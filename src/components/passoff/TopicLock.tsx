@@ -30,7 +30,8 @@ import { tone } from "./ui";
  * title as the lesson page draws them, one card in the tokens, the conditions and lessons divided by a line instead of a
  * box inside the box. Every word above is kept (the lock checks read '순차 학습 잠금' · 'TOPIC N을 마치면 열려요').
  *
- * 단계 2-나 E2: the condition "구성도 다시 채우기" (on since the engine records it) links the topic's map page until it is done.
+ * 단계 2-나 E2: the condition "구성도 다시 채우기" (on since the engine records it) links the topic's map page until it is done —
+ * once the lesson conditions above it are met (E2 수정: the map is the topic's end, and the server takes it only then).
  */
 export interface PassoffTopicLockProps {
   title: string;
@@ -76,6 +77,8 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
   const completedCount = lessons.filter(counted).length;
   const last = lessons[lessons.length - 1] ?? null;
   const mapRefilled = answer && current ? Boolean(answer.topics.find((t) => t.topic === current.topic)?.mapRefilled) : Boolean(current?.mapRefilled);
+  // the map is the topic's end: its link once the two conditions above are met (the server takes a map refill only then)
+  const lessonsDone = current !== null && last !== null && completedCount >= current.requiredCount && counted(last);
   const notCounted = lessons.filter((lesson) => !counted(lesson));
   // finished on this device (its own record) but not counted by the server
   const finishedHereOnly = new Set(notCounted.filter((lesson) => isCompleted(COURSE, lesson.id)).map((lesson) => lesson.id));
@@ -129,6 +132,8 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
                 <Condition ok={mapRefilled}>
                   {mapRefilled ? (
                     <>대주제 끝 &lsquo;구성도 다시 채우기&rsquo; 한 번 하기</>
+                  ) : !lessonsDone ? (
+                    <>대주제 끝 &lsquo;구성도 다시 채우기&rsquo; 한 번 하기(위 레슨을 마친 뒤)</>
                   ) : (
                     <Link
                       href={passoffMapHref(current.topic)}

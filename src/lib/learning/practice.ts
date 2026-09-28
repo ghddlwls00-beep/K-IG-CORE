@@ -4,18 +4,21 @@
  *
  *   - practice: an answer that moves no schedule — the wrong-answer list's "지금 다시 풀기". It is logged with the effect
  *     "practice" whether the item is due or not (applyAttempt would count the first answer of a due day); a "내 답도 맞아요"
- *     made there is kept for judging (a report and a "pending" log entry) and moves nothing either;
- *   - bring forward: a course sends a lesson's items to the front of the next review (PASS-OFF: a box of the topic map
- *     that was filled wrong). Each item of the lesson still being learned becomes due since the day after it was learned
- *     — the plan takes the longest overdue first (planDay), so they come before the rest; an item first seen today stays
- *     for tomorrow, and a passed item keeps its upkeep. The server does the same on its copy (the learning API's
- *     `forward`), because a merge keeps the stored item when two copies differ only in their due day.
+ *     made there is kept for judging (a report and a "pending" log entry) and moves nothing either. An item that is due and
+ *     not asked yet in today's review waits for it (practiceWaits): the answer seen while practising would make today's
+ *     review answer — the day's first, which counts — an answer just seen, and the engine never counts those;
+ *   - bring forward: a course sends a lesson's items back into review sooner (PASS-OFF: a box of the topic map that was
+ *     filled wrong). Each item of the lesson still being learned becomes due tomorrow — never today: one answered in today's
+ *     review would come back as a second answer the same day (a retry that moves nothing, so it would stay in the day's
+ *     plan), and one not asked yet today would lose its spacing. One due by tomorrow already stays, and a passed item keeps
+ *     its upkeep. The server does the same on its copy (the learning API's `forward`), because a merge keeps the stored item
+ *     when two copies differ only in their due day.
  * Checked by docs/pass-off-grammar/검사/check-learning-e2.cjs.
  */
 import { addDays, daysBetween, learningDay } from "./day";
 import { LOG_LIMIT, REPORT_LIMIT } from "./engine";
 import { readCourseRecord, writeCourseRecord } from "./record";
-import type { AttemptEffect, AttemptInput, CourseProfile, CourseRecord } from "./types";
+import type { AttemptEffect, AttemptInput, CourseProfile, CourseRecord, Day, ItemState } from "./types";
 
 /** engine.ts keeps a wrong answer to this length (its ANSWER_LIMIT) */
 const ANSWER_LIMIT = 200;
@@ -48,22 +51,34 @@ export function recordPractice(
   return effect;
 }
 
-/** The lessons' learning items due since the day after each was learned. Returns how many moved. */
+/**
+ * An item "지금 다시 풀기" does not offer yet: due today (or overdue) and not answered in today's review. Once today's review
+ * has asked it — or on a day it is not due — it can be practised, and the review answer that counts next is on another day.
+ */
+export function practiceWaits(state: ItemState | undefined, today: Day): boolean {
+  return state !== undefined && daysBetween(state.dueDay, today) >= 0 && state.reviewDay !== today;
+}
+
+/** The lessons' learning items due tomorrow at the latest (sooner ones stay as they are). Returns how many moved. */
 export function applyBringForward(record: CourseRecord, lessonIds: readonly string[], atMs: number): number {
   const lessons = new Set(lessonIds);
-  const today = learningDay(atMs);
+  const due = addDays(learningDay(atMs), 1);
   let moved = 0;
   for (const state of Object.values(record.items)) {
     if (!lessons.has(state.lessonId) || state.stage !== "learning") continue;
-    // the day after the lesson — never the lesson's own day, so an item learned today stays for tomorrow
-    const since = addDays(state.firstDay, 1);
-    const due = daysBetween(since, today) >= 0 ? since : addDays(today, 1);
     if (daysBetween(due, state.dueDay) > 0) {
       state.dueDay = due;
       moved += 1;
     }
   }
   return moved;
+}
+
+/** How many of the lessons' learning items come back by tomorrow — what a course tells the learner after a bring-forward. */
+export function forwardedItems(record: CourseRecord, lessonIds: readonly string[], atMs: number): number {
+  const lessons = new Set(lessonIds);
+  const due = addDays(learningDay(atMs), 1);
+  return Object.values(record.items).filter((s) => lessons.has(s.lessonId) && s.stage === "learning" && daysBetween(s.dueDay, due) >= 0).length;
 }
 
 /** This device's record: bring the lessons' items forward (the server is told with the learning API's `forward`). */

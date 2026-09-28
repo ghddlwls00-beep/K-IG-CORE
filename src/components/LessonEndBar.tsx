@@ -29,10 +29,11 @@ type Neighbour = { href: string; title: string; code?: string } | null;
  * ready, '이 강의 학습 완료' is disabled with the gate's reason on one line under it (VOCA: until one Step 2 round is finished).
  * A completed lesson stays toggleable. No gate registered — every other course today — renders exactly as before.
  *
- * 2026-09-28 (PASS-OFF GRAMMAR, merged with main): its view registers { ready: the five steps are done, undo: false } and
- * completes the lesson itself when the learner finishes the fifth step (docs/pass-off-grammar/설계.md §3). The bar shows the
- * disabled button with the reason until then, and '학습 완료함' as a status afterwards — no '취소', because that course's
- * server keeps completions only (lessonGate.ts `undo`).
+ * 2026-09-28 (PASS-OFF GRAMMAR, merged with main): its view registers { ready: the five steps are done, undo: false }; the
+ * learner presses '이 강의 학습 완료' once the fifth step is done (단계 2-나 E2 — as in the other courses; docs/pass-off-grammar/
+ * 설계.md §3). The bar shows the disabled button with the reason until then, and '학습 완료함' as a status afterwards — no
+ * '취소', because that course's server keeps completions only (lessonGate.ts `undo`). On a topic's last lesson whose
+ * "구성도 다시 채우기" opens the next topic, the gate also says `quietNext`: '다음 강의' keeps its border (one filled button).
  */
 export function LessonEndBar({
   course,
@@ -56,6 +57,8 @@ export function LessonEndBar({
   const blocked = showComplete && !completed && gate !== null && !gate.ready;
   // a gate with undo: false (PASS-OFF GRAMMAR): a completed lesson is a status line, not a toggle
   const doneForGood = showComplete && completed && gate !== null && gate.undo === false;
+  // a gate with quietNext (PASS-OFF GRAMMAR — a topic's last lesson before its map): '다음 강의' is not the page's main action
+  const nextFilled = (completed || !showComplete) && gate?.quietNext !== true;
   const reasonId = useId();
 
   async function goNext(event: MouseEvent<HTMLAnchorElement>) {
@@ -147,16 +150,16 @@ export function LessonEndBar({
               onClick={goNext}
               aria-label={`다음 강의: ${named(next)}`}
               className={`group flex min-h-14 min-w-0 items-center justify-end gap-3 rounded-control px-3 py-2 text-right transition-colors ${
-                completed || !showComplete
+                nextFilled
                   ? "bg-ink text-surface hover:opacity-90"
                   : "border border-line bg-raised hover:bg-sunken"
               }`}
             >
               <span className="min-w-0">
-                <span className={`block text-caption ${completed || !showComplete ? "text-surface/75" : "text-ink-soft"}`}>
+                <span className={`block text-caption ${nextFilled ? "text-surface/75" : "text-ink-soft"}`}>
                   {saving ? "저장 중…" : "다음 강의"}
                 </span>
-                <span className={`block truncate text-label font-semibold ${completed || !showComplete ? "text-surface" : "text-ink"}`}>{named(next)}</span>
+                <span className={`block truncate text-label font-semibold ${nextFilled ? "text-surface" : "text-ink"}`}>{named(next)}</span>
               </span>
               <span aria-hidden>→</span>
             </Link>

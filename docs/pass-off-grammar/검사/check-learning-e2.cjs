@@ -8,28 +8,37 @@
  * R2 환경값이 하나라도 있거나 NODE_ENV=production 이면 아무것도 안 하고 멈춘다(exit 2). 이용권 비밀값은 이 실행만의 버리는 값.
  *   E1 연습(지금 다시 풀기 — practice.ts applyPractice): 오늘 낼 차례인 문항을 맞혀도 · 틀려도 일정 그대로(effect practice) — 같은
  *      답을 엔진 applyAttempt 로 넣으면 일정이 바뀌는 것과 대조 · 연습 중 '내 답도 맞아요'는 신고(pending)만 남고 일정 그대로
- *   E2 앞으로 당기기(applyBringForward): 그 레슨의 배우는 중 문항만 '배운 다음 날부터 낼 차례' · 오늘 처음 배운 문항은 내일 그대로 ·
- *      통과한 문항 · 다른 레슨 그대로 · 계획(planDay)에서 다른 복습 문항보다 앞
+ *   E1b (E2 수정) 오늘 낼 차례이고 오늘 복습에서 아직 안 푼 문항은 연습에 안 나옴(practiceWaits) — 연습에서 정답을 보고 같은 날 복습에서
+ *      답하면 그 답이 통과 날로 세어지는 것(엔진으로 보임)을 막는 칸. 오늘 복습에서 푼 뒤 · 낼 차례가 아닌 날은 연습 가능
+ *   E2 앞으로 당기기(applyBringForward — E2 수정): 그 레슨의 배우는 중 문항만 '내일' 낼 차례(오늘이 아님 — 오늘 복습에서 이미 푼
+ *      문항이 오늘 계획에 되돌아오지 않고, 아직 안 푼 문항도 오늘로 당겨 간격이 줄지 않음) · 내일까지 낼 차례인 문항 · 오늘 처음 배운
+ *      문항 · 통과한 문항 · 다른 레슨 그대로 · 내일 계획에 들어감 · forwardedItems 가 내일까지 나올 수를 셈
  *   E3 '내 답도 맞아요'가 그날 첫 답이면(복습 화면이 틀린 첫 답을 붙잡아 두었다가 신고로 바꿈) 맞음도 틀림도 아님 — lapses 0 ·
  *      통과한 날 그대로 · 내일 다시 · 신고 1(엔진 reportMyAnswer 그대로)
  *   E4 API view "notes"(레슨 없이): 오답노트 = 열린 레슨의 틀린 문항만(열쇠 · 종류 · 내 답) · 문항 글 0(모든 레슨의 문항 글 중 응답에
  *      있는 것 0) · items 비어 있음
  *   E5 API view "notes" + lesson: 그 레슨의 틀린 문항 데이터만(열쇠 = 목록의 그 레슨 열쇠) · 다른 문항 글 0
  *   E6 다시 잠긴 대주제(관리자 초기화 뒤)의 저장된 틀린 문항 → 목록에 없음 · 그 레슨을 물어도 데이터 0
- *   E7 API forward: 열린 레슨만 서버 기록에서 당김 · 잠긴 레슨은 무시 · 그 뒤 옛 기기 기록이 올라와도(합치기 — 같은 날이면 서버 것)
- *      당긴 날 그대로 · 다른 이용권의 기기 기록(owner 다름)이면 안 당김
+ *   E7 API forward: 열린 레슨만 서버 기록에서 내일로 당김 · 잠긴 레슨은 무시 · 응답 forwarded = 내일까지 나올 그 레슨 문항 수 · 그 뒤
+ *      옛 기기 기록이 올라와도(합치기 — 같은 날이면 서버 것) 당긴 날 그대로 · 기기 기록이 다른 이용권 것이라 안 받을 때(taken false)도
+ *      forward 는 이 이용권의 요청이라 서버 기록에 함(E2 수정 — 전에는 안 당기고 '기록했어요')
  *   E8 관리자 신고 모아 보기(/api/admin/learning-reports): 관리자 아님 401 · 두 이용권의 신고를 문항별로 묶음(건수 · 학습자 수 ·
  *      같은 답은 대소문자 · 띄어쓰기 무시하고 하나로) · 문항의 한국어 · 정답(레슨 파일) · 많이 신고된 순 · 코드는 응답에 없음
+ *   E8b (E2 수정) 한 번에 기록 하나씩(limit 1 · after = 받은 next) 쪽을 넘겨 받아 합친 것(review.ts mergeReportGroups) = 한 번에 받은 것 ·
+ *      쪽마다 기록 수 1 이하 · 마지막 쪽 next 없음
  *   E9 구성도(passoffMap.ts · passoffReview.ts passoffMapData): TOPIC 마다 레슨 순서 · 규칙 제목 · 첫 예문이 레슨 파일과 같음 · 칩 순서는
- *      정답 순서가 아님 · 같은 대주제면 같은 순서 · 보기에 정답이 있음 · 다 맞히면 틀린 칸 0 · 칩을 바꾸면 그 두 레슨 · 규칙 · 문장이
- *      틀리면 그 레슨
+ *      정답 순서가 아님 · 같은 대주제면 같은 순서 · 보기(놓은 레슨 것)에 그 레슨 문장이 있음 · 다 맞히면 틀린 칸 0 · 칩을 바꾸면 그 두
+ *      레슨 · 규칙 · 문장이 틀리면 그 레슨 · (E2 수정) 칩을 바꾸고 놓은 레슨의 규칙 · 문장을 고르면 그 두 칸은 레슨만 틀림(칸 화면이 묻는
+ *      것 — 놓은 레슨 — 기준)
  *   E10 API view "record"(레슨 완료 · 신고 · 연습 · 구성도 뒤에 기록만 맞출 때): 기록은 받고 돌려주되 items 0 · 문항 글 0 — 같은 때
  *      보통 요청은 오늘 계획 문항 데이터를 줌(비교)
  *   node docs/pass-off-grammar/검사/check-learning-e2.cjs [--break=<아래 하나>] [--prove-breaks]
  *     깨기는 사본만 바꿈 — 각각 이름 붙은 FAIL(exit 1)이어야: practice-moves(연습이 일정을 바꿈) · forward-all(다른 레슨까지 당김) ·
- *     forward-today(오늘 배운 문항을 오늘로) · notes-all-items(물은 레슨 밖 문항도 보냄) · notes-locked(잠긴 대주제 문항도 목록에) ·
+ *     forward-today(당긴 날이 오늘 — 점검 전 판처럼) · notes-all-items(물은 레슨 밖 문항도 보냄) · notes-locked(잠긴 대주제 문항도 목록에) ·
  *     forward-locked(잠긴 레슨도 당김) · report-case(대소문자가 다르면 다른 답으로) · admin-open(관리자 확인 없음) ·
- *     map-grade(규칙이 틀려도 맞은 칸) · record-items(view "record" 에도 계획 문항 데이터를 보냄)
+ *     map-grade(규칙이 틀려도 맞은 칸) · record-items(view "record" 에도 계획 문항 데이터를 보냄) ·
+ *     (E2 수정) practice-early(낼 차례인 문항도 연습에 냄) · forward-not-sent(기기 기록을 안 받으면 forward 도 안 함 — 점검 전 판) ·
+ *     map-by-box(규칙을 놓은 레슨이 아니라 칸의 레슨으로 채점 — 점검 전 판) · reports-no-page(관리자 신고가 after 를 무시)
  * exit 0 = 실패 0
  */
 const fs = require("fs");
@@ -45,18 +54,25 @@ const ROUTE_FILE = path.join(REPO, "src/app/api/learning/[course]/route.ts");
 const ADMIN_FILE = path.join(REPO, "src/app/api/admin/learning-reports/route.ts");
 const PRACTICE_FILE = path.join(REPO, "src/lib/learning/practice.ts");
 const REVIEW_FILE = path.join(REPO, "src/lib/learning/review.ts");
+const STORE_FILE = path.join(REPO, "src/lib/learning/serverStore.ts");
 const MAP_FILE = path.join(REPO, "src/lib/passoffMap.ts");
 const BREAKS = {
   "practice-moves": [PRACTICE_FILE, /if \(record\.log\.length > LOG_LIMIT\) record\.log\.splice\(0, record\.log\.length - LOG_LIMIT\);/, "if (record.log.length > LOG_LIMIT) record.log.splice(0, record.log.length - LOG_LIMIT); if (record.items[itemKey]) record.items[itemKey].dueDay = addDays(day, 2);"],
   "forward-all": [PRACTICE_FILE, /if \(!lessons\.has\(state\.lessonId\) \|\| state\.stage !== "learning"\) continue;/, 'if (state.stage !== "learning") continue;'],
-  "forward-today": [PRACTICE_FILE, /const since = addDays\(state\.firstDay, 1\);/, "const since = state.firstDay;"],
+  // the first occurrence: applyBringForward's (forwardedItems below keeps tomorrow)
+  "forward-today": [PRACTICE_FILE, /const due = addDays\(learningDay\(atMs\), 1\);/, "const due = learningDay(atMs);"],
   "notes-all-items": [ROUTE_FILE, /notes\.find\(\(lesson\) => lesson\.lessonId === body\.lesson\)\?\.items\.map\(\(item\) => item\.key\) \?\? \[\]/, "notes.flatMap((lesson) => lesson.items.map((item) => item.key))"],
   "notes-locked": [ROUTE_FILE, /const notes = body\.view === "notes" \? wrongList\(openRecord\) : null;/, 'const notes = body.view === "notes" ? wrongList(record) : null;'],
   "record-items": [ROUTE_FILE, /const items = body\.view === "record" \? \{\} : /, "const items = "],
   "forward-locked": [ROUTE_FILE, /typeof id === "string" && access\.lessonOpen\(id\)/, 'typeof id === "string"'],
   "report-case": [REVIEW_FILE, /const sameWords = \(answer: string\) => answer\.trim\(\)\.replace\(\/\\s\+\/g, " "\)\.toLowerCase\(\);/, "const sameWords = (answer: string) => answer;"],
   "admin-open": [ADMIN_FILE, /if \(!verifyAdminSession\(request\)\) \{/, "if (false) {"],
-  "map-grade": [MAP_FILE, /const ruleOk = picks\.rules\[box\] === lesson\.id;/, "const ruleOk = true;"],
+  "map-grade": [MAP_FILE, /const ruleOk = placed !== null && picks\.rules\[box\] === placed\.id;/, "const ruleOk = true;"],
+  // E2 수정
+  "practice-early": [PRACTICE_FILE, /return state !== undefined && daysBetween\(state\.dueDay, today\) >= 0 && state\.reviewDay !== today;/, "return false;"],
+  "forward-not-sent": [ROUTE_FILE, /if \(!forward\.length\) return \{ record: stored, changed: false \};/, "return { record: stored, changed: false };"],
+  "map-by-box": [MAP_FILE, /const ruleOk = placed !== null && picks\.rules\[box\] === placed\.id;/, "const ruleOk = picks.rules[box] === lesson.id;"],
+  "reports-no-page": [STORE_FILE, /const start = after !== null && \/\^\\d\+\$\/\.test\(after\) \? Number\(after\) : 0;/, "const start = 0;"],
 };
 
 if (process.argv.includes("--prove-breaks")) {
@@ -159,6 +175,7 @@ const admin = load(ADMIN_FILE);
 const E = load(path.join(REPO, "src/lib/learning/engine.ts"));
 const Day = load(path.join(REPO, "src/lib/learning/day.ts"));
 const P = load(PRACTICE_FILE);
+const R = load(REVIEW_FILE);
 const progress = load(path.join(REPO, "src/lib/passoffProgress.ts"));
 const M = load(MAP_FILE);
 const { passoffMapData } = load(path.join(REPO, "src/lib/passoffReview.ts"));
@@ -248,7 +265,31 @@ const check = (name, ok, note) => results.push({ name, ok: Boolean(ok), note: St
       `due ${due} · ${effect}/${effectWrong} · 상태 같음 ${stateSame} · 기록 ${logged} · 엔진 ${engineEffect} ${beforeState.dueDay}→${r2.items[key].dueDay} · 신고 ${reportEffect} ${r.reports.length}`);
   }
 
-  // ---- E2 bring forward -------------------------------------------------------------------------------------------
+  // ---- E1b practice waits for today's review (E2 수정) -----------------------------------------------------------------
+  {
+    NOW = kst(D, 10);
+    const r = recordOf([t1[0]], kst(day(-3), 9));
+    const [a, b, c] = reviewItemsOf(t1[0]).map((e) => e.key);
+    // a: its next-day check two days late, not asked today · b: asked in today's review (wrong → tomorrow) · c: due in two days
+    Object.assign(r.items[c], { step: 1, dueDay: day(2), lastDay: day(-1), lastCorrect: true, reviewDay: day(-1) });
+    E.applyAttempt(r, b, review(t1[0], r.items[b].kind, false, { answer: junk(9) }), NOW, PROFILE);
+    const waitsA = P.practiceWaits(r.items[a], D);
+    const waitsB = P.practiceWaits(r.items[b], D);
+    const waitsC = P.practiceWaits(r.items[c], D);
+    const overdue = P.practiceWaits({ ...r.items[a], dueDay: day(-2), reviewDay: day(-2) }, D);
+    // what the gate is for — the engine alone: a practised with the answer shown, then today's review answer counts
+    const r2 = JSON.parse(JSON.stringify(r));
+    P.applyPractice(r2, a, review(t1[0], r2.items[a].kind, true, { help: "reveal" }), NOW);
+    const leak = E.applyAttempt(r2, a, review(t1[0], r2.items[a].kind, true), NOW + 60_000, PROFILE);
+    // once today's review has asked it, a can be practised
+    E.applyAttempt(r, a, review(t1[0], r.items[a].kind, true), NOW, PROFILE);
+    const afterReview = P.practiceWaits(r.items[a], D);
+    check(`E1b 낼 차례이고 오늘 복습에서 아직 안 푼 문항은 연습에 안 나옴(practiceWaits — 엔진만으로는 연습 뒤 같은 날 복습 답이 '${leak}') · 오늘 복습에서 푼 문항 · 낼 차례가 아닌 문항은 연습 가능 · 밀린 문항도 기다림 · 오늘 복습에서 푼 뒤에는 연습 가능`,
+      waitsA === true && waitsB === false && waitsC === false && overdue === true && afterReview === false,
+      `a ${waitsA} · b(오늘 풂) ${waitsB} · c(모레) ${waitsC} · 밀림 ${overdue} · 엔진만 ${leak} · 복습 뒤 ${afterReview}`);
+  }
+
+  // ---- E2 bring forward (E2 수정: tomorrow, never today) ------------------------------------------------------------------
   {
     NOW = kst(D, 10);
     const r = recordOf([t1[0], t1[1]], kst(day(-10), 9));
@@ -256,26 +297,34 @@ const check = (name, ok, note) => results.push({ name, ok: Boolean(ok), note: St
     for (const e of reviewItemsOf(t1[0]).concat(reviewItemsOf(t1[1]))) {
       Object.assign(r.items[e.key], { step: 2, dueDay: day(4), lastDay: day(-2), lastCorrect: true, reviewDay: day(-2), passDays: [day(-8), day(-2)] });
     }
+    const t0 = reviewItemsOf(t1[0]).map((e) => e.key);
     // one of the moved lesson's items has passed
-    const passedKey = reviewItemsOf(t1[0])[1].key;
+    const passedKey = t0[1];
     Object.assign(r.items[passedKey], { stage: "passed", step: 0, dueDay: day(20) });
+    // one due today and answered in today's review (right: now due later) — it must not come back today
+    const todayKey = t0[0];
+    Object.assign(r.items[todayKey], { dueDay: D, passDays: [] }); // still learning after today's right answer
+    const todayEffect = E.applyAttempt(r, todayKey, review(t1[0], r.items[todayKey].kind, true), NOW, PROFILE);
+    const todayDueBefore = r.items[todayKey].dueDay;
+    // one due tomorrow already — it stays
+    const soonKey = t0[2];
+    r.items[soonKey].dueDay = day(1);
     // a lesson first seen today
     E.applyLessonDone(r, t1[2], NOW, reviewItemsOf(t1[2]).map(({ key, kind }) => ({ key, kind })));
     const moved = P.applyBringForward(r, [t1[0], t1[2]], NOW);
-    const t0Items = reviewItemsOf(t1[0]).map((e) => e.key).filter((k) => k !== passedKey);
-    const firstDayPlus1 = Day.addDays(r.items[t0Items[0]].firstDay, 1);
-    const movedOk = t0Items.every((k) => r.items[k].dueDay === firstDayPlus1);
+    const learningT0 = t0.filter((k) => k !== passedKey);
+    const allTomorrow = learningT0.every((k) => r.items[k].dueDay === day(1));
     const passedKept = r.items[passedKey].dueDay === day(20);
     const otherKept = reviewItemsOf(t1[1]).every((e) => r.items[e.key].dueDay === day(4));
     const todayKept = reviewItemsOf(t1[2]).every((e) => r.items[e.key].dueDay === day(1));
-    // in the plan of the day they come before the other lesson's (make those due today too)
-    for (const e of reviewItemsOf(t1[1])) r.items[e.key].dueDay = D;
-    const plan = E.planDay(r, D, PROFILE);
-    const firstOther = plan.items.findIndex((i) => i.lessonId === t1[1]);
-    const lastMoved = plan.items.map((i) => i.lessonId).lastIndexOf(t1[0]);
-    check(`E2 앞으로 당기기: ${t1[0]} 의 배우는 중 문항 ${t0Items.length}개 → ${firstDayPlus1}(배운 다음 날) · 통과한 문항 · ${t1[1]} · 오늘 배운 ${t1[2]} 그대로 · 계획에서 ${t1[1]} 보다 앞`,
-      moved === t0Items.length && movedOk && passedKept && otherKept && todayKept && lastMoved >= 0 && (firstOther < 0 || lastMoved < firstOther),
-      `옮김 ${moved} · 당김 ${movedOk} · 통과 ${passedKept} · 다른 레슨 ${otherKept} · 오늘 ${todayKept} · 계획 순서 마지막 당긴 문항 ${lastMoved} < 첫 다른 문항 ${firstOther}`);
+    const planToday = E.planDay(r, D, PROFILE);
+    const notToday = !planToday.items.some((i) => i.lessonId === t1[0]);
+    // the day's answer stays the day's: a second answer today would be a retry that moves nothing
+    const againToday = E.applyAttempt(JSON.parse(JSON.stringify(r)), todayKey, review(t1[0], r.items[todayKey].kind, true), NOW + 60_000, PROFILE);
+    const counted = P.forwardedItems(r, [t1[0]], NOW);
+    check(`E2 앞으로 당기기: ${t1[0]} 의 배우는 중 문항 ${learningT0.length}개 모두 내일(${day(1)}) — 오늘 복습에서 푼 문항(${todayDueBefore} 였음)도 오늘이 아니라 내일 · 오늘 계획에 없음 · 이미 내일인 문항은 안 옮김 · 통과한 문항 · ${t1[1]} · 오늘 배운 ${t1[2]} 그대로 · forwardedItems ${learningT0.length}`,
+      todayEffect === "right" && moved === learningT0.length - 1 && allTomorrow && passedKept && otherKept && todayKept && notToday && againToday === "retry" && counted === learningT0.length,
+      `오늘 답 ${todayEffect} · 옮김 ${moved}/${learningT0.length - 1} · 내일 ${allTomorrow} · 통과 ${passedKept} · 다른 레슨 ${otherKept} · 오늘 배운 ${todayKept} · 오늘 계획에 없음 ${notToday} · 같은 날 두 번째 ${againToday} · 셈 ${counted}`);
   }
 
   // ---- E3 a report as the day's first answer -------------------------------------------------------------------------
@@ -368,25 +417,29 @@ const check = (name, ok, note) => results.push({ name, ok: Boolean(ok), note: St
     await progress.resetPassoffProgress(a.payload.key);
     const r7 = await sync(a, { record: dev, owner, forward: [t1[0], t2[0], "pg99-9", 42] });
     const s7 = stored(a.payload.key);
-    const since = (k) => Day.addDays(s7.items[k].firstDay, 1);
-    const openMoved = reviewItemsOf(t1[0]).every((e) => s7.items[e.key].dueDay === since(e.key));
+    const openMoved = reviewItemsOf(t1[0]).every((e) => s7.items[e.key].dueDay === day(1));
     const lockedKept = reviewItemsOf(t2[0]).every((e) => s7.items[e.key].dueDay === day(4));
-    const planFirst = r7.data.plan.items.length > 0 && r7.data.plan.items.every((i) => i.lessonId === t1[0]);
+    const notToday = !r7.data.plan.items.some((i) => i.lessonId === t1[0]);
+    const counted = r7.data.forwarded === reviewItemsOf(t1[0]).length;
     // an old copy comes up later without `forward` — the merge keeps the stored (same day) item
     await sync(a, { record: dev, owner });
     const s7b = stored(a.payload.key);
-    const survived = reviewItemsOf(t1[0]).every((e) => s7b.items[e.key].dueDay === since(e.key));
-    // another licence's device record (owner differs): nothing is taken, nothing moves
+    const survived = reviewItemsOf(t1[0]).every((e) => s7b.items[e.key].dueDay === day(1));
+    // E2 수정: the device's record last kept for another licence (owner differs) is not taken — but the forward is this
+    // licence's own request (its map page), so it is made on the stored record
     const b = sessionFor("1Y");
     const devB = recordOf([t1[1]], kst(day(-10), 9));
     for (const e of reviewItemsOf(t1[1])) Object.assign(devB.items[e.key], { step: 2, dueDay: day(4), lastDay: day(-2), lastCorrect: true, reviewDay: day(-2) });
     const firstB = await sync(b, { record: devB, owner: null });
-    await sync(b, { record: devB, owner: "id-0000000000000000", forward: [t1[1]] });
+    const foreignDevice = recordOf([t1[1], t1[2]], kst(day(-10), 9));
+    const foreign = await sync(b, { record: foreignDevice, owner: "id-0000000000000000", forward: [t1[1]] });
     const sB = stored(b.payload.key);
-    const foreignKept = firstB.status === 200 && reviewItemsOf(t1[1]).every((e) => sB.items[e.key].dueDay === day(4));
-    check(`E7 forward: 열린 ${t1[0]} 만 서버에서 당김(배운 다음 날) · 잠긴 ${t2[0]} · 없는 레슨 무시 · 오늘 계획이 그 문항 · 옛 기기 기록이 올라와도 그대로 · 다른 이용권 기기 기록이면 안 당김`,
-      r7.status === 200 && openMoved && lockedKept && planFirst && survived && foreignKept,
-      `당김 ${openMoved} · 잠긴 것 그대로 ${lockedKept} · 계획 ${r7.data.plan.items.length}(${planFirst}) · 합친 뒤 ${survived} · 다른 이용권 ${foreignKept}`);
+    const foreignForward = firstB.status === 200 && foreign.status === 200 && foreign.data.taken === false &&
+      reviewItemsOf(t1[1]).every((e) => sB.items[e.key].dueDay === day(1)) && foreign.data.forwarded === reviewItemsOf(t1[1]).length &&
+      !Object.keys(sB.items).some((k) => k.startsWith(`${t1[2]}:`));
+    check(`E7 forward: 열린 ${t1[0]} 만 서버에서 내일(${day(1)})로 · 잠긴 ${t2[0]} · 없는 레슨 무시 · 오늘 계획에 없음 · forwarded ${reviewItemsOf(t1[0]).length} · 옛 기기 기록이 올라와도 그대로 · 다른 이용권 기기 기록(taken false)이어도 forward 는 이 이용권 기록에 함(그 기기 기록은 안 받음)`,
+      r7.status === 200 && openMoved && lockedKept && notToday && counted && survived && foreignForward,
+      `당김 ${openMoved} · 잠긴 것 그대로 ${lockedKept} · 오늘 계획에 없음 ${notToday} · forwarded ${r7.data.forwarded} · 합친 뒤 ${survived} · 다른 이용권 기기 ${foreignForward}(taken ${foreign.data && foreign.data.taken} · forwarded ${foreign.data && foreign.data.forwarded})`);
   }
 
   // ---- E8 the owner's report list ---------------------------------------------------------------------------------------
@@ -416,6 +469,22 @@ const check = (name, ok, note) => results.push({ name, ok: Boolean(ok), note: St
         g.about && g.about.prompt.includes(item.item.ko) && g.about.answers[0] === item.item.en && g.about.lessonTitle === index.lessons.find((l) => l.id === t1[1]).title &&
         g2 && g2.count === 1 && groups.indexOf(g) < groups.indexOf(g2) && codes.length === 0,
       `${denied.status} · ${r8.status} · ${g && `${g.count}건/${g.learners}명/답 ${g.answers.length}(${g.answers.map((a) => `${a.answer}×${a.count}`).join(" | ")})`} · ${g && g.about && g.about.lessonTitle} · 순서 ${groups.indexOf(g)}<${groups.indexOf(g2)} · 코드 ${codes.length}`);
+
+    // E8b (E2 수정) a page of one record at a time, joined as the screen joins them = the one look above
+    const pages = [];
+    let after = null;
+    for (let n = 0; n < 40; n++) {
+      const p = await call(admin.POST, null, "passoff-grammar", { course: "passoff-grammar", after, limit: 1 });
+      pages.push(p);
+      after = p.data && p.data.next;
+      if (!after) break;
+    }
+    const joined = pages.reduce((acc, p) => R.mergeReportGroups(acc, (p.data && p.data.items) || []), []);
+    const shape = (list) => list.map((x) => ({ item: x.item, count: x.count, learners: x.learners, pending: x.pending, lastDay: x.lastDay, answers: x.answers }));
+    const recordsSum = pages.reduce((sum, p) => sum + ((p.data && p.data.records) || 0), 0);
+    check(`E8b 관리자 신고를 기록 하나씩 ${pages.length}쪽으로(after = 받은 next): 합친 묶음 = 한 번에 받은 묶음 · 읽은 기록 ${recordsSum} = ${r8.data.records} · 쪽마다 기록 1 이하 · 마지막 쪽 next 없음`,
+      pages.length > 1 && pages.every((p) => p.status === 200 && p.data.records <= 1) && !after && recordsSum === r8.data.records && same(shape(joined), shape(groups)),
+      `쪽 ${pages.length} · 기록 ${recordsSum}/${r8.data.records} · 끝 next ${after} · 묶음 ${joined.length}/${groups.length} · 같음 ${same(shape(joined), shape(groups))}`);
   }
 
   // ---- E9 the topic map -----------------------------------------------------------------------------------------------------
@@ -444,22 +513,37 @@ const check = (name, ok, note) => results.push({ name, ok: Boolean(ok), note: St
       if (!same([...chips].sort(), [...lessons].sort())) bad.push(`TOPIC ${topicNumber}: 칩이 레슨과 다름`);
       const rules = M.mapRuleOptions(data).map((o) => o.lessonId);
       if (!same([...rules].sort(), [...lessons].sort())) bad.push(`TOPIC ${topicNumber}: 규칙 보기`);
-      for (const [box, lesson] of data.lessons.entries()) {
-        const options = M.mapSentenceOptions(data, box);
-        if (!options.some((o) => o.id === lesson.sentence.id) || options.length !== Math.min(3, lessons.length)) bad.push(`TOPIC ${topicNumber} 칸 ${box + 1}: 문장 보기`);
+      // the sentences to pick from are the PLACED lesson's (E2 수정): its own sentence among them, the same wherever it is placed
+      for (const lesson of data.lessons) {
+        const options = M.mapSentenceOptions(data, lesson.id);
+        if (!options.some((o) => o.id === lesson.sentence.id) || options.length !== Math.min(3, lessons.length) || new Set(options.map((o) => o.id)).size !== options.length) {
+          bad.push(`TOPIC ${topicNumber} ${lesson.id}: 문장 보기`);
+        }
+        if (!same(options, M.mapSentenceOptions(data, lesson.id))) bad.push(`TOPIC ${topicNumber} ${lesson.id}: 문장 보기 순서가 매번 다름`);
       }
       const right = { boxes: lessons, rules: lessons, sentences: data.lessons.map((l) => l.sentence.id) };
       if (M.mapMissedLessons(M.gradeMap(data, right)).length) bad.push(`TOPIC ${topicNumber}: 다 맞혔는데 틀린 칸`);
       if (lessons.length >= 2) {
         const swapped = { ...right, boxes: [lessons[1], lessons[0], ...lessons.slice(2)] };
         if (!same(M.mapMissedLessons(M.gradeMap(data, swapped)), [lessons[0], lessons[1]])) bad.push(`TOPIC ${topicNumber}: 칩 바꿈`);
+        // the chips swapped, and each box's rule and sentence picked for the lesson placed in it — the two boxes wrong by the
+        // lesson only (the box screen asked about the placed lesson)
+        const placedPicks = {
+          boxes: swapped.boxes,
+          rules: swapped.boxes,
+          sentences: swapped.boxes.map((id) => data.lessons.find((l) => l.id === id).sentence.id),
+        };
+        const pg = M.gradeMap(data, placedPicks);
+        if (!same(M.mapMissedLessons(pg), [lessons[0], lessons[1]]) || !(pg[0].ruleOk && pg[0].sentenceOk && !pg[0].lessonOk && pg[0].placedId === lessons[1]) || !(pg[1].ruleOk && pg[1].sentenceOk && !pg[1].lessonOk)) {
+          bad.push(`TOPIC ${topicNumber}: 놓은 레슨 기준`);
+        }
         const wrongRule = { ...right, rules: [lessons[1], ...lessons.slice(1)] };
         if (!same(M.mapMissedLessons(M.gradeMap(data, wrongRule)), [lessons[0]])) bad.push(`TOPIC ${topicNumber}: 규칙 틀림`);
         const wrongSentence = { ...right, sentences: [data.lessons[1].sentence.id, ...right.sentences.slice(1)] };
         if (!same(M.mapMissedLessons(M.gradeMap(data, wrongSentence)), [lessons[0]])) bad.push(`TOPIC ${topicNumber}: 문장 틀림`);
       }
     }
-    check(`E9 구성도: 대주제 ${topics.length}개 모두 — 레슨 순서 · 규칙 제목 · 첫 예문이 레슨 파일과 같음 · 칩은 정답 순서 아님 · 같은 순서 · 보기에 정답 · 다 맞히면 0 · 칩 바꿈 · 규칙 · 문장 틀림은 그 레슨`,
+    check(`E9 구성도: 대주제 ${topics.length}개 모두 — 레슨 순서 · 규칙 제목 · 첫 예문이 레슨 파일과 같음 · 칩은 정답 순서 아님 · 같은 순서 · 보기(놓은 레슨 것)에 그 문장 · 다 맞히면 0 · 칩 바꿈 · 규칙 · 문장 틀림은 그 레슨 · 칩을 바꾸고 놓은 레슨의 규칙 · 문장을 고르면 레슨만 틀림`,
       checked === topics.length && bad.length === 0, `${checked}/${topics.length} · 어긋남 ${bad.length}${bad.length ? ` (${bad.slice(0, 3).join(" | ")})` : ""}`);
   }
 

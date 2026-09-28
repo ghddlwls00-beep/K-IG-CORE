@@ -31,6 +31,16 @@ import { passoffTopicOf, type PassoffProgressSnapshot } from "@/lib/passoffUnloc
 
 export type PassoffSyncStatus = "local" | "syncing" | "saved" | "pending" | "error";
 
+/**
+ * What recording a map refill came to (단계 2-나 E2 수정 — the map page says which): the server's answer, or why there is none —
+ * "licence": no licence active on this device (after waiting a few seconds for one being checked) or the server did not
+ * take the session; "offline": the request did not go; "error": the server failed.
+ */
+export type MapRefillResult = { ok: true; progress: PassoffProgressSnapshot } | { ok: false; reason: "licence" | "offline" | "error" };
+
+/** how long a map refill waits for a licence still being checked on this device */
+const LICENCE_WAIT_MS = 5_000;
+
 interface PendingCompletion {
   lessonId: string;
   clientUpdatedAt: number;
@@ -55,9 +65,9 @@ interface PassoffProgressContextType {
   recordLessonComplete: (lessonId: string) => void;
   /**
    * 단계 2-나 E2: the topic's "구성도 다시 채우기" was done (src/app/passoff-grammar/map) — sent at once, not queued: the map
-   * page waits for the answer and offers to send again when none came. Resolves with the server's answer, or null.
+   * page waits for the answer and offers to send again when none came. Resolves with the server's answer, or why none came.
    */
-  recordMapRefill: (topic: number) => Promise<PassoffProgressSnapshot | null>;
+  recordMapRefill: (topic: number) => Promise<MapRefillResult>;
   /** sends the queue now; resolves with the server's answer, or null when nothing went or it failed */
   flush: () => Promise<PassoffProgressSnapshot | null>;
   /** a topic opened that the course list has not announced yet (usePassoffUnlockNotice) */
@@ -71,7 +81,7 @@ const PassoffProgressContext = createContext<PassoffProgressContextType>({
   countedIds: null,
   syncStatus: "local",
   recordLessonComplete: () => {},
-  recordMapRefill: async () => null,
+  recordMapRefill: async () => ({ ok: false, reason: "licence" }),
   flush: async () => null,
   unannouncedTopic: null,
   markTopicAnnounced: () => {},
@@ -315,27 +325,32 @@ export function PassoffProgressProvider({ children }: { children: React.ReactNod
   );
 
   const recordMapRefill = useCallback(
-    async (topic: number): Promise<PassoffProgressSnapshot | null> => {
+    async (topic: number): Promise<MapRefillResult> => {
+      // a licence still being checked on this device (a page opened afresh) — a few seconds for it
+      for (let waited = 0; !identityRef.current && waited < LICENCE_WAIT_MS; waited += 250) {
+        await new Promise((resolve) => window.setTimeout(resolve, 250));
+      }
       const licence = identityRef.current;
-      if (!hasActiveLicense || !licence) return null;
+      if (!licence) return { ok: false, reason: "licence" };
       try {
-        // queued completions first, so the answer judges the topic with them
+        // queued completions first, so the answer judges the topic with them (the map is taken after its lessons)
         await flush();
         const response = await fetch(API, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ updates: [{ mapRefillTopic: topic }] }),
         });
-        const data = await response.json();
-        if (!response.ok || !data.success) return null;
+        const data = await response.json().catch(() => null);
+        if (response.status === 401 || response.status === 403) return { ok: false, reason: "licence" };
+        if (!response.ok || !data || !data.success) return { ok: false, reason: "error" };
         const progress = data.progress as PassoffProgressSnapshot;
         if (identityRef.current === licence) accept(progress);
-        return progress;
+        return { ok: true, progress };
       } catch {
-        return null;
+        return { ok: false, reason: typeof navigator !== "undefined" && navigator.onLine === false ? "offline" : "error" };
       }
     },
-    [accept, flush, hasActiveLicense],
+    [accept, flush],
   );
 
   // a licence became active (or the connection came back): what waited for it goes now

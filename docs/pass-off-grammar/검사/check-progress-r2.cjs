@@ -7,7 +7,8 @@
  * 를 S3 처럼 따짐)로 바꾸고, R2 환경값은 이 프로세스 안에서만 가짜로 넣는다 — 네트워크로 나가는 것 없음. 진짜 R2 환경값이
  * 이미 있으면 아무것도 안 하고 멈춘다(exit 2).
  *   R1 두 인스턴스가 같은 코드에 거의 같은 때 다른 레슨을 씀(처음 쓰기 · 그다음 쓰기 둘 다) → 둘 다 남음
- *      (예전 판은 나중 쓰기가 앞 것을 지움 — 목록 ✓ 와 잠금이 어긋난 원인 하나)
+ *      (예전 판은 나중 쓰기가 앞 것을 지움 — 목록 ✓ 와 잠금이 어긋난 원인 하나). 그다음 쓰기(R1b)는 구성도 1 과 TOPIC 2 레슨(모든
+ *      대주제가 열린 쓰기)의 겹침 — 단계 2-나 E2 수정 뒤 구성도는 대주제 레슨을 마친 뒤에만 받으므로 TOPIC 1 마지막 레슨을 먼저 씀
  *   R2 처음 쓰기는 If-None-Match "*" · 그다음은 읽은 때의 ETag 로 If-Match
  *   R3 조건을 받지 않는 저장소(501) → 조건 없이 한 번 더 써서 남음(예전 동작 — 더 나빠지지 않음)
  *   R4 계속 412 → 조건부 3번 뒤 조건 없는 쓰기 1번으로 끝남(끝없이 돌지 않음)
@@ -144,7 +145,7 @@ const dataBefore = fs.existsSync(dataFile) ? fs.statSync(dataFile).mtimeMs : nul
 const A = instance();
 const B = instance();
 const index = JSON.parse(fs.readFileSync(path.join(REPO, "content/courses/passoff-grammar.json"), "utf8"));
-const [t1] = index.groups.map((g) => g.lessons);
+const [t1, t2] = index.groups.map((g) => g.lessons);
 
 const results = [];
 const check = (name, ok, note) => results.push({ name, ok: Boolean(ok), note });
@@ -167,14 +168,17 @@ const puts = (from) => log.slice(from).filter((x) => x.op === "put");
     firstPuts.map((p) => (p.IfMatch ? `If-Match ${p.IfMatch.slice(0, 9)}…` : p.IfNoneMatch ? `If-None-Match ${p.IfNoneMatch}` : "조건 없음")).join(" → "),
   );
 
-  // R1 · R2 — a later write: both instances read the same version
+  // R1 · R2 — a later write: both instances read the same version. TOPIC 1's last lesson first (a map refill is taken only
+  // after the topic's lessons — 단계 2-나 E2 수정), then A's map refill and B's completion of a TOPIC 2 lesson written the way
+  // a LIFE pass writes (every topic open) overlap
+  await A.updatePassoffProgress(key, done(t1[2]));
   mark = log.length;
   const etagBefore = store.get([...store.keys()][0]).etag;
-  beforePut = () => B.updatePassoffProgress(key, done(t1[2]));
+  beforePut = () => B.updatePassoffProgress(key, done(t2[0]), { everyTopicOpen: true });
   await A.updatePassoffProgress(key, [{ mapRefillTopic: 1 }]);
   rec = await B.getPassoffProgress(key);
   const laterPuts = puts(mark);
-  check(`R1b 그다음 쓰기가 겹침: A(구성도 1) · B(${t1[2]}) 둘 다 남음 · TOPIC 2 열림`, rec.lessons[t1[2]]?.completed && rec.mapRefills["1"] && rec.unlockedThrough === 2,
+  check(`R1b 그다음 쓰기가 겹침: A(구성도 1) · B(${t2[0]}) 둘 다 남음 · TOPIC 2 열림`, rec.lessons[t2[0]]?.completed && rec.lessons[t1[2]]?.completed && rec.mapRefills["1"] && rec.unlockedThrough === 2,
     `레슨 ${Object.keys(rec.lessons).length} · 구성도 ${Object.keys(rec.mapRefills).join(",") || "없음"} · unlockedThrough ${rec.unlockedThrough}`);
   check("R2b 그다음 쓰기는 읽은 때의 ETag 로 If-Match(겹친 A 는 한 번 더)", laterPuts.length === 3 && laterPuts[0].IfMatch === etagBefore && laterPuts[1].IfMatch === etagBefore && laterPuts[2].IfMatch && laterPuts[2].IfMatch !== etagBefore,
     laterPuts.map((p) => (p.IfMatch ? `If-Match ${p.IfMatch.slice(0, 9)}…` : "조건 없음")).join(" → "));

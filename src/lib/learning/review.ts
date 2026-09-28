@@ -23,6 +23,8 @@ export interface LearningSyncAnswer<T = unknown> {
   owner: string;
   /** false: the device's record was last kept for another licence, so it was not merged into this one */
   taken: boolean;
+  /** 단계 2-나 E2 — with a `forward`: how many of those lessons' learning items come back by tomorrow (practice.ts forwardedItems) */
+  forwarded?: number;
 }
 
 /** A copy with only the kept items (their answers and reports go with them) and the kept lessons. */
@@ -194,7 +196,42 @@ export function reportGroups(records: readonly Pick<CourseRecord, "reports">[]):
   return [...groups.values()]
     .map(({ answerMap, ...group }) => ({
       ...group,
-      answers: [...answerMap.values()].sort((a, b) => b.count - a.count || daysBetween(a.lastDay, b.lastDay)),
+      answers: [...answerMap.values()].sort(byAnswer),
     }))
-    .sort((a, b) => b.count - a.count || daysBetween(a.lastDay, b.lastDay) || (a.item < b.item ? -1 : 1));
+    .sort(byGroup);
+}
+
+const byAnswer = (a: ReportGroup["answers"][number], b: ReportGroup["answers"][number]) => b.count - a.count || daysBetween(a.lastDay, b.lastDay);
+const byGroup = (a: ReportGroup, b: ReportGroup) => b.count - a.count || daysBetween(a.lastDay, b.lastDay) || (a.item < b.item ? -1 : 1);
+
+/**
+ * Report groups of different records as one list (단계 2-나 E2 수정 — the owner's list is read a page of records at a time, so
+ * the pages' groups are joined here): counts and learners add up (a page's records are its own), the same words once, the
+ * same order as reportGroups. What else a group carries (the admin route's `about`) is the first page's.
+ */
+export function mergeReportGroups<G extends ReportGroup>(a: readonly G[], b: readonly G[]): G[] {
+  const groups = new Map<string, G & { answerMap: Map<string, { answer: string; count: number; lastDay: Day }> }>();
+  for (const group of [...a, ...b]) {
+    let into = groups.get(group.item);
+    if (!into) {
+      into = { ...group, count: 0, learners: 0, pending: 0, accepted: 0, rejected: 0, answers: [], answerMap: new Map() };
+      groups.set(group.item, into);
+    }
+    into.count += group.count;
+    into.learners += group.learners;
+    into.pending += group.pending;
+    into.accepted += group.accepted;
+    into.rejected += group.rejected;
+    into.lastDay = later(into.lastDay, group.lastDay);
+    for (const answer of group.answers) {
+      const words = sameWords(answer.answer);
+      const seen = into.answerMap.get(words) ?? { answer: answer.answer, count: 0, lastDay: answer.lastDay };
+      seen.count += answer.count;
+      seen.lastDay = later(seen.lastDay, answer.lastDay);
+      into.answerMap.set(words, seen);
+    }
+  }
+  return [...groups.values()]
+    .map(({ answerMap, ...group }) => ({ ...group, answers: [...answerMap.values()].sort(byAnswer) }) as unknown as G)
+    .sort(byGroup);
 }

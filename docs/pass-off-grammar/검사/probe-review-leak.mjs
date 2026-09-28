@@ -23,6 +23,8 @@
  *     P9 API view "notes"(틀린 문항: 열린 pg01-1 · pg01-2 · 잠긴 TOPIC 2): 목록은 열린 레슨 것만 · 레슨 없이 물으면 문항 글 0 ·
  *        lesson=pg01-2 면 그 레슨 틀린 문항 글만(다른 문항 글 0) · 잠긴 레슨을 물으면 0
  *     P10 이용권 구성도 쪽: 열린 TOPIC 1 은 그 레슨들의 규칙 제목 · 첫 예문이 있음 · 다른 대주제 레슨 글 0 · 잠긴 TOPIC 2 는 레슨 글 0
+ *     P10a (E2 수정 — 구성도는 대주제 끝) TOPIC 1 레슨 전에는 '대주제의 레슨을 마친 뒤' 한 줄 · 레슨 글 0 → 진도 API 로 TOPIC 1 레슨을
+ *        마친 뒤 P10
  *   node docs/pass-off-grammar/검사/probe-review-leak.mjs [--base http://127.0.0.1:3471] [--selftest] [--secrets <json>]
  * exit 0 = 실패 0
  */
@@ -263,6 +265,17 @@ if (secretsFile) {
       return [rule && rule.title, anchor && anchor.en].filter((t) => typeof t === "string" && t.length >= 8);
     });
     const topic1 = index.groups[0].lessons;
+    // E2 수정: the map is the topic's END — before TOPIC 1's lessons the page has the line and none of their words
+    const m0h = await get(`/${COURSE}/map?topic=1`, { cookie });
+    const m0r = await get(`/${COURSE}/map?topic=1`, { rsc: true, cookie });
+    const m0Leak = [...found(m0h.body, allNeedles), ...found(m0r.body, allNeedles)];
+    check(`P10a 이용권 구성도(TOPIC 1 레슨 전): '대주제의 레슨을 마친 뒤' · 레슨 글 ${allNeedles.length}개 중 0(HTML · RSC)`,
+      m0h.status === 200 && m0h.body.includes("대주제의 레슨을 마친 뒤") && m0Leak.length === 0, `${m0h.status} · 글 ${m0Leak.length}${m0Leak.length ? ` (${m0Leak[0]})` : ""}`);
+    await fetch(`${BASE}/api/progress/${COURSE}`, {
+      method: "POST",
+      headers: { "content-type": "application/json", cookie },
+      body: JSON.stringify({ updates: topic1.map((lessonId) => ({ lessonId, completed: true, clientUpdatedAt: Date.now() })) }),
+    });
     const m1h = await get(`/${COURSE}/map?topic=1`, { cookie });
     const m1r = await get(`/${COURSE}/map?topic=1`, { rsc: true, cookie });
     const m1Seen = mapWordsOf(topic1).filter((t) => forms(t).some((f) => m1h.body.includes(f)));

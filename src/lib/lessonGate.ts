@@ -13,6 +13,10 @@
  * '취소'. PASS-OFF's server progress takes completions only (docs/pass-off-grammar/설계.md §5 — "학습자 화면에 취소가 없고"), so
  * an undo here would clear this device's mark while the course list and the topic lock still count the lesson. Absent → the
  * toggle of every other course, unchanged.
+ *
+ * 2026-09-28 (PASS-OFF 단계 2-나 E2 수정): `quietNext: true` — the next lesson is not the page's main action, so the end bar
+ * draws '다음 강의' with a border instead of filled even after completion (docs/디자인-규칙.md §1-2: one filled button). PASS-OFF
+ * sets it on a topic's last lesson while its "구성도 다시 채우기" is what opens the next topic. Absent → as before.
  */
 export interface LessonGate {
   ready: boolean;
@@ -20,6 +24,8 @@ export interface LessonGate {
   reason: string;
   /** false: a completed lesson cannot be un-completed from the end bar (PASS-OFF GRAMMAR). Absent or true → as before. */
   undo?: boolean;
+  /** true: '다음 강의' stays a bordered link — the course view has the page's main action (PASS-OFF GRAMMAR). Absent → as before. */
+  quietNext?: boolean;
 }
 
 const gates = new Map<string, LessonGate>();
@@ -33,8 +39,13 @@ function emit() {
 export function setLessonGate(course: string, lessonId: string, gate: LessonGate): void {
   const key = keyOf(course, lessonId);
   const prev = gates.get(key);
-  if (prev && prev.ready === gate.ready && prev.reason === gate.reason && prev.undo === gate.undo) return;
-  gates.set(key, gate.undo === undefined ? { ready: gate.ready, reason: gate.reason } : { ready: gate.ready, reason: gate.reason, undo: gate.undo });
+  if (prev && prev.ready === gate.ready && prev.reason === gate.reason && prev.undo === gate.undo && prev.quietNext === gate.quietNext) return;
+  gates.set(key, {
+    ready: gate.ready,
+    reason: gate.reason,
+    ...(gate.undo === undefined ? {} : { undo: gate.undo }),
+    ...(gate.quietNext === undefined ? {} : { quietNext: gate.quietNext }),
+  });
   emit();
 }
 

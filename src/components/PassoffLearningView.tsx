@@ -28,6 +28,7 @@ import {
 } from "@/lib/passoffLearning";
 import { syncCourseRecordWith } from "@/lib/learning/sync";
 import { planOpensCourse } from "@/lib/license";
+import { passoffLessonsDone } from "@/lib/passoffUnlock";
 import { useLicense } from "./LicenseProvider";
 import { LESSON_COMPLETE_EVENT, useProgress } from "./ProgressProvider";
 import { usePassoffProgress } from "./PassoffProgressProvider";
@@ -76,7 +77,8 @@ import { FONT_LABEL, segmentButton, spokenOf, type FontSize, type Speaker } from
  * itself: a lesson this device already marked complete, done again through '처음부터 다시 하기' (the bar shows '학습 완료함',
  * so there is nothing to press) — its five steps done again send the completion once more, which is how a completion the
  * server lost is given back (코드 단계 C 점검 1). At the end of a topic's last lesson the fifth step links "구성도 다시
- * 채우기" (src/app/passoff-grammar/map — the topic's last condition) until it has been done.
+ * 채우기" (src/app/passoff-grammar/map — the topic's last condition) until it has been done — once the topic's lessons are
+ * done (E2 수정: the server takes a map refill only then), and as the page's one filled button while it opens the next topic.
  */
 const STEPS = [
   { short: "예문", title: "예문 떠올리기" },
@@ -372,21 +374,35 @@ export function PassoffLearningView({
     return () => window.removeEventListener(LESSON_COMPLETE_EVENT, onComplete);
   }, [lessonId]);
 
+  const stepsLeft = done.flatMap((d, i) => (d ? [] : [i]));
+
+  // the topic's last lesson: "구성도 다시 채우기" until it is done (the server's answer knows — with a licence only). It opens
+  // once the topic's lessons are done — counted as the list counts them: the server's and those on their way (countedIds) —
+  // and it is what opens the next topic only while there is one still locked (E2 수정)
+  const topicState = progress?.topics.find((t) => t.lessonIds.includes(lessonId)) ?? null;
+  const mapRefill = (() => {
+    if (!topicState || topicState.lastLessonId !== lessonId || topicState.mapRefilled) return null;
+    const counted = countedIds ?? new Set<string>();
+    const completedCount = topicState.lessonIds.filter((id) => counted.has(id)).length;
+    const ready = passoffLessonsDone({ ...topicState, completedCount, lastLessonCompleted: counted.has(lessonId) });
+    const next = progress?.topics.find((t) => t.topic > topicState.topic);
+    return {
+      href: passoffMapHref(topicState.topic),
+      topic: topicState.topic,
+      ready,
+      left: Math.max(0, topicState.requiredCount - completedCount),
+      required: Boolean(progress?.mapRefillRequired && !progress.everyTopicOpen && next && !next.unlocked),
+    };
+  })();
+  // the map, when it opens the next topic, is the page's one filled button: the end bar's '다음 강의' keeps its border
+  const quietNext = Boolean(work.lessonDone && mapRefill?.ready && mapRefill.required);
+
   // main's end bar (LessonEndBar · lessonGate): off until the five steps are done, and no undo — the server keeps completions only
   const gateReady = allDone || work.lessonDone;
   useEffect(() => {
-    setLessonGate(PASSOFF_COURSE, lessonId, { ready: gateReady, reason: PASSOFF_GATE_REASON, undo: false });
-  }, [gateReady, lessonId]);
+    setLessonGate(PASSOFF_COURSE, lessonId, { ready: gateReady, reason: PASSOFF_GATE_REASON, undo: false, quietNext });
+  }, [gateReady, lessonId, quietNext]);
   useEffect(() => () => clearLessonGate(PASSOFF_COURSE, lessonId), [lessonId]);
-
-  const stepsLeft = done.flatMap((d, i) => (d ? [] : [i]));
-
-  // the topic's last lesson: "구성도 다시 채우기" until it is done (the server's answer knows — with a licence only)
-  const topicState = progress?.topics.find((t) => t.lessonIds.includes(lessonId)) ?? null;
-  const mapRefill =
-    topicState && topicState.lastLessonId === lessonId && !topicState.mapRefilled
-      ? { href: passoffMapHref(topicState.topic), topic: topicState.topic, required: Boolean(progress?.mapRefillRequired && !progress.everyTopicOpen) }
-      : null;
 
   // text size and sentence speed — GRAMMAR's words and segments, beside the step's title
   const settingsButton = (

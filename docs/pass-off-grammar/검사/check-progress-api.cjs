@@ -8,7 +8,7 @@
  * 모두 진짜 코드(passoffProgress.ts · passoffUnlock.ts · content.ts)이고, 진도는 임시 폴더의 data/passoff-progress.json
  * 에만 쓴다. R2 환경값이 하나라도 있거나 NODE_ENV=production 이면 아무것도 안 하고 멈춘다(exit 2).
  *   A1 이용권 없음 → 401            A2 새 STUDENT 이용권: TOPIC 1 만 · 대주제 수 = 과정 목록
- *   A3 잠긴 TOPIC 2 완료 → 안 남음   A4 TOPIC 1 두 개 → 남음 · 아직 1
+ *   A3 잠긴 TOPIC 2 완료 → 안 남음   A3b (E2 수정) 레슨 전 구성도 → 안 남음   A4 TOPIC 1 두 개 → 남음 · 아직 1
  *   A5 마지막 레슨 → 아직 1(구성도 조건 — 단계 2-나 E2 에서 켬) → 구성도 다시 채우기 { mapRefillTopic: 1 } → TOPIC 2 열림
  *   A6 이제 TOPIC 2 완료 → 남음      A7 레슨 전부 + 구성도 전부 한 번에 → TOPIC 1 것만 · unlockedThrough 2
  *   A8 LIFE: 맨 끝 레슨 → 남음 · everyTopicOpen    A9 STULIFE: 맨 끝 레슨 → 안 남음(LIFE 만 모두 열림 — STUDENT 와 같음)
@@ -21,7 +21,7 @@
  *   node docs/pass-off-grammar/검사/check-progress-api.cjs [--break=<아래 하나>]
  *     깨기는 사본만 바꿈 — 각각 FAIL(exit 1)이어야: life-as-1y(LIFE 칸에 1Y) · no-guard(잠긴 대주제 거절을 뺀 판정) ·
  *     stulife-opens(API 가 STULIFE 도 모두 여는 판) · admin-life-off(관리자가 LIFE 를 모름 — 점검 전 판) ·
- *     settopic-down(수동 해금이 내림)
+ *     settopic-down(수동 해금이 내림) · map-early(레슨 전 구성도도 받음 — E2 점검 전 판)
  * exit 0 = 실패 0
  */
 const fs = require("fs");
@@ -32,7 +32,7 @@ const Module = require("module");
 
 const REPO = path.resolve(__dirname, "../../..");
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
-const BREAKS = ["life-as-1y", "no-guard", "stulife-opens", "admin-life-off", "settopic-down"];
+const BREAKS = ["life-as-1y", "no-guard", "stulife-opens", "admin-life-off", "settopic-down", "map-early"];
 if (BREAK && !BREAKS.includes(BREAK)) {
   console.error(`모르는 깨기: ${BREAK} — ${BREAKS.join(" · ")}`);
   process.exit(2);
@@ -63,6 +63,7 @@ const TRANSFORM = {
   "stulife-opens": [path.join(REPO, "src/app/api/progress/passoff-grammar/route.ts"), /const everyTopicOpen = session\.payload\.plan === "LIFE";/g, 'const everyTopicOpen = session.payload.plan.endsWith("LIFE");'],
   "admin-life-off": [path.join(REPO, "src/app/api/admin/passoff-progress/route.ts"), /const everyTopicOpen = checked\.plan === "LIFE";/, "const everyTopicOpen = false;"],
   "settopic-down": [path.join(REPO, "src/lib/passoffUnlock.ts"), /if \(topic <= before\) return false;/, "if (topic === before) return false;"],
+  "map-early": [path.join(REPO, "src/lib/passoffUnlock.ts"), /else if \(!lessonsDone\(topic\)\) refused\.push\(\{ what, why: "not-ready" \}\);/, ""],
 }[BREAK];
 const cache = new Map();
 function resolveSpec(spec, fromDir) {
@@ -159,6 +160,10 @@ const check = (name, ok, note) => results.push({ name, ok: Boolean(ok), note });
     `${r.status} unlockedThrough=${r.data.progress && r.data.progress.unlockedThrough} 대주제 ${r.data.progress && r.data.progress.topics.length}/${topics.length}`);
   r = await post(stu, [secondTopic[0]]);
   check(`A3 잠긴 TOPIC 2 의 ${secondTopic[0]} 완료 → 안 남음`, r.status === 200 && !r.data.progress.lessons[secondTopic[0]] && r.data.progress.unlockedThrough === 1, `${secondTopic[0]}=${JSON.stringify(r.data.progress.lessons[secondTopic[0]] || null)}`);
+  // A3b (E2 수정) the map is the topic's end: sent before TOPIC 1's lessons it is not taken
+  r = await postMap(stu, [1]);
+  check("A3b 레슨 전 구성도 다시 채우기 { mapRefillTopic: 1 } → 안 남음(TOPIC 1 레슨을 마친 뒤에만)", r.status === 200 && r.data.progress.topics[0].mapRefilled === false && r.data.progress.unlockedThrough === 1,
+    `mapRefilled=${r.data.progress && r.data.progress.topics[0].mapRefilled} · unlockedThrough=${r.data.progress && r.data.progress.unlockedThrough}`);
   r = await post(stu, firstTopic.slice(0, -1));
   check(`A4 TOPIC 1 의 ${firstTopic.length - 1}개 → 남음 · 아직 TOPIC 1`, firstTopic.slice(0, -1).every((id) => r.data.progress.lessons[id] && r.data.progress.lessons[id].completed) && r.data.progress.unlockedThrough === 1,
     `남은 ${Object.keys(r.data.progress.lessons).length} · unlockedThrough=${r.data.progress.unlockedThrough}`);

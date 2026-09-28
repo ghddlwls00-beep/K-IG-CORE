@@ -14,7 +14,7 @@ import { useLicense } from "./LicenseProvider";
 import { isFreePreviewLesson, planOpensCourse } from "@/lib/license";
 import type { LessonPresentation } from "@/lib/curriculumPresentation";
 import { READING_LENGTHS } from "@/lib/readingLengths";
-import { passoffTopicOf, topicWithParticle } from "@/lib/passoffUnlock";
+import { passoffLessonsDone, passoffTopicOf, topicWithParticle } from "@/lib/passoffUnlock";
 import { ChapterAudioBar } from "./ChapterAudioBar";
 import { usePassoffProgress, usePassoffUnlockNotice } from "./PassoffProgressProvider";
 import { PassoffReviewEntry } from "./passoff/ReviewEntry";
@@ -579,9 +579,9 @@ export function CourseDashboard({
                         );
                       })}
                     </ul>
-                    {/* PASS-OFF GRAMMAR: the topic's "구성도 다시 채우기" (단계 2-나 E2) — an open topic, with a licence */}
+                    {/* PASS-OFF GRAMMAR: the topic's "구성도 다시 채우기" (단계 2-나 E2) — an open topic, with a licence; a link once its lessons are done */}
                     {isPassoff && hasCourseAccess && chapterUnlocked && !passoffChecking && passoffTopic !== null && filter === "all" ? (
-                      <PassoffMapRow topic={passoffTopic} done={Boolean(passoffState?.mapRefilled)} />
+                      <PassoffMapRow topic={passoffTopic} done={Boolean(passoffState?.mapRefilled)} ready={Boolean(passoffState && passoffLessonsDone(passoffState))} />
                     ) : null}
                   </div>
                 )}

@@ -2,14 +2,15 @@
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
+import { learningDay } from "@/lib/learning/day";
 import { wrongList } from "@/lib/learning/engine";
-import { recordPractice } from "@/lib/learning/practice";
+import { practiceWaits, recordPractice } from "@/lib/learning/practice";
 import { readCourseRecord } from "@/lib/learning/record";
 import type { LearningNotesAnswer, WrongLesson } from "@/lib/learning/review";
 import { syncCourseRecordWith } from "@/lib/learning/sync";
 import type { PlanItem } from "@/lib/learning/types";
 import { IconCheck, IconChevronDown } from "../icons";
-import { CourseItem, Progress, type MyAnswer, type ReviewAnswer, type ReviewCourse, type ReviewSource } from "./ReviewSession";
+import { commitLeftAnswers, CourseItem, Progress, type MyAnswer, type ReviewAnswer, type ReviewCourse, type ReviewSource } from "./ReviewSession";
 
 /**
  * The wrong-answer list — the engine's screen for any course (공통-학습-엔진.md §8-5 — 단계 2-나 E2), on the same course
@@ -22,9 +23,13 @@ import { CourseItem, Progress, type MyAnswer, type ReviewAnswer, type ReviewCour
  *   - "지금 다시 풀기": the lesson's listed items once more with the course's own card (mode "notes": the result at once,
  *     its help after a miss). The answers are practice (practice.ts recordPractice) — nothing moves in the review's
  *     schedule; a "내 답도 맞아요" made here is kept for judging and moves nothing either. With a licence they go up at the
- *     end of the run and when the page is left.
+ *     end of the run and when the page is left (hidden, closed, or another page of the site).
  * The frame follows docs/디자인-규칙.md §6 like ReviewSession: the page's header and title, then the list (or one progress
  * line and the item), and the bar back to the course list at the bottom.
+ *
+ * E2 수정: an item due in today's review and not asked there yet is not practised here (practice.ts practiceWaits — its answer
+ * seen here would make today's review answer, which counts, an answer just seen): '오늘 복습에서 먼저 풀어요' on its row, and
+ * '지금 다시 풀기' runs the lesson's others. One lesson is open at a time, so one '지금 다시 풀기' is on the screen.
  */
 
 /** What a report says once sent here (practice: the item's schedule stays). */
@@ -52,8 +57,21 @@ export function WrongNotes<T>({ course, source }: { course: ReviewCourse<T>; sou
   /** the first answer of each item in the run on screen — its result line */
   const [firsts, setFirsts] = useState<Record<string, boolean>>({});
   const [reported, setReported] = useState<Record<string, true>>({});
+  /** items due in today's review and not asked there yet — not practised here until then */
+  const [waiting, setWaiting] = useState<Record<string, true>>({});
   const unsent = useRef(false);
   const topRef = useRef<HTMLDivElement | null>(null);
+
+  /** which items wait for today's review — this device's record (merged with the server's first, with a licence) */
+  const waitingNow = useCallback((): Record<string, true> => {
+    const record = readCourseRecord(profile.course);
+    const today = learningDay(Date.now());
+    return Object.fromEntries(
+      Object.entries(record.items)
+        .filter(([, state]) => practiceWaits(state, today))
+        .map(([key]) => [key, true as const]),
+    );
+  }, [profile.course]);
 
   const sorted = (list: WrongLesson[]) =>
     [...list]
@@ -73,6 +91,8 @@ export function WrongNotes<T>({ course, source }: { course: ReviewCourse<T>; sou
   useEffect(() => {
     if (started.current) return;
     started.current = true;
+    // answers a review page held when it ended while hidden: recorded first (ReviewSession), so the list includes them
+    if (commitLeftAnswers(profile)) unsent.current = true;
     void (async () => {
       if (server) {
         const result = await syncCourseRecordWith<T, LearningNotesAnswer<T>>(profile.course, { view: "notes" });
@@ -86,20 +106,36 @@ export function WrongNotes<T>({ course, source }: { course: ReviewCourse<T>; sou
         setNotes(sorted(wrongList(course.deviceRecord ? course.deviceRecord(record) : record)));
         setData(deviceItems ?? {});
       }
+      setWaiting(waitingNow());
       setPhase({ at: "list" });
     })();
     // once — the list is read when the page opens
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // leaving the page: what was practised goes up (reports included)
+  // leaving the page — hidden, closed, or another page of the site: what was practised goes up (reports included)
   useEffect(() => {
     const onHide = () => {
       if (document.visibilityState === "hidden") void sync();
     };
+    const onLeave = () => void sync();
     document.addEventListener("visibilitychange", onHide);
-    return () => document.removeEventListener("visibilitychange", onHide);
+    window.addEventListener("pagehide", onLeave);
+    return () => {
+      document.removeEventListener("visibilitychange", onHide);
+      window.removeEventListener("pagehide", onLeave);
+    };
   }, [sync]);
+  const leaving = useRef(sync);
+  useEffect(() => {
+    leaving.current = sync;
+  }, [sync]);
+  useEffect(
+    () => () => {
+      void leaving.current();
+    },
+    [],
+  );
 
   // a new screen starts at the top, as in the review
   useEffect(() => {
@@ -108,10 +144,10 @@ export function WrongNotes<T>({ course, source }: { course: ReviewCourse<T>; sou
     if (top.getBoundingClientRect().top < 0) window.scrollTo({ top: Math.max(0, top.getBoundingClientRect().top + window.scrollY - 72) });
   }, [phase]);
 
-  /** a lesson opened: its items' words (with a licence, from the server — that lesson's listed items only) */
+  /** a lesson opened (the one open before closes): its items' words (with a licence, from the server — that lesson's listed items only) */
   async function toggle(lessonId: string) {
     const opening = !open[lessonId];
-    setOpen((prev) => ({ ...prev, [lessonId]: opening }));
+    setOpen(opening ? { [lessonId]: true } : {});
     if (!opening || !server) return;
     const lesson = notes.find((l) => l.lessonId === lessonId);
     if (!lesson || lesson.items.every((item) => data[item.key] !== undefined)) return;
@@ -126,10 +162,14 @@ export function WrongNotes<T>({ course, source }: { course: ReviewCourse<T>; sou
     setData((prev) => ({ ...prev, ...result.answer.items }));
   }
 
+  /** `waitingNow` again at the press: an item that became due since the list was read (04:00) waits too */
   function start(lesson: WrongLesson) {
-    const keys = lesson.items.map((item) => item.key).filter((key) => data[key] !== undefined);
+    const now = waitingNow();
+    setWaiting(now);
+    const keys = lesson.items.map((item) => item.key).filter((key) => data[key] !== undefined && !now[key]);
     if (!keys.length) return;
     setFirsts({});
+    setReported({});
     setPhase({ at: "run", lessonId: lesson.lessonId, keys, index: 0 });
   }
 
@@ -218,7 +258,9 @@ export function WrongNotes<T>({ course, source }: { course: ReviewCourse<T>; sou
         <ul className="flex flex-col divide-y divide-line overflow-hidden rounded-card border border-line bg-raised">
           {notes.map((lesson) => {
             const isOpen = Boolean(open[lesson.lessonId]);
-            const ready = lesson.items.some((item) => data[item.key] !== undefined);
+            const withData = lesson.items.filter((item) => data[item.key] !== undefined);
+            const ready = withData.some((item) => !waiting[item.key]);
+            const waits = withData.filter((item) => waiting[item.key]).length;
             return (
               <li key={lesson.lessonId} data-notes-lesson={lesson.lessonId}>
                 <button
@@ -251,19 +293,34 @@ export function WrongNotes<T>({ course, source }: { course: ReviewCourse<T>; sou
                               {item.lapses > 0 ? `틀림 ${item.lapses}번` : "도움 받아 맞힘"}
                               {item.lastCorrect === true ? " · 지난번엔 맞힘" : ""}
                             </p>
+                            {waiting[item.key] ? (
+                              <p className="text-label text-ink" data-notes-waits>
+                                복습할 차례예요. 복습에서 먼저 풀어요.
+                              </p>
+                            ) : null}
                           </li>
                         ))}
                       </ul>
                     )}
+                    {!ready && waits > 0 ? (
+                      <p className="text-label leading-relaxed text-ink-soft">이 레슨의 문항은 복습할 차례예요. 복습에서 먼저 풀면 여기서 다시 풀 수 있어요.</p>
+                    ) : null}
                     {ready ? (
-                      <div>
-                        <button
-                          type="button"
-                          onClick={() => start(lesson)}
-                          className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control bg-ink px-4 text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90"
-                        >
-                          지금 다시 풀기
-                        </button>
+                      <div className="flex flex-col gap-1.5">
+                        <div>
+                          <button
+                            type="button"
+                            onClick={() => start(lesson)}
+                            className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control bg-ink px-4 text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90"
+                          >
+                            지금 다시 풀기
+                          </button>
+                        </div>
+                        {waits > 0 ? (
+                          <p className="text-caption text-ink-soft">
+                            복습할 차례인 <span className="tabular-nums">{waits}</span>문항은 빼고 풀어요.
+                          </p>
+                        ) : null}
                       </div>
                     ) : null}
                   </div>

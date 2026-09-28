@@ -160,14 +160,14 @@ export function FormItemCard({
   const composing = useRef(false);
   const settled = phase === "right" || phase === "shown";
 
-  /** `reportAs`: the answer as a report would put it (the words tapped with their labels), when it differs */
-  function record(correct: boolean, answer?: string, reportAs?: string) {
+  /** `answer`: as the learner gave it — the words tapped with their labels ("quickly(부사)"), the option, the word typed */
+  function record(correct: boolean, answer?: string) {
     const first = tries === 0;
     if (first) {
       setFirstRight(correct);
       onFirstTry(correct);
     }
-    if (!correct) setLastWrong(reportAs ?? answer ?? "");
+    if (!correct) setLastWrong(answer ?? "");
     // the help taken BEFORE this answer: "한 번 더" is not help; the answer shown in an earlier presentation is
     (onAttempt ?? notePassoffAttempt)({
       lessonId,
@@ -205,11 +205,9 @@ export function FormItemCard({
       if (res.wrongLabels.length) parts.push(`이름표가 틀린 것이 있어요(${res.wrongLabels.length}개)`);
       setSelectNote(parts.join(" · "));
     }
-    record(
-      res.correct,
-      picked.map((i) => item.tokens[i]).join(" "),
-      picked.map((i) => (labels[i] ? `${item.tokens[i]}(${labels[i]})` : item.tokens[i])).join(" "),
-    );
+    // with its labels: the review's results, the wrong-answer list and a report show what was really given (E2 수정 — a right
+    // word with a wrong label read as a right answer there)
+    record(res.correct, picked.map((i) => (labels[i] ? `${item.tokens[i]}(${labels[i]})` : item.tokens[i])).join(" "));
   }
 
   function toggleToken(i: number) {

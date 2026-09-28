@@ -3,7 +3,7 @@ import { planOpensCourse } from "@/lib/license";
 import { verifyLicenseSession } from "@/lib/licenseSession";
 import { learningDay } from "@/lib/learning/day";
 import { mergeRecords, planDay, sanitizeRecord, wrongList } from "@/lib/learning/engine";
-import { applyBringForward } from "@/lib/learning/practice";
+import { applyBringForward, forwardedItems } from "@/lib/learning/practice";
 import { acceptDeviceRecord, restrictRecord, sameRecord, type LearningSyncAnswer } from "@/lib/learning/review";
 import { serverLearningCourse } from "@/lib/learning/serverCourses";
 import { changeLearningRecord, isServerLearningCourse } from "@/lib/learning/serverStore";
@@ -30,9 +30,10 @@ import { licenseIdFor } from "@/lib/serverLicense";
  *     (`lesson`), none without it. The list names the items; their words come lesson by lesson, open lessons only;
  *   - `view: "record"`: the record kept in step and nothing else — `items` empty (a lesson page after a completion or a
  *     report, the wrong-answer list after a practice run, the map page);
- *   - `forward: [lesson ids]`: those open lessons' items come to the front of the next review (practice.ts
- *     applyBringForward — PASS-OFF: the boxes of a topic map filled wrong). Done here on the stored copy, because a merge
- *     keeps the stored item when two copies differ only in their due day.
+ *   - `forward: [lesson ids]`: those open lessons' learning items come back by tomorrow (practice.ts applyBringForward —
+ *     PASS-OFF: the boxes of a topic map filled wrong). Done here on the stored copy, because a merge keeps the stored item
+ *     when two copies differ only in their due day — and done even when the device's record is not taken (`taken: false`):
+ *     the request is this licence's own. The answer's `forwarded` counts those lessons' items that come back by tomorrow.
  */
 
 const requestWindows = new Map<string, { startedAt: number; count: number }>();
@@ -103,7 +104,13 @@ export async function POST(request: Request, { params }: { params: Promise<{ cou
       : [];
 
     const record = await changeLearningRecord(course, session.payload.key, (stored) => {
-      if (!sent) return { record: stored, changed: false };
+      if (!sent) {
+        // a forward is this licence's own request (its map page), so it is made on the stored record even when the device's
+        // record is not taken (another licence last kept it on this device)
+        if (!forward.length) return { record: stored, changed: false };
+        const copy = structuredClone(stored);
+        return { record: copy, changed: applyBringForward(copy, forward, now) > 0 };
+      }
       const merged = mergeRecords(stored, sent);
       if (forward.length) applyBringForward(merged, forward, now);
       return { record: merged, changed: !sameRecord(stored, merged) };
@@ -123,7 +130,12 @@ export async function POST(request: Request, { params }: { params: Promise<{ cou
     const noteKeys = notes ? (notes.find((lesson) => lesson.lessonId === body.lesson)?.items.map((item) => item.key) ?? []) : [];
     const items = body.view === "record" ? {} : adapter.itemData(notes ? noteKeys : plan.items.map((item) => item.key), access);
     const answer: LearningSyncAnswer = { record, plan, items, owner, taken };
-    return NextResponse.json({ success: true, ...answer, ...(notes ? { notes } : {}) }, { headers: { "Cache-Control": "no-store" } });
+    // E2: with a forward, how many of those lessons' learning items come back by tomorrow — the map page says so (0: none to bring)
+    const forwarded = forward.length ? forwardedItems(record, forward, now) : undefined;
+    return NextResponse.json(
+      { success: true, ...answer, ...(notes ? { notes } : {}), ...(forwarded !== undefined ? { forwarded } : {}) },
+      { headers: { "Cache-Control": "no-store" } },
+    );
   } catch (error) {
     console.error(`Learning record sync failed (${course}):`, error);
     return fail(500, "복습 기록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.");

@@ -2,35 +2,58 @@
 
 import { useState } from "react";
 import type { ReportedItem } from "@/lib/learning/serverCourses";
-import type { ReportGroup } from "@/lib/learning/review";
+import { mergeReportGroups, type ReportGroup } from "@/lib/learning/review";
 
 /**
  * The owner's "내 답도 맞아요" list on /admin/license (공통-학습-엔진.md §8-6 — 단계 2-나 E2): the learners' server records read
  * and grouped by item (/api/admin/learning-reports) — what the item asks, the answers it already takes, and the answers
  * reported, most reported first. Nameless and read-only: a report judged right goes into the lesson's accept list (the fix
- * session's work, then 관문 4), so there is no button to judge here. Loaded only when the owner asks (it reads every record).
+ * session's work, then 관문 4), so there is no button to judge here. Loaded only when the owner asks.
+ *
+ * E2 수정: the route answers a page of records at a time (`next`), so this asks page after page and joins them
+ * (review.ts mergeReportGroups) — one request no longer reads every record.
  */
+type Group = ReportGroup & { about: ReportedItem | null };
 type Loaded = {
   records: number;
   recordsWithReports: number;
   itemCount: number;
-  items: (ReportGroup & { about: ReportedItem | null })[];
+  items: Group[];
 };
+type Page = Omit<Loaded, "items"> & { items: Group[]; next: string | null };
+
+/** the most reported items shown */
+const SHOWN = 300;
+/** pages read at most in one look (200 records a page) */
+const MAX_PAGES = 100;
 
 export function LearningReports({ course = "passoff-grammar", title = "PASS-OFF GRAMMAR" }: { course?: string; title?: string }) {
-  const [state, setState] = useState<{ at: "idle" } | { at: "loading" } | { at: "error"; message: string } | { at: "loaded"; data: Loaded }>({ at: "idle" });
+  const [state, setState] = useState<
+    { at: "idle" } | { at: "loading"; read: number } | { at: "error"; message: string } | { at: "loaded"; data: Loaded }
+  >({ at: "idle" });
 
   async function load() {
-    setState({ at: "loading" });
+    setState({ at: "loading", read: 0 });
     try {
-      const response = await fetch("/api/admin/learning-reports", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ course }),
-      });
-      const data = await response.json();
-      if (!response.ok || !data.success) throw new Error(data.error || "신고를 불러오지 못했습니다.");
-      setState({ at: "loaded", data });
+      const joined: Loaded = { records: 0, recordsWithReports: 0, itemCount: 0, items: [] };
+      let after: string | null = null;
+      for (let n = 0; n < MAX_PAGES; n += 1) {
+        const response = await fetch("/api/admin/learning-reports", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ course, after }),
+        });
+        const data = (await response.json()) as Page & { success?: boolean; error?: string };
+        if (!response.ok || !data.success) throw new Error(data.error || "신고를 불러오지 못했습니다.");
+        joined.records += data.records;
+        joined.recordsWithReports += data.recordsWithReports;
+        joined.items = mergeReportGroups(joined.items, data.items);
+        setState({ at: "loading", read: joined.records });
+        after = data.next;
+        if (!after) break;
+      }
+      joined.itemCount = joined.items.length;
+      setState({ at: "loaded", data: { ...joined, items: joined.items.slice(0, SHOWN) } });
     } catch (error) {
       setState({ at: "error", message: error instanceof Error ? error.message : "신고를 불러오지 못했습니다." });
     }
@@ -57,6 +80,12 @@ export function LearningReports({ course = "passoff-grammar", title = "PASS-OFF 
           {state.at === "loading" ? "불러오는 중…" : state.at === "loaded" ? "다시 불러오기" : "신고 불러오기"}
         </button>
       </div>
+
+      {state.at === "loading" && state.read > 0 ? (
+        <p className="text-label text-ink-soft" aria-live="polite">
+          학습 기록 <span className="tabular-nums">{state.read}</span>개를 읽었어요…
+        </p>
+      ) : null}
 
       {state.at === "error" ? (
         <p className="text-label text-danger" role="alert">

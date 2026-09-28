@@ -7,8 +7,8 @@ import { isDay, learningDay } from "./learning/day";
  * is open from the start, and the lessons of an open topic can be taken in any order. The next topic opens when the
  * current one has at least ceil(0.8·n) of its n lessons finished with its LAST lesson among them (a lesson is
  * finished when the learner presses '이 강의 학습 완료' after its five steps — 단계 2-나 E2), and the topic-end "구성도
- * 다시 채우기" done once, whatever the score. A sentence's pass-off is not a condition (it takes weeks). A LIFE pass
- * opens every topic. `unlockedThrough` never goes down.
+ * 다시 채우기" done once, whatever the score — after those lessons: a map refill sent before them is not taken (E2 수정). A
+ * sentence's pass-off is not a condition (it takes weeks). A LIFE pass opens every topic. `unlockedThrough` never goes down.
  *
  * THE SERVER DECIDES (src/lib/passoffProgress.ts · /api/progress/passoff-grammar · the lesson route's gate in
  * src/app/passoff-grammar/[lesson]/page.tsx); a browser only shows what the server answered. A record is taken only
@@ -290,14 +290,26 @@ export interface PassoffApplyResult {
   changed: boolean;
   /** lesson ids, and "map:<topic>" for a map refill */
   accepted: string[];
-  refused: { what: string; why: "unknown" | "locked" | "not-a-completion" }[];
+  /** "not-ready": a topic's map refill before its lessons are done (단계 2-나 E2 수정) */
+  refused: { what: string; why: "unknown" | "locked" | "not-a-completion" | "not-ready" }[];
+}
+
+/**
+ * A topic's lessons done as its lock counts them — ceil(ratio · n) finished, the last among them. Its "구성도 다시 채우기" is
+ * the topic's END (설계 §4 · §5), so it is taken only after this, and the course's screens offer it only then.
+ */
+export function passoffLessonsDone(
+  topic: Pick<PassoffTopicProgress, "lessonIds" | "completedCount" | "requiredCount" | "lastLessonCompleted">,
+): boolean {
+  return topic.lessonIds.length > 0 && topic.completedCount >= topic.requiredCount && topic.lastLessonCompleted;
 }
 
 /**
  * Applies what a browser sent, in place. Taken only for a known lesson or topic that was open when the request came
  * in — the open topics do not widen while the list is applied, so a list of every lesson id opens one topic at most
  * (RE-010). A lesson already finished keeps its first date; the date is the server's (a browser's clock is only
- * the ordering hint `updatedAt`, capped at now + 60 s).
+ * the ordering hint `updatedAt`, capped at now + 60 s). A topic's map refill is taken only once the topic's lessons are
+ * done (passoffLessonsDone) — the completions come first, so one request may finish the lessons and send the map.
  */
 export function applyPassoffUpdates(
   record: PassoffProgressRecord,
@@ -314,8 +326,20 @@ export function applyPassoffUpdates(
   const refused: PassoffApplyResult["refused"] = [];
   const at = new Date(now).toISOString();
   const day = learningDay(now);
+  const list = updates.slice(0, MAX_UPDATES);
+  /** the topic's lessons done in the record as it is now (this request's completions included) */
+  const lessonsDone = (topic: number) => {
+    const ids = topics.find((t) => t.topic === topic)?.lessonIds ?? [];
+    const last = ids[ids.length - 1];
+    return passoffLessonsDone({
+      lessonIds: ids,
+      completedCount: ids.filter((id) => record.lessons[id]?.completed === true).length,
+      requiredCount: passoffRequiredCount(ids.length, rule.ratio),
+      lastLessonCompleted: last !== undefined && record.lessons[last]?.completed === true,
+    });
+  };
 
-  for (const update of updates.slice(0, MAX_UPDATES)) {
+  for (const update of list) {
     if (typeof update.lessonId === "string") {
       const lessonId = update.lessonId;
       const topic = topicOfLesson.get(lessonId);
@@ -335,11 +359,15 @@ export function applyPassoffUpdates(
         accepted.push(lessonId);
       }
     }
+  }
+  // the map refills after every completion of the request
+  for (const update of list) {
     if (update.mapRefillTopic !== undefined) {
       const topic = Number(update.mapRefillTopic);
       const what = `map:${update.mapRefillTopic}`;
       if (!Number.isInteger(topic) || !knownTopics.has(topic)) refused.push({ what, why: "unknown" });
       else if (topic > ceiling) refused.push({ what, why: "locked" });
+      else if (!lessonsDone(topic)) refused.push({ what, why: "not-ready" });
       else {
         record.mapRefills[String(topic)] ??= { at, day };
         accepted.push(`map:${topic}`);

@@ -30,9 +30,15 @@ import { MyAnswerReport } from "./MyAnswerReport";
  * learner may say the answer is right. That report is the day's answer instead of the wrong one — neither right nor wrong
  * (the engine's "pending": nothing moves but the item comes back tomorrow, and the answer waits for the owner's judging). So a
  * wrong FIRST answer is held back here, not recorded at once, until the learner moves on (the next item · leaving the check's
- * results · the end · leaving the page): then it is recorded as it was. A report on an answer already recorded is still kept
- * for judging, and the day's wrong stands. The check's results go up to the server when the learner leaves them (not when
- * they show), so a report there reaches it the same way. The end screen links the wrong-answer list (`notesHref`).
+ * results · the end · leaving the page): then it is recorded as it was, at the time it was given (an answer given at 03:58
+ * and passed on at 04:01 stays on the day of the test). A report on an answer already recorded is still kept for judging,
+ * and the day's wrong stands. The check's results go up to the server when the learner leaves them (not when they show),
+ * so a report there reaches it the same way. The end screen links the wrong-answer list (`notesHref`).
+ *
+ * E2 수정 — a page that is only hidden (a glance at another app, the phone locked) is not left: the held answers stay held,
+ * so a report pressed after coming back is still the day's answer, and only what was recorded goes up. A phone may end a
+ * hidden page, so the held answers are also kept on the device ("kig-learning-held:<course>"); the next review or
+ * wrong-answer list page of the course records what a page left behind, at its own time (commitLeftAnswers).
  */
 
 export interface ReviewAnswer {
@@ -107,6 +113,90 @@ export type ReviewSource<T> = { kind: "server" } | { kind: "device"; items: Reco
 /** What a report says once sent, in the review (the item was due: it comes back tomorrow). */
 export const REVIEW_REPORT_NOTE = "신고했어요. 확인한 뒤 맞는 답이면 정답에 더해요. 이 문항은 내일 다시 나와요.";
 
+/** A wrong first answer not recorded yet, and when it was given. */
+interface HeldAnswer {
+  entry: PlanItem;
+  given: ReviewAnswer;
+  at: number;
+}
+
+/** + the course: the held answers of a review page, kept on the device while it is open (a phone may end a hidden page) */
+const HELD_PREFIX = "kig-learning-held:";
+const HELPS: readonly Help[] = ["none", "hint", "tiles", "reveal"];
+const MODES: readonly AnswerMode[] = ["typed", "voice", "tap"];
+/** a held answer older than this is not recorded any more (the day it belonged to is long past) */
+const HELD_MAX_AGE_MS = 7 * 86_400_000;
+
+function saveHeld(course: string, held: ReadonlyMap<string, HeldAnswer>): void {
+  try {
+    if (!held.size) {
+      window.localStorage.removeItem(HELD_PREFIX + course);
+      return;
+    }
+    const list = [...held.values()].map(({ entry, given, at }) => ({
+      entry: { key: entry.key, lessonId: entry.lessonId, kind: entry.kind, seconds: entry.seconds, reason: entry.reason },
+      given: { correct: given.correct, help: given.help, mode: given.mode, ...(given.answer ? { answer: given.answer.slice(0, 200) } : {}) },
+      at,
+    }));
+    window.localStorage.setItem(HELD_PREFIX + course, JSON.stringify(list));
+  } catch {
+    // no storage: the held answers live in this page only
+  }
+}
+
+/** The held answers a page left behind (it ended while hidden), taken off the device — well-formed ones only. */
+function takeLeftHeld(course: string): HeldAnswer[] {
+  try {
+    const raw = window.localStorage.getItem(HELD_PREFIX + course);
+    if (raw === null) return [];
+    window.localStorage.removeItem(HELD_PREFIX + course);
+    const list: unknown = JSON.parse(raw);
+    if (!Array.isArray(list)) return [];
+    const now = Date.now();
+    const text = (value: unknown) => typeof value === "string" && value.length > 0 && value.length <= 80;
+    return list.filter(
+      (h): h is HeldAnswer =>
+        Boolean(h) &&
+        typeof h.at === "number" &&
+        h.at <= now + 60_000 &&
+        now - h.at <= HELD_MAX_AGE_MS &&
+        Boolean(h.entry) &&
+        text(h.entry.key) &&
+        text(h.entry.lessonId) &&
+        typeof h.entry.kind === "string" &&
+        Boolean(h.given) &&
+        typeof h.given.correct === "boolean" &&
+        HELPS.includes(h.given.help) &&
+        MODES.includes(h.given.mode),
+    );
+  } catch {
+    return [];
+  }
+}
+
+/** The engine's input for a review answer (where "review" — the engine decides what it counts). */
+function reviewInput(entry: PlanItem, given: Pick<ReviewAnswer, "correct" | "help" | "mode" | "answer">) {
+  return {
+    lessonId: entry.lessonId,
+    kind: entry.kind,
+    correct: given.correct,
+    help: given.help,
+    mode: given.mode,
+    where: "review" as const,
+    ...(given.answer && !given.correct ? { answer: given.answer } : {}),
+  };
+}
+
+/**
+ * The held answers a review page left behind when it ended while hidden, recorded as they were at their own time. The review
+ * and the wrong-answer list call this when they open, before they read the record. Returns how many were recorded.
+ */
+export function commitLeftAnswers(profile: CourseProfile): number {
+  const left = takeLeftHeld(profile.course);
+  for (const h of left) recordAttempt(profile, h.entry.key, reviewInput(h.entry, h.given), h.at);
+  return left.length;
+}
+
 interface Entry<T> {
   entry: PlanItem;
   data: T;
@@ -162,8 +252,8 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
   const topRef = useRef<HTMLDivElement | null>(null);
   /** answers not yet sent up (with a licence) */
   const unsent = useRef(false);
-  /** wrong first answers not recorded yet — a report may still take their place (see above) */
-  const held = useRef(new Map<string, { entry: PlanItem; given: ReviewAnswer }>());
+  /** wrong first answers not recorded yet — a report may still take their place (see above) — also kept on the device */
+  const held = useRef(new Map<string, HeldAnswer>());
   /** items answered on this page (a later answer is the day's second — never held) */
   const answeredHere = useRef(new Set<string>());
   const server = source.kind === "server";
@@ -176,17 +266,10 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
     if (!result.ok) unsent.current = true;
   }, [profile.course, server]);
 
+  /** one answer to the engine, at the time it was given */
   const put = useCallback(
-    (entry: PlanItem, given: ReviewAnswer) => {
-      recordAttempt(profile, entry.key, {
-        lessonId: entry.lessonId,
-        kind: entry.kind,
-        correct: given.correct,
-        help: given.help,
-        mode: given.mode,
-        where: "review",
-        ...(given.answer && !given.correct ? { answer: given.answer } : {}),
-      });
+    (entry: PlanItem, given: ReviewAnswer, at: number = Date.now()) => {
+      recordAttempt(profile, entry.key, reviewInput(entry, given), at);
       unsent.current = true;
     },
     [profile],
@@ -195,14 +278,17 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
   /** the held wrong answers (or one item's) recorded as they were — the learner moved on */
   const commit = useCallback(
     (key?: string) => {
+      let changed = false;
       for (const k of key === undefined ? [...held.current.keys()] : [key]) {
         const h = held.current.get(k);
         if (!h) continue;
         held.current.delete(k);
-        put(h.entry, h.given);
+        put(h.entry, h.given, h.at);
+        changed = true;
       }
+      if (changed) saveHeld(profile.course, held.current);
     },
-    [put],
+    [profile.course, put],
   );
 
   /** The end: the held answers are recorded, the record goes up once more, then the numbers — from this device's copy. */
@@ -245,18 +331,29 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
   useEffect(() => {
     if (started.current) return;
     started.current = true;
+    // answers an earlier page held when it ended while hidden: recorded first, so the plan and the record include them
+    if (commitLeftAnswers(profile)) unsent.current = true;
     void load();
-  }, [load]);
+  }, [load, profile]);
 
-  // leaving the page (another tab, the phone locked): the held answers are recorded, and what was answered goes up
+  // the page hidden (another app, the phone locked) is not left: the held answers stay held — a report pressed after coming
+  // back is still the day's answer — and only what was recorded goes up
   useEffect(() => {
     const onHide = () => {
       if (document.visibilityState !== "hidden") return;
-      commit();
       if (server && unsent.current) void sync();
     };
     document.addEventListener("visibilitychange", onHide);
     return () => document.removeEventListener("visibilitychange", onHide);
+  }, [server, sync]);
+  // the page really left (closed, reloaded, another site): the held answers are recorded and what was answered goes up
+  useEffect(() => {
+    const onLeave = () => {
+      commit();
+      if (server && unsent.current) void sync();
+    };
+    window.addEventListener("pagehide", onLeave);
+    return () => window.removeEventListener("pagehide", onLeave);
   }, [commit, server, sync]);
   // …and going to another page of the site (the list, a lesson): the same, once
   const leaving = useRef({ commit, sync, server });
@@ -284,28 +381,38 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
       const first = !answeredHere.current.has(entry.key);
       answeredHere.current.add(entry.key);
       if (first && !given.correct) {
-        held.current.set(entry.key, { entry, given });
+        held.current.set(entry.key, { entry, given, at: Date.now() });
+        saveHeld(profile.course, held.current);
         return;
       }
       // a second answer: the first one (held) goes in before it — the engine then keeps this one as the day's retry
       commit(entry.key);
       put(entry, given);
     },
-    [commit, put],
+    [commit, profile.course, put],
   );
 
   const report = useCallback(
     (entry: PlanItem, mine: MyAnswer) => {
       const h = held.current.get(entry.key);
-      held.current.delete(entry.key);
-      reportMyAnswer(profile, entry.key, {
-        lessonId: entry.lessonId,
-        kind: entry.kind,
-        help: h ? h.given.help : "none",
-        mode: h ? h.given.mode : mine.mode,
-        where: "review",
-        answer: mine.answer || h?.given.answer || "",
-      });
+      if (h) {
+        held.current.delete(entry.key);
+        saveHeld(profile.course, held.current);
+      }
+      // in place of a held answer: the day it was given
+      reportMyAnswer(
+        profile,
+        entry.key,
+        {
+          lessonId: entry.lessonId,
+          kind: entry.kind,
+          help: h ? h.given.help : "none",
+          mode: h ? h.given.mode : mine.mode,
+          where: "review",
+          answer: mine.answer || h?.given.answer || "",
+        },
+        h ? h.at : Date.now(),
+      );
       unsent.current = true;
       setReported((prev) => ({ ...prev, [entry.key]: true }));
     },

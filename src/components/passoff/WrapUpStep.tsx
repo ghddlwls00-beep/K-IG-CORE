@@ -14,6 +14,11 @@ import { FONT, SecondaryButton, Verdict, tone, type FontSize, type Speaker } fro
  * sentence on the lesson's frame (not graded, kept on this device only). Once ①~⑤ are done the learner finishes the
  * lesson with the end bar's '이 강의 학습 완료' below (단계 2-나 E2 — as in the other courses), and the topic's last lesson
  * then links "구성도 다시 채우기" (`mapRefill`) until it has been done.
+ *
+ * E2 수정: the link only once the topic's lessons are done (`ready` — before that one line says how many are left; the server
+ * takes a map refill only then). It is the page's one filled button while the map opens the next topic (`required` — the
+ * end bar's '다음 강의' keeps its border then: lessonGate `quietNext`), and a bordered one otherwise (the last topic, a next
+ * topic already open, a LIFE pass). 'TOPIC N이 열리는 조건' is said only when there is such a next topic.
  */
 export function WrapUpStep({
   transfers,
@@ -51,8 +56,11 @@ export function WrapUpStep({
   lessonDone: boolean;
   /** done on this device, but not in this licence's server progress — finishing it again records it */
   notCounted?: boolean;
-  /** the topic's last lesson and its "구성도 다시 채우기" not done yet (`required`: it is the next topic's last condition) */
-  mapRefill?: { href: string; topic: number; required: boolean } | null;
+  /**
+   * the topic's last lesson and its "구성도 다시 채우기" not done yet — `ready`: the topic's lessons are done (the map opens);
+   * `left`: lessons still to finish before that; `required`: the map is what opens the next topic (a next topic still locked)
+   */
+  mapRefill?: { href: string; topic: number; ready: boolean; left: number; required: boolean } | null;
   report: ComposeReport;
   onCheckRight: () => void;
   onFrame: (values: string[]) => void;
@@ -150,7 +158,14 @@ export function WrapUpStep({
               이 이용권의 진도에는 아직 이 레슨이 기록되지 않았어요. &lsquo;처음부터 다시 하기&rsquo;로 5단계를 다시 마치면 기록돼요.
             </p>
           ) : null}
-          {mapRefill ? (
+          {mapRefill && !mapRefill.ready ? (
+            <div className="flex flex-col gap-1 border-t border-line pt-3" data-passoff-map-entry={mapRefill.topic} data-passoff-map-entry-waiting>
+              <p className="text-body font-semibold text-ink">TOPIC {mapRefill.topic} 마무리 — 구성도 다시 채우기</p>
+              <p className="text-label leading-relaxed text-ink-soft">
+                대주제의 레슨을 <span className="tabular-nums">{mapRefill.left}</span>개 더 마치면 할 수 있어요.
+              </p>
+            </div>
+          ) : mapRefill ? (
             <div className="flex flex-col gap-2 border-t border-line pt-3" data-passoff-map-entry={mapRefill.topic}>
               <p className="text-body font-semibold text-ink">TOPIC {mapRefill.topic} 마무리 — 구성도 다시 채우기</p>
               <p className="text-label leading-relaxed text-ink-soft">
@@ -160,7 +175,11 @@ export function WrapUpStep({
               <div>
                 <Link
                   href={mapRefill.href}
-                  className="inline-flex min-h-11 items-center justify-center rounded-control bg-ink px-4 text-label font-semibold text-surface transition-opacity hover:opacity-90"
+                  className={`inline-flex min-h-11 items-center justify-center rounded-control px-4 text-label font-semibold ${
+                    mapRefill.required
+                      ? "bg-ink text-surface transition-opacity hover:opacity-90"
+                      : "border border-line bg-surface text-ink transition-colors hover:bg-sunken"
+                  }`}
                 >
                   구성도 다시 채우기
                 </Link>

@@ -28,7 +28,10 @@
  *   P2 오늘 복습 문장을 틀림 → 카드의 '내 답도 맞아요' → '신고했어요' → 고쳐서 맞힘
  *   P3 기기 기록: 두 문항 모두 맞음도 틀림도 아님(pending · lapses 0 · 통과한 날 그대로 · 내일 다시) · 그날 답은 pending(다음 날 확인) ·
  *      pending → retry(오늘 복습) — 'wrong' 없음 · 신고 2(내 답 그대로)
- *   --break=no-report : P 에서 '내 답도 맞아요'를 누르지 않음 → P3 FAIL(틀린 답이 그대로 틀림으로 남는 판을 잡음)
+ *   (E2 수정) N5 오답노트: 어제 틀려 오늘 복습할 차례인 문항은 '복습할 차례예요' — '지금 다시 풀기'에서 빠지고 오늘 복습에서 틀린 문항만 ·
+ *      그 문항 연습 기록 0 / P5 다음 날 확인 결과에서 쪽이 가려졌다 돌아온 뒤(visibilitychange hidden → visible) '내 답도 맞아요' →
+ *      pending · lapses 0 — 가려진 동안 틀린 답은 기록되지 않고 기기(kig-learning-held)에 붙잡힘 / P6 콘솔 오류 0
+ *   --break=no-report : P 에서 '내 답도 맞아요'를 누르지 않음 → P3 · P5 FAIL(틀린 답이 그대로 틀림으로 남는 판을 잡음)
  *   --secrets <json> : 이어서 이용권 쪽 한 바퀴(check-progress-live.mjs 와 같은 준비 — 버리는 시험 비밀값 {LICENSE_SALT, LICENSE_SECRET}
  *     으로 켠 `npx next dev -p 3472`, R2 값 없이). STUDENT 이용권을 등록해 그 세션 쿠키를 탭에 넣고 같은 기기 기록으로:
  *     S1 복습 쪽이 서버 판(무료 안내 없음) · '다음 날 확인 1 / 18' — 문항은 API 로 옴
@@ -546,6 +549,91 @@ const layouts = [];
     check(`P4 오답노트 · 신고 화면 ${layoutsE2.length}곳 넘침 · 44px · 12px · 16px 0 · 콘솔 오류 · 예외 · 실패한 요청 0`,
       layoutBadP.length === 0 && evE2.console.length === 0 && evE2.exceptions.length === 0 && badE2.length === 0,
       JSON.stringify({ layout: layoutBadP.map((l) => l.where), console: evE2.console.slice(0, 2), exceptions: evE2.exceptions.slice(0, 2), bad: badE2.slice(0, 3) }));
+
+    // ---- E2 수정 ----------------------------------------------------------------------------------------------------------
+    tab.resetEvents();
+    // N5 — an item due in today's review and not asked there yet is not practised (its answer seen there would make today's
+    // review answer, which counts, an answer just seen)
+    {
+      const r5 = E.emptyRecord("passoff-grammar");
+      E.applyLessonDone(r5, "pg01-1", NOW - 3 * DAY_MS, PRACTICE.map(({ key, kind }) => ({ key, kind })));
+      const [X, Y] = PRACTICE;
+      E.applyAttempt(r5, X.key, { lessonId: "pg01-1", kind: X.kind, correct: false, help: "none", mode: "typed", where: "review", answer: "zq yesterday" }, NOW - DAY_MS, PROFILE);
+      E.applyAttempt(r5, Y.key, { lessonId: "pg01-1", kind: Y.kind, correct: false, help: "none", mode: "typed", where: "review", answer: "zq today" }, NOW, PROFILE);
+      await tab.eval(`localStorage.setItem("kig-learning:passoff-grammar", ${JSON.stringify(JSON.stringify(r5))}); true`);
+      await tab.goto(`${ORIGIN}/passoff-grammar/review?notes=1`, 1500);
+      await kit();
+      s = await waitFor((x) => x.step === "list", 10000);
+      await tab.eval(`(() => { const b = document.querySelector('[data-notes-lesson="pg01-1"] button'); if (b) b.click(); return Boolean(b); })()`);
+      await sleep(500);
+      const noteRows = await tab.eval(`[...document.querySelectorAll('[data-notes-item]')].map((e) => ({ key: e.dataset.notesItem, waits: Boolean(e.querySelector('[data-notes-waits]')) }))`);
+      await click("지금 다시 풀기");
+      const ran = [];
+      for (let n = 0; n < PRACTICE.length; n++) {
+        s = await waitFor((x) => x.mode === "notes" || x.step === "ran", 5000);
+        if (s.step === "ran" || s.mode !== "notes") break;
+        const e = ITEMS.get(s.item);
+        if (!e) break;
+        ran.push(s.item);
+        await answerRight(e);
+        await click(e.kind === "produce" || e.kind === "transfer" ? "다음 문장" : "다음");
+        const before = s.item;
+        s = await waitFor((x) => x.item !== before || x.step === "ran", 5000);
+      }
+      s = await waitFor((x) => x.step === "ran", 5000);
+      const rec5 = JSON.parse((await tab.eval(`localStorage.getItem("kig-learning:passoff-grammar")`)) || "null");
+      const xPractice = rec5 ? rec5.log.filter((l) => l.item === X.key && l.effect === "practice").length : -1;
+      check(`N5 오답노트: 어제 틀려 오늘 복습할 차례인 ${X.key} 는 '복습할 차례예요'(다시 풀기에서 빠짐) · 오늘 복습에서 틀린 ${Y.key} 만 '지금 다시 풀기' → '1문항 중 1개' · ${X.key} 연습 기록 0 · 일정 그대로`,
+        noteRows.length === 2 && noteRows.find((x) => x.key === X.key)?.waits === true && noteRows.find((x) => x.key === Y.key)?.waits === false &&
+          JSON.stringify(ran) === JSON.stringify([Y.key]) && s.step === "ran" && s.text.includes("1문항 중 1개") && xPractice === 0 && rec5.items[X.key].dueDay === r5.items[X.key].dueDay,
+        `${JSON.stringify(noteRows)} · 다시 풀기 ${JSON.stringify(ran)} · ${s.step} · 연습 기록 ${xPractice}`);
+    }
+    // P5 — the page hidden between the check's answer and the report (another app, the phone locked): the report is still the
+    // day's answer — the held wrong answer waits on the device while hidden and is not recorded
+    {
+      await tab.eval(`localStorage.setItem("kig-learning:passoff-grammar", ${JSON.stringify(JSON.stringify(seed))}); localStorage.removeItem("kig-learning-held:passoff-grammar"); true`);
+      await tab.goto(`${ORIGIN}/passoff-grammar/review`, 1500);
+      await kit();
+      s = await waitFor((x) => x.step === "items", 15000);
+      for (let n = 0; n < TEST.length; n++) {
+        s = await state();
+        const e = ITEMS.get(s.item);
+        if (!e || s.mode !== "test") break;
+        if (e.key === reportTest.key) {
+          await type(ownAnswer);
+          await click("확인");
+        } else if (e.kind === "produce" || e.kind === "transfer") {
+          await type(e.item.en);
+          await click("확인");
+        } else await answerForm(e, true);
+        const before = s.item;
+        s = await waitFor((x) => x.item !== before || x.step !== "items", 5000);
+      }
+      s = await waitFor((x) => x.step === "results", 5000);
+      const setVisibility = (value) =>
+        tab.eval(`(() => { Object.defineProperty(document, "visibilityState", { configurable: true, get: () => ${JSON.stringify(value)} }); document.dispatchEvent(new Event("visibilitychange")); return true; })()`);
+      await setVisibility("hidden");
+      await sleep(400);
+      const heldHidden = (await tab.eval(`localStorage.getItem("kig-learning-held:passoff-grammar") || ""`)) || "";
+      const whileHidden = JSON.parse((await tab.eval(`localStorage.getItem("kig-learning:passoff-grammar")`)) || "null");
+      await setVisibility("visible");
+      await sleep(200);
+      const pressed = BREAK === "no-report" ? false : await tab.eval(`window.__kit.report(document.querySelector('[data-review-result="${reportTest.key}"]'))`);
+      await sleep(300);
+      const after5 = JSON.parse((await tab.eval(`localStorage.getItem("kig-learning:passoff-grammar")`)) || "null");
+      const st5 = after5 && after5.items[reportTest.key];
+      const effects5 = after5 ? after5.log.filter((x) => x.item === reportTest.key && x.day === today && x.where === "review").map((x) => x.effect) : [];
+      const heldAfter = await tab.eval(`localStorage.getItem("kig-learning-held:passoff-grammar")`);
+      check(`P5 다음 날 확인 결과에서 쪽이 가려졌다(다른 앱) 돌아온 뒤 '내 답도 맞아요' → 그날의 답은 신고(pending · lapses 0 · 그날 답 [pending]) — 가려진 동안 틀린 답은 기록되지 않고 기기에 붙잡혀 있음(kig-learning-held) · 신고 뒤 비움`,
+        heldHidden.includes(reportTest.key) && whileHidden && whileHidden.items[reportTest.key].lastDay === null && pressed &&
+          st5 && st5.pending === true && st5.lapses === 0 && JSON.stringify(effects5) === JSON.stringify(["pending"]) && heldAfter === null,
+        `가려진 동안 붙잡힘 ${heldHidden.includes(reportTest.key)} · 기록 전 lastDay ${whileHidden && whileHidden.items[reportTest.key].lastDay} · 누름 ${pressed} · ${JSON.stringify(st5 && { p: st5.pending, l: st5.lapses })} · ${JSON.stringify(effects5)} · 뒤 ${heldAfter}`);
+      await tab.goto(`${ORIGIN}/passoff-grammar`, 800);
+    }
+    const evFix = tab.events;
+    const badFix = evFix.badResponses.filter((r) => !/\/audio\//.test(r.url));
+    check("P6 N5 · P5 화면 콘솔 오류 · 예외 · 실패한 요청 0", evFix.console.length === 0 && evFix.exceptions.length === 0 && badFix.length === 0,
+      JSON.stringify({ console: evFix.console.slice(0, 2), exceptions: evFix.exceptions.slice(0, 2), bad: badFix.slice(0, 3) }));
 
     // S — with a licence: the same review, from the server
     const secretsFile = arg("secrets");
