@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr194",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr194-q1",
+      "type": "중심 생각",
+      "prompt": "이 글에 드러난 '나'의 심정으로 가장 적절한 것은",
+      "options": [
+        "설레고 기대된다",
+        "편안하고 만족스럽다",
+        "섭섭하고 외롭다",
+        "부끄럽고 죄송하다"
+      ],
+      "answer": 3,
+      "evidence": [
+        3,
+        6,
+        7,
+        8
+      ],
+      "note": "근거 문장의 핵심 표현: \"could not enjoy it\", \"felt ashamed\", \"I disappointed him\", \"wasn’t happy with myself\""
+    },
+    {
+      "id": "pr194-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 '나'에 대한 설명으로 옳은 것은",
+      "options": [
+        "조 삼촌을 20년 동안 찾아가지 않았다",
+        "지난 5년 동안 조 삼촌을 찾아가지 않았다",
+        "지난주 조 삼촌의 60번째 생일을 함께 보냈다",
+        "조 삼촌에게 사랑받지 못하고 자랐다"
+      ],
+      "answer": 1,
+      "evidence": [
+        6
+      ],
+      "note": "근거 문장의 핵심 표현: \"not having visited him for the last five years\""
+    }
+  ]
+}

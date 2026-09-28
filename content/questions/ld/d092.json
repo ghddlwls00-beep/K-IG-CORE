@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d092",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d092-q1",
+      "type": "세부 사실",
+      "prompt": "기술 전문학교(technical institute)에 대한 설명으로 옳은 것은?",
+      "options": [
+        "문학사나 이학사 학위로 이어지는 4년 과정이다",
+        "2년 과정으로 전자공학, 경영 등을 가르친다",
+        "고등학교를 마치기 전에 다니는 2년 과정이다",
+        "4년 과정으로 법, 의학 등을 가르친다"
+      ],
+      "answer": 1,
+      "evidence": [
+        2
+      ],
+      "note": "'Technical institutes offer two-year programs in electronics, engineering, business' — 2년 과정, 그 분야들"
+    },
+    {
+      "id": "d092-q2",
+      "type": "세부 사실",
+      "prompt": "준학위(associate degree)를 받는 때로 옳은 것은?",
+      "options": [
+        "4년제 대학을 졸업했을 때",
+        "기술 전문학교에 막 들어갔을 때",
+        "문학사 학위를 받고 난 뒤",
+        "주니어 대학에서 2년을 마쳤을 때"
+      ],
+      "answer": 3,
+      "evidence": [
+        4
+      ],
+      "note": "'After two years at a junior college, students receive an associate degree' — 주니어 대학 2년 뒤"
+    },
+    {
+      "id": "d092-q3",
+      "type": "중심 내용",
+      "prompt": "이 강의가 주로 설명하는 것은?",
+      "options": [
+        "고등 교육 기관의 여러 종류와 하는 일",
+        "4년제 대학에 곧바로 가는 학생이 많은 까닭",
+        "직업 과정과 학술 과정 가운데 더 나은 쪽",
+        "법, 의학 전문 대학원에 들어가는 방법"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        3,
+        7
+      ],
+      "note": "'many kinds of institutions of higher education' · 'Technical institutes' · 'Community or junior colleges' · 'Colleges and universities' — 여러 기관"
+    }
+  ]
+}

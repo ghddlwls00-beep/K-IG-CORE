@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d025",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d025-q1",
+      "type": "세부 사실",
+      "prompt": "해변에 도착한 두 사람이 가장 먼저 한 일은 무엇인가?",
+      "options": [
+        "고무보트를 타고 바다로 나갔다",
+        "물건을 놓아두고 수영하러 갔다",
+        "그늘에 앉아 점심을 먹었다",
+        "해변을 따라 함께 산책했다"
+      ],
+      "answer": 1,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "5행 'They got to the beach around 11:30', 6행 'they left their things on the beach and went swimming' 참고"
+    },
+    {
+      "id": "d025-q2",
+      "type": "세부 사실",
+      "prompt": "카를로스가 보트를 젓는 동안 킴이 한 일은 무엇인가?",
+      "options": [
+        "잡지를 꺼내 읽었다",
+        "카를로스와 함께 노를 저었다",
+        "물에 뛰어들어 수영을 했다",
+        "바다와 하늘을 바라보았다"
+      ],
+      "answer": 3,
+      "evidence": [
+        10
+      ],
+      "note": "10행 'Carlos rowed the boat and Kim looked at the ocean, beach, and the sky' 참고"
+    },
+    {
+      "id": "d025-q3",
+      "type": "다음에 할 일",
+      "prompt": "글의 마지막 부분으로 보아, 이어서 일어날 일로 가장 적절한 것은?",
+      "options": [
+        "점점 거세지는 바람 때문에 곤경에 빠진다",
+        "바람이 잦아들어 두 사람이 한가롭게 쉰다",
+        "갑자기 비가 쏟아져 두 사람이 서둘러 떠난다",
+        "날이 추워져 두 사람이 수영을 그만둔다"
+      ],
+      "answer": 0,
+      "evidence": [
+        9,
+        10,
+        11
+      ],
+      "note": "9행 'took the rubber boat to the shallow water and got in it', 10행 'Carlos rowed the boat', 11행 'it was becoming windy' 참고"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "d238",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d238-q1",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "초보 승객은 비행 내내 메스꺼움에 시달린다",
+        "초보 승객은 이륙하는 순간을 또렷이 느낀다",
+        "초보 승객은 걱정과 달리 곧 비행을 즐기게 된다",
+        "초보 승객은 구름 위에서 두려움이 더 커진다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        5
+      ],
+      "note": "'his fears are groundless' · 'he soon finds himself enjoying the plane trip' — 두려움은 근거 없고 곧 비행을 즐김"
+    },
+    {
+      "id": "d238-q2",
+      "type": "세부사실",
+      "prompt": "초보 승객이 창밖을 내다보고 놀란 까닭으로 가장 적절한 것은?",
+      "options": [
+        "아래 도시와 마을이 점점 작아져서",
+        "비행기가 아직 땅 위에 있어서",
+        "아래 도시와 마을이 점점 커져서",
+        "구름에 가려 아무것도 안 보여서"
+      ],
+      "answer": 0,
+      "evidence": [
+        4
+      ],
+      "note": "'sees the cities and towns below him growing smaller and smaller' — 아래 도시와 마을이 점점 작아지는 것을 봄"
+    }
+  ]
+}

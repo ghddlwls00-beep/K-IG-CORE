@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "lesson": "d087",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d087-q1",
+      "type": "말한 사람의 목적/태도",
+      "prompt": "작년 휴가에 대한 브루스의 마음으로 가장 알맞은 것은?",
+      "options": [
+        "날씨가 선선해서 좋았다",
+        "음식이 입에 맞지 않아 힘들었다",
+        "도시가 너무 붐벼서 아쉬웠다",
+        "돈이 모자라서 걱정이었다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "'If the city hadn't been so crowded, he might have had a better time'이 도시가 붐벼서 덜 즐거웠음을 보여 줌"
+    },
+    {
+      "id": "d087-q2",
+      "type": "세부 사실",
+      "prompt": "브루스가 표를 예약했더라면 갈 수 있었던 곳으로 가장 알맞은 것은?",
+      "options": [
+        "유람선 관광",
+        "재즈 콘서트",
+        "여러 박물관",
+        "좋은 호텔"
+      ],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
+      "note": "'If he had reserved tickets, he could have gone to a jazz concert'가 표를 예약했다면 재즈 콘서트에 갈 수 있었음을 보여 줌"
+    },
+    {
+      "id": "d087-q3",
+      "type": "다음에 할 일",
+      "prompt": "브루스가 올해 하기로 한 일로 가장 알맞은 것은?",
+      "options": [
+        "뉴올리언스에 다시 간다",
+        "박물관을 둘러본다",
+        "집에 머물며 쉰다",
+        "해변에서 휴가를 보낸다"
+      ],
+      "answer": 3,
+      "evidence": [
+        7
+      ],
+      "note": "'This year he will spend his vacation at the beach'가 올해 휴가를 해변에서 보낸다는 것을 보여 줌"
+    }
+  ]
+}

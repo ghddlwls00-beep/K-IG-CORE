@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr128",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr128-q1",
+      "type": "세부 사실",
+      "prompt": "2000년 무렵 전자 상거래 산업이 직면했던 문제로 가장 적절한 것은?",
+      "options": [
+        "필요한 인력이 모자랐던 것",
+        "일할 사람이 남아돌았던 것",
+        "상품을 사려는 사람이 줄어든 것",
+        "기업들이 전자 상거래를 꺼린 것"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "근거: 'the e-business industry was faced with a labor shortage'"
+    },
+    {
+      "id": "pr128-q2",
+      "type": "한 단계 추론",
+      "prompt": "글에서 'This gap'에 대해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "2005년 전에 좁혀질 것으로 보였다",
+        "2005년 뒤에도 끝내 좁혀지지 않았다",
+        "조사 직후 곧바로 사라졌다",
+        "한동안 좁혀지지 않으리라 예상되었다"
+      ],
+      "answer": 3,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "근거: 'a gap between the labor supply and demand' · 'This gap was not expected to close before 2005'"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d268",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d268-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "현대 미술은 겉모습보다 사물의 영혼을 담으려 한다",
+        "현대 미술은 사물의 영혼보다 겉모습을 담으려 한다",
+        "현대 미술은 고전 미술의 사실적인 표현을 되살렸다",
+        "현대 미술은 사물의 모든 세부를 추상화로 옮긴다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "'not so much concerned with portraying an object exactly as it appears to the eye as with capturing its soul' — 겉모습보다 영혼"
+    },
+    {
+      "id": "d268-q2",
+      "type": "세부 사실",
+      "prompt": "피카소가 조르주 브라크와 만든 양식이 입체파(큐비즘)로 불린 까닭으로 말한 것은?",
+      "options": [
+        "피카소가 사물을 입체 모형으로 빚었기 때문에",
+        "조르주 브라크가 고전 미술의 표현을 따랐기 때문에",
+        "피카소가 조르주 브라크의 그림을 흉내 냈기 때문에",
+        "피카소가 사물을 기하학적인 모양으로 보았기 때문에"
+      ],
+      "answer": 3,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "'His conception of things took the form of geometrical shapes' · 'Consequently, the style he developed with Georges Braque is called Cubism' — 기하학적인 모양 때문"
+    },
+    {
+      "id": "d268-q3",
+      "type": "말한 사람의 목적/태도",
+      "prompt": "말한 사람이 피카소를 이야기한 까닭으로 가장 적절한 것은?",
+      "options": [
+        "고전 미술의 본보기로 들려고",
+        "현대 화가의 본보기로 들려고",
+        "추상화를 처음 그린 화가로 들려고",
+        "조르주 브라크의 스승으로 들려고"
+      ],
+      "answer": 1,
+      "evidence": [
+        6
+      ],
+      "note": "'Picasso is a good example of a modern artist' — 현대 화가의 좋은 본보기"
+    }
+  ]
+}

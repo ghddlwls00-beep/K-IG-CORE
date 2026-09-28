@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr139",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr139-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "학교는 사회 질서를 위한 곳이라 창의성과 부딪친다",
+        "학교는 탐험가 같은 창의적 인재를 길러야 한다",
+        "학교 교육을 불리하게 여기는 천재들의 생각은 모두 틀렸다",
+        "학교 교육은 천재들의 창의성을 키워 준다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "note": "'not a criticism of schools' · 'the function of schools to civilize' · 'destructive to creativity' · 'conflict' — 학교는 사회 질서를 위한 곳이라 창의성과 부딪침"
+    },
+    {
+      "id": "pr139-q2",
+      "type": "세부 사실",
+      "prompt": "글에서 아인슈타인이 한 말로 옳은 것은?",
+      "options": [
+        "한 과학자는 학교를 오래 다니면서 창의성을 모두 잃었다",
+        "학교에 다니지 않은 과학자가 자유로운 생각을 지켰다",
+        "한 예술가는 학교 덕분에 창의성을 키웠다",
+        "한 과학자는 학교에서 쫓겨난 뒤로 오히려 창의성을 얻었다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "'a famous scientist' · 'never went to school' · 'preserved the rare gift of thinking freely' — 한 과학자는 학교에 안 다녀 자유로운 생각을 지킴"
+    }
+  ]
+}

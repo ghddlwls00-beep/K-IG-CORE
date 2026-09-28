@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr219",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr219-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "말다툼은 무례한 일이므로 가정에서 막아야 한다",
+        "건강하게 자라는 청소년은 말다툼을 하지 않는다",
+        "말다툼은 엄격한 가정에서만 볼 수 있는 일이다",
+        "말다툼은 청소년이 자라며 꼭 해야 하는 일이다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        5
+      ],
+      "note": "'a way of life with normally developing youths', 'something that adolescents need to do'가 근거"
+    },
+    {
+      "id": "pr219-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면 청소년이 자라면서 말다툼에 나타나는 변화로 옳은 것은?",
+      "options": [
+        "양과 질이 모두 늘어난다",
+        "양은 줄고 질은 높아진다",
+        "양은 늘고 질은 낮아진다",
+        "양과 질이 모두 줄어든다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "'the quantity of argument decreases but the quality increases'가 근거"
+    }
+  ]
+}

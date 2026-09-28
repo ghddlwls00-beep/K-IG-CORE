@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr222",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr222-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "우리 시대의 특징은 정보를 전하는 기술에 있다",
+        "우리 시대의 특징은 받아들이는 정보의 양에 있다",
+        "정보를 나누는 수단은 우리 시대에 처음 생겼다",
+        "옛날 사람들은 마을 밖 소식을 전혀 몰랐다"
+      ],
+      "answer": 0,
+      "evidence": [
+        7,
+        8,
+        9
+      ],
+      "note": "'All ages have had a means of sharing information', 'not the density of the data', 'the technology that does the transmitting'가 근거"
+    },
+    {
+      "id": "pr222-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 벤저민 프랭클린에 대해 말한 것으로 옳은 것은?",
+      "options": [
+        "파리에서 보낸 편지를 필라델피아에서 받았다",
+        "그리스 병사에게서 승리 소식을 들었다",
+        "필라델피아에서 온 편지를 5주 뒤에 받았다",
+        "편지를 받는 데 보통 5일이 걸렸다"
+      ],
+      "answer": 2,
+      "evidence": [
+        11
+      ],
+      "note": "'five weeks for Benjamin Franklin in Paris to receive a letter sent from Philadelphia'가 근거"
+    }
+  ]
+}

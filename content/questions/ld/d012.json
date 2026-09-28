@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d012",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d012-q1",
+      "type": "세부 사실",
+      "prompt": "킴의 지갑에 대한 설명으로 옳은 것은?",
+      "options": [
+        "가게 밖에서 주운 소년이 돌려주었다",
+        "베키의 어머니가 맡아 두고 있었다",
+        "끝내 찾지 못했다",
+        "경찰서에 맡겨져 있었다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        5,
+        6
+      ],
+      "note": "'my wallet was gone', 'One of them had my wallet', 'He found it outside the store'에서 가게 밖에서 주운 지갑을 소년들이 가져다주었음을 알 수 있음."
+    },
+    {
+      "id": "d012-q2",
+      "type": "세부 사실",
+      "prompt": "테디 윌리엄스에 대한 설명으로 옳은 것은?",
+      "options": [
+        "베키의 사촌 오빠이자 인명구조원이다",
+        "무뚝뚝하고 말수가 적은 인명구조원이다",
+        "인명구조원이며 잘생기고 친절하다",
+        "나이 지긋한 인명구조원이다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        6,
+        8
+      ],
+      "note": "'He is a lifeguard, good looking and very, very nice'에서 테디가 어떤 사람인지, 'two boys knocked at the door', 'He found it'에서 테디가 지갑을 찾아 준 소년임을 알 수 있음."
+    },
+    {
+      "id": "d012-q3",
+      "type": "다음에 할 일",
+      "prompt": "킴과 베키가 금요일 밤에 할 일로 가장 알맞은 것은?",
+      "options": [
+        "베키 어머니와 함께 집에서 쉰다",
+        "새 수영복을 사러 쇼핑을 간다",
+        "워싱턴에 있는 가족과 친구들에게 편지를 쓴다",
+        "판자 산책로에서 열리는 무도회에 간다"
+      ],
+      "answer": 3,
+      "evidence": [
+        9
+      ],
+      "note": "'invited Becky and me to the dance Friday night on the boardwalk', 'Becky's mother says we can go'에서 금요일 밤 판자 산책로 무도회에 간다는 것을 알 수 있음."
+    }
+  ]
+}

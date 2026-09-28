@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d020",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d020-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "과들루프에 갔지만 날씨가 나빠서 일찍 돌아왔다",
+        "과들루프에 새 집을 사서 그곳으로 이사했다",
+        "과들루프 여행이 너무 비싸서 일정을 줄였다",
+        "과들루프에 가서 해안 호텔에서 즐겁게 지냈다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "note": "“I have been to Guadeloupe”, “The weather is wonderful there”, “I spent a week in a hotel on the coast”, “The hotel food tasted delicious”에서 알 수 있다."
+    },
+    {
+      "id": "d020-q2",
+      "type": "세부 사실",
+      "prompt": "이 사람이 점심을 먹고 나서 보통 몇 시간 동안 한 일로 알맞은 것은?",
+      "options": [
+        "잠을 잤다",
+        "친구들과 춤을 추었다",
+        "해변을 따라 걸었다",
+        "바다에서 수영을 했다"
+      ],
+      "answer": 0,
+      "evidence": [
+        10
+      ],
+      "note": "“After lunch, I usually slept for a few hours”라고 했다."
+    },
+    {
+      "id": "d020-q3",
+      "type": "다음에 할 일",
+      "prompt": "이 사람이 올해 하려고 하는 일로 알맞은 것은?",
+      "options": [
+        "과들루프 대신 처음으로 유럽에 갈 것이다",
+        "과들루프로 다시 여행을 갈 것이다",
+        "과들루프에서 사귄 친구들을 집에 초대할 것이다",
+        "8월 첫 주에 과들루프로 이사할 것이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        12
+      ],
+      "note": "“I have already decided to go to Guadeloupe again this year”라고 했다."
+    }
+  ]
+}

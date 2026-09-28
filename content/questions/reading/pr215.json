@@ -1,0 +1,46 @@
+{
+  "v": 1,
+  "lesson": "pr215",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr215-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "options": [
+        "과학의 발전은 해로운 결과만 낳는다",
+        "사람들은 발전을 늘 두려워하기만 한다",
+        "발전으로 생긴 문제는 곧 해결된다",
+        "발전에는 늘 반갑지 않은 면이 뒤따른다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "note": "'happy with developments in medicine', 'rivers become so polluted', 'frightened by the horrors of air crashes', 'see the other side there, too'"
+    },
+    {
+      "id": "pr215-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 미루어 볼 때, 글쓴이가 살던 시대에 대한 설명으로 알맞은 것은?",
+      "options": [
+        "항공 교통이 아직 발달하지 않았다",
+        "우주에 막 갈 수 있게 되었다",
+        "식량 공급이 크게 줄어들고 있었다",
+        "강물이 맑아 수영하기 좋았다"
+      ],
+      "answer": 1,
+      "evidence": [
+        7
+      ],
+      "note": "'We are excited by the fact that space can now be entered'"
+    }
+  ]
+}

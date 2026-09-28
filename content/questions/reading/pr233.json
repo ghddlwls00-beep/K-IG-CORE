@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr233",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr233-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "진실을 말할 자유는 위협받을 때 지켜내야 한다",
+        "진실을 말할 자유는 민주주의에서 저절로 보장된다",
+        "국민은 의사결정권자의 뜻을 따라야 한다",
+        "민주주의에서는 의사결정권자가 모든 것을 정한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        4
+      ],
+      "note": "'the freedom to tell the truth' · 'fight for the right to tell the truth whenever it is threatened'"
+    },
+    {
+      "id": "pr233-q2",
+      "type": "세부 사실",
+      "prompt": "의사결정권자들이 우리의 삶을 어렵게 만들 수도 있는 이유로 이 글이 든 것은?",
+      "options": [
+        "우리가 민주주의 국가에 살지 않아서",
+        "그들이 우리의 생각을 알지 못해서",
+        "그들이 국민의 뜻을 이미 다 알고 있어서",
+        "우리가 의사결정권자들을 믿지 않아서"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "'make our lives difficult because they wouldn't know what we think'"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr112",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr112-q1",
+      "type": "세부 사실",
+      "prompt": "본문에서 글쓴이가 제안한 것으로 옳은 것은?",
+      "options": [
+        "야간 강좌로 다른 직종을 준비한다",
+        "경제가 좋아질 때까지 기다린다",
+        "원래 일을 그만두고 새 기술을 배운다",
+        "스트레스를 줄이려고 일을 그만둔다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "'Have you considered taking night classes to train for another kind of job?' — 야간 강좌로 다른 직종 준비"
+    },
+    {
+      "id": "pr112-q2",
+      "type": "한 단계 추론",
+      "prompt": "글쓴이가 이 글을 쓴 목적으로 가장 적절한 것은?",
+      "options": [
+        "경제가 나빠진 까닭을 설명하려고",
+        "퇴근 뒤에는 쉬기만 하라고 권하려고",
+        "낙심하지 말라고 격려하려고",
+        "지금 다니는 회사를 떠나라고 권하려고"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "'there aren't many jobs available right now' · 'But don't be discouraged because there are some things you can try' — 낙심하지 말라는 격려"
+    }
+  ]
+}

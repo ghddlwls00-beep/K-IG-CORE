@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d137",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d137-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "새 호텔 식당에서 멋진 저녁을 먹은 이야기",
+        "부부가 새 호텔에서 하룻밤 묵은 이야기",
+        "음식값이 비싸서 다시는 가지 않기로 한 이야기",
+        "부부가 할머니 농장에서 저녁을 먹은 이야기"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4,
+        5
+      ],
+      "note": "'go out for the evening' · 'went to the restaurant in a new hotel' · 'We had a wonderful meal'이 새 호텔 식당에서 멋진 저녁을 먹었음을 보여 줌"
+    },
+    {
+      "id": "d137-q2",
+      "type": "세부 사실",
+      "prompt": "부부가 저녁에 외출하기 쉬운 이유로 알맞은 것은?",
+      "options": [
+        "아이들이 할머니 농장에 가 있어서",
+        "아이들이 스스로 밥을 챙겨 먹어서",
+        "장모님이 아이들을 돌봐 주셔서",
+        "새 호텔 식당이 집 가까이에 생겨서"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'My wife's mother lives with us and she stays with the children' · 'makes it very easy for us to go out for the evening'이 장모님이 아이들을 돌봐 주셔서 외출이 쉬움을 보여 줌"
+    },
+    {
+      "id": "d137-q3",
+      "type": "세부 사실",
+      "prompt": "아이들이 식당에서 식사하는 것을 좋아하지 않는 이유로 알맞은 것은?",
+      "options": [
+        "음식 양이 너무 많아서",
+        "오래 앉아서 조용히 있어야 해서",
+        "먹고 싶은 음식이 메뉴에 없어서",
+        "바깥 음식이 입에 안 맞아서"
+      ],
+      "answer": 1,
+      "evidence": [
+        11
+      ],
+      "note": "'don't like to eat in restaurants because they have to sit and be quiet for a long time'이 오래 앉아서 조용히 있어야 해서임을 보여 줌"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d207",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d207-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "대학에서는 정규 수업이 과외 활동보다 훨씬 중요하다",
+        "과외 활동도 정규 수업 못지않게 중요하다",
+        "대학 생활은 과외 활동 덕분에 재미있기만 하다",
+        "대학에서는 과외 활동을 학생들이 스스로 만들어야 한다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2,
+        4,
+        7
+      ],
+      "note": "'not all fun' · 'its serious side' · 'participate in the various extracurricular activities offered by the school' · 'just as important as formal classes' — 과외 활동도 정규 수업만큼 중요"
+    },
+    {
+      "id": "d207-q2",
+      "type": "세부 사실",
+      "prompt": "많은 훌륭한 언론인들이 처음 경력을 시작한 곳으로 옳은 것은?",
+      "options": [
+        "대학 연극 무대",
+        "대학 토론 동아리",
+        "졸업 뒤 들어간 신문사",
+        "대학 신문"
+      ],
+      "answer": 3,
+      "evidence": [
+        6
+      ],
+      "note": "'Many great journalists actually began their career on their college newspaper' — 대학 신문"
+    },
+    {
+      "id": "d207-q3",
+      "type": "세부 사실",
+      "prompt": "이 글에서 말한 '일주일에 약 15시간'이 가리키는 것은?",
+      "options": [
+        "보통 대학생이 수업을 듣는 시간",
+        "보통 대학생이 과외 활동에 쓰는 시간",
+        "대학 연극 연습에 쓰는 시간",
+        "수업과 과외 활동을 모두 합친 시간"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "'The ordinary college student spends about 15 hours a week in class' — 수업 듣는 시간"
+    }
+  ]
+}

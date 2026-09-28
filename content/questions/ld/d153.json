@@ -1,0 +1,49 @@
+{
+  "v": 1,
+  "lesson": "d153",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d153-q1",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면, 각 주의 공립학교를 운영하는 데 쓰는 돈은 무엇인가?",
+      "options": [
+        "나라에서 거두어들이는 세금",
+        "그곳 주민들이 내는 세금",
+        "나라에서 따로 모으는 기부금",
+        "그곳 주민들이 내는 기부금"
+      ],
+      "answer": 1,
+      "evidence": [1],
+      "note": "\"supported by taxes paid by the citizens of the individual state\""
+    },
+    {
+      "id": "d153-q2",
+      "type": "세부 사실(숫자)",
+      "prompt": "이 글에서 말한, 중학교와 고등학교에서 보내는 기간으로 옳은 것은?",
+      "options": [
+        "중학교 4년, 고등학교 3년",
+        "중학교 3년, 고등학교 4년",
+        "중학교 4년, 고등학교 4년",
+        "중학교 3년, 고등학교 3년"
+      ],
+      "answer": 3,
+      "evidence": [4, 5],
+      "note": "\"junior high school and remain there for three years\" · \"The last three years … are spent in senior high school\""
+    },
+    {
+      "id": "d153-q3",
+      "type": "세부 사실(순서)",
+      "prompt": "많은 고등학교 졸업생이 졸업 뒤에 하는 일로 옳은 것은?",
+      "options": [
+        "여러 대학 중 한 곳에서 배움을 이어 간다",
+        "곧바로 석사 학위 공부를 시작한다",
+        "4년 동안 돈을 번 뒤 다시 공부한다",
+        "고등학교에 한 해 더 남아 공부한다"
+      ],
+      "answer": 0,
+      "evidence": [6],
+      "note": "\"A great number of high school graduates continue their education in one of the many colleges or universities\""
+    }
+  ]
+}

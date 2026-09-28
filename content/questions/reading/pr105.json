@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr105",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr105-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "정부의 목표 가운데 하나는 늘 다른 것보다 앞선다",
+        "정부의 목표는 모두 중요하지만 절대적이지 않다",
+        "인간의 행복은 정부가 없어도 이룰 수 있다",
+        "정부가 세운 목표는 어떤 경우에도 희생될 수 없다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "'The primary aims of government' · 'of the utmost importance to human happiness' · 'no one of them is absolute' — 목표는 모두 중요하지만 어느 것도 절대적이지 않음"
+    },
+    {
+      "id": "pr105-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "본문의 'These'가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "인간의 행복",
+        "여러 가지 상황",
+        "다른 좋은 것들",
+        "안전, 정의, 보전"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "'security, justice, and conservation' · 'These are things of the utmost importance to human happiness' — 'These'는 앞 문장의 세 목표"
+    }
+  ]
+}

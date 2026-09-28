@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr021",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr021-q1",
+      "type": "vocab",
+      "prompt": "이 글에서 'a policeman in every man's bosom'이 뜻하는 것으로 가장 알맞은 것은?",
+      "options": [
+        "사람마다 마음속에 있어 법을 지키게 하는 양심",
+        "사회가 사생활까지 직접 감시하는 제도",
+        "법을 어긴 사람을 잡으러 다니는 실제 경찰관",
+        "양심의 가책을 느끼게 하는 사회의 처벌 규정"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "1번 'the function of conscience, setting ... a policeman in every man's bosom'에서 양심을 가리킴을 알 수 있다."
+    },
+    {
+      "id": "pr021-q2",
+      "type": "inference",
+      "prompt": "이 글로 미루어 볼 때, 양심에 대해 추론할 수 있는 것으로 가장 알맞은 것은?",
+      "options": [
+        "양심은 사회의 법이 미치지 않는 사적인 일에는 영향을 주지 않는다",
+        "양심은 법보다 강제성이 약해서 사람들에게 자주 무시된다",
+        "양심은 보는 사람이 없는 일에서도 사회의 이익을 따르게 한다",
+        "양심은 사람마다 다른 기준으로 작동해 사회에 도움이 되지 않는다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "2번 'even in a man's most private affairs ... conscience leads him to act according to the good of this organism'에서 알 수 있다."
+    }
+  ]
+}

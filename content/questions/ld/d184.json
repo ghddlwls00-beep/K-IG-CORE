@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d184",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d184-q1",
+      "type": "세부 사실",
+      "prompt": "존커가 다이아몬드를 판 상대로 알맞은 것은?",
+      "options": [
+        "다이아몬드 탐광자",
+        "다이아몬드 커팅공",
+        "다이아몬드 수집가",
+        "다이아몬드 거래인"
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "'Jonker sold the stone to a diamond dealer' — 다이아몬드 거래인에게 팖"
+    },
+    {
+      "id": "d184-q2",
+      "type": "세부 사실",
+      "prompt": "존커가 다이아몬드를 발견하게 된 계기로 알맞은 것은?",
+      "options": [
+        "먼 광산을 오래 탐사하던 중",
+        "뒤뜰에 우물을 파던 중",
+        "큰 폭우가 쏟아진 뒤",
+        "긴 가뭄이 이어진 뒤"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'There had been a heavy rainstorm and the rains had washed away part of a hillside' / 'in the middle of the mud sat a huge diamond' — 큰 폭우 뒤 진흙 속에서"
+    },
+    {
+      "id": "d184-q3",
+      "type": "중심 내용",
+      "prompt": "다이아몬드의 가치에 대해 말한 내용으로 알맞은 것은?",
+      "options": [
+        "처음 팔린 값이 곧 진짜 가치이다",
+        "발견된 곳에 따라 가치가 정해진다",
+        "뉴욕에서 매긴 값이 진짜 가치이다",
+        "커팅 전에는 진짜 가치를 모른다"
+      ],
+      "answer": 3,
+      "evidence": [
+        7
+      ],
+      "note": "'The true value of a diamond is never known until it has been cut' — 커팅 전에는 진짜 가치를 알 수 없음"
+    }
+  ]
+}

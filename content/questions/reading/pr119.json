@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "lesson": "pr119",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr119-q1",
+      "type": "세부 사실",
+      "prompt": "7~12세 아이들이 자주 두려워한다고 글에 나온 것은?",
+      "options": [
+        "다치거나 사고를 당하는 일",
+        "유령처럼 현실에 근거하지 않은 것",
+        "낯선 사람을 보는 일",
+        "불을 끈 채로 잠드는 일"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "'Kids aged 7 through 12 often fear real situations ... such as injuries or accidents' — 다치거나 사고를 당하는 일"
+    },
+    {
+      "id": "pr119-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글에서 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "한번 생긴 두려움은 평생 사라지지 않는다",
+        "두려움은 나이가 들수록 많아진다",
+        "한 동물이 무서우면 모든 동물이 무섭다",
+        "자라면서 겁내는 대상이 바뀌기도 한다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "note": "'Babies ... strangers' · 'aged 2 through 6 ... ghosts' · 'aged 7 through 12 ... real situations' · 'As a child grows, fears may disappear' · 'enjoy ghost stories years later' — 자라면서 겁내는 대상이 바뀜"
+    }
+  ]
+}

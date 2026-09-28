@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr210",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr210-q1",
+      "type": "세부 사실",
+      "prompt": "이 글에서 책이 가르쳐 준다고 한 것은?",
+      "options": [
+        "위인들도 우리처럼 고통받았다는 것",
+        "누구나 자신을 잘 안다는 것",
+        "세상은 언제나 우리에게 친절하다는 것",
+        "세상의 불의가 곧 사라진다는 것"
+      ],
+      "answer": 0,
+      "evidence": [
+        5
+      ],
+      "note": "'from books we learn that others—greater men than we—have suffered and have sought as we have'"
+    },
+    {
+      "id": "pr210-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'this vast, irresponsive world'에서 irresponsive의 뜻으로 가장 알맞은 것은?",
+      "options": [
+        "끝없이 넓은",
+        "외로운",
+        "무반응한",
+        "정의롭지 못한"
+      ],
+      "answer": 2,
+      "evidence": [
+        3
+      ],
+      "note": "'We all feel lonely in this vast, irresponsive world'"
+    }
+  ]
+}

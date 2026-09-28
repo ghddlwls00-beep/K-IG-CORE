@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr224",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr224-q1",
+      "type": "중심 생각",
+      "prompt": "글쓴이의 주장으로 가장 적절한 것은?",
+      "options": [
+        "TV 중계는 사법 제도를 알리는 가장 좋은 길이다",
+        "TV 카메라는 드라마 속 재판에도 쓰면 안 된다",
+        "실제 재판은 TV로 내보내지 말아야 한다",
+        "재판 중계를 허용하는 주를 늘려야 한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4,
+        7
+      ],
+      "note": "'I don't agree with them', 'A fair trial isn't possible', 'fictional trials, not real ones'가 근거"
+    },
+    {
+      "id": "pr224-q2",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 말한 TV 카메라의 영향으로 옳은 것은?",
+      "options": [
+        "판사와 배심원, 증인이 산만해진다",
+        "증인들이 재판에 나오려고 앞다투어 나선다",
+        "배심원들만 촬영을 의식해 집중하지 못한다",
+        "배심원들이 재판에 나오기를 싫어한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        5
+      ],
+      "note": "'Judges, jurors, and witnesses will be distracted'가 근거"
+    }
+  ]
+}

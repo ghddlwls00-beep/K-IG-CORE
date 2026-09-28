@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr088",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr088-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "소비자들은 쇼핑에 시간을 더 쓰고 싶어 한다",
+        "가게들은 손님이 오래 머물도록 통로를 좁히고 있다",
+        "최근 조사에서 쇼핑을 즐기는 사람이 늘었다",
+        "시간을 아끼려는 손님에 맞춰 매장이 바뀌고 있다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "1번 'An increasing emphasis on the value of time', 2번 'spend less time shopping', 3번 'shop owners are changing store designs to make shopping and customer service easier'"
+    },
+    {
+      "id": "pr088-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "이 글에서 'race through the store'가 뜻하는 바로 가장 적절한 것은?",
+      "options": [
+        "매장 안에서 달리기 시합을 하는 것",
+        "매장 곳곳의 층별 안내도를 찾는 것",
+        "매장을 빠르게 돌며 쇼핑하는 것",
+        "매장 여러 곳을 천천히 구경하는 것"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "4번 'to help busy shoppers race through the store'"
+    }
+  ]
+}

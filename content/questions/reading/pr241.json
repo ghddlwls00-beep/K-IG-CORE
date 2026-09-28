@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "lesson": "pr241",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr241-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "교육은 낡은 가치를 버리고 사회 변화를 이끌어야 한다",
+        "교육은 무엇보다 개인의 사회 적응을 도와야 한다",
+        "교육은 사회에 필요한 가치를 지키는 일을 가장 중시해야 한다",
+        "학교는 사회의 전통을 다음 세대에 전하는 곳이어야 한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "note": "'not overemphasize the value of the first part' · 'cut out the decayed values' · 'the inspiration for social change' · 'changing society rather than in preserving its traditions'가 글의 요지"
+    },
+    {
+      "id": "pr241-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "글에서 'the value of the first part'의 'the first part'가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "개인에게 사회를 바꿀 힘을 주는 것",
+        "개인이 살아갈 사회에 대비하게 하는 것",
+        "사회에 해로운 낡은 가치를 잘라 내는 것",
+        "학교가 사회 변화에 영감을 주는 것"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'the first part'는 교육 목적의 앞부분 'to prepare the individual for the society in which he must live'를 가리킴"
+    }
+  ]
+}

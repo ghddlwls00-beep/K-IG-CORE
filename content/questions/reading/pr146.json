@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr146",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr146-q1",
+      "type": "세부 사실",
+      "prompt": "다음 중 글의 내용과 일치하는 것은?",
+      "options": [
+        "수리점이 점점 많아지고 있다",
+        "쓰레기장에는 쓸 수 없는 물건만 가득하다",
+        "1회용 면도기와 카메라까지 나와 있다",
+        "우리는 재활용으로 돈을 아끼고 있다"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "'even disposable razors and cameras' 참고"
+    },
+    {
+      "id": "pr146-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글에서 추론할 수 있는 것은?",
+      "options": [
+        "제조업자는 사람들이 물건을 오래 고쳐 쓰기를 바란다",
+        "새 모델은 헌 모델보다 언제나 성능이 좋다",
+        "소비자는 새 물건보다 헌 물건을 더 아낀다",
+        "제조업자는 사람들이 새 물건을 빨리 사기를 바란다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "'encourage the \"new is better\" attitude', 'make more money if we buy a new model as soon as the old one fails' 참고"
+    }
+  ]
+}

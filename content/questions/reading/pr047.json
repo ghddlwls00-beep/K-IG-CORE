@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr047",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr047-q1",
+      "type": "세부 사실",
+      "prompt": "이 글의 내용과 일치하는 것은?",
+      "options": [
+        "정부는 공연 예술의 중요성을 충분히 인식하지 못하고 있다",
+        "정부는 기업보다 공연 예술을 더 적극적으로 지원한다",
+        "공연 예술은 정부의 재정적 도움 없이도 우수성을 이룰 수 있다",
+        "정부는 경제를 강하게 유지하는 데 관심이 없다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "3번 'hasn’t fully recognized the importance of the arts, especially the performing arts'에 근거함."
+    },
+    {
+      "id": "pr047-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 보아 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "영화는 공연 예술과는 상관없이 혼자 발전할 수 있다",
+        "공연 예술은 국민의 마음과는 별 관계가 없다",
+        "기업만 튼튼하면 공연 예술도 저절로 살아난다",
+        "공연 예술이 무너지면 영화도 타격을 받는다"
+      ],
+      "answer": 3,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "5번 'the performing arts cannot survive', 6번 'This will affect other areas of culture, including film'에 근거함."
+    }
+  ]
+}

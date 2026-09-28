@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d105",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d105-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "격언이 진리를 전하는 두 가지 방식",
+        "격언이 모두 비유로만 말하는 까닭",
+        "비유가 격언보다 더 쓸모 있는 까닭",
+        "진리를 담은 격언이 생겨난 역사"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        4
+      ],
+      "note": "'to express a truth' · 'Some proverbs state a fact or truth directly' · 'Most proverbs, however, use a specific situation to suggest a general truth' — 격언이 진리를 곧바로 말하거나 구체적인 상황으로 암시하는 두 방식을 설명함"
+    },
+    {
+      "id": "d105-q2",
+      "type": "세부 사실",
+      "prompt": "'Too many cooks spoil the broth'라는 격언의 뜻으로 알맞은 것은?",
+      "options": [
+        "요리사가 많을수록 국이 맛있어진다",
+        "사람이 너무 많으면 일을 망친다",
+        "사람이 많을수록 일이 빨리 끝난다",
+        "정직하게 일해야 좋은 결과가 나온다"
+      ],
+      "answer": 1,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'Too many cooks spoil the broth' · 'if too many people work on the same project at the same time, the result will not be good' — 한 일에 사람이 너무 많으면 결과가 나쁘다는 뜻"
+    },
+    {
+      "id": "d105-q3",
+      "type": "세부 사실",
+      "prompt": "'Honesty is the best policy'에 대한 설명으로 알맞은 것은?",
+      "options": [
+        "대부분의 격언과 같은 방식의 격언이다",
+        "사람들에게 낯선 격언이다",
+        "사실을 곧바로 드러낸 격언이다",
+        "정직하면 오히려 손해 본다는 격언이다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'Some proverbs state a fact or truth directly' · 'Honesty is the best policy' — 사실이나 진리를 곧바로 말하는 격언의 예"
+    }
+  ]
+}

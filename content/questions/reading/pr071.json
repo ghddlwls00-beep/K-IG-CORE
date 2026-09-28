@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr071",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr071-q1",
+      "type": "세부 사실",
+      "prompt": "실험에서 의사들이 확인한 것으로 글에 언급되지 않은 것은?",
+      "options": [
+        "혈압",
+        "심박수",
+        "체온",
+        "호흡"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "2번 'doctors checked their heart rate, blood pressure, breathing, and muscles'에 근거함."
+    },
+    {
+      "id": "pr071-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 보아 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "영화를 보며 웃기만 해도 운동과 비슷한 효과가 난다",
+        "웃음이 몸에 주는 효과는 운동과 정반대이다",
+        "웃을 때는 얼굴 근육만 움직이고 다른 근육은 쉰다",
+        "참가자들이 자기 몸의 변화를 직접 재어 기록했다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "2번 'People watched funny movies, while doctors checked', 3번 'laughter has similar effects to physical exercise'에 근거함."
+    }
+  ]
+}

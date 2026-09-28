@@ -1,0 +1,49 @@
+{
+  "v": 1,
+  "lesson": "d191",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d191-q1",
+      "type": "중심내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "여인과 목적지를 찾다 함께 길을 잃은 일",
+        "여인이 화자를 목적지까지 데려다준 일",
+        "여인이 화자를 목적지 근처에 두고 떠난 일",
+        "여인이 화자를 목적지와 먼 곳으로 데려간 일"
+      ],
+      "answer": 1,
+      "evidence": [3, 5, 8],
+      "note": "여인을 따라가 목적지에 닿음: 'the young woman' · 'followed her' · 'led me straight to my destination'"
+    },
+    {
+      "id": "d191-q2",
+      "type": "목적태도",
+      "prompt": "캄캄한 거리를 걸으며 화자가 한 걱정으로 알맞은 것은?",
+      "options": [
+        "여인이 자신을 묘지로 데려갈 것",
+        "안개 속에서 여인을 놓쳐 버릴 것",
+        "여인과 그 친구들에게 강도를 당할 것",
+        "여인이 자신을 두고 먼저 가 버릴 것"
+      ],
+      "answer": 2,
+      "evidence": [6],
+      "note": "강도를 당할까 걱정함: 'an alley where she and some friends would rob me'"
+    },
+    {
+      "id": "d191-q3",
+      "type": "세부사실",
+      "prompt": "여인이 화자에게 한 말로 알맞은 것은?",
+      "options": [
+        "이 동네는 내가 꽤 잘 안다",
+        "안개 속에서도 길이 훤히 보인다",
+        "안개 때문에 아무것도 안 보인다",
+        "이 거리는 묘지처럼 조용하다"
+      ],
+      "answer": 0,
+      "evidence": [10],
+      "note": "여인의 대답: 'I know this part of town quite well,' she replied"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr187",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr187-q1",
+      "type": "세부 사실",
+      "prompt": "이 글에서 모든 생물에 공통된 활동의 예로 든 것은?",
+      "options": [
+        "먹기와 잠자기",
+        "떼 지어 살기",
+        "혼자 살기",
+        "먹기와 번식하기"
+      ],
+      "answer": 3,
+      "evidence": [
+        6
+      ],
+      "note": "'some activities, such as eating and reproducing, common to all organisms' 인용."
+    },
+    {
+      "id": "pr187-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "사람이 하는 활동은 모두 똑같이 복잡하다",
+        "신경계에 따라 할 수 있는 활동이 달라진다",
+        "신경계가 복잡한 동물일수록 무리를 지어 산다",
+        "벌레는 신경계가 없어 축구를 못 한다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "'Our nervous system determines the complexity of activities that we are able to perform', 'Animals with nervous systems similar to a worm’s cannot play soccer' 인용."
+    }
+  ]
+}

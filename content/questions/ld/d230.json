@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "d230",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d230-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "요세미티의 폭포와 세쿼이아 국립공원의 나무가 사라져 가는 까닭을 밝힌다",
+        "요세미티의 높은 폭포와 세쿼이아 국립공원의 거대한 나무를 소개한다",
+        "요세미티의 폭포와 세쿼이아 국립공원의 나무 가운데 더 유명한 것을 가린다",
+        "요세미티의 폭포와 세쿼이아 국립공원의 나무를 보러 가는 길을 안내한다"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3,
+        4
+      ],
+      "note": "'famous for its breathtaking waterfalls, some of the highest in North America' · 'named for the huge sequoia trees found there' · 'the largest tree in the world' — 요세미티의 높은 폭포와 세쿼이아의 거대한 나무를 소개한다"
+    },
+    {
+      "id": "d230-q2",
+      "type": "세부 사실",
+      "prompt": "세쿼이아 나무에 대한 설명으로 옳은 것은?",
+      "options": [
+        "살아 있는 나무 하나에 차가 지나갈 만한 터널이 있다",
+        "모두 그리스도가 태어난 뒤에 싹이 텄다",
+        "이름이 붙은 나무는 셔먼 장군 나무 하나뿐이다",
+        "쓰러진 나무 하나에 차가 지나갈 만한 터널이 있다"
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "'a tunnel cut through one fallen giant is wide enough for cars to drive through' — 쓰러진 거대한 나무 하나에 차가 지나갈 만한 터널이 뚫려 있다"
+    }
+  ]
+}

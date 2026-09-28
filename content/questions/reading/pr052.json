@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr052",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr052-q1",
+      "type": "세부 사실",
+      "prompt": "이 글에서 부모가 자녀에게 바라는 모습으로 언급된 것은?",
+      "options": [
+        "용감하고 씩씩한 사람",
+        "부지런하고 검소한 사람",
+        "똑똑하고 재치 있는 사람",
+        "정직하고 사려 깊은 사람"
+      ],
+      "answer": 3,
+      "evidence": [
+        3
+      ],
+      "note": "3번 grow up to be honest and considerate 부분이 근거"
+    },
+    {
+      "id": "pr052-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "아이는 학교에 들어가면 양심이 저절로 생긴다",
+        "한두 번만 가르쳐도 아이는 옳고 그름을 안다",
+        "부모의 꾸준한 노력이 아이의 인격을 만든다",
+        "양심은 타고나는 것이라 교육으로 바뀌지 않는다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        6,
+        8
+      ],
+      "note": "5번 does not develop by itself, 6번 day after day, and year after year, 8번 the essence of their character가 근거"
+    }
+  ]
+}

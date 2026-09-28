@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "d013",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d013-q1",
+      "type": "세부 사실",
+      "prompt": "존 조던이 할 수 없는 일로 옳은 것은?",
+      "options": [
+        "자동차 운전하기",
+        "자전거 타기",
+        "비행기 조종하기",
+        "배 몰기"
+      ],
+      "answer": 1,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'But he can't ride a bicycle', 'He could never learn to ride a bike'에서 알 수 있음."
+    },
+    {
+      "id": "d013-q2",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "비행기 조종사가 되려고 공부하는 이야기",
+        "운전면허를 새로 딴 친구를 자랑하는 이야기",
+        "자전거 타는 법을 차근차근 설명하는 이야기",
+        "유능하지만 쉬운 일 몇 가지는 못하는 친구 이야기"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'He's very capable', 'he can't do some of the very simple things in life'에서 중심 내용을 알 수 있음."
+    }
+  ]
+}

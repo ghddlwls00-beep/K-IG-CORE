@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr246",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr246-q1",
+      "type": "세부 사실",
+      "prompt": "다음 중 글의 내용과 일치하는 것은?",
+      "options": [
+        "다윈은 기린이 싸우는 모습을 보고 설명을 세웠다",
+        "다윈의 설명은 나온 뒤 곧 틀린 것으로 밝혀졌다",
+        "시먼스는 독수리를 연구하다가 기린의 싸움을 보았다",
+        "시먼스는 1996년에 다윈의 설명을 지지했다"
+      ],
+      "answer": 2,
+      "evidence": [
+        3
+      ],
+      "note": "'Simmons was studying eagles in Africa when he came across a pair of male giraffes locked in combat'와 일치"
+    },
+    {
+      "id": "pr246-q2",
+      "type": "한 단계 추론",
+      "prompt": "글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "시먼스는 높은 곳의 먹이가 목을 길게 했다고 보았을 것이다",
+        "목이 길고 굵은 수컷일수록 짝을 얻기 쉬웠을 것이다",
+        "목이 짧고 가는 수컷이 싸움에서 더 자주 이겼을 것이다",
+        "수컷 기린의 목은 가벼워서 싸움에 쓰이지 않았을 것이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "'battling for mates' · 'males with the longest, thickest necks usually won'에서 짝을 얻기에 유리했음을 추론"
+    }
+  ]
+}

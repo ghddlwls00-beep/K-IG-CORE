@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d162",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d162-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "신문은 세상일을 알려 주는 중요한 정보원이다",
+        "신문 기사에는 과장이 많아서 그대로 믿기 어렵다",
+        "바쁜 사람들은 이제 신문을 읽지 않는다",
+        "윌 로저스는 신문만 읽고 세상일을 배웠다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        4
+      ],
+      "note": "'newspapers are an important source of information', 'learn what is going on in the world' 참고"
+    },
+    {
+      "id": "d162-q2",
+      "type": "세부 사실",
+      "prompt": "이 글의 내용과 일치하는 것은?",
+      "options": [
+        "아주 바쁠 때는 신문의 머리기사도 보지 않는다",
+        "많은 사람이 신문을 읽으며 하루를 시작한다",
+        "시간이 없을 때는 일면을 건너뛴다",
+        "대부분의 사람은 저녁에 신문을 몰아서 읽는다"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "'Many people begin their day by reading the paper' 참고"
+    },
+    {
+      "id": "d162-q3",
+      "type": "세부 사실",
+      "prompt": "큰 도시의 신문은 얼마나 자주 나온다고 했는가?",
+      "options": [
+        "하루에 한 번만",
+        "일주일에 한 번",
+        "하루에 여러 번",
+        "한 달에 한 번"
+      ],
+      "answer": 2,
+      "evidence": [
+        8
+      ],
+      "note": "'In the big cities, there are many types of papers with several different editions every day' 참고"
+    }
+  ]
+}

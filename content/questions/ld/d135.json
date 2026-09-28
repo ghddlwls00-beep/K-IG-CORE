@@ -1,0 +1,60 @@
+{
+  "v": 1,
+  "lesson": "d135",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d135-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "신발이 발에 맞지 않아 옷만 사 온 이야기",
+        "두 친구가 서로 같은 옷을 사겠다고 다툰 이야기",
+        "학교에 입고 갈 옷과 신발을 산 이야기",
+        "두 친구가 신발 가게에서 일을 시작한 이야기"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        5,
+        6,
+        7,
+        10
+      ],
+      "note": "'needed some new clothes for school' · 'he bought it' · 'selected a blue suit' · 'also bought 2 pairs of pants' · 'didn't take them very long to get their shoes'가 학교에 입을 옷과 신발을 샀음을 보여 줌"
+    },
+    {
+      "id": "d135-q2",
+      "type": "세부 사실",
+      "prompt": "남성복 매장에서 밥이 한 일로 알맞은 것은?",
+      "options": [
+        "연한 회색 양복을 곧바로 찾아 샀다",
+        "한참 망설이다가 파란 양복을 샀다",
+        "연한 회색 양복을 입어 봤지만 사지 않았다",
+        "판매원이 권한 짙은 회색 양복을 샀다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        5
+      ],
+      "note": "'went to the men's department' · 'Bob found a light gray suit right away and he bought it'이 밥이 연한 회색 양복을 곧바로 찾아 샀음을 보여 줌"
+    },
+    {
+      "id": "d135-q3",
+      "type": "세부 사실",
+      "prompt": "두 친구가 바지도 산 이유로 알맞은 것은?",
+      "options": [
+        "세일 중이라 반값이어서",
+        "학교에서 꼭 사 오라고 해서",
+        "판매원이 양복과 함께 사라고 권해서",
+        "값이 그리 비싸지 않아서"
+      ],
+      "answer": 3,
+      "evidence": [
+        7
+      ],
+      "note": "'also bought 2 pairs of pants because they were not too expensive'가 바지 값이 그리 비싸지 않아서 샀음을 보여 줌"
+    }
+  ]
+}

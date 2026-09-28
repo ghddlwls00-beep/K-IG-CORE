@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr098",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr098-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "아이는 노래보다 말로 하는 부탁을 더 잘 따른다",
+        "음악은 두 살배기를 차분하게 하는 데 도움이 된다",
+        "아이가 차분해지려면 음악을 꺼 두는 것이 좋다",
+        "부모가 노래하면 아이가 오히려 짜증을 낸다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "'the presence of comforting music' · 'A parent’s singing can help' · 'may be more effective than simply saying the request'로 확인"
+    },
+    {
+      "id": "pr098-q2",
+      "type": "세부 사실",
+      "prompt": "이 글의 내용과 일치하는 것은?",
+      "options": [
+        "두 살배기는 스스로 차분한 분위기를 만들어 낸다",
+        "녹음된 동요는 오전이 끝나 갈 무렵에만 알맞다",
+        "녹음된 동요는 아침 식사 시간에만 틀어 주어야 한다",
+        "어떤 아이들은 음악을 오래 틀어 두기도 한다"
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "'Some children like to have their own music players' · 'may play these for very long periods of time'로 확인"
+    }
+  ]
+}

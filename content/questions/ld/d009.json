@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d009",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d009-q1",
+      "type": "세부 사실",
+      "prompt": "앤이 일하는 곳으로 옳은 것은?",
+      "options": [
+        "전국 잡지사",
+        "여행사",
+        "국제기구",
+        "대학 연구소"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'His wife Anne is a translator for an international organization'에서 앤이 국제기구에서 일함을, 'Keith's a photographer for a national magazine'에서 잡지사는 키스의 직장임을 알 수 있음."
+    },
+    {
+      "id": "d009-q2",
+      "type": "중심 내용",
+      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "앤드루스 부부의 여행 사진을 보고 감탄한 이야기",
+        "헨리가 새 카메라를 사기로 결심한 이야기",
+        "헬렌이 세계 일주 여행을 계획하는 이야기",
+        "앤이 통역사 일을 그만두기로 한 이야기"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "note": "'a trip around the world', 'we looked at some of them last night', 'Their pictures were beautiful'에서 여행 사진을 보고 감탄한 이야기임을 알 수 있음."
+    },
+    {
+      "id": "d009-q3",
+      "type": "목적/태도",
+      "prompt": "어젯밤 일에 대한 헨리의 심정으로 가장 알맞은 것은?",
+      "options": [
+        "결국 가지 않은 것을 후회했다",
+        "억지로 갔다가 괜히 갔다고 후회했다",
+        "처음부터 가고 싶어서 한껏 들떠 있었다",
+        "가기 싫었지만 가길 잘했다고 생각했다"
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "'I didn't want to go', 'I am glad we went'에서 처음엔 가기 싫었지만 다녀온 것을 기뻐함을 알 수 있음."
+    }
+  ]
+}

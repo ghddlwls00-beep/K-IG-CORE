@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr032",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr032-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "어느 나라에서든 소리를 내지 않고 먹는 것이 예의이다",
+        "그 나라의 식사 예절을 따르는 것이 좋다",
+        "일본에서는 모든 음식을 소리 내어 먹어야 한다",
+        "식사 도구는 나라와 상관없이 똑같이 쓰인다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "1번 'When in Rome, do as the Romans do ... at the dinner table', 2번 'In Japan'과 3번 'in most Western countries'의 서로 다른 예절이 근거"
+    },
+    {
+      "id": "pr032-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글의 내용으로 보아 가장 알맞게 추론한 것은?",
+      "options": [
+        "서양 사람들은 일본 음식을 좋아하지 않는다",
+        "식사 도구를 잘못 쓰면 음식 맛이 달라진다",
+        "국수를 소리 내어 먹으면 서양에선 무례해 보일 수 있다",
+        "일본에서는 식사 중에 소리를 내는 것을 무례하다고 여긴다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "2번 'slurping noodles noisily', 3번 'no noise should be made while eating'을 연결한 추론"
+    }
+  ]
+}

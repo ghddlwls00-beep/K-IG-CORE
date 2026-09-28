@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d051",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d051-q1",
+      "type": "중심 내용",
+      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "신문 기자의 하루는 모험의 연속이다",
+        "신문 기자는 대부분 판에 박힌 생활을 한다",
+        "신문 기자는 대부분 자기 칼럼을 쓰며 지낸다",
+        "신문 기자는 늘 사건을 취재하러 밖을 다닌다"
+      ],
+      "answer": 1,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "3번 “seems to be filled with adventure” · 4번 “Actually, however, most newspaper reporters lead rather routine lives”라고 했다"
+    },
+    {
+      "id": "d051-q2",
+      "type": "세부 사실",
+      "prompt": "젊은 기자가 주로 하는 일로 가장 알맞은 것은?",
+      "options": [
+        "유명한 사람들을 찾아가 직접 인터뷰하는 일",
+        "다른 신문사의 기사를 확인하고 번역하는 일",
+        "매일 새로운 사건 현장에 나가 취재하는 일",
+        "선배 기자들이 가져온 기사를 다시 쓰는 일"
+      ],
+      "answer": 3,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "5번 “spends most of his day at his desk” · 6번 “His job is to rewrite the stories that the older and more experienced reporters bring in”이라고 했다"
+    },
+    {
+      "id": "d051-q3",
+      "type": "다음에 할 일",
+      "prompt": "젊은 기자가 일을 잘 해내면 앞으로 일어날 일로 가장 알맞은 것은?",
+      "options": [
+        "취재를 나갈 기회가 더 많아진다",
+        "취재를 그만두고 책상 일만 하게 된다",
+        "상사가 되어 다른 기자들의 취재를 이끈다",
+        "다른 신문사에서 취재 기자 자리를 제안받는다"
+      ],
+      "answer": 0,
+      "evidence": [
+        7,
+        8
+      ],
+      "note": "7번 “the boss may send him out to cover a story” · 8번 “the boss will probably send him out more often”이라고 했다"
+    }
+  ]
+}

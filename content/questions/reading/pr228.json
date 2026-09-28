@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr228",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr228-q1",
+      "type": "세부 사실",
+      "prompt": "피터 설리번이 안내원 일에 대해 한 말로 가장 적절한 것은?",
+      "options": [
+        "생각보다 힘든 일이다",
+        "누구나 쉽게 할 수 있는 일이다",
+        "관객이 적어 한가한 일이다",
+        "서 있는 시간이 짧아 편한 일이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "'People often think that being an usher is an easy job, but it isn't' — 사람들 생각과 달리 쉽지 않다"
+    },
+    {
+      "id": "pr228-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 미루어 볼 때, 피터 설리번의 사장에 대해 알 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "안내원에게 휴식 시간을 더 주려 한다",
+        "안내원에게 통로 쪽 좌석을 따로 내준다",
+        "안내원이 좌석에 앉아 쉬는 것을 반기지 않는다",
+        "안내원이 서서 일하는 것을 싫어한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "'I sit in an aisle seat during intermission, but my boss could fire me for that' — 앉아 쉬면 해고될 수도 있다"
+    }
+  ]
+}

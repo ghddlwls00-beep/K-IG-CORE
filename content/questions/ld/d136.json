@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d136",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d136-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "영화를 보느라 옷 살 돈을 다 써 버린 이야기",
+        "버스비가 없어 집까지 걸어서 돌아간 이야기",
+        "스웨터를 사느라 돈을 다 써 버린 이야기",
+        "옷값을 치르고 나니 영화 볼 돈이 없어진 이야기"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2,
+        7
+      ],
+      "note": "'decided to buy several pairs' · 'Don had to get some shirts' · 'intended to go to the movies' · 'after they paid for all their new clothes, they had only enough money to ride home on the bus'가 옷값을 치르고 나니 영화 볼 돈이 없었음을 보여 줌"
+    },
+    {
+      "id": "d136-q2",
+      "type": "다음에 할 일",
+      "prompt": "스웨터를 사러 간 밥이 하기로 한 일로 알맞은 것은?",
+      "options": [
+        "어울리는 스웨터가 없어 셔츠를 대신 사기로 했다",
+        "며칠 뒤 스웨터가 더 들어오면 다시 오기로 했다",
+        "마음에 안 들어도 스웨터를 그냥 사기로 했다",
+        "다른 가게로 가서 스웨터를 찾아보기로 했다"
+      ],
+      "answer": 1,
+      "evidence": [
+        6
+      ],
+      "note": "'would have some more sweaters in a few days' · 'Bob said he would come back then'이 며칠 뒤 스웨터가 더 들어오면 다시 오기로 했음을 보여 줌"
+    },
+    {
+      "id": "d136-q3",
+      "type": "세부 사실",
+      "prompt": "두 친구가 양말을 산 이유로 알맞은 것은?",
+      "options": [
+        "신던 양말이 다 해져서 꼭 필요해서",
+        "판매원이 꼭 사야 한다고 권해서",
+        "필요하진 않았지만 세일 중이어서",
+        "셔츠를 사면 양말을 덤으로 줘서"
+      ],
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "'didn't really need socks, but these were on sale too'가 꼭 필요하지는 않았지만 세일 중이어서 샀음을 보여 줌"
+    }
+  ]
+}

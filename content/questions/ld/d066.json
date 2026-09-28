@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d066",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d066-q1",
+      "type": "세부 사실",
+      "prompt": "신문에 난 새 광고를 본 사람들의 반응으로 알맞은 것은?",
+      "options": [
+        "새 맥주를 사러 몰려갔다",
+        "영문을 몰라 어리둥절했다",
+        "신문사에 항의 전화를 걸었다",
+        "재미있다며 크게 웃었다"
+      ],
+      "answer": 1,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'strange new ads appeared in the Chicago newspapers'와 'The public, of course, was confused'가 사람들이 어리둥절했음을 보여줌"
+    },
+    {
+      "id": "d066-q2",
+      "type": "세부 사실",
+      "prompt": "새 맥주가 팔리기 시작한 뒤 새 광고가 신문에 나오기까지 걸린 기간으로 알맞은 것은?",
+      "options": [
+        "1주일",
+        "2주일",
+        "1개월",
+        "2개월"
+      ],
+      "answer": 3,
+      "evidence": [
+        3
+      ],
+      "note": "'Only 2 months after the new beer had been on sale'가 광고가 2개월 뒤에 나왔음을 보여줌"
+    },
+    {
+      "id": "d066-q3",
+      "type": "세부 사실",
+      "prompt": "'라이트는 비누 맛이 난다'라는 광고에 대한 설명으로 알맞은 것은?",
+      "options": [
+        "라이트 맥주 이야기가 아니었다",
+        "라이트 맥주의 값을 알리는 광고였다",
+        "라이트 맥주를 만든 양조장이 냈다",
+        "라이트 맥주의 이름을 바꾸라고 했다"
+      ],
+      "answer": 0,
+      "evidence": [
+        4,
+        6
+      ],
+      "note": "'They said, \"Lite tastes soapy.\"'와 'The new ads weren't talking about Lite beer'가 그 광고가 라이트 맥주 이야기가 아니었음을 보여줌"
+    }
+  ]
+}

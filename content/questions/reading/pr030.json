@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr030",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr030-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "편지는 길고 정성 들여 써야만 의미가 있다",
+        "편지 쓰기에 드는 시간은 바쁜 삶에 부담만 될 뿐이다",
+        "마음을 담은 편지는 쓰는 사람과 받는 사람 모두에게 좋다",
+        "편지 쓰기는 특별한 날에만 하면 충분하다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2,
+        9
+      ],
+      "note": "1번 'write a heartfelt letter', 2번 'does many things for you', 9번 'the person receiving it will be touched and grateful'이 근거"
+    },
+    {
+      "id": "pr030-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 쪽지를 쓰는 행동이 주는 효과로 언급된 것은?",
+      "options": [
+        "받는 사람이 곧바로 답장을 보내게 한다",
+        "삶에서 좋은 것에 주의를 기울이게 한다",
+        "받는 사람의 걱정거리를 대신 해결해 준다",
+        "글솜씨가 빠르게 좋아지게 해 준다"
+      ],
+      "answer": 1,
+      "evidence": [
+        9
+      ],
+      "note": "9번 'the act of writing a note like this focus your attention on what's right in your life'가 근거"
+    }
+  ]
+}

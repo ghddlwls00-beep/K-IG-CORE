@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr053",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr053-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "아인슈타인의 예측은 언제나 정확했다",
+        "과학이 발전하면 미래를 정확히 예측할 수 있다",
+        "사람들은 현재보다 과거에 더 관심을 가져야 한다",
+        "미래를 예측하는 일은 매우 중요하다"
+      ],
+      "answer": 3,
+      "evidence": [
+        5,
+        6,
+        9
+      ],
+      "note": "5번 without looking through the windshield, 6번 desperately need people who can foretell the future, 9번 priceless information이 근거"
+    },
+    {
+      "id": "pr053-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'advance scouts'가 비유적으로 가리키는 대상으로 가장 적절한 것은?",
+      "options": [
+        "국경을 지키는 군인들",
+        "미래를 예견하는 사람들",
+        "역사를 연구하는 학자들",
+        "새 땅을 탐험하는 여행자들"
+      ],
+      "answer": 1,
+      "evidence": [
+        6,
+        9
+      ],
+      "note": "6번 people who can foretell the future, 9번 our advance scouts가 근거"
+    }
+  ]
+}

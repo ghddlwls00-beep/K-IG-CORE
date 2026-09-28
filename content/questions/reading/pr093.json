@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr093",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr093-q1",
+      "type": "중심 생각",
+      "prompt": "글쓴이의 주장으로 가장 적절한 것은?",
+      "options": [
+        "모피를 얻으려고 동물을 죽이는 것은 옳지 않다",
+        "귀엽고 사랑스러운 동물만 지켜 주면 된다",
+        "모피 옷은 값이 비싸니 사지 않는 것이 좋다",
+        "생각이 깊은 사람일수록 모피 옷을 즐겨 입는다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        7
+      ],
+      "note": "'Killing animals for their fur is wrong' · 'The answer, from any thoughtful individual, must be a resounding No' — 모피를 위해 동물을 죽이는 것은 잘못"
+    },
+    {
+      "id": "pr093-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "글에서 'Spot'이 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "앞에서 말한 밍크",
+        "앞에서 말한 강아지",
+        "앞에서 말한 라쿤",
+        "앞에서 말한 하프물범"
+      ],
+      "answer": 1,
+      "evidence": [
+        4,
+        5,
+        6
+      ],
+      "note": "'Think of a puppy' · 'Picture its soulful trusting eyes' · 'wear Spot's hide' — 바로 앞의 강아지에게 붙인 이름"
+    }
+  ]
+}

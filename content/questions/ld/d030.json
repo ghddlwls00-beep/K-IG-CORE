@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d030",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d030-q1",
+      "type": "중심 내용",
+      "prompt": "이 편지의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "손님이 가격표를 바꿔 달아 시계를 헐값에 샀다",
+        "사장이 가격표를 잘못 붙여 손님에게 사과했다",
+        "영수증을 잃어버려 손님에게 돈을 물어 주었다",
+        "시계 값을 잘못 알고 싸게 팔아 해고됐다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        6,
+        9,
+        10
+      ],
+      "note": "2·6·9·10번 줄 'he fired me today' · 'it said 495' · 'the watch cost $4.95' · 'I sold the watch for $4.95' · 'cost $495'에서 확인."
+    },
+    {
+      "id": "d030-q2",
+      "type": "세부 사실",
+      "prompt": "손님이 시계를 사려고 한 까닭으로 옳은 것은?",
+      "options": [
+        "아내에게 선물하려고",
+        "딸의 졸업 선물로 주려고",
+        "골동품을 모으는 취미가 있어서",
+        "자기 시계가 고장 나서"
+      ],
+      "answer": 0,
+      "evidence": [
+        4
+      ],
+      "note": "4번 줄 'He wanted to buy his wife a present'에서 확인."
+    },
+    {
+      "id": "d030-q3",
+      "type": "다음에 할 일",
+      "prompt": "글쓴이가 윌마에게 곧 하겠다고 한 일로 옳은 것은?",
+      "options": [
+        "직접 만나러 간다",
+        "다시 편지를 보낸다",
+        "전화로 소식을 전한다",
+        "사진을 찍어 보낸다"
+      ],
+      "answer": 1,
+      "evidence": [
+        11
+      ],
+      "note": "11번 줄 'I'll send you another letter soon'에서 확인."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr206",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr206-q1",
+      "type": "세부 사실",
+      "prompt": "글에서 19세기 후반 도시의 문제로 언급되지 않은 것은?",
+      "options": [
+        "화재",
+        "쓰레기",
+        "실업",
+        "범죄"
+      ],
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "인용: crime, fires, garbage, disease"
+    },
+    {
+      "id": "pr206-q2",
+      "type": "한 단계 추론",
+      "prompt": "글의 내용으로 보아, 19세기 후반 시골에 도서관이나 극장이 드물었던 까닭으로 알맞은 것은?",
+      "options": [
+        "사람들이 도시보다 덜 고립되어 있어서",
+        "도시보다 즐길 거리가 더 많아서",
+        "사람들이 창작에 관심이 없어서",
+        "시설을 유지할 인구가 모자라서"
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "인용: large populations were necessary to support libraries, theaters / first developed as part of the trend toward urbanization"
+    }
+  ]
+}

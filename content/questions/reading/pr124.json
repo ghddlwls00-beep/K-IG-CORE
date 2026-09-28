@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr124",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr124-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "나무가 많은 건물은 그늘이 넓어 여름에 시원하다",
+        "과학자들이 시카고 주택 단지에 나무를 새로 심었다",
+        "아이들은 나무가 없는 곳에서 더 안전하게 자란다",
+        "나무가 많은 곳에서는 범죄가 덜 일어난다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        3
+      ],
+      "note": "근거: 'they do a lot more than give shade' · 'violence and property crimes were nearly twice as high ... where vegetation was low'"
+    },
+    {
+      "id": "pr124-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 미루어 볼 때, 나무가 거의 없는 건물 구역에 대해 짐작할 수 있는 것은?",
+      "options": [
+        "주민들이 더 자주 모여 서로 가까울 것이다",
+        "이웃끼리 모일 만한 곳이 적어 유대가 약할 것이다",
+        "아이들을 더 잘 돌보는 분위기일 것이다",
+        "연구에서 비교 대상으로 쓰이지 않았을 것이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
+      "note": "근거: 'Greenery creates a natural gathering space for neighbors and, ultimately, stronger bonds in the community'"
+    }
+  ]
+}

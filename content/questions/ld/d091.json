@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d091",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d091-q1",
+      "type": "세부 사실",
+      "prompt": "초등학생들의 하루에 대한 설명으로 가장 알맞은 것은?",
+      "options": [
+        "과목마다 다른 선생님을 만난다",
+        "선생님 없이 스스로 공부한다",
+        "대부분의 시간을 한 선생님과 보낸다",
+        "오전 수업만 듣고 집에 간다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "'Children usually meet with one teacher for most of the day'가 하루 대부분을 한 선생님과 보낸다는 것을 보여 줌"
+    },
+    {
+      "id": "d091-q2",
+      "type": "세부 사실",
+      "prompt": "기술 과정이나 직업 과정을 듣는 학생들의 목적으로 가장 알맞은 것은?",
+      "options": [
+        "졸업 뒤 일자리에 대비하려고",
+        "대학에 들어갈 준비를 하려고",
+        "중학교 과목을 다시 배우려고",
+        "외국에 나가 살려고"
+      ],
+      "answer": 0,
+      "evidence": [
+        9
+      ],
+      "note": "'Other students take technical or vocational courses that prepare them for jobs after they graduate'가 졸업 뒤 일자리에 대비하려는 것임을 보여 줌"
+    },
+    {
+      "id": "d091-q3",
+      "type": "중심 내용",
+      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "초등 교육과 중등 교육의 교사를 뽑는 방법",
+        "초등 교육과 중등 교육의 대상과 배우는 것",
+        "초등 교육과 중등 교육에 드는 비용",
+        "초등 교육과 중등 교육을 합친 까닭"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        3,
+        5,
+        8
+      ],
+      "note": "'elementary education, is for children from age 6 to 12 or 14' · 'They learn reading, arithmetic, writing' · 'The third level is secondary education' · 'a variety of subjects are taught in the same school'이 초등·중등 교육의 대상과 배우는 것을 설명함"
+    }
+  ]
+}

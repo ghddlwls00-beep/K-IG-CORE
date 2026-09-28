@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr130",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr130-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "재미없는 일이 가장 큰 지루함을 준다",
+        "할 일이 없는 날이 가장 즐겁다",
+        "휴일이 길어야 일이 즐겁다",
+        "일은 지루함을 막고 휴일을 더 즐겁게 한다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "'a preventive of boredom' · 'makes holidays more delicious' — 일은 지루함을 막고 휴일을 더 즐겁게 함"
+    },
+    {
+      "id": "pr130-q2",
+      "type": "세부 사실",
+      "prompt": "'find more zest in his free time'의 조건으로 글에 나온 것은?",
+      "options": [
+        "쉬지 않고 밤낮으로 일하는 것",
+        "활력을 해칠 만큼 일하지 않는 것",
+        "재미있는 일만 골라서 하는 것",
+        "휴일을 되도록 자주 갖는 것"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "'Provided a man does not have to work so hard as to impair his vigor' — 활력을 해칠 만큼 고되게 일하지 않는다면"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr137",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr137-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "청년들의 무료 봉사가 가난한 지역에 희망을 준다",
+        "가난한 지역 사람들이 청년들에게 농사짓는 법을 가르친다",
+        "청년들이 보수를 받고 가난한 지역에서 글을 가르친다",
+        "정부가 가난한 지역의 식수 문제를 해결해 준다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "'volunteer to teach, without pay' · 'all is not lost' · 'less discouraged' — 청년들의 무료 봉사로 주민들이 희망을 얻음"
+    },
+    {
+      "id": "pr137-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "글에서 'They'가 가리키는 대상으로 가장 적절한 것은?",
+      "options": [
+        "청년들",
+        "지역 주민들",
+        "정부 기관",
+        "농업 전문가들"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'the formerly hopeless members of the communities' · 'They become less discouraged' — They는 예전에 희망을 잃었던 지역 주민들"
+    }
+  ]
+}

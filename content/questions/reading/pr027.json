@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr027",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr027-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "미래의 꿈은 접어 두고 오늘만 생각하며 살아라",
+        "현실적 목표를 세워 한 걸음씩 나아가라",
+        "원대한 계획을 세울수록 꿈을 이루기 쉬워진다",
+        "다른 사람의 조언에 따라 계획을 자주 바꿔라"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        5
+      ],
+      "note": "1번 'Don't wish your life away making impossible plans', 5번 'Set yourself realistic goals ... one step at a time'이 근거"
+    },
+    {
+      "id": "pr027-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 불가능한 일을 이루려 애쓸 때 생기는 결과로 언급된 것은?",
+      "options": [
+        "목표를 더 빨리 이루게 된다",
+        "다른 사람들이 도와주기 시작한다",
+        "걱정이 사라지고 마음이 편해진다",
+        "새로운 불안이 많이 생겨난다"
+      ],
+      "answer": 3,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "3번 'things that you know are not possible', 4번 'You'll only worry ... trigger a whole host of new anxieties'가 근거"
+    }
+  ]
+}

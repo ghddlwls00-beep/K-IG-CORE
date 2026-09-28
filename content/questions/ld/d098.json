@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d098",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d098-q1",
+      "type": "세부 사실",
+      "prompt": "오염된 공기가 물질에 미치는 영향으로 이 강의가 말한 것은?",
+      "options": [
+        "강철과 콘크리트 같은 강한 물질까지 상할 수 있다",
+        "강철과 콘크리트는 오염된 공기에서도 닳지 않는다",
+        "강철과 콘크리트는 깨끗한 공기에서 더 빨리 닳는다",
+        "강철과 콘크리트만 상하고 다른 물질은 괜찮다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'Most materials wear out more quickly in polluted air' · 'can even damage strong materials like steel and concrete' — 강한 물질까지 상함"
+    },
+    {
+      "id": "d098-q2",
+      "type": "다음에 할 일",
+      "prompt": "오염을 당장 멈추려면 사람들이 해야 할 일로 말한 것은?",
+      "options": [
+        "사업체들이 이 문제에 신경 쓰게 설득한다",
+        "편리한 기계 여럿을 그만 쓴다",
+        "식량을 주는 식물을 더 많이 기른다",
+        "오염을 일으키는 사업체에 벌을 준다"
+      ],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
+      "note": "'If people wanted to stop pollution immediately, they would have to stop using many of the machines that make life easier' — 기계를 많이 쓰지 않아야 함"
+    },
+    {
+      "id": "d098-q3",
+      "type": "세부 사실",
+      "prompt": "오염을 천천히 멈추는 방법으로 이 강의가 말한 것은?",
+      "options": [
+        "과학자와 엔지니어가 오염이 적은 비행기와 배를 만든다",
+        "정부가 오염을 내는 공장 문을 모두 닫게 한다",
+        "과학자와 엔지니어가 오염이 적은 차와 공장을 만든다",
+        "과학자들이 흐려진 공기를 맑게 걸러 낸다"
+      ],
+      "answer": 2,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "'Pollution can also be stopped slowly' · 'Scientists and engineers can develop automobiles and factories that produce less pollution' — 오염이 적은 차와 공장"
+    }
+  ]
+}

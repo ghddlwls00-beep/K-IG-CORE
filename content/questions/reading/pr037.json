@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr037",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr037-q1",
+      "type": "main",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "지식이 많을수록 사람은 실수를 덜 하게 된다",
+        "작은 지식은 위험하지만 큰 지식은 오히려 안전하다",
+        "사람을 잘못 이끄는 것은 지식에 대한 오만이다",
+        "무언가를 대충 아는 것이 가장 좋은 처방이다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "1번 'the arrogance of knowledge, that misleads men'이 이 글의 요지이다."
+    },
+    {
+      "id": "pr037-q2",
+      "type": "vocab",
+      "prompt": "'The best remedy against this'의 'this'가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "사람들이 가진 지식의 양",
+        "무언가를 정말로 잘 아는 것",
+        "크거나 작은 지식",
+        "지식에 대한 오만"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "2번 'The best remedy against this'의 'this'는 1번의 'the arrogance of knowledge'를 가리킨다."
+    }
+  ]
+}

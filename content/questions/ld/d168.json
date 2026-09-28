@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "d168",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d168-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "사막 한가운데 도시에서 서핑을 하게 된 사연",
+        "캘리포니아 바닷가에 서핑장이 생긴 사연",
+        "학생들이 방과 후 서핑을 그만둔 사연",
+        "태평양의 큰 파도로 서핑이 금지된 사연"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "note": "'meet at a place called Big Surf for an afternoon of surfing', 'Tempe is in the middle of the desert', 'How did surfing in the desert become possible?', 'It all started' 참고"
+    },
+    {
+      "id": "d168-q2",
+      "type": "세부 사실",
+      "prompt": "몇 년 전 덱스터가 캘리포니아에 간 까닭은?",
+      "options": [
+        "서핑을 배우려고",
+        "학교에 다니려고",
+        "휴가를 보내려고",
+        "파도 풀장을 지으려고"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "'a man named Dexter spent his vacation in California' 참고"
+    }
+  ]
+}

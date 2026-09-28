@@ -1,0 +1,44 @@
+{
+  "v": 1,
+  "lesson": "pr184",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr184-q1",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면 예전 한국인의 직장 생활에 관한 설명으로 옳은 것은?",
+      "options": [
+        "나이가 든 뒤에야 처음 회사에 들어갔다",
+        "회사를 그만두고 교수가 되는 일이 많았다",
+        "일자리를 찾아 미국으로 많이 떠났다",
+        "젊을 때 들어간 회사에서 계속 일했다"
+      ],
+      "answer": 3,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "'Koreans tended to have one job for their whole life', 'When they were young, they went to work for a company, and they stayed with that company' — 젊을 때 들어간 회사에 계속 머묾"
+    },
+    {
+      "id": "pr184-q2",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "두 나라는 한 직장에 머무는 햇수가 다르다",
+        "한국과 미국의 고용 형태는 거의 같다",
+        "한국의 고용 방식이 미국보다 더 낫다",
+        "경영학 교수가 되는 길은 나라마다 크게 다르다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "note": "'employment patterns in Korea and the United States', 'some important differences', 'the number of years a person stays with a job' — 두 나라의 근속 햇수 차이가 중심"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr045",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr045-q1",
+      "type": "세부 사실",
+      "prompt": "이 글의 내용과 일치하는 것은?",
+      "options": [
+        "전화 예절은 다른 곳에서 지키는 예절과는 전혀 다르다",
+        "전화를 오래 쓰는 사람일수록 권리가 더 커진다",
+        "전화는 똑같은 권리를 가진 여러 사람이 함께 쓴다",
+        "전화 예절에서는 상대에 대한 배려보다 말투가 중요하다"
+      ],
+      "answer": 2,
+      "evidence": [
+        6
+      ],
+      "note": "6번 'shared by several people who have an equal right to its use'에 근거함."
+    },
+    {
+      "id": "pr045-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'its use'의 'its'가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "전화기",
+        "전화 예절",
+        "여러 사람의 권리",
+        "다른 사람에 대한 배려"
+      ],
+      "answer": 0,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "6번 'its use'의 its는 5번 'Do not keep the telephone to yourself'의 the telephone을 가리킴."
+    }
+  ]
+}

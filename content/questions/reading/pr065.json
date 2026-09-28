@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr065",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr065-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "에너지는 값이 비싸더라도 깨끗하기만 하면 된다",
+        "온실 효과를 피하려면 청정하고 저렴한 에너지원이 필요하다",
+        "온실 효과를 줄이려면 에너지를 되도록 적게 쓰는 수밖에 없다",
+        "온실 효과는 과학자들이 이미 해결한 문제이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2,
+        5
+      ],
+      "note": "1번 'In order to avoid the greenhouse effect, we have to find other sources of energy', 2번 'They have to be clean and less expensive', 5번 'take steps to find clean energy'에 근거함."
+    },
+    {
+      "id": "pr065-q2",
+      "type": "세부 사실",
+      "prompt": "태양 에너지에 대한 설명으로 글의 내용과 일치하는 것은?",
+      "options": [
+        "과학자들은 태양 에너지가 유일한 청정 에너지원이라고 본다",
+        "태양 에너지는 차보다 비행기에 더 알맞다",
+        "과학자들은 태양 에너지로는 전기를 만들 수 없다고 본다",
+        "태양 에너지로 만든 전기는 차와 비행기에 쓸 수 있다"
+      ],
+      "answer": 3,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "3번 'one such source is solar energy', 4번 'It can be used to produce electricity, which can then be used to run cars and fly airplanes'에 근거함."
+    }
+  ]
+}

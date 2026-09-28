@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d200",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d200-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "문명의 발전에 기여한 것은 호기심이 아닌 노력이다",
+        "인간의 호기심은 문명의 발전을 가로막아 왔다",
+        "문명이 발전할수록 인간의 호기심은 줄어든다",
+        "문명이 발전한 데에는 호기심도 한몫했다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1
+      ],
+      "note": "'Man's curiosity has also contributed to the advancement of civilization' — 인간의 호기심이 문명의 발전에 이바지함"
+    },
+    {
+      "id": "d200-q2",
+      "type": "세부 사실",
+      "prompt": "벤저민 프랭클린에 대해 글에서 말한 것은?",
+      "options": [
+        "번개에만 호기심이 많았다",
+        "모든 것에 호기심이 많았다",
+        "모든 것에 전혀 관심이 없었다",
+        "네덜란드 과학자에게 렌즈를 배웠다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "'Benjamin Franklin was curious about everything' — 프랭클린은 모든 것에 호기심이 많았음"
+    },
+    {
+      "id": "d200-q3",
+      "type": "세부 사실",
+      "prompt": "네덜란드 과학자의 발견 덕분에 크게 발전한 분야로 언급된 것은?",
+      "options": [
+        "항공학",
+        "전기학",
+        "의학",
+        "천문학"
+      ],
+      "answer": 2,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "'The curiosity of a Dutch scientist', 'His discoveries have enabled great advancement to be made in the science of medicine' — 네덜란드 과학자의 발견으로 의학이 크게 발전함"
+    }
+  ]
+}

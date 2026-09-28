@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr144",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr144-q1",
+      "type": "세부 사실",
+      "prompt": "글에서 항공 교통 관제사들이 말한 내용으로 옳은 것은?",
+      "options": [
+        "하늘이 붐벼 바쁠 때에만 스트레스를 크게 느낀다",
+        "할 일이 적을수록 마음이 훨씬 더 편해진다",
+        "할 일이 적은 시간도 항공기가 많을 때 못지않게 힘들다",
+        "공항이 몹시 붐비는 날에 가장 큰 스트레스를 받는다"
+      ],
+      "answer": 2,
+      "evidence": [
+        6
+      ],
+      "note": "'the long stretches of doing relatively little are at least as stressful as' · 'handling many aircraft' — 할 일이 적은 시간도 항공기가 많을 때 못지않게 스트레스를 줌"
+    },
+    {
+      "id": "pr144-q2",
+      "type": "한 단계 추론",
+      "prompt": "글로 보아 제조업 근로자에 대해 추론할 수 있는 것은?",
+      "options": [
+        "조용한 곳에서 일해 소음 걱정이 전혀 없다",
+        "소음 때문에 자주 일을 멈추고 쉬어야 한다",
+        "기계 덕분에 스트레스를 덜 받는다",
+        "일하는 속도를 스스로 정하기 어렵다"
+      ],
+      "answer": 3,
+      "evidence": [
+        4
+      ],
+      "note": "'the stress of being paced by mechanical requirements of the assembly line' — 일하는 속도가 기계에 맞춰 정해짐"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d029",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d029-q1",
+      "type": "세부 사실",
+      "prompt": "엘리자베스 노리스가 있는 레인으로 옳은 것은?",
+      "options": [
+        "3번 레인",
+        "2번 레인",
+        "4번 레인",
+        "5번 레인"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "3번 줄 'In lane 3, we see Elizabeth Norris'에서 확인."
+    },
+    {
+      "id": "d029-q2",
+      "type": "세부 사실",
+      "prompt": "마르타 페레즈가 50미터 배영 말고도 잘한다고 한 종목으로 옳은 것은?",
+      "options": [
+        "200미터 평영",
+        "400미터 개인혼영",
+        "50미터 접영",
+        "100미터 자유형"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "2번 줄 'better at the 50 meter backstroke' · 'good at the 100 meter freestyle, too'에서 확인."
+    },
+    {
+      "id": "d029-q3",
+      "type": "말한 사람의 목적/태도",
+      "prompt": "화자가 샐리 밀러에 대해 예상하는 것으로 가장 적절한 것은?",
+      "options": [
+        "친구들이 다른 선수를 응원해서 불리하다",
+        "응원 덕분에 이길 수도 있다",
+        "응원 소리에 긴장해 실수할 것이다",
+        "응원이 없어도 쉽게 우승할 것이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        5,
+        6,
+        7
+      ],
+      "note": "5~7번 줄 'A lot of her friends have come' · 'all cheering for Sally' · 'Sally may win with all that help'에서 확인."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr050",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr050-q1",
+      "type": "세부 사실",
+      "prompt": "언어가 없는 사회에서 각 개인이 의존하게 되는 것은 무엇인가?",
+      "options": [
+        "정부의 지원과 보호",
+        "다른 사람들과의 협동",
+        "자기 자신의 힘과 능력",
+        "공동의 목표와 계획"
+      ],
+      "answer": 2,
+      "evidence": [
+        3
+      ],
+      "note": "3번 dependent on his own strength and ability, lack ... the help of others가 근거"
+    },
+    {
+      "id": "pr050-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'explaining them to others'에서 them이 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "언어를 사용하지 않는 사람들",
+        "개인이나 집단의 목표",
+        "다른 사람의 도움",
+        "협동으로 하는 일들"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "1번 cooperative enterprises, 2번 such activities, explaining them to others가 근거"
+    }
+  ]
+}

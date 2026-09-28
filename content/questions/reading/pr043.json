@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr043",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr043-q1",
+      "type": "세부 사실",
+      "prompt": "이 글의 내용과 일치하는 것은?",
+      "options": [
+        "무엇을 손질할지 정하는 일은 그리 어렵지 않다",
+        "복원 전문가들은 그리 많은 훈련을 받지 않는다",
+        "복원 전문가들은 화가보다 작품의 의도를 더 잘 안다",
+        "먼지 제거 같은 기술적인 작업은 꽤 간단하다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "2번 'such as dirt removal, are quite straightforward'에 근거함."
+    },
+    {
+      "id": "pr043-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 보아 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "잘 훈련된 복원 전문가라도 화가의 의도를 확신하기는 어렵다",
+        "복원에서 가장 중요한 일은 그림을 새것처럼 만드는 것이다",
+        "기술만 뛰어나면 복원할 때 따로 판단할 일은 거의 없다",
+        "복원 전문가들은 그림을 그린 화가와 함께 작업한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        5
+      ],
+      "note": "1번 'highly trained', 'would have to be the original painter to know exactly', 5번 'extremely difficult to determine'에 근거함."
+    }
+  ]
+}
