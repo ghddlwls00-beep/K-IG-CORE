@@ -23,6 +23,21 @@ export interface ServerLearningCourse<T = unknown> {
   access: (licence: { key: string; plan: string }) => Promise<ServerLearningAccess>;
   /** the data the review screen draws — for these items only, and only those of open lessons */
   itemData: (keys: readonly string[], access: ServerLearningAccess) => Record<string, T>;
+  /**
+   * 단계 2-나 E2 — the owner's "내 답도 맞아요" list (/admin/license): what an item asks and its model answer, in plain words.
+   * Only the admin route calls it, for the owner. null for a key the course does not have.
+   */
+  describe?: (key: string) => ReportedItem | null;
+}
+
+/** An item as the owner's report list shows it. */
+export interface ReportedItem {
+  lessonId: string;
+  lessonTitle: string;
+  /** what the learner was asked (the Korean sentence, or the instruction and its sentence) */
+  prompt: string;
+  /** the model answer and the answers already taken — what a report is judged against */
+  answers: string[];
 }
 
 const COURSES: Record<string, ServerLearningCourse> = {

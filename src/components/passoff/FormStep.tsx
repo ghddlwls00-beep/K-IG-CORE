@@ -3,9 +3,11 @@
 import { useRef, useState } from "react";
 import type { PassoffFormItem } from "@/lib/passoffTypes";
 import { expectedLabel, gradeChoice, gradeSelect, gradeShort, hasHangul } from "@/lib/passoffGrading";
-import { notePassoffAttempt, type PassoffAttempt } from "@/lib/passoffLearning";
+import { notePassoffAttempt, type PassoffAnswerMode, type PassoffAttempt } from "@/lib/passoffLearning";
 import { optionOrder, type FormItemState } from "@/lib/passoffLesson";
 import { IconCheck } from "../icons";
+import { MyAnswerReport } from "../learning/MyAnswerReport";
+import { LESSON_REPORT_NOTE, useLessonReport } from "./lessonReport";
 import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, tone, usePassoffLearner, type FontSize } from "./ui";
 
 /**
@@ -95,6 +97,10 @@ type Phase = "answer" | "retry" | "right" | "shown";
  *
  * A choice item's options come in the order its id gives (passoffLesson.ts optionOrder — the same on every reload, device
  * and in the review; 작업기록 할 일 5); a button hands back its option's own index (`data-option`), which gradeChoice checks.
+ *
+ * 단계 2-나 E2 — "내 답도 맞아요" (§8-6) under a wrong result ('한 번 더' · the answer shown): the words tapped (with their
+ * labels), the option picked or the word typed (on a card opened on the check's `missed` answer, that answer until another
+ * is checked). In the lesson it is kept for judging (useLessonReport); on the review screen `onReport` hands it to the frame.
  */
 export function FormItemCard({
   item,
@@ -108,6 +114,9 @@ export function FormItemCard({
   onAttempt,
   test = false,
   missed,
+  onReport,
+  reported,
+  reportNote,
 }: {
   item: PassoffFormItem;
   lessonId: string;
@@ -124,9 +133,27 @@ export function FormItemCard({
   test?: boolean;
   /** the check's wrong answer — the card opens on '한 번 더' */
   missed?: string;
+  /** "내 답도 맞아요" — who records it (the lesson's own report when absent) */
+  onReport?: (mine: { answer: string; mode: PassoffAnswerMode }) => void;
+  /** reported already (the review frame knows; the lesson card keeps its own) */
+  reported?: boolean;
+  /** the line once reported */
+  reportNote?: string;
 }) {
   const learner = usePassoffLearner();
+  const lessonReport = useLessonReport();
   const again = missed !== undefined;
+  const [reportedHere, setReportedHere] = useState(false);
+  /** the last answer graded wrong, as the learner gave it — what "내 답도 맞아요" sends (the check's, on a card opened on it) */
+  const [lastWrong, setLastWrong] = useState<string | null>(missed ? missed : null);
+  const isReported = reported ?? reportedHere;
+  const mode: PassoffAnswerMode = item.kind === "short" ? "typed" : "tap";
+  function sendReport() {
+    if (lastWrong === null || isReported) return;
+    if (onReport) onReport({ answer: lastWrong, mode });
+    else lessonReport({ lessonId, itemId: item.id, kind: item.kind, help: answerSeen ? "reveal" : "none", mode, answer: lastWrong });
+    setReportedHere(true);
+  }
   const [phase, setPhase] = useState<Phase>(again ? "retry" : "answer");
   const [tries, setTries] = useState(again ? 1 : 0);
   const [firstRight, setFirstRight] = useState<boolean | null>(again ? false : null);
@@ -145,12 +172,14 @@ export function FormItemCard({
   const composing = useRef(false);
   const settled = phase === "right" || phase === "shown";
 
+  /** `answer`: as the learner gave it — the words tapped with their labels ("quickly(부사)"), the option, the word typed */
   function record(correct: boolean, answer?: string) {
     const first = tries === 0;
     if (first) {
       setFirstRight(correct);
       onFirstTry(correct);
     }
+    if (!correct) setLastWrong(answer ?? "");
     // the help taken BEFORE this answer: "한 번 더" is not help; the answer shown in an earlier presentation is
     const note = onAttempt ?? ((attempt: PassoffAttempt) => notePassoffAttempt(attempt, learner));
     note({
@@ -189,7 +218,9 @@ export function FormItemCard({
       if (res.wrongLabels.length) parts.push(`이름표가 틀린 것이 있어요(${res.wrongLabels.length}개)`);
       setSelectNote(parts.join(" · "));
     }
-    record(res.correct, picked.map((i) => item.tokens[i]).join(" "));
+    // with its labels: the review's results, the wrong-answer list and a report show what was really given (E2 수정 — a right
+    // word with a wrong label read as a right answer there)
+    record(res.correct, picked.map((i) => (labels[i] ? `${item.tokens[i]}(${labels[i]})` : item.tokens[i])).join(" "));
   }
 
   function toggleToken(i: number) {
@@ -395,6 +426,7 @@ export function FormItemCard({
         <div className="flex flex-col gap-1">
           <Verdict ok={false}>한 번 더 해 보세요.</Verdict>
           {selectNote ? <p className="text-label text-ink-soft">{selectNote}</p> : null}
+          {lastWrong !== null ? <MyAnswerReport reported={isReported} note={reportNote ?? LESSON_REPORT_NOTE} onReport={sendReport} /> : null}
         </div>
       ) : null}
       {phase === "right" ? <Verdict ok>맞았어요.</Verdict> : null}
@@ -406,6 +438,7 @@ export function FormItemCard({
               {item.answer.join(" / ")}
             </p>
           ) : null}
+          {lastWrong !== null ? <MyAnswerReport reported={isReported} note={reportNote ?? LESSON_REPORT_NOTE} onReport={sendReport} /> : null}
         </div>
       ) : null}
       {settled && item.why ? <p className={`${FONT[font].text} text-ink`}>{item.why}</p> : null}

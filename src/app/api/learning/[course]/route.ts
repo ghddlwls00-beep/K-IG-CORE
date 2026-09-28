@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { planOpensCourse } from "@/lib/license";
 import { verifyLicenseSession } from "@/lib/licenseSession";
 import { addDays, learningDay } from "@/lib/learning/day";
-import { mergeRecords, planDay, sanitizeRecord } from "@/lib/learning/engine";
+import { mergeRecords, planDay, sanitizeRecord, wrongList } from "@/lib/learning/engine";
+import { applyBringForward, forwardedItems } from "@/lib/learning/practice";
 import { acceptDeviceRecord, restrictRecord, sameRecord, type LearningSyncAnswer } from "@/lib/learning/review";
 import { serverLearningCourse } from "@/lib/learning/serverCourses";
 import { changeLearningRecord, isServerLearningCourse } from "@/lib/learning/serverStore";
@@ -23,8 +24,20 @@ import { licenseIdFor } from "@/lib/serverLicense";
  *      that changed it;
  *   4. answered with the record, today's plan by the SERVER's clock, tomorrow's count and the data of the plan's items
  *      ONLY — the course's server adapter reads them from its lesson files (serverCourses.ts), only for open lessons; with
- *      `planOnly` (the course list's line, a finished lesson) no item data at all. Nothing else of a paid lesson leaves
+ *      `planOnly` (the course list's line, answers going up) no item data at all. Nothing else of a paid lesson leaves
  *      the server here.
+ *
+ * 단계 2-나 E2 (공통-학습-엔진.md §8-5 · 8-7 · §11) — more may be asked in the same body:
+ *   - `view: "notes"`: the answer also carries the wrong-answer list (engine.ts wrongList) of the open lessons — keys, kinds
+ *     and the learner's own last wrong answers, no item text — and `items` holds the data of ONE lesson's listed items
+ *     (`lesson`), none without it. The list names the items; their words come lesson by lesson, open lessons only;
+ *   - `view: "record"`: the record kept in step and nothing else — `items` empty, as with `planOnly` (a lesson page after a
+ *     completion or a report, the wrong-answer list after a practice run, the map page);
+ *   - `forward: [lesson ids]`: those open lessons' learning items come back by tomorrow (practice.ts applyBringForward —
+ *     PASS-OFF: the boxes of a topic map filled wrong). Done here on the stored copy, because a merge keeps the stored item
+ *     when two copies differ only in their due day — and done even when the device's record is not taken (`taken: false`):
+ *     the request is made with this licence's session, as the map's own record (the progress API) is. The answer's
+ *     `forwarded` counts those lessons' items that come back by tomorrow.
  */
 
 const requestWindows = new Map<string, { startedAt: number; count: number }>();
@@ -90,9 +103,21 @@ export async function POST(request: Request, { params }: { params: Promise<{ cou
         })
       : null;
 
+    // E2: lessons brought forward — open ones only, a lesson id at most once, a course's worth at most
+    const forward = Array.isArray(body.forward)
+      ? [...new Set(body.forward.filter((id): id is string => typeof id === "string" && access.lessonOpen(id)))].slice(0, 100)
+      : [];
+
     const record = await changeLearningRecord(course, session.payload.key, (stored) => {
-      if (!sent) return { record: stored, changed: false };
+      if (!sent) {
+        // a forward is this licence's own request (its map page), so it is made on the stored record even when the device's
+        // record is not taken (another licence last kept it on this device)
+        if (!forward.length) return { record: stored, changed: false };
+        const copy = structuredClone(stored);
+        return { record: copy, changed: applyBringForward(copy, forward, now) > 0 };
+      }
       const merged = mergeRecords(stored, sent);
+      if (forward.length) applyBringForward(merged, forward, now);
       return { record: merged, changed: !sameRecord(stored, merged) };
     });
 
@@ -104,16 +129,23 @@ export async function POST(request: Request, { params }: { params: Promise<{ cou
     };
     const reviewable = restrictRecord(record, open, access.lessonOpen);
     const plan = planDay(reviewable, today, adapter.profile);
+    // E2: the wrong-answer list names its items; only the asked lesson's come with their words. A page that only keeps the
+    // record in step (`planOnly` · view "record" — the course list, a lesson finished, a report, a practice run, answers
+    // going up) gets no item's words at all
+    const notes = body.view === "notes" ? wrongList(reviewable) : null;
+    const noteKeys = notes ? (notes.find((lesson) => lesson.lessonId === body.lesson)?.items.map((item) => item.key) ?? []) : [];
     const items =
-      body.planOnly === true
+      body.planOnly === true || body.view === "record"
         ? {}
-        : adapter.itemData(
-            plan.items.map((item) => item.key),
-            access,
-          );
+        : adapter.itemData(notes ? noteKeys : plan.items.map((item) => item.key), access);
     const tomorrow = planDay(reviewable, addDays(today, 1), adapter.profile).items.length;
     const answer: LearningSyncAnswer = { record, plan, items, tomorrow, owner, taken };
-    return NextResponse.json({ success: true, ...answer }, { headers: { "Cache-Control": "no-store" } });
+    // E2: with a forward, how many of those lessons' learning items come back by tomorrow — the map page says so (0: none to bring)
+    const forwarded = forward.length ? forwardedItems(record, forward, now) : undefined;
+    return NextResponse.json(
+      { success: true, ...answer, ...(notes ? { notes } : {}), ...(forwarded !== undefined ? { forwarded } : {}) },
+      { headers: { "Cache-Control": "no-store" } },
+    );
   } catch (error) {
     console.error(`Learning record sync failed (${course}):`, error);
     return fail(500, "복습 기록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.");

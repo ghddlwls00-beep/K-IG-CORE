@@ -16,7 +16,11 @@
  *   M5 'STUDENT 진도' 는 그대로 열림(현재 챕터 1까지 해금)
  *   M6 LIFE 코드의 'PASS-OFF 진도' → 'LIFE — 모든 TOPIC 열림' · 칩 모두 '열림' · 수동 해금 칸 없음(점검 7)
  *   M7 콘솔 오류 · 예외 0(음성 파일 502 제외)
- *   깨기(각각 exit 1 이어야): --break=no-reset(초기화를 안 누름 → M3 FAIL) · --break=no-settopic(수동 해금을 안 고름 → M4 FAIL)
+ *   M8 (단계 2-나 E2) '내 답도 맞아요' 신고 모아 보기: 이 이용권의 학습 기록에 올라간 신고 하나 → '신고 불러오기' → 그 문항(레슨 이름 ·
+ *      한국어 · 신고 1건 · 학습자 1명 · 신고한 답) · 판정 단추 없음(보기만) · 이용권 코드는 목록 밖 어디에도 없음(이름 없는 묶음)
+ *   준비의 TOPIC 2 열기는 구성도 다시 채우기 조건(단계 2-나 E2 에서 켬) 때문에 레슨 셋과 { mapRefillTopic: 1 } 을 같이 보냄
+ *   깨기(각각 exit 1 이어야): --break=no-reset(초기화를 안 누름 → M3 FAIL) · --break=no-settopic(수동 해금을 안 고름 → M4 FAIL) ·
+ *     --break=no-report(신고를 올리지 않음 → M8 FAIL)
  */
 const fs = require("fs");
 const os = require("os");
@@ -33,8 +37,8 @@ const arg = (name, fallback = null) => {
 };
 const ORIGIN = arg("base", "http://localhost:3461");
 const BREAK = arg("break", "");
-if (BREAK && !["no-reset", "no-settopic"].includes(BREAK)) {
-  console.error(`모르는 깨기: ${BREAK} — no-reset · no-settopic`);
+if (BREAK && !["no-reset", "no-settopic", "no-report"].includes(BREAK)) {
+  console.error(`모르는 깨기: ${BREAK} — no-reset · no-settopic · no-report`);
   process.exit(2);
 }
 if (!/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(ORIGIN)) {
@@ -104,8 +108,18 @@ const activate = (key, keep) => `(async () => {
     // a LIFE code registered to this browser too (listed on the admin page) — the STUDENT pass stays the one in use
     const act = await tab.eval(activate(lifeKey, false));
     const act2 = await tab.eval(activate(key, true));
-    const progress = await tab.eval(`fetch('/api/progress/passoff-grammar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ updates: ['pg01-1','pg01-2','pg01-3'].map(lessonId => ({ lessonId, completed: true })) }) }).then(x => x.json()).then(p => p.progress.unlockedThrough)`);
+    const progress = await tab.eval(`fetch('/api/progress/passoff-grammar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ updates: [...['pg01-1','pg01-2','pg01-3'].map(lessonId => ({ lessonId, completed: true })), { mapRefillTopic: 1 }] }) }).then(x => x.json()).then(p => p.progress.unlockedThrough)`);
     if (act !== "ok" || act2 !== "ok" || progress !== 2) throw new Error(`setup: ${act} · ${act2} · unlockedThrough ${progress}`);
+    // one "내 답도 맞아요" in this licence's learning record (the engine's shape — a report on pg01-1's first ④ sentence)
+    const lessonFile = JSON.parse(fs.readFileSync(path.join(REPO, "content/lessons/passoff-grammar/pg01-1.json"), "utf8"));
+    const reported = lessonFile.blocks.find((b) => b.type === "drill").produce[0];
+    // an answer of this run only — the stand-in store may hold earlier runs' reports on the same item
+    const reportAnswer = `Zq my own answer ${crypto.randomBytes(3).toString("hex")} is right.`;
+    if (BREAK !== "no-report") {
+      const day = new Date(Date.now() + 5 * 3_600_000).toISOString().slice(0, 10);
+      const sent = await tab.eval(`fetch('/api/learning/passoff-grammar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ owner: null, record: { v: 1, course: 'passoff-grammar', lessons: {}, items: {}, log: [], reports: [{ item: ${JSON.stringify(reported.id)}, answer: ${JSON.stringify(reportAnswer)}, day: ${JSON.stringify(day)}, status: 'pending' }], lastStudyDay: ${JSON.stringify(day)} } }) }).then(r => r.status)`);
+      if (sent !== 200) throw new Error(`report setup: ${sent}`);
+    }
 
     // M1 STUDENT's list, as it was
     await tab.goto(ORIGIN + "/student", 2500);
@@ -169,6 +183,17 @@ const activate = (key, keep) => `(async () => {
     const p6 = await tab.eval(passoffPanel(lifeKey));
     const lifeSelect = await tab.eval(`(() => { const panels = [...document.querySelectorAll('div.rounded-2xl')].filter(d => d.innerText.trim().startsWith('PASS-OFF GRAMMAR · LIFE')); return panels.length ? Boolean(panels[0].querySelector('select')) : null; })()`);
     check("M6 LIFE 코드: 'LIFE — 모든 TOPIC 열림' · 칩 모두 '열림' · 수동 해금 칸 없음", c6 === "clicked" && p6.includes("LIFE — 모든 TOPIC 열림") && !p6.includes("잠김") && lifeSelect === false, { panel: p6.slice(0, 160), lifeSelect });
+
+    // M8 the reports, grouped by item — read only, no names
+    const loadButton = await tab.eval(`(() => { const s = document.querySelector('[data-admin-learning-reports]'); const b = s && [...s.querySelectorAll('button')].find(x => x.innerText.trim() === '신고 불러오기'); if (!b) return 'no button'; b.click(); return 'clicked'; })()`);
+    await waitFor(tab, `Boolean(document.querySelector('[data-admin-learning-reports] [role=status]'))`, 10000);
+    const reportRow = await tab.eval(`(() => { const e = document.querySelector('[data-report-item=${JSON.stringify(reported.id)}]'); return e ? e.innerText.replace(/\\s+/g, ' ') : null; })()`);
+    const section = await tab.eval(`(() => { const s = document.querySelector('[data-admin-learning-reports]'); return s ? { buttons: [...s.querySelectorAll('button')].map(b => b.innerText.trim()), text: s.innerText } : null; })()`);
+    const small = await tab.eval(`[...document.querySelectorAll('[data-admin-learning-reports] button')].filter(b => { const r = b.getBoundingClientRect(); return r.width < 44 || r.height < 44; }).length`);
+    check(`M8 신고 모아 보기: '신고 불러오기' → ${reported.id}(1인칭 · 한국어 · 신고 N건 · 학습자 N명 · 이번에 올린 답 '${reportAnswer}') · 판정 단추 없음 · 코드 0 · 44px 미만 0`,
+      loadButton === "clicked" && reportRow && reportRow.includes("1인칭") && reportRow.includes(reported.ko) && /신고 \d+건/.test(reportRow) && /학습자 \d+명/.test(reportRow) && reportRow.includes(reportAnswer) &&
+        section && section.buttons.length === 1 && section.buttons[0] === "다시 불러오기" && !section.text.includes(key) && small === 0,
+      { loadButton, reportRow: reportRow && reportRow.slice(0, 200), buttons: section && section.buttons, small });
 
     const errs = [...tab.events.console, ...tab.events.exceptions].filter((e) => !/502|Failed to load resource/.test(e));
     check("M7 콘솔 오류 · 예외 0(음성 파일 502 제외)", errs.length === 0, errs.slice(0, 5));

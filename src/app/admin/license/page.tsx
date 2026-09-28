@@ -14,6 +14,8 @@ import {
   type AdminLicenseRecord,
   type LegacyHistoryItem,
 } from "@/lib/adminLicenseList";
+// 단계 2-나 E2 — the learners' "내 답도 맞아요" reports, grouped by item (read-only; the component and its route are new)
+import { LearningReports } from "@/components/admin/LearningReports";
 
 /**
  * ISS-14 — the list below used to be this key in the ISSUING browser's localStorage,
@@ -51,6 +53,9 @@ interface AdminPassoffProgress {
     lessonCount: number;
     completedCount: number;
     requiredCount: number;
+    lastLessonCompleted: boolean;
+    /** the topic's "구성도 다시 채우기" done (단계 2-나 E2 — the next topic's last condition) */
+    mapRefilled: boolean;
     complete: boolean;
     unlocked: boolean;
   }[];
@@ -1132,13 +1137,20 @@ export default function AdminLicensePage() {
                               <li key={topic.topic} title={topic.label} className="rounded-lg border border-blue-200 bg-white px-2 py-0.5">
                                 TOPIC {topic.topic} · {topic.completedCount}/{topic.lessonCount}
                                 {topic.complete ? " · 완료" : topic.unlocked ? " · 열림" : " · 잠김"}
+                                {/* E2 수정: an open topic not complete yet — whether its map was done (why every lesson finished may not open the next;
+                                    not for a LIFE code, whose topics are all open) */}
+                                {passoffProgressByKey[item.key].mapRefillRequired && !passoffProgressByKey[item.key].everyTopicOpen && topic.unlocked && !topic.complete
+                                  ? topic.mapRefilled
+                                    ? " · 구성도 함"
+                                    : " · 구성도 안 함"
+                                  : ""}
                               </li>
                             ))}
                           </ul>
                           <p className="mt-2 text-[11.5px] text-blue-900/80">
                             다음 TOPIC 이 열리는 조건: 레슨 80% 이상 + 마지막 레슨
                             {passoffProgressByKey[item.key].mapRefillRequired
-                              ? " + 구성도 다시 채우기 1번"
+                              ? " + 구성도 다시 채우기 1번(레슨을 마친 뒤)"
                               : " (구성도 다시 채우기 조건은 공통 학습 엔진이 생길 때까지 꺼져 있음)"}
                           </p>
                         </div>
@@ -1149,6 +1161,8 @@ export default function AdminLicensePage() {
               </div>
             )}
           </div>
+
+          <LearningReports />
         </div>
       )}
     </main>

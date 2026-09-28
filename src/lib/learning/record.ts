@@ -176,6 +176,17 @@ export function recordLearnerAttempt(
   return effect;
 }
 
+/** reportMyAnswer, into this learner's record ("내 답도 맞아요" — 단계 2-나 E2, merged onto the E1 records per learner). */
+export function reportLearnerAnswer(
+  profile: CourseProfile,
+  learner: string | null,
+  itemKey: string,
+  input: Omit<AttemptInput, "correct" | "pending"> & { answer: string },
+  nowMs: number = Date.now(),
+): AttemptEffect {
+  return recordLearnerAttempt(profile, learner, itemKey, { ...input, correct: false, pending: true }, nowMs);
+}
+
 /** Calls `listener` when any learner's record of this course changes, in this tab or another one. */
 export function onLearnerRecordChange(course: string, listener: () => void): () => void {
   if (typeof window === "undefined") return () => {};

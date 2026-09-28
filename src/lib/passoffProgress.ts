@@ -311,7 +311,11 @@ export async function setPassoffTopic(key: string, topic: number): Promise<Passo
   return changeRecord(key, (record, now) => raisePassoffUnlock(record, topic, topics, now));
 }
 
-/** The topic-end "구성도 다시 채우기" done — for the common learning engine (단계 2-나), which will call this. */
+/**
+ * The topic-end "구성도 다시 채우기" done. Since 단계 2-나 E2 the map page's browser sends the same change through the
+ * progress API (POST { mapRefillTopic } → updatePassoffProgress — PassoffProgressProvider.recordMapRefill); this is that
+ * change for server code.
+ */
 export async function recordPassoffMapRefill(
   key: string,
   topic: number,

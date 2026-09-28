@@ -15,9 +15,11 @@ import { useLicense } from "./LicenseProvider";
 import { isFreePreviewLesson, planOpensCourse } from "@/lib/license";
 import type { LessonPresentation } from "@/lib/curriculumPresentation";
 import { READING_LENGTHS } from "@/lib/readingLengths";
-import { passoffTopicOf, topicWithParticle } from "@/lib/passoffUnlock";
+import { passoffLessonsDone, passoffTopicOf, topicWithParticle } from "@/lib/passoffUnlock";
 import { ChapterAudioBar } from "./ChapterAudioBar";
 import { usePassoffProgress, usePassoffUnlockNotice } from "./PassoffProgressProvider";
+// the topic's "구성도 다시 채우기" links (단계 2-나 E2) — from the server's progress answer only: no learning engine in them
+import { PassoffMapNext, PassoffMapRow } from "./passoff/MapEntry";
 
 // PASS-OFF GRAMMAR's '오늘 복습' line — loaded on that course's list only, so the learning engine it brings is not in the
 // other courses' list code (it draws nothing on the server anyway: it reads this device's record)
@@ -373,8 +375,10 @@ export function CourseDashboard({
               <span aria-hidden>→</span>
             </Link>
           ) : null}
-          {/* PASS-OFF GRAMMAR: today's review — with a licence the server's plan (공통-학습-엔진.md §8-4 · §10); other courses have none yet */}
+          {/* PASS-OFF GRAMMAR: today's review — with a licence the server's plan (공통-학습-엔진.md §8-4 · §10); other courses have
+              none yet — and a topic's "구성도 다시 채우기" when it is the step left (단계 2-나 E2) */}
           {isPassoff ? <PassoffReviewEntry learner={licenseInfo?.licenseId ?? null} freeKeys={passoffFreeReviewKeys ?? []} /> : null}
+          {isPassoff ? <PassoffMapNext progress={passoffProgress} /> : null}
           <div className="mt-4 flex flex-col gap-2">
             <p className="text-label text-ink">
               학습 진도율: <span className="font-semibold tabular-nums">{completedCount}</span> / {totalLessons}개 완료{" "}
@@ -583,6 +587,10 @@ export function CourseDashboard({
                         );
                       })}
                     </ul>
+                    {/* PASS-OFF GRAMMAR: the topic's "구성도 다시 채우기" (단계 2-나 E2) — an open topic, with a licence; a link once its lessons are done */}
+                    {isPassoff && hasCourseAccess && chapterUnlocked && !passoffChecking && passoffTopic !== null && filter === "all" ? (
+                      <PassoffMapRow topic={passoffTopic} done={Boolean(passoffState?.mapRefilled)} ready={Boolean(passoffState && passoffLessonsDone(passoffState))} />
+                    ) : null}
                   </div>
                 )}
               </div>

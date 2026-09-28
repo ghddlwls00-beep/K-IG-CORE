@@ -9,13 +9,15 @@ import { speakText, stopSpeech } from "@/lib/speech";
 import type { PlanItem } from "@/lib/learning/types";
 import {
   PASSOFF_COURSE,
+  PASSOFF_NOTES_HREF,
   PASSOFF_PROFILE,
   PASSOFF_SENTENCE_KINDS,
   passoffLessonOfItem,
   type PassoffAttempt,
   type PassoffReviewItem,
 } from "@/lib/passoffLearning";
-import { ReviewSession, type ReviewCourse, type ReviewItemProps, type ReviewResult, type ReviewSource } from "../learning/ReviewSession";
+import { ReviewSession, REVIEW_REPORT_NOTE, type ReviewCourse, type ReviewItemProps, type ReviewResult, type ReviewSource } from "../learning/ReviewSession";
+import { NOTES_REPORT_NOTE, WrongNotes } from "../learning/WrongNotes";
 import { IconTextSize } from "../icons";
 import { ComposeCard } from "./ComposeCard";
 import { FormItemCard } from "./FormStep";
@@ -35,6 +37,9 @@ import { FONT_LABEL, segmentButton, spokenOf, type FontSize, type Speaker } from
  * A sentence sounds exactly as in its lesson — the same string through the same function (lessonSpeechForm of its
  * lesson · spokenOf), so the same clip (scripts/lib/spoken-texts.cjs lists it already). Text size and sentence speed are
  * the lesson's (기본 · 크게 · 특대 · 1.0× · 0.85×).
+ *
+ * 단계 2-나 E2 — the same course description draws the wrong-answer list (`view` "notes" — the engine's WrongNotes, whose
+ * "지금 다시 풀기" uses these cards in mode "notes") and hands the cards "내 답도 맞아요" (onReport — the frame records it).
  */
 
 const isSentence = (data: PassoffReviewItem): data is PassoffReviewItem & { item: PassoffProduceItem; kind: "produce" | "transfer" } =>
@@ -58,7 +63,17 @@ const orderItems = (entries: PlanItem[], data: Record<string, PassoffReviewItem>
     return found && isSentence(found) ? found.item : null;
   });
 
-export function PassoffReview({ source }: { source: ReviewSource<PassoffReviewItem> }) {
+export function PassoffReview({
+  source,
+  view = "review",
+  titles = {},
+}: {
+  source: ReviewSource<PassoffReviewItem>;
+  /** "notes": the wrong-answer list (/passoff-grammar/review?notes=1) */
+  view?: "review" | "notes";
+  /** the course's lesson titles by id (public — the course list shows them): the wrong-answer list's lesson rows */
+  titles?: Record<string, string>;
+}) {
   const [font, setFont] = useState<FontSize>("normal");
   const [speed, setSpeed] = useState<1 | 0.85>(1);
   const [showSettings, setShowSettings] = useState(false);
@@ -132,11 +147,12 @@ export function PassoffReview({ source }: { source: ReviewSource<PassoffReviewIt
     </div>
   ) : null;
 
-  function renderItem({ data, mode, missed, onAnswer, onNext }: ReviewItemProps<PassoffReviewItem>) {
+  function renderItem({ data, mode, missed, onAnswer, onNext, onReport, reported }: ReviewItemProps<PassoffReviewItem>) {
     const record = (attempt: PassoffAttempt) =>
       onAnswer({ correct: attempt.correct, help: attempt.help, mode: attempt.mode, answer: attempt.answer, detail: firsts.current[attempt.itemId] });
     // "again": the check's wrong answer, which the card opens on
     const missedAnswer = mode === "again" && missed && !missed.correct && missed.answer ? missed.answer : undefined;
+    const reportNote = mode === "notes" ? NOTES_REPORT_NOTE : REVIEW_REPORT_NOTE;
     if (isSentence(data)) {
       return (
         <ComposeCard
@@ -150,9 +166,12 @@ export function PassoffReview({ source }: { source: ReviewSource<PassoffReviewIt
           speaker={speaker}
           ruleTitle={data.ruleTitle}
           test={mode === "test"}
-          afterMiss="이 문장은 내일 다시 나와요."
+          afterMiss={mode === "notes" ? "" : "이 문장은 내일 다시 나와요."}
           missed={missedAnswer !== undefined ? { answer: missedAnswer, spoken: missed?.mode === "voice" } : undefined}
           onAttempt={record}
+          onReport={onReport}
+          reported={reported}
+          reportNote={reportNote}
           onFirstTry={({ first }) => {
             if (first) firsts.current[data.item.id] = first;
           }}
@@ -171,6 +190,9 @@ export function PassoffReview({ source }: { source: ReviewSource<PassoffReviewIt
         test={mode === "test"}
         missed={mode === "again" ? (missedAnswer ?? "") : undefined}
         onAttempt={record}
+        onReport={onReport}
+        reported={reported}
+        reportNote={reportNote}
         onFirstTry={() => {}}
         onShown={() => {}}
         onDone={() => onNext()}
@@ -236,7 +258,9 @@ export function PassoffReview({ source }: { source: ReviewSource<PassoffReviewIt
     toolbar,
     toolbarPanel,
     orderItems,
+    notesHref: PASSOFF_NOTES_HREF,
+    lessonTitle: (lessonId) => titles[lessonId] ?? lessonId,
   };
 
-  return <ReviewSession course={course} source={source} />;
+  return view === "notes" ? <WrongNotes course={course} source={source} /> : <ReviewSession course={course} source={source} />;
 }

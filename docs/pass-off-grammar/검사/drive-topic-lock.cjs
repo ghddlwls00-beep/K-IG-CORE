@@ -11,8 +11,12 @@
  *   D1 이용권 없음: 목록 — TOPIC 1 '첫 두 레슨 무료 체험' · TOPIC 2 '이용권 등록 후 열림'(이용권 없는 사람에게 'TOPIC 1을 마치면' 이라고 하지 않음)
  *   D2 STUDENT 이용권(새것): 목록 — '서버에 저장됨' · TOPIC 1 열림(자물쇠 없음) · 해금 기준 · TOPIC 2 'TOPIC 1을 마치면 열림' · 자물쇠 ·
  *      줄마다 'TOPIC 1을 마치면 열림' · 가로 넘침 0
- *   D3 pg01-1 · pg01-2 는 API 로, pg01-3 은 레슨 화면 5단계를 끝까지 → 화면이 서버에 완료를 보냄 · 끝 막대(LessonEndBar)는 5단계 전
- *      '이 강의 학습 완료' 꺼짐 + '5단계를 모두 마치면 완료돼요.', 끝난 뒤 '학습 완료함'(취소 단추 없음)
+ *   D3 pg01-1 · pg01-2 는 API 로, pg01-3 은 레슨 화면 5단계를 끝까지 · 끝 막대(LessonEndBar)는 5단계 전 '이 강의 학습 완료' 꺼짐 +
+ *      '5단계를 모두 마치면 완료할 수 있어요.' — 단계 2-나 E2(완료 방식 통일): 5단계를 마쳐도 저절로 완료되지 않음(D3f — 단추가 켜지고
+ *      서버에 기록 없음) → 학습자가 끝 막대를 눌러 완료(D3e '학습 완료함' · 취소 단추 없음) → 화면이 서버에 완료를 보냄(D3b — 구성도
+ *      전이라 아직 TOPIC 1) → 대주제 마지막 레슨 끝에 '구성도 다시 채우기'(D3g) → 그 쪽에서 칩을 칸에 놓고 칸마다 규칙 · 문장을 골라
+ *      (2번 칸 문장만 일부러 틀림) 결과 · 'TOPIC 2가 열렸어요' · 틀린 칸 레슨(pg01-2)의 복습 문항이 기기 · 서버 모두 앞으로(D3h)
+ *   D3r (E2) 레슨 ④ 첫 문장을 틀리고 '내 답도 맞아요' → '신고했어요' · 기기 기록에 신고 · 이용권이라 서버 기록에도(관리자 목록의 재료)
  *   D4 목록 — 'TOPIC 2가 열렸어요.'(점검 3: 2 는 받침 없음) · TOPIC 1 '대주제 완료' · '3 / N개 완료' · TOPIC 2 열림(자물쇠 없음)
  *
  *   2026-09-28 main 합친 뒤(공통 틀 2 — 과정 목록을 새로 짬): 대주제 머리의 칩('학습 가능' · '🔒 잠금' · '확인 중')과 레슨 카드의
@@ -21,7 +25,13 @@
  *   2026-09-28(작업기록 할 일 5): ③ 보기 · ② 규칙 확인 · ⑤ 다시 확인의 보기가 문항 id 로 정한 순서로 보이므로, 정답은 자리가 아니라
  *   보기의 원래 번호(단추의 data-option)로 누른다.
  *   D5 다시 열면 알림 없음
- *   D6 잠금 화면 pg03-1 'TOPIC 2를 마치면 열려요' · 기기에 남은 완료(pg02-1~3)를 보내면 서버 답으로 레슨이 열림
+ *   D6 잠금 화면 pg03-1 'TOPIC 2를 마치면 열려요' · (E2 수정 — 구성도는 대주제 끝) 레슨 전 TOPIC 2 구성도는 서버가 안 받음 · 기기에 남은
+ *      완료(pg02-1~3)를 잠금 화면이 보내면 서버에 기록되고 조건 줄에 구성도 쪽 링크가 생김(D6b) · 그 뒤 구성도를 기록하면 레슨이 열림(D6c)
+ *   D3h (E2 수정) 틀린 칸 레슨의 복습 문항은 기기 · 서버 모두 '내일'로(오늘 계획엔 없음) · 결과 '… 내일부터 복습에 다시 나와요' · 기기의
+ *      당기기 대기열(kig-learning-forward) 비움
+ *   (합친 판 2026-09-28 — E1 점검 반영의 이용권마다 기기 칸: 레슨 · 구성도가 쓰는 기록과 당기기 대기열은 이 이용권 칸
+ *    `kig-learning:passoff-grammar@<이용권 id>` · `kig-learning-forward:passoff-grammar@<이용권 id>` 에서 읽고, 서버 기록은 그 id 로 물음.
+ *    pg01-2 의 씨 기록은 엔진이 스스로 남기는 모양(step 2 · 통과 날 둘 · 마지막 답에서 4일 — 서버의 다시 판정 settleItem 이 그대로 둠))
  *   D7 잠금 화면 가로 넘침 0 · 누를 곳 44px · 콘솔 오류 0(음성 파일이 없어 나는 502 제외)
  *   D8 점검 6: 쪽을 다시 열 때 서버 답이 늦어도 — 기기에 둔 지난 답으로 TOPIC 2~3 이 바로 열려 보임 · 둔 답이 없으면
  *      '진도 확인 중…'(잠김으로 그렸다가 바뀌지 않음)
@@ -38,6 +48,9 @@
  *     --break=no-cache        D8 전에 기기에 둔 답을 지움 → D8a FAIL
  *     --break=no-reset        D9 에서 초기화를 안 누름 → D9a FAIL
  *     --break=same-licence    D10 의 '다른 이용권' 완료를 이 이용권 것으로 적어 넣음(보내져야 하는 판) → D10a FAIL
+ *     --break=press-early     5단계 끝 확인(D3f) 전에 끝 막대를 누름 → D3f FAIL(저절로 완료되는 판을 잡을 수 있음)
+ *     --break=no-press        끝 막대를 누르지 않음 → D3e · D3b FAIL(누르지 않으면 완료가 서버로 가지 않음)
+ *     --break=map-all-right   구성도에서 일부러 틀리지 않음 → D3h FAIL(틀린 칸 레슨 당기기를 보는 칸이 실패할 수 있음)
  */
 const fs = require("fs");
 const path = require("path");
@@ -54,7 +67,7 @@ const arg = (name, fallback = null) => {
 };
 const ORIGIN = arg("base", "http://localhost:3461");
 const BREAK = arg("break", "");
-const BREAKS = ["seen", "no-pending", "topic-lock-off", "no-cache", "no-reset", "same-licence"];
+const BREAKS = ["seen", "no-pending", "topic-lock-off", "no-cache", "no-reset", "same-licence", "press-early", "no-press", "map-all-right"];
 if (BREAK && !BREAKS.includes(BREAK)) {
   console.error(`모르는 깨기: ${BREAK} — ${BREAKS.join(" · ")}`);
   process.exit(2);
@@ -253,7 +266,45 @@ async function finishSteps(tab, id) {
     await tab.eval(`(() => { const sec = document.querySelector('section[aria-labelledby="passoff-wrap-check"]'); const b = sec.querySelector('[role=group] button[data-option="${L.rule.check.answer}"]'); b.click(); return true; })()`);
     await sleep(900);
   }
-  return tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.includes('레슨 완료')`);
+  // 단계 2-나 E2: the five steps done — '5단계를 모두 마쳤어요' (before the press) or '레슨 완료 — 5단계를 모두 마쳤어요.' (after)
+  return tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.includes('5단계를 모두 마쳤어요')`);
+}
+/** the end bar's '이 강의 학습 완료' — pressed as a learner does (단계 2-나 E2: the lesson is finished only by this) */
+async function pressComplete(tab) {
+  const r = await tab.eval(`(() => { const b = document.querySelector('section[aria-label="강의 마치기"] button[aria-label="학습 완료 체크"]'); if (!b || b.disabled) return 'no button'; b.click(); return 'clicked'; })()`);
+  await sleep(700);
+  return r;
+}
+/** the map of a topic as the lesson files give it (passoffMap.ts — box i is the topic's i-th lesson) */
+function mapOf(topicIndex) {
+  return index.groups[topicIndex].lessons.map((id) => {
+    const L = lessonView(id);
+    return { id, title: titleOf(id), rule: L.rule.title, sentence: L.anchors[0].en };
+  });
+}
+const clickText = (selector, text) => `(() => { const b = [...document.querySelectorAll(${JSON.stringify(selector)})].find((x) => x.textContent.replace(/\\s+/g, ' ').trim() === ${JSON.stringify(text)} && !x.disabled); if (!b) return 'no ' + ${JSON.stringify(text)}; b.click(); return 'clicked'; })()`;
+/** "구성도 다시 채우기" on its page: the chips in order, then each box's rule and sentence — `wrongBox`'s sentence another box's */
+async function fillMap(tab, map, wrongBox = -1) {
+  const log = [];
+  for (const lesson of map) {
+    log.push(await tab.eval(clickText('[aria-label="레슨 칩"] button', lesson.title)));
+    await sleep(150);
+  }
+  log.push(await tab.eval(clickText("main button", "다음")));
+  await sleep(300);
+  // the box screen, as a phone shows it: every target 44px, no sideways scroll
+  for (const small of await tab.eval(SMALL)) log.push(`작은 것 ${small}`);
+  if (await tab.eval(OVERFLOW)) log.push("가로 넘침");
+  for (const [box, lesson] of map.entries()) {
+    log.push(await tab.eval(clickText('[aria-labelledby="map-rule"] button', lesson.rule)));
+    await sleep(100);
+    const sentence = box === wrongBox ? map[(box + 1) % map.length].sentence : lesson.sentence;
+    log.push(await tab.eval(clickText('[aria-labelledby="map-sentence"] button', sentence)));
+    await sleep(100);
+    log.push(await tab.eval(clickText("main button", box + 1 < map.length ? "다음 칸" : "결과 보기")));
+    await sleep(300);
+  }
+  return log.filter((x) => x !== "clicked");
 }
 async function finishLesson(tab, id) {
   await tab.goto(BASE + id, 1800);
@@ -311,7 +362,7 @@ const check = (label, ok, detail) => {
     const lock0 = await tab.eval(LOCKED(0));
     const lock1 = await tab.eval(LOCKED(1));
     check("D2a '서버에 저장됨'", (await tab.eval(MAIN_TEXT)).includes("서버에 저장됨"));
-    check("D2b TOPIC 1: 열림(자물쇠 없음) · '레슨 3개와 마지막 레슨을 마치면 다음 대주제'", lock0 === false && /레슨 3개와 마지막 레슨을 마치면 다음 대주제/.test(a0), { a0, lock0 });
+    check("D2b TOPIC 1: 열림(자물쇠 없음) · '레슨 3개와 마지막 레슨, 구성도 다시 채우기를 마치면 다음 대주제'", lock0 === false && /레슨 3개와 마지막 레슨, 구성도 다시 채우기를 마치면 다음 대주제/.test(a0), { a0, lock0 });
     check("D2c TOPIC 2: 'TOPIC 1을 마치면 열림' · 자물쇠", /TOPIC 1을 마치면 열림/.test(a1) && lock1 === true, { a1, lock1 });
     await tab.eval(`document.querySelector('#section-1 button[aria-expanded]').click(), true`);
     await sleep(500);
@@ -321,22 +372,116 @@ const check = (label, ok, detail) => {
     check("D2e 목록 가로 넘침 0", (await tab.eval(OVERFLOW)) === false);
     if (BREAK === "topic-lock-off") await tab.eval(`localStorage.removeItem('drive:passoff-open-all'), true`);
 
-    // D3 pg01-1 · pg01-2 by the API, pg01-3 through its five steps
+    // D3 pg01-1 · pg01-2 by the API, pg01-3 through its five steps — and the learner's press
     const pre = await tab.eval(`fetch('/api/progress/passoff-grammar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ updates: [{ lessonId: 'pg01-1', completed: true }, { lessonId: 'pg01-2', completed: true }] }) }).then(r => r.json()).then(d => d.progress.unlockedThrough)`);
+    // pg01-2's review items on this device, learned five days ago, answered right four days ago and yesterday, and not due
+    // for three more days (step 2 — the state the engine itself leaves; the server's re-judging, E1's settleItem, keeps it)
+    // — the map's missed box brings them forward (D3h). 합친 판: in THIS licence's record on the device
+    // ("kig-learning:passoff-grammar@<licence id>" — E1's records per licence), which the lesson and the map page write to
+    const seedAt = Date.now() - 5 * 86_400_000;
+    const learningDay = (ms) => new Date(ms + 5 * 3_600_000).toISOString().slice(0, 10);
+    const pg012 = lessonView("pg01-2");
+    const seedKeys = [...pg012.produce.map((p) => [p.id, "produce"]), ...pg012.transfers.map((t) => [t.id, "transfer"])];
+    const seedDay = learningDay(seedAt);
+    const yesterday = learningDay(Date.now() - 86_400_000);
+    const later = learningDay(Date.now() + 3 * 86_400_000);
+    const LEARNER_SLOT = `kig-learning:passoff-grammar@${licenseId}`;
+    await tab.eval(`(() => {
+      const record = { v: 1, course: 'passoff-grammar', lessons: { 'pg01-2': { at: ${JSON.stringify(new Date(seedAt).toISOString())}, day: ${JSON.stringify(seedDay)} } }, items: {}, log: [], reports: [], lastStudyDay: ${JSON.stringify(yesterday)} };
+      for (const [key, kind] of ${JSON.stringify(seedKeys)}) record.items[key] = { lessonId: 'pg01-2', kind, stage: 'learning', firstDay: ${JSON.stringify(seedDay)}, dueDay: ${JSON.stringify(later)}, step: 2, passDays: [${JSON.stringify(learningDay(Date.now() - 4 * 86_400_000))}, ${JSON.stringify(yesterday)}], lastDay: ${JSON.stringify(yesterday)}, lastCorrect: true, reviewDay: ${JSON.stringify(yesterday)}, lapses: 0 };
+      localStorage.setItem(${JSON.stringify(LEARNER_SLOT)}, JSON.stringify(record));
+      return true;
+    })()`);
+    await tab.goto(BASE + "pg01-3", 1800);
+    // D3r "내 답도 맞아요" inside the lesson: ④'s first sentence answered wrong, reported, then fixed
+    const L013 = lessonView("pg01-3");
+    const firstSentence = L013.sets[0][0];
+    const wrongOwn = "Zq my lesson answer is right.";
+    await tab.eval(clickTab(3));
+    await sleep(400);
+    await tab.eval(setField(4, "textarea", wrongOwn));
+    await tab.eval(clickIn(4, "확인"));
+    await sleep(400);
+    const lessonReport = await tab.eval(`(() => { const sec = document.querySelector('section[aria-labelledby="passoff-step-4"]'); const b = sec && sec.querySelector('[data-my-answer-report="button"]'); if (!b) return 'no button'; b.click(); return 'clicked'; })()`);
+    await sleep(400);
+    const lessonNote = await tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-4"]').innerText.includes('신고했어요')`);
+    await tab.eval(setField(4, "textarea", firstSentence.en));
+    await tab.eval(clickIn(4, "다시 확인"));
+    await sleep(400);
+    await tab.eval(clickIn(4, "다음 문장"));
+    await sleep(500);
+    const deviceReports = await tab.eval(`(JSON.parse(localStorage.getItem(${JSON.stringify(LEARNER_SLOT)}) || '{"reports":[],"log":[]}')).reports.filter(r => r.item === ${JSON.stringify(firstSentence.id)})`);
+    // this licence's record as the server keeps it (the record is not sent: nothing of the device's goes up with this ask)
+    const SERVER_RECORD = `fetch('/api/learning/passoff-grammar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ record: null, owner: ${JSON.stringify(licenseId)}, planOnly: true }) }).then(r => r.json())`;
+    const serverReports = await (async () => {
+      const end = Date.now() + 8000;
+      while (Date.now() < end) {
+        const list = await tab.eval(`${SERVER_RECORD}.then(d => (d.record && d.record.reports || []).filter(r => r.item === ${JSON.stringify(firstSentence.id)}))`);
+        if (list.length) return list;
+        await sleep(400);
+      }
+      return [];
+    })();
+    check(`D3r 레슨 ④ 첫 문장(${firstSentence.id})을 틀림 → '내 답도 맞아요' → '신고했어요' · 기기 기록에 신고 1(내 답 그대로 · pending) · 이용권이라 서버 기록에도 올라감`,
+      lessonReport === "clicked" && lessonNote && deviceReports.length === 1 && deviceReports[0].answer === wrongOwn && deviceReports[0].status === "pending" &&
+        serverReports.length === 1 && serverReports[0].answer === wrongOwn,
+      { lessonReport, lessonNote, deviceReports, serverReports });
+    // the five steps from the start of the page (the view comes back to the first step not done)
     await tab.goto(BASE + "pg01-3", 1800);
     const barBefore = await tab.eval(END_BAR);
-    check("D3d 끝 막대(5단계 전): '이 강의 학습 완료' 꺼짐 · '5단계를 모두 마치면 완료돼요.'",
-      Boolean(barBefore && barBefore.button && barBefore.button.label === "학습 완료 체크" && barBefore.button.disabled && barBefore.text.includes("5단계를 모두 마치면 완료돼요.")), barBefore);
+    check("D3d 끝 막대(5단계 전): '이 강의 학습 완료' 꺼짐 · '5단계를 모두 마치면 완료할 수 있어요.'",
+      Boolean(barBefore && barBefore.button && barBefore.button.label === "학습 완료 체크" && barBefore.button.disabled && barBefore.text.includes("5단계를 모두 마치면 완료할 수 있어요.")), barBefore);
     const finished = await finishSteps(tab, "pg01-3");
-    check("D3a pg01-3 레슨 화면 5단계 끝 — '레슨 완료'", finished === true && pre === 1, { pre, finished });
+    check("D3a pg01-3 레슨 화면 5단계 끝 — '5단계를 모두 마쳤어요'", finished === true && pre === 1, { pre, finished });
+    // 단계 2-나 E2: nothing finishes by itself — the button is on, the server has nothing, the step says to press it
+    if (BREAK === "press-early") await pressComplete(tab);
+    await sleep(1500);
+    const barReady = await tab.eval(END_BAR);
+    const serverBefore = await tab.eval(`${API_GET}.then(d => Boolean(d.progress.lessons['pg01-3']))`);
+    const step5 = await tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.replace(/\\s+/g, ' ')`);
+    check("D3f 5단계를 마쳐도 저절로 완료되지 않음 — 끝 막대 '이 강의 학습 완료' 켜짐 · 서버에 pg01-3 없음 · 5단계에 '누르면 레슨이 완료돼요'",
+      Boolean(barReady && barReady.button && barReady.button.label === "학습 완료 체크" && !barReady.button.disabled) && serverBefore === false && step5.includes("누르면 레슨이 완료돼요") && !step5.includes("레슨 완료 —"),
+      { barReady, serverBefore, step5: step5.slice(-120) });
+    const pressed = BREAK === "no-press" || BREAK === "press-early" ? "skipped" : await pressComplete(tab);
     const barAfter = await tab.eval(END_BAR);
-    check("D3e 끝 막대(5단계 뒤): '학습 완료함' — 취소 단추 없음(서버는 완료만 받음)",
-      Boolean(barAfter && barAfter.button === null && barAfter.status && barAfter.text.includes("학습 완료함") && !barAfter.text.includes("취소")), barAfter);
-    const synced = await waitFor(tab, `${API_GET}.then(d => d.progress.lessons['pg01-3'] && d.progress.unlockedThrough === 2)`);
-    const state = await tab.eval(`${API_GET}.then(d => ({ u: d.progress.unlockedThrough, pg013: d.progress.lessons['pg01-3'] || null }))`);
-    check("D3b 화면이 완료를 서버에 보냄 → unlockedThrough 2 (레슨 화면 → PassoffProgressProvider → API)", synced, state);
+    check("D3e 끝 막대를 누름 → '학습 완료함' — 취소 단추 없음(서버는 완료만 받음) · 5단계 '레슨 완료'",
+      pressed !== "no button" && Boolean(barAfter && barAfter.button === null && barAfter.status && barAfter.text.includes("학습 완료함") && !barAfter.text.includes("취소")) &&
+        (await tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.includes('레슨 완료')`)),
+      { pressed, barAfter });
+    const synced = await waitFor(tab, `${API_GET}.then(d => Boolean(d.progress.lessons['pg01-3']) && d.progress.unlockedThrough === 1 && d.progress.mapRefillRequired === true)`);
+    const state = await tab.eval(`${API_GET}.then(d => ({ u: d.progress.unlockedThrough, map: d.progress.mapRefillRequired, pg013: d.progress.lessons['pg01-3'] || null }))`);
+    check("D3b 누른 완료가 서버로(레슨 화면 → PassoffProgressProvider → API) · 구성도 전이라 아직 TOPIC 1", synced, state);
     const pending = await tab.eval(`localStorage.getItem('kig:passoff:pending:v1')`);
     check("D3c 기기의 보낼 목록이 비워짐", pending === "[]", pending);
+    const entry = await tab.eval(`(() => { const e = document.querySelector('[data-passoff-map-entry="1"]'); return e ? { text: e.innerText.replace(/\\s+/g, ' '), href: (e.querySelector('a') || {}).getAttribute ? e.querySelector('a').getAttribute('href') : null } : null; })()`);
+    check("D3g 대주제 마지막 레슨 끝: 'TOPIC 1 마무리 — 구성도 다시 채우기' · /passoff-grammar/map?topic=1",
+      Boolean(entry && entry.text.includes("TOPIC 1 마무리") && entry.href === "/passoff-grammar/map?topic=1"), entry);
+    // the map page, from that link
+    const map1 = mapOf(0);
+    if (entry && entry.href) await tab.eval(`document.querySelector('[data-passoff-map-entry="1"] a').click(), true`);
+    await waitFor(tab, `Boolean(document.querySelector('[data-passoff-map-stage="place"]'))`, 10000);
+    const mapSmall = await tab.eval(SMALL);
+    const mapOverflow = await tab.eval(OVERFLOW);
+    const missedBox = BREAK === "map-all-right" ? -1 : 1;
+    const fillLog = await fillMap(tab, map1, missedBox);
+    const saved = await waitFor(tab, `Boolean(document.querySelector('[data-passoff-map-saved]'))`, 10000);
+    const result = await tab.eval(`(() => { const s = document.querySelector('[data-passoff-map-stage="result"]'); return s ? s.innerText.replace(/\\s+/g, ' ') : null; })()`);
+    mapSmall.push(...(await tab.eval(SMALL)));
+    const resultOverflow = await tab.eval(OVERFLOW);
+    const after = await tab.eval(`${API_GET}.then(d => ({ u: d.progress.unlockedThrough, refilled: d.progress.topics[0].mapRefilled }))`);
+    const device = await tab.eval(`JSON.parse(localStorage.getItem(${JSON.stringify(LEARNER_SLOT)}) || 'null')`);
+    // E2 수정: the wrong box's lesson comes back TOMORROW (never today — see practice.ts applyBringForward)
+    const tomorrow = learningDay(Date.now() + 86_400_000);
+    const deviceMoved = seedKeys.length > 0 && seedKeys.every(([key]) => device && device.items[key] && device.items[key].dueDay === tomorrow);
+    const server = await tab.eval(SERVER_RECORD);
+    const serverMoved = seedKeys.every(([key]) => server && server.record && server.record.items[key] && server.record.items[key].dueDay === tomorrow);
+    const notToday = Boolean(server && server.plan && !server.plan.items.some((i) => i.lessonId === "pg01-2"));
+    // 합친 판: the queue is this licence's ("kig-learning-forward:<course>@<licence id>")
+    const queueLeft = await tab.eval(`localStorage.getItem(${JSON.stringify(`kig-learning-forward:passoff-grammar@${licenseId}`)})`);
+    check(`D3h 구성도 다시 채우기(2번 칸 문장만 틀림): 결과 '칸 ${map1.length}개 중 ${map1.length - 1}개' · '2인칭 … 내일부터 복습에 다시 나와요' · 'TOPIC 2가 열렸어요' · 서버 구성도 기록 · 2인칭 복습 문항이 기기 · 서버 모두 ${tomorrow}(내일)로 · 오늘 계획엔 없음 · 기기 대기열 비움 · 44px 미만 0 · 넘침 0`,
+      fillLog.length === 0 && saved && result && result.includes(`칸 ${map1.length}개 중 ${map1.length - 1}개`) && result.includes(`${titleOf("pg01-2")}`) && result.includes("내일부터 복습에 다시 나와요") &&
+        result.includes("TOPIC 2가 열렸어요") && after.u === 2 && after.refilled === true && deviceMoved && serverMoved && notToday && queueLeft === null && mapSmall.length === 0 && mapOverflow === false && resultOverflow === false,
+      { fillLog, saved, result: result && result.slice(0, 200), after, deviceMoved, serverMoved, notToday, queueLeft, mapSmall });
 
     // D4 back to the list
     await tab.goto(ORIGIN + "/passoff-grammar", 1500);
@@ -362,12 +507,25 @@ const check = (label, ok, detail) => {
     const lockText = await tab.eval(MAIN_TEXT);
     check("D6a pg03-1 잠금 화면 'TOPIC 2를 마치면 열려요' · 지금 대주제 TOPIC 2 · 아직 기록되지 않은 레슨 3", lockText.includes("순차 학습 잠금") && lockText.includes("TOPIC 2를 마치면 열려요") && lockText.includes(index.groups[1].label) && ["pg02-1", "pg02-2", "pg02-3"].every((id) => lockText.includes(titleOf(id))), lockText.slice(0, 200));
     check("D7a 잠금 화면: 가로 넘침 0 · 누를 곳 44px 미만 0", (await tab.eval(OVERFLOW)) === false && (await tab.eval(SMALL)).length === 0, await tab.eval(SMALL));
+    // E2 수정: TOPIC 2's map refill is taken only after its lessons, so it cannot go first — sent before them it is refused
+    const map2Early = await tab.eval(`fetch('/api/progress/passoff-grammar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ updates: [{ mapRefillTopic: 2 }] }) }).then(r => r.json()).then(d => d.progress.topics[1].mapRefilled)`);
+    check("D6 레슨 전 TOPIC 2 구성도 → 서버가 안 받음(구성도는 대주제 레슨을 마친 뒤)", map2Early === false, map2Early);
+    const map2Link = `Boolean(document.querySelector('main a[href="/passoff-grammar/map?topic=2"]'))`;
+    const linkBefore = await tab.eval(map2Link);
     if (BREAK !== "no-pending") {
       await tab.eval(`localStorage.setItem('kig:passoff:pending:v1', JSON.stringify(['pg02-1','pg02-2','pg02-3'].map((lessonId, i) => ({ lessonId, completed: true, clientUpdatedAt: Date.now() + i, licence: ${JSON.stringify(licenseId)} })))), true`);
     }
+    // the lock screen sends what is still queued; the server's answer counts TOPIC 2's lessons, and its map condition links the map
+    await tab.goto(BASE + "pg03-1", 500);
+    const linked = await waitFor(tab, map2Link, 12000);
+    const recorded6 = await tab.eval(`${API_GET}.then(d => ['pg02-1','pg02-2','pg02-3'].every((id) => d.progress.lessons[id] && d.progress.lessons[id].completed) && d.progress.unlockedThrough === 2)`);
+    check("D6b 기기에 남은 완료(pg02-1~3)를 잠금 화면이 보냄 → 서버에 기록 · TOPIC 3 은 아직(구성도만 남음) · 조건 줄에 구성도 쪽 링크가 생김(보내기 전에는 없음)",
+      linkBefore === false && linked && recorded6, { linkBefore, linked, recorded6, text: (await tab.eval(MAIN_TEXT)).slice(0, 160) });
+    // TOPIC 2's map refill (the page itself is driven in D3h) — then the lesson opens
+    await tab.eval(`fetch('/api/progress/passoff-grammar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ updates: [{ mapRefillTopic: 2 }] }) }).then(r => r.json()).then(d => d.progress.topics[1].mapRefilled)`);
     await tab.goto(BASE + "pg03-1", 500);
     const opened = await waitFor(tab, `${MAIN_TEXT}.includes('예문 떠올리기') && !${MAIN_TEXT}.includes('순차 학습 잠금')`, 12000);
-    check("D6b 기기에 남은 완료(pg02-1~3)를 보내고 서버 답으로 레슨이 열림(router.refresh)", opened, (await tab.eval(MAIN_TEXT)).slice(0, 120));
+    check("D6c 레슨을 마친 뒤 TOPIC 2 구성도를 기록하면 pg03-1 레슨이 열림", opened, (await tab.eval(MAIN_TEXT)).slice(0, 120));
 
     // D8 점검 6 — a page opened again while the server's answer is slow
     await tab.goto(ORIGIN + "/passoff-grammar", 2500); // the list asks once, so this device keeps the answer (TOPIC 3 open)

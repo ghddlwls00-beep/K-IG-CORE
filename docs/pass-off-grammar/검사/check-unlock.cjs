@@ -13,9 +13,13 @@
  *       모르는 id · 완료가 아닌 기록 거절, 한 요청 100개까지
  *   U6  날짜 경계 — 날은 서버 시각의 한국시간 오전 4시 경계(03:59:59.999 KST = 전날, 04:00 = 그날) · 브라우저 시각은
  *       날을 정하지 않음 · 첫 완료 날 유지 · 브라우저 시각은 서버 시각 + 60초까지만
- *   U7  구성도 다시 채우기 설정 — 지금 판(꺼짐)과 켠 판 둘 다 · 출시 설정값(0.8) · 스위치는 양쪽으로 묶임: src/ 에서
- *       진도 파일 밖이 구성도 기록(recordPassoffMapRefill · mapRefillTopic)을 부르면 requireMapRefill 이 true 여야,
- *       아무도 안 부르면 false 여야(코드 단계 C 점검 10 — 엔진이 기록을 붙이고 스위치를 잊으면 여기서 FAIL)
+ *   U7  구성도 다시 채우기 설정 — 켠 판과 끈 판 둘 다 · 출시 설정값(0.8 · 구성도 조건 켬 — 단계 2-나 E2 에서 켬) · 스위치는
+ *       양쪽으로 묶임: src/ 에서 진도 파일 밖이 구성도 기록(recordPassoffMapRefill · mapRefillTopic)을 부르면 requireMapRefill 이
+ *       true 여야, 아무도 안 부르면 false 여야(코드 단계 C 점검 10) · 출시 판(기본 규칙)으로 레슨을 다 마쳐도 구성도가 없으면 잠김 ·
+ *       (단계 2-나 E2 수정) 구성도는 대주제 끝 — 레슨 조건(ceil(0.8n) + 마지막 레슨) 전에 보내면 거절(not-ready, LIFE 도) · 한 요청에
+ *       레슨과 같이 오면 레슨 먼저 · passoffLessonsDone(화면들이 묻는 것)
+ *   U1 ~ U5 · U11 · U13 은 레슨 조건을 보는 칸이라 기록에 모든 대주제의 구성도를 넣고(recordWith 기본값) 쓰기 길에는 구성도 기록을
+ *   같이 보낸다 — 출시 판(구성도 켬) 규칙 그대로 레슨 조건을 잰다. 구성도를 쓰기 길로 보내는 칸(U5 · U6)은 그 대주제 레슨을 먼저 넣는다
  *   U8  저장된 기록 다듬기 — 망가진 값 · 모르는 id · 범위 밖 대주제 · 없는 날짜('2026-02-30' · '2026-13-99') 버림
  *   U9  과정 목록 → 대주제 — 실제 content/courses/passoff-grammar.json 을 이 파일이 따로 묶은 것과 같게
  *   U10 필요 레슨 수 — 0.8·15 같은 곱이 올림으로 튀지 않음
@@ -29,7 +33,9 @@
  *
  * 깨기(사본만 바꿈 — 저장소 파일은 그대로): ratio70 · no-last · reach · decrease · life · day0 · client-clock · map-ignored ·
  * chain-from-1 · shape-day(날짜 모양만 봄 — 점검 전 판) · particle(0 을 받침 없음으로) · raise-down(수동 해금이 내림) ·
- * life-unlocked(LIFE 모양에서 잠김) · map-caller(엔진이 구성도 기록을 부른 것처럼 — 스위치는 꺼진 채) · map-on(부르는 곳 없이 켬)
+ * life-unlocked(LIFE 모양에서 잠김) · map-no-caller(구성도 기록을 부르는 곳이 없어진 것처럼 — 스위치는 켜진 채) ·
+ * map-off(부르는 곳이 있는데 스위치를 끔 — 단계 2-나 E2 전의 판). E2 전의 map-caller · map-on 은 스위치를 켠 뒤 뜻이 없어져
+ * 이 둘로 바꿈 · map-early(레슨 전 구성도도 받음 — E2 점검 전의 판)
  */
 const fs = require("fs");
 const path = require("path");
@@ -68,8 +74,10 @@ const BREAKS = {
   particle: { file: "unlock", from: /\[1, 3, 6, 7, 8, 0\]\.includes\(lastDigit\)/, to: "[1, 3, 6, 7, 8].includes(lastDigit)" },
   "raise-down": { file: "unlock", from: /if \(topic <= before\) return false;/, to: "if (topic === before) return false;" },
   "life-unlocked": { file: "unlock", from: /unlocked: everyTopicOpen \|\| t\.topic <= unlockedThrough/, to: "unlocked: t.topic <= unlockedThrough" },
-  "map-caller": { file: "scan" },
-  "map-on": { file: "unlock", from: /requireMapRefill: false,/, to: "requireMapRefill: true," },
+  "map-no-caller": { file: "scan" },
+  "map-off": { file: "unlock", from: /requireMapRefill: true,/, to: "requireMapRefill: false," },
+  // E2 수정: a map refill taken before the topic's lessons (the E2 판)
+  "map-early": { file: "unlock", from: /else if \(!lessonsDone\(topic\)\) refused\.push\(\{ what, why: "not-ready" \}\);/, to: "" },
 };
 
 const arg = (name) => (process.argv.find((a) => a.startsWith(`--${name}=`)) || "").split("=").slice(1).join("=");
@@ -130,11 +138,17 @@ const NOW = Date.UTC(2026, 8, 27, 3, 0, 0); // 2026-09-27 12:00 KST
 const pad = (n) => String(n).padStart(2, "0");
 const topicOf = (t, n) => ({ topic: t, label: `TOPIC ${t}`, lessonIds: Array.from({ length: n }, (_, i) => `pg${pad(t)}-${i + 1}`) });
 const needed = (n) => Math.max(1, Math.floor((4 * n + 4) / 5)); // ceil(0.8·n), in integers
+/** every topic's "구성도 다시 채우기" done — the cases about the lessons keep the release rule (map refill on) and judge the lessons */
+const allMaps = () => Object.fromEntries(Array.from({ length: 20 }, (_, i) => [String(i + 1), { at: new Date(NOW).toISOString(), day: "2026-09-27" }]));
 function recordWith(ids, extra = {}) {
   const r = U.emptyPassoffRecord(NOW);
+  r.mapRefills = allMaps();
   for (const id of ids) r.lessons[id] = { completed: true, updatedAt: NOW, at: new Date(NOW).toISOString(), day: "2026-09-27" };
   return Object.assign(r, extra);
 }
+/** the map refills of these topics, as the browser sends them (the write path) */
+const mapUpdates = (topics) => topics.map((t) => ({ mapRefillTopic: t.topic }));
+const lessonsOnly = (accepted) => accepted.filter((what) => !what.startsWith("map:"));
 const index = JSON.parse(fs.readFileSync(INDEX, "utf8"));
 const REAL = U.passoffTopicsFromGroups(index.groups);
 const realTopic = (t) => REAL.find((x) => x.topic === t);
@@ -267,7 +281,7 @@ group("U4 줄지 않음");
   check(U.isPassoffLessonOpen("pg03-1", r, topics) && !U.isPassoffLessonOpen("pg04-1", r, topics), "저장 3: TOPIC 3 열림 · 4 잠김");
   // finish TOPIC 1 → 2, then a completion disappears (a record edited by hand, a lesson id retired)
   const r2 = U.emptyPassoffRecord(NOW);
-  U.applyPassoffUpdates(r2, topics[0].lessonIds.map((lessonId) => ({ lessonId, completed: true })), topics, { now: NOW });
+  U.applyPassoffUpdates(r2, [...topics[0].lessonIds.map((lessonId) => ({ lessonId, completed: true })), ...mapUpdates([topics[0]])], topics, { now: NOW });
   check(r2.unlockedThrough === 2, `TOPIC 1 을 마치면 2 — ${r2.unlockedThrough}`);
   delete r2.lessons["pg01-1"];
   check(U.recalculatePassoffUnlock(r2, topics) === 2, "완료 하나가 사라져도 2 그대로");
@@ -291,17 +305,18 @@ group("U5 도달 불가 대주제 기록 거부");
   const r = U.emptyPassoffRecord(NOW);
   const res = U.applyPassoffUpdates(r, [{ lessonId: second.lessonIds[0], completed: true }], REAL, { now: NOW });
   check(!res.changed && Object.keys(r.lessons).length === 0 && res.refused[0] && res.refused[0].why === "locked", `빈 기록에 TOPIC ${second.topic} 완료: 거절 · 바뀐 것 없음이어야 — ${JSON.stringify(res)}`);
-  // every lesson id at once: one topic per request
-  const all = REAL.flatMap((t) => t.lessonIds).map((lessonId) => ({ lessonId, completed: true, clientUpdatedAt: NOW }));
+  // every lesson id at once, with every topic's map refill: one topic per request
+  const all = [...REAL.flatMap((t) => t.lessonIds).map((lessonId) => ({ lessonId, completed: true, clientUpdatedAt: NOW })), ...mapUpdates(REAL)];
   const r2 = U.emptyPassoffRecord(NOW);
   const a = U.applyPassoffUpdates(r2, all, REAL, { now: NOW });
   const firstIds = REAL[0].lessonIds;
-  check(a.accepted.length === firstIds.length && a.accepted.every((id) => firstIds.includes(id)), `모두 한 번에(${all.length}): TOPIC 1 의 ${firstIds.length}개만 받아야 — ${a.accepted.length}`);
+  check(lessonsOnly(a.accepted).length === firstIds.length && lessonsOnly(a.accepted).every((id) => firstIds.includes(id)) && Object.keys(r2.mapRefills).join() === String(REAL[0].topic),
+    `모두 한 번에(${all.length}): TOPIC 1 의 ${firstIds.length}개와 그 구성도만 받아야 — ${a.accepted.length} · 구성도 ${Object.keys(r2.mapRefills).join(",")}`);
   check(r2.unlockedThrough === (REAL[1] ? REAL[1].topic : REAL[0].topic), `첫 요청 뒤 unlockedThrough ${r2.unlockedThrough}`);
   check(Object.keys(r2.lessons).every((id) => firstIds.includes(id)), "TOPIC 2 이후 기록 0");
   const b = U.applyPassoffUpdates(r2, all, REAL, { now: NOW + 1000 });
   const secondIds = REAL[1] ? REAL[1].lessonIds : [];
-  check(b.accepted.filter((id) => secondIds.includes(id)).length === secondIds.length && Object.keys(r2.lessons).length === firstIds.length + secondIds.length, `두 번째 요청: TOPIC 2 까지만 — 저장 ${Object.keys(r2.lessons).length}`);
+  check(lessonsOnly(b.accepted).filter((id) => secondIds.includes(id)).length === secondIds.length && Object.keys(r2.lessons).length === firstIds.length + secondIds.length, `두 번째 요청: TOPIC 2 까지만 — 저장 ${Object.keys(r2.lessons).length}`);
   check(r2.unlockedThrough === (REAL[2] ? REAL[2].topic : r2.unlockedThrough), `두 번째 요청 뒤 unlockedThrough ${r2.unlockedThrough}`);
   // unknown ids, not a completion
   const r3 = recordWith(["pg01-1"]);
@@ -314,8 +329,8 @@ group("U5 도달 불가 대주제 기록 거부");
   ], REAL, { now: NOW });
   check(c.refused.filter((x) => x.why === "unknown").length === 3 && c.refused.filter((x) => x.why === "not-a-completion").length === 2, `모르는 id 3 · 완료 아님 2 거절이어야 — ${JSON.stringify(c.refused)}`);
   check(r3.lessons["pg01-1"].completed === true && !r3.lessons["pg01-2"] && !c.changed, "completed:false 는 완료를 지우지 않음 · 바뀐 것 없음");
-  // map refills: a locked topic refused, the open one taken once (first date kept)
-  const r4 = U.emptyPassoffRecord(NOW);
+  // map refills: a locked topic refused, the open one taken once (first date kept) — its lessons done first (E2 수정)
+  const r4 = recordWith(REAL[0].lessonIds, { mapRefills: {} });
   const d = U.applyPassoffUpdates(r4, [{ mapRefillTopic: REAL[2] ? REAL[2].topic : 3 }, { mapRefillTopic: 1 }, { mapRefillTopic: 42 }, { mapRefillTopic: 1.5 }], REAL, { now: NOW });
   check(r4.mapRefills["1"] && !r4.mapRefills[String(REAL[2] ? REAL[2].topic : 3)] && d.refused.length === 3, `구성도: 잠긴 대주제 · 없는 대주제 · 소수 거절, TOPIC 1 받음 — ${JSON.stringify(d)}`);
   const firstAt = r4.mapRefills["1"].at;
@@ -354,9 +369,9 @@ group("U6 날짜 경계");
   const r3 = U.emptyPassoffRecord(NOW);
   U.applyPassoffUpdates(r3, [{ lessonId: "pg01-1", completed: true, clientUpdatedAt: at4 + 10 * 86_400_000 }, { lessonId: "pg01-2", completed: true, clientUpdatedAt: -5 }], REAL, { now: at4 });
   check(r3.lessons["pg01-1"].updatedAt === at4 + 60_000 && r3.lessons["pg01-2"].updatedAt === 0, `앞선 시각은 +60초까지 · 음수는 0 — ${r3.lessons["pg01-1"].updatedAt - at4} · ${r3.lessons["pg01-2"].updatedAt}`);
-  const r4 = U.emptyPassoffRecord(NOW);
+  const r4 = recordWith(REAL[0].lessonIds, { mapRefills: {} });
   U.applyPassoffUpdates(r4, [{ mapRefillTopic: 1 }], REAL, { now: before4 });
-  check(r4.mapRefills["1"].day === "2026-09-27", `구성도 기록도 같은 경계 — ${r4.mapRefills["1"].day}`);
+  check(r4.mapRefills["1"] && r4.mapRefills["1"].day === "2026-09-27", `구성도 기록도 같은 경계 — ${r4.mapRefills["1"] && r4.mapRefills["1"].day}`);
   // the engine's own function agrees at the boundary
   check(dayModule.learningDay(before4) === "2026-09-27" && dayModule.learningDay(at4) === "2026-09-28", "learning/day.ts 도 같은 경계");
 }
@@ -364,10 +379,14 @@ group("U6 날짜 경계");
 // ---- U7 구성도 다시 채우기 설정 --------------------------------------------------------------------------------------
 group("U7 구성도 다시 채우기 설정");
 {
-  check(U.PASSOFF_UNLOCK_RULE.ratio === 0.8, `출시 설정 ratio 0.8 — ${U.PASSOFF_UNLOCK_RULE.ratio}`);
+  // the release setting (단계 2-나 E2 turned the map refill on — the topic-end map page records it)
+  check(
+    U.PASSOFF_UNLOCK_RULE.ratio === 0.8 && U.PASSOFF_UNLOCK_RULE.requireMapRefill === true,
+    `출시 설정 ratio 0.8 · 구성도 조건 켬 — ${U.PASSOFF_UNLOCK_RULE.ratio} · ${U.PASSOFF_UNLOCK_RULE.requireMapRefill}`,
+  );
   // the switch is tied both ways to who records a map refill: the progress files that carry it are not callers
   const callers = mapRefillCallers();
-  if (breakName === "map-caller") callers.push("src/lib/learning/(깨기 — 공통 엔진이 부른 것처럼):1");
+  if (breakName === "map-no-caller") callers.length = 0;
   check(
     U.PASSOFF_UNLOCK_RULE.requireMapRefill === callers.length > 0,
     callers.length
@@ -376,14 +395,21 @@ group("U7 구성도 다시 채우기 설정");
   );
   const topics = [topicOf(1, 3), topicOf(2, 3), topicOf(3, 3)];
   const ON = { ratio: 0.8, requireMapRefill: true };
-  // the OFF setting named, not the default — so the engine's commit that turns the default on changes only the line above
+  // the OFF setting named, not the default
   const OFF = { ratio: 0.8, requireMapRefill: false };
-  const done = recordWith(topics[0].lessonIds);
+  const done = recordWith(topics[0].lessonIds, { mapRefills: {} });
+  // the release rule itself (the default): every lesson of TOPIC 1 finished, no map refill — still TOPIC 1
+  check(U.judgePassoffTopics(done, topics).unlockedThrough === 1 && !U.isPassoffLessonOpen("pg02-1", done, topics), "출시 판: 레슨을 다 마쳐도 구성도가 없으면 TOPIC 2 잠김");
+  const viaApi = U.emptyPassoffRecord(NOW);
+  U.applyPassoffUpdates(viaApi, topics[0].lessonIds.map((lessonId) => ({ lessonId, completed: true })), topics, { now: NOW });
+  const beforeMap = viaApi.unlockedThrough;
+  U.applyPassoffUpdates(viaApi, mapUpdates([topics[0]]), topics, { now: NOW + 1000 });
+  check(beforeMap === 1 && viaApi.unlockedThrough === 2, `출시 판 · 쓰기: 레슨만 1 → 구성도 기록 뒤 2 — ${beforeMap} → ${viaApi.unlockedThrough}`);
   check(U.judgePassoffTopics(done, topics, OFF).unlockedThrough === 2, "꺼짐: 레슨만 마치면 2");
   check(U.judgePassoffTopics(done, topics, ON).unlockedThrough === 1, "켬: 구성도 없으면 1");
   done.mapRefills["1"] = { at: new Date(NOW).toISOString(), day: "2026-09-27" };
   check(U.judgePassoffTopics(done, topics, ON).unlockedThrough === 2, "켬: 구성도 1번이면 2");
-  const onlyMap = recordWith([topics[0].lessonIds[2]]);
+  const onlyMap = recordWith([topics[0].lessonIds[2]], { mapRefills: {} });
   onlyMap.mapRefills["1"] = { at: new Date(NOW).toISOString(), day: "2026-09-27" };
   check(U.judgePassoffTopics(onlyMap, topics, ON).unlockedThrough === 1, "켬: 구성도만 하고 레슨이 모자라면 1");
   // through the write path with the setting on
@@ -397,6 +423,36 @@ group("U7 구성도 다시 채우기 설정");
       U.passoffSnapshot(r, topics, { rule: OFF }).mapRefillRequired === false &&
       U.passoffSnapshot(r, topics).mapRefillRequired === U.PASSOFF_UNLOCK_RULE.requireMapRefill,
     "브라우저용 모양의 mapRefillRequired 가 설정을 따름",
+  );
+
+  // E2 수정 — the map is the topic's END: taken only after the topic's lessons (ceil(0.8n) with the last), not before
+  const early = U.emptyPassoffRecord(NOW);
+  const e1 = U.applyPassoffUpdates(early, [{ mapRefillTopic: 1 }], topics, { now: NOW });
+  check(!early.mapRefills["1"] && e1.refused.some((x) => x.what === "map:1" && x.why === "not-ready") && !e1.changed,
+    `레슨 전 구성도 → 거절(not-ready) · 기록 없음 · 쓸 것 없음 — ${JSON.stringify(e1)}`);
+  const noLast = recordWith(topics[0].lessonIds.slice(0, -1), { mapRefills: {} });
+  const e2 = U.applyPassoffUpdates(noLast, [{ mapRefillTopic: 1 }], topics, { now: NOW });
+  check(!noLast.mapRefills["1"] && e2.refused.some((x) => x.why === "not-ready"), `마지막 레슨 빠짐 → 구성도 거절 — ${JSON.stringify(e2.refused)}`);
+  const big = [topicOf(1, 5), topicOf(2, 3)];
+  const short = recordWith([big[0].lessonIds[4], big[0].lessonIds[0], big[0].lessonIds[1]], { mapRefills: {} }); // 3 of 5 (needs 4), the last among them
+  const e3 = U.applyPassoffUpdates(short, [{ mapRefillTopic: 1 }], big, { now: NOW });
+  check(!short.mapRefills["1"] && e3.refused.some((x) => x.why === "not-ready"), `5개 중 3개(마지막 포함, 4개 필요) → 구성도 거절 — ${JSON.stringify(e3.refused)}`);
+  // the lessons in the same request, even listed after the map: the completions go first, then the map is taken
+  const same = U.emptyPassoffRecord(NOW);
+  const e4 = U.applyPassoffUpdates(same, [{ mapRefillTopic: 1 }, ...topics[0].lessonIds.map((lessonId) => ({ lessonId, completed: true }))], topics, { now: NOW });
+  check(Boolean(same.mapRefills["1"]) && e4.accepted.includes("map:1") && same.unlockedThrough === 2, `한 요청에 구성도(먼저 적힘) + 레슨 셋 → 레슨 먼저, 구성도 받음 · 2 — ${JSON.stringify(e4.accepted)} · ${same.unlockedThrough}`);
+  // a LIFE pass too: every topic open, and still the lessons first
+  const life = U.emptyPassoffRecord(NOW);
+  const e5 = U.applyPassoffUpdates(life, [{ mapRefillTopic: REAL[REAL.length - 1].topic }], REAL, { now: NOW, everyTopicOpen: true });
+  check(!life.mapRefills[String(REAL[REAL.length - 1].topic)] && e5.refused.some((x) => x.why === "not-ready"), `LIFE 도 레슨 전 구성도 거절 — ${JSON.stringify(e5.refused)}`);
+  // the screens' own question (passoffLessonsDone) over the judged shape
+  const judged = (ids) => U.judgePassoffTopics(recordWith(ids, { mapRefills: {} }), topics).topics[0];
+  check(
+    U.passoffLessonsDone(judged(topics[0].lessonIds)) === true &&
+      U.passoffLessonsDone(judged(topics[0].lessonIds.slice(0, -1))) === false &&
+      U.passoffLessonsDone(judged([])) === false &&
+      U.passoffLessonsDone({ lessonIds: [], completedCount: 0, requiredCount: 1, lastLessonCompleted: false }) === false,
+    "passoffLessonsDone: 다 마침 true · 마지막 빠짐 false · 0 false · 빈 대주제 false",
   );
 }
 

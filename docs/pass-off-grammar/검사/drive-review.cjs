@@ -22,6 +22,20 @@
  *   R10 화면마다(카드 · 결과 · 사다리 · 끝 · 목록): 가로 넘침 0 · 누를 것 44px 미만 0 · 12px 미만 글 0 · 입력 칸 16px 미만 0
  *   R11 콘솔 오류 · 잡히지 않은 예외 · 실패한 요청 0
  *   (2026-09-28 작업기록 할 일 5: 보기는 문항 id 로 정한 순서로 보이므로 자리가 아니라 원래 번호 — 단추의 data-option — 로 누른다)
+ *   단계 2-나 E2 — 오답노트 · '내 답도 맞아요'(이용권 없이):
+ *   N1 목록에 '오답노트 · 3문항'(R 에서 일부러 틀린 셋) → /passoff-grammar/review?notes=1
+ *   N2 오답노트: 레슨 '2인칭 · 3문항' → 펼치면 문항마다 한국어(또는 지시문) · 내 답 · '틀림 1번'
+ *   N3 '지금 다시 풀기' → 레슨의 카드 그대로(맞았어요) → 끝 '3문항 중 3개를 처음에 맞혔어요'
+ *   N4 기기 기록: 세 문항의 일정 · 틀린 횟수 그대로(연습) · 답 기록 practice 3 더해짐(right · wrong · retry 0) · 화면 44px · 12px · 16px · 넘침
+ *   P1 새 기록으로 다시: 다음 날 확인에서 한 문장을 틀림 → 결과에 '내 답: …' · '내 답도 맞아요' → '신고했어요 … 내일 다시 나와요' ·
+ *      '틀린 문항 다시 풀기' 없음(신고한 문항은 빠짐)
+ *   P2 오늘 복습 문장을 틀림 → 카드의 '내 답도 맞아요' → '신고했어요' → 고쳐서 맞힘
+ *   P3 기기 기록: 두 문항 모두 맞음도 틀림도 아님(pending · lapses 0 · 통과한 날 그대로 · 내일 다시) · 그날 답은 pending(다음 날 확인) ·
+ *      pending → retry(오늘 복습) — 'wrong' 없음 · 신고 2(내 답 그대로)
+ *   (E2 수정) N5 오답노트: 어제 틀려 오늘 복습할 차례인 문항은 '복습할 차례예요' — '지금 다시 풀기'에서 빠지고 오늘 복습에서 틀린 문항만 ·
+ *      그 문항 연습 기록 0 / P5 다음 날 확인 결과에서 쪽이 가려졌다 돌아온 뒤(visibilitychange hidden → visible) '내 답도 맞아요' →
+ *      pending · lapses 0 — 가려진 동안 틀린 답은 기록되지 않고 기기(kig-learning-held)에 붙잡힘 / P6 콘솔 오류 0
+ *   --break=no-report : P 에서 '내 답도 맞아요'를 누르지 않음 → P3 · P5 FAIL(틀린 답이 그대로 틀림으로 남는 판을 잡음)
  *   --secrets <json> : 이어서 이용권 쪽 한 바퀴(check-progress-live.mjs 와 같은 준비 — 버리는 시험 비밀값 {LICENSE_SALT, LICENSE_SECRET}
  *     으로 켠 `npx next dev -p 3472`, R2 값 없이). STUDENT 이용권을 등록해 그 세션 쿠키를 탭에 넣고:
  *     S0 목록: 무료 칸에 같은 기록 → '오늘 복습 · 약 N분'(서버 계획) · 무료 칸이 이 이용권 칸(kig-learning:…@id-…)으로 옮겨감 /
@@ -31,7 +45,14 @@
  *     S2 다시 열면 '다음 날 확인 1 / 15'(이어서) → 하나 틀리고 결과 '12문항 중 11개' → '다시 풀지 않고 이어서' → 바로 복습 문항 →
  *        끝: 오늘 푼 문항 18개 · 내일 올 문항 1개(서버가 센 수)
  *     S3 서버 기록(이 이용권으로 API 에 빈 기록을 보내 받음): 18문항 모두 오늘 풂 · 틀린 하나는 내일 · 기기에 이용권 칸만(무료 칸 빔)
- *   node docs/pass-off-grammar/검사/drive-review.cjs [--base http://127.0.0.1:3471] [--break=no-seed] [--secrets <json>]
+ *     S4 이용권 쪽 콘솔 오류 · 예외 · 실패한 요청 0
+ *     S6 (E2 의 S5 — 합친 판에서 이름을 바꿈, E1 의 S5 와 겹쳐서) 오답노트가 서버 판: 새 이용권(서버 기록이 빈)으로 · 무료 칸의 틀린
+ *        기록이 첫 요청에 그 이용권 칸으로 → 목록 요청 뒤 레슨을 펼치면 그 레슨 문항만 한 번 더 요청 · 다시 풀기 · 서버 기록의 일정
+ *        그대로 · practice 가 서버에 올라감
+ *   (합친 판 2026-09-28 — E1 점검 반영 판(b6687ba · dc65ee7)과 E2 판(2b97c29)을 합침: R 은 E1 판(다시 풀기는 시험 답에서 · 포커스 ·
+ *    data-option · 건너뛰기), N · P 는 E2 판 그대로, S 는 E1 판(이용권마다 기기 칸 — E2 판의 S1~S3 은 옛 한 칸 · owner 표시 판이라
+ *    E1 판 S0~S3 이 대신함) + S6)
+ *   node docs/pass-off-grammar/검사/drive-review.cjs [--base http://127.0.0.1:3471] [--break=no-seed|no-report] [--secrets <json>]
  *     --break=no-seed : 기기 기록을 넣지 않음 → R1 · R2 … 가 FAIL(exit 1)이어야(드라이버가 실패할 수 있음)
  * exit 0 = 실패 0
  */
@@ -50,8 +71,8 @@ const arg = (name, fallback = null) => {
 };
 const ORIGIN = arg("base", "http://127.0.0.1:3471");
 const BREAK = arg("break", "");
-if (BREAK && BREAK !== "no-seed") {
-  console.error(`모르는 깨기: ${BREAK} — no-seed`);
+if (BREAK && BREAK !== "no-seed" && BREAK !== "no-report") {
+  console.error(`모르는 깨기: ${BREAK} — no-seed · no-report`);
   process.exit(2);
 }
 if (!/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(ORIGIN)) {
@@ -119,9 +140,16 @@ const KIT = `window.__kit = {
     return true;
   },
   state() {
-    const s = document.querySelector("[data-review-step]");
+    const s = document.querySelector("[data-review-step]") || document.querySelector("[data-notes-step]");
     const item = document.querySelector("[data-review-item]");
-    return { step: s ? s.dataset.reviewStep : null, item: item ? item.dataset.reviewItem : null, mode: item ? item.dataset.reviewMode : null, text: (document.querySelector("main") || document.body).innerText.replace(/\\s+/g, " ").slice(0, 2000) };
+    return { step: s ? s.dataset.reviewStep || s.dataset.notesStep : null, item: item ? item.dataset.reviewItem : null, mode: item ? item.dataset.reviewMode : null, text: (document.querySelector("main") || document.body).innerText.replace(/\\s+/g, " ").slice(0, 2000) };
+  },
+  /** "내 답도 맞아요" in this element (a results row or the card) → pressed */
+  report(root) {
+    const b = (root || document).querySelector('[data-my-answer-report="button"]');
+    if (!b) return false;
+    b.click();
+    return true;
   },
   focusAnswer() {
     const el = document.querySelector('[data-review-item] textarea[aria-label="영작 답"], [data-review-item] input[aria-label="답"]');
@@ -384,6 +412,247 @@ const layouts = [];
       ev.console.length === 0 && ev.exceptions.length === 0 && badResponses.length === 0,
       JSON.stringify({ console: ev.console.slice(0, 2), exceptions: ev.exceptions.slice(0, 2), bad: badResponses.slice(0, 3) }));
 
+    // ---- 단계 2-나 E2: the wrong-answer list and "내 답도 맞아요", without a licence ------------------------------------------
+    tab.resetEvents();
+    const layoutsE2 = [];
+    const layoutE2 = async (where) => {
+      const l = await tab.eval("window.__kit.layout()");
+      layoutsE2.push({ where, ...l });
+    };
+    const answerRight = async (e) => {
+      if (e.kind === "produce" || e.kind === "transfer") {
+        await type(e.item.en);
+        await click("확인");
+      } else await answerForm(e, true);
+      await sleep(300);
+    };
+    // N1
+    await tab.goto(`${ORIGIN}/passoff-grammar`, 1500);
+    await kit();
+    const notesEntry = await tab.eval(`(() => { const e = document.querySelector("[data-passoff-notes-entry]"); return e ? { text: e.innerText.replace(/\\s+/g, " ").trim(), href: e.getAttribute("href") } : null; })()`);
+    check(`N1 목록: '오답노트 · ${WRONG.size}문항' → /passoff-grammar/review?notes=1`,
+      notesEntry && notesEntry.text.includes(`오답노트 · ${WRONG.size}문항`) && notesEntry.href === "/passoff-grammar/review?notes=1", JSON.stringify(notesEntry));
+    // N2
+    const recordBefore = JSON.parse((await tab.eval(`localStorage.getItem("kig-learning:passoff-grammar")`)) || "null");
+    await tab.eval(`document.querySelector("[data-passoff-notes-entry]").click(), true`);
+    s = await waitFor((x) => x.step === "list", 10000);
+    await kit();
+    const lessonRow = await tab.eval(`(() => { const e = document.querySelector('[data-notes-lesson="pg01-2"] button'); return e ? e.innerText.replace(/\\s+/g, " ").trim() : null; })()`);
+    await tab.eval(`document.querySelector('[data-notes-lesson="pg01-2"] button').click(), true`);
+    await sleep(500);
+    const noteItems = await tab.eval(`[...document.querySelectorAll('[data-notes-item]')].map((e) => ({ key: e.dataset.notesItem, text: e.innerText.replace(/\\s+/g, " ").trim() }))`);
+    const promptOf = (e) => (e.kind === "produce" || e.kind === "transfer" ? e.item.ko : e.item.instruction);
+    const noteOk = noteItems.length === WRONG.size && [...WRONG].every((key) => {
+      const row = noteItems.find((n) => n.key === key);
+      const e = ITEMS.get(key);
+      return row && row.text.includes(promptOf(e)) && row.text.includes("내 답:") && row.text.includes("틀림 1번");
+    });
+    check(`N2 오답노트: h1 '오답노트' · 레슨 '2인칭 · ${WRONG.size}문항' → 펼치면 문항마다 한국어(지시문) · 내 답 · '틀림 1번'`,
+      s.step === "list" && s.text.includes("오답노트") && lessonRow && lessonRow.includes("2인칭") && lessonRow.includes(`${WRONG.size}문항`) && noteOk,
+      `${s.step} · ${lessonRow} · ${JSON.stringify(noteItems).slice(0, 240)}`);
+    await layoutE2("오답노트 목록");
+    // N3
+    await click("지금 다시 풀기");
+    s = await waitFor((x) => x.mode === "notes", 5000);
+    const runLog = [];
+    for (let n = 0; n < WRONG.size; n++) {
+      s = await state();
+      const e = ITEMS.get(s.item);
+      if (!e || s.mode !== "notes") break;
+      if (n === 0) await layoutE2("다시 풀기 카드");
+      await answerRight(e);
+      runLog.push({ key: e.key, right: (await state()).text.includes("맞았어요") });
+      await click(e.kind === "produce" || e.kind === "transfer" ? "다음 문장" : "다음");
+      const before = e.key;
+      s = await waitFor((x) => x.item !== before || x.step === "ran", 5000);
+    }
+    s = await waitFor((x) => x.step === "ran", 5000);
+    check(`N3 '지금 다시 풀기' → 레슨 카드 그대로(맞았어요 ${WRONG.size}) → 끝 '${WRONG.size}문항 중 ${WRONG.size}개를 처음에 맞혔어요' · '연습이라 복습 일정은 그대로'`,
+      runLog.length === WRONG.size && runLog.every((x) => x.right) && s.step === "ran" && s.text.includes(`${WRONG.size}문항 중 ${WRONG.size}개를 처음에 맞혔어요`) && s.text.includes("복습 일정은 그대로"),
+      `${JSON.stringify(runLog)} · ${s.step} · ${s.text.slice(0, 160)}`);
+    await layoutE2("다시 풀기 끝");
+    // N4
+    const recordAfter = JSON.parse((await tab.eval(`localStorage.getItem("kig-learning:passoff-grammar")`)) || "null");
+    const unchanged = [...WRONG].every((key) => JSON.stringify(recordAfter.items[key]) === JSON.stringify(recordBefore.items[key]));
+    const newLog = recordAfter.log.slice(recordBefore.log.length);
+    const newEffects = newLog.reduce((m, x) => ((m[x.effect] = (m[x.effect] || 0) + 1), m), {});
+    const layoutBadE2 = layoutsE2.filter((l) => l.overflow > 0 || l.small.length || l.tiny.length || l.smallInput.length);
+    check(`N4 기기 기록: 틀린 ${WRONG.size}문항의 일정 · 틀린 횟수 그대로(연습) · 답 기록 practice ${WRONG.size}(right · wrong · retry 0) · 화면 ${layoutsE2.length}곳 넘침 · 44px · 12px · 16px 0`,
+      recordBefore && recordAfter && unchanged && newEffects.practice === WRONG.size && !newEffects.right && !newEffects.wrong && !newEffects.retry && layoutBadE2.length === 0,
+      `그대로 ${unchanged} · ${JSON.stringify(newEffects)} · ${layoutBadE2.map((l) => `${l.where}: ${l.small.slice(0, 2).join(",")} ${l.tiny.slice(0, 2).join(",")}`).join(" / ") || "화면 0"}`);
+
+    // P1 — a fresh record: the check's first sentence answered wrong, and reported on the results
+    await tab.eval(`localStorage.setItem("kig-learning:passoff-grammar", ${JSON.stringify(JSON.stringify(seed))}); true`);
+    await tab.goto(`${ORIGIN}/passoff-grammar/review`, 1500);
+    await kit();
+    s = await waitFor((x) => x.step === "items", 15000);
+    const reportTest = TEST.find((e) => e.kind === "produce");
+    const reportPractice = PRACTICE.find((e) => e.kind === "produce");
+    const ownAnswer = "My own answer is right on purpose.";
+    for (let n = 0; n < TEST.length; n++) {
+      s = await state();
+      const e = ITEMS.get(s.item);
+      if (!e || s.mode !== "test") break;
+      if (e.key === reportTest.key) {
+        await type(ownAnswer);
+        await click("확인");
+      } else if (e.kind === "produce" || e.kind === "transfer") {
+        await type(e.item.en);
+        await click("확인");
+      } else await answerForm(e, true);
+      const before = s.item;
+      s = await waitFor((x) => x.item !== before || x.step !== "items", 5000);
+    }
+    s = await waitFor((x) => x.step === "results", 5000);
+    const resultRow = await tab.eval(`(() => { const e = document.querySelector('[data-review-result="${reportTest.key}"]'); return e ? e.innerText.replace(/\\s+/g, " ") : null; })()`);
+    const reportedOnResults = BREAK === "no-report" ? false : await tab.eval(`window.__kit.report(document.querySelector('[data-review-result="${reportTest.key}"]'))`);
+    await sleep(300);
+    const resultAfter = await tab.eval(`(() => { const e = document.querySelector('[data-review-result="${reportTest.key}"]'); return e ? e.innerText.replace(/\\s+/g, " ") : null; })()`);
+    const leave = (await state()).text;
+    check(`P1 다음 날 확인 결과: 틀린 ${reportTest.key} 에 '내 답: ${ownAnswer}' · '내 답도 맞아요' → '신고했어요 … 내일 다시 나와요' · '틀린 문항 다시 풀기' 없음(신고한 문항은 빠짐)`,
+      resultRow && resultRow.includes(`내 답: ${ownAnswer}`) && resultRow.includes("내 답도 맞아요") && reportedOnResults && resultAfter.includes("신고했어요") && resultAfter.includes("내일 다시 나와요") && !leave.includes("틀린 문항 다시 풀기"),
+      `${resultRow && resultRow.slice(0, 160)} · 누름 ${reportedOnResults} · ${resultAfter && resultAfter.slice(-60)}`);
+    await layoutE2("결과(신고)");
+    await click(leave.includes("이어서 복습") ? "이어서 복습" : "틀린 문항 다시 풀기");
+    // P2 — today's sentence answered wrong, reported on the card, then fixed
+    let p2 = { reported: false, fixed: false };
+    for (let n = 0; n < PRACTICE.length + WRONG.size + 1; n++) {
+      s = await waitFor((x) => x.step === "items" || x.step === "again" || x.step === "done", 5000);
+      if (s.step === "done") break;
+      const e = ITEMS.get(s.item);
+      if (!e) break;
+      if (s.mode !== "practice") {
+        await answerRight(e);
+        await click(e.kind === "produce" || e.kind === "transfer" ? "다음 문장" : "다음");
+      } else if (e.key === reportPractice.key) {
+        await type(ownAnswer);
+        await click("확인");
+        await sleep(300);
+        const shown = (await state()).text.includes("내 답도 맞아요");
+        const pressed = BREAK === "no-report" ? false : await tab.eval(`window.__kit.report(document.querySelector("[data-review-item]"))`);
+        await sleep(300);
+        const note = (await state()).text.includes("신고했어요");
+        if (shown && pressed) await layoutE2("카드(신고)");
+        await type(e.item.en);
+        await click("다시 확인");
+        await sleep(300);
+        p2 = { reported: shown && pressed && note, fixed: (await state()).text.includes("맞았어요") };
+        await click("다음 문장");
+      } else {
+        await answerRight(e);
+        await click(e.kind === "produce" || e.kind === "transfer" ? "다음 문장" : "다음");
+      }
+      const before = e.key;
+      s = await waitFor((x) => x.item !== before || x.step === "done", 5000);
+    }
+    s = await waitFor((x) => x.step === "done" && /내일 올 문항/.test(x.text), 8000);
+    check(`P2 오늘 복습 ${reportPractice.key} 를 틀림 → 카드의 '내 답도 맞아요' → '신고했어요' → 고쳐서 '맞았어요' → 끝`, p2.reported && p2.fixed && s.step === "done", JSON.stringify(p2));
+    // P3 — the record: neither right nor wrong
+    const recP = JSON.parse((await tab.eval(`localStorage.getItem("kig-learning:passoff-grammar")`)) || "null");
+    const tomorrowP = D.addDays(today, 1);
+    const seedPractice = seed.items[reportPractice.key];
+    const sT = recP && recP.items[reportTest.key];
+    const sP = recP && recP.items[reportPractice.key];
+    const effectsOf = (key) => (recP ? recP.log.filter((x) => x.item === key && x.day === today && x.where === "review").map((x) => x.effect) : []);
+    const reportsP = recP ? recP.reports.filter((r) => r.day === today) : [];
+    check(`P3 기기 기록: ${reportTest.key} · ${reportPractice.key} 모두 pending · lapses 0 · 통과한 날 그대로 · 내일(${tomorrowP}) 다시 · 그날 답 [pending] · [pending, retry] — wrong 없음 · 신고 2('${ownAnswer}')`,
+      sT && sT.pending === true && sT.lapses === 0 && sT.lastCorrect === null && sT.dueDay === tomorrowP &&
+        sP && sP.pending === true && sP.lapses === 0 && sP.lastCorrect === true && JSON.stringify(sP.passDays) === JSON.stringify(seedPractice.passDays) && sP.dueDay === tomorrowP &&
+        JSON.stringify(effectsOf(reportTest.key)) === JSON.stringify(["pending"]) && JSON.stringify(effectsOf(reportPractice.key)) === JSON.stringify(["pending", "retry"]) &&
+        reportsP.length === 2 && reportsP.every((r) => r.answer === ownAnswer && r.status === "pending"),
+      `${reportTest.key} ${JSON.stringify(sT && { p: sT.pending, l: sT.lapses, c: sT.lastCorrect, d: sT.dueDay })} ${JSON.stringify(effectsOf(reportTest.key))} · ${reportPractice.key} ${JSON.stringify(sP && { p: sP.pending, l: sP.lapses, c: sP.lastCorrect, d: sP.dueDay })} ${JSON.stringify(effectsOf(reportPractice.key))} · 신고 ${reportsP.length}`);
+    const layoutBadP = layoutsE2.filter((l) => l.overflow > 0 || l.small.length || l.tiny.length || l.smallInput.length);
+    const evE2 = tab.events;
+    const badE2 = evE2.badResponses.filter((r) => !/\/audio\//.test(r.url));
+    check(`P4 오답노트 · 신고 화면 ${layoutsE2.length}곳 넘침 · 44px · 12px · 16px 0 · 콘솔 오류 · 예외 · 실패한 요청 0`,
+      layoutBadP.length === 0 && evE2.console.length === 0 && evE2.exceptions.length === 0 && badE2.length === 0,
+      JSON.stringify({ layout: layoutBadP.map((l) => l.where), console: evE2.console.slice(0, 2), exceptions: evE2.exceptions.slice(0, 2), bad: badE2.slice(0, 3) }));
+
+    // ---- E2 수정 ----------------------------------------------------------------------------------------------------------
+    tab.resetEvents();
+    // N5 — an item due in today's review and not asked there yet is not practised (its answer seen there would make today's
+    // review answer, which counts, an answer just seen)
+    {
+      const r5 = E.emptyRecord("passoff-grammar");
+      E.applyLessonDone(r5, "pg01-1", NOW - 3 * DAY_MS, PRACTICE.map(({ key, kind }) => ({ key, kind })));
+      const [X, Y] = PRACTICE;
+      E.applyAttempt(r5, X.key, { lessonId: "pg01-1", kind: X.kind, correct: false, help: "none", mode: "typed", where: "review", answer: "zq yesterday" }, NOW - DAY_MS, PROFILE);
+      E.applyAttempt(r5, Y.key, { lessonId: "pg01-1", kind: Y.kind, correct: false, help: "none", mode: "typed", where: "review", answer: "zq today" }, NOW, PROFILE);
+      await tab.eval(`localStorage.setItem("kig-learning:passoff-grammar", ${JSON.stringify(JSON.stringify(r5))}); true`);
+      await tab.goto(`${ORIGIN}/passoff-grammar/review?notes=1`, 1500);
+      await kit();
+      s = await waitFor((x) => x.step === "list", 10000);
+      await tab.eval(`(() => { const b = document.querySelector('[data-notes-lesson="pg01-1"] button'); if (b) b.click(); return Boolean(b); })()`);
+      await sleep(500);
+      const noteRows = await tab.eval(`[...document.querySelectorAll('[data-notes-item]')].map((e) => ({ key: e.dataset.notesItem, waits: Boolean(e.querySelector('[data-notes-waits]')) }))`);
+      await click("지금 다시 풀기");
+      const ran = [];
+      for (let n = 0; n < PRACTICE.length; n++) {
+        s = await waitFor((x) => x.mode === "notes" || x.step === "ran", 5000);
+        if (s.step === "ran" || s.mode !== "notes") break;
+        const e = ITEMS.get(s.item);
+        if (!e) break;
+        ran.push(s.item);
+        await answerRight(e);
+        await click(e.kind === "produce" || e.kind === "transfer" ? "다음 문장" : "다음");
+        const before = s.item;
+        s = await waitFor((x) => x.item !== before || x.step === "ran", 5000);
+      }
+      s = await waitFor((x) => x.step === "ran", 5000);
+      const rec5 = JSON.parse((await tab.eval(`localStorage.getItem("kig-learning:passoff-grammar")`)) || "null");
+      const xPractice = rec5 ? rec5.log.filter((l) => l.item === X.key && l.effect === "practice").length : -1;
+      check(`N5 오답노트: 어제 틀려 오늘 복습할 차례인 ${X.key} 는 '복습할 차례예요'(다시 풀기에서 빠짐) · 오늘 복습에서 틀린 ${Y.key} 만 '지금 다시 풀기' → '1문항 중 1개' · ${X.key} 연습 기록 0 · 일정 그대로`,
+        noteRows.length === 2 && noteRows.find((x) => x.key === X.key)?.waits === true && noteRows.find((x) => x.key === Y.key)?.waits === false &&
+          JSON.stringify(ran) === JSON.stringify([Y.key]) && s.step === "ran" && s.text.includes("1문항 중 1개") && xPractice === 0 && rec5.items[X.key].dueDay === r5.items[X.key].dueDay,
+        `${JSON.stringify(noteRows)} · 다시 풀기 ${JSON.stringify(ran)} · ${s.step} · 연습 기록 ${xPractice}`);
+    }
+    // P5 — the page hidden between the check's answer and the report (another app, the phone locked): the report is still the
+    // day's answer — the held wrong answer waits on the device while hidden and is not recorded
+    {
+      await tab.eval(`localStorage.setItem("kig-learning:passoff-grammar", ${JSON.stringify(JSON.stringify(seed))}); localStorage.removeItem("kig-learning-held:passoff-grammar"); true`);
+      await tab.goto(`${ORIGIN}/passoff-grammar/review`, 1500);
+      await kit();
+      s = await waitFor((x) => x.step === "items", 15000);
+      for (let n = 0; n < TEST.length; n++) {
+        s = await state();
+        const e = ITEMS.get(s.item);
+        if (!e || s.mode !== "test") break;
+        if (e.key === reportTest.key) {
+          await type(ownAnswer);
+          await click("확인");
+        } else if (e.kind === "produce" || e.kind === "transfer") {
+          await type(e.item.en);
+          await click("확인");
+        } else await answerForm(e, true);
+        const before = s.item;
+        s = await waitFor((x) => x.item !== before || x.step !== "items", 5000);
+      }
+      s = await waitFor((x) => x.step === "results", 5000);
+      const setVisibility = (value) =>
+        tab.eval(`(() => { Object.defineProperty(document, "visibilityState", { configurable: true, get: () => ${JSON.stringify(value)} }); document.dispatchEvent(new Event("visibilitychange")); return true; })()`);
+      await setVisibility("hidden");
+      await sleep(400);
+      const heldHidden = (await tab.eval(`localStorage.getItem("kig-learning-held:passoff-grammar") || ""`)) || "";
+      const whileHidden = JSON.parse((await tab.eval(`localStorage.getItem("kig-learning:passoff-grammar")`)) || "null");
+      await setVisibility("visible");
+      await sleep(200);
+      const pressed = BREAK === "no-report" ? false : await tab.eval(`window.__kit.report(document.querySelector('[data-review-result="${reportTest.key}"]'))`);
+      await sleep(300);
+      const after5 = JSON.parse((await tab.eval(`localStorage.getItem("kig-learning:passoff-grammar")`)) || "null");
+      const st5 = after5 && after5.items[reportTest.key];
+      const effects5 = after5 ? after5.log.filter((x) => x.item === reportTest.key && x.day === today && x.where === "review").map((x) => x.effect) : [];
+      const heldAfter = await tab.eval(`localStorage.getItem("kig-learning-held:passoff-grammar")`);
+      check(`P5 다음 날 확인 결과에서 쪽이 가려졌다(다른 앱) 돌아온 뒤 '내 답도 맞아요' → 그날의 답은 신고(pending · lapses 0 · 그날 답 [pending]) — 가려진 동안 틀린 답은 기록되지 않고 기기에 붙잡혀 있음(kig-learning-held) · 신고 뒤 비움`,
+        heldHidden.includes(reportTest.key) && whileHidden && whileHidden.items[reportTest.key].lastDay === null && pressed &&
+          st5 && st5.pending === true && st5.lapses === 0 && JSON.stringify(effects5) === JSON.stringify(["pending"]) && heldAfter === null,
+        `가려진 동안 붙잡힘 ${heldHidden.includes(reportTest.key)} · 기록 전 lastDay ${whileHidden && whileHidden.items[reportTest.key].lastDay} · 누름 ${pressed} · ${JSON.stringify(st5 && { p: st5.pending, l: st5.lapses })} · ${JSON.stringify(effects5)} · 뒤 ${heldAfter}`);
+      await tab.goto(`${ORIGIN}/passoff-grammar`, 800);
+    }
+    const evFix = tab.events;
+    const badFix = evFix.badResponses.filter((r) => !/\/audio\//.test(r.url));
+    check("P6 N5 · P5 화면 콘솔 오류 · 예외 · 실패한 요청 0", evFix.console.length === 0 && evFix.exceptions.length === 0 && badFix.length === 0,
+      JSON.stringify({ console: evFix.console.slice(0, 2), exceptions: evFix.exceptions.slice(0, 2), bad: badFix.slice(0, 3) }));
+
     // S — with a licence: the same review, from the server
     const secretsFile = arg("secrets");
     if (secretsFile) {
@@ -530,6 +799,76 @@ const layouts = [];
       const badS = evS.badResponses.filter((r) => !/\/audio\//.test(r.url));
       check("S4 이용권 쪽 콘솔 오류 · 예외 · 실패한 요청 0", evS.console.length === 0 && evS.exceptions.length === 0 && badS.length === 0,
         JSON.stringify({ console: evS.console.slice(0, 2), exceptions: evS.exceptions.slice(0, 2), bad: badS.slice(0, 3) }));
+
+      // S6 (단계 2-나 E2 — the E2 driver's S5, on E1's records per licence) — the wrong-answer list with a licence: the list
+      // from the server, a lesson's items when it is opened. A licence of its own, so its server record starts empty (S0~S3
+      // left pg01-2's items answered today on the first one): its cookie replaces the first one, the device is emptied and
+      // its free slot holds the wrong answers — the page's first request adopts them into this licence's slot and the server
+      // takes them
+      const nonceB = crypto.randomBytes(8).toString("hex").toUpperCase();
+      const keyB = `KIG-STU1Y-${nonceB}-${crypto.createHmac("sha256", sec.LICENSE_SALT).update(`STU1Y:${nonceB}`).digest("hex").slice(0, 16).toUpperCase()}`;
+      const activatedB = await fetch(`${ORIGIN}/api/license/activate`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ key: keyB, deviceId: `review-drive-notes-${Date.now()}`, deviceName: "review drive notes" }),
+      });
+      const sessionB = (activatedB.headers.getSetCookie?.() || []).map((c) => c.split(";")[0]).find((c) => c.startsWith("kig_license_session="));
+      if (!sessionB) throw new Error(`licence activation failed: ${activatedB.status}`);
+      const wrongSeed = seedRecord();
+      for (const key of WRONG) {
+        const e = ITEMS.get(key);
+        E.applyAttempt(wrongSeed, key, { lessonId: "pg01-2", kind: e.kind, correct: false, help: "none", mode: "typed", where: "review", answer: "zq server notes" }, NOW, PROFILE);
+      }
+      // the device emptied on a page of the site that runs no app code (a page of the app would keep the first licence in
+      // LicenseProvider and verify it again — which gives the first licence's session back), then the new licence's cookie
+      await tab.goto(`${ORIGIN}/robots.txt`, 600);
+      await tab.eval(`localStorage.clear(); localStorage.setItem("kig-learning:passoff-grammar", ${JSON.stringify(JSON.stringify(wrongSeed))}); true`);
+      await tab.send("Network.setCookie", { name: "kig_license_session", value: sessionB.slice("kig_license_session=".length), url: ORIGIN, httpOnly: true });
+      tab.resetEvents();
+      await tab.goto(`${ORIGIN}/passoff-grammar/review?notes=1`, 1500);
+      await kit();
+      s = await waitFor((x) => x.step === "list" || x.step === "error", 20000);
+      const serverNotesPage = !(await tab.eval(`Boolean(document.querySelector('[data-kig-paid-extra="license"]'))`));
+      const afterList = tab.events.requests.filter((u) => u.includes("/api/learning/passoff-grammar")).length;
+      await tab.eval(`(() => { const b = document.querySelector('[data-notes-lesson="pg01-2"] button'); if (b) b.click(); return Boolean(b); })()`);
+      const itemsShown = await (async () => {
+        const end = Date.now() + 10000;
+        while (Date.now() < end) {
+          const n = await tab.eval(`[...document.querySelectorAll('[data-notes-item]')].filter((e) => !e.innerText.includes('문항을 찾지 못했어요')).length`);
+          if (n >= WRONG.size) return n;
+          await sleep(200);
+        }
+        return 0;
+      })();
+      const afterOpen = tab.events.requests.filter((u) => u.includes("/api/learning/passoff-grammar")).length;
+      await click("지금 다시 풀기");
+      let ranS = 0;
+      for (let n = 0; n < WRONG.size; n++) {
+        s = await waitFor((x) => x.mode === "notes" || x.step === "ran", 5000);
+        const e = ITEMS.get(s.item);
+        if (!e || s.mode !== "notes") break;
+        await answerRight(e);
+        ranS += (await state()).text.includes("맞았어요") ? 1 : 0;
+        await click(e.kind === "produce" || e.kind === "transfer" ? "다음 문장" : "다음");
+        const before = e.key;
+        s = await waitFor((x) => x.item !== before || x.step === "ran", 5000);
+      }
+      s = await waitFor((x) => x.step === "ran", 5000);
+      await sleep(1500);
+      const backS = await fetch(`${ORIGIN}/api/learning/passoff-grammar`, { method: "POST", headers: { "content-type": "application/json", cookie: sessionB }, body: JSON.stringify({ record: null, planOnly: true }) });
+      const keptS = await backS.json().catch(() => null);
+      const serverWrong = keptS && keptS.record ? [...WRONG].filter((key) => keptS.record.items[key] && keptS.record.items[key].lastCorrect === false && keptS.record.items[key].dueDay === D.addDays(today, 1)).length : -1;
+      const serverPractice = keptS && keptS.record ? keptS.record.log.filter((x) => WRONG.has(x.item) && x.effect === "practice").length : -1;
+      const slotsB = await tab.eval(`Object.keys(localStorage).filter((k) => k.startsWith("kig-learning:passoff-grammar"))`);
+      const slotB = keptS && typeof keptS.owner === "string" ? `kig-learning:passoff-grammar@${keptS.owner}` : null;
+      const freeAfterB = await tab.eval(`(() => { const r = JSON.parse(localStorage.getItem("kig-learning:passoff-grammar") || "null"); return r ? Object.keys(r.items).length : 0; })()`);
+      const evS6 = tab.events;
+      const badS6 = evS6.badResponses.filter((r) => !/\/audio\//.test(r.url));
+      check(`S6 이용권 오답노트(새 이용권): 서버 판(무료 안내 없음) · 목록 1번 요청 뒤 레슨을 펼치면 그 레슨 문항만 한 번 더(${afterList} → ${afterOpen}) · 문항 ${WRONG.size}개 · 다시 풀기 ${WRONG.size}개 맞음 · 서버 기록: 세 문항 틀림 · 내일 그대로 · practice ${WRONG.size} 올라감 · 기기에는 그 이용권 칸(무료 칸 빔) · 오류 0`,
+        serverNotesPage && s.step === "ran" && afterList >= 1 && afterOpen === afterList + 1 && itemsShown === WRONG.size && ranS === WRONG.size &&
+          serverWrong === WRONG.size && serverPractice >= WRONG.size && Boolean(slotB) && slotsB.includes(slotB) && freeAfterB === 0 &&
+          evS6.console.length === 0 && evS6.exceptions.length === 0 && badS6.length === 0,
+        `${serverNotesPage} · ${s.step} · 요청 ${afterList}→${afterOpen} · 문항 ${itemsShown} · 맞음 ${ranS} · 서버 틀림 ${serverWrong} · practice ${serverPractice} · 칸 ${JSON.stringify(slotsB)} · 무료 ${freeAfterB} · ${JSON.stringify({ console: evS6.console.slice(0, 2), bad: badS6.slice(0, 2) })}`);
     }
   } catch (error) {
     check("드라이버 오류 없이 끝까지", false, error && error.stack ? error.stack.slice(0, 300) : String(error));

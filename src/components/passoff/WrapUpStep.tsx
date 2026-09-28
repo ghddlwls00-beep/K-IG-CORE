@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { PassoffFrameBlock, PassoffProduceItem, PassoffRuleBlock } from "@/lib/passoffTypes";
 import { hasHangul } from "@/lib/passoffGrading";
 import { frameParts, ruleQuestionKey, type ComposeItemState } from "@/lib/passoffLesson";
@@ -10,7 +11,14 @@ import { FONT, SecondaryButton, Verdict, tone, type FontSize, type Speaker } fro
 
 /**
  * ⑤ 마무리 (설계 §3): two sentences the lesson has not shown (graded as in ④) → the rule check once more → my own
- * sentence on the lesson's frame (not graded, kept on this device only). The lesson is finished when ①~⑤ are.
+ * sentence on the lesson's frame (not graded, kept on this device only). Once ①~⑤ are done the learner finishes the
+ * lesson with the end bar's '이 강의 학습 완료' below (단계 2-나 E2 — as in the other courses), and the topic's last lesson
+ * then links "구성도 다시 채우기" (`mapRefill`) until it has been done.
+ *
+ * E2 수정: the link only once the topic's lessons are done (`ready` — before that one line says how many are left; the server
+ * takes a map refill only then). It is the page's one filled button while the map opens the next topic (`required` — the
+ * end bar's '다음 강의' keeps its border then: lessonGate `quietNext`), and a bordered one otherwise (the last topic, a next
+ * topic already open, a LIFE pass). 'TOPIC N이 열리는 조건' is said only when there is such a next topic.
  */
 export function WrapUpStep({
   transfers,
@@ -26,6 +34,7 @@ export function WrapUpStep({
   stepsLeft,
   lessonDone,
   notCounted = false,
+  mapRefill = null,
   report,
   onCheckRight,
   onFrame,
@@ -47,6 +56,11 @@ export function WrapUpStep({
   lessonDone: boolean;
   /** done on this device, but not in this licence's server progress — finishing it again records it */
   notCounted?: boolean;
+  /**
+   * the topic's last lesson and its "구성도 다시 채우기" not done yet — `ready`: the topic's lessons are done (the map opens);
+   * `left`: lessons still to finish before that; `required`: the map is what opens the next topic (a next topic still locked)
+   */
+  mapRefill?: { href: string; topic: number; ready: boolean; left: number; required: boolean } | null;
   report: ComposeReport;
   onCheckRight: () => void;
   onFrame: (values: string[]) => void;
@@ -144,13 +158,41 @@ export function WrapUpStep({
         </section>
       ) : null}
 
-      {lessonDone || (stepsLeft.length === 0 && frameShown) ? (
+      {lessonDone ? (
         <section aria-live="polite" className="flex flex-col gap-3 rounded-card border border-line bg-raised p-4">
           <Verdict ok>레슨 완료 — 5단계를 모두 마쳤어요.</Verdict>
           {notCounted ? (
             <p className="text-label leading-relaxed text-ink-soft">
               이 이용권의 진도에는 아직 이 레슨이 기록되지 않았어요. &lsquo;처음부터 다시 하기&rsquo;로 5단계를 다시 마치면 기록돼요.
             </p>
+          ) : null}
+          {mapRefill && !mapRefill.ready ? (
+            <div className="flex flex-col gap-1 border-t border-line pt-3" data-passoff-map-entry={mapRefill.topic} data-passoff-map-entry-waiting>
+              <p className="text-body font-semibold text-ink">TOPIC {mapRefill.topic} 마무리 — 구성도 다시 채우기</p>
+              <p className="text-label leading-relaxed text-ink-soft">
+                대주제의 레슨을 <span className="tabular-nums">{mapRefill.left}</span>개 더 마치면 할 수 있어요.
+              </p>
+            </div>
+          ) : mapRefill ? (
+            <div className="flex flex-col gap-2 border-t border-line pt-3" data-passoff-map-entry={mapRefill.topic}>
+              <p className="text-body font-semibold text-ink">TOPIC {mapRefill.topic} 마무리 — 구성도 다시 채우기</p>
+              <p className="text-label leading-relaxed text-ink-soft">
+                대주제의 레슨을 칸에 놓고, 칸마다 규칙 한 줄과 대표 문장을 골라요.
+                {mapRefill.required ? " 한 번 하면 다음 대주제가 열리는 조건이 채워져요." : ""}
+              </p>
+              <div>
+                <Link
+                  href={mapRefill.href}
+                  className={`inline-flex min-h-11 items-center justify-center rounded-control px-4 text-label font-semibold ${
+                    mapRefill.required
+                      ? "bg-ink text-surface transition-opacity hover:opacity-90"
+                      : "border border-line bg-surface text-ink transition-colors hover:bg-sunken"
+                  }`}
+                >
+                  구성도 다시 채우기
+                </Link>
+              </div>
+            </div>
           ) : null}
           <div className="flex justify-end">
             <SecondaryButton
@@ -161,6 +203,11 @@ export function WrapUpStep({
               처음부터 다시 하기
             </SecondaryButton>
           </div>
+        </section>
+      ) : stepsLeft.length === 0 && frameShown ? (
+        <section aria-live="polite" className="flex flex-col gap-2 rounded-card border border-line bg-raised p-4" data-passoff-steps-done>
+          <Verdict ok>5단계를 모두 마쳤어요.</Verdict>
+          <p className="text-label leading-relaxed text-ink-soft">아래 &lsquo;이 강의 학습 완료&rsquo;를 누르면 레슨이 완료돼요.</p>
         </section>
       ) : frameShown && otherStepsLeft.length ? (
         <section className="flex flex-col gap-3 rounded-card border border-line bg-raised p-4">

@@ -8,7 +8,7 @@ import { passoffTopicOf, type PassoffProgressSnapshot } from "@/lib/passoffUnloc
 /**
  * PASS-OFF GRAMMAR progress in the browser (docs/pass-off-grammar/설계.md §5) — what ProgressProvider does for
  * STUDENT, done for this course in a provider of its own (ProgressProvider is not touched):
- *   - a finished lesson (PassoffLearningView, once its five steps are done) goes into a queue on this device
+ *   - a finished lesson (PassoffLearningView — the learner pressed '이 강의 학습 완료' after its five steps) goes into a queue on this device
  *     (localStorage kig:passoff:pending:v1) under the licence it was finished with, and to POST
  *     /api/progress/passoff-grammar as soon as that licence is active — at once, not after a pause, so it is on the
  *     server before the next lesson's page asks there. A lesson finished with no licence (a free preview lesson) goes
@@ -24,11 +24,22 @@ import { passoffTopicOf, type PassoffProgressSnapshot } from "@/lib/passoffUnloc
  *     the server's own answer apart, and the lock screen acts on that alone;
  *   - `countedIds` — the lessons the server counts, plus completions on their way — is what the course list marks
  *     done with a licence. The topic lock counts the server's record alone, so a list that also took this device's
- *     own record showed ✓ the lock did not count (점검 1: after the owner's reset, a lost write, another code here).
+ *     own record showed ✓ the lock did not count (점검 1: after the owner's reset, a lost write, another code here);
+ *   - a topic's "구성도 다시 채우기" (단계 2-나 E2 — recordMapRefill, the map page's): POST { mapRefillTopic } at once.
  * The server decides what is open; nothing here judges.
  */
 
 export type PassoffSyncStatus = "local" | "syncing" | "saved" | "pending" | "error";
+
+/**
+ * What recording a map refill came to (단계 2-나 E2 수정 — the map page says which): the server's answer, or why there is none —
+ * "licence": no licence active on this device (after waiting a few seconds for one being checked) or the server did not
+ * take the session; "offline": the request did not go; "error": the server failed.
+ */
+export type MapRefillResult = { ok: true; progress: PassoffProgressSnapshot } | { ok: false; reason: "licence" | "offline" | "error" };
+
+/** how long a map refill waits for a licence still being checked on this device */
+const LICENCE_WAIT_MS = 5_000;
 
 interface PendingCompletion {
   lessonId: string;
@@ -50,8 +61,13 @@ interface PassoffProgressContextType {
    */
   countedIds: ReadonlySet<string> | null;
   syncStatus: PassoffSyncStatus;
-  /** the five steps of this lesson are done */
+  /** the lesson is finished (the learner pressed '이 강의 학습 완료' after its five steps) */
   recordLessonComplete: (lessonId: string) => void;
+  /**
+   * 단계 2-나 E2: the topic's "구성도 다시 채우기" was done (src/app/passoff-grammar/map) — sent at once, not queued: the map
+   * page waits for the answer and offers to send again when none came. Resolves with the server's answer, or why none came.
+   */
+  recordMapRefill: (topic: number) => Promise<MapRefillResult>;
   /** sends the queue now; resolves with the server's answer, or null when nothing went or it failed */
   flush: () => Promise<PassoffProgressSnapshot | null>;
   /** a topic opened that the course list has not announced yet (usePassoffUnlockNotice) */
@@ -65,6 +81,7 @@ const PassoffProgressContext = createContext<PassoffProgressContextType>({
   countedIds: null,
   syncStatus: "local",
   recordLessonComplete: () => {},
+  recordMapRefill: async () => ({ ok: false, reason: "licence" }),
   flush: async () => null,
   unannouncedTopic: null,
   markTopicAnnounced: () => {},
@@ -307,6 +324,35 @@ export function PassoffProgressProvider({ children }: { children: React.ReactNod
     [commitPending, flush, hasActiveLicense],
   );
 
+  const recordMapRefill = useCallback(
+    async (topic: number): Promise<MapRefillResult> => {
+      // a licence still being checked on this device (a page opened afresh) — a few seconds for it
+      for (let waited = 0; !identityRef.current && waited < LICENCE_WAIT_MS; waited += 250) {
+        await new Promise((resolve) => window.setTimeout(resolve, 250));
+      }
+      const licence = identityRef.current;
+      if (!licence) return { ok: false, reason: "licence" };
+      try {
+        // queued completions first, so the answer judges the topic with them (the map is taken after its lessons)
+        await flush();
+        const response = await fetch(API, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ updates: [{ mapRefillTopic: topic }] }),
+        });
+        const data = await response.json().catch(() => null);
+        if (response.status === 401 || response.status === 403) return { ok: false, reason: "licence" };
+        if (!response.ok || !data || !data.success) return { ok: false, reason: "error" };
+        const progress = data.progress as PassoffProgressSnapshot;
+        if (identityRef.current === licence) accept(progress);
+        return { ok: true, progress };
+      } catch {
+        return { ok: false, reason: typeof navigator !== "undefined" && navigator.onLine === false ? "offline" : "error" };
+      }
+    },
+    [accept, flush],
+  );
+
   // a licence became active (or the connection came back): what waited for it goes now
   useEffect(() => {
     if (!licenseIdentity) return;
@@ -365,11 +411,12 @@ export function PassoffProgressProvider({ children }: { children: React.ReactNod
       countedIds,
       syncStatus: hasActiveLicense ? status : "local",
       recordLessonComplete,
+      recordMapRefill,
       flush,
       unannouncedTopic: hasActiveLicense ? unannouncedTopic : null,
       markTopicAnnounced,
     }),
-    [countedIds, flush, hasActiveLicense, markTopicAnnounced, passoffProgress, recordLessonComplete, serverAnswer, status, unannouncedTopic],
+    [countedIds, flush, hasActiveLicense, markTopicAnnounced, passoffProgress, recordLessonComplete, recordMapRefill, serverAnswer, status, unannouncedTopic],
   );
 
   return <PassoffProgressContext.Provider value={value}>{children}</PassoffProgressContext.Provider>;

@@ -12,6 +12,11 @@
  *   4) 끝나면 이 작업 트리의 data/license-devices.json · data/passoff-progress.json · data/student-progress.json 을 지운다
  *      (.gitignore 에 있지만 남겨 두지 않는다)
  *   --break=life-cookie : 잠금이어야 하는 곳에 LIFE 쿠키를 보냄 — 잠금 칸들이 FAIL(exit 1)이어야(검사가 실패할 수 있음)
+ *   단계 2-나 E2: 구성도 다시 채우기 조건이 켜져 L6 은 레슨 셋 → 아직 1 → { mapRefillTopic: 1 } → 2 · L3c 는 잠금 화면의 구성도 조건과
+ *   그 쪽 링크 · L14 는 구성도 쪽(/passoff-grammar/map?topic=N)이 이용권 · 열린 대주제에만 그 레슨 글을 싣는지
+ *   E2 수정(구성도는 대주제 끝): L3c 레슨 전 잠금 화면에는 구성도 조건 글만(링크 없음) · L5c 레슨 전 구성도는 안 남음 · L6 레슨을 마친
+ *   잠금 화면에 그 쪽 링크 · L14 이용권 없는 안내 줄에 data-kig-paid-extra="license" · L14e 열린 대주제라도 레슨 전이면 '대주제의 레슨을
+ *   마친 뒤'(글 0) · L14b 그 레슨을 마치면 구성도 · L14d LIFE 도 같음
  * exit 0 = 실패 0
  */
 import fs from "node:fs";
@@ -60,7 +65,11 @@ const visible = (html) =>
     .replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&[a-z#0-9]+;/g, " ")
     .replace(/\s+/g, " ").trim();
 async function page(p, cookie = null, { rsc = false } = {}) {
-  const r = await fetch(BASE + p, { headers: { ...(cookie ? { cookie } : {}), ...(rsc ? { RSC: "1" } : {}) }, redirect: "manual" });
+  const headers = { ...(cookie ? { cookie } : {}), ...(rsc ? { RSC: "1" } : {}) };
+  let r = await fetch(BASE + p, { headers, redirect: "manual" });
+  // an RSC request without the router's `_rsc` is sent (307) to the URL that has it — followed once (probe-review-leak.mjs)
+  const location = r.headers.get("location");
+  if (rsc && r.status === 307 && location && /[?&]_rsc(=|&|$)/.test(location)) r = await fetch(new URL(location, BASE), { headers, redirect: "manual" });
   const body = await r.text();
   return { status: r.status, body, text: rsc ? body : visible(body) };
 }
@@ -69,6 +78,8 @@ async function api(method, p, cookie, body) {
   return { status: r.status, data: await r.json().catch(() => null), setCookie: r.headers.getSetCookie?.() || [] };
 }
 const complete = (cookie, ids) => api("POST", "/api/progress/passoff-grammar", cookie, { updates: ids.map((lessonId) => ({ lessonId, completed: true, clientUpdatedAt: Date.now() })) });
+/** a topic's "구성도 다시 채우기" as the map page sends it (단계 2-나 E2 — since then the topic's last condition) */
+const mapRefill = (cookie, topic) => api("POST", "/api/progress/passoff-grammar", cookie, { updates: [{ mapRefillTopic: topic }] });
 
 const lessonFile = (id) => JSON.parse(fs.readFileSync(path.join(REPO, "content/lessons/passoff-grammar", `${id}.json`), "utf8"));
 /** the lesson's own words — none may reach a locked page */
@@ -113,7 +124,11 @@ const lockCookie = (c) => (BREAK === "life-cookie" ? life.cookie : c);
   check(`L3 STUDENT 이용권(새것): ${t2[0]} 대주제 잠금 '순차 학습 잠금' · 'TOPIC 1을 마치면 열려요' · 본문 0(HTML · RSC)`,
     r.status === 200 && r.text.includes("순차 학습 잠금") && r.text.includes("TOPIC 1을 마치면 열려요") && !r.text.includes(LESSON) && leak.length === 0, leak.join(" · ") || r.text.match(/순차 학습 잠금.{0,60}/)?.[0]);
   check("L3b 잠금 화면은 data-kig-paywall=\"progress\"(이용권 다시 불러오기 고리 없음)", r.body.includes('data-kig-paywall="progress"') && !r.body.includes('data-kig-paywall="license"'), r.body.match(/data-kig-paywall="[a-z]+"/)?.[0]);
-  check("L3c 잠금 화면에 지금 대주제의 조건(TOPIC 1 · 레슨 3개 · 마지막 레슨 이름)", r.text.includes(index.groups[0].label) && r.text.includes(`레슨 ${Math.ceil(t1.length * 0.8)}개 이상`) && r.text.includes(lessonFile(t1[t1.length - 1]).title), r.text.match(/지금 학습할 대주제.{0,120}/)?.[0]);
+  // E2 수정: the map is the topic's end — its condition is there, its link only once the lessons are done (L6)
+  check("L3c 잠금 화면에 지금 대주제의 조건(TOPIC 1 · 레슨 3개 · 마지막 레슨 이름 · 구성도 다시 채우기 — 레슨 전이라 그 쪽 링크는 아직 없음)",
+    r.text.includes(index.groups[0].label) && r.text.includes(`레슨 ${Math.ceil(t1.length * 0.8)}개 이상`) && r.text.includes(lessonFile(t1[t1.length - 1]).title) &&
+      r.text.includes("구성도 다시 채우기") && !r.body.includes('href="/passoff-grammar/map?topic=1"'),
+    r.text.match(/지금 학습할 대주제.{0,160}/)?.[0]);
   // 점검 1: the lessons the server has not counted, each a link into the open topic
   const recorded = r.text.match(/아직 기록되지 않은 레슨.{0,120}/)?.[0] || "";
   check("L3d 잠금 화면에 '아직 기록되지 않은 레슨' — TOPIC 1 의 레슨마다 이름 · 그 레슨으로 가는 링크",
@@ -124,8 +139,18 @@ const lockCookie = (c) => (BREAK === "life-cookie" ? life.cookie : c);
   check("L5 진도 API: unlockedThrough 1 · 대주제 수 = 과정 목록", g.status === 200 && g.data.progress.unlockedThrough === 1 && g.data.progress.topics.length === T.length, JSON.stringify(g.data && g.data.progress && { u: g.data.progress.unlockedThrough, t: g.data.progress.topics.length }));
   const early = await complete(stu.cookie, [t2[0]]);
   check(`L5b 잠긴 ${t2[0]} 완료를 보내도 안 남음`, early.status === 200 && !early.data.progress.lessons[t2[0]], JSON.stringify(early.data.progress.lessons));
+  // E2 수정: a map refill before TOPIC 1's lessons is not taken
+  const earlyMap = await mapRefill(stu.cookie, 1);
+  check("L5c 레슨 전 구성도 다시 채우기 { mapRefillTopic: 1 } → 안 남음 · 아직 1", earlyMap.status === 200 && earlyMap.data.progress.topics[0].mapRefilled === false && earlyMap.data.progress.unlockedThrough === 1,
+    JSON.stringify(earlyMap.data && earlyMap.data.progress && { m: earlyMap.data.progress.topics[0].mapRefilled, u: earlyMap.data.progress.unlockedThrough }));
   const done = await complete(stu.cookie, t1);
-  check("L6 TOPIC 1 세 레슨 완료 → unlockedThrough 2", done.status === 200 && done.data.progress.unlockedThrough === 2, done.data && done.data.progress && done.data.progress.unlockedThrough);
+  const lessonsOnly = done.data && done.data.progress && done.data.progress.unlockedThrough;
+  const beforeMap = await page(`/passoff-grammar/${t2[0]}`, lockCookie(stu.cookie));
+  const refilled = await mapRefill(stu.cookie, 1);
+  check("L6 TOPIC 1 세 레슨 완료 → 아직 1 · 잠금 화면(구성도만 남음 — 이제 그 쪽 링크) → 구성도 다시 채우기 → unlockedThrough 2",
+    done.status === 200 && lessonsOnly === 1 && beforeMap.text.includes("순차 학습 잠금") && beforeMap.body.includes('href="/passoff-grammar/map?topic=1"') &&
+      refilled.status === 200 && refilled.data.progress.unlockedThrough === 2,
+    `레슨만 ${lessonsOnly} · 잠금 ${beforeMap.text.includes("순차 학습 잠금")} · 링크 ${beforeMap.body.includes('href="/passoff-grammar/map?topic=1"')} · 구성도 뒤 ${refilled.data && refilled.data.progress && refilled.data.progress.unlockedThrough}`);
   const now2 = await page(`/passoff-grammar/${t2[0]}`, stu.cookie);
   check(`L6b 이제 ${t2[0]} 레슨이 열림`, now2.status === 200 && !PAYWALL.test(now2.text) && now2.text.includes(LESSON), now2.status);
   if (t3) {
@@ -154,6 +179,52 @@ const lockCookie = (c) => (BREAK === "life-cookie" ? life.cookie : c);
   check("L10 STUDENT 이용권: /student/s2-1 은 STUDENT 순서 잠금 문구 그대로(main 판 '2장은 앞 장을 마치면 열립니다')", s2.text.includes("순차 학습 잠금") && s2.text.includes("2장은 앞 장을 마치면 열립니다"), s2.text.match(/순차 학습 잠금.{0,50}/)?.[0]);
   const s1 = await page("/student/s1-3", stu.cookie);
   check("L10b STUDENT 이용권: /student/s1-3 열림", s1.status === 200 && !PAYWALL.test(s1.text), s1.status);
+}
+
+// --- "구성도 다시 채우기" page (단계 2-나 E2): the map's words only for a licence with the topic open ------------------------
+{
+  const mapWords = (ids) => ids.flatMap((id) => {
+    const d = lessonFile(id);
+    const rule = d.blocks.find((b) => b.type === "rule");
+    const anchors = (d.blocks.find((b) => b.type === "anchors") || { items: [] }).items;
+    return [rule && rule.title, anchors[0] && anchors[0].en].filter((t) => typeof t === "string" && t.length >= 8);
+  });
+  const none = await page("/passoff-grammar/map?topic=1");
+  const noneRsc = await page("/passoff-grammar/map?topic=1", null, { rsc: true });
+  const noneLeak = [...found(none, mapWords(t1)), ...found(noneRsc, mapWords(t1))];
+  // E2 수정: the line is marked for LicenseProvider (a licence checked after the page came gets it again as the licensed page)
+  check("L14 구성도 쪽: 이용권 없음 → 안내 한 줄(data-kig-paid-extra=\"license\") · TOPIC 1 레슨의 규칙 제목 · 예문 0(HTML · RSC)",
+    none.status === 200 && none.text.includes("이용권이 있으면") && none.body.includes('data-kig-paid-extra="license"') && noneLeak.length === 0, noneLeak.join(" | ") || none.status);
+  // E2 수정: the map is the topic's END — an all-pass (1Y) with TOPIC 2 open and its lessons not done gets the line, not the map
+  await complete(all.cookie, t1);
+  await mapRefill(all.cookie, 1);
+  const wait2 = await page("/passoff-grammar/map?topic=2", all.cookie);
+  const wait2Rsc = await page("/passoff-grammar/map?topic=2", all.cookie, { rsc: true });
+  const waitLeak = [...found(wait2, mapWords(t2)), ...found(wait2Rsc, mapWords(t2))];
+  check(`L14e 올패스(TOPIC 2 열림 · 그 레슨 전): TOPIC 2 구성도 쪽 → '대주제의 레슨을 마친 뒤' · 레슨 ${t2.length}개 조건 · 그 레슨 글 0(HTML · RSC)`,
+    wait2.status === 200 && wait2.text.includes("대주제의 레슨을 마친 뒤") && wait2.body.includes('data-passoff-map-waiting="2"') && waitLeak.length === 0,
+    waitLeak.join(" | ") || wait2.text.match(/구성도 다시 채우기는.{0,80}/)?.[0]);
+  await complete(all.cookie, t2);
+  const open2 = await page("/passoff-grammar/map?topic=2", all.cookie);
+  const seen2 = found(open2, mapWords(t2));
+  const other = found(open2, mapWords(T.filter((_, i) => i !== 1).flat()));
+  check(`L14b 올패스(TOPIC 2 레슨을 마침): TOPIC 2 구성도 — 그 레슨들의 규칙 · 예문 ${mapWords(t2).length}개가 있음 · 다른 대주제 것 0`,
+    open2.status === 200 && seen2.length === mapWords(t2).length && other.length === 0, `${seen2.length}/${mapWords(t2).length} · 다른 것 ${other.join(" | ") || 0}`);
+  if (t3) {
+    const locked3 = await page(`/passoff-grammar/map?topic=3`, lockCookie(stu.cookie));
+    const locked3Rsc = await page(`/passoff-grammar/map?topic=3`, lockCookie(stu.cookie), { rsc: true });
+    const leak3 = [...found(locked3, mapWords(t3)), ...found(locked3Rsc, mapWords(t3))];
+    check("L14c STUDENT 이용권: 잠긴 TOPIC 3 구성도 → 'TOPIC 3은 아직 열리지 않았어요' · 그 레슨 글 0(HTML · RSC)", locked3.text.includes("TOPIC 3은 아직 열리지 않았어요") && leak3.length === 0, leak3.join(" | ") || locked3.text.match(/구성도 다시 채우기.{0,60}/)?.[0]);
+  }
+  // LIFE: every topic open — the last topic's map once its lessons are done (before them, the line and none of its words)
+  const lifeEarly = await page(`/passoff-grammar/map?topic=${T.length}`, life.cookie);
+  const lifeEarlyLeak = found(lifeEarly, mapWords(T[T.length - 1]));
+  await complete(life.cookie, T[T.length - 1]);
+  const lifeDeep = await page(`/passoff-grammar/map?topic=${T.length}`, life.cookie);
+  check(`L14d LIFE: 맨 끝 TOPIC ${T.length} 구성도 — 레슨 전 '레슨을 마친 뒤'(글 0) → 레슨을 마치면 열림`,
+    lifeEarly.status === 200 && lifeEarly.text.includes("대주제의 레슨을 마친 뒤") && lifeEarlyLeak.length === 0 &&
+      lifeDeep.status === 200 && found(lifeDeep, mapWords(T[T.length - 1])).length === mapWords(T[T.length - 1]).length,
+    `${lifeEarly.status} · 레슨 전 글 ${lifeEarlyLeak.length} · ${lifeDeep.status}`);
 }
 
 // --- admin --------------------------------------------------------------------------------------------

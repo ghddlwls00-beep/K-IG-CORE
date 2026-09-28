@@ -3,7 +3,7 @@ import "server-only";
 import crypto from "crypto";
 import fs from "fs";
 import path from "path";
-import { GetObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { GetObjectCommand, ListObjectsV2Command, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { normalizeLicenseKey } from "@/lib/license";
 import { emptyRecord, sanitizeRecord } from "./engine";
 import type { CourseRecord } from "./types";
@@ -201,6 +201,69 @@ const WRITE_ATTEMPTS = 4;
 /** The licence's record for a course (a read never writes). */
 export async function readLearningRecord(course: string, key: string): Promise<CourseRecord> {
   return (await readStored(checkedCourse(course), key)).record;
+}
+
+/** records read by one request of the owner's report list (/admin/license) at most — the list goes on with `next` */
+export const REPORT_PAGE_LIMIT = 200;
+/** reads in flight at once while listing */
+const LIST_READS_AT_ONCE = 8;
+
+/** One page of every licence's reports: each record's reports only (the rest of a record is dropped as soon as it is read). */
+export interface LearningReportsPage {
+  /** one entry per record read — its reports, maybe none */
+  records: Pick<CourseRecord, "reports">[];
+  /** where the next page starts (an object name — a hash of a code — or, for the local file, a position); null at the end */
+  next: string | null;
+}
+
+/**
+ * Every licence's "내 답도 맞아요" reports for a course, read-only, nameless and a page at a time (단계 2-나 E2 — the owner's list,
+ * 공통-학습-엔진.md §8-6; 수정: the first version read up to 5,000 whole records in one request, about 300 KB each). The objects
+ * under private/learning/<course>/ are named by a hash of the code, so nothing here says whose a record is, and a record is
+ * cut down to its reports right after it is read. R2: one listing of `limit` names (Class A) + one read each (Class B) per
+ * page, only when the owner asks. The local stand-in file is paged by position.
+ */
+export async function listLearningReports(
+  course: string,
+  { after = null, limit = REPORT_PAGE_LIMIT }: { after?: string | null; limit?: number } = {},
+): Promise<LearningReportsPage> {
+  checkedCourse(course);
+  const size = Math.min(REPORT_PAGE_LIMIT, Math.max(1, Math.floor(limit) || REPORT_PAGE_LIMIT));
+  const reportsOnly = (record: CourseRecord) => ({ reports: record.reports });
+  const config = getR2Config();
+  if (!config) {
+    const all = Object.values(readLocal(course));
+    const start = after !== null && /^\d+$/.test(after) ? Number(after) : 0;
+    const end = start + size;
+    return {
+      records: all.slice(start, end).map((raw) => reportsOnly(sanitizeRecord(raw, course))),
+      next: end < all.length ? String(end) : null,
+    };
+  }
+  const prefix = `private/learning/${course}/`;
+  const page = await config.client.send(
+    new ListObjectsV2Command({ Bucket: config.bucket, Prefix: prefix, MaxKeys: size, ...(after && after.startsWith(prefix) ? { StartAfter: after } : {}) }),
+  );
+  const keys = (page.Contents ?? []).map((item) => item.Key).filter((key): key is string => Boolean(key && key.endsWith(".json")));
+  const records: Pick<CourseRecord, "reports">[] = [];
+  for (let i = 0; i < keys.length; i += LIST_READS_AT_ONCE) {
+    const batch = await Promise.all(
+      keys.slice(i, i + LIST_READS_AT_ONCE).map(async (Key) => {
+        try {
+          const response = await config.client.send(new GetObjectCommand({ Bucket: config.bucket, Key }));
+          const raw = await response.Body?.transformToString();
+          return raw ? reportsOnly(decrypt(raw, config.encryptionKey, course)) : null;
+        } catch (error) {
+          // one unreadable record does not hide the others' reports
+          console.error(`Learning record unreadable (${course}):`, error);
+          return null;
+        }
+      }),
+    );
+    for (const record of batch) if (record) records.push(record);
+  }
+  const last = page.Contents?.[page.Contents.length - 1]?.Key ?? null;
+  return { records, next: page.IsTruncated && last ? last : null };
 }
 
 /**

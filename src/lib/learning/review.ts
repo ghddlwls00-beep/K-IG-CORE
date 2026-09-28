@@ -9,7 +9,7 @@
  * docs/pass-off-grammar/검사/check-learning-api.cjs.
  */
 import { addDays, daysBetween } from "./day";
-import { isPassed, planDay, ruleOf } from "./engine";
+import { isPassed, planDay, ruleOf, type wrongList } from "./engine";
 import type { CourseProfile, CourseRecord, Day, ItemState, Plan } from "./types";
 
 /** What POST /api/learning/<course> answers. */
@@ -26,6 +26,8 @@ export interface LearningSyncAnswer<T = unknown> {
   owner: string;
   /** false: the device sent another licence's record (its owner is not this session's), so it was not merged */
   taken: boolean;
+  /** 단계 2-나 E2 — with a `forward`: how many of those lessons' learning items come back by tomorrow (practice.ts forwardedItems) */
+  forwarded?: number;
 }
 
 /** A copy with only the kept items (their answers and reports go with them) and the kept lessons. */
@@ -196,4 +198,106 @@ export function reviewSummary(
     passed: states.filter((s) => s.stage === "passed" && counted(s.kind)).length,
     tomorrow: planDay(record, addDays(today, 1), profile).items.length,
   };
+}
+
+// ---------------------------------------------------------------------------
+// 단계 2-나 E2 — the wrong-answer list and "내 답도 맞아요" (공통-학습-엔진.md §8-5 · 8-6)
+// ---------------------------------------------------------------------------
+
+/** One lesson of the wrong-answer list (engine.ts wrongList) — keys, kinds and the learner's own last wrong answer, no item text. */
+export type WrongLesson = ReturnType<typeof wrongList>[number];
+
+/**
+ * POST /api/learning/<course> with `view: "notes"`: the answer also carries the wrong-answer list of the lessons this licence
+ * has open, and `items` holds the data of ONE lesson's listed items (`lesson`) — none without it (the list itself says only
+ * which items, the text comes lesson by lesson).
+ */
+export interface LearningNotesAnswer<T = unknown> extends LearningSyncAnswer<T> {
+  notes: WrongLesson[];
+}
+
+/** The reports of one item, from every learner's record (the owner's list — /admin/license). */
+export interface ReportGroup {
+  item: string;
+  /** reports of this item */
+  count: number;
+  /** records that hold one (a learner each — the records carry no name) */
+  learners: number;
+  pending: number;
+  accepted: number;
+  rejected: number;
+  lastDay: Day;
+  /** the answers given — the same words (case and spaces aside) once, most given first */
+  answers: { answer: string; count: number; lastDay: Day }[];
+}
+
+const sameWords = (answer: string) => answer.trim().replace(/\s+/g, " ").toLowerCase();
+const later = (a: Day, b: Day) => (daysBetween(a, b) > 0 ? b : a);
+
+/** Reports grouped by item: the most reported first, then the most recent. */
+export function reportGroups(records: readonly Pick<CourseRecord, "reports">[]): ReportGroup[] {
+  const groups = new Map<string, ReportGroup & { answerMap: Map<string, { answer: string; count: number; lastDay: Day }> }>();
+  records.forEach((record) => {
+    const seen = new Set<string>();
+    for (const report of record.reports) {
+      let group = groups.get(report.item);
+      if (!group) {
+        group = { item: report.item, count: 0, learners: 0, pending: 0, accepted: 0, rejected: 0, lastDay: report.day, answers: [], answerMap: new Map() };
+        groups.set(report.item, group);
+      }
+      group.count += 1;
+      group[report.status] += 1;
+      group.lastDay = later(group.lastDay, report.day);
+      if (!seen.has(report.item)) {
+        seen.add(report.item);
+        group.learners += 1;
+      }
+      const words = sameWords(report.answer);
+      const answer = group.answerMap.get(words) ?? { answer: report.answer.trim().replace(/\s+/g, " "), count: 0, lastDay: report.day };
+      answer.count += 1;
+      answer.lastDay = later(answer.lastDay, report.day);
+      group.answerMap.set(words, answer);
+    }
+  });
+  return [...groups.values()]
+    .map(({ answerMap, ...group }) => ({
+      ...group,
+      answers: [...answerMap.values()].sort(byAnswer),
+    }))
+    .sort(byGroup);
+}
+
+const byAnswer = (a: ReportGroup["answers"][number], b: ReportGroup["answers"][number]) => b.count - a.count || daysBetween(a.lastDay, b.lastDay);
+const byGroup = (a: ReportGroup, b: ReportGroup) => b.count - a.count || daysBetween(a.lastDay, b.lastDay) || (a.item < b.item ? -1 : 1);
+
+/**
+ * Report groups of different records as one list (단계 2-나 E2 수정 — the owner's list is read a page of records at a time, so
+ * the pages' groups are joined here): counts and learners add up (a page's records are its own), the same words once, the
+ * same order as reportGroups. What else a group carries (the admin route's `about`) is the first page's.
+ */
+export function mergeReportGroups<G extends ReportGroup>(a: readonly G[], b: readonly G[]): G[] {
+  const groups = new Map<string, G & { answerMap: Map<string, { answer: string; count: number; lastDay: Day }> }>();
+  for (const group of [...a, ...b]) {
+    let into = groups.get(group.item);
+    if (!into) {
+      into = { ...group, count: 0, learners: 0, pending: 0, accepted: 0, rejected: 0, answers: [], answerMap: new Map() };
+      groups.set(group.item, into);
+    }
+    into.count += group.count;
+    into.learners += group.learners;
+    into.pending += group.pending;
+    into.accepted += group.accepted;
+    into.rejected += group.rejected;
+    into.lastDay = later(into.lastDay, group.lastDay);
+    for (const answer of group.answers) {
+      const words = sameWords(answer.answer);
+      const seen = into.answerMap.get(words) ?? { answer: answer.answer, count: 0, lastDay: answer.lastDay };
+      seen.count += answer.count;
+      seen.lastDay = later(seen.lastDay, answer.lastDay);
+      into.answerMap.set(words, seen);
+    }
+  }
+  return [...groups.values()]
+    .map(({ answerMap, ...group }) => ({ ...group, answers: [...answerMap.values()].sort(byAnswer) }) as unknown as G)
+    .sort(byGroup);
 }

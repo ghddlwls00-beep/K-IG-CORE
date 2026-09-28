@@ -5,8 +5,10 @@ import type { PassoffProduceItem } from "@/lib/passoffTypes";
 import { gradeProduce, hasHangul, isCorrect, writingIssues, type DiffToken, type ProduceResult } from "@/lib/passoffGrading";
 import { contrastPool, firstLetters, wordTiles } from "@/lib/passoffLesson";
 import { generateWordBank, verifyAnyWordSequence, type WordTile } from "@/lib/listeningUtils";
-import { notePassoffAttempt, strongerHelp, type PassoffAttempt, type PassoffHelp } from "@/lib/passoffLearning";
+import { notePassoffAttempt, strongerHelp, type PassoffAnswerMode, type PassoffAttempt, type PassoffHelp } from "@/lib/passoffLearning";
+import { MyAnswerReport } from "../learning/MyAnswerReport";
 import { VoiceSpeakingTester } from "../VoiceSpeakingTester";
+import { LESSON_REPORT_NOTE, useLessonReport } from "./lessonReport";
 import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, tone, usePassoffLearner, type FontSize, type Speaker } from "./ui";
 
 export interface ComposeOutcome {
@@ -47,6 +49,11 @@ const HELP_AT: PassoffHelp[] = ["none", "none", "hint", "tiles", "reveal"];
  * ladder (the results come together at the end). `missed` is that check's wrong answer when the sentence comes once more
  * right after the results: the card opens on it at the ladder's first rung — the answer in the box, where it is wrong
  * marked (설계 §4 "틀린 문장은 즉시 사다리") — not as a blank card. Without these the card is the lesson's, unchanged.
+ *
+ * 단계 2-나 E2 — "내 답도 맞아요" (§8-6) under a wrong result (where it is wrong · the answer shown): the last typed or spoken
+ * answer that was graded wrong (on a card opened on the check's `missed` answer, that answer until another is checked). In
+ * the lesson it is kept for judging (useLessonReport — nothing else moves); on the review screen `onReport` hands it to the
+ * frame, which records it in place of the day's wrong answer when it can.
  */
 export function ComposeCard({
   item,
@@ -65,6 +72,9 @@ export function ComposeCard({
   afterMiss,
   test = false,
   missed,
+  onReport,
+  reported,
+  reportNote,
 }: {
   item: PassoffProduceItem;
   kind: "produce" | "transfer";
@@ -89,15 +99,34 @@ export function ComposeCard({
   test?: boolean;
   /** the check's wrong answer (`spoken`: said into the microphone) — the card opens on it, at the ladder's first rung */
   missed?: { answer: string; spoken: boolean };
+  /** "내 답도 맞아요" — who records it (the lesson's own report when absent) */
+  onReport?: (mine: { answer: string; mode: PassoffAnswerMode }) => void;
+  /** reported already (the review frame knows; the lesson card keeps its own) */
+  reported?: boolean;
+  /** the line once reported */
+  reportNote?: string;
 }) {
   const learner = usePassoffLearner();
   const note = onAttempt ?? ((attempt: PassoffAttempt) => notePassoffAttempt(attempt, learner));
+  const lessonReport = useLessonReport();
   // graded as it was in the check (the same grader, the same answer): a wrong answer opens the card on the ladder
   const [start] = useState<ProduceResult | null>(() => {
     if (!missed) return null;
     const res = gradeProduce(missed.answer, item, { spoken: missed.spoken });
     return res.verdict === "wrong" ? res : null;
   });
+  const [reportedHere, setReportedHere] = useState(false);
+  /** the last typed or spoken answer graded wrong — what "내 답도 맞아요" sends (the check's, on a card opened on it) */
+  const [lastWrong, setLastWrong] = useState<{ answer: string; mode: PassoffAnswerMode; help: PassoffHelp } | null>(() =>
+    start && missed ? { answer: missed.answer, mode: missed.spoken ? "voice" : "typed", help: priorHelp } : null,
+  );
+  const isReported = reported ?? reportedHere;
+  function sendReport() {
+    if (!lastWrong || isReported) return;
+    if (onReport) onReport({ answer: lastWrong.answer, mode: lastWrong.mode });
+    else lessonReport({ lessonId, itemId: item.id, kind, help: lastWrong.help, mode: lastWrong.mode, answer: lastWrong.answer });
+    setReportedHere(true);
+  }
   const [text, setText] = useState(start && missed ? missed.answer : "");
   const [heard, setHeard] = useState<string | null>(null);
   const [checks, setChecks] = useState(start ? 1 : 0);
@@ -143,6 +172,7 @@ export function ComposeCard({
     const correct = isCorrect(res);
     const firstTry = checks === 0;
     const firstAnswer = { answer, verdict: res.verdict, reference: res.reference };
+    if (!correct) setLastWrong({ answer, mode, help: strongerHelp(priorHelp, HELP_AT[rung]) });
     if (firstTry) {
       setFirst(firstAnswer);
       onFirstTry({ right: correct, first: presentation === 0 ? firstAnswer : null });
@@ -291,6 +321,7 @@ export function ComposeCard({
               </p>
             </div>
           ) : null}
+          {lastWrong ? <MyAnswerReport reported={isReported} note={reportNote ?? LESSON_REPORT_NOTE} onReport={sendReport} /> : null}
         </div>
       ) : null}
 
@@ -375,6 +406,7 @@ export function ComposeCard({
               <DiffLine tokens={result.diff} reveal font={font} />
             </>
           ) : null}
+          {lastWrong ? <MyAnswerReport reported={isReported} note={reportNote ?? LESSON_REPORT_NOTE} onReport={sendReport} /> : null}
           {ruleTitle ? <p className="text-body text-ink">규칙: {ruleTitle}</p> : null}
           <StudentTag studentRef={item.studentRef} />
           {comeback ? <p className="text-label text-ink-soft">{comeback}</p> : null}
