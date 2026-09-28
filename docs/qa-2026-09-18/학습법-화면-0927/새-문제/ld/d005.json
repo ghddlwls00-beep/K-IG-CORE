@@ -8,10 +8,10 @@
       "type": "중심 내용",
       "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
       "options": [
-        "톰과 프레드가 다니는 학교 소개",
-        "낚시 대회에서 우승한 이야기",
-        "톰과 프레드의 비슷한 취향",
-        "두 소년의 성적 비교"
+        "두 친구가 서로 다른 점",
+        "두 친구가 즐겨 먹는 음식의 조리법",
+        "두 친구의 비슷한 취향",
+        "두 친구가 함께 나간 운동 대회"
       ],
       "answer": 2,
       "evidence": [
@@ -20,23 +20,24 @@
         7,
         8
       ],
-      "note": "'They like many of the same things', 'dislike many of the same kinds of things'에서 두 소년의 취향이 비슷함을 알 수 있음."
+      "note": "'They like many of the same things', 'dislike many of the same kinds of things'에서 두 친구의 취향이 비슷함을 알 수 있음."
     },
     {
       "id": "d005-q2",
       "type": "세부 사실",
-      "prompt": "톰과 프레드가 둘 다 잘하는 운동으로 옳은 것은?",
+      "prompt": "톰과 프레드에 대한 설명으로 옳은 것은?",
       "options": [
-        "골프",
-        "수영",
-        "배드민턴",
-        "테니스"
+        "생선은 먹지 않는다",
+        "아침 일찍 일어나기를 즐긴다",
+        "야구를 가장 잘한다",
+        "낚시를 무척 좋아한다"
       ],
       "answer": 3,
       "evidence": [
-        5
+        2,
+        3
       ],
-      "note": "'they both play good tennis'에서 잘하는 운동을 알 수 있음."
+      "note": "'both boys like to fish', 'They love to fish'에서 알 수 있음."
     },
     {
       "id": "d005-q3",

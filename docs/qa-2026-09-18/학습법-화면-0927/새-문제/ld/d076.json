@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "d076",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d076-q1",
+      "type": "세부 사실",
+      "prompt": "드래그 레이싱에 쓰는 차의 생김새로 옳은 것은?",
+      "options": [
+        "앞바퀴가 크고 두껍다",
+        "뒤쪽에 자전거 바퀴가 달렸다",
+        "앞바퀴가 자전거 바퀴 같다",
+        "앞뒤 바퀴가 모두 크고 두껍다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "'In the front is something that looks like a bicycle wheel. Huge fat tires are at the back'이 앞은 자전거 바퀴 같고 뒤는 크고 두꺼운 바퀴임을 보여 줌"
+    },
+    {
+      "id": "d076-q2",
+      "type": "목적/태도",
+      "prompt": "팬들이 가장 좋은 경주라고 말하는 것은?",
+      "options": [
+        "차가 잘 보일 만큼 느린 경주",
+        "연기가 하나도 나지 않는 경주",
+        "프로 선수들만 나오는 경주",
+        "차가 안 보일 만큼 빠른 경주"
+      ],
+      "answer": 3,
+      "evidence": [
+        4
+      ],
+      "note": "'the best races are those where the cars go so fast you can't see them at all'이 팬들이 꼽는 가장 좋은 경주를 보여 줌"
+    }
+  ]
+}

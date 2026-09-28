@@ -8,19 +8,19 @@
       "type": "중심 내용",
       "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "기상요원의 예보는 지금까지 한 번도 어긋난 적이 없다",
-        "사람들은 날씨 이야기를 자주 하고 저마다 바라는 날씨를 믿으려 한다",
-        "사람들은 날씨 이야기를 부담스러워해서 되도록 피한다",
-        "날씨를 예측하는 사람들은 대부분 같은 의견을 내놓아 다툴 일이 거의 없다"
+        "날씨를 정확하게 예보하는 여러 가지 방법",
+        "날씨를 두고 사람들이 보이는 여러 가지 모습",
+        "날씨 이야기로 대화를 이어 가는 요령",
+        "날씨가 농사와 나들이에 끼치는 영향"
       ],
       "answer": 1,
       "evidence": [
         1,
-        2,
+        5,
         8,
-        10
+        11
       ],
-      "note": "1번 'everybody talks about the weather' · 2번 'the most common subject of conversation' · 8번 'look for the weather they want' · 10번 'so sure the weather is going to clear up'가 근거"
+      "note": "1번 'everybody talks about the weather' · 5번 'think they can tell what the weather is going to be like' · 8번 'look for the weather they want' · 11번 'listens to what the weatherman says'가 근거"
     },
     {
       "id": "d036-q2",
@@ -42,19 +42,20 @@
     {
       "id": "d036-q3",
       "type": "목적/태도",
-      "prompt": "기상요원에 대한 말하는 사람의 생각으로 가장 적절한 것은?",
+      "prompt": "말하는 사람이 동쪽 하늘이 흐리다는 이야기를 꺼낸 까닭으로 가장 적절한 것은?",
       "options": [
-        "가끔 틀리기도 하지만 누구보다 정확한 편이라고 본다",
-        "말을 믿을 수 없으니 아예 무시하는 것이 낫다고 본다",
-        "언제나 정확하므로 의심할 필요가 전혀 없다고 본다",
-        "일반 사람들보다 날씨를 더 잘 맞히지는 못한다고 본다"
+        "같은 하늘을 보고도 사람마다 짐작이 다름을 보여 주려고",
+        "동쪽이 흐리면 다음 날 비가 온다고 알려 주려고",
+        "구름만 잘 살펴보면 날씨를 쉽게 맞힐 수 있다고 말하려고",
+        "기상요원의 예보가 가끔 틀리는 까닭을 밝히려고"
       ],
       "answer": 0,
       "evidence": [
-        11,
-        12
+        5,
+        6,
+        7
       ],
-      "note": "11번 'once in a while he makes a mistake' · 12번 'closer to being correct than anyone else'가 근거"
+      "note": "5번 'they hardly ever agree with each other' · 6번 'It's going to rain tomorrow' · 7번 'We are going to have fine weather tomorrow'가 근거"
     }
   ]
 }

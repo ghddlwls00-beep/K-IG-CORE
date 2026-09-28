@@ -8,10 +8,10 @@
       "type": "중심 내용",
       "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "도시 생활이 시골 생활보다 경제적인 면에서 더 낫다",
-        "시골은 조용하지만 생활비가 많이 들어 불편하다",
-        "시골 생활은 여러 면에서 도시 생활보다 이점이 많다",
-        "텃밭과 닭만 있으면 시골 생활은 부족함이 없다"
+        "도시와 시골 생활은 장단점이 서로 비슷하다",
+        "시골 생활은 조용하지만 지루하고 불편하다",
+        "시골 생활이 여러모로 도시 생활보다 낫다",
+        "시골에서는 이웃과 가깝게 지낼 수 있어 좋다"
       ],
       "answer": 2,
       "evidence": [
@@ -41,18 +41,18 @@
     {
       "id": "d057-q3",
       "type": "목적/태도",
-      "prompt": "도시로 출퇴근하는 일에 대한 말하는 사람의 생각으로 가장 적절한 것은?",
+      "prompt": "시골집에 대한 말하는 사람의 생각으로 가장 적절한 것은?",
       "options": [
-        "출퇴근이 힘들어서 시골 생활은 권할 만하지 않다",
-        "출퇴근 시간이 짧은 것이 시골 생활의 가장 큰 장점이다",
-        "출퇴근 때문에 가족과 보낼 시간이 거의 없다",
-        "시골 생활의 장점이 출퇴근에 드는 시간을 메워 준다"
+        "은퇴한 뒤에 살기 좋은 곳이다",
+        "주말에 잠깐 쉬러 가기 좋은 곳이다",
+        "값이 비싸 쉽게 마련하기 어려운 곳이다",
+        "가족을 키우며 살기 좋은 곳이다"
       ],
       "answer": 3,
       "evidence": [
-        8
+        6
       ],
-      "note": "“the advantages of country living make up for the hours spent commuting to work”에서 알 수 있음"
+      "note": "“a country home provides a good place to raise a family as well as a pleasant place to return to after a busy day working in the city”에서 알 수 있음"
     }
   ]
 }

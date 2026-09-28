@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "lesson": "d122",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d122-q1",
+      "type": "세부 사실",
+      "prompt": "여러 지역의 인구에 대한 설명으로 옳은 것은?",
+      "options": [
+        "유럽의 인구는 이민 덕분에 빠르게 늘고 있다",
+        "북미 인구 증가의 상당 부분은 이민 때문이다",
+        "북미의 인구는 해마다 2% 넘게 늘고 있다",
+        "아프리카의 인구는 거의 늘지 않고 있다"
+      ],
+      "answer": 1,
+      "evidence": [
+        7
+      ],
+      "note": "'North America's population is growing slowly, and much of that growth is the result of immigration'가 북미 인구 증가의 상당 부분이 이민 때문임을 보여 줌"
+    },
+    {
+      "id": "d122-q2",
+      "type": "목적/태도",
+      "prompt": "많은 개발도상국의 인구에 대해 말하는 사람이 보이는 태도로 가장 적절한 것은?",
+      "options": [
+        "식량 생산보다 빨리 늘어난 것을 반가워한다",
+        "식량 생산보다 느리게 늘어난 것을 다행으로 여긴다",
+        "식량 생산보다 빨리 늘어난 것을 안타까워한다",
+        "식량 생산보다 느리게 늘어난 것을 걱정한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "'Unfortunately, the population in many developing countries has risen faster than food production'가 식량 생산보다 빨리 늘어난 것을 안타까워함을 보여 줌"
+    },
+    {
+      "id": "d122-q3",
+      "type": "다음에 할 일",
+      "prompt": "어떤 사람들이 앞으로 인구 문제를 풀어 줄 것이라고 믿는 것은?",
+      "options": [
+        "식량 증산과 기술 향상",
+        "이민의 자유로운 확대",
+        "새로운 자원의 발견",
+        "인구의 고른 분산"
+      ],
+      "answer": 0,
+      "evidence": [
+        2
+      ],
+      "note": "'Some believe that increased food production and technological improvements will solve the problem'가 보여 줌"
+    }
+  ]
+}

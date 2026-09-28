@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "lesson": "d077",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d077-q1",
+      "type": "세부 사실",
+      "prompt": "오즈월드가 집을 사무실로 쓰기로 한 까닭으로 옳은 것은?",
+      "options": [
+        "비용이 덜 들고 사업이 작아서",
+        "넓은 집에 빈방이 많이 남아서",
+        "진이 일을 도와준다고 해서",
+        "집주인이 그러라고 해서"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "'because it was cheaper and his business was small'이 집을 사무실로 쓰기로 한 까닭을 보여 줌"
+    },
+    {
+      "id": "d077-q2",
+      "type": "세부 사실",
+      "prompt": "진과 오즈월드가 이사하기로 한 까닭으로 옳은 것은?",
+      "options": [
+        "집주인이 집을 비워 달라고 해서",
+        "일이 늘어 집이 너무 비좁아져서",
+        "집세가 갑자기 크게 올라서",
+        "새 사무실을 따로 얻어서"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "'his business developed very quickly and soon the apartment became much too crowded'가 이사하기로 한 까닭을 보여 줌"
+    },
+    {
+      "id": "d077-q3",
+      "type": "다음에 할 일",
+      "prompt": "이사하기로 한 뒤 진과 오즈월드가 한 일로 옳은 것은?",
+      "options": [
+        "집주인들을 만나 집세를 깎았다",
+        "신문에 방을 내놓는 광고를 냈다",
+        "날마다 신문의 아파트 광고를 읽었다",
+        "건축가 친구에게 집을 부탁했다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5
+      ],
+      "note": "'they began to read the apartment ads in the newspaper every day'가 두 사람이 날마다 신문의 아파트 광고를 읽었음을 보여 줌"
+    }
+  ]
+}

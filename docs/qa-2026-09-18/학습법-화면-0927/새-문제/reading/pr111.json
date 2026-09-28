@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr111",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr111-q1",
+      "type": "세부 사실",
+      "prompt": "본문에 따르면 사람들이 산에서 할 수 있는 일로 언급된 것은?",
+      "options": [
+        "많은 사람과 어울려 시끄럽게 논다",
+        "동물 소리를 피해 텐트를 친다",
+        "도시의 소식을 계속 챙겨 듣는다",
+        "일상의 걱정을 잊고 혼자 있기를 즐긴다"
+      ],
+      "answer": 3,
+      "evidence": [
+        3
+      ],
+      "note": "'They can enjoy being alone in the mountains, forgetting completely about the everyday cares of the world' — 걱정을 잊고 혼자 있기를 즐김"
+    },
+    {
+      "id": "pr111-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글 바로 앞에 나왔을 내용으로 가장 적절한 것은?",
+      "options": [
+        "산에서는 시끄러운 군중을 피하기 어렵다는 내용",
+        "깨끗한 공기도 산을 찾는 이유가 된다는 내용",
+        "산속 동물들이 사람을 두려워한다는 내용",
+        "산에 텐트를 치는 것은 위험하다는 내용"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        6
+      ],
+      "note": "'But clean air is not the only reason' · 'These are other reasons why people like to go to the mountains' — 앞에서 깨끗한 공기를 이유로 들었음"
+    }
+  ]
+}

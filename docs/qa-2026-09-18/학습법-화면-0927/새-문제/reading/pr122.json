@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr122",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr122-q1",
+      "type": "세부 사실",
+      "prompt": "1989년에 일어난 일로 가장 적절한 것은?",
+      "options": [
+        "콜롬비아가 커피 수출 가격을 크게 낮추었다",
+        "커피 값을 떠받치던 국제 협정이 끝났다",
+        "콜롬비아가 새 수출 작물을 기르기 시작했다",
+        "커피를 사고파는 새 국제 협정이 맺어졌다"
+      ],
+      "answer": 1,
+      "evidence": [
+        2
+      ],
+      "note": "근거: 'in 1989 an international agreement that had helped keep coffee prices high came to an end'"
+    },
+    {
+      "id": "pr122-q2",
+      "type": "한 단계 추론",
+      "prompt": "커피 가격이 몇 년 사이 최저로 떨어진 까닭으로 가장 적절한 것은?",
+      "options": [
+        "다른 나라들이 커피 수출을 줄여서",
+        "세계 시장에서 커피가 모자라서",
+        "세계 시장에서 커피가 남아돌아서",
+        "콜롬비아가 커피 수출을 늘려서"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "근거: 'more coffee on the world market than buyers needed' · 'As a result, coffee prices fell to their lowest level in years'"
+    }
+  ]
+}

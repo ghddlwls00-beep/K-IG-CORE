@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr123",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr123-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "텔레비전이 학생들의 언어 능력을 높여 주었다",
+        "1960년대 이후 수학 점수는 꾸준히 올랐다",
+        "텔레비전이 학력 저하의 한 원인으로 지목되었다",
+        "1960년대 전부터 모든 집에 텔레비전이 있었다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "근거: 'television was partly blamed for a sharp slide in traditional learning' · 'average scores ... declined'"
+    },
+    {
+      "id": "pr123-q2",
+      "type": "세부 사실",
+      "prompt": "1980년 언어 영역(verbal) 평균 점수로 옳은 것은?",
+      "options": [
+        "424점",
+        "466점",
+        "478점",
+        "502점"
+      ],
+      "answer": 0,
+      "evidence": [
+        2
+      ],
+      "note": "근거: 'declined from 478 to 424 on the verbal exam'"
+    }
+  ]
+}

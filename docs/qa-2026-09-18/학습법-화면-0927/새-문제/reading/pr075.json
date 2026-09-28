@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr075",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr075-q1",
+      "type": "세부 사실",
+      "prompt": "이 글의 내용과 일치하는 것은?",
+      "options": [
+        "1,909명 연구에서 카페인은 임신을 도왔다",
+        "두 연구의 대상은 모두 1,909명이었다",
+        "두 연구 모두 카페인이 임신을 늦춘다는 결과를 얻었다",
+        "2,817명 연구에서는 카페인의 영향이 없었다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "2번 'One study of 2,817 women found no effect of caffeine on their chances of conceiving'에 근거함."
+    },
+    {
+      "id": "pr075-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글에서 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "카페인이 임신에 미치는 영향은 아직 분명하지 않다",
+        "카페인이 임신과 관계없다는 것은 이미 확실하다",
+        "하루 300밀리그램 넘는 카페인은 임신을 막는다",
+        "카페인을 끊으면 누구나 곧 임신할 수 있다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "1번 'Reviews on caffeine and conception conflict', 2번 'found no effect of caffeine ... linked more than 300 milligrams of caffeine daily to a delay in conception'에 근거함."
+    }
+  ]
+}

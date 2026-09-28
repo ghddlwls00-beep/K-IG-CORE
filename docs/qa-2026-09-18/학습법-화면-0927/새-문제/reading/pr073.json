@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr073",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr073-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "남에게 인정받아야 신념을 지킬 용기가 생긴다",
+        "인격과 상관없이 용기만 있으면 두려움이 사라진다",
+        "좋은 사람이라고 확신하면 남의 생각이 두렵지 않다",
+        "좋은 사람일수록 인생의 도전을 피하려 한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        3,
+        4
+      ],
+      "note": "2번 'the sincere conviction that you are a person of sound character', 3번 'never have to worry about what others think of you', 4번 'without fear of what others think'에 근거함."
+    },
+    {
+      "id": "pr073-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 'a person of sound character'를 설명하는 말로 나오지 않은 것은?",
+      "options": [
+        "친절하고 정직한 사람",
+        "믿을 만한 사람",
+        "남을 돌보는 사람",
+        "겸손한 사람"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "2번 'an honest, dependable, kind, and caring person'에 근거함 — 겸손(humble)은 나오지 않음."
+    }
+  ]
+}

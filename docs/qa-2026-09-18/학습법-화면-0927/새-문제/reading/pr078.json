@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr078",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr078-q1",
+      "type": "세부 사실",
+      "prompt": "이 글의 내용과 일치하는 것은?",
+      "options": [
+        "수녀가 의사에게 무슨 일이냐고 물었다",
+        "수녀는 진료비를 내지 않고 떠났다",
+        "접수 직원이 수녀에게 진료비를 받았다",
+        "의사는 수녀에게 진료비를 받지 않겠다고 했다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "1번 'a nun stormed out of the examining room and left without paying'에 근거함."
+    },
+    {
+      "id": "pr078-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글에서 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "의사는 수녀가 정말로 임신했다고 믿었다",
+        "접수 직원은 수녀가 임신했다는 의사의 말을 믿었다",
+        "의사는 수녀를 놀라게 해서 딸꾹질을 멈추려 했다",
+        "수녀는 의사의 말을 듣고 크게 안심했다"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4,
+        5
+      ],
+      "note": "3번 'told her she was pregnant', 4번 'That can't be!', 5번 'Of course not ... but it sure cured her hiccups'에 근거함."
+    }
+  ]
+}

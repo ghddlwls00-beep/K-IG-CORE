@@ -8,9 +8,9 @@
       "type": "중심 내용",
       "prompt": "낸시가 이 편지에서 페기에게 전하려는 주된 내용으로 가장 알맞은 것은?",
       "options": [
-        "시내에 있는 새 아파트로 이사한다는 소식을 전함",
-        "아이들의 학교 성적을 자랑함",
-        "겨울에 난방이 고장 났다고 알림",
+        "농장 일이 너무 힘들다고 불평함",
+        "농장 살 돈을 빌려 달라고 부탁함",
+        "새 농장 일을 도와 달라고 부탁함",
         "새 농장을 소개하고 놀러 오라고 초대함"
       ],
       "answer": 3,
@@ -24,34 +24,36 @@
     {
       "id": "d008-q2",
       "type": "세부 사실",
-      "prompt": "농장에 있는 집에 대한 설명으로 옳은 것은?",
+      "prompt": "새 농장에서 아이들이 등하교하는 방법으로 옳은 것은?",
       "options": [
-        "침실이 3개 있다",
-        "침실이 4개 있다",
-        "화장실이 2개 있다",
-        "지어진 지 얼마 안 된 새집이다"
+        "자전거를 타고 학교에 다닌다",
+        "스쿨버스로 학교에 오간다",
+        "이웃집 차를 얻어 타고 다닌다",
+        "아빠가 트럭에 태워 데려다준다"
       ],
       "answer": 1,
       "evidence": [
-        7
+        4,
+        5
       ],
-      "note": "'The house isn't new', '4 bedrooms and a bathroom'에서 새집이 아니고 침실이 4개임을 알 수 있음."
+      "note": "'There is a school bus for the children', 'It stops for them in the morning and brings them home in the afternoon'에서 아이들이 스쿨버스로 학교에 오감을 알 수 있음."
     },
     {
       "id": "d008-q3",
       "type": "다음에 할 일",
       "prompt": "낸시네 가족이 내년에 하려는 일로 옳은 것은?",
       "options": [
-        "헛간에도 전기가 들어오게 한다",
-        "아이들에게 말을 한 마리 사 준다",
-        "소를 100마리쯤 들여와 키운다",
-        "집에 새 난방 장치를 설치한다"
+        "헛간에 전기를 들인다",
+        "헛간을 새로 짓는다",
+        "헛간에서 말을 키운다",
+        "헛간을 헐고 꽃밭을 만든다"
       ],
       "answer": 0,
       "evidence": [
-        8
+        8,
+        13
       ],
-      "note": "'we are going to put it in the barn next year'에서 내년에 헛간에도 전기를 넣으려 함을 알 수 있음."
+      "note": "'we are going to put it in the barn next year'에서 내년에 헛간에 전기를 들이려 함을, 'The children want a horse, but Don and I think they are too young'에서 말은 키우지 않음을 알 수 있음."
     }
   ]
 }

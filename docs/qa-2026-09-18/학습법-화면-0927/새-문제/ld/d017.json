@@ -8,35 +8,36 @@
       "type": "중심 내용",
       "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
       "options": [
-        "새 집을 짓고 수영장과 테니스장, 큰 정원까지 마련해 이사했다",
-        "교외에 땅을 사서 곧바로 집을 짓기 시작했다",
-        "첫 집을 계획했지만 너무 비싸서 아직 짓지 못했다",
-        "돈을 다 모아서 원하던 꿈의 집을 마침내 샀다"
+        "돈을 모두 모은 끝에 원하던 꿈의 집을 마침내 샀다",
+        "은행에서 돈을 빌려 꿈의 집을 곧바로 지었다",
+        "꿈의 집을 계획했지만 너무 비싸서 아직 짓지 못했다",
+        "돈을 아끼려고 꿈의 집 대신 작은 집을 지었다"
       ],
       "answer": 2,
       "evidence": [
         1,
         6,
+        7,
         8
       ],
-      "note": "“planning our first house”, “Our dream house was just too expensive”, “We still live in our little apartment in town”에서 알 수 있다."
+      "note": "“planning our first house”, “Our dream house was just too expensive”, “We decided to wait until we had more money”, “We still live in our little apartment in town”에서 알 수 있다."
     },
     {
       "id": "d017-q2",
       "type": "세부 사실",
-      "prompt": "집 지을 곳으로 이들이 생각해 본 장소가 아닌 것은?",
+      "prompt": "방을 몇 개로 할지 정한 뒤 이들이 깨달은 것으로 알맞은 것은?",
       "options": [
-        "계곡",
-        "호숫가",
-        "숲속",
-        "강가"
+        "방이 몇 개 더 필요하다는 것",
+        "창문이 더 많이 필요하다는 것",
+        "집이 너무 커진다는 것",
+        "새 가구가 많이 필요하다는 것"
       ],
       "answer": 3,
       "evidence": [
-        2,
-        3
+        4,
+        5
       ],
-      "note": "“in town or in the suburbs”, “In the valley or in the hills”, “By the lake or on the coast”, “In the mountains or in the woods” 가운데 강가는 없다."
+      "note": "“decide how many rooms we wanted”, “When we finished that we realized we needed a lot of new furniture”에서 알 수 있다."
     },
     {
       "id": "d017-q3",
@@ -44,7 +45,7 @@
       "prompt": "꿈의 집 계획을 세운 뒤 이들이 하기로 한 일로 알맞은 것은?",
       "options": [
         "돈이 더 생길 때까지 기다리기로 했다",
-        "은행에서 돈을 빌려 당장 집을 짓기로 했다",
+        "가진 돈으로 작은 땅부터 사기로 했다",
         "방 개수를 줄여서 바로 공사를 시작하기로 했다",
         "수영장과 정원은 빼고 작은 집을 사기로 했다"
       ],

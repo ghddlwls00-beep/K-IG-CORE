@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr117",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr117-q1",
+      "type": "세부 사실",
+      "prompt": "책장을 만들 때 목재를 자른 다음에 할 일은?",
+      "options": [
+        "목재상에서 책장용 나무 고르기",
+        "목재에 페인트 칠하기",
+        "접착제와 못으로 조립하기",
+        "서재에 맞는 책장 설계하기"
+      ],
+      "answer": 2,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "'carefully cut it according to your design' · 'The next step is to put the different parts together with glue and nails' — 자른 다음은 조립"
+    },
+    {
+      "id": "pr117-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "글에서 'add the finishing touch'가 뜻하는 것은?",
+      "options": [
+        "마지막 손질을 하다",
+        "나무 조각을 새로 붙이다",
+        "나무 표면을 손으로 만지다",
+        "나무를 처음부터 다시 자르다"
+      ],
+      "answer": 0,
+      "evidence": [
+        6
+      ],
+      "note": "'add the finishing touch by painting the woodwork' — 페인트를 칠해 마지막 손질을 함"
+    }
+  ]
+}

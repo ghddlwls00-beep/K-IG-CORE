@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr069",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr069-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "금속 활자 인쇄는 1450년대 유럽에서 처음 시작되었다",
+        "구텐베르크는 한국의 금속 활자 기술을 배워 성경을 찍었다",
+        "현재 남은 가장 오래된 금속 활자 책은 한국에서 만들어졌다",
+        "한국의 금속 활자 인쇄는 유럽에서 전해진 것이다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "1번 'Many people think that printing with movable metal type began in Europe with Johannes Gutenberg', 2번 'However, the oldest surviving book printed with movable metal type was made in Korea'에 근거함."
+    },
+    {
+      "id": "pr069-q2",
+      "type": "세부 사실",
+      "prompt": "직지에 관한 내용으로 글과 일치하는 것은?",
+      "options": [
+        "두 권 중 하권만 오늘날 전해진다",
+        "지금은 청주 흥덕사에 보관되어 있다",
+        "1377년에 유네스코 세계기록유산이 되었다",
+        "불교가 아니라 과학 지식을 모아 엮은 책이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        5
+      ],
+      "note": "5번 'only the second of its two volumes survives today'에 근거함."
+    }
+  ]
+}

@@ -6,19 +6,19 @@
     {
       "id": "d011-q1",
       "type": "세부 사실",
-      "prompt": "킴이 현재 머물고 있는 곳으로 옳은 것은?",
+      "prompt": "킴이 머물고 있는 집에 대한 설명으로 옳은 것은?",
       "options": [
-        "오션시티의 베키네 여름 별장",
-        "워싱턴에 있는 로라 베킷의 옛집",
-        "뉴저지에 있는 자신의 집",
-        "필라델피아에 있는 호텔"
+        "침실이 3개인 크고 편안한 집이다",
+        "침실이 6개나 되는 저택이다",
+        "작지만 아늑한 집이다",
+        "낡고 좁아서 불편한 집이다"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        4
+        7,
+        8
       ],
-      "note": "'the houseguest of her friend Becky Field', 'their summer home here at the beach'에서 킴이 베키네 여름 별장에 머물고 있음을 알 수 있음."
+      "note": "'The house here is very nice and comfortable', 'It's large, too. It has three bedrooms'에서 킴이 머무는 집이 침실 3개의 크고 편안한 집임을 알 수 있음."
     },
     {
       "id": "d011-q2",
@@ -44,8 +44,8 @@
       "options": [
         "오히려 홀가분하고 기뻤다",
         "몹시 화가 났다",
-        "새로 사면 된다고 대수롭지 않게 여겼다",
-        "무척 재미있고 신이 났다"
+        "대수롭지 않게 여겼다",
+        "무척 재미있어했다"
       ],
       "answer": 1,
       "evidence": [

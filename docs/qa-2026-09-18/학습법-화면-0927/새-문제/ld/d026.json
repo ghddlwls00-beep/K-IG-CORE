@@ -6,35 +6,35 @@
     {
       "id": "d026-q1",
       "type": "세부 사실",
-      "prompt": "카를로스와 킴이 해변을 떠난 시각으로 옳은 것은?",
+      "prompt": "킴이 보트의 방향을 돌려야 한다고 말한 까닭은 무엇인가?",
       "options": [
-        "3시경",
-        "4시경",
-        "5시경",
-        "6시경"
+        "보트에 물이 새어 들어오기 시작해서",
+        "해가 져서 곧 날이 어두워질 것 같아서",
+        "카를로스가 노를 젓느라 몹시 지쳐서",
+        "바람 때문에 해변에서 빠르게 멀어져서"
       ],
       "answer": 3,
       "evidence": [
-        10
+        2
       ],
-      "note": "10행 'They left the beach around 6:00' 참고"
+      "note": "2행 'we have to turn around. The wind is taking us away from the beach too fast' 참고"
     },
     {
       "id": "d026-q2",
       "type": "세부 사실",
-      "prompt": "보트를 해변으로 옮긴 뒤 낮잠을 잔 사람은 누구인가?",
+      "prompt": "킴이 낮잠을 자는 동안 카를로스가 한 일은 무엇인가?",
       "options": [
-        "킴",
-        "카를로스",
-        "카를로스와 킴 둘 다",
-        "둘 다 낮잠을 자지 않았다"
+        "혼자 다시 수영을 했다",
+        "조개껍데기를 찾아다녔다",
+        "잡지를 읽었다",
+        "보트를 손질했다"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
         8,
         9
       ],
-      "note": "8행 'Because Kim was very tired, she took a nap on the beach', 9행 'Carlos read a magazine' 참고"
+      "note": "8행 'she took a nap on the beach', 9행 'Carlos read a magazine. Later, they went swimming again' 참고"
     },
     {
       "id": "d026-q3",

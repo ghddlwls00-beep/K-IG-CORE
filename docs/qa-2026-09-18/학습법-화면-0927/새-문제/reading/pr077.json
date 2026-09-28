@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr077",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr077-q1",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "본문의 'this increase'가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "자녀와 손주가 점점 많아지는 것",
+        "기후 과학자들의 수가 늘어나는 것",
+        "비판자들의 의문이 점점 커지는 것",
+        "대기 중 온실가스의 양이 늘어나는 것"
+      ],
+      "answer": 3,
+      "evidence": [
+        1
+      ],
+      "note": "1번 'an increased accumulation of so-called greenhouse gases in the atmosphere ... that this increase may bring about'에 근거함."
+    },
+    {
+      "id": "pr077-q2",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "인간 활동이 지구를 덥힌다는 것은 이제 분명하다",
+        "기후 변화가 정말 일어나고 있는지는 아직 알 수 없다",
+        "대부분의 과학자는 온난화의 원인을 자연에서 찾는다",
+        "기후 변화에 맞설 대책은 이미 합의가 끝났다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "2번 'almost all climate scientists agree that human activity is warming the planet', 3번 'the evidence for global warming is now very strong'에 근거함."
+    }
+  ]
+}

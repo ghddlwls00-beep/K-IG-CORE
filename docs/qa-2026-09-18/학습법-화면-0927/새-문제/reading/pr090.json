@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr090",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr090-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "가족 안의 관계가 사회의 관계보다 더 중요하다",
+        "영향은 늘 부모에게서 자녀에게로만 흘러간다",
+        "사회는 서로 영향을 주고받는 관계망이다",
+        "사람은 이웃보다 친척에게서 더 큰 영향을 받는다"
+      ],
+      "answer": 2,
+      "evidence": [
+        8,
+        9
+      ],
+      "note": "'A society is a network of relationships among individuals' · 'Each will influence the others, and each will be influenced by the others' — 사회는 서로 영향을 주고받는 관계망"
+    },
+    {
+      "id": "pr090-q2",
+      "type": "세부 사실",
+      "prompt": "글에서 처음 예로 든 가족의 구성원으로 알맞은 것은?",
+      "options": [
+        "남편, 아내, 자녀 1명",
+        "남편, 아내, 자녀 2명",
+        "아내, 자녀 2명, 조부모",
+        "남편, 조부모, 이모, 삼촌"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "'a family unit made up of a husband, a wife, and a child' — 처음 가족은 남편 · 아내 · 자녀 1명(자녀 · 조부모 · 이모 · 삼촌은 그 뒤에 더함)"
+    }
+  ]
+}

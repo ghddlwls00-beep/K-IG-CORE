@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "d139",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d139-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "신문 평을 믿지 못해 다른 연극을 보러 간 이야기",
+        "신문 평을 보지 않고 무작정 표를 산 이야기",
+        "신문 평이 좋아 새 코미디를 보기로 한 이야기",
+        "신문 평과 달리 새 코미디가 지루했던 이야기"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4,
+        5
+      ],
+      "note": "'read the review in our newspaper' · 'a new comedy opened' · 'said it was very amusing so we decided to go'가 신문 평이 좋아 새 코미디를 보기로 했음을 보여 줌"
+    },
+    {
+      "id": "d139-q2",
+      "type": "세부 사실",
+      "prompt": "연극을 보러 가던 날 집을 조금 늦게 나선 까닭으로 알맞은 것은?",
+      "options": [
+        "표를 사러 먼저 극장에 다녀와서",
+        "아내가 무엇을 입을지 오래 고민해서",
+        "토요일에도 일을 하고 와서",
+        "아내가 연극을 보러 가기 싫어해서"
+      ],
+      "answer": 1,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'we decided to go on Saturday night' · 'My wife took a long time to make up her mind what to wear, and we left our house a little late'가 아내가 입을 옷을 오래 고민해서임을 보여 줌"
+    }
+  ]
+}

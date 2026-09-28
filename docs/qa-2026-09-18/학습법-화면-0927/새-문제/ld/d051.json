@@ -8,18 +8,17 @@
       "type": "중심 내용",
       "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
       "options": [
-        "신문 기자는 사람들의 생각과 달리 대개 판에 박힌 생활을 한다",
-        "신문 기자는 유명한 사람들을 자주 인터뷰하며 모험을 즐긴다",
-        "신문사에서 일하려면 먼저 여러 해 동안 특별한 훈련을 받아야 한다",
-        "젊은 기자는 나이 많은 기자보다 글을 더 잘 쓴다"
+        "신문 기자의 하루는 모험의 연속이다",
+        "신문 기자는 대부분 판에 박힌 생활을 한다",
+        "신문 기자는 대부분 자기 칼럼을 쓰며 지낸다",
+        "신문 기자는 늘 사건을 취재하러 밖을 다닌다"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        1,
         3,
         4
       ],
-      "note": "1번 “everyone believes that working for a newspaper must be a fascinating job” · 3번 “seems to be filled with adventure” · 4번 “Actually, however, most newspaper reporters lead rather routine lives”라고 했다"
+      "note": "3번 “seems to be filled with adventure” · 4번 “Actually, however, most newspaper reporters lead rather routine lives”라고 했다"
     },
     {
       "id": "d051-q2",
@@ -43,17 +42,17 @@
       "type": "다음에 할 일",
       "prompt": "젊은 기자가 일을 잘 해내면 앞으로 일어날 일로 가장 알맞은 것은?",
       "options": [
-        "다른 신문사에서 더 좋은 자리를 제안받게 된다",
-        "곧바로 상사가 되어 다른 기자들을 이끌게 된다",
-        "취재를 더 자주 나가게 되고 자신의 칼럼도 가질 수 있다",
-        "상으로 긴 휴가를 받아 한동안 회사에 나오지 않아도 된다"
+        "취재를 나갈 기회가 더 많아진다",
+        "취재를 그만두고 책상 일만 하게 된다",
+        "상사가 되어 다른 기자들의 취재를 이끈다",
+        "다른 신문사에서 취재 기자 자리를 제안받는다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        8,
-        9
+        7,
+        8
       ],
-      "note": "8번 “If he does a good job, the boss will probably send him out more often” · 9번 “He may even let him have a column of his own”이라고 했다"
+      "note": "7번 “the boss may send him out to cover a story” · 8번 “the boss will probably send him out more often”이라고 했다"
     }
   ]
 }

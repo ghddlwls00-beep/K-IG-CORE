@@ -6,35 +6,34 @@
     {
       "id": "d002-q1",
       "type": "세부 사실",
-      "prompt": "로드 왓슨이 살고 있는 도시로 옳은 것은?",
+      "prompt": "밥 왓슨에 대한 설명으로 옳은 것은?",
       "options": [
-        "매디슨",
-        "덴버",
-        "시카고",
-        "피닉스"
+        "매디슨에서 태어나 지금은 덴버에 산다",
+        "덴버에서 태어나 지금은 매디슨에 산다",
+        "클레이턴가 1490번지에 산다",
+        "1937년에 태어났다"
       ],
       "answer": 1,
       "evidence": [
-        2
+        4
       ],
-      "note": "'I live in Denver, Colorado'에서 사는 도시를 알 수 있음."
+      "note": "'Both Bob and I were born in Denver, but Bob lives in Madison, Wisconsin now'에서 알 수 있음."
     },
     {
       "id": "d002-q2",
       "type": "세부 사실",
-      "prompt": "로드 왓슨의 집 주소로 옳은 것은?",
+      "prompt": "로드 왓슨의 직업으로 옳은 것은?",
       "options": [
-        "클레이턴가 1490번지",
-        "클레이턴가 1940번지",
-        "제퍼슨가 1616번지",
-        "매디슨가 1490번지"
+        "경제학자",
+        "통계학자",
+        "외과의사",
+        "과학자"
       ],
       "answer": 0,
       "evidence": [
-        3,
-        4
+        6
       ],
-      "note": "'I live on Clayton Street. The number is 1490'에서 주소를 알 수 있음."
+      "note": "'I'm an economist'에서 로드 왓슨의 직업을 알 수 있음."
     },
     {
       "id": "d002-q3",

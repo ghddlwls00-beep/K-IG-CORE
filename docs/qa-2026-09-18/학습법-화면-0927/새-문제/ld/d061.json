@@ -8,19 +8,18 @@
       "type": "중심 내용",
       "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "화자가 태기 몬태그의 매니저가 되어 함께 일했다는 이야기",
+        "태기 몬태그의 공연이 취소되어 실망한 이야기",
         "태기 몬태그가 은퇴를 선언한 마지막 공연 이야기",
-        "화자가 좋아하던 가수의 공연을 보러 갔다는 이야기",
-        "화자가 무대에 직접 올라가 노래를 불렀다는 이야기"
+        "화자가 여자 친구와 태기 몬태그 공연을 본 이야기",
+        "화자가 태기 몬태그와 무대에서 노래한 이야기"
       ],
       "answer": 2,
       "evidence": [
         2,
         3,
-        5,
-        8
+        7
       ],
-      "note": "“went to see Taggy Montag” · “a favorite of ours” · “after every song”에서 알 수 있음"
+      "note": "“my girlfriend and I went to see Taggy Montag” · “a show he was doing in town” · “The show was a great success”에서 알 수 있음"
     },
     {
       "id": "d061-q2",
@@ -28,9 +27,9 @@
       "prompt": "화자가 클럽에 전화해 얻은 자리로 알맞은 것은?",
       "options": [
         "무대 옆 테이블 자리",
-        "맨 뒷줄 좌석",
-        "2층 발코니석",
-        "입구 옆 테이블 자리"
+        "무대 뒤 대기실 자리",
+        "무대에서 먼 뒷줄 자리",
+        "무대 위 특별석"
       ],
       "answer": 0,
       "evidence": [

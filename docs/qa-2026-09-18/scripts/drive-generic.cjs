@@ -405,6 +405,56 @@ async function gradedInputs(tab, exp, checks, maxFields = 12, course = null) {
   // counts it covered only when this SAME record holds `coveredBy` as PASS; otherwise the lesson is BLOCKED 'NA 인데 대신 본 기록 없음'.
   if (exp.tileAnswers) { checks.push({ feature: "graded input", item: "tile dictation", status: "NA", coveredBy: "tile dictation", note: "tile-based answering — answered by tapping tiles, not typing; the tile routine (tile dictation) and grade-offline.cjs check it" }); return; }
   const answers = exp.answers;
+  /**
+   * 2026-09-28 (학습법-화면-0927 README 도구 할 일 ② — FAIL 44/4 since 9/21): GRAMMAR grades each sentence in its own row
+   * (li[data-item]) and writes the verdict there — [data-verdict] exact · partial · incorrect (GrammarLearningView renderAnswerPanel).
+   * The generic reader below took the first '정답 · 다시 · 틀렸 …' line anywhere in <main> — another row's verdict, '정답 문장 전체
+   * 듣기', '모범 답안' — so a row was judged by other text. Here: Enter in the row's own box (its own grading — the generic check
+   * button could be another row's) and the row's own verdict. The right answer FIRST: a test row takes one answer (typed after
+   * it, the box keeps the first) — a wrong answer is then checked only where the row takes new text, and a row that keeps its
+   * first answer is said so, not failed (check-grammar-exam covers the test's grading).
+   */
+  if (course === "grammar1" || course === "grammar2") {
+    // only Step 1 '영작 훈련' grades a whole typed sentence per row on Enter. Step 2 '빈칸 완성' takes one word per blank
+    // (check-grammar-cloze.cjs) and Step 4 '종합 평가' grades every row at once on '제출' (check-grammar-exam.cjs) — typing whole
+    // sentences there was the rest of the FAIL 44/4. Said as NA, with the tool that checks them.
+    const gStep = await tab.eval(`(() => { const v = document.querySelector('main [data-grammar-view]'); return v ? v.getAttribute('data-step') : null; })()`).catch(() => null);
+    if (gStep !== "1") {
+      checks.push({ feature: "graded input", item: `step ${gStep}`, status: "NA", note: `GRAMMAR Step ${gStep} does not grade a typed sentence per row — Step 2 (one word per blank) is checked by check-grammar-cloze.cjs, Step 4 (all rows on '제출') by check-grammar-exam.cjs; this tool checks Step 1` });
+      return;
+    }
+    if (checks.some((c) => c.feature === "graded input" && /the row's own \[data-verdict\]/.test(String(c.note)))) return; // Step 1 rows were checked on this visit
+    const WRONG = "zzz qqq xxx";
+    const rowVerdict = (i) => tab.eval(`(() => { const f = ${FIELD_AT(i)}; const row = f && f.closest('[data-item]'); const v = row && row.querySelector('[data-verdict]'); return v ? { grade: v.getAttribute('data-verdict'), text: (v.textContent || '').replace(/\\s+/g, ' ').trim() } : null; })()`).catch(() => null);
+    const fieldValue = (i) => tab.eval(`(() => { const f = ${FIELD_AT(i)}; return f ? f.value : null; })()`).catch(() => null);
+    const limitG = Math.min(fields.length, maxFields);
+    for (let i = 0; i < limitG; i++) {
+      const ans = answers[i];
+      if (!ans) break;
+      const trial = async (text, kind) => {
+        const ok = await H.type(tab, FIELD_AT(i), text);
+        const value = ok ? await fieldValue(i) : null;
+        if (!ok) return { kind, typed: false, took: false, v: await rowVerdict(i) };
+        await tab.send("Input.dispatchKeyEvent", { type: "keyDown", key: "Enter", code: "Enter", windowsVirtualKeyCode: 13, text: "\r" }).catch(() => {});
+        await H.sleep(500);
+        return { kind, typed: true, took: String(value || "").trim() === text.trim(), v: await rowVerdict(i) };
+      };
+      // --break=grammar-graded: the 'right' answer typed is the row's answer with its last word dropped — the row must then
+      // FAIL (proves this check reads a real verdict)
+      const typedRight = process.argv.includes("--break=grammar-graded") ? ans.text.replace(/\s*\S+\s*$/, "") : ans.text;
+      const correct = await trial(typedRight, "correct");
+      const wrong = await trial(WRONG, "wrong");
+      const kept = !wrong.took; // the row kept its first answer (a test row)
+      const say = (r) => (!r.typed ? "field not typable" : !r.took ? "the row kept its first answer" : r.v ? `${r.v.grade} "${r.v.text}"` : "no verdict in the row");
+      checks.push({
+        feature: "graded input", item: `#${ans.n ?? i + 1}`,
+        status: correct.took && correct.v && correct.v.grade === "exact" && (kept || (wrong.v && wrong.v.grade !== "exact")) ? "PASS" : "FAIL",
+        note: `correct→${say(correct)} | wrong→${say(wrong)} (the row's own [data-verdict])`,
+        expected: ans.text.slice(0, 80),
+      });
+    }
+    return;
+  }
   const controls = withNth((await tab.eval(listControls("")).catch(() => [])) || []);
   const checkBtn = controls.find((c) => CHECK_RE.test(c.text + c.aria) && !SKIP_CLICK.test(c.text + c.aria));
   const feedback = async () => (await tab.eval(`(() => { const m = document.querySelector('main'); const t = (m ? m.innerText : ''); const hit = t.match(/[^\\n]{0,40}(정답|맞았|틀렸|오답|다시|correct|wrong)[^\\n]{0,40}/i); return hit ? hit[0].replace(/\\s+/g, ' ').trim() : null; })()`).catch(() => null));

@@ -6,34 +6,34 @@
     {
       "id": "d006-q1",
       "type": "세부 사실",
-      "prompt": "그린 박사의 직업으로 옳은 것은?",
+      "prompt": "그린 박사의 환자에 대한 설명으로 옳은 것은?",
       "options": [
-        "소아과 의사",
-        "아이들을 가르치는 학교 선생님",
-        "어린이 치과의사",
-        "약사"
+        "주로 노인들이다",
+        "치과를 무서워한다",
+        "대부분이 어린이이다",
+        "모두 올니에 산다"
       ],
       "answer": 2,
       "evidence": [
         1
       ],
-      "note": "'a children's dentist'에서 직업을 알 수 있음."
+      "note": "'Most of his patients are children'에서 알 수 있음."
     },
     {
       "id": "d006-q2",
       "type": "세부 사실",
-      "prompt": "그린 박사가 아침에 일어나는 시각으로 옳은 것은?",
+      "prompt": "말하는 사람이 치과의사들에 대해 말한 것으로 옳은 것은?",
       "options": [
-        "6시 15분",
-        "6시 45분",
-        "7시 15분",
-        "8시 정각"
+        "모두 책임이 크다",
+        "모두 돈을 많이 번다",
+        "대부분 아침 일찍 일어난다",
+        "대부분 워싱턴에서 일한다"
       ],
       "answer": 0,
       "evidence": [
-        6
+        9
       ],
-      "note": "'He gets up at 6:15 every morning'에서 시각을 알 수 있음."
+      "note": "'All dentists have a lot of responsibility'에서 알 수 있음."
     },
     {
       "id": "d006-q3",

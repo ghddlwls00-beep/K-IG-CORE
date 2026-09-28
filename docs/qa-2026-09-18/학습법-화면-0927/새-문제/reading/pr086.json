@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr086",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr086-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "오페라는 한 번 들으면 다시 들을 필요가 없다",
+        "같은 오페라도 다시 들을 때마다 새로 얻는 것이 있다",
+        "유명한 가수가 부른 오페라만 들을 만하다",
+        "좋아하는 오페라도 여러 번 들으면 싫증이 난다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        4,
+        5
+      ],
+      "note": "1번 'there is so much room for growth', 4번 'With each rehearing, you refine what you know', 5번 'the more you will be challenged by the ideas of new singers'"
+    },
+    {
+      "id": "pr086-q2",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 본 동유럽 출신 소프라노에 대한 내용으로 옳은 것은?",
+      "options": [
+        "첫 공연은 관객을 크게 실망시켰다",
+        "두 공연 사이에 아버지를 갑자기 잃었다",
+        "두 번째 공연이 첫 공연보다 더 밋밋했다",
+        "10개월 안에 토스카를 두 번 불렀다"
+      ],
+      "answer": 3,
+      "evidence": [
+        10
+      ],
+      "note": "10번 'I saw a famous soprano from Eastern Europe sing Tosca twice within ten months'"
+    }
+  ]
+}

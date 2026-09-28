@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d108",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d108-q1",
+      "type": "중심 내용",
+      "prompt": "이 강의의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "연감은 격언 없이 날씨 정보로만 성공했다",
+        "날씨를 잘못 맞혀 연감이 인기를 잃었다",
+        "격언 덕분에 연감이 크게 성공했다",
+        "격언은 오늘날 거의 쓰이지 않는다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        4,
+        8
+      ],
+      "note": "'Poor Richard's Almanac, became very popular', 'In each edition of his almanac, Franklin included a few proverbs', 'Franklin's proverbs helped make Poor Richard's Almanac one of the most successful publications'가 격언 덕분에 연감이 크게 성공했음을 보여 줌"
+    },
+    {
+      "id": "d108-q2",
+      "type": "세부 사실",
+      "prompt": "프랭클린이 연감을 펴낸 시기와 횟수로 옳은 것은?",
+      "options": [
+        "1733년부터 1758년까지 달마다 펴냈다",
+        "1733년과 1758년에만 펴냈다",
+        "1733년부터 1758년까지 몇 달마다 펴냈다",
+        "1733년부터 1758년까지 해마다 펴냈다"
+      ],
+      "answer": 3,
+      "evidence": [
+        3
+      ],
+      "note": "'Franklin published an almanac every year from 1733 to 1758'이 1733년부터 1758년까지 해마다 펴냈음을 보여 줌"
+    },
+    {
+      "id": "d108-q3",
+      "type": "세부 사실",
+      "prompt": "프랭클린의 격언 대부분이 다룬 것으로 옳은 것은?",
+      "options": [
+        "날씨와 해, 달의 변화를 아는 것",
+        "돈을 아끼고 열심히 일하는 것",
+        "일찍 자고 일찍 일어나는 것",
+        "일찍 일어나 건강하고 지혜롭게 사는 것"
+      ],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
+      "note": "'Most of Franklin's proverbs were about saving money and working hard'가 격언 대부분이 돈을 아끼고 열심히 일하는 것을 다뤘음을 보여 줌"
+    }
+  ]
+}

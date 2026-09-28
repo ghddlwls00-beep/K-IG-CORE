@@ -28,6 +28,10 @@ const REPO = path.resolve(__dirname, "../../..");
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const DIR = path.resolve(REPO, arg("--dir", "docs/qa-2026-09-18/학습법-화면-0927/새-문제"));
 const BREAK = arg("--break", "");
+// --detail (2026-09-28): one line per question — answer position, the answer's length rank (1 = longest; ties as a range), the four
+// lengths and which overlap tricks point at the answer — so a checker sees which questions to re-word in one pass
+const DETAIL = process.argv.includes("--detail");
+const detailRows = [];
 const scripts = JSON.parse(fs.readFileSync(path.join(REPO, "content/ld_english_scripts.json"), "utf8"));
 const ldLines = (id) => {
   const v = scripts[id] || scripts[id.replace(/-1$/, "")];
@@ -126,6 +130,15 @@ for (const course of ["ld", "reading"]) {
       tricks.odd += pickShare(sim, q.answer, "min");
       const pg = grams(q.prompt);
       tricks.echo += pickShare(g.map((x) => jac(x, pg)), q.answer, "max");
+      if (DETAIL) {
+        const rk = tied > 1 ? `${longer + 1}-${longer + tied}` : `${longer + 1}`;
+        const flags = [];
+        if (sorted[0] - sorted[1] >= 5) flags.push("튀게 긴 보기");
+        if (pickShare(sim, q.answer, "max") > 0) flags.push("정답이 겹침 가운데");
+        if (pickShare(sim, q.answer, "min") > 0) flags.push("정답이 외톨이");
+        if (pickShare(g.map((x) => jac(x, pg)), q.answer, "max") > 0) flags.push("정답이 물음과 가장 겹침");
+        detailRows.push(`${q.id} · 정답 ${"ABCD"[q.answer]} · 길이 순위 ${rk} (${lens.join("/")})${flags.length ? " · " + flags.join(" · ") : ""}`);
+      }
     }
   }
 }
@@ -147,6 +160,10 @@ for (const [k, label] of Object.entries(TRICKS)) {
 }
 const pct = (x) => `${Math.round((x / (questions || 1)) * 100)}%`;
 console.log(`${path.relative(REPO, DIR)} · 문항 ${questions} · 정답이 혼자 가장 긴 것 ${longest}(${Math.round(share * 100)}%) · 자리 A ${pos[0]} B ${pos[1]} C ${pos[2]} D ${pos[3]} · 길이 순위 ${rank.map(pct).join("/")} · 튀게 긴 보기 ${outliers} · 겹침 가운데 ${pct(tricks.central)} 외톨이 ${pct(tricks.odd)} 물음 ${pct(tricks.echo)}${BREAK ? ` · 깨기 ${BREAK}` : ""}`);
+if (DETAIL) {
+  console.log("문항별(정답 자리 · 정답의 길이 순위 1 = 가장 김 · 보기 길이 · 정답을 가리키는 겹침 요령):");
+  for (const r of detailRows) console.log("  " + r);
+}
 for (const p of problems.slice(0, 30)) console.log("  - " + p);
 if (problems.length > 30) console.log(`  … ${problems.length - 30} 더`);
 console.log(problems.length ? `FAIL ${problems.length}` : "PASS");
