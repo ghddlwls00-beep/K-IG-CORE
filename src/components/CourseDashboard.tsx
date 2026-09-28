@@ -9,6 +9,7 @@ import {
   useRef,
 } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { useProgress } from "./ProgressProvider";
 import { useLicense } from "./LicenseProvider";
 import { isFreePreviewLesson, planOpensCourse } from "@/lib/license";
@@ -17,7 +18,10 @@ import { READING_LENGTHS } from "@/lib/readingLengths";
 import { passoffTopicOf, topicWithParticle } from "@/lib/passoffUnlock";
 import { ChapterAudioBar } from "./ChapterAudioBar";
 import { usePassoffProgress, usePassoffUnlockNotice } from "./PassoffProgressProvider";
-import { PassoffReviewEntry } from "./passoff/ReviewEntry";
+
+// PASS-OFF GRAMMAR's '오늘 복습' line — loaded on that course's list only, so the learning engine it brings is not in the
+// other courses' list code (it draws nothing on the server anyway: it reads this device's record)
+const PassoffReviewEntry = dynamic(() => import("./passoff/ReviewEntry").then((m) => m.PassoffReviewEntry), { ssr: false });
 
 export interface DashboardLessonItem {
   id: string;
@@ -150,10 +154,13 @@ export function CourseDashboard({
   courseSlug,
   sections,
   totalLessons,
+  passoffFreeReviewKeys,
 }: {
   courseSlug: string;
   sections: DashboardSection[];
   totalLessons: number;
+  /** PASS-OFF GRAMMAR: the items its free review can draw (ids only) — the '오늘 복습' line counts no other without a licence */
+  passoffFreeReviewKeys?: readonly string[];
 }) {
   const { completed, bookmarks, recentByCourse, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus } = useProgress();
   const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, studentProgress } = useLicense();
@@ -366,8 +373,8 @@ export function CourseDashboard({
               <span aria-hidden>→</span>
             </Link>
           ) : null}
-          {/* PASS-OFF GRAMMAR: today's review from this device's record (공통-학습-엔진.md §8-4) — other courses have none yet */}
-          {isPassoff ? <PassoffReviewEntry withLicence /> : null}
+          {/* PASS-OFF GRAMMAR: today's review — with a licence the server's plan (공통-학습-엔진.md §8-4 · §10); other courses have none yet */}
+          {isPassoff ? <PassoffReviewEntry learner={licenseInfo?.licenseId ?? null} freeKeys={passoffFreeReviewKeys ?? []} /> : null}
           <div className="mt-4 flex flex-col gap-2">
             <p className="text-label text-ink">
               학습 진도율: <span className="font-semibold tabular-nums">{completedCount}</span> / {totalLessons}개 완료{" "}
@@ -414,8 +421,8 @@ export function CourseDashboard({
               ))}
             </div>
           ) : null}
-          {/* without a licence the review has the free lessons' items alone, on this device */}
-          {isPassoff ? <PassoffReviewEntry withLicence={false} /> : null}
+          {/* without a licence the review has the free review's items alone, on this device */}
+          {isPassoff ? <PassoffReviewEntry learner={null} freeKeys={passoffFreeReviewKeys ?? []} /> : null}
           {/* kept for the audit drivers, which read the counters on every list page */}
           <p className="mt-3 text-caption text-ink-soft">
             학습 진도율: <span className="tabular-nums">{completedCount}</span> / {totalLessons}개 완료 ({progressPercent}%)

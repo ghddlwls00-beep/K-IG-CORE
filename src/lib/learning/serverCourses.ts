@@ -33,3 +33,12 @@ const COURSES: Record<string, ServerLearningCourse> = {
 export function serverLearningCourse(course: string): ServerLearningCourse | null {
   return isServerLearningCourse(course) ? (COURSES[course] ?? null) : null;
 }
+
+/**
+ * The course's server adapter whether or not the server keeps its record — for the item data a device asks for by key
+ * (src/app/api/learning/[course]/items/route.ts): a course whose record stays on the device until D04 plans on the device,
+ * and its paid items still come from the server, those keys only. Null for a course with no adapter.
+ */
+export function learningCourseAdapter(course: string): ServerLearningCourse | null {
+  return Object.prototype.hasOwnProperty.call(COURSES, course) ? COURSES[course] : null;
+}

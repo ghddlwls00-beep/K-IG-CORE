@@ -7,7 +7,7 @@ import { contrastPool, contrastTiles, firstLetters } from "@/lib/passoffLesson";
 import { generateWordBank, verifyAnyWordSequence, type WordTile } from "@/lib/listeningUtils";
 import { notePassoffAttempt, strongerHelp, type PassoffAttempt, type PassoffHelp } from "@/lib/passoffLearning";
 import { VoiceSpeakingTester } from "../VoiceSpeakingTester";
-import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, tone, type FontSize, type Speaker } from "./ui";
+import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, tone, usePassoffLearner, type FontSize, type Speaker } from "./ui";
 
 export interface ComposeOutcome {
   /** right at the first try of this presentation (no help can come before a first try) */
@@ -44,7 +44,9 @@ const HELP_AT: PassoffHelp[] = ["none", "none", "hint", "tiles", "reveal"];
  * The review screen (공통-학습-엔진.md §8 — src/components/passoff/PassoffReview.tsx) uses the same card: its answers go
  * to `onAttempt` (recorded there with where "review") instead of the lesson's record, `afterMiss` says when a missed
  * sentence comes back, and `test` is the next-day check — one answer, recorded, and passed on at once with no result or
- * ladder (the results come together at the end). Without these three the card is the lesson's, unchanged.
+ * ladder (the results come together at the end). `missed` is that check's wrong answer when the sentence comes once more
+ * right after the results: the card opens on it at the ladder's first rung — the answer in the box, where it is wrong
+ * marked (설계 §4 "틀린 문장은 즉시 사다리") — not as a blank card. Without these the card is the lesson's, unchanged.
  */
 export function ComposeCard({
   item,
@@ -62,6 +64,7 @@ export function ComposeCard({
   onAttempt,
   afterMiss,
   test = false,
+  missed,
 }: {
   item: PassoffProduceItem;
   kind: "produce" | "transfer";
@@ -84,15 +87,26 @@ export function ComposeCard({
   afterMiss?: string;
   /** the next-day check: one answer, recorded, then passed on at once — no result, no ladder */
   test?: boolean;
+  /** the check's wrong answer (`spoken`: said into the microphone) — the card opens on it, at the ladder's first rung */
+  missed?: { answer: string; spoken: boolean };
 }) {
-  const note = onAttempt ?? notePassoffAttempt;
-  const [text, setText] = useState("");
+  const learner = usePassoffLearner();
+  const note = onAttempt ?? ((attempt: PassoffAttempt) => notePassoffAttempt(attempt, learner));
+  // graded as it was in the check (the same grader, the same answer): a wrong answer opens the card on the ladder
+  const [start] = useState<ProduceResult | null>(() => {
+    if (!missed) return null;
+    const res = gradeProduce(missed.answer, item, { spoken: missed.spoken });
+    return res.verdict === "wrong" ? res : null;
+  });
+  const [text, setText] = useState(start && missed ? missed.answer : "");
   const [heard, setHeard] = useState<string | null>(null);
-  const [checks, setChecks] = useState(0);
-  const [rung, setRung] = useState(0);
-  const [result, setResult] = useState<ProduceResult | null>(null);
+  const [checks, setChecks] = useState(start ? 1 : 0);
+  const [rung, setRung] = useState(start ? 1 : 0);
+  const [result, setResult] = useState<ProduceResult | null>(start);
   const [phase, setPhase] = useState<"answer" | "right" | "revealed">("answer");
-  const [first, setFirst] = useState<ComposeOutcome["first"]>(null);
+  const [first, setFirst] = useState<ComposeOutcome["first"]>(
+    start && missed ? { answer: missed.answer, verdict: start.verdict, reference: start.reference } : null,
+  );
   const [hangul, setHangul] = useState(false);
   const [bank, setBank] = useState<{ acceptedWordSequences: string[][]; tiles: WordTile[] } | null>(null);
   const [tilePicks, setTilePicks] = useState<WordTile[]>([]);

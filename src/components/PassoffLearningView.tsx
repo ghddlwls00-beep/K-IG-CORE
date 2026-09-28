@@ -29,7 +29,7 @@ import { FormStep } from "./passoff/FormStep";
 import { ComposeStep } from "./passoff/ComposeStep";
 import { WrapUpStep } from "./passoff/WrapUpStep";
 import type { ComposeReport } from "./passoff/ComposeCard";
-import { FONT_LABEL, segmentButton, spokenOf, type FontSize, type Speaker } from "./passoff/ui";
+import { FONT_LABEL, segmentButton, spokenOf, usePassoffLearner, type FontSize, type Speaker } from "./passoff/ui";
 
 /**
  * PASS-OFF GRAMMAR lesson view — the same five steps for every lesson (docs/pass-off-grammar/설계.md §3; the
@@ -308,6 +308,8 @@ export function PassoffLearningView({
   const notCounted = work.lessonDone && confirmed && countedIds !== null && !countedIds.has(lessonId);
   // one finish per run of the five steps: the automatic one below and the end bar's button both come here
   const finishing = useRef(false);
+  // whose review record the lesson goes into — the licence of this moment, or none (공통-학습-엔진.md §10)
+  const learner = usePassoffLearner();
   const finish = useCallback(() => {
     if (finishing.current) return;
     finishing.current = true;
@@ -325,8 +327,9 @@ export function PassoffLearningView({
       lessonId,
       entries,
       ids.compose.filter((id) => work.compose[id]?.tomorrow),
+      learner,
     );
-  }, [update, recordLessonComplete, lessonId, content, ids, work.compose]);
+  }, [update, recordLessonComplete, lessonId, content, ids, work.compose, learner]);
   const finishRef = useRef(finish);
   useEffect(() => {
     finishRef.current = finish;

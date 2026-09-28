@@ -3,12 +3,15 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { learningDay } from "@/lib/learning/day";
-import { onLearningChange, readCourseRecord } from "@/lib/learning/record";
-import { PASSOFF_COURSE, passoffDevicePlan, passoffFreeRecord } from "@/lib/passoffLearning";
+import { planDay } from "@/lib/learning/engine";
+import { onLearnerRecordChange, readLearnerRecord } from "@/lib/learning/record";
+import { syncLearnerRecord } from "@/lib/learning/sync";
+import type { CourseRecord, Plan } from "@/lib/learning/types";
+import { PASSOFF_COURSE, PASSOFF_PROFILE, passoffFreeRecord } from "@/lib/passoffLearning";
 import { IconChevronRight } from "../icons";
 
 interface EntryState {
-  /** this device has a finished lesson's items (without a licence: a free lesson's) */
+  /** the record has a finished lesson's items */
   studied: boolean;
   count: number;
   seconds: number;
@@ -16,31 +19,49 @@ interface EntryState {
   comeback: boolean;
 }
 
+const stateOf = (record: CourseRecord, plan: Plan): EntryState => ({
+  studied: Object.keys(record.items).length > 0,
+  count: plan.items.length,
+  seconds: plan.seconds,
+  reviewFirst: plan.reviewFirst,
+  comeback: plan.comeback,
+});
+
 /**
- * '오늘 복습 · 약 N분' on the PASS-OFF GRAMMAR course list (공통-학습-엔진.md §8-4) — the plan the engine makes now from
- * this device's record (without a licence, from the free lessons' items alone: the review page has only those). "오늘
- * 복습 없음" when nothing is due, and nothing at all before a lesson has been finished here. Under it one line when the
+ * '오늘 복습 · 약 N분' on the PASS-OFF GRAMMAR course list (공통-학습-엔진.md §8-4 · §10):
+ *   - with a licence (`learner`, its id): the SERVER's plan — this licence's record on the device goes up (no item data
+ *     comes back) and today's plan comes by the server's clock over the topics open now, so a lesson finished on another
+ *     device counts and a phone with nothing on it still gets its link; offline, this device's own copy;
+ *   - without one: the plan this device makes from the record kept with no licence, over the free review's items alone
+ *     (`freeKeys` — what the review page can draw; a key outside them could never be answered there and would stay due).
+ * "오늘 복습 없음" when nothing is due, and nothing at all before a lesson has been finished. Under it one line when the
  * plan says so: a long break brings the comeback set ('복습 10개부터'), too much due suggests reviewing before a new lesson
  * (a suggestion, never a lock).
  */
-export function PassoffReviewEntry({ withLicence }: { withLicence: boolean }) {
+export function PassoffReviewEntry({ learner, freeKeys }: { learner: string | null; freeKeys: readonly string[] }) {
   const [state, setState] = useState<EntryState | null>(null);
+  const keys = freeKeys.join("\n");
 
   useEffect(() => {
-    const read = () => {
-      const record = readCourseRecord(PASSOFF_COURSE);
-      const plan = passoffDevicePlan(record, learningDay(Date.now()), { freeOnly: !withLicence });
-      setState({
-        studied: Object.keys((withLicence ? record : passoffFreeRecord(record)).items).length > 0,
-        count: plan.items.length,
-        seconds: plan.seconds,
-        reviewFirst: plan.reviewFirst,
-        comeback: plan.comeback,
-      });
+    const free = new Set(keys ? keys.split("\n") : []);
+    const onDevice = () => {
+      const own = readLearnerRecord(PASSOFF_COURSE, learner);
+      const record = learner ? own : passoffFreeRecord(own, free);
+      return stateOf(record, planDay(record, learningDay(Date.now()), PASSOFF_PROFILE));
     };
-    read();
-    return onLearningChange(PASSOFF_COURSE, read);
-  }, [withLicence]);
+    if (!learner) {
+      const read = () => setState(onDevice());
+      read();
+      return onLearnerRecordChange(PASSOFF_COURSE, read);
+    }
+    let cancelled = false;
+    void syncLearnerRecord(PASSOFF_COURSE, learner, { planOnly: true }).then((result) => {
+      if (!cancelled) setState(result.ok ? stateOf(result.answer.record, result.answer.plan) : onDevice());
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [keys, learner]);
 
   if (!state || !state.studied) return null;
   if (!state.count) {

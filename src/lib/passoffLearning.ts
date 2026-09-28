@@ -8,19 +8,24 @@
  *     toward a pass: the model answer was just in front of the learner);
  *   - the five steps finished (notePassoffLessonDone → markLessonDone): the lesson's ④ · ⑤ sentences and the ③
  *     items it asked (not `reserve`) come back from the next day.
- * The record lives on this device (localStorage "kig-learning:passoff-grammar"); the review screen and the server
- * copy come with the engine's shared page (설계 §12 2-나). The course list's check mark (ProgressProvider) is
- * recorded by the view itself.
+ * The record lives on this device (localStorage "kig-learning:passoff-grammar", one per licence since E1 — below); the
+ * review screen and the server copy come with the engine's shared page (설계 §12 2-나). The course list's check mark
+ * (ProgressProvider) is recorded by the view itself.
  *
  * 2-나 (E1): the review screen (/passoff-grammar/review — src/components/passoff/PassoffReview.tsx on the engine's
  * ReviewSession) answers the same items with where "review". With a licence the record also lives on the server
  * (/api/learning/passoff-grammar, which sends the data of today's items only — src/lib/passoffReview.ts); without one the
- * review has the two free lessons' items alone, on this device (passoffDevicePlan).
+ * review has the two free lessons' items alone, on this device (passoffFreeRecord).
+ *
+ * E1 점검 반영: a device keeps one record per learner (src/lib/learning/sync.ts). Every answer and every finished lesson
+ * goes to the record of whoever studies at that moment — `learner`, the licence's id (learnerOf) or null with no licence —
+ * and with a licence a finished lesson goes up to the server at once (공통-학습-엔진.md §2 "단계 · 회차가 끝날 때 묶어서
+ * 보낸다"), so another device's review and the course list see it.
  */
-import { planDay } from "./learning/engine";
-import { markLessonDone, recordAttempt } from "./learning/record";
+import { markLearnerLessonDone, recordLearnerAttempt } from "./learning/record";
 import { restrictRecord } from "./learning/review";
-import type { AnswerMode, CourseProfile, CourseRecord, Day, Help, Plan } from "./learning/types";
+import { syncLearnerRecord } from "./learning/sync";
+import type { AnswerMode, CourseProfile, CourseRecord, Help } from "./learning/types";
 import { FREE_PREVIEW_LESSON_IDS } from "./license";
 import type { PassoffFormItem, PassoffProduceItem } from "./passoffTypes";
 
@@ -66,9 +71,9 @@ export interface PassoffAttempt {
   answer?: string;
 }
 
-/** One answer inside the lesson, with this course's verdict. */
-export function notePassoffAttempt(attempt: PassoffAttempt): void {
-  recordAttempt(PASSOFF_PROFILE, attempt.itemId, {
+/** One answer inside the lesson, with this course's verdict — into the record of `learner` (a licence's id, or null). */
+export function notePassoffAttempt(attempt: PassoffAttempt, learner: string | null): void {
+  recordLearnerAttempt(PASSOFF_PROFILE, learner, attempt.itemId, {
     lessonId: attempt.lessonId,
     kind: attempt.kind,
     correct: attempt.correct,
@@ -83,11 +88,18 @@ export function notePassoffAttempt(attempt: PassoffAttempt): void {
 /**
  * The five steps are finished: the lesson's first completion date is kept and `entries` come back from the next
  * day. `tomorrowFirst` — sentences still not right on their own after three comebacks ("내일 1순위", 설계 §3 ④) —
- * go in first: the engine keeps a lesson's next-day items in the order they came.
+ * go in first: the engine keeps a lesson's next-day items in the order they came. With a licence (`learner`) the record
+ * goes up now; offline, it goes with the next one (the course list, the review, the next lesson).
  */
-export function notePassoffLessonDone(lessonId: string, entries: { key: string; kind: PassoffItemKind }[], tomorrowFirst: readonly string[]): void {
+export function notePassoffLessonDone(
+  lessonId: string,
+  entries: { key: string; kind: PassoffItemKind }[],
+  tomorrowFirst: readonly string[],
+  learner: string | null,
+): void {
   const first = new Set(tomorrowFirst);
-  markLessonDone(PASSOFF_PROFILE, lessonId, [...entries.filter((e) => first.has(e.key)), ...entries.filter((e) => !first.has(e.key))]);
+  markLearnerLessonDone(PASSOFF_PROFILE, learner, lessonId, [...entries.filter((e) => first.has(e.key)), ...entries.filter((e) => !first.has(e.key))]);
+  if (learner) void syncLearnerRecord(PASSOFF_COURSE, learner, { planOnly: true });
 }
 
 // ---------------------------------------------------------------------------
@@ -114,19 +126,11 @@ export const PASSOFF_FREE_LESSONS: readonly string[] = FREE_PREVIEW_LESSON_IDS[P
 /** An item id's lesson: "pg02-1:p4" → "pg02-1". */
 export const passoffLessonOfItem = (key: string): string => key.split(":")[0];
 
-/** The record with the free lessons' items alone. */
-export function passoffFreeRecord(record: CourseRecord): CourseRecord {
-  return restrictRecord(
-    record,
-    (key) => PASSOFF_FREE_LESSONS.includes(passoffLessonOfItem(key)),
-    (lessonId) => PASSOFF_FREE_LESSONS.includes(lessonId),
-  );
-}
-
 /**
- * Today's review from this device's record — the course list's '오늘 복습' button, and the whole review without a
- * licence (`freeOnly`: the free lessons' items; no server).
+ * The record with the free review's items alone — `freeKeys`, the items the free review page can draw
+ * (passoffReview.ts passoffFreeReviewItems: the free lessons' items without the paid STUDENT sentences a licence adds).
+ * A key outside them could never be answered there and would stay due for good (E1 점검: a device whose licence ended).
  */
-export function passoffDevicePlan(record: CourseRecord, today: Day, { freeOnly }: { freeOnly: boolean }): Plan {
-  return planDay(freeOnly ? passoffFreeRecord(record) : record, today, PASSOFF_PROFILE);
+export function passoffFreeRecord(record: CourseRecord, freeKeys: ReadonlySet<string>): CourseRecord {
+  return restrictRecord(record, (key) => freeKeys.has(key), (lessonId) => PASSOFF_FREE_LESSONS.includes(lessonId));
 }

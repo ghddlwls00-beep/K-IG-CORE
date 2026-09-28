@@ -9,7 +9,6 @@ import {
   PASSOFF_COURSE,
   PASSOFF_PROFILE,
   PASSOFF_SENTENCE_KINDS,
-  passoffFreeRecord,
   passoffLessonOfItem,
   type PassoffAttempt,
   type PassoffReviewItem,
@@ -28,7 +27,8 @@ import { FONT_LABEL, segmentButton, spokenOf, type FontSize, type Speaker } from
  *   - ③ form items: FormItemCard — tap · pick · a short blank, one more try, then the answer;
  * with every answer recorded where "review" (ReviewSession → recordAttempt), not as the lesson's. In the next-day check
  * the same cards take one answer and pass on (`test`); the results then come together, with the lesson's two-line score
- * (문법 정답 · 서술형 기준 — 설계 §4 "2일 '확인'"), and the missed ones come once more with the ladder.
+ * (문법 정답 · 서술형 기준 — 설계 §4 "2일 '확인'"), and the missed ones come once more opening on the check's answer: a
+ * sentence at the ladder's first rung (where it is wrong), a form item at '한 번 더' (`missed`).
  *
  * A sentence sounds exactly as in its lesson — the same string through the same function (lessonSpeechForm of its
  * lesson · spokenOf), so the same clip (scripts/lib/spoken-texts.cjs lists it already). Text size and sentence speed are
@@ -120,9 +120,11 @@ export function PassoffReview({ source }: { source: ReviewSource<PassoffReviewIt
     </div>
   ) : null;
 
-  function renderItem({ data, mode, onAnswer, onNext }: ReviewItemProps<PassoffReviewItem>) {
+  function renderItem({ data, mode, missed, onAnswer, onNext }: ReviewItemProps<PassoffReviewItem>) {
     const record = (attempt: PassoffAttempt) =>
       onAnswer({ correct: attempt.correct, help: attempt.help, mode: attempt.mode, answer: attempt.answer, detail: firsts.current[attempt.itemId] });
+    // "again": the check's wrong answer, which the card opens on
+    const missedAnswer = mode === "again" && missed && !missed.correct && missed.answer ? missed.answer : undefined;
     if (isSentence(data)) {
       return (
         <ComposeCard
@@ -137,6 +139,7 @@ export function PassoffReview({ source }: { source: ReviewSource<PassoffReviewIt
           ruleTitle={data.ruleTitle}
           test={mode === "test"}
           afterMiss="이 문장은 내일 다시 나와요."
+          missed={missedAnswer !== undefined ? { answer: missedAnswer, spoken: missed?.mode === "voice" } : undefined}
           onAttempt={record}
           onFirstTry={({ first }) => {
             if (first) firsts.current[data.item.id] = first;
@@ -154,6 +157,7 @@ export function PassoffReview({ source }: { source: ReviewSource<PassoffReviewIt
         answerSeen={false}
         font={font}
         test={mode === "test"}
+        missed={mode === "again" ? (missedAnswer ?? "") : undefined}
         onAttempt={record}
         onFirstTry={() => {}}
         onShown={() => {}}
@@ -210,9 +214,9 @@ export function PassoffReview({ source }: { source: ReviewSource<PassoffReviewIt
   const course: ReviewCourse<PassoffReviewItem> = {
     profile: PASSOFF_PROFILE,
     listHref: `/${PASSOFF_COURSE}`,
+    unit: "레슨",
     sentenceKinds: PASSOFF_SENTENCE_KINDS,
     passedLabel: "통과한 문장",
-    deviceRecord: passoffFreeRecord,
     renderItem,
     itemSource: (data) => data.lessonTitle,
     resultLine,

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { planOpensCourse } from "@/lib/license";
 import { verifyLicenseSession } from "@/lib/licenseSession";
-import { learningDay } from "@/lib/learning/day";
+import { addDays, learningDay } from "@/lib/learning/day";
 import { mergeRecords, planDay, sanitizeRecord } from "@/lib/learning/engine";
 import { acceptDeviceRecord, restrictRecord, sameRecord, type LearningSyncAnswer } from "@/lib/learning/review";
 import { serverLearningCourse } from "@/lib/learning/serverCourses";
@@ -9,19 +9,22 @@ import { changeLearningRecord, isServerLearningCourse } from "@/lib/learning/ser
 import { licenseIdFor } from "@/lib/serverLicense";
 
 /**
- * The learning record on the server and today's review (공통-학습-엔진.md §8-2) — one route for every course whose record
- * the server keeps (src/lib/learning/serverStore.ts SERVER_LEARNING_COURSES; PASS-OFF GRAMMAR first).
+ * The learning record on the server and today's review (공통-학습-엔진.md §8-2 · §10) — one route for every course whose
+ * record the server keeps (src/lib/learning/serverStore.ts SERVER_LEARNING_COURSES; PASS-OFF GRAMMAR first).
  *
- * POST { record, owner } — the device's CourseRecord and the licence it was last kept for (null the first time):
+ * POST { record, owner, planOnly? } — this licence's record on the device and the licence the device keeps it under
+ * (src/lib/learning/sync.ts):
  *   1. a licence session that opens the course (401 · 403), at most 120 requests a minute per device (429, as STUDENT's);
  *   2. the device's record, checked field by field (sanitizeRecord) and taken only for items the course has in lessons
- *      open to this licence, with no day after the server's today (review.ts acceptDeviceRecord). A record last kept for
- *      another licence on this device is not taken at all (`taken: false`) — two learners' answers are never mixed;
+ *      open to this licence, with no day after the server's today and no state its answers do not bear out (review.ts
+ *      acceptDeviceRecord). A record kept for another licence is not taken at all (`taken: false`) — two learners'
+ *      answers are never mixed;
  *   3. merged into the stored one (the engine's mergeRecords — on the same day a wrong answer wins) and written only when
  *      that changed it;
- *   4. answered with the record, today's plan by the SERVER's clock, and the data of the plan's items ONLY — the course's
- *      server adapter reads them from its lesson files (serverCourses.ts), only for open lessons. Nothing else of a paid
- *      lesson leaves the server here.
+ *   4. answered with the record, today's plan by the SERVER's clock, tomorrow's count and the data of the plan's items
+ *      ONLY — the course's server adapter reads them from its lesson files (serverCourses.ts), only for open lessons; with
+ *      `planOnly` (the course list's line, a finished lesson) no item data at all. Nothing else of a paid lesson leaves
+ *      the server here.
  */
 
 const requestWindows = new Map<string, { startedAt: number; count: number }>();
@@ -83,6 +86,7 @@ export async function POST(request: Request, { params }: { params: Promise<{ cou
           nowIso: new Date(now).toISOString(),
           item: adapter.item,
           lessonOpen: access.lessonOpen,
+          profile: adapter.profile,
         })
       : null;
 
@@ -98,12 +102,17 @@ export async function POST(request: Request, { params }: { params: Promise<{ cou
       const known = adapter.item(key);
       return known !== null && access.lessonOpen(known.lessonId);
     };
-    const plan = planDay(restrictRecord(record, open, access.lessonOpen), today, adapter.profile);
-    const items = adapter.itemData(
-      plan.items.map((item) => item.key),
-      access,
-    );
-    const answer: LearningSyncAnswer = { record, plan, items, owner, taken };
+    const reviewable = restrictRecord(record, open, access.lessonOpen);
+    const plan = planDay(reviewable, today, adapter.profile);
+    const items =
+      body.planOnly === true
+        ? {}
+        : adapter.itemData(
+            plan.items.map((item) => item.key),
+            access,
+          );
+    const tomorrow = planDay(reviewable, addDays(today, 1), adapter.profile).items.length;
+    const answer: LearningSyncAnswer = { record, plan, items, tomorrow, owner, taken };
     return NextResponse.json({ success: true, ...answer }, { headers: { "Cache-Control": "no-store" } });
   } catch (error) {
     console.error(`Learning record sync failed (${course}):`, error);

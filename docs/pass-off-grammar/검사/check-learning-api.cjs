@@ -24,9 +24,29 @@
  *       기록용 칸(bookRef · source · note …) 0
  *   node docs/pass-off-grammar/검사/check-learning-api.cjs [--break=<아래 하나>] [--prove-breaks]
  *   L15 과정에 없는 문항 열쇠(없는 문항 · 없는 레슨 · 이상한 글)와 문항의 레슨 · 종류를 기기가 바꿔 적은 것 → 과정의 것만 저장
+ *   ── E1 점검 반영(09-28)에서 더함 ──
+ *   L9b 서버가 다시 판정: 시계가 12일 빠른 기기가 기기의 날 +1 · +3 · +7 에 맞혀 '통과'한 문항 → 서버는 learning(다음 복습이
+ *       내일) · 손으로 적은 'passed'(답한 적 없음) → learning · 올바른 시계로 쌓은 통과 · 중간 단계는 그대로(정직한 기록은 안 바뀜)
+ *   L16 다시 잠긴 대주제: TOPIC 2 를 연 STUDENT 이용권이 TOPIC 2 레슨 기록을 저장 → 관리자 초기화(resetPassoffProgress) → 계획 ·
+ *       문항 데이터 · 내일 수에 TOPIC 2 가 0(route 겹) · 어댑터 itemData 에 잠긴 열쇠를 직접 넘겨도 데이터 0(adapter 겹)
+ *   L17 문항 API(/api/learning/<과정>/items — 기기가 짠 계획의 열쇠만): 이용권 없음 401 · 어댑터 없는 과정 404 · 열쇠 201개 ·
+ *       배열 아님 400 · 준 열쇠 중 열린 대주제 것만 데이터(잠긴 TOPIC 2 · 없는 열쇠 0) · 묻지 않은 문항의 글 0
+ *   기기 쪽(진짜 record.ts · sync.ts · passoffLearning.ts 를 가짜 localStorage · fetch → 진짜 route 로):
+ *   L18 이용권 A 가 쓰던 기기에서 B 가 레슨을 마침 → B 의 서버 기록에 B 레슨 · A 레슨 0 / A 의 서버 기록에 B 레슨 0 · 기기에
+ *       A · B 칸이 따로
+ *   L19 첫 동기화 전(오프라인)에 A · B 가 한 기기에서 레슨 → B 가 올리면 B 서버에 A 레슨 0 · A 가 올리면 A 서버에 B 레슨 0
+ *   L19b 세션이 다른 이용권(M)인데 기기가 L 칸을 보냄 → taken false · M 서버에 L 레슨 0 · 기기의 L 칸 그대로 · M 답은 M 칸에
+ *   L20 이용권 없이 한 무료 레슨 → 처음 올린 이용권 A 에 합쳐짐 · 무료 칸 비워짐 · 그 뒤 B 에는 안 감
+ *   L21 이용권으로 레슨을 마치면 바로 서버에(목록 · 복습을 안 열어도) → 빈 새 기기가 다음 날 같은 이용권으로 물으면 계획에
+ *       그 레슨 문항(문항 데이터 없이 — planOnly)
+ *   L22 무료 계산은 무료 복습 문항 열쇠로: pg01-1 의 유료 보충 문항이 든 기기 기록 → 무료 계획 · 내일 수에 유료 문항 0
  *     깨기는 사본만 바꿈 — 각각 이름 붙은 FAIL(exit 1)이어야: no-lock(잠금 검사를 뺌) · all-items(plan 밖 문항까지 넣음) ·
  *     any-key(과정에 없는 문항도 받음) · whole-lesson(문항에 레슨 블록을 통째로 붙임) · future-days(오지 않은 날을 그대로 받음) ·
- *     device-day(기기의 날로 계획) · replace(합치지 않고 기기 기록으로 덮음) · no-owner(다른 이용권의 기기 기록도 받음)
+ *     device-day(기기의 날로 계획) · replace(합치지 않고 기기 기록으로 덮음) · no-owner(다른 이용권의 기기 기록도 받음) ·
+ *     no-rejudge(기기의 stage · step · dueDay 를 그대로) · no-plan-restrict(계획을 열린 대주제로 거르지 않음) ·
+ *     no-itemdata-lock(어댑터가 잠금을 안 봄) · items-no-cap(문항 API 열쇠 수 제한 없음) · one-record(기기 기록을 이용권별로 안 나눔) ·
+ *     taken-overwrite(다른 이용권 답을 이 칸에 씀) · no-adopt(무료 칸을 안 합침) · no-lesson-sync(레슨을 마쳐도 안 올림) ·
+ *     free-by-lesson(무료 계산을 레슨 id 로만 거름)
  *     --prove-breaks: 깨지 않은 판 exit 0 + 깨기마다 exit 1 을 한 번에 확인
  * exit 0 = 실패 0
  */
@@ -40,7 +60,11 @@ const { spawnSync } = require("child_process");
 const REPO = path.resolve(__dirname, "../../..");
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
 const ROUTE_FILE = path.join(REPO, "src/app/api/learning/[course]/route.ts");
+const ITEMS_ROUTE_FILE = path.join(REPO, "src/app/api/learning/[course]/items/route.ts");
 const REVIEW_FILE = path.join(REPO, "src/lib/learning/review.ts");
+const RECORD_FILE = path.join(REPO, "src/lib/learning/record.ts");
+const SYNC_FILE = path.join(REPO, "src/lib/learning/sync.ts");
+const PASSOFF_LEARNING_FILE = path.join(REPO, "src/lib/passoffLearning.ts");
 const ADAPTER_FILE = path.join(REPO, "src/lib/passoffReview.ts");
 const STORE_FILE = path.join(REPO, "src/lib/learning/serverStore.ts");
 const BREAKS = {
@@ -52,6 +76,15 @@ const BREAKS = {
   "device-day": [ROUTE_FILE, /const today = learningDay\(now\);/, 'const sentDay = (body.record as { lastStudyDay?: unknown } | null)?.lastStudyDay; const today = typeof sentDay === "string" && sentDay > learningDay(now) ? sentDay : learningDay(now);'],
   replace: [ROUTE_FILE, /const merged = mergeRecords\(stored, sent\);/, "const merged = mergeRecords(sent, sent);"],
   "no-owner": [ROUTE_FILE, /const taken = typeof body\.owner !== "string" \|\| body\.owner === owner;/, "const taken = true;"],
+  "no-rejudge": [REVIEW_FILE, /out\.items\[key\] = settleItem\(/, "out.items[key] = ((s: ItemState, _p: CourseProfile) => s)("],
+  "no-plan-restrict": [ROUTE_FILE, /const reviewable = restrictRecord\(record, open, access\.lessonOpen\);/, "const reviewable = record;"],
+  "no-itemdata-lock": [ADAPTER_FILE, /if \(!access\.lessonOpen\(lessonId\)\) continue;/, ""],
+  "items-no-cap": [ITEMS_ROUTE_FILE, /keys\.length > MAX_KEYS \|\|/, ""],
+  "one-record": [RECORD_FILE, /return learner \? `\$\{PREFIX\}\$\{course\}@\$\{learner\}` : PREFIX \+ course;/, "return PREFIX + course;"],
+  "taken-overwrite": [SYNC_FILE, /const owner = data\.taken \? learner : typeof data\.owner === "string" && data\.owner \? data\.owner : null;/, "const owner = learner;"],
+  "no-adopt": [SYNC_FILE, /if \(isEmpty\(free\)\) return;/, "return;"],
+  "no-lesson-sync": [PASSOFF_LEARNING_FILE, /if \(learner\) void syncLearnerRecord\(PASSOFF_COURSE, learner, \{ planOnly: true \}\);/, ""],
+  "free-by-lesson": [PASSOFF_LEARNING_FILE, /\(key\) => freeKeys\.has\(key\)/, "(key) => PASSOFF_FREE_LESSONS.includes(passoffLessonOfItem(key))"],
 };
 
 if (process.argv.includes("--prove-breaks")) {
@@ -155,7 +188,15 @@ const route = load(ROUTE_FILE);
 const E = load(path.join(REPO, "src/lib/learning/engine.ts"));
 const Day = load(path.join(REPO, "src/lib/learning/day.ts"));
 const { attachPaidItems } = load(path.join(REPO, "src/lib/passoffSupplement.ts"));
-const { passoffFreeReviewItems } = load(ADAPTER_FILE);
+const { passoffFreeReviewItems, PASSOFF_SERVER_LEARNING } = load(ADAPTER_FILE);
+const itemsRoute = load(ITEMS_ROUTE_FILE);
+const Progress = load(path.join(REPO, "src/lib/passoffProgress.ts"));
+const { licenseIdFor } = load(path.join(REPO, "src/lib/serverLicense.ts"));
+// the device side, as the browser runs it (a stand-in localStorage and fetch are set up before L18)
+const Rec = load(RECORD_FILE);
+const Sync = load(SYNC_FILE);
+const PL = load(PASSOFF_LEARNING_FILE);
+const Review = load(REVIEW_FILE);
 // a copy of the route in which D04 has added GRAMMAR I to the server-kept courses (L3)
 const loadWithGrammar = makeLoader([[STORE_FILE, /\["passoff-grammar"\]/, '["passoff-grammar", "grammar1"]']]);
 const routeWithGrammar = loadWithGrammar(ROUTE_FILE);
@@ -450,6 +491,215 @@ const check = (name, ok, note) => results.push({ name, ok: Boolean(ok), note: St
   check(`L14 무료 복습 쪽 문항: ${freeLessons.join(" · ")} 의 복습 문항만(${expected.length}) · 유료 보충 ${paidAll.length}개 중 0 · 기록용 칸 0`,
     freeKeys.length === expected.length && expected.every((k) => free[k]) && freeKeys.filter((k) => paidAll.includes(k)).length === 0 && hiddenFound.length === 0,
     `${freeKeys.length}/${expected.length} · 유료 ${freeKeys.filter((k) => paidAll.includes(k)).length} · 기록용 칸 ${hiddenFound.length}`);
+
+  // ── E1 점검 반영 ─────────────────────────────────────────────────────────────────────────────────────────────────
+  const COURSE = "passoff-grammar";
+  const items12 = reviewItemsOf(t1[1], true);
+  const [sent1, sent2, sent3] = items12.filter((e) => e.kind === "produce");
+
+  // L9b — the server judges again: a pass made on days still to come, or written in by hand, is not a pass
+  NOW = kst(D, 10);
+  const deviceDay = (n) => kst(D, 10) + (12 + n) * 86_400_000; // a clock twelve days ahead
+  const fastPass = E.emptyRecord(COURSE);
+  E.applyLessonDone(fastPass, t1[1], deviceDay(0), items12.map(({ key, kind }) => ({ key, kind })));
+  for (const n of [1, 3, 7]) E.applyAttempt(fastPass, sent1.key, reviewAnswer(t1[1], "produce", true), deviceDay(n), PROFILE);
+  const passedOnDevice = fastPass.items[sent1.key].stage === "passed";
+  fastPass.items[sent2.key] = { ...fastPass.items[sent2.key], stage: "passed", step: 2, dueDay: "2027-06-01" };
+  // an honest record kept with a right clock: one item passed (days D-9 · D-7 · D-3), one half way (D-9 · D-7)
+  const honest = E.emptyRecord(COURSE);
+  E.applyLessonDone(honest, t1[0], kst(D, 10) - 10 * 86_400_000, reviewItemsOf(t1[0], true).map(({ key, kind }) => ({ key, kind })));
+  const [h1, h2] = reviewItemsOf(t1[0], true).filter((e) => e.kind === "produce");
+  for (const n of [9, 7, 3]) E.applyAttempt(honest, h1.key, reviewAnswer(t1[0], "produce", true), kst(D, 10) - n * 86_400_000, PROFILE);
+  for (const n of [9, 7]) E.applyAttempt(honest, h2.key, reviewAnswer(t1[0], "produce", true), kst(D, 10) - n * 86_400_000, PROFILE);
+  const a7 = sessionFor("1Y");
+  const r9b = await sync(a7, fastPass);
+  const a8 = sessionFor("1Y");
+  await sync(a8, honest);
+  const s9b = stored(a7.payload.key);
+  const k1 = s9b && s9b.items[sent1.key];
+  const k2 = s9b && s9b.items[sent2.key];
+  const kept = stored(a8.payload.key);
+  const sameState = (a, b) => Boolean(a && b) && Review.sameRecord({ items: { x: a } }, { items: { x: b } });
+  check(`L9b 서버가 다시 판정: 시계가 12일 빠른 기기가 '통과'시킨 ${sent1.key} → learning · 다음 복습 ${Day.addDays(D, 2)} 전 / 손으로 적은 'passed'(${sent2.key}) → learning · 내일 / 올바른 시계로 쌓은 통과 · 중간 단계는 그대로`,
+    passedOnDevice && r9b.status === 200 && k1 && k1.stage === "learning" && k1.dueDay <= Day.addDays(D, 2) && k1.step <= k1.passDays.length &&
+      k2 && k2.stage === "learning" && k2.dueDay <= Day.addDays(D, 1) &&
+      kept && kept.items[h1.key].stage === "passed" && sameState(kept.items[h1.key], honest.items[h1.key]) && sameState(kept.items[h2.key], honest.items[h2.key]),
+    `기기 통과 ${passedOnDevice} · ${sent1.key} ${k1 && `${k1.stage}/${k1.step}/${k1.dueDay}`} · ${sent2.key} ${k2 && `${k2.stage}/${k2.dueDay}`} · 정직한 통과 ${kept && kept.items[h1.key].stage} 같음 ${kept && sameState(kept.items[h1.key], honest.items[h1.key])} · 중간 같음 ${kept && sameState(kept.items[h2.key], honest.items[h2.key])}`);
+
+  // L16 — a topic locked again after its record was kept (the owner's reset)
+  const re = sessionFor("STU1Y");
+  await Progress.setPassoffTopic(re.payload.key, 2);
+  const t2Items = reviewItemsOf(t2[0], true);
+  const openRun = await sync(re, deviceRecord([t2[0]], yesterday));
+  const t2Planned = ((openRun.data && openRun.data.plan.items) || []).filter((i) => i.key.startsWith(`${t2[0]}:`)).length;
+  await Progress.resetPassoffProgress(re.payload.key);
+  const lockedRun = await sync(re, E.emptyRecord(COURSE));
+  const lockedPlan = ((lockedRun.data && lockedRun.data.plan.items) || []).filter((i) => i.key.startsWith(`${t2[0]}:`)).length;
+  const lockedData = Object.keys((lockedRun.data && lockedRun.data.items) || {}).filter((k) => k.startsWith(`${t2[0]}:`)).length;
+  const reAccess = await PASSOFF_SERVER_LEARNING.access({ key: re.payload.key, plan: "STU1Y" });
+  const direct = PASSOFF_SERVER_LEARNING.itemData([...t2Items.map((e) => e.key), items12[0].key], reAccess);
+  const directLocked = Object.keys(direct).filter((k) => k.startsWith(`${t2[0]}:`)).length;
+  check(`L16 다시 잠긴 대주제: ${t2[0]} 기록 저장(열렸을 때 계획 ${t2Planned}) → 관리자 초기화 → 계획 · 문항 데이터 · 내일 수에 TOPIC 2 가 0(route) · 어댑터에 잠긴 열쇠 ${t2Items.length}개를 직접 넘겨도 데이터 0(adapter) · 열린 문항은 데이터 있음`,
+    t2Planned > 0 && lockedRun.status === 200 && lockedPlan === 0 && lockedData === 0 && lockedRun.data.tomorrow === 0 && directLocked === 0 && Boolean(direct[items12[0].key]),
+    `열렸을 때 계획 ${t2Planned} · 잠긴 뒤 계획 ${lockedPlan} · 데이터 ${lockedData} · 내일 ${lockedRun.data && lockedRun.data.tomorrow} · 어댑터 잠긴 ${directLocked} · 열린 ${Boolean(direct[items12[0].key])}`);
+
+  // L17 — the items API (a plan made on the device asks for those items' data only)
+  const askItems = (session, course, body) => call(itemsRoute.POST, session, course, body);
+  const it = sessionFor("STU1Y");
+  const wanted = [items12[0].key, items12[1].key, t2Items[0].key, "pg99-9:p1", "../x"];
+  const noLicence = await askItems(null, COURSE, { keys: wanted });
+  const noAdapter = await askItems(it, "grammar1", { keys: wanted });
+  const tooMany = await askItems(it, COURSE, { keys: Array.from({ length: 201 }, (_, i) => `${t1[1]}:p${i}`) });
+  const notList = await askItems(it, COURSE, { keys: "pg01-2:p1" });
+  const okItems = await askItems(it, COURSE, { keys: wanted });
+  const gotKeys = Object.keys((okItems.data && okItems.data.items) || {}).sort();
+  const unasked = items12.filter((e) => !wanted.includes(e.key)).flatMap((e) => textsOf(e.item)).filter((t) => !textsOf(items12[0].item).concat(textsOf(items12[1].item)).some((p) => p.includes(t)));
+  const unaskedSeen = unasked.filter((t) => inBody(okItems.text, t));
+  check(`L17 문항 API: 이용권 없음 401 · 어댑터 없는 과정 404 · 열쇠 201개 400 · 배열 아님 400 · 준 5개 중 열린 ${items12[0].key} · ${items12[1].key} 만 데이터(잠긴 TOPIC 2 · 없는 열쇠 0) · 묻지 않은 문항 글 ${unasked.length}개 중 0`,
+    noLicence.status === 401 && noAdapter.status === 404 && tooMany.status === 400 && notList.status === 400 && okItems.status === 200 &&
+      gotKeys.join(",") === [items12[0].key, items12[1].key].sort().join(",") && unaskedSeen.length === 0 && unasked.length > 0,
+    `${noLicence.status} · ${noAdapter.status} · ${tooMany.status} · ${notList.status} · ${okItems.status} [${gotKeys.join(",")}] · 묻지 않은 글 ${unaskedSeen.length}`);
+
+  // ── the device side: record.ts · sync.ts · passoffLearning.ts on a stand-in localStorage, fetch into the real routes ──
+  const box = new Map();
+  global.window = {
+    localStorage: {
+      getItem: (k) => (box.has(k) ? box.get(k) : null),
+      setItem: (k, v) => void box.set(k, String(v)),
+      removeItem: (k) => void box.delete(k),
+    },
+    dispatchEvent: () => true,
+    addEventListener: () => {},
+    removeEventListener: () => {},
+  };
+  global.CustomEvent = class {
+    constructor(type, init) {
+      this.type = type;
+      this.detail = init && init.detail;
+    }
+  };
+  let deviceSession = null;
+  let offline = false;
+  global.fetch = async (url, init = {}) => {
+    if (offline) throw new TypeError("offline");
+    const p = new URL(url, "http://local").pathname;
+    const m = p.match(/^\/api\/learning\/([^/]+)(\/items)?$/);
+    if (!m) throw new Error(`fetch outside the learning API: ${p}`);
+    SESSION = deviceSession;
+    const request = new Request(`http://local${p}`, { method: init.method || "GET", headers: init.headers, body: init.body });
+    return (m[2] ? itemsRoute.POST : route.POST)(request, { params: Promise.resolve({ course: decodeURIComponent(m[1]) }) });
+  };
+  const entriesOf = (id) => reviewItemsOf(id, true).map(({ key, kind }) => ({ key, kind }));
+  const lessonsIn = (rec) => Object.keys((rec && rec.lessons) || {});
+  const itemsFrom = (rec, id) => Object.keys((rec && rec.items) || {}).filter((k) => k.startsWith(`${id}:`)).length;
+  const settle = async (test, ms = 3000) => {
+    const end = realNow() + ms;
+    while (!test() && realNow() < end) await new Promise((r) => setTimeout(r, 20));
+    return test();
+  };
+  const device = (learner) => Rec.readLearnerRecord(COURSE, learner);
+  NOW = kst(D, 10);
+
+  // L18 — one device: licence A studies and syncs, then licence B finishes a lesson there
+  box.clear();
+  const A = sessionFor("1Y");
+  const B = sessionFor("1Y");
+  const idA = licenseIdFor(A.payload.key);
+  const idB = licenseIdFor(B.payload.key);
+  deviceSession = A;
+  PL.notePassoffLessonDone(t1[0], entriesOf(t1[0]), [], idA);
+  await settle(() => lessonsIn(stored(A.payload.key)).includes(t1[0]));
+  deviceSession = B;
+  PL.notePassoffLessonDone(t1[1], entriesOf(t1[1]), [], idB);
+  await settle(() => lessonsIn(stored(B.payload.key)).includes(t1[1]));
+  const sA = stored(A.payload.key);
+  const sB = stored(B.payload.key);
+  check(`L18 A 가 쓰던 기기에서 B 가 ${t1[1]} 를 마침 → B 서버에 ${t1[1]} 있음 · ${t1[0]}(A 것) 0 / A 서버에 ${t1[1]} 0 · 기기에 A · B 칸 따로`,
+    lessonsIn(sB).includes(t1[1]) && itemsFrom(sB, t1[0]) === 0 && lessonsIn(sA).includes(t1[0]) && itemsFrom(sA, t1[1]) === 0 &&
+      itemsFrom(device(idA), t1[0]) > 0 && itemsFrom(device(idA), t1[1]) === 0 && itemsFrom(device(idB), t1[1]) > 0 && itemsFrom(device(idB), t1[0]) === 0,
+    `B 서버 레슨 [${lessonsIn(sB).join(",")}] A 문항 ${itemsFrom(sB, t1[0])} · A 서버 레슨 [${lessonsIn(sA).join(",")}] B 문항 ${itemsFrom(sA, t1[1])} · 기기 A ${itemsFrom(device(idA), t1[0])}/${itemsFrom(device(idA), t1[1])} · B ${itemsFrom(device(idB), t1[1])}/${itemsFrom(device(idB), t1[0])}`);
+
+  // L19 — before any sync (offline), A and B each finish a lesson on one device; then each goes up
+  box.clear();
+  const C = sessionFor("1Y");
+  const G = sessionFor("1Y");
+  const idC = licenseIdFor(C.payload.key);
+  const idG = licenseIdFor(G.payload.key);
+  offline = true;
+  PL.notePassoffLessonDone(t1[0], entriesOf(t1[0]), [], idC);
+  PL.notePassoffLessonDone(t1[1], entriesOf(t1[1]), [], idG);
+  await new Promise((r) => setTimeout(r, 50));
+  offline = false;
+  deviceSession = G;
+  await Sync.syncLearnerRecord(COURSE, idG);
+  deviceSession = C;
+  await Sync.syncLearnerRecord(COURSE, idC);
+  const sG = stored(G.payload.key);
+  const sC = stored(C.payload.key);
+  check(`L19 첫 동기화 전 한 기기에서 C 는 ${t1[0]} · G 는 ${t1[1]} → G 서버에 ${t1[0]} 0 · C 서버에 ${t1[1]} 0 · 각자 자기 레슨은 있음`,
+    itemsFrom(sG, t1[1]) > 0 && itemsFrom(sG, t1[0]) === 0 && itemsFrom(sC, t1[0]) > 0 && itemsFrom(sC, t1[1]) === 0,
+    `G 서버 ${itemsFrom(sG, t1[1])}/${itemsFrom(sG, t1[0])} · C 서버 ${itemsFrom(sC, t1[0])}/${itemsFrom(sC, t1[1])}`);
+
+  // L19b — the session is another licence (M) than the record the device sends (L)
+  box.clear();
+  const L = sessionFor("1Y");
+  const M = sessionFor("1Y");
+  const idL = licenseIdFor(L.payload.key);
+  deviceSession = M;
+  await sync(M, deviceRecord([t1[1]], yesterday), licenseIdFor(M.payload.key)); // M's own record on the server
+  offline = true;
+  PL.notePassoffLessonDone(t1[0], entriesOf(t1[0]), [], idL);
+  offline = false;
+  const cross = await Sync.syncLearnerRecord(COURSE, idL);
+  const sM = stored(M.payload.key);
+  check(`L19b 세션은 M 인데 기기가 L 칸(${t1[0]})을 보냄 → taken false · M 서버에 ${t1[0]} 0 · 기기 L 칸 그대로(${t1[1]} 안 섞임) · M 의 답은 M 칸에`,
+    cross.ok && cross.answer.taken === false && itemsFrom(sM, t1[0]) === 0 && itemsFrom(device(idL), t1[0]) > 0 && itemsFrom(device(idL), t1[1]) === 0 &&
+      itemsFrom(device(licenseIdFor(M.payload.key)), t1[1]) > 0,
+    `taken ${cross.ok && cross.answer.taken} · M 서버 ${t1[0]} ${itemsFrom(sM, t1[0])} · L 칸 ${itemsFrom(device(idL), t1[0])}/${itemsFrom(device(idL), t1[1])} · M 칸 ${itemsFrom(device(licenseIdFor(M.payload.key)), t1[1])}`);
+
+  // L20 — a free lesson studied with no licence goes with the first licence only
+  box.clear();
+  const F1 = sessionFor("STU1Y");
+  const F2 = sessionFor("STU1Y");
+  PL.notePassoffLessonDone(t1[1], reviewItemsOf(t1[1], false).map(({ key, kind }) => ({ key, kind })), [], null);
+  deviceSession = F1;
+  await Sync.syncLearnerRecord(COURSE, licenseIdFor(F1.payload.key));
+  deviceSession = F2;
+  await Sync.syncLearnerRecord(COURSE, licenseIdFor(F2.payload.key));
+  const f1 = stored(F1.payload.key);
+  const f2 = stored(F2.payload.key);
+  check(`L20 이용권 없이 마친 ${t1[1]} → 처음 올린 이용권에 합쳐짐 · 무료 칸 비움 · 다음 이용권에는 안 감`,
+    itemsFrom(f1, t1[1]) > 0 && itemsFrom(device(null), t1[1]) === 0 && itemsFrom(f2, t1[1]) === 0,
+    `첫 이용권 ${itemsFrom(f1, t1[1])} · 무료 칸 ${itemsFrom(device(null), t1[1])} · 다음 이용권 ${itemsFrom(f2, t1[1])}`);
+
+  // L21 — a lesson finished with a licence goes up at once; a new, empty device gets its review the next day
+  box.clear();
+  const N = sessionFor("1Y");
+  const idN = licenseIdFor(N.payload.key);
+  deviceSession = N;
+  PL.notePassoffLessonDone(t1[1], entriesOf(t1[1]), [], idN);
+  const upNow = await settle(() => itemsFrom(stored(N.payload.key), t1[1]) > 0);
+  box.clear(); // another phone
+  NOW = kst(Day.addDays(D, 1), 10);
+  const otherPhone = await Sync.syncLearnerRecord(COURSE, idN, { planOnly: true });
+  const nextPlan = otherPhone.ok ? otherPhone.answer.plan.items.filter((i) => i.key.startsWith(`${t1[1]}:`)).length : -1;
+  check(`L21 이용권으로 ${t1[1]} 를 마치면 바로 서버에 · 빈 새 기기가 다음 날 물으면 계획에 그 문항 ${items12.length}개 중 ${nextPlan}개(문항 데이터 없이)`,
+    upNow && otherPhone.ok && nextPlan > 0 && Object.keys(otherPhone.answer.items).length === 0 && itemsFrom(device(idN), t1[1]) > 0,
+    `바로 올라감 ${upNow} · 다음 날 계획 ${nextPlan} · 데이터 ${otherPhone.ok && Object.keys(otherPhone.answer.items).length} · 새 기기 칸 ${itemsFrom(device(idN), t1[1])}`);
+
+  // L22 — the free list line counts the free review's items alone (a device whose licence ended)
+  const withPaid = E.emptyRecord(COURSE);
+  E.applyLessonDone(withPaid, t1[0], yesterday, entriesOf(t1[0]));
+  const freeSet = new Set(Object.keys(free));
+  const freeRec = PL.passoffFreeRecord(withPaid, freeSet);
+  const planFree = E.planDay(freeRec, D, PROFILE);
+  const paidInPlan = planFree.items.filter((i) => paidAll.includes(i.key)).length;
+  const paidTomorrow = E.planDay(freeRec, Day.addDays(D, 1), PROFILE).items.filter((i) => paidAll.includes(i.key)).length;
+  const paidIn = Object.keys(withPaid.items).filter((k) => paidAll.includes(k)).length;
+  check(`L22 무료 계산: 유료 보충 문항 ${paidIn}개가 든 ${t1[0]} 기록 → 무료 계획 ${planFree.items.length}개 중 유료 0 · 내일 수에도 0`,
+    paidIn > 0 && planFree.items.length > 0 && paidInPlan === 0 && paidTomorrow === 0 && planFree.items.every((i) => freeSet.has(i.key)),
+    `기록의 유료 ${paidIn} · 계획 ${planFree.items.length} 중 유료 ${paidInPlan} · 내일 유료 ${paidTomorrow}`);
+  NOW = null;
 
   for (const x of results) console.log(`${x.ok ? "PASS" : "FAIL"}  ${x.name}  — ${x.note}`);
   const failed = results.filter((x) => !x.ok).length;

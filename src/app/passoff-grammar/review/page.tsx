@@ -6,11 +6,13 @@ import { isServerLearningCourse } from "@/lib/learning/serverStore";
 import { planOpensCourse } from "@/lib/license";
 import { LICENSE_SESSION_COOKIE_NAME, verifyLicenseSessionToken } from "@/lib/licenseSession";
 import { passoffFreeReviewItems } from "@/lib/passoffReview";
+import { licenseIdFor } from "@/lib/serverLicense";
 
 /**
  * PASS-OFF GRAMMAR's review of the day (공통-학습-엔진.md §8-3) — a literal folder, so it wins over [lesson].
  *
- * With a licence that opens the course the page holds NO lesson text at all: the browser sends its record to
+ * With a licence that opens the course the page holds NO lesson text at all: the browser sends this licence's record
+ * (the one the device keeps under the licence's id, handed to it here — src/lib/learning/sync.ts) to
  * /api/learning/passoff-grammar and gets back today's plan with the data of those items only (and only of open topics).
  * Without one — the free trial — the page gives the two free lessons' review items as their free pages show them (never
  * the paid STUDENT sentences a licence adds), and the device plans from its own record; nothing goes to the server.
@@ -48,7 +50,13 @@ export default async function PassoffReviewPage() {
           </p>
         )}
       </header>
-      <PassoffReview source={withLicence ? { kind: "server" } : { kind: "device", items: passoffFreeReviewItems() }} />
+      <PassoffReview
+        source={
+          withLicence && session
+            ? { kind: "server", learner: licenseIdFor(session.payload.key) }
+            : { kind: "device", items: passoffFreeReviewItems() }
+        }
+      />
     </main>
   );
 }
