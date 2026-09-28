@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr050",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr050-q1",
+      "type": "main",
+      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "options": [
+        "언어가 없으면 사람들은 아주 단순한 일밖에 함께 해낼 수 없다.",
+        "언어가 없어도 사람들은 몸짓만으로 충분히 협동할 수 있다.",
+        "여럿이 함께하는 일에서는 개인의 힘과 능력이 가장 중요하다.",
+        "사회가 커질수록 언어는 점점 더 복잡해진다."
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "1번 'incapable of engaging in any but the simplest of cooperative enterprises'가 주제문이고, 2·3번은 그 까닭을 풀어 쓴 것이다."
+    },
+    {
+      "id": "pr050-q2",
+      "type": "inference",
+      "prompt": "이 글로 미루어 볼 때, 언어가 사회에서 하는 역할로 가장 알맞은 것은?",
+      "options": [
+        "사람들이 남의 도움 없이 혼자 힘으로 일하게 해 준다.",
+        "사람들이 저마다 다른 목표를 따르게 해 준다.",
+        "사람들이 함께 계획을 세우고 서로 도움을 얻게 해 준다.",
+        "사람들이 서로 경쟁해서 이기게 해 준다."
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "2번 'no way of planning such activities'와 3번 'lack the means of securing the help of others'를 거꾸로 보면, 언어가 있어야 함께 계획하고 남의 도움을 얻을 수 있다."
+    }
+  ]
+}

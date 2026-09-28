@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr001",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr001-q1",
+      "type": "main",
+      "prompt": "이 글의 요지로 가장 알맞은 것은?",
+      "options": [
+        "남자아이와 여자아이는 똑같은 방식으로 말하도록 배워야 한다.",
+        "부모가 성별이 다른 자녀의 말하는 방식을 존중하면 대화가 더 잘 통한다.",
+        "부모와 성별이 다른 자녀는 끝내 서로 오해할 수밖에 없다.",
+        "자녀에게 하는 조언은 성별이 같은 부모가 맡는 것이 좋다."
+      ],
+      "answer": 1,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "4번에서 'doomed to miscommunicate'는 아니라고 한 뒤, 5번에서 'more successful if parents respect ... different way of speaking'이라고 결론짓는다."
+    },
+    {
+      "id": "pr001-q2",
+      "type": "detail",
+      "prompt": "과학자들에 따르면, 남자아이와 여자아이의 말하는 방식 차이가 문제를 일으키는 때는 언제인가?",
+      "options": [
+        "같은 성별의 부모와 자녀가 서로 말할 때",
+        "남자아이와 여자아이가 서로 말다툼할 때",
+        "부모가 자녀에게 조언을 해 주지 않을 때",
+        "어머니가 아들에게, 아버지가 딸에게 말할 때"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "2번에 'create problems when mothers talk to sons and fathers talk to daughters'라고 나온다."
+    }
+  ]
+}

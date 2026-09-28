@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "d150",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d150-q1",
+      "type": "detail",
+      "prompt": "미국의 남부와 북부에 대해 들은 내용과 일치하는 것은?",
+      "options": [
+        "남부는 때때로 매우 춥고, 북부는 매우 덥다.",
+        "그 지역 사람들은 기후에 익숙해져 크게 고생하지 않는다.",
+        "그 지역 사람들은 더위와 추위 때문에 크게 고생한다.",
+        "두 지역 모두 일 년 내내 날씨가 온화하다."
+      ],
+      "answer": 1,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "남부·북부 사람들은 “become accustomed to the climate and never suffer very much”라고 했으니 크게 고생하지 않는다."
+    },
+    {
+      "id": "d150-q2",
+      "type": "next",
+      "prompt": "말하는 사람이 이어서 이야기할 내용으로 가장 알맞은 것은?",
+      "options": [
+        "지리적 조건은 나라의 발전과 관계없다는 주장",
+        "남부와 북부 사람들이 날씨 때문에 겪는 고통",
+        "미국의 기후가 사실은 좋지 않다는 반론",
+        "기후 외에 미국이 지리적으로 누리는 또 다른 장점"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "미국이 “very fortunate in this respect”라 하고 “First of all, it has a good climate”로 첫째 장점을 들었으니 다음 장점이 이어진다."
+    }
+  ]
+}

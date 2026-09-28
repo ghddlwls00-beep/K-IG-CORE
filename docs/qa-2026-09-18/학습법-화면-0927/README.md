@@ -57,6 +57,14 @@
    깨기: stop 휴대폰 3 · 데스크탑 41 FAIL · gate 휴대폰 5 FAIL · cloze 데스크탑 15 FAIL · hover 데스크탑 1 FAIL(cloze · hover 는 데스크탑 길만 봄 — 휴대폰 깨기는 통과가 맞음) → **READING 올려도 됨**.
 4. 남은 일: 디자인 규칙 §7 에 AudioPlayer `speeds` · LISTENING · READING 의 넘겨받기 · 완료 조건 한 줄씩(다음 문서 정리 때).
 
+### 새 문제 진행 (09-28 06:2x — 압축 뒤 여기부터 · 계획은 `새-문제-설계.md` §3-1 · §3-2)
+
+- 시범 36문항 끝(`새-문제/pilot/` — 정답 길이 치우침 58% 등으로 check-new-questions FAIL 18 → 규칙 고침, 시범 강의도 새 규칙으로 다시 씀).
+- **묶음 1 도는 중**: 워크플로우 wf_82ddbaa6-08e(작업 w6ans28mw) — LISTENING d001 ~ d070 · READING pr001 ~ pr064, 18묶음 · 쓰기 Sonnet · 대조 · 고침 · 저장은 지금 모델,
+  결과 파일은 `새-문제/_staging/<묶음>/{ld,reading}/<id>.json`(묶음마다 check-new-questions PASS 가 조건).
+- 묶음 1이 끝나면: ① `_staging/*/{ld,reading}/*.json` 을 `새-문제/{ld,reading}/` 로 옮김 ② `node docs/qa-2026-09-18/scripts/check-new-questions.cjs`(전체) PASS ③ get_usage — 주간 70% 넘으면 멈추고 설계 세션과 나눔 ④ 묶음 2(d071 ~ d140 · pr065 ~ pr128)를 같은 스크립트로(범위만 바꿈) ⑤ 커밋(파일 이름으로, content/ 는 아직 안 건드림).
+- 올리기: 설계 세션이 0dd1b4b 판으로 3 ~ 6 다시 재는 중(09-28 05:5x ~) — 통과하면 운영에 올림.
+
 ### 다음 할 일 (06:4x 기준 — 압축 뒤 여기부터)
 
 1. ~~STUDENT~~ 끝(위 표). **운영에 올라간 뒤 이용권 브라우저로만 볼 수 있는 것**(로컬에는 이용권이 없어 유료 강의가 잠김): 16낱말 이상 문장의 앞 · 뒤 두 번 조립(s16-2 · s11-4) —

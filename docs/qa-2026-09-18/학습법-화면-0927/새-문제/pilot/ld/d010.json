@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d010",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d010-q1",
+      "type": "detail",
+      "prompt": "Anne에 대한 내용으로 맞는 것은?",
+      "options": [
+        "아프리카 언어는 하나도 몰랐지만 프랑스어와 포르투갈어는 안다",
+        "아프리카 언어를 몇 가지 할 줄 알아서 여행이 쉬웠다",
+        "프랑스어는 잘하지만 포르투갈어는 전혀 못 한다",
+        "말이 통하지 않아 여행 내내 고생했다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "“She didn't know any of the African languages”라고 했지만 “She knows both of these languages”(프랑스어와 포르투갈어)라고도 했다."
+    },
+    {
+      "id": "d010-q2",
+      "type": "purpose",
+      "prompt": "말하는 사람이 특히 즐겁게 보았다고 한 사진은?",
+      "options": [
+        "빅토리아 호수와 나일강 사진",
+        "사하라 사막의 특이한 사진",
+        "극동 지역의 도시 사진",
+        "케냐의 야생 동물 사진"
+      ],
+      "answer": 3,
+      "evidence": [
+        4
+      ],
+      "note": "“I especially enjoyed the pictures of the wild animals in Kenya”라고 했다. 호수 · 강 · 사막 사진은 '특히 즐겼다'고 하지 않았다."
+    },
+    {
+      "id": "d010-q3",
+      "type": "next",
+      "prompt": "여행을 한 일행은 아프리카 다음에 어디로 갔는가?",
+      "options": [
+        "배를 타고 유럽으로 갔다",
+        "비행기를 타고 극동 지역으로 갔다",
+        "케냐로 돌아가 야생 동물을 더 찍었다",
+        "곧장 집으로 돌아왔다"
+      ],
+      "answer": 1,
+      "evidence": [
+        7
+      ],
+      "note": "“From Africa, they flew to the Far East”라고 했다."
+    }
+  ]
+}

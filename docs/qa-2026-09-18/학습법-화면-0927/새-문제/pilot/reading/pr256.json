@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr256",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr256-q1",
+      "type": "main",
+      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "options": [
+        "20세기의 기술 발전은 사람들의 삶을 거의 바꾸지 못했다.",
+        "윤리 문제를 막으려면 기술 개발을 당장 멈추어야 한다.",
+        "기술 덕분에 삶이 크게 나아졌지만, 그만큼 어려운 윤리 문제도 생겼다.",
+        "우주 개발은 20세기 기술 발전 가운데 가장 중요한 일이었다."
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "5번 'We have come a long way because of technology' 다음에 6번 'Yet ... created equally troubling ethical problems'가 글의 중심 생각을 밝힌다."
+    },
+    {
+      "id": "pr256-q2",
+      "type": "vocab",
+      "prompt": "이 글에서 'draw the line'이 뜻하는 것으로 가장 알맞은 것은?",
+      "options": [
+        "종이에 자를 대고 줄을 그어 설계도를 그리다",
+        "기술 발달을 어디까지 허용할지 한계를 정하다",
+        "과학자와 일반 사람이 맡을 일을 서로 나누다",
+        "20세기와 지금의 기술 수준을 서로 비교하다"
+      ],
+      "answer": 1,
+      "evidence": [
+        7,
+        8
+      ],
+      "note": "7번 'Should there be ethical limits to technological development?' 바로 뒤에 'where to draw the line'을 물으므로, 한계를 어디에 둘지 정한다는 뜻이다."
+    }
+  ]
+}
