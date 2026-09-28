@@ -31,7 +31,8 @@ function load(breakName) {
   const active = breakName ? (BREAK_SETS[breakName] || [breakName]).map((n) => BREAKS[n]) : [];
   if (breakName && active.some((b) => !b)) throw new Error(`unknown break ${breakName}`);
   for (const file of ["types.ts", "day.ts", "engine.ts"]) {
-    let source = fs.readFileSync(path.join(SRC, file), "utf8");
+    // a Windows checkout may hand back CRLF; the break texts are written with LF
+    let source = fs.readFileSync(path.join(SRC, file), "utf8").replace(/\r\n/g, "\n");
     for (const b of active.filter((x) => x.file === file)) {
       if (!source.includes(b.from)) throw new Error(`break text not found in ${file}: ${b.from}`);
       source = source.split(b.from).join(b.to);
@@ -49,7 +50,9 @@ if (argv.includes("--prove-breaks")) {
   for (const name of Object.keys(BREAKS).filter((n) => n !== "lessonState")) {
     const r = run([`--break=${name}`]);
     const failed = (r.stdout.match(/^FAIL .*/gm) || []).map((l) => l.slice(5, 45));
-    rows.push([name, r.status, r.status === 1 ? `caught (${failed.length}: ${failed.slice(0, 3).join(" | ")})` : "NOT CAUGHT"]);
+    // caught only when a named case failed — a crash (break text not found, exit 1 with no FAIL line) is not a catch
+    const caught = r.status === 1 && failed.length > 0;
+    rows.push([name, caught ? 1 : `${r.status}*`, caught ? `caught (${failed.length}: ${failed.slice(0, 3).join(" | ")})` : `NOT CAUGHT${r.stderr ? ` — ${r.stderr.trim().split("\n")[0].slice(0, 120)}` : ""}`]);
   }
   for (const [name, status, verdict] of rows) console.log(`${name.padEnd(10)} exit ${status}  ${verdict}`);
   const ok = rows[0][1] === 0 && rows.slice(1).every((r) => r[1] === 1);
