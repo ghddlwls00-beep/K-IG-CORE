@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d133",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d133-q1",
+      "type": "다음에 할 일",
+      "prompt": "여행을 떠나려고 형이 글쓴이의 집까지 오는 방법으로 옳은 것은?",
+      "options": [
+        "버스로 정류장까지 간 뒤 말을 타고 온다",
+        "기차를 타고 뉴욕을 거쳐 글쓴이 집에 온다",
+        "말을 타고 정류장에 간 뒤 버스를 탄다",
+        "기차를 타고 곧장 글쓴이 집으로 온다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'go on horseback from his farm to the bus station', 'take a bus to our house'에서 확인"
+    },
+    {
+      "id": "d133-q2",
+      "type": "다음에 할 일",
+      "prompt": "유럽에 도착한 뒤 가족이 할 일로 옳은 것은?",
+      "options": [
+        "기차를 타고 여러 나라를 돈다",
+        "배를 타고 가까운 섬들을 돈다",
+        "곧바로 비행기를 타고 돌아온다",
+        "차를 빌려 타고 원하는 곳을 다닌다"
+      ],
+      "answer": 3,
+      "evidence": [
+        9
+      ],
+      "note": "'rent a car and drive wherever we want to go'에서 확인"
+    },
+    {
+      "id": "d133-q3",
+      "type": "세부 사실",
+      "prompt": "처음 계획과 달리 배를 타고 유럽으로 가게 된 까닭으로 가장 알맞은 것은?",
+      "options": [
+        "형이 배 여행을 무척 하고 싶어 해서",
+        "아이들이 배를 꼭 타고 싶어 해서",
+        "비행기가 더 느리고 구경할 시간이 적어서",
+        "비행기표가 배표보다 훨씬 비싸서"
+      ],
+      "answer": 0,
+      "evidence": [
+        12
+      ],
+      "note": "'At first we wanted to fly', 'my brother was very anxious to take a boat trip'에서 확인"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr101",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr101-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "최근 연구는 마음이 병과 치료에 영향을 준다고 본다",
+        "의학계는 오래전부터 마음의 역할을 중시해 왔다",
+        "건강은 몸의 상태만으로 설명할 수 있다",
+        "최근 연구는 마음보다 몸의 역할을 강조한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "'Recently ... a lot of research that shows our mind affects illness and healing'로 확인"
+    },
+    {
+      "id": "pr101-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "이 글에서 'organic disease'가 뜻하는 것으로 가장 적절한 것은?",
+      "options": [
+        "마음에서 비롯된 심리적인 증상",
+        "의학계가 최근 새로 발견한 병",
+        "신체 기관에 실제로 생긴 병",
+        "의사들도 치료법을 모르는 병"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "'did not have an organic disease but were seeking psychological help'로 확인"
+    }
+  ]
+}

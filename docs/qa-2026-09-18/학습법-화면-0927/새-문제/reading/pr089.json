@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr089",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr089-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "경쟁에는 양쪽이 지켜야 할 규칙이 있다",
+        "경쟁에서는 이기기 위해 무엇이든 해도 된다",
+        "규칙은 이긴 쪽이 마음대로 바꿀 수 있다",
+        "규칙은 시간이 지나면서 저절로 바뀐다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        4
+      ],
+      "note": "'a set of rules that govern the conduct of the opposed parties' · 'the game is governed by a set of rules' — 경쟁하는 양쪽의 행동을 다스리는 규칙이 있음"
+    },
+    {
+      "id": "pr089-q2",
+      "type": "세부 사실",
+      "prompt": "글에서 경쟁을 설명하려고 예로 든 것은?",
+      "options": [
+        "두 야구팀의 경기",
+        "두 축구팀의 경기",
+        "두 선수의 달리기 시합",
+        "두 학교의 토론 대회"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "'For instance, when two soccer teams play against one another' — 예로 든 것은 두 축구팀의 경기"
+    }
+  ]
+}

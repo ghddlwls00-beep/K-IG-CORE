@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr127",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr127-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "우리의 지성으로는 종교를 결코 이해할 수 없다",
+        "지성을 기르면 무엇이든 이해할 수 있다",
+        "종교는 지성 밖에 있는 것을 이해하게 도와야 한다",
+        "종교는 눈에 보이는 세상의 일만 다루어야 한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "근거: 'A religion should offer a way to make understandable something ... outside the capability of our intellect'"
+    },
+    {
+      "id": "pr127-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "글에서 'something'이 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "종교 그 자체",
+        "시공간을 넘어선 것",
+        "시간과 공간 그 자체",
+        "우리 지성이 가진 능력"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "근거: 'something that is beyond time and space'"
+    }
+  ]
+}

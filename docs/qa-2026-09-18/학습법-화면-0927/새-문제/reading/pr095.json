@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr095",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr095-q1",
+      "type": "세부 사실",
+      "prompt": "IMF의 한 관리가 어려움을 겪는 경제들이 회복될 것이라고 말한 시기로 알맞은 것은?",
+      "options": [
+        "1998년 상반기",
+        "1998년 하반기",
+        "1999년 상반기",
+        "1999년 하반기"
+      ],
+      "answer": 3,
+      "evidence": [
+        3
+      ],
+      "note": "'An officer of the IMF said the troubled economies would recover ... by the second half of 1999' — 관리가 말한 회복 시기는 1999년 하반기"
+    },
+    {
+      "id": "pr095-q2",
+      "type": "한 단계 추론",
+      "prompt": "IMF 관리가 회복 시기를 정확히 말할 수 없다고 한 까닭으로 가장 적절한 것은?",
+      "options": [
+        "통계 자료가 아직 다 모이지 않았기 때문에",
+        "IMF 안에서 의견이 서로 달랐기 때문에",
+        "각국 정부의 대처에 달려 있기 때문에",
+        "다른 국제기구와 먼저 의논해야 했기 때문에"
+      ],
+      "answer": 2,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "'the IMF could not be exact about the timing of a recovery' · 'depend on how effective governments were in dealing with their economic problems' — 회복 시기가 각국 정부의 대처에 달림"
+    }
+  ]
+}

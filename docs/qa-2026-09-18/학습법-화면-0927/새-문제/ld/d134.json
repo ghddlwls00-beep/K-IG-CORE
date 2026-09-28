@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d134",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d134-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "기차와 배에서도 짐이 44파운드로 제한되는 이야기",
+        "비행기 짐 제한 탓에 가져갈 짐을 고민하는 이야기",
+        "짐을 너무 적게 챙겨 여행 중에 곤란했던 이야기",
+        "짐이 44파운드를 넘어 비행기를 타지 못한 이야기"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "'don't know how many suitcases to take' · 'come home by plane, we will have a problem' · 'only have 44 pounds for each person on the plane'이 비행기 짐 제한 때문에 가져갈 짐을 고민함을 보여 줌"
+    },
+    {
+      "id": "d134-q2",
+      "type": "세부 사실",
+      "prompt": "말하는 이의 형에 대한 설명으로 알맞은 것은?",
+      "options": [
+        "어디를 가든 큰 가방을 여러 개 들고 다닌다",
+        "가방을 많이 가져가서 늘 곤란을 겪는다",
+        "짐은 늘 다른 사람이 대신 싸 준다",
+        "어디를 가든 작은 가방 하나로 충분하다"
+      ],
+      "answer": 3,
+      "evidence": [
+        8,
+        9
+      ],
+      "note": "'My brother has no problem' · 'just carries one small suitcase wherever he goes and always has everything he needs'가 형은 작은 가방 하나로 충분함을 보여 줌"
+    },
+    {
+      "id": "d134-q3",
+      "type": "세부 사실",
+      "prompt": "아내가 여행 가방에 짐을 넣는 방법으로 알맞은 것은?",
+      "options": [
+        "무거운 것부터 넣고 가벼운 것은 나중에 채운다",
+        "가벼운 것부터 넣고 무거운 것은 나중에 채운다",
+        "둥근 것은 모서리에, 네모난 것은 가운데에 넣는다",
+        "무거운 것과 가벼운 것을 서로 다른 가방에 담는다"
+      ],
+      "answer": 0,
+      "evidence": [
+        6
+      ],
+      "note": "'puts all the heavy things in the suitcase first and then puts the lighter things in'이 무거운 것부터 넣고 가벼운 것은 나중에 넣음을 보여 줌"
+    }
+  ]
+}

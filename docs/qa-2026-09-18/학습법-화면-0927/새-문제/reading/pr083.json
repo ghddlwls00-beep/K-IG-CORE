@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr083",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr083-q1",
+      "type": "세부 사실",
+      "prompt": "샌프란시스코의 대학원생에 대한 내용으로 옳은 것은?",
+      "options": [
+        "인터넷 친구 가운데 50명쯤과 데이트를 했다",
+        "인터넷에서 사귄 친구가 50명이 넘는다",
+        "인터넷 친구 가운데 한 명과 결혼했다",
+        "컴퓨터 때문에 연애가 끝났다고 여긴다"
+      ],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "3번 'a graduate student in San Francisco ... has made more than fifty \"net friends\"'"
+    },
+    {
+      "id": "pr083-q2",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "컴퓨터로는 자기와 비슷한 사람들만 만나게 된다",
+        "공공장소의 컴퓨터로는 사람을 사귀기가 어렵다",
+        "컴퓨터로 평소라면 못 만날 사람들도 사귄다",
+        "게시판에서는 아는 사람끼리만 이야기한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "1번 'carry on active social lives with computers', 2번 'they get to know people they might never meet in the traditional way'"
+    }
+  ]
+}

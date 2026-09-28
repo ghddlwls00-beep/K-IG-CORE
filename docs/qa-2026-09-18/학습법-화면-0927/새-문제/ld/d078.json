@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d078",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d078-q1",
+      "type": "세부 사실",
+      "prompt": "중개인들이 평가사(appraisers)로 일할 때 하는 일로 옳은 것은?",
+      "options": [
+        "부동산을 살펴본 뒤 고칠 곳을 알려 준다",
+        "주인이 부동산을 살 때 낸 값을 알아낸다",
+        "주인이 팔 때 받을 값을 알려 준다",
+        "살 사람을 찾아 부동산을 대신 보여 준다"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'appraisers look at a piece of property'와 'tell how much money the owner can get when he sells it'이 평가사가 하는 일을 보여 줌"
+    },
+    {
+      "id": "d078-q2",
+      "type": "세부 사실",
+      "prompt": "많은 부동산 중개인들에 대해 글에서 말한 것으로 옳은 것은?",
+      "options": [
+        "직원 없이 모든 일을 혼자서 해낸다",
+        "자기 사업체를 운영하며 판매원을 고용한다",
+        "남의 회사에 들어가 판매원으로 일한다",
+        "시간제 직원만 두고 판매원은 쓰지 않는다"
+      ],
+      "answer": 1,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'operate their own businesses'와 'hire other salespeople to work for them'이 많은 중개인들이 사업체를 운영하며 판매원을 고용함을 보여 줌"
+    },
+    {
+      "id": "d078-q3",
+      "type": "세부 사실",
+      "prompt": "중개인들이 대신 부동산을 팔거나 세놓아 주는 사람으로 옳은 것은?",
+      "options": [
+        "부동산을 내놓으려는 사람",
+        "부동산을 새로 사려는 사람",
+        "부동산을 빌리려는 사람",
+        "부동산을 평가하는 사람"
+      ],
+      "answer": 0,
+      "evidence": [
+        8
+      ],
+      "note": "'find people who have property to sell or rent'와 'try to sell or rent the property for them'이 부동산을 가진 사람을 위해 일함을 보여 줌"
+    }
+  ]
+}

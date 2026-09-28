@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d131",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d131-q1",
+      "type": "세부 사실",
+      "prompt": "처음 캐빈 4채를 짓는 데 쓴 돈으로 옳은 것은?",
+      "options": [
+        "원래 땅의 일부를 판 돈",
+        "아내가 모아 둔 돈",
+        "손님들에게서 미리 받은 숙박비",
+        "대학생 직원들이 일해서 번 돈"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "'sold part of the original land and used the money to add to the lodge and to build 4 cabins'에서 확인"
+    },
+    {
+      "id": "d131-q2",
+      "type": "세부 사실",
+      "prompt": "캐빈에 대한 설명으로 옳은 것은?",
+      "options": [
+        "부엌이 있어 손님이 직접 요리해 먹는다",
+        "침실 하나에 벽난로가 딸려 있다",
+        "요리 시설이 없어 식사는 로지 식당에서 한다",
+        "큰 침실 둘과 작은 부엌이 있다"
+      ],
+      "answer": 2,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "'no cooking facilities in the cabins', 'All the guests are served in the lodge dining room'에서 확인"
+    },
+    {
+      "id": "d131-q3",
+      "type": "목적/태도",
+      "prompt": "대학생들을 주로 직원으로 쓰는 방식에 대한 글쓴이의 평가로 알맞은 것은?",
+      "options": [
+        "히크먼 가족보다 학생에게 더 편리하다",
+        "학생보다 히크먼 가족에게 더 편리하다",
+        "히크먼 가족과 학생 모두에게 편리하다",
+        "손님과 히크먼 가족에게만 편리하다"
+      ],
+      "answer": 2,
+      "evidence": [
+        9
+      ],
+      "note": "'a very convenient arrangement for both the Hickmans and the students'에서 확인"
+    }
+  ]
+}

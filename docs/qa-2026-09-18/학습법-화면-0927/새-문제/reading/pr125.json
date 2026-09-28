@@ -1,0 +1,39 @@
+{
+  "v": 1,
+  "lesson": "pr125",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr125-q1",
+      "type": "세부 사실",
+      "prompt": "2000년대 초 한국이 2010년까지 이룰 것으로 예상되었던 것은?",
+      "options": [
+        "자동차 생산 세계 1위가 되는 것",
+        "소형차 생산을 처음으로 시작하게 되는 것",
+        "대형차 생산에 온 힘을 쏟는 것",
+        "세계 4대 자동차 생산국에 드는 것"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "근거: 'expected to be among the world’s top four auto-making countries by 2010'"
+    },
+    {
+      "id": "pr125-q2",
+      "type": "세부 사실",
+      "prompt": "전문가들이 예상한 한국의 세계 자동차 시장 점유율로 옳은 것은?",
+      "options": [
+        "4퍼센트",
+        "6.5퍼센트",
+        "10퍼센트",
+        "65퍼센트"
+      ],
+      "answer": 2,
+      "evidence": [
+        3
+      ],
+      "note": "근거: 'Korea would hold 10 percent of the global auto market'"
+    }
+  ]
+}

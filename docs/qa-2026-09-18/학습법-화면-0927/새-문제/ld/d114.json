@@ -1,0 +1,60 @@
+{
+  "v": 1,
+  "lesson": "d114",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d114-q1",
+      "type": "세부 사실",
+      "prompt": "콜럼버스가 항해를 떠난 계절과 도착한 계절로 옳은 것은?",
+      "options": [
+        "여름에 떠나 그해 가을에 닿았다",
+        "봄에 떠나 그해 여름에 닿았다",
+        "가을에 떠나 이듬해 여름에 닿았다",
+        "여름에 떠나 이듬해 봄에 닿았다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        3
+      ],
+      "note": "'In the summer of 1492' · 'In the autumn of that year, Columbus landed'가 여름에 떠나 그해 가을에 닿았음을 보여 줌"
+    },
+    {
+      "id": "d114-q2",
+      "type": "세부 사실",
+      "prompt": "콜럼버스가 도착해서 처음에 한 생각으로 옳은 것은?",
+      "options": [
+        "북아메리카에 닿았다고 생각했다",
+        "아시아로 가는 길을 잃었다고 생각했다",
+        "인도 제도에 닿았다고 생각했다",
+        "알래스카에 닿았다고 생각했다"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "'At first, Columbus thought that he had reached the Indies'가 처음에 인도 제도에 닿았다고 생각했음을 보여 줌"
+    },
+    {
+      "id": "d114-q3",
+      "type": "세부 사실",
+      "prompt": "처음 아메리카에 온 사람들이 아시아에서 건너온 때로 옳은 것은?",
+      "options": [
+        "얼음이 녹은 뒤, 땅이 물에 잠겼을 때",
+        "얼음이 녹기 전, 바다가 더 넓었을 때",
+        "얼음이 녹은 뒤, 새 땅이 드러났을 때",
+        "얼음이 녹기 전, 땅이 드러나 있을 때"
+      ],
+      "answer": 3,
+      "evidence": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "note": "'came from Asia more than 15,000 years ago' · 'At that time ... covered with ice' · 'Before the ice melted, much of the land that is now underwater was dry' · 'connected Asia with Alaska' · 'wandered across this area'가 얼음이 녹기 전 땅이 드러나 있을 때 건너왔음을 보여 줌"
+    }
+  ]
+}

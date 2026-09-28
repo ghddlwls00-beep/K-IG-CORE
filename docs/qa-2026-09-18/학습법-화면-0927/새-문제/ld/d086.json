@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d086",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d086-q1",
+      "type": "중심 내용",
+      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "컴퓨터 산업이 작아진 까닭",
+        "컴퓨터의 여러 가지 쓰임새",
+        "은행이 재정 기록을 지키는 까닭",
+        "특별한 컴퓨터를 만드는 방법"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        7
+      ],
+      "note": "'Computers are used in many different ways' · 'computers have so many uses'가 컴퓨터의 여러 쓰임새를 다룬 글임을 보여 줌"
+    },
+    {
+      "id": "d086-q2",
+      "type": "세부 사실",
+      "prompt": "많은 산업 분야에서 컴퓨터가 제어하는 것으로 가장 알맞은 것은?",
+      "options": [
+        "공장의 온도와 조명",
+        "은행의 재정 기록",
+        "공장 직원들의 근무 시간",
+        "제품을 만드는 다른 기계"
+      ],
+      "answer": 3,
+      "evidence": [
+        3
+      ],
+      "note": "'In many industries, computers are used to control other machines that make products'가 제품을 만드는 기계를 제어한다는 것을 보여 줌"
+    },
+    {
+      "id": "d086-q3",
+      "type": "세부 사실",
+      "prompt": "일부 사람들이 집에 두고 있다고 한 것으로 가장 알맞은 것은?",
+      "options": [
+        "작은 컴퓨터 시스템",
+        "특별히 개발된 컴퓨터",
+        "은행에서 만든 프로그램",
+        "통신 회사에서 빌린 장비"
+      ],
+      "answer": 0,
+      "evidence": [
+        6
+      ],
+      "note": "'Some people have small computer systems in their homes'가 집에 작은 컴퓨터 시스템을 둔다는 것을 보여 줌"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d103",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d103-q1",
+      "type": "세부 사실",
+      "prompt": "이 경주가 출발하는 곳과 도착하는 곳으로 알맞은 것은?",
+      "options": [
+        "놈에서 앵커리지까지",
+        "네나나에서 놈까지",
+        "앵커리지에서 놈까지",
+        "앵커리지에서 네나나까지"
+      ],
+      "answer": 2,
+      "evidence": [
+        6
+      ],
+      "note": "'The race goes across Alaska from Anchorage to Nome' — 경주는 앵커리지에서 출발해 놈까지 감"
+    },
+    {
+      "id": "d103-q2",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "알래스카 사람만 나가는 개썰매 경주",
+        "1925년에 처음 열린 개썰매 경주",
+        "짧은 거리를 도는 개썰매 경주",
+        "세계에서 제일 긴 개썰매 경주"
+      ],
+      "answer": 3,
+      "evidence": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "note": "'an annual dog sled race' · 'the longest dog sled race in the world' · 'covers almost 1,700 kilometers' · 'from Anchorage to Nome' — 세계에서 가장 긴 개썰매 경주를 소개함"
+    },
+    {
+      "id": "d103-q3",
+      "type": "세부 사실",
+      "prompt": "이 경주가 따라가는 길에 대한 설명으로 알맞은 것은?",
+      "options": [
+        "금을 찾던 사람들이 다니던 길",
+        "경주를 위해 새로 닦은 길",
+        "앵커리지 주민의 출퇴근길",
+        "해마다 새로 정하는 길"
+      ],
+      "answer": 0,
+      "evidence": [
+        7
+      ],
+      "note": "'follows trails that were once used by people who looked for gold' — 예전에 금을 찾던 사람들이 다니던 길을 따라감"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr091",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr091-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "사법 제도의 목적은 범죄자를 엄하게 벌하는 것이다",
+        "미국의 법은 다른 나라의 법보다 훨씬 더 엄격하다",
+        "범죄로 고발되면 그때부터 죄인으로 여겨진다",
+        "사법 제도의 목적은 국민의 권리를 지키는 것이다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1
+      ],
+      "note": "'The purpose of the court system is to protect the rights of the people' — 사법 제도의 목적은 국민의 권리 보호"
+    },
+    {
+      "id": "pr091-q2",
+      "type": "세부 사실",
+      "prompt": "미국 법에 따르면 유죄를 입증할 책임을 지는 것은?",
+      "options": [
+        "고발된 사람 자신",
+        "사건을 맡은 검찰",
+        "재판을 맡은 판사",
+        "재판에 나온 증인"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'according to American law' · 'it is the responsibility of the prosecution to prove that a person is guilty' — 유죄 입증은 검찰의 책임"
+    }
+  ]
+}
