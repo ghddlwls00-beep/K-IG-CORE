@@ -313,7 +313,7 @@ export function ComposeCard({
           {rung >= 2 ? (
             <div className="flex flex-col gap-1 border-t border-line pt-2">
               <p className="text-label font-semibold text-ink-soft">단서</p>
-              {ruleTitle ? <p className="text-body text-ink">규칙: {ruleTitle}</p> : null}
+              {ruleTitle ? <p className="text-body text-ink">문법 설명: {ruleTitle}</p> : null}
               {result.missingTargets.length ? <p className="text-body text-ink">이 문장에 꼭 써야 하는 문법 낱말이 빠졌어요.</p> : null}
               <p className="text-label text-ink-soft">낱말의 첫 글자</p>
               <p lang="en" className={`font-mono ${FONT[font].text} text-ink`}>
@@ -407,7 +407,7 @@ export function ComposeCard({
             </>
           ) : null}
           {lastWrong ? <MyAnswerReport reported={isReported} note={reportNote ?? LESSON_REPORT_NOTE} onReport={sendReport} /> : null}
-          {ruleTitle ? <p className="text-body text-ink">규칙: {ruleTitle}</p> : null}
+          {ruleTitle ? <p className="text-body text-ink">문법 설명: {ruleTitle}</p> : null}
           <StudentTag studentRef={item.studentRef} />
           {comeback ? <p className="text-label text-ink-soft">{comeback}</p> : null}
         </div>

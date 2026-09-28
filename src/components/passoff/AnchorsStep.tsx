@@ -139,7 +139,7 @@ export function AnchorsStep({
 
       {allShown ? (
         <div className="flex justify-end">
-          <PrimaryButton onClick={onNext}>다음 단계: 규칙</PrimaryButton>
+          <PrimaryButton onClick={onNext}>다음 단계: 문법 설명</PrimaryButton>
         </div>
       ) : null}
     </div>

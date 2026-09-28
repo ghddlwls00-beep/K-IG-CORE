@@ -80,7 +80,7 @@ import { FONT_LABEL, segmentButton, spokenOf, usePassoffLearner, type FontSize, 
  */
 const STEPS = [
   { short: "예문", title: "예문 떠올리기" },
-  { short: "규칙", title: "규칙" },
+  { short: "문법 설명", title: "문법 설명" },
   { short: "찾기", title: "형태 찾기" },
   { short: "영작", title: "영작" },
   { short: "마무리", title: "마무리" },

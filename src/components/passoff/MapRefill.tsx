@@ -222,7 +222,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
         </h2>
         <section aria-labelledby="map-rule" className="flex flex-col gap-2">
           <h3 id="map-rule" className="text-label font-semibold text-ink-soft">
-            이 레슨의 규칙 한 줄
+            이 레슨의 문법 설명 한 줄
           </h3>
           <div className="flex flex-col gap-2" role="group" aria-labelledby="map-rule">
             {ruleOptions.map((option) => (
@@ -242,7 +242,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
         </section>
         <section aria-labelledby="map-sentence" className="flex flex-col gap-2">
           <h3 id="map-sentence" className="text-label font-semibold text-ink-soft">
-            이 규칙을 보여 주는 대표 문장
+            이 문법을 보여 주는 대표 문장
           </h3>
           <div className="flex flex-col gap-2" role="group" aria-labelledby="map-sentence">
             {sentenceOptions.map((option) => (
@@ -307,7 +307,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
                   {!r.lessonOk ? <p className="text-label text-ink-soft">놓은 레슨: {placedLesson ? placedLesson.title : "없음"}</p> : null}
                   {!r.ruleOk && placedLesson ? (
                     <p className="text-label text-ink">
-                      {about}규칙: {placedLesson.ruleTitle}
+                      {about}문법 설명: {placedLesson.ruleTitle}
                     </p>
                   ) : null}
                   {!r.sentenceOk && placedLesson ? (

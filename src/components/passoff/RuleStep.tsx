@@ -46,7 +46,7 @@ export function RuleStep({
   onNext: () => void;
 }) {
   const [missedPoint, setMissedPoint] = useState<number | null>(null);
-  if (!rule) return <p className="text-body text-ink-soft">이 레슨에는 규칙 카드가 없습니다.</p>;
+  if (!rule) return <p className="text-body text-ink-soft">이 레슨에는 문법 설명 카드가 없습니다.</p>;
   const d = rule.discovery;
   const cardOpen = !d || discovery !== null;
   const shownAnchors = d?.anchorIds?.length ? anchors.filter((a) => d.anchorIds?.includes(a.id)) : [];
@@ -120,7 +120,7 @@ export function RuleStep({
           {rule.check ? (
             <section aria-labelledby="passoff-rule-check" className="flex flex-col gap-3">
               <h3 id="passoff-rule-check" className="text-body font-semibold text-ink">
-                규칙 확인
+                문법 설명 확인
               </h3>
               <RuleCheck
                 check={rule.check}
@@ -328,9 +328,9 @@ export function RuleCheck({
           <Verdict ok={false}>다시 골라 보세요.</Verdict>
           {point ? (
             showPointInline ? (
-              <p className="text-body leading-relaxed text-ink">규칙: {point}</p>
+              <p className="text-body leading-relaxed text-ink">문법 설명: {point}</p>
             ) : (
-              <p className="text-label text-ink-soft">위 규칙 카드에 표시한 줄을 다시 읽어 보세요.</p>
+              <p className="text-label text-ink-soft">위 문법 설명 카드에 표시한 줄을 다시 읽어 보세요.</p>
             )
           ) : null}
         </div>

@@ -85,7 +85,7 @@ export function WrapUpStep({
           {!transfersDone ? (
             <>
               <p className="text-label text-ink-soft">
-                이 레슨에서 아직 보지 않은 문장이에요. 배운 규칙으로 써 보세요. ({transfers.length - queue.length + 1} / {transfers.length})
+                이 레슨에서 아직 보지 않은 문장이에요. 배운 문법으로 써 보세요. ({transfers.length - queue.length + 1} / {transfers.length})
               </p>
               <ComposeRun
                 items={transfers}
@@ -108,7 +108,7 @@ export function WrapUpStep({
       {check && checkShown ? (
         <section aria-labelledby="passoff-wrap-check" className="flex flex-col gap-3">
           <h3 id="passoff-wrap-check" className="text-body font-semibold text-ink">
-            규칙 다시 확인
+            문법 설명 다시 확인
           </h3>
           <RuleCheck
             check={check}
@@ -177,7 +177,7 @@ export function WrapUpStep({
             <div className="flex flex-col gap-2 border-t border-line pt-3" data-passoff-map-entry={mapRefill.topic}>
               <p className="text-body font-semibold text-ink">TOPIC {mapRefill.topic} 마무리 — 구성도 다시 채우기</p>
               <p className="text-label leading-relaxed text-ink-soft">
-                대주제의 레슨을 칸에 놓고, 칸마다 규칙 한 줄과 대표 문장을 골라요.
+                대주제의 레슨을 칸에 놓고, 칸마다 문법 설명 한 줄과 대표 문장을 골라요.
                 {mapRefill.required ? " 한 번 하면 다음 대주제가 열리는 조건이 채워져요." : ""}
               </p>
               <div>
