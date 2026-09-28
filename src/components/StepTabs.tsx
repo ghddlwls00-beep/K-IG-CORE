@@ -47,9 +47,12 @@ export function StepTabs({
                 (isCurrent ? "flex-1 bg-raised font-semibold text-ink shadow-2xs" : "min-w-11 font-medium text-ink-soft hover:bg-raised/60")
               }
             >
-              <span className="sr-only sm:not-sr-only">{"Step "}</span>
-              <span className="tabular-nums">{step.n}</span>
-              <span className={isCurrent ? "" : "hidden sm:inline"}>{` · ${step.name}`}</span>
+              {/* one inline run: as separate flex items the spaces at their edges were dropped — 'Step2· 문법 설명' (2026-09-28, 설계 세션이 짚음) */}
+              <span>
+                <span className="sr-only sm:not-sr-only">{"Step "}</span>
+                <span className="tabular-nums">{step.n}</span>
+                <span className={isCurrent ? "" : "hidden sm:inline"}>{` · ${step.name}`}</span>
+              </span>
               {step.badge ? (
                 <span
                   className={"ml-1.5 text-caption font-medium tabular-nums text-ink-soft " + (isCurrent ? "" : "hidden sm:inline")}
