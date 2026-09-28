@@ -345,6 +345,17 @@ function checkLesson(lesson, problems, tags, warnings = null) {
         for (const a of p.accept || []) if (!containsTarget(a, g)) P(`${p.id} 허용 답 "${a}" 에 목표형 없음 [${g.join("|")}]`);
         for (const ok of [p.en, ...(p.accept || [])]) if (containsTarget(ok, g) && !containsTargetSpoken(ok, g)) P(`${p.id} 마이크로 "${ok}" 를 말하면 목표형 [${g.join("|")}] 을 못 찾음`);
       }
+      // v1.7: the grader reads a REFERENCE's noun 's as written, so a noun 's that can only be "has" ('s been · 's got ·
+      // 's gotten · 's had — never a possessive) needs its spelled-out sibling among the references, or a learner's
+      // "The door has been painted." is wrong. ("Jim's sick" could be a possessive to a machine, so it is not checked.)
+      const refs = [p.en, ...(p.accept || [])].filter(Boolean);
+      for (const ok of refs) {
+        for (const m of String(ok).matchAll(/\b([A-Za-z]+)['’]s\s+(been|got|gotten|had)\b/gi)) {
+          if (/^(he|she|it|that|this|there|what|who|where|here|how|when|let)$/i.test(m[1])) continue;
+          const spelled = ` ${m[1]} has ${m[2]} `.toLowerCase();
+          if (!refs.some((r) => gradeWords(r).includes(spelled))) P(`${p.id} "${ok}" 의 명사 's(${m[1]}'s ${m[2]})에 풀어 쓴 판(${m[1]} has ${m[2]})이 허용 답에 없음`);
+        }
+      }
       // The screen shows the first pattern that fires, so the number of patterns is not the limit — a pattern that can
       // never be first is: its words hold an earlier pattern's words (every answer it catches, the earlier one caught).
       const pieces = (p.errorPatterns || []).map((e) => (e && !e.literal ? GRADER.normalizeForComparison(String(e.match || "")) : ""));
@@ -805,6 +816,8 @@ function selftest(lessons) {
       result.nounApostropheSNoFalseAlarm = fresh(run(copy, decisions, null, QUIET)).some((p) => p.includes(it.id) && p.includes("목표형 없음")) ? "놓침(거짓 경보)" : "잡음(거짓 경보 없음)";
     }
   }
+  // a noun 's that can only be "has", with no spelled-out sibling
+  breakOne("nounHasWithoutSibling", firstWith(() => true), (p) => { Object.assign(p, { en: "The door's been painted.", accept: [], targets: [], errorPatterns: [] }); }, (msg, p) => msg.includes(p.id) && msg.includes("풀어 쓴 판"));
   // typed "at 7:00" holds the target; a microphone gives "at seven o'clock", which does not
   breakOne("spokenTargetMissing", firstWith((p) => (p.targets || []).length > 0), (p) => { Object.assign(p, { targets: [["at 7:00"]], en: "I get up at 7:00.", accept: [], errorPatterns: [] }); }, (msg, p) => msg.includes(p.id) && msg.includes("마이크로"));
   {
