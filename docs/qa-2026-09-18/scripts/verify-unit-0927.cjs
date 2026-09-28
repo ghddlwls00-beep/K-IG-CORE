@@ -4,6 +4,7 @@
  * 고친 것이 글 · 번역 · 소리를 건드리지 않았고 빌드가 되는지를 기계로 본다. 하나라도 어긋나면 exit 1.
  *
  *   1. 글 · 번역 그대로: content/ · src/lib/readingSentences.json · src/lib/readingVocabulary.json 이 기준 커밋과 같은가(git diff)
+ *      — 2026-09-28 새 문제 폴더 content/questions/ 만 빼고 따로 셈(새-문제-설계.md §2)
  *   2. 소리 정의 그대로: scripts/lib/spoken-texts.cjs · src/lib/lessonSpeechForm.ts · src/lib/vocaSpeech.ts · src/lib/unifiedSpeech.ts 가 같은가
  *   3. 소리 낼 글 수 그대로 · 새로 만들 클립 0: generate-azure-ava --dry-run 의 과정별 items 가 기준(2026-09-27 01:5x)과 같고 pending 0
  *   4. prove-spoken-definition exit 0 · check-completeness missing-clip 0
@@ -45,9 +46,15 @@ const run = (cmd, args, opts = {}) => {
 
 // 1 · 2 — git diff 가 비었는가
 const diffNames = (paths) => run("git", ["-c", "core.quotepath=false", "diff", "--name-only", BASE_COMMIT, "--", ...paths]).out.split(/\r?\n/).filter(Boolean);
-let contentDiff = diffNames(CONTENT_PATHS);
+// 2026-09-28 새 문제(사장님 "아니 나로 해" — 새-문제-설계.md §2): content/questions/ 는 새 폴더(LISTENING · READING 문제)라
+// '기존 글 · 번역 그대로'에서 빼고 따로 셈 — 그 밖의 content 는 전과 같이 한 글자도 달라지면 안 됨
+const QUESTION_DIR = "content/questions/";
+const allContentDiff = diffNames(CONTENT_PATHS);
+let contentDiff = allContentDiff.filter((f) => !f.startsWith(QUESTION_DIR));
+const questionDiff = allContentDiff.filter((f) => f.startsWith(QUESTION_DIR));
 let spokenDiff = diffNames(SPOKEN_PATHS);
 if (BREAK === "content") contentDiff = ["(깨기) content/lessons/ld/d001.json"];
+console.log(`(새 문제 폴더 ${QUESTION_DIR} 바뀐 파일 ${questionDiff.length} — '글 · 번역 그대로'에서 뺌)`);
 if (BREAK === "spoken") spokenDiff = ["(깨기) scripts/lib/spoken-texts.cjs"];
 check("글 · 번역 그대로", contentDiff.length === 0, contentDiff.length ? `바뀐 파일 ${contentDiff.length}: ${contentDiff.slice(0, 5).join(", ")}` : `기준 ${BASE_COMMIT} 과 같음`);
 check("소리 정의 그대로", spokenDiff.length === 0, spokenDiff.length ? `바뀐 파일: ${spokenDiff.join(", ")}` : "같음");

@@ -33,7 +33,8 @@
  *           comes up under the header as plain text (no numbers, no taps), '다 읽었어요' at its end; a run faster than 500 WPM is
  *           not saved ([data-too-fast]) and the completion stays shut; a real run shows [data-speed-result] (WPM, or the time on
  *           the five one-sentence passages) = the stored record's `again`, this run only (no '→', no '%'), and opens the
- *           completion; the comprehension slot [data-comprehension] is there, hidden and empty (no questions yet).
+ *           completion; the comprehension questions [data-comprehension] are the page's own (2026-09-28 새 문제 — content.ts
+ *           getLessonQuestions), or hidden and empty for a passage without a question file.
  *   engine  kig-learning:reading gets an attempt per '알아요/몰라요' and per blank (item '<main id>#k<n>'), and on completion
  *           the '몰라요' words and the missed blanks as items.
  * Deliberate breaks (--break): 'gate' presses completion without the timed reading first, 'cloze' judges round 0 against
@@ -207,6 +208,8 @@ function lessonData(id) {
     prev: ctx.prev ? { id: ctx.prev.id, title: presentation.formatLessonPresentation(COURSE, ctx.prev).title } : null,
     next: ctx.next ? { id: ctx.next.id, title: presentation.formatLessonPresentation(COURSE, ctx.next).title } : null,
     free: FREE_IDS.has(id),
+    // 2026-09-28 새 문제: the passage's comprehension questions, as the page reads them (content.ts getLessonQuestions) — null: none
+    questions: typeof content.getLessonQuestions === "function" ? content.getLessonQuestions(COURSE, id, pairs.length) : null,
     // a run slower than 500 WPM is saved: words × 120 ms, plus a second
     minMs: Math.ceil(wordCount * 120) + 1000,
   };
@@ -859,16 +862,23 @@ async function firstReadChecks(rec, tab, D, { touch = false } = {}) {
 /**
  * Step 4 '다시 읽고 재기' (2026-09-28): the only timed reading. Before '읽기 시작' the passage is not on screen and there is no player;
  * a too-fast run is explained and not saved and the completion stays shut; a real run is stored as `again`, shows this run only
- * (no '→', no '%') and opens the completion; the comprehension slot is there, hidden and empty.
+ * (no '→', no '%') and opens the completion; the comprehension questions (2026-09-28 새 문제) are the page's own, under it — or,
+ * for a passage without a question file, the slot is there, hidden and empty.
  */
 async function step4Checks(rec, tab, D, captured, { touch = false } = {}) {
   eqCk(rec, "step4", "", "Step 4 meta: word count · sentences · target", D.metaTimed, await jsText(tab, `document.querySelector(${J(`${SEL.step4} [data-passage-meta]`)})`));
   boolCk(rec, "step4", "", "'읽기 시작' is there", true, await exists(tab, action(SEL.step4, "start-reading")));
   eqCk(rec, "step4", "", "the passage is not on screen before '읽기 시작' (it cannot be read before the clock starts)", "0", String(await count(tab, `${SEL.step4} [data-sentence-id]`)));
   boolCk(rec, "player", "step4", "no whole-lesson player in the timed step", false, await exists(tab, `document.querySelector(${J(`${SEL.step4} [data-reading-player]`)})`));
-  // the comprehension questions' place (새 문제 — not written yet): present, hidden, empty; the generated quiz stays off
-  const slot = await jsEval(tab, `(() => { const s = document.querySelector(${J(`${SEL.step4} [data-comprehension]`)}); return s ? { hidden: s.hidden || getComputedStyle(s).display === 'none', text: (s.textContent || '').trim().length, kids: s.children.length } : null; })()`, null);
-  ck(rec, "step4", "comprehension", "the comprehension slot is there, hidden and empty (no questions yet)", "hidden · 0 characters", slot ? `${slot.hidden ? "hidden" : "SHOWN"} · ${slot.text} characters · ${slot.kids} children` : "no [data-comprehension]", slot && slot.hidden && slot.text === 0 && slot.kids === 0 ? "PASS" : "FAIL");
+  // the comprehension questions (2026-09-28 새 문제): a passage with a question file shows them under the timed reading — the
+  // page's own questions, in order; a passage without one keeps the slot hidden and empty. The generated quiz stays off.
+  const slot = await jsEval(tab, `(() => { const s = document.querySelector(${J(`${SEL.step4} [data-comprehension]`)}); return s ? { kind: s.getAttribute('data-comprehension'), hidden: s.hidden || getComputedStyle(s).display === 'none', text: (s.textContent || '').trim().length, kids: s.children.length, prompts: [...s.querySelectorAll('[data-question] > p:first-child')].map((p) => p.textContent.replace(/\\s+/g, ' ').trim()), options: [...s.querySelectorAll('[data-question]')].map((li) => li.querySelectorAll('[data-option]').length) } : null; })()`, null);
+  if (D.questions && D.questions.length) {
+    const want = D.questions.map((q, i) => `${i + 1}. ${q.prompt}`);
+    ck(rec, "step4", "comprehension", "the passage's questions are shown under the timed reading, in order, 4 options each", `${want.length} · ${cut(want.join(" / "), 160)}`, slot ? `${slot.hidden ? "HIDDEN" : "shown"} · ${slot.prompts.length} · ${cut(slot.prompts.join(" / "), 160)} · options ${slot.options.join(",")}` : "no [data-comprehension]", slot && !slot.hidden && slot.kind === "questions" && J(slot.prompts) === J(want) && slot.options.every((n) => n === 4) ? "PASS" : "FAIL");
+  } else {
+    ck(rec, "step4", "comprehension", "the comprehension slot is there, hidden and empty (no question file for this passage)", "hidden · 0 characters", slot ? `${slot.hidden ? "hidden" : "SHOWN"} · ${slot.text} characters · ${slot.kids} children` : "no [data-comprehension]", slot && slot.hidden && slot.text === 0 && slot.kids === 0 ? "PASS" : "FAIL");
+  }
   lacksCk(rec, "step4", "comprehension", "generated quiz stays off (SHOW_GENERATED_QUIZ=false)", "Q1.", (await stepText(tab, "step4")) || "");
 
   // too fast: start and finish at once — explained, not saved, the gate stays shut (RD-L04 ⑥)

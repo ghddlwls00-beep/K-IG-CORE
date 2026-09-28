@@ -16,9 +16,11 @@
  *   Step 3  원문 대조 — the line-by-line view that was Step 4 (rows, views, dotted key words, the whole-lesson player), then the
  *           reading-aloud check (it sat with the blanks; D34 would make it this view's '따라 읽기') and the memo.
  *   Step 4  다시 읽고 재기 — the only timed reading, with the machinery Step 1 had (Timing below). The result is this run's time or
- *           WPM only: the first reading has no number now, so there is no 'A → B' and no percentage. After it, the place of the
- *           comprehension questions ([data-comprehension]) — hidden and empty until the new questions (512) exist; until then the
- *           tab says '다시 읽고 재기' only (사장님: "들어오기 전엔 다시 읽고 재기만" — and a 360px phone has no room for more).
+ *           WPM only: the first reading has no number now, so there is no 'A → B' and no percentage. Under it, the passage's two
+ *           comprehension questions ([data-comprehension] — 2026-09-28 새 문제, LessonQuestions, the same component as LISTENING
+ *           Step 1; hidden while the clock runs; a passage without a question file shows nothing there). The tab still says
+ *           '다시 읽고 재기' (사장님: "들어오기 전엔 다시 읽고 재기만" — and a 360px phone has no room for more); the questions
+ *           have their own heading '이해 문제'.
  * Completion (D02): '이 강의 학습 완료' opens after one timed reading in Step 4 — readingGateOpen (src/lib/readingLearning.ts): the
  * record's `again`, or an older record (the timed first reading of 09-27 ~ 28, an old best WPM of 1–500). The sentences, the
  * translations, every sound, the storage keys and the engine calls are unchanged; a "-1" page shares the main page's records.
@@ -76,6 +78,7 @@ import { SHOW_GENERATED_QUIZ } from "@/lib/quizFlags";
 import { markLessonDone, recordAttempt } from "@/lib/learning/record";
 import { clearLessonGate, setLessonGate } from "@/lib/lessonGate";
 import type { PassagePlayerData } from "@/lib/passagePlayer";
+import type { LessonQuestion } from "@/lib/lessonQuestions";
 import {
   contextSnippet,
   extractFullReadingPassage,
@@ -126,6 +129,7 @@ import {
   type WordsRecord,
 } from "@/lib/readingLearning";
 import { AudioPlayer } from "./AudioPlayer";
+import { LessonQuestions } from "./LessonQuestions";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import { StepTabs } from "./StepTabs";
 import { IconCheck, IconChevronDown, IconChevronRight, IconRepeat, IconSpeaker, IconStop, IconX } from "./icons";
@@ -145,6 +149,8 @@ interface ReadingLearningViewProps {
   passagePlayers?: PassagePlayerData[] | null;
   /** 2026-09-27 (유출 규칙): this lesson's reviewed 'also fits' blank pairs, worked out on the server (readingClozeFitsForLesson) */
   clozeAlsoFits?: Record<string, string[]> | null;
+  /** 2026-09-28 새 문제: this passage's comprehension questions, read on the server after the access check (lessonQuestions.ts) */
+  lessonQuestions?: LessonQuestion[] | null;
 }
 
 type StepNo = 1 | 2 | 3 | 4;
@@ -342,6 +348,7 @@ export function ReadingLearningView({
   readingVocabulary = null,
   passagePlayers = null,
   clozeAlsoFits = null,
+  lessonQuestions = null,
 }: ReadingLearningViewProps) {
   const pageId = lessonKey.split("/").pop() || lessonKey;
   /** the main page's id — a "-1" page shares its passage, its words, its records and its engine items */
@@ -1633,14 +1640,48 @@ export function ReadingLearningView({
   // --- Step 4 · 다시 읽고 재기 + 이해 문제 (2026-09-28 · D31 다) ---------------------------------------------------------
   /**
    * 이해 문제 자리 — 사장님 D31 다 "4 다시 읽고 재기 + 이해 문제(새 문제 512 가 들어갈 자리 — 들어오기 전엔 다시 읽고 재기만)".
-   * The new comprehension questions (docs/qa-2026-09-18/학습법-화면-0927/새-문제-설계.md — being written) go HERE, after the timed
-   * reading. They are to come from the page as data worked out on the server, like clozeAlsoFits (the leak rule — never an
-   * all-lessons file in the browser). Until they exist the slot is empty and hidden: no heading, no '준비 중', nothing a learner
-   * sees; [data-comprehension] is the hook for the audit tools (drive-reading.cjs checks it stays empty and hidden). KIG-008's
-   * auto-generated quiz (SHOW_GENERATED_QUIZ — off, the call site kept behind it; it was Step 3 '독해 퀴즈') would show here if
-   * it were turned back on.
+   * 2026-09-28 새 문제: the passage's two questions (lessonQuestions — the page reads them on the server, like clozeAlsoFits: the
+   * leak rule) come HERE, under the timed reading, with their own heading '이해 문제' (the tab keeps '다시 읽고 재기' — a 360px
+   * phone has no room for more). They are hidden while the clock runs. An answered question shows its sentences with their
+   * translation. The same component as LISTENING Step 1 (LessonQuestions). A passage without a question file keeps the slot
+   * empty and hidden: no heading, no '준비 중'. [data-comprehension] is the hook for the audit tools (drive-reading.cjs).
+   * KIG-008's auto-generated quiz (SHOW_GENERATED_QUIZ — off, the call site kept behind it; it was Step 3 '독해 퀴즈') would show
+   * here, where there is no question file, if it were turned back on.
    */
+  const evidenceSentences = (question: LessonQuestion) => {
+    const rows = question.evidence.map((n) => ({ n, pair: sentencePairs[n - 1] })).filter((row) => row.pair);
+    if (rows.length === 0) return null;
+    return (
+      <div data-question-evidence className="flex flex-col gap-2 rounded-control bg-sunken px-3 py-2.5">
+        <p className="text-caption font-semibold text-ink-soft">근거</p>
+        {rows.map(({ n, pair }) => (
+          <div key={n} className="flex flex-col gap-0.5">
+            <p lang="en" className="text-label text-ink">
+              <span className="tabular-nums text-ink-soft">{n}.</span> {pair.en}
+            </p>
+            {pair.ko ? <p className="text-label text-ink-soft">{pair.ko}</p> : null}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   function renderComprehension() {
+    if (lessonQuestions && lessonQuestions.length > 0) {
+      return (
+        <div data-comprehension="questions">
+          <LessonQuestions
+            course="reading"
+            mainId={mainId}
+            questions={lessonQuestions}
+            profile={READING_LEARNING_PROFILE}
+            heading="이해 문제"
+            intro="다시 읽은 뒤 풀어 보세요. 고르면 바로 답이 나와요."
+            evidence={evidenceSentences}
+          />
+        </div>
+      );
+    }
     if (!(SHOW_GENERATED_QUIZ && questions.length > 0)) return <div data-comprehension="" hidden />;
     return (
       <div data-comprehension="generated" className="flex flex-col gap-3">

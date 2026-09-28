@@ -5,6 +5,7 @@ import type { Course, CourseIndex, Lesson, LessonGroup, LessonSummary, Tab } fro
 import { COURSES } from "./courses";
 import { TABS } from "./tabs";
 import { isFreePreviewLesson } from "./license";
+import { toLessonQuestions, type LessonQuestion } from "./lessonQuestions";
 
 /**
  * Content access. Every read here is a file read — there is no database, no
@@ -238,6 +239,27 @@ export function getLdEnglishScript(id: string): { n: string; ko: string; en: str
     path.join(CONTENT_DIR, "ld_english_scripts.json"),
   );
   return dict ? dict[baseId] ?? null : null;
+}
+
+/**
+ * 2026-09-28 새 문제: a LISTENING lesson's or READING passage's comprehension questions — content/questions/<course>/<main id>.json
+ * (src/lib/lessonQuestions.ts). The page calls this only after the access check, like every other lesson read, so a locked
+ * lesson never carries its questions. A "-1" page gets its main lesson's. No file (or no valid question) → null: the view
+ * shows nothing. `lineCount` is the lesson's line (LISTENING) or sentence (READING) count; evidence past it is dropped.
+ */
+export function getLessonQuestions(course: string, id: string, lineCount: number): LessonQuestion[] | null {
+  if (!/^[a-z0-9-]+$/i.test(id)) return null;
+  // two fixed directories, so the build trace takes only them (like getLesson)
+  const dir =
+    course === "ld"
+      ? path.join(CONTENT_DIR, "questions", "ld")
+      : course === "reading"
+        ? path.join(CONTENT_DIR, "questions", "reading")
+        : null;
+  if (!dir) return null;
+  const mainId = id.replace(/-\d+$/, "");
+  const questions = toLessonQuestions(readJson<unknown>(path.join(dir, `${mainId}.json`)), lineCount);
+  return questions.length > 0 ? questions : null;
 }
 
 /** Pre-computed authentic Korean translations for MEN and conversation courses. */
