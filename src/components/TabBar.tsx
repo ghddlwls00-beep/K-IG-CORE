@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Tab } from "@/lib/types";
@@ -12,12 +12,13 @@ import { useLicense } from "./LicenseProvider";
  * The persistent top navigation: logo · licence · search · menu.
  *
  * 2026-09-28 (사장님 "지금 위에 섹션들 너무 많아 그냥 메뉴 바에 다 넣자"): every section is in the menu drawer on every
- * width. The desktop row of all tabs (xl+) is gone — with PASS-OFF GRAMMAR it was eleven tabs and ran off the right edge
- * even at 1280px. Before that, below xl the drawer already listed every tab so nothing was ever clipped (KIG-036).
+ * width. The desktop row of all eight tabs (xl+) is gone. Before that, below xl the drawer already listed every tab so
+ * nothing was ever clipped (KIG-036).
  */
 export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<string, string> }) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const { hasActiveLicense, licenseInfo, openModal } = useLicense();
 
   // Close mobile drawer when route changes
@@ -35,6 +36,18 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
     return () => {
       document.body.style.overflow = "";
     };
+  }, [mobileMenuOpen]);
+
+  // Esc closes the menu and puts focus back on ☰ — on a desktop the menu is now the only way to the other sections
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== "Escape") return;
+      setMobileMenuOpen(false);
+      menuButtonRef.current?.focus();
+    }
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
   }, [mobileMenuOpen]);
 
   // The home page keeps its own look without this header (사장님 2026-09-27 "추가하지마 이건").
@@ -84,6 +97,7 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
 
               {/* 3-bar menu button — every width (2026-09-28) */}
               <button
+                ref={menuButtonRef}
                 type="button"
                 onClick={() => setMobileMenuOpen((prev) => !prev)}
                 aria-label={mobileMenuOpen ? "메뉴 닫기" : "메뉴 열기"}
