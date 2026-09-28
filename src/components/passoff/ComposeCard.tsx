@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import type { PassoffProduceItem } from "@/lib/passoffTypes";
 import { gradeProduce, hasHangul, isCorrect, writingIssues, type DiffToken, type ProduceResult } from "@/lib/passoffGrading";
-import { contrastPool, contrastTiles, firstLetters } from "@/lib/passoffLesson";
+import { contrastPool, firstLetters, wordTiles } from "@/lib/passoffLesson";
 import { generateWordBank, verifyAnyWordSequence, type WordTile } from "@/lib/listeningUtils";
 import { notePassoffAttempt, strongerHelp, type PassoffAttempt, type PassoffHelp } from "@/lib/passoffLearning";
 import { VoiceSpeakingTester } from "../VoiceSpeakingTester";
@@ -117,11 +117,11 @@ export function ComposeCard({
 
   function climb(to: number) {
     const next = Math.min(4, to);
-    // the tiles are shuffled here, in the handler — never while rendering (the server's HTML would differ)
+    // the tiles are shuffled here, in the handler — never while rendering (the server's HTML would differ); a token of
+    // punctuation alone (the "-" of "go - went - gone") is no tile (wordTiles — 작업기록 할 일 4)
     if (next >= 3 && !bank) {
       const pool = contrastPool(item);
-      const words = generateWordBank(item.en, pool);
-      setBank({ acceptedWordSequences: words.acceptedWordSequences, tiles: contrastTiles(words, pool) });
+      setBank(wordTiles(generateWordBank(item.en, pool), pool));
     }
     if (next >= 4) setPhase("revealed");
     setRung(next);

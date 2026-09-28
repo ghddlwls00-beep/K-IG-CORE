@@ -7,6 +7,12 @@
  * (localStorage `kig:passoff:work:<lessonKey>`) with the steps that change it. What does NOT: anything that
  * crosses days — review, pass, "내일 1순위" scheduling. The lesson only records those (src/lib/passoffLearning.ts);
  * the common learning engine owns them (설계 §4, 공통-학습-엔진.md).
+ *
+ * The order things are SHOWN in lives here too (2026-09-28, 작업기록 할 일 5 · 6 — the end of this file): the options of a
+ * choice item and of the rule questions (optionOrder), and a sentence whose English prompt is another's model answer
+ * after that one (promptPartners · orderAfterPartners) — in the lesson's queues and, for the order only, in today's
+ * review (orderReviewPlan; which items come on which day stays the engine's). Import-free apart from types, so the checks
+ * (docs/pass-off-grammar/검사/check-lesson-state.cjs · check-screen-fixes.cjs) run this file as it is.
  */
 import type { WordTile } from "./listeningUtils";
 import type { PassoffHelp } from "./passoffLearning";
@@ -145,6 +151,28 @@ export function contrastTiles(
   return tiles;
 }
 
+/** A token with a letter or a digit — not one of punctuation alone (the "-" of "go - went - gone"). */
+const isWordToken = (token: string) => /[A-Za-z0-9]/.test(token);
+
+/**
+ * Ladder step ③'s bank as the card keeps it (작업기록 할 일 4): contrastTiles' tiles and generateWordBank's accepted word
+ * sequences, without the tokens of punctuation alone. generateWordBank keeps a hyphen as part of a word (well-known), so
+ * the free-standing "-" of "go - went - gone" came out as a word — two "-" tiles to place in each of the 126 verb-form
+ * items of pg10-2 · pg10-3. They are dropped AFTER the shuffle: an item without such a token keeps exactly the tiles it
+ * had — the same words, ids and order for the same random numbers (Book 1's comma lists included: a comma never was a
+ * token). The card checks the placed tiles against these sequences (verifyAnyWordSequence), so "go went gone" is whole.
+ */
+export function wordTiles(
+  bank: { acceptedWordSequences: string[][]; allTiles: WordTile[] },
+  pool: readonly string[],
+  random: () => number = Math.random,
+): { acceptedWordSequences: string[][]; tiles: WordTile[] } {
+  return {
+    acceptedWordSequences: bank.acceptedWordSequences.map((words) => words.filter(isWordToken)),
+    tiles: contrastTiles(bank, pool, random).filter((tile) => isWordToken(tile.word)),
+  };
+}
+
 // ---------------------------------------------------------------------------
 // The practice state kept on this device — kig:passoff:work:<lessonKey>
 // ---------------------------------------------------------------------------
@@ -231,11 +259,21 @@ export function frameParts(template: string): string[] {
   return String(template ?? "").split(/_{2,}/);
 }
 
-/** A stored queue while it still holds items to do; otherwise the items not done yet, in lesson order. */
-export function queueOf(stored: readonly string[] | null, ids: readonly string[], isDone: (id: string) => boolean): string[] {
+/**
+ * A stored queue while it still holds items to do; otherwise the items not done yet, in lesson order. With `partners`
+ * (promptPartners — ④ · ⑤ on screen), a sentence whose prompt is another's answer waits until that one is off the queue:
+ * the queue as it is drawn, whatever order a comeback ("다시 풀기 3~5문장 뒤"), a reload or the challenge-last sets left.
+ */
+export function queueOf(
+  stored: readonly string[] | null,
+  ids: readonly string[],
+  isDone: (id: string) => boolean,
+  partners?: ReadonlyMap<string, readonly string[]>,
+): string[] {
   const valid = new Set(ids);
   const kept = (stored ?? []).filter((id) => valid.has(id) && !isDone(id));
-  return kept.length ? kept : ids.filter((id) => !isDone(id));
+  const queue = kept.length ? kept : ids.filter((id) => !isDone(id));
+  return partners?.size ? orderAfterPartners(queue, (id) => id, partners) : queue;
 }
 
 /** ③ an item passed on with '다음': missed at its first try → once more at the end of ③ (설계 §3); otherwise done. */
@@ -354,4 +392,154 @@ export function sanitizeWork(raw: unknown, ids: { anchors: string[]; forms: stri
   work.frame = Array.isArray(raw.frame) ? raw.frame.slice(0, 6).map((x) => (typeof x === "string" ? x.slice(0, 120) : "")) : [];
   work.lessonDone = raw.lessonDone === true;
   return work;
+}
+
+// ---------------------------------------------------------------------------
+// The order things are shown in (2026-09-28 — 작업기록 할 일 5 · 6)
+// ---------------------------------------------------------------------------
+
+/** FNV-1a (32 bits): the same number for the same text on every device and every reload. */
+function hashOf(text: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return h >>> 0;
+}
+
+/** A small seeded generator (mulberry32): numbers in [0, 1), the same run for the same seed. */
+function seeded(seed: number): () => number {
+  let a = seed | 0;
+  return () => {
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/**
+ * The order the options of one question are shown in (작업기록 할 일 5): place k shows option `order[k]`. A shuffle seeded by
+ * the question's key — a ③ choice item's id ("pg11-3:s2"), or ruleQuestionKey for ②'s discovery question and rule check —
+ * so it is the same on every reload and every device, and the same in the review, which draws the lesson's own cards. The
+ * textbook data mostly put the answer first (every option question of pg11-3 · pg15-2 · pg18-2 · pg20-2); shown this way
+ * it is first about once in n. Only the places change: the screen hands back the option's own index, which is what is
+ * graded (`answer`) and kept (the discovery choice).
+ */
+export function optionOrder(key: string, count: number): number[] {
+  const order = Array.from({ length: Math.max(0, Math.floor(count)) }, (_, i) => i);
+  const random = seeded(hashOf(key));
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  return order;
+}
+
+/**
+ * The key of a lesson's rule question, which has no id of its own: "pg11-3:discovery" · "pg11-3:check" (⑤ asks ②'s check
+ * again, in the same order). An item id has a letter and a number after the colon, so the two never meet.
+ */
+export function ruleQuestionKey(lessonId: string, which: "discovery" | "check"): string {
+  return `${lessonId}:${which}`;
+}
+
+/** What pairing looks at: an item's id ("pg19-2:p4"), its model answer and its English prompt. */
+export interface PromptItem {
+  id: string;
+  en?: string | null;
+  promptEn?: string | null;
+}
+
+const lessonOfId = (id: string) => id.split(":")[0];
+const sameText = (text: string | null | undefined) => String(text ?? "").trim().replace(/\s+/g, " ");
+
+/**
+ * A lesson's paraphrase pairs (작업기록 할 일 6): item B whose English prompt (`promptEn`) is item A's model answer (`en`) —
+ * pg19-2 p4 rewrites p3's answer, pg05-3 p2 answers p1's tag question. Shown before A, B hands over A's answer (and in the
+ * review, A's first answer of the day would pass on it). Found from the items as they are, no data field; items of
+ * different lessons never pair. Returns B's id → the ids of its A.
+ */
+export function promptPartners(items: readonly PromptItem[]): Map<string, string[]> {
+  const byAnswer = new Map<string, string[]>();
+  for (const a of items) {
+    const en = sameText(a.en);
+    if (!en) continue;
+    const key = `${lessonOfId(a.id)}\n${en}`;
+    byAnswer.set(key, [...(byAnswer.get(key) ?? []), a.id]);
+  }
+  const partners = new Map<string, string[]>();
+  for (const b of items) {
+    const prompt = sameText(b.promptEn);
+    if (!prompt) continue;
+    const as = (byAnswer.get(`${lessonOfId(b.id)}\n${prompt}`) ?? []).filter((id) => id !== b.id);
+    if (as.length) partners.set(b.id, as);
+  }
+  return partners;
+}
+
+/**
+ * `list` with each B after its A (promptPartners) when both are in it: B moves to just after the last of its A, and all
+ * else keeps its place. An A not in `list` — done already, or not in this session — holds nothing back. Items in a cycle
+ * (never in the data) are kept, at the end.
+ */
+export function orderAfterPartners<T>(list: readonly T[], idOf: (item: T) => string, partners: ReadonlyMap<string, readonly string[]>): T[] {
+  const present = new Set(list.map(idOf));
+  const placed = new Set<string>();
+  const out: T[] = [];
+  const waiting: T[] = [];
+  const free = (item: T) => (partners.get(idOf(item)) ?? []).every((a) => !present.has(a) || placed.has(a));
+  for (const item of list) {
+    if (!free(item)) {
+      waiting.push(item);
+      continue;
+    }
+    out.push(item);
+    placed.add(idOf(item));
+    // the B it held back, in their own order — and a B let out may let out one of its own (a chain)
+    for (let i = 0; i < waiting.length; i++) {
+      if (!free(waiting[i])) continue;
+      const [next] = waiting.splice(i, 1);
+      out.push(next);
+      placed.add(idOf(next));
+      i = -1;
+    }
+  }
+  return [...out, ...waiting];
+}
+
+/** the engine's reason for a finished lesson's first check (src/lib/learning/engine.ts planDay) */
+const NEXT_DAY = "next-day";
+
+/**
+ * Today's review in this course's order (작업기록 할 일 6): the engine's plan — which items come, and why — with every B
+ * after its A when both come today. The review screen answers each lesson's next-day items first, as one test, and all
+ * the rest after them (src/components/learning/ReviewSession.tsx segmentsOf). So a B still waiting for its next-day check
+ * whose A comes as a practice item (answered on an earlier day — the check left half done) is answered with the practice
+ * items, just after A: it takes A's reason, which here only says where the screen puts it. `itemOf` gives an entry's item
+ * (the review's data); an entry without one is not drawn and holds nothing back.
+ */
+export function orderReviewPlan<E extends { key: string; reason: string }>(entries: readonly E[], itemOf: (key: string) => Omit<PromptItem, "id"> | null | undefined): E[] {
+  const items: PromptItem[] = [];
+  for (const e of entries) {
+    const item = itemOf(e.key);
+    if (item) items.push({ id: e.key, en: item.en, promptEn: item.promptEn });
+  }
+  const partners = promptPartners(items);
+  if (!partners.size) return [...entries];
+  let list = [...entries];
+  for (let pass = 0; pass < list.length; pass++) {
+    const byKey = new Map(list.map((e) => [e.key, e]));
+    let moved = false;
+    list = list.map((e) => {
+      if (e.reason !== NEXT_DAY) return e;
+      const a = (partners.get(e.key) ?? []).map((key) => byKey.get(key)).find((x): x is E => x !== undefined && x.reason !== NEXT_DAY);
+      if (!a) return e;
+      moved = true;
+      return { ...e, reason: a.reason };
+    });
+    if (!moved) break;
+  }
+  return orderAfterPartners(list, (e) => e.key, partners);
 }

@@ -21,6 +21,7 @@
  *   R9 목록으로 돌아가면 '오늘 복습 없음'
  *   R10 화면마다(카드 · 결과 · 사다리 · 끝 · 목록): 가로 넘침 0 · 누를 것 44px 미만 0 · 12px 미만 글 0 · 입력 칸 16px 미만 0
  *   R11 콘솔 오류 · 잡히지 않은 예외 · 실패한 요청 0
+ *   (2026-09-28 작업기록 할 일 5: 보기는 문항 id 로 정한 순서로 보이므로 자리가 아니라 원래 번호 — 단추의 data-option — 로 누른다)
  *   --secrets <json> : 이어서 이용권 쪽 한 바퀴(check-progress-live.mjs 와 같은 준비 — 버리는 시험 비밀값 {LICENSE_SALT, LICENSE_SECRET}
  *     으로 켠 `npx next dev -p 3472`, R2 값 없이). STUDENT 이용권을 등록해 그 세션 쿠키를 탭에 넣고:
  *     S0 목록: 무료 칸에 같은 기록 → '오늘 복습 · 약 N분'(서버 계획) · 무료 칸이 이 이용권 칸(kig-learning:…@id-…)으로 옮겨감 /
@@ -208,8 +209,9 @@ const layouts = [];
     const answerForm = async (e, right) => {
       const it = e.item;
       if (it.kind === "choice") {
+        // the options come in an order taken from the item's id (작업기록 할 일 5): an option by its own index, not its place
         const i = right ? it.answer : (it.answer + 1) % it.options.length;
-        return tab.eval(`(() => { const b = [...document.querySelectorAll('[data-review-item] [aria-label="보기"] button')][${i}]; if (!b) return false; b.click(); return true; })()`);
+        return tab.eval(`(() => { const b = document.querySelector('[data-review-item] [aria-label="보기"] button[data-option="${i}"]'); if (!b) return false; b.click(); return true; })()`);
       }
       if (it.kind === "short") {
         await type(right ? it.answer[0] : "zzz");
@@ -291,7 +293,7 @@ const layouts = [];
       } else {
         const it = e.item;
         const wrongPick = it.kind === "choice" ? (it.answer + 1) % it.options.length : -1;
-        const struck = it.kind === "choice" ? await tab.eval(`Boolean(([...document.querySelectorAll('[data-review-item] [aria-label="보기"] button')][${wrongPick}] || {}).disabled)`) : true;
+        const struck = it.kind === "choice" ? await tab.eval(`Boolean((document.querySelector('[data-review-item] [aria-label="보기"] button[data-option="${wrongPick}"]') || {}).disabled)`) : true;
         const opened = s.text.includes("한 번 더 해 보세요.") && struck;
         await answerForm(e, true);
         await sleep(300);
