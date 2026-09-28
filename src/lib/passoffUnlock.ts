@@ -6,9 +6,9 @@ import { isDay, learningDay } from "./learning/day";
  * A topic (대주제 — one group of the course index, "TOPIC 2. 동사의 현재형") is what a chapter is to STUDENT. TOPIC 1
  * is open from the start, and the lessons of an open topic can be taken in any order. The next topic opens when the
  * current one has at least ceil(0.8·n) of its n lessons finished with its LAST lesson among them (a lesson is
- * finished when the learner has done its five steps — the view's own completion), and — once the common learning
- * engine records it — the topic-end "구성도 다시 채우기" done once, whatever the score. A sentence's pass-off is not
- * a condition (it takes weeks). A LIFE pass opens every topic. `unlockedThrough` never goes down.
+ * finished when the learner presses '이 강의 학습 완료' after its five steps — 단계 2-나 E2), and the topic-end "구성도
+ * 다시 채우기" done once, whatever the score. A sentence's pass-off is not a condition (it takes weeks). A LIFE pass
+ * opens every topic. `unlockedThrough` never goes down.
  *
  * THE SERVER DECIDES (src/lib/passoffProgress.ts · /api/progress/passoff-grammar · the lesson route's gate in
  * src/app/passoff-grammar/[lesson]/page.tsx); a browser only shows what the server answered. A record is taken only
@@ -38,11 +38,11 @@ export interface PassoffUnlockRule {
 
 export const PASSOFF_UNLOCK_RULE: PassoffUnlockRule = {
   ratio: 0.8,
-  // OFF until the common learning engine records the map refill (설계 §4 · §5 — 단계 2-나): with it on now nobody
-  // could open TOPIC 2. The record field and the judgement are here already; the engine's commit turns this on.
-  // check-unlock.cjs U7 holds both ways: it fails while code outside the progress files records a map refill
-  // (recordPassoffMapRefill · mapRefillTopic) and this is still off — and while this is on with nothing recording one.
-  requireMapRefill: false,
+  // ON since 단계 2-나 E2: the topic-end "구성도 다시 채우기" (src/app/passoff-grammar/map) records the map refill
+  // (PassoffProgressProvider.recordMapRefill → the progress API's mapRefillTopic). check-unlock.cjs U7 holds both ways:
+  // it fails while code outside the progress files records a map refill and this is off — and while this is on with
+  // nothing recording one (then nobody could open TOPIC 2).
+  requireMapRefill: true,
 };
 
 /** "2026-09-27" — the Korea-time learning day, turning at 04:00 (src/lib/learning/day.ts). */

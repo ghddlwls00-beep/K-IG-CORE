@@ -18,7 +18,17 @@ import {
   settleOpen,
   type PassoffWork,
 } from "@/lib/passoffLesson";
-import { notePassoffLessonDone, PASSOFF_COURSE, PASSOFF_GATE_REASON, strongerHelp, type PassoffItemKind } from "@/lib/passoffLearning";
+import {
+  notePassoffLessonDone,
+  PASSOFF_COURSE,
+  PASSOFF_GATE_REASON,
+  passoffMapHref,
+  strongerHelp,
+  type PassoffItemKind,
+} from "@/lib/passoffLearning";
+import { syncCourseRecordWith } from "@/lib/learning/sync";
+import { planOpensCourse } from "@/lib/license";
+import { useLicense } from "./LicenseProvider";
 import { LESSON_COMPLETE_EVENT, useProgress } from "./ProgressProvider";
 import { usePassoffProgress } from "./PassoffProgressProvider";
 import { StepTabs } from "./StepTabs";
@@ -53,13 +63,20 @@ import { FONT_LABEL, segmentButton, spokenOf, type FontSize, type Speaker } from
  *     itself (a step's own '다음 단계', coming back to the first unfinished step) presses that step's tab (goStep), as
  *     VOCA · READING · LISTENING do;
  *   - the end of the lesson is the common LessonEndBar. This view registers a completion gate (src/lib/lessonGate.ts):
- *     '이 강의 학습 완료' stays off, with PASSOFF_GATE_REASON under it, until the five steps are done. Finishing the fifth
- *     step completes the lesson by itself, as before (설계 §3 — the course's method is unchanged); `undo: false` because
- *     the server takes completions only (설계 §5), so the bar then shows '학습 완료함' without '취소'. Should the button be
- *     pressed while the steps are done but this device has no completion mark, the same finish runs (LESSON_COMPLETE_EVENT);
+ *     '이 강의 학습 완료' stays off, with PASSOFF_GATE_REASON under it, until the five steps are done; `undo: false` because
+ *     the server takes completions only (설계 §5), so the bar then shows '학습 완료함' without '취소';
  *   - the line icons of src/components/icons.tsx and the type · radius · colour tokens; text size and sentence speed sit
  *     beside the step's title, in GRAMMAR's words and segments ('글자 크기' 기본 · 크게 · 특대 · '문장 속도' 1.0× · 0.85×).
  * The textbook's own subheading of the lesson is the line under the page's title (page.tsx), as STUDENT's chapter is.
+ *
+ * 단계 2-나 E2 (이끄는 세션 결정 09-28 — the other courses' way): the lesson is finished when the learner PRESSES '이 강의 학습
+ * 완료' after the five steps, no longer by itself. The press (ProgressProvider.toggleComplete → LESSON_COMPLETE_EVENT) runs
+ * `finish`: the list's mark, the server's progress (it opens the next topic) and the engine's markLessonDone — and with a
+ * licence the learning record goes up (the review on another device has the lesson's items). One case still finishes by
+ * itself: a lesson this device already marked complete, done again through '처음부터 다시 하기' (the bar shows '학습 완료함',
+ * so there is nothing to press) — its five steps done again send the completion once more, which is how a completion the
+ * server lost is given back (코드 단계 C 점검 1). At the end of a topic's last lesson the fifth step links "구성도 다시
+ * 채우기" (src/app/passoff-grammar/map — the topic's last condition) until it has been done.
  */
 const STEPS = [
   { short: "예문", title: "예문 떠올리기" },
@@ -300,13 +317,15 @@ export function PassoffLearningView({
     };
   }
 
-  // ── the lesson is finished: once, after the learner's own last action (never on a restore)
-  const { isCompleted, toggleComplete } = useProgress();
-  const { recordLessonComplete, confirmed, countedIds } = usePassoffProgress();
+  // ── the lesson is finished: when the learner presses '이 강의 학습 완료' after the five steps (never on a restore)
+  const { isCompleted } = useProgress();
+  const { recordLessonComplete, confirmed, countedIds, progress } = usePassoffProgress();
+  const { hasActiveLicense, licenseInfo } = useLicense();
+  const withLicence = hasActiveLicense && planOpensCourse(licenseInfo?.plan, PASSOFF_COURSE);
   // finished on this device, but the server — which the list and the topic lock count by — does not have it (after
   // the owner's reset, a lost write, another code here: 코드 단계 C 점검 1); only finishing it again records it
   const notCounted = work.lessonDone && confirmed && countedIds !== null && !countedIds.has(lessonId);
-  // one finish per run of the five steps: the automatic one below and the end bar's button both come here
+  // one finish per run of the five steps: the end bar's button and the redo below both come here
   const finishing = useRef(false);
   const finish = useCallback(() => {
     if (finishing.current) return;
@@ -326,20 +345,23 @@ export function PassoffLearningView({
       entries,
       ids.compose.filter((id) => work.compose[id]?.tomorrow),
     );
-  }, [update, recordLessonComplete, lessonId, content, ids, work.compose]);
+    // with a licence the learning record goes up now — the review on another device has this lesson's items tomorrow
+    // (view "record": the record only, no item's words back)
+    if (withLicence) void syncCourseRecordWith(PASSOFF_COURSE, { view: "record" });
+  }, [update, recordLessonComplete, lessonId, content, ids, work.compose, withLicence]);
   const finishRef = useRef(finish);
   useEffect(() => {
     finishRef.current = finish;
   }, [finish]);
 
+  // a lesson this device already marked complete, its five steps done again ('처음부터 다시 하기'): the bar says '학습 완료함'
+  // and has nothing to press, so the completion goes once more by itself — the way back for one the server lost
   useEffect(() => {
     if (!restored || !acted.current || !allDone || work.lessonDone) return;
-    finish();
-    // the course list's mark — its LESSON_COMPLETE_EVENT comes back to the listener below, which finds this finish done
-    if (!isCompleted(PASSOFF_COURSE, lessonId)) toggleComplete(PASSOFF_COURSE, lessonId);
-  }, [restored, allDone, work.lessonDone, finish, isCompleted, toggleComplete, lessonId]);
+    if (isCompleted(PASSOFF_COURSE, lessonId)) finish();
+  }, [restored, allDone, work.lessonDone, finish, isCompleted, lessonId]);
 
-  // '이 강의 학습 완료' pressed in the end bar (open once the steps are done — see the gate below): the same finish
+  // '이 강의 학습 완료' pressed in the end bar (open once the steps are done — see the gate below): the lesson is finished
   useEffect(() => {
     const onComplete = (event: Event) => {
       const detail = (event as CustomEvent<{ course?: string; lessonId?: string; completed?: boolean }>).detail;
@@ -358,6 +380,13 @@ export function PassoffLearningView({
   useEffect(() => () => clearLessonGate(PASSOFF_COURSE, lessonId), [lessonId]);
 
   const stepsLeft = done.flatMap((d, i) => (d ? [] : [i]));
+
+  // the topic's last lesson: "구성도 다시 채우기" until it is done (the server's answer knows — with a licence only)
+  const topicState = progress?.topics.find((t) => t.lessonIds.includes(lessonId)) ?? null;
+  const mapRefill =
+    topicState && topicState.lastLessonId === lessonId && !topicState.mapRefilled
+      ? { href: passoffMapHref(topicState.topic), topic: topicState.topic, required: Boolean(progress?.mapRefillRequired && !progress.everyTopicOpen) }
+      : null;
 
   // text size and sentence speed — GRAMMAR's words and segments, beside the step's title
   const settingsButton = (
@@ -523,6 +552,7 @@ export function PassoffLearningView({
           stepsLeft={stepsLeft}
           lessonDone={work.lessonDone}
           notCounted={notCounted}
+          mapRefill={mapRefill}
           report={composeReport("transferQueue")}
           onCheckRight={() =>
             update((w) => {

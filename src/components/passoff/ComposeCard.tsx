@@ -5,8 +5,10 @@ import type { PassoffProduceItem } from "@/lib/passoffTypes";
 import { gradeProduce, hasHangul, isCorrect, writingIssues, type DiffToken, type ProduceResult } from "@/lib/passoffGrading";
 import { contrastPool, contrastTiles, firstLetters } from "@/lib/passoffLesson";
 import { generateWordBank, verifyAnyWordSequence, type WordTile } from "@/lib/listeningUtils";
-import { notePassoffAttempt, strongerHelp, type PassoffAttempt, type PassoffHelp } from "@/lib/passoffLearning";
+import { notePassoffAttempt, strongerHelp, type PassoffAnswerMode, type PassoffAttempt, type PassoffHelp } from "@/lib/passoffLearning";
+import { MyAnswerReport } from "../learning/MyAnswerReport";
 import { VoiceSpeakingTester } from "../VoiceSpeakingTester";
+import { LESSON_REPORT_NOTE, useLessonReport } from "./lessonReport";
 import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, tone, type FontSize, type Speaker } from "./ui";
 
 export interface ComposeOutcome {
@@ -45,6 +47,10 @@ const HELP_AT: PassoffHelp[] = ["none", "none", "hint", "tiles", "reveal"];
  * to `onAttempt` (recorded there with where "review") instead of the lesson's record, `afterMiss` says when a missed
  * sentence comes back, and `test` is the next-day check — one answer, recorded, and passed on at once with no result or
  * ladder (the results come together at the end). Without these three the card is the lesson's, unchanged.
+ *
+ * 단계 2-나 E2 — "내 답도 맞아요" (§8-6) under a wrong result (where it is wrong · the answer shown): the last typed or spoken
+ * answer that was graded wrong. In the lesson it is kept for judging (useLessonReport — nothing else moves); on the review
+ * screen `onReport` hands it to the frame, which records it in place of the day's wrong answer when it can.
  */
 export function ComposeCard({
   item,
@@ -62,6 +68,9 @@ export function ComposeCard({
   onAttempt,
   afterMiss,
   test = false,
+  onReport,
+  reported,
+  reportNote,
 }: {
   item: PassoffProduceItem;
   kind: "produce" | "transfer";
@@ -84,8 +93,25 @@ export function ComposeCard({
   afterMiss?: string;
   /** the next-day check: one answer, recorded, then passed on at once — no result, no ladder */
   test?: boolean;
+  /** "내 답도 맞아요" — who records it (the lesson's own report when absent) */
+  onReport?: (mine: { answer: string; mode: PassoffAnswerMode }) => void;
+  /** reported already (the review frame knows; the lesson card keeps its own) */
+  reported?: boolean;
+  /** the line once reported */
+  reportNote?: string;
 }) {
   const note = onAttempt ?? notePassoffAttempt;
+  const lessonReport = useLessonReport();
+  const [reportedHere, setReportedHere] = useState(false);
+  /** the last typed or spoken answer graded wrong — what "내 답도 맞아요" sends */
+  const [lastWrong, setLastWrong] = useState<{ answer: string; mode: PassoffAnswerMode; help: PassoffHelp } | null>(null);
+  const isReported = reported ?? reportedHere;
+  function sendReport() {
+    if (!lastWrong || isReported) return;
+    if (onReport) onReport({ answer: lastWrong.answer, mode: lastWrong.mode });
+    else lessonReport({ lessonId, itemId: item.id, kind, help: lastWrong.help, mode: lastWrong.mode, answer: lastWrong.answer });
+    setReportedHere(true);
+  }
   const [text, setText] = useState("");
   const [heard, setHeard] = useState<string | null>(null);
   const [checks, setChecks] = useState(0);
@@ -129,6 +155,7 @@ export function ComposeCard({
     const correct = isCorrect(res);
     const firstTry = checks === 0;
     const firstAnswer = { answer, verdict: res.verdict, reference: res.reference };
+    if (!correct) setLastWrong({ answer, mode, help: strongerHelp(priorHelp, HELP_AT[rung]) });
     if (firstTry) {
       setFirst(firstAnswer);
       onFirstTry({ right: correct, first: presentation === 0 ? firstAnswer : null });
@@ -275,6 +302,7 @@ export function ComposeCard({
               </p>
             </div>
           ) : null}
+          {lastWrong ? <MyAnswerReport reported={isReported} note={reportNote ?? LESSON_REPORT_NOTE} onReport={sendReport} /> : null}
         </div>
       ) : null}
 
@@ -359,6 +387,7 @@ export function ComposeCard({
               <DiffLine tokens={result.diff} reveal font={font} />
             </>
           ) : null}
+          {lastWrong ? <MyAnswerReport reported={isReported} note={reportNote ?? LESSON_REPORT_NOTE} onReport={sendReport} /> : null}
           {ruleTitle ? <p className="text-body text-ink">규칙: {ruleTitle}</p> : null}
           <StudentTag studentRef={item.studentRef} />
           {comeback ? <p className="text-label text-ink-soft">{comeback}</p> : null}

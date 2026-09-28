@@ -18,6 +18,7 @@ import { passoffTopicOf, topicWithParticle } from "@/lib/passoffUnlock";
 import { ChapterAudioBar } from "./ChapterAudioBar";
 import { usePassoffProgress, usePassoffUnlockNotice } from "./PassoffProgressProvider";
 import { PassoffReviewEntry } from "./passoff/ReviewEntry";
+import { PassoffMapNext, PassoffMapRow } from "./passoff/MapEntry";
 
 export interface DashboardLessonItem {
   id: string;
@@ -366,8 +367,10 @@ export function CourseDashboard({
               <span aria-hidden>→</span>
             </Link>
           ) : null}
-          {/* PASS-OFF GRAMMAR: today's review from this device's record (공통-학습-엔진.md §8-4) — other courses have none yet */}
+          {/* PASS-OFF GRAMMAR: today's review from this device's record (공통-학습-엔진.md §8-4) — other courses have none yet —
+              and a topic's "구성도 다시 채우기" when it is the step left (단계 2-나 E2) */}
           {isPassoff ? <PassoffReviewEntry withLicence /> : null}
+          {isPassoff ? <PassoffMapNext progress={passoffProgress} /> : null}
           <div className="mt-4 flex flex-col gap-2">
             <p className="text-label text-ink">
               학습 진도율: <span className="font-semibold tabular-nums">{completedCount}</span> / {totalLessons}개 완료{" "}
@@ -576,6 +579,10 @@ export function CourseDashboard({
                         );
                       })}
                     </ul>
+                    {/* PASS-OFF GRAMMAR: the topic's "구성도 다시 채우기" (단계 2-나 E2) — an open topic, with a licence */}
+                    {isPassoff && hasCourseAccess && chapterUnlocked && !passoffChecking && passoffTopic !== null && filter === "all" ? (
+                      <PassoffMapRow topic={passoffTopic} done={Boolean(passoffState?.mapRefilled)} />
+                    ) : null}
                   </div>
                 )}
               </div>

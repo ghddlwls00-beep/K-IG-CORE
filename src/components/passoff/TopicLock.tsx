@@ -3,6 +3,7 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { passoffMapHref } from "@/lib/passoffLearning";
 import { topicWithParticle } from "@/lib/passoffUnlock";
 import { useProgress } from "../ProgressProvider";
 import { usePassoffProgress } from "../PassoffProgressProvider";
@@ -28,6 +29,8 @@ import { tone } from "./ui";
  * 2026-09-28 (merged with main — docs/디자인-규칙.md §6 · 공통 틀 2): the frame of the other lock screens — '← 목록' and the
  * title as the lesson page draws them, one card in the tokens, the conditions and lessons divided by a line instead of a
  * box inside the box. Every word above is kept (the lock checks read '순차 학습 잠금' · 'TOPIC N을 마치면 열려요').
+ *
+ * 단계 2-나 E2: the condition "구성도 다시 채우기" (on since the engine records it) links the topic's map page until it is done.
  */
 export interface PassoffTopicLockProps {
   title: string;
@@ -123,7 +126,18 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
                 <Condition ok={counted(last)}>마지막 레슨 &lsquo;{last.title}&rsquo; 5단계까지 마치기</Condition>
               ) : null}
               {current.mapRefillRequired ? (
-                <Condition ok={mapRefilled}>대주제 끝 &lsquo;구성도 다시 채우기&rsquo; 한 번 하기</Condition>
+                <Condition ok={mapRefilled}>
+                  {mapRefilled ? (
+                    <>대주제 끝 &lsquo;구성도 다시 채우기&rsquo; 한 번 하기</>
+                  ) : (
+                    <Link
+                      href={passoffMapHref(current.topic)}
+                      className="inline-flex min-h-11 items-center text-ink underline underline-offset-4 hover:text-ink-soft"
+                    >
+                      대주제 끝 &lsquo;구성도 다시 채우기&rsquo; 한 번 하기
+                    </Link>
+                  )}
+                </Condition>
               ) : null}
             </ul>
 

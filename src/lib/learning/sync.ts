@@ -56,3 +56,45 @@ export async function syncCourseRecord<T>(course: string): Promise<SyncResult<T>
   if (typeof data.owner === "string" && data.owner) writeOwner(course, data.owner);
   return { ok: true, answer: { ...data, record } };
 }
+
+/**
+ * What a request may ask besides the merge (단계 2-나 E2 — the API's own words in src/app/api/learning/[course]/route.ts):
+ *   view "notes"  the wrong-answer list of the open lessons comes back too (LearningNotesAnswer) — `lesson` for that
+ *                 lesson's listed items' data (none without it);
+ *   view "record" the record kept in step, no item data back (a lesson finished · a report · a practice run · a map);
+ *   forward       lessons whose items the server brings to the front of the next review (practice.ts applyBringForward —
+ *                 this device does the same on its own copy);
+ *   withRecord    false: this device's record does not go up (a second request right after the first one) — the
+ *                 server's still comes back and is merged here.
+ */
+export interface SyncExtra {
+  view?: "notes" | "record";
+  lesson?: string;
+  forward?: readonly string[];
+  withRecord?: boolean;
+}
+
+/** syncCourseRecord with more asked of the server (the wrong-answer list · a lesson's listed items · lessons brought forward). */
+export async function syncCourseRecordWith<T, A extends LearningSyncAnswer<T> = LearningSyncAnswer<T>>(
+  course: string,
+  extra: SyncExtra,
+): Promise<{ ok: true; answer: A } | { ok: false; status: number | "offline" }> {
+  let response: Response;
+  const { withRecord = true, ...asked } = extra;
+  try {
+    response = await fetch(`/api/learning/${encodeURIComponent(course)}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      cache: "no-store",
+      body: JSON.stringify({ record: withRecord ? readCourseRecord(course) : null, owner: readOwner(course), ...asked }),
+    });
+  } catch {
+    return { ok: false, status: "offline" };
+  }
+  const data = (await response.json().catch(() => null)) as (A & { success?: boolean }) | null;
+  if (!response.ok || !data || data.success !== true) return { ok: false, status: response.status };
+  const record = sanitizeRecord(data.record, course);
+  writeCourseRecord(data.taken ? mergeRecords(readCourseRecord(course), record) : record);
+  if (typeof data.owner === "string" && data.owner) writeOwner(course, data.owner);
+  return { ok: true, answer: { ...data, record } };
+}

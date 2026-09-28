@@ -11,7 +11,7 @@ import type { PassoffUpdate } from "@/lib/passoffUnlock";
 /**
  * PASS-OFF GRAMMAR progress (docs/pass-off-grammar/설계.md §5) — STUDENT's /api/progress/student, for this course.
  * GET: the licence's record as judged now. POST: finished lessons ({ updates: [{ lessonId, completed: true,
- * clientUpdatedAt }] }) and, from the common learning engine later, a topic's "구성도 다시 채우기" ({ mapRefillTopic }).
+ * clientUpdatedAt }] }) and a topic's "구성도 다시 채우기" ({ mapRefillTopic } — the map page, 단계 2-나 E2).
  * The licence cookie is required; the server takes records only for open topics (src/lib/passoffUnlock.ts).
  */
 const COURSE = "passoff-grammar";

@@ -6,8 +6,9 @@
  * only records, through the engine's record functions:
  *   - every answer (notePassoffAttempt → recordAttempt, where "lesson" — an answer inside a lesson never counts
  *     toward a pass: the model answer was just in front of the learner);
- *   - the five steps finished (notePassoffLessonDone → markLessonDone): the lesson's ④ · ⑤ sentences and the ③
- *     items it asked (not `reserve`) come back from the next day.
+ *   - the lesson finished (notePassoffLessonDone → markLessonDone): the lesson's ④ · ⑤ sentences and the ③
+ *     items it asked (not `reserve`) come back from the next day;
+ *   - "내 답도 맞아요" on a wrong result (notePassoffReport → reportMyAnswer, where "lesson" — kept for judging, nothing moves).
  * The record lives on this device (localStorage "kig-learning:passoff-grammar"); the review screen and the server
  * copy come with the engine's shared page (설계 §12 2-나). The course list's check mark (ProgressProvider) is
  * recorded by the view itself.
@@ -17,8 +18,8 @@
  * (/api/learning/passoff-grammar, which sends the data of today's items only — src/lib/passoffReview.ts); without one the
  * review has the two free lessons' items alone, on this device (passoffDevicePlan).
  */
-import { planDay } from "./learning/engine";
-import { markLessonDone, recordAttempt } from "./learning/record";
+import { planDay, wrongList } from "./learning/engine";
+import { markLessonDone, recordAttempt, reportMyAnswer } from "./learning/record";
 import { restrictRecord } from "./learning/review";
 import type { AnswerMode, CourseProfile, CourseRecord, Day, Help, Plan } from "./learning/types";
 import { FREE_PREVIEW_LESSON_IDS } from "./license";
@@ -28,9 +29,10 @@ export const PASSOFF_COURSE = "passoff-grammar";
 
 /**
  * The line under the end bar's disabled '이 강의 학습 완료' (src/lib/lessonGate.ts — main's common part) until the five steps
- * are done: the lesson completes with them (설계 §3), as VOCA's · LISTENING's · READING's gates say what opens theirs.
+ * are done, in the words VOCA's · LISTENING's · READING's gates use ("…하면 완료할 수 있어요"). 단계 2-나 E2 (이끄는 세션 결정,
+ * 09-28): the learner presses it after the fifth step, as in the other courses — the lesson no longer completes by itself.
  */
-export const PASSOFF_GATE_REASON = "5단계를 모두 마치면 완료돼요.";
+export const PASSOFF_GATE_REASON = "5단계를 모두 마치면 완료할 수 있어요.";
 
 export type PassoffItemKind = "produce" | "transfer" | "select" | "choice" | "short";
 /** the help received before an answer: ladder ② clue = "hint", ③ tiles = "tiles", the answer shown = "reveal" (설계 §4) */
@@ -81,9 +83,25 @@ export function notePassoffAttempt(attempt: PassoffAttempt): void {
 }
 
 /**
- * The five steps are finished: the lesson's first completion date is kept and `entries` come back from the next
- * day. `tomorrowFirst` — sentences still not right on their own after three comebacks ("내일 1순위", 설계 §3 ④) —
- * go in first: the engine keeps a lesson's next-day items in the order they came.
+ * "내 답도 맞아요" on a wrong result inside the lesson (공통-학습-엔진.md §8-6): the answer is kept for judging (the record's
+ * reports — the owner's list on /admin/license once the record reaches the server). An answer inside a lesson never counts,
+ * so nothing else moves; the item comes back from the next day like the lesson's others.
+ */
+export function notePassoffReport(report: { lessonId: string; itemId: string; kind: PassoffItemKind; help: PassoffHelp; mode: PassoffAnswerMode; answer: string }): void {
+  reportMyAnswer(PASSOFF_PROFILE, report.itemId, {
+    lessonId: report.lessonId,
+    kind: report.kind,
+    help: report.help,
+    mode: report.mode,
+    where: "lesson",
+    answer: report.answer,
+  });
+}
+
+/**
+ * The lesson is finished (the learner pressed '이 강의 학습 완료' after the five steps): the lesson's first completion date is
+ * kept and `entries` come back from the next day. `tomorrowFirst` — sentences still not right on their own after three
+ * comebacks ("내일 1순위", 설계 §3 ④) — go in first: the engine keeps a lesson's next-day items in the order they came.
  */
 export function notePassoffLessonDone(lessonId: string, entries: { key: string; kind: PassoffItemKind }[], tomorrowFirst: readonly string[]): void {
   const first = new Set(tomorrowFirst);
@@ -130,3 +148,13 @@ export function passoffFreeRecord(record: CourseRecord): CourseRecord {
 export function passoffDevicePlan(record: CourseRecord, today: Day, { freeOnly }: { freeOnly: boolean }): Plan {
   return planDay(freeOnly ? passoffFreeRecord(record) : record, today, PASSOFF_PROFILE);
 }
+
+/** The wrong-answer list's page (단계 2-나 E2 — /passoff-grammar/review?notes=1) and how many items this device's list holds. */
+export const PASSOFF_NOTES_HREF = `/${PASSOFF_COURSE}/review?notes=1`;
+
+export function passoffDeviceWrongCount(record: CourseRecord, { freeOnly }: { freeOnly: boolean }): number {
+  return wrongList(freeOnly ? passoffFreeRecord(record) : record).reduce((sum, lesson) => sum + lesson.items.length, 0);
+}
+
+/** "구성도 다시 채우기" of a topic (단계 2-나 E2 — src/app/passoff-grammar/map/page.tsx). */
+export const passoffMapHref = (topic: number): string => `/${PASSOFF_COURSE}/map?topic=${topic}`;

@@ -15,6 +15,14 @@
  *     P5 POST /api/learning/passoff-grammar(어제 끝낸 pg01-1 · pg01-2 · 잠긴 TOPIC 2 레슨) → 문항 열쇠 = 계획 열쇠 · 잠긴 대주제
  *        문항 0 · 계획 밖 문항의 글 0 · 계획 날짜 = 서버의 오늘
  *     끝나면 그 작업 트리의 data/license-devices.json · passoff-progress.json · learning-passoff-grammar.json 을 지운다.
+ *   단계 2-나 E2 — 오답노트(/passoff-grammar/review?notes=1)와 구성도(/passoff-grammar/map?topic=N)도 같은 기준으로:
+ *   P6 이용권 없이 오답노트 쪽 HTML · RSC 에 유료 레슨 글 · 보충 글 0 · 무료 레슨 문항 글은 있음(무료 복습 쪽과 같은 것) · 제목 '오답노트'
+ *   P7 이용권 없이 구성도 쪽(TOPIC 1 · 2 · 20) HTML · RSC 에 레슨 글(무료 레슨 것까지) 0 · 안내 한 줄
+ *   --secrets 일 때:
+ *     P8 이용권 오답노트 쪽 HTML · RSC 에 레슨 글(무료 레슨 것까지) 0 — 목록은 API 로만
+ *     P9 API view "notes"(틀린 문항: 열린 pg01-1 · pg01-2 · 잠긴 TOPIC 2): 목록은 열린 레슨 것만 · 레슨 없이 물으면 문항 글 0 ·
+ *        lesson=pg01-2 면 그 레슨 틀린 문항 글만(다른 문항 글 0) · 잠긴 레슨을 물으면 0
+ *     P10 이용권 구성도 쪽: 열린 TOPIC 1 은 그 레슨들의 규칙 제목 · 첫 예문이 있음 · 다른 대주제 레슨 글 0 · 잠긴 TOPIC 2 는 레슨 글 0
  *   node docs/pass-off-grammar/검사/probe-review-leak.mjs [--base http://127.0.0.1:3471] [--selftest] [--secrets <json>]
  * exit 0 = 실패 0
  */
@@ -115,6 +123,29 @@ check(
   `${html.status} · ${rsc.status} ${rsc.type} · HTML ${seenHtml.length}/${freeItemTexts.length} · RSC ${seenRsc.length}/${freeItemTexts.length}`,
 );
 
+// --- 단계 2-나 E2: the wrong-answer list and the topic map, without a licence --------------------------------------------------
+const notesHtml = await get(`/${COURSE}/review?notes=1`);
+const notesRsc = await get(`/${COURSE}/review?notes=1`, { rsc: true });
+if (SELFTEST) notesHtml.body += `<p>${supplementNeedles[0]}</p>`;
+const p6 = [...new Set([...found(notesHtml.body, [...paidNeedles, ...supplementNeedles]), ...found(notesRsc.body, [...paidNeedles, ...supplementNeedles])])];
+const seenNotes = freeItemTexts.filter((t) => forms(t).some((f) => notesRsc.body.includes(f)));
+check(`P6 이용권 없이 오답노트 쪽 HTML · RSC 에 유료 레슨 글 · 보충 글 ${paidNeedles.length + supplementNeedles.length}개 중 0 · 무료 레슨 문항 글 ${freeItemTexts.length}개는 있음 · 제목 '오답노트'`,
+  notesHtml.status === 200 && notesRsc.status === 200 && p6.length === 0 && seenNotes.length === freeItemTexts.length && notesHtml.body.includes("오답노트"),
+  `${notesHtml.status} · ${notesRsc.status} · 유료 ${p6.length}${p6.length ? ` (${p6[0]})` : ""} · 무료 ${seenNotes.length}/${freeItemTexts.length}`);
+const allLessonNeedles = [...new Set([...paidNeedles, ...supplementNeedles, ...freeTexts])];
+const lastTopic = index.groups.length;
+let p7 = [];
+const p7Pages = [];
+for (const topic of [1, 2, lastTopic]) {
+  const h = await get(`/${COURSE}/map?topic=${topic}`);
+  const r = await get(`/${COURSE}/map?topic=${topic}`, { rsc: true });
+  p7Pages.push(`${topic}:${h.status}/${r.status}${h.body.includes("이용권이 있으면") ? "" : "(안내 없음)"}`);
+  p7 = [...p7, ...found(h.body, allLessonNeedles), ...found(r.body, allLessonNeedles)];
+  if (h.status !== 200 || r.status !== 200 || !h.body.includes("이용권이 있으면")) p7.push(`TOPIC ${topic} 쪽 ${h.status}`);
+}
+check(`P7 이용권 없이 구성도 쪽(TOPIC 1 · 2 · ${lastTopic}) HTML · RSC 에 레슨 글 ${allLessonNeedles.length}개(무료 레슨 것까지) 중 0 · 안내 한 줄`,
+  p7.length === 0, `${p7Pages.join(" ")} · ${[...new Set(p7)].slice(0, 2).join(" | ") || 0}`);
+
 // --- with a licence (a dev server with throwaway secrets) --------------------------------------------------------------
 const secretsFile = arg("secrets");
 if (secretsFile) {
@@ -181,6 +212,69 @@ if (secretsFile) {
     check(`P5 API(이용권 · 시계는 이 서버): 문항 열쇠 = 계획 열쇠(${planSet.size}) · 잠긴 ${second} 문항 0 · 계획 밖 문항의 글 ${outside.length}개 중 0 · 계획 날짜 = 서버의 오늘`,
       api.status === 200 && data && data.success && planSet.size > 0 && itemKeys.length === planSet.size && itemKeys.every((k) => planSet.has(k)) && lockedKeys.length === 0 && p5.length === 0 && data.plan.day === learningDay(Date.now()),
       `${api.status} 계획 ${planSet.size} · 문항 ${itemKeys.length} · 잠긴 ${lockedKeys.length} · 새어 나간 글 ${p5.length} · day ${data && data.plan && data.plan.day}`);
+
+    // ---- 단계 2-나 E2 with a licence ----
+    const nh = await get(`/${COURSE}/review?notes=1`, { cookie });
+    const nr = await get(`/${COURSE}/review?notes=1`, { rsc: true, cookie });
+    const p8 = [...new Set([...found(nh.body, allNeedles), ...found(nr.body, allNeedles)])];
+    check(`P8 이용권(STUDENT) 오답노트 쪽 HTML · RSC 에 레슨 글 ${allNeedles.length}개(무료 레슨 것까지) 중 0 · 무료 안내 없음 · 제목 '오답노트'`,
+      nh.status === 200 && nr.status === 200 && p8.length === 0 && !nh.body.includes('data-kig-paid-extra="license"') && nh.body.includes("오답노트"),
+      `${nh.status} · ${nr.status} · 글 ${p8.length}${p8.length ? ` (${p8.slice(0, 2).join(" | ")})` : ""}`);
+
+    // the wrong-answer list: two items of each lesson (the free two and the locked TOPIC 2 one) answered wrong yesterday
+    const wrongRecord = JSON.parse(JSON.stringify(record));
+    const wrongBy = {};
+    for (const id of [...FREE, second]) {
+      wrongBy[id] = Object.keys(wrongRecord.items).filter((k) => k.startsWith(`${id}:`)).slice(0, 2);
+      for (const key of wrongBy[id]) Object.assign(wrongRecord.items[key], { lastDay: dayBefore, lastCorrect: false, reviewDay: dayBefore, lapses: 1, lastWrong: "zq probe answer", dueDay: next });
+    }
+    const owner = data && data.owner;
+    const notesCall = async (extra) => {
+      const res = await fetch(`${BASE}/api/learning/${COURSE}`, { method: "POST", headers: { "content-type": "application/json", cookie }, body: JSON.stringify({ record: wrongRecord, owner, view: "notes", ...extra }) });
+      const body = await res.text();
+      let json = null;
+      try {
+        json = JSON.parse(body);
+      } catch {}
+      return { status: res.status, body, json };
+    };
+    const itemWords = (keys) => everyItem.filter((i) => keys.includes(i.id)).flatMap((i) => textsOfBlocks([{ type: "drill", produce: [i] }]));
+    const n0 = await notesCall({});
+    const listed = n0.json && n0.json.notes ? n0.json.notes.map((l) => l.lessonId).sort() : [];
+    const n0Leak = found(n0.body, [...new Set(everyItem.flatMap((i) => textsOfBlocks([{ type: "drill", produce: [i] }])))]);
+    const n1 = await notesCall({ lesson: FREE[1] });
+    const mine = itemWords(wrongBy[FREE[1]]);
+    const notMine = [...new Set(everyItem.filter((i) => !wrongBy[FREE[1]].includes(i.id)).flatMap((i) => textsOfBlocks([{ type: "drill", produce: [i] }])))].filter((t) => !mine.some((m) => m.includes(t)));
+    const n1Leak = found(n1.body, notMine);
+    const n1Keys = n1.json && n1.json.items ? Object.keys(n1.json.items).sort() : [];
+    const n2 = await notesCall({ lesson: second });
+    const n2Leak = found(n2.body, itemWords(Object.keys(record.items).filter((k) => k.startsWith(`${second}:`))));
+    check(`P9 API view "notes": 목록은 열린 ${FREE.join(" · ")} 것만(잠긴 ${second} 없음) · 레슨 없이 물으면 문항 글 0 · lesson=${FREE[1]} 이면 그 레슨 틀린 문항 ${wrongBy[FREE[1]].length}개만(다른 문항 글 ${notMine.length}개 중 0) · 잠긴 ${second} 을 물으면 0`,
+      n0.status === 200 && JSON.stringify(listed) === JSON.stringify([...FREE].sort()) && Object.keys(n0.json.items).length === 0 && n0Leak.length === 0 &&
+        n1.status === 200 && JSON.stringify(n1Keys) === JSON.stringify([...wrongBy[FREE[1]]].sort()) && n1Leak.length === 0 && found(n1.body, mine).length > 0 &&
+        n2.status === 200 && Object.keys(n2.json.items).length === 0 && n2Leak.length === 0,
+      `목록 ${listed.join(",")} · 글 ${n0Leak.length} · ${FREE[1]} 열쇠 ${n1Keys.join(",")} · 다른 글 ${n1Leak.length}${n1Leak.length ? ` (${n1Leak[0]})` : ""} · ${second} ${n2.json && Object.keys(n2.json.items).length}/${n2Leak.length}`);
+
+    // the topic map: TOPIC 1 open, TOPIC 2 locked for this new licence
+    const mapWordsOf = (ids) => ids.flatMap((id) => {
+      const blocks = lessonFile(id).blocks;
+      const rule = blocks.find((b) => b.type === "rule");
+      const anchor = (blocks.find((b) => b.type === "anchors") || { items: [] }).items[0];
+      return [rule && rule.title, anchor && anchor.en].filter((t) => typeof t === "string" && t.length >= 8);
+    });
+    const topic1 = index.groups[0].lessons;
+    const m1h = await get(`/${COURSE}/map?topic=1`, { cookie });
+    const m1r = await get(`/${COURSE}/map?topic=1`, { rsc: true, cookie });
+    const m1Seen = mapWordsOf(topic1).filter((t) => forms(t).some((f) => m1h.body.includes(f)));
+    const otherLessons = index.lessons.map((l) => l.id).filter((id) => !topic1.includes(id));
+    const otherWords = [...new Set(otherLessons.flatMap((id) => textsOfBlocks(lessonFile(id).blocks)))].filter((t) => !mapWordsOf(topic1).some((m) => m.includes(t)));
+    const m1Leak = [...found(m1h.body, otherWords), ...found(m1r.body, otherWords)];
+    const m2h = await get(`/${COURSE}/map?topic=2`, { cookie });
+    const m2r = await get(`/${COURSE}/map?topic=2`, { rsc: true, cookie });
+    const m2Leak = [...found(m2h.body, allNeedles), ...found(m2r.body, allNeedles)];
+    check(`P10 이용권 구성도: 열린 TOPIC 1 — 레슨 ${topic1.length}개의 규칙 제목 · 첫 예문 ${mapWordsOf(topic1).length}개가 있음 · 다른 대주제 레슨 글 ${otherWords.length}개 중 0 / 잠긴 TOPIC 2 — 레슨 글 0 · '아직 열리지 않았어요'`,
+      m1h.status === 200 && m1Seen.length === mapWordsOf(topic1).length && m1Leak.length === 0 && m2h.status === 200 && m2Leak.length === 0 && m2h.body.includes("아직 열리지 않았어요"),
+      `TOPIC 1 ${m1Seen.length}/${mapWordsOf(topic1).length} · 다른 글 ${m1Leak.length}${m1Leak.length ? ` (${m1Leak[0]})` : ""} · TOPIC 2 글 ${m2Leak.length}`);
   }
 }
 

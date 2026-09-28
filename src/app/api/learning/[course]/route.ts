@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { planOpensCourse } from "@/lib/license";
 import { verifyLicenseSession } from "@/lib/licenseSession";
 import { learningDay } from "@/lib/learning/day";
-import { mergeRecords, planDay, sanitizeRecord } from "@/lib/learning/engine";
+import { mergeRecords, planDay, sanitizeRecord, wrongList } from "@/lib/learning/engine";
+import { applyBringForward } from "@/lib/learning/practice";
 import { acceptDeviceRecord, restrictRecord, sameRecord, type LearningSyncAnswer } from "@/lib/learning/review";
 import { serverLearningCourse } from "@/lib/learning/serverCourses";
 import { changeLearningRecord, isServerLearningCourse } from "@/lib/learning/serverStore";
@@ -22,6 +23,16 @@ import { licenseIdFor } from "@/lib/serverLicense";
  *   4. answered with the record, today's plan by the SERVER's clock, and the data of the plan's items ONLY — the course's
  *      server adapter reads them from its lesson files (serverCourses.ts), only for open lessons. Nothing else of a paid
  *      lesson leaves the server here.
+ *
+ * 단계 2-나 E2 (공통-학습-엔진.md §8-5 · 8-7) — more may be asked in the same body:
+ *   - `view: "notes"`: the answer also carries the wrong-answer list (engine.ts wrongList) of the open lessons — keys, kinds
+ *     and the learner's own last wrong answers, no item text — and `items` holds the data of ONE lesson's listed items
+ *     (`lesson`), none without it. The list names the items; their words come lesson by lesson, open lessons only;
+ *   - `view: "record"`: the record kept in step and nothing else — `items` empty (a lesson page after a completion or a
+ *     report, the wrong-answer list after a practice run, the map page);
+ *   - `forward: [lesson ids]`: those open lessons' items come to the front of the next review (practice.ts
+ *     applyBringForward — PASS-OFF: the boxes of a topic map filled wrong). Done here on the stored copy, because a merge
+ *     keeps the stored item when two copies differ only in their due day.
  */
 
 const requestWindows = new Map<string, { startedAt: number; count: number }>();
@@ -86,9 +97,15 @@ export async function POST(request: Request, { params }: { params: Promise<{ cou
         })
       : null;
 
+    // E2: lessons brought forward — open ones only, a lesson id at most once, a course's worth at most
+    const forward = Array.isArray(body.forward)
+      ? [...new Set(body.forward.filter((id): id is string => typeof id === "string" && access.lessonOpen(id)))].slice(0, 100)
+      : [];
+
     const record = await changeLearningRecord(course, session.payload.key, (stored) => {
       if (!sent) return { record: stored, changed: false };
       const merged = mergeRecords(stored, sent);
+      if (forward.length) applyBringForward(merged, forward, now);
       return { record: merged, changed: !sameRecord(stored, merged) };
     });
 
@@ -98,13 +115,15 @@ export async function POST(request: Request, { params }: { params: Promise<{ cou
       const known = adapter.item(key);
       return known !== null && access.lessonOpen(known.lessonId);
     };
-    const plan = planDay(restrictRecord(record, open, access.lessonOpen), today, adapter.profile);
-    const items = adapter.itemData(
-      plan.items.map((item) => item.key),
-      access,
-    );
+    const openRecord = restrictRecord(record, open, access.lessonOpen);
+    const plan = planDay(openRecord, today, adapter.profile);
+    // E2: the wrong-answer list names its items; only the asked lesson's come with their words. A page that only keeps the
+    // record in step (view "record" — a lesson finished, a report, a practice run) gets no item's words at all
+    const notes = body.view === "notes" ? wrongList(openRecord) : null;
+    const noteKeys = notes ? (notes.find((lesson) => lesson.lessonId === body.lesson)?.items.map((item) => item.key) ?? []) : [];
+    const items = body.view === "record" ? {} : adapter.itemData(notes ? noteKeys : plan.items.map((item) => item.key), access);
     const answer: LearningSyncAnswer = { record, plan, items, owner, taken };
-    return NextResponse.json({ success: true, ...answer }, { headers: { "Cache-Control": "no-store" } });
+    return NextResponse.json({ success: true, ...answer, ...(notes ? { notes } : {}) }, { headers: { "Cache-Control": "no-store" } });
   } catch (error) {
     console.error(`Learning record sync failed (${course}):`, error);
     return fail(500, "복습 기록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.");

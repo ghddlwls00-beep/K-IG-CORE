@@ -3,12 +3,13 @@
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { learningDay } from "@/lib/learning/day";
-import { planDay } from "@/lib/learning/engine";
-import { readCourseRecord, recordAttempt } from "@/lib/learning/record";
+import { planDay, wrongList } from "@/lib/learning/engine";
+import { readCourseRecord, recordAttempt, reportMyAnswer } from "@/lib/learning/record";
 import { reviewSummary, type ReviewSummary } from "@/lib/learning/review";
 import { syncCourseRecord } from "@/lib/learning/sync";
 import type { AnswerMode, CourseProfile, CourseRecord, Help, Plan, PlanItem } from "@/lib/learning/types";
 import { IconCheck, IconX } from "../icons";
+import { MyAnswerReport } from "./MyAnswerReport";
 
 /**
  * Today's review — the engine's screen, for any course (공통-학습-엔진.md §8-3). The course gives its item cards
@@ -24,6 +25,14 @@ import { IconCheck, IconX } from "../icons";
  *   - the end: today's answered items · passed sentences · how many come tomorrow.
  * The frame follows docs/디자인-규칙.md §6 (the page's header and title are the page's): one progress line instead of
  * step tabs → the item → a bar at the bottom back to the course list.
+ *
+ * 단계 2-나 E2 — "내 답도 맞아요" (§8-6): beside a wrong result (the check's results here, a course card's own result) the
+ * learner may say the answer is right. That report is the day's answer instead of the wrong one — neither right nor wrong
+ * (the engine's "pending": nothing moves but the item comes back tomorrow, and the answer waits for the owner's judging). So a
+ * wrong FIRST answer is held back here, not recorded at once, until the learner moves on (the next item · leaving the check's
+ * results · the end · leaving the page): then it is recorded as it was. A report on an answer already recorded is still kept
+ * for judging, and the day's wrong stands. The check's results go up to the server when the learner leaves them (not when
+ * they show), so a report there reaches it the same way. The end screen links the wrong-answer list (`notesHref`).
  */
 
 export interface ReviewAnswer {
@@ -37,6 +46,12 @@ export interface ReviewAnswer {
   detail?: unknown;
 }
 
+/** "내 답도 맞아요": the answer the learner says is right, and how it was given. */
+export interface MyAnswer {
+  answer: string;
+  mode: AnswerMode;
+}
+
 export interface ReviewItemProps<T> {
   entry: PlanItem;
   data: T;
@@ -44,10 +59,15 @@ export interface ReviewItemProps<T> {
    * "test": the next-day check — one answer, recorded, and on to the next with no result.
    * "practice": the course's card as in its lesson — the result at once, its help after a miss.
    * "again": a check item missed in the test, once more with that help (the answers are the day's second — kept, not counted).
+   * "notes": the wrong-answer list's "지금 다시 풀기" (WrongNotes) — the result at once; nothing moves in the schedule.
    */
-  mode: "test" | "practice" | "again";
+  mode: "test" | "practice" | "again" | "notes";
   onAnswer: (answer: ReviewAnswer) => void;
   onNext: () => void;
+  /** "내 답도 맞아요" on the card's own wrong result (not in "test", which shows none) — the frame records it */
+  onReport: (report: MyAnswer) => void;
+  /** that item was reported here */
+  reported: boolean;
 }
 
 export interface ReviewResult<T> {
@@ -68,7 +88,7 @@ export interface ReviewCourse<T> {
   renderItem: (props: ReviewItemProps<T>) => ReactNode;
   /** a small line above an item: where it comes from (the lesson's name) */
   itemSource?: (data: T) => string;
-  /** an item in the next-day results */
+  /** an item in the next-day results (and in the wrong-answer list) */
   resultLine: (data: T) => ReactNode;
   /** the course's own lines above those results (PASS-OFF: 문법 정답 · 서술형 기준) */
   resultScore?: (results: ReviewResult<T>[]) => ReactNode;
@@ -76,9 +96,16 @@ export interface ReviewCourse<T> {
   toolbar?: ReactNode;
   /** under the progress line while it is open (that button's settings) */
   toolbarPanel?: ReactNode;
+  /** 단계 2-나 E2: the wrong-answer list's page (the end screen's link — none when absent) */
+  notesHref?: string;
+  /** the wrong-answer list's lesson names (WrongNotes — the lesson id when absent) */
+  lessonTitle?: (lessonId: string) => string;
 }
 
 export type ReviewSource<T> = { kind: "server" } | { kind: "device"; items: Record<string, T> };
+
+/** What a report says once sent, in the review (the item was due: it comes back tomorrow). */
+export const REVIEW_REPORT_NOTE = "신고했어요. 확인한 뒤 맞는 답이면 정답에 더해요. 이 문항은 내일 다시 나와요.";
 
 interface Entry<T> {
   entry: PlanItem;
@@ -95,7 +122,8 @@ type Step =
   | { at: "error"; status: number | "offline" }
   | { at: "items"; segment: number; index: number }
   | { at: "results"; segment: number }
-  | { at: "again"; segment: number; index: number }
+  /** `keys`: the check's items missed and not reported, as they were when the results were left */
+  | { at: "again"; segment: number; index: number; keys: string[] }
   | { at: "done" };
 
 /** Each lesson's next-day check is one test (the engine brings a lesson's check whole); everything else after them. */
@@ -126,11 +154,18 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
   const [segments, setSegments] = useState<Segment<T>[]>([]);
   const [comeback, setComeback] = useState(false);
   const [summary, setSummary] = useState<ReviewSummary | null>(null);
+  const [wrongCount, setWrongCount] = useState(0);
   /** the first answer of each next-day item, by key — the results */
   const [results, setResults] = useState<Record<string, ReviewAnswer>>({});
+  /** items reported here ("내 답도 맞아요") */
+  const [reported, setReported] = useState<Record<string, true>>({});
   const topRef = useRef<HTMLDivElement | null>(null);
   /** answers not yet sent up (with a licence) */
   const unsent = useRef(false);
+  /** wrong first answers not recorded yet — a report may still take their place (see above) */
+  const held = useRef(new Map<string, { entry: PlanItem; given: ReviewAnswer }>());
+  /** items answered on this page (a later answer is the day's second — never held) */
+  const answeredHere = useRef(new Set<string>());
   const server = source.kind === "server";
   const deviceItems = source.kind === "device" ? source.items : null;
 
@@ -141,15 +176,47 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
     if (!result.ok) unsent.current = true;
   }, [profile.course, server]);
 
-  /** The end: the record goes up once more, then the numbers — from this device's copy, merged with the server's. */
+  const put = useCallback(
+    (entry: PlanItem, given: ReviewAnswer) => {
+      recordAttempt(profile, entry.key, {
+        lessonId: entry.lessonId,
+        kind: entry.kind,
+        correct: given.correct,
+        help: given.help,
+        mode: given.mode,
+        where: "review",
+        ...(given.answer && !given.correct ? { answer: given.answer } : {}),
+      });
+      unsent.current = true;
+    },
+    [profile],
+  );
+
+  /** the held wrong answers (or one item's) recorded as they were — the learner moved on */
+  const commit = useCallback(
+    (key?: string) => {
+      for (const k of key === undefined ? [...held.current.keys()] : [key]) {
+        const h = held.current.get(k);
+        if (!h) continue;
+        held.current.delete(k);
+        put(h.entry, h.given);
+      }
+    },
+    [put],
+  );
+
+  /** The end: the held answers are recorded, the record goes up once more, then the numbers — from this device's copy. */
   const finish = useCallback(async () => {
+    commit();
     setStep({ at: "done" });
     if (server && unsent.current) await sync();
     const record = readCourseRecord(profile.course);
     const counted = course.sentenceKinds ? (kind: string) => course.sentenceKinds!.includes(kind) : undefined;
     const today = learningDay(Date.now());
-    setSummary(reviewSummary(course.deviceRecord && !server ? course.deviceRecord(record) : record, today, profile, counted));
-  }, [course, profile, server, sync]);
+    const scope = course.deviceRecord && !server ? course.deviceRecord(record) : record;
+    setSummary(reviewSummary(scope, today, profile, counted));
+    setWrongCount(wrongList(scope).reduce((sum, lesson) => sum + lesson.items.length, 0));
+  }, [commit, course, profile, server, sync]);
 
   // today's items: from the server with a licence, from this device's record without one — once, when the page opens
   const load = useCallback(async () => {
@@ -181,15 +248,28 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
     void load();
   }, [load]);
 
-  // leaving the page (another tab, the phone locked): what was answered goes up
+  // leaving the page (another tab, the phone locked): the held answers are recorded, and what was answered goes up
   useEffect(() => {
-    if (!server) return;
     const onHide = () => {
-      if (document.visibilityState === "hidden" && unsent.current) void sync();
+      if (document.visibilityState !== "hidden") return;
+      commit();
+      if (server && unsent.current) void sync();
     };
     document.addEventListener("visibilitychange", onHide);
     return () => document.removeEventListener("visibilitychange", onHide);
-  }, [server, sync]);
+  }, [commit, server, sync]);
+  // …and going to another page of the site (the list, a lesson): the same, once
+  const leaving = useRef({ commit, sync, server });
+  useEffect(() => {
+    leaving.current = { commit, sync, server };
+  }, [commit, server, sync]);
+  useEffect(
+    () => () => {
+      leaving.current.commit();
+      if (leaving.current.server && unsent.current) void leaving.current.sync();
+    },
+    [],
+  );
 
   // a new item or screen starts at the top of the review, as a new step does in a lesson
   useEffect(() => {
@@ -200,39 +280,71 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
 
   const answer = useCallback(
     (entry: PlanItem, test: boolean, given: ReviewAnswer) => {
-      recordAttempt(profile, entry.key, {
+      if (test) setResults((prev) => (prev[entry.key] ? prev : { ...prev, [entry.key]: given }));
+      const first = !answeredHere.current.has(entry.key);
+      answeredHere.current.add(entry.key);
+      if (first && !given.correct) {
+        held.current.set(entry.key, { entry, given });
+        return;
+      }
+      // a second answer: the first one (held) goes in before it — the engine then keeps this one as the day's retry
+      commit(entry.key);
+      put(entry, given);
+    },
+    [commit, put],
+  );
+
+  const report = useCallback(
+    (entry: PlanItem, mine: MyAnswer) => {
+      const h = held.current.get(entry.key);
+      held.current.delete(entry.key);
+      reportMyAnswer(profile, entry.key, {
         lessonId: entry.lessonId,
         kind: entry.kind,
-        correct: given.correct,
-        help: given.help,
-        mode: given.mode,
+        help: h ? h.given.help : "none",
+        mode: h ? h.given.mode : mine.mode,
         where: "review",
-        ...(given.answer && !given.correct ? { answer: given.answer } : {}),
+        answer: mine.answer || h?.given.answer || "",
       });
       unsent.current = true;
-      if (test) setResults((prev) => (prev[entry.key] ? prev : { ...prev, [entry.key]: given }));
+      setReported((prev) => ({ ...prev, [entry.key]: true }));
     },
     [profile],
   );
 
-  const missedOf = (segment: Segment<T>) => segment.entries.filter((e) => results[e.entry.key] && !results[e.entry.key].correct);
+  const missedOf = (segment: Segment<T>) =>
+    segment.entries.filter((e) => results[e.entry.key] && !results[e.entry.key].correct && !reported[e.entry.key]);
 
   function afterSegment(segment: number) {
     if (segment + 1 < segments.length) setStep({ at: "items", segment: segment + 1, index: 0 });
     else void finish();
   }
 
+  /** leaving a check's results: its held answers are recorded (the reported ones are reports now) and go up */
+  function leaveResults(segment: number, missed: string[]) {
+    commit();
+    void sync();
+    if (missed.length) setStep({ at: "again", segment, index: 0, keys: missed });
+    else afterSegment(segment);
+  }
+
+  /** the items of "다시 풀기", fixed when it began (a report during it does not move the others) */
+  const againOf = (segment: Segment<T>, keys: string[]) => segment.entries.filter((e) => keys.includes(e.entry.key));
+
   function next() {
     if (step.at === "items") {
       const segment = segments[step.segment];
+      const current = segment.entries[step.index];
+      // a test's wrong answers wait for its results — the learner may report one there
+      if (segment.kind !== "test" && current) commit(current.entry.key);
       if (step.index + 1 < segment.entries.length) setStep({ ...step, index: step.index + 1 });
-      else if (segment.kind === "test") {
-        void sync();
-        setStep({ at: "results", segment: step.segment });
-      } else afterSegment(step.segment);
+      else if (segment.kind === "test") setStep({ at: "results", segment: step.segment });
+      else afterSegment(step.segment);
     } else if (step.at === "again") {
-      const missed = missedOf(segments[step.segment]);
-      if (step.index + 1 < missed.length) setStep({ ...step, index: step.index + 1 });
+      const list = againOf(segments[step.segment], step.keys);
+      const current = list[step.index];
+      if (current) commit(current.entry.key);
+      if (step.index + 1 < list.length) setStep({ ...step, index: step.index + 1 });
       else afterSegment(step.segment);
     }
   }
@@ -267,7 +379,7 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
   } else if (step.at === "items" || step.at === "again") {
     const segment = segments[step.segment];
     const again = step.at === "again";
-    const list = again ? missedOf(segment) : segment.entries;
+    const list = step.at === "again" ? againOf(segment, step.keys) : segment.entries;
     const current = list[step.index];
     const mode = again ? "again" : segment.kind;
     const shown = again ? step.index + 1 : passed(step.segment) + step.index + 1;
@@ -284,13 +396,16 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
         ) : null}
         {course.itemSource ? <p className="text-caption text-ink-soft">{course.itemSource(current.data)}</p> : null}
         <div key={`${mode}:${current.entry.key}`} data-review-item={current.entry.key} data-review-mode={mode}>
-          {course.renderItem({
-            entry: current.entry,
-            data: current.data,
-            mode,
-            onAnswer: (given) => answer(current.entry, mode === "test", given),
-            onNext: next,
-          })}
+          <CourseItem
+            render={course.renderItem}
+            entry={current.entry}
+            data={current.data}
+            mode={mode}
+            onAnswer={(given) => answer(current.entry, mode === "test", given)}
+            onNext={next}
+            onReport={(mine) => report(current.entry, mine)}
+            reported={Boolean(reported[current.entry.key])}
+          />
         </div>
       </div>
     ) : null;
@@ -314,12 +429,27 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
             : null}
           <ul className="flex flex-col divide-y divide-line border-t border-line">
             {answered.map((e) => {
-              const ok = results[e.entry.key].correct;
+              const given = results[e.entry.key];
+              const ok = given.correct;
               return (
-                <li key={e.entry.key} className="flex items-start gap-2 py-2">
+                <li key={e.entry.key} className="flex items-start gap-2 py-2" data-review-result={e.entry.key}>
                   <span className={`mt-1 shrink-0 ${ok ? "text-success" : "text-danger"}`}>{ok ? <IconCheck size={16} /> : <IconX size={16} />}</span>
                   <span className="sr-only">{ok ? "맞음: " : "틀림: "}</span>
-                  <div className="min-w-0 flex-1">{course.resultLine(e.data)}</div>
+                  <div className="flex min-w-0 flex-1 flex-col gap-1.5">
+                    {course.resultLine(e.data)}
+                    {!ok && given.answer ? (
+                      <p className="text-label text-ink-soft">
+                        내 답: <span lang="en" className="text-ink">{given.answer}</span>
+                      </p>
+                    ) : null}
+                    {!ok ? (
+                      <MyAnswerReport
+                        reported={Boolean(reported[e.entry.key])}
+                        note={REVIEW_REPORT_NOTE}
+                        onReport={() => report(e.entry, { answer: given.answer ?? "", mode: given.mode })}
+                      />
+                    ) : null}
+                  </div>
                 </li>
               );
             })}
@@ -328,7 +458,7 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
         <div className="flex justify-end">
           <button
             type="button"
-            onClick={() => (missed.length ? setStep({ at: "again", segment: step.segment, index: 0 }) : afterSegment(step.segment))}
+            onClick={() => leaveResults(step.segment, missed.map((e) => e.entry.key))}
             className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control bg-ink px-4 text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90"
           >
             {missed.length ? `틀린 문항 다시 풀기 (${missed.length})` : step.segment + 1 < segments.length ? "이어서 복습" : "복습 마치기"}
@@ -370,6 +500,17 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
           </p>
         )}
         {!total ? <p className="text-label leading-relaxed text-ink-soft">레슨을 마치면 다음 날부터 그 레슨의 문항이 복습으로 나와요.</p> : null}
+        {course.notesHref && summary && wrongCount > 0 ? (
+          <div>
+            <Link
+              href={course.notesHref}
+              className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control border border-line bg-surface px-4 text-label font-semibold text-ink transition-colors hover:bg-sunken"
+            >
+              오답노트 보기
+              <span className="font-normal tabular-nums text-ink-soft">{wrongCount}문항</span>
+            </Link>
+          </div>
+        ) : null}
       </section>
     );
   }
@@ -388,15 +529,36 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
           {done ? "과정 목록으로" : "그만하고 과정 목록으로"}
         </Link>
         {!done && step.at !== "loading" && step.at !== "error" ? (
-          <p className="mt-2 text-center text-caption text-ink-soft">푼 문항은 바로 저장돼요. 남은 문항은 다시 열면 이어서 나와요.</p>
+          <p className="mt-2 text-center text-caption text-ink-soft">푼 문항은 저장돼요. 남은 문항은 다시 열면 이어서 나와요.</p>
         ) : null}
       </nav>
     </div>
   );
 }
 
+/**
+ * A course's item card, drawn by the course's `renderItem` — as a component, so the frame's answer and report functions
+ * reach the card as the event handlers they are (never called while the frame renders).
+ */
+export function CourseItem<T>({ render, ...props }: ReviewItemProps<T> & { render: (props: ReviewItemProps<T>) => ReactNode }) {
+  return <>{render(props)}</>;
+}
+
 /** The one line in place of step tabs: what this part is, where the learner is, and a thin bar. */
-function Progress({ label, at, of, toolbar }: { label: string; at: number; of: number; toolbar?: ReactNode }) {
+export function Progress({
+  label,
+  at,
+  of,
+  toolbar,
+  name = "오늘 복습 진행",
+}: {
+  label: string;
+  at: number;
+  of: number;
+  toolbar?: ReactNode;
+  /** the bar's name for a screen reader */
+  name?: string;
+}) {
   const percent = of > 0 ? Math.round((Math.min(at, of) / of) * 100) : 0;
   return (
     <div className="flex items-center gap-3">
@@ -406,7 +568,7 @@ function Progress({ label, at, of, toolbar }: { label: string; at: number; of: n
       <div
         className="h-1.5 min-w-0 flex-1 overflow-hidden rounded-full bg-sunken"
         role="progressbar"
-        aria-label="오늘 복습 진행"
+        aria-label={name}
         aria-valuemin={0}
         aria-valuemax={of}
         aria-valuenow={Math.min(at, of)}

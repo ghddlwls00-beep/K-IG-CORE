@@ -14,6 +14,8 @@ import {
   type AdminLicenseRecord,
   type LegacyHistoryItem,
 } from "@/lib/adminLicenseList";
+// 단계 2-나 E2 — the learners' "내 답도 맞아요" reports, grouped by item (read-only; the component and its route are new)
+import { LearningReports } from "@/components/admin/LearningReports";
 
 /**
  * ISS-14 — the list below used to be this key in the ISSUING browser's localStorage,
@@ -1149,6 +1151,8 @@ export default function AdminLicensePage() {
               </div>
             )}
           </div>
+
+          <LearningReports />
         </div>
       )}
     </main>

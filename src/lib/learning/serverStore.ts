@@ -3,7 +3,7 @@ import "server-only";
 import crypto from "crypto";
 import fs from "fs";
 import path from "path";
-import { GetObjectCommand, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import { GetObjectCommand, ListObjectsV2Command, PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import { normalizeLicenseKey } from "@/lib/license";
 import { emptyRecord, sanitizeRecord } from "./engine";
 import type { CourseRecord } from "./types";
@@ -201,6 +201,50 @@ const WRITE_ATTEMPTS = 4;
 /** The licence's record for a course (a read never writes). */
 export async function readLearningRecord(course: string, key: string): Promise<CourseRecord> {
   return (await readStored(checkedCourse(course), key)).record;
+}
+
+/** records read by one owner's look at the reports (/admin/license) at most — far past this course's learners for now */
+const LIST_LIMIT = 5_000;
+/** reads in flight at once while listing */
+const LIST_READS_AT_ONCE = 8;
+
+/**
+ * Every licence's record for a course, read-only and nameless (단계 2-나 E2 — the owner's "내 답도 맞아요" list, 공통-학습-엔진.md
+ * §8-6): the objects under private/learning/<course>/ are named by a hash of the code, so nothing here says whose a record
+ * is. R2: one listing a thousand records (Class A) + one read each (Class B), only when the owner asks. The local stand-in
+ * file holds them all.
+ */
+export async function listLearningRecords(course: string): Promise<CourseRecord[]> {
+  checkedCourse(course);
+  const config = getR2Config();
+  if (!config) return Object.values(readLocal(course)).map((raw) => sanitizeRecord(raw, course)).slice(0, LIST_LIMIT);
+  const keys: string[] = [];
+  let token: string | undefined;
+  do {
+    const page = await config.client.send(
+      new ListObjectsV2Command({ Bucket: config.bucket, Prefix: `private/learning/${course}/`, ContinuationToken: token }),
+    );
+    for (const item of page.Contents ?? []) if (item.Key?.endsWith(".json")) keys.push(item.Key);
+    token = page.IsTruncated ? page.NextContinuationToken : undefined;
+  } while (token && keys.length < LIST_LIMIT);
+  const records: CourseRecord[] = [];
+  for (let i = 0; i < Math.min(keys.length, LIST_LIMIT); i += LIST_READS_AT_ONCE) {
+    const batch = await Promise.all(
+      keys.slice(i, i + LIST_READS_AT_ONCE).map(async (Key) => {
+        try {
+          const response = await config.client.send(new GetObjectCommand({ Bucket: config.bucket, Key }));
+          const raw = await response.Body?.transformToString();
+          return raw ? decrypt(raw, config.encryptionKey, course) : null;
+        } catch (error) {
+          // one unreadable record does not hide the others' reports
+          console.error(`Learning record unreadable (${course}):`, error);
+          return null;
+        }
+      }),
+    );
+    for (const record of batch) if (record) records.push(record);
+  }
+  return records;
 }
 
 /**

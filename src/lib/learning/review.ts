@@ -8,7 +8,7 @@
  * items only (LearningSyncAnswer). Checked by docs/pass-off-grammar/검사/check-learning-api.cjs.
  */
 import { addDays, daysBetween } from "./day";
-import { planDay } from "./engine";
+import { planDay, type wrongList } from "./engine";
 import type { CourseProfile, CourseRecord, Day, Plan } from "./types";
 
 /** What POST /api/learning/<course> answers. */
@@ -130,4 +130,71 @@ export function reviewSummary(
     passed: states.filter((s) => s.stage === "passed" && counted(s.kind)).length,
     tomorrow: planDay(record, addDays(today, 1), profile).items.length,
   };
+}
+
+// ---------------------------------------------------------------------------
+// 단계 2-나 E2 — the wrong-answer list and "내 답도 맞아요" (공통-학습-엔진.md §8-5 · 8-6)
+// ---------------------------------------------------------------------------
+
+/** One lesson of the wrong-answer list (engine.ts wrongList) — keys, kinds and the learner's own last wrong answer, no item text. */
+export type WrongLesson = ReturnType<typeof wrongList>[number];
+
+/**
+ * POST /api/learning/<course> with `view: "notes"`: the answer also carries the wrong-answer list of the lessons this licence
+ * has open, and `items` holds the data of ONE lesson's listed items (`lesson`) — none without it (the list itself says only
+ * which items, the text comes lesson by lesson).
+ */
+export interface LearningNotesAnswer<T = unknown> extends LearningSyncAnswer<T> {
+  notes: WrongLesson[];
+}
+
+/** The reports of one item, from every learner's record (the owner's list — /admin/license). */
+export interface ReportGroup {
+  item: string;
+  /** reports of this item */
+  count: number;
+  /** records that hold one (a learner each — the records carry no name) */
+  learners: number;
+  pending: number;
+  accepted: number;
+  rejected: number;
+  lastDay: Day;
+  /** the answers given — the same words (case and spaces aside) once, most given first */
+  answers: { answer: string; count: number; lastDay: Day }[];
+}
+
+const sameWords = (answer: string) => answer.trim().replace(/\s+/g, " ").toLowerCase();
+const later = (a: Day, b: Day) => (daysBetween(a, b) > 0 ? b : a);
+
+/** Reports grouped by item: the most reported first, then the most recent. */
+export function reportGroups(records: readonly Pick<CourseRecord, "reports">[]): ReportGroup[] {
+  const groups = new Map<string, ReportGroup & { answerMap: Map<string, { answer: string; count: number; lastDay: Day }> }>();
+  records.forEach((record) => {
+    const seen = new Set<string>();
+    for (const report of record.reports) {
+      let group = groups.get(report.item);
+      if (!group) {
+        group = { item: report.item, count: 0, learners: 0, pending: 0, accepted: 0, rejected: 0, lastDay: report.day, answers: [], answerMap: new Map() };
+        groups.set(report.item, group);
+      }
+      group.count += 1;
+      group[report.status] += 1;
+      group.lastDay = later(group.lastDay, report.day);
+      if (!seen.has(report.item)) {
+        seen.add(report.item);
+        group.learners += 1;
+      }
+      const words = sameWords(report.answer);
+      const answer = group.answerMap.get(words) ?? { answer: report.answer.trim().replace(/\s+/g, " "), count: 0, lastDay: report.day };
+      answer.count += 1;
+      answer.lastDay = later(answer.lastDay, report.day);
+      group.answerMap.set(words, answer);
+    }
+  });
+  return [...groups.values()]
+    .map(({ answerMap, ...group }) => ({
+      ...group,
+      answers: [...answerMap.values()].sort((a, b) => b.count - a.count || daysBetween(a.lastDay, b.lastDay)),
+    }))
+    .sort((a, b) => b.count - a.count || daysBetween(a.lastDay, b.lastDay) || (a.item < b.item ? -1 : 1));
 }
