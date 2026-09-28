@@ -17,7 +17,7 @@ import { LessonStepNavigation } from "@/components/LessonStepNavigation";
 import { LessonEndBar } from "@/components/LessonEndBar";
 import { LessonPaywall } from "@/components/LessonPaywall";
 import { T } from "@/components/LanguageProvider";
-import { canonicalLessonId, getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
+import { canonicalLessonId, getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getLessonQuestions, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
 import { planOpensCourse } from "@/lib/license";
 import { passoffLessonBlocks } from "@/lib/passoffContent";
 import { freeLessonLinks } from "@/lib/freeLessonLinks";
@@ -213,6 +213,15 @@ export default async function LessonPage({
   const ldEnglishScript = course === "ld"
     ? getLdEnglishScript(id) ?? (pair ? getLdEnglishScript(pair.id) : null)
     : null;
+
+  // 2026-09-28 새 문제: the lesson's comprehension questions — read here, after the access check, like the lesson (lessonQuestions.ts)
+  const readingSentences = lesson.readingSentences ?? pairLesson?.readingSentences ?? null;
+  const lessonQuestions =
+    course === "ld"
+      ? getLessonQuestions(course, id, ldEnglishScript?.length ?? 0)
+      : course === "reading"
+        ? getLessonQuestions(course, id, readingSentences?.length ?? 0)
+        : null;
 
   // Ultra-fast payload minimization: Extract ONLY the needed translations for this lesson (saving 120KB+ JSON payload per page)
   let menTranslations: Record<string, string> | null = null;
@@ -458,6 +467,7 @@ export default async function LessonPage({
               audioTracks={audio}
               ldEnglishScript={ldEnglishScript}
               passagePlayers={passagePlayers}
+              lessonQuestions={lessonQuestions}
             />
           ) : course === "reading" ? (
             <ReadingLearningView
@@ -467,13 +477,14 @@ export default async function LessonPage({
               isScript={isScript}
               audioTracks={audio}
               vocaDictionary={vocaDictionary}
-              readingSentences={lesson.readingSentences ?? pairLesson?.readingSentences ?? null}
+              readingSentences={readingSentences}
               readingVocabulary={lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? null}
               passagePlayers={passagePlayers}
               clozeAlsoFits={clozeAlsoFitsFor(
-                (lesson.readingSentences ?? pairLesson?.readingSentences ?? []).map((s) => s.english),
+                (readingSentences ?? []).map((s) => s.english),
                 (lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? []).map((v) => v.word),
               )}
+              lessonQuestions={lessonQuestions}
             />
           ) : course === "grammar1" || course === "grammar2" ? (
             <GrammarLearningView

@@ -17,7 +17,9 @@
  *   Step 2  (E02 · D20 · L01–L03 · L08 · L13 · L17 · U02) a round asks every word once in a new order; a word asked English → Korean
  *           in one round is asked Korean → English in the next; about a third is heard, not read (never a word with a homophone);
  *           a miss comes back at the end of the round with new options, at most twice; the answer line plays the word in both
- *           directions and names the option picked; '다음' sits right under it and takes the focus.
+ *           directions and names the option picked; '다음' sits right under it and takes the focus. 2026-09-28 (사장님 — the
+ *           rule of STUDENT 060705c): opening the step never starts sound — a heard question waits for its '듣기'; only '다음'
+ *           and '한 회차 더', pressed inside the step, play the heard question they bring.
  *   Step 3  (D21 · L05 · L06 · L07 · L16 · U01 · U03 · U11 · U20) the words missed in Steps 2 and 4, one card at a time: recall
  *           from the meaning → see and hear it, say it twice (the microphone check where the browser has one, else '말했어요') →
  *           type it. Only the first spelling of a card moves its box; new words are '새 단어'.
@@ -509,8 +511,9 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
   // Step 2 — a round (vocaUtils generateActiveRecallQuizzes · queueAfterAnswer)
   // ------------------------------------------------------------------------------------------------------------
   /**
-   * A heard question plays by itself when it appears. When the step changes, the Step 1 player unmounts in the same commit and
-   * stops all sound (AudioPlayer's clean-up), so the word starts just after that commit — the audio is unlocked inside the press.
+   * The first heard question of a round started by '한 회차 더' (a press inside Step 2) plays by itself, just after the commit —
+   * the audio is unlocked inside the press. 2026-09-28 (사장님 "고쳐" — the rule of STUDENT 060705c): a step change never plays;
+   * this also ran on the way into Step 2 (a new round's first question, or the one left unanswered) and is no longer called there.
    */
   const playSoon = useCallback(
     (word: string) => {
@@ -520,12 +523,13 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
     [playWord],
   );
 
+  /** A new round. `play`: its first question, when heard, plays — only for '한 회차 더' inside Step 2, never on the way in. */
   const startRound = useCallback(
-    (no: number) => {
+    (no: number, play = false) => {
       const queue = generateActiveRecallQuizzes(words, dictMap, { round: no, rows });
       commitRound({ no, queue, idx: 0, picked: null, results: {}, finished: false });
       const first = queue[0];
-      if (first?.prompt === "listen") playSoon(first.word);
+      if (play && first?.prompt === "listen") playSoon(first.word);
     },
     [words, dictMap, rows, commitRound, playSoon],
   );
@@ -792,11 +796,10 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
       commitGame(readyGame());
     }
     setStep(n);
-    if (n === 2) {
-      const r = roundRef.current;
-      if (!r) startRound(roundsRef.current + 1);
-      else if (!r.finished && r.picked === null && r.queue[r.idx]?.prompt === "listen") playSoon(r.queue[r.idx].word);
-    }
+    // 2026-09-28 (사장님 "고쳐" — the rule of STUDENT 060705c): a step change never starts sound. Step 2 used to play a heard
+    // question by itself on the way in (a new round's first one, or the one left unanswered — playSoon); it now waits for its
+    // '듣기'. '다음' and '한 회차 더' inside Step 2 still play the heard question they bring. Steps 1, 3 and 4 never played here.
+    if (n === 2 && !roundRef.current) startRound(roundsRef.current + 1);
     if (n === 3 && (!practiceRef.current || practiceRef.current.done) && wrongOrders.length > 0) startPractice(false);
   };
 
@@ -1107,9 +1110,10 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
           </p>
           {listen ? (
             <>
+              {/* 2026-09-28: '듣기', was '다시 듣기' — on the way into Step 2 the question has not played yet (like STUDENT 060705c) */}
               <button type="button" data-action="listen" onClick={() => playWord(q.word)} className={`${outlineButton} min-h-12 px-5`}>
                 <IconSpeaker />
-                <span>{activeWord === q.word ? "듣는 중" : "다시 듣기"}</span>
+                <span>{activeWord === q.word ? "듣는 중" : "듣기"}</span>
               </button>
               {answered ? (
                 <p lang="en" className="text-title font-semibold text-ink [overflow-wrap:anywhere]">
@@ -1230,7 +1234,8 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
             data-action="new-round"
             onClick={() => {
               stopAll();
-              startRound(roundsRef.current + 1);
+              // a press inside Step 2 — its first heard question plays, like one '다음' brings
+              startRound(roundsRef.current + 1, true);
             }}
             className={`${outlineButton} sm:flex-1`}
           >

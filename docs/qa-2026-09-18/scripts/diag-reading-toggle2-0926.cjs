@@ -18,6 +18,9 @@ const STOP = `[...document.querySelectorAll('main button')].filter(${VIS}).find(
     const tab = await H.openTab(browser);
     await H.setViewport(tab, "desktop");
     await H.load(tab, "/reading/pr001", { marker: H.MARKERS.reading });
+    // 2026-09-28 (READING 순서 바꿈 — D31 다): READING's whole-lesson player is the view's own, in 원문 대조 — Step 3 now (the top
+    // one is hidden since 2026-09-27 · A10; Step 1 has it only after '다 읽었어요') — so open Step 3 first, like a learner who listens.
+    await H.click(tab, `document.querySelector('main [data-step-tab="3"]')`, { settle: 600 });
     await tab.eval("window.__kigT0 = performance.now()");
     const mark = async (what) => {
       const s = await tab.eval(`(() => { const b = ${TOGGLE}; return { t: Math.round(performance.now() - window.__kigT0), label: b ? b.getAttribute('aria-label') : null, synth: window.speechSynthesis ? { speaking: speechSynthesis.speaking, paused: speechSynthesis.paused } : null }; })()`);

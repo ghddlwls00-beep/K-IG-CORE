@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr057",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr057-q1",
+      "type": "main",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "여행 보험은 여행이 끝난 뒤에 가입해도 상관없다",
+        "여행자는 출발 전에 보험에 들고 보험 증권 사본을 내야 한다",
+        "보험 증권 사본이 없어도 단체 여행에 함께 갈 수 있다",
+        "여행 경비를 잃어버리거나 여행을 취소하면 보험으로 보장받을 수 없다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        4
+      ],
+      "note": "1번 'have adequate travel insurance before they depart', 4번 'provide your tour leader with a copy of your insurance policy'"
+    },
+    {
+      "id": "pr057-q2",
+      "type": "detail",
+      "prompt": "이 글에서 여행 보험이 보장해야 할 것으로 언급된 것은?",
+      "options": [
+        "여권을 분실했을 때 드는 재발급 비용",
+        "항공기가 지연되어 생긴 숙박비",
+        "관광 담당자의 업무 실수로 생긴 손해",
+        "질병이나 사고로 생긴 의료비"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "2번 'coverage for medical expenses arising from illness or accident'"
+    }
+  ]
+}

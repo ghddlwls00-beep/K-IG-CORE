@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr035",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr035-q1",
+      "type": "main",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "과학과 기술은 19세기 이후로 거의 변하지 않았다",
+        "컴퓨터 전문가만 특별한 훈련이 필요하다",
+        "대학 졸업자 수는 예전보다 오히려 줄었다",
+        "분야마다 전문성을 갖춘 사람이 이긴다"
+      ],
+      "answer": 3,
+      "evidence": [
+        4,
+        7
+      ],
+      "note": "4번 'much more to know in every field'와 7번 'The one best qualified, the expert, wins'가 분야마다 전문가가 이긴다는 요지를 보여 준다."
+    },
+    {
+      "id": "pr035-q2",
+      "type": "vocab",
+      "prompt": "셋째 문장의 'It'이 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "과학과 기술",
+        "훈련",
+        "세상",
+        "경쟁"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "2번 'The world has changed, too' 바로 뒤의 3번 'It has become more complex'에서 'It'은 'The world'를 받는다."
+    }
+  ]
+}

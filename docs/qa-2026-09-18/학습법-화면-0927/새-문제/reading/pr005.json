@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr005",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr005-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "10대가 되어서도 어른들의 생각을 그대로 따르는 것이 가장 바람직하다",
+        "어린아이였을 때 가장 독립적으로 사고하고 판단할 수 있다",
+        "생활 방식은 부모가 대신 정해 주는 것이 자녀에게 가장 좋다",
+        "10대가 되면 자신만의 생각으로 삶을 스스로 선택해 나가려 한다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        3,
+        4
+      ],
+      "note": "question adults' ideas / choices of your own about your lifestyle / best for you로 확인"
+    },
+    {
+      "id": "pr005-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글로 보아 어린아이였을 때의 모습으로 가장 적절한 것은?",
+      "options": [
+        "어른들의 생각을 의심 없이 받아들였다",
+        "어른들의 생각에 자주 의문을 품었다",
+        "생활 방식을 스스로 선택하기 시작했다",
+        "자신이 독특한 사람임을 이미 알고 있었다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "instead of blindly accepting their ideas as you did when you were a small child로 확인"
+    }
+  ]
+}

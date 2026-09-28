@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr154",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr154-q1",
+      "type": "detail",
+      "prompt": "한지를 만드는 과정에 대한 설명으로 글의 내용과 일치하는 것은?",
+      "options": [
+        "나무를 통째로 베어 내는 것으로 시작한다.",
+        "가지는 두들길수록 약해지므로 잠깐만 두들긴다.",
+        "가지를 햇볕에 여러 날 말려 부드럽게 만든다.",
+        "가지를 찌고 삶은 뒤 여러 번 씻어 불순물을 없앤다."
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "5번 'They are steamed, boiled, and then washed many times to remove any impure materials'와 같다."
+    },
+    {
+      "id": "pr154-q2",
+      "type": "inference",
+      "prompt": "글쓴이는 가지를 '두들기는 일'을 사람의 삶에서 무엇에 빗대었는가?",
+      "options": [
+        "사람이 날마다 부딪히는 어려움과 고난",
+        "사람이 점점 더 지혜로워지는 것",
+        "사람이 어려움을 피해 편히 쉬는 것",
+        "사람이 나쁜 버릇을 하나씩 버리는 것"
+      ],
+      "answer": 0,
+      "evidence": [
+        7,
+        8
+      ],
+      "note": "7번 'The more they are beaten, the stronger'를 8번이 'overcoming the difficulties and hardships they encounter day after day'와 비슷하다고 했으니, 두들김은 날마다 겪는 어려움이고 'stronger'는 'wiser'에 해당한다."
+    }
+  ]
+}

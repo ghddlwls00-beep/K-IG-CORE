@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr044",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr044-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "아이는 어른보다 음식을 가려 먹는 경우가 많다",
+        "식습관은 학교에서 가르쳐야 제대로 길러진다",
+        "아이들은 자라면서 저절로 건강한 음식을 좋아하게 된다",
+        "아이의 식습관은 부모의 식습관을 따라가기 쉽다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "2번 'their children usually do, too', 3번 'children eat the same way as their parents do'에 근거함."
+    },
+    {
+      "id": "pr044-q2",
+      "type": "세부 사실",
+      "prompt": "이 글의 내용과 일치하는 것은?",
+      "options": [
+        "건강한 식단은 아이보다 어른에게 더 중요하다",
+        "부모가 건강한 음식을 먹으면 아이도 맛있다고 여긴다",
+        "부모의 식습관이 나빠도 아이들은 대개 건강하게 먹는다",
+        "아이들은 부모가 먹지 않는 음식을 더 좋아한다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "4번 'When parents eat healthy food, the children will think it tastes good'에 근거함."
+    }
+  ]
+}

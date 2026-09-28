@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr009",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr009-q1",
+      "type": "main",
+      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "options": [
+        "천연자원이 풍부한 나라일수록 경제 경쟁에서 계속 유리하다",
+        "천연자원보다 지식과 두뇌의 힘이 경제적 성공을 좌우하는 시대로 바뀌고 있다",
+        "산업을 중심으로 하는 경제 체제가 지식 경제보다 앞으로 더 오래 이어질 것이다",
+        "자유 세계 시장에서는 경쟁보다 협력이 더 중요해지고 있다"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "1번 'changing into a knowledge economy', 2번 'human resourcefulness counts far more than natural resources', 3번 'It is brain power that can guarantee our economic success'가 중심 생각을 보여준다"
+    },
+    {
+      "id": "pr009-q2",
+      "type": "detail",
+      "prompt": "이 글에 따르면, 오늘날 세계 시장에서 경제적 성공을 보장해 주는 것은 무엇인가?",
+      "options": [
+        "정부가 마련해 온 산업 지원 정책",
+        "예전부터 쌓아 온 풍부한 천연자원",
+        "오래전에 갖추어 둔 산업 생산 시설",
+        "사람의 두뇌가 만들어 내는 힘"
+      ],
+      "answer": 3,
+      "evidence": [
+        3
+      ],
+      "note": "3번 'It is brain power that can guarantee our economic success'에 정답이 그대로 나온다"
+    }
+  ]
+}

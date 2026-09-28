@@ -35,6 +35,8 @@
  *   node probe-bundle-leak-all.cjs --break=index      일부러 깨기: 유료 강의 본문 한 문장을 /search-index.json 사본(메모리)에 넣음 → inJson 1 · exit 1
  *   node probe-bundle-leak-all.cjs --break=js         일부러 깨기: 유료 PASS-OFF 레슨 문장 하나를 JS 사본(메모리)에 넣음 → 앱 코드 예외가 있어도 inJs 1 · exit 1
  *   node probe-bundle-leak-all.cjs --break=app-code   일부러 깨기: 앱 코드 예외를 끔 → 그 바늘들이 다시 유출로 셈 · exit 1
+ *   node probe-bundle-leak-all.cjs --break=question   (2026-09-28 새 문제) 유료 강의 문제 물음 하나를 같은 사본에 넣음 → inJson 1 · exit 1
+ *   2026-09-28: LISTENING · READING 의 바늘에 그 강의 새 문제(content/questions/<과정>/<본 id>.json)의 물음 · 보기(12글자 이상)도 들어감.
  */
 const fs = require("fs");
 const path = require("path");
@@ -87,6 +89,17 @@ function lessonNeedles(course, id) {
   const needles = out.filter((s) => typeof s === "string").map((s) => ({ kind: "text", raw: s, f: flat(s), meta: meta.has(flat(s)) })).filter((n) => n.f.length >= 20);
   if (course === "reading") for (const v of d.readingVocabulary || []) needles.push({ kind: "vocab-record", raw: v.word, f: "word" + flat(v.word) + "lemma" + flat(v.lemma) });
   for (const b of d.blocks || []) if (b.type === "wordgrid") for (const row of b.rows || []) { const f = flat(row.join(" ")); if (f.length >= 20) needles.push({ kind: "grid-row", raw: row.join(" "), f }); }
+  // 2026-09-28 새 문제: the lesson's comprehension questions (content/questions/<course>/<main id>.json) — prompts and options of
+  // 12+ letters (Korean is dense: 12 letters is already a specific phrase)
+  const qFile = path.join(REPO, "content/questions", course, `${id.replace(/-\d+$/, "")}.json`);
+  if ((course === "ld" || course === "reading") && fs.existsSync(qFile)) {
+    for (const q of JSON.parse(fs.readFileSync(qFile, "utf8")).questions || []) {
+      for (const t of [q.prompt, ...(q.options || [])]) {
+        const f = flat(t);
+        if (f.length >= 12) needles.push({ kind: "question", raw: t, f });
+      }
+    }
+  }
   return needles;
 }
 
@@ -254,6 +267,14 @@ async function crawl() {
     console.log(`[일부러 깸] JS 사본에 유료 PASS-OFF 레슨 한 문장: ${JSON.stringify(planted)}`);
   } else if (BREAK === "app-code") {
     console.log("[일부러 깸] 앱 코드 예외를 끔 — 앱 코드와 글자가 같은 바늘도 유출로 셈");
+  } else if (BREAK === "question") {
+    // 2026-09-28: one paid lesson's question prompt into the in-memory copy — proves the question needles are searched
+    const idx = jsonBodies.find((j) => j.url === "/search-index.json");
+    outer: for (const c of ["ld", "reading"]) for (const id of vr.lessons[c] || []) {
+      if (isFree(c, id)) continue;
+      for (const n of lessonNeedles(c, id)) if (n.kind === "question" && !freeFlat.has(n.f) && !homeFlat.includes(n.f)) { planted = { course: c, id, text: n.raw.slice(0, 80) }; idx.flat += n.f; break outer; }
+    }
+    console.log(`[일부러 깸] /search-index.json 사본에 유료 문제 물음 하나: ${JSON.stringify(planted)}`);
   } else if (BREAK) throw new Error(`모르는 --break=${BREAK}`);
 
   const result = { at: new Date().toISOString(), base: BASE, pages, chunks: chunkList.length, jsKB: Math.round(jsBytes / 1024), badChunks, json: jsonBodies.map((j) => ({ url: j.url, status: j.status, kb: Math.round(j.bytes / 1024) })), courses: {} };

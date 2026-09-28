@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d021",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d021-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "출근 첫날부터 일을 잘해서 곧바로 승진했다",
+        "지각했지만 사장이 너그럽게 넘어가 계속 다녔다",
+        "첫 출근 날 모든 일이 꼬여 다음 날 그만두었다",
+        "사장과 함께 공장을 새로 차려 크게 성공을 거두었다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        12
+      ],
+      "note": "“everything went wrong”, “The next morning, she got to work on time and quit”에서 알 수 있다."
+    },
+    {
+      "id": "d021-q2",
+      "type": "세부 사실",
+      "prompt": "주디가 첫 출근 날 청량음료 공장에 도착한 시각으로 알맞은 것은?",
+      "options": [
+        "8시 30분",
+        "8시",
+        "9시 30분",
+        "9시"
+      ],
+      "answer": 3,
+      "evidence": [
+        3
+      ],
+      "note": "“She got to the soft drink factory at 9 instead of 8:30”라고 했다."
+    },
+    {
+      "id": "d021-q3",
+      "type": "세부 사실",
+      "prompt": "그날 오후가 끝날 무렵 주디의 심정으로 가장 알맞은 것은?",
+      "options": [
+        "배고프고 지루하고 피곤했다",
+        "만족스럽고 뿌듯했다",
+        "신이 나고 즐거웠다",
+        "배부르고 느긋하고 편안했다"
+      ],
+      "answer": 0,
+      "evidence": [
+        10
+      ],
+      "note": "“she felt very hungry, bored and tired”라고 했다."
+    }
+  ]
+}

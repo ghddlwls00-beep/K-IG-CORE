@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr061",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr061-q1",
+      "type": "detail",
+      "prompt": "졸업 앨범을 예약하는 방법으로 옳은 것은?",
+      "options": [
+        "11월 30일까지 212호실에 가서 사무실 직원에게 말한다",
+        "12월 30일까지 212호실에 가서 사무실 직원에게 말한다",
+        "11월 30일까지 담임 선생님에게 신청서를 낸다",
+        "졸업식 날 212호실에 가서 앨범 값을 낸다"
+      ],
+      "answer": 0,
+      "evidence": [
+        8
+      ],
+      "note": "8번 'go to Room 212 by November 30, and tell the secretary that you want one'"
+    },
+    {
+      "id": "pr061-q2",
+      "type": "vocab",
+      "prompt": "이 글에서 'these big events'가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "앨범 속에 실린 선생님과 친구들의 얼굴 사진",
+        "여러 차례 여행에서 둘러본 흥미로운 장소들",
+        "앨범을 예약하려고 212호실을 찾아온 학생들",
+        "축구 우승, 여행, 음악 축제 같은 행사들"
+      ],
+      "answer": 3,
+      "evidence": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "note": "4번 'win the soccer championships', 5번 'the trips', 6번 'the school music festivals', 7번 'All these big events'"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr015",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr015-q1",
+      "type": "main",
+      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "options": [
+        "시기심은 걱정보다 사람을 훨씬 더 불행하게 만든다",
+        "아이들은 편애를 겪어도 크면서 자연히 잊어버린다",
+        "아이를 공정하게 대하는 것보다 사랑으로 따뜻하게 감싸 주는 것이 훨씬 더 중요하다",
+        "시기심은 아주 어릴 때부터 나타나는 뿌리 깊은 감정이라 신중히 다루어야 한다"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3,
+        5
+      ],
+      "note": "2번 'one of the most universal and deep-seated of human passions', 3번 'noticeable in children before they are a year old'와 'treated with the most tender respect'가 중심 생각을 보여준다"
+    },
+    {
+      "id": "pr015-q2",
+      "type": "detail",
+      "prompt": "이 글에 따르면, 아이를 돌보는 사람이 반드시 지켜야 하는 것으로 가장 알맞은 것은?",
+      "options": [
+        "아이가 걱정하는 일을 먼저 찾아내 없애 주는 것",
+        "아이들 모두를 한결같이 공정하게 대하는 것",
+        "아이가 시기심을 느끼지 않도록 감정을 숨기게 하는 것",
+        "아이마다 다른 재능에 맞추어 다르게 가르치는 것"
+      ],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
+      "note": "5번 'Distributive justice, absolute, rigid and unvarying, must be observed by anyone who has children to deal with'에 정답이 나온다"
+    }
+  ]
+}

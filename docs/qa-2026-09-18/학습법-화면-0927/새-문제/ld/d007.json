@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "lesson": "d007",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d007-q1",
+      "type": "세부 사실",
+      "prompt": "존의 아버지가 태어난 곳으로 옳은 것은?",
+      "options": [
+        "독일",
+        "스위스 베른",
+        "필라델피아",
+        "펜실베이니아"
+      ],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
+      "note": "'John's father was born in Bern, Switzerland'에서 태어난 곳을 알 수 있음."
+    },
+    {
+      "id": "d007-q2",
+      "type": "세부 사실",
+      "prompt": "존이 태어난 날짜로 옳은 것은?",
+      "options": [
+        "1953년 5월 9일",
+        "1933년 9월 9일",
+        "1954년 6월 4일",
+        "1931년 11월 12일"
+      ],
+      "answer": 2,
+      "evidence": [
+        7
+      ],
+      "note": "'John was born in Philadelphia on June 4, 1954'에서 태어난 날짜를 알 수 있음."
+    },
+    {
+      "id": "d007-q3",
+      "type": "다음 할 일",
+      "prompt": "존이 앞으로 하고자 하는 일로 옳은 것은?",
+      "options": [
+        "법학을 공부하는 것",
+        "외국에서 교사로 일하는 것",
+        "고향으로 돌아가는 것",
+        "의학 분야로 진출하는 것"
+      ],
+      "answer": 3,
+      "evidence": [
+        10
+      ],
+      "note": "'John hopes to enter the field of medicine'에서 앞으로 할 일을 알 수 있음."
+    }
+  ]
+}

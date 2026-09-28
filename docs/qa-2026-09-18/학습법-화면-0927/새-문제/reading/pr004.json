@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr004",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr004-q1",
+      "type": "세부 사실",
+      "prompt": "이 글에서 쿰비아에 대한 설명으로 옳은 것은?",
+      "options": [
+        "더운 카리브해 지역에서 생겨났고 전통적으로 구애의 춤이었다",
+        "더 추운 지역에서 생겨나 연인에게 사랑을 고백할 때 쓰였다",
+        "아프리카 노예들이 스페인으로 가져가 처음 만든 춤이다",
+        "오늘날에는 카리브해 지역에서만 인기가 있는 춤이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "hot Caribbean region / courtship dance ... popular all over Latin America로 확인"
+    },
+    {
+      "id": "pr004-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "마지막 문장의 'It'이 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "쿰비아",
+        "스페인 노래",
+        "밤부코",
+        "원주민의 피리"
+      ],
+      "answer": 2,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "the 'bambuco' is often said to have a Spanish origin / It was created in colder zones로 확인"
+    }
+  ]
+}

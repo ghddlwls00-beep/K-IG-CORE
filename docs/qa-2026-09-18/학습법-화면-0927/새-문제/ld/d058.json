@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d058",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d058-q1",
+      "type": "중심 내용",
+      "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "헨리 포드가 농부가 되어 크게 성공했다는 이야기",
+        "헨리 포드가 자동차 회사를 세워 성공했다는 이야기",
+        "디트로이트 시민들이 자동차 경주를 구경한 이야기",
+        "헨리 포드가 학창 시절 최고의 우등생이었다는 이야기"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        5,
+        7,
+        8
+      ],
+      "note": "“The driver's name was Henry Ford” · “he founded the Ford Motor Company” · “His most successful car”에서 알 수 있음"
+    },
+    {
+      "id": "d058-q2",
+      "type": "세부 사실",
+      "prompt": "헨리 포드가 포드 자동차 회사를 세운 해로 알맞은 것은?",
+      "options": [
+        "1896년",
+        "1876년",
+        "1924년",
+        "1903년"
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "“In 1903, he founded the Ford Motor Company”에서 알 수 있음"
+    },
+    {
+      "id": "d058-q3",
+      "type": "세부 사실",
+      "prompt": "포드가 근로자들에게 지급한 하루 최소 임금으로 알맞은 것은?",
+      "options": [
+        "5달러",
+        "10달러",
+        "15달러",
+        "50달러"
+      ],
+      "answer": 0,
+      "evidence": [
+        10
+      ],
+      "note": "“They all received at least $5 a day”에서 알 수 있음"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "d001",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d001-q1",
+      "type": "detail",
+      "prompt": "왓슨 부인과 남편의 직업을 바르게 짝지은 것은?",
+      "options": [
+        "부인은 과학자, 남편은 간호사",
+        "부인은 간호사, 남편은 의사",
+        "부인은 간호사, 남편은 과학자",
+        "부인은 의사, 남편은 과학자"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "“I'm a nurse”는 왓슨 부인, “He is a scientist”는 남편 로버트의 직업이다."
+    },
+    {
+      "id": "d001-q2",
+      "type": "purpose",
+      "prompt": "왓슨 부인은 자기 집에 대해 어떻게 말하는가?",
+      "options": [
+        "새집도 아니고 크지도 않지만 무척 마음에 든다",
+        "새집이고 넓어서 무척 마음에 든다",
+        "새집은 아니지만 넓어서 마음에 든다",
+        "새집도 아니고 크지도 않아서 마음에 들지 않는다"
+      ],
+      "answer": 0,
+      "evidence": [
+        4
+      ],
+      "note": "“Our house isn't new and it isn't large, but we like it very much”라고 했다."
+    }
+  ]
+}

@@ -281,9 +281,11 @@ const clearSeed = (tab) => tab.eval(`(() => { localStorage.removeItem('kig:progr
         // (details[data-answer-player]) — open it like a learner would, or no visible 재생 button is found (BLOCKED).
         const foldedPlayer = `document.querySelector('main details[data-answer-player]:not([open]) > summary')`;
         if (await tab.eval(`Boolean(${foldedPlayer})`).catch(() => false)) await H.click(tab, foldedPlayer, { settle: 300 });
-        // 2026-09-27 (READING · 계획 D01 나): the whole passage plays after the timed reading and in Step 4 — the top player is hidden
-        // (A10) and Step 1 has no play button before timing, so go to Step 4 like a learner who wants to listen.
-        if (course === "reading") await H.click(tab, `document.querySelector('main [data-step-tab="4"]')`, { settle: 600 });
+        // 2026-09-27 (READING · 계획 D01 나): the whole passage plays after the first reading and in 원문 대조 — the top player is hidden
+        // (A10) and Step 1 has no play button before its '다 읽었어요', so go to 원문 대조 like a learner who wants to listen.
+        // 2026-09-28 (READING 순서 바꿈 — D31 다): 원문 대조 and its player moved from Step 4 to Step 3; Step 4 is now the timed
+        // re-read, which has no player (a player there would let the timed passage be heard first).
+        if (course === "reading") await H.click(tab, `document.querySelector('main [data-step-tab="3"]')`, { settle: 600 });
         tab.resetEvents();
         // 재생 단추는 누르면 🔊 → ⏹️ 로 바뀜(ReadingLearningView 등) — 첫 판은 글로 다시 찾다가 1 ~ 2번만 누름(도구 탓).
         // 처음 찾은 단추에 표를 달아 같은 단추를 6번(재생 ↔ 정지 연타), 단추가 새로 그려지면 재생/정지 글로 다시 찾아 표를 닮
@@ -314,8 +316,8 @@ const clearSeed = (tab) => tab.eval(`(() => { localStorage.removeItem('kig:progr
         await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
         await H.sleep(800);
         if (steps.length) await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(steps[0])})`, { settle: 900 });
-        // READING: the passage player lives in Step 4 (Step 1 has none before the timed reading) — back to it, as at the start
-        if (course === "reading") await H.click(tab, `document.querySelector('main [data-step-tab="4"]')`, { settle: 600 });
+        // READING: the passage player lives in 원문 대조 — Step 3 since 2026-09-28 (Step 1 has none before '다 읽었어요') — back to it
+        if (course === "reading") await H.click(tab, `document.querySelector('main [data-step-tab="3"]')`, { settle: 600 });
         await tab.eval(tagPlay("/재생|🔊/")).catch(() => false);
         await H.audioLog(tab, { clear: true });
         const again = await H.click(tab, tagged, { settle: 200 });

@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d020",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d020-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "과들루프에 갔지만 날씨가 나빠서 일정을 앞당겨 돌아왔다",
+        "과들루프에 새 집을 사서 그곳으로 이사했다",
+        "휴가 비용이 너무 비싸서 일정을 줄여야 했다",
+        "과들루프에서 1주일 동안 즐거운 휴가를 보냈다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "note": "“I have been to Guadeloupe”, “The weather is wonderful there”, “I spent a week in a hotel on the coast”, “The hotel food tasted delicious”에서 알 수 있다."
+    },
+    {
+      "id": "d020-q2",
+      "type": "세부 사실",
+      "prompt": "이 사람이 과들루프에서 머무는 데 하루에 든 비용으로 알맞은 것은?",
+      "options": [
+        "15달러",
+        "5달러",
+        "50달러",
+        "150달러"
+      ],
+      "answer": 0,
+      "evidence": [
+        6
+      ],
+      "note": "“All this wasn't expensive. It cost only $15 a day”라고 했다."
+    },
+    {
+      "id": "d020-q3",
+      "type": "다음에 할 일",
+      "prompt": "이 사람이 올해 하려고 하는 일로 알맞은 것은?",
+      "options": [
+        "처음으로 유럽 여행을 떠날 것이다",
+        "과들루프로 다시 여행을 갈 것이다",
+        "살이 쪄서 여행을 쉬고 집에 있을 것이다",
+        "과들루프에 있는 호텔을 사서 운영할 것이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        12
+      ],
+      "note": "“I have already decided to go to Guadeloupe again this year”라고 했다."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr059",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr059-q1",
+      "type": "detail",
+      "prompt": "각막이 흐려져 앞을 보지 못하는 사람이 다시 볼 수 있는 방법으로 이 글에 나온 것은?",
+      "options": [
+        "빛을 모아 주는 특수 안경을 쓰는 것",
+        "약물로 흐려진 각막을 다시 맑게 하는 것",
+        "기증자에게서 건강한 각막을 받는 것",
+        "인공 눈을 수술로 이식받는 것"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "3번 'can be made to see again ... if they are able to get clear corneas', 4번 'get healthy corneas from donors'"
+    },
+    {
+      "id": "pr059-q2",
+      "type": "inference",
+      "prompt": "이 글로 보아 추론할 수 있는 것은?",
+      "options": [
+        "기증자가 없으면 각막이 흐려진 사람은 다시 보기 어렵다",
+        "모든 시각장애인은 각막에 이상이 생겨서 앞을 보지 못한다",
+        "각막은 한 번 흐려지면 시간이 지나면서 저절로 다시 맑아진다",
+        "기증자는 살아 있을 때 자기 각막을 내어 준다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "3번 'if they are able to get clear corneas', 4번 'must get healthy corneas from donors'"
+    }
+  ]
+}

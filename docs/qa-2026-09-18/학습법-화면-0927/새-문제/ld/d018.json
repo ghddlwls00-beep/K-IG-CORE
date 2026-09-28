@@ -1,0 +1,60 @@
+{
+  "v": 1,
+  "lesson": "d018",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d018-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "친구와 경주마의 속도를 두고 내기를 하고 경주를 벌였다",
+        "말이 다리를 모두 한꺼번에 드는지 내기하고 카메라로 알아보았다",
+        "새 카메라가 잘 찍히는지 친구와 내기를 하고 시험해 보았다",
+        "밤에 필름을 현상하다가 친구에게 사진 찍는 기술을 가르쳐 주었다"
+      ],
+      "answer": 1,
+      "evidence": [
+        5,
+        6,
+        9,
+        10,
+        11
+      ],
+      "note": "“a horse lifted all its legs at the same time”, “I will make a bet with you”, “24 cameras in a row”, “He tied a string to each camera”, “the camera took a picture”에서 알 수 있다."
+    },
+    {
+      "id": "d018-q2",
+      "type": "세부 사실",
+      "prompt": "두 사람이 내기에 건 돈으로 알맞은 것은?",
+      "options": [
+        "50달러",
+        "5,000달러",
+        "500달러",
+        "1,500달러"
+      ],
+      "answer": 2,
+      "evidence": [
+        7
+      ],
+      "note": "“It will cost you $500 to find out who is right”라고 했다."
+    },
+    {
+      "id": "d018-q3",
+      "type": "세부 사실",
+      "prompt": "누가 옳은지 알아보려고 백만장자가 준비한 것으로 알맞은 것은?",
+      "options": [
+        "경기장 여기저기에 12개의 카메라를 놓고 사람이 직접 눌렀다",
+        "말의 다리에 작은 카메라를 매달아 촬영했다",
+        "경기장 옆에 사진사를 세워 손으로 찍게 했다",
+        "경기장 둘레에 24개의 카메라를 놓고 각각에 끈을 묶었다"
+      ],
+      "answer": 3,
+      "evidence": [
+        9,
+        10
+      ],
+      "note": "“24 cameras in a row around the track”, “He tied a string to each camera”에서 알 수 있다."
+    }
+  ]
+}

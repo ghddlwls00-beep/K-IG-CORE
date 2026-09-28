@@ -27,13 +27,15 @@
  *                   '우리말 힌트') and Step 3 (English and Korean of every sentence) also carry [data-en] / [data-ko],
  *                   but they are other panels and not mounted while STEP 1 is open. Step 2's one line would be
  *                   exactly LISTENING's "sentence 1 only" hole if the reader were not scoped.
- *   reading-passage 2026-09-27: scoped to [data-step-panel="1"] and to [data-en] — Step 4's rows also carry
- *                   data-sentence-id, but that panel is not mounted during STEP 1.
+ *   reading-passage 2026-09-27: scoped to [data-step-panel="1"] and to [data-en] — Step 3's rows (원문 대조) and Step 4's timed
+ *                   passage (only while its clock runs) also carry data-sentence-id, but those panels are not mounted
+ *                   during STEP 1 (2026-09-28 순서 바꿈: 1 처음 읽기 · 2 핵심 어휘 · 3 원문 대조 · 4 다시 읽고 재기).
  *   ld-script-ko    2026-09-27: scoped to [data-step-panel="5"] [data-line] [data-ko] — Steps 2–4 also carry [data-ko] for the
  *                   line on screen, but they are other panels and not mounted while STEP 5 is open.
- *   reading-vocab   2026-09-27: scoped to [data-step-panel="2"] li[data-vocab] — [data-word-text] · [data-meaning].
- *   reading-ko      2026-09-27: scoped to [data-step-panel="4"] [data-rows] — the English of a row is [data-en], a
- *                   different attribute, so it cannot stand in for the Korean.
+ *   reading-vocab   2026-09-27: scoped to [data-step-panel="2"] li[data-vocab] — [data-word-text] · [data-meaning]. 2026-09-28: the
+ *                   blanks share Step 2 now (below the cards, [data-blanks]); they are not li[data-vocab] and carry neither mark.
+ *   reading-ko      2026-09-28: scoped to [data-step-panel="3"] [data-rows] — 원문 대조 moved from Step 4 to Step 3. The English of a
+ *                   row is [data-en], a different attribute, so it cannot stand in for the Korean.
  * If a new element with the same classes appears in the SAME step, a selector widens without
  * any error. Re-run the deliberate-break test (scripts/proof-run.cjs) after changing a view.
  */
@@ -106,7 +108,8 @@ const READERS = {
    * READING STEP 1 passage, one element per sentence.
    * 2026-09-27 (READING 학습법 · 화면 고침 — G01 · G05): the sentence's English is [data-en] inside [data-sentence-id] in the
    * Step 1 panel ([data-step-panel="1"]) — a sentence also carries a number <sup> and, when pressed, a Korean line OUTSIDE it,
-   * so only [data-en] is read. Step 4's rows carry [data-sentence-id] too, but are another panel, not mounted during STEP 1.
+   * so only [data-en] is read. 2026-09-28: Step 1 is '처음 읽기' (not timed) and still shows the whole passage from the start;
+   * Step 3's rows and Step 4's timed passage carry [data-sentence-id] too, but are other panels, not mounted during STEP 1.
    */
   "reading-passage": `(() => {
     const main = document.querySelector('main'); if (!main) return [];
@@ -140,15 +143,16 @@ const READERS = {
   })()`,
 
   /**
-   * READING STEP 4, the Korean of each sentence row.
+   * READING STEP 3 (원문 대조), the Korean of each sentence row.
    * 2026-09-27 (READING 학습법 · 화면 고침 — G03): one row per sentence (ol[data-rows] li[data-sentence-id]) with its English
-   * [data-en] and its Korean [data-ko], in the Step 4 panel. The view opens on '영어 · 한글', where every row shows [data-ko];
-   * under '영어만' a row shows '해석 보기' instead, so a reader running after a driver chose that view finds fewer.
+   * [data-en] and its Korean [data-ko]. The view opens on '영어 · 한글', where every row shows [data-ko]; under '영어만' a row
+   * shows '해석 보기' instead, so a reader running after a driver chose that view finds fewer.
+   * 2026-09-28 (사장님 D31 다 — 순서 바꿈): 원문 대조 is Step 3 now (it was Step 4), so the reader reads the Step 3 panel.
    */
   "reading-ko": `(() => {
     const main = document.querySelector('main'); if (!main) return [];
     ${TEXTS}
-    return texts([...main.querySelectorAll('[data-step-panel="4"] [data-rows] [data-sentence-id] [data-ko]')]);
+    return texts([...main.querySelectorAll('[data-step-panel="3"] [data-rows] [data-sentence-id] [data-ko]')]);
   })()`,
 
   /**
@@ -195,10 +199,11 @@ const CONTAINERS = {
     { id: "grammar-en", step: STEP(3), kinds: ["item"], lang: "en" },
   ],
   student: [{ id: "student-cards", step: STEP(1), kinds: ["en", "ko"] }],
+  // 2026-09-28 (READING 순서 바꿈 — D31 다): 1 처음 읽기 (passage) · 2 핵심 어휘 (cards + blanks) · 3 원문 대조 (rows) · 4 다시 읽고 재기
   reading: [
     { id: "reading-passage", step: STEP(1), kinds: ["en"] },
     { id: "reading-vocab", step: STEP(2), kinds: ["word", "meaning"] },
-    { id: "reading-ko", step: STEP(4), kinds: ["ko-sentence"] },
+    { id: "reading-ko", step: STEP(3), kinds: ["ko-sentence"] },
   ],
   ld: [{ id: "ld-script-ko", step: STEP(5), kinds: ["ko-script"] }],
 };

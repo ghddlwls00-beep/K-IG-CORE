@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d002",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d002-q1",
+      "type": "detail",
+      "prompt": "로드 왓슨의 주소로 맞는 것은?",
+      "options": [
+        "매디슨 클레이턴가 1490번지",
+        "덴버 클레이턴가 1941번지",
+        "매디슨 클레이턴가 1937번지",
+        "덴버 클레이턴가 1490번지"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3,
+        4
+      ],
+      "note": "“I live in Denver, Colorado”, “My address is 1490 Clayton Street”라고 했다. 매디슨은 밥이 사는 곳이고 1937 · 1941은 태어난 해다."
+    },
+    {
+      "id": "d002-q2",
+      "type": "detail",
+      "prompt": "로드와 그의 형제 밥에 대한 내용으로 맞는 것은?",
+      "options": [
+        "밥은 로드보다 먼저 태어났다",
+        "두 사람 모두 덴버에서 태어났다",
+        "밥은 지금 로드와 함께 덴버에 산다",
+        "로드의 생일은 1월 3일이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "“Both Bob and I were born in Denver”라고 했다. 밥은 1941년생이라 로드(1937년)보다 늦게 태어났고, 지금은 매디슨에 산다."
+    },
+    {
+      "id": "d002-q3",
+      "type": "purpose",
+      "prompt": "로드는 자기 일에 대해 어떻게 말하는가?",
+      "options": [
+        "사무실이 좁아서 불편하다",
+        "일이 지루해서 그만두고 싶다",
+        "자기 일을 무척 즐긴다",
+        "시내에서 일해서 출퇴근이 힘들다"
+      ],
+      "answer": 2,
+      "evidence": [
+        8
+      ],
+      "note": "“I enjoy my work very much”라고 했다. 사무실은 “a nice office”라고 했고 출퇴근 이야기는 없다."
+    }
+  ]
+}

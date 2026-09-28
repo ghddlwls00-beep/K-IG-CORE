@@ -24,6 +24,9 @@ const soundAfter = async (tab, ms = 5000) => {
     const tab = await H.openTab(browser);
     await H.setViewport(tab, "desktop");
     await H.load(tab, "/reading/pr001", { marker: H.MARKERS.reading });
+    // 2026-09-28 (READING 순서 바꿈 — D31 다): READING's whole-lesson player is the view's own, in 원문 대조 — Step 3 now (the top
+    // one is hidden since 2026-09-27 · A10; Step 1 has it only after '다 읽었어요') — so open Step 3 first, like a learner who listens.
+    await H.click(tab, `document.querySelector('main [data-step-tab="3"]')`, { settle: 600 });
     // 누름마다 실제로 받은 단추를 적음(좌표로 누르는 도구가 옆 단추를 누르지 않았는지)
     await tab.eval(`(() => { window.__kigClicks = []; document.addEventListener('click', (e) => { const b = e.target.closest('button'); window.__kigClicks.push(b ? (b.getAttribute('aria-label') || (b.innerText || '').trim().slice(0, 12)) : e.target.tagName); }, true); })()`);
     const lastClick = async () => tab.eval("(window.__kigClicks || []).slice(-1)[0] || null").catch(() => null);

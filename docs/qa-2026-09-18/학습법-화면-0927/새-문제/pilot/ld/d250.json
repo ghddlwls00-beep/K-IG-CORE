@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "d250",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d250-q1",
+      "type": "main",
+      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "셜록 홈스가 실제로 해결한 유명한 사건들",
+        "진짜 경찰관이 되기 위해 해야 할 공부",
+        "탐정처럼 추리 소설 속 사건을 풀어 보는 즐거움",
+        "추리 소설의 마지막 장을 먼저 읽는 요령"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2,
+        4
+      ],
+      "note": "“an enjoyable thrill in matching wits with the great detectives of fiction”과 “armchair detectives”가 이야기의 중심이다."
+    },
+    {
+      "id": "d250-q2",
+      "type": "detail",
+      "prompt": "독자가 큰 성취감을 느끼는 것은 언제라고 했나요?",
+      "options": [
+        "마지막 장의 설명을 읽기 전에 스스로 사건을 풀었을 때",
+        "마지막 장의 설명을 읽고 나서 범인을 알게 되었을 때",
+        "두꺼운 추리 소설을 끝까지 다 읽었을 때",
+        "경찰과 함께 실제 사건을 해결했을 때"
+      ],
+      "answer": 0,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "“Solving the mystery before reading the explanation in the last chapter”가 “a sense of great accomplishment”를 준다고 했다."
+    }
+  ]
+}

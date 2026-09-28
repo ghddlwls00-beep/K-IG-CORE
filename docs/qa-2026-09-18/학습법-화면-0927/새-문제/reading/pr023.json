@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr023",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr023-q1",
+      "type": "detail",
+      "prompt": "이 글에 따르면, 은퇴하는 직원이 1979년에 처음 일을 시작한 곳으로 알맞은 것은?",
+      "options": [
+        "회계부",
+        "임원 비서실",
+        "우편실",
+        "인사부"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "2번 'Since you started in the mail room in 1979'에서 확인된다."
+    },
+    {
+      "id": "pr023-q2",
+      "type": "vocab",
+      "prompt": "이 글에서 'well-earned retirement'가 뜻하는 것으로 가장 알맞은 것은?",
+      "options": [
+        "오랫동안 공헌하고 노력한 끝에 얻은 은퇴",
+        "회사 사정으로 어쩔 수 없이 하게 된 은퇴",
+        "특별한 이유 없이 갑자기 결정된 은퇴",
+        "많은 재산을 모아 일찍 하게 된 은퇴"
+      ],
+      "answer": 0,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "4번 'without your contributions over the years'와 5번 'well-earned retirement'로 뜻을 알 수 있다."
+    }
+  ]
+}

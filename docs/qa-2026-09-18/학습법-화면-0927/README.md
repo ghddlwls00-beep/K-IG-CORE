@@ -57,6 +57,56 @@
    깨기: stop 휴대폰 3 · 데스크탑 41 FAIL · gate 휴대폰 5 FAIL · cloze 데스크탑 15 FAIL · hover 데스크탑 1 FAIL(cloze · hover 는 데스크탑 길만 봄 — 휴대폰 깨기는 통과가 맞음) → **READING 올려도 됨**.
 4. 남은 일: 디자인 규칙 §7 에 AudioPlayer `speeds` · LISTENING · READING 의 넘겨받기 · 완료 조건 한 줄씩(다음 문서 정리 때).
 
+### 사장님 결정 (09-28)
+
+- "스튜던트 … 1단계에서 2단계로 넘어가는데 음성이 나와 이거 해결해" → `060705c`(설계 세션이 올리는 중) · "고쳐"(VOCA · LISTENING 같은 것) → 일꾼 도는 중(단계를 옮길 때 소리 없음 · 안의 '다음 문장'은 그대로).
+- "이제 워크플로우 사용할 때 허락 요청하지마 무조건 허락이야".
+- READING 순서 바꿈(D31 다) — "그 순서로 바꾸고 혹시 다른 섹션도 바꿔야 한다면 허락할게":
+  **1 처음 읽기(시간 재지 않음) → 2 핵심 어휘(카드 · 알아요/몰라요 + 빈칸) → 3 원문 대조 → 4 다시 읽고 재기 + 이해 문제**(새 문제 512 가 들어갈 자리 — 들어오기 전엔 다시 읽고 재기만). 완료 조건 = 4단계 한 번 재기.
+  다른 섹션에서 같은 허락으로 할 수 있는 것: LISTENING · GRAMMAR 대본 쪽(-1 · -2) 합치기(D30 나 — 주소 · 진도 합침) — 새 문제 뒤에 검토.
+
+### 커밋 전 작업 트리(09-28 09:xx — 압축 뒤 먼저 이것)
+
+1. **VOCA 단계 옮길 때 소리 없음**(일꾼 끝, 커밋 전): src/components/PhonicsLearningView.tsx(switchStep 이 소리 없이 회차 시작 · '한 회차 더'만 재생 · 버튼 '다시 듣기' → '듣기') ·
+   src/components/LdLearningView.tsx(설명 한 줄 — LISTENING 은 원래 단계 옮길 때 소리 없음) · check-voca-0927.cjs(V2 '단계를 옮겨도 소리 없음' + --break autoplay · Q1 은 글 문항만 셈) · check-student-0927.cjs 머리말.
+   할 일: READING 순서 일꾼이 끝나면 한 번 빌드(verify-unit --build) → check-voca-0927 8/8 · --break autoplay FAIL · check-student-0927 22/22 → 커밋 → 설계 세션에 번호(060705c 와 같이 올려 달라고).
+2. **READING 순서 바꿈**(일꾼 도는 중 — D31 다): ReadingLearningView · readingLearning · drive-reading · reading-page · check-reading-learning · containers · gap T · drive-common D.
+   끝나면: 빌드 → drive-reading pr001 휴대폰 · 데스크탑 --no-resume PASS · 깨기 FAIL · gap P · T · drive-common D · 유출 · 디자인 → 커밋 → 설계 세션.
+
+### 새 문제 진행 (09-28 06:2x — 압축 뒤 여기부터 · 계획은 `새-문제-설계.md` §3-1 · §3-2)
+
+- 시범 36문항 끝(`새-문제/pilot/` — 정답 길이 치우침 58% 등으로 check-new-questions FAIL 18 → 규칙 고침, 시범 강의도 새 규칙으로 다시 씀).
+- **묶음 1 끝 · 커밋 `bfa3d12`**(09-28 약 10:3x): 327문항 · 대조 일꾼이 218 고침 · 그때 검사 PASS(혼자 가장 긴 정답 0% · 자리 81/81/83/82) · 주간 사용량 21%.
+- **VOCA 소리 `ecc5761` · READING 순서 `0ab7d43` 운영에 올라감(09-28 11:35:55 · 설계 세션)** — 로컬 · 운영 모두 새로 깨진 것 0: 운영 check-voca-0927 8/8 · check-student-0927 22/22 · drive-reading pr001 휴대폰 71/71 · 데스크탑 340/0/1(마이크) · 관문 1 1,623 · 관문 2 무료 261 열림 · 유료 14,726 막힘 · 관문 3 유출 0.
+- **묶음 1에서 찾은 찍기 요령(09-28 11:2x — 이 세션이 대조 일꾼 기록을 읽다가)**: 쓰는 일꾼이 '정답이 혼자 가장 긴 것 금지'를 오답 하나를 늘려 맞춤 →
+  정답이 **두 번째로 긴 보기인 문항 45%**(고르면 찍기 25%보다 잘 맞음 · 묶음에 따라 60 ~ 66%) · READING '다른 보기와 가장 많이 겹치는 것 고르기' 42%(오답을 정답의 한 부분만 바꿔 만듦).
+  대조 일꾼 18명 중 2명만 짚음 · 기계 검사는 못 봄. → `check-new-questions.cjs` 에 더함: 정답의 길이 순위 각 15 ~ 35% · 튀게 긴 보기 ≤ 10% · 겹침 요령 셋 각 15 ~ 35% · 자리 검사도 12문항부터(묶음 하나에도) · 깨기 rank · outlier · converge.
+  새 검사로 묶음 1 = FAIL(LD 길이 순위 9/47/22/22% · RD 9/43/25/22% · RD 겹침 가운데 42%) — 고치는 중.
+- **워크플로우 wf_b263c4f1-710(작업 wbw2vgapg · 11:2x 시작)**: ① 묶음 1 고치기 18묶음(지금 모델 — `_staging/<묶음>` 사본을 고치고 묶음마다 새 검사 PASS · 깨기 rank · converge FAIL) ② 묶음 2 d071 ~ d140 · pr065 ~ pr128(쓰기 Sonnet → 대조 지금 모델, 새 규칙).
+  끝나면: 묶음 1 사본을 `새-문제/{ld,reading}/` 로 되돌려 놓고 + 묶음 2 옮김 → 전체 검사 · 과정별 검사 · 깨기 → 커밋 → 사용량 → 5시간 창이 새로 열리면 묶음 3 · 4.
+  (12:30 — 고치기 8/18 끝(LISTENING) · 5시간 52% · 주간 25%. 고치기 한 일꾼 약 35 ~ 45분.)
+- **LISTENING 칩 찍기(09-28 12:0x — 화면에 붙여 d001 을 보다가)**: 1단계는 듣기 전에 '미리 알아 둘 이름 · 숫자' 칩(강의 hints — 사장님 D25)을 보여 줌 →
+  d001 '사는 곳' 보기 넷 중 칩에 있는 것은 위스콘신 하나. 묶음 1 LISTENING 표본 20문항 중 **6문항이 칩만 보고 맞힘**(1825년 · 17마일 · 60세 · 10,000달러 · 'dentist' → 치과의사 · 아침 메뉴) + 반쯤 1.
+  → `check-new-questions.cjs` 에 **칩 숫자** 검사(정답 숫자가 칩에 있고 칩 숫자 보기가 4개 미만이면 FAIL · 깨기 chips) — 묶음 1 LD 199문항 중 25 걸림. 낱말 칩(이름 · 장소 · 직업)은 기계로 못 봄.
+  돌고 있는 일꾼들도 이 검사를 돌리므로 숫자 칩은 이번에 같이 고쳐짐. **할 일: 워크플로우 뒤 LISTENING d001 ~ d140 칩 점검 한 번(낱말 칩까지 — 일꾼 20) · 묶음 3 · 4 는 처음부터 칩 규칙.**
+- **화면에 붙임(코드 — 09-28 12:4x, 커밋 예정 · 문제 파일은 아직 커밋 안 함)**: `src/lib/lessonQuestions.ts`(모양 · 이 기기 기록 `kig-questions:<과정>/<본 id>`) ·
+  `src/components/LessonQuestions.tsx`(두 과정이 같이 씀 — 한 번 고르면 잠김 · 정답 표시 · 근거 · '다시 풀기' · 엔진 recordAttempt kind question(lesson — 복습 일정 안 바꿈)) ·
+  content.ts `getLessonQuestions`(content/questions/<과정>/<본 id>.json — 잠금 확인 뒤에만 읽음 · 파일 없으면 아무것도 안 보임) · page.tsx 가 두 화면에 props ·
+  LISTENING 1단계 플레이어 아래 '들은 내용 확인'(근거 = 그 줄 다시 듣기 버튼 — 받아쓰기 전이라 글은 안 보임) · READING 4단계 아래 '이해 문제'(재는 동안 숨음 · 근거 = 문장 영어 + 번역 · 탭 이름 그대로).
+  대본 쪽(-1)도 같은 문제 · 같은 기록(되돌리려면 page.tsx 에서 isScript 일 때 null 한 줄).
+  확인(로컬 운영 빌드 · 묶음 1 파일을 content/questions 에 복사해 봄 · 같은 AI 계열 — 독립 검수 아님): 새 `check-lesson-questions-0928.cjs` 10/10 · 깨기 verdict · evidence · hide · engine · persist · lock 모두 FAIL ·
+  새 `probe-question-lock-0928.cjs`(모든 LD · RD 쪽 로그아웃 HTML + RSC) 유료 520번 받음 문제 글 0 · 무료 16 모두 물음 있음 · 깨기 free FAIL ·
+  probe-bundle-leak-all(문제 바늘 더함) 유출 0 · 깨기 question → d003 물음 잡힘 exit 1 · drive-reading pr001 휴대폰 71/71 · 데스크탑 340/0/1(마이크) ·
+  gap P · T 5/5 · drive-common D 9/9 · 디자인 규칙 0 · verify-unit --base bfa3d12 --build 8/8(새 문제 폴더는 '글 · 번역 그대로'에서 빼고 따로 셈).
+  **올리기**: 코드는 파일이 없으면 화면에 아무 변화가 없음. 문제 파일(content/questions)은 **사장님이 표본을 읽으신 뒤** 커밋 — 사람이 아무도 안 읽은 AI 문제 1,268개를 유료 학습자에게 먼저 내보내지 않으려고.
+- (지난) 묶음 1: 워크플로우 wf_82ddbaa6-08e(작업 w6ans28mw) — LISTENING d001 ~ d070 · READING pr001 ~ pr064, 18묶음 · 쓰기 Sonnet · 대조 · 고침 · 저장은 지금 모델,
+  결과 파일은 `새-문제/_staging/<묶음>/{ld,reading}/<id>.json`(묶음마다 check-new-questions PASS 가 조건).
+- 묶음 1이 끝나면: ① `_staging/*/{ld,reading}/*.json` 을 `새-문제/{ld,reading}/` 로 옮김 ② `node docs/qa-2026-09-18/scripts/check-new-questions.cjs`(전체) PASS ③ get_usage — 주간 70% 넘으면 멈추고 설계 세션과 나눔 ④ 묶음 2(d071 ~ d140 · pr065 ~ pr128)를 같은 스크립트로(범위만 바꿈) ⑤ 커밋(파일 이름으로, content/ 는 아직 안 건드림).
+- 올리기: **3 ~ 6(GRAMMAR · STUDENT · VOCA · LISTENING · READING) 운영에 올라감(09-28 07:5x · dacc980 → 0dd1b4b · 설계 세션 — 확인 일꾼 숫자가 이 세션과 같음)**. 운영 관문 1 ~ 3 · 이용권 브라우저(s16-2 · s11-4) 도는 중.
+- **운영 확인(설계 세션 · 09-28)**: 0dd1b4b 실제 올린 시각 09:32 · 관문 1 1,623/1,623 · 관문 2 무료 261 열림 · 유료 14,726 막힘 · 관문 3 유출 0(READING 빈칸 짝 표 공개 JS 0) · 이용권 STUDENT s16-2 · s11-4 두 토막 조립 PASS · 과정마다 유료 1강 12/12 · drive-generic FAIL 0(GRAMMAR 채점 칸 도구 착오 제외 — 시험 채점은 운영에서 PASS).
+  **060705c(STUDENT 단계 옮길 때 소리 없음) 10:17 올라감**. 아무도 안 본 것: 진짜 휴대폰 · 마이크 · 귀로 들은 소리 · 태블릿 · 다음 날 복습.
+- 도구 할 일(설계 세션 확인 일꾼이 짚음): ⓪ verify-unit-0927 — 깨끗한 사본에 git 밖 폴더(out/features · public/audio/azure-ava/v1)가 없으면 '소리 정의 증명' · '빠진 클립' 이 ENOENT FAIL → '폴더 없음 — 이 칸 못 봄'으로 분명히 말하게 ① drive-reading 고정 경로 → 고침 `f27df1e` ② GRAMMAR drive-generic '채점 칸' FAIL 44/4 — 9/21 부터의 도구 착오(1단계가 스스로 채점해 다른 글을 판정으로 읽음), 채점은 check-grammar-exam 이 봄 → drive-generic 의 GRAMMAR 채점 칸 읽기를 data-verdict 로 고칠 것(새 문제 묶음 사이 작은 일) ③ check-learning-engine CRLF 가짜 통과는 설계 세션이 3e1f64f 로 고침(PASS-OFF 합칠 때 들어옴).
+
 ### 다음 할 일 (06:4x 기준 — 압축 뒤 여기부터)
 
 1. ~~STUDENT~~ 끝(위 표). **운영에 올라간 뒤 이용권 브라우저로만 볼 수 있는 것**(로컬에는 이용권이 없어 유료 강의가 잠김): 16낱말 이상 문장의 앞 · 뒤 두 번 조립(s16-2 · s11-4) —

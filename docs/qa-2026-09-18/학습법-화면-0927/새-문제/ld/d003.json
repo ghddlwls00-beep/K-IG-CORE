@@ -1,0 +1,56 @@
+{
+  "v": 1,
+  "lesson": "d003",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d003-q1",
+      "type": "세부 사실",
+      "prompt": "말하는 사람이 어제 학교에 결석한 이유로 옳은 것은?",
+      "options": [
+        "조부모님 댁에 가 있어서",
+        "몸이 아파서",
+        "어머니 고향으로 이사해서",
+        "농장에서 일을 도와야 해서"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "'I was absent. I was visiting my grandparents'에서 결석 이유를 알 수 있음."
+    },
+    {
+      "id": "d003-q2",
+      "type": "세부 사실",
+      "prompt": "할아버지의 나이에 대한 설명으로 옳은 것은?",
+      "options": [
+        "50세 정도이다",
+        "60세 정도이다",
+        "40대 초반이다",
+        "70세가 넘었다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "'My grandfather's about 60'에서 나이를 알 수 있음."
+    },
+    {
+      "id": "d003-q3",
+      "type": "목적/태도",
+      "prompt": "말하는 사람이 조부모님 댁에서 지내는 것에 대한 태도로 가장 알맞은 것은?",
+      "options": [
+        "지루해서 가고 싶어 하지 않는다",
+        "불편하고 어색해한다",
+        "갈 때마다 즐거워한다",
+        "무관심하다"
+      ],
+      "answer": 2,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "'I always have a good time there', 'I always like to see my grandparents'에서 태도를 알 수 있음."
+    }
+  ]
+}

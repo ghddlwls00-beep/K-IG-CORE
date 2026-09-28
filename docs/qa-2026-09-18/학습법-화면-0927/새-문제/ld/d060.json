@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d060",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d060-q1",
+      "type": "중심 내용",
+      "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "정부가 방송을 미리 막아서 큰 소동을 예방했다는 이야기",
+        "군대가 힘을 모아 침입자를 물리쳤다는 연극의 결말",
+        "청취자 모두가 처음부터 연극임을 알았다는 이야기",
+        "연극을 진짜로 믿은 사람들이 벌인 소동과 연극의 결말"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        4,
+        5,
+        7
+      ],
+      "note": "“many thought it was a true news report” · “left their homes” · “the panic for days” · “How did the play end?”에서 알 수 있음"
+    },
+    {
+      "id": "d060-q2",
+      "type": "세부 사실",
+      "prompt": "그 물체를 공격한 군인들 중 살아남은 사람의 수로 알맞은 것은?",
+      "options": [
+        "120명",
+        "7,000명",
+        "1,200명",
+        "12명"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "“7,000 soldiers attacked the object, but only 120 lived”에서 알 수 있음"
+    },
+    {
+      "id": "d060-q3",
+      "type": "세부 사실",
+      "prompt": "연극 속 화성 침입자들이 결국 죽게 된 원인은 무엇인가?",
+      "options": [
+        "육해공군의 공격",
+        "작은 세균 하나",
+        "자기들끼리의 싸움",
+        "지구의 추운 날씨"
+      ],
+      "answer": 1,
+      "evidence": [
+        7,
+        8
+      ],
+      "note": "“the invaders were killed by a little germ” · “deadly to the Martians”에서 알 수 있음"
+    }
+  ]
+}

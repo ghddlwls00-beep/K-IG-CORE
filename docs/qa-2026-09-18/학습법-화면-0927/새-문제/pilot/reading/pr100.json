@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr100",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr100-q1",
+      "type": "vocab",
+      "prompt": "이 글에서 'artificial mothers'가 가리키는 것으로 가장 알맞은 것은?",
+      "options": [
+        "새끼 원숭이들을 낳은 진짜 엄마 원숭이",
+        "새끼들을 대신 길러 준 다른 엄마 원숭이",
+        "철사로 만들거나 수건 천으로 감싼 가짜 엄마",
+        "새끼 원숭이들을 돌봐 준 동물원 사육사"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "1번에서 진짜 엄마와 떨어진 새끼들이 받은 'artificial mothers'는 2번에서 'made of bare, hard wire' 또는 'covered with soft towel cloth'였다."
+    },
+    {
+      "id": "pr100-q2",
+      "type": "main",
+      "prompt": "이 실험이 보여 주는 것으로 가장 알맞은 것은?",
+      "options": [
+        "새끼 원숭이들은 단단한 철사 엄마 곁에서 더 오래 지냈다.",
+        "새끼 원숭이들은 수건 천 엄마와 몸이 닿을 때 얻는 편안함을 찾았다.",
+        "새끼 원숭이들은 먹이를 주는 엄마를 더 따랐다.",
+        "새끼 원숭이들은 진짜 엄마와 가짜 엄마를 구별하지 못했다."
+      ],
+      "answer": 1,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "3번에서 새끼들은 수건 천 엄마를 되풀이해 골랐고('repeatedly chose'), 4번은 그 까닭을 'looked for the comfort supplied by their contact with towel cloth mothers'라고 풀이한다."
+    }
+  ]
+}

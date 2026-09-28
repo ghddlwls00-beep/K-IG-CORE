@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "lesson": "d032",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d032-q1",
+      "type": "세부 사실",
+      "prompt": "엘리엇이 떨어진 거리로 옳은 것은?",
+      "options": [
+        "2~3미터",
+        "5~6미터",
+        "8~9미터",
+        "10~12미터"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "4번 줄 'fell 5 or 6 meters'에서 확인."
+    },
+    {
+      "id": "d032-q2",
+      "type": "중심 내용",
+      "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "짐 엘리엇이 절벽에서 떨어지는 캐시 바이럼을 로프로 구했다",
+        "윌리엄 스미스가 로프 없이 절벽을 혼자 올라갔다",
+        "바위에 맞아 떨어진 엘리엇을 바이럼이 로프로 구조했다",
+        "3명 모두 크게 다쳐 병원으로 옮겨졌다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "note": "3·4·6번 줄 'a piece of rock hit him' · 'Byram managed to hold him on the rope' · 'With the help of the rope'에서 확인."
+    }
+  ]
+}

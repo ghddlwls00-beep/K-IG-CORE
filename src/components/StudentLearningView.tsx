@@ -538,7 +538,9 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
       stopAll();
       setStudyMode(mode);
       setNavNotice(null);
-      if (mode === "dictation") openSentence(Math.min(dictationIdx, Math.max(0, total - 1)));
+      // 2026-09-28 (사장님 "1단계에서 2단계로 넘어가는데 음성이 나와 이거 해결해"): a step change never starts sound — the
+      // sentence opens silent and the learner presses '듣기'; '다음 문장' and the number buttons inside Step 2 still play it
+      if (mode === "dictation") openSentence(Math.min(dictationIdx, Math.max(0, total - 1)), false);
     },
     [studyMode, stopAll, openSentence, dictationIdx, total],
   );
@@ -1071,7 +1073,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
           <div className="flex items-center gap-2">
             <button type="button" data-action="replay" onClick={() => toggleSentence(idx, "en")} className={`${outlineButton} shrink-0`}>
               {replaying ? <IconStop /> : <IconPlay />}
-              <span>{replaying ? "정지" : "다시 듣기"}</span>
+              <span>{replaying ? "정지" : "듣기"}</span>
             </button>
             <button type="button" data-action="hint" onClick={giveHint} disabled={done} className={`${outlineButton} shrink-0`}>
               힌트

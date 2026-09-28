@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr026",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr026-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "두뇌는 새로운 생각을 낼 때 가장 편안함을 느낀다",
+        "다수의 의견은 언제나 소수의 의견보다 옳다",
+        "새로운 생각을 꺼리는 태도는 바뀌어야 한다",
+        "익숙한 믿음일수록 사회 발전에 도움이 된다"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        5,
+        6
+      ],
+      "note": "3번 'hostile to anything which would upset the established order', 5번 'new ideas ... seem evil', 6번 'this attitude should be altered'가 근거"
+    },
+    {
+      "id": "pr026-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "이 글의 'just because they are disagreeable'에서 they가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "대다수를 이루는 보통 사람들",
+        "이미 굳게 자리 잡은 믿음과 제도",
+        "사회 발전을 이끄는 새로운 힘",
+        "의문을 던지는 새로운 생각과 의견"
+      ],
+      "answer": 3,
+      "evidence": [
+        5
+      ],
+      "note": "5번 'new ideas and opinions which cast doubt ... seem evil just because they are disagreeable'에서 they는 new ideas and opinions"
+    }
+  ]
+}

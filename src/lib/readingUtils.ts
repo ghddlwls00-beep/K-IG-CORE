@@ -688,7 +688,7 @@ export function generateReadingQuiz(
 }
 
 /**
- * One blank of READING Step 3 (빈칸 퀴즈).
+ * One blank of READING's blanks — Step 2 '핵심 어휘', after the cards, since 2026-09-28 (사장님 D31 다; Step 3 '빈칸 퀴즈' before).
  *
  * 2026-09-27 (READING 학습법 · 화면 — 계획 G02 · D33 나 · RD-L06 · RD-L13): the blank is always one of the lesson's KEY
  * WORDS (readingVocabulary, the 14 words of Step 2), and a set takes one from the start, one from the middle and one
@@ -747,7 +747,8 @@ const isApostrophe = (c: string | undefined) => c === "'" || c === "’";
 
 /**
  * Where `word` stands in `text` as a whole word, ignoring case — [start, end) index pairs. 2026-09-27: one rule for the
- * blank, the word's passage line in Step 2 and the key-word marks of Step 4, so the three always agree.
+ * blank, the word's passage line on a card and the key-word marks of 원문 대조 (Step 2 · Step 2 · Step 3 since 2026-09-28),
+ * so the three always agree.
  *   - a hyphen joins: "sex" is not found in "other-sex", "well" not in "well-known" (but "other-sex" itself is);
  *   - an apostrophe inside a word joins ("don" is not in "don't", "clock" not in "o'clock"), except a possessive:
  *     "adults" is found in "adults'" and "children" in "children's";

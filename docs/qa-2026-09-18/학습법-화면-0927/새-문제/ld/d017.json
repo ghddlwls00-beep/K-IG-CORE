@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d017",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d017-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "새 집을 짓고 수영장과 테니스장, 큰 정원까지 마련해 이사했다",
+        "교외에 땅을 사서 곧바로 집을 짓기 시작했다",
+        "첫 집을 계획했지만 너무 비싸서 아직 짓지 못했다",
+        "돈을 다 모아서 원하던 꿈의 집을 마침내 샀다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        6,
+        8
+      ],
+      "note": "“planning our first house”, “Our dream house was just too expensive”, “We still live in our little apartment in town”에서 알 수 있다."
+    },
+    {
+      "id": "d017-q2",
+      "type": "세부 사실",
+      "prompt": "집 지을 곳으로 이들이 생각해 본 장소가 아닌 것은?",
+      "options": [
+        "계곡",
+        "호숫가",
+        "숲속",
+        "강가"
+      ],
+      "answer": 3,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "“in town or in the suburbs”, “In the valley or in the hills”, “By the lake or on the coast”, “In the mountains or in the woods” 가운데 강가는 없다."
+    },
+    {
+      "id": "d017-q3",
+      "type": "다음에 할 일",
+      "prompt": "꿈의 집 계획을 세운 뒤 이들이 하기로 한 일로 알맞은 것은?",
+      "options": [
+        "돈이 더 생길 때까지 기다리기로 했다",
+        "은행에서 돈을 빌려 당장 집을 짓기로 했다",
+        "방 개수를 줄여서 바로 공사를 시작하기로 했다",
+        "수영장과 정원은 빼고 작은 집을 사기로 했다"
+      ],
+      "answer": 0,
+      "evidence": [
+        7
+      ],
+      "note": "“We decided to wait until we had more money”라고 했다."
+    }
+  ]
+}

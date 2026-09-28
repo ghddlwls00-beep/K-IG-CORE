@@ -1,41 +1,59 @@
 "use client";
 
 /**
- * READING — one view for all 512 pages (256 lessons and their "-1" pages): Step 1 속독 챌린지 · Step 2 핵심 어휘 ·
- * Step 3 독해 퀴즈 · Step 4 원문 대조 (the owner's step names and order; every tab still reads "Step N").
+ * READING — one view for all 512 pages (256 lessons and their "-1" pages): Step 1 처음 읽기 · Step 2 핵심 어휘 · Step 3 원문 대조 ·
+ * Step 4 다시 읽고 재기 (every tab still reads "Step N · name" — StepTabs; LessonStepNavigation and the audit drivers find it so).
  *
- * 2026-09-27 학습법 · 화면 고침 (사장님 "검토 결과대로 … 끝까지"; docs/qa-2026-09-18/학습법-화면-0927/reading-verified.md ·
- * 계획.md G01–G05 · D01 · D02 · D31–D33 · D35). The sentences, the translations and every sound are unchanged: speakText gets
- * lessonSpeechForm(pageKey, sentence) for a sentence and readingWordSpeech(word, meaning) for a key word, exactly as before, and
- * the whole-lesson player is the page's own AudioPlayer with the same sentences (the page hands them over as data — A10).
- * What changed, by review item:
- *   Frame   no header card (RD-U07): the word count and the target move into Step 1's row; the shared StepTabs (RD-U15);
- *           line icons, the colour tokens and the six text sizes (RD-U08 · U09 · U20); 44px controls (RD-U10); one 'Aa' menu —
- *           text size, sentence numbers, copy — remembered for every lesson (RD-U07); nothing changes on mouse-over (RD-U02).
- *   Step 1  (G01 · D31 나 · RD-L03 · L04 · U01 · U02 · U05 · U06 · U11 · U17) '뜻을 파악하며 평소 속도로': start → the passage comes
- *           up under the header, numbers and sentence taps are off, '다 읽었어요' waits at the end of the passage; the time is
- *           performance.now() and stops while the page is hidden; faster than 500 WPM is explained and not saved; one line
- *           against the target (180 WPM) instead of grades; the one-sentence passages show the time only. A sentence is a
- *           button (Enter/Space) that plays it and opens its Korean line under it on a phone, in a panel under the passage
- *           from sm. The playing sentence is underlined, not bold red. Text is selectable (long-press dictionary).
- *   Player  (D01 나 · G04 · RD-L07) the whole-lesson player plays after the first timed reading (Step 1) and in Step 4 — never
- *           before it; while it plays, its sentence is tinted (Step 1 when not timing, Step 4's English line) and kept in view.
- *   Step 2  (G02 · D32 다 · RD-L05 · L15 · U13) one row per word — word 18 · part of speech and base form 12, '뜻 보기' and
- *           a speaker, the word's passage line with the word underlined; the meaning stays hidden until asked; then
- *           '알아요 / 몰라요' ('알아요' folds the row and it stays folded; '몰라요' words come first in Step 3 and the review).
- *   Step 3  (G02 · D33 나 · RD-L06 · L13 · U14) one blank at a time from the lesson's key words — the start, the middle and
- *           the end of the passage; options 2×2 at 48px; after an answer the filled sentence, its translation and
- *           '문장 듣기'; 'n/3' and '다른 빈칸으로 다시 풀기'. The blanks are seeded by the lesson (readingUtils) — the same
- *           for every learner, never a romanized Korean word. The reading-aloud check stays here until the comprehension
- *           questions exist (D34 — a later stage), named for what it is; a romanized Korean word is any word to it.
- *   Step 4  (G03 · D31 나 · D32 다 · RD-U03 · U05 · U18 · U23 · L08) one row per sentence — number (plays it) | English |
- *           Korean, the Korean under the English on a phone; '영어만' puts '해석 보기' in each row instead of a bottom bar; key
- *           words are dotted — pressing one shows its meaning (a played row also lists them as buttons); '같은 글 다시 읽기'
- *           times the same passage again and shows the two numbers only; the memo, folded, at the end.
- * Completion (D02 나): LessonEndBar's '이 강의 학습 완료' opens after one timed reading (src/lib/lessonGate.ts).
- * On this device and for the learning engine: src/lib/readingLearning.ts (storage keys, what is kept, the engine's items).
- * The data-* attributes are what the audit helpers read (drive-reading.cjs · lib/containers.cjs · lib/reading-page.cjs) —
- * keep them.
+ * 2026-09-28 순서 바꿈 — 사장님 결정 D31 다 ("그 순서로 바꾸고"; docs/qa-2026-09-18/학습법-화면-0927/README.md '사장님 결정 (09-28)'):
+ * READING no longer times a passage the learner has never read. Before: 1 속독 챌린지 (a timed first reading) · 2 핵심 어휘 ·
+ * 3 독해 퀴즈 (the blanks) · 4 원문 대조 (+ '같은 글 다시 읽기'). Now:
+ *   Step 1  처음 읽기 — the passage, read for meaning: no clock, no WPM, no target. A sentence plays and shows its Korean as before.
+ *           '다 읽었어요' at the end of the passage records nothing and opens nothing; it offers '다음: Step 2 핵심 어휘' and the
+ *           whole-lesson player (D01 나 — the player comes after the first reading). A learner who read the passage before (a timed
+ *           record, the lesson completed) sees both at once.
+ *   Step 2  핵심 어휘 — the key-word cards, then the blanks that were Step 3. Until the first answer of a set, the set follows the
+ *           '몰라요' marks made on the cards above it (asked first in their part of the passage); from the first answer on it stays.
+ *   Step 3  원문 대조 — the line-by-line view that was Step 4 (rows, views, dotted key words, the whole-lesson player), then the
+ *           reading-aloud check (it sat with the blanks; D34 would make it this view's '따라 읽기') and the memo.
+ *   Step 4  다시 읽고 재기 — the only timed reading, with the machinery Step 1 had (Timing below). The result is this run's time or
+ *           WPM only: the first reading has no number now, so there is no 'A → B' and no percentage. Under it, the passage's two
+ *           comprehension questions ([data-comprehension] — 2026-09-28 새 문제, LessonQuestions, the same component as LISTENING
+ *           Step 1; hidden while the clock runs; a passage without a question file shows nothing there). The tab still says
+ *           '다시 읽고 재기' (사장님: "들어오기 전엔 다시 읽고 재기만" — and a 360px phone has no room for more); the questions
+ *           have their own heading '이해 문제'.
+ * Completion (D02): '이 강의 학습 완료' opens after one timed reading in Step 4 — readingGateOpen (src/lib/readingLearning.ts): the
+ * record's `again`, or an older record (the timed first reading of 09-27 ~ 28, an old best WPM of 1–500). The sentences, the
+ * translations, every sound, the storage keys and the engine calls are unchanged; a "-1" page shares the main page's records.
+ *
+ * 2026-09-27 학습법 · 화면 고침 (사장님 "검토 결과대로 … 끝까지"; docs/qa-2026-09-18/학습법-화면-0927/reading-verified.md · 계획.md
+ * G01–G05 · D01 · D02 · D31–D33 · D35) — all still so, under the new step numbers. speakText gets lessonSpeechForm(pageKey, sentence)
+ * for a sentence and readingWordSpeech(word, meaning) for a key word, and the whole-lesson player is the page's own AudioPlayer with
+ * the same sentences (the page hands them over as data — A10). By review item:
+ *   Frame   no header card (RD-U07): the word count in Step 1's row, the target in Step 4's; the shared StepTabs (RD-U15); line
+ *           icons, the colour tokens and the six text sizes (RD-U08 · U09 · U20); 44px controls (RD-U10); one 'Aa' menu — text
+ *           size, sentence numbers, copy — remembered for every lesson (RD-U07); nothing changes on mouse-over (RD-U02).
+ *   Passage (Step 1 — RD-U02 · U06 · U11) a sentence is a button (Enter/Space) that plays it and opens its Korean line under it on
+ *           a phone, in a panel under the passage from sm. The playing sentence is underlined, not bold red. Text is selectable.
+ *   Timing  (Step 4 — G01 · RD-L03 · L04 · U01 · U05 · U17) '읽기 시작' → the passage comes up under the header, numbers and
+ *           sentence taps are off, '다 읽었어요' waits at the end of the passage; the time is performance.now() and stops while
+ *           the page is hidden; faster than 500 WPM is explained and not saved; one line against the target (180 WPM) instead
+ *           of grades; the one-sentence passages show the time only.
+ *   Player  (D01 나 · G04 · RD-L07) never before the first reading: in Step 1 after it, and in Step 3; while it plays, its
+ *           sentence is tinted (Step 1's passage, Step 3's English line) and kept in view.
+ *   Cards   (Step 2 — G02 · D32 다 · RD-L05 · L15 · U13) one row per word — word 18 · part of speech and base form 12, '뜻 보기'
+ *           and a speaker, the word's passage line with the word underlined; the meaning stays hidden until asked; then
+ *           '알아요 / 몰라요' ('알아요' folds the row and it stays folded; '몰라요' words come first in the blanks and the review).
+ *   Blanks  (Step 2 — G02 · D33 나 · RD-L06 · L13 · U14) one blank at a time from the lesson's key words — the start, the middle
+ *           and the end of the passage; options 2×2 at 48px; after an answer the filled sentence, its translation and '문장 듣기';
+ *           'n/3' and '다른 빈칸으로 다시 풀기'. Seeded by the lesson (readingUtils) — the same for every learner, never a
+ *           romanized Korean word.
+ *   Rows    (Step 3 — G03 · D32 다 · RD-U03 · U05 · U18 · U23 · L08) one row per sentence — number (plays it) | English | Korean,
+ *           the Korean under the English on a phone; '영어만' puts '해석 보기' in each row instead of a bottom bar; key words are
+ *           dotted — pressing one shows its meaning (a played row also lists them as buttons); the reading-aloud check, named for
+ *           what it is (a romanized Korean word is any word to it — RD-L13 ④); the memo, folded, at the end.
+ * A step change stops any sound and never starts one (사장님 2026-09-28). On this device and for the learning engine:
+ * src/lib/readingLearning.ts (storage keys, what is kept, the engine's items). The data-* attributes are what the audit helpers
+ * read (drive-reading.cjs · lib/containers.cjs · lib/reading-page.cjs · gap-checks-0926.cjs T · drive-common-0926.cjs D) — keep them.
  */
 
 import {
@@ -60,6 +78,7 @@ import { SHOW_GENERATED_QUIZ } from "@/lib/quizFlags";
 import { markLessonDone, recordAttempt } from "@/lib/learning/record";
 import { clearLessonGate, setLessonGate } from "@/lib/lessonGate";
 import type { PassagePlayerData } from "@/lib/passagePlayer";
+import type { LessonQuestion } from "@/lib/lessonQuestions";
 import {
   contextSnippet,
   extractFullReadingPassage,
@@ -90,6 +109,7 @@ import {
   parseSpeedRecord,
   parseWordsRecord,
   posLabel,
+  readingGateOpen,
   readingItemKey,
   readingMainId,
   reviewEntries,
@@ -109,6 +129,7 @@ import {
   type WordsRecord,
 } from "@/lib/readingLearning";
 import { AudioPlayer } from "./AudioPlayer";
+import { LessonQuestions } from "./LessonQuestions";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import { StepTabs } from "./StepTabs";
 import { IconCheck, IconChevronDown, IconChevronRight, IconRepeat, IconSpeaker, IconStop, IconX } from "./icons";
@@ -123,18 +144,27 @@ interface ReadingLearningViewProps {
   vocaDictionary?: Record<string, { meaning: string; searchWord?: string }> | null;
   readingSentences?: ReadingSentence[] | null;
   readingVocabulary?: ReadingVocabularyItem[] | null;
-  /** 2026-09-27 (계획 A10 · D01 나): the page's whole-lesson player as data — played after the first timed reading and in Step 4 */
+  /** 2026-09-27 (계획 A10 · D01 나): the page's whole-lesson player as data — offered after the first reading (Step 1) and in
+   *  원문 대조 (Step 3 since 2026-09-28) */
   passagePlayers?: PassagePlayerData[] | null;
   /** 2026-09-27 (유출 규칙): this lesson's reviewed 'also fits' blank pairs, worked out on the server (readingClozeFitsForLesson) */
   clozeAlsoFits?: Record<string, string[]> | null;
+  /** 2026-09-28 새 문제: this passage's comprehension questions, read on the server after the access check (lessonQuestions.ts) */
+  lessonQuestions?: LessonQuestion[] | null;
 }
 
 type StepNo = 1 | 2 | 3 | 4;
+/**
+ * 2026-09-28 (사장님 D31 다): 1 처음 읽기 → 2 핵심 어휘 → 3 원문 대조 → 4 다시 읽고 재기 (+ 이해 문제). Step 4 is named for what it
+ * does today — "들어오기 전엔 다시 읽고 재기만" — and '· 이해 문제' is not a tab name a learner meets before any question exists;
+ * it is also too long for a 360px phone's tab row, where the current tab has about 176px (LISTENING keeps short tab names for
+ * the same reason). When the questions come, their part of Step 4 gets its own heading.
+ */
 const STEPS: { n: StepNo; name: string }[] = [
-  { n: 1, name: "속독 챌린지" },
+  { n: 1, name: "처음 읽기" },
   { n: 2, name: "핵심 어휘" },
-  { n: 3, name: "독해 퀴즈" },
-  { n: 4, name: "원문 대조" },
+  { n: 3, name: "원문 대조" },
+  { n: 4, name: "다시 읽고 재기" },
 ];
 
 // the button kinds of the course views (GrammarLearningView · StudentLearningView · PhonicsLearningView), 44px
@@ -158,6 +188,14 @@ const SIZE_CLASS: Record<PassageSize, { en: string; ko: string }> = {
 };
 const SIZE_LABEL: Record<PassageSize, string> = { normal: "보통", large: "크게", xlarge: "특대" };
 const REGION_LABEL = ["글 앞", "글 중간", "글 끝"] as const;
+
+/** The orders of the words marked '몰라요', in order — what a set of blanks asks first in its part of the passage. */
+function unknownOf(marks: Record<number, WordMark>): number[] {
+  return Object.entries(marks)
+    .filter(([, mark]) => mark === "unknown")
+    .map(([order]) => Number(order))
+    .sort((a, b) => a - b);
+}
 
 /** A tinted sentence (selected, or the one the whole-lesson player is reading); playing alone adds the underline (RD-U06). */
 const TINT = "bg-primary-soft";
@@ -186,14 +224,15 @@ function keepInView(el: Element | null) {
   scrollPageTo(window.scrollY + delta);
 }
 
-/** A timed reading in progress (Step 1 '첫 읽기' or Step 4 '같은 글 다시 읽기') — its clock stands still while the page is hidden. */
+/**
+ * The timed reading in progress — Step 4 '다시 읽고 재기', the only one since 2026-09-28 (Step 1 is no longer timed). Its clock
+ * stands still while the page is hidden.
+ */
 interface ReadingRun {
-  purpose: "first" | "again";
   clock: ReadingClockState;
 }
 
 interface RunOutcome {
-  purpose: "first" | "again";
   wpm: number;
   ms: number;
   hiddenMs: number;
@@ -309,6 +348,7 @@ export function ReadingLearningView({
   readingVocabulary = null,
   passagePlayers = null,
   clozeAlsoFits = null,
+  lessonQuestions = null,
 }: ReadingLearningViewProps) {
   const pageId = lessonKey.split("/").pop() || lessonKey;
   /** the main page's id — a "-1" page shares its passage, its words, its records and its engine items */
@@ -377,7 +417,7 @@ export function ReadingLearningView({
     [keywords, sentencePairs],
   );
 
-  /** the key words in each sentence — the dotted words of Step 4 (D32 다 · RD-L08) */
+  /** the key words in each sentence — the dotted words of 원문 대조 (Step 3 since 2026-09-28 · D32 다 · RD-L08) */
   const keywordMarks = useMemo(
     () =>
       sentencePairs.map((pair) => {
@@ -417,34 +457,37 @@ export function ReadingLearningView({
   const [playing, setPlaying] = useState<string | null>(null);
   const playingSawRef = useRef(false);
 
-  // Step 1 and Step 4's timed readings
-  const [speed, setSpeed] = useState<SpeedRecord>({ first: null, again: null });
-  const [legacyRead, setLegacyRead] = useState(false);
-  const [running, setRunning] = useState<"first" | "again" | null>(null);
-  const runRef = useRef<ReadingRun | null>(null);
-  const [outcome, setOutcome] = useState<RunOutcome | null>(null);
+  // Step 1 — the first reading ('다 읽었어요' on this visit; it is not timed and not stored — readOnce below also counts records)
+  const [firstReadDone, setFirstReadDone] = useState(false);
   const [selected, setSelected] = useState<number | null>(null);
 
-  // Step 2
+  // Step 4 — the timed reading (the record's `again`; `first` is an older record, read only)
+  const [speed, setSpeed] = useState<SpeedRecord>({ first: null, again: null });
+  const [legacyRead, setLegacyRead] = useState(false);
+  const [running, setRunning] = useState(false);
+  const runRef = useRef<ReadingRun | null>(null);
+  const [outcome, setOutcome] = useState<RunOutcome | null>(null);
+
+  // Step 2 — the cards
   const [words, setWords] = useState<WordsRecord>({ marks: {}, missed: [] });
   const wordsRef = useRef<WordsRecord>(words);
   const [revealed, setRevealed] = useState<Record<number, boolean>>({});
   const [unfolded, setUnfolded] = useState<Record<number, boolean>>({});
   const answeredRef = useRef<Set<number>>(new Set());
 
-  // Step 3 — one blank at a time
+  // Step 2 — the blanks, one at a time (Step 3 until 2026-09-28)
   const [clozeRound, setClozeRound] = useState(0);
   const [clozeUnknown, setClozeUnknown] = useState<number[]>([]);
   const [clozeIndex, setClozeIndex] = useState(0);
   const [clozePicks, setClozePicks] = useState<Record<number, number>>({});
+  // Step 4 — the generated quiz's answers (SHOW_GENERATED_QUIZ — off)
   const [quizAnswers, setQuizAnswers] = useState<Record<number, number>>({});
 
-  // Step 4
+  // Step 3 — 원문 대조 (Step 4 until 2026-09-28)
   const [dualView, setDualView] = useState<"both" | "en" | "ko">("both");
   const [shownKo, setShownKo] = useState<Record<number, boolean>>({});
   const [activeRow, setActiveRow] = useState<number | null>(null);
   const [gloss, setGloss] = useState<{ row: number; order: number } | null>(null);
-  const [rereading, setRereading] = useState(false);
 
   // the memo (kept exactly as it was stored — kig:reading:notes:<page key>)
   const [notes, setNotes] = useState("");
@@ -456,12 +499,18 @@ export function ReadingLearningView({
 
   const rootRef = useRef<HTMLDivElement | null>(null);
   const passageRef = useRef<HTMLDivElement | null>(null);
+  const firstReadRef = useRef<HTMLDivElement | null>(null);
   const resultRef = useRef<HTMLDivElement | null>(null);
-  const rereadRef = useRef<HTMLDivElement | null>(null);
   const lastUserScrollRef = useRef(0);
 
   // a lesson seen completed on this screen stays completable after '완료 취소' (like VOCA · STUDENT); adjusted while rendering
   if (lessonCompleted && !seenCompleted) setSeenCompleted(true);
+
+  /**
+   * The learner has read this passage once: '다 읽었어요' in Step 1 on this visit, or a record from before (a timed reading, an old
+   * best WPM, the lesson completed). Step 1 then offers '다음: Step 2' and the whole-lesson player (D01 나 — never before it).
+   */
+  const readOnce = firstReadDone || Boolean(speed.first || speed.again) || legacyRead || lessonCompleted || seenCompleted;
 
   // ------------------------------------------------------------------------------------------------------------
   // This device's records (src/lib/readingLearning.ts) — read once per lesson
@@ -485,6 +534,8 @@ export function ReadingLearningView({
     const record = parseWordsRecord(wordsRaw, keywords.length);
     wordsRef.current = record;
     setWords(record);
+    // the first set of blanks (Step 2) asks the words kept as '몰라요' first
+    setClozeUnknown(unknownOf(record.marks));
     setPrefs(parsePrefs(prefsRaw));
     setLegacyRead(legacy);
     setLoaded(true);
@@ -587,8 +638,9 @@ export function ReadingLearningView({
     return () => window.removeEventListener(LESSON_COMPLETE_EVENT, onComplete);
   }, [pageId, mainId]);
 
-  // D02 나: '이 강의 학습 완료' opens once the passage was read and timed (or when the lesson was completed) — lessonGate
-  const gateReady = Boolean(speed.first || speed.again) || legacyRead || lessonCompleted || seenCompleted;
+  // D02 (2026-09-28, after the reorder): '이 강의 학습 완료' opens after one timed reading in Step 4 — readingGateOpen, where an
+  // older record counts too — or when the lesson was completed. Step 1's '다 읽었어요' does not open it. lessonGate
+  const gateReady = readingGateOpen(speed, legacyRead) || lessonCompleted || seenCompleted;
   useEffect(() => {
     if (!loaded) return;
     setLessonGate("reading", pageId, { ready: gateReady, reason: READING_GATE_REASON });
@@ -684,9 +736,10 @@ export function ReadingLearningView({
     };
   }, []);
 
-  // G04: while the whole lesson plays, its sentence stays in view (the smallest move — "nearest")
+  // G04: while the whole lesson plays, its sentence stays in view (the smallest move — "nearest"). The player is in Step 1 (after
+  // the first reading) and in Step 3 (원문 대조) since 2026-09-28.
   useEffect(() => {
-    if (queueIndex < 0 || running || (step !== 1 && step !== 4)) return;
+    if (queueIndex < 0 || running || (step !== 1 && step !== 3)) return;
     if (Date.now() - lastUserScrollRef.current < 2000) return;
     const id = sentencePairs[queueIndex]?.id;
     if (!id) return;
@@ -694,7 +747,7 @@ export function ReadingLearningView({
   }, [queueIndex, running, step, sentencePairs]);
 
   // ------------------------------------------------------------------------------------------------------------
-  // Timed reading (G01 · D31 나 · RD-L04) — performance.now(), paused while the page is hidden
+  // The timed reading — Step 4 only since 2026-09-28 (G01 · D31 다 · RD-L04) — performance.now(), paused while the page is hidden
   // ------------------------------------------------------------------------------------------------------------
   const readElapsed = useCallback(() => {
     const run = runRef.current;
@@ -722,23 +775,21 @@ export function ReadingLearningView({
     });
   };
 
-  const startRun = (purpose: "first" | "again") => {
+  const startRun = () => {
     unlockMobileAudio();
     stopAll();
     setSelected(null);
     setActiveRow(null);
     setGloss(null);
     setOutcome(null);
-    runRef.current = { purpose, clock: clockStart(performance.now()) };
-    setRunning(purpose);
-    if (purpose === "again") setRereading(true);
+    runRef.current = { clock: clockStart(performance.now()) };
+    setRunning(true);
     bringPassageUp();
   };
 
   const cancelRun = () => {
     runRef.current = null;
-    setRunning(null);
-    setRereading(false);
+    setRunning(false);
   };
 
   const finishRun = () => {
@@ -746,14 +797,13 @@ export function ReadingLearningView({
     if (!run) return;
     const ms = readElapsed();
     runRef.current = null;
-    setRunning(null);
-    setRereading(false);
+    setRunning(false);
     const wpm = wordsPerMinute(wordCount, ms);
     const tooFast = wpm > READING_MAX_WPM;
-    setOutcome({ purpose: run.purpose, wpm, ms, hiddenMs: run.clock.hiddenMs, tooFast });
+    setOutcome({ wpm, ms, hiddenMs: run.clock.hiddenMs, tooFast });
     if (!tooFast) {
-      const kept = { wpm, ms: Math.round(ms), at: new Date().toISOString() };
-      const next: SpeedRecord = run.purpose === "first" ? { ...speed, first: kept } : { ...speed, again: kept };
+      // the record's `again` ('다시 읽기'); an older `first` stays as it was (it still opens the completion — readingGateOpen)
+      const next: SpeedRecord = { ...speed, again: { wpm, ms: Math.round(ms), at: new Date().toISOString() } };
       setSpeed(next);
       try {
         window.localStorage.setItem(speedStorageKey(mainId), serializeSpeedRecord(next));
@@ -761,22 +811,23 @@ export function ReadingLearningView({
         // storage unavailable: the result shows; it is not kept
       }
     }
-    // the result appears where the reading ended — keep it on screen
-    window.requestAnimationFrame(() => keepInView(run.purpose === "first" ? resultRef.current : rereadRef.current));
+    // the passage closes and the result (or the reason it was not kept) takes its place — keep it on screen
+    window.requestAnimationFrame(() => keepInView(resultRef.current));
+  };
+
+  /** Step 1's '다 읽었어요' — nothing is timed or stored; what comes next appears under the passage and is kept in view */
+  const finishFirstRead = () => {
+    setFirstReadDone(true);
+    window.requestAnimationFrame(() => keepInView(firstReadRef.current));
   };
 
   // ------------------------------------------------------------------------------------------------------------
   // Steps
   // ------------------------------------------------------------------------------------------------------------
-  const unknownOrders = useMemo(
-    () =>
-      Object.entries(words.marks)
-        .filter(([, mark]) => mark === "unknown")
-        .map(([order]) => Number(order))
-        .sort((a, b) => a - b),
-    [words.marks],
-  );
+  const unknownOrders = useMemo(() => unknownOf(words.marks), [words.marks]);
 
+  // A step change stops the sound and never starts one (사장님 2026-09-28). The blanks follow the '몰라요' marks by themselves
+  // now that they share Step 2 with the cards (clozeItems below) — the step change no longer seeds them.
   const switchStep = (n: StepNo) => {
     if (n === step) return;
     stopAll();
@@ -784,8 +835,6 @@ export function ReadingLearningView({
     setSelected(null);
     setGloss(null);
     setActiveRow(null);
-    // a new set of blanks takes the words marked '몰라요' so far — a set in progress stays as it is
-    if (n === 3 && Object.keys(clozePicks).length === 0) setClozeUnknown(unknownOrders);
     setStep(n);
   };
 
@@ -848,89 +897,102 @@ export function ReadingLearningView({
   };
 
   /**
-   * The passage as flowing text (Step 1, and Step 4 while the same passage is timed again). A sentence is a button:
-   * inline, with vertical padding so its pressable box is at least 44px tall without moving the lines (the passage keeps
-   * a loose line height); its text carries the tint. While timing: plain text, no numbers, no taps (RD-U01 ④).
+   * The passage as flowing text — Step 1 '처음 읽기' ("step1"), and Step 4 while it is timed ("timed", only while the clock runs,
+   * so it cannot be read before '읽기 시작'). A sentence is a button: inline, with vertical padding so its pressable box is at least
+   * 44px tall without moving the lines (the passage keeps a loose line height); its text carries the tint. While timing: plain
+   * text, no numbers, no taps (RD-U01 ④). Step 1 is never timed (2026-09-28): its passage ends with '다 읽었어요', which only
+   * says the first reading is over.
    */
-  const renderPassage = (timing: boolean, where: "step1" | "reread") => (
-    <div
-      ref={passageRef}
-      data-passage={where}
-      className="rounded-card border border-line bg-raised px-4 py-4 sm:px-6 sm:py-5"
-    >
-      {timing ? (
-        // one slim line, so the passage's first line still comes up right under the header (G01 — y ≤ 120)
-        <p className="mb-1 text-label font-medium text-ink-soft" role="status">
-          읽는 중 · <ReadingClock read={readElapsed} />
-        </p>
-      ) : null}
-      <div lang="en" className={`${size.en} font-serif leading-loose text-left text-ink sm:max-w-[68ch]`}>
-        {sentencePairs.map((pair, i) => {
-          const learnFirst = where === "step1" && i === 0 ? "" : undefined;
-          if (timing) {
+  const renderPassage = (where: "step1" | "timed") => {
+    const timing = where === "timed";
+    return (
+      <div
+        ref={passageRef}
+        data-passage={where}
+        className="rounded-card border border-line bg-raised px-4 py-4 sm:px-6 sm:py-5"
+      >
+        {timing ? (
+          // one slim line, so the passage's first line still comes up right under the header (G01 — y ≤ 120)
+          <p className="mb-1 text-label font-medium text-ink-soft" role="status">
+            읽는 중 · <ReadingClock read={readElapsed} />
+          </p>
+        ) : null}
+        <div lang="en" className={`${size.en} font-serif leading-loose text-left text-ink sm:max-w-[68ch]`}>
+          {sentencePairs.map((pair, i) => {
+            const learnFirst = where === "step1" && i === 0 ? "" : undefined;
+            if (timing) {
+              return (
+                <Fragment key={pair.id}>
+                  <span data-sentence-id={pair.id} data-learn-first={learnFirst} className="px-1.5 py-3.5">
+                    <span data-en>{pair.en}</span>
+                  </span>{" "}
+                </Fragment>
+              );
+            }
+            const isSelected = selected === i;
+            const isPlaying = playing === `s:${i}`;
+            const isCurrent = queueIndex === i;
             return (
               <Fragment key={pair.id}>
-                <span data-sentence-id={pair.id} data-learn-first={learnFirst} className="px-1.5 py-3.5">
-                  <span data-en>{pair.en}</span>
+                <span
+                  role="button"
+                  tabIndex={0}
+                  data-sentence-id={pair.id}
+                  data-learn-first={learnFirst}
+                  aria-pressed={isSelected}
+                  onClick={() => pressSentence(i)}
+                  onKeyDown={(event: ReactKeyboardEvent<HTMLSpanElement>) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      // the top player listens for Space on the window — this press is the sentence's (RD-U02 CHECK)
+                      event.preventDefault();
+                      event.stopPropagation();
+                      pressSentence(i);
+                    }
+                  }}
+                  className="cursor-pointer rounded-control px-1.5 py-3.5"
+                >
+                  {prefs.numbers ? (
+                    <sup aria-hidden className="mr-0.5 font-sans text-caption tabular-nums text-ink-faint">
+                      {i + 1}
+                    </sup>
+                  ) : null}
+                  <span data-en className={`box-decoration-clone rounded-sm ${isPlaying ? PLAYING_MARK : isSelected || isCurrent ? TINT : ""}`}>
+                    {pair.en}
+                  </span>
                 </span>{" "}
+                {isSelected ? (
+                  // a phone opens the Korean line right under the sentence (RD-U11); from sm it is in the panel below
+                  <span data-ko-line lang="ko" className="my-1 block rounded-control bg-sunken px-3 py-2 font-sans text-label text-ink sm:hidden">
+                    {pair.ko}
+                  </span>
+                ) : null}
               </Fragment>
             );
-          }
-          const isSelected = selected === i;
-          const isPlaying = playing === `s:${i}`;
-          const isCurrent = queueIndex === i;
-          return (
-            <Fragment key={pair.id}>
-              <span
-                role="button"
-                tabIndex={0}
-                data-sentence-id={pair.id}
-                data-learn-first={learnFirst}
-                aria-pressed={isSelected}
-                onClick={() => pressSentence(i)}
-                onKeyDown={(event: ReactKeyboardEvent<HTMLSpanElement>) => {
-                  if (event.key === "Enter" || event.key === " ") {
-                    // the top player listens for Space on the window — this press is the sentence's (RD-U02 CHECK)
-                    event.preventDefault();
-                    event.stopPropagation();
-                    pressSentence(i);
-                  }
-                }}
-                className="cursor-pointer rounded-control px-1.5 py-3.5"
-              >
-                {prefs.numbers ? (
-                  <sup aria-hidden className="mr-0.5 font-sans text-caption tabular-nums text-ink-faint">
-                    {i + 1}
-                  </sup>
-                ) : null}
-                <span data-en className={`box-decoration-clone rounded-sm ${isPlaying ? PLAYING_MARK : isSelected || isCurrent ? TINT : ""}`}>
-                  {pair.en}
-                </span>
-              </span>{" "}
-              {isSelected ? (
-                // a phone opens the Korean line right under the sentence (RD-U11); from sm it is in the panel below
-                <span data-ko-line lang="ko" className="my-1 block rounded-control bg-sunken px-3 py-2 font-sans text-label text-ink sm:hidden">
-                  {pair.ko}
-                </span>
-              ) : null}
-            </Fragment>
-          );
-        })}
-      </div>
-      {timing ? (
-        // where the reading ends — the eyes are already here (RD-U01 ②)
-        <div className="mt-3 flex flex-col gap-1 sm:flex-row sm:items-center">
-          <button type="button" data-action="finish-reading" onClick={finishRun} className={`${filledButton} min-h-12 w-full sm:w-auto sm:px-6`}>
-            <IconCheck />
-            <span>다 읽었어요</span>
-          </button>
-          <button type="button" data-action="cancel-reading" onClick={cancelRun} className={`${quietButton} w-full sm:w-auto`}>
-            그만두기
-          </button>
+          })}
         </div>
-      ) : null}
-    </div>
-  );
+        {timing ? (
+          // where the reading ends — the eyes are already here (RD-U01 ②)
+          <div className="mt-3 flex flex-col gap-1 sm:flex-row sm:items-center">
+            <button type="button" data-action="finish-reading" onClick={finishRun} className={`${filledButton} min-h-12 w-full sm:w-auto sm:px-6`}>
+              <IconCheck />
+              <span>다 읽었어요</span>
+            </button>
+            <button type="button" data-action="cancel-reading" onClick={cancelRun} className={`${quietButton} w-full sm:w-auto`}>
+              그만두기
+            </button>
+          </div>
+        ) : loaded && !readOnce ? (
+          // the first reading ends here too — nothing is timed or kept; it offers the next step and the player
+          <div className="mt-3">
+            <button type="button" data-action="first-read-done" onClick={finishFirstRead} className={`${filledButton} min-h-12 w-full sm:w-auto sm:px-6`}>
+              <IconCheck />
+              <span>다 읽었어요</span>
+            </button>
+          </div>
+        ) : null}
+      </div>
+    );
+  };
 
   /** one line against the target (RD-L04 ② — instead of the grades '최상위 속독 수준' …, whose steps did not match the target) */
   const verdictLine = (wpm: number) => {
@@ -953,7 +1015,7 @@ export function ReadingLearningView({
   const hiddenNote = (o: RunOutcome | null) =>
     o && o.hiddenMs >= 500 ? <p className="text-caption text-ink-soft">다른 화면에 있던 {formatDuration(o.hiddenMs)}는 빼고 쟀어요.</p> : null;
 
-  const playerBlock = (where: "step1" | "step4") =>
+  const playerBlock = (where: "step1" | "step3") =>
     ownsPlayer && passagePlayers ? (
       // the page's whole-lesson player, here (A10 · D01 나) — the same sentences and voice as the top one, which is hidden
       <div data-reading-player={where} className="flex flex-col gap-1.5">
@@ -964,76 +1026,47 @@ export function ReadingLearningView({
       </div>
     ) : null;
 
-  // --- Step 1 ------------------------------------------------------------------------------------------------------
+  // --- Step 1 · 처음 읽기 (not timed — 2026-09-28) --------------------------------------------------------------------
   function renderStep1() {
-    const timing = running === "first";
-    const first = speed.first;
-    const read = Boolean(first) || legacyRead;
-    const shown = outcome && outcome.purpose === "first" ? outcome : null;
     return (
-      <section data-step-panel="1" aria-label="속독" className="flex flex-col gap-3">
-        {!timing ? (
-          <p className="text-label text-ink-soft">
-            {read
-              ? "문장을 누르면 해석과 소리가 나와요. 다시 재려면 '다시 재기'를 누르세요."
-              : "'읽기 시작'을 누르고 뜻을 파악하며 평소 속도로 읽으세요. 다 읽으면 '다 읽었어요'를 누르세요."}
-          </p>
-        ) : null}
+      <section data-step-panel="1" aria-label="처음 읽기" className="flex flex-col gap-3">
+        <p className="text-label text-ink-soft">
+          {readOnce
+            ? "문장을 누르면 해석과 소리가 나와요."
+            : "뜻을 파악하며 끝까지 읽으세요. 막히는 문장은 누르면 해석과 소리가 나와요. 다 읽으면 '다 읽었어요'를 누르세요."}
+        </p>
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
-            {!timing && !first ? (
-              <button type="button" data-action="start-reading" onClick={() => startRun("first")} className={`${filledButton} min-h-12 px-5`}>
-                <span>읽기 시작</span>
-              </button>
-            ) : null}
-            <p data-passage-meta className="text-label tabular-nums text-ink-soft">
-              {wordCount}단어 · {sentencePairs.length}문장 · 목표 약 {formatApprox(targetMs(wordCount))}
-            </p>
-          </div>
+          <p data-passage-meta="first" className="text-label tabular-nums text-ink-soft">
+            {wordCount}단어 · {sentencePairs.length}문장
+          </p>
           <ViewMenu prefs={prefs} onChange={changePrefs} onCopy={copyPassage} copied={copied} />
         </div>
 
-        {renderPassage(timing, "step1")}
+        {renderPassage("step1")}
 
-        {!timing ? (
-          <div data-ko-panel className="hidden min-h-12 sm:block" aria-live="polite">
-            {selected !== null && sentencePairs[selected] ? (
-              <div className="flex items-start gap-3 rounded-card border border-line bg-raised px-4 py-2">
-                <span className="pt-2.5 text-label font-semibold tabular-nums text-ink-soft">{selected + 1}</span>
-                <p lang="ko" className="min-w-0 flex-1 py-2 text-body text-ink">
-                  {sentencePairs[selected].ko}
-                </p>
-                {speakerButton(`${selected + 1}번 문장`, `s:${selected}`, () => playSentence(selected))}
-              </div>
-            ) : null}
-          </div>
-        ) : null}
-
-        {shown?.tooFast ? tooFastNotice(shown) : null}
-
-        {!timing && first ? (
-          <div ref={resultRef} data-speed-result role="status" className="flex flex-col gap-2 rounded-card border border-line bg-raised px-4 py-4">
-            <p className="text-caption text-ink-soft">첫 읽기</p>
-            <p className="text-title font-semibold tabular-nums text-ink">{timeOnly ? formatDuration(first.ms) : `${first.wpm} WPM`}</p>
-            <p className="text-label tabular-nums text-ink-soft">
-              {wordCount}단어 · {formatDuration(first.ms)}
-            </p>
-            <p className="text-label text-ink">{verdictLine(first.wpm)}</p>
-            {hiddenNote(shown)}
-            <div className="flex flex-col gap-2 sm:flex-row">
-              <button type="button" data-action="to-step2" onClick={() => goToStep(2)} className={`${filledButton} sm:flex-1`}>
-                <span>다음: Step 2 핵심 어휘</span>
-                <IconChevronRight />
-              </button>
-              <button type="button" data-action="measure-again" onClick={() => startRun("first")} className={`${outlineButton} sm:flex-1`}>
-                <IconRepeat />
-                <span>다시 재기</span>
-              </button>
+        <div data-ko-panel className="hidden min-h-12 sm:block" aria-live="polite">
+          {selected !== null && sentencePairs[selected] ? (
+            <div className="flex items-start gap-3 rounded-card border border-line bg-raised px-4 py-2">
+              <span className="pt-2.5 text-label font-semibold tabular-nums text-ink-soft">{selected + 1}</span>
+              <p lang="ko" className="min-w-0 flex-1 py-2 text-body text-ink">
+                {sentencePairs[selected].ko}
+              </p>
+              {speakerButton(`${selected + 1}번 문장`, `s:${selected}`, () => playSentence(selected))}
             </div>
+          ) : null}
+        </div>
+
+        {readOnce ? (
+          <div ref={firstReadRef} data-first-read role="status" className="flex flex-col gap-2 rounded-card border border-line bg-raised px-4 py-4">
+            <p className="text-label text-ink">처음 읽기를 마쳤어요. 다음 단계에서 이 글의 핵심 어휘를 익혀요.</p>
+            <button type="button" data-action="to-step2" onClick={() => goToStep(2)} className={`${filledButton} sm:self-start`}>
+              <span>다음: Step 2 핵심 어휘</span>
+              <IconChevronRight />
+            </button>
           </div>
         ) : null}
 
-        {!timing && read ? playerBlock("step1") : null}
+        {readOnce ? playerBlock("step1") : null}
       </section>
     );
   }
@@ -1042,7 +1075,10 @@ export function ReadingLearningView({
   const setMark = (order: number, mark: WordMark) => {
     const cur = wordsRef.current;
     if (cur.marks[order] === mark) return;
-    commitWords({ ...cur, marks: { ...cur.marks, [order]: mark } });
+    const next: WordsRecord = { ...cur, marks: { ...cur.marks, [order]: mark } };
+    commitWords(next);
+    // the blanks below take the '몰라요' words first — until the first answer of a set (2026-09-28: they share this step)
+    if (Object.keys(clozePicks).length === 0) setClozeUnknown(unknownOf(next.marks));
     // a self-report: '몰라요' is a wrong answer for the engine, '알아요' a right one (both inside the lesson — never a pass)
     noteAttempt(order, mark === "known");
     if (mark === "known") setUnfolded((prev) => ({ ...prev, [order]: false }));
@@ -1145,44 +1181,13 @@ export function ReadingLearningView({
     );
   }
 
-  function renderStep2() {
-    const known = Object.values(words.marks).filter((m) => m === "known").length;
-    const unknown = Object.values(words.marks).filter((m) => m === "unknown").length;
-    const allRevealed = keywords.length > 0 && keywords.every((_, i) => revealed[i + 1]);
-    return (
-      <section data-step-panel="2" aria-label="핵심 어휘" className="flex flex-col gap-3">
-        <p className="text-label text-ink-soft">
-          뜻을 먼저 떠올려 본 뒤 &lsquo;뜻 보기&rsquo;를 누르고 알아요 · 몰라요를 표시하세요. 몰라요 단어는 3단계 빈칸에 먼저 나와요.
-        </p>
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <p data-vocab-summary className="text-label tabular-nums text-ink-soft">
-            알아요 {known} · 몰라요 {unknown} · 남은 단어 {Math.max(0, keywords.length - known - unknown)}
-          </p>
-          <button
-            type="button"
-            data-action="reveal-all"
-            onClick={() => {
-              if (allRevealed) setRevealed({});
-              else setRevealed(Object.fromEntries(keywords.map((_, i) => [i + 1, true])));
-            }}
-            className={quietButton}
-          >
-            {allRevealed ? "뜻 모두 가리기" : "뜻 모두 보기"}
-          </button>
-        </div>
-        {keywords.length ? (
-          <ul className="flex list-none flex-col divide-y divide-line rounded-card border border-line bg-raised">
-            {keywords.map((kw, i) => renderWordRow(kw, i + 1))}
-          </ul>
-        ) : (
-          <p className="text-label text-ink-soft">이 강의에는 핵심 어휘가 없어요.</p>
-        )}
-      </section>
-    );
-  }
-
-  // --- Step 3 ------------------------------------------------------------------------------------------------------
+  // --- Step 2 · the blanks (Step 3 until 2026-09-28) ------------------------------------------------------------------
   const clozeKeywords = useMemo(() => keywords.map((kw) => ({ word: kw.word, pos: kw.pos })), [keywords]);
+  /**
+   * clozeUnknown — the '몰라요' words the set asks first. Until the first answer of a set it follows the marks made on the cards
+   * above it (setMark · the records read on load); from the first answer on it stays, and '다른 빈칸으로 다시 풀기' starts a new set
+   * from the marks of that moment. The cards and the blanks share Step 2 now (2026-09-28), so no step change seeds the set.
+   */
   const clozeItems: ClozeItem[] = useMemo(
     () => generateClozeItems(sentencePairs, { lessonKey: mainKey, keywords: clozeKeywords, round: clozeRound, unknown: clozeUnknown, alsoFits: clozeAlsoFits ?? {} }),
     [sentencePairs, mainKey, clozeKeywords, clozeRound, clozeUnknown, clozeAlsoFits],
@@ -1322,7 +1327,7 @@ export function ReadingLearningView({
     return (
       <div data-cloze-result role="status" className="flex flex-col gap-3">
         <div className="flex flex-col gap-0.5">
-          <h3 className="text-title-s font-semibold text-ink">빈칸 {total}문제 끝</h3>
+          <h4 className="text-title-s font-semibold text-ink">빈칸 {total}문제 끝</h4>
           <p className="text-label tabular-nums text-ink-soft">
             {right} / {total} 맞힘
           </p>
@@ -1353,6 +1358,58 @@ export function ReadingLearningView({
     );
   }
 
+  /** Step 2 — the key-word cards, then the blanks (Step 3 until 2026-09-28 · D31 다 '핵심 어휘(카드 · 알아요/몰라요 + 빈칸)') */
+  function renderStep2() {
+    const known = Object.values(words.marks).filter((m) => m === "known").length;
+    const unknown = Object.values(words.marks).filter((m) => m === "unknown").length;
+    const allRevealed = keywords.length > 0 && keywords.every((_, i) => revealed[i + 1]);
+    const item = clozeItems[clozeIndex];
+    return (
+      <section data-step-panel="2" aria-label="핵심 어휘" className="flex flex-col gap-3">
+        <p className="text-label text-ink-soft">
+          뜻을 먼저 떠올려 본 뒤 &lsquo;뜻 보기&rsquo;를 누르고 알아요 · 몰라요를 표시하세요. 몰라요 단어는 아래 빈칸에 먼저 나와요.
+        </p>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <p data-vocab-summary className="text-label tabular-nums text-ink-soft">
+            알아요 {known} · 몰라요 {unknown} · 남은 단어 {Math.max(0, keywords.length - known - unknown)}
+          </p>
+          <button
+            type="button"
+            data-action="reveal-all"
+            onClick={() => {
+              if (allRevealed) setRevealed({});
+              else setRevealed(Object.fromEntries(keywords.map((_, i) => [i + 1, true])));
+            }}
+            className={quietButton}
+          >
+            {allRevealed ? "뜻 모두 가리기" : "뜻 모두 보기"}
+          </button>
+        </div>
+        {keywords.length ? (
+          <ul className="flex list-none flex-col divide-y divide-line rounded-card border border-line bg-raised">
+            {keywords.map((kw, i) => renderWordRow(kw, i + 1))}
+          </ul>
+        ) : (
+          <p className="text-label text-ink-soft">이 강의에는 핵심 어휘가 없어요.</p>
+        )}
+
+        <div data-blanks className="mt-3 flex flex-col gap-3 border-t border-line pt-4">
+          <h3 className="text-body font-semibold text-ink">빈칸 채우기</h3>
+          <p className="text-label text-ink-soft">
+            빈칸에 들어갈 단어를 고르세요. 이 글의 핵심 어휘에서 글 앞 · 중간 · 끝 한 문제씩 나오고, 몰라요로 표시한 단어가 먼저 나와요.
+          </p>
+          {clozeItems.length === 0 ? (
+            <p className="text-label text-ink-soft">이 글에서는 빈칸 문제를 만들 수 없어요.</p>
+          ) : item ? (
+            renderBlank(item)
+          ) : (
+            renderBlankResult()
+          )}
+        </div>
+      </section>
+    );
+  }
+
   /** the romanized Korean words of this page (lessonSpeechForm) — any word the learner says there counts (RD-L13 ④) */
   const readAloudTargets = useMemo(() => {
     const target = sentencePairs[0]?.en ?? "";
@@ -1365,75 +1422,7 @@ export function ReadingLearningView({
     return slotted !== target ? [target, slotted] : undefined;
   }, [sentencePairs, lessonKey]);
 
-  function renderStep3() {
-    const item = clozeItems[clozeIndex];
-    return (
-      <section data-step-panel="3" aria-label="독해 퀴즈" className="flex flex-col gap-3">
-        {SHOW_GENERATED_QUIZ && questions.length ? (
-          <div className="flex flex-col gap-3">
-            {questions.map((q) => {
-              const picked = quizAnswers[q.id];
-              const answered = picked !== undefined;
-              return (
-                <div key={q.id} className="flex flex-col gap-2 rounded-card border border-line bg-raised px-4 py-4">
-                  <h3 className="text-body font-semibold text-ink">{q.question}</h3>
-                  <div className="flex flex-col gap-2">
-                    {q.options.map((opt, oIdx) => (
-                      <button
-                        key={oIdx}
-                        type="button"
-                        disabled={answered}
-                        onClick={() => setQuizAnswers((prev) => ({ ...prev, [q.id]: oIdx }))}
-                        className={
-                          "flex min-h-11 items-center rounded-control border px-3 text-left text-label transition-colors " +
-                          (!answered
-                            ? "border-line bg-raised text-ink hover:bg-sunken cursor-pointer"
-                            : oIdx === q.answerIndex
-                              ? "border-success text-success"
-                              : picked === oIdx
-                                ? "border-danger text-danger line-through"
-                                : "border-line text-ink-faint")
-                        }
-                      >
-                        {opt}
-                      </button>
-                    ))}
-                  </div>
-                  {answered ? <p className="text-label text-ink-soft">{q.explanation}</p> : null}
-                </div>
-              );
-            })}
-          </div>
-        ) : null}
-
-        <p className="text-label text-ink-soft">
-          빈칸에 들어갈 단어를 고르세요. 이 글의 핵심 어휘에서 글 앞 · 중간 · 끝 한 문제씩 나오고, 몰라요로 표시한 단어가 먼저 나와요.
-        </p>
-        {clozeItems.length === 0 ? (
-          <p className="text-label text-ink-soft">이 글에서는 빈칸 문제를 만들 수 없어요.</p>
-        ) : item ? (
-          renderBlank(item)
-        ) : (
-          renderBlankResult()
-        )}
-
-        {sentencePairs[0] ? (
-          <div data-read-aloud className="mt-3 flex flex-col gap-3 border-t border-line pt-4">
-            <div>
-              <h3 className="text-body font-semibold text-ink">소리 내어 읽기 · 말하기 인식(단어 일치)</h3>
-              <p className="mt-0.5 text-label text-ink-soft">첫 문장을 소리 내어 읽으면, 알아들은 단어가 원문과 얼마나 맞는지 보여 줘요.</p>
-            </div>
-            <p lang="en" className="rounded-card border border-line bg-raised px-4 py-3 font-serif text-body text-ink">
-              {sentencePairs[0].en}
-            </p>
-            <VoiceSpeakingTester targetText={sentencePairs[0].en} targetTexts={readAloudTargets} onStart={stopAll} buttonLabel="소리 내어 읽기" />
-          </div>
-        ) : null}
-      </section>
-    );
-  }
-
-  // --- Step 4 ------------------------------------------------------------------------------------------------------
+  // --- Step 3 · 원문 대조 (Step 4 until 2026-09-28) ------------------------------------------------------------------
   const englishWithKeywords = (i: number): ReactNode => {
     const text = sentencePairs[i]?.en ?? "";
     const marks = keywordMarks[i] || [];
@@ -1573,25 +1562,14 @@ export function ReadingLearningView({
     );
   }
 
-  function renderStep4() {
-    if (rereading) {
-      return (
-        <section data-step-panel="4" aria-label="원문 대조" className="flex flex-col gap-3">
-          <p className="text-label text-ink-soft">같은 글을 뜻을 파악하며 평소 속도로 다시 읽으세요. 다 읽으면 &lsquo;다 읽었어요&rsquo;를 누르세요.</p>
-          {renderPassage(running === "again", "reread")}
-        </section>
-      );
-    }
-    const first = speed.first;
-    const again = speed.again;
-    const shown = outcome && outcome.purpose === "again" ? outcome : null;
+  function renderStep3() {
     const views: { value: "both" | "en" | "ko"; label: string }[] = [
       { value: "both", label: "영어 · 한글" },
       { value: "en", label: "영어만" },
       { value: "ko", label: "한글만" },
     ];
     return (
-      <section data-step-panel="4" aria-label="원문 대조" className="flex flex-col gap-3">
+      <section data-step-panel="3" aria-label="원문 대조" className="flex flex-col gap-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <h2 className="text-label font-semibold text-ink">영어 원문 · 한글 해석</h2>
           <div className="flex items-center gap-2">
@@ -1616,28 +1594,24 @@ export function ReadingLearningView({
           </div>
         </div>
         <p className="text-label text-ink-soft">줄이나 번호를 누르면 그 문장을 들어요. 점선 단어를 누르면 뜻이 보여요.</p>
-        {playerBlock("step4")}
+        {playerBlock("step3")}
         <ol data-rows className="flex list-none flex-col divide-y divide-line rounded-card border border-line bg-raised">
           {sentencePairs.map((pair, i) => renderRow(pair, i))}
         </ol>
 
-        <div ref={rereadRef} data-reread className="flex flex-col gap-2 rounded-card border border-line bg-raised px-4 py-4">
-          <h3 className="text-body font-semibold text-ink">같은 글 다시 읽기</h3>
-          <p className="text-label text-ink-soft">해석과 소리를 확인했으면 같은 글을 다시 읽고 속도를 재 보세요.</p>
-          {again ? (
-            <p data-reread-result role="status" className="text-label tabular-nums text-ink">
-              {timeOnly
-                ? `같은 글 다시 읽기: ${first ? `${formatDuration(first.ms)} → ` : ""}${formatDuration(again.ms)}`
-                : `같은 글 다시 읽기: ${first ? `${first.wpm} → ` : ""}${again.wpm} WPM`}
+        {sentencePairs[0] ? (
+          // the reading-aloud check — with the blanks until 2026-09-28; D34 would make it this view's '따라 읽기' of a chosen sentence
+          <div data-read-aloud className="mt-3 flex flex-col gap-3 border-t border-line pt-4">
+            <div>
+              <h3 className="text-body font-semibold text-ink">소리 내어 읽기 · 말하기 인식(단어 일치)</h3>
+              <p className="mt-0.5 text-label text-ink-soft">첫 문장을 소리 내어 읽으면, 알아들은 단어가 원문과 얼마나 맞는지 보여 줘요.</p>
+            </div>
+            <p lang="en" className="rounded-card border border-line bg-raised px-4 py-3 font-serif text-body text-ink">
+              {sentencePairs[0].en}
             </p>
-          ) : null}
-          {hiddenNote(shown && !shown.tooFast ? shown : null)}
-          {shown?.tooFast ? tooFastNotice(shown) : null}
-          <button type="button" data-action="reread-start" onClick={() => startRun("again")} className={`${outlineButton} sm:self-start`}>
-            <IconRepeat />
-            <span>다시 읽고 재기</span>
-          </button>
-        </div>
+            <VoiceSpeakingTester targetText={sentencePairs[0].en} targetTexts={readAloudTargets} onStart={stopAll} buttonLabel="소리 내어 읽기" />
+          </div>
+        ) : null}
 
         <details data-notes open={memoOpen} onToggle={(event) => setMemoOpen(event.currentTarget.open)} className="group rounded-card border border-line bg-raised">
           <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 rounded-card px-4 text-label font-medium text-ink transition-colors hover:bg-sunken [&::-webkit-details-marker]:hidden">
@@ -1659,6 +1633,149 @@ export function ReadingLearningView({
             <p className="text-caption tabular-nums text-ink-soft">{notes.length}자</p>
           </div>
         </details>
+      </section>
+    );
+  }
+
+  // --- Step 4 · 다시 읽고 재기 + 이해 문제 (2026-09-28 · D31 다) ---------------------------------------------------------
+  /**
+   * 이해 문제 자리 — 사장님 D31 다 "4 다시 읽고 재기 + 이해 문제(새 문제 512 가 들어갈 자리 — 들어오기 전엔 다시 읽고 재기만)".
+   * 2026-09-28 새 문제: the passage's two questions (lessonQuestions — the page reads them on the server, like clozeAlsoFits: the
+   * leak rule) come HERE, under the timed reading, with their own heading '이해 문제' (the tab keeps '다시 읽고 재기' — a 360px
+   * phone has no room for more). They are hidden while the clock runs. An answered question shows its sentences with their
+   * translation. The same component as LISTENING Step 1 (LessonQuestions). A passage without a question file keeps the slot
+   * empty and hidden: no heading, no '준비 중'. [data-comprehension] is the hook for the audit tools (drive-reading.cjs).
+   * KIG-008's auto-generated quiz (SHOW_GENERATED_QUIZ — off, the call site kept behind it; it was Step 3 '독해 퀴즈') would show
+   * here, where there is no question file, if it were turned back on.
+   */
+  const evidenceSentences = (question: LessonQuestion) => {
+    const rows = question.evidence.map((n) => ({ n, pair: sentencePairs[n - 1] })).filter((row) => row.pair);
+    if (rows.length === 0) return null;
+    return (
+      <div data-question-evidence className="flex flex-col gap-2 rounded-control bg-sunken px-3 py-2.5">
+        <p className="text-caption font-semibold text-ink-soft">근거</p>
+        {rows.map(({ n, pair }) => (
+          <div key={n} className="flex flex-col gap-0.5">
+            <p lang="en" className="text-label text-ink">
+              <span className="tabular-nums text-ink-soft">{n}.</span> {pair.en}
+            </p>
+            {pair.ko ? <p className="text-label text-ink-soft">{pair.ko}</p> : null}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  function renderComprehension() {
+    if (lessonQuestions && lessonQuestions.length > 0) {
+      return (
+        <div data-comprehension="questions">
+          <LessonQuestions
+            course="reading"
+            mainId={mainId}
+            questions={lessonQuestions}
+            profile={READING_LEARNING_PROFILE}
+            heading="이해 문제"
+            intro="다시 읽은 뒤 풀어 보세요. 고르면 바로 답이 나와요."
+            evidence={evidenceSentences}
+          />
+        </div>
+      );
+    }
+    if (!(SHOW_GENERATED_QUIZ && questions.length > 0)) return <div data-comprehension="" hidden />;
+    return (
+      <div data-comprehension="generated" className="flex flex-col gap-3">
+        {questions.map((q) => {
+          const picked = quizAnswers[q.id];
+          const answered = picked !== undefined;
+          return (
+            <div key={q.id} className="flex flex-col gap-2 rounded-card border border-line bg-raised px-4 py-4">
+              <h3 className="text-body font-semibold text-ink">{q.question}</h3>
+              <div className="flex flex-col gap-2">
+                {q.options.map((opt, oIdx) => (
+                  <button
+                    key={oIdx}
+                    type="button"
+                    disabled={answered}
+                    onClick={() => setQuizAnswers((prev) => ({ ...prev, [q.id]: oIdx }))}
+                    className={
+                      "flex min-h-11 items-center rounded-control border px-3 text-left text-label transition-colors " +
+                      (!answered
+                        ? "border-line bg-raised text-ink hover:bg-sunken cursor-pointer"
+                        : oIdx === q.answerIndex
+                          ? "border-success text-success"
+                          : picked === oIdx
+                            ? "border-danger text-danger line-through"
+                            : "border-line text-ink-faint")
+                    }
+                  >
+                    {opt}
+                  </button>
+                ))}
+              </div>
+              {answered ? <p className="text-label text-ink-soft">{q.explanation}</p> : null}
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+
+  /**
+   * The timed reading (Step 1's machinery until 2026-09-28): the passage is not on screen until '읽기 시작', so it cannot be read
+   * before the clock starts; while timing it is plain text with '다 읽었어요' at its end. The result is this run only — its time
+   * or WPM against the target, no earlier number, no percentage — and '다시 재기' times it again.
+   */
+  function renderStep4() {
+    const again = speed.again;
+    const shown = outcome;
+    return (
+      <section data-step-panel="4" aria-label="다시 읽고 재기" className="flex flex-col gap-3">
+        {!running ? (
+          <p className="text-label text-ink-soft">
+            {again
+              ? "같은 글을 다시 재려면 '다시 재기'를 누르세요."
+              : "원문 대조까지 마쳤으면 같은 글을 다시 읽으며 시간을 재 보세요. '읽기 시작'을 누르면 글이 나와요. 뜻을 파악하며 평소 속도로 읽고, 다 읽으면 '다 읽었어요'를 누르세요."}
+          </p>
+        ) : null}
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+            {!running && !again ? (
+              <button type="button" data-action="start-reading" onClick={() => startRun()} className={`${filledButton} min-h-12 px-5`}>
+                <span>읽기 시작</span>
+              </button>
+            ) : null}
+            <p data-passage-meta="timed" className="text-label tabular-nums text-ink-soft">
+              {wordCount}단어 · {sentencePairs.length}문장 · 목표 약 {formatApprox(targetMs(wordCount))}
+            </p>
+          </div>
+          <ViewMenu prefs={prefs} onChange={changePrefs} onCopy={copyPassage} copied={copied} />
+        </div>
+
+        {running ? renderPassage("timed") : null}
+
+        {!running && (shown?.tooFast || again) ? (
+          <div ref={resultRef} className="flex flex-col gap-3">
+            {shown?.tooFast ? tooFastNotice(shown) : null}
+            {again ? (
+              <div data-speed-result role="status" className="flex flex-col gap-2 rounded-card border border-line bg-raised px-4 py-4">
+                <p className="text-caption text-ink-soft">다시 읽기</p>
+                <p className="text-title font-semibold tabular-nums text-ink">{timeOnly ? formatDuration(again.ms) : `${again.wpm} WPM`}</p>
+                <p className="text-label tabular-nums text-ink-soft">
+                  {wordCount}단어 · {formatDuration(again.ms)}
+                </p>
+                <p className="text-label text-ink">{verdictLine(again.wpm)}</p>
+                {hiddenNote(shown && !shown.tooFast ? shown : null)}
+                <button type="button" data-action="measure-again" onClick={() => startRun()} className={`${outlineButton} sm:self-start`}>
+                  <IconRepeat />
+                  <span>다시 재기</span>
+                </button>
+              </div>
+            ) : null}
+          </div>
+        ) : null}
+
+        {!running ? renderComprehension() : null}
       </section>
     );
   }

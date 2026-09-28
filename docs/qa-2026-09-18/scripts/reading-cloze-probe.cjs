@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * READING Step 3 빈칸 — 앱의 생성기(src/lib/readingUtils.ts)가 강의마다 낼 수 있는 빈칸을 그대로 보인다.
+ * (2026-09-28 순서 바꿈 — 사장님 D31 다: 빈칸은 이제 Step 2 '핵심 어휘' 카드 아래. 생성기와 씨앗은 그대로.)
  * 앱과 같은 것을 넘긴다: readingSentences 의 english · 핵심어 readingVocabulary(word · partOfSpeech) · 씨앗 'reading/<본 강의 id>'.
  *
  * 2026-09-27 (READING 학습법 · 화면 — 계획 G02 · D33 나): 빈칸은 이제 그 강의의 핵심어에서만 나오고 모두 씨앗으로 정해진다

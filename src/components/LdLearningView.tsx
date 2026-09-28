@@ -13,7 +13,9 @@
  *           rows and no empty box (U09); line icons, the colour tokens and the six text sizes (U04 · U06 · U07 · U16); one
  *           speed set 0.75 · 1 · 1.25 · 1.5 for every step (U11); one line of instruction per step + '이 단계는?' (U15).
  *   Step 1  (F01 · D01 · D25 · LD-L03) the lesson's names and numbers above the player (two lines, '더 보기'); the page's own
- *           player plays here and the top one hides from the first paint (data-owns-passage-player).
+ *           player plays here and the top one hides from the first paint (data-owns-passage-player). 2026-09-28 새 문제 (사장님
+ *           "아니 나로 해"): under the player, the lesson's 2–3 questions '들은 내용 확인' (LessonQuestions — the same component as
+ *           READING Step 4); an answered question offers its lines to hear again, not their text.
  *   Step 2  (F02 · D24 나 · LD-L04 · L05 · L12 · L13 · U02 · U03 · U21 · U22) 빈칸 (default) · 블록 · 쓰기 — the rules are in
  *           src/lib/ldDictation.ts; the Korean line after the first check; where the answer differs, word by word; '정답 보기'
  *           after two wrong checks (the line then counts as helped); tiles that stay where they are; a 16px typing box, Enter checks.
@@ -88,7 +90,9 @@ import {
 import { markLessonDone, readCourseRecord, recordAttempt } from "@/lib/learning/record";
 import { clearLessonGate, setLessonGate } from "@/lib/lessonGate";
 import type { PassagePlayerData } from "@/lib/passagePlayer";
+import type { LessonQuestion } from "@/lib/lessonQuestions";
 import { AudioPlayer } from "./AudioPlayer";
+import { LessonQuestions } from "./LessonQuestions";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import { StepTabs } from "./StepTabs";
 import { IconBackspace, IconCheck, IconChevronDown, IconChevronRight, IconPlay, IconSpeaker, IconStop, IconX } from "./icons";
@@ -104,6 +108,8 @@ interface LdLearningViewProps {
   ldEnglishScript?: LdScriptRow[] | null;
   /** 2026-09-27 (계획 A10 · F01): the page's whole-lesson player as data — played in Step 1; the top one then hides */
   passagePlayers?: PassagePlayerData[] | null;
+  /** 2026-09-28 새 문제: this lesson's comprehension questions, read on the server after the access check (lessonQuestions.ts) */
+  lessonQuestions?: LessonQuestion[] | null;
 }
 
 /** `answer`: the solution of a riddle round ("Can you guess why?"), kept out of the Korean line. */
@@ -231,6 +237,7 @@ function LdLessonView({
   isScript,
   ldEnglishScript = null,
   passagePlayers = null,
+  lessonQuestions = null,
 }: LdLearningViewProps) {
   const lessonId = lessonKey.split("/").pop() || lessonKey;
   // a script page (d001-1) has its main lesson's lines — the same blanks, the same engine items (src/lib/ldLearning.ts)
@@ -645,6 +652,9 @@ function LdLessonView({
 
   const switchStep = (n: StepNo) => {
     if (n === step) return; // the current tab again: keep the work on screen
+    // 2026-09-28 (사장님 — the rule of STUDENT 060705c · VOCA): a step change never starts sound. Checked that day: nothing here or
+    // in a step's first paint plays (the players have no autoplay) — each step waits for its own play button; '다음 문장' inside
+    // Step 2 plays the next line (goLine(…, true)) because the learner pressed it. Keep it that way.
     stopAll();
     // D28: Steps 2–4 continue on the same line — but after the last line of a finished dictation, Steps 3 · 4 start from line 1
     if ((n === 3 || n === 4) && step === 2 && lineIdx === total - 1 && allChecked) {
@@ -897,6 +907,31 @@ function LdLessonView({
   // ------------------------------------------------------------------------------------------------------------
   // Render — Step 1
   // ------------------------------------------------------------------------------------------------------------
+  /**
+   * 2026-09-28 새 문제: what proves an answered question, in a LISTENING way — its lines to hear again ('문장 n' is Step 2's
+   * numbering), never their text: Step 1 comes before dictation, and a line's English stays hidden until it is dictated (D29).
+   */
+  const evidenceLines = (question: LessonQuestion) => {
+    const lineNos = question.evidence.filter((n) => sentences[n - 1]?.en);
+    if (lineNos.length === 0) return null;
+    return (
+      <div data-question-evidence className="flex flex-col gap-1.5">
+        <p className="text-label text-ink-soft">근거가 되는 문장을 다시 들어 보세요.</p>
+        <div className="flex flex-wrap gap-2">
+          {lineNos.map((n) => {
+            const on = isOn(`line:${n - 1}:${speed}`);
+            return (
+              <button key={n} type="button" data-action="play-evidence" data-line={n} aria-pressed={on} onClick={() => playLine(n - 1, speed)} className={outlineButton}>
+                {on ? <IconStop /> : <IconSpeaker />}
+                <span>문장 {n}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
+
   function renderStep1() {
     return (
       <section data-step-panel="1" aria-label="블라인드 리스닝" className="flex flex-col gap-3">
@@ -927,6 +962,17 @@ function LdLessonView({
               ? <AudioPlayer fallbackSentences={queueTexts} lang="en" gender="neutral" speeds={SPEEDS} initialRate={speed} onRateChange={setSpeed} />
               : <p className="text-label text-ink-soft">이 강의에는 들을 문장이 없어요.</p>}
         </div>
+        {lessonQuestions && lessonQuestions.length > 0 ? (
+          <LessonQuestions
+            course="ld"
+            mainId={baseId}
+            questions={lessonQuestions}
+            profile={LD_LEARNING_PROFILE}
+            heading="들은 내용 확인"
+            intro="끝까지 들은 뒤 풀어 보세요. 고르면 바로 답이 나와요."
+            evidence={evidenceLines}
+          />
+        ) : null}
         {SHOW_GENERATED_QUIZ && contextQuizzes.length > 0 ? (
           <div data-quiz className="flex flex-col gap-4 rounded-card border border-line bg-raised px-4 py-4">
             {contextQuizzes.map((quiz, qIdx) => {

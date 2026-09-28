@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d019",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d019-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "쥘 베른이 꿈꾼 달 여행이 100년 뒤 현실이 되었다",
+        "쥘 베른이 실제로 우주선을 만들어 달에 착륙했다",
+        "쥘 베른이 미국 우주비행사와 함께 달을 연구했다",
+        "쥘 베른의 달 여행 이야기는 그의 시대에 바로 사실로 증명되었다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3,
+        10
+      ],
+      "note": "“dreamed about wonderful machines and fantastic journeys”, “a journey to the moon”, “impossible dreams, but 100 years later, men were walking on the moon”에서 알 수 있다."
+    },
+    {
+      "id": "d019-q2",
+      "type": "세부 사실",
+      "prompt": "베른의 이야기에서 우주선이 지구를 떠나 달에 도착하기까지 걸린 시간으로 알맞은 것은?",
+      "options": [
+        "79시간 13분 20초",
+        "97시간 13분 20초",
+        "97시간 30분 12초",
+        "17시간 13분 20초"
+      ],
+      "answer": 1,
+      "evidence": [
+        6
+      ],
+      "note": "“97 hours, 13 minutes, and 20 seconds”라고 했다."
+    },
+    {
+      "id": "d019-q3",
+      "type": "세부 사실",
+      "prompt": "베른의 이야기에서 우주선에 탄 사람들로 알맞은 것은?",
+      "options": [
+        "미국인 1명과 프랑스인 2명",
+        "영국인 2명과 프랑스인 1명",
+        "미국인 2명과 프랑스인 1명",
+        "미국인 3명과 영국인 1명"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "“The passengers, 2 Americans and one Frenchman”라고 했다."
+    }
+  ]
+}

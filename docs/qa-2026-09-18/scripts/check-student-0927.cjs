@@ -9,7 +9,7 @@
  *
  * 보는 것
  *   L  1단계: 처음엔 모든 문장이 '먼저 듣기'(잠김) → 한 문장을 끝까지 들으면 그 문장만 '눌러서 보기' → 보기 · 가리기 → 보기 방식을 바꾸면 연 카드가 닫힘
- *   D  2단계: 들어가면 문장이 재생됨 · 우리말은 힌트 뒤 · 틀리게 조립 → 틀린 자리 · '여기부터 다시' · 우리말이 보임 → 바르게 → 정답 · 힌트로만 채우면 '힌트로 완성'(정답으로 안 셈)
+ *   D  2단계: 단계를 옮겨도 소리 없음(09-28) · '듣기'로 재생 · 우리말은 힌트 뒤 · 틀리게 조립 → 틀린 자리 · '여기부터 다시' · 우리말이 보임 → 바르게 → 정답 · 힌트로만 채우면 '힌트로 완성'(정답으로 안 셈)
  *   M  3단계 마이크(가짜): 'nice to meet you sir' → 100점 빨강 0 · 앞 세 낱말 되풀이 → 85점 이상 빨강 0 · 70~79점은 '통과했어요' · 반복 재생 중 마이크를 켜면 반복이 멈춤
  *   C  완료: 연습 전에는 완료 단추가 꺼짐 → 받아쓰기 · 말하기 80% 뒤 켜짐 → 완료 → '완료한 강의' · '다음 강의: Ch 1-2 · …' · 공통 엔진 기록(kig-learning:student) 강의 날짜 · 문장 3개
  *   I  s1-2 내 정보: 넣은 값이 3단계 문장에 보이고, 듣기는 모범 문장 클립 그대로(브라우저 음성 0), 마이크는 내 정보로 말해도 100점
@@ -103,12 +103,18 @@ async function speak(tab, idx, said) {
     check("L4 '모두' → '가림'이면 연 카드도 닫힘", allEn === 3 && afterHidden === 0, `모두 ${allEn} · 가림으로 돌린 뒤 영어 ${afterHidden}`);
 
     // ------------------------------------------------------------------ D. Step 2
+    // 2026-09-28 (사장님 "1단계에서 2단계로 넘어가는데 음성이 나와 이거 해결해"): a step change never starts sound — Step 2 opens
+    // silent and the learner's own '듣기' plays the sentence (the first version of this check expected the auto-play)
     await H.audioLog(tab, { clear: true });
     await click(tab, '[data-step-tab="2"]', 1500);
     const log2 = await H.audioLog(tab);
-    const autoPlayed = log2.some((e) => e.ev === "play()" || e.ev === "playing");
+    const autoPlayed = log2.some((e) => e.ev === "play()" || e.ev === "playing" || (e.ev === "tts.speak" && (e.text || "").trim()));
+    await H.audioLog(tab, { clear: true });
+    await click(tab, '[data-step-panel="2"] [data-action="replay"]', 1200);
+    const pressedPlays = (await H.audioLog(tab)).some((e) => e.ev === "play()" || e.ev === "playing");
+    await click(tab, '[data-step-panel="2"] [data-action="replay"]', 300); // stop it again
     const koHidden = (await count(tab, "[data-dictation] [data-ko]")) === 0 && (await count(tab, '[data-action="ko-hint"]')) === 1;
-    check("D1 들어가면 문장이 먼저 나오고 우리말은 힌트 뒤", autoPlayed && koHidden, `재생 ${autoPlayed} · 우리말 숨김 ${koHidden}`);
+    check("D1 단계를 옮겨도 소리 없음 · '듣기'로 재생 · 우리말은 힌트 뒤", (BREAK === "autoplay" ? autoPlayed : !autoPlayed) && pressedPlays && koHidden, `들어갈 때 소리 ${autoPlayed} · '듣기' 누르면 소리 ${pressedPlays} · 우리말 숨김 ${koHidden}`);
     const lower = await tab.eval(`[...document.querySelectorAll('[data-word-bank] button')].map((b) => (b.innerText || '').trim())`);
     // every tile must be a word of this lesson (a distractor comes from its other sentences — 'with' is fine when s1-1 #2 has it;
     // the first version of this check banned the old fixed list outright and failed on a legitimate 'with', 2026-09-27)

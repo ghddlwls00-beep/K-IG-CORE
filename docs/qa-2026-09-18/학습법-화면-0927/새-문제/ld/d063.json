@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d063",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d063-q1",
+      "type": "중심 내용",
+      "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "레코드 가게에서 우연히 유명 가수를 만나 사인을 받았다는 이야기",
+        "리츠 호텔에서 열린 공연에 다녀왔다는 이야기",
+        "길을 물어본 낯선 남자가 알고 보니 유명 가수였다는 이야기",
+        "화자가 잃어버렸던 지갑을 되찾았다는 이야기"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        8,
+        10
+      ],
+      "note": "“asked me the way to the Ritz Hotel” · “number two in the top 20” · “the singer in the Fantastic Five”에서 알 수 있음"
+    },
+    {
+      "id": "d063-q2",
+      "type": "세부 사실",
+      "prompt": "화자가 낯선 남자를 만난 때와 장소로 알맞은 것은?",
+      "options": [
+        "일요일 오후 2시, 리츠 호텔 앞",
+        "토요일 저녁 7시, 레코드 가게 안",
+        "금요일 아침 9시 30분, 하이 스트리트",
+        "토요일 아침 9시 30분, 하이 스트리트"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "“On Saturday morning at 9:30, I was walking down High Street” · “A man stopped me”에서 알 수 있음"
+    },
+    {
+      "id": "d063-q3",
+      "type": "세부 사실",
+      "prompt": "화자가 지갑을 찾다가 발견한 종이에 대한 설명으로 가장 적절한 것은?",
+      "options": [
+        "낯선 남자가 건네준 지폐 한 장",
+        "레코드 가게에서 받은 영수증",
+        "낯선 남자가 건네준 사진 한 장",
+        "판타스틱 파이브의 공연 표"
+      ],
+      "answer": 2,
+      "evidence": [
+        9
+      ],
+      "note": "“the piece of paper the stranger had given to me” · “It was a photo”에서 알 수 있음"
+    }
+  ]
+}

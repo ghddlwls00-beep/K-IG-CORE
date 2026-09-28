@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "lesson": "d023",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d023-q1",
+      "type": "세부 사실",
+      "prompt": "오늘 뉴저지 경찰에 체포된 사람은 누구인가?",
+      "options": [
+        "토니 모턴",
+        "키드 나이바",
+        "길다 릴리",
+        "사건을 목격한 사람"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "1행 'New Jersey police today arrested Tony Morton for the murder of Kid Naiba' 참고"
+    },
+    {
+      "id": "d023-q2",
+      "type": "세부 사실",
+      "prompt": "그 유명한 밀수범이 총에 맞은 시각으로 옳은 것은?",
+      "options": [
+        "밤 8시에서 8시 30분 사이",
+        "밤 8시 30분에서 9시 사이",
+        "밤 9시에서 9시 30분 사이",
+        "밤 9시 30분에서 10시 사이"
+      ],
+      "answer": 2,
+      "evidence": [
+        5
+      ],
+      "note": "5행 'Somebody shot the well-known smuggler between 9 and 9:30 last night' 참고"
+    },
+    {
+      "id": "d023-q3",
+      "type": "다음에 할 일",
+      "prompt": "이 뉴스에 따르면 경찰이 앞으로 하려는 일로 가장 적절한 것은?",
+      "options": [
+        "체포한 용의자를 풀어 주고 다른 사람을 찾는다",
+        "사건을 종결하고 수사를 중단한다",
+        "길다를 찾아 용의자의 알리바이를 깬다",
+        "용의자의 식당을 뒤져 훔친 물건을 찾는다"
+      ],
+      "answer": 2,
+      "evidence": [
+        8
+      ],
+      "note": "8행 'Gilda is hiding somewhere in the city ... break Morton's alibi as soon as they have found her' 참고"
+    }
+  ]
+}

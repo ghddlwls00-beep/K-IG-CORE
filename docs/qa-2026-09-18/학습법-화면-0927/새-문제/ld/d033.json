@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d033",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d033-q1",
+      "type": "세부 사실",
+      "prompt": "뉴올리언스가 멕시코만에서 떨어진 거리로 옳은 것은?",
+      "options": [
+        "60킬로미터",
+        "100킬로미터",
+        "120킬로미터",
+        "160킬로미터"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "2번 줄 '160 kilometers north of the Gulf of Mexico'에서 확인."
+    },
+    {
+      "id": "d033-q2",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "뉴올리언스는 무역이 활발한 큰 항구 도시이다",
+        "뉴올리언스는 최근 관광객 수가 급격히 줄어들고 있다",
+        "뉴올리언스는 무역보다 농업이 중심인 조용한 도시이다",
+        "뉴올리언스는 위치가 나빠 배가 드나들기 어려운 도시이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        3,
+        4
+      ],
+      "note": "1·3·4번 줄 'busiest seaports' · 'great shipping center' · 'trade with Latin America'에서 확인."
+    },
+    {
+      "id": "d033-q3",
+      "type": "세부 사실",
+      "prompt": "뉴올리언스로 배를 통해 들어오는 물품으로 언급되지 않은 것은?",
+      "options": [
+        "바나나",
+        "목화",
+        "코코아 콩",
+        "커피"
+      ],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
+      "note": "5번 줄 'Bananas, cocoa beans and coffee'에서 확인."
+    }
+  ]
+}

@@ -139,12 +139,14 @@ const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getCompute
         }
         // 2026-09-27 (READING · 계획 D02 나): '학습 완료 체크' is disabled until one timed reading on this device — read once like a
         // learner first (lib/reading-page.cjs MEASURE_ONCE: '읽기 시작' → wait → '다 읽었어요').
+        // 2026-09-28 (READING 순서 바꿈 — D31 다): the timed reading is Step 4 '다시 읽고 재기' now (Step 1 '처음 읽기' is not timed and
+        // its '다 읽었어요' does not open the completion) — MEASURE_ONCE opens Step 4; the note says so.
         if (course === "reading") {
           if (await H.waitFor(tab, RDP.VIEW_READY, 8000)) await H.sleep(300);
           const gated = await tab.eval(`Boolean(document.querySelector('button[aria-label="학습 완료 체크"][disabled]'))`).catch(() => false);
           if (gated) {
             const r = await tab.eval(RDP.MEASURE_ONCE).catch(() => ({ ok: false, why: "eval failed" }));
-            practised = r && r.ok ? ` · 1단계를 한 번 잼` : ` · 1단계를 재지 못함: ${(r && r.why) || "?"}`;
+            practised = r && r.ok ? ` · 4단계에서 한 번 잼` : ` · 4단계에서 재지 못함: ${(r && r.why) || "?"}`;
             await H.sleep(400);
           }
         }
@@ -211,6 +213,10 @@ const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getCompute
       await H.setViewport(tab, "desktop");
     }
     // ---------- T. READING 문장을 눌러 그 문장 소리 ----------
+    // 2026-09-28 (READING 순서 바꿈 — D31 다): the first step with pressable sentences is still Step 1 — now '처음 읽기', not timed,
+    // its passage on screen from the start (no '읽기 시작'), each sentence a button that plays it. Step 3 (원문 대조) rows also play,
+    // but the loop stops at the first step that has [data-sentence-id]. --break T (pointer-events: none on [data-sentence-id]) still
+    // leaves every press silent → FAIL.
     if (ONLY.has("T")) {
       await H.setViewport(tab, "desktop");
       for (const id of ["pr001", "pr002"]) {
