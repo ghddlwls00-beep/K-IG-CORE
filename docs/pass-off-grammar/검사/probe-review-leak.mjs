@@ -8,7 +8,9 @@
  *   P1 HTML · RSC 에 유료 레슨(무료 두 레슨 밖 전부)의 글 0 — 문항 · ① 예문 · ② 규칙 · ⑤ 틀, 무료 레슨에도 있는 같은 글은 뺌
  *   P2 pg01-1 의 유료 STUDENT 보충(content/private) 글 0
  *   P3 무료 레슨의 복습 문항 글은 RSC 에 있음(탐침이 글을 볼 수 있다는 증거) · 쪽이 200 · 제목 '오늘 복습'
- *   --selftest : 받은 HTML 에 유료 문장 하나를 넣은 사본으로 P1 이 1 을 세는지(탐침이 실패할 수 있음) — exit 1 이어야 맞음
+ *   --selftest : 받은 HTML 에 유료 글 하나씩을 심은 사본으로 심은 칸마다 FAIL 이 나는지(탐침이 실패할 수 있음) — 심는 곳: P1(복습 쪽) ·
+ *     P6(오답노트 쪽) · P7(구성도 TOPIC 1 쪽 — 점검 17) · --secrets 면 P8(이용권 오답노트 쪽 — 점검 17). 심은 칸이 모두 FAIL 이면
+ *     exit 1(맞음), 심은 칸 하나라도 PASS 거나 심지 못했으면(--secrets 인데 이용권 등록 실패 등) exit 2 — 탐침을 믿을 수 없음
  *   --secrets <json> : 이용권 쪽도 가짜 없이(check-progress-live.mjs 와 같은 준비 — 버리는 시험 비밀값 {LICENSE_SALT,
  *     LICENSE_SECRET} 을 넣고 켠 `npx next dev -p 3472`, R2 값 없이 → 로컬 대체 저장소 data/*.json). STUDENT 이용권을 등록해
  *     P4 이용권 복습 쪽 HTML · RSC 에 레슨 글(무료 레슨 것까지) 0 — 문항은 API 로만 옴 · 무료 안내 표시 없음
@@ -103,10 +105,16 @@ async function get(p, { rsc = false, cookie = null } = {}) {
 
 const rows = [];
 const check = (name, ok, detail = "") => rows.push({ ok, name, detail: String(detail).slice(0, 300) });
+/** --selftest: the checks a paid string was planted for (each must FAIL) */
+const planted = new Set();
+const plant = (id, body, needle) => {
+  planted.add(id);
+  return `${body}<p>${needle}</p>`;
+};
 
 const html = await get(`/${COURSE}/review`);
 const rsc = await get(`/${COURSE}/review`, { rsc: true });
-if (SELFTEST) html.body += `<p>${paidNeedles[0]}</p>`;
+if (SELFTEST) html.body = plant("P1", html.body, paidNeedles[0]);
 
 const p1 = [...new Set([...found(html.body, paidNeedles), ...found(rsc.body, paidNeedles)])];
 check(`P1 이용권 없이 복습 쪽 HTML · RSC 에 유료 레슨 ${paidLessons.length}개의 글 ${paidNeedles.length}개 중 0`, p1.length === 0, p1.slice(0, 3).join(" | ") || "0");
@@ -128,7 +136,7 @@ check(
 // --- 단계 2-나 E2: the wrong-answer list and the topic map, without a licence --------------------------------------------------
 const notesHtml = await get(`/${COURSE}/review?notes=1`);
 const notesRsc = await get(`/${COURSE}/review?notes=1`, { rsc: true });
-if (SELFTEST) notesHtml.body += `<p>${supplementNeedles[0]}</p>`;
+if (SELFTEST) notesHtml.body = plant("P6", notesHtml.body, supplementNeedles[0]);
 const p6 = [...new Set([...found(notesHtml.body, [...paidNeedles, ...supplementNeedles]), ...found(notesRsc.body, [...paidNeedles, ...supplementNeedles])])];
 const seenNotes = freeItemTexts.filter((t) => forms(t).some((f) => notesRsc.body.includes(f)));
 check(`P6 이용권 없이 오답노트 쪽 HTML · RSC 에 유료 레슨 글 · 보충 글 ${paidNeedles.length + supplementNeedles.length}개 중 0 · 무료 레슨 문항 글 ${freeItemTexts.length}개는 있음 · 제목 '오답노트'`,
@@ -141,6 +149,8 @@ const p7Pages = [];
 for (const topic of [1, 2, lastTopic]) {
   const h = await get(`/${COURSE}/map?topic=${topic}`);
   const r = await get(`/${COURSE}/map?topic=${topic}`, { rsc: true });
+  // 점검 17: a paid string planted in TOPIC 1's map page must make P7 fail
+  if (SELFTEST && topic === 1) h.body = plant("P7", h.body, paidNeedles[1]);
   p7Pages.push(`${topic}:${h.status}/${r.status}${h.body.includes("이용권이 있으면") ? "" : "(안내 없음)"}`);
   p7 = [...p7, ...found(h.body, allLessonNeedles), ...found(r.body, allLessonNeedles)];
   if (h.status !== 200 || r.status !== 200 || !h.body.includes("이용권이 있으면")) p7.push(`TOPIC ${topic} 쪽 ${h.status}`);
@@ -218,6 +228,8 @@ if (secretsFile) {
     // ---- 단계 2-나 E2 with a licence ----
     const nh = await get(`/${COURSE}/review?notes=1`, { cookie });
     const nr = await get(`/${COURSE}/review?notes=1`, { rsc: true, cookie });
+    // 점검 17: a paid string planted in the licensed wrong-answer list's page must make P8 fail
+    if (SELFTEST) nh.body = plant("P8", nh.body, paidNeedles[2]);
     const p8 = [...new Set([...found(nh.body, allNeedles), ...found(nr.body, allNeedles)])];
     check(`P8 이용권(STUDENT) 오답노트 쪽 HTML · RSC 에 레슨 글 ${allNeedles.length}개(무료 레슨 것까지) 중 0 · 무료 안내 없음 · 제목 '오답노트'`,
       nh.status === 200 && nr.status === 200 && p8.length === 0 && !nh.body.includes('data-kig-paid-extra="license"') && nh.body.includes("오답노트"),
@@ -294,4 +306,19 @@ if (secretsFile) {
 for (const r of rows) console.log(`${r.ok ? "PASS" : "FAIL"}  ${r.name}  — ${r.detail}`);
 const failed = rows.filter((r) => !r.ok).length;
 console.log(`\n${SELFTEST ? "[--selftest] " : ""}${failed ? "FAIL" : "PASS"} — 실패 ${failed} / ${rows.length} · HTML ${html.body.length}자 · RSC ${rsc.body.length}자`);
+if (SELFTEST) {
+  // every check a string was planted for must FAIL; one planned but not planted (P8 with --secrets and no licence) or planted
+  // and still PASS means the probe cannot be trusted there — exit 2, not the 1 a working self-test gives
+  const expected = ["P1", "P6", "P7", ...(secretsFile ? ["P8"] : [])];
+  const caught = expected.filter((id) => planted.has(id) && rows.some((r) => !r.ok && r.name.startsWith(`${id} `)));
+  const notPlanted = expected.filter((id) => !planted.has(id));
+  const missed = expected.filter((id) => planted.has(id) && !caught.includes(id));
+  console.log(
+    `[--selftest] 심은 칸 ${[...planted].join(" · ")} → FAIL 로 잡힘 ${caught.join(" · ") || "없음"}` +
+      (missed.length ? ` · 못 잡음 ${missed.join(" · ")}` : "") +
+      (notPlanted.length ? ` · 심지 못함 ${notPlanted.join(" · ")}` : "") +
+      (secretsFile ? "" : " (P8 은 --secrets 일 때 — 이용권 쪽)"),
+  );
+  process.exit(missed.length || notPlanted.length ? 2 : 1);
+}
 process.exit(failed ? 1 : 0);

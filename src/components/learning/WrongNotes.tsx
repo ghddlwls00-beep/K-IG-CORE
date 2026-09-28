@@ -330,6 +330,8 @@ export function WrongNotes<T>({ course, source }: { course: ReviewCourse<T>; sou
                             className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control bg-ink px-4 text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90"
                           >
                             지금 다시 풀기
+                            {/* 점검 18: each lesson's button has a name of its own for a screen reader (the visible words first) */}
+                            <span className="sr-only"> ({titleOf(lesson.lessonId)})</span>
                           </button>
                         </div>
                         {waits > 0 ? (

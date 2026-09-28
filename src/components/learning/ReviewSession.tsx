@@ -124,7 +124,14 @@ export interface ReviewCourse<T> {
 export type ReviewSource<T> =
   /** a licence, and the course's record kept on the server — `learner` is the licence's id (the page reads the session) */
   | { kind: "server"; learner: string }
-  /** no server: the device plans from the record kept with no licence, over these items (the page's — free text only) */
+  /**
+   * no server: the device plans from the record kept with no licence, over these items (the page's — free text only).
+   * TODO(점검 19 — a precondition, docs/pass-off-grammar/공통-학습-엔진.md §10 '다른 과정이 붙일 때'): this mode needs every
+   * listed item's data in the page up front — it has no per-lesson loader (WrongNotes asks for an opened lesson's words only
+   * in "server" and "device-plan") — so it must never carry paid text (the server sends only today's items). A course with
+   * paid items attaches with "server" (a server adapter like src/lib/passoffReview.ts) or "device-plan", or adds a
+   * per-lesson loader to this mode first.
+   */
   | { kind: "device"; items: Record<string, T> }
   /** the record on the device (a course before D04), paid items: the device plans, the server gives those items' data */
   | { kind: "device-plan" };
