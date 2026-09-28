@@ -7,24 +7,32 @@
  *   lesson id   the MAIN page's id — "pr001" also on its "-1" page (pr001-1): the two pages carry the same passage and the
  *               same 14 words (checked 256/256), so a word is one item whichever page it was met on.
  * A word is an ELEMENT item (passes on 2 different days), about 6 seconds each in review. The view reports:
- *   recordAttempt  every blank answered in Step 3 (mode tap) and every '알아요 / 몰라요' in Step 2 — a self-report:
- *                  '알아요' correct true, '몰라요' correct false, help 'none', mode 'tap' (where 'lesson' — never a pass);
+ *   recordAttempt  every blank answered (mode tap) and every '알아요 / 몰라요' on a card — both in Step 2 since 2026-09-28 (the
+ *                  blanks were Step 3) — a self-report: '알아요' correct true, '몰라요' correct false, help 'none', mode 'tap'
+ *                  (where 'lesson' — never a pass);
  *   markLessonDone when the learner completes the lesson (LESSON_COMPLETE_EVENT): the words marked '몰라요' and the words of
  *                  blanks answered wrong on this device come back from the next day (kind 'word').
  * The review screen itself comes with the engine's shared page (설계 세션).
  *
+ * THE STEPS since 2026-09-28 (사장님 D31 다): 1 처음 읽기 (not timed) · 2 핵심 어휘 (cards, then blanks) · 3 원문 대조 · 4 다시 읽고
+ * 재기 (the only timed reading) + the comprehension questions' place. The keys below did not change with the order.
+ *
  * THIS DEVICE (localStorage). What changed on 2026-09-27, and what is kept:
- *   kig:reading:speed:v1:reading/<main id>   NEW {"v":1,"first":{wpm,ms,at}|null,"again":{wpm,ms,at}|null} — Step 1 '첫 읽기'
- *                                            and Step 4 '같은 글 다시 읽기' (the latest of each; only runs of ≤ 500 WPM)
+ *   kig:reading:speed:v1:reading/<main id>   NEW {"v":1,"first":{wpm,ms,at}|null,"again":{wpm,ms,at}|null} — only runs of
+ *                                            ≤ 500 WPM. Since 2026-09-28 the view writes `again` only: Step 4 '다시 읽고 재기'
+ *                                            (the latest run). `first` was the timed first reading of the old Step 1 (09-27 ~ 28);
+ *                                            it is kept, never shown and never written, and still opens the completion gate
  *   kig:reading:words:v1:reading/<main id>   NEW {"v":1,"marks":{"<n>":"known"|"unknown"},"missed":[n,…]} — Step 2 marks and
  *                                            the words of blanks answered wrong
  *   kig:reading:prefs:v1                     NEW {"v":1,"size":"normal"|"large"|"xlarge","numbers":true|false} — the 'Aa'
  *                                            menu, for every READING lesson
- *   kig:reading:notes:<page key>             KEPT as it was ({"notes","at"}, per page) — the memo, now folded at the end of Step 4
+ *   kig:reading:notes:<page key>             KEPT as it was ({"notes","at"}, per page) — the memo, folded at the end of 원문 대조
+ *                                            (Step 3 since 2026-09-28)
  *   kig:reading:wpm:<page key>               KEPT, read only: the old best WPM. It is no longer shown or written; a value of
  *                                            1–500 still counts as "read once" for the completion gate (an old value above
  *                                            500 was a mis-press under the old 1,000 ceiling and does not count)
  *   kig-learning:reading                     the common engine's record (src/lib/learning/record.ts)
+ * Step 1's '다 읽었어요' (the first, untimed reading) is not stored: it only offers the next step and the whole-lesson player.
  */
 import type { CourseProfile } from "@/lib/learning/types";
 
@@ -252,11 +260,21 @@ export function parsePrefs(raw: string | null): ReadingPrefs {
 export const serializePrefs = (prefs: ReadingPrefs) => JSON.stringify({ v: 1, size: prefs.size, numbers: prefs.numbers });
 
 // ---------------------------------------------------------------------------------------------------------------------
-// Completion (계획 D02 나)
+// Completion (계획 D02 나 · 2026-09-28 순서 바꿈 D31 다)
 // ---------------------------------------------------------------------------------------------------------------------
 
-/** The line under the disabled '이 강의 학습 완료' until the passage was read and timed once (lessonGate). */
-export const READING_GATE_REASON = "1단계에서 지문을 한 번 읽고 '다 읽었어요'를 누르면 완료할 수 있어요.";
+/**
+ * Whether '이 강의 학습 완료' may open (lessonGate — the view adds "or the lesson was completed"). Since 2026-09-28 the one timed
+ * reading is Step 4 '다시 읽고 재기' — the record's `again`. Older records count as done too, so no learner loses a completion
+ * the old order had opened: `first` (the old Step 1's timed first reading, 09-27 ~ 28) and an old best WPM of 1–500
+ * (`legacyBest` — legacyBestCounts). Step 1's untimed '다 읽었어요' is not a record and does not open it.
+ */
+export function readingGateOpen(record: SpeedRecord, legacyBest: boolean): boolean {
+  return Boolean(record.again || record.first) || legacyBest;
+}
+
+/** The line under the disabled '이 강의 학습 완료' until the passage was timed once in Step 4 (lessonGate). */
+export const READING_GATE_REASON = "4단계에서 지문을 다시 읽고 시간을 한 번 재면 완료할 수 있어요.";
 
 /** Part-of-speech abbreviations of the vocabulary data as Korean words (the old coloured chips showed "n." "v." …). */
 export function posLabel(pos: string | undefined): string {

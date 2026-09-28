@@ -27,6 +27,9 @@ const FOLDED_PLAYER = `document.querySelector('main details[data-answer-player]:
       const course = url.split("/")[1];
       await H.load(tab, url, { marker: H.MARKERS[course] });
       if (await tab.eval(`Boolean(${FOLDED_PLAYER})`).catch(() => false)) await H.click(tab, FOLDED_PLAYER, { settle: 300 });
+      // 2026-09-28 (READING 순서 바꿈 — D31 다): READING's top player is hidden (A10, since 2026-09-27) and the view plays the same
+      // sentences in 원문 대조 — Step 3 now (Step 1 has it only after '다 읽었어요') — so that is the player pressed here.
+      if (course === "reading") await H.click(tab, `document.querySelector('main [data-step-tab="3"]')`, { settle: 600 });
       const label = await tab.eval(`(() => { const b = ${BUTTON}; return b ? ((b.getAttribute('aria-label') || '') + '|' + (b.innerText || '')).replace(/\\s+/g, ' ').trim().slice(0, 60) : null; })()`).catch(() => null);
       const press = async () => {
         await tab.eval("window.__kigAudio && (window.__kigAudio.length = 0)").catch(() => {});

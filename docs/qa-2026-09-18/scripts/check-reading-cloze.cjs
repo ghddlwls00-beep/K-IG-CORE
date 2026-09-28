@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * READING Step 3 빈칸 문제 생성기(src/lib/readingUtils.ts generateClozeItems · clozeCandidates) 검사.
+ * (2026-09-28 순서 바꿈 — 사장님 D31 다: 빈칸은 이제 Step 2 '핵심 어휘' 카드 아래에 나온다. 생성기 · 씨앗 · 판정은 그대로라 이 검사는 바뀌지 않음.)
  *
  * 4단계 #72·#73·#74·#76·#77 이 지적한 네 가지를 256강 전부에서 센다:
  *   대시     : 빈칸 정답이 "eyes—people" 처럼 대시로 붙은 두 낱말인 문항 (#74)

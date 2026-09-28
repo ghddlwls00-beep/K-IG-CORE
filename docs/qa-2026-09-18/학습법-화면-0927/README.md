@@ -57,13 +57,32 @@
    깨기: stop 휴대폰 3 · 데스크탑 41 FAIL · gate 휴대폰 5 FAIL · cloze 데스크탑 15 FAIL · hover 데스크탑 1 FAIL(cloze · hover 는 데스크탑 길만 봄 — 휴대폰 깨기는 통과가 맞음) → **READING 올려도 됨**.
 4. 남은 일: 디자인 규칙 §7 에 AudioPlayer `speeds` · LISTENING · READING 의 넘겨받기 · 완료 조건 한 줄씩(다음 문서 정리 때).
 
+### 사장님 결정 (09-28)
+
+- "스튜던트 … 1단계에서 2단계로 넘어가는데 음성이 나와 이거 해결해" → `060705c`(설계 세션이 올리는 중) · "고쳐"(VOCA · LISTENING 같은 것) → 일꾼 도는 중(단계를 옮길 때 소리 없음 · 안의 '다음 문장'은 그대로).
+- "이제 워크플로우 사용할 때 허락 요청하지마 무조건 허락이야".
+- READING 순서 바꿈(D31 다) — "그 순서로 바꾸고 혹시 다른 섹션도 바꿔야 한다면 허락할게":
+  **1 처음 읽기(시간 재지 않음) → 2 핵심 어휘(카드 · 알아요/몰라요 + 빈칸) → 3 원문 대조 → 4 다시 읽고 재기 + 이해 문제**(새 문제 512 가 들어갈 자리 — 들어오기 전엔 다시 읽고 재기만). 완료 조건 = 4단계 한 번 재기.
+  다른 섹션에서 같은 허락으로 할 수 있는 것: LISTENING · GRAMMAR 대본 쪽(-1 · -2) 합치기(D30 나 — 주소 · 진도 합침) — 새 문제 뒤에 검토.
+
+### 커밋 전 작업 트리(09-28 09:xx — 압축 뒤 먼저 이것)
+
+1. **VOCA 단계 옮길 때 소리 없음**(일꾼 끝, 커밋 전): src/components/PhonicsLearningView.tsx(switchStep 이 소리 없이 회차 시작 · '한 회차 더'만 재생 · 버튼 '다시 듣기' → '듣기') ·
+   src/components/LdLearningView.tsx(설명 한 줄 — LISTENING 은 원래 단계 옮길 때 소리 없음) · check-voca-0927.cjs(V2 '단계를 옮겨도 소리 없음' + --break autoplay · Q1 은 글 문항만 셈) · check-student-0927.cjs 머리말.
+   할 일: READING 순서 일꾼이 끝나면 한 번 빌드(verify-unit --build) → check-voca-0927 8/8 · --break autoplay FAIL · check-student-0927 22/22 → 커밋 → 설계 세션에 번호(060705c 와 같이 올려 달라고).
+2. **READING 순서 바꿈**(일꾼 도는 중 — D31 다): ReadingLearningView · readingLearning · drive-reading · reading-page · check-reading-learning · containers · gap T · drive-common D.
+   끝나면: 빌드 → drive-reading pr001 휴대폰 · 데스크탑 --no-resume PASS · 깨기 FAIL · gap P · T · drive-common D · 유출 · 디자인 → 커밋 → 설계 세션.
+
 ### 새 문제 진행 (09-28 06:2x — 압축 뒤 여기부터 · 계획은 `새-문제-설계.md` §3-1 · §3-2)
 
 - 시범 36문항 끝(`새-문제/pilot/` — 정답 길이 치우침 58% 등으로 check-new-questions FAIL 18 → 규칙 고침, 시범 강의도 새 규칙으로 다시 씀).
 - **묶음 1 도는 중**: 워크플로우 wf_82ddbaa6-08e(작업 w6ans28mw) — LISTENING d001 ~ d070 · READING pr001 ~ pr064, 18묶음 · 쓰기 Sonnet · 대조 · 고침 · 저장은 지금 모델,
   결과 파일은 `새-문제/_staging/<묶음>/{ld,reading}/<id>.json`(묶음마다 check-new-questions PASS 가 조건).
 - 묶음 1이 끝나면: ① `_staging/*/{ld,reading}/*.json` 을 `새-문제/{ld,reading}/` 로 옮김 ② `node docs/qa-2026-09-18/scripts/check-new-questions.cjs`(전체) PASS ③ get_usage — 주간 70% 넘으면 멈추고 설계 세션과 나눔 ④ 묶음 2(d071 ~ d140 · pr065 ~ pr128)를 같은 스크립트로(범위만 바꿈) ⑤ 커밋(파일 이름으로, content/ 는 아직 안 건드림).
-- 올리기: 설계 세션이 0dd1b4b 판으로 3 ~ 6 다시 재는 중(09-28 05:5x ~) — 통과하면 운영에 올림.
+- 올리기: **3 ~ 6(GRAMMAR · STUDENT · VOCA · LISTENING · READING) 운영에 올라감(09-28 07:5x · dacc980 → 0dd1b4b · 설계 세션 — 확인 일꾼 숫자가 이 세션과 같음)**. 운영 관문 1 ~ 3 · 이용권 브라우저(s16-2 · s11-4) 도는 중.
+- **운영 확인(설계 세션 · 09-28)**: 0dd1b4b 실제 올린 시각 09:32 · 관문 1 1,623/1,623 · 관문 2 무료 261 열림 · 유료 14,726 막힘 · 관문 3 유출 0(READING 빈칸 짝 표 공개 JS 0) · 이용권 STUDENT s16-2 · s11-4 두 토막 조립 PASS · 과정마다 유료 1강 12/12 · drive-generic FAIL 0(GRAMMAR 채점 칸 도구 착오 제외 — 시험 채점은 운영에서 PASS).
+  **060705c(STUDENT 단계 옮길 때 소리 없음) 10:17 올라감**. 아무도 안 본 것: 진짜 휴대폰 · 마이크 · 귀로 들은 소리 · 태블릿 · 다음 날 복습.
+- 도구 할 일(설계 세션 확인 일꾼이 짚음): ⓪ verify-unit-0927 — 깨끗한 사본에 git 밖 폴더(out/features · public/audio/azure-ava/v1)가 없으면 '소리 정의 증명' · '빠진 클립' 이 ENOENT FAIL → '폴더 없음 — 이 칸 못 봄'으로 분명히 말하게 ① drive-reading 고정 경로 → 고침 `f27df1e` ② GRAMMAR drive-generic '채점 칸' FAIL 44/4 — 9/21 부터의 도구 착오(1단계가 스스로 채점해 다른 글을 판정으로 읽음), 채점은 check-grammar-exam 이 봄 → drive-generic 의 GRAMMAR 채점 칸 읽기를 data-verdict 로 고칠 것(새 문제 묶음 사이 작은 일) ③ check-learning-engine CRLF 가짜 통과는 설계 세션이 3e1f64f 로 고침(PASS-OFF 합칠 때 들어옴).
 
 ### 다음 할 일 (06:4x 기준 — 압축 뒤 여기부터)
 

@@ -983,8 +983,9 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     if (page.course === "reading" && c0 && /\|disabled$/.test(c0)) {
       // 2026-09-27 (READING · 계획 D02 나): '이 강의 학습 완료' opens after one timed reading — read once like a learner
       // (lib/reading-page.cjs MEASURE_ONCE), then read the button again. (READING's own driver is drive-reading.cjs.)
+      // 2026-09-28 (READING 순서 바꿈 — D31 다): the timed reading is Step 4 '다시 읽고 재기' now; MEASURE_ONCE opens Step 4.
       const r = await tab.eval(RDP.MEASURE_ONCE).catch((e) => ({ ok: false, why: String(e && e.message ? e.message : e).slice(0, 80) }));
-      practiceNote = r && r.ok ? "practised: one timed reading" : `could not time a reading: ${(r && r.why) || "?"}`;
+      practiceNote = r && r.ok ? "practised: one timed reading (Step 4)" : `could not time a reading: ${(r && r.why) || "?"}`;
       await H.sleep(200);
       c0 = await tab.eval(cmState).catch(() => null);
     }

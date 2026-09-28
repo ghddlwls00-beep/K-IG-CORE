@@ -288,7 +288,8 @@ function expected(course, id) {
     for (const v of d.readingVocabulary || []) { texts.push({ kind: "word", text: clean(v.word) }); texts.push({ kind: "meaning", text: clean(v.korean) }); }
     /**
      * The Korean passage (2026-09-23): one expected text PER SENTENCE ("ko-sentence") instead of
-     * the whole instruction block ("ko-passage"). STEP 4 draws readingSentences[].korean sentence
+     * the whole instruction block ("ko-passage"). 원문 대조 (STEP 4 then, STEP 3 since 2026-09-28 — lib/containers.cjs
+     * reading-ko) draws readingSentences[].korean sentence
      * by sentence; across all 256 script pages the instruction block and those sentences joined
      * are the same text once spacing and punctuation are ignored — it is not a stale copy, as
      * LISTENING's was. Checked per sentence, a single missing sentence is caught; the old check

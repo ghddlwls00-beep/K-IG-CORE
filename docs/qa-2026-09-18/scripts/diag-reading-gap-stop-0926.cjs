@@ -17,6 +17,9 @@ const STOP = `[...document.querySelectorAll('main button')].filter(${VIS}).find(
     await H.setViewport(tab, "desktop");
     for (const mode of ["문장 가운데", "문장 사이", "문장 가운데", "문장 사이", "문장 가운데", "문장 사이"]) {
       await H.load(tab, "/reading/pr001", { marker: H.MARKERS.reading });
+      // 2026-09-28 (READING 순서 바꿈 — D31 다): READING's whole-lesson player is the view's own, in 원문 대조 — Step 3 now (the top
+      // one is hidden since 2026-09-27 · A10; Step 1 has it only after '다 읽었어요') — so open Step 3 first, like a learner who listens.
+      await H.click(tab, `document.querySelector('main [data-step-tab="3"]')`, { settle: 600 });
       await H.audioLog(tab, { clear: true });
       await H.click(tab, TOGGLE, { settle: 0 });
       if (mode === "문장 가운데") await H.sleep(1000);

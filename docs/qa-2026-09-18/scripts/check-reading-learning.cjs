@@ -11,9 +11,13 @@
  *   E 엔진      recordAttempt(강의 안 → 'lesson') · markLessonDone(몰라요 + 틀린 빈칸만, kind word, 본 강의 id) · 요소 문항 · 6초 — 실제 engine 으로
  *   F 목록 길이  src/lib/readingLengths.ts = 데이터(D35)
  *   G 시계      화면이 가려진 동안 멈춤 — 읽은 10초 + 가려진 5초 + 읽은 15초 = 25초 (감사 브라우저는 늘 '보임'이라 여기서 증명)
+ *   H 완료 조건  (2026-09-28 순서 바꿈 — 사장님 D31 다: 1 처음 읽기(재지 않음) · 2 핵심 어휘 · 3 원문 대조 · 4 다시 읽고 재기)
+ *                readingGateOpen: 4단계에서 잰 기록(again)이 있어야 열림 · 옛 기록(09-27~28 의 옛 1단계 first · 옛 최고 WPM 1~500)도 열림 ·
+ *                아무 기록도 없으면(1단계 '다 읽었어요'는 기록을 남기지 않음) 닫힘 · 500 넘는 기록은 읽어 들일 때 버려져 열지 못함 ·
+ *                안내 글이 4단계를 가리킴(1단계가 아님)
  *
  *   node docs/qa-2026-09-18/scripts/check-reading-learning.cjs
- *   node docs/qa-2026-09-18/scripts/check-reading-learning.cjs --break spans|context|key|wpm|timeonly|entries|lengths|hidden   깨기 — FAIL(exit 1)이 나야 맞음
+ *   node docs/qa-2026-09-18/scripts/check-reading-learning.cjs --break spans|context|key|wpm|timeonly|entries|lengths|hidden|gate   깨기 — FAIL(exit 1)이 나야 맞음
  */
 const fs = require("fs");
 const path = require("path");
@@ -203,6 +207,31 @@ check("F 목록 글 길이 = 데이터", badLengths.length === 0 && extraIds.len
   rl.clockShow(clock, 17000); // a second show changes nothing
   const elapsed = rl.clockElapsed(clock, 31000); // 15 s more
   check("G 가려진 동안 시계 멈춤", elapsed === 25000 && clock.hiddenMs === (BREAK === "hidden" ? clock.hiddenMs : 5000), `읽은 10초 + 가려진 5초 + 읽은 15초 → 잰 시간 ${elapsed / 1000}초(기대 25) · 뺀 시간 ${clock.hiddenMs / 1000}초`);
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// H. the completion gate after the reorder (2026-09-28 · 사장님 D31 다) — the view calls readingGateOpen(speed, legacyRead)
+//    (ReadingLearningView gateReady, plus "or the lesson was completed"). --break gate: a gate that also opens on nothing.
+// ---------------------------------------------------------------------------------------------------------------------
+{
+  const gate = BREAK === "gate" ? () => true : rl.readingGateOpen;
+  const run = { wpm: 131, ms: 34800, at: "2026-09-28T00:00:00.000Z" };
+  const parsed = (obj) => rl.parseSpeedRecord(JSON.stringify(obj));
+  const cases = [
+    ["기록 없음(1단계 '다 읽었어요'만 — 기록을 남기지 않음)", rl.parseSpeedRecord(null), false, false],
+    ["4단계에서 잰 기록(again)", parsed({ v: 1, first: null, again: run }), false, true],
+    ["옛 1단계 기록(first, 09-27~28)", parsed({ v: 1, first: run, again: null }), false, true],
+    ["옛 최고 WPM 1~500(kig:reading:wpm)", rl.parseSpeedRecord(null), rl.legacyBestCounts("152"), true],
+    ["옛 최고 WPM 890 — 헛누름(1~500 아님)", rl.parseSpeedRecord(null), rl.legacyBestCounts("890"), false],
+    ["500 넘는 기록(890 WPM) — 읽을 때 버려짐", parsed({ v: 1, first: null, again: { wpm: 890, ms: 6000, at: "" } }), false, false],
+  ];
+  const bad = cases.filter(([, rec, legacy, want]) => Boolean(gate(rec, legacy)) !== want);
+  const reasonOk = typeof rl.READING_GATE_REASON === "string" && /4단계/.test(rl.READING_GATE_REASON) && !/1단계/.test(rl.READING_GATE_REASON);
+  check(
+    "H 완료 조건 = 4단계에서 한 번 재기(옛 기록 인정)",
+    bad.length === 0 && reasonOk,
+    `${cases.length}경우${bad.length ? ` · 어긋남 ${bad.map(([name, , , want]) => `${name} → ${want ? "열려야" : "닫혀야"} 함`).join(" | ")}` : " 모두 기대대로"} · 안내 글 '${rl.READING_GATE_REASON}'${reasonOk ? "" : " (4단계를 가리키지 않음)"}`,
+  );
 }
 
 const ok = results.every((r) => r.ok);
