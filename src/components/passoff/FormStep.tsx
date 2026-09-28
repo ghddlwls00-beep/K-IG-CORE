@@ -3,10 +3,10 @@
 import { useRef, useState } from "react";
 import type { PassoffFormItem } from "@/lib/passoffTypes";
 import { expectedLabel, gradeChoice, gradeSelect, gradeShort, hasHangul } from "@/lib/passoffGrading";
-import { notePassoffAttempt } from "@/lib/passoffLearning";
+import { notePassoffAttempt, type PassoffAttempt } from "@/lib/passoffLearning";
 import type { FormItemState } from "@/lib/passoffLesson";
 import { IconCheck } from "../icons";
-import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, tone, type FontSize } from "./ui";
+import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, tone, usePassoffLearner, type FontSize } from "./ui";
 
 /**
  * ③ 형태 찾기 4~6문제 (설계 §3) — one item at a time: tap the words (and give each its label), pick an option, or
@@ -86,7 +86,14 @@ export function FormStep({
 
 type Phase = "answer" | "retry" | "right" | "shown";
 
-function FormItemCard({
+/**
+ * One ③ item. The review screen (공통-학습-엔진.md §8 — src/components/passoff/PassoffReview.tsx) uses it too: its answers
+ * go to `onAttempt` (recorded there with where "review"), and `test` is the next-day check — one answer, recorded, and
+ * passed on at once with no result (the results come together at the end). `missed` is that check's wrong answer when the
+ * item comes once more after the results: it counts as the first try, so the card opens on '한 번 더' (the option picked
+ * struck out, the word typed still in the box) and a second miss shows the answer. Without them the card is the lesson's.
+ */
+export function FormItemCard({
   item,
   lessonId,
   firstPresentation,
@@ -95,6 +102,9 @@ function FormItemCard({
   onFirstTry,
   onShown,
   onDone,
+  onAttempt,
+  test = false,
+  missed,
 }: {
   item: PassoffFormItem;
   lessonId: string;
@@ -105,19 +115,29 @@ function FormItemCard({
   onFirstTry: (right: boolean) => void;
   onShown: () => void;
   onDone: (firstTryRight: boolean) => void;
+  /** who records each answer — the lesson's own record (notePassoffAttempt) when absent */
+  onAttempt?: (attempt: PassoffAttempt) => void;
+  /** the next-day check: one answer, recorded, then passed on at once — no result */
+  test?: boolean;
+  /** the check's wrong answer — the card opens on '한 번 더' */
+  missed?: string;
 }) {
-  const [phase, setPhase] = useState<Phase>("answer");
-  const [tries, setTries] = useState(0);
-  const [firstRight, setFirstRight] = useState<boolean | null>(null);
+  const learner = usePassoffLearner();
+  const again = missed !== undefined;
+  const [phase, setPhase] = useState<Phase>(again ? "retry" : "answer");
+  const [tries, setTries] = useState(again ? 1 : 0);
+  const [firstRight, setFirstRight] = useState<boolean | null>(again ? false : null);
   // select
   const [picked, setPicked] = useState<number[]>([]);
   const [labels, setLabels] = useState<Record<number, string>>({});
   const [labelFor, setLabelFor] = useState<number | null>(null);
   const [selectNote, setSelectNote] = useState<string | null>(null);
   // choice
-  const [wrongOptions, setWrongOptions] = useState<number[]>([]);
+  const [wrongOptions, setWrongOptions] = useState<number[]>(() =>
+    item.kind === "choice" && missed !== undefined && item.options.includes(missed) ? [item.options.indexOf(missed)] : [],
+  );
   // short
-  const [text, setText] = useState("");
+  const [text, setText] = useState(item.kind === "short" && missed ? missed : "");
   const [hangul, setHangul] = useState(false);
   const composing = useRef(false);
   const settled = phase === "right" || phase === "shown";
@@ -129,7 +149,8 @@ function FormItemCard({
       onFirstTry(correct);
     }
     // the help taken BEFORE this answer: "한 번 더" is not help; the answer shown in an earlier presentation is
-    notePassoffAttempt({
+    const note = onAttempt ?? ((attempt: PassoffAttempt) => notePassoffAttempt(attempt, learner));
+    note({
       lessonId,
       itemId: item.id,
       kind: item.kind,
@@ -139,6 +160,11 @@ function FormItemCard({
       firstTry: first && firstPresentation,
       answer,
     });
+    if (test) {
+      // the next-day check: this one answer is the result — shown with the others at the end
+      onDone(correct);
+      return;
+    }
     setTries((t) => t + 1);
     if (correct) {
       setPhase("right");

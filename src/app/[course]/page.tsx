@@ -7,6 +7,7 @@ import { tabForCourse } from "@/lib/tabs";
 import { lessonDisplay } from "@/lib/courses";
 import { formatGroupTitle, formatLessonPresentation } from "@/lib/curriculumPresentation";
 import { CourseDashboard } from "@/components/CourseDashboard";
+import { passoffFreeReviewItems } from "@/lib/passoffReview";
 import type { LessonSummary } from "@/lib/types";
 
 export function generateStaticParams() {
@@ -160,6 +161,8 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
           })),
         }))}
         totalLessons={listed.length}
+        // PASS-OFF GRAMMAR's '오늘 복습' line without a licence counts only what the free review can draw — its ids, no text
+        passoffFreeReviewKeys={course.slug === "passoff-grammar" ? Object.keys(passoffFreeReviewItems()) : undefined}
       />
     </main>
   );

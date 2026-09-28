@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { learnerOf } from "@/lib/learning/sync";
+import { PASSOFF_COURSE } from "@/lib/passoffLearning";
 import type { PassoffStudentRef } from "@/lib/passoffTypes";
 import { useLicense } from "../LicenseProvider";
 import { IconCheck, IconSpeaker, IconStop, IconX } from "../icons";
@@ -20,6 +22,16 @@ export const tone = {
   dangerBorder: "border-danger",
   dangerWavy: "underline decoration-wavy decoration-2 underline-offset-4 decoration-danger",
 };
+
+/**
+ * Whose record the lesson writes to now (공통-학습-엔진.md §10 — one record per licence on a device): the licence's id
+ * while an active licence opens this course, else null — the record kept with no licence (src/lib/learning/sync.ts
+ * learnerOf). Read at each answer, as PassoffProgressProvider files a completion under the licence of that moment.
+ */
+export function usePassoffLearner(): string | null {
+  const { hasActiveLicense, licenseInfo } = useLicense();
+  return learnerOf(PASSOFF_COURSE, { active: hasActiveLicense, id: licenseInfo?.licenseId, plan: licenseInfo?.plan });
+}
 
 /** What a step needs to play a sentence: which one is playing, and play/stop by item (its `speakAs` or `en`). */
 export interface Speaker {
