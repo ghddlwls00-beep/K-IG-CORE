@@ -1,0 +1,198 @@
+[
+  {
+    "lesson": "pg16-1",
+    "item": "pg16-1:p4",
+    "finding": "오답 패턴 'if it does not snow' 의 힌트('if 절의 동사를 과거형으로')대로 고친 'If it did not snow, we could climb the mountain.'(맞는 가정법 과거)이 accept 에 없고 targets[0] 이 [were, was] 뿐이라 오답(힌트도 없음).",
+    "action": "fixed",
+    "note": "점검 제안대로 accept 에 did not snow 꼴 6개(could climb · would be able to climb · could go up × 앞뒤 순서)를 더하고(23 → 29) targets[0] → [were, was, did]. didn't 는 채점기가 펴 주므로 따로 넣지 않음. note 에 까닭을 덧붙임. 실제 채점기(src/lib/passoffGrading.ts 단독 트랜스파일)로 고치기 전 did not · didn't · 마이크 답 6꼴 오답(MISS[were/was]) → 고친 뒤 정답. does not snow · doesn't snow · is not snowy · we can climb 은 여전히 오답 + 제 힌트. 증거: scratchpad\\g13fix\\before.txt · after.txt (cases-g13.json · grade.cjs)."
+  },
+  {
+    "lesson": "pg16-1",
+    "item": "pg16-1:rule(points[4] · table.rows[1][2]) · pg16-1:p8",
+    "finding": "설명 카드가 조건문 주절을 'will + 동사원형'으로만 적어 앵커 a5 · ④ p8(주절 I need to …)과 맞지 않고, 'i would need to' 힌트를 보고 카드대로 쓴 I will need to … · I'll need to … · I will have to … 와 work hard on improving 이 모두 오답.",
+    "action": "fixed",
+    "note": "points[4] → '실제로 일어날 수 있는 일은 조건문: If + 현재형, 주절은 will + 동사원형 · 현재형(I need to …) · 명령문'(점검 문구 그대로). table.rows[1][2] 는 점검 제안 'will + 동사원형 · 현재형'에 줄 문구와 맞춰 '· 명령문'까지 적음. p8 accept 에 점검의 6개 + 같은 짜임 3개(will need to on improving · will have to on improving · must work hard on improving) = 9개(29 → 38). I need to … 는 앵커 a5 와 같은 문장이라 카드에 보여도 '앞 단계가 ④ 정답을 먼저 보여 주지 않기' 규칙에 안 걸림(check-lessons 0). 채점: will need to · I'll need to · will have to · on improving 7꼴 오답 → 정답, would need to · wanted · at improve 는 여전히 오답 + 제 힌트."
+  },
+  {
+    "lesson": "pg17-2",
+    "item": "pg17-2:p9 (+ 판정 #36)",
+    "finding": "영어는 what you have done for me 로 고쳤는데 ko 는 교재 그대로 '네가 내게 한 일'이라, 한국어대로 옮긴 'what you did to me' 가 오답(힌트 없음). 'what did you do' 힌트(어순)대로 고친 답도 힌트 없이 오답이고, 기존 힌트는 제시문에 없는 '나를 위해'를 요구.",
+    "action": "fixed",
+    "note": "점검 제안대로 ko → '네가 어디를 가더라도, 나는 네가 나를 위해 해 준 일을 결코 잊지 않을 거야.', koSource → 'review 2. item 17 (고침)', fix 에 fromKo(교재 한국어)를 넣고 field en → en+ko, why 에 한국어도 for me 에 맞춰 고친 까닭을 덧붙임. errorPatterns[2](what you do to me) 힌트 → \"'나를 위해 해 준 일'은 지난 일이에요. '~를 위해'에 맞는 전치사를 써 보세요.\", 패턴 what you did to me(\"'나를 위해' 해 준 일이에요. '~를 위해'에 맞는 전치사를 써 보세요.\")를 더함(힌트는 for 를 그대로 말하지 않음). 판정 #36 이유에 한국어 고침과 새 힌트를 덧붙임. 채점: what you did to me → 오답 + 전치사 힌트, what did you do to me → 어순 힌트, what you do to me → 새 힌트, what you did for me · what you have done for me → 정답."
+  },
+  {
+    "lesson": "pg17-3",
+    "item": "pg17-3:p11",
+    "finding": "'지금은 낀다'를 동사로 옮긴 '… but now I wear them.' · '… but I wear them now.' 등이 오답이고, 'but now i am' 힌트('wear 를 받아 do 로')가 do 만 맞는 것처럼 가르침.",
+    "action": "fixed",
+    "note": "점검의 5개를 포함해 앞부분 3가지(didn't use to · never used to · used not to) × 뒷부분 6가지(now I do · I do now · now I wear them · I wear them now · now I wear glasses · I wear glasses now) 격자를 채움(4 → 17). 빠져 있던 'I used not to wear glasses, but I do now.'도 여기서 채워짐. 명사를 되풀이한 now I wear glasses 는 덜 매끄럽지만 틀린 영어가 아니고 뜻이 같아 받음. errorPatterns[1] 힌트 → \"'낀다'는 be동사가 아니라 일반동사예요. wear 를 다시 쓰거나 그것을 받는 말로 써 보세요.\"(점검 문구 그대로). 채점: wear them 5꼴 · used not to … I do now 오답 → 정답, but now I am · didn't used to 는 오답 + 힌트."
+  },
+  {
+    "lesson": "pg17-1",
+    "item": "pg17-1:p2 (accept)",
+    "finding": "'언젠가 배울 거야'의 '거야'를 be going to 로, someday 대신 one day 로 쓴 흔한 맞는 답('… but I'm going to learn it someday.' · '… but I will learn it one day.')이 오답.",
+    "action": "fixed",
+    "note": "점검의 6개를 포함해 {someday · one day} × {I'll learn · I'm going to learn} × {목적어 없음 · it · Chinese} × {앞 · 뒤} 격자를 채움 — 이미 있던 5개와 모범 답은 채점기 기준 같은 답이라 건너뛰고 18개를 더함(6 → 24). be going to 는 앞 레슨 pg12-4 의 문법이라 도전 판정과 무관. 채점: going to · one day 8꼴 오답 → 정답, 'I don't can …' 은 여전히 오답 + 힌트, 교재 원문 'I ’ll learn'(빈칸)은 오답."
+  },
+  {
+    "lesson": "pg16-2",
+    "item": "pg16-2:p11",
+    "finding": "'의사의 충고를 받아들였다면'을 listen to · accept 로 쓴 답이 오답(빠진 목표형 had taken/had followed로 표시).",
+    "action": "fixed",
+    "note": "targets[0] → [had taken, had followed, had listened, had accepted](점검 제안 그대로). accept 는 점검의 6개를 포함해 기존 taken · followed 와 같은 격자({might · could} × {be alive · be alive now · still be alive} × 앞뒤 순서)로 listened to · accepted 24개(23 → 47). 근거: listen to / accept someone's advice 는 사전에 있는 흔한 연어. 채점: listened to · accepted · he'd listened 6꼴 오답 → 정답, might have been alive · 'If he took …' 은 오답 + 힌트."
+  },
+  {
+    "lesson": "pg17-1",
+    "item": "pg17-1:t2",
+    "finding": "'밤에는 별을 볼 수 있다'를 the stars 로 쓴 'You can see the stars at night.' · 'We can see the stars at night.'가 오답.",
+    "action": "fixed",
+    "note": "점검 제안 4개를 accept 에 더함(3 → 7). GRAMMAR II 원문(gh2-009#15)의 영어 · 한국어는 그대로. 채점: 4꼴 오답 → 정답, can sees 는 오답 + 힌트."
+  },
+  {
+    "lesson": "pg16-2",
+    "item": "pg16-2:p7",
+    "finding": "같은 레슨 p8 은 도치형 'Should you see him, …'을 받는데 p7 의 'Should it rain tomorrow, I will stay home.'은 오답.",
+    "action": "fixed",
+    "note": "점검 제안 4개(would · will × stay home · stay at home)를 더함(7 → 11). note 에 p8 과 같은 기준이라고 덧붙임. 채점: 4꼴 오답 → 정답, 'If it rains tomorrow …' 는 오답 + 조건 힌트."
+  },
+  {
+    "lesson": "pg16-2",
+    "item": "pg16-2:p9",
+    "finding": "'다시 태어난다면'을 be reborn 으로 쓴 답과 도치형 'Were I to be born again, …'(목표형 were to 가 없다고 판정)이 오답.",
+    "action": "fixed",
+    "note": "점검 제안(be reborn 2개 · 도치형 2개 · targets[0] → [were to, were I to])에, 같은 짜임의 뒤 순서 2개('I would be/become a doctor if I were to be reborn.')와 도치 + reborn 2개를 더함(3 → 11). note 에 까닭(격식체 도치 — p8 의 Should you see him 과 같은 기준). 채점: 6꼴 오답 → 정답, 'If I were born again'(were to 없음) · 'will be a doctor' 는 오답 + 힌트."
+  },
+  {
+    "lesson": "pg17-2",
+    "item": "pg17-2:p6 · pg17-2:t2 (+ p1 · p4 · p5 · t1)",
+    "finding": "조건 칩은 'may를 써서'인데 시도 뒤 보이는 모범 답이 might(You might have left it … / He might have studied English.)라 서로 어긋나 보임.",
+    "action": "fixed",
+    "note": "점검 제안대로 p6 · t2 와, might 도 받는 p1 · p4 · p5 · t1 의 condition 을 'may나 might를 써서'로. may 만 받는 p2(may not 금지) · p3(May I … / you may) · p9(wherever you may) 는 'may를 써서' 그대로라, 칩이 '둘 다 됨'과 'may 만 됨'을 가려 줌. 조건 칩을 그대로 말하던 힌트 3개(p1 · p4 · t1 의 maybe … 패턴)도 새 칩 문구로 맞춤. 칩 · 힌트 글만 바뀌어 채점 결과는 그대로."
+  },
+  {
+    "lesson": "pg16-1",
+    "item": "pg16-1:p2",
+    "finding": "조건 칩 'Would you mind if를 써서'는 현재형 'Would you mind if I use your phone?'으로도 채워지는데 그 답은 오답이라 과거형 요구가 칩에 안 드러남. 흔한 'Would you mind if I borrowed your phone?'도 오답(빠진 목표형 used).",
+    "action": "fixed",
+    "note": "condition → 'Would you mind if + 과거형으로', targets[1] → [used, borrowed](점검 제안 그대로). accept 에 borrowed × 기존 전화 낱말 5가지(your phone · cell phone · cellphone · mobile phone · telephone)와, 아래 19번 한국어 고침으로 나올 수 있는 the phone(used · borrowed) · the telephone(used)을 더함(4 → 12). 패턴: 'if i use your' → 'if i use'(the phone 에도 걸리게), 'can i use your phone' · 'may i use your phone' → 'can i' · 'may i'(the phone · borrow 에도 걸리게), 조건을 말하는 힌트 2개를 새 칩 문구로 — 세 조각 모두 정답 목록에 없음(check-lessons 0). 한때 'if i borrow' 패턴도 더했다가 점검이 요청하지 않은 4번째 패턴이라 '문항당 1~3개' 규칙에 맞춰 뺌. note 에 현재형을 받지 않는 까닭(가정법 과거 연습)을 적음. 채점: borrowed · the phone 3꼴 오답 → 정답, 'if I use (your · the) phone' · 'Can I use the phone?' · 'May I use your phone?' 은 오답 + 힌트."
+  },
+  {
+    "lesson": "pg16-1",
+    "item": "pg16-1:p7",
+    "finding": "'내 입장이라면'을 in my place 로 쓴 'If you were in my place, which one would you choose?'가 오답.",
+    "action": "fixed",
+    "note": "점검의 4개(choose)에, 기존 position · shoes · me 격자와 같게 pick 4개를 더해 in my place 8개(23 → 31). 채점: 4꼴 오답 → 정답, 'If you are in my place …' 는 오답."
+  },
+  {
+    "lesson": "pg17-1",
+    "item": "pg17-1:p5",
+    "finding": "'5살이 될 때까지'를 turned five 로 쓴 'Karen couldn't walk until she turned five.'가 오답.",
+    "action": "fixed",
+    "note": "점검의 3개 + 같은 짜임 'Karen wasn't able to walk until she turned 5.' 1개(5 → 9). 채점: 3꼴 오답 → 정답, 'Karen can't walk …' 는 오답 + 힌트."
+  },
+  {
+    "lesson": "pg17-3",
+    "item": "pg17-3:t1",
+    "finding": "'현찰로 지불해야 한다'를 with cash 로 쓴 'You must pay with cash.'와 전치사 없는 'You must pay cash.'가 오답.",
+    "action": "fixed",
+    "note": "점검의 5개를 포함해 기존 조동사 5가지(must · have to · should · need to · ought to) × {with cash · cash} 10개(4 → 14). 근거: pay in cash · pay with cash · pay cash 모두 사전 용례가 있는 맞는 영어. GRAMMAR II 원문(gh2-008#12)은 그대로. 채점: 5꼴 오답 → 정답, 'must to pay' 는 오답 + 힌트."
+  },
+  {
+    "lesson": "pg16-2",
+    "item": "pg16-2:rule(points[1] · table.rows[1][2])",
+    "finding": "혼합 가정법의 주절을 'would + 동사원형'으로만 적었는데 이 레슨 p11 모범 답은 might be alive, accept 에는 could be alive.",
+    "action": "fixed",
+    "note": "점검 문구 그대로 points[1] → '… If + had + 과거분사, would/could/might + 동사원형', table.rows[1][2] → 'would/could/might + 동사원형'. koDiff 의 '결과가 지금 일이면 주절은 would + 동사원형'은 대표 예로 든 말이라 틀리지 않아 그대로 둠."
+  },
+  {
+    "lesson": "pg17-2",
+    "item": "pg17-2:rule(points[0] · points[4] · table)",
+    "finding": "① ④ p2 가 요구하는 'may not = ~하면 안 된다(금지)'가 규칙 줄에 없음 ② may well 의 뜻을 '~하는 것도 당연하다' 하나만 적음(요즘 더 흔한 뜻은 '아마 ~일 것이다') ③ 표의 wherever 행 뜻 '어디로 ~하더라도'가 예문 Wherever you may live 와 안 맞음.",
+    "action": "fixed",
+    "note": "points[0] → 'may + 동사원형: ~일지도 모른다(추측) · ~해도 된다(허락). 허락의 부정 may not 은 ~하면 안 된다(금지)'. 점검 문구 'may not 은 ~하면 안 된다(금지)'에 '허락의 부정'을 붙인 까닭: 추측의 may not(He may not be at home. = 집에 없을지도 모른다)은 금지가 아니라서, 모든 may not 이 금지로 읽히지 않게(설명 카드는 반례까지 틀림 없이). points[4] 와 표 may well 행 뜻 → '~하는 것도 당연하다 · 아마 ~일 것이다', wherever 행 뜻 → '어디에(어디로) ~하더라도'(점검 문구 그대로). 근거: may well 의 두 뜻(아마 ~일 것이다 · ~하는 것도 무리가 아니다)은 Swan, Practical English Usage 와 영영사전(Oxford · Cambridge)에 모두 있음. ④ p8(혼란스러워하는 것도 당연하다)은 한국어 제시문이 뜻을 정해 주어 모호하지 않음."
+  },
+  {
+    "lesson": "pg17-3",
+    "item": "pg17-3:rule(mistakes[1] · discovery.why)",
+    "finding": "mistakes[1].right 'I am used to getting up early.'가 ④ p14 정답(Jenny wasn't used to getting up early.)의 핵심 덩어리를 미리 보임. discovery.why 는 'be used to 만 뒤에 명사나 -ing'라고 해, 같은 카드 표의 get used to 와 어긋남.",
+    "action": "fixed",
+    "note": "mistakes[1] → wrong 'She is used to drive at night.' · right 'She is used to driving at night.' · why 'be used to(~에 익숙하다) 뒤에는 -ing 가 와요.'. 점검 제안은 주어 He 였는데, ⑤ t2('He is used to coming here.')의 첫머리와 겹치지 않게 She 로 씀(가르치는 점은 같음). discovery.why 뒷문장 → '모양이 비슷한 be used to · get used to(~에 익숙하다 · ~에 익숙해지다)는 뒤에 명사나 -ing 가 와요.'(점검 문구 그대로). 설명 카드는 소리 내지 않아 음성 영향 없음. check-lessons 의 ②→④ 노출 · ⑤ 처음 보는 문장 검사 0."
+  },
+  {
+    "lesson": "pg17-1",
+    "item": "pg17-1:f1",
+    "finding": "내 문장 틀 'I can play ___ very well.'의 ko '나는 ___을(를) 아주 잘할 수 있다.'가 어떤 활동이든 넣게 해 'I can play swimming very well' 같은 틀린 영어를 부름.",
+    "action": "fixed",
+    "note": "점검 제안대로 ko → '나는 ___(운동이나 악기)을(를) 아주 잘할 수 있다.', template 은 그대로."
+  },
+  {
+    "lesson": "pg16-1",
+    "item": "pg16-1:a2 · pg16-1:p2 (ko)",
+    "finding": "'제가 당신 전화를 써도 괜찮을까요?' — 존댓말로 상대에게 직접 '당신'이라고 하는 번역투.",
+    "action": "fixed",
+    "note": "a2 · p2 ko → '제가 전화를 좀 써도 괜찮을까요?'(점검 문구 그대로). 이 제시문으로 나올 수 있는 'Would you mind if I used the phone?'을 p2 accept 에 더함(11번 기록). a2 · p2 의 fix.why 를 새 한국어 · 새 칩과 '당신' 번역투를 쓰지 않은 까닭으로 고치고(fix.fromKo 는 교재 원문 그대로), 판정 #12 이유도 새 한국어 · 칩 · borrowed · the phone 으로 맞춤. 한국어는 소리 내지 않아 음성 영향 없음."
+  },
+  {
+    "lesson": "pg17-1",
+    "item": "pg17-1:p2 (ko)",
+    "finding": "ko '나는 중국어는 못하지만 언젠가 나는 배울 거야.'는 교재 그대로이고 주어 '나는'이 두 번 나오는 번역투(같은 그룹 pg17-3:p10 은 같은 까닭으로 고침).",
+    "action": "fixed",
+    "note": "겹친 뒤쪽 '나는'만 빼 '나는 중국어는 못하지만 언젠가 배울 거야.'로 고침. 점검 제안은 '중국어를'로도 바꿨지만, 대조의 '중국어는'(다른 말은 몰라도 중국어는)은 틀린 한국어가 아니어서 '오류가 아닌 표기 취향은 바꾸지 않는다'에 따라 그대로 둠. koSource → 'review 2. item 2 (다듬음)'. fix 는 영어 고침과 합쳐 fromKo(교재 한국어) · field en+ko · kind english_grammar(영어 쪽 까닭) · why 끝에 한국어 까닭을 덧붙임. 판정 파일에 note 1줄(pg17-1:p2)을 더하고, 영어 판정 #28 이유에 be going to · one day 허용(5번 기록)을 덧붙임."
+  },
+  {
+    "lesson": "pg16-2",
+    "item": "pg16-2:p4",
+    "finding": "'입원해 있다'를 그대로 옮긴 'If I had known you were hospitalized, I would have gone to see you.'가 오답.",
+    "action": "fixed",
+    "note": "점검의 4개를 포함해 기존 격자(that 있음 · 없음 × 주절 4가지 × 앞뒤 순서)대로 hospitalized 16개와 영국 철자 hospitalised 16개(작업 규칙: accept 에 미국 · 영국 철자 — 안 넣으면 한 글자 차이라 '오타 표시'가 붙음)를 더함(31 → 63). 채점: hospitalized · hospitalised 5꼴 오답 → 정답, 'If I knew you were hospitalized …' 는 오답 + 힌트."
+  },
+  {
+    "lesson": "pg17-2",
+    "item": "pg17-2:p6",
+    "finding": "may/might × in/at × store/shop 조합 중 at the shop 두 개('You might/may have left it at the shop.')만 없어 오답.",
+    "action": "fixed",
+    "note": "점검 제안 2개를 더해 8가지 조합을 모두 채움(5 → 7). 채점: 2꼴 오답 → 정답."
+  },
+  {
+    "lesson": "pg17-3",
+    "item": "pg17-3:p10",
+    "finding": "'개를 키웠었다'를 raise 로 쓴 'She used to raise a dog when she was a child.'가 오답.",
+    "action": "fixed",
+    "note": "점검의 3개를 포함해 기존 have 격자({a child · young · little} × 앞뒤 순서)와 같게 raise 6개, 한 꼴뿐이던 keep 도 5개를 채움(7 → 17). 근거: raise 는 '(동물을) 기르다'(Cambridge 'raise': to take care of a person or animal until they are grown)라 맞는 영어. 채점: raise 3꼴 · keep 1꼴 오답 → 정답, 'used to had' 는 오답 + 힌트."
+  },
+  {
+    "lesson": "pg17-1",
+    "item": "pg17-1:p1",
+    "finding": "STUDENT 한국어 '축구를 매우 잘하십니다'를 그대로 옮긴 'He can fix cars and is very good at soccer.'가 오답(문항 note 는 같은 까닭으로 plays 도 받는다고 적음).",
+    "action": "fixed",
+    "note": "점검의 2개 + 기존 accept 의 football 과 같게 football 2개(7 → 11). note 에 is very good at soccer 도 받는다고 덧붙임. 모범 답 · STUDENT exact 문장 · 한국어는 그대로. 채점: 3꼴(he's 포함) 오답 → 정답, 'can fixes' 는 오답 + 힌트."
+  },
+  {
+    "lesson": "pg17-2",
+    "item": "pg17-2:p2",
+    "finding": "두 번째 주어를 생략한 'You may wait in the restaurant, but may not smoke.'(맞는 영어)가 오답.",
+    "action": "fixed",
+    "note": "점검 제안 1개 + 기존 accept 의 there 와 같게 '… but may not smoke there.' 1개(1 → 3). 근거: 같은 주어의 두 동사구를 but 으로 이을 때 뒤 주어를 생략하는 것은 문법에 맞음. 채점: 2꼴 오답 → 정답, 'may not to smoke' 는 오답 + 힌트."
+  },
+  {
+    "lesson": "pg16-3",
+    "item": "pg16-3:p4 fix.kind (+ 판정 #9)",
+    "finding": "fix.kind 가 english_grammar(원문이 틀린 영어)인데 원문 'I wish our apartment was more convenient.'는 accept 에 있어 정답 — 분류와 정답 처리가 모순(check-grading 도 '덜 자연스러운 글'로 셈).",
+    "action": "fixed",
+    "note": "fix.kind → english_unnatural, why 를 '원문의 was 는 구어에서 흔히 쓰는 꼴로 틀린 영어는 아니라 정답으로 받고, 학교 문법의 were 를 모범 답으로 둠'으로 고침. 판정 #9 이유도 같은 뜻으로 맞춤(decision 은 모범 답을 were 로 바꿨으므로 fix 그대로, type 은 교재 issue 의 분류라 그대로). check-grading 의 B 줄이 이제 [english_unnatural] '덜 자연스러운 글'로 셈 — PASS."
+  },
+  {
+    "lesson": "pg16-2",
+    "item": "판정 #8 (TOPIC 16 application item 12) · pg16-2:p4",
+    "finding": "pg16-2:p4 는 한국어도 고쳤는데('내가 네가' 겹침 · '갔었을') 그 내용이 fix.fromKo 에만 있고 판정 #8 이유 · note 에는 없음.",
+    "action": "fixed",
+    "note": "판정 #8 이유 끝에 점검 문구대로 한국어 고침('만약 네가 병원에 입원해 있다는 것을 알았더라면, 나는 너를 보러 갔을 텐데.')을 덧붙이고, 21번 기록에서 받게 한 hospitalized(영국 철자 hospitalised)도 적음."
+  },
+  {
+    "lesson": "pg17-2 · pg16-2",
+    "item": "오답 패턴이 4개인 문항: pg17-2:p9(이번 점검 요청으로 4개) · pg16-2:p1(만들 때부터 4개)",
+    "finding": "작업 규칙은 문항당 오답 패턴 1~3개인데, 점검이 pg17-2:p9 에 패턴을 하나 더하라고 해 4개가 됨.",
+    "action": "lead",
+    "note": "이끄는 세션 판단 거리(규칙 해석 — G11 수정기록의 같은 줄과 같은 문제). 점검 제안대로 4개로 둠: what you do to me(시제 + 전치사)와 what you did to me(전치사)는 힌트가 달라 합치지 않음. 3개로 엄격히 맞추려면 pg17-2:p9 는 이번에 더한 'what you did to me' 를 빼면 됨(그러면 그 답은 힌트 없이 틀린 자리 표시만 남음). pg16-2:p1 은 이번 점검이 짚지 않아 손대지 않음. 같은 까닭으로 pg16-1:p2 에 스스로 더했던 'if i borrow' 패턴은 뺌(11번 기록). check-lessons 는 패턴 수를 세지 않음."
+  }
+]

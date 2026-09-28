@@ -1,0 +1,163 @@
+[
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3:p6 (+ rule.koDiff · errorPatterns 'even though')",
+    "finding": "한국어를 '가끔은 실수할 수 있다'로 고친 뒤 흔한 답(can · may … sometimes 가 문장 끝 등) 24가지가 거짓 오답. 이 문장의 문법 핵심(최상급 주어 = ~조차, 양보)이 설명 카드에 없는데 even though 절 답을 힌트로 틀림 처리.",
+    "action": "fixed",
+    "note": "점검자 말이 맞음(교재 추출 analysisNote 도 '최상급이 양보 의미(가장 현명한 사람조차)'). (1) accept 에 점검자가 적은 24개를 더함(35 → 59). 스크립트가 even 유무 × man · person · people × may · can · 없음 × sometimes 자리 × a mistake · mistakes 60가지를 만들어 빠진 것이 정확히 24개인지 확인한 뒤 씀. (2) rule.koDiff 끝에 \"또 우리말 '가장 ~한 사람일지라도(~조차)'는 even though 로 절을 따로 만들지 않고, 최상급 주어 하나로 말할 수 있어요 — The strongest man can't lift it. = Even the strongest man can't lift it.(가장 힘센 사람조차 그것을 들 수 없다)\". 점검자 예문(Even …) 옆에 even 없는 꼴도 둠 — 교재 문장처럼 최상급 주어만으로도 양보 뜻이 되므로. ④ · ⑤ 에 없는 새 문장. (3) 절 답은 맞는 영어지만 이 문법을 피해 가므로 점검자의 둘째 안대로 condition 을 '최상급을 주어로'로 붙임. 오답 패턴은 match 를 'even though' → 'is the wisest' 로 넓힘: 옛 패턴은 'Although he is the wisest person, …'(실제 채점기로 힌트 없음 확인) · 'Even if someone is the wisest person, …'을 못 잡았음. hint = \"조건은 '최상급을 주어로'예요. '비록 ~일지라도'를 절로 따로 만들지 말고, 최상급 주어 하나로 말해 보세요(설명 카드).\" 기록용 note 에 까닭. 판정 TOPIC-09 의 Review 3 #6 항목 reason 에 덧붙이고 appliedTo 에 pg09-3:rule. 채점기: 점검자 예시 3개를 포함한 5개 정답, 절 답 3개 모두 새 힌트, most wise · may sometimes makes 는 기존 힌트. 증거: scratchpad\\g7fix2\\(grade.cjs 가 실제 채점기 src/lib/passoffGrading.ts 로 채점 · cases.json 73 + cases2.json 8 · 고치기 전 before.log 51 불일치 → 고친 뒤 0 · 두 레슨 묶음의 모범 답 · 허용 답 전부 '정답')."
+  },
+  {
+    "lesson": "pg09-1",
+    "item": "pg09-1:p11",
+    "finding": "조건 칩이 없어 맞는 영어 'It sounds like fun.' · 'That sounds like fun.'이 'sounds like' 패턴으로 틀림 — 형용사를 쓰라는 조건을 힌트가 뒤늦게 요구.",
+    "action": "fixed",
+    "note": "제안대로 condition null → '형용사로'(같은 레슨 p14 · p15 와 같은 방식). 'sounds like' 힌트 → \"조건은 '형용사로'예요. sound 바로 뒤에 형용사를 써 보세요(sound like 뒤에는 명사가 와요).\" accept 는 그대로(It sounds fun 의 fun 은 형용사). 기록용 note 에 까닭. 채점기: It/That sounds like fun → 오답 + 새 힌트, It sounds fun → 정답."
+  },
+  {
+    "lesson": "pg09-1",
+    "item": "pg09-1:p8",
+    "finding": "'What kind of book is this?'(what 이 명사 kind 를 꾸미는 의문형용사 — 이 레슨 문법 그대로)가 조건 칩 없이 틀림. 힌트조차 '뜻은 맞아요'.",
+    "action": "fixed",
+    "note": "제안대로 accept [] → 'What kind of book is this?', targets [['What book']] → [['What book','What kind','What sort']], 'what kind of book' 패턴 뺌(남은 패턴 2). 같은 짜임의 동의어 'What sort of book is this?'도 더함(수정자 판단). 기록용 note 에 까닭. 채점기: What kind · sort of book is this? 정답, What is this book? · What book this is? 는 기존 힌트로 오답."
+  },
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3:p7",
+    "finding": "'최대한 이용하다'의 맞는 번역 'You must make full use of your chance.'가 조건 칩 · 힌트 없이 틀림 — 교재 Review 3 지시문 '최상급을 이용하여 영작하시오'가 웹에서 빠짐.",
+    "action": "fixed",
+    "note": "condition null → '최상급을 써서'. 'must to make' 패턴 자리에 새 패턴 — match 는 제안의 'make full use of' 대신 'full' 로 넓혀 take full advantage of · to the full 도 같은 힌트를 받게 함(정답 어디에도 full 이라는 낱말은 없음 — 검사 도구로 확인). hint 는 제안 그대로 \"조건은 '최상급을 써서'예요. '최대한 이용하다'를 most 가 들어간 굳은 표현으로 써 보세요.\" 'must to make' 힌트는 패턴 3개 한도로 빠지지만 그런 답은 여전히 오답(틀린 자리 표시). 조건을 붙이면서 새로 생기는 거짓 오답도 막음: 조건을 지키는 다른 최상급 답 make the best use of · use … to the fullest(must · have to · should · need to × chance · chances · opportunity · opportunities) 32개를 accept 에, targets 에 'the best use of' · 'to the fullest'(15 → 47). 더하기 전 채점기로 이 넷이 오답인 것을 확인(cases2.json 4 불일치 → 0). 기록용 note 에 까닭."
+  },
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3 rule.points[3] (+ pg09-3:p3 errorPatterns)",
+    "finding": "카드는 최상급 앞에 늘 the 라고만 가르치는데 a4 · p3 모범 답(my mother's eldest brother) · t1 허용 답(my best friend)은 the 가 없음 — 소유격 뒤에는 the 를 쓰지 않는 예외가 빠짐.",
+    "action": "fixed",
+    "note": "points[3] → '불규칙: … / eldest 는 가족 사이 서열에만 — my eldest brother(my · Tom's 같은 소유격이 앞에 오면 최상급이어도 the 를 쓰지 않아요)'. p3 의 'most old' 패턴(같은 힌트가 p2 에 남아 있음) 자리에 {match \"mother's the\", hint \"mother's 같은 소유격 뒤에는 최상급이라도 the 를 쓰지 않아요.\"} — 제안의 \"mother's the eldest\" 보다 짧게 해 mother's the oldest 도 잡음(정답 조각 아님 — 검사 도구 확인). 채점기: 두 오답 모두 새 힌트."
+  },
+  {
+    "lesson": "pg09-4",
+    "item": "pg09-4:p2",
+    "finding": "'별로 맛이 없었지만 … 맛있었다'의 맞는 답 여럿(wasn't so good · wasn't good · didn't taste good · wasn't really good …)이 틀림, '그 샌드위치'를 That sandwich 로 옮긴 답은 힌트 없이 틀림.",
+    "action": "fixed",
+    "note": "제안대로 틀 'The sandwich {A}, but the apple {B}.'(A 8가지 × B 3가지)에서 빠진 16개를 더함(8 → 24), condition null → '관사를 써서'. 기록용 note 에 까닭. 채점기: 점검자 예시 5개 + 1개 정답, That sandwich … that apple … 은 조건 위반으로 오답(목표 the 없음)."
+  },
+  {
+    "lesson": "pg09-2",
+    "item": "pg09-2:p8",
+    "finding": "'누구보다도 더 잘'의 가장 흔한 영어 'better than anyone'(else 없음)이 빠져 틀림.",
+    "action": "fixed",
+    "note": "제안대로 'I know him well — {probably|maybe|perhaps} better than {anyone|anybody}{| does}.' 12개 + 'I know him well. I probably know him better than {anyone|anybody}{| does}.' 4개(15 → 31). 채점기: 쉼표로 쓴 답 · maybe · perhaps · does 붙은 답 모두 정답(문장부호는 채점에 안 씀)."
+  },
+  {
+    "lesson": "pg09-1",
+    "item": "pg09-1:p1 · pg09-1:p2",
+    "finding": "p1: 채점기가 명사 뒤 's 를 풀지 않아 \"Today's a nice day.\"가 틀림. p2: p1 은 great 를 받는데 'The weather is great today.'는 목표형이 없어 틀림.",
+    "action": "fixed",
+    "note": "제안대로 p1 accept + Today's a nice · good · fine · great day.(7 → 11). p2 targets 에 'is great' · \"weather's great\", accept 6개(17 → 23). 채점기로 모두 정답."
+  },
+  {
+    "lesson": "pg09-4",
+    "item": "pg09-4 rule.koDiff",
+    "finding": "'셀 수 있는 명사 하나 앞에 a · an 이나 the 를 꼭 붙여요'는 틀린 말 — 같은 레슨 앵커의 Your sweater · her mother 처럼 소유격 · 지시어가 있으면 관사를 쓰지 않음.",
+    "action": "fixed",
+    "note": "그 문장만 '… 셀 수 있는 명사 하나 앞에 a · an · the(또는 my · your · this 같은 말) 가운데 하나를 꼭 붙여요.'로 바꿈(나머지 그대로). 셀 수 있는 단수 명사 앞에는 한정사(관사 · 소유격 · 지시어) 하나가 필요하다는 표준 설명과 같음. 판정 TOPIC-09 의 Review 4 지시문 항목 reason 에도 적음."
+  },
+  {
+    "lesson": "pg09-4",
+    "item": "pg09-4 rule.points[2]",
+    "finding": "'관사 없음: 식사(for breakfast)'를 예외 없이 적음 — 식사 이름 앞에 형용사가 붙으면 a(a big breakfast · a nice lunch).",
+    "action": "fixed",
+    "note": "제안대로 '관사 없음: 식사(for breakfast — 앞에 형용사가 붙으면 a: a big breakfast) · 운동(play soccer) · 본래 목적으로 있는 곳(at school = 학교에서 공부하는 중)'."
+  },
+  {
+    "lesson": "pg09-1",
+    "item": "pg09-1 rule.points[0]",
+    "finding": "한정적 용법을 '명사 앞에서 꾸며요'라고만 적어, -thing · -one 대명사를 뒤에서 꾸미는 한정적 용법(something cold)이 빠짐.",
+    "action": "fixed",
+    "note": "'한정적 용법: 명사 앞에서 꾸며요 — a nice day. 다만 -thing · -one · -body 로 끝나는 말(something · someone)은 뒤에서 꾸며요 — something cold. 명사 앞의 what · which 도 형용사(의문형용사) — …'. 점검자 문안은 -thing 만 적어서, 문제 설명에 있던 -one 과 같은 무리인 -body 까지 넣음."
+  },
+  {
+    "lesson": "pg09-2 (+ pg09-3)",
+    "item": "pg09-2 rule.points[2] (+ pg09-3 rule.points[2])",
+    "finding": "카드 규칙이 '짧은 형용사는 -er, 긴 형용사는 more'뿐이라 앞 레슨의 tired · bored 가 tireder · boreder 가 됨 — -ed · -ing 형용사는 짧아도 more · most.",
+    "action": "fixed",
+    "note": "pg09-2 points[2] → '그 밖의 긴 형용사(대부분의 2음절 이상)와, 짧아도 -ed · -ing 로 끝나는 형용사는 앞에 more — more talented, more serious, more tired'. 같은 사실을 다음 레슨 pg09-3 points[2] 에도 '긴 형용사와, 짧아도 -ed · -ing 로 끝나는 형용사는 the most + 형용사 — the most boring, the most beautiful, the most tired'로 넣음 — 그 카드도 '-est 붙이는 법은 비교급과 같아요' 다음 줄에 '긴 형용사'만 적어 같은 구멍이 있었음(점검 밖, 수정자가 더함)."
+  },
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3:p3",
+    "finding": "'외할머니'를 그대로 옮긴 'My maternal grandmother lives with my mother's eldest brother.'(맞는 영어)가 틀림.",
+    "action": "fixed",
+    "note": "제안대로 lives with · is living with × my mother's eldest · oldest brother · my eldest · oldest uncle 8개(15 → 23). 판정 TOPIC-09 의 Review 3 #3 항목 reason 에 적음. 채점기로 정답."
+  },
+  {
+    "lesson": "pg09-1",
+    "item": "pg09-1:p22 · pg09-1:t1 · pg09-1:p20",
+    "finding": "p22: 한국어 '야구 경기를'에 '그'가 없는데 a baseball game 이 틀림. t1: 'That book seems interesting.'이 틀림. p20: 'He stood there astonished at the sight of the huge robot.'이 틀림.",
+    "action": "fixed",
+    "note": "제안대로 p22 +2(1 → 3 — 관사 레슨보다 앞이라 a · the 로 가르지 않음). t1 targets 에 'seems interesting' · 'seems fun', accept +4(3 → 7). GRAMMAR II gh2-019#5 의 대안 3개에는 seem 이 없어 기록용 note 에 까닭(seem 도 look 처럼 뒤에 형용사가 오는 동사)을 남김. p20 'He stood there {astonished|amazed|surprised} at the sight of the {huge|giant} robot.' 6개(17 → 23). 채점기로 모두 정답."
+  },
+  {
+    "lesson": "pg09-4",
+    "item": "pg09-4:p9 · p11 · p8 · p15",
+    "finding": "p9 \"Your sweater's color is the same as mine.\" · p11 '… would like to see her teacher at the school.' · p8 '… and also play all kinds of sports.'가 틀림. p15 'Only Zeus can do this.'는 틀림이 맞지만 힌트가 없음.",
+    "action": "fixed",
+    "note": "p9 +4(10 → 14, color · colour). p11 은 제안 2개에 이미 있는 mother · mom 짝을 맞춰 her mom would like to see · meet 도 더함(4 → 8). p8 +2(11 → 13). p15 'an only' 자리에 {match 'only zeus', hint \"맞는 영어지만, 이 문항은 한국어의 '유일한 사람'을 그대로 살려 써 보세요.\"} — 제안의 'only zeus can' 보다 짧게 해 'Only Zeus is able to …'도 잡음. 힌트는 제안('유일한 사람'을 주어로)을 조금 바꿈: 'Zeus is the only person who can do this.'(유일한 사람이 보어 자리)도 정답이라 '주어로'는 맞지 않음. 채점기: 더한 답 정답, Only Zeus … 두 가지에 새 힌트, a only 는 기존 힌트."
+  },
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3:s5",
+    "finding": "화면에 나오는 why 의 \"(교재 메모 '= oldest')\"를 웹 학습자는 알 수 없음.",
+    "action": "fixed",
+    "note": "why → '가족 사이 서열에는 eldest 도 oldest 도 써요. 가족이 아닌 사람 · 물건에는 oldest 만 써요.' — 제안 문안에 가족 밖은 oldest 만이라는 대비를 한 문장 더함(s4 · 카드 points[3] 과 같은 내용)."
+  },
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3:p3.fix · 판정 TOPIC-09 '(=/=eldest) · (=oldest)' 항목",
+    "finding": "Application #37 원문의 '(=oldest)'를 뗀 기록이 p3.fix 에 없음(같은 경우인 p2 는 있음). 판정 파일 해당 항목 appliedTo 에 p3 가 빠짐.",
+    "action": "fixed",
+    "note": "교재 추출에서 application #37 raw 가 'My grandmother lives with my mother’s eldest brother. (=oldest) (4과)'임을 확인. p3.fix = {from 'My grandmother lives with my mother’s eldest brother. (=oldest)', fromKo 그대로, field 'en+ko', kind 'translation_mismatch', why 기존 + \"영어 끝의 '(=oldest)'는 '여기서는 oldest 와 같음'이라는 메모라 문장에서 떼고 형태 찾기 s5(eldest · oldest 둘 다)로 옮겼습니다.\"}. 판정 항목 appliedTo 에 pg09-3:p3, reason 덧붙임. check-grading 다시 돌림: PASS. B 는 '(=oldest)'를 떼고 채점하므로 p3 원문은 모범 답과 같은 글이 되어 '따로 셈 · 문장부호 · 대소문자만 다름'으로 들어감 — 영어는 원래 틀리지 않았으니 실패가 아님."
+  },
+  {
+    "lesson": "pg09-1",
+    "item": "pg09-1:p12",
+    "finding": "accept 의 'Jinna is hard-working.' · \"Jinna's hard-working.\"은 hardworking 꼴과 하이픈만 달라 '문장부호만 다른 답은 넣지 않는다' 규칙에 어긋남.",
+    "action": "fixed",
+    "note": "두 줄을 뺌(5 → 3), targets 는 그대로. 채점기: 하이픈은 낱말 사이 띄움으로 읽고 hard working = hardworking(띄어쓰기만 다름)이라 두 답 모두 여전히 정답."
+  },
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3:p8 errorPatterns 'movie i ever saw'",
+    "finding": "'It was the most boring movie I ever saw.'(미국 구어에서 쓰는 영어)에 '보통 have + p.p.' 힌트만 나와 이 영어 자체가 틀렸다고 배움.",
+    "action": "fixed",
+    "note": "도전 판정과 오답은 그대로. hint → \"'지금까지 본 것 중'은 보통 현재완료(have + p.p.)로 써요. ever saw 는 주로 미국 구어에서 쓰는 말이에요.\" — 제안 문안의 '주로 … 에서만'은 겹말이라 '주로 미국 구어에서 쓰는 말이에요'로."
+  },
+  {
+    "lesson": "pg09-4",
+    "item": "pg09-4:p5",
+    "finding": "(점검 밖 — 수정자가 같은 레슨에서 찾음) p2 와 같은 경우: '그 책은'을 that book 으로 옮긴 맞는 답이 조건 칩 없이, 힌트도 없이 틀림(목표 the 없음).",
+    "action": "fixed",
+    "note": "condition null → '관사를 써서'(p2 와 같은 까닭 — the 가 이 문항의 목표), 기록용 note. 판정 TOPIC-09 의 Review 4 지시문 항목('여러 답이 나올 수 있는 문항에만 조건 칩')의 appliedTo 에 pg09-4:p2 · p5, reason 덧붙임. 채점기: 'This is a science fiction book, and that book is very thick.' → 오답(조건 위반)."
+  },
+  {
+    "lesson": "pg09-4",
+    "item": "pg09-4:p13",
+    "finding": "(점검 밖 — 수정자가 같은 레슨에서 찾음) '그 벽돌이'를 That brick 으로 옮긴 답은 목표 in the face 를 그대로 쓰는데도 틀림.",
+    "action": "fixed",
+    "note": "accept 에 'That brick hit John in the face.' · 'That brick struck John in the face.'(1 → 3). 목표를 피해 가지 않는 맞는 번역이라 받음 — the 자체가 목표인 p2 · p5 에 조건을 붙인 것과 다름. 기록용 note. 채점기로 정답."
+  },
+  {
+    "lesson": "G7 전체",
+    "item": "수정기록 G7.json",
+    "finding": "(수정자가 알림) 이 파일은 09-28 반박 점검의 지적과 그 처리만 담음.",
+    "action": "lead",
+    "note": "09-27 에 끊긴 첫 G7 수정이 레슨 note · 판정 TOPIC-09 에 'G7 점검 반영(2026-09-27)'을 남겼지만, 그때의 수정기록 파일은 없었음(네 레슨 · 판정 파일의 마지막 쓰기 09-27 11:15:15 — scratchpad\\backup-part23-1117 과 바이트까지 같았음). 첫 점검의 지적 목록 · 처리 수가 필요하면 워크플로우 실행 wf_8373e585-cf3 기록에서 찾아야 함 — 이끄는 세션 몫."
+  },
+  {
+    "lesson": "검사 도구",
+    "item": "docs/pass-off-grammar/검사/check-grading.cjs B 의 '따로 셈' 까닭 글",
+    "finding": "(수정자가 알림) B 는 oldEnglish 가 '(=oldest)' · '(4과)' 같은 메모를 떼고 채점해서, 메모만 뗀 고침(pg09-3:p3 — 영어는 원래 맞음)을 '문장부호 · 대소문자만 다름'으로 셈.",
+    "action": "lead",
+    "note": "판정(실패 아님)은 맞지만 까닭 글이 실제(메모만 뗌)와 다름. 코드(검사 도구) 몫이라 고치지 않음 — 이끄는 세션 몫(급하지 않음)."
+  }
+]

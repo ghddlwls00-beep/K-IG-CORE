@@ -1,0 +1,795 @@
+{
+  "id": "pg13-3",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "동명사",
+  "label": "TOPIC 13. 준동사",
+  "menuLabel": "13-3. 동명사",
+  "unit": 13,
+  "part": 2,
+  "order": 3,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(3) 동명사",
+  "grammarTags": [
+    "gerund"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg13-3:a1",
+          "en": "Getting ready for school is the hardest part of my day.",
+          "ko": "학교에 가는 준비는 나의 하루의 가장 어려운 부분입니다.",
+          "koSource": "student:s5-1#1",
+          "focus": [
+            "Getting ready"
+          ],
+          "studentRef": {
+            "lesson": "s5-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff 3) 동명사 item 1",
+            "reviewWhere": "Review 3. item 23 (p61)"
+          },
+          "fix": {
+            "from": "Getting ready for school is hardest part of my day.",
+            "fromKo": "등교 준비는 나의 날의 가장 힘든 부분이다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "Pass-Off 쪽은 최상급 hardest 앞의 the 가 빠졌습니다(Application 과 STUDENT 5과는 the hardest). STUDENT 와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(교재 한국어 '나의 날의'는 직역투, 판정 p53 · p61)."
+          }
+        },
+        {
+          "id": "pg13-3:a2",
+          "en": "My hobbies include reading books, listening to music, hiking, watching movies, and participating in sports.",
+          "ko": "나의 취미는 책 읽기, 음악 듣기, 등산, 영화 보기, 스포츠 참여입니다.",
+          "koSource": "student:s1-4#1",
+          "focus": [
+            "reading",
+            "listening",
+            "hiking",
+            "watching",
+            "participating"
+          ],
+          "studentRef": {
+            "lesson": "s1-4",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff 3) 동명사 item 2",
+            "reviewWhere": "Review 3. item 24 (p61)"
+          },
+          "fix": {
+            "from": "My hobbies include reading books, listening to music, watching movies and participating in sports. (1과)",
+            "fromKo": "내 취미는 책 읽기, 음악듣기, 등산하기, 영화보기 그리고 스포츠에 참가하기이다.",
+            "field": "en+ko",
+            "kind": "translation_mismatch",
+            "why": "Pass-Off 쪽에는 hiking 이 빠져 Application · STUDENT 1과(s1-4) · Review 한국어(등산하기)와 달랐습니다. STUDENT 판 문장(movies 뒤 쉼표 포함)과 한국어를 씁니다. 교재 한국어는 '음악듣기 · 영화보기' 띄어쓰기도 틀렸습니다(판정 p53 · p61)."
+          }
+        },
+        {
+          "id": "pg13-3:a3",
+          "en": "Seeing is believing.",
+          "ko": "보는 것이 믿는 것이다.",
+          "koSource": "review 3 item 25",
+          "focus": [
+            "Seeing",
+            "believing"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff 3) 동명사 item 3",
+            "reviewWhere": "Review 3. item 25 (p61)"
+          }
+        },
+        {
+          "id": "pg13-3:a4",
+          "en": "Running away is not the answer.",
+          "ko": "도망치는 것은 답이 아니다.",
+          "koSource": "new",
+          "focus": [
+            "Running away"
+          ],
+          "source": "new",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff 3) 동명사 item 4 (자리 바꿈)"
+          },
+          "fix": {
+            "from": "I saw him running away.",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재가 이 자리에 동명사 예로 둔 I saw him running away. 의 running 은 see + 목적어 뒤의 현재분사라 분사 레슨(pg13-2:p12)으로 옮기고, 그 자리에 같은 낱말로 만든 동명사 예를 새로 넣었습니다(판정 p53)."
+          }
+        },
+        {
+          "id": "pg13-3:a5",
+          "en": "She is excellent at teaching exactly what we need to know.",
+          "ko": "그녀는 우리가 알아야 할 것을 정확하게 가르치는 데 뛰어나다.",
+          "koSource": "review 3 item 27 (고침)",
+          "focus": [
+            "at teaching"
+          ],
+          "studentRef": {
+            "lesson": "s14-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff 3) 동명사 item 5",
+            "reviewWhere": "Review 3. item 27 (p61)"
+          },
+          "fix": {
+            "fromKo": "그녀는 우리가 알아야 할 것을 정확하게 가르쳐 주는 것이 훌륭하다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "be excellent at -ing 는 '~을 아주 잘한다(~하는 데 뛰어나다)'인데 '~하는 것이 훌륭하다'는 뜻이 흐려져 고쳤습니다(판정 p61)."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg13-3:a1",
+          "pg13-3:a3",
+          "pg13-3:a5"
+        ],
+        "question": "Getting · Seeing · teaching 은 모두 동사 + -ing 예요. 문장에서 무엇처럼 쓰였을까요?",
+        "options": [
+          "명사처럼(~하는 것)",
+          "형용사처럼(~하는)",
+          "진행형(~하고 있다)"
+        ],
+        "answer": 0,
+        "why": "Getting ready for school(준비하는 것은)은 주어, Seeing · believing(보는 것 · 믿는 것)은 주어 · 보어, teaching(가르치는 것)은 전치사 at 의 목적어 — 모두 명사 자리예요. 이런 -ing 를 동명사라고 해요."
+      },
+      "title": "동명사: 동사 + -ing 가 '~하는 것'(명사)이 됩니다",
+      "points": [
+        "동명사(-ing)는 '~하는 것' — 명사 자리에 써요",
+        "주어 · 보어: Seeing is believing.",
+        "동사의 목적어: enjoy · finish · include + -ing",
+        "전치사 뒤에는 동명사: excellent at teaching",
+        "모양이 같은 현재분사(~하는 · ~하면서)와 자리로 구별해요"
+      ],
+      "table": {
+        "columns": [
+          "자리",
+          "예문",
+          "뜻"
+        ],
+        "rows": [
+          [
+            "주어",
+            "Seeing is believing.",
+            "보는 것이 (믿는 것이다)"
+          ],
+          [
+            "보어",
+            "My hobby is collecting stamps.",
+            "우표를 모으는 것"
+          ],
+          [
+            "동사의 목적어",
+            "I enjoy swimming. / include reading books",
+            "수영하는 것을 / 책 읽기를"
+          ],
+          [
+            "전치사의 목적어",
+            "She is excellent at teaching.",
+            "가르치는 데"
+          ],
+          [
+            "(비교) 현재분사",
+            "I saw him running away.",
+            "그가 도망가고 있는 것을 — 동명사 아님"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '-기 · -는 것'을 붙여 동사를 명사로 만들지만, 영어는 동사에 -ing 를 붙여요. 전치사 뒤에는 보통 to부정사가 아니라 동명사를 써요(good at teaching).",
+      "mistakes": [
+        {
+          "wrong": "She is good at teach English.",
+          "right": "She is good at teaching English.",
+          "why": "전치사 at 뒤에는 동명사(-ing)"
+        },
+        {
+          "wrong": "I enjoy to swim.",
+          "right": "I enjoy swimming.",
+          "why": "enjoy 는 동명사만 목적어로 써요."
+        }
+      ],
+      "worked": [
+        "나는 책 읽는 것을 즐긴다.",
+        "'읽는 것을' → enjoy 의 목적어",
+        "enjoy 뒤에는 동명사: reading",
+        "I enjoy reading books."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'Thank you for ___ me.' 빈칸에 알맞은 것은?",
+        "options": [
+          "help",
+          "to help",
+          "helping"
+        ],
+        "answer": 2,
+        "why": "전치사 for 뒤에는 동명사(-ing)가 와요.",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg13-3:s1",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분이 문장에서 하는 일은?",
+          "sentence": "Getting ready for school is the hardest part of my day.",
+          "underline": [
+            "Getting ready for school"
+          ],
+          "options": [
+            "명사를 꾸미는 말(~하는)",
+            "진행형(~하고 있다)",
+            "주어(~하는 것은)"
+          ],
+          "answer": 2,
+          "why": "문장 맨 앞 동명사 덩어리 Getting ready for school 이 주어('학교 갈 준비를 하는 것은')예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff 3) 동명사 item 1"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-3:s2",
+          "kind": "select",
+          "instruction": "include 의 목적어인 동명사를 모두 누르세요",
+          "tokens": [
+            "My",
+            "hobbies",
+            "include",
+            "reading",
+            "books",
+            ",",
+            "listening",
+            "to",
+            "music",
+            ",",
+            "hiking",
+            ",",
+            "watching",
+            "movies",
+            ",",
+            "and",
+            "participating",
+            "in",
+            "sports",
+            "."
+          ],
+          "answer": [
+            3,
+            6,
+            10,
+            12,
+            16
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "include(포함하다)의 목적어 다섯 개: reading · listening · hiking · watching · participating.",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff 3) 동명사 item 2"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-3:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "She is excellent at ___ exactly what we need to know.",
+          "underline": [],
+          "options": [
+            "teaching",
+            "teach",
+            "to teach"
+          ],
+          "answer": 0,
+          "why": "전치사 at 뒤에는 동명사(-ing)가 와요.",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff 3) 동명사 item 5"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-3:s4",
+          "kind": "choice",
+          "instruction": "-ing 가 동명사(~하는 것)로 쓰인 문장은?",
+          "underline": [],
+          "options": [
+            "I saw him running away.",
+            "Seeing is believing.",
+            "Barking dogs do not bite."
+          ],
+          "answer": 1,
+          "why": "Seeing · believing 은 '보는 것 · 믿는 것'(주어 · 보어)이라 동명사예요. running 은 him 이 하고 있는 모습, Barking 은 dogs 를 꾸미는 말이라 현재분사예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff 3) 동명사 item 3 · item 4"
+          },
+          "source": "new",
+          "fix": {
+            "from": "I saw him running away. (동명사 묶음)",
+            "field": "options",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재가 동명사 예로 둔 이 문장은 현재분사라, 동명사와 구별하는 보기로 씁니다(판정 p53)."
+          }
+        },
+        {
+          "id": "pg13-3:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "I finished ___ my homework.",
+          "underline": [],
+          "options": [
+            "to do",
+            "doing",
+            "do"
+          ],
+          "answer": 1,
+          "why": "finish 는 동명사만 목적어로 써요(to부정사 ✗).",
+          "bookRef": null,
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg13-3:p1",
+          "ko": "학교에 가는 준비는 나의 하루의 가장 어려운 부분입니다.",
+          "koSource": "student:s5-1#1",
+          "condition": "동명사로",
+          "promptEn": null,
+          "en": "Getting ready for school is the hardest part of my day.",
+          "accept": [
+            "Getting ready for school is the most difficult part of my day.",
+            "Preparing for school is the hardest part of my day.",
+            "Preparing for school is the most difficult part of my day.",
+            "Getting ready to go to school is the hardest part of my day.",
+            "Getting ready to go to school is the most difficult part of my day.",
+            "Preparing to go to school is the hardest part of my day.",
+            "Preparing to go to school is the most difficult part of my day."
+          ],
+          "targets": [
+            [
+              "Getting ready",
+              "Preparing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "To get ready for school",
+              "hint": "맞는 영어지만 조건은 '동명사로'예요. '준비하는 것은'을 -ing 로 시작해 보세요."
+            },
+            {
+              "match": "is hardest part",
+              "hint": "최상급(가장 ~한) 앞에는 the 를 써요."
+            },
+            {
+              "match": "Get ready for school is",
+              "hint": "동사원형은 주어가 될 수 없어요. '~하는 것'을 -ing 로 만들어 보세요."
+            }
+          ],
+          "tags": [
+            "gerund",
+            "superlative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s5-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (3) 동명사[라벨 없음·추론] item 1",
+            "reviewWhere": "Review 3. item 23 (p61)"
+          },
+          "fix": {
+            "from": "Getting ready for school is hardest part of my day.",
+            "fromKo": "등교 준비는 나의 날의 가장 힘든 부분이다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "Pass-Off 쪽은 최상급 hardest 앞의 the 가 빠졌습니다(Application 과 STUDENT 5과는 the hardest). STUDENT 와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(교재 한국어 '나의 날의'는 직역투, 판정 p53 · p61)."
+          }
+        },
+        {
+          "id": "pg13-3:p2",
+          "ko": "나의 취미는 책 읽기, 음악 듣기, 등산, 영화 보기, 스포츠 참여입니다.",
+          "koSource": "student:s1-4#1",
+          "condition": null,
+          "promptEn": null,
+          "en": "My hobbies include reading books, listening to music, hiking, watching movies, and participating in sports.",
+          "accept": [
+            "My hobbies include reading books, listening to music, hiking, watching movies, and taking part in sports.",
+            "My hobbies include reading books, listening to music, hiking, watching movies, and playing sports.",
+            "My hobbies include reading books, listening to music, hiking, watching films, and participating in sports.",
+            "My hobbies include reading books, listening to music, hiking, watching films, and taking part in sports.",
+            "My hobbies include reading books, listening to music, hiking, watching films, and playing sports.",
+            "My hobbies include reading books, listening to music, mountain climbing, watching movies, and participating in sports.",
+            "My hobbies include reading books, listening to music, mountain climbing, watching movies, and taking part in sports.",
+            "My hobbies include reading books, listening to music, mountain climbing, watching movies, and playing sports.",
+            "My hobbies include reading books, listening to music, mountain climbing, watching films, and participating in sports.",
+            "My hobbies include reading books, listening to music, mountain climbing, watching films, and taking part in sports.",
+            "My hobbies include reading books, listening to music, mountain climbing, watching films, and playing sports.",
+            "My hobbies are reading books, listening to music, hiking, watching movies, and participating in sports.",
+            "My hobbies are reading books, listening to music, hiking, watching movies, and taking part in sports.",
+            "My hobbies are reading books, listening to music, hiking, watching movies, and playing sports.",
+            "My hobbies are reading books, listening to music, hiking, watching films, and participating in sports.",
+            "My hobbies are reading books, listening to music, hiking, watching films, and taking part in sports.",
+            "My hobbies are reading books, listening to music, hiking, watching films, and playing sports.",
+            "My hobbies are reading books, listening to music, mountain climbing, watching movies, and participating in sports.",
+            "My hobbies are reading books, listening to music, mountain climbing, watching movies, and taking part in sports.",
+            "My hobbies are reading books, listening to music, mountain climbing, watching movies, and playing sports.",
+            "My hobbies are reading books, listening to music, mountain climbing, watching films, and participating in sports.",
+            "My hobbies are reading books, listening to music, mountain climbing, watching films, and taking part in sports.",
+            "My hobbies are reading books, listening to music, mountain climbing, watching films, and playing sports.",
+            "My hobbies include reading, listening to music, hiking, watching movies, and participating in sports.",
+            "My hobbies include reading, listening to music, hiking, watching movies, and taking part in sports.",
+            "My hobbies include reading, listening to music, hiking, watching movies, and playing sports.",
+            "My hobbies include reading, listening to music, hiking, watching films, and participating in sports.",
+            "My hobbies include reading, listening to music, hiking, watching films, and taking part in sports.",
+            "My hobbies include reading, listening to music, hiking, watching films, and playing sports.",
+            "My hobbies include reading, listening to music, mountain climbing, watching movies, and participating in sports.",
+            "My hobbies include reading, listening to music, mountain climbing, watching movies, and taking part in sports.",
+            "My hobbies include reading, listening to music, mountain climbing, watching movies, and playing sports.",
+            "My hobbies include reading, listening to music, mountain climbing, watching films, and participating in sports.",
+            "My hobbies include reading, listening to music, mountain climbing, watching films, and taking part in sports.",
+            "My hobbies include reading, listening to music, mountain climbing, watching films, and playing sports.",
+            "My hobbies are reading, listening to music, hiking, watching movies, and participating in sports.",
+            "My hobbies are reading, listening to music, hiking, watching movies, and taking part in sports.",
+            "My hobbies are reading, listening to music, hiking, watching movies, and playing sports.",
+            "My hobbies are reading, listening to music, hiking, watching films, and participating in sports.",
+            "My hobbies are reading, listening to music, hiking, watching films, and taking part in sports.",
+            "My hobbies are reading, listening to music, hiking, watching films, and playing sports.",
+            "My hobbies are reading, listening to music, mountain climbing, watching movies, and participating in sports.",
+            "My hobbies are reading, listening to music, mountain climbing, watching movies, and taking part in sports.",
+            "My hobbies are reading, listening to music, mountain climbing, watching movies, and playing sports.",
+            "My hobbies are reading, listening to music, mountain climbing, watching films, and participating in sports.",
+            "My hobbies are reading, listening to music, mountain climbing, watching films, and taking part in sports.",
+            "My hobbies are reading, listening to music, mountain climbing, watching films, and playing sports."
+          ],
+          "targets": [
+            [
+              "reading"
+            ],
+            [
+              "listening"
+            ],
+            [
+              "hiking",
+              "climbing"
+            ],
+            [
+              "watching"
+            ],
+            [
+              "participating",
+              "taking part",
+              "playing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "include read books",
+              "hint": "include 의 목적어 자리에는 동사원형이 아니라 -ing(동명사)를 써요."
+            },
+            {
+              "match": "listening music",
+              "hint": "'음악을 듣다'는 listen 뒤에 전치사가 필요해요."
+            },
+            {
+              "match": "participating sports",
+              "hint": "'스포츠에 참여하다'는 participate 뒤에 전치사가 필요해요."
+            }
+          ],
+          "tags": [
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s1-4",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (3) 동명사[라벨 없음·추론] item 2",
+            "reviewWhere": "Review 3. item 24 (p61)"
+          },
+          "fix": {
+            "fromKo": "내 취미는 책 읽기, 음악듣기, 등산하기, 영화보기 그리고 스포츠에 참가하기이다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "Pass-Off 쪽에는 hiking 이 빠져 Application · STUDENT 1과(s1-4) · Review 한국어(등산하기)와 달랐습니다. STUDENT 판 문장(movies 뒤 쉼표 포함)과 한국어를 씁니다. 교재 한국어는 '음악듣기 · 영화보기' 띄어쓰기도 틀렸습니다(판정 p53 · p61)."
+          }
+        },
+        {
+          "id": "pg13-3:p3",
+          "ko": "보는 것이 믿는 것이다.",
+          "koSource": "review 3 item 25",
+          "condition": "동명사로",
+          "promptEn": null,
+          "en": "Seeing is believing.",
+          "accept": [],
+          "targets": [
+            [
+              "Seeing"
+            ],
+            [
+              "believing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "To see is to believe",
+              "hint": "맞는 영어지만 조건은 '동명사로'예요. '보는 것 · 믿는 것'을 -ing 로 써 보세요."
+            },
+            {
+              "match": "Seeing is believe",
+              "hint": "보어 자리의 '믿는 것'도 -ing 로 맞춰요."
+            },
+            {
+              "match": "See is believe",
+              "hint": "동사원형은 주어가 될 수 없어요. '~하는 것'을 -ing 로 만들어 보세요."
+            }
+          ],
+          "tags": [
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (3) 동명사[라벨 없음·추론] item 3",
+            "reviewWhere": "Review 3. item 25 (p61)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-3:p4",
+          "ko": "도망치는 것은 답이 아니다.",
+          "koSource": "new",
+          "condition": "동명사로",
+          "promptEn": null,
+          "en": "Running away is not the answer.",
+          "accept": [
+            "Running away is not an answer.",
+            "Running away is not the solution.",
+            "Running away is not a solution."
+          ],
+          "targets": [
+            [
+              "Running away"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "To run away is not",
+              "hint": "맞는 영어지만 조건은 '동명사로'예요. '도망치는 것은'을 -ing 로 시작해 보세요."
+            },
+            {
+              "match": "Run away is not",
+              "hint": "동사원형은 주어가 될 수 없어요. '~하는 것'을 -ing 로 만들어 보세요."
+            }
+          ],
+          "tags": [
+            "gerund",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (3) 동명사[라벨 없음·추론] item 4 (자리 바꿈)"
+          },
+          "fix": null,
+          "source": "new",
+          "note": "교재 (3) item 4 'I saw him running away.'는 현재분사라 pg13-2:p12 로 옮기고, 이 자리에 동명사 예를 새로 넣음(판정 p53)."
+        },
+        {
+          "id": "pg13-3:p5",
+          "ko": "그녀는 우리가 알아야 할 것을 정확하게 가르치는 데 뛰어나다.",
+          "koSource": "review 3 item 27 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "She is excellent at teaching exactly what we need to know.",
+          "accept": [
+            "She is excellent at teaching us exactly what we need to know.",
+            "She is very good at teaching exactly what we need to know.",
+            "She is very good at teaching us exactly what we need to know.",
+            "She is great at teaching exactly what we need to know.",
+            "She is great at teaching us exactly what we need to know.",
+            "She is excellent at teaching exactly what we have to know.",
+            "She is excellent at teaching exactly what we should know.",
+            "She is excellent at teaching us exactly what we have to know.",
+            "She is excellent at teaching us exactly what we should know.",
+            "She is very good at teaching exactly what we have to know.",
+            "She is very good at teaching exactly what we should know.",
+            "She is very good at teaching us exactly what we have to know.",
+            "She is very good at teaching us exactly what we should know.",
+            "She is great at teaching exactly what we have to know.",
+            "She is great at teaching exactly what we should know.",
+            "She is great at teaching us exactly what we have to know.",
+            "She is great at teaching us exactly what we should know.",
+            "She is really good at teaching exactly what we need to know.",
+            "She is really good at teaching exactly what we have to know.",
+            "She is really good at teaching exactly what we should know.",
+            "She is really good at teaching us exactly what we need to know.",
+            "She is really good at teaching us exactly what we have to know.",
+            "She is really good at teaching us exactly what we should know."
+          ],
+          "targets": [
+            [
+              "at teaching"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "excellent at teach",
+              "hint": "전치사 at 뒤에는 동사원형이 아니라 -ing(동명사)를 써요."
+            },
+            {
+              "match": "excellent to teach",
+              "hint": "'~하는 데 뛰어나다'는 excellent 뒤에 전치사 + -ing 로 써요."
+            },
+            {
+              "match": "what do we need to know",
+              "hint": "'우리가 알아야 할 것'은 묻는 말이 아니에요. 주어-동사 순서로 써 보세요."
+            }
+          ],
+          "tags": [
+            "gerund",
+            "relative-what",
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s14-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (3) 동명사[라벨 없음·추론] item 5",
+            "reviewWhere": "Review 3. item 27 (p61)"
+          },
+          "fix": {
+            "fromKo": "그녀는 우리가 알아야 할 것을 정확하게 가르쳐 주는 것이 훌륭하다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "be excellent at -ing 는 '~을 아주 잘한다(~하는 데 뛰어나다)'인데 '~하는 것이 훌륭하다'는 뜻이 흐려져 고쳤습니다(판정 p61)."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg13-3:t1",
+          "ko": "그는 시간을 잘 지키는 것을 자랑스러워한다. (시간을 잘 지키는 것에 자부심을 갖고 있다.)",
+          "condition": "동명사로",
+          "promptEn": null,
+          "en": "He is proud of being punctual.",
+          "accept": [
+            "He takes pride in being punctual.",
+            "He is proud of being on time.",
+            "He takes pride in being on time."
+          ],
+          "targets": [
+            [
+              "being"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "proud of be punctual",
+              "hint": "전치사 of 뒤에는 동사원형이 아니라 -ing(동명사)를 써요."
+            },
+            {
+              "match": "proud to be punctual",
+              "hint": "맞는 영어지만 조건은 '동명사로'예요. proud 뒤에 전치사 + -ing 로 써 보세요."
+            }
+          ],
+          "tags": [
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-038#6",
+          "note": "GRAMMAR II 허용 답 2개를 그대로 받고 takes pride in being on time 을 더함."
+        },
+        {
+          "id": "pg13-3:t2",
+          "ko": "너는 왜 계속 나를 피하니?",
+          "condition": "동명사로",
+          "promptEn": null,
+          "en": "Why do you keep avoiding me?",
+          "accept": [
+            "Why do you continue avoiding me?",
+            "Why do you keep on avoiding me?"
+          ],
+          "targets": [
+            [
+              "avoiding"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "keep avoid me",
+              "hint": "keep(계속하다) 뒤에는 -ing(동명사)를 써요."
+            },
+            {
+              "match": "keep to avoid",
+              "hint": "keep 뒤에는 to부정사가 아니라 -ing 를 써요."
+            },
+            {
+              "match": "continue to avoid",
+              "hint": "맞는 영어지만 조건은 '동명사로'예요. -ing 로 써 보세요."
+            }
+          ],
+          "tags": [
+            "gerund",
+            "question-wh"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-038#2",
+          "note": "GRAMMAR II 허용 답 1개를 그대로 받고 keep on 판을 더함. 한국어는 GRAMMAR II 원문 '왜 너는 나를 피하는 것을 계속하니?(왜 계속 나를 피하니?)'가 번역투라 괄호 속 뜻대로 '너는 왜 계속 나를 피하니?'로 다듬음(영어 · 허용 답은 GRAMMAR II 그대로)."
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg13-3:f1",
+      "template": "I am good at ___.",
+      "ko": "나는 ___을(를) 잘한다. (명사나 -ing 로)"
+    }
+  ]
+}

@@ -1,0 +1,1126 @@
+{
+  "id": "pg13-4",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "관용 표현",
+  "label": "TOPIC 13. 준동사",
+  "menuLabel": "13-4. 관용 표현",
+  "unit": 13,
+  "part": 2,
+  "order": 4,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(4) 관용 표현",
+  "grammarTags": [
+    "verbal-idioms"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg13-4:a1",
+          "en": "Generally speaking, he is a kind of hero.",
+          "ko": "일반적으로 말해서, 그는 일종의 영웅이다.",
+          "koSource": "review 2 item 1",
+          "focus": [
+            "Generally speaking"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 1",
+            "reviewWhere": "Review 2. item 1 (p58)"
+          }
+        },
+        {
+          "id": "pg13-4:a2",
+          "en": "Judging from the weather forecast, we'll have a heavy rain tonight.",
+          "ko": "일기예보로 판단하건대, 오늘 밤에 비가 많이 올 것이다.",
+          "koSource": "review 2 item 4 (고침)",
+          "focus": [
+            "Judging from"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 4",
+            "reviewWhere": "Review 2. item 4 (p58)"
+          },
+          "fix": {
+            "fromKo": "일기 예보로 판단하건대, 오늘 밤에 비가 많이 올 것이다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'일기예보'는 한 낱말이라 붙여 씁니다(판정 p58)."
+          }
+        },
+        {
+          "id": "pg13-4:a3",
+          "en": "I could not help laughing when she announced the wrong reports.",
+          "ko": "나는 그녀가 잘못된 보고서를 발표할 때, 웃지 않을 수 없었다.",
+          "koSource": "review 2 item 5",
+          "focus": [
+            "could not help laughing"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 5",
+            "reviewWhere": "Review 2. item 5 (p58)"
+          }
+        },
+        {
+          "id": "pg13-4:a4",
+          "en": "It's no use crying over spilt milk.",
+          "ko": "쏟아진 우유를 두고 울어도 소용없다.",
+          "koSource": "review 2 item 6 (고침)",
+          "focus": [
+            "no use crying"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 6",
+            "reviewWhere": "Review 2. item 6 (p58)"
+          },
+          "fix": {
+            "fromKo": "쏟아진 우유를 두고 울어도 소용 없다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'소용없다'는 한 낱말이라 붙여 씁니다(판정 p58)."
+          }
+        },
+        {
+          "id": "pg13-4:a5",
+          "en": "The novel is worth reading.",
+          "ko": "그 소설은 읽을 가치가 있다.",
+          "koSource": "review 2 item 7",
+          "focus": [
+            "worth reading"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 7",
+            "reviewWhere": "Review 2. item 7 (p58)"
+          }
+        },
+        {
+          "id": "pg13-4:a6",
+          "en": "My son is busy studying mathematics.",
+          "ko": "나의 아들은 수학을 공부하느라고 바쁘다.",
+          "koSource": "review 2 item 8 (고침)",
+          "focus": [
+            "busy studying"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 8",
+            "reviewWhere": "Review 2. item 8 (p58)"
+          },
+          "fix": {
+            "fromKo": "나의 아들은 수학을 공부하느라고 바쁘다",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "문장 끝 마침표가 빠져 쪽 아래에 따로 인쇄되어 있었습니다(판정 p58)."
+          }
+        },
+        {
+          "id": "pg13-4:a7",
+          "en": "It goes without saying that health comes before wealth.",
+          "ko": "부보다 건강이 우선이라는 것은 말할 필요도 없다.",
+          "koSource": "review 3 item 28",
+          "focus": [
+            "It goes without saying"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 9",
+            "reviewWhere": "Review 3. item 28 (p61)"
+          }
+        },
+        {
+          "id": "pg13-4:a8",
+          "en": "I feel like swimming in the river.",
+          "ko": "나는 강에서 수영하고 싶은 기분이다.",
+          "koSource": "review 3 item 29 (고침)",
+          "focus": [
+            "feel like swimming"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 10",
+            "reviewWhere": "Review 3. item 29 (p61)"
+          },
+          "fix": {
+            "fromKo": "나는 강에서 수영하고 싶다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "feel like -ing 는 '~하고 싶은 기분이다' — '수영하고 싶다'만으로는 want to swim 을 부릅니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg13-4:a1",
+          "pg13-4:a3",
+          "pg13-4:a5"
+        ],
+        "question": "세 문장의 강조한 표현(Generally speaking · could not help laughing · worth reading)의 공통점은?",
+        "options": [
+          "to + 동사원형이 들어 있다",
+          "be동사 + 과거분사(수동)이다",
+          "-ing 가 든 굳은 표현이다"
+        ],
+        "answer": 2,
+        "why": "세 표현 모두 -ing 가 든 굳은 표현(관용 표현)이에요. 낱말 뜻을 하나씩 더하기보다 덩어리 뜻으로 익혀요."
+      },
+      "title": "-ing 가 든 관용 표현은 덩어리로 익힙니다",
+      "points": [
+        "Generally speaking: 일반적으로 말해서 · Judging from: ~로 판단하건대",
+        "cannot help -ing: ~하지 않을 수 없다",
+        "It is no use -ing: ~해도 소용없다 · be worth -ing: ~할 가치가 있다",
+        "be busy -ing: ~하느라 바쁘다 · feel like -ing: ~하고 싶은 기분이다",
+        "It goes without saying that ~: ~은 말할 필요도 없다"
+      ],
+      "table": {
+        "columns": [
+          "표현",
+          "뜻"
+        ],
+        "rows": [
+          [
+            "Generally speaking / Strictly speaking",
+            "일반적으로 말해서 / 엄밀히 말해서"
+          ],
+          [
+            "Frankly speaking",
+            "솔직히 말해서"
+          ],
+          [
+            "Judging from ~",
+            "~로 판단하건대"
+          ],
+          [
+            "Taking ~ into consideration (= Considering ~)",
+            "~을 고려하면"
+          ],
+          [
+            "cannot help -ing (= cannot help but + 동사원형)",
+            "~하지 않을 수 없다"
+          ],
+          [
+            "It is no use -ing",
+            "~해도 소용없다"
+          ],
+          [
+            "be worth -ing",
+            "~할 가치가 있다"
+          ],
+          [
+            "be busy -ing",
+            "~하느라 바쁘다"
+          ],
+          [
+            "feel like -ing",
+            "~하고 싶은 기분이다"
+          ],
+          [
+            "It goes without saying that ~ (= Needless to say, ~)",
+            "~은 말할 필요도 없다"
+          ]
+        ]
+      },
+      "koDiff": "우리말 '~하지 않을 수 없다 · ~할 가치가 있다'를 낱말대로 옮기면 틀린 영어가 되기 쉬워요. 영어는 정해진 틀(cannot help -ing, be worth -ing)에 -ing 를 넣어 말해요.",
+      "mistakes": [
+        {
+          "wrong": "This book is worth to read.",
+          "right": "This book is worth reading.",
+          "why": "worth 뒤에는 to부정사가 아니라 -ing"
+        },
+        {
+          "wrong": "I couldn't help to laugh.",
+          "right": "I couldn't help laughing.",
+          "why": "cannot help 뒤에는 -ing"
+        }
+      ],
+      "worked": [
+        "나는 오늘 밤 외출하고 싶은 기분이 아니다.",
+        "'~하고 싶은 기분이다' → feel like + -ing",
+        "'아니다' → don't feel like",
+        "go out → going out",
+        "I don't feel like going out tonight."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'She is busy ___ dinner.' 빈칸에 알맞은 것은?",
+        "options": [
+          "cooking",
+          "cook",
+          "to cook"
+        ],
+        "answer": 0,
+        "why": "be busy + -ing = ~하느라 바쁘다",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg13-4:s1",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "I could not help ___ when she announced the wrong reports.",
+          "underline": [],
+          "options": [
+            "laugh",
+            "laughing",
+            "to laugh"
+          ],
+          "answer": 1,
+          "why": "cannot help + -ing = ~하지 않을 수 없다.",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 5"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-4:s2",
+          "kind": "choice",
+          "instruction": "밑줄 친 표현의 뜻은?",
+          "sentence": "Generally speaking, he is a kind of hero.",
+          "underline": [
+            "Generally speaking"
+          ],
+          "options": [
+            "엄밀히 말해서",
+            "솔직히 말해서",
+            "일반적으로 말해서"
+          ],
+          "answer": 2,
+          "why": "generally(일반적으로) + speaking(말해서).",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 1"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-4:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "The novel is worth ___.",
+          "underline": [],
+          "options": [
+            "reading",
+            "to read",
+            "read"
+          ],
+          "answer": 0,
+          "why": "be worth + -ing = ~할 가치가 있다(to부정사 ✗).",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 7"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-4:s4",
+          "kind": "choice",
+          "instruction": "밑줄 친 표현의 뜻은?",
+          "sentence": "It's no use crying over spilt milk.",
+          "underline": [
+            "no use crying"
+          ],
+          "options": [
+            "울지 않을 수 없다",
+            "울고 싶은 기분이다",
+            "울어도 소용없다"
+          ],
+          "answer": 2,
+          "why": "It is no use -ing = ~해도 소용없다.",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 6"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-4:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "My son is busy ___ mathematics.",
+          "underline": [],
+          "options": [
+            "to study",
+            "studying",
+            "study"
+          ],
+          "answer": 1,
+          "why": "be busy + -ing = ~하느라 바쁘다.",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 8"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-4:s6",
+          "kind": "select",
+          "instruction": "'~로 판단하건대'에 해당하는 말을 모두 누르세요",
+          "tokens": [
+            "Judging",
+            "from",
+            "the",
+            "weather",
+            "forecast",
+            ",",
+            "we'll",
+            "have",
+            "a",
+            "heavy",
+            "rain",
+            "tonight",
+            "."
+          ],
+          "answer": [
+            0,
+            1
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "Judging from ~ = ~로 판단하건대(분사 관용 표현).",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 4"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-4:s7",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "I feel like ___ in the river.",
+          "underline": [],
+          "options": [
+            "to swim",
+            "swim",
+            "swimming"
+          ],
+          "answer": 2,
+          "why": "feel like + -ing = ~하고 싶은 기분이다.",
+          "bookRef": {
+            "book": 2,
+            "page": 53,
+            "where": "passOff (4) 관용표현 item 10"
+          },
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg13-4:p1",
+          "ko": "일반적으로 말해서, 그는 일종의 영웅이다.",
+          "koSource": "review 2 item 1",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "Generally speaking, he is a kind of hero.",
+          "accept": [
+            "Generally speaking, he is a sort of hero.",
+            "He is a kind of hero, generally speaking.",
+            "He is a sort of hero, generally speaking."
+          ],
+          "targets": [
+            [
+              "Generally speaking"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "In general, he is",
+              "hint": "맞는 영어지만 조건은 '관용 표현으로'예요. '말해서'가 든 -ing 표현을 떠올려 보세요."
+            },
+            {
+              "match": "General speaking",
+              "hint": "speaking 을 꾸미는 말은 부사 모양이어야 해요."
+            },
+            {
+              "match": "Generally speak",
+              "hint": "'말해서'는 -ing 로 써요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "participle-clause"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (4) 관용표현[라벨 없음·추론] item 1",
+            "reviewWhere": "Review 2. item 1 (p58)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-4:p2",
+          "ko": "엄밀히 말해서, 그는 좋은 학생은 아니었다.",
+          "koSource": "review 2 item 2 (고침)",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "Strictly speaking, he was not a good student.",
+          "accept": [
+            "He was not a good student, strictly speaking."
+          ],
+          "targets": [
+            [
+              "Strictly speaking"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Strict speaking",
+              "hint": "speaking 을 꾸미는 말은 부사 모양이어야 해요."
+            },
+            {
+              "match": "he is not a good student",
+              "hint": "'아니었다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "participle-clause",
+            "be-past",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (4) 관용표현[라벨 없음·추론] item 2",
+            "reviewWhere": "Review 2. item 2 (p58)"
+          },
+          "fix": {
+            "fromKo": "엄격하게 말해서, 그는 좋은 학생은 아니었다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "strictly speaking 의 strictly 는 '엄밀히(정확히 따지면)'라는 뜻이라 '엄밀히 말해서'로 고쳤습니다. '엄격하게'는 규칙 · 태도가 엄하다는 뜻이라 어긋납니다(추출 issues 에 없던 것, 이 작업에서 찾음)."
+          }
+        },
+        {
+          "id": "pg13-4:p3",
+          "ko": "그의 나이를 고려한다면, 그는 그것을 매우 잘했다.",
+          "koSource": "review 2 item 3",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "Taking his age into consideration, he did it very well.",
+          "accept": [
+            "Taking his age into consideration, he did it really well.",
+            "Taking his age into account, he did it very well.",
+            "Taking his age into account, he did it really well.",
+            "Considering his age, he did it very well.",
+            "Considering his age, he did it really well.",
+            "He did it very well, considering his age.",
+            "He did it very well, taking his age into consideration.",
+            "He did it very well, taking his age into account.",
+            "He did it really well, considering his age.",
+            "He did it really well, taking his age into consideration.",
+            "He did it really well, taking his age into account.",
+            "Given his age, he did it very well.",
+            "Given his age, he did it really well.",
+            "He did it very well, given his age.",
+            "He did it really well, given his age."
+          ],
+          "targets": [
+            [
+              "Taking",
+              "Considering",
+              "Given"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "If we consider his age",
+              "hint": "맞는 영어지만 조건은 '관용 표현으로'예요. '고려한다면'을 -ing 로 시작하는 표현으로 써 보세요."
+            },
+            {
+              "match": "Take his age into consideration",
+              "hint": "'고려한다면'은 명령문이 아니에요. -ing 로 시작해 보세요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "participle-clause",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (4) 관용표현[라벨 없음·추론] item 3",
+            "reviewWhere": "Review 2. item 3 (p58)"
+          },
+          "fix": null,
+          "note": "판정 p58 answer_ambiguous: 빈칸 정답이 하나가 아님 — Considering his age · Taking his age into account · Given his age 도 정답."
+        },
+        {
+          "id": "pg13-4:p4",
+          "ko": "일기예보로 판단하건대, 오늘 밤에 비가 많이 올 것이다.",
+          "koSource": "review 2 item 4 (고침)",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "Judging from the weather forecast, we'll have a heavy rain tonight.",
+          "accept": [
+            "Judging from the weather forecast, we'll have heavy rain tonight.",
+            "Judging from the weather forecast, we'll have a lot of rain tonight.",
+            "Judging from the weather forecast, it will rain a lot tonight.",
+            "Judging from the weather forecast, it will rain heavily tonight.",
+            "Judging from the weather forecast, there will be heavy rain tonight.",
+            "Judging from the weather forecast, there will be a lot of rain tonight.",
+            "Judging by the weather forecast, we'll have a heavy rain tonight.",
+            "Judging by the weather forecast, we'll have heavy rain tonight.",
+            "Judging by the weather forecast, we'll have a lot of rain tonight.",
+            "Judging by the weather forecast, it will rain a lot tonight.",
+            "Judging by the weather forecast, it will rain heavily tonight.",
+            "Judging by the weather forecast, there will be heavy rain tonight.",
+            "Judging by the weather forecast, there will be a lot of rain tonight.",
+            "Judging from the weather report, we'll have a heavy rain tonight.",
+            "Judging from the weather report, we'll have heavy rain tonight.",
+            "Judging from the weather report, we'll have a lot of rain tonight.",
+            "Judging from the weather report, it will rain a lot tonight.",
+            "Judging from the weather report, it will rain heavily tonight.",
+            "Judging from the weather report, there will be heavy rain tonight.",
+            "Judging from the weather report, there will be a lot of rain tonight.",
+            "Judging from the weather forecast, it's going to rain a lot tonight.",
+            "Judging from the weather forecast, it's going to rain heavily tonight.",
+            "Judging from the weather forecast, we're going to have heavy rain tonight.",
+            "Judging from the weather forecast, we're going to have a lot of rain tonight.",
+            "Judging from the weather forecast, there's going to be heavy rain tonight.",
+            "Judging from the weather forecast, there's going to be a lot of rain tonight.",
+            "Judging by the weather forecast, it's going to rain a lot tonight.",
+            "Judging by the weather forecast, it's going to rain heavily tonight.",
+            "Judging by the weather forecast, we're going to have heavy rain tonight.",
+            "Judging by the weather forecast, we're going to have a lot of rain tonight.",
+            "Judging by the weather forecast, there's going to be heavy rain tonight.",
+            "Judging by the weather forecast, there's going to be a lot of rain tonight.",
+            "Judging from the weather report, it's going to rain a lot tonight.",
+            "Judging from the weather report, it's going to rain heavily tonight.",
+            "Judging from the weather report, we're going to have heavy rain tonight.",
+            "Judging from the weather report, we're going to have a lot of rain tonight.",
+            "Judging from the weather report, there's going to be heavy rain tonight.",
+            "Judging from the weather report, there's going to be a lot of rain tonight."
+          ],
+          "targets": [
+            [
+              "Judging"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "According to the weather forecast",
+              "hint": "맞는 영어지만 조건은 '관용 표현으로'예요. '판단하건대'를 -ing 로 시작하는 표현으로 써 보세요."
+            },
+            {
+              "match": "Judge from the weather",
+              "hint": "'판단하건대'는 -ing 로 써요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "participle-clause",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (4) 관용표현[라벨 없음·추론] item 4",
+            "reviewWhere": "Review 2. item 4 (p58)"
+          },
+          "fix": {
+            "fromKo": "일기 예보로 판단하건대, 오늘 밤에 비가 많이 올 것이다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'일기예보'는 한 낱말이라 붙여 씁니다(판정 p58)."
+          },
+          "note": "판정 p58 answer_ambiguous: Judging by … 도 정답."
+        },
+        {
+          "id": "pg13-4:p5",
+          "ko": "나는 그녀가 잘못된 보고서를 발표할 때, 웃지 않을 수 없었다.",
+          "koSource": "review 2 item 5",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "I could not help laughing when she announced the wrong reports.",
+          "accept": [
+            "I could not help laughing when she announced the wrong report.",
+            "I could not help laughing when she presented the wrong reports.",
+            "I could not help laughing when she presented the wrong report.",
+            "I could not help but laugh when she announced the wrong reports.",
+            "I could not help but laugh when she announced the wrong report.",
+            "I could not help but laugh when she presented the wrong reports.",
+            "I could not help but laugh when she presented the wrong report.",
+            "I could not but laugh when she announced the wrong reports.",
+            "I could not but laugh when she announced the wrong report.",
+            "I could not but laugh when she presented the wrong reports.",
+            "I could not but laugh when she presented the wrong report.",
+            "When she announced the wrong reports, I could not help laughing.",
+            "When she announced the wrong report, I could not help laughing.",
+            "When she presented the wrong reports, I could not help laughing.",
+            "When she presented the wrong report, I could not help laughing.",
+            "When she announced the wrong reports, I could not help but laugh.",
+            "When she announced the wrong report, I could not help but laugh.",
+            "When she presented the wrong reports, I could not help but laugh.",
+            "When she presented the wrong report, I could not help but laugh.",
+            "When she announced the wrong reports, I could not but laugh.",
+            "When she announced the wrong report, I could not but laugh.",
+            "When she presented the wrong reports, I could not but laugh.",
+            "When she presented the wrong report, I could not but laugh."
+          ],
+          "targets": [
+            [
+              "help laughing",
+              "help but laugh",
+              "not but laugh"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "help to laugh",
+              "hint": "cannot help 뒤에는 to부정사가 아니라 -ing 를 써요."
+            },
+            {
+              "match": "help laugh when",
+              "hint": "cannot help 뒤에는 -ing 를 써요."
+            },
+            {
+              "match": "couldn't stop laughing",
+              "hint": "'웃지 않을 수 없었다'에 맞는 관용 표현을 떠올려 보세요. stop 이 아니에요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "gerund",
+            "complex-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (4) 관용표현[라벨 없음·추론] item 5",
+            "reviewWhere": "Review 2. item 5 (p58)"
+          },
+          "fix": null,
+          "note": "판정 p58 answer_ambiguous: not help but laugh · not but laugh 도 정답."
+        },
+        {
+          "id": "pg13-4:p6",
+          "ko": "쏟아진 우유를 두고 울어도 소용없다.",
+          "koSource": "review 2 item 6 (고침)",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "It's no use crying over spilt milk.",
+          "accept": [
+            "It is no use crying over spilled milk.",
+            "It is no good crying over spilt milk.",
+            "It is no good crying over spilled milk.",
+            "There is no use crying over spilt milk.",
+            "There is no use crying over spilled milk.",
+            "There is no point crying over spilt milk.",
+            "There is no point crying over spilled milk.",
+            "There is no point in crying over spilt milk.",
+            "There is no point in crying over spilled milk."
+          ],
+          "targets": [
+            [
+              "no use crying",
+              "no good crying",
+              "no point crying",
+              "no point in crying"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "no use to cry",
+              "hint": "It is no use 뒤에는 -ing 를 써요."
+            },
+            {
+              "match": "no use cry",
+              "hint": "It is no use 뒤에는 -ing 를 써요."
+            },
+            {
+              "match": "is useless",
+              "hint": "맞는 영어지만 조건은 '관용 표현으로'예요. '~해도 소용없다'에 맞는 -ing 관용 표현을 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "gerund",
+            "it-dummy"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (4) 관용표현[라벨 없음·추론] item 6",
+            "reviewWhere": "Review 2. item 6 (p58)"
+          },
+          "fix": {
+            "fromKo": "쏟아진 우유를 두고 울어도 소용 없다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'소용없다'는 한 낱말이라 붙여 씁니다(판정 p58)."
+          },
+          "note": "판정 p58 answer_ambiguous: no good crying 도 정답."
+        },
+        {
+          "id": "pg13-4:p7",
+          "ko": "그 소설은 읽을 가치가 있다.",
+          "koSource": "review 2 item 7",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "The novel is worth reading.",
+          "accept": [
+            "That novel is worth reading.",
+            "The novel is well worth reading.",
+            "The novel is worthy of being read.",
+            "It is worth reading the novel."
+          ],
+          "targets": [
+            [
+              "worth reading",
+              "worthy of being read"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "worth to read",
+              "hint": "worth 뒤에는 to부정사가 아니라 -ing 를 써요."
+            },
+            {
+              "match": "worth read",
+              "hint": "worth 뒤에는 -ing 를 써요."
+            },
+            {
+              "match": "worth being read",
+              "hint": "'읽을 가치'는 worth 뒤에 -ing 를 그대로 써요(수동 모양 아님)."
+            },
+            {
+              "match": "worth reading it",
+              "hint": "주어(그 소설)가 곧 읽는 대상이라 뒤에 it 을 또 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (4) 관용표현[라벨 없음·추론] item 7",
+            "reviewWhere": "Review 2. item 7 (p58)"
+          },
+          "fix": null,
+          "note": "판정 p58 answer_ambiguous: worthy of being read 도 정답."
+        },
+        {
+          "id": "pg13-4:p8",
+          "ko": "나의 아들은 수학을 공부하느라고 바쁘다.",
+          "koSource": "review 2 item 8 (고침)",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "My son is busy studying mathematics.",
+          "accept": [
+            "My son is busy studying math.",
+            "My son is busy studying maths."
+          ],
+          "targets": [
+            [
+              "busy studying"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "busy to study",
+              "hint": "busy 뒤에는 to부정사가 아니라 -ing 를 써요."
+            },
+            {
+              "match": "busy study",
+              "hint": "busy 뒤에는 -ing 를 써요."
+            },
+            {
+              "match": "busy because he studies",
+              "hint": "맞는 영어지만 조건은 '관용 표현으로'예요. '~하느라 바쁘다'를 busy 뒤 한 덩어리로 써 보세요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (4) 관용표현[라벨 없음·추론] item 8",
+            "reviewWhere": "Review 2. item 8 (p58)"
+          },
+          "fix": {
+            "fromKo": "나의 아들은 수학을 공부하느라고 바쁘다",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "문장 끝 마침표가 빠져 쪽 아래에 따로 인쇄되어 있었습니다(판정 p58)."
+          }
+        },
+        {
+          "id": "pg13-4:p9",
+          "ko": "부보다 건강이 우선이라는 것은 말할 필요도 없다.",
+          "koSource": "review 3 item 28",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "It goes without saying that health comes before wealth.",
+          "accept": [
+            "It goes without saying that health is more important than wealth.",
+            "Needless to say, health comes before wealth.",
+            "Needless to say, health is more important than wealth.",
+            "It goes without saying health comes before wealth.",
+            "It goes without saying health is more important than wealth.",
+            "It goes without saying that health is more important than money.",
+            "It goes without saying health is more important than money.",
+            "Needless to say, health is more important than money."
+          ],
+          "targets": [
+            [
+              "without saying",
+              "Needless to say"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "without say",
+              "hint": "전치사 without 뒤에는 -ing 를 써요."
+            },
+            {
+              "match": "without to say",
+              "hint": "전치사 without 뒤에는 to부정사가 아니라 -ing 를 써요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "gerund",
+            "it-dummy",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (4) 관용표현[라벨 없음·추론] item 9",
+            "reviewWhere": "Review 3. item 28 (p61)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-4:p10",
+          "ko": "나는 강에서 수영하고 싶은 기분이다.",
+          "koSource": "review 3 item 29 (고침)",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "I feel like swimming in the river.",
+          "accept": [
+            "I feel like going swimming in the river.",
+            "I feel like taking a swim in the river.",
+            "I feel like going for a swim in the river.",
+            "I feel like swimming in a river.",
+            "I feel like going swimming in a river.",
+            "I feel like taking a swim in a river.",
+            "I feel like going for a swim in a river."
+          ],
+          "targets": [
+            [
+              "feel like swimming",
+              "feel like going swimming",
+              "feel like taking a swim",
+              "feel like going for a swim"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "feel like swim",
+              "hint": "feel like 뒤에는 -ing 를 써요."
+            },
+            {
+              "match": "feel like to swim",
+              "hint": "feel like 뒤에는 to부정사가 아니라 -ing 를 써요."
+            },
+            {
+              "match": "I want to swim in the river",
+              "hint": "맞는 영어지만 조건은 '관용 표현으로'예요. '~하고 싶은 기분이다'에 맞는 -ing 관용 표현을 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (4) 관용표현[라벨 없음·추론] item 10",
+            "reviewWhere": "Review 3. item 29 (p61)"
+          },
+          "fix": {
+            "fromKo": "나는 강에서 수영하고 싶다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "feel like -ing 는 '~하고 싶은 기분이다' — '수영하고 싶다'만으로는 want to swim 을 부릅니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg13-4:t1",
+          "ko": "이 영화는 볼 만한 가치가 있다.",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "This movie is worth watching.",
+          "accept": [
+            "This film is worth watching.",
+            "This movie is worth seeing.",
+            "This film is worth seeing."
+          ],
+          "targets": [
+            [
+              "worth watching",
+              "worth seeing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "worth to watch",
+              "hint": "worth 뒤에는 to부정사가 아니라 -ing 를 써요."
+            },
+            {
+              "match": "worth to see",
+              "hint": "worth 뒤에는 to부정사가 아니라 -ing 를 써요."
+            },
+            {
+              "match": "worth watching it",
+              "hint": "주어(이 영화)가 곧 보는 대상이라 뒤에 it 을 또 쓰지 않아요."
+            },
+            {
+              "match": "worth seeing it",
+              "hint": "주어(이 영화)가 곧 보는 대상이라 뒤에 it 을 또 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "new"
+        },
+        {
+          "id": "pg13-4:t2",
+          "ko": "나는 그 아기에게 미소 짓지 않을 수 없었다.",
+          "condition": "관용 표현으로",
+          "promptEn": null,
+          "en": "I couldn't help smiling at the baby.",
+          "accept": [
+            "I couldn't help but smile at the baby.",
+            "I could not but smile at the baby."
+          ],
+          "targets": [
+            [
+              "help smiling",
+              "help but smile",
+              "not but smile"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "help to smile",
+              "hint": "cannot help 뒤에는 to부정사가 아니라 -ing 를 써요."
+            },
+            {
+              "match": "help smile at",
+              "hint": "cannot help 뒤에는 -ing 를 써요."
+            }
+          ],
+          "tags": [
+            "verbal-idioms",
+            "gerund",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "new"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg13-4:f1",
+      "template": "I feel like ___ today.",
+      "ko": "나는 오늘 ___하고 싶은 기분이다. (-ing 로)"
+    }
+  ]
+}

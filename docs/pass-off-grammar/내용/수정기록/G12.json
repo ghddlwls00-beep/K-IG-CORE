@@ -1,0 +1,170 @@
+[
+  {
+    "lesson": "pg14-1 · pg14-2",
+    "item": "pg14-1:p7 · pg14-2:p7",
+    "finding": "한국어 '영어를 쓴다 / 영어가 쓰인다'대로 쓴 'People use English in Singapore.' · 'English is used in Singapore.'가 오답(MISS[speak] · MISS[is spoken], 힌트 없음).",
+    "action": "fixed",
+    "note": "점검 제안대로 pg14-1:p7 accept 에 People use English in Singapore. · In Singapore, people use English. 를, pg14-2:p7 에 English is used in Singapore. · In Singapore, English is used. 를 넣고 targets 를 [[People, They],[speak, use]] · [[is spoken, is used]] 로 바꿈. 아래 p9 와 같은 까닭(이 레슨은 '사람들'을 일반 주어 they 로도 받음 — p10 모범 답)으로 pg14-1:p7 에 They speak/use English in Singapore. · In Singapore, they speak/use English. · People in Singapore speak/use English. 도 더함(accept 1 → 9, pg14-2:p7 1 → 3). 오답 패턴 'People uses'(힌트는 People speaks 와 같음)를 더함(3개). 실제 채점기(passoffGrading.ts 단독 트랜스파일): 고치기 전 이 두 문항 시나리오 7개 오답 → 고친 뒤 정답, People speaks · People uses · Singapore speaks · by people 은 여전히 오답 + 힌트. 증거: scratchpad\\g12fix\\before.txt · after.txt (cases-g12.json · grade.cjs)."
+  },
+  {
+    "lesson": "pg14-1",
+    "item": "pg14-1:p9",
+    "finding": "p10 은 '사람들은'을 they(모범 답)로 받는데 p9 는 'They never invite me to parties.'를 오답 처리(MISS[People]).",
+    "action": "fixed",
+    "note": "accept 에 They never invite me to parties. · They don't ever invite me to parties. 를 더하고 targets[0] → [People, They]. 오답 패턴 'People never invites' 를 'never invites'(힌트 '주어(사람들)는 여럿이라 동사에 -s 를 붙이지 않아요.')로 넓혀 They 로 쓴 같은 실수도 잡게 함 — 정답 조각 충돌 0(check-lessons). 'People never invited'(시제)는 그대로 둠: 'never invited' 로 넓히면 수동태를 그대로 베낀 I am never invited … 에 엉뚱한 시제 힌트가 뜸. 판정 파일 g2-p52-71-044 이유에 they 허용을 적음. 채점: They 두 꼴 정답, invite I 는 People · They 모두 오답 + 힌트."
+  },
+  {
+    "lesson": "pg14-1",
+    "item": "pg14-1:p15 · pg14-1:p16",
+    "finding": "ko '그는 그녀에게 새 차를 주겠다고 약속했다.'를 그대로 옮긴 'He promised to give her a new car.'가 오답(능동태이고 뜻도 같음).",
+    "action": "fixed",
+    "note": "점검의 첫 제안(accept)을 택함 — 한국어는 자연스러운 우리말이라 그대로 둠. 두 문항 accept 에 He promised to give her a new car. · He promised to give a new car to her. 와, 같은 한국어의 흔한 번역 He promised that he would give her a new car. · He promised he would give her a new car. 를 더함(1 → 5). 모두 능동태라 목표 문법을 피하지 않고 targets [[He],[promised]] 를 채움. 채점: 네 답 정답, He promises … · Him promised … 는 오답 + 힌트."
+  },
+  {
+    "lesson": "pg15-1",
+    "item": "pg15-1:p16",
+    "finding": "'She said, \"May God bless you!\"'가 오답 — 1권 pg04-4:p10 은 같은 기원문에서 May God bless you! 를 허용함.",
+    "action": "fixed",
+    "note": "pg04-4:p10 accept 에 \"May God bless you!\" 가 있음을 확인한 뒤 pg15-1:p16 accept 에 She said, \"May God bless you!\" · \"May God bless you!\" she said. 를 더함(1 → 3, targets [[said],[God bless you]] 충족). God blesses you 는 여전히 오답 + 힌트."
+  },
+  {
+    "lesson": "pg15-1",
+    "item": "pg15-1:p17",
+    "finding": "조건이 '직접화법으로'뿐인데 'He said, \"I hope you succeed.\"'를 오답 + 'May 기원문으로' 힌트로 처리 — 특정 형태 요구는 조건 칩으로 밝혀야 함.",
+    "action": "fixed",
+    "note": "점검의 첫 제안(조건 칩)을 택함: condition → '직접화법으로, 기원문으로', 'I hope' 패턴 힌트 → \"조건은 '기원문으로'예요. '~하기를 빕니다'를 비는 문장 모양으로 써 보세요.\" 기원문은 1권 pg04-4(서술문/명령문/기원문)에서 배운 말이고, 짝인 pg15-2:p18 이 바로 이 기원문(May you succeed.)을 간접화법으로 바꾸므로 교재가 연습시키는 모양을 살림. 채점: I hope you succeed → 오답 + 새 힌트, May you succeed → 정답."
+  },
+  {
+    "lesson": "pg15-2",
+    "item": "pg15-2:p15 · pg15-2:p16 · pg15-2:p12",
+    "finding": "cry · exclaim · shout 뒤(특히 with delight · with regret 가 끼었을 때) that 을 뺀 비표준 영어가 허용 답에 있어 정답 처리됨.",
+    "action": "fixed",
+    "note": "that 없는 꼴을 모두 뺌: p15 6개(cried · exclaimed · shouted × with delight · with joy), p16 2개, p12 의 He exclaimed it was a really/very great movie. 2개(선택 항목도 반영). 근거: Swan, Practical English Usage 'that: omission' — that 은 say · think 같은 흔한 동사 뒤에서는 흔히 빠지지만 reply · shout 같은 동사 뒤에서는 보통 빠지지 않음; Quirk 외(1985) · Huddleston & Pullum(2002) — 말하는 방식 동사(shout · whisper …) 뒤, 그리고 동사와 절 사이에 다른 말이 끼면 that 이 필요. that 있는 꼴은 모두 남김(p15 11 → 7, p16 3 → 1). 설명 카드도 that 을 씀(points[0] '따옴표 대신 that + 주어 + 동사', 표 'She cried with delight that she had won.')이라 카드와 채점이 맞음. 세 문항 note 에 까닭을 적음. 채점: that 없는 7개 시나리오 오답, that 있는 꼴 정답."
+  },
+  {
+    "lesson": "pg14-2",
+    "item": "pg14-2:p1 · p2 · p3 · p5 · p6 · p14 · p16 · p17 (ko)",
+    "finding": "'~에 의해 ~되었다' 번역투 제시문 8개.",
+    "action": "fixed",
+    "note": "주제어 꼴로 바꿈: p1 '바닥은 그가 칠했다.' · p2 '이 그림은 제이콥이 그리지 않았다.' · p3 '그 편지는 그녀가 썼다.' · p5 '이 방은 캐빈이 쓸 수 있다.' · p6 '이 책들은 화이트 씨가 쓰지 않았다.' · p14 '이 게임기는 삼촌이 나에게 주셨다.' · p17 '닭고기 수프는 어머니가 나를 위해 만들어 주셨다.'(점검 제안 그대로). p16 만 점검 제안 '새 차는 그가 그녀에게 주겠다고 약속한 것이었다.' 대신 '새 차는 그가 그녀에게 주겠다고 약속했다.' — '~한 것이었다'는 영어에 없는 설명(분열문) 느낌을 더하고 길어서, 나머지 일곱과 같은 '○○는 누가 …했다' 꼴로 맞춤(뜻 · 시제 · 부정 · 인칭 같음). 수동태 요구는 조건 칩 '수동태로' · promptEn 이 그대로 함. t1(GRAMMAR II 원문 한국어) · p18 은 그대로. 남은 '에 의해'는 t1 하나(검색으로 확인). 한국어는 소리 내지 않아 음성 영향 없음."
+  },
+  {
+    "lesson": "pg14-1",
+    "item": "pg14-1:rule.table",
+    "finding": "p18(He was seen to run by me. → I saw him run.)에 필요한 '능동태로 바꾸면 to 가 빠진다'가 설명 카드에 없음.",
+    "action": "fixed",
+    "note": "columns[0] '시제' → '종류'(조동사 줄도 있어 더 맞는 이름), rows 끝에 ['지각동사', 'was seen to run', 'saw … run (to 없이)']. I saw him run. 은 앵커 a7 이라 앞 단계 노출 규칙에 안 걸림(check-lessons 0)."
+  },
+  {
+    "lesson": "pg15-1",
+    "item": "pg15-1:p8",
+    "finding": "p7 · p18 · t1 은 told me 를 허용하는데 p8 만 'Ann told me, \"Please don't tell …\"'이 오답. 'not to tell' 힌트('Don't 로 시작해요')가 모범 답(Please don't …)과 안 맞음.",
+    "action": "fixed",
+    "note": "accept 에 told me 꼴 4개(앞 · 뒤 × anybody · anyone, 3 → 7), targets[1] → [said to me, told me]. 'not to tell' 힌트 → '직접화법은 앤이 한 말 그대로 옮겨요. 부정 명령문은 Don't + 동사원형이에요.' 채점: told me 두 꼴 정답, Please not to tell … · 간접화법 Ann told me not to tell … 은 오답 + 새 힌트."
+  },
+  {
+    "lesson": "pg15-1",
+    "item": "pg15-1:p10",
+    "finding": "ko '조용히 해 주시겠어요?'의 흔한 영어 Could you 가 오답(MISS[Would you]).",
+    "action": "fixed",
+    "note": "점검의 6개에 Would 쪽과 같은 짜임이 되게 \"Could you please be quiet?\" she said to us. · … she asked us. 를 더해 Could 꼴 8개(7 → 15), targets[1] → [Would you, Could you]. asked to us 는 Would · Could 모두 오답 + 힌트."
+  },
+  {
+    "lesson": "pg15-1",
+    "item": "pg15-1:p15",
+    "finding": "같은 '외쳤다'인데 p12 는 exclaimed · cried 를 받고 p15 는 exclaimed 오답. has left · left 를 뒤로 보낸 꼴도 빠짐.",
+    "action": "fixed",
+    "note": "점검의 4개에 더해 exclaimed × took off · has left · left 도 앞 · 뒤 꼴로 넣어 cried 쪽과 같은 짜임(5 → 15), targets[0] → [cried, exclaimed]. had taken off 는 여전히 오답 + 힌트."
+  },
+  {
+    "lesson": "pg14-1 · pg15-1 · pg15-2",
+    "item": "pg14-1:p8 · pg15-1:p1 · pg15-2:p11 · pg15-2:p12 · pg15-2:p13 · pg15-2:p15 (+ 선택: pg15-1:p11 · pg15-2:p12 film)",
+    "finding": "실제 채점기로 오답이 된 흔한 맞는 변형(Every day someone … · \"I'll come back soon!\" says Rick. · to please be quiet · such a great movie · really deep · cried out with delight that …).",
+    "action": "fixed",
+    "note": "pg14-1:p8 Every day, someone/somebody cleans these rooms.(1 → 3) · pg15-1:p1 \"I'll come back soon!\" says Rick.(4 → 5) · pg15-2:p11 She asked us to please be quiet.(0 → 1, targets[1] 에 to please be quiet) · pg15-2:p12 He said (that) it was such a great movie. 2개 + He exclaimed that it was such a great movie. · pg15-2:p13 She exclaimed that my love was really deep.(6 → 7) · pg15-2:p15 Phillip cried out with delight/joy that he had found it. 2개. 선택 항목 film 도 반영: pg15-1:p11 film 꼴 8개(7 → 15, targets[1] 에 What a great film) · pg15-2:p12 film 꼴 9개(that 없는 exclaimed 2개를 뺀 뒤 10 → 20). 채점: 목록의 답 모두 정답."
+  },
+  {
+    "lesson": "pg15-2",
+    "item": "pg15-2:p10",
+    "finding": "ko 가 '충고했다'라서 'He told me not to be late for church.'는 오답인데 걸리는 패턴이 없어 힌트 없이 틀림.",
+    "action": "fixed",
+    "note": "가장 드문 'advised me not being' 을 빼고 {'told me not to be late', \"한국어 제시문은 '충고했다'예요. '충고하다' 뜻의 동사를 써 보세요.\"} 를 넣음(3개 유지). 허용 답 He told me (that) I had better not be late … 와 충돌 없음(낱말 경계 비교, check-lessons 0). 채점: 새 힌트가 뜸, advised me not to … · told me that I had better not … 은 정답."
+  },
+  {
+    "lesson": "pg15-1",
+    "item": "pg15-1:rule(points[4] · table.rows[0][0] · rows[1][0] · koDiff) · s4",
+    "finding": "'Tom said' 같은 전달부를 '전하는 말'이라고 불러 따옴표 안 내용으로 오해될 수 있음.",
+    "action": "fixed",
+    "note": "points[4] → \"'누가 말했다' 부분이 뒤에 오면 \\\"…,\\\" he said. — 문장부호는 따옴표 안에\", table.rows[0][0] · rows[1][0] → \"'누가 말했다'가 앞에\" · \"'누가 말했다'가 뒤에\", koDiff → \"'누가 말했다' 부분을 앞에 두는\", s4.instruction → \"따옴표 밖에서 '누가 누구에게 말했는지' 나타내는 말을 모두 누르세요\", s4.why → '…가 따옴표 밖의 전달 부분이에요.' 기록용 note 두 곳(t1 · t2)의 '전하는 말'도 같은 말로. 이 레슨 화면 글에 '전하는 말'이 남지 않음(검색으로 확인)."
+  },
+  {
+    "lesson": "pg15-2",
+    "item": "pg15-2:rule.points[2] · p15 · p16 · t2 hint",
+    "finding": "'시제를 한 칸 앞으로' · '한 칸 앞 시제' · '한 칸 더 앞선 시제'는 '앞 = 미래'로 읽힐 수 있음(pg11-4 는 '한 걸음 과거로').",
+    "action": "fixed",
+    "note": "points[2] → '전달 동사가 과거면 안의 시제를 한 걸음 과거 쪽으로(is → was, has → had).' · p15 · p16 힌트 '… 한 걸음 과거 쪽 시제로 바꿔요.' · t2 힌트 '한 걸음 더 과거 쪽 시제로 바꿔요.' — pg11-4 의 '한 걸음 과거로 · 한 걸음 과거 쪽으로'와 맞춤. 같은 카드 koDiff 의 '과거 쪽으로 한 칸 옮겨요'도 '한 걸음 과거 쪽으로 옮겨요'로 맞춤(점검 목록 밖이지만 같은 개념의 같은 카드 글)."
+  },
+  {
+    "lesson": "pg15-2",
+    "item": "pg15-2:p18 (ko)",
+    "finding": "'우리가 성공하기를 바란다는 소망을 나타냈다' — '바란다'와 '소망'이 겹침.",
+    "action": "fixed",
+    "note": "ko → '그는 우리가 성공하기를 바라는 마음을 나타냈다.'(점검 제안 그대로). He expressed his wish that we might succeed. 와 뜻이 같고, 허용 답(hope · prayed)과도 맞음."
+  },
+  {
+    "lesson": "pg14-2",
+    "item": "pg14-2:rule.koDiff",
+    "finding": "'받는 쪽이 주어면 반드시 be동사 + 과거분사' — get 수동태 · 자동사 반례가 있어 '반드시'가 틀림.",
+    "action": "fixed",
+    "note": "'반드시' → '보통'. 반례: He got hurt.(get + 과거분사) · The door opened.(받는 쪽이 주어인 자동사)."
+  },
+  {
+    "lesson": "pg14-2 · pg15-1",
+    "item": "pg14-2:p11 · pg15-1:p3",
+    "finding": "채점기가 명사 + 's 를 펴지 않아 'The door's been painted.' · 'Tom said, \"Jim's sick.\"'가 오답(타이핑 · 마이크 모두).",
+    "action": "fixed",
+    "note": "내용 쪽: pg14-2:p11 accept += The door's been painted.(1 → 2), targets → [has been painted, door's been painted]; pg15-1:p3 accept += Tom said, \"Jim's sick.\" · \"Jim's sick,\" Tom said. · \"Jim's sick,\" said Tom.(4 → 7), targets[1] → [Jim is, Jim's]. 목표형을 \"'s\" 가 아니라 낱말째(door's been painted · Jim's) 적어 check-lessons 와 채점기가 같게 보게 함(아래 이끄는 세션 몫 참고). 채점: 타이핑 · 마이크 모두 정답, The door has painted · The door was painted · Jim was 는 여전히 오답 + 힌트. 명사 + 's 는 채점기가 이미 같게 보지 않으므로 '축약형만 다른 답은 넣지 않는다' 규칙의 전제(채점기가 같게 봄)가 성립하지 않음 — 두 문항 note 에 까닭을 적음."
+  },
+  {
+    "lesson": "pg14-2 · pg15-1 (코드 · 검사 도구)",
+    "item": "src/lib/passoffGrading.ts S_SUBJECT · docs/pass-off-grammar/검사/check-lessons.cjs containsTarget",
+    "finding": "명사 + 's 처리(점검 지적 '코드 쪽에 명사 + 's 처리 여부를 알릴 것').",
+    "action": "lead",
+    "note": "이끄는 세션 몫(코드 · 공용 검사 도구라 고치지 않음). ① 채점기 passoffGrading.ts 는 대명사 · 의문사 뒤 's(S_SUBJECT: he · she · it · that · this · there · what · who · where · here · how · when)만 is/has 로 펴고 명사 뒤 's(The door's been · Jim's sick · Professor McCarthy's going to)는 펴지 않음 — 마이크 인식기가 축약형으로 적으면 맞게 말해도 틀릴 수 있음. 이 그룹은 두 문항에 허용 답을 넣어 막았지만 모든 레슨의 명사 주어 문장에 해당하므로, 코드에서 명사 + 's 를 is/has(뒤 낱말로 가름)로 읽을지 정할 일. ② 두 검사 도구의 목표형 판정이 다름: 채점기 containsForm 은 \"'s\" 같은 앞 아포스트로피 목표형을 낱말 끝 조각([a-z0-9]'s)으로 찾아 Jill's seen 에서도 찾지만, check-lessons containsTarget 은 낱말로만 찾아 '목표형 없음'을 냄. 이 수정 도중 check-lessons --topics 14,15 중간 실행에서 pg12-1:p6 · pg12-3:p1 · pg12-4:p9 · pg12-4:t1 의 명사 + 's 허용 답(Jill's seen a rainbow. · Bob's working … · The road's being repaired … · Professor McCarthy's going to …)이 이 까닭으로 41줄 떴다가 마지막 실행에서는 0(다른 그룹이 같은 때 고친 것으로 보임 — 그 파일은 읽지도 고치지도 않음)."
+  },
+  {
+    "lesson": "pg15-1",
+    "item": "pg15-1:p2",
+    "finding": "관사를 한 번만 쓴 'a police officer, firefighter, teacher, doctor, or interpreter'와 '… or an interpreter and serve the community'가 오답.",
+    "action": "fixed",
+    "note": "점검의 두 꼴에 더해 둘을 합친 꼴(관사 한 번 + and serve), 그리고 tells me 로 쓴 같은 세 꼴을 넣음(2 → 8). 모두 목표형 [says to me | tells me] · [I want to be] 포함. 채점: 세 시나리오 정답."
+  },
+  {
+    "lesson": "pg15-1",
+    "item": "pg15-1:select (s7 새로 · s4 reserve)",
+    "finding": "④ 채점은 쉼표 · 따옴표를 보지 않는데 ③ 에도 문장부호를 묻는 문항이 없어 카드 points[3] · [4]를 확인하는 곳이 없음.",
+    "action": "fixed",
+    "note": "새 문항 pg15-1:s7(choice)을 넣고 s4 에 \"reserve\": true(레슨 안 ③ 6개: s1 · s2 · s3 · s5 · s6 · s7 — 스크립트로 확인). 다만 점검이 낸 보기(Mom said \"dinner is ready\". · Mom said, \"dinner is ready.\" · Mom said, \"Dinner is ready.\")는 넣어서 돌려 보니 check-lessons 가 보기를 비교할 때 대소문자 · 문장부호를 지워(norm) 세 보기가 같은 글이 되어 'pg15-1:s7 choice 보기가 겹침'으로 걸림. 같은 규칙을 묻도록, 틀린 문장 Mom said \"dinner is ready\". 를 sentence 로 보여 주고 고치는 방법 셋을 우리말 보기로 고르게 바꿈: ['said 뒤에 마침표, dinner 는 그대로, 마침표는 따옴표 밖', 'said 뒤에 쉼표, Dinner 는 대문자로, 마침표는 따옴표 안', 'said 뒤에 아무것도 없이, Dinner 는 대문자로, 마침표는 따옴표 밖'], 정답 1(셋을 모두 맞게 고친 것은 하나뿐). 이 레슨의 다른 choice · 규칙 확인 정답이 0 에 몰려 있어 두 번째 자리에 둠. 채점(gradeChoice): 보기 1 만 정답. 새 문장은 ④ · ⑤ 에 없음(check-lessons 0), 소리 내지 않음."
+  },
+  {
+    "lesson": "pg15-1 (검사 도구)",
+    "item": "docs/pass-off-grammar/검사/check-lessons.cjs choice 보기 겹침",
+    "finding": "문장부호 · 대소문자만 다른 문장을 보기로 쓰는 choice 는 검사 도구에 늘 걸림(위 s7 에서 발견).",
+    "action": "lead",
+    "note": "이끄는 세션 몫(공용 검사 도구). check-lessons.cjs:249 가 보기를 norm(소문자 · 문장부호 제거)으로 비교하므로, 문장부호 · 대문자 규칙을 '바르게 쓴 문장 고르기'로 묻는 문항은 만들 수 없음. 이번에는 우리말 보기로 바꿔 피했음. 다른 레슨에서도 문장부호를 문장 보기로 물어야 한다면, 보기 겹침만 대소문자 · 문장부호를 살려 비교하도록 도구를 바꿀지 이끄는 세션이 정할 일."
+  },
+  {
+    "lesson": "pg14-1",
+    "item": "pg14-1:s2",
+    "finding": "'동작을 한 사람을 누르세요'에서 by him 을 한 덩어리로 누르면 by 가 틀린 선택으로 감점됨.",
+    "action": "fixed",
+    "note": "optional → [4](by). 채점(gradeSelect): him · by + him 정답, by 만 · floor 는 오답."
+  },
+  {
+    "lesson": "pg15-1 · pg15-2",
+    "item": "pg15-1:p6 · pg15-2:p6 · pg15-1:p2 (fix 기록) · 판정 g2-p52-71-050",
+    "finding": "passOff (2) item 5 의 따옴표 오류가 어느 fix 에도 없음. pg15-1:p2 fix.from 에 p69 Application 2행의 다른 글이 없음.",
+    "action": "fixed",
+    "note": "pg15-1:p6 에 fix {field 'en', kind 'english_grammar'}, pg15-2:p6 에 같은 내용으로 field 'promptEn' 을 넣고, 판정 파일 TOPIC-14-15.json 의 g2-p52-71-050 appliedTo 에 'pg15-1:p6' · 'pg15-2:p6' 을 더함. pg15-1:p2 fix.from 끝에 ' / (p69 Application 2행) He says, ”I want to be a police officer, fire fighter, teacher, doctor, interpreter and I want to serve the community.”'를 덧붙임(추출 글자 그대로). 한 가지는 점검과 다르게 적음: 점검은 (2) item 5 의 여는 따옴표가 닫는 모양(”)이라 했지만, 교재 추출(PDF 글자층)은 같은 쪽 (2) item 1 은 '”Is your …'로, (2) item 5 는 '“ What shall …'(여는 따옴표 + 빈칸)로 구별해 적었고, 쪽 사진(p067, 4배 확대)에서는 이 글꼴의 “ 와 ” 가 구별되지 않음. 그래서 fix.from 은 추출 글자 그대로 '“ What shall I do?” she said to me.', 이유는 '여는 따옴표 뒤에 빈칸이 있었습니다(Application 6행은 바름)'로 적음. check-grading 은 fix.from 을 ' / ' 로 나눠 한글 없는 첫 조각만 원문으로 보므로 p2 에 덧붙인 글은 판정에 영향 없음(PASS)."
+  }
+]

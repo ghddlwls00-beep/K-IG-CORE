@@ -1,0 +1,803 @@
+{
+  "id": "pg16-3",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "I wish 가정법",
+  "label": "TOPIC 16. 가정법",
+  "menuLabel": "16-3. I wish 가정법",
+  "unit": 16,
+  "part": 3,
+  "order": 3,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(4) I wish 가정법",
+  "grammarTags": [
+    "i-wish"
+  ],
+  "koreanWords": [
+    "Jung"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg16-3:a1",
+          "en": "I wish it would stop raining.",
+          "ko": "비가 그치면 좋겠다.",
+          "koSource": "review (1) item 15 (고침)",
+          "focus": [
+            "wish",
+            "would stop"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (4) item 1",
+            "reviewWhere": "review (1) item 15 (p9)"
+          },
+          "fix": {
+            "fromKo": "나는 비가 그치기를 원한다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "I wish + would 는 '~하면 좋겠다'(지금 이루어지지 않는 바람)인데 '원한다'(want)로 옮겨 I want the rain to stop 도 답이 되어 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg16-3:a2",
+          "en": "I wish somebody would answer me.",
+          "ko": "누군가 나에게 대답해 주면 좋겠다.",
+          "koSource": "new(교재에 한국어 없음)",
+          "focus": [
+            "wish",
+            "would answer"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (4) item 2"
+          }
+        },
+        {
+          "id": "pg16-3:a3",
+          "en": "I wish I were taller.",
+          "ko": "내 키가 더 크면 좋을 텐데.",
+          "koSource": "new",
+          "focus": [
+            "wish",
+            "were"
+          ],
+          "source": "new",
+          "note": "교재 Pass-Off (4) 는 I wish + would 두 문장뿐이라, 지금(과거형) · 지난 일(had + 과거분사)의 바람을 보일 앵커를 새로 더함(발견 질문에 앵커 3개가 필요)."
+        },
+        {
+          "id": "pg16-3:a4",
+          "en": "I wish I had studied harder.",
+          "ko": "내가 더 열심히 공부했더라면 좋았을 텐데.",
+          "koSource": "new",
+          "focus": [
+            "wish",
+            "had studied"
+          ],
+          "source": "new",
+          "note": "교재 Pass-Off (4) 는 I wish + would 두 문장뿐이라, 지금(과거형) · 지난 일(had + 과거분사)의 바람을 보일 앵커를 새로 더함(발견 질문에 앵커 3개가 필요)."
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg16-3:a1",
+          "pg16-3:a3",
+          "pg16-3:a4"
+        ],
+        "question": "I wish 뒤의 동사 모양(would stop · were · had studied)은 무엇에 따라 달라질까요?",
+        "options": [
+          "바라는 일의 때(앞으로 · 지금 · 지난 일)",
+          "주어가 몇 명인지",
+          "문장이 긍정인지 부정인지"
+        ],
+        "answer": 0,
+        "why": "앞으로 바뀌기를 바라면 would + 동사원형, 지금 사실과 반대면 과거형, 지난 일과 반대면 had + 과거분사예요."
+      },
+      "title": "I wish 가정법: 이루기 어려운 바람",
+      "points": [
+        "지금 사실과 반대인 바람: I wish + 주어 + 과거형(were) = ~라면 좋을 텐데",
+        "지난 일과 반대인 바람: I wish + 주어 + had + 과거분사 = ~했더라면 좋았을 텐데",
+        "바뀌기를 바라는 일: I wish + 주어 + would + 동사원형 = ~하면 좋겠다",
+        "이루어질 수 있는 바람은 hope 로: I hope you get better soon."
+      ],
+      "table": {
+        "columns": [
+          "바람의 때",
+          "모양",
+          "예문",
+          "뜻"
+        ],
+        "rows": [
+          [
+            "지금",
+            "I wish + 과거형",
+            "I wish I were rich.",
+            "부자라면 좋을 텐데(사실은 아님)"
+          ],
+          [
+            "지난 일",
+            "I wish + had + 과거분사",
+            "I wish I had gone to the party.",
+            "파티에 갔더라면 좋았을 텐데(안 갔음)"
+          ],
+          [
+            "앞으로",
+            "I wish + would + 동사원형",
+            "I wish you would listen to me.",
+            "내 말 좀 들어 주면 좋겠다"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '~라면 좋을 텐데 · ~했더라면 좋았을 텐데'처럼 끝말로 아쉬움을 나타내지만, 영어는 I wish 뒤의 동사를 한 시제 뒤로(지금 일 → 과거형, 지난 일 → had + 과거분사) 보내요.",
+      "mistakes": [
+        {
+          "wrong": "I wish I am taller.",
+          "right": "I wish I were taller.",
+          "why": "지금 사실과 반대인 바람이라 be동사는 were 예요(말로는 was 도 써요)."
+        },
+        {
+          "wrong": "I wish I didn't eat so much yesterday.",
+          "right": "I wish I hadn't eaten so much yesterday.",
+          "why": "yesterday(지난 일)와 반대인 바람은 had + 과거분사예요."
+        }
+      ],
+      "worked": [
+        "우산을 가져왔더라면 좋았을 텐데.",
+        "바라는 일의 때 → 지난 일(이미 우산 없이 나옴)",
+        "지난 일과 반대 → I wish + had + 과거분사",
+        "가져오다 bring → 과거분사 brought",
+        "I wish I had brought my umbrella."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'I wish I ___ the answer now.' 빈칸에 맞는 것은? (지금 답을 모른다)",
+        "options": [
+          "know",
+          "knew",
+          "had known"
+        ],
+        "answer": 1,
+        "why": "지금 사실과 반대인 바람이라 과거형 knew 예요.",
+        "pointIndex": 0
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg16-3:s1",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (내 방이 더 넓으면 좋을 텐데.)",
+          "sentence": "I wish my room ___ bigger.",
+          "underline": [],
+          "options": [
+            "is",
+            "were",
+            "will be"
+          ],
+          "answer": 1,
+          "why": "지금 사실(방이 좁음)과 반대인 바람이라 be동사는 were 예요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "TOPIC 16 Review 에는 영작 과제만 있어 형태 찾기 문항을 새로 만들었습니다."
+        },
+        {
+          "id": "pg16-3:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (어제 그 영화를 봤더라면 좋았을 텐데.)",
+          "sentence": "I wish I ___ the movie yesterday.",
+          "underline": [],
+          "options": [
+            "saw",
+            "had seen",
+            "would see"
+          ],
+          "answer": 1,
+          "why": "어제(지난 일)와 반대인 바람이라 had + 과거분사예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg16-3:s3",
+          "kind": "choice",
+          "instruction": "문장의 뜻으로 알맞은 것은?",
+          "sentence": "I wish I had a dog.",
+          "underline": [],
+          "options": [
+            "개가 있으면 좋을 텐데.(사실은 지금 없다)",
+            "나는 개가 있어서 좋다.",
+            "개가 있었더라면 좋았을 텐데.(예전에 없었다)"
+          ],
+          "answer": 0,
+          "why": "I wish + 과거형(had)은 지금 사실(개가 없음)과 반대인 바람이에요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg16-3:s4",
+          "kind": "select",
+          "instruction": "바람을 나타내는 조동사를 누르세요",
+          "tokens": [
+            "I",
+            "wish",
+            "it",
+            "would",
+            "stop",
+            "raining",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "I wish + would + 동사원형은 앞으로 바뀌기를 바라는 마음(비가 그치면 좋겠다)이에요.",
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (4) item 1"
+          },
+          "source": "new",
+          "note": "TOPIC 16 Review 에는 영작 과제만 있어 형태 찾기 문항을 새로 만들었습니다."
+        },
+        {
+          "id": "pg16-3:s5",
+          "kind": "short",
+          "instruction": "빈칸에 알맞은 한 낱말을 쓰세요. (그가 여기 있으면 좋을 텐데.)",
+          "sentence": "I wish he ___ here.",
+          "answer": [
+            "were",
+            "was"
+          ],
+          "why": "지금 사실(그가 없음)과 반대인 바람이라 be동사는 were 예요(말로는 was 도 써요).",
+          "bookRef": null,
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg16-3:p1",
+          "ko": "비가 그치면 좋겠다.",
+          "koSource": "review (1) item 15 (고침)",
+          "condition": "I wish를 써서",
+          "promptEn": null,
+          "en": "I wish it would stop raining.",
+          "accept": [
+            "I wish the rain would stop."
+          ],
+          "targets": [
+            [
+              "wish"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i want it to stop raining",
+              "hint": "조건은 'I wish를 써서'예요. 이루어지기 어려운 바람을 나타내 보세요."
+            },
+            {
+              "match": "i hope",
+              "hint": "조건은 'I wish를 써서'예요."
+            },
+            {
+              "match": "i wish it will stop",
+              "hint": "wish 뒤에는 will 대신 한 시제 뒤로 물러난 조동사를 써요."
+            }
+          ],
+          "tags": [
+            "i-wish"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 7,
+            "where": "application item 15",
+            "reviewWhere": "review (1) item 15 (p9)"
+          },
+          "fix": {
+            "fromKo": "나는 비가 그치기를 원한다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "I wish + would 는 '~하면 좋겠다'인데 '원한다'(want)로 옮겨 I want the rain to stop 도 답이 되어 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg16-3:p2",
+          "ko": "누군가 나에게 대답해 주면 좋겠다.",
+          "koSource": "new(교재에 한국어 없음)",
+          "condition": "I wish를 써서",
+          "promptEn": null,
+          "en": "I wish somebody would answer me.",
+          "accept": [
+            "I wish someone would answer me."
+          ],
+          "targets": [
+            [
+              "wish"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "somebody will answer",
+              "hint": "wish 뒤에는 will 대신 한 시제 뒤로 물러난 조동사를 써요."
+            },
+            {
+              "match": "someone will answer",
+              "hint": "wish 뒤에는 will 대신 한 시제 뒤로 물러난 조동사를 써요."
+            },
+            {
+              "match": "i want somebody to answer",
+              "hint": "조건은 'I wish를 써서'예요."
+            }
+          ],
+          "tags": [
+            "i-wish",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (4) item 2"
+          },
+          "fix": null,
+          "note": "Pass-Off 에만 있는 문장(Application · Review 에 없음)이라 ④ 에도 넣고 한국어를 새로 옮김. 순서는 Pass-Off 대로 a1 다음."
+        },
+        {
+          "id": "pg16-3:p3",
+          "ko": "읽을거리가 있으면 좋을 텐데.",
+          "koSource": "review (1) item 16 (고침)",
+          "condition": "I wish를 써서",
+          "promptEn": null,
+          "en": "I wish I had something to read.",
+          "accept": [
+            "I wish there were something to read.",
+            "I wish there was something to read."
+          ],
+          "targets": [
+            [
+              "wish"
+            ],
+            [
+              "had",
+              "were",
+              "was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i wish i have something",
+              "hint": "지금 사실(읽을 것이 없음)과 반대인 바람이에요. wish 뒤 동사를 과거형으로 써 보세요."
+            },
+            {
+              "match": "something to reading",
+              "hint": "to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "i want something to read",
+              "hint": "조건은 'I wish를 써서'예요."
+            }
+          ],
+          "tags": [
+            "i-wish",
+            "infinitive",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 7,
+            "where": "application item 16",
+            "reviewWhere": "review (1) item 16 (p9)"
+          },
+          "fix": {
+            "fromKo": "나는 읽을 무언가가 있기를 원한다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "I wish I had ~(지금 사실과 반대인 바람)를 '있기를 원한다'(want)로 옮겨 I want something to read 가 답이 될 수 있어 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg16-3:p4",
+          "ko": "우리 아파트가 더 편리하면 좋을 텐데.",
+          "koSource": "review (1) item 17 (고침)",
+          "condition": "I wish를 써서",
+          "promptEn": null,
+          "en": "I wish our apartment were more convenient.",
+          "accept": [
+            "I wish our apartment were a little more convenient.",
+            "I wish our apartment were a bit more convenient.",
+            "I wish our apartment was more convenient.",
+            "I wish our apartment was a little more convenient.",
+            "I wish our apartment was a bit more convenient."
+          ],
+          "targets": [
+            [
+              "wish"
+            ],
+            [
+              "were",
+              "was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "our apartment is more convenient",
+              "hint": "지금 사실과 반대인 바람이에요. be동사를 가정법 모양으로 써 보세요."
+            },
+            {
+              "match": "our apartment will be",
+              "hint": "wish 뒤에는 will 을 쓰지 않아요. 지금 사실과 반대인 바람이에요."
+            }
+          ],
+          "tags": [
+            "i-wish",
+            "comparative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 7,
+            "where": "application item 17",
+            "reviewWhere": "review (1) item 17 (p9)"
+          },
+          "fix": {
+            "from": "I wish our apartment was more convenient.",
+            "fromKo": "나는 우리 아파트가 조금 더 편리하기를 원한다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "가정법의 be동사는 주어와 상관없이 were 가 원칙(학교 문법 · 시험)이라 모범 답을 were 로 두었습니다. 원문의 was 는 구어에서 흔히 쓰는 꼴로 틀린 영어는 아니라 정답으로 받습니다(그래서 틀린 영어가 아니라 덜 격식 있는 글로 분류). 한국어는 '편리하기를 원한다'(want)를 '편리하면 좋을 텐데'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg16-3:p5",
+          "ko": "정 선생님이 편찮으셨다는 것을 알았더라면 좋았을 텐데. 나는 그분을 뵈러 갔을 텐데.",
+          "koSource": "review (1) item 18 (고침)",
+          "condition": "I wish를 써서",
+          "promptEn": null,
+          "en": "I wish I had known that Mr. Jung was ill. I would have gone to see him.",
+          "accept": [
+            "I wish I had known that Mr. Jung was ill. I would have visited him.",
+            "I wish I had known that Mr. Jung was ill. Then I would have gone to see him.",
+            "I wish I had known that Mr. Jung was ill. Then I would have visited him.",
+            "I wish I had known that Mr. Jung was ill. I would have gone to visit him.",
+            "I wish I had known Mr. Jung was ill. I would have gone to see him.",
+            "I wish I had known Mr. Jung was ill. I would have visited him.",
+            "I wish I had known Mr. Jung was ill. Then I would have gone to see him.",
+            "I wish I had known Mr. Jung was ill. Then I would have visited him.",
+            "I wish I had known Mr. Jung was ill. I would have gone to visit him.",
+            "I wish I had known that Mr. Jung was sick. I would have gone to see him.",
+            "I wish I had known that Mr. Jung was sick. I would have visited him.",
+            "I wish I had known that Mr. Jung was sick. Then I would have gone to see him.",
+            "I wish I had known that Mr. Jung was sick. Then I would have visited him.",
+            "I wish I had known that Mr. Jung was sick. I would have gone to visit him.",
+            "I wish I had known Mr. Jung was sick. I would have gone to see him.",
+            "I wish I had known Mr. Jung was sick. I would have visited him.",
+            "I wish I had known Mr. Jung was sick. Then I would have gone to see him.",
+            "I wish I had known Mr. Jung was sick. Then I would have visited him.",
+            "I wish I had known Mr. Jung was sick. I would have gone to visit him.",
+            "I wish I had known that Mr. Jung had been ill. I would have gone to see him.",
+            "I wish I had known that Mr. Jung had been ill. I would have visited him.",
+            "I wish I had known that Mr. Jung had been ill. Then I would have gone to see him.",
+            "I wish I had known that Mr. Jung had been ill. Then I would have visited him.",
+            "I wish I had known that Mr. Jung had been ill. I would have gone to visit him.",
+            "I wish I had known that Mr. Jung had been sick. I would have gone to see him.",
+            "I wish I had known that Mr. Jung had been sick. I would have visited him.",
+            "I wish I had known that Mr. Jung had been sick. Then I would have gone to see him.",
+            "I wish I had known that Mr. Jung had been sick. Then I would have visited him.",
+            "I wish I had known that Mr. Jung had been sick. I would have gone to visit him."
+          ],
+          "targets": [
+            [
+              "wish"
+            ],
+            [
+              "had known"
+            ],
+            [
+              "would have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i wish i knew that",
+              "hint": "몰랐던 것은 지난 일이에요. wish 뒤를 had + 과거분사로 써 보세요."
+            },
+            {
+              "match": "i would go to see him",
+              "hint": "'갔을 텐데'는 지난 일이에요. would 뒤를 have + 과거분사로."
+            },
+            {
+              "match": "would have went",
+              "hint": "have 뒤에는 과거분사가 와요. go 의 과거분사는?"
+            }
+          ],
+          "tags": [
+            "i-wish",
+            "subjunctive-past-perfect",
+            "tense-agreement",
+            "infinitive",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 7,
+            "where": "application item 18",
+            "reviewWhere": "review (1) item 18 (p9)"
+          },
+          "fix": {
+            "fromKo": "나는 내가 정선생님이 아팠다는 것을 알기를 원한다(그랬다면,)나는 그를 만나러 갔을 텐데.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "I wish I had known 은 지난 일에 대한 아쉬움('알았더라면 좋았을 텐데')인데 '알기를 원한다'(앞으로의 바람)로 옮겼습니다. '정선생님' 띄어쓰기와 '(그랬다면,)나는' 빈칸도 고치고, 괄호 대신 두 문장으로 옮겼습니다(Then 을 넣은 답도 받음)."
+          }
+        },
+        {
+          "id": "pg16-3:p6",
+          "ko": "날씨가 더 따뜻했더라면 좋았을 텐데.",
+          "koSource": "review (1) item 19 (고침)",
+          "condition": "I wish를 써서",
+          "promptEn": null,
+          "en": "I wish it had been warmer.",
+          "accept": [
+            "I wish the weather had been warmer."
+          ],
+          "targets": [
+            [
+              "wish"
+            ],
+            [
+              "had been"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i wish it was warmer",
+              "hint": "'따뜻했더라면'은 지난 일이에요. wish 뒤를 had + 과거분사로 써 보세요."
+            },
+            {
+              "match": "i wish it were warmer",
+              "hint": "'따뜻했더라면'은 지난 일이에요. wish 뒤를 had + 과거분사로 써 보세요."
+            }
+          ],
+          "tags": [
+            "i-wish",
+            "subjunctive-past-perfect",
+            "comparative",
+            "it-dummy"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 7,
+            "where": "application item 19",
+            "reviewWhere": "review (1) item 19 (p9)"
+          },
+          "fix": {
+            "fromKo": "나는 날씨가 더 따듯하기를 바란다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "I wish it had been warmer 는 지난 일('더 따뜻했더라면 좋았을 텐데')인데 지금의 바람으로 옮겨 I wish it were warmer 를 쓰게 되어 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg16-3:p7",
+          "ko": "내 키가 더 크면 좋을 텐데.",
+          "koSource": "new",
+          "condition": "I wish를 써서",
+          "promptEn": null,
+          "en": "I wish I were taller.",
+          "accept": [
+            "I wish I was taller."
+          ],
+          "targets": [
+            [
+              "wish"
+            ],
+            [
+              "were",
+              "was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i wish i am taller",
+              "hint": "지금 사실과 반대인 바람이에요. be동사를 가정법 모양으로 써 보세요."
+            },
+            {
+              "match": "i wish i will be taller",
+              "hint": "wish 뒤에는 will 을 쓰지 않아요. 지금 사실과 반대인 바람이에요."
+            }
+          ],
+          "tags": [
+            "i-wish",
+            "comparative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "교재 Pass-Off (4) 는 I wish + would 두 문장뿐이라, 지금(과거형) · 지난 일(had + 과거분사)의 바람을 보일 앵커를 새로 더함(발견 질문에 앵커 3개가 필요)."
+        },
+        {
+          "id": "pg16-3:p8",
+          "ko": "내가 더 열심히 공부했더라면 좋았을 텐데.",
+          "koSource": "new",
+          "condition": "I wish를 써서",
+          "promptEn": null,
+          "en": "I wish I had studied harder.",
+          "accept": [
+            "I wish I had studied more."
+          ],
+          "targets": [
+            [
+              "wish"
+            ],
+            [
+              "had studied"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i wish i studied harder",
+              "hint": "지난 일에 대한 아쉬움이에요. wish 뒤를 had + 과거분사로 써 보세요."
+            },
+            {
+              "match": "i wish i studied more",
+              "hint": "지난 일에 대한 아쉬움이에요. wish 뒤를 had + 과거분사로 써 보세요."
+            }
+          ],
+          "tags": [
+            "i-wish",
+            "subjunctive-past-perfect",
+            "comparative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "교재 Pass-Off (4) 는 I wish + would 두 문장뿐이라, 지금(과거형) · 지난 일(had + 과거분사)의 바람을 보일 앵커를 새로 더함(발견 질문에 앵커 3개가 필요)."
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg16-3:t1",
+          "ko": "나는 이것이 격식을 차리는 파티가 아니면 좋겠다.",
+          "koSource": "grammar2:gh2-048#7 (괄호 속 '(정장 파티)' 뺌)",
+          "condition": "I wish를 써서",
+          "promptEn": null,
+          "en": "I wish this were not a formal party.",
+          "accept": [
+            "I wish this was not a formal party."
+          ],
+          "targets": [
+            [
+              "wish"
+            ],
+            [
+              "were",
+              "was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i wish this is not",
+              "hint": "지금 사실과 반대인 바람이에요. be동사를 가정법 모양으로 써 보세요."
+            },
+            {
+              "match": "i hope this is not",
+              "hint": "조건은 'I wish를 써서'예요."
+            }
+          ],
+          "tags": [
+            "i-wish",
+            "negative-basic",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-048#7"
+        },
+        {
+          "id": "pg16-3:t2",
+          "ko": "내가 빨간 신호등 위반으로 딱지를 떼지 않았으면 좋았을 텐데.",
+          "koSource": "grammar2:gh2-048#6 (지난 일에 맞게 '좋을 텐데' → '좋았을 텐데')",
+          "condition": "I wish를 써서",
+          "promptEn": null,
+          "en": "I wish I hadn't got a ticket for running a red light.",
+          "accept": [
+            "I wish I hadn't gotten a ticket for running a red light.",
+            "I wish I hadn't received a ticket for running a red light.",
+            "I wish I hadn't got a ticket for running the red light.",
+            "I wish I hadn't gotten a ticket for running the red light.",
+            "I wish I hadn't received a ticket for running the red light."
+          ],
+          "targets": [
+            [
+              "wish"
+            ],
+            [
+              "had not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i wish i did not get a ticket",
+              "hint": "딱지를 뗀 것은 지난 일이에요. wish 뒤를 had + 과거분사로 써 보세요."
+            },
+            {
+              "match": "for run a red light",
+              "hint": "전치사 for 뒤에는 동사의 -ing 형이 와요."
+            }
+          ],
+          "tags": [
+            "i-wish",
+            "subjunctive-past-perfect",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-048#6"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg16-3:f1",
+      "template": "I wish I could ___.",
+      "ko": "내가 ___할 수 있으면 좋겠다."
+    }
+  ]
+}

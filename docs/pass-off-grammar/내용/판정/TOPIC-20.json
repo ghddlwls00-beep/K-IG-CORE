@@ -1,0 +1,474 @@
+[
+  {
+    "page": 46,
+    "where": "TOPIC 20 passOff 2) item 13 라벨",
+    "text": "As if (even though) : Even though it is hard work, ...",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "라벨 'As if'(마치 ~인 것처럼)는 예문의 even though(비록 ~지만)와 뜻이 다릅니다. 웹 레슨에서는 이 라벨을 쓰지 않고, 설명 카드 표의 양보 줄을 though · although · even though 로만 적었습니다(as if 는 넣지 않음). 예문은 STUDENT 10과와 글자까지 같은 문장이라 ④ pg20-2:p34 에 그대로 둡니다.",
+    "appliedTo": [
+      "pg20-2:p34"
+    ]
+  },
+  {
+    "page": 46,
+    "where": "TOPIC 20 passOff 2) item 5 · application 2) item 17 (p49) · review 1) item 9 (p51)",
+    "text": "Never a moment goes by unless I think of him.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "unless 는 '~하지 않으면'(조건)이라 '그를 생각하지 않고 지나가는 순간이 없다'(늘 함께 일어나는 일)를 자연스럽게 나타내지 못하는 어색한 문장(오류)이라 고쳐야 합니다. 그런데 뜻을 살린 자연스러운 영어(Not a moment goes by when/that I don't think of him.)에는 unless 가 남지 않아, 이 문장은 종속접속사 unless 를 연습하는 문장이 되지 못해 ①·③·④ 어디에도 넣지 않았습니다(아래 coverage excluded — 과정에서 교재 문장을 뺀 첫 사례). 같은 when 관계부사를 쓴 p48 'There are times when I like chocolate.'(pg20-2:p3)는 고칠 필요가 없는 맞는 영어라 교재대로 ④ 에 둔 것이고, 이 문장은 고쳐야 하는데 고친 글이 이 레슨의 목표(unless)를 잃는다는 점이 다릅니다(G16 반박 점검으로 까닭을 바로잡음). unless 는 같은 쪽의 교재 문장 2개(pg20-2:p15 · p16), 교재 'Unless :' 자리에 새로 만든 ③ 문항(pg20-2:s6), 설명 카드(unless = if ~ not · not 을 겹쳐 쓰지 않음)로 가르칩니다.",
+    "appliedTo": [
+      "pg20-2:s6"
+    ]
+  },
+  {
+    "page": 46,
+    "where": "TOPIC 20 문장부호: passOff 1) items 1 · 3, passOff 2) item 1 (p46) · application 1) item 2 (p47)",
+    "text": "He is my friend and I am proud of him(3과) / I often go and visit them or they come and visit me .(4과) / when I get home, I chat on the computer with my friends(10과) / He likes to eat fish and chips",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "마침표 빠짐 · 마침표 앞 빈칸 · 첫 글자 소문자(when)를 고쳤습니다. 문장부호는 채점에 쓰지 않으므로(설계 §8) 학습자 답에는 영향이 없고 화면 글만 바뀝니다.",
+    "appliedTo": [
+      "pg20-1:a1",
+      "pg20-1:a3",
+      "pg20-2:a1",
+      "pg20-1:p2"
+    ]
+  },
+  {
+    "page": 46,
+    "where": "TOPIC 20 passOff 2) item 11 · application 2) items 30–31 (p50)",
+    "text": "Be careful lest you should fall from the tree.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "lest ~ should 는 문법상 맞는 문장이고 교재 Pass-Off 표제(Lest ~ should) 자체라 그대로 둡니다. 지금은 잘 쓰지 않는 딱딱한 글말이라 설명 카드 표에 '딱딱한 글말'로 적고, ④ 에서는 so that you don't … · lest you fall 도 정답으로 받습니다(조건 칩 '종속접속사로' — not to fall 처럼 절이 아닌 답은 힌트로 안내).",
+    "appliedTo": [
+      "pg20-2:p29",
+      "pg20-2:p30"
+    ]
+  },
+  {
+    "page": 47,
+    "where": "TOPIC 20 application 1) item 3 · review 2) item 3 (p53)",
+    "text": "We’re waiting for hours and hours.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "몇 시간째 계속 기다리는 중이라는 뜻은 현재완료진행이 맞아 We've been waiting for hours and hours. 로 고쳤고, 한국어도 hours and hours 가 드러나게 '몇 시간이고 몇 시간이고 계속 기다리고 있다'로 고쳤습니다. 교재 원문은 오답 힌트(we are waiting for hours)로 안내합니다. 현재완료 have waited for hours and hours 로 쓴 답도 정답입니다(G16 반박 점검).",
+    "appliedTo": [
+      "pg20-1:p3"
+    ]
+  },
+  {
+    "page": 48,
+    "where": "TOPIC 20 application 1) item 13",
+    "text": "She felt hungry, so she made herself sandwiches.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "관사 없는 복수 sandwiches 는 '샌드위치 여러 개'로 문법상 맞아 영어는 교재 그대로 둡니다. a sandwich · some sandwiches · sandwiches for herself 도 정답으로 받습니다. (같은 문항의 한국어 '스스로에게 … 만들어 주었다'는 번역투라 따로 고침 — pg20-1:p13 fix)",
+    "appliedTo": [
+      "pg20-1:p13"
+    ]
+  },
+  {
+    "page": 48,
+    "where": "TOPIC 20 application 2) item 3 · review 2) item 17 (p54)",
+    "text": "There are times when I like chocolate. / 내가 초콜릿을 좋아하던 시절이 있었다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어(현재: 초콜릿이 좋을 때가 있다)는 맞는 문장이라 두고, 과거로 옮긴 한국어를 '나는 초콜릿이 좋을 때가 있다.'로 고쳤습니다. 이 when 이 times 를 꾸미는 관계부사라는 지적도 맞아 설명 카드 표에 '참고: 명사 + when(관계부사 — 접속사 아님)' 줄을 두고 복습용 ③ 문항(pg20-2:s15)을 더했습니다. 교재가 when 예문으로 둔 문장이라 ④ 에서는 빼지 않았습니다. ④ 에서는 'Sometimes I like chocolate.'도 같은 뜻이라 조건 칩 'when을 써서'를 달고, 이 when 은 종속접속사가 아니라 tags 에 subordinating-conjunction 을 달지 않습니다(G16 반박 점검).",
+    "appliedTo": [
+      "pg20-2:p3",
+      "pg20-2:s15"
+    ]
+  },
+  {
+    "page": 48,
+    "where": "TOPIC 20 application 2) item 12",
+    "text": "Robin, as you know, has been better nowadays.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "nowadays 와 현재완료가 어울리지 않고 has been better 는 '요즘 좋지 않다'로도 읽혀, Robin, as you know, is much better these days. 로 고쳤습니다(Review 에 한국어가 없어 새로 번역).",
+    "appliedTo": [
+      "pg20-2:p12"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "TOPIC 20 application 2) item 15 · review 2) item 27 (p55)",
+    "text": "He will not go to sleep unless you read books for him.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "소리 내어 읽어 주는 것은 read to him 이라 read books to him 으로 고쳤습니다(read to him · read him a book 등도 정답). 교재 원문은 오답 힌트(read books for him)로 안내하고, 한국어의 '그를 위해'도 뺐습니다.",
+    "appliedTo": [
+      "pg20-2:p15"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "TOPIC 20 application 2) item 20 · review 2) item 32 (p55)",
+    "text": "If they gave the students deep impression, they could change their lives.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "If they made a deep impression on the students, they could change their lives. 로 고쳤습니다(impressed the students deeply 도 정답). 교재 원문은 오답 힌트로 안내합니다.",
+    "appliedTo": [
+      "pg20-2:p19"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "TOPIC 20 application 2) item 23 · review 2) item 35 (p56)",
+    "text": "He could stay the palace as long as he wanted.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "stay 뒤에 전치사를 넣어 stay in the palace 로 고쳤습니다(at the palace · for as long as 도 정답). 교재 원문은 오답 힌트(stay the palace)로 안내합니다.",
+    "appliedTo": [
+      "pg20-2:p22"
+    ]
+  },
+  {
+    "page": 50,
+    "where": "TOPIC 20 application 2) item 29",
+    "text": "Give me strength that I may stand against them.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "모범 답을 지금 쓰는 so that I can 으로 바꾸고, 교재의 that I may(옛 글투)도 틀린 영어는 아니라 정답으로 받습니다. 한국어의 높임('제가 … 나에게' → '저에게')도 맞췄습니다.",
+    "appliedTo": [
+      "pg20-2:p28"
+    ]
+  },
+  {
+    "page": 50,
+    "where": "TOPIC 20 application 2) item 33 · review 2) item 45 (p56)",
+    "text": "Though she had no one to be friends, she could be satisfied with learning and growing herself.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "Though she had no one to be friends with, she was able to find satisfaction in learning and growing on her own. 으로 고쳤습니다(could be satisfied with · by herself 등도 정답). 한국어도 새 영어에 맞게 고쳤습니다. 교재 원문은 오답 힌트(growing herself · to be friends 뒤 with 빠짐)로 안내합니다.",
+    "appliedTo": [
+      "pg20-2:p32"
+    ]
+  },
+  {
+    "page": 51,
+    "where": "TOPIC 20 review 1) items 2 · 3 · 10 · 17 (p51-52)",
+    "text": "... thought of Korea and Koreans ... / I often go and visit them or they come and visit me. / Don’t tell Sue what I said if ... / ... learn new things and spend time ...",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "③ 에서 '접속사를 모두 누르고, 등위인지 종속인지 고르세요'로 과제를 분명히 하고, 문장 안 접속사 전부(Korea and Koreans 의 and · go and visit 의 and 둘 · learn … and spend 의 and)를 정답으로, what(관계대명사)과 before himself 의 before(전치사)는 접속사가 아니라고 풀이에 적었습니다.",
+    "appliedTo": [
+      "pg20-1:s2",
+      "pg20-1:s3",
+      "pg20-2:s12",
+      "pg20-2:s14"
+    ]
+  },
+  {
+    "page": 53,
+    "where": "TOPIC 20 review 2) item 1",
+    "text": "그는 나의 친구이고 나는 그를 존경스러워한다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "proud of 는 '자랑스러워하다'라 '그는 나의 친구이고 나는 그가 자랑스럽다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg20-1:a1",
+      "pg20-1:p1"
+    ]
+  },
+  {
+    "page": 53,
+    "where": "TOPIC 20 review 2) item 4",
+    "text": "그녀는 고양이를 집어 들어서 상자 안에 넣는다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그녀는 새끼 고양이를 집어 들어서 상자 안에 넣었다.'로 시제와 kitten 의 뜻을 맞췄습니다.",
+    "appliedTo": [
+      "pg20-1:p4"
+    ]
+  },
+  {
+    "page": 54,
+    "where": "TOPIC 20 review 2) item 18",
+    "text": "내가 하교 후에 집에 도착했을 때, 나의 어머니는 항상 나를 보고 기뻐하셨다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어가 STUDENT 8과와 글자까지 같은 문장이라 한국어는 STUDENT 판(내가 학교를 마친 후 집에 오면 나의 어머니께서는 항상 나를 반겨 주십니다. — 현재 습관)을 씁니다.",
+    "appliedTo": [
+      "pg20-2:p4"
+    ]
+  },
+  {
+    "page": 54,
+    "where": "TOPIC 20 review 2) item 20",
+    "text": "그녀는 그가 말하기를 마쳤을 때까지 기다렸다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그녀는 그가 말을 마칠 때까지 기다렸다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg20-2:p6"
+    ]
+  },
+  {
+    "page": 55,
+    "where": "TOPIC 20 review 2) item 28",
+    "text": "나는 그녀가 안전하지 않는다면, 그녀를 떠날 수 없어요.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'그녀가 안전하지 않다면, 나는 그녀를 떠날 수 없어요.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg20-2:p16"
+    ]
+  },
+  {
+    "page": 55,
+    "where": "TOPIC 20 review 2) item 29",
+    "text": "나는 당신을 생각하지 않고는 한 순간도 지나가지 않아요.",
+    "type": "translation_mismatch",
+    "decision": "na",
+    "reason": "이 한국어가 붙은 영어 문장(Never a moment goes by unless I think of him.)을 레슨에서 뺐습니다(판정 p46). 지적(him ↔ '당신', 주어가 맞지 않는 비문)은 맞습니다.",
+    "appliedTo": []
+  },
+  {
+    "page": 55,
+    "where": "TOPIC 20 review 2) items 32 · 33",
+    "text": "만약, 그들이 학생들에게 깊은 감명을 준다면, 그들은 그 인생을 바꿀 수 있을 텐데. / 내가 너라면, 나는 걱정하지 않아.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'만약 그들이 학생들에게 깊은 감명을 준다면, 학생들의 인생을 바꿀 수 있을 텐데.' · '내가 너라면, 그 일은 걱정하지 않을 거야.'로 가정의 뜻과 about it 을 살렸습니다.",
+    "appliedTo": [
+      "pg20-2:p19",
+      "pg20-2:p20"
+    ]
+  },
+  {
+    "page": 56,
+    "where": "TOPIC 20 review 2) item 39",
+    "text": "나는 그들과 편리하게 의사소통 할 수 있기 위해서 나는 영어를 잘 말하는 것을 배워야만 한다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그들과 편하게 의사소통할 수 있도록, 나는 영어를 잘 말하는 법을 배워야 한다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg20-2:a7",
+      "pg20-2:p26"
+    ]
+  },
+  {
+    "page": 56,
+    "where": "TOPIC 20 review 2) item 40",
+    "text": "내가 당신을 들을 수 있기 위해서 크게 말하세요.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'내가 당신 말을 들을 수 있도록 크게 말하세요.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg20-2:p27"
+    ]
+  },
+  {
+    "page": 57,
+    "where": "TOPIC 20 review 2) item 46",
+    "text": "지미는 그것이 위험했었지만, 그 실험을 먼저 했다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'지미는 그 실험이 위험했는데도 그것을 강행했다.'로 고쳤습니다(went ahead with · carried out · proceeded with 모두 정답).",
+    "appliedTo": [
+      "pg20-2:p33"
+    ]
+  },
+  {
+    "page": 57,
+    "where": "TOPIC 20 review 2) item 47",
+    "text": "그것이 비록 힘든 일이었지만, 나는 내 친구들과 / 새로운 것을 배우고 친구들과 시간을 보내는 것이 행복하다.",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "두 줄을 한 문항으로 합쳤고, 영어가 STUDENT 10과와 글자까지 같은 문장이라 한국어는 STUDENT 판(현재)을 씁니다.",
+    "appliedTo": [
+      "pg20-2:p34"
+    ]
+  },
+  {
+    "page": 53,
+    "where": "TOPIC 20 review 2) items 9 · 11 (p53) · 12 · 14 (p54)",
+    "text": "우리 영화관에 외출할까 아니면 집에 있을까? / 서너 살 이었다 / 조용해 지도록 / 할거야",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'우리 영화 보러 나갈까, 아니면 집에 있을까?' · '서너 살이었다' · '할 거야'로 고쳤습니다. '조용해 지도록 시키기 위해서'는 띄어쓰기에 번역투('~도록 시키기 위해서')까지 있어 STUDENT 5-3 한국어처럼 '우리를 조용히 시키려고'로 고쳤습니다(G16 반박 점검).",
+    "appliedTo": [
+      "pg20-1:p9",
+      "pg20-1:p11",
+      "pg20-1:a4",
+      "pg20-1:p12",
+      "pg20-1:p14"
+    ]
+  },
+  {
+    "page": 57,
+    "where": "TOPIC 20 review 2) item 50",
+    "text": "너는 자격증을 얻기 전에 몇 가지 시험을 통과해야 한다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "license 는 면허라 '너는 면허를 따기 전에 몇 가지 시험을 통과해야 한다.'로 고쳤습니다(licence 철자도 정답).",
+    "appliedTo": [
+      "pg20-2:p37"
+    ]
+  },
+  {
+    "page": 54,
+    "where": "TOPIC 20 review 2) item 19",
+    "text": "나는 당신이 돌아올 때까지 기다릴 겁니다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어의 here(여기서)가 빠져 있어 '나는 당신이 돌아올 때까지 여기서 기다릴 겁니다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg20-2:a2",
+      "pg20-2:p5"
+    ],
+    "foundBy": "G16(추출 issues 밖)"
+  },
+  {
+    "page": 55,
+    "where": "TOPIC 20 review 2) item 34",
+    "text": "너는 주의 깊게 운전한다면, 내 차를 써도 돼.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "as long as(~하기만 하면)의 뜻과 종속절 주어('너는' → '네가')를 살려 '네가 주의 깊게 운전하기만 하면, 내 차를 써도 돼.'로 고쳤습니다(if 로 쓴 답도 정답).",
+    "appliedTo": [
+      "pg20-2:a5",
+      "pg20-2:p21"
+    ],
+    "foundBy": "G16(추출 issues 밖)"
+  },
+  {
+    "page": 56,
+    "where": "TOPIC 20 review 2) item 36",
+    "text": "우리가 잘 경기하는 한, 경기에서 승리할 거야.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "keep playing(계속 ~하다)이 빠졌고 '잘 경기하는'이 어색해 '우리가 계속 경기를 잘하는 한, 우리는 그 경기에서 이길 거야.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg20-2:p23"
+    ],
+    "foundBy": "G16(추출 issues 밖)"
+  },
+  {
+    "page": 54,
+    "where": "TOPIC 20 review 2) item 13",
+    "text": "그녀는 배가 고파서, 스스로에게 샌드위치를 만들어 주었다.",
+    "type": "korean_unnatural",
+    "decision": "fix",
+    "reason": "'스스로에게 … 만들어 주었다'는 번역투라 '그녀는 배가 고파서, 자기가 먹을 샌드위치를 만들었다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg20-1:p13"
+    ],
+    "foundBy": "G16(추출 issues 밖)"
+  },
+  {
+    "page": 54,
+    "where": "TOPIC 20 review 2) item 22",
+    "text": "그녀가 영어를 가르치기 시작한 것은 서른 살이 되어서였다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'~한 것은 서른 살이 되어서였다'는 '서른 살 때였다'로 읽혀 It was not until … that(그 전에는 안 함)이 드러나지 않고, 한국어대로 쓴 when 답(She started teaching English when she was 30.)이 오답이 됐습니다. '그녀는 서른 살이 되어서야 영어를 가르치기 시작했다.'로 고치고 조건 칩 'until을 접속사로 써서'를 달았습니다(turned 30 으로 쓴 답도 정답). 이 한국어는 pg19-2:p13(전치사 until — until the age of 30)의 제시문과 같아, 전치사로 쓴 답에는 '주어 + 동사' 힌트를 줍니다.",
+    "appliedTo": [
+      "pg20-2:p8"
+    ],
+    "foundBy": "G16 반박 점검(추출 issues 밖)"
+  },
+  {
+    "page": 54,
+    "where": "TOPIC 20 review 2) item 15",
+    "text": "내가 집에 도착할 때, 나는 친구들과 컴퓨터로 잡담한다.",
+    "type": "korean_unnatural",
+    "decision": "fix",
+    "reason": "chat on the computer 는 '컴퓨터로 채팅하다'(STUDENT 10-4 한국어도 '채팅')라 '내가 집에 도착할 때, 나는 친구들과 컴퓨터로 채팅을 한다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg20-2:a1",
+      "pg20-2:p1"
+    ],
+    "foundBy": "G16 반박 점검(추출 issues 밖)"
+  },
+  {
+    "page": 55,
+    "where": "TOPIC 20 review 2) item 30",
+    "text": "만약 그녀가 당신에게 묻지 않는다면, 내가 말했던 것을 수에게 말하지 마세요.",
+    "type": "korean_unnatural",
+    "decision": "fix",
+    "reason": "'그녀'가 가리킬 '수'보다 먼저 나와 누구인지 알 수 없어 '만약 수가 당신에게 묻지 않는다면, 내가 한 말을 그녀에게 말하지 마세요.'로 고쳤습니다(If Sue doesn't ask you, don't tell her … 로 쓴 답도 정답).",
+    "appliedTo": [
+      "pg20-2:p17"
+    ],
+    "foundBy": "G16 반박 점검(추출 issues 밖)"
+  },
+  {
+    "page": 56,
+    "where": "TOPIC 20 review 2) item 35",
+    "text": "그는 원한다면, 얼마든지 궁전에 머물 수 있었다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'원한다면'(if)은 영어 He could stay in the palace as long as he wanted. 에 없어 한국어대로 쓴 If he wanted, … 답이 오답이 됐습니다. '그는 원하는 만큼 얼마든지 궁전에 머물 수 있었다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg20-2:p22"
+    ],
+    "foundBy": "G16 반박 점검(추출 issues 밖)"
+  },
+  {
+    "page": 56,
+    "where": "TOPIC 20 review 2) item 43",
+    "text": "그녀는 그의 사무실에서 당신이 실수하지 않도록 당신에게 조언을 주었다.",
+    "type": "korean_unnatural",
+    "decision": "fix",
+    "reason": "'그의 사무실에서'가 앞에 있어 조언한 곳으로도 읽히고(영어 in his office 는 실수하는 곳) '조언을 주었다'는 번역투라 '그녀는 당신이 그의 사무실에서 실수하지 않도록 당신에게 조언을 해 주었다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg20-2:p30"
+    ],
+    "foundBy": "G16 반박 점검(추출 issues 밖)"
+  },
+  {
+    "coverage": "excluded",
+    "page": 46,
+    "where": "passOff (2) Unless : item 5 · application (2) item 17 (p49) · review 1 item 9 (p51) · review 2 item 29 (p55)",
+    "text": "Never a moment goes by unless I think of him.",
+    "reason": "교재 영어가 unless 를 어색하게 쓴 문장(오류, 판정 p46)이라 고쳐야 하는데, 뜻을 살린 자연스러운 영어(Not a moment goes by when/that I don't think of him.)에는 unless 가 남지 않아 이 레슨의 연습 문장이 되지 못함. p48 'There are times when I like chocolate.'(pg20-2:p3)은 고칠 필요 없는 맞는 영어라 교재대로 둔 것과 다름(G16 반박 점검). unless 는 pg20-2:p15 · p16 · s6 · 설명 카드로 가르침. 과정에서 처음 뺀 교재 문장이라 이끄는 세션이 확정."
+  },
+  {
+    "coverage": "not-in-anchors",
+    "page": 46,
+    "where": "passOff (2) As : item 3",
+    "text": "As I am walking to school, I often see my friends.",
+    "reason": "(2) 종속접속사의 Pass-Off 문장이 13개라 ① 예문은 접속사가 서로 다른 8개(when · until · as soon as · if · as long as · because · so that · though)만 둠. 이 문장은 ④ 와 복습 ③ 에 있음.",
+    "refs": [
+      "pg20-2:p9",
+      "pg20-2:s11"
+    ]
+  },
+  {
+    "coverage": "not-in-anchors",
+    "page": 46,
+    "where": "passOff (2) If ~ not : item 6",
+    "text": "Don’t tell Sue what I said if she doesn’t ask you.",
+    "reason": "① 예문 8개 밖(if 는 a4 로 보임) — ④ 와 복습 ③ 에 있음. if ~ not = unless 는 설명 카드에 있음.",
+    "refs": [
+      "pg20-2:p17",
+      "pg20-2:s12"
+    ]
+  },
+  {
+    "coverage": "not-in-anchors",
+    "page": 46,
+    "where": "passOff (2) Lest ~ should : item 11",
+    "text": "Be careful lest you should fall from the tree.",
+    "reason": "① 예문 8개 밖(딱딱한 글말이라 앞세우지 않음) — ④ 와 복습 ③ 에 있음. 설명 카드 표 목적 줄에 lest 를 적음.",
+    "refs": [
+      "pg20-2:p29",
+      "pg20-2:s13"
+    ]
+  },
+  {
+    "coverage": "not-in-anchors",
+    "page": 46,
+    "where": "passOff (2) As if (even though) : item 13",
+    "text": "Even though it is hard work, I am happy to learn new things and spend time with my friends.",
+    "reason": "① 예문 8개 밖(양보는 a8 Though 로 보임) — ④(STUDENT 10과 같은 문장)와 복습 ③ 에 있음.",
+    "refs": [
+      "pg20-2:p34",
+      "pg20-2:s14"
+    ]
+  }
+]

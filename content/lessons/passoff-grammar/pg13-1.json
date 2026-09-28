@@ -1,0 +1,2465 @@
+{
+  "id": "pg13-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "부정사",
+  "label": "TOPIC 13. 준동사",
+  "menuLabel": "13-1. 부정사",
+  "unit": 13,
+  "part": 2,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 부정사",
+  "grammarTags": [
+    "infinitive"
+  ],
+  "koreanWords": [
+    "Yi Sun-sin"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg13-1:a1",
+          "en": "To be an honest man is always important.",
+          "ko": "정직한 사람이 되는 것은 언제나 중요하다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "To be"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (1) 부정사 item 1",
+            "reviewWhere": "Review 1. item 1 (p57)"
+          }
+        },
+        {
+          "id": "pg13-1:a2",
+          "en": "So now I want to become a teacher.",
+          "ko": "그래서 지금 나는 선생님이 되고 싶습니다.",
+          "koSource": "student:s6-4#8",
+          "focus": [
+            "to become"
+          ],
+          "studentRef": {
+            "lesson": "s6-4",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (1) 부정사 item 2",
+            "reviewWhere": "Review 1. item 2 (p57)"
+          }
+        },
+        {
+          "id": "pg13-1:a3",
+          "en": "To live is to fight.",
+          "ko": "사는 것은 싸우는 것이다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "To live",
+            "to fight"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (1) 부정사 item 3",
+            "reviewWhere": "Review 1. item 3 (p57)"
+          },
+          "fix": {
+            "from": "To live is to fight",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "Pass-Off 줄에 끝 마침표가 빠져 있었습니다(Application 줄에는 있음)."
+          }
+        },
+        {
+          "id": "pg13-1:a4",
+          "en": "He seems to be honest.",
+          "ko": "그는 정직한 것 같다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "seems to be"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (1) 부정사 item 4",
+            "reviewWhere": "Review 1. item 4 (p57)"
+          }
+        },
+        {
+          "id": "pg13-1:a5",
+          "en": "There are so many fun things to do there and many beautiful spots to visit.",
+          "ko": "그곳에는 할 수 있는 재미있는 일도 아주 많고, 방문할 만한 아름다운 장소도 많습니다.",
+          "koSource": "student:s20-5#3",
+          "focus": [
+            "things to do",
+            "spots to visit"
+          ],
+          "studentRef": {
+            "lesson": "s20-5",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (1) 부정사 item 5",
+            "reviewWhere": "Review 1. item 5 (p57)"
+          }
+        },
+        {
+          "id": "pg13-1:a6",
+          "en": "I have no house to live in.",
+          "ko": "나는 살 집이 없다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "house to live in"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (1) 부정사 item 6",
+            "reviewWhere": "Review 1. item 6 (p57)"
+          }
+        },
+        {
+          "id": "pg13-1:a7",
+          "en": "I must have a lot of patience in order to teach them.",
+          "ko": "나는 그들을 가르치기 위해서 많은 인내심을 가져야 합니다.",
+          "koSource": "student:s14-3#4 (뒷문장의 한국어)",
+          "focus": [
+            "in order to teach"
+          ],
+          "studentRef": {
+            "lesson": "s14-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (1) 부정사 item 7",
+            "reviewWhere": "Review 1. item 7 (p57)"
+          }
+        },
+        {
+          "id": "pg13-1:a8",
+          "en": "I am happy to learn new things.",
+          "ko": "나는 새로운 것들을 배워서 행복하다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "happy to learn"
+          ],
+          "studentRef": {
+            "lesson": "s10-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (1) 부정사 item 8",
+            "reviewWhere": "Review 1. item 8 (p57)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg13-1:a3",
+          "pg13-1:a6",
+          "pg13-1:a7"
+        ],
+        "question": "세 문장에 모두 to + 동사원형이 있어요. 우리말로 옮기면 뜻이 어떻게 될까요?",
+        "options": [
+          "'~하는 것 · ~할 · ~하기 위해'로 저마다 다르다",
+          "모두 '~하기 위해'이다",
+          "모두 '~하는 것'이다"
+        ],
+        "answer": 0,
+        "why": "To live(사는 것) · a house to live in(살 집) · in order to teach(가르치기 위해) — 문장 안 자리에 따라 명사 · 형용사 · 부사처럼 쓰여요."
+      },
+      "title": "to부정사(to + 동사원형)는 명사 · 형용사 · 부사처럼 씁니다",
+      "points": [
+        "명사처럼 '~하는 것': 주어 · 목적어 · 보어 자리",
+        "형용사처럼 명사 뒤에서 '~할': things to do",
+        "부사처럼 '~하기 위해 · ~해서 · ~하다니'",
+        "too … to(너무 …해서 ~할 수 없는) · … enough to(~할 만큼)",
+        "let · make · see + 목적어 뒤에는 to 없는 동사원형(help 는 둘 다 · see 는 -ing 도)"
+      ],
+      "table": {
+        "columns": [
+          "쓰임",
+          "예문",
+          "뜻"
+        ],
+        "rows": [
+          [
+            "명사(주어 · 보어)",
+            "To live is to fight.",
+            "사는 것은 싸우는 것이다"
+          ],
+          [
+            "명사(목적어)",
+            "I want to become a teacher.",
+            "선생님이 되기를(되고 싶다)"
+          ],
+          [
+            "형용사(명사 꾸밈)",
+            "things to do / a house to live in",
+            "할 일 / 살 집"
+          ],
+          [
+            "부사(목적)",
+            "in order to teach them",
+            "그들을 가르치기 위해"
+          ],
+          [
+            "부사(감정의 원인 · 판단의 근거)",
+            "happy to learn new things / He must be rich to buy that car.",
+            "배워서 행복한 / 그 차를 사다니 부자임에 틀림없다"
+          ],
+          [
+            "be happy to(기꺼이)",
+            "I'll be happy to help.",
+            "기꺼이 돕겠다 — '~해서 기쁘다'와 구별"
+          ],
+          [
+            "부사(결과)",
+            "She grew up to be a doctor.",
+            "그녀는 자라서 의사가 되었다"
+          ],
+          [
+            "부사(조건)",
+            "To hear him talk, you would think he was the boss.",
+            "그가 말하는 걸 들으면 사장인 줄 알 거야"
+          ],
+          [
+            "seem to · 목적어 + to",
+            "He seems to be honest. / ask him to come",
+            "~인 것 같다 / 그에게 오라고 부탁하다"
+          ],
+          [
+            "원형부정사(to 없음)",
+            "make me laugh / let him go / see her dance / help me (to) carry",
+            "웃게 하다 / 가게 하다 / 춤추는 것을 보다 / 나르는 것을 돕다"
+          ],
+          [
+            "의미상 주어(누가 하는지): for + 사람 · kind · nice 같은 성격 형용사 뒤는 of + 사람",
+            "It is hard for me to get up early. / It was kind of him to help me.",
+            "내가 일찍 일어나기는 어렵다 / 나를 도와주다니 그는 친절했다"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '-는 것 · -ㄹ · -기 위해 · -해서'처럼 끝말이 바뀌지만, 영어는 모두 to + 동사원형 한 모양이에요. 그래서 문장 안 자리를 보고 뜻을 정해요.",
+      "mistakes": [
+        {
+          "wrong": "I want going there.",
+          "right": "I want to go there.",
+          "why": "want 뒤에는 to + 동사원형이 와요."
+        },
+        {
+          "wrong": "He made me to wait.",
+          "right": "He made me wait.",
+          "why": "make(시키다) + 목적어 뒤에는 to 없이 동사원형을 써요."
+        }
+      ],
+      "worked": [
+        "나는 읽을 책이 한 권 필요하다.",
+        "'읽을' → 명사 '책'을 뒤에서 꾸미는 말",
+        "a book 뒤에 to + read",
+        "I need a book to read."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'I went to the library ___ a book.' (책을 빌리기 위해) 빈칸에 알맞은 것은?",
+        "options": [
+          "borrow",
+          "to borrow",
+          "borrowing"
+        ],
+        "answer": 1,
+        "why": "'~하기 위해'(목적)는 to + 동사원형이에요.",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg13-1:s1",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 뜻으로 알맞은 것은?",
+          "sentence": "To be an honest man is always important.",
+          "underline": [
+            "To be an honest man"
+          ],
+          "options": [
+            "정직한 사람이 되기 위해서",
+            "정직한 사람이 되는 것은",
+            "정직한 사람이 될"
+          ],
+          "answer": 1,
+          "why": "문장 맨 앞에서 주어 노릇을 하는 to부정사 → '~하는 것은'(명사처럼 쓰임).",
+          "bookRef": {
+            "book": 2,
+            "page": 57,
+            "where": "Review 1. item 1 (p57)"
+          }
+        },
+        {
+          "id": "pg13-1:s2",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 뜻으로 알맞은 것은?",
+          "sentence": "So now I want to become a teacher.",
+          "underline": [
+            "to become a teacher"
+          ],
+          "options": [
+            "선생님이 되기 위해서",
+            "선생님이 될",
+            "선생님이 되기를(되는 것을)"
+          ],
+          "answer": 2,
+          "why": "want 의 목적어 자리 → '~하기를(~하는 것을)'.",
+          "bookRef": {
+            "book": 2,
+            "page": 57,
+            "where": "Review 1. item 2 (p57)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg13-1:s3",
+          "kind": "choice",
+          "instruction": "밑줄 친 두 부분의 뜻으로 알맞은 것은?",
+          "sentence": "To live is to fight.",
+          "underline": [
+            "To live",
+            "to fight"
+          ],
+          "options": [
+            "살기 위해 / 싸우기 위해",
+            "사는 것은 / 싸우는 것이다",
+            "살 / 싸울"
+          ],
+          "answer": 1,
+          "why": "앞은 주어(사는 것은), 뒤는 보어(싸우는 것이다) — 둘 다 명사처럼 쓰였어요.",
+          "bookRef": {
+            "book": 2,
+            "page": 57,
+            "where": "Review 1. item 3 (p57)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg13-1:s4",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 뜻으로 알맞은 것은?",
+          "sentence": "He seems to be honest.",
+          "underline": [
+            "seems to be honest"
+          ],
+          "options": [
+            "정직해지려고 한다",
+            "정직해야 한다",
+            "정직한 것 같다"
+          ],
+          "answer": 2,
+          "why": "seem + to부정사 = '~인 것 같다'.",
+          "bookRef": {
+            "book": 2,
+            "page": 57,
+            "where": "Review 1. item 4 (p57)"
+          },
+          "fix": {
+            "from": "(굵은 글씨: seems to)",
+            "field": "underline",
+            "kind": "layout_or_extraction",
+            "why": "교재는 seems to 까지만 굵게 인쇄했지만 해석 단위는 seems to be honest(정직한 것 같다)라 밑줄을 넓혔습니다."
+          }
+        },
+        {
+          "id": "pg13-1:s5",
+          "kind": "choice",
+          "instruction": "밑줄 친 to부정사가 하는 일은?",
+          "sentence": "There are so many fun things to do there and many beautiful spots to visit.",
+          "underline": [
+            "things to do",
+            "spots to visit"
+          ],
+          "options": [
+            "문장의 주어가 된다(~하는 것은)",
+            "목적을 나타낸다(~하기 위해)",
+            "앞의 명사를 꾸민다(~할)"
+          ],
+          "answer": 2,
+          "why": "to do 는 things 를, to visit 는 spots 를 뒤에서 꾸며요(할 · 방문할).",
+          "bookRef": {
+            "book": 2,
+            "page": 57,
+            "where": "Review 1. item 5 (p57)"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg13-1:s6",
+          "kind": "select",
+          "instruction": "'살 집'을 만들 때 to부정사 뒤에 꼭 남는 전치사를 누르세요",
+          "tokens": [
+            "I",
+            "have",
+            "no",
+            "house",
+            "to",
+            "live",
+            "in",
+            "."
+          ],
+          "answer": [
+            6
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "live in a house(집에서 살다) → a house to live in. in 을 빼면 안 돼요.",
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 11",
+            "reviewWhere": "Review 1. item 6 (p57)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-1:s7",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 뜻으로 알맞은 것은?",
+          "sentence": "I must have a lot of patience in order to teach them.",
+          "underline": [
+            "in order to teach them"
+          ],
+          "options": [
+            "그들을 가르치기 위해서",
+            "그들을 가르쳐서",
+            "그들이 가르칠"
+          ],
+          "answer": 0,
+          "why": "in order to + 동사원형 = '~하기 위해서'(목적).",
+          "bookRef": {
+            "book": 2,
+            "page": 57,
+            "where": "Review 1. item 7 (p57)"
+          }
+        },
+        {
+          "id": "pg13-1:s8",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 뜻으로 알맞은 것은?",
+          "sentence": "I am happy to learn new things.",
+          "underline": [
+            "to learn new things"
+          ],
+          "options": [
+            "새로운 것들을 배우기 위해",
+            "배울 새로운 것들",
+            "새로운 것들을 배워서"
+          ],
+          "answer": 2,
+          "why": "happy 같은 감정 말 뒤의 to부정사 → 그 감정의 원인 '~해서'.",
+          "bookRef": {
+            "book": 2,
+            "page": 57,
+            "where": "Review 1. item 8 (p57)"
+          }
+        },
+        {
+          "id": "pg13-1:s9",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 뜻으로 알맞은 것은?",
+          "sentence": "He cannot be honest to do such a thing.",
+          "underline": [
+            "cannot be honest to do such a thing"
+          ],
+          "options": [
+            "그런 일을 하려고 정직할 수 없다",
+            "그런 일을 하다니 정직할 리가 없다",
+            "그런 일을 할 만큼 정직하지 않다"
+          ],
+          "answer": 1,
+          "why": "to do such a thing 은 판단의 근거 '그런 일을 하다니', cannot be 는 '~일 리가 없다'.",
+          "bookRef": {
+            "book": 2,
+            "page": 57,
+            "where": "Review 1. item 9 (p57)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg13-1:s10",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 뜻으로 알맞은 것은?",
+          "sentence": "You will be happy to follow my advice.",
+          "underline": [
+            "happy to follow my advice"
+          ],
+          "options": [
+            "내 충고를 따르기 위해 행복한",
+            "따라야 할 내 충고에 행복한",
+            "기꺼이 내 충고를 따르는"
+          ],
+          "answer": 2,
+          "why": "be happy to + 동사원형 = '기꺼이 ~하다'(I'll be happy to help.).",
+          "bookRef": {
+            "book": 2,
+            "page": 57,
+            "where": "Review 1. item 10 (p57)"
+          },
+          "reserve": true,
+          "fix": {
+            "from": "(굵은 글씨: to follow my advice — 교재 한국어 '내 충고를 따른다면')",
+            "field": "underline",
+            "kind": "translation_mismatch",
+            "why": "영어 원어민은 be happy to + 동사원형을 '기꺼이 ~하다'로 읽어 '따른다면'(조건)으로 옮긴 교재 해석과 다릅니다. 해석 단위도 happy to follow my advice 로 넓혔습니다(판정 p54)."
+          }
+        },
+        {
+          "id": "pg13-1:s11",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 뜻으로 알맞은 것은?",
+          "sentence": "My mother doesn’t allow us to watch a lot of TV.",
+          "underline": [
+            "to watch a lot of TV"
+          ],
+          "options": [
+            "TV를 많이 보기 위해",
+            "TV를 많이 보는 것을(보도록)",
+            "많이 볼 TV"
+          ],
+          "answer": 1,
+          "why": "allow + 목적어 + to부정사 = '(목적어)가 ~하는 것을 허락하다'.",
+          "bookRef": {
+            "book": 2,
+            "page": 57,
+            "where": "Review 1. item 11 (p57)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg13-1:s12",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 뜻으로 알맞은 것은?",
+          "sentence": "I want to be able to help others learn and grow, too.",
+          "underline": [
+            "to help others learn and grow"
+          ],
+          "options": [
+            "다른 사람들이 배우고 성장하도록 돕는 것",
+            "다른 사람들을 돕기 위해 배우고 성장하는 것",
+            "배우고 성장하는 다른 사람들"
+          ],
+          "answer": 0,
+          "why": "want 의 목적어 to be able to help(도울 수 있기를) — help + 목적어 + 동사원형 = '(목적어)가 ~하도록 돕다'.",
+          "bookRef": {
+            "book": 2,
+            "page": 57,
+            "where": "Review 1. item 12 (p57)"
+          },
+          "reserve": true,
+          "fix": {
+            "from": "I want to be able to help other learn and grow, too. (굵은 글씨: to help other learn and grow)",
+            "field": "sentence+underline",
+            "kind": "english_grammar",
+            "why": "other(다른 사람들)는 대명사 복수 others 여야 합니다. STUDENT 14과(s14-2) 원문도 others."
+          }
+        },
+        {
+          "id": "pg13-1:s13",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은? (엄마는 내가 방을 청소하게 하셨다.)",
+          "sentence": "My mom made me ___ my room.",
+          "underline": [],
+          "options": [
+            "clean",
+            "to clean",
+            "cleaning"
+          ],
+          "answer": 0,
+          "why": "make(시키다) + 목적어 뒤에는 to 없이 동사원형(원형부정사)을 써요.",
+          "bookRef": null,
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg13-1:p1",
+          "ko": "정직한 사람이 되는 것은 언제나 중요하다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "To be an honest man is always important.",
+          "accept": [
+            "To be an honest person is always important.",
+            "To become an honest man is always important.",
+            "To become an honest person is always important.",
+            "It is always important to be an honest man.",
+            "It is always important to be an honest person.",
+            "It is always important to become an honest man.",
+            "It is always important to become an honest person."
+          ],
+          "targets": [
+            [
+              "To be",
+              "To become"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Being an honest",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '~하는 것은'을 to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "To being",
+              "hint": "to 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 1",
+            "reviewWhere": "Review 1. item 1 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p2",
+          "ko": "커피를 너무 많이 마시는 것은 건강에 좋지 않다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "To drink too much coffee is not good for your health.",
+          "accept": [
+            "To drink too much coffee is not good for you.",
+            "To drink too much coffee is bad for your health.",
+            "To drink too much coffee is bad for you.",
+            "It is not good for your health to drink too much coffee.",
+            "It is not good for you to drink too much coffee.",
+            "It is bad for your health to drink too much coffee.",
+            "It is bad for you to drink too much coffee.",
+            "To drink too much coffee is not good for health.",
+            "To drink too much coffee is bad for health.",
+            "It is not good for health to drink too much coffee.",
+            "It is bad for health to drink too much coffee."
+          ],
+          "targets": [
+            [
+              "To drink"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Drinking too much coffee",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '마시는 것은'을 to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "To drink too much coffee are",
+              "hint": "to부정사 주어는 한 덩어리(단수)로 봐요. 동사 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 2"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p3",
+          "ko": "너는 아침으로 양배추 샌드위치를 먹고 싶니?",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Do you want to eat cabbage sandwiches for breakfast?",
+          "accept": [
+            "Do you want to eat a cabbage sandwich for breakfast?",
+            "Do you want to have cabbage sandwiches for breakfast?",
+            "Do you want to have a cabbage sandwich for breakfast?",
+            "Would you like to eat cabbage sandwiches for breakfast?",
+            "Would you like to eat a cabbage sandwich for breakfast?",
+            "Would you like to have cabbage sandwiches for breakfast?",
+            "Would you like to have a cabbage sandwich for breakfast?"
+          ],
+          "targets": [
+            [
+              "to eat",
+              "to have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "want eat",
+              "hint": "want 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "want eating",
+              "hint": "want 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "eat cabbage sandwich for",
+              "hint": "sandwich 는 셀 수 있는 명사예요. 하나인지 여럿인지 모양을 맞춰요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "want-to",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 3"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p4",
+          "ko": "키라는 컴퓨터 수업을 더 들어야 한다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "need를 써서",
+          "promptEn": null,
+          "en": "Kira needs to take more computer lessons.",
+          "accept": [
+            "Kira needs to take more computer classes.",
+            "Kira needs to attend more computer lessons.",
+            "Kira needs to attend more computer classes.",
+            "Kira needs to take more computer courses.",
+            "Kira needs to attend more computer courses."
+          ],
+          "targets": [
+            [
+              "to take",
+              "to attend"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "listen to more computer",
+              "hint": "'수업을 듣다'는 영어로 listen 이 아니라 다른 동사를 써요."
+            },
+            {
+              "match": "Kira need to",
+              "hint": "Kira 는 3인칭 한 명이에요. need 모양을 보세요."
+            },
+            {
+              "match": "needs take",
+              "hint": "need 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "Kira has to",
+              "hint": "맞는 영어지만 조건은 'need를 써서'예요. need 뒤에 to + 동사원형을 써 보세요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 4"
+          },
+          "fix": {
+            "from": "Kira needs to listen to more computer lessons.",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "수업(lessons)은 listen to 가 아니라 take 로 들어요(수업을 듣다 = take lessons). 교재에 한국어가 없어 새로 옮겼습니다(판정 p54)."
+          }
+        },
+        {
+          "id": "pg13-1:p5",
+          "ko": "그래서 지금 나는 선생님이 되고 싶습니다.",
+          "koSource": "student:s6-4#8",
+          "condition": null,
+          "promptEn": null,
+          "en": "So now I want to become a teacher.",
+          "accept": [
+            "So now I want to be a teacher.",
+            "So now I would like to become a teacher.",
+            "So now I would like to be a teacher.",
+            "So I want to become a teacher now.",
+            "So I want to be a teacher now.",
+            "So I would like to become a teacher now.",
+            "So I would like to be a teacher now.",
+            "So I now want to become a teacher.",
+            "So I now want to be a teacher."
+          ],
+          "targets": [
+            [
+              "to become",
+              "to be"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "want become",
+              "hint": "want 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "want to becoming",
+              "hint": "to 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "want-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s6-4",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 5",
+            "reviewWhere": "Review 1. item 2 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p6",
+          "ko": "사는 것은 싸우는 것이다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "To live is to fight.",
+          "accept": [
+            "To live is to struggle."
+          ],
+          "targets": [
+            [
+              "To live"
+            ],
+            [
+              "to fight",
+              "to struggle"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Living is fighting",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '사는 것 · 싸우는 것'을 to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "To live is fight",
+              "hint": "보어 자리의 '싸우는 것'도 to + 동사원형으로 맞춰요."
+            }
+          ],
+          "tags": [
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 6",
+            "reviewWhere": "Review 1. item 3 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p7",
+          "ko": "나는 너를 다시 만나서 기쁘다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "I am happy to see you again.",
+          "accept": [
+            "I am happy to meet you again.",
+            "I am glad to see you again.",
+            "I am glad to meet you again.",
+            "I am pleased to see you again.",
+            "I am pleased to meet you again."
+          ],
+          "targets": [
+            [
+              "to see",
+              "to meet"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "happy to seeing",
+              "hint": "to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "because i see you again",
+              "hint": "'만나서'(감정의 원인)는 형용사 뒤에 to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "that i can",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '만나서'(감정의 원인)를 형용사 뒤에 to + 동사원형으로 써 보세요."
+            }
+          ],
+          "tags": [
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 7"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p8",
+          "ko": "너는 시험 볼 준비가 됐니?",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "Are you ready to take the test?",
+          "accept": [
+            "Are you ready to take the exam?",
+            "Are you ready to take the examination?",
+            "Are you ready to sit the test?",
+            "Are you ready to sit the exam?",
+            "Are you ready to sit the examination?",
+            "Are you ready to take a test?",
+            "Are you ready to take an exam?",
+            "Are you ready to take an examination?",
+            "Are you ready to sit a test?",
+            "Are you ready to sit an exam?",
+            "Are you ready to sit an examination?"
+          ],
+          "targets": [
+            [
+              "to take",
+              "to sit"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "ready to win the",
+              "hint": "시험은 이기는(win) 것이 아니에요. '시험을 보다'에 맞는 동사를 써 보세요."
+            },
+            {
+              "match": "ready for the test",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '시험 볼'을 to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "ready for the exam",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '시험 볼'을 to + 동사원형으로 써 보세요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 8"
+          },
+          "fix": {
+            "from": "Are you ready to win the test?",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "시험(test)은 win 하는 대상이 아니라 take(치르다) 해요. 교재에 한국어가 없어 새로 옮겼습니다(판정 p54)."
+          }
+        },
+        {
+          "id": "pg13-1:p9",
+          "ko": "그는 정직한 것 같다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "seem to를 써서",
+          "promptEn": null,
+          "en": "He seems to be honest.",
+          "accept": [
+            "He seems to be an honest man.",
+            "He seems to be an honest person."
+          ],
+          "targets": [
+            [
+              "to be"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He seems honest",
+              "hint": "맞는 영어지만 조건은 'seem to를 써서'예요. seems 뒤에 to + 동사원형을 넣어 보세요."
+            },
+            {
+              "match": "It seems that he is",
+              "hint": "맞는 영어지만 조건은 'seem to를 써서'예요. He 를 주어로 하고 seems 뒤에 to + 동사원형을 써 보세요."
+            },
+            {
+              "match": "seems to honest",
+              "hint": "to 뒤에는 동사원형이 와요. honest 는 형용사라 앞에 동사가 필요해요."
+            },
+            {
+              "match": "He seem to",
+              "hint": "He 는 3인칭 한 명이에요. seem 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 9",
+            "reviewWhere": "Review 1. item 4 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p10",
+          "ko": "그곳에는 할 수 있는 재미있는 일도 아주 많고, 방문할 만한 아름다운 장소도 많습니다.",
+          "koSource": "student:s20-5#3",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "There are so many fun things to do there and many beautiful spots to visit.",
+          "accept": [
+            "There are so many fun things to do there and many beautiful places to visit.",
+            "There are so many fun things to do there and a lot of beautiful places to visit.",
+            "There are so many fun things to do there and lots of beautiful places to visit.",
+            "There are so many fun things to do there and a lot of beautiful spots to visit.",
+            "There are so many interesting things to do there and many beautiful spots to visit.",
+            "There are so many interesting things to do there and many beautiful places to visit.",
+            "There are so many interesting things to do there and a lot of beautiful places to visit.",
+            "There are so many interesting things to do there and lots of beautiful places to visit.",
+            "There are so many interesting things to do there and a lot of beautiful spots to visit.",
+            "There are a lot of fun things to do there and many beautiful spots to visit.",
+            "There are a lot of fun things to do there and many beautiful places to visit.",
+            "There are a lot of fun things to do there and a lot of beautiful places to visit.",
+            "There are a lot of fun things to do there and lots of beautiful places to visit.",
+            "There are a lot of fun things to do there and a lot of beautiful spots to visit.",
+            "There are a lot of interesting things to do there and many beautiful spots to visit.",
+            "There are a lot of interesting things to do there and many beautiful places to visit.",
+            "There are a lot of interesting things to do there and a lot of beautiful places to visit.",
+            "There are a lot of interesting things to do there and lots of beautiful places to visit.",
+            "There are a lot of interesting things to do there and a lot of beautiful spots to visit.",
+            "There are lots of fun things to do there and many beautiful spots to visit.",
+            "There are lots of fun things to do there and many beautiful places to visit.",
+            "There are lots of fun things to do there and a lot of beautiful places to visit.",
+            "There are lots of fun things to do there and lots of beautiful places to visit.",
+            "There are lots of fun things to do there and a lot of beautiful spots to visit.",
+            "There are lots of interesting things to do there and many beautiful spots to visit.",
+            "There are lots of interesting things to do there and many beautiful places to visit.",
+            "There are lots of interesting things to do there and a lot of beautiful places to visit.",
+            "There are lots of interesting things to do there and lots of beautiful places to visit.",
+            "There are lots of interesting things to do there and a lot of beautiful spots to visit."
+          ],
+          "targets": [
+            [
+              "things to do"
+            ],
+            [
+              "to visit"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "you can do",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '할 수 있는'을 명사 뒤 to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "things to doing",
+              "hint": "to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "places visiting",
+              "hint": "'방문할 만한'은 명사 뒤에 to + 동사원형으로 꾸며요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s20-5",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 10",
+            "reviewWhere": "Review 1. item 5 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p11",
+          "ko": "나는 살 집이 없다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I have no house to live in.",
+          "accept": [
+            "I don't have a house to live in.",
+            "I don't have any house to live in.",
+            "I have no home to live in.",
+            "There is no house for me to live in."
+          ],
+          "targets": [
+            [
+              "to live in"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "don't have no",
+              "hint": "not 과 no 를 한 문장에 겹쳐 쓰지 않아요."
+            },
+            {
+              "match": "house to living",
+              "hint": "to 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "have-has",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 11",
+            "reviewWhere": "Review 1. item 6 (p57)"
+          },
+          "fix": null,
+          "note": "교재 꼬리표 '( 전치사가 동반된 to부정사)' — in 이 빠지면 목표형이 없다고 표시됩니다."
+        },
+        {
+          "id": "pg13-1:p12",
+          "ko": "나는 그들을 가르치기 위해서 많은 인내심을 가져야 합니다.",
+          "koSource": "student:s14-3#4 (뒷문장의 한국어)",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "I must have a lot of patience in order to teach them.",
+          "accept": [
+            "I must have a lot of patience to teach them.",
+            "I must have lots of patience in order to teach them.",
+            "I must have lots of patience to teach them.",
+            "I must have much patience in order to teach them.",
+            "I must have much patience to teach them.",
+            "I have to have a lot of patience in order to teach them.",
+            "I have to have a lot of patience to teach them.",
+            "I have to have lots of patience in order to teach them.",
+            "I have to have lots of patience to teach them.",
+            "I have to have much patience in order to teach them.",
+            "I have to have much patience to teach them.",
+            "I need to have a lot of patience in order to teach them.",
+            "I need to have a lot of patience to teach them.",
+            "I need to have lots of patience in order to teach them.",
+            "I need to have lots of patience to teach them.",
+            "I need to have much patience in order to teach them.",
+            "I need to have much patience to teach them.",
+            "I should have a lot of patience in order to teach them.",
+            "I should have a lot of patience to teach them.",
+            "I should have lots of patience in order to teach them.",
+            "I should have lots of patience to teach them.",
+            "I should have much patience in order to teach them.",
+            "I should have much patience to teach them.",
+            "In order to teach them, I must have a lot of patience.",
+            "In order to teach them, I have to have a lot of patience.",
+            "To teach them, I must have a lot of patience.",
+            "To teach them, I have to have a lot of patience.",
+            "I need a lot of patience to teach them.",
+            "I need a lot of patience in order to teach them.",
+            "I need lots of patience to teach them.",
+            "I need lots of patience in order to teach them.",
+            "To teach them, I need a lot of patience.",
+            "In order to teach them, I need a lot of patience.",
+            "To teach them, I need to have a lot of patience.",
+            "In order to teach them, I need to have a lot of patience."
+          ],
+          "targets": [
+            [
+              "to teach"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "in order to teaching",
+              "hint": "to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "for teach them",
+              "hint": "'~하기 위해서'는 for 가 아니라 to + 동사원형으로 써요."
+            },
+            {
+              "match": "so that i can teach",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '가르치기 위해서'를 to + 동사원형으로 써 보세요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s14-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 12",
+            "reviewWhere": "Review 1. item 7 (p57)"
+          },
+          "fix": {
+            "from": "(16과)",
+            "kind": "lesson_ref",
+            "why": "교재는 (16과)라고 적었지만 이 문장은 STUDENT 14과(s14-3) 4번 문장의 뒷부분이라 14과로 연결했습니다(판정 p54)."
+          }
+        },
+        {
+          "id": "pg13-1:p13",
+          "ko": "나는 새로운 것들을 배워서 행복하다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "I am happy to learn new things.",
+          "accept": [
+            "I am glad to learn new things.",
+            "I am pleased to learn new things."
+          ],
+          "targets": [
+            [
+              "to learn"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "because i learn new things",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '배워서'(감정의 원인)를 to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "happy to learning",
+              "hint": "to 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s10-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 13",
+            "reviewWhere": "Review 1. item 8 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p14",
+          "ko": "그런 일을 하다니 그는 정직할 리가 없다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "He cannot be honest to do such a thing.",
+          "accept": [
+            "He cannot be honest to do something like that.",
+            "He must be dishonest to do such a thing.",
+            "He must be dishonest to do something like that.",
+            "He cannot be honest to do that."
+          ],
+          "targets": [
+            [
+              "to do"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if he did such a thing",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '그런 일을 하다니'(판단의 근거)를 to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "honest to doing",
+              "hint": "to 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 14",
+            "reviewWhere": "Review 1. item 9 (p57)"
+          },
+          "fix": null,
+          "note": "판정 p52 english_unnatural(확신 낮음) → keep: '판단의 근거' to부정사로 학교 문법의 대표 예문이고 문법에 맞음. 원어민에게 더 자연스러운 must be dishonest to do … 도 정답으로 받음."
+        },
+        {
+          "id": "pg13-1:p15",
+          "ko": "너는 기꺼이 내 충고를 따를 거야.",
+          "koSource": "new (교재 한국어는 영어 뜻과 달라 고침)",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "You will be happy to follow my advice.",
+          "accept": [
+            "You will be happy to take my advice.",
+            "You will be glad to follow my advice.",
+            "You will be glad to take my advice.",
+            "You will be pleased to follow my advice.",
+            "You will be pleased to take my advice.",
+            "You will be willing to follow my advice.",
+            "You will be willing to take my advice."
+          ],
+          "targets": [
+            [
+              "to follow",
+              "to take"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "You will gladly follow",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '기꺼이 ~하다'를 형용사 + to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "if you follow my advice",
+              "hint": "'기꺼이 따를 거야'는 조건(~한다면)이 아니에요. 형용사 + to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "will happily follow",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '기꺼이 ~하다'를 형용사 + to + 동사원형으로 써 보세요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 15",
+            "reviewWhere": "Review 3. item 1 (p59)"
+          },
+          "fix": {
+            "fromKo": "너는 내 충고를 따른다면 행복할 거야.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "교재는 to부정사의 '조건' 용법으로 옮겼지만, 영어 원어민은 be happy to + 동사원형을 '기꺼이 ~하다'로 읽습니다(I'll be happy to help.). 영어는 그대로 두고 한국어를 영어의 실제 뜻으로 고쳤습니다. '따른다면 행복할 거야'는 You will be happy if you follow my advice. 가 됩니다(판정 p54)."
+          }
+        },
+        {
+          "id": "pg13-1:p16",
+          "ko": "나는 자라서 이순신 장군만큼 용감하고 자신감 있는 사람이 되기를 바란다.",
+          "koSource": "review 3 item 2 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I hope to grow up to be as brave and confident as Admiral Yi Sun-sin.",
+          "accept": [
+            "I hope to grow up to be as brave and confident as Admiral Yi.",
+            "I hope to grow up to be as brave and confident as General Yi Sun-sin.",
+            "I hope to grow up to be as brave and confident as Yi Sun-sin.",
+            "I hope to grow up to be as brave and confident as Admiral Yi Sun-shin.",
+            "I hope to grow up to be as brave and confident as General Yi Sun-shin.",
+            "I hope to grow up to be as brave and confident as Yi Sun-shin.",
+            "I hope to grow up to be as brave and confident as Admiral Lee Sun-sin.",
+            "I hope to grow up to be as brave and confident as General Lee Sun-sin.",
+            "I hope to grow up to be as brave and confident as Lee Sun-sin.",
+            "I hope to grow up to be as brave and confident as Admiral Lee Sun-shin.",
+            "I hope to grow up to be as brave and confident as General Lee Sun-shin.",
+            "I hope to grow up to be as brave and confident as Lee Sun-shin.",
+            "I hope to grow up to be as brave and confident as Admiral Lee Soon-shin.",
+            "I hope to grow up to be as brave and confident as General Lee Soon-shin.",
+            "I hope to grow up to be as brave and confident as Lee Soon-shin.",
+            "I hope to grow up to be as brave and confident as General Soon-shin Lee.",
+            "I hope to grow up to be a person as brave and confident as Admiral Yi Sun-sin.",
+            "I hope to grow up to be a person as brave and confident as Admiral Yi.",
+            "I hope to grow up to be a person as brave and confident as General Yi Sun-sin.",
+            "I hope to grow up to be a person as brave and confident as Yi Sun-sin.",
+            "I hope to grow up to be a person as brave and confident as Admiral Yi Sun-shin.",
+            "I hope to grow up to be a person as brave and confident as General Yi Sun-shin.",
+            "I hope to grow up to be a person as brave and confident as Yi Sun-shin.",
+            "I hope to grow up to be a person as brave and confident as Admiral Lee Sun-sin.",
+            "I hope to grow up to be a person as brave and confident as General Lee Sun-sin.",
+            "I hope to grow up to be a person as brave and confident as Lee Sun-sin.",
+            "I hope to grow up to be a person as brave and confident as Admiral Lee Sun-shin.",
+            "I hope to grow up to be a person as brave and confident as General Lee Sun-shin.",
+            "I hope to grow up to be a person as brave and confident as Lee Sun-shin.",
+            "I hope to grow up to be a person as brave and confident as Admiral Lee Soon-shin.",
+            "I hope to grow up to be a person as brave and confident as General Lee Soon-shin.",
+            "I hope to grow up to be a person as brave and confident as Lee Soon-shin.",
+            "I hope to grow up to be a person as brave and confident as General Soon-shin Lee.",
+            "I hope to grow up to become as brave and confident as Admiral Yi Sun-sin.",
+            "I hope to grow up to become as brave and confident as Admiral Yi.",
+            "I hope to grow up to become as brave and confident as General Yi Sun-sin.",
+            "I hope to grow up to become as brave and confident as Yi Sun-sin.",
+            "I hope to grow up to become as brave and confident as Admiral Yi Sun-shin.",
+            "I hope to grow up to become as brave and confident as General Yi Sun-shin.",
+            "I hope to grow up to become as brave and confident as Yi Sun-shin.",
+            "I hope to grow up to become as brave and confident as Admiral Lee Sun-sin.",
+            "I hope to grow up to become as brave and confident as General Lee Sun-sin.",
+            "I hope to grow up to become as brave and confident as Lee Sun-sin.",
+            "I hope to grow up to become as brave and confident as Admiral Lee Sun-shin.",
+            "I hope to grow up to become as brave and confident as General Lee Sun-shin.",
+            "I hope to grow up to become as brave and confident as Lee Sun-shin.",
+            "I hope to grow up to become as brave and confident as Admiral Lee Soon-shin.",
+            "I hope to grow up to become as brave and confident as General Lee Soon-shin.",
+            "I hope to grow up to become as brave and confident as Lee Soon-shin.",
+            "I hope to grow up to become as brave and confident as General Soon-shin Lee.",
+            "I hope to grow up to become a person as brave and confident as Admiral Yi Sun-sin.",
+            "I hope to grow up to become a person as brave and confident as Admiral Yi.",
+            "I hope to grow up to become a person as brave and confident as General Yi Sun-sin.",
+            "I hope to grow up to become a person as brave and confident as Yi Sun-sin.",
+            "I hope to grow up to become a person as brave and confident as Admiral Yi Sun-shin.",
+            "I hope to grow up to become a person as brave and confident as General Yi Sun-shin.",
+            "I hope to grow up to become a person as brave and confident as Yi Sun-shin.",
+            "I hope to grow up to become a person as brave and confident as Admiral Lee Sun-sin.",
+            "I hope to grow up to become a person as brave and confident as General Lee Sun-sin.",
+            "I hope to grow up to become a person as brave and confident as Lee Sun-sin.",
+            "I hope to grow up to become a person as brave and confident as Admiral Lee Sun-shin.",
+            "I hope to grow up to become a person as brave and confident as General Lee Sun-shin.",
+            "I hope to grow up to become a person as brave and confident as Lee Sun-shin.",
+            "I hope to grow up to become a person as brave and confident as Admiral Lee Soon-shin.",
+            "I hope to grow up to become a person as brave and confident as General Lee Soon-shin.",
+            "I hope to grow up to become a person as brave and confident as Lee Soon-shin.",
+            "I hope to grow up to become a person as brave and confident as General Soon-shin Lee.",
+            "I hope I grow up to be as brave and confident as Admiral Yi Sun-sin.",
+            "I hope I grow up to be as brave and confident as Admiral Yi.",
+            "I hope I grow up to be as brave and confident as General Yi Sun-sin.",
+            "I hope I grow up to be as brave and confident as Yi Sun-sin.",
+            "I hope I grow up to be as brave and confident as Admiral Yi Sun-shin.",
+            "I hope I grow up to be as brave and confident as General Yi Sun-shin.",
+            "I hope I grow up to be as brave and confident as Yi Sun-shin.",
+            "I hope I grow up to be as brave and confident as Admiral Lee Sun-sin.",
+            "I hope I grow up to be as brave and confident as General Lee Sun-sin.",
+            "I hope I grow up to be as brave and confident as Lee Sun-sin.",
+            "I hope I grow up to be as brave and confident as Admiral Lee Sun-shin.",
+            "I hope I grow up to be as brave and confident as General Lee Sun-shin.",
+            "I hope I grow up to be as brave and confident as Lee Sun-shin.",
+            "I hope I grow up to be as brave and confident as Admiral Lee Soon-shin.",
+            "I hope I grow up to be as brave and confident as General Lee Soon-shin.",
+            "I hope I grow up to be as brave and confident as Lee Soon-shin.",
+            "I hope I grow up to be as brave and confident as General Soon-shin Lee.",
+            "I hope I grow up to be a person as brave and confident as Admiral Yi Sun-sin.",
+            "I hope I grow up to be a person as brave and confident as Admiral Yi.",
+            "I hope I grow up to be a person as brave and confident as General Yi Sun-sin.",
+            "I hope I grow up to be a person as brave and confident as Yi Sun-sin.",
+            "I hope I grow up to be a person as brave and confident as Admiral Yi Sun-shin.",
+            "I hope I grow up to be a person as brave and confident as General Yi Sun-shin.",
+            "I hope I grow up to be a person as brave and confident as Yi Sun-shin.",
+            "I hope I grow up to be a person as brave and confident as Admiral Lee Sun-sin.",
+            "I hope I grow up to be a person as brave and confident as General Lee Sun-sin.",
+            "I hope I grow up to be a person as brave and confident as Lee Sun-sin.",
+            "I hope I grow up to be a person as brave and confident as Admiral Lee Sun-shin.",
+            "I hope I grow up to be a person as brave and confident as General Lee Sun-shin.",
+            "I hope I grow up to be a person as brave and confident as Lee Sun-shin.",
+            "I hope I grow up to be a person as brave and confident as Admiral Lee Soon-shin.",
+            "I hope I grow up to be a person as brave and confident as General Lee Soon-shin.",
+            "I hope I grow up to be a person as brave and confident as Lee Soon-shin.",
+            "I hope I grow up to be a person as brave and confident as General Soon-shin Lee.",
+            "I hope I will grow up to be as brave and confident as Admiral Yi Sun-sin.",
+            "I hope I will grow up to be as brave and confident as Admiral Yi.",
+            "I hope I will grow up to be as brave and confident as General Yi Sun-sin.",
+            "I hope I will grow up to be as brave and confident as Yi Sun-sin.",
+            "I hope I will grow up to be as brave and confident as Admiral Yi Sun-shin.",
+            "I hope I will grow up to be as brave and confident as General Yi Sun-shin.",
+            "I hope I will grow up to be as brave and confident as Yi Sun-shin.",
+            "I hope I will grow up to be as brave and confident as Admiral Lee Sun-sin.",
+            "I hope I will grow up to be as brave and confident as General Lee Sun-sin.",
+            "I hope I will grow up to be as brave and confident as Lee Sun-sin.",
+            "I hope I will grow up to be as brave and confident as Admiral Lee Sun-shin.",
+            "I hope I will grow up to be as brave and confident as General Lee Sun-shin.",
+            "I hope I will grow up to be as brave and confident as Lee Sun-shin.",
+            "I hope I will grow up to be as brave and confident as Admiral Lee Soon-shin.",
+            "I hope I will grow up to be as brave and confident as General Lee Soon-shin.",
+            "I hope I will grow up to be as brave and confident as Lee Soon-shin.",
+            "I hope I will grow up to be as brave and confident as General Soon-shin Lee.",
+            "I hope I will grow up to be a person as brave and confident as Admiral Yi Sun-sin.",
+            "I hope I will grow up to be a person as brave and confident as Admiral Yi.",
+            "I hope I will grow up to be a person as brave and confident as General Yi Sun-sin.",
+            "I hope I will grow up to be a person as brave and confident as Yi Sun-sin.",
+            "I hope I will grow up to be a person as brave and confident as Admiral Yi Sun-shin.",
+            "I hope I will grow up to be a person as brave and confident as General Yi Sun-shin.",
+            "I hope I will grow up to be a person as brave and confident as Yi Sun-shin.",
+            "I hope I will grow up to be a person as brave and confident as Admiral Lee Sun-sin.",
+            "I hope I will grow up to be a person as brave and confident as General Lee Sun-sin.",
+            "I hope I will grow up to be a person as brave and confident as Lee Sun-sin.",
+            "I hope I will grow up to be a person as brave and confident as Admiral Lee Sun-shin.",
+            "I hope I will grow up to be a person as brave and confident as General Lee Sun-shin.",
+            "I hope I will grow up to be a person as brave and confident as Lee Sun-shin.",
+            "I hope I will grow up to be a person as brave and confident as Admiral Lee Soon-shin.",
+            "I hope I will grow up to be a person as brave and confident as General Lee Soon-shin.",
+            "I hope I will grow up to be a person as brave and confident as Lee Soon-shin.",
+            "I hope I will grow up to be a person as brave and confident as General Soon-shin Lee.",
+            "I hope to grow up to be as brave and confident as Admiral Yi Soon-shin.",
+            "I hope to grow up to be as brave and confident as General Yi Soon-shin.",
+            "I hope to grow up to be as brave and confident as Yi Soon-shin.",
+            "I hope to grow up to be as brave and confident as General Yi.",
+            "I hope to grow up to be a person as brave and confident as Admiral Yi Soon-shin.",
+            "I hope to grow up to be a person as brave and confident as General Yi Soon-shin.",
+            "I hope to grow up to be a person as brave and confident as Yi Soon-shin.",
+            "I hope to grow up to be a person as brave and confident as General Yi.",
+            "I hope to grow up to become as brave and confident as Admiral Yi Soon-shin.",
+            "I hope to grow up to become as brave and confident as General Yi Soon-shin.",
+            "I hope to grow up to become as brave and confident as Yi Soon-shin.",
+            "I hope to grow up to become as brave and confident as General Yi.",
+            "I hope to grow up to become a person as brave and confident as Admiral Yi Soon-shin.",
+            "I hope to grow up to become a person as brave and confident as General Yi Soon-shin.",
+            "I hope to grow up to become a person as brave and confident as Yi Soon-shin.",
+            "I hope to grow up to become a person as brave and confident as General Yi.",
+            "I hope I grow up to be as brave and confident as Admiral Yi Soon-shin.",
+            "I hope I grow up to be as brave and confident as General Yi Soon-shin.",
+            "I hope I grow up to be as brave and confident as Yi Soon-shin.",
+            "I hope I grow up to be as brave and confident as General Yi.",
+            "I hope I grow up to be a person as brave and confident as Admiral Yi Soon-shin.",
+            "I hope I grow up to be a person as brave and confident as General Yi Soon-shin.",
+            "I hope I grow up to be a person as brave and confident as Yi Soon-shin.",
+            "I hope I grow up to be a person as brave and confident as General Yi.",
+            "I hope I will grow up to be as brave and confident as Admiral Yi Soon-shin.",
+            "I hope I will grow up to be as brave and confident as General Yi Soon-shin.",
+            "I hope I will grow up to be as brave and confident as Yi Soon-shin.",
+            "I hope I will grow up to be as brave and confident as General Yi.",
+            "I hope I will grow up to be a person as brave and confident as Admiral Yi Soon-shin.",
+            "I hope I will grow up to be a person as brave and confident as General Yi Soon-shin.",
+            "I hope I will grow up to be a person as brave and confident as Yi Soon-shin.",
+            "I hope I will grow up to be a person as brave and confident as General Yi."
+          ],
+          "targets": [
+            [
+              "to grow up",
+              "to be",
+              "to become"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "hope growing up",
+              "hint": "hope 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "brave and confident than",
+              "hint": "'~만큼'은 as + 형용사 + as 로 써요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "comparative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s13-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 16",
+            "reviewWhere": "Review 3. item 2 (p59)"
+          },
+          "fix": {
+            "from": "I hope to grow up to be as brave and confident as General Soon-shin Lee.",
+            "fromKo": "나는 이 순신 장군만큼 용감하고 자신감 있도록 자라기를 소망한다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "이순신은 수군 지휘관이라 영어로는 Admiral, 표준 로마자는 Yi Sun-sin 입니다 — STUDENT 13과(s13-3)가 이미 고친 표기를 씁니다. 한국어는 '이순신' 띄어쓰기와 어색한 '자신감 있도록 자라기를'을 고쳤습니다. '장군'을 곧게 옮긴 General … 과 Lee Sun-sin 같은 표기도 정답으로 받습니다(판정 p52 · p59)."
+          }
+        },
+        {
+          "id": "pg13-1:p17",
+          "ko": "나의 어머니께서는 우리가 TV를 많이 보는 것을 허락하지 않으십니다.",
+          "koSource": "student:s8-4#2",
+          "condition": null,
+          "promptEn": null,
+          "en": "My mother doesn’t allow us to watch a lot of TV.",
+          "accept": [
+            "My mother doesn't allow us to watch much TV.",
+            "My mother doesn't allow us to watch lots of TV.",
+            "My mother doesn't let us watch a lot of TV.",
+            "My mother doesn't let us watch much TV.",
+            "My mother doesn't let us watch lots of TV.",
+            "My mother doesn't permit us to watch a lot of TV.",
+            "My mother doesn't permit us to watch much TV.",
+            "My mother doesn't permit us to watch lots of TV.",
+            "My mom doesn't allow us to watch a lot of TV.",
+            "My mom doesn't allow us to watch much TV.",
+            "My mom doesn't allow us to watch lots of TV.",
+            "My mom doesn't let us watch a lot of TV.",
+            "My mom doesn't let us watch much TV.",
+            "My mom doesn't let us watch lots of TV.",
+            "My mom doesn't permit us to watch a lot of TV.",
+            "My mom doesn't permit us to watch much TV.",
+            "My mom doesn't permit us to watch lots of TV.",
+            "My mum doesn't allow us to watch a lot of TV.",
+            "My mum doesn't allow us to watch much TV.",
+            "My mum doesn't allow us to watch lots of TV.",
+            "My mum doesn't let us watch a lot of TV.",
+            "My mum doesn't let us watch much TV.",
+            "My mum doesn't let us watch lots of TV.",
+            "My mum doesn't permit us to watch a lot of TV.",
+            "My mum doesn't permit us to watch much TV.",
+            "My mum doesn't permit us to watch lots of TV.",
+            "My mother doesn't allow us to watch TV a lot.",
+            "My mother doesn't let us watch TV a lot.",
+            "My mother doesn't permit us to watch TV a lot.",
+            "My mom doesn't allow us to watch TV a lot.",
+            "My mom doesn't let us watch TV a lot.",
+            "My mom doesn't permit us to watch TV a lot.",
+            "My mum doesn't allow us to watch TV a lot.",
+            "My mum doesn't let us watch TV a lot.",
+            "My mum doesn't permit us to watch TV a lot."
+          ],
+          "targets": [
+            [
+              "to watch",
+              "let us watch"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "allow us watch",
+              "hint": "allow + 목적어 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "allow us watching",
+              "hint": "allow + 목적어 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "let us to watch",
+              "hint": "let 뒤 목적어 다음에는 to 없이 동사원형을 써요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "sentence-pattern-5",
+            "negative-basic",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s8-4",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 17",
+            "reviewWhere": "Review 3. item 3 (p59)"
+          },
+          "fix": {
+            "fromKo": "나의 어머니는 우리가 많은 TV를 보는 것을 허락하지 않으신다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT s8-4 와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다. 교재 한국어 '많은 TV'는 'TV 여러 대'로 읽혀 'TV를 많이'로 고쳐야 했습니다(판정 p59)."
+          }
+        },
+        {
+          "id": "pg13-1:p18",
+          "ko": "데이비드는 나를 자기 집에 오라고 초대했다.",
+          "koSource": "review 3 item 4 (고침)",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "David invited me to come to his house.",
+          "accept": [
+            "David invited me to come to his home.",
+            "David invited me to come to his place.",
+            "David invited me to come over to his house.",
+            "David invited me to come over to his place.",
+            "David invited me to visit his house.",
+            "David invited me to visit his home."
+          ],
+          "targets": [
+            [
+              "to come",
+              "to visit"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "invited me come",
+              "hint": "invite + 목적어 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "invited me to his house",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '오라고'를 to + 동사원형으로 넣어 보세요."
+            },
+            {
+              "match": "invited me to coming",
+              "hint": "to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "invited me over",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '오라고'를 to + 동사원형으로 넣어 보세요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "sentence-pattern-5",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 18",
+            "reviewWhere": "Review 3. item 4 (p59)"
+          },
+          "fix": {
+            "fromKo": "데이빗은 내가 그의 집으로 오도록 초대했다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "외래어 표기법에 따라 David 는 '데이비드'입니다. '그의 집'은 데이비드 자신의 집이라 '자기 집'으로, '내가 … 오도록 초대했다'는 '나를 … 오라고 초대했다'로 다듬었습니다(판정 p59)."
+          }
+        },
+        {
+          "id": "pg13-1:p19",
+          "ko": "메리는 나에게 그 팀의 대장이 되어 달라고 부탁했다.",
+          "koSource": "review 3 item 5 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Mary asked me to be the captain of the team.",
+          "accept": [
+            "Mary asked me to be a captain of the team.",
+            "Mary asked me to be the team captain.",
+            "Mary asked me to be the team's captain.",
+            "Mary asked me to be the leader of the team.",
+            "Mary asked me to become the captain of the team.",
+            "Mary asked me to become a captain of the team.",
+            "Mary asked me to become the team captain.",
+            "Mary asked me to become the team's captain.",
+            "Mary asked me to become the leader of the team.",
+            "Mary asked me to be captain of the team.",
+            "Mary asked me to become captain of the team.",
+            "Mary asked me to be team captain.",
+            "Mary asked me to become team captain.",
+            "Mary asked me to be the team leader.",
+            "Mary asked me to become the team leader."
+          ],
+          "targets": [
+            [
+              "to be",
+              "to become"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Mary asks me",
+              "hint": "'부탁했다'는 지난 일이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "asked me be",
+              "hint": "ask + 목적어 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "asked me that i",
+              "hint": "'~해 달라고 부탁하다'는 ask + 목적어 + to + 동사원형으로 써요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "sentence-pattern-5",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 54,
+            "where": "application (1) 부정사[라벨 없음·추론] item 19",
+            "reviewWhere": "Review 3. item 5 (p59)"
+          },
+          "fix": {
+            "from": "Mary asks me to be a captain of the team.",
+            "fromKo": "메리는 내가 그 팀의 대장이 되어달라고 부탁했다.",
+            "field": "en+ko",
+            "kind": "translation_mismatch",
+            "why": "한국어는 과거(부탁했다)인데 영어는 현재(asks)였습니다. 한 팀의 대장(주장)은 한 명이라 the captain 으로 고쳤습니다(a captain 도 정답으로 받음, 판정 p54). 한국어는 부탁 받는 사람을 '나에게'로 다듬었습니다('내가 … 되어달라고'는 어색함 — p18 의 '나를 … 오라고'와 같은 까닭)."
+          }
+        },
+        {
+          "id": "pg13-1:p20",
+          "ko": "마이크는 학교에 갈 만큼 나이가 들었다.",
+          "koSource": "review 3 item 6",
+          "condition": null,
+          "promptEn": null,
+          "en": "Mike is old enough to go to school.",
+          "accept": [
+            "Mike is old enough to attend school."
+          ],
+          "targets": [
+            [
+              "enough to go",
+              "enough to attend"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "enough old",
+              "hint": "enough 는 형용사 뒤에 와요."
+            },
+            {
+              "match": "old enough going",
+              "hint": "enough 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "Mike was old enough",
+              "hint": "'나이가 들었다'는 지금의 상태를 말해요. be동사를 현재로 써 보세요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (1) 부정사[라벨 없음·추론] item 20",
+            "reviewWhere": "Review 3. item 6 (p59)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p21",
+          "ko": "아이들이 학교로 걸어가기에는 너무 춥다.",
+          "koSource": "review 3 item 7",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "It's too cold for children to walk to school.",
+          "accept": [
+            "It is too cold for children to go to school on foot.",
+            "It is too cold for the children to walk to school.",
+            "It is too cold for the children to go to school on foot.",
+            "It is too cold for kids to walk to school.",
+            "It is too cold for kids to go to school on foot.",
+            "It is too cold for the kids to walk to school.",
+            "It is too cold for the kids to go to school on foot."
+          ],
+          "targets": [
+            [
+              "too cold for"
+            ],
+            [
+              "to walk",
+              "to go"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "so cold that children",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. too + 형용사 + for + 사람 + to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "too cold to children",
+              "hint": "to부정사의 주어(누가)는 for + 사람으로 나타내요."
+            },
+            {
+              "match": "cold for children walking",
+              "hint": "too … 뒤에는 to + 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "it-dummy"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (1) 부정사[라벨 없음·추론] item 21",
+            "reviewWhere": "Review 3. item 7 (p59)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p22",
+          "ko": "그 음악은 내가 전화를 받기에는 너무 시끄러웠다.",
+          "koSource": "review 3 item 8 (고침)",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "The music was too loud for me to answer the phone.",
+          "accept": [
+            "The music was too loud to answer the phone.",
+            "The music was too loud for me to answer the telephone.",
+            "The music was too noisy for me to answer the phone.",
+            "The music was too noisy to answer the phone.",
+            "The music was too noisy for me to answer the telephone."
+          ],
+          "targets": [
+            [
+              "to answer"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "The music is too loud",
+              "hint": "'시끄러웠다'는 지난 일이에요."
+            },
+            {
+              "match": "so loud that i couldn't",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. too + 형용사 + for + 사람 + to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "too loud to me",
+              "hint": "to부정사의 주어(누가)는 for + 사람으로 나타내요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (1) 부정사[라벨 없음·추론] item 22",
+            "reviewWhere": "Review 3. item 8 (p59)"
+          },
+          "fix": {
+            "from": "The music was too loud to answer the phone.",
+            "fromKo": "전화 받기에 그 음악은 너무 시끄럽다.",
+            "field": "en+ko",
+            "kind": "translation_mismatch",
+            "why": "교재 한국어는 현재(시끄럽다), 영어는 과거(was)였습니다. 한국어를 과거로 고치고, 전화를 받는 사람이 드러나게 for me 를 넣었습니다(for me 없는 교재 문장도 정답으로 받음, 판정 p55)."
+          }
+        },
+        {
+          "id": "pg13-1:p23",
+          "ko": "당신이 그렇게 말씀하셨다니 참 친절하셨네요.",
+          "koSource": "review 3 item 9",
+          "condition": null,
+          "promptEn": null,
+          "en": "It was nice of you to say so.",
+          "accept": [
+            "It was nice of you to say that.",
+            "It was very nice of you to say so.",
+            "It was very nice of you to say that.",
+            "It was so nice of you to say so.",
+            "It was so nice of you to say that.",
+            "It was kind of you to say so.",
+            "It was kind of you to say that.",
+            "It was very kind of you to say so.",
+            "It was very kind of you to say that.",
+            "It was so kind of you to say so.",
+            "It was so kind of you to say that.",
+            "You were very kind to say so.",
+            "You were kind to say so.",
+            "You were very nice to say so.",
+            "That was nice of you to say so.",
+            "That was nice of you to say that.",
+            "That was kind of you to say so.",
+            "That was kind of you to say that.",
+            "That was very nice of you to say so.",
+            "That was very kind of you to say so.",
+            "You were nice to say so.",
+            "You were kind to say that.",
+            "You were so kind to say so.",
+            "It was sweet of you to say so.",
+            "It was sweet of you to say that."
+          ],
+          "targets": [
+            [
+              "to say"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "nice for you to",
+              "hint": "사람의 성격 · 태도를 말하는 nice · kind 뒤에서는 for 가 아니라 다른 전치사를 써요."
+            },
+            {
+              "match": "kind for you to",
+              "hint": "사람의 성격 · 태도를 말하는 nice · kind 뒤에서는 for 가 아니라 다른 전치사를 써요."
+            },
+            {
+              "match": "it is",
+              "hint": "'친절하셨네요'는 지난 일이에요. 시제를 맞춰 보세요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "it-dummy",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (1) 부정사[라벨 없음·추론] item 23",
+            "reviewWhere": "Review 3. item 9 (p59)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-1:p24",
+          "ko": "나 또한 다른 사람들을 배우고 성장할 수 있게 도울 수 있기를 원합니다.",
+          "koSource": "student:s14-2#4",
+          "condition": null,
+          "promptEn": null,
+          "en": "I want to be able to help others learn and grow, too.",
+          "accept": [
+            "I want to be able to help others to learn and grow, too.",
+            "I want to be able to help other people learn and grow, too.",
+            "I want to be able to help other people to learn and grow, too.",
+            "I also want to be able to help others learn and grow.",
+            "I also want to be able to help others to learn and grow.",
+            "I also want to be able to help other people learn and grow.",
+            "I also want to be able to help other people to learn and grow.",
+            "I want to be able to help others learn and grow as well.",
+            "I want to be able to help others to learn and grow as well.",
+            "I want to be able to help other people learn and grow as well.",
+            "I want to be able to help other people to learn and grow as well.",
+            "I, too, want to be able to help others learn and grow.",
+            "I, too, want to be able to help others to learn and grow.",
+            "I, too, want to be able to help other people learn and grow.",
+            "I, too, want to be able to help other people to learn and grow."
+          ],
+          "targets": [
+            [
+              "to be able"
+            ],
+            [
+              "others learn",
+              "others to learn",
+              "people learn",
+              "people to learn"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "help other learn",
+              "hint": "'다른 사람들'은 여럿이에요. other 를 대명사로 쓸 때의 모양을 보세요."
+            },
+            {
+              "match": "help others learning",
+              "hint": "help + 목적어 뒤에는 동사원형(또는 to + 동사원형)이 와요."
+            },
+            {
+              "match": "want to can help",
+              "hint": "to 뒤에 can 을 쓸 수 없어요. '~할 수 있기를'은 be able to 로 써요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "want-to",
+            "can-basic",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "be able to 는 base 태그 can-basic(STUDENT 로 익힌 기초 — 이 문장도 STUDENT s14-2 그대로)으로 보아 도전으로 켜지 않음. 1권 pg07-3:p12 · 2권 pg10-1:p23(같은 문장)과 같은 판단이고, pg17-1 에서 목표 문법(modal-can)으로 다시 배움.",
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s14-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (1) 부정사[라벨 없음·추론] item 24",
+            "reviewWhere": "Review 3. item 10 (p59)"
+          },
+          "fix": {
+            "from": "I want to be able to help other learn and grow , too. (6과)",
+            "fromKo": "나는 다른 사람들이 배우고 성장하도록 도울 수 있기를 원한다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "other(다른 사람들)는 대명사 복수 others 여야 합니다. STUDENT 14과(s14-2)가 이미 고친 문장이라 영어 · 한국어 모두 STUDENT 판을 씁니다(한국어에 too 에 해당하는 '또한'이 들어감). 교재의 (6과)는 14과의 잘못이라 14과로 연결했습니다(판정 p52 · p55 · p59)."
+          }
+        },
+        {
+          "id": "pg13-1:p25",
+          "ko": "그는 학생들이 좋아하는 것을 고르도록 허락했다.",
+          "koSource": "review 3 item 11 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He let his students choose what they like.",
+          "accept": [
+            "He let his students choose what they liked.",
+            "He let his students pick what they like.",
+            "He let his students pick what they liked.",
+            "He let the students choose what they like.",
+            "He let the students choose what they liked.",
+            "He let the students pick what they like.",
+            "He let the students pick what they liked.",
+            "He allowed his students to choose what they like.",
+            "He allowed his students to choose what they liked.",
+            "He allowed his students to pick what they like.",
+            "He allowed his students to pick what they liked.",
+            "He allowed the students to choose what they like.",
+            "He allowed the students to choose what they liked.",
+            "He allowed the students to pick what they like.",
+            "He allowed the students to pick what they liked.",
+            "He let his students choose whatever they like.",
+            "He let his students choose whatever they liked.",
+            "He let his students pick whatever they like.",
+            "He let his students pick whatever they liked.",
+            "He let the students choose whatever they like.",
+            "He let the students choose whatever they liked.",
+            "He let the students pick whatever they like.",
+            "He let the students pick whatever they liked.",
+            "He allowed his students to choose whatever they like.",
+            "He allowed his students to choose whatever they liked.",
+            "He allowed his students to pick whatever they like.",
+            "He allowed his students to pick whatever they liked.",
+            "He allowed the students to choose whatever they like.",
+            "He allowed the students to choose whatever they liked.",
+            "He allowed the students to pick whatever they like.",
+            "He allowed the students to pick whatever they liked.",
+            "He let students choose what they like.",
+            "He let students choose what they liked.",
+            "He let students choose whatever they like.",
+            "He let students choose whatever they liked.",
+            "He let students pick what they like.",
+            "He let students pick what they liked.",
+            "He let students pick whatever they like.",
+            "He let students pick whatever they liked.",
+            "He allowed students to choose what they like.",
+            "He allowed students to choose what they liked.",
+            "He allowed students to choose whatever they like.",
+            "He allowed students to choose whatever they liked.",
+            "He allowed students to pick what they like.",
+            "He allowed students to pick what they liked.",
+            "He allowed students to pick whatever they like.",
+            "He allowed students to pick whatever they liked."
+          ],
+          "targets": [
+            [
+              "choose",
+              "pick"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "let his students to choose",
+              "hint": "let 뒤 목적어 다음에는 to 없이 동사원형을 써요."
+            },
+            {
+              "match": "let the students to choose",
+              "hint": "let 뒤 목적어 다음에는 to 없이 동사원형을 써요."
+            },
+            {
+              "match": "students chose",
+              "hint": "let + 목적어 뒤에는 동사원형이 와요(과거 문장이라도 그대로)."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "sentence-pattern-5",
+            "relative-what",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (1) 부정사[라벨 없음·추론] item 25",
+            "reviewWhere": "Review 3. item 11 (p60)"
+          },
+          "fix": {
+            "fromKo": "그는 그의 학생들이 그들이 좋아하는 것을 선택하도록 허락했다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'그의 학생들이 그들이'는 영어 대명사를 그대로 옮긴 번역투라 '학생들이 좋아하는 것을 고르도록'으로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg13-1:p26",
+          "ko": "그들은 내가 자기들에게 진실을 말하도록 만들었다.",
+          "koSource": "review 3 item 12 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "They made me tell them the truth.",
+          "accept": [
+            "They made me tell the truth to them."
+          ],
+          "targets": [
+            [
+              "made me tell"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "made me to tell",
+              "hint": "make(시키다) + 목적어 뒤에는 to 없이 동사원형을 써요."
+            },
+            {
+              "match": "made me telling",
+              "hint": "make(시키다) + 목적어 뒤에는 동사원형을 써요."
+            },
+            {
+              "match": "made me told",
+              "hint": "make + 목적어 뒤에는 동사원형이 와요(과거 문장이라도 그대로)."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "sentence-pattern-5",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (1) 부정사[라벨 없음·추론] item 26",
+            "reviewWhere": "Review 3. item 12 (p60)"
+          },
+          "fix": {
+            "fromKo": "그들은 내가 그들에게 진실을 말하도록 만들었다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'그들은 … 그들에게'는 영어 대명사를 그대로 옮긴 번역투라(p25 · p27 과 같은 까닭) '자기들에게'로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg13-1:p27",
+          "ko": "그는 자기 누이가 영어를 매우 유창하게 말하는 것을 보았다.",
+          "koSource": "review 3 item 13 (고침)",
+          "condition": "원형부정사로",
+          "promptEn": null,
+          "en": "He saw his sister speak English very fluently.",
+          "accept": [
+            "He saw his sister speak English really fluently.",
+            "He watched his sister speak English very fluently.",
+            "He watched his sister speak English really fluently."
+          ],
+          "targets": [
+            [
+              "sister speak"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sister to speak",
+              "hint": "see(보다) + 목적어 뒤에는 to 없이 동사원형을 써요."
+            },
+            {
+              "match": "sister speaking",
+              "hint": "맞는 영어지만 조건은 '원형부정사로'예요. see + 목적어 뒤에 to 없는 동사원형을 써 보세요."
+            },
+            {
+              "match": "sister spoke",
+              "hint": "see + 목적어 뒤에는 동사원형이 와요(과거 문장이라도 그대로)."
+            },
+            {
+              "match": "sister speaks",
+              "hint": "see + 목적어 뒤의 동사원형에는 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "sentence-pattern-5",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (1) 부정사[라벨 없음·추론] item 27",
+            "reviewWhere": "Review 3. item 13 (p60)"
+          },
+          "fix": {
+            "fromKo": "그는 그의 누이가 영어를 매우 유창하게 말하는 것을 보았다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'그는 그의 누이가'는 영어 대명사를 그대로 옮긴 번역투라 '자기 누이가'로 다듬었습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg13-1:t1",
+          "ko": "그는 그 시험에 통과하기 위하여 영어를 공부했다.",
+          "condition": "to부정사로",
+          "promptEn": null,
+          "en": "He studied English to pass the examination.",
+          "accept": [
+            "He studied English to pass the exam.",
+            "He studied English in order to pass the exam.",
+            "He studied English to pass the test.",
+            "He studied English in order to pass the examination.",
+            "He studied English in order to pass the test.",
+            "He studied English so as to pass the exam.",
+            "He studied English so as to pass the examination.",
+            "He studied English so as to pass the test."
+          ],
+          "targets": [
+            [
+              "to pass"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "for pass the",
+              "hint": "'~하기 위하여'는 for 가 아니라 to + 동사원형으로 써요."
+            },
+            {
+              "match": "to passing",
+              "hint": "to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "so that he could pass",
+              "hint": "맞는 영어지만 조건은 'to부정사로'예요. '~하기 위하여'를 to + 동사원형으로 써 보세요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-017#26",
+          "note": "GRAMMAR II 허용 답 3개를 그대로 받고 in order to 판 2개 · so as to 판 3개를 더함."
+        },
+        {
+          "id": "pg13-1:t2",
+          "ko": "나는 잃을 것이 아무것도 없다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I have nothing to lose.",
+          "accept": [
+            "I don't have anything to lose.",
+            "I've got nothing to lose."
+          ],
+          "targets": [
+            [
+              "to lose"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "nothing to losing",
+              "hint": "to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "don't have nothing",
+              "hint": "not 과 nothing 을 한 문장에 겹쳐 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "infinitive",
+            "have-has",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-035#4",
+          "note": "한국어는 GRAMMAR II 원문 '나는 잃을 아무것도 없다.'가 번역투라 '잃을 것이 아무것도 없다'로 다듬음(영어 · 허용 답은 GRAMMAR II 그대로)."
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg13-1:f1",
+      "template": "My dream is to ___.",
+      "ko": "나의 꿈은 ___하는 것이다. (동사원형으로)"
+    }
+  ]
+}

@@ -1,0 +1,1961 @@
+{
+  "id": "pg09-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "용법과 종류",
+  "label": "TOPIC 9. 형용사",
+  "menuLabel": "9-1. 용법과 종류",
+  "unit": 9,
+  "part": 2,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 한정적 용법과 서술적 용법",
+  "grammarTags": [
+    "adjective-attributive-predicative",
+    "adjective-ing-ed"
+  ],
+  "koreanWords": [
+    "Jinna"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg09-1:a1",
+          "en": "It's a nice day.",
+          "ko": "좋은 날이다.",
+          "koSource": "new",
+          "focus": [
+            "nice"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (1) item 1"
+          }
+        },
+        {
+          "id": "pg09-1:a2",
+          "en": "The weather is nice today.",
+          "ko": "오늘은 날씨가 좋다.",
+          "koSource": "new",
+          "focus": [
+            "nice"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (1) item 2"
+          }
+        },
+        {
+          "id": "pg09-1:a3",
+          "en": "What book is this? Which book is yours?",
+          "ko": "이것은 무슨 책이니? 어느 책이 네 것이니?",
+          "koSource": "new",
+          "focus": [
+            "What",
+            "Which"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (1) item 3 (한 줄에 두 문장)"
+          }
+        },
+        {
+          "id": "pg09-1:a4",
+          "en": "You look tired. It sounds interesting.",
+          "ko": "너 피곤해 보인다. 그거 재미있게 들린다.",
+          "koSource": "new",
+          "focus": [
+            "tired",
+            "interesting"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (1) item 4 (한 줄에 두 문장)"
+          }
+        },
+        {
+          "id": "pg09-1:a5",
+          "en": "Jane's job is boring.",
+          "ko": "제인의 직업은 지겹다.",
+          "koSource": "review 2 item 6 (p11)",
+          "focus": [
+            "boring"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (1) item 5"
+          }
+        },
+        {
+          "id": "pg09-1:a6",
+          "en": "Jane is bored.",
+          "ko": "제인은 지겨워한다.",
+          "koSource": "review 2 item 7 (p11)",
+          "focus": [
+            "bored"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (1) item 6"
+          }
+        },
+        {
+          "id": "pg09-1:a7",
+          "en": "It is an exciting time to learn.",
+          "ko": "그것은 배우기에 신나는 시간이다.",
+          "koSource": "review 2 item 8 (p11, 고침)",
+          "focus": [
+            "exciting"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (1) item 7"
+          },
+          "fix": {
+            "fromKo": "그것은 배우기에 재미있는 시간이다.",
+            "field": "ko",
+            "kind": "answer_ambiguous",
+            "why": "exciting 은 '신나는'이고 '재미있는'은 interesting · fun 에 가까워, 같은 레슨의 interesting 과 헷갈리지 않게 '신나는'으로 고쳤습니다(영어는 교재 그대로)."
+          }
+        },
+        {
+          "id": "pg09-1:a8",
+          "en": "We were excited to watch the baseball game.",
+          "ko": "우리는 야구 경기를 보게 되어 신이 났다.",
+          "koSource": "review 2 item 9 (p11, 고침)",
+          "focus": [
+            "excited"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (1) item 8"
+          },
+          "fix": {
+            "fromKo": "우리는 야구 경기보는 것에 신이 났다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'경기보는'은 '경기를 보는'처럼 띄어 쓰고 조사를 넣어야 하고, to watch(보게 되어)의 뜻이 드러나게 '야구 경기를 보게 되어 신이 났다'로 고쳤습니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg09-1:a5",
+          "pg09-1:a6",
+          "pg09-1:a7"
+        ],
+        "question": "boring · bored · exciting 에서 -ing 와 -ed 는 무엇에 따라 갈릴까요?",
+        "options": [
+          "그 느낌을 주는 쪽이냐, 느끼는 쪽이냐",
+          "지금 일이냐, 지난 일이냐",
+          "문장이 기냐, 짧으냐"
+        ],
+        "answer": 0,
+        "why": "직업(job)과 시간(time)은 지루함 · 신남을 '주는' 쪽이라 -ing, 제인은 지루함을 '느끼는' 쪽이라 -ed 예요. bored 의 -ed 는 과거를 뜻하지 않아요."
+      },
+      "title": "형용사는 명사를 앞에서 꾸미거나, 동사 뒤에서 설명해요",
+      "points": [
+        "한정적 용법: 명사 앞에서 꾸며요 — a nice day. 다만 -thing · -one · -body 로 끝나는 말(something · someone)은 뒤에서 꾸며요 — something cold. 명사 앞의 what · which 도 형용사(의문형용사) — What book(무슨 책) · Which book(어느 책)",
+        "서술적 용법: be동사 · look · sound 같은 동사 뒤에서 주어나 목적어를 설명해요 — The weather is nice. / It makes me happy.",
+        "alive · afraid · asleep 은 서술적 용법으로만 써요 — The baby is asleep.(an asleep baby ✗)",
+        "-ing 는 그 느낌을 주는 쪽, -ed 는 그 느낌을 받는 쪽 — a boring job / Jane is bored.",
+        "형용사를 여러 개 쌓을 때는 보통 의견 → 크기 → 나이 → 모양 → 색 → 재료 순서예요 — a nice big old house · a small red wooden box. 다만 사람의 키 · 나이 · 성격을 쉼표나 and 로 나란히 늘어놓을 때는 순서를 바꿔도 돼요."
+      ],
+      "table": {
+        "columns": [
+          "느낌을 주는 쪽(-ing)",
+          "느낌을 받는 쪽(-ed)"
+        ],
+        "rows": [
+          [
+            "boring (지루한)",
+            "bored (지루해하는)"
+          ],
+          [
+            "exciting (신나게 하는)",
+            "excited (신이 난)"
+          ],
+          [
+            "interesting (흥미로운)",
+            "interested (흥미를 느끼는)"
+          ],
+          [
+            "tiring (피곤하게 하는)",
+            "tired (피곤한)"
+          ],
+          [
+            "surprising (놀라운)",
+            "surprised (놀란)"
+          ],
+          [
+            "satisfying (만족스러운)",
+            "satisfied (만족한)"
+          ]
+        ]
+      },
+      "koDiff": "우리말 '지루하다'는 지루하게 만드는 쪽('수업이 지루하다')에도 지루해하는 쪽('나는 지루하다')에도 똑같이 쓰지만, 영어는 boring 과 bored 로 나눠요. 또 우리말 '재미있게 들린다'의 '-게'에 끌려 부사를 쓰지 마세요 — look · sound 뒤에는 형용사가 와요.",
+      "mistakes": [
+        {
+          "wrong": "I am boring in math class.",
+          "right": "I am bored in math class.",
+          "why": "지루함을 '느끼는' 사람은 bored. I am boring 은 '나는 (남을) 지루하게 하는 사람이다'라는 뜻이 돼요."
+        },
+        {
+          "wrong": "This cake tastes sweetly.",
+          "right": "This cake tastes sweet.",
+          "why": "taste · look · sound 뒤에는 부사가 아니라 형용사가 와요."
+        }
+      ],
+      "worked": [
+        "그 영화가 지루해서 나는 지루했다.",
+        "영화 → 지루함을 주는 쪽 → boring",
+        "나 → 지루함을 느끼는 쪽 → bored",
+        "The movie was boring, so I was bored."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'These are ___ fish.' 빈칸에 쓸 수 없는 것은?",
+        "options": [
+          "live",
+          "alive",
+          "small"
+        ],
+        "answer": 1,
+        "why": "alive 는 서술적 용법으로만 써서 명사 앞에 올 수 없어요. 명사 앞에서 꾸밀 때는 live(살아 있는)를 써요 — live fish.",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg09-1:s1",
+          "kind": "select",
+          "instruction": "형용사를 누르고, 용법을 고르세요",
+          "tokens": [
+            "It's",
+            "a",
+            "nice",
+            "day",
+            "."
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [
+            1
+          ],
+          "labels": [
+            "한정적 용법",
+            "서술적 용법"
+          ],
+          "labelAnswer": [
+            "한정적 용법"
+          ],
+          "why": "nice 가 명사 day 를 바로 앞에서 꾸며요 → 한정적 용법. 관사 a 는 골라도 틀리지 않아요.",
+          "bookRef": {
+            "book": 2,
+            "page": 10,
+            "where": "review 1 item 1"
+          },
+          "fix": {
+            "from": "(형용사에 밑줄 — 책에 정답 없음)",
+            "field": "answer",
+            "kind": "answer_ambiguous",
+            "why": "책은 정답을 싣지 않았고 관사 a · an · the 를 형용사로 볼지 기준이 없음 → 정답은 Application 굵은 글씨(형용사), 관사는 골라도 틀리지 않게(optional)."
+          },
+          "note": "책 과제(형용사에 밑줄)에 용법(한정적 · 서술적) 고르기를 더함"
+        },
+        {
+          "id": "pg09-1:s2",
+          "kind": "select",
+          "instruction": "형용사를 누르고, 용법을 고르세요",
+          "tokens": [
+            "The",
+            "weather",
+            "is",
+            "nice",
+            "today",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [
+            0
+          ],
+          "labels": [
+            "한정적 용법",
+            "서술적 용법"
+          ],
+          "labelAnswer": [
+            "서술적 용법"
+          ],
+          "why": "nice 가 be동사 is 뒤에서 주어 The weather 를 설명해요 → 서술적 용법. today 는 부사예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 10,
+            "where": "review 1 item 2"
+          },
+          "fix": {
+            "from": "(형용사에 밑줄 — 책에 정답 없음)",
+            "field": "answer",
+            "kind": "answer_ambiguous",
+            "why": "책은 정답을 싣지 않았고 관사 a · an · the 를 형용사로 볼지 기준이 없음 → 정답은 Application 굵은 글씨(형용사), 관사는 골라도 틀리지 않게(optional)."
+          },
+          "note": "책 과제(형용사에 밑줄)에 용법(한정적 · 서술적) 고르기를 더함"
+        },
+        {
+          "id": "pg09-1:s3",
+          "kind": "select",
+          "instruction": "형용사를 모두 누르고, 용법을 고르세요",
+          "tokens": [
+            "What",
+            "book",
+            "is",
+            "this",
+            "?",
+            "Which",
+            "book",
+            "is",
+            "yours",
+            "?"
+          ],
+          "answer": [
+            0,
+            5
+          ],
+          "optional": [],
+          "labels": [
+            "한정적 용법",
+            "서술적 용법"
+          ],
+          "labelAnswer": [
+            "한정적 용법",
+            "한정적 용법"
+          ],
+          "why": "What · Which 가 뒤의 명사 book 을 꾸미는 의문형용사예요(무슨 책 · 어느 책). this · yours 는 대명사예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 10,
+            "where": "review 1 item 8 · 9 (① 예문 a3 처럼 한 줄로)"
+          },
+          "note": "책 과제(형용사에 밑줄)에 용법(한정적 · 서술적) 고르기를 더함"
+        },
+        {
+          "id": "pg09-1:s4",
+          "kind": "select",
+          "instruction": "형용사를 모두 누르고, 용법을 고르세요",
+          "tokens": [
+            "You",
+            "look",
+            "tired",
+            ".",
+            "It",
+            "sounds",
+            "interesting",
+            "."
+          ],
+          "answer": [
+            2,
+            6
+          ],
+          "optional": [],
+          "labels": [
+            "한정적 용법",
+            "서술적 용법"
+          ],
+          "labelAnswer": [
+            "서술적 용법",
+            "서술적 용법"
+          ],
+          "why": "tired 는 look 뒤, interesting 은 sounds 뒤에서 주어를 설명해요 → 둘 다 서술적 용법.",
+          "bookRef": {
+            "book": 2,
+            "page": 10,
+            "where": "review 1 item 10 · 11 (① 예문 a4 처럼 한 줄로)"
+          },
+          "note": "책 과제(형용사에 밑줄)에 용법(한정적 · 서술적) 고르기를 더함"
+        },
+        {
+          "id": "pg09-1:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 차례로 알맞은 것은?",
+          "sentence": "Jane's job is ___. Jane is ___.",
+          "underline": [],
+          "options": [
+            "boring / bored",
+            "bored / boring",
+            "bored / bored"
+          ],
+          "answer": 0,
+          "why": "직업은 지루함을 '주는' 쪽이라 boring, 제인은 지루함을 '느끼는' 쪽이라 bored 예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (1) item 5 · 6"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-1:s6",
+          "kind": "choice",
+          "instruction": "빈칸에 쓸 수 없는 것은?",
+          "sentence": "Look at the ___ baby.",
+          "underline": [],
+          "options": [
+            "sleeping",
+            "asleep",
+            "cute"
+          ],
+          "answer": 1,
+          "why": "asleep 은 서술적 용법으로만 써요(The baby is asleep.). 명사 앞에서 꾸밀 때는 sleeping 을 써요.",
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #15 (asleep)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-1:s7",
+          "kind": "select",
+          "instruction": "형용사를 누르고, 용법을 고르세요",
+          "tokens": [
+            "She",
+            "has",
+            "a",
+            "big",
+            "cat",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [
+            2
+          ],
+          "labels": [
+            "한정적 용법",
+            "서술적 용법"
+          ],
+          "labelAnswer": [
+            "한정적 용법"
+          ],
+          "why": "big 이 명사 cat 을 바로 앞에서 꾸며요 → 한정적 용법.",
+          "bookRef": {
+            "book": 2,
+            "page": 10,
+            "where": "review 1 item 3"
+          },
+          "fix": {
+            "from": "(형용사에 밑줄 — 책에 정답 없음)",
+            "field": "answer",
+            "kind": "answer_ambiguous",
+            "why": "책은 정답을 싣지 않았고 관사 a · an · the 를 형용사로 볼지 기준이 없음 → 정답은 Application 굵은 글씨(형용사), 관사는 골라도 틀리지 않게(optional)."
+          },
+          "note": "책 과제(형용사에 밑줄)에 용법(한정적 · 서술적) 고르기를 더함",
+          "reserve": true
+        },
+        {
+          "id": "pg09-1:s8",
+          "kind": "select",
+          "instruction": "형용사를 누르고, 용법을 고르세요",
+          "tokens": [
+            "Have",
+            "a",
+            "wonderful",
+            "day",
+            "!"
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [
+            1
+          ],
+          "labels": [
+            "한정적 용법",
+            "서술적 용법"
+          ],
+          "labelAnswer": [
+            "한정적 용법"
+          ],
+          "why": "wonderful 이 명사 day 를 바로 앞에서 꾸며요 → 한정적 용법.",
+          "bookRef": {
+            "book": 2,
+            "page": 10,
+            "where": "review 1 item 4"
+          },
+          "fix": {
+            "from": "(형용사에 밑줄 — 책에 정답 없음)",
+            "field": "answer",
+            "kind": "answer_ambiguous",
+            "why": "책은 정답을 싣지 않았고 관사 a · an · the 를 형용사로 볼지 기준이 없음 → 정답은 Application 굵은 글씨(형용사), 관사는 골라도 틀리지 않게(optional)."
+          },
+          "note": "책 과제(형용사에 밑줄)에 용법(한정적 · 서술적) 고르기를 더함",
+          "reserve": true
+        },
+        {
+          "id": "pg09-1:s9",
+          "kind": "select",
+          "instruction": "형용사를 모두 누르고, 용법을 고르세요",
+          "tokens": [
+            "Danny",
+            "is",
+            "a",
+            "tall",
+            ",",
+            "young",
+            ",",
+            "interesting",
+            "person",
+            "."
+          ],
+          "answer": [
+            3,
+            5,
+            7
+          ],
+          "optional": [
+            2
+          ],
+          "labels": [
+            "한정적 용법",
+            "서술적 용법"
+          ],
+          "labelAnswer": [
+            "한정적 용법",
+            "한정적 용법",
+            "한정적 용법"
+          ],
+          "why": "tall · young · interesting 셋이 모두 명사 person 을 앞에서 꾸며요 → 한정적 용법.",
+          "bookRef": {
+            "book": 2,
+            "page": 10,
+            "where": "review 1 item 5"
+          },
+          "fix": {
+            "from": "(형용사에 밑줄 — 책에 정답 없음)",
+            "field": "answer",
+            "kind": "answer_ambiguous",
+            "why": "책은 정답을 싣지 않았고 관사 a · an · the 를 형용사로 볼지 기준이 없음 → 정답은 Application 굵은 글씨(형용사), 관사는 골라도 틀리지 않게(optional)."
+          },
+          "note": "책 과제(형용사에 밑줄)에 용법(한정적 · 서술적) 고르기를 더함",
+          "reserve": true
+        },
+        {
+          "id": "pg09-1:s10",
+          "kind": "select",
+          "instruction": "형용사를 모두 누르고, 용법을 고르세요",
+          "tokens": [
+            "The",
+            "rabbit",
+            "has",
+            "long",
+            "black",
+            "ears",
+            "."
+          ],
+          "answer": [
+            3,
+            4
+          ],
+          "optional": [
+            0
+          ],
+          "labels": [
+            "한정적 용법",
+            "서술적 용법"
+          ],
+          "labelAnswer": [
+            "한정적 용법",
+            "한정적 용법"
+          ],
+          "why": "long · black 이 명사 ears 를 앞에서 꾸며요(길이 → 색 순서) → 한정적 용법.",
+          "bookRef": {
+            "book": 2,
+            "page": 10,
+            "where": "review 1 item 6"
+          },
+          "fix": {
+            "from": "(형용사에 밑줄 — 책에 정답 없음)",
+            "field": "answer",
+            "kind": "answer_ambiguous",
+            "why": "책은 정답을 싣지 않았고 관사 a · an · the 를 형용사로 볼지 기준이 없음 → 정답은 Application 굵은 글씨(형용사), 관사는 골라도 틀리지 않게(optional)."
+          },
+          "note": "책 과제(형용사에 밑줄)에 용법(한정적 · 서술적) 고르기를 더함",
+          "reserve": true
+        },
+        {
+          "id": "pg09-1:s11",
+          "kind": "select",
+          "instruction": "형용사를 모두 누르고, 용법을 고르세요",
+          "tokens": [
+            "I",
+            "have",
+            "an",
+            "old",
+            ",",
+            "round",
+            ",",
+            "wooden",
+            "table",
+            "."
+          ],
+          "answer": [
+            3,
+            5,
+            7
+          ],
+          "optional": [
+            2
+          ],
+          "labels": [
+            "한정적 용법",
+            "서술적 용법"
+          ],
+          "labelAnswer": [
+            "한정적 용법",
+            "한정적 용법",
+            "한정적 용법"
+          ],
+          "why": "old · round · wooden 이 명사 table 을 앞에서 꾸며요(나이 → 모양 → 재료 순서) → 한정적 용법.",
+          "bookRef": {
+            "book": 2,
+            "page": 10,
+            "where": "review 1 item 7"
+          },
+          "fix": {
+            "from": "(형용사에 밑줄 — 책에 정답 없음)",
+            "field": "answer",
+            "kind": "answer_ambiguous",
+            "why": "책은 정답을 싣지 않았고 관사 a · an · the 를 형용사로 볼지 기준이 없음 → 정답은 Application 굵은 글씨(형용사), 관사는 골라도 틀리지 않게(optional)."
+          },
+          "note": "책 과제(형용사에 밑줄)에 용법(한정적 · 서술적) 고르기를 더함",
+          "reserve": true
+        },
+        {
+          "id": "pg09-1:s12",
+          "kind": "select",
+          "instruction": "형용사를 누르고, 용법을 고르세요",
+          "tokens": [
+            "Jinna",
+            "is",
+            "diligent",
+            "."
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [],
+          "labels": [
+            "한정적 용법",
+            "서술적 용법"
+          ],
+          "labelAnswer": [
+            "서술적 용법"
+          ],
+          "why": "diligent 가 be동사 is 뒤에서 주어 Jinna 를 설명해요 → 서술적 용법.",
+          "bookRef": {
+            "book": 2,
+            "page": 10,
+            "where": "review 1 item 12"
+          },
+          "note": "책 과제(형용사에 밑줄)에 용법(한정적 · 서술적) 고르기를 더함",
+          "reserve": true
+        },
+        {
+          "id": "pg09-1:s13",
+          "kind": "select",
+          "instruction": "-ing · -ed 형용사를 누르고, 느낌을 주는 쪽인지 받는 쪽인지 고르세요",
+          "tokens": [
+            "The",
+            "game",
+            "was",
+            "exciting",
+            ",",
+            "so",
+            "we",
+            "were",
+            "excited",
+            "."
+          ],
+          "answer": [
+            3,
+            8
+          ],
+          "optional": [],
+          "labels": [
+            "느낌을 주는 쪽",
+            "느낌을 받는 쪽"
+          ],
+          "labelAnswer": [
+            "느낌을 주는 쪽",
+            "느낌을 받는 쪽"
+          ],
+          "why": "경기(game)는 신남을 주는 쪽이라 exciting, 우리(we)는 신남을 느끼는 쪽이라 excited 예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (1) item 7 · 8"
+          },
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg09-1:p1",
+          "ko": "좋은 날이다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "It's a nice day.",
+          "accept": [
+            "It's a good day.",
+            "It's a fine day.",
+            "Today is a nice day.",
+            "Today is a good day.",
+            "Today is a fine day.",
+            "Today is a great day.",
+            "It's a great day.",
+            "Today's a nice day.",
+            "Today's a good day.",
+            "Today's a fine day.",
+            "Today's a great day."
+          ],
+          "targets": [
+            [
+              "nice day",
+              "good day",
+              "fine day",
+              "great day"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "it is nice day",
+              "hint": "day 는 셀 수 있는 명사예요. 형용사 앞에 빠진 말이 있어요."
+            },
+            {
+              "match": "a day nice",
+              "hint": "형용사는 꾸미는 명사 바로 앞에 와요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "be-present",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #1",
+            "reviewWhere": "review 1 item 1 (p10, 밑줄 과제)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p2",
+          "ko": "오늘은 날씨가 좋다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "The weather is nice today.",
+          "accept": [
+            "The weather is good today.",
+            "The weather is fine today.",
+            "Today the weather is nice.",
+            "Today the weather is good.",
+            "Today the weather is fine.",
+            "The weather today is nice.",
+            "The weather today is good.",
+            "The weather today is fine.",
+            "Today's weather is nice.",
+            "Today's weather is good.",
+            "Today's weather is fine.",
+            "It's nice weather today.",
+            "It's good weather today.",
+            "It's fine weather today.",
+            "The weather's nice today.",
+            "The weather's good today.",
+            "The weather's fine today.",
+            "The weather is great today.",
+            "Today the weather is great.",
+            "The weather today is great.",
+            "Today's weather is great.",
+            "The weather's great today.",
+            "It's great weather today."
+          ],
+          "targets": [
+            [
+              "is nice",
+              "is good",
+              "is fine",
+              "is great",
+              "weather's nice",
+              "weather's good",
+              "weather's fine",
+              "weather's great"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "the weather nice",
+              "hint": "형용사가 주어를 설명할 때는 형용사 앞에 be동사가 있어야 해요."
+            },
+            {
+              "match": "weather is nicely",
+              "hint": "be동사 뒤에는 부사가 아니라 형용사가 와요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #2",
+            "reviewWhere": "review 1 item 2 (p10, 밑줄 과제)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p3",
+          "ko": "그녀는 큰 고양이를 한 마리 키운다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "She has a big cat.",
+          "accept": [
+            "She has a large cat.",
+            "She has one big cat.",
+            "She has one large cat.",
+            "She keeps a big cat.",
+            "She keeps a large cat.",
+            "She keeps one big cat.",
+            "She keeps one large cat.",
+            "She raises a big cat.",
+            "She raises a large cat.",
+            "She raises one big cat.",
+            "She raises one large cat.",
+            "She has got a big cat.",
+            "She has got a large cat."
+          ],
+          "targets": [
+            [
+              "big cat",
+              "large cat"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a cat big",
+              "hint": "형용사는 꾸미는 명사 바로 앞에 와요."
+            },
+            {
+              "match": "she have",
+              "hint": "주어 She 는 3인칭 한 명이에요. have 의 모양은?"
+            },
+            {
+              "match": "has big cat",
+              "hint": "cat 은 셀 수 있는 명사예요. 형용사 앞에 빠진 말이 있어요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #3",
+            "reviewWhere": "review 1 item 3 (p10, 밑줄 과제)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p4",
+          "ko": "멋진 하루 보내세요!",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Have a wonderful day!",
+          "accept": [
+            "Have a great day!",
+            "Have a fantastic day!",
+            "Have a lovely day!",
+            "Have a nice day!",
+            "Have a good day!",
+            "Have an amazing day!",
+            "Have a terrific day!"
+          ],
+          "targets": [
+            [
+              "wonderful day",
+              "great day",
+              "fantastic day",
+              "lovely day",
+              "nice day",
+              "good day",
+              "amazing day",
+              "terrific day"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "have wonderful day",
+              "hint": "day 는 셀 수 있는 명사예요. 형용사 앞에 빠진 말이 있어요."
+            },
+            {
+              "match": "a day wonderful",
+              "hint": "형용사는 꾸미는 명사 바로 앞에 와요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "imperative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #4",
+            "reviewWhere": "review 1 item 4 (p10, 밑줄 과제)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p5",
+          "ko": "대니는 키가 크고 젊고 흥미로운 사람이다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Danny is a tall, young, interesting person.",
+          "accept": [
+            "Danny is a tall, young and interesting person.",
+            "Danny is an interesting, tall, young person.",
+            "Danny is a tall, interesting, young person.",
+            "Danny is a tall, interesting and young person.",
+            "Danny is a young, tall, interesting person.",
+            "Danny is a young, tall and interesting person.",
+            "Danny is a young, interesting, tall person.",
+            "Danny is a young, interesting and tall person.",
+            "Danny is an interesting, tall and young person.",
+            "Danny is an interesting, young, tall person.",
+            "Danny is an interesting, young and tall person.",
+            "Danny's a tall, young, interesting person.",
+            "Danny's a tall, young and interesting person."
+          ],
+          "targets": [
+            [
+              "tall"
+            ],
+            [
+              "young"
+            ],
+            [
+              "interesting"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is tall young interesting person",
+              "hint": "person 은 셀 수 있는 명사예요. 형용사들 앞에 빠진 말이 있어요."
+            },
+            {
+              "match": "a interesting",
+              "hint": "interesting 은 모음 소리로 시작해요. 관사 모양을 보세요."
+            },
+            {
+              "match": "an tall",
+              "hint": "tall 은 자음 소리로 시작해요. 관사 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #5",
+            "reviewWhere": "review 1 item 5 (p10, 밑줄 과제)"
+          },
+          "fix": null,
+          "note": "교재 순서(tall, young, interesting)를 모범 답으로 둠 — 사람의 키 · 나이 · 성격을 쉼표로 나란히 늘어놓은 것이라 순서를 바꿔도 틀리지 않아, 여섯 순서 모두 쉼표만 쓴 꼴 · and 로 이은 꼴을 정답으로 받음(판정 TOPIC-09 7쪽 keep). 사물을 꾸미며 쌓은 p6 · p7 은 보통 순서를 따름(설명 카드 points[4]). Danny's 로 줄인 두 답은 채점기가 이름 뒤 's 를 is 로 읽지 못하는 동안 넣은 허용 답(G7 점검)."
+        },
+        {
+          "id": "pg09-1:p6",
+          "ko": "그 토끼는 길고 검은 귀를 가지고 있다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "The rabbit has long black ears.",
+          "accept": [
+            "That rabbit has long black ears.",
+            "The rabbit has got long black ears.",
+            "That rabbit has got long black ears."
+          ],
+          "targets": [
+            [
+              "long black ears"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "black long ears",
+              "hint": "형용사 여러 개를 쓸 때는 순서가 있어요. 길이 · 크기가 색보다 먼저 와요."
+            },
+            {
+              "match": "the rabbit have",
+              "hint": "주어 The rabbit 은 한 마리예요. have 의 모양은?"
+            },
+            {
+              "match": "long black ear",
+              "hint": "귀는 두 개예요. 명사의 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #6",
+            "reviewWhere": "review 1 item 6 (p10, 밑줄 과제)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p7",
+          "ko": "나는 오래된 둥근 나무 탁자를 가지고 있다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "I have an old, round, wooden table.",
+          "accept": [
+            "I have an old, round, wood table.",
+            "I've got an old, round, wooden table.",
+            "I've got an old, round, wood table."
+          ],
+          "targets": [
+            [
+              "old, round, wooden",
+              "old, round, wood"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a old",
+              "hint": "old 는 모음 소리로 시작해요. 관사 모양을 보세요."
+            },
+            {
+              "match": "wooden round",
+              "hint": "형용사 순서는 나이 → 모양 → 재료예요. 모양과 재료의 차례를 보세요."
+            },
+            {
+              "match": "round old",
+              "hint": "형용사 순서는 나이 → 모양 → 재료예요. 나이가 먼저 와요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "have-has",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #7",
+            "reviewWhere": "review 1 item 7 (p10, 밑줄 과제)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p8",
+          "ko": "이것은 무슨 책이니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "What book is this?",
+          "accept": [
+            "What kind of book is this?",
+            "What sort of book is this?"
+          ],
+          "targets": [
+            [
+              "What book",
+              "What kind",
+              "What sort"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what is this book",
+              "hint": "'무슨 책'처럼 what 이 명사 book 을 바로 꾸미게 써 보세요."
+            },
+            {
+              "match": "what book this is",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "question-wh",
+            "pronoun-demonstrative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #8",
+            "reviewWhere": "review 1 item 8 (p10, 밑줄 과제)"
+          },
+          "fix": null,
+          "note": "What kind(sort) of book 의 what 도 명사 kind 를 꾸미는 의문형용사라 이 레슨 문법 그대로 — 정답으로 받음(G7 반박 점검)."
+        },
+        {
+          "id": "pg09-1:p9",
+          "ko": "어느 책이 네 것이니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Which book is yours?",
+          "accept": [],
+          "targets": [
+            [
+              "Which book"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "which book is your",
+              "hint": "'네 것'은 소유대명사로 써요."
+            },
+            {
+              "match": "what book is yours",
+              "hint": "정해진 몇 권 가운데 '어느' 것인지 고를 때 쓰는 의문형용사를 떠올려 보세요."
+            },
+            {
+              "match": "which is your book",
+              "hint": "'어느 책'처럼 which 가 명사 book 을 바로 꾸미게 써 보세요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "question-wh",
+            "pronoun-possessive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #9",
+            "reviewWhere": "review 1 item 9 (p10, 밑줄 과제)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p10",
+          "ko": "너 피곤해 보인다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "You look tired.",
+          "accept": [
+            "You seem tired.",
+            "You seem to be tired."
+          ],
+          "targets": [
+            [
+              "tired"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "look tiring",
+              "hint": "피곤함을 '느끼는' 사람이에요. -ed 와 -ing 중 어느 쪽일까요?"
+            },
+            {
+              "match": "look like tired",
+              "hint": "look 바로 뒤에는 형용사가 와요. look like 는 명사 앞에 써요."
+            },
+            {
+              "match": "you are look",
+              "hint": "look 이 이 문장의 동사예요. be동사를 함께 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "adjective-ing-ed",
+            "sentence-pattern-2"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #10",
+            "reviewWhere": "review 1 item 10 (p10, 밑줄 과제)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p11",
+          "ko": "그거 재미있게 들린다.",
+          "koSource": "new",
+          "condition": "형용사로",
+          "promptEn": null,
+          "en": "It sounds interesting.",
+          "accept": [
+            "That sounds interesting.",
+            "It sounds fun.",
+            "That sounds fun."
+          ],
+          "targets": [
+            [
+              "interesting",
+              "fun"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sounds interestingly",
+              "hint": "sound 뒤에는 부사가 아니라 형용사가 와요. 우리말 '-게'에 끌리지 마세요."
+            },
+            {
+              "match": "sounds interested",
+              "hint": "재미를 '주는' 쪽(그것)이에요. -ed 와 -ing 중 어느 쪽일까요?"
+            },
+            {
+              "match": "sounds like",
+              "hint": "조건은 '형용사로'예요. sound 바로 뒤에 형용사를 써 보세요(sound like 뒤에는 명사가 와요)."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "adjective-ing-ed",
+            "sentence-pattern-2"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #11",
+            "reviewWhere": "review 1 item 11 (p10, 밑줄 과제)"
+          },
+          "fix": null,
+          "note": "조건 '형용사로': It sounds like fun. 은 맞는 영어지만 sound + 형용사(서술적 용법)를 피해 가므로 p14 · p15 처럼 조건으로 미리 알림(G7 반박 점검)."
+        },
+        {
+          "id": "pg09-1:p12",
+          "ko": "진나는 부지런하다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Jinna is diligent.",
+          "accept": [
+            "Jinna is hardworking.",
+            "Jinna's diligent.",
+            "Jinna's hardworking."
+          ],
+          "targets": [
+            [
+              "diligent",
+              "hardworking",
+              "hard-working"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "jinna diligent",
+              "hint": "형용사가 주어를 설명할 때는 형용사 앞에 be동사가 있어야 해요."
+            },
+            {
+              "match": "is diligently",
+              "hint": "be동사 뒤에는 부사가 아니라 형용사가 와요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #12",
+            "reviewWhere": "review 1 item 12 (p10, 밑줄 과제)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p13",
+          "ko": "이 물고기들은 살아있다.",
+          "koSource": "review 2 item 1 (p11)",
+          "condition": null,
+          "promptEn": null,
+          "en": "These fish are alive.",
+          "accept": [],
+          "targets": [
+            [
+              "alive"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "are live",
+              "hint": "'살아 있는'을 be동사 뒤에 쓸 때는 live 가 아닌 다른 형용사를 써요."
+            },
+            {
+              "match": "these fishes",
+              "hint": "물고기 여러 마리는 보통 fish 그대로 써요."
+            },
+            {
+              "match": "this fish is",
+              "hint": "'이 물고기들'은 여럿이에요. 주어와 be동사를 여럿에 맞춰요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "noun-plural-rules",
+            "pronoun-demonstrative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #13",
+            "reviewWhere": "review 2 item 1 (p11)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p14",
+          "ko": "그 아이들은 어두운 것을 무서워한다.",
+          "koSource": "review 2 item 2 (p11)",
+          "condition": "형용사로",
+          "promptEn": null,
+          "en": "The kids are afraid of the dark.",
+          "accept": [
+            "The kids are scared of the dark.",
+            "The kids are frightened of the dark.",
+            "The children are afraid of the dark.",
+            "The children are scared of the dark.",
+            "The children are frightened of the dark.",
+            "The kids are afraid of darkness.",
+            "The kids are scared of darkness.",
+            "The kids are frightened of darkness.",
+            "The children are afraid of darkness.",
+            "The children are scared of darkness.",
+            "The children are frightened of darkness."
+          ],
+          "targets": [
+            [
+              "afraid of",
+              "scared of",
+              "frightened of"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "afraid the dark",
+              "hint": "afraid 뒤에 무서워하는 대상을 쓸 때는 전치사가 필요해요."
+            },
+            {
+              "match": "kids afraid of",
+              "hint": "형용사가 주어를 설명할 때는 형용사 앞에 be동사가 있어야 해요."
+            },
+            {
+              "match": "fear the dark",
+              "hint": "조건은 '형용사로'예요. '무서워하다'를 be동사 + 형용사로 써 보세요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #14",
+            "reviewWhere": "review 2 item 2 (p11)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p15",
+          "ko": "그는 깊이 잠들어 있다.",
+          "koSource": "review 2 item 3 (p11, 고침)",
+          "condition": "형용사로",
+          "promptEn": null,
+          "en": "He is fast asleep.",
+          "accept": [
+            "He is sound asleep.",
+            "He is deeply asleep.",
+            "He is soundly asleep."
+          ],
+          "targets": [
+            [
+              "asleep"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sleeping",
+              "hint": "조건은 '형용사로'예요. '잠들어 있는' 상태를 나타내는 형용사를 써 보세요."
+            },
+            {
+              "match": "he is sleepy",
+              "hint": "sleepy 는 '졸린'이에요. '잠들어 있는'을 뜻하는 형용사는 따로 있어요."
+            },
+            {
+              "match": "he fast asleep",
+              "hint": "형용사가 주어를 설명할 때는 형용사 앞에 be동사가 있어야 해요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #15",
+            "reviewWhere": "review 2 item 3 (p11)"
+          },
+          "fix": {
+            "fromKo": "그는 빠르게 잠이 든다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "fast asleep 은 '깊이 잠들어 있다'(상태)이지 '빨리 잠든다'가 아닙니다. 원래 한국어대로면 He falls asleep quickly. 가 답이 되어 서술적 형용사 asleep 연습이 사라지므로 한국어를 고치고 조건 '형용사로'를 붙였습니다."
+          }
+        },
+        {
+          "id": "pg09-1:p16",
+          "ko": "너는 거울에서 빛나는 얼굴을 볼 수 있어.",
+          "koSource": "review 2 item 4 (p11)",
+          "condition": null,
+          "promptEn": null,
+          "en": "You can see a shining face in the mirror.",
+          "accept": [
+            "You can see a glowing face in the mirror."
+          ],
+          "targets": [
+            [
+              "shining face",
+              "glowing face"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "on the mirror",
+              "hint": "거울 속에 비친 모습은 on 이 아니라 다른 전치사로 말해요."
+            },
+            {
+              "match": "shined face",
+              "hint": "빛을 '내는' 얼굴이에요. -ed 와 -ing 중 어느 쪽일까요?"
+            },
+            {
+              "match": "can sees",
+              "hint": "can 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "adjective-ing-ed",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #16",
+            "reviewWhere": "review 2 item 4 (p11)"
+          },
+          "fix": {
+            "from": "You can see a shining face on the mirror.",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "거울에 비친 모습은 in the mirror 입니다(on the mirror 는 거울 표면에 붙은 얼룩 · 스티커 같은 것). Review 2 item 4 의 정답도 같은 문장이라 함께 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg09-1:p17",
+          "ko": "만족하십니까?",
+          "koSource": "review 2 item 5 (p11)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Are you satisfied?",
+          "accept": [
+            "Do you feel satisfied?"
+          ],
+          "targets": [
+            [
+              "satisfied"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "are you satisfying",
+              "hint": "만족을 '느끼는' 사람이에요. -ed 와 -ing 중 어느 쪽일까요?"
+            },
+            {
+              "match": "do you satisfied",
+              "hint": "satisfied 는 형용사예요. 무엇으로 물을까요?"
+            },
+            {
+              "match": "you are satisfied",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            }
+          ],
+          "tags": [
+            "adjective-ing-ed",
+            "question-yes-no"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #17",
+            "reviewWhere": "review 2 item 5 (p11)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p18",
+          "ko": "제인의 직업은 지겹다.",
+          "koSource": "review 2 item 6 (p11)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Jane's job is boring.",
+          "accept": [],
+          "targets": [
+            [
+              "boring"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "job is bored",
+              "hint": "직업은 지루함을 '주는' 쪽이에요. -ed 와 -ing 중 어느 쪽일까요?"
+            },
+            {
+              "match": "jane job",
+              "hint": "'제인의'는 이름 뒤에 소유를 나타내는 표시를 붙여요."
+            }
+          ],
+          "tags": [
+            "adjective-ing-ed",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #18",
+            "reviewWhere": "review 2 item 6 (p11)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p19",
+          "ko": "제인은 지겨워한다.",
+          "koSource": "review 2 item 7 (p11)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Jane is bored.",
+          "accept": [
+            "Jane feels bored.",
+            "Jane's bored."
+          ],
+          "targets": [
+            [
+              "bored"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "jane is boring",
+              "hint": "제인은 지루함을 '느끼는' 쪽이에요. 이렇게 쓰면 '제인은 (남을) 지루하게 하는 사람이다'가 돼요."
+            },
+            {
+              "match": "jane bored",
+              "hint": "형용사가 주어를 설명할 때는 형용사 앞에 be동사가 있어야 해요."
+            }
+          ],
+          "tags": [
+            "adjective-ing-ed",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 7,
+            "where": "application #19",
+            "reviewWhere": "review 2 item 7 (p11)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p20",
+          "ko": "그는 거대한 로봇을 보고 놀라서 서 있었다.",
+          "koSource": "review 2 item 10 (p11)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He stood astonished at the sight of the huge robot.",
+          "accept": [
+            "He stood astonished at the sight of the giant robot.",
+            "He stood amazed at the sight of the huge robot.",
+            "He stood amazed at the sight of the giant robot.",
+            "He stood surprised at the sight of the huge robot.",
+            "He stood surprised at the sight of the giant robot.",
+            "He stood astonished when he saw the huge robot.",
+            "He stood astonished when he saw the giant robot.",
+            "He stood amazed when he saw the huge robot.",
+            "He stood amazed when he saw the giant robot.",
+            "He stood surprised when he saw the huge robot.",
+            "He stood surprised when he saw the giant robot.",
+            "He stood astonished at the huge robot.",
+            "He stood astonished at the giant robot.",
+            "He stood amazed at the huge robot.",
+            "He stood amazed at the giant robot.",
+            "He stood surprised at the huge robot.",
+            "He stood surprised at the giant robot.",
+            "He stood there astonished at the sight of the huge robot.",
+            "He stood there astonished at the sight of the giant robot.",
+            "He stood there amazed at the sight of the huge robot.",
+            "He stood there amazed at the sight of the giant robot.",
+            "He stood there surprised at the sight of the huge robot.",
+            "He stood there surprised at the sight of the giant robot."
+          ],
+          "targets": [
+            [
+              "astonished",
+              "amazed",
+              "surprised"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "stood astonishing",
+              "hint": "놀람을 '느낀' 사람이에요. -ed 와 -ing 중 어느 쪽일까요?"
+            },
+            {
+              "match": "he stands",
+              "hint": "'서 있었다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "adjective-ing-ed",
+            "sentence-pattern-2",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #22",
+            "reviewWhere": "review 2 item 10 (p11)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-1:p21",
+          "ko": "그것은 배우기에 신나는 시간이다.",
+          "koSource": "review 2 item 8 (p11, 고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "It is an exciting time to learn.",
+          "accept": [],
+          "targets": [
+            [
+              "exciting"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "an excited time",
+              "hint": "시간은 신남을 '주는' 쪽이에요. -ed 와 -ing 중 어느 쪽일까요?"
+            },
+            {
+              "match": "a exciting",
+              "hint": "exciting 은 모음 소리로 시작해요. 관사 모양을 보세요."
+            },
+            {
+              "match": "time to learning",
+              "hint": "to 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "adjective-ing-ed",
+            "adjective-attributive-predicative",
+            "infinitive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "infinitive"
+          ],
+          "challengeNote": "time to learn(배울 시간)의 to부정사 없이는 같은 뜻을 만들 수 없어 도전으로 둠.",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #20",
+            "reviewWhere": "review 2 item 8 (p11)"
+          },
+          "fix": {
+            "fromKo": "그것은 배우기에 재미있는 시간이다.",
+            "field": "ko",
+            "kind": "answer_ambiguous",
+            "why": "exciting 은 '신나는'이고 '재미있는'은 interesting · fun 에 가까워, 같은 레슨의 interesting 과 헷갈리지 않게 '신나는'으로 고쳤습니다(영어는 교재 그대로)."
+          }
+        },
+        {
+          "id": "pg09-1:p22",
+          "ko": "우리는 야구 경기를 보게 되어 신이 났다.",
+          "koSource": "review 2 item 9 (p11, 고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "We were excited to watch the baseball game.",
+          "accept": [
+            "We were excited to see the baseball game.",
+            "We were excited to watch a baseball game.",
+            "We were excited to see a baseball game."
+          ],
+          "targets": [
+            [
+              "excited"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "we were exciting",
+              "hint": "신이 난 것을 '느낀' 사람들이에요. -ed 와 -ing 중 어느 쪽일까요?"
+            },
+            {
+              "match": "excited to watching",
+              "hint": "to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "we was",
+              "hint": "We 는 여럿이에요. be동사 과거 모양은?"
+            }
+          ],
+          "tags": [
+            "adjective-ing-ed",
+            "be-past",
+            "infinitive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "infinitive"
+          ],
+          "challengeNote": "excited to watch(보게 되어 신난)의 to부정사 없이는 같은 뜻을 만들 수 없어 도전으로 둠.",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #21",
+            "reviewWhere": "review 2 item 9 (p11)"
+          },
+          "fix": {
+            "fromKo": "우리는 야구 경기보는 것에 신이 났다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'경기보는'은 '경기를 보는'처럼 띄어 쓰고 조사를 넣어야 하고, to watch(보게 되어)의 뜻이 드러나게 '야구 경기를 보게 되어 신이 났다'로 고쳤습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg09-1:t1",
+          "ko": "그 책은 재미있어 보인다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "That book looks interesting.",
+          "accept": [
+            "The book looks interesting.",
+            "That book looks fun.",
+            "The book looks fun.",
+            "That book seems interesting.",
+            "The book seems interesting.",
+            "That book seems fun.",
+            "The book seems fun."
+          ],
+          "targets": [
+            [
+              "looks interesting",
+              "looks fun",
+              "seems interesting",
+              "seems fun"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "looks interested",
+              "hint": "책은 재미를 '주는' 쪽이에요. -ed 와 -ing 중 어느 쪽일까요?"
+            },
+            {
+              "match": "looks like interesting",
+              "hint": "look 바로 뒤에는 형용사가 와요. look like 는 명사 앞에 써요."
+            },
+            {
+              "match": "book look",
+              "hint": "주어 That book 은 한 권이에요. 동사 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "adjective-attributive-predicative",
+            "adjective-ing-ed",
+            "sentence-pattern-2"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-019#5",
+          "bookRef": null,
+          "fix": null,
+          "note": "GRAMMAR II 대안 3개에 더해, seem 도 look 처럼 뒤에 형용사가 오는 동사(서술적 용법)라 '재미있어 보인다'를 seems 로 옮긴 답도 받음(G7 반박 점검)."
+        },
+        {
+          "id": "pg09-1:t2",
+          "ko": "왜 너는 놀랐니?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Why were you surprised?",
+          "accept": [],
+          "targets": [
+            [
+              "surprised"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "were you surprising",
+              "hint": "놀람을 '느낀' 사람이에요. -ed 와 -ing 중 어느 쪽일까요?"
+            },
+            {
+              "match": "why did you surprised",
+              "hint": "surprised 는 형용사예요. 무엇으로 물을까요?"
+            },
+            {
+              "match": "why you were",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            }
+          ],
+          "tags": [
+            "adjective-ing-ed",
+            "question-wh",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-077#27",
+          "bookRef": null,
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg09-1:f1",
+      "template": "I feel excited when I ___.",
+      "ko": "나는 ___할 때 신이 난다."
+    }
+  ]
+}

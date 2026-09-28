@@ -1,0 +1,1014 @@
+{
+  "id": "pg18-4",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "부사의 위치·비교급·최상급",
+  "label": "TOPIC 18. 부사",
+  "menuLabel": "18-4. 부사의 위치·비교급·최상급",
+  "unit": 18,
+  "part": 3,
+  "order": 4,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(4) 비교급과 최상급 / 위치",
+  "grammarTags": [
+    "adverb-position",
+    "adverb-comparison"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg18-4:a1",
+          "en": "I am a pretty happy person.",
+          "ko": "나는 꽤 행복한 사람이다.",
+          "koSource": "review 3 item 37 (고침)",
+          "focus": [
+            "pretty"
+          ],
+          "studentRef": {
+            "lesson": "s1-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 19,
+            "where": "passOff (4) 비교급과 최상급 / 위치 item 1",
+            "reviewWhere": "review 3 item 37 (p28)"
+          },
+          "fix": {
+            "fromKo": "나는 매우 행복한 사람이다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "목표 부사 pretty 는 '꽤'인데 한국어가 '매우'(very)라 이 소주제를 연습하지 못함 → '꽤'로 고침."
+          }
+        },
+        {
+          "id": "pg18-4:a2",
+          "en": "They are studying pretty hard.",
+          "ko": "그들은 꽤 열심히 공부하고 있다.",
+          "koSource": "review 3 item 38 (고침)",
+          "focus": [
+            "pretty"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 19,
+            "where": "passOff (4) 비교급과 최상급 / 위치 item 2",
+            "reviewWhere": "review 3 item 38 (p28)"
+          },
+          "fix": {
+            "fromKo": "그들은 매우 열심히 공부하고 있다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "목표 부사 pretty 는 '꽤'인데 한국어가 '매우'(very)라 → '꽤'로 고침."
+          }
+        },
+        {
+          "id": "pg18-4:a3",
+          "en": "My mother always makes dinner.",
+          "ko": "나의 어머니께서는 항상 저녁을 만드십니다.",
+          "koSource": "student:s9-3#2",
+          "focus": [
+            "always"
+          ],
+          "studentRef": {
+            "lesson": "s9-3",
+            "kind": "exact"
+          },
+          "source": "student:s9-3#2",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        },
+        {
+          "id": "pg18-4:a4",
+          "en": "My father is always helpful around the house.",
+          "ko": "나의 아버지는 항상 집안일을 잘 도와주십니다.",
+          "koSource": "student:s2-4#4",
+          "focus": [
+            "always"
+          ],
+          "studentRef": {
+            "lesson": "s2-4",
+            "kind": "exact"
+          },
+          "source": "student:s2-4#4",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        },
+        {
+          "id": "pg18-4:a5",
+          "en": "I usually hang out with my friends on Saturdays.",
+          "ko": "나는 보통 토요일에 나의 친구들과 함께 시간을 보냅니다.",
+          "koSource": "student:s11-1#5",
+          "focus": [
+            "usually"
+          ],
+          "studentRef": {
+            "lesson": "s11-1",
+            "kind": "exact"
+          },
+          "source": "student:s11-1#5",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        },
+        {
+          "id": "pg18-4:a6",
+          "en": "Jake runs faster than his brother.",
+          "ko": "제이크는 형보다 더 빨리 달린다.",
+          "koSource": "new",
+          "focus": [
+            "faster"
+          ],
+          "source": "new",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        },
+        {
+          "id": "pg18-4:a7",
+          "en": "She sings the best in our class.",
+          "ko": "그녀는 우리 반에서 노래를 가장 잘한다.",
+          "koSource": "new",
+          "focus": [
+            "the best"
+          ],
+          "source": "new",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg18-4:a3",
+          "pg18-4:a4",
+          "pg18-4:a5"
+        ],
+        "question": "always · usually 는 makes · hang out 앞에, is 뒤에 있어요. 이 부사들의 자리를 정하는 것은 무엇일까요?",
+        "options": [
+          "뒤에 오는 동사가 일반동사인지 be동사인지",
+          "주어가 한 명인지 여럿인지",
+          "문장이 현재인지 과거인지"
+        ],
+        "answer": 0,
+        "why": "always · usually · often · never 같은 빈도부사는 일반동사 앞, be동사 뒤에 와요. 주어나 시제와는 상관없어요."
+      },
+      "title": "부사의 자리와 비교급 · 최상급",
+      "points": [
+        "빈도부사(always · usually · often · never)는 보통 일반동사 앞, be동사 · 조동사 뒤에 와요.",
+        "정도부사(very · pretty · too)는 꾸미는 형용사 · 부사 바로 앞 — enough 만 뒤(big enough)",
+        "-ly 부사의 비교급 · 최상급은 앞에 more · most: more slowly, most carefully",
+        "형용사와 모양이 같은 부사는 -er · -est: fast → faster → fastest, early → earlier",
+        "불규칙: well → better → best, badly → worse → worst, much → more → most"
+      ],
+      "table": {
+        "columns": [
+          "원급",
+          "비교급",
+          "최상급"
+        ],
+        "rows": [
+          [
+            "fast",
+            "faster",
+            "fastest"
+          ],
+          [
+            "hard",
+            "harder",
+            "hardest"
+          ],
+          [
+            "early",
+            "earlier",
+            "earliest"
+          ],
+          [
+            "slowly",
+            "more slowly",
+            "most slowly"
+          ],
+          [
+            "well",
+            "better",
+            "best"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '항상 · 보통'을 동사 앞 어디에 두어도 되지만, 영어 빈도부사는 일반동사 앞, be동사 뒤로 자리가 정해져 있어요. '더 빨리 · 가장 빨리'도 영어는 '더'를 따로 붙이지 않고 faster · fastest 처럼 낱말의 모양을 바꾸는 경우가 많아요.",
+      "mistakes": [
+        {
+          "wrong": "I eat often breakfast.",
+          "right": "I often eat breakfast.",
+          "why": "빈도부사는 일반동사(eat) 앞에 와요."
+        },
+        {
+          "wrong": "She speaks more faster than me.",
+          "right": "She speaks faster than me.",
+          "why": "faster 에 이미 '더'가 들어 있어 more 를 또 쓰지 않아요."
+        }
+      ],
+      "worked": [
+        "그는 나보다 영어를 더 잘한다.",
+        "'잘' = well (부사)",
+        "well 의 비교급은 불규칙 → better",
+        "'~보다' = than",
+        "He speaks English better than me."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'He studies ___ than I do.' 빈칸에 알맞은 것은? (그는 나보다 더 열심히 공부한다.)",
+        "options": [
+          "more hard",
+          "harder",
+          "hardlier"
+        ],
+        "answer": 1,
+        "why": "hard 는 형용사와 모양이 같은 부사라 -er 을 붙여요: harder.",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg18-4:s1",
+          "kind": "choice",
+          "instruction": "빈도부사가 바른 자리에 있는 문장은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "He is busy always on Mondays.",
+            "He is always busy on Mondays.",
+            "He always busy is on Mondays."
+          ],
+          "answer": 1,
+          "why": "be동사(is)가 있으면 빈도부사는 be동사 바로 뒤에 와요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg18-4:s2",
+          "kind": "choice",
+          "instruction": "빈도부사가 바른 자리에 있는 문장은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "My brother plays often computer games.",
+            "My brother often plays computer games.",
+            "My brother plays computer often games."
+          ],
+          "answer": 1,
+          "why": "일반동사(plays)가 있으면 빈도부사는 그 앞에 와요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg18-4:s3",
+          "kind": "select",
+          "instruction": "형용사나 부사를 꾸미는 부사를 누르세요",
+          "tokens": [
+            "They",
+            "are",
+            "studying",
+            "pretty",
+            "hard",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "pretty(꽤)는 부사 hard 바로 앞에서 정도를 나타내요. hard(열심히)는 동사 studying 을 꾸미는 부사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 19,
+            "where": "passOff (4) item 2"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg18-4:s4",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은? (마이크는 나보다 더 빨리 달린다.)",
+          "sentence": "Mike runs ___ than me.",
+          "underline": [],
+          "options": [
+            "fast",
+            "faster",
+            "more fast"
+          ],
+          "answer": 1,
+          "why": "fast 는 형용사와 모양이 같은 부사라 비교급도 -er 을 붙여요: faster.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg18-4:s5",
+          "kind": "choice",
+          "instruction": "well 의 비교급 · 최상급을 바르게 짝지은 것은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "well - weller - wellest",
+            "well - better - best",
+            "well - more well - most well"
+          ],
+          "answer": 1,
+          "why": "well 은 불규칙이에요: better(더 잘) · best(가장 잘).",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg18-4:s6",
+          "kind": "short",
+          "instruction": "괄호 안의 부사를 비교급으로 쓰세요",
+          "sentence": "You can do it ___ with this computer. (easily)",
+          "answer": [
+            "more easily"
+          ],
+          "why": "-ly 로 끝나는 부사는 앞에 more 를 붙여요: more easily.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg18-4:s7",
+          "kind": "select",
+          "instruction": "빈도부사를 모두 누르세요",
+          "tokens": [
+            "My",
+            "mother",
+            "always",
+            "makes",
+            "dinner",
+            ",",
+            "and",
+            "my",
+            "father",
+            "often",
+            "washes",
+            "the",
+            "dishes",
+            "."
+          ],
+          "answer": [
+            2,
+            9
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "always(항상) · often(자주)은 얼마나 자주 하는지를 나타내는 빈도부사로, 일반동사 makes · washes 앞에 와요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "레슨 안 형태 찾기는 6개로 두고 이 문항은 날을 넘기는 복습용(reserve).",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg18-4:p1",
+          "ko": "톰은 항상 차로 출근한다.",
+          "koSource": "review 3 item 18",
+          "condition": null,
+          "promptEn": null,
+          "en": "Tom always goes to work by car.",
+          "accept": [
+            "Tom always drives to work."
+          ],
+          "targets": [
+            [
+              "always"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Tom goes always",
+              "hint": "always · usually 같은 빈도부사는 일반동사 앞에 와요."
+            },
+            {
+              "match": "Tom always go to",
+              "hint": "주어 Tom 은 3인칭 단수예요."
+            }
+          ],
+          "tags": [
+            "adverb-position",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 18",
+            "reviewWhere": "review 3 item 18 (p27)"
+          },
+          "fix": null,
+          "note": "교재 Application 18 은 '(2) 부사의 여러 가지 용법' 쪽 순서에 있지만(추출자 impliedGroup), 빈도부사 always 의 자리(일반동사 앞)가 요점이라 위치를 다루는 이 소주제(4)에서 연습하도록 여기에 둠(내용 배치 — 레슨 구조는 그대로)."
+        },
+        {
+          "id": "pg18-4:p2",
+          "ko": "나는 꽤 행복한 사람이다.",
+          "koSource": "review 3 item 37 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I am a pretty happy person.",
+          "accept": [
+            "I am a fairly happy person.",
+            "I am quite a happy person.",
+            "I am a rather happy person.",
+            "I am rather a happy person."
+          ],
+          "targets": [
+            [
+              "pretty",
+              "fairly",
+              "quite",
+              "rather"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a happy pretty person",
+              "hint": "pretty(꽤)는 꾸미는 형용사 happy 바로 앞에 와요."
+            },
+            {
+              "match": "I am a very happy person",
+              "hint": "'꽤'는 very(매우)보다 약한 말이에요."
+            }
+          ],
+          "tags": [
+            "adverb-position",
+            "be-present",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s1-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 22,
+            "where": "application item 41",
+            "reviewWhere": "review 3 item 37 (p28)"
+          },
+          "fix": {
+            "fromKo": "나는 매우 행복한 사람이다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "목표 부사 pretty 는 '꽤'인데 한국어가 '매우'(very)라 very 를 쓰게 되어 이 소주제를 연습하지 못함 → '꽤'로 고침(판정 p28)."
+          }
+        },
+        {
+          "id": "pg18-4:p3",
+          "ko": "그들은 꽤 열심히 공부하고 있다.",
+          "koSource": "review 3 item 38 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "They are studying pretty hard.",
+          "accept": [
+            "They are studying quite hard.",
+            "They are studying fairly hard.",
+            "They are studying rather hard."
+          ],
+          "targets": [
+            [
+              "pretty",
+              "quite",
+              "fairly",
+              "rather"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "studying hard pretty",
+              "hint": "pretty 는 꾸미는 부사 hard 바로 앞에 와요."
+            },
+            {
+              "match": "pretty hardly",
+              "hint": "hardly 는 '거의 ~않다'예요. '열심히'는 어떤 모양일까요?"
+            }
+          ],
+          "tags": [
+            "adverb-position",
+            "progressive",
+            "adverb-flat-form"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 42",
+            "reviewWhere": "review 3 item 38 (p28)"
+          },
+          "fix": {
+            "fromKo": "그들은 매우 열심히 공부하고 있다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "목표 부사 pretty 는 '꽤'인데 한국어가 '매우'(very)라 → '꽤'로 고침(판정 p28)."
+          }
+        },
+        {
+          "id": "pg18-4:p4",
+          "ko": "나의 어머니께서는 항상 저녁을 만드십니다.",
+          "koSource": "student:s9-3#2",
+          "condition": null,
+          "promptEn": null,
+          "en": "My mother always makes dinner.",
+          "accept": [
+            "My mother always cooks dinner.",
+            "My mom always makes dinner.",
+            "My mom always cooks dinner."
+          ],
+          "targets": [
+            [
+              "always"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "makes always",
+              "hint": "always · usually 같은 빈도부사는 일반동사 앞에 와요."
+            },
+            {
+              "match": "mother always make",
+              "hint": "주어 My mother 는 3인칭 단수예요."
+            }
+          ],
+          "tags": [
+            "adverb-position",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s9-3",
+            "kind": "exact"
+          },
+          "bookRef": null,
+          "fix": null,
+          "source": "student:s9-3#2",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        },
+        {
+          "id": "pg18-4:p5",
+          "ko": "나의 아버지는 항상 집안일을 잘 도와주십니다.",
+          "koSource": "student:s2-4#4",
+          "condition": null,
+          "promptEn": null,
+          "en": "My father is always helpful around the house.",
+          "accept": [
+            "My dad is always helpful around the house.",
+            "My father always helps around the house.",
+            "My father always helps with the housework.",
+            "My father always helps with housework.",
+            "My dad always helps around the house.",
+            "My dad always helps with the housework.",
+            "My dad always helps with housework."
+          ],
+          "targets": [
+            [
+              "always"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "My father always is",
+              "hint": "be동사(is)가 있으면 빈도부사는 그 뒤에 와요."
+            },
+            {
+              "match": "helps always",
+              "hint": "always · usually 같은 빈도부사는 일반동사 앞에 와요."
+            }
+          ],
+          "tags": [
+            "adverb-position",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-4",
+            "kind": "exact"
+          },
+          "bookRef": null,
+          "fix": null,
+          "source": "student:s2-4#4",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장. STUDENT 한국어('집안일을 잘 도와주십니다')대로 helps 로 쓴 답도 받음(빈도부사 자리는 같음)."
+        },
+        {
+          "id": "pg18-4:p6",
+          "ko": "나는 보통 토요일에 나의 친구들과 함께 시간을 보냅니다.",
+          "koSource": "student:s11-1#5",
+          "condition": null,
+          "promptEn": null,
+          "en": "I usually hang out with my friends on Saturdays.",
+          "accept": [
+            "I usually spend time with my friends on Saturdays.",
+            "On Saturdays, I usually hang out with my friends.",
+            "On Saturdays, I usually spend time with my friends."
+          ],
+          "targets": [
+            [
+              "usually"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I hang out usually",
+              "hint": "always · usually 같은 빈도부사는 일반동사 앞에 와요."
+            },
+            {
+              "match": "I spend usually",
+              "hint": "always · usually 같은 빈도부사는 일반동사 앞에 와요."
+            }
+          ],
+          "tags": [
+            "adverb-position",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s11-1",
+            "kind": "exact"
+          },
+          "bookRef": null,
+          "fix": null,
+          "source": "student:s11-1#5",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        },
+        {
+          "id": "pg18-4:p7",
+          "ko": "그녀는 절대 학교에 늦지 않는다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "She is never late for school.",
+          "accept": [
+            "She is never late to school."
+          ],
+          "targets": [
+            [
+              "never"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "She never is late",
+              "hint": "be동사(is)가 있으면 빈도부사는 그 뒤에 와요."
+            },
+            {
+              "match": "is not never late",
+              "hint": "never 에 이미 부정의 뜻이 있어 not 을 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "adverb-position",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        },
+        {
+          "id": "pg18-4:p8",
+          "ko": "제이크는 형보다 더 빨리 달린다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Jake runs faster than his brother.",
+          "accept": [
+            "Jake runs faster than his brother does.",
+            "Jake runs faster than his older brother.",
+            "Jake runs faster than his older brother does.",
+            "Jake runs more quickly than his brother.",
+            "Jake runs more quickly than his brother does.",
+            "Jake runs more quickly than his older brother.",
+            "Jake runs more quickly than his older brother does.",
+            "Jake runs faster than his elder brother.",
+            "Jake runs faster than his elder brother does.",
+            "Jake runs faster than his big brother.",
+            "Jake runs faster than his big brother does.",
+            "Jake runs more quickly than his elder brother.",
+            "Jake runs more quickly than his elder brother does.",
+            "Jake runs more quickly than his big brother.",
+            "Jake runs more quickly than his big brother does."
+          ],
+          "targets": [
+            [
+              "faster",
+              "more quickly"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "more faster",
+              "hint": "faster 에 이미 '더'가 들어 있어 more 를 또 쓰지 않아요."
+            },
+            {
+              "match": "runs fast than",
+              "hint": "'더 빨리'는 비교급 모양이에요."
+            }
+          ],
+          "tags": [
+            "adverb-comparison",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        },
+        {
+          "id": "pg18-4:p9",
+          "ko": "그녀는 우리 반에서 노래를 가장 잘한다.",
+          "koSource": "new",
+          "condition": "동사 sing을 써서",
+          "promptEn": null,
+          "en": "She sings the best in our class.",
+          "accept": [
+            "She sings best in our class."
+          ],
+          "targets": [
+            [
+              "best"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sings most well",
+              "hint": "well 의 최상급은 모양이 완전히 달라요(불규칙)."
+            },
+            {
+              "match": "She is the best singer",
+              "hint": "맞는 말이지만 조건은 '동사 sing을 써서'예요. 동사를 꾸미는 부사의 최상급을 써 보세요."
+            }
+          ],
+          "tags": [
+            "adverb-comparison",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        },
+        {
+          "id": "pg18-4:p10",
+          "ko": "나의 아버지는 어머니보다 더 일찍 일어나신다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "My father gets up earlier than my mother.",
+          "accept": [
+            "My father gets up earlier than my mother does.",
+            "My father gets up earlier than my mom.",
+            "My father gets up earlier than my mom does.",
+            "My father wakes up earlier than my mother.",
+            "My father wakes up earlier than my mother does.",
+            "My father wakes up earlier than my mom.",
+            "My father wakes up earlier than my mom does.",
+            "My dad gets up earlier than my mother.",
+            "My dad gets up earlier than my mother does.",
+            "My dad gets up earlier than my mom.",
+            "My dad gets up earlier than my mom does.",
+            "My dad wakes up earlier than my mother.",
+            "My dad wakes up earlier than my mother does.",
+            "My dad wakes up earlier than my mom.",
+            "My dad wakes up earlier than my mom does."
+          ],
+          "targets": [
+            [
+              "earlier"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "more early",
+              "hint": "early 의 비교급은 more 를 쓰지 않고 끝을 바꿔요."
+            },
+            {
+              "match": "up early than",
+              "hint": "'더 일찍'은 비교급 모양이에요."
+            }
+          ],
+          "tags": [
+            "adverb-comparison",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        },
+        {
+          "id": "pg18-4:p11",
+          "ko": "좀 더 조심해서 운전해 주세요.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Please drive more carefully.",
+          "accept": [
+            "Please drive a little more carefully.",
+            "Please drive a bit more carefully.",
+            "Drive more carefully, please.",
+            "Could you drive more carefully?",
+            "Could you drive a little more carefully?",
+            "Could you drive a bit more carefully?",
+            "Could you please drive more carefully?",
+            "Could you please drive a little more carefully?",
+            "Could you please drive a bit more carefully?",
+            "Would you drive more carefully?",
+            "Would you drive a little more carefully?",
+            "Would you drive a bit more carefully?",
+            "Would you please drive more carefully?",
+            "Would you please drive a little more carefully?",
+            "Would you please drive a bit more carefully?",
+            "Can you drive more carefully?",
+            "Can you drive a little more carefully?",
+            "Can you drive a bit more carefully?",
+            "Can you please drive more carefully?",
+            "Can you please drive a little more carefully?",
+            "Can you please drive a bit more carefully?"
+          ],
+          "targets": [
+            [
+              "more carefully"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "drive more careful",
+              "hint": "동사 drive 를 꾸미는 말은 부사(-ly) 모양이에요."
+            },
+            {
+              "match": "drive carefully more",
+              "hint": "'더'를 뜻하는 말은 꾸미는 부사 바로 앞에 와요."
+            }
+          ],
+          "tags": [
+            "adverb-comparison",
+            "imperative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        },
+        {
+          "id": "pg18-4:p12",
+          "ko": "너희 반에서 누가 가장 빨리 달리니?",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Who runs the fastest in your class?",
+          "accept": [
+            "Who runs fastest in your class?"
+          ],
+          "targets": [
+            [
+              "fastest"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "runs the most fast",
+              "hint": "fast 는 짧은 낱말이라 most 를 쓰지 않아요."
+            },
+            {
+              "match": "Who does run",
+              "hint": "'누가'가 주어인 질문은 does 없이 동사를 바로 써요."
+            }
+          ],
+          "tags": [
+            "adverb-comparison",
+            "pronoun-interrogative",
+            "question-wh",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "교재 (4) 본문은 정도부사 pretty 예문 2개뿐이고 제목의 위치 · 비교급 · 최상급 예문이 없어(판정 p19) 보충한 문장."
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg18-4:t1",
+          "ko": "소리는 빛보다 더 천천히 이동한다(움직인다).",
+          "koSource": "grammar2:gh2-020#4 ('여행한다' → '이동한다': 어색한 직역을 다듬음)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Sound travels more slowly than light.",
+          "accept": [
+            "Sound travels slower than light.",
+            "Sound moves more slowly than light.",
+            "Sound moves slower than light."
+          ],
+          "targets": [
+            [
+              "more slowly",
+              "slower"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "more slow than",
+              "hint": "동사 travels 를 꾸미는 부사의 비교급이에요. -ly 부사의 모양을 살려 보세요."
+            }
+          ],
+          "tags": [
+            "adverb-comparison",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-020#4"
+        },
+        {
+          "id": "pg18-4:t2",
+          "ko": "왜 우리는 항상 여기에 머무니?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Why do we always stay here?",
+          "accept": [],
+          "targets": [
+            [
+              "always"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Why do we stay always",
+              "hint": "always 같은 빈도부사는 일반동사 앞에 와요."
+            }
+          ],
+          "tags": [
+            "adverb-position",
+            "adverb-interrogative",
+            "question-wh"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-109#61",
+          "note": "GRAMMAR I 허용 답 Why do we stay here all the time? 은 빈도부사 always 를 쓰지 않아 뺌(이 레슨의 목표: 빈도부사의 자리)."
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg18-4:f1",
+      "template": "I always ___ before breakfast.",
+      "ko": "나는 아침 식사 전에 항상 ___."
+    }
+  ]
+}

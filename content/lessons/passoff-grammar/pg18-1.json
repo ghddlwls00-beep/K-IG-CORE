@@ -1,0 +1,2222 @@
+{
+  "id": "pg18-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "부사의 종류",
+  "label": "TOPIC 18. 부사",
+  "menuLabel": "18-1. 부사의 종류",
+  "unit": 18,
+  "part": 3,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) -ly 부사 · (5) 의문부사",
+  "grammarTags": [
+    "adverb-ly",
+    "adverb-interrogative"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg18-1:a1",
+          "en": "My elementary school is fairly large.",
+          "ko": "나의 초등학교는 꽤 큽니다.",
+          "koSource": "student:s6-1#3",
+          "focus": [
+            "fairly"
+          ],
+          "studentRef": {
+            "lesson": "s6-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (1) item 1",
+            "reviewWhere": "review 1 item 1 (p24) · review 3 item 1 (p26)"
+          },
+          "fix": {
+            "fromKo": "나의 초등학교는 상당히 크다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT 6과(s6-1)와 글자까지 같은 문장이라 한국어도 STUDENT 판으로 맞춤(사장님 결정). 교재 한국어가 틀린 것은 아님."
+          }
+        },
+        {
+          "id": "pg18-1:a2",
+          "en": "Would you speak more slowly?",
+          "ko": "조금만 더 천천히 말씀해 주실래요?",
+          "koSource": "review 3 item 4",
+          "focus": [
+            "more slowly"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (1) item 2",
+            "reviewWhere": "review 1 item 2 (p24) · review 3 item 4 (p26)"
+          }
+        },
+        {
+          "id": "pg18-1:a3",
+          "en": "He is a truly smart person, and I am sure that his dream will come true.",
+          "ko": "그는 진실로 똑똑한 사람이고 나는 그의 꿈이 실현될 것을 확신한다.",
+          "koSource": "review 3 item 5",
+          "focus": [
+            "truly"
+          ],
+          "studentRef": {
+            "lesson": "s3-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (1) item 3",
+            "reviewWhere": "review 1 item 3 (p24) · review 3 item 5 (p26)"
+          }
+        },
+        {
+          "id": "pg18-1:a4",
+          "en": "I could remember his face vaguely.",
+          "ko": "나는 그의 얼굴을 희미하게 기억할 수 있었다.",
+          "koSource": "review 3 item 8",
+          "focus": [
+            "vaguely"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (1) item 4",
+            "reviewWhere": "review 1 item 4 (p24) · review 3 item 8 (p26)"
+          }
+        },
+        {
+          "id": "pg18-1:a5",
+          "en": "Usually in class, the students are very friendly to each other.",
+          "ko": "보통 수업 시간에, 학생들은 서로서로에게 매우 친절합니다.",
+          "koSource": "student:s5-5#1",
+          "focus": [
+            "Usually"
+          ],
+          "studentRef": {
+            "lesson": "s5-5",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (1) item 5",
+            "reviewWhere": "review 1 item 5 (p24) · review 3 item 9 (p26)"
+          },
+          "fix": {
+            "fromKo": "보통 학급에서, 학생들은 서로 서로에게 매우 친절하다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "in class 는 '수업 시간에', '서로 서로'는 겹말입니다. STUDENT 5과(s5-5)와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다."
+          }
+        },
+        {
+          "id": "pg18-1:a6",
+          "en": "How old are you?",
+          "ko": "너는 몇 살이니?",
+          "koSource": "review 3 item 39",
+          "focus": [
+            "How old"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 19,
+            "where": "passOff (5) item 1",
+            "reviewWhere": "review 3 item 39 (p29)"
+          }
+        },
+        {
+          "id": "pg18-1:a7",
+          "en": "How tall are you?",
+          "ko": "너는 키가 얼마니?",
+          "koSource": "review 3 item 41",
+          "focus": [
+            "How tall"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 19,
+            "where": "passOff (5) item 2",
+            "reviewWhere": "review 3 item 41 (p29)"
+          }
+        },
+        {
+          "id": "pg18-1:a8",
+          "en": "How much is this book?",
+          "ko": "이 책은 얼마니?",
+          "koSource": "new (교재에 번역 없음)",
+          "focus": [
+            "How much"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 19,
+            "where": "passOff (5) item 5"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg18-1:a1",
+          "pg18-1:a2",
+          "pg18-1:a4"
+        ],
+        "question": "fairly · slowly · vaguely 는 어떤 말에 -ly 를 붙여 만든 낱말일까요?",
+        "options": [
+          "형용사(fair · slow · vague)",
+          "명사",
+          "동사"
+        ],
+        "answer": 0,
+        "why": "형용사 fair(꽤 괜찮은) · slow(느린) · vague(희미한)에 -ly 를 붙이면 '어떻게 · 얼마나'를 나타내는 부사가 돼요."
+      },
+      "title": "형용사 + -ly 는 부사, how · when · where · why 는 의문부사",
+      "points": [
+        "형용사 + -ly → 부사: slow → slowly, vague → vaguely, true → truly",
+        "부사는 동사 · 형용사 · 다른 부사 · 문장 전체를 꾸며요.",
+        "-ly 로 끝나도 형용사인 말이 있어요: friendly(친절한) · lovely · lonely",
+        "의문부사 when(언제) · where(어디) · why(왜) · how(어떻게)는 묻는 문장 맨 앞에 와요.",
+        "how + 형용사 · 부사 = '얼마나 ~': How old · How tall · How often"
+      ],
+      "table": {
+        "columns": [
+          "형용사 끝",
+          "부사 만들기",
+          "예"
+        ],
+        "rows": [
+          [
+            "대부분",
+            "+ ly",
+            "slow → slowly, awful → awfully"
+          ],
+          [
+            "자음 + y",
+            "y → i + ly",
+            "happy → happily, busy → busily"
+          ],
+          [
+            "-le",
+            "e → y",
+            "gentle → gently, simple → simply"
+          ],
+          [
+            "-ue",
+            "e 빼고 + ly",
+            "true → truly"
+          ],
+          [
+            "-ic",
+            "+ ally",
+            "basic → basically (예외: public → publicly)"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '느리다 → 느리게', '조용하다 → 조용히'처럼 '-게 · -히'를 붙여 꾸미는 말을 만들고, 영어는 형용사에 -ly 를 붙여요. 또 '키가 얼마나 크니?'의 '얼마나'는 how 하나로 떼어 쓰지 않고, How tall 처럼 형용사와 한 덩어리로 묶어 문장 맨 앞에 둬요.",
+      "mistakes": [
+        {
+          "wrong": "He drives careful.",
+          "right": "He drives carefully.",
+          "why": "동사 drives 를 꾸미는 말은 부사(-ly) 모양이에요."
+        },
+        {
+          "wrong": "How is he tall?",
+          "right": "How tall is he?",
+          "why": "how 와 형용사(tall)는 떨어지지 않고 한 덩어리로 맨 앞에 와요."
+        }
+      ],
+      "worked": [
+        "그녀는 조용히 말했다.",
+        "'조용한' = quiet (형용사)",
+        "'조용히' = quiet + ly → quietly (부사)",
+        "'어떻게' 말했는지를 나타내 동사 spoke 를 꾸미므로 spoke 뒤에",
+        "She spoke quietly."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'The baby is sleeping ___.' 빈칸에 알맞은 것은? (아기가 평화롭게 자고 있다.)",
+        "options": [
+          "peaceful",
+          "peacefully",
+          "peace"
+        ],
+        "answer": 1,
+        "why": "동사 is sleeping 을 꾸미므로 형용사 peaceful 에 -ly 를 붙인 부사 peacefully 예요.",
+        "pointIndex": 0
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg18-1:s1",
+          "kind": "select",
+          "instruction": "부사를 누르세요",
+          "tokens": [
+            "My",
+            "elementary",
+            "school",
+            "is",
+            "fairly",
+            "large",
+            "."
+          ],
+          "answer": [
+            4
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "fairly(꽤)는 형용사 large 를 꾸미는 부사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 1 (부사 밑줄)"
+          }
+        },
+        {
+          "id": "pg18-1:s2",
+          "kind": "select",
+          "instruction": "부사를 모두 누르세요",
+          "tokens": [
+            "Would",
+            "you",
+            "speak",
+            "more",
+            "slowly",
+            "?"
+          ],
+          "answer": [
+            3,
+            4
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "slowly 는 동사 speak 를, more(더)는 slowly 를 꾸며요. 둘 다 부사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 2 (부사 밑줄)"
+          }
+        },
+        {
+          "id": "pg18-1:s3",
+          "kind": "select",
+          "instruction": "부사를 누르세요",
+          "tokens": [
+            "He",
+            "is",
+            "a",
+            "truly",
+            "smart",
+            "person",
+            ",",
+            "and",
+            "I",
+            "am",
+            "sure",
+            "that",
+            "his",
+            "dream",
+            "will",
+            "come",
+            "true",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "truly(진실로)만 부사예요. sure · true 는 be동사 · come 뒤에서 주어를 설명하는 형용사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 3 (부사 밑줄)"
+          }
+        },
+        {
+          "id": "pg18-1:s4",
+          "kind": "select",
+          "instruction": "부사(한 낱말)를 모두 누르세요",
+          "tokens": [
+            "Usually",
+            "in class",
+            ",",
+            "the",
+            "students",
+            "are",
+            "very",
+            "friendly",
+            "to",
+            "each other",
+            "."
+          ],
+          "answer": [
+            0,
+            6
+          ],
+          "optional": [
+            1
+          ],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "Usually 는 문장 전체를, very 는 형용사 friendly 를 꾸며요. friendly 는 -ly 로 끝나도 '친절한'이라는 형용사예요. in class 는 부사처럼 쓰이는 구(부사구)라 골라도 틀리지 않아요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 5 (부사 밑줄)"
+          },
+          "note": "판정 p24 answer_ambiguous: 교재 정답은 Usually · very. in class(부사구)는 한 토큰으로 묶어 optional(골라도 감점 없음)로 둠."
+        },
+        {
+          "id": "pg18-1:s5",
+          "kind": "choice",
+          "instruction": "밑줄 친 말이 묻는 것은?",
+          "sentence": "How tall are you?",
+          "underline": [
+            "How tall"
+          ],
+          "options": [
+            "나이",
+            "키(높이)",
+            "값"
+          ],
+          "answer": 1,
+          "why": "How tall 은 '얼마나 큰(높은)' — 키나 높이를 물어요. 나이는 How old, 값은 How much 예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 19,
+            "where": "passOff (5) item 2"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg18-1:s6",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 의문부사는? (너는 왜 늦었니?)",
+          "sentence": "___ were you late?",
+          "underline": [],
+          "options": [
+            "Why",
+            "Where",
+            "How"
+          ],
+          "answer": 0,
+          "why": "이유(왜)를 물을 때는 why 예요. where 는 장소(어디), how 는 방법 · 정도(어떻게 · 얼마나)를 물어요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg18-1:s7",
+          "kind": "select",
+          "instruction": "부사를 누르세요",
+          "tokens": [
+            "I",
+            "could",
+            "remember",
+            "his",
+            "face",
+            "vaguely",
+            "."
+          ],
+          "answer": [
+            5
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "vaguely(희미하게)는 동사 remember 를 꾸며요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 4 (부사 밑줄)"
+          },
+          "note": "레슨 안 형태 찾기는 6개로 두고, 교재 Review 1 의 나머지는 날을 넘기는 복습용(reserve)으로 둠.",
+          "reserve": true
+        },
+        {
+          "id": "pg18-1:s8",
+          "kind": "select",
+          "instruction": "부사를 누르세요",
+          "tokens": [
+            "I",
+            "am",
+            "awfully",
+            "hungry",
+            "."
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "awfully(몹시)는 형용사 hungry 를 꾸며요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 6 (부사 밑줄)"
+          },
+          "note": "이 문장은 ④ p10 의 정답이라(앵커 아님) 레슨 안에서는 내지 않고 날을 넘기는 복습용으로 둠.",
+          "reserve": true
+        },
+        {
+          "id": "pg18-1:s9",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은? (너는 얼마나 자주 운동하니?)",
+          "sentence": "How ___ do you exercise?",
+          "underline": [],
+          "options": [
+            "often",
+            "much",
+            "long"
+          ],
+          "answer": 0,
+          "why": "'얼마나 자주'는 how often 이에요. how long 은 '얼마나 오래', how much 는 '얼마나 많이'예요.",
+          "bookRef": null,
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg18-1:p1",
+          "ko": "나의 초등학교는 꽤 큽니다.",
+          "koSource": "student:s6-1#3",
+          "condition": null,
+          "promptEn": null,
+          "en": "My elementary school is fairly large.",
+          "accept": [
+            "My elementary school is pretty large.",
+            "My elementary school is quite large.",
+            "My elementary school is rather large.",
+            "My elementary school is fairly big.",
+            "My elementary school is pretty big.",
+            "My elementary school is quite big.",
+            "My elementary school is rather big."
+          ],
+          "targets": [
+            [
+              "fairly",
+              "pretty",
+              "quite",
+              "rather"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is fair large",
+              "hint": "형용사 large 를 꾸미는 말은 부사 모양이에요."
+            },
+            {
+              "match": "is very large",
+              "hint": "'꽤'는 very(매우)보다 약한 말이에요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s6-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 1",
+            "reviewWhere": "review 1 item 1 (p24) · review 3 item 1 (p26)"
+          },
+          "fix": {
+            "fromKo": "나의 초등학교는 상당히 크다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT 6과(s6-1)와 글자까지 같은 문장이라 한국어도 STUDENT 판(나의 초등학교는 꽤 큽니다.)으로 맞춤(사장님 결정). 교재 한국어가 틀린 것은 아님."
+          }
+        },
+        {
+          "id": "pg18-1:p2",
+          "ko": "톰은 그 사고에서 심각하게 다치지 않았다.",
+          "koSource": "review 3 item 2",
+          "condition": null,
+          "promptEn": null,
+          "en": "Tom was not seriously injured in the accident.",
+          "accept": [
+            "Tom was not seriously hurt in the accident.",
+            "Tom was not badly injured in the accident.",
+            "Tom was not badly hurt in the accident.",
+            "Tom was not severely injured in the accident.",
+            "Tom was not severely hurt in the accident.",
+            "Tom did not get seriously injured in the accident.",
+            "Tom did not get seriously hurt in the accident.",
+            "Tom did not get badly injured in the accident.",
+            "Tom did not get badly hurt in the accident.",
+            "Tom did not get severely injured in the accident.",
+            "Tom did not get severely hurt in the accident.",
+            "In the accident, Tom was not seriously injured.",
+            "In the accident, Tom was not seriously hurt.",
+            "In the accident, Tom was not badly injured.",
+            "In the accident, Tom was not badly hurt.",
+            "In the accident, Tom was not severely injured.",
+            "In the accident, Tom was not severely hurt.",
+            "Tom was not injured seriously in the accident.",
+            "Tom was not hurt seriously in the accident.",
+            "Tom was not injured badly in the accident.",
+            "Tom was not hurt badly in the accident.",
+            "Tom was not injured severely in the accident.",
+            "Tom was not hurt severely in the accident."
+          ],
+          "targets": [
+            [
+              "seriously",
+              "badly",
+              "severely"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "not serious injured",
+              "hint": "과거분사 injured 를 꾸미는 말은 부사(-ly) 모양이에요."
+            },
+            {
+              "match": "Tom did not seriously",
+              "hint": "톰이 다친 것이라 was + 과거분사로 써요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "passive",
+            "negative-basic",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 2",
+            "reviewWhere": "review 3 item 2 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p3",
+          "ko": "그는 가방을 가지고 그 가게를 빠르게 나왔다.",
+          "koSource": "review 3 item 3",
+          "condition": null,
+          "promptEn": null,
+          "en": "He got the bag and got out of the shop quickly.",
+          "accept": [
+            "He got the bag and came out of the shop quickly.",
+            "He got the bag and left the shop quickly.",
+            "He got the bag and quickly got out of the shop.",
+            "He got the bag and quickly came out of the shop.",
+            "He got the bag and quickly left the shop.",
+            "He got the bag and got out of the shop fast.",
+            "He got the bag and came out of the shop fast.",
+            "He got the bag and left the shop fast.",
+            "He got the bag and got out of the store quickly.",
+            "He got the bag and came out of the store quickly.",
+            "He got the bag and left the store quickly.",
+            "He got the bag and quickly got out of the store.",
+            "He got the bag and quickly came out of the store.",
+            "He got the bag and quickly left the store.",
+            "He got the bag and got out of the store fast.",
+            "He got the bag and came out of the store fast.",
+            "He got the bag and left the store fast.",
+            "He took the bag and got out of the shop quickly.",
+            "He took the bag and came out of the shop quickly.",
+            "He took the bag and left the shop quickly.",
+            "He took the bag and quickly got out of the shop.",
+            "He took the bag and quickly came out of the shop.",
+            "He took the bag and quickly left the shop.",
+            "He took the bag and got out of the shop fast.",
+            "He took the bag and came out of the shop fast.",
+            "He took the bag and left the shop fast.",
+            "He took the bag and got out of the store quickly.",
+            "He took the bag and came out of the store quickly.",
+            "He took the bag and left the store quickly.",
+            "He took the bag and quickly got out of the store.",
+            "He took the bag and quickly came out of the store.",
+            "He took the bag and quickly left the store.",
+            "He took the bag and got out of the store fast.",
+            "He took the bag and came out of the store fast.",
+            "He took the bag and left the store fast.",
+            "He grabbed the bag and got out of the shop quickly.",
+            "He grabbed the bag and came out of the shop quickly.",
+            "He grabbed the bag and left the shop quickly.",
+            "He grabbed the bag and quickly got out of the shop.",
+            "He grabbed the bag and quickly came out of the shop.",
+            "He grabbed the bag and quickly left the shop.",
+            "He grabbed the bag and got out of the shop fast.",
+            "He grabbed the bag and came out of the shop fast.",
+            "He grabbed the bag and left the shop fast.",
+            "He grabbed the bag and got out of the store quickly.",
+            "He grabbed the bag and came out of the store quickly.",
+            "He grabbed the bag and left the store quickly.",
+            "He grabbed the bag and quickly got out of the store.",
+            "He grabbed the bag and quickly came out of the store.",
+            "He grabbed the bag and quickly left the store.",
+            "He grabbed the bag and got out of the store fast.",
+            "He grabbed the bag and came out of the store fast.",
+            "He grabbed the bag and left the store fast.",
+            "He quickly left the shop with the bag.",
+            "He left the shop quickly with the bag.",
+            "He quickly came out of the shop with the bag.",
+            "He came out of the shop quickly with the bag.",
+            "He quickly got out of the shop with the bag.",
+            "He got out of the shop quickly with the bag.",
+            "He quickly went out of the shop with the bag.",
+            "He went out of the shop quickly with the bag.",
+            "He quickly left the store with the bag.",
+            "He left the store quickly with the bag.",
+            "He quickly came out of the store with the bag.",
+            "He came out of the store quickly with the bag.",
+            "He quickly got out of the store with the bag.",
+            "He got out of the store quickly with the bag.",
+            "He quickly went out of the store with the bag.",
+            "He went out of the store quickly with the bag.",
+            "He took the bag and went out of the shop quickly.",
+            "He took the bag and quickly went out of the shop.",
+            "He took the bag and went out of the shop fast.",
+            "He took the bag and went out of the store quickly.",
+            "He took the bag and quickly went out of the store.",
+            "He took the bag and went out of the store fast.",
+            "He got the bag and went out of the shop quickly.",
+            "He got the bag and quickly went out of the shop.",
+            "He got the bag and went out of the shop fast.",
+            "He got the bag and went out of the store quickly.",
+            "He got the bag and quickly went out of the store.",
+            "He got the bag and went out of the store fast.",
+            "He grabbed the bag and went out of the shop quickly.",
+            "He grabbed the bag and quickly went out of the shop.",
+            "He grabbed the bag and went out of the shop fast.",
+            "He grabbed the bag and went out of the store quickly.",
+            "He grabbed the bag and quickly went out of the store.",
+            "He grabbed the bag and went out of the store fast."
+          ],
+          "targets": [
+            [
+              "quickly",
+              "fast"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "the shop quick",
+              "hint": "동사(나왔다)를 꾸미는 말은 부사(-ly) 모양이에요."
+            },
+            {
+              "match": "got out the shop",
+              "hint": "'~에서 나오다'는 get out 뒤에 of 가 필요해요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 3",
+            "reviewWhere": "review 3 item 3 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p4",
+          "ko": "조금만 더 천천히 말씀해 주실래요?",
+          "koSource": "review 3 item 4",
+          "condition": null,
+          "promptEn": null,
+          "en": "Would you speak more slowly?",
+          "accept": [
+            "Would you speak a little more slowly?",
+            "Would you speak a bit more slowly?",
+            "Would you speak slower?",
+            "Would you speak a little slower?",
+            "Would you please speak more slowly?",
+            "Would you please speak a little more slowly?",
+            "Would you please speak a bit more slowly?",
+            "Would you please speak slower?",
+            "Would you please speak a little slower?",
+            "Could you speak more slowly?",
+            "Could you speak a little more slowly?",
+            "Could you speak a bit more slowly?",
+            "Could you speak slower?",
+            "Could you speak a little slower?",
+            "Could you please speak more slowly?",
+            "Could you please speak a little more slowly?",
+            "Could you please speak a bit more slowly?",
+            "Could you please speak slower?",
+            "Could you please speak a little slower?",
+            "Can you speak more slowly?",
+            "Can you speak a little more slowly?",
+            "Can you speak a bit more slowly?",
+            "Can you speak slower?",
+            "Can you speak a little slower?",
+            "Can you please speak more slowly?",
+            "Can you please speak a little more slowly?",
+            "Can you please speak a bit more slowly?",
+            "Can you please speak slower?",
+            "Can you please speak a little slower?",
+            "Would you speak more slowly, please?",
+            "Would you speak a little more slowly, please?",
+            "Could you speak more slowly, please?",
+            "Could you speak a little more slowly, please?",
+            "Would you speak a bit slower?",
+            "Would you please speak a bit slower?",
+            "Could you speak a bit slower?",
+            "Could you please speak a bit slower?",
+            "Can you speak a bit slower?",
+            "Can you please speak a bit slower?"
+          ],
+          "targets": [
+            [
+              "slowly",
+              "slower"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "speak more slow",
+              "hint": "동사 speak 를 꾸미는 말은 부사(-ly) 모양이에요."
+            },
+            {
+              "match": "Would you speak slowly",
+              "hint": "'조금만 더' 천천히예요. '더'를 뜻하는 말이 빠졌어요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "comparative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 4",
+            "reviewWhere": "review 1 item 2 (p24) · review 3 item 4 (p26)"
+          },
+          "fix": null,
+          "note": "more slowly 는 pg09-2 비교급(긴 낱말 앞에 more)과 같은 방법이라 태그를 comparative(앞 레슨)로 둠. adverb-comparison(pg18-4)은 이 문장의 목표가 아닌 곁가지라 넣지 않음(도전 아님). 구어의 slower 도 받음(GRAMMAR II gh2-020#4 허용 답과 같음)."
+        },
+        {
+          "id": "pg18-1:p5",
+          "ko": "그는 진실로 똑똑한 사람이고 나는 그의 꿈이 실현될 것을 확신한다.",
+          "koSource": "review 3 item 5",
+          "condition": null,
+          "promptEn": null,
+          "en": "He is a truly smart person, and I am sure that his dream will come true.",
+          "accept": [
+            "He is a truly smart person, and I am sure that his dream will be realized.",
+            "He is a truly smart person, and I am sure his dream will come true.",
+            "He is a truly smart person, and I am sure his dream will be realized.",
+            "He is a really smart person, and I am sure that his dream will come true.",
+            "He is a really smart person, and I am sure that his dream will be realized.",
+            "He is a really smart person, and I am sure his dream will come true.",
+            "He is a really smart person, and I am sure his dream will be realized.",
+            "He is a truly smart person, and I am certain that his dream will come true.",
+            "He is a truly smart person, and I am certain that his dream will be realized.",
+            "He is a truly smart person, and I am certain his dream will come true.",
+            "He is a truly smart person, and I am certain his dream will be realized.",
+            "He is truly a smart person, and I am sure that his dream will come true.",
+            "He is truly a smart person, and I am sure that his dream will be realized.",
+            "He is truly a smart person, and I am sure his dream will come true.",
+            "He is truly a smart person, and I am sure his dream will be realized.",
+            "He is truly a smart person, and I am certain that his dream will come true.",
+            "He is truly a smart person, and I am certain that his dream will be realized.",
+            "He is truly a smart person, and I am certain his dream will come true.",
+            "He is truly a smart person, and I am certain his dream will be realized.",
+            "He is a really smart person, and I am certain that his dream will come true.",
+            "He is a really smart person, and I am certain that his dream will be realized.",
+            "He is a really smart person, and I am certain his dream will come true.",
+            "He is a really smart person, and I am certain his dream will be realized.",
+            "He is really a smart person, and I am sure that his dream will come true.",
+            "He is really a smart person, and I am sure that his dream will be realized.",
+            "He is really a smart person, and I am sure his dream will come true.",
+            "He is really a smart person, and I am sure his dream will be realized.",
+            "He is really a smart person, and I am certain that his dream will come true.",
+            "He is really a smart person, and I am certain that his dream will be realized.",
+            "He is really a smart person, and I am certain his dream will come true.",
+            "He is really a smart person, and I am certain his dream will be realized."
+          ],
+          "targets": [
+            [
+              "truly",
+              "really"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a true smart",
+              "hint": "형용사 smart 를 꾸미는 말은 부사 모양이에요."
+            },
+            {
+              "match": "will come truly",
+              "hint": "come true 의 true 는 '(꿈이) 이루어진'이라는 형용사예요. 부사로 바꾸지 않아요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "compound-sentence",
+            "complex-sentence",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 5",
+            "reviewWhere": "review 1 item 3 (p24) · review 3 item 5 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p6",
+          "ko": "우리가 당신을 밀쳐서 정말 미안합니다.",
+          "koSource": "review 3 item 6",
+          "condition": "-ly 부사를 써서",
+          "promptEn": null,
+          "en": "We're terribly sorry for pushing you.",
+          "accept": [
+            "We're terribly sorry that we pushed you.",
+            "We're terribly sorry we pushed you.",
+            "We're really sorry for pushing you.",
+            "We're really sorry that we pushed you.",
+            "We're really sorry we pushed you.",
+            "We're truly sorry for pushing you.",
+            "We're truly sorry that we pushed you.",
+            "We're truly sorry we pushed you.",
+            "We're awfully sorry for pushing you.",
+            "We're awfully sorry that we pushed you.",
+            "We're awfully sorry we pushed you.",
+            "We're extremely sorry for pushing you.",
+            "We're extremely sorry that we pushed you.",
+            "We're extremely sorry we pushed you.",
+            "We're terribly sorry about pushing you.",
+            "We're really sorry about pushing you.",
+            "We're truly sorry about pushing you.",
+            "We're awfully sorry about pushing you.",
+            "We're extremely sorry about pushing you.",
+            "We're deeply sorry for pushing you.",
+            "We're deeply sorry that we pushed you.",
+            "We're deeply sorry we pushed you.",
+            "We're deeply sorry about pushing you."
+          ],
+          "targets": [
+            [
+              "terribly",
+              "really",
+              "truly",
+              "awfully",
+              "extremely",
+              "deeply"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "very sorry",
+              "hint": "조건은 '-ly 부사를 써서'예요. '정말 · 몹시'를 뜻하는 -ly 부사를 떠올려 보세요."
+            },
+            {
+              "match": "so sorry",
+              "hint": "조건은 '-ly 부사를 써서'예요. '정말 · 몹시'를 뜻하는 -ly 부사를 떠올려 보세요."
+            },
+            {
+              "match": "sorry for push you",
+              "hint": "전치사 for 뒤에는 동사를 -ing 모양으로 써요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "gerund",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 6",
+            "reviewWhere": "review 3 item 6 (p26)"
+          },
+          "fix": null,
+          "note": "한국어 '정말'은 very · so 로도 옮길 수 있어 -ly 부사를 쓰라는 조건 칩을 붙임."
+        },
+        {
+          "id": "pg18-1:p7",
+          "ko": "그 회의는 엉망으로 준비되었다.",
+          "koSource": "review 3 item 7 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "The meeting was badly organized.",
+          "accept": [
+            "The meeting was badly organised.",
+            "The meeting was badly prepared.",
+            "The meeting was badly planned.",
+            "The meeting was poorly organized.",
+            "The meeting was poorly organised.",
+            "The meeting was poorly prepared.",
+            "The meeting was poorly planned.",
+            "The meeting was organized badly.",
+            "The meeting was organised badly.",
+            "The meeting was prepared badly.",
+            "The meeting was planned badly.",
+            "The meeting was organized poorly.",
+            "The meeting was organised poorly.",
+            "The meeting was prepared poorly.",
+            "The meeting was planned poorly."
+          ],
+          "targets": [
+            [
+              "badly",
+              "poorly"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "was bad organized",
+              "hint": "과거분사 organized 를 꾸미는 말은 부사 모양이에요."
+            },
+            {
+              "match": "the meeting badly",
+              "hint": "'준비되었다'는 be동사 + 과거분사로 써요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "passive",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 7",
+            "reviewWhere": "review 3 item 7 (p26)"
+          },
+          "fix": {
+            "fromKo": "그 회의는 나쁘게 조직되어 있었다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'나쁘게 조직되어 있었다'는 직역투입니다. badly organized 는 '엉망으로 준비된(운영된)'이라 '그 회의는 엉망으로 준비되었다.'로 고침. badly · poorly × organized · prepared · planned 모두 정답."
+          }
+        },
+        {
+          "id": "pg18-1:p8",
+          "ko": "나는 그의 얼굴을 희미하게 기억할 수 있었다.",
+          "koSource": "review 3 item 8",
+          "condition": null,
+          "promptEn": null,
+          "en": "I could remember his face vaguely.",
+          "accept": [
+            "I could vaguely remember his face.",
+            "I could dimly remember his face.",
+            "I could faintly remember his face.",
+            "I could remember his face dimly.",
+            "I could remember his face faintly.",
+            "I was able to remember his face vaguely.",
+            "I was able to vaguely remember his face.",
+            "I could vaguely recall his face.",
+            "I could recall his face vaguely.",
+            "I could dimly recall his face.",
+            "I could faintly recall his face.",
+            "I could recall his face dimly.",
+            "I could recall his face faintly.",
+            "I was able to recall his face vaguely.",
+            "I was able to vaguely recall his face."
+          ],
+          "targets": [
+            [
+              "vaguely",
+              "dimly",
+              "faintly"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "his face vague",
+              "hint": "동사 remember 를 꾸미는 말은 부사(-ly) 모양이에요."
+            },
+            {
+              "match": "I can remember",
+              "hint": "'기억할 수 있었다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "modal-can",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 8",
+            "reviewWhere": "review 1 item 4 (p24) · review 3 item 8 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p9",
+          "ko": "보통 수업 시간에, 학생들은 서로서로에게 매우 친절합니다.",
+          "koSource": "student:s5-5#1",
+          "condition": null,
+          "promptEn": null,
+          "en": "Usually in class, the students are very friendly to each other.",
+          "accept": [
+            "In class, the students are usually very friendly to each other.",
+            "The students are usually very friendly to each other in class.",
+            "Usually, the students are very friendly to each other in class.",
+            "Usually in class, the students are very friendly to one another.",
+            "In class, the students are usually very friendly to one another.",
+            "The students are usually very friendly to one another in class.",
+            "Usually, the students are very friendly to one another in class.",
+            "Usually in class, the students are very kind to each other.",
+            "In class, the students are usually very kind to each other.",
+            "The students are usually very kind to each other in class.",
+            "Usually, the students are very kind to each other in class.",
+            "Usually in class, the students are very kind to one another.",
+            "In class, the students are usually very kind to one another.",
+            "The students are usually very kind to one another in class.",
+            "Usually, the students are very kind to one another in class.",
+            "Normally in class, the students are very friendly to each other.",
+            "In class, the students are normally very friendly to each other.",
+            "The students are normally very friendly to each other in class.",
+            "Normally, the students are very friendly to each other in class.",
+            "Normally in class, the students are very friendly to one another.",
+            "In class, the students are normally very friendly to one another.",
+            "The students are normally very friendly to one another in class.",
+            "Normally, the students are very friendly to one another in class.",
+            "Normally in class, the students are very kind to each other.",
+            "In class, the students are normally very kind to each other.",
+            "The students are normally very kind to each other in class.",
+            "Normally, the students are very kind to each other in class.",
+            "Normally in class, the students are very kind to one another.",
+            "In class, the students are normally very kind to one another.",
+            "The students are normally very kind to one another in class.",
+            "Normally, the students are very kind to one another in class.",
+            "Usually in class, students are very friendly to each other.",
+            "In class, students are usually very friendly to each other.",
+            "Students are usually very friendly to each other in class.",
+            "Usually, students are very friendly to each other in class.",
+            "Usually in class, students are very friendly to one another.",
+            "In class, students are usually very friendly to one another.",
+            "Students are usually very friendly to one another in class.",
+            "Usually, students are very friendly to one another in class.",
+            "Usually in class, students are very kind to each other.",
+            "In class, students are usually very kind to each other.",
+            "Students are usually very kind to each other in class.",
+            "Usually, students are very kind to each other in class.",
+            "Usually in class, students are very kind to one another.",
+            "In class, students are usually very kind to one another.",
+            "Students are usually very kind to one another in class.",
+            "Usually, students are very kind to one another in class.",
+            "Normally in class, students are very friendly to each other.",
+            "In class, students are normally very friendly to each other.",
+            "Students are normally very friendly to each other in class.",
+            "Normally, students are very friendly to each other in class.",
+            "Normally in class, students are very friendly to one another.",
+            "In class, students are normally very friendly to one another.",
+            "Students are normally very friendly to one another in class.",
+            "Normally, students are very friendly to one another in class.",
+            "Normally in class, students are very kind to each other.",
+            "In class, students are normally very kind to each other.",
+            "Students are normally very kind to each other in class.",
+            "Normally, students are very kind to each other in class.",
+            "Normally in class, students are very kind to one another.",
+            "In class, students are normally very kind to one another.",
+            "Students are normally very kind to one another in class.",
+            "Normally, students are very kind to one another in class."
+          ],
+          "targets": [
+            [
+              "Usually",
+              "Normally"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "usual in class",
+              "hint": "문장 전체를 꾸미는 말은 부사(-ly) 모양이에요."
+            },
+            {
+              "match": "each others",
+              "hint": "each other(서로)에는 s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s5-5",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 9",
+            "reviewWhere": "review 1 item 5 (p24) · review 3 item 9 (p26)"
+          },
+          "fix": {
+            "fromKo": "보통 학급에서, 학생들은 서로 서로에게 매우 친절하다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "in class 는 '수업 시간에', '서로 서로'는 겹말입니다. STUDENT 5과(s5-5)와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(판정 p26)."
+          }
+        },
+        {
+          "id": "pg18-1:p10",
+          "ko": "나는 매우 배가 고프다.",
+          "koSource": "review 3 item 10",
+          "condition": "-ly 부사를 써서",
+          "promptEn": null,
+          "en": "I am awfully hungry.",
+          "accept": [
+            "I am really hungry.",
+            "I am terribly hungry.",
+            "I am extremely hungry.",
+            "I am incredibly hungry."
+          ],
+          "targets": [
+            [
+              "awfully",
+              "really",
+              "terribly",
+              "extremely",
+              "incredibly"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "am very hungry",
+              "hint": "조건은 '-ly 부사를 써서'예요. '매우 · 몹시'를 뜻하는 -ly 부사를 떠올려 보세요."
+            },
+            {
+              "match": "am so hungry",
+              "hint": "조건은 '-ly 부사를 써서'예요. '매우 · 몹시'를 뜻하는 -ly 부사를 떠올려 보세요."
+            },
+            {
+              "match": "I awfully hungry",
+              "hint": "'배가 고프다'는 be동사 + hungry 예요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 10",
+            "reviewWhere": "review 1 item 6 (p24) · review 3 item 10 (p26)"
+          },
+          "fix": null,
+          "note": "한국어 '매우'는 very 로도 옮길 수 있어 -ly 부사를 쓰라는 조건 칩을 붙임."
+        },
+        {
+          "id": "pg18-1:p11",
+          "ko": "시간은 매우 빠르게 지났다.",
+          "koSource": "review 3 item 11",
+          "condition": null,
+          "promptEn": null,
+          "en": "The time passed very quickly.",
+          "accept": [
+            "The time passed really quickly.",
+            "The time passed very fast.",
+            "The time passed so quickly.",
+            "The time went by very quickly.",
+            "The time went by really quickly.",
+            "The time went by very fast.",
+            "The time went by so quickly.",
+            "Time passed very quickly.",
+            "Time passed really quickly.",
+            "Time passed very fast.",
+            "Time passed so quickly.",
+            "Time went by very quickly.",
+            "Time went by really quickly.",
+            "Time went by very fast.",
+            "Time went by so quickly.",
+            "The time passed by very quickly.",
+            "The time passed by really quickly.",
+            "The time passed by very fast.",
+            "The time passed by so quickly.",
+            "Time passed by very quickly.",
+            "Time passed by really quickly.",
+            "Time passed by very fast.",
+            "Time passed by so quickly."
+          ],
+          "targets": [
+            [
+              "quickly",
+              "fast"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "very quick",
+              "hint": "동사 passed 를 꾸미는 말은 부사(-ly) 모양이에요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 11",
+            "reviewWhere": "review 3 item 11 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p12",
+          "ko": "앨리스와 조는 매우 행복하게 결혼 생활을 하고 있다.",
+          "koSource": "review 3 item 12 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Alice and Jo are very happily married.",
+          "accept": [
+            "Alice and Jo are really happily married.",
+            "Alice and Jo live very happily as a married couple.",
+            "Alice and Jo are living very happily as a married couple.",
+            "Alice and Jo live really happily as a married couple.",
+            "Alice and Jo are living really happily as a married couple."
+          ],
+          "targets": [
+            [
+              "happily"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "very happy married",
+              "hint": "과거분사 married 를 꾸미는 말은 부사(-ly) 모양이에요."
+            },
+            {
+              "match": "got married very happily",
+              "hint": "한 번 일어난 결혼식이 아니라, 지금 결혼 생활을 하고 있는 상태예요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 12",
+            "reviewWhere": "review 3 item 12 (p26)"
+          },
+          "fix": {
+            "fromKo": "앨리스와 조는 매우 행복하게 결혼했다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "are very happily married 는 지금의 상태(행복하게 결혼 생활을 하고 있다)인데 한국어는 과거의 사건('결혼했다')이라 got married 를 쓰게 됨. '행복하게'는 살려 happily 를 이끔."
+          }
+        },
+        {
+          "id": "pg18-1:p13",
+          "ko": "너는 몇 살이니?",
+          "koSource": "review 3 item 39",
+          "condition": null,
+          "promptEn": null,
+          "en": "How old are you?",
+          "accept": [],
+          "targets": [
+            [
+              "How old"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How old you are",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            },
+            {
+              "match": "How many years are you",
+              "hint": "나이는 how 뒤에 '나이 든'을 뜻하는 형용사를 붙여 물어요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 43",
+            "reviewWhere": "review 3 item 39 (p29)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p14",
+          "ko": "그곳은 얼마나 머니?",
+          "koSource": "review 3 item 40",
+          "condition": null,
+          "promptEn": null,
+          "en": "How far is it?",
+          "accept": [
+            "How far is that place?",
+            "How far away is it?",
+            "How far away is that place?"
+          ],
+          "targets": [
+            [
+              "How far"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How far it is",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            },
+            {
+              "match": "How long is it",
+              "hint": "How long 은 길이 · 시간을 물어요. 거리(얼마나 먼지)를 묻는 말을 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "it-dummy"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 44",
+            "reviewWhere": "review 3 item 40 (p29)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p15",
+          "ko": "너는 키가 얼마니?",
+          "koSource": "review 3 item 41",
+          "condition": null,
+          "promptEn": null,
+          "en": "How tall are you?",
+          "accept": [],
+          "targets": [
+            [
+              "How tall"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How tall you are",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            },
+            {
+              "match": "How high are you",
+              "hint": "사람의 키는 high 가 아니라 '키가 큰'을 뜻하는 형용사로 물어요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 45",
+            "reviewWhere": "review 3 item 41 (p29)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p16",
+          "ko": "이 나무는 높이가 얼마나 되니?",
+          "koSource": "new (교재에 번역 없음)",
+          "condition": null,
+          "promptEn": null,
+          "en": "How tall is this tree?",
+          "accept": [
+            "How high is this tree?"
+          ],
+          "targets": [
+            [
+              "How tall",
+              "How high"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How tall this tree is",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 19,
+            "where": "passOff (5) item 3"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p17",
+          "ko": "저 다리는 얼마나 기니?",
+          "koSource": "new (교재에 번역 없음)",
+          "condition": null,
+          "promptEn": null,
+          "en": "How long is that bridge?",
+          "accept": [],
+          "targets": [
+            [
+              "How long"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How long that bridge is",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            },
+            {
+              "match": "How far is that bridge",
+              "hint": "다리의 거리가 아니라 길이를 묻는 말이에요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 19,
+            "where": "passOff (5) item 4"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p18",
+          "ko": "이 책은 얼마니?",
+          "koSource": "new (교재에 번역 없음)",
+          "condition": null,
+          "promptEn": null,
+          "en": "How much is this book?",
+          "accept": [
+            "How much does this book cost?"
+          ],
+          "targets": [
+            [
+              "How much"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How much this book is",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            },
+            {
+              "match": "How many is this book",
+              "hint": "값은 셀 수 없는 양이라 many 로 묻지 않아요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 19,
+            "where": "passOff (5) item 5"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p19",
+          "ko": "너의 집에서 학교까지 얼마나 걸릴 것 같니?",
+          "koSource": "review 3 item 42",
+          "condition": null,
+          "promptEn": null,
+          "en": "How long will it take to get from your house to your school?",
+          "accept": [
+            "How long will it take to go from your house to your school?",
+            "How long will it take from your house to your school?",
+            "How long will it take to get to your school from your house?",
+            "How long will it take to get from your home to your school?",
+            "How long do you think it will take to get from your house to your school?",
+            "How long do you think it will take from your house to your school?",
+            "How long will it take to get from your house to school?",
+            "How long will it take to get to school from your house?",
+            "How long will it take to go from your house to school?",
+            "How long will it take from your house to school?",
+            "How long will it take to get from your home to school?",
+            "How long do you think it will take to get from your house to school?",
+            "How long do you think it will take from your house to school?",
+            "How long do you think it will take to get to school from your house?",
+            "How long do you think it will take to get to your school from your house?",
+            "How long will it take you to get from your house to school?",
+            "How long will it take you to get to school from your house?",
+            "How long will it take you to get from your house to your school?",
+            "How long will it take you to get to your school from your house?",
+            "How long do you think it will take you to get from your house to school?",
+            "How long do you think it will take you to get to school from your house?"
+          ],
+          "targets": [
+            [
+              "How long"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "your house and to your school",
+              "hint": "'A에서 B까지'는 from A to B 예요. 사이에 and 를 넣지 않아요."
+            },
+            {
+              "match": "How long does it take",
+              "hint": "'걸릴 것 같니'는 앞으로의 일을 짐작하는 말이에요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "it-dummy",
+            "infinitive",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 46",
+            "reviewWhere": "review 3 item 42 (p29)"
+          },
+          "fix": {
+            "from": "How long will it take from your house and to your school?",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "from A to B 사이에 and 가 들어간 비문이고, take 뒤에 to get 이 있어야 자연스럽습니다. to get 없이 from your house to your school 만 쓴 답도 받습니다."
+          }
+        },
+        {
+          "id": "pg18-1:p20",
+          "ko": "저 집은 얼마나 크니?",
+          "koSource": "review 3 item 43",
+          "condition": null,
+          "promptEn": null,
+          "en": "How big is that house?",
+          "accept": [
+            "How large is that house?"
+          ],
+          "targets": [
+            [
+              "How big",
+              "How large"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How big that house is",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            },
+            {
+              "match": "How much big",
+              "hint": "how 바로 뒤에 형용사를 붙여 '얼마나 ~'를 만들어요."
+            },
+            {
+              "match": "How tall is that house",
+              "hint": "높이가 아니라 집의 크기를 묻는 말이에요. '큰'을 뜻하는 다른 형용사를 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 47",
+            "reviewWhere": "review 3 item 43 (p29)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p21",
+          "ko": "너는 얼마나 자주 네 차를 사용하니?",
+          "koSource": "review 3 item 44",
+          "condition": null,
+          "promptEn": null,
+          "en": "How often do you use your car?",
+          "accept": [
+            "How frequently do you use your car?",
+            "How often do you drive your car?",
+            "How frequently do you drive your car?"
+          ],
+          "targets": [
+            [
+              "How often",
+              "How frequently"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How often you use",
+              "hint": "묻는 문장이에요. do · does · did 를 주어 앞에 두세요."
+            },
+            {
+              "match": "How many times do you use your car",
+              "hint": "'얼마나 자주'는 how 뒤에 '자주'를 뜻하는 부사를 붙여요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 48",
+            "reviewWhere": "review 3 item 44 (p29)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p22",
+          "ko": "전쟁이 어떻게 발발했니?",
+          "koSource": "review 3 item 45",
+          "condition": null,
+          "promptEn": null,
+          "en": "How did the war break out?",
+          "accept": [
+            "How did the war start?",
+            "How did the war begin?"
+          ],
+          "targets": [
+            [
+              "How"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How the war broke out",
+              "hint": "묻는 문장이에요. do · does · did 를 주어 앞에 두세요."
+            },
+            {
+              "match": "How did the war broke out",
+              "hint": "did 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 49",
+            "reviewWhere": "review 3 item 45 (p29)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p23",
+          "ko": "너는 어디에 사니?",
+          "koSource": "review 3 item 46 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Where do you live?",
+          "accept": [],
+          "targets": [
+            [
+              "Where"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Where you live",
+              "hint": "묻는 문장이에요. do · does · did 를 주어 앞에 두세요."
+            },
+            {
+              "match": "Where are you live",
+              "hint": "일반동사(live)로 물을 때는 be동사가 아니라 do 를 써요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 50",
+            "reviewWhere": "review 3 item 46 (p29)"
+          },
+          "fix": {
+            "fromKo": "어디서 너는 사니?",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "의문사를 맨 앞에, 주어를 그 뒤에 둔 영어식 어순(번역투). p24 · p27 과 같게 고침."
+          }
+        },
+        {
+          "id": "pg18-1:p24",
+          "ko": "너는 어디 가고 있니?",
+          "koSource": "review 3 item 47 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Where are you going?",
+          "accept": [],
+          "targets": [
+            [
+              "Where"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Where do you go",
+              "hint": "지금 가고 있는 중이에요. be동사 + -ing 로 물어 보세요."
+            },
+            {
+              "match": "Where you are going",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "progressive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 51",
+            "reviewWhere": "review 3 item 47 (p29)"
+          },
+          "fix": {
+            "fromKo": "어디로 너는 가니?",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "Where are you going? 은 지금 가고 있는 중(진행)인데 '어디로 너는 가니?'는 늘 하는 일로 읽혀 Where do you go? 를 쓰게 됨. '너는 어디 가고 있니?'로 고침."
+          }
+        },
+        {
+          "id": "pg18-1:p25",
+          "ko": "수잔은 어디서 일하니?",
+          "koSource": "review 3 item 48",
+          "condition": null,
+          "promptEn": null,
+          "en": "Where does Susan work?",
+          "accept": [],
+          "targets": [
+            [
+              "Where"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Where does Susan works",
+              "hint": "does 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "Where Susan works",
+              "hint": "묻는 문장이에요. do · does · did 를 주어 앞에 두세요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 52",
+            "reviewWhere": "review 3 item 48 (p29)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p26",
+          "ko": "소방서는 어디에 있니?",
+          "koSource": "review 3 item 49",
+          "condition": null,
+          "promptEn": null,
+          "en": "Where is the fire station?",
+          "accept": [
+            "Where is a fire station?"
+          ],
+          "targets": [
+            [
+              "Where"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Where is fire station",
+              "hint": "fire station 은 셀 수 있는 명사예요. 앞에 필요한 말이 있어요."
+            },
+            {
+              "match": "Where the fire station is",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 53",
+            "reviewWhere": "review 3 item 49 (p29)"
+          },
+          "fix": {
+            "from": "Where is a fire station?",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "정해진 소방서를 묻는 말은 the 를 씁니다(근처에 있는지 물을 때는 Is there a fire station near here?). 교재 문장도 틀린 문법은 아니라 허용 답으로 둡니다."
+          }
+        },
+        {
+          "id": "pg18-1:p27",
+          "ko": "너는 언제 떠나니?",
+          "koSource": "review 3 item 50 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "When are you going away?",
+          "accept": [
+            "When are you leaving?",
+            "When will you leave?",
+            "When will you go away?",
+            "When are you going to leave?",
+            "When do you leave?",
+            "When are you going to go away?"
+          ],
+          "targets": [
+            [
+              "When"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "When you are going",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "progressive",
+            "future-substitutes"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 54",
+            "reviewWhere": "review 3 item 50 (p29)"
+          },
+          "fix": {
+            "fromKo": "언제 너는 갈 거니?",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "going away 는 '(여행 · 이사 등으로) 떠나다'인데 '갈 거니'는 어디로 가는지가 빠져 모호함. '너는 언제 떠나니?'로 고침."
+          }
+        },
+        {
+          "id": "pg18-1:p28",
+          "ko": "네 생일이 언제이니?",
+          "koSource": "review 3 item 51",
+          "condition": null,
+          "promptEn": null,
+          "en": "When is your birthday?",
+          "accept": [],
+          "targets": [
+            [
+              "When"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "When your birthday is",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내세요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 55",
+            "reviewWhere": "review 3 item 51 (p29)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-1:p29",
+          "ko": "너는 언제 대학을 졸업했니?",
+          "koSource": "review 3 item 52 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "When did you graduate from university?",
+          "accept": [
+            "When did you graduate from college?",
+            "When did you graduate from your university?",
+            "When did you graduate from the university?"
+          ],
+          "targets": [
+            [
+              "When"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "When did you graduated",
+              "hint": "did 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "When you graduated",
+              "hint": "묻는 문장이에요. do · does · did 를 주어 앞에 두세요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "question-wh",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 23,
+            "where": "application item 56",
+            "reviewWhere": "review 3 item 52 (p29)"
+          },
+          "fix": {
+            "from": "When did you graduate from your university?",
+            "fromKo": "언제 너는 대학을 졸업했니?",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "'대학을 졸업하다'는 graduate from university(college)가 굳은 말이라 your 를 빼는 것이 자연스럽습니다. 교재 문장도 틀린 문법은 아니라 허용 답으로 둡니다. 한국어도 영어식 어순 '언제 너는'을 '너는 언제'로."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg18-1:t1",
+          "ko": "나는 그 도구를 쉽게 찾았다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I found the tool easily.",
+          "accept": [
+            "I easily found the tool."
+          ],
+          "targets": [
+            [
+              "easily"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "found the tool easy",
+              "hint": "동사 found 를 꾸미는 말은 부사(-ly) 모양이에요."
+            }
+          ],
+          "tags": [
+            "adverb-ly",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-020#7"
+        },
+        {
+          "id": "pg18-1:t2",
+          "ko": "그 모임은 얼마나 빨리 끝났니?",
+          "koSource": "grammar1:gh1-098#103 ('끝났나?' → '끝났니?': 다른 문항과 같은 물음 끝)",
+          "condition": null,
+          "promptEn": null,
+          "en": "How quickly did the meeting end?",
+          "accept": [
+            "How fast did the meeting end?",
+            "How quickly did the meeting finish?",
+            "How soon did the meeting end?",
+            "How quickly did the gathering end?",
+            "How fast did the meeting finish?"
+          ],
+          "targets": [
+            [
+              "How quickly",
+              "How fast",
+              "How soon"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How quickly the meeting ended",
+              "hint": "묻는 문장이에요. do · does · did 를 주어 앞에 두세요."
+            }
+          ],
+          "tags": [
+            "adverb-interrogative",
+            "adverb-ly",
+            "question-wh",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-099#103"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg18-1:f1",
+      "template": "I ___ very slowly.",
+      "ko": "나는 아주 천천히 ___."
+    }
+  ]
+}

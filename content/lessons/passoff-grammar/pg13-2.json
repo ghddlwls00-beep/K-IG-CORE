@@ -1,0 +1,1503 @@
+{
+  "id": "pg13-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "분사",
+  "label": "TOPIC 13. 준동사",
+  "menuLabel": "13-2. 분사",
+  "unit": 13,
+  "part": 2,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(2) 분사",
+  "grammarTags": [
+    "participle",
+    "participle-clause"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg13-2:a1",
+          "en": "While the teacher is conducting the morning session, the students are very noisy.",
+          "ko": "선생님이 아침 조회를 하고 있을 때, 학생들이 매우 시끄럽다.",
+          "koSource": "review 3 item 14",
+          "focus": [
+            "is conducting"
+          ],
+          "studentRef": {
+            "lesson": "s5-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 1",
+            "reviewWhere": "Review 3. item 14 (p60)"
+          },
+          "fix": {
+            "from": "While the teacher is conducting for morning session, the students are very noisy.",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "conduct(진행하다)는 타동사라 for 가 필요 없고, 정해진 아침 조회라 the 가 필요합니다. STUDENT 5과(s5-3)가 이미 고친 꼴(conducting the morning session)을 씁니다(판정 p52)."
+          }
+        },
+        {
+          "id": "pg13-2:a2",
+          "en": "The teacher conducting the morning session, the students are very noisy.",
+          "ko": "선생님이 아침 조회를 하고 있을 때, 학생들이 매우 시끄럽다.",
+          "koSource": "review 3 item 14 (같은 뜻)",
+          "focus": [
+            "The teacher conducting"
+          ],
+          "promptEn": "While the teacher is conducting the morning session, the students are very noisy.",
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 2"
+          },
+          "fix": {
+            "from": "=>While the teacher conducting for morning session, the students are very noisy.",
+            "field": "en",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재의 분사구문 전환 예시가 틀렸습니다. 두 주어(the teacher · the students)가 달라서, 접속사 While 을 빼고 주어 the teacher 를 남긴 채 is 를 뺀 독립분사구문이 됩니다. 'While + 주어 + -ing'는 틀린 문장입니다(for · 빠진 the 도 고침, 판정 p52)."
+          }
+        },
+        {
+          "id": "pg13-2:a3",
+          "en": "As I am walking to school, I often see my friends.",
+          "ko": "학교에 걸어가고 있을 때, 나는 친구들을 자주 만난다.",
+          "koSource": "review 3 item 15 (고침)",
+          "focus": [
+            "am walking"
+          ],
+          "studentRef": {
+            "lesson": "s5-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 3",
+            "reviewWhere": "Review 3. item 15 (p60)"
+          },
+          "fix": {
+            "fromKo": "학교로 걸어갈 때, 나는 내 친구들을 자주 만난다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 진행형(am walking)이라 '걸어가고 있을 때'로 맞췄습니다. 교재에 인쇄된 두 답(As I am walking … · Walking to school …)을 모두 정답으로 받습니다(판정 p60)."
+          }
+        },
+        {
+          "id": "pg13-2:a4",
+          "en": "Walking to school, I often see my friends.",
+          "ko": "학교에 걸어가고 있을 때, 나는 친구들을 자주 만난다.",
+          "koSource": "review 3 item 15 (고침)",
+          "focus": [
+            "Walking"
+          ],
+          "promptEn": "As I am walking to school, I often see my friends.",
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 4",
+            "reviewWhere": "Review 3. item 15 (p60) [별해]"
+          },
+          "fix": {
+            "fromKo": "학교로 걸어갈 때, 나는 내 친구들을 자주 만난다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 진행형(am walking)이라 '걸어가고 있을 때'로 맞췄습니다. 교재에 인쇄된 두 답(As I am walking … · Walking to school …)을 모두 정답으로 받습니다(판정 p60)."
+          }
+        },
+        {
+          "id": "pg13-2:a5",
+          "en": "Barking dogs do not bite.",
+          "ko": "짖는 개는 물지 않는다.",
+          "koSource": "review 3 item 16",
+          "focus": [
+            "Barking"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 5",
+            "reviewWhere": "Review 3. item 16 (p60)"
+          }
+        },
+        {
+          "id": "pg13-2:a6",
+          "en": "He is a wounded soldier.",
+          "ko": "그는 부상당한 병사다.",
+          "koSource": "review 3 item 20",
+          "focus": [
+            "wounded"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 6",
+            "reviewWhere": "Review 3. item 20 (p60)"
+          }
+        },
+        {
+          "id": "pg13-2:a7",
+          "en": "I saw a soldier wounded on the battlefield.",
+          "ko": "나는 전쟁터에서 부상당한 병사를 보았다.",
+          "koSource": "review 3 item 21",
+          "focus": [
+            "wounded on the battlefield"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 7",
+            "reviewWhere": "Review 3. item 21 (p61)"
+          },
+          "fix": {
+            "from": "I saw a soldier wounded on the battle filed.",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "filed 는 field 의 오타이고, 표준 표기는 한 낱말 battlefield 입니다(Application 쪽은 battle field, 판정 p52)."
+          }
+        },
+        {
+          "id": "pg13-2:a8",
+          "en": "He often goes shopping with my mother.",
+          "ko": "그분은 종종 어머니와 함께 쇼핑을 가십니다.",
+          "koSource": "student:s2-4#5",
+          "focus": [
+            "goes shopping"
+          ],
+          "studentRef": {
+            "lesson": "s2-4",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 8",
+            "reviewWhere": "Review 3. item 22 (p61)"
+          },
+          "fix": {
+            "fromKo": "그는 엄마와 함께 자주 쇼핑을 가십니다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT s2-4 와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(교재 한국어 '그는 … 가십니다'는 주어 높임이 어긋남 — 그는 ↔ -시-)."
+          },
+          "note": "go -ing(~하러 가다)를 교재는 (2) 분사에 묶었습니다. 동명사 관용 표현으로 가르치는 책도 있어 설명 카드 표에 적었습니다(판정 p52)."
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg13-2:a5",
+          "pg13-2:a6",
+          "pg13-2:a4"
+        ],
+        "question": "Barking · wounded · Walking 은 모두 동사에서 온 말이에요. 문장에서 어떻게 쓰였을까요?",
+        "options": [
+          "모두 문장의 동사(서술어)다",
+          "꾸미는 말(형용사 · 부사)처럼 쓰였다",
+          "모두 '~하는 것'이라는 명사다"
+        ],
+        "answer": 1,
+        "why": "Barking 은 dogs 를, wounded 는 soldier 를 꾸미고(형용사처럼), Walking to school 은 '걸어가고 있을 때'라는 뜻으로 뒤 문장을 꾸며요(부사처럼). 동사의 이런 -ing · -ed 꼴을 분사라고 해요."
+      },
+      "title": "분사: 동사의 -ing(~하는) · -ed(~된)가 꾸미는 말이 됩니다",
+      "points": [
+        "현재분사 -ing: '~하는 · ~하고 있는'(능동) — barking dogs",
+        "과거분사 -ed/-en: '~된 · ~당한'(수동) — a wounded soldier · 자동사는 '이미 ~한'(완료) — fallen leaves",
+        "혼자면 대개 명사 앞, 뒤에 말이 붙으면 명사 뒤에서 꾸며요",
+        "분사구문: 접속사와 같은 주어를 빼고 동사를 -ing 로(진행형은 -ing 만 — Being walking ✗)",
+        "두 주어가 다르면 앞 주어를 남긴 채 접속사를 빼고 -ing 로(독립분사구문)"
+      ],
+      "table": {
+        "columns": [
+          "쓰임",
+          "예문",
+          "뜻"
+        ],
+        "rows": [
+          [
+            "명사 앞에서 꾸밈",
+            "barking dogs / a wounded soldier",
+            "짖는 개 / 부상당한 병사"
+          ],
+          [
+            "명사 뒤에서 꾸밈",
+            "a soldier wounded on the battlefield",
+            "전쟁터에서 부상당한 병사"
+          ],
+          [
+            "모습 · 상태(보어)",
+            "She sat reading a book. / I saw her dancing.",
+            "책을 읽으며 앉아 있었다 / 그녀가 춤추고 있는 것을 보았다"
+          ],
+          [
+            "go + -ing",
+            "He often goes shopping with my mother.",
+            "~하러 가다 (동명사 관용 표현으로 가르치는 책도 있어요)"
+          ],
+          [
+            "분사구문(같은 주어)",
+            "As I am walking to school, … → Walking to school, …",
+            "학교에 걸어가고 있을 때 (while · when 은 남겨도 돼요: While walking …)"
+          ],
+          [
+            "분사구문(주어가 다름)",
+            "While the teacher is conducting …, the students … → The teacher conducting …, the students …",
+            "선생님이 … 하고 있을 때"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '짖는 개 · 다친 병사'처럼 꾸미는 말이 늘 명사 앞에 오지만, 영어 분사는 뒤에 다른 말이 붙으면 명사 뒤로 가요. 또 우리말 '-면서 · -ㄹ 때'를 영어는 -ing 한 낱말(분사구문)로 줄여 말할 수 있어요.",
+      "mistakes": [
+        {
+          "wrong": "While the teacher conducting the morning session, the students are very noisy.",
+          "right": "The teacher conducting the morning session, the students are very noisy.",
+          "why": "두 주어가 다르면 접속사를 빼고 앞 주어를 남겨요. 'While + 주어 + -ing'는 틀린 문장이에요."
+        },
+        {
+          "wrong": "He is a wounding soldier.",
+          "right": "He is a wounded soldier.",
+          "why": "병사가 부상을 '당한' 것 → 과거분사"
+        }
+      ],
+      "worked": [
+        "When he saw me, he ran away.",
+        "① 접속사 When 을 뺀다",
+        "② 두 문장의 주어(he)가 같으니 앞의 he 를 뺀다",
+        "③ 동사 saw 를 -ing 로: Seeing",
+        "Seeing me, he ran away."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'Look at the ___ baby.' (자고 있는 아기) 빈칸에 알맞은 것은?",
+        "options": [
+          "slept",
+          "sleeping",
+          "sleep"
+        ],
+        "answer": 1,
+        "why": "아기가 스스로 '자고 있는' 것(능동 · 진행) → 현재분사 -ing",
+        "pointIndex": 0
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg13-2:s1",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 쓰임은?",
+          "sentence": "Barking dogs do not bite.",
+          "underline": [
+            "Barking"
+          ],
+          "options": [
+            "주어가 되는 동명사(짖는 것)",
+            "dogs 를 꾸미는 현재분사(짖는)",
+            "진행형의 일부(짖고 있다)"
+          ],
+          "answer": 1,
+          "why": "Barking 은 명사 dogs 앞에서 '짖는'으로 꾸며요.",
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 5"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-2:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은? (그는 부상당한 병사다.)",
+          "sentence": "He is a ___ soldier.",
+          "underline": [],
+          "options": [
+            "wounding",
+            "wound",
+            "wounded"
+          ],
+          "answer": 2,
+          "why": "병사가 부상을 '당한' 것(수동) → 과거분사.",
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 6"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-2:s3",
+          "kind": "select",
+          "instruction": "a soldier 를 뒤에서 꾸미는 분사를 누르세요",
+          "tokens": [
+            "I",
+            "saw",
+            "a",
+            "soldier",
+            "wounded",
+            "on",
+            "the",
+            "battlefield",
+            "."
+          ],
+          "answer": [
+            4
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "분사 뒤에 말(on the battlefield)이 붙으면 명사 뒤에서 꾸며요.",
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 7"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-2:s4",
+          "kind": "short",
+          "instruction": "분사구문으로 바꿀 때 빈칸에 알맞은 한 낱말을 쓰세요",
+          "sentence": "As I am walking to school, I often see my friends. → ___ to school, I often see my friends.",
+          "answer": [
+            "Walking"
+          ],
+          "why": "접속사 As 와 같은 주어 I 를 빼고, am walking 을 Walking 으로 바꿔요.",
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 3 → item 4"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg13-2:s5",
+          "kind": "choice",
+          "instruction": "주어가 다른 문장을 분사구문으로 바르게 바꾼 것은?",
+          "sentence": "While the teacher is conducting the morning session, the students are very noisy.",
+          "underline": [],
+          "options": [
+            "The teacher conducting the morning session, the students are very noisy.",
+            "While the teacher conducting the morning session, the students are very noisy.",
+            "Conducting the morning session, the students are very noisy."
+          ],
+          "answer": 0,
+          "why": "주어(the teacher ≠ the students)가 달라 앞 주어를 남기고 접속사를 빼요. 셋째는 학생들이 조회를 하는 뜻이 돼요.",
+          "bookRef": {
+            "book": 2,
+            "page": 52,
+            "where": "passOff (2) 분사 item 1 → item 2"
+          },
+          "source": "new",
+          "fix": {
+            "from": "=>While the teacher conducting for morning session, the students are very noisy.",
+            "field": "sentence",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재의 틀린 전환 예시를 오답 보기로 두고, 바른 전환(독립분사구문)을 정답으로 했습니다(판정 p52)."
+          }
+        },
+        {
+          "id": "pg13-2:s6",
+          "kind": "choice",
+          "instruction": "밑줄 친 말의 뜻으로 알맞은 것은?",
+          "sentence": "She sat singing merrily.",
+          "underline": [
+            "singing"
+          ],
+          "options": [
+            "노래를 부르기 위해(앉았다)",
+            "노래를 부르며(앉아 있었다)",
+            "노래 부르는 것을(앉았다)"
+          ],
+          "answer": 1,
+          "why": "sat 뒤의 singing 은 앉아 있던 모습(동시 동작)을 나타내는 현재분사예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 8"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg13-2:s7",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은? (로비는 정말 재미있는 사람이다.)",
+          "sentence": "Robby is a really ___ person.",
+          "underline": [],
+          "options": [
+            "interested",
+            "interest",
+            "interesting"
+          ],
+          "answer": 2,
+          "why": "로비가 남에게 흥미를 '주는' 사람 → -ing. interested 는 흥미를 '느끼는' 사람이에요.",
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 6"
+          },
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg13-2:p1",
+          "ko": "선생님이 아침 조회를 하고 있을 때, 학생들이 매우 시끄럽다.",
+          "koSource": "review 3 item 14",
+          "condition": null,
+          "promptEn": null,
+          "en": "While the teacher is conducting the morning session, the students are very noisy.",
+          "accept": [
+            "While the teacher is conducting the morning session, the students are really noisy.",
+            "While the teacher is conducting the morning assembly, the students are very noisy.",
+            "While the teacher is conducting the morning assembly, the students are really noisy.",
+            "While the teacher is holding the morning session, the students are very noisy.",
+            "While the teacher is holding the morning session, the students are really noisy.",
+            "While the teacher is holding the morning assembly, the students are very noisy.",
+            "While the teacher is holding the morning assembly, the students are really noisy.",
+            "While the teacher is leading the morning session, the students are very noisy.",
+            "While the teacher is leading the morning session, the students are really noisy.",
+            "While the teacher is leading the morning assembly, the students are very noisy.",
+            "While the teacher is leading the morning assembly, the students are really noisy.",
+            "When the teacher is conducting the morning session, the students are very noisy.",
+            "When the teacher is conducting the morning session, the students are really noisy.",
+            "When the teacher is conducting the morning assembly, the students are very noisy.",
+            "When the teacher is conducting the morning assembly, the students are really noisy.",
+            "When the teacher is holding the morning session, the students are very noisy.",
+            "When the teacher is holding the morning session, the students are really noisy.",
+            "When the teacher is holding the morning assembly, the students are very noisy.",
+            "When the teacher is holding the morning assembly, the students are really noisy.",
+            "When the teacher is leading the morning session, the students are very noisy.",
+            "When the teacher is leading the morning session, the students are really noisy.",
+            "When the teacher is leading the morning assembly, the students are very noisy.",
+            "When the teacher is leading the morning assembly, the students are really noisy.",
+            "As the teacher is conducting the morning session, the students are very noisy.",
+            "As the teacher is conducting the morning session, the students are really noisy.",
+            "As the teacher is conducting the morning assembly, the students are very noisy.",
+            "As the teacher is conducting the morning assembly, the students are really noisy.",
+            "As the teacher is holding the morning session, the students are very noisy.",
+            "As the teacher is holding the morning session, the students are really noisy.",
+            "As the teacher is holding the morning assembly, the students are very noisy.",
+            "As the teacher is holding the morning assembly, the students are really noisy.",
+            "As the teacher is leading the morning session, the students are very noisy.",
+            "As the teacher is leading the morning session, the students are really noisy.",
+            "As the teacher is leading the morning assembly, the students are very noisy.",
+            "As the teacher is leading the morning assembly, the students are really noisy.",
+            "The teacher conducting the morning session, the students are very noisy.",
+            "The teacher conducting the morning session, the students are really noisy.",
+            "The teacher conducting the morning assembly, the students are very noisy.",
+            "The teacher conducting the morning assembly, the students are really noisy.",
+            "The teacher holding the morning session, the students are very noisy.",
+            "The teacher holding the morning session, the students are really noisy.",
+            "The teacher holding the morning assembly, the students are very noisy.",
+            "The teacher holding the morning assembly, the students are really noisy.",
+            "The teacher leading the morning session, the students are very noisy.",
+            "The teacher leading the morning session, the students are really noisy.",
+            "The teacher leading the morning assembly, the students are very noisy.",
+            "The teacher leading the morning assembly, the students are really noisy.",
+            "With the teacher conducting the morning session, the students are very noisy.",
+            "With the teacher conducting the morning session, the students are really noisy.",
+            "With the teacher conducting the morning assembly, the students are very noisy.",
+            "With the teacher conducting the morning assembly, the students are really noisy.",
+            "With the teacher holding the morning session, the students are very noisy.",
+            "With the teacher holding the morning session, the students are really noisy.",
+            "With the teacher holding the morning assembly, the students are very noisy.",
+            "With the teacher holding the morning assembly, the students are really noisy.",
+            "With the teacher leading the morning session, the students are very noisy.",
+            "With the teacher leading the morning session, the students are really noisy.",
+            "With the teacher leading the morning assembly, the students are very noisy.",
+            "With the teacher leading the morning assembly, the students are really noisy.",
+            "While the teacher is conducting the morning session, the students are so noisy.",
+            "While the teacher is conducting the morning session, the students are very loud.",
+            "While the teacher is conducting the morning session, the students are really loud.",
+            "While the teacher is conducting the morning session, the students are so loud.",
+            "While the teacher is conducting the morning assembly, the students are so noisy.",
+            "While the teacher is conducting the morning assembly, the students are very loud.",
+            "While the teacher is conducting the morning assembly, the students are really loud.",
+            "While the teacher is conducting the morning assembly, the students are so loud.",
+            "While the teacher is holding the morning session, the students are so noisy.",
+            "While the teacher is holding the morning session, the students are very loud.",
+            "While the teacher is holding the morning session, the students are really loud.",
+            "While the teacher is holding the morning session, the students are so loud.",
+            "While the teacher is holding the morning assembly, the students are so noisy.",
+            "While the teacher is holding the morning assembly, the students are very loud.",
+            "While the teacher is holding the morning assembly, the students are really loud.",
+            "While the teacher is holding the morning assembly, the students are so loud.",
+            "While the teacher is leading the morning session, the students are so noisy.",
+            "While the teacher is leading the morning session, the students are very loud.",
+            "While the teacher is leading the morning session, the students are really loud.",
+            "While the teacher is leading the morning session, the students are so loud.",
+            "While the teacher is leading the morning assembly, the students are so noisy.",
+            "While the teacher is leading the morning assembly, the students are very loud.",
+            "While the teacher is leading the morning assembly, the students are really loud.",
+            "While the teacher is leading the morning assembly, the students are so loud.",
+            "When the teacher is conducting the morning session, the students are so noisy.",
+            "When the teacher is conducting the morning session, the students are very loud.",
+            "When the teacher is conducting the morning session, the students are really loud.",
+            "When the teacher is conducting the morning session, the students are so loud.",
+            "When the teacher is conducting the morning assembly, the students are so noisy.",
+            "When the teacher is conducting the morning assembly, the students are very loud.",
+            "When the teacher is conducting the morning assembly, the students are really loud.",
+            "When the teacher is conducting the morning assembly, the students are so loud.",
+            "When the teacher is holding the morning session, the students are so noisy.",
+            "When the teacher is holding the morning session, the students are very loud.",
+            "When the teacher is holding the morning session, the students are really loud.",
+            "When the teacher is holding the morning session, the students are so loud.",
+            "When the teacher is holding the morning assembly, the students are so noisy.",
+            "When the teacher is holding the morning assembly, the students are very loud.",
+            "When the teacher is holding the morning assembly, the students are really loud.",
+            "When the teacher is holding the morning assembly, the students are so loud.",
+            "When the teacher is leading the morning session, the students are so noisy.",
+            "When the teacher is leading the morning session, the students are very loud.",
+            "When the teacher is leading the morning session, the students are really loud.",
+            "When the teacher is leading the morning session, the students are so loud.",
+            "When the teacher is leading the morning assembly, the students are so noisy.",
+            "When the teacher is leading the morning assembly, the students are very loud.",
+            "When the teacher is leading the morning assembly, the students are really loud.",
+            "When the teacher is leading the morning assembly, the students are so loud.",
+            "As the teacher is conducting the morning session, the students are so noisy.",
+            "As the teacher is conducting the morning session, the students are very loud.",
+            "As the teacher is conducting the morning session, the students are really loud.",
+            "As the teacher is conducting the morning session, the students are so loud.",
+            "As the teacher is conducting the morning assembly, the students are so noisy.",
+            "As the teacher is conducting the morning assembly, the students are very loud.",
+            "As the teacher is conducting the morning assembly, the students are really loud.",
+            "As the teacher is conducting the morning assembly, the students are so loud.",
+            "As the teacher is holding the morning session, the students are so noisy.",
+            "As the teacher is holding the morning session, the students are very loud.",
+            "As the teacher is holding the morning session, the students are really loud.",
+            "As the teacher is holding the morning session, the students are so loud.",
+            "As the teacher is holding the morning assembly, the students are so noisy.",
+            "As the teacher is holding the morning assembly, the students are very loud.",
+            "As the teacher is holding the morning assembly, the students are really loud.",
+            "As the teacher is holding the morning assembly, the students are so loud.",
+            "As the teacher is leading the morning session, the students are so noisy.",
+            "As the teacher is leading the morning session, the students are very loud.",
+            "As the teacher is leading the morning session, the students are really loud.",
+            "As the teacher is leading the morning session, the students are so loud.",
+            "As the teacher is leading the morning assembly, the students are so noisy.",
+            "As the teacher is leading the morning assembly, the students are very loud.",
+            "As the teacher is leading the morning assembly, the students are really loud.",
+            "As the teacher is leading the morning assembly, the students are so loud.",
+            "The teacher conducting the morning session, the students are so noisy.",
+            "The teacher conducting the morning session, the students are very loud.",
+            "The teacher conducting the morning session, the students are really loud.",
+            "The teacher conducting the morning session, the students are so loud.",
+            "The teacher conducting the morning assembly, the students are so noisy.",
+            "The teacher conducting the morning assembly, the students are very loud.",
+            "The teacher conducting the morning assembly, the students are really loud.",
+            "The teacher conducting the morning assembly, the students are so loud.",
+            "The teacher holding the morning session, the students are so noisy.",
+            "The teacher holding the morning session, the students are very loud.",
+            "The teacher holding the morning session, the students are really loud.",
+            "The teacher holding the morning session, the students are so loud.",
+            "The teacher holding the morning assembly, the students are so noisy.",
+            "The teacher holding the morning assembly, the students are very loud.",
+            "The teacher holding the morning assembly, the students are really loud.",
+            "The teacher holding the morning assembly, the students are so loud.",
+            "The teacher leading the morning session, the students are so noisy.",
+            "The teacher leading the morning session, the students are very loud.",
+            "The teacher leading the morning session, the students are really loud.",
+            "The teacher leading the morning session, the students are so loud.",
+            "The teacher leading the morning assembly, the students are so noisy.",
+            "The teacher leading the morning assembly, the students are very loud.",
+            "The teacher leading the morning assembly, the students are really loud.",
+            "The teacher leading the morning assembly, the students are so loud.",
+            "With the teacher conducting the morning session, the students are so noisy.",
+            "With the teacher conducting the morning session, the students are very loud.",
+            "With the teacher conducting the morning session, the students are really loud.",
+            "With the teacher conducting the morning session, the students are so loud.",
+            "With the teacher conducting the morning assembly, the students are so noisy.",
+            "With the teacher conducting the morning assembly, the students are very loud.",
+            "With the teacher conducting the morning assembly, the students are really loud.",
+            "With the teacher conducting the morning assembly, the students are so loud.",
+            "With the teacher holding the morning session, the students are so noisy.",
+            "With the teacher holding the morning session, the students are very loud.",
+            "With the teacher holding the morning session, the students are really loud.",
+            "With the teacher holding the morning session, the students are so loud.",
+            "With the teacher holding the morning assembly, the students are so noisy.",
+            "With the teacher holding the morning assembly, the students are very loud.",
+            "With the teacher holding the morning assembly, the students are really loud.",
+            "With the teacher holding the morning assembly, the students are so loud.",
+            "With the teacher leading the morning session, the students are so noisy.",
+            "With the teacher leading the morning session, the students are very loud.",
+            "With the teacher leading the morning session, the students are really loud.",
+            "With the teacher leading the morning session, the students are so loud.",
+            "With the teacher leading the morning assembly, the students are so noisy.",
+            "With the teacher leading the morning assembly, the students are very loud.",
+            "With the teacher leading the morning assembly, the students are really loud.",
+            "With the teacher leading the morning assembly, the students are so loud."
+          ],
+          "targets": [
+            [
+              "conducting",
+              "holding",
+              "leading"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "conducting for morning session",
+              "hint": "conduct(진행하다)는 바로 목적어를 받아요. for 가 필요할까요? 조회 앞의 관사도 보세요."
+            },
+            {
+              "match": "while the teacher conducting",
+              "hint": "While 뒤에 주어를 남기면 동사(be동사)도 있어야 해요."
+            },
+            {
+              "match": "conducting morning",
+              "hint": "정해진 아침 조회라 조회 앞에 관사가 필요해요."
+            },
+            {
+              "match": "teacher conducts",
+              "hint": "맞는 영어지만 제시문은 '하고 있을 때'(진행)예요. 진행 중인 동작 모양으로 써 보세요."
+            }
+          ],
+          "tags": [
+            "participle",
+            "progressive",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s5-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 1",
+            "reviewWhere": "Review 3. item 14 (p60)"
+          },
+          "fix": {
+            "from": "While the teacher is conducting for morning session, the students are very noisy.",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "conduct(진행하다)는 타동사라 for 가 필요 없고, 정해진 아침 조회라 the 가 필요합니다. STUDENT 5과(s5-3)가 이미 고친 꼴(conducting the morning session)을 씁니다(판정 p52)."
+          }
+        },
+        {
+          "id": "pg13-2:p2",
+          "ko": "선생님이 아침 조회를 하고 있을 때, 학생들이 매우 시끄럽다.",
+          "koSource": "review 3 item 14 (같은 뜻)",
+          "condition": "분사구문으로",
+          "promptEn": "While the teacher is conducting the morning session, the students are very noisy.",
+          "en": "The teacher conducting the morning session, the students are very noisy.",
+          "accept": [
+            "The teacher conducting the morning session, the students are really noisy.",
+            "The teacher conducting the morning assembly, the students are very noisy.",
+            "The teacher conducting the morning assembly, the students are really noisy.",
+            "The teacher holding the morning session, the students are very noisy.",
+            "The teacher holding the morning session, the students are really noisy.",
+            "The teacher holding the morning assembly, the students are very noisy.",
+            "The teacher holding the morning assembly, the students are really noisy.",
+            "The teacher leading the morning session, the students are very noisy.",
+            "The teacher leading the morning session, the students are really noisy.",
+            "The teacher leading the morning assembly, the students are very noisy.",
+            "The teacher leading the morning assembly, the students are really noisy.",
+            "With the teacher conducting the morning session, the students are very noisy.",
+            "With the teacher conducting the morning session, the students are really noisy.",
+            "With the teacher conducting the morning assembly, the students are very noisy.",
+            "With the teacher conducting the morning assembly, the students are really noisy.",
+            "With the teacher holding the morning session, the students are very noisy.",
+            "With the teacher holding the morning session, the students are really noisy.",
+            "With the teacher holding the morning assembly, the students are very noisy.",
+            "With the teacher holding the morning assembly, the students are really noisy.",
+            "With the teacher leading the morning session, the students are very noisy.",
+            "With the teacher leading the morning session, the students are really noisy.",
+            "With the teacher leading the morning assembly, the students are very noisy.",
+            "With the teacher leading the morning assembly, the students are really noisy.",
+            "The teacher conducting the morning session, the students are so noisy.",
+            "The teacher conducting the morning session, the students are very loud.",
+            "The teacher conducting the morning session, the students are really loud.",
+            "The teacher conducting the morning session, the students are so loud.",
+            "The teacher conducting the morning assembly, the students are so noisy.",
+            "The teacher conducting the morning assembly, the students are very loud.",
+            "The teacher conducting the morning assembly, the students are really loud.",
+            "The teacher conducting the morning assembly, the students are so loud.",
+            "The teacher holding the morning session, the students are so noisy.",
+            "The teacher holding the morning session, the students are very loud.",
+            "The teacher holding the morning session, the students are really loud.",
+            "The teacher holding the morning session, the students are so loud.",
+            "The teacher holding the morning assembly, the students are so noisy.",
+            "The teacher holding the morning assembly, the students are very loud.",
+            "The teacher holding the morning assembly, the students are really loud.",
+            "The teacher holding the morning assembly, the students are so loud.",
+            "The teacher leading the morning session, the students are so noisy.",
+            "The teacher leading the morning session, the students are very loud.",
+            "The teacher leading the morning session, the students are really loud.",
+            "The teacher leading the morning session, the students are so loud.",
+            "The teacher leading the morning assembly, the students are so noisy.",
+            "The teacher leading the morning assembly, the students are very loud.",
+            "The teacher leading the morning assembly, the students are really loud.",
+            "The teacher leading the morning assembly, the students are so loud.",
+            "With the teacher conducting the morning session, the students are so noisy.",
+            "With the teacher conducting the morning session, the students are very loud.",
+            "With the teacher conducting the morning session, the students are really loud.",
+            "With the teacher conducting the morning session, the students are so loud.",
+            "With the teacher conducting the morning assembly, the students are so noisy.",
+            "With the teacher conducting the morning assembly, the students are very loud.",
+            "With the teacher conducting the morning assembly, the students are really loud.",
+            "With the teacher conducting the morning assembly, the students are so loud.",
+            "With the teacher holding the morning session, the students are so noisy.",
+            "With the teacher holding the morning session, the students are very loud.",
+            "With the teacher holding the morning session, the students are really loud.",
+            "With the teacher holding the morning session, the students are so loud.",
+            "With the teacher holding the morning assembly, the students are so noisy.",
+            "With the teacher holding the morning assembly, the students are very loud.",
+            "With the teacher holding the morning assembly, the students are really loud.",
+            "With the teacher holding the morning assembly, the students are so loud.",
+            "With the teacher leading the morning session, the students are so noisy.",
+            "With the teacher leading the morning session, the students are very loud.",
+            "With the teacher leading the morning session, the students are really loud.",
+            "With the teacher leading the morning session, the students are so loud.",
+            "With the teacher leading the morning assembly, the students are so noisy.",
+            "With the teacher leading the morning assembly, the students are very loud.",
+            "With the teacher leading the morning assembly, the students are really loud.",
+            "With the teacher leading the morning assembly, the students are so loud."
+          ],
+          "targets": [
+            [
+              "teacher conducting",
+              "teacher holding",
+              "teacher leading"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "while the teacher conducting",
+              "hint": "주어가 다른 분사구문에는 접속사를 남기지 않아요. 앞 주어는 남기고 be동사를 빼요."
+            },
+            {
+              "match": "the teacher is conducting",
+              "hint": "조건은 '분사구문으로'예요. 앞 문장의 be동사를 빼고 동사를 -ing 로만 남겨요."
+            },
+            {
+              "match": "teacher being conducting",
+              "hint": "진행형에서 나온 being 은 쓰지 않아요. 앞 주어 뒤에 -ing 만 남겨요."
+            },
+            {
+              "match": "conducting morning",
+              "hint": "정해진 아침 조회라 조회 앞에 관사가 필요해요."
+            }
+          ],
+          "tags": [
+            "participle-clause"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 2"
+          },
+          "fix": {
+            "from": "While the teacher conducting for morning session, the students are very noisy.",
+            "field": "en",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재의 분사구문 전환 예시가 틀렸습니다. 두 주어(the teacher · the students)가 달라서, 접속사 While 을 빼고 주어 the teacher 를 남긴 채 is 를 뺀 독립분사구문이 됩니다. 'While + 주어 + -ing'는 틀린 문장입니다(for · 빠진 the 도 고침, 판정 p52)."
+          }
+        },
+        {
+          "id": "pg13-2:p3",
+          "ko": "학교에 걸어가고 있을 때, 나는 친구들을 자주 만난다.",
+          "koSource": "review 3 item 15 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "As I am walking to school, I often see my friends.",
+          "accept": [
+            "As I am walking to school, I often meet my friends.",
+            "When I am walking to school, I often see my friends.",
+            "When I am walking to school, I often meet my friends.",
+            "While I am walking to school, I often see my friends.",
+            "While I am walking to school, I often meet my friends.",
+            "I often see my friends as I am walking to school.",
+            "I often see my friends when I am walking to school.",
+            "I often see my friends while I am walking to school.",
+            "I often meet my friends as I am walking to school.",
+            "I often meet my friends when I am walking to school.",
+            "I often meet my friends while I am walking to school.",
+            "Walking to school, I often see my friends.",
+            "Walking to school, I often meet my friends.",
+            "While walking to school, I often see my friends.",
+            "While walking to school, I often meet my friends.",
+            "When walking to school, I often see my friends.",
+            "When walking to school, I often meet my friends."
+          ],
+          "targets": [
+            [
+              "walking"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i walk to school",
+              "hint": "맞는 영어지만 제시문은 '걸어가고 있을 때'(진행)예요. 진행 중인 동작 모양으로 써 보세요."
+            }
+          ],
+          "tags": [
+            "participle",
+            "progressive",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s5-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 3",
+            "reviewWhere": "Review 3. item 15 (p60)"
+          },
+          "fix": {
+            "fromKo": "학교로 걸어갈 때, 나는 내 친구들을 자주 만난다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 진행형(am walking)이라 '걸어가고 있을 때'로 맞췄습니다. 교재에 인쇄된 두 답(As I am walking … · Walking to school …)을 모두 정답으로 받습니다(판정 p60)."
+          }
+        },
+        {
+          "id": "pg13-2:p4",
+          "ko": "학교에 걸어가고 있을 때, 나는 친구들을 자주 만난다.",
+          "koSource": "review 3 item 15 (고침)",
+          "condition": "분사구문으로",
+          "promptEn": "As I am walking to school, I often see my friends.",
+          "en": "Walking to school, I often see my friends.",
+          "accept": [
+            "Walking to school, I often meet my friends.",
+            "While walking to school, I often see my friends.",
+            "While walking to school, I often meet my friends.",
+            "When walking to school, I often see my friends.",
+            "When walking to school, I often meet my friends."
+          ],
+          "targets": [
+            [
+              "Walking"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I walking to school",
+              "hint": "같은 주어(I)는 빼고 -ing 로 시작해요."
+            },
+            {
+              "match": "Walk to school",
+              "hint": "동사를 -ing 꼴로 바꿔요."
+            },
+            {
+              "match": "i am walking",
+              "hint": "조건은 '분사구문으로'예요. 접속사와 같은 주어, be동사를 빼 보세요."
+            },
+            {
+              "match": "Being walking",
+              "hint": "진행형에서 나온 being 은 쓰지 않아요. -ing 한 낱말로 시작해요."
+            }
+          ],
+          "tags": [
+            "participle-clause"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 4",
+            "reviewWhere": "Review 3. item 15 (p60) [별해]"
+          },
+          "fix": {
+            "fromKo": "학교로 걸어갈 때, 나는 내 친구들을 자주 만난다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 진행형(am walking)이라 '걸어가고 있을 때'로 맞췄습니다. 교재에 인쇄된 두 답(As I am walking … · Walking to school …)을 모두 정답으로 받습니다(판정 p60)."
+          }
+        },
+        {
+          "id": "pg13-2:p5",
+          "ko": "짖는 개는 물지 않는다.",
+          "koSource": "review 3 item 16",
+          "condition": "분사로",
+          "promptEn": null,
+          "en": "Barking dogs do not bite.",
+          "accept": [
+            "A barking dog does not bite."
+          ],
+          "targets": [
+            [
+              "Barking"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "barked dogs",
+              "hint": "개가 스스로 '짖는' 것(능동)이에요. 어떤 분사를 쓸까요?"
+            },
+            {
+              "match": "dogs barking do not",
+              "hint": "분사 한 낱말만 꾸밀 때는 명사 앞에 둬요."
+            },
+            {
+              "match": "barking dogs does not",
+              "hint": "dogs 는 여럿이에요. do/does 모양을 보세요."
+            },
+            {
+              "match": "dogs that bark",
+              "hint": "맞는 영어지만 조건은 '분사로'예요. '짖는'을 -ing 한 낱말로 dogs 앞에 써 보세요."
+            },
+            {
+              "match": "dogs which bark",
+              "hint": "맞는 영어지만 조건은 '분사로'예요. '짖는'을 -ing 한 낱말로 dogs 앞에 써 보세요."
+            }
+          ],
+          "tags": [
+            "participle",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 5",
+            "reviewWhere": "Review 3. item 16 (p60)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-2:p6",
+          "ko": "로비는 정말 재미있는 사람이다.",
+          "koSource": "review 3 item 17",
+          "condition": "-ing 형용사로",
+          "promptEn": null,
+          "en": "Robby is a really interesting person.",
+          "accept": [
+            "Robby is a very interesting person.",
+            "Robbie is a really interesting person.",
+            "Robbie is a very interesting person.",
+            "Lobby is a really interesting person.",
+            "Lobby is a very interesting person.",
+            "Robby is a really amusing person.",
+            "Robby is a really entertaining person.",
+            "Robby is a very amusing person.",
+            "Robby is a very entertaining person.",
+            "Robbie is a really amusing person.",
+            "Robbie is a really entertaining person.",
+            "Robbie is a very amusing person.",
+            "Robbie is a very entertaining person.",
+            "Lobby is a really amusing person.",
+            "Lobby is a really entertaining person.",
+            "Lobby is a very amusing person.",
+            "Lobby is a very entertaining person."
+          ],
+          "targets": [
+            [
+              "interesting",
+              "amusing",
+              "entertaining"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "interested person",
+              "hint": "로비가 남에게 흥미를 '주는' 사람이에요. -ing 와 -ed 중 무엇일까요?"
+            },
+            {
+              "match": "funny person",
+              "hint": "맞는 영어지만 조건은 '-ing 형용사로'예요. 흥미를 '주는' 쪽의 -ing 형용사를 떠올려 보세요."
+            },
+            {
+              "match": "fun person",
+              "hint": "맞는 영어지만 조건은 '-ing 형용사로'예요. 흥미를 '주는' 쪽의 -ing 형용사를 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "participle",
+            "adjective-ing-ed"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 6",
+            "reviewWhere": "Review 3. item 17 (p60)"
+          },
+          "fix": {
+            "from": "Lobby is a really interesting person.",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "lobby 는 건물 현관을 뜻하는 낱말이라 사람 이름으로 어색합니다. 한국어 '로비'에 맞는 이름 Robby 로 고쳤습니다(Robbie · 교재의 Lobby 도 정답, 판정 p55)."
+          }
+        },
+        {
+          "id": "pg13-2:p7",
+          "ko": "우리는 그 사진에서 불타는 집을 볼 수 있다.",
+          "koSource": "review 3 item 18 (고침)",
+          "condition": "분사로",
+          "promptEn": null,
+          "en": "We can see the burning house in the picture.",
+          "accept": [
+            "We can see the burning house in the photo.",
+            "We can see a burning house in the picture.",
+            "We can see a burning house in the photo.",
+            "In the picture, we can see the burning house.",
+            "We can see the house burning in the picture.",
+            "We can see the burning house in the photograph.",
+            "We can see a burning house in the photograph.",
+            "In the photo, we can see the burning house.",
+            "In the photograph, we can see the burning house."
+          ],
+          "targets": [
+            [
+              "burning"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "burned house",
+              "hint": "'불타는'은 지금 타고 있는 것(진행 · 능동)이에요. 어떤 분사일까요?"
+            },
+            {
+              "match": "burnt house",
+              "hint": "'불타는'은 지금 타고 있는 것(진행 · 능동)이에요. 어떤 분사일까요?"
+            },
+            {
+              "match": "that is burning",
+              "hint": "맞는 영어지만 조건은 '분사로'예요. that is 를 빼고 -ing 만으로 집을 꾸며 보세요."
+            },
+            {
+              "match": "house on fire",
+              "hint": "맞는 영어지만 조건은 '분사로'예요. '불타는'을 -ing 로 써 보세요."
+            }
+          ],
+          "tags": [
+            "participle",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 7",
+            "reviewWhere": "Review 3. item 18 (p60)"
+          },
+          "fix": {
+            "fromKo": "우리는 그 사진에서 불 타는 집을 볼 수 있다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'불타다'는 한 낱말이라 붙여 씁니다(판정 p60)."
+          }
+        },
+        {
+          "id": "pg13-2:p8",
+          "ko": "그녀는 즐겁게 노래를 부르며 앉아 있었다.",
+          "koSource": "review 3 item 19 (고침)",
+          "condition": "분사로",
+          "promptEn": null,
+          "en": "She sat singing merrily.",
+          "accept": [
+            "She sat singing happily.",
+            "She sat singing cheerfully.",
+            "She sat there singing merrily.",
+            "She sat there singing happily.",
+            "She sat there singing cheerfully.",
+            "She was sitting there singing merrily.",
+            "She was sitting there singing happily.",
+            "She was sitting there singing cheerfully.",
+            "She was sitting singing merrily.",
+            "She was sitting singing happily.",
+            "She was sitting singing cheerfully.",
+            "She sat singing joyfully.",
+            "She sat there singing joyfully.",
+            "She was sitting there singing joyfully.",
+            "She was sitting singing joyfully."
+          ],
+          "targets": [
+            [
+              "sat singing",
+              "sat there singing",
+              "sitting singing",
+              "sitting there singing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sat and sang",
+              "hint": "맞는 영어지만 조건은 '분사로'예요. '부르며'를 -ing 로 sat 뒤에 붙여 보세요."
+            },
+            {
+              "match": "sat sing",
+              "hint": "'노래를 부르며'는 동사원형이 아니라 -ing 로 써요."
+            },
+            {
+              "match": "was sitting and singing",
+              "hint": "맞는 영어지만 조건은 '분사로'예요. and 없이 '부르며'를 -ing 로 붙여 보세요."
+            }
+          ],
+          "tags": [
+            "participle",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 8",
+            "reviewWhere": "Review 3. item 19 (p60)"
+          },
+          "fix": {
+            "fromKo": "그녀는 즐겁게 노래를 부르면서 앉았다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "She sat singing merrily 는 '노래를 부르며 앉아 있었다'(상태)라는 뜻인데 '앉았다'는 앉는 동작으로 읽혀 고쳤습니다(판정 p60)."
+          }
+        },
+        {
+          "id": "pg13-2:p9",
+          "ko": "그는 부상당한 병사다.",
+          "koSource": "review 3 item 20",
+          "condition": "분사로",
+          "promptEn": null,
+          "en": "He is a wounded soldier.",
+          "accept": [
+            "He is an injured soldier."
+          ],
+          "targets": [
+            [
+              "wounded",
+              "injured"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "wounding soldier",
+              "hint": "병사가 부상을 '당한' 것(수동)이에요. 어떤 분사일까요?"
+            },
+            {
+              "match": "is wounded soldier",
+              "hint": "soldier 는 셀 수 있는 명사라 앞에 관사가 필요해요."
+            }
+          ],
+          "tags": [
+            "participle"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 9",
+            "reviewWhere": "Review 3. item 20 (p60)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg13-2:p10",
+          "ko": "나는 전쟁터에서 부상당한 병사를 보았다.",
+          "koSource": "review 3 item 21",
+          "condition": "분사로",
+          "promptEn": null,
+          "en": "I saw a soldier wounded on the battlefield.",
+          "accept": [
+            "I saw a soldier injured on the battlefield.",
+            "I saw a wounded soldier on the battlefield.",
+            "I saw an injured soldier on the battlefield."
+          ],
+          "targets": [
+            [
+              "wounded",
+              "injured"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "wounding on the battlefield",
+              "hint": "병사가 부상을 '당한' 것(수동)이에요."
+            },
+            {
+              "match": "battle filed",
+              "hint": "'전쟁터'의 철자를 다시 보세요."
+            },
+            {
+              "match": "soldier who was",
+              "hint": "맞는 영어지만 조건은 '분사로'예요. who was 를 빼고 분사만으로 뒤에서 꾸며 보세요."
+            }
+          ],
+          "tags": [
+            "participle",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 55,
+            "where": "application (2) 분사[라벨 없음·추론] item 10",
+            "reviewWhere": "Review 3. item 21 (p61)"
+          },
+          "fix": {
+            "from": "I saw a soldier wounded on the battle field.",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "표준 표기는 한 낱말 battlefield 입니다(Pass-Off 쪽은 battle filed 로 오타). 띄어 쓴 답도 채점은 같게 봅니다(판정 p52)."
+          }
+        },
+        {
+          "id": "pg13-2:p11",
+          "ko": "그분은 종종 어머니와 함께 쇼핑을 가십니다.",
+          "koSource": "student:s2-4#5",
+          "condition": null,
+          "promptEn": null,
+          "en": "He often goes shopping with my mother.",
+          "accept": [
+            "He often goes shopping with my mom.",
+            "He often goes shopping with my mum.",
+            "He goes shopping with my mother often.",
+            "He frequently goes shopping with my mother.",
+            "He often goes shopping with his mother.",
+            "He often goes shopping with his mom.",
+            "He often goes shopping with his mum.",
+            "He goes shopping with his mother often.",
+            "He frequently goes shopping with his mother.",
+            "He often goes shopping with Mom."
+          ],
+          "targets": [
+            [
+              "goes shopping"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "goes to shopping",
+              "hint": "'쇼핑하러 가다'는 go 뒤에 to 없이 -ing 를 바로 써요."
+            },
+            {
+              "match": "often go shopping",
+              "hint": "He 는 3인칭 한 명이에요. go 모양을 보세요."
+            },
+            {
+              "match": "goes shop with",
+              "hint": "'쇼핑하러 가다'는 go + -ing 예요."
+            }
+          ],
+          "tags": [
+            "participle",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-4",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (2) 분사[라벨 없음·추론] item 11",
+            "reviewWhere": "Review 3. item 22 (p61)"
+          },
+          "fix": {
+            "fromKo": "그는 엄마와 함께 자주 쇼핑을 가십니다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT s2-4 와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(교재 한국어 '그는 … 가십니다'는 주어 높임이 어긋남 — 그는 ↔ -시-)."
+          },
+          "note": "go -ing 를 교재는 (2) 분사에 묶었습니다. 동명사 관용 표현으로 가르치는 책도 있어 설명 카드 표에 적었습니다(판정 p52). 한국어(STUDENT 판)가 누구의 어머니인지 정하지 않아(STUDENT 2-4 에서는 앞 문장 덕에 '나의 어머니') his mother 도 정답으로 받습니다. 가족끼리 쓰는 with Mom 도 받습니다."
+        },
+        {
+          "id": "pg13-2:p12",
+          "ko": "나는 그가 도망가고 있는 것을 보았다.",
+          "koSource": "review 3 item 26 (고침)",
+          "condition": "분사로",
+          "promptEn": null,
+          "en": "I saw him running away.",
+          "accept": [
+            "I watched him running away.",
+            "I saw him running off.",
+            "I watched him running off."
+          ],
+          "targets": [
+            [
+              "him running"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "him run away",
+              "hint": "맞는 영어(도망가는 동작 전체를 봄)지만 제시문은 '도망가고 있는'(진행 중인 모습)이에요. see + 목적어 뒤에 -ing 를 써 보세요."
+            },
+            {
+              "match": "saw he running",
+              "hint": "see 의 목적어 자리에는 he 가 아니라 목적격을 써요."
+            },
+            {
+              "match": "saw him to run",
+              "hint": "see + 목적어 뒤에는 to 를 쓰지 않아요."
+            },
+            {
+              "match": "that he was running",
+              "hint": "맞는 영어지만 조건은 '분사로'예요. see + 목적어 + -ing 로 써 보세요."
+            }
+          ],
+          "tags": [
+            "participle",
+            "sentence-pattern-5",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 56,
+            "where": "application (3) 동명사[라벨 없음·추론] item 4",
+            "reviewWhere": "Review 3. item 26 (p61)"
+          },
+          "fix": {
+            "fromKo": "나는 그가 도망가는 것을 보았다.",
+            "field": "ko",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재는 이 문장을 (3) 동명사에 묶었지만 running 은 see + 목적어 뒤에서 목적어의 모습을 나타내는 현재분사입니다. 그래서 분사 레슨으로 옮겼고, 진행 중인 모습이 드러나게 한국어를 '도망가고 있는'으로 고쳤습니다(I saw him run away. 는 동작 전체를 본 것, 판정 p53)."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg13-2:t1",
+          "ko": "당신은 저쪽에 서 있는 그 숙녀를 압니까?",
+          "condition": "분사로",
+          "promptEn": null,
+          "en": "Do you know the lady standing over there?",
+          "accept": [
+            "Do you know the lady standing there?",
+            "Do you know the woman standing over there?",
+            "Do you know the woman standing there?"
+          ],
+          "targets": [
+            [
+              "standing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "lady stood over there",
+              "hint": "숙녀가 지금 '서 있는' 것(진행 · 능동)이에요."
+            },
+            {
+              "match": "standing lady over there",
+              "hint": "뒤에 말(over there)이 붙은 분사는 명사 뒤에서 꾸며요."
+            },
+            {
+              "match": "who is standing",
+              "hint": "맞는 영어지만 조건은 '분사로'예요. who is 를 빼고 분사만으로 뒤에서 꾸며 보세요."
+            },
+            {
+              "match": "that is standing",
+              "hint": "맞는 영어지만 조건은 '분사로'예요. that is 를 빼고 분사만으로 뒤에서 꾸며 보세요."
+            }
+          ],
+          "tags": [
+            "participle",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-038#13",
+          "note": "GRAMMAR II 허용 답 1개를 그대로 받고 woman 판 2개를 더함."
+        },
+        {
+          "id": "pg13-2:t2",
+          "ko": "그는 하루에 15시간을 일하면서 그것을 끝냈다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "He finished it working 15 hours a day.",
+          "accept": [
+            "He finished it working fifteen hours a day.",
+            "He finished that working 15 hours a day.",
+            "He finished that working fifteen hours a day.",
+            "He finished it working 15 hours per day.",
+            "He completed it working 15 hours a day.",
+            "Working 15 hours a day, he finished it.",
+            "Working fifteen hours a day, he finished it.",
+            "He finished it while working 15 hours a day.",
+            "He finished it while working fifteen hours a day."
+          ],
+          "targets": [
+            [
+              "working"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "finished it worked",
+              "hint": "'일하면서'는 동시에 일어난 동작이에요. -ing 로 써 보세요."
+            },
+            {
+              "match": "finished it to work",
+              "hint": "'일하면서'는 to부정사가 아니라 -ing 로 써요."
+            }
+          ],
+          "tags": [
+            "participle-clause",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-038#1",
+          "note": "GRAMMAR II 허용 답 6개를 그대로 받고 fifteen 판 1개 · while 판 2개(15 · fifteen)를 더함."
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg13-2:f1",
+      "template": "Walking to school, I often see ___.",
+      "ko": "학교에 걸어갈 때, 나는 자주 ___을(를) 본다."
+    }
+  ]
+}

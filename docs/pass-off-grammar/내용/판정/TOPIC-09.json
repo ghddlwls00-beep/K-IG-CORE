@@ -1,0 +1,361 @@
+[
+ {
+  "page": 6,
+  "where": "TOPIC 9 형용사 · passOff (4) item 10 + application #56(9쪽) + Review 4. #13(14쪽) 정답",
+  "text": "We can buy strawberry by the pound.",
+  "type": "english_grammar",
+  "decision": "fix",
+  "reason": "strawberry 는 셀 수 있는 명사라 관사 없는 단수로 쓸 수 없음 → We can buy strawberries by the pound. 교재 문장은 fix.from 에 남기고 오답 힌트(buy strawberry by)로 안내. 같은 문항의 한국어 띄어쓰기('살수')도 함께 고침.",
+  "appliedTo": [
+   "pg09-4:p14"
+  ]
+ },
+ {
+  "page": 7,
+  "where": "TOPIC 9 형용사 · application #16 + Review 2. #4(11쪽) 정답",
+  "text": "You can see a shining face on the mirror.",
+  "type": "english_grammar",
+  "decision": "fix",
+  "reason": "거울에 비친 모습은 in the mirror(on the mirror 는 거울 표면에 붙은 것). 모범 답을 in 으로 고치고 on the mirror 는 오답 힌트로.",
+  "appliedTo": [
+   "pg09-1:p16"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 9 형용사 · application #46 + Review 4. #3(13쪽)",
+  "text": "It’s a scientific novel book and the book is very thick. / 이것은 과학 소설책이고 그 책은 매우 두껍다.",
+  "type": "english_unnatural",
+  "decision": "fix",
+  "reason": "scientific novel book 은 쓰지 않는 말(과학 소설 = science fiction, novel 과 book 겹침)이고 한국어 '이것은'과 It's 도 어긋남 → This is a science fiction book, and the book is very thick.(처음 a, 다시 the 연습 유지). 한국어는 교재 그대로. sci-fi · novel · It is 도 정답, and it is very thick(the 를 피한 답)은 오답 힌트.",
+  "appliedTo": [
+   "pg09-4:p5"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 9 형용사 · application #47 + Review 4. #4(14쪽)",
+  "text": "Look at the sky. The rainbow is over there.",
+  "type": "english_unnatural",
+  "decision": "fix",
+  "reason": "처음 알려 주는 무지개는 a(There's a rainbow over there.). The rainbow 는 둘 다 이미 아는 무지개일 때만 맞고, 바로 앞 sandwich/apple 예문의 '처음 a, 다시 the' 규칙과 어긋남. 한국어 '무지개가'(새 정보)와도 a 가 맞아 한국어는 그대로. 교재 답은 오답 힌트(the rainbow is over there)로.",
+  "appliedTo": [
+   "pg09-4:p6"
+  ]
+ },
+ {
+  "page": 5,
+  "where": "TOPIC 9 형용사 · passOff (2) item 3 + application #30(8쪽) + Review 2. #17(12쪽)",
+  "text": "I know him well-probably better than anybody else does. / 나는 그를 잘 안다- 아마 누구보다도 더 잘 안다.",
+  "type": "english_grammar",
+  "decision": "fix",
+  "reason": "줄표(—) 자리에 하이픈을 붙여 써서 well-probably 가 한 낱말처럼 보임 → I know him well — probably better than anybody else does. 한국어는 '나는 그를 잘 안다. 아마 누구보다도 더 잘 알 것이다.'(채점은 문장부호를 보지 않으므로 하이픈으로 친 답도 정답).",
+  "appliedTo": [
+   "pg09-2:a3",
+   "pg09-2:p8"
+  ]
+ },
+ {
+  "page": 7,
+  "where": "TOPIC 9 형용사 · application #5 + Review 1. #5(10쪽)",
+  "text": "Danny is a tall, young, interesting person.",
+  "type": "english_unnatural",
+  "decision": "keep",
+  "reason": "사람의 여러 성질(키 · 나이 · 성격)을 쉼표로 나란히 늘어놓은 문장이라 순서를 바꿔도 틀리지 않고, 교재 순서(크기 → 나이 → 의견)도 틀린 곳이 없는 영어라 모범 답으로 그대로 둠. 여섯 순서 모두 쉼표만 쓴 꼴 · and 로 이은 꼴(12가지)을 정답으로 받음. 사물을 꾸미며 쌓은 p6(long black ears)과 p7(old, round, wooden — 나이 · 모양 · 재료로 종류를 좁혀 감)은 보통 순서(의견 → 크기 → 나이 → 모양 → 색 → 재료)를 따르며, 설명 카드 points[4] 가 이 둘을 가름. G7 점검 반영(2026-09-27): 앞 이유 '쉼표로 나열한 형용사는 순서를 바꿔도 틀리지 않음'은 쉼표가 있는 p7 의 순서 힌트와 어긋나 '사람의 성질을 나란히 늘어놓은 경우'로 좁히고, 빠졌던 순서 9가지를 허용 답에 더하고, 설명 카드에 쌓는 순서 줄(points[4])을 넣음. 점검이 권한 'and 로 이은 꼴을 모범 답으로'는 교재 문장이 틀리지 않아 따르지 않음(오류가 아닌 표기는 바꾸지 않는다는 기준).",
+  "appliedTo": [
+   "pg09-1:p5",
+   "pg09-1:s9",
+   "pg09-1:rule"
+  ]
+ },
+ {
+  "page": 11,
+  "where": "TOPIC 9 형용사 · Review 2. #3 ↔ application #15",
+  "text": "그는 빠르게 잠이 든다. ↔ He is fast asleep.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "fast asleep 은 '깊이 잠들어 있다'(상태). 한국어를 '그는 깊이 잠들어 있다.'로 고치고, He is sleeping deeply 같은 동사 답으로 새지 않게 조건 '형용사로'를 붙임. sound asleep · deeply asleep 도 정답.",
+  "appliedTo": [
+   "pg09-1:p15"
+  ]
+ },
+ {
+  "page": 13,
+  "where": "TOPIC 9 형용사 · Review 3. #3 ↔ application #37",
+  "text": "나의 할머니는 나의 어머니의 큰 아버지와 함께 산다. ↔ My grandmother lives with my mother’s eldest brother.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "my mother's eldest brother 는 큰외삼촌인데 '어머니의 큰 아버지'는 외할아버지의 형이라 뜻이 다름. 이 문장을 가져온 STUDENT 4-4 의 한국어(외할머니는 큰외삼촌과 함께 살고 계십니다.)로 맞추고 studentRef adapted. oldest · my eldest uncle 도 정답. G7 반박 점검 반영(2026-09-28): 한국어 '외할머니'를 그대로 옮긴 My maternal grandmother … 답(8가지)도 정답으로 더함.",
+  "appliedTo": [
+   "pg09-3:a4",
+   "pg09-3:p3"
+  ]
+ },
+ {
+  "page": 13,
+  "where": "TOPIC 9 형용사 · Review 3. #5 ↔ application #39",
+  "text": "그것은 그들 인생에서 가장 행복한 여름이었다. ↔ It was the most beautiful summer of their lives.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어(beautiful)에 맞춰 한국어를 '가장 아름다운 여름'으로 고침(영어는 교재 그대로 — the most + 긴 형용사 연습).",
+  "appliedTo": [
+   "pg09-3:p5"
+  ]
+ },
+ {
+  "page": 14,
+  "where": "TOPIC 9 형용사 · Review 4. #10 ↔ application #53",
+  "text": "그는 손으로 나를 잡았다. ↔ He took me by the hand.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "take + 사람 + by the hand = '(누구)의 손을 잡다' → 한국어 '그는 내 손을 잡았다.'로 고치고, He took my hand. 로 새지 않게 ④ 에 조건 'by를 써서'. by my hand 는 오답 힌트.",
+  "appliedTo": [
+   "pg09-4:a7",
+   "pg09-4:p12"
+  ]
+ },
+ {
+  "page": 14,
+  "where": "TOPIC 9 형용사 · Review 4. #13",
+  "text": "우리는 딸기를 파운드당으로 살수 있다.",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "'살수' → '살 수', 어색한 '파운드당으로' → '파운드 단위로'. 영어 strawberry → strawberries 와 같은 문항(fix 한 번에 기록).",
+  "appliedTo": [
+   "pg09-4:p14"
+  ]
+ },
+ {
+  "page": 14,
+  "where": "TOPIC 9 형용사 · Review 4. #15, #16",
+  "text": "누가 요리를 할거야? / 누가 쇼핑을 할거야?",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "'할거야' → '할 거야'(의존 명사 '거' 띄어 씀). 두 문항 모두. be going to(뒤 레슨 pg12-4)는 Who will do the cooking? 처럼 will 로도 같은 뜻이라 도전으로 두지 않고 will 답도 정답으로.",
+  "appliedTo": [
+   "pg09-4:a8",
+   "pg09-4:p16",
+   "pg09-4:p17"
+  ]
+ },
+ {
+  "page": 11,
+  "where": "TOPIC 9 형용사 · Review 2. #9",
+  "text": "우리는 야구 경기보는 것에 신이 났다.",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "'경기보는' 띄어쓰기와 빠진 조사 → '우리는 야구 경기를 보게 되어 신이 났다.'(to watch 의 뜻이 드러나게).",
+  "appliedTo": [
+   "pg09-1:a8",
+   "pg09-1:p22"
+  ]
+ },
+ {
+  "page": 12,
+  "where": "TOPIC 9 형용사 · Review 2. #15 ↔ application #28",
+  "text": "불행하게도, 그녀의 병은 우리가 처음 생각했던 것보다 훨씬 더 심각했다. ↔ Unfortunately her illness was more serious than we thought at first.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어는 틀린 곳이 없어 교재 그대로 두고, 영어에 없는 '훨씬'(much)을 한국어에서 뺌. Unfortunately 뒤 쉼표는 채점에 쓰지 않으므로 쉼표 있는 답도 정답(표기 취향이라 모범 답은 교재 그대로).",
+  "appliedTo": [
+   "pg09-2:p6"
+  ]
+ },
+ {
+  "page": 12,
+  "where": "TOPIC 9 형용사 · Review 2. #19 ↔ application #32",
+  "text": "날씨가 더 따뜻할수록, 나는 더 나아지는 것 같다. ↔ The warmer the weather, the better I feel.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "feel better = 기분이 더 좋다 → '날씨가 따뜻할수록 나는 기분이 더 좋다.' The warmer it is, … 도 정답.",
+  "appliedTo": [
+   "pg09-2:a5",
+   "pg09-2:p10"
+  ]
+ },
+ {
+  "page": 12,
+  "where": "TOPIC 9 형용사 · Review 2. #21 ↔ application #34(8쪽)",
+  "text": "둘 중에서 누가 더 크니? ↔ Which is the taller of the two?",
+  "type": "answer_ambiguous",
+  "decision": "fix",
+  "reason": "한국어가 '누가'라 Who is the taller of the two? · Which of the two is taller? · Who is taller? 등도 정답 목록에 넣음(교재 영어는 모범 답 그대로). 이 문장은 the + 비교급 + of the two(비교급)라 추출자 추정 소주제(3 최상급) 대신 비교급 레슨(pg09-2) 끝에 둠 — tallest of the two 는 오답 힌트. G7 점검 반영(2026-09-27): '크다'가 키(taller)와 몸집(bigger) 둘로 읽혀 한국어를 '둘 중에서 누가 더 키가 크니?'로 고침(fix.fromKo 에 교재 한국어). Which one of the two is taller? · Of the two, who is taller? 같은 답도 정답으로 더함.",
+  "appliedTo": [
+   "pg09-2:p11"
+  ]
+ },
+ {
+  "page": 13,
+  "where": "TOPIC 9 형용사 · Review 3. #4 ↔ application #38",
+  "text": "네 인생에서 가장 행복한 날은 어떤 날이니? ↔ What was the happiest day of your life?",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어 과거(was)에 맞춰 '네 인생에서 가장 행복했던 날은 어떤 날이었니?'로 고침(이슈 제안 '언제였니'는 When 으로 옮기게 되어 '어떤 날이었니'로). in your life 도 정답.",
+  "appliedTo": [
+   "pg09-3:a5",
+   "pg09-3:p4"
+  ]
+ },
+ {
+  "page": 13,
+  "where": "TOPIC 9 형용사 · Review 4. 지시문",
+  "text": "4. 다음의 내용을 보고 a나 the를 이용하여 영작하시오.",
+  "type": "grammar_explanation_wrong",
+  "decision": "fix",
+  "reason": "웹에서는 이 지시문을 쓰지 않음. 관사를 쓰지 않는 것이 핵심인 문항(for breakfast · sports)에는 조건을 붙이지 않고, 설명 카드에 '관사 없음'(식사 · 운동 · 본래 목적의 장소) 줄과 오답 힌트(for the breakfast · play the sports · Claudia is at the school)를 둠. 여러 답이 나올 수 있는 문항에만 조건 칩(a/an을 써서 · by를 써서 · in을 써서 · do를 써서 · school을 두 번 써서). G7 점검 반영(2026-09-27): at school 문항(p11)은 '수업 중'을 in class 로 옮긴 맞는 답이 있어 조건 'school을 두 번 써서'와 in class 오답 힌트를 붙임. 악기 앞 관사는 미국 영어에서 흔히 빼므로(play guitar) p8 은 두 꼴 모두 정답. G7 반박 점검 반영(2026-09-28): '그 ~'를 that 으로 옮긴 맞는 답이 다시 말한 것의 the 연습을 피해 가는 p2(그 샌드위치 · 그 사과) · p5(그 책)에 조건 '관사를 써서'를 붙임. 설명 카드 koDiff 는 '셀 수 있는 명사 하나 앞에는 a · an · the(또는 my · your · this 같은 말)', points[2] 에 '식사 앞에 형용사가 붙으면 a(a big breakfast)'를 더함.",
+  "appliedTo": [
+   "pg09-4:p8",
+   "pg09-4:p10",
+   "pg09-4:p11",
+   "pg09-4:p2",
+   "pg09-4:p5"
+  ]
+ },
+ {
+  "page": 10,
+  "where": "TOPIC 9 형용사 · Review 1. 전체(형용사에 밑줄)",
+  "text": "1. 다음 문장을 읽어보고 형용사에 밑줄을 그으시오.",
+  "type": "answer_ambiguous",
+  "decision": "fix",
+  "reason": "정답은 Application 굵은 글씨 기준(nice, nice, big, wonderful, tall · young · interesting, long · black, old · round · wooden, What, Which, tired, interesting, diligent). 관사 a · an · the 는 optional(골라도 틀리지 않음). 각 문항에 용법(한정적 · 서술적) 고르기를 더함. 앵커가 아닌 ④ 문장과 같은 문항(item 3~7 · 12)은 reserve, item 8 · 9 와 10 · 11 은 ① 예문처럼 한 줄로 묶어 ③ 에 둠.",
+  "appliedTo": [
+   "pg09-1:s1",
+   "pg09-1:s2",
+   "pg09-1:s3",
+   "pg09-1:s4",
+   "pg09-1:s7",
+   "pg09-1:s8",
+   "pg09-1:s9",
+   "pg09-1:s10",
+   "pg09-1:s11",
+   "pg09-1:s12"
+  ]
+ },
+ {
+  "page": 6,
+  "where": "TOPIC 9 형용사 · passOff (4) item 11~13",
+  "text": "The only person who can do this is Zeus. / Who’s going to do the cooking? / Who’s going to do the shopping?",
+  "type": "layout_or_extraction",
+  "decision": "fix",
+  "reason": "웹에는 글꼴이 없어 강조를 focus 로 통일: ① 예문 a8 의 focus 는 do the cooking. The only person … · do the shopping 줄은 ① 예문 8개 밖이라 ④ 영작 문항으로만 들어감(아래 not-in-anchors).",
+  "appliedTo": [
+   "pg09-4:a8"
+  ]
+ },
+ {
+  "page": 6,
+  "where": "TOPIC 9 형용사 · passOff (3) item 3~4 + application #36~37(8쪽)",
+  "text": "That church is the oldest building in the town.(=/=eldest) / My grandmother lives with my mother’s eldest brother. (=oldest)",
+  "type": "layout_or_extraction",
+  "decision": "fix",
+  "reason": "메모 '(=/=eldest)' · '(=oldest)'를 문장에서 떼어 설명 카드(eldest 는 가족 사이 서열에만) · 형태 찾기(oldest/eldest 고르기, eldest · oldest 둘 다) · 오답 힌트(the eldest building)로 옮김. G7 반박 점검 반영(2026-09-28): application #37 의 '(=oldest)'를 뗀 기록을 pg09-3:p3.fix(from · field en+ko)에도 남김.",
+  "appliedTo": [
+   "pg09-3:a3",
+   "pg09-3:a4",
+   "pg09-3:p2",
+   "pg09-3:s4",
+   "pg09-3:s5",
+   "pg09-3:p3"
+  ]
+ },
+ {
+  "page": 12,
+  "where": "TOPIC 9 형용사 · Review 2.(영작) #20 ↔ Review 3.(최상급) 경계",
+  "text": "어제는 일 년 중에 가장 더운 날이었다.",
+  "type": "layout_or_extraction",
+  "decision": "fix",
+  "reason": "소주제 기준으로 배치: Yesterday was the hottest day of the year.(Review 2 #20)는 (3) 최상급 레슨 pg09-3 에, Which is the taller of the two?(Review 2 #21 — 비교급)는 pg09-2 에 둠.",
+  "appliedTo": [
+   "pg09-3:p1",
+   "pg09-2:p11"
+  ]
+ },
+ {
+  "page": 14,
+  "where": "TOPIC 9 형용사 · Review 4. #9 ↔ application #52 · passOff (4) item 6",
+  "text": "클라우디아는 수업 중이고 그녀의 엄마는 학교에서 그녀의 선생님을 뵙기를 원한다.",
+  "type": "answer_ambiguous",
+  "decision": "fix",
+  "reason": "at the school(그 학교 건물에서)의 the 가 한국어에 드러나지 않아 at school(수업 중)과 구별되지 않았고, '뵙기를 원한다'는 want 를 글자대로 옮긴 번역투라 '클라우디아는 수업 중이고 그녀의 엄마는 그 학교에서 그녀의 선생님을 뵙고 싶어 한다.'로 고침. '수업 중'은 in class 로도 옮겨지는 맞는 말이라 ④ 에 조건 'school을 두 번 써서'를 붙이고 in class 답에는 오답 힌트를 둠. 영어는 교재 그대로. 추출 issues 에 없던 것 — '그 학교에서'는 처음 만든 작업이, 나머지는 G7 점검이 찾음.",
+  "appliedTo": [
+   "pg09-4:a6",
+   "pg09-4:p11"
+  ],
+  "newFinding": true
+ },
+ {
+  "page": 14,
+  "where": "TOPIC 9 형용사 · Review 4. #14 ↔ application #57",
+  "text": "그것을 할 수 있는 유일한 사람은 제우스이다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어는 this(이것)인데 한국어는 '그것을'이라 '이것을 할 수 있는 유일한 사람은 제우스이다.'로 고침. it · that 을 쓴 답과 who 대신 that 을 쓴 답도 정답. 추출 issues 에 없던 것을 G7 점검에서 찾음.",
+  "appliedTo": [
+   "pg09-4:p15"
+  ],
+  "newFinding": true
+ },
+ {
+  "page": 13,
+  "where": "TOPIC 9 형용사 · Review 3. #6 ↔ application #40",
+  "text": "비록 가장 현명한 사람일지라도 가끔은 실수한다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어 may(~할 수 있다)가 한국어에 없어 '비록 가장 현명한 사람일지라도 가끔은 실수할 수 있다.'로 고침(영어는 교재 그대로). may 는 뒤 레슨(pg17-2) 문법이지만 can(기초)으로 같은 뜻을 쓸 수 있어 도전으로 두지 않음 — can 답 · 조동사 없는 답 · Even the wisest … 답도 정답. 추출 issues 에 없던 것을 G7 점검에서 찾음. G7 반박 점검 반영(2026-09-28): 이 문장의 문법 핵심(최상급 주어의 양보 뜻 — 가장 ~한 사람조차)을 설명 카드 koDiff 에 새 예문(The strongest man can't lift it.)으로 넣고, even though · although 절 답은 맞는 영어지만 이 문법을 피해 가므로 ④ 에 조건 '최상급을 주어로'와 힌트(is the wisest)를 둠. can · may · 조동사 없음 × sometimes 가 문장 끝에 온 답 등 빠졌던 24가지를 정답으로 더함.",
+  "appliedTo": [
+   "pg09-3:p6",
+   "pg09-3:rule"
+  ],
+  "newFinding": true
+ },
+ {
+  "coverage": "not-in-anchors",
+  "page": 6,
+  "where": "passOff (4) item 8",
+  "text": "The brick hit John in the face.",
+  "reason": "(4) 관사의 Pass-Off 문장이 13개라 ① 예문은 규칙이 서로 다른 8개(a/an · 다시 말한 the · 하나뿐인 the · the same · 식사 무관사 · at school · by the hand · do the cooking)만 둠. 이 문장은 by the hand 와 같은 규칙이라 ④ 영작에만 있음.",
+  "refs": [
+   "pg09-4:p13"
+  ]
+ },
+ {
+  "coverage": "not-in-anchors",
+  "page": 6,
+  "where": "passOff (4) item 9",
+  "text": "He is hired by the day.",
+  "reason": "① 예문 8개 밖 — ④ 영작(도전: 수동태)에 있음. by the + 단위는 설명 카드에도 있음.",
+  "refs": [
+   "pg09-4:p18"
+  ]
+ },
+ {
+  "coverage": "not-in-anchors",
+  "page": 6,
+  "where": "passOff (4) item 10",
+  "text": "We can buy strawberry by the pound.",
+  "reason": "① 예문 8개 밖 — ④ 영작에 고친 문장(strawberries)으로 있음.",
+  "refs": [
+   "pg09-4:p14"
+  ]
+ },
+ {
+  "coverage": "not-in-anchors",
+  "page": 6,
+  "where": "passOff (4) item 11",
+  "text": "The only person who can do this is Zeus.",
+  "reason": "① 예문 8개 밖 — ④ 영작에 있음. the only 는 설명 카드에도 있음.",
+  "refs": [
+   "pg09-4:p15"
+  ]
+ },
+ {
+  "coverage": "not-in-anchors",
+  "page": 6,
+  "where": "passOff (4) item 13",
+  "text": "Who’s going to do the shopping?",
+  "reason": "① 예문 8개 밖(같은 규칙의 do the cooking 이 ① 에 있음) — ④ 영작에 있음.",
+  "refs": [
+   "pg09-4:p17"
+  ]
+ }
+]

@@ -1,0 +1,163 @@
+[
+  {
+    "lesson": "pg10-2",
+    "item": "rule.points[2]",
+    "finding": "설명 카드가 불규칙동사의 모양을 '넷'으로 단정함. 표 5행 beat - beat - beaten(원형 = 과거인 꼴)이 넷 가운데 어디에도 들지 않아 ④ p5 에서 카드와 어긋남.",
+    "action": "fixed",
+    "note": "점검자 말이 맞음(원형과 과거만 같은 beat 가 ④ p5 에 있음). points[2] → '모양은 크게 넷: 셋이 같음 · 과거=과거분사 · 원형=과거분사 · 셋이 다름(원형과 과거만 같은 동사도 드물게 있어요).' beat 는 앵커가 아니어서 동사 이름과 꼴은 카드에 쓰지 않음(④ p5 정답을 먼저 보이지 않게). 표는 그대로."
+  },
+  {
+    "lesson": "pg10-3",
+    "item": "pg10-3:t2",
+    "finding": "'그녀는 나를 보고 미소 지었다'를 한국어대로 옮긴 'She saw me and smiled.'가 조건 칩 없이 틀림(missing looked).",
+    "action": "fixed",
+    "note": "accept += 'She saw me and smiled.', targets → [['looked','saw'],['smiled']](이 레슨의 -ed 는 smiled 로 계속 검사), note 에 'GRAMMAR II 에 허용 답이 없어 saw 답을 더함'을 적음. saw 길을 받게 된 만큼 현재형 'She sees me' 에도 기존 'She looks at me' 와 같은 시제 힌트를 더함(오답 패턴 2 → 3). 실제 채점기: 'She saw me and smiled.' 정답 · 'She saw me and smileed.' 틀림 + smileed 힌트 · 'She sees me and smiles.' 틀림 + 시제 힌트."
+  },
+  {
+    "lesson": "pg10-1",
+    "item": "pg10-1:t1",
+    "finding": "맞는 영어 'The members were against the plan.'이 '뜻은 맞아요' 힌트와 함께 틀림인데 condition 이 null(특정 형태를 요구하면 조건 칩 규칙 위반).",
+    "action": "fixed",
+    "note": "condition null → 'oppose 나 object 를 써서'(1권 pg07-2:t1 'it을 써서'와 같은 방식). 셋째 오답 패턴(were against the plan) hint → '뜻은 맞아요. 이번에는 조건대로 oppose 나 object 를 써 보세요.' 문항 note 에 까닭을 적음. accept 3개(GRAMMAR II 다른 답)는 모두 oppose/object 를 써서 그대로. 채점기: were against → 틀림 + 새 힌트, opposed · objected to → 정답, opposed to → 틀림 + 기존 힌트."
+  },
+  {
+    "lesson": "pg10-1",
+    "item": "pg10-1:p3",
+    "finding": "'Mom's out in the garage.' · 'Mom's in the garage.' · 'My mother is in the garage.' 등이 틀림으로 나오고 '빠진 말: is'까지 뜸(채점기는 대명사 뒤 's 만 is 로 풂).",
+    "action": "fixed",
+    "note": "accept += 점검자 목록 6개(5 → 11). targets 는 점검자 안 [['is',\"'s\"]] 로 바꿨더니 채점기는 맞게 보지만 검사 도구 check-lessons(containsTarget)가 대명사 뒤 's 만 is 로 풀어 Mom's 허용 답 4개에 '목표형 없음' 4줄을 냄(실제로 돌려 확인) → 묶음에 Mom's 를 더해 [['is',\"'s\",\"Mom's\"]] 로 하고 까닭을 문항 note 에 적음(도구를 채점기와 맞추는 일은 이끄는 세션 몫). 실제 채점기: 6개 모두 정답(마이크 답 Mom's 도 정답), 'Mom was in the garage.' · 'Mom went out to the garage.'(기존 힌트) · 'Moms out in the garage.'(아포스트로피 빠진 복수형)은 틀림."
+  },
+  {
+    "lesson": "pg10-2",
+    "item": "rule.mistakes[1]",
+    "finding": "✓ 예시 'I have gone there.'(1인칭 have gone)가 pg12-1 설명 카드(have gone to = 가 버렸다, 경험은 have been to)와 pg11-1 오답 힌트와 어긋남.",
+    "action": "fixed",
+    "note": "파일에서 확인: pg12-1 koDiff 'have gone to 는 주로 ~에 가 버렸다(지금 여기 없다)' · pg11-1 오답 패턴 'will have gone there' 힌트. mistakes[1] → {wrong 'She has went home.', right 'She has gone home.', why 'has 뒤에는 과거(went)가 아니라 과거분사(gone)를 써요.'}(점검자 안 그대로). go 는 앵커라 gone 을 보여도 되고, 이 레슨 ④ · ⑤ 에 이 문장이 없음(check-lessons '카드가 ④ 정답을 먼저 보여 줌' 0)."
+  },
+  {
+    "lesson": "코드(pg10-2 · pg10-3 채점)",
+    "item": "src/lib/passoffGrading.ts normalizeLiteral — pg10-2 영작 114 · pg10-3 낱말 꼴 12",
+    "finding": "채점기가 빗금(/)을 낱말 경계로 보지 않아 'go/went/gone'은 틀림 + '빠진 말: went · gone', 'go / went / gone'은 까닭 없이 틀림.",
+    "action": "lead",
+    "note": "이끄는 세션(코드) 몫 — 코드는 고치지 않음. 수정 중 실제 채점기로 다시 확인: pg10-2:p41 'go/went/gone' → 틀림(missing [went][gone]), 'go / went / gone' → 틀림(표시 없음), 'go, went, gone' · 'go went gone' → 정답. 점검자 제안: normalizeLiteral 의 하이픈 문자 클래스 [-‐‑‒–—―] 에 / 를 넣고, check-grading · compare-grading 로 판정이 바뀌는 것이 빗금 답뿐인지 확인 + 되돌리면 'go/went/gone' 이 다시 틀림이 되는지 깨기로 보이기. pg10-2:p2 의 am/is 허용 답은 그대로 둠(해가 없음)."
+  },
+  {
+    "lesson": "코드(pg10-1 음성)",
+    "item": "src/lib/lessonSpeechForm.ts — pg10-1 koreanWords [\"Seoul\"] · p19 en",
+    "finding": "pg10-1:p19 모범 답 'Can you tell me how to get to Seoul?'은 소리 내는 글인데 lessonSpeechForm.ts 에 'passoff-grammar/pg10-1' 행이 없음.",
+    "action": "lead",
+    "note": "파일에서 확인: 140~144행은 pg01-1 · pg03-3 · pg05-1 · pg06-1 · pg08-2 만 있음. 레슨의 koreanWords ['Seoul'] 은 이미 적혀 있음. 코드 쪽이 \"passoff-grammar/pg10-1\": [\"Seoul\"] 행을 더함(pg01-1 · pg05-1 과 같은 발음) — generate-azure-ava --dry-run 전에. 이 수정으로 소리 내는 글의 Seoul 은 그대로 p19 한 곳(허용 답은 소리 내지 않음)."
+  },
+  {
+    "lesson": "pg10-3",
+    "item": "rule.table.rows[1][0]",
+    "finding": "e 로 끝나는 동사의 예외로 ee 만 적혀 가장 흔한 예외 be → being 이 빠짐(카드 규칙대로면 bing).",
+    "action": "fixed",
+    "note": "→ 'e 로 끝남 (ee · be 는 -ing 그대로: see → seeing, be → being)'(점검자 글 그대로). 이 레슨 ④ 에 being 문항 없음."
+  },
+  {
+    "lesson": "pg10-3",
+    "item": "rule.points[0]",
+    "finding": "'규칙동사는 -ed 로 …, -ing 로 현재분사를 만들어요'가 -ing 도 규칙동사에만 붙는다고 읽힘(앵커 making · running · lying 과 ③ s2 · s6 은 불규칙동사).",
+    "action": "fixed",
+    "note": "→ '-ed 는 규칙동사의 과거 · 과거분사를 만들고, -ing 는 불규칙동사에도 붙여 현재분사를 만들어요.' 점검자 글의 '모든 동사'는 쓰지 않음 — can · must 같은 조동사는 -ing 꼴이 없어 '모든'이 틀린 말이 되므로 '불규칙동사에도'로 범위를 정확히 적음."
+  },
+  {
+    "lesson": "pg10-3",
+    "item": "rule.points[2]",
+    "finding": "'끝 음절에 강세가 없으면 자음을 겹치지 않아요'는 미국식 기준(영국식 travelled · cancelled).",
+    "action": "fixed",
+    "note": "→ '끝 음절에 강세가 없으면 보통 자음을 겹치지 않아요: listen → listened(영국식은 travel → travelled 처럼 l 을 겹쳐요).' 점검자 글에서 두 곳을 다듬음: ① '보통' — 미국식에도 kidnapped · worshipped · programmed · formatted 같은 예외가 있어 단정하지 않음 ② 영국식은 '모음 하나 + l'로 끝나면 보통 l 을 겹치므로 '겹치기도 해요' 대신 '겹쳐요'. ④ 채점에는 영향 없음."
+  },
+  {
+    "lesson": "pg10-1",
+    "item": "pg10-1:p16 errorPatterns[1]",
+    "finding": "힌트 'owe A to B: 누구 덕분인지는 다른 전치사로 이어요.'가 정답 전치사 to 를 그대로 보여 줌.",
+    "action": "fixed",
+    "note": "hint → '누구 덕분인지는 for 가 아닌 다른 전치사로 이어요.'(점검자 글 그대로). 채점기: 'He owed his success for his father.' → 틀림 + 새 힌트."
+  },
+  {
+    "lesson": "pg10-1",
+    "item": "pg10-1:p16 ko · fix.why · 판정 self(review 1 #17)",
+    "finding": "번역투 '그는 그의'를 고친 것은 맞지만, 오류가 아닌 굳은 표현 '아버지의 덕으로'까지 '아버지 덕분으로'로 바꿈.",
+    "action": "fixed",
+    "note": "ko → '그는 자신의 성공을 아버지의 덕으로 돌렸다.' fix.why → \"'그는 그의'는 번역투라 '자신의'로 다듬었습니다('아버지의 덕으로 돌리다'는 굳은 표현이라 그대로 둠). 한국어대로 옮긴 attributed · credited his success to 도 정답으로 받습니다.\" 판정 TOPIC-10.json 의 self 항목(page 22, review 1 #17) reason 도 같게 고침. fix.fromKo(교재 원문)는 그대로."
+  },
+  {
+    "lesson": "pg10-1",
+    "item": "pg10-1:p7 · p14 · p15 · p16 · p19 · p20 (선택: p8 · p23 · t2)",
+    "finding": "흔히 쓸 맞는 답이 모두 틀림(순서만 바꾼 while 절 · '가방을'대로 the bag · the report · credited · please · the way to get to · very tasty 등).",
+    "action": "fixed",
+    "note": "점검자 목록을 모두 넣고, 같은 짜임이 들쭉날쭉하지 않게 넓힘: p7 26 → 53(while 절을 앞으로 옮긴 판을 기존 뒤쪽 짜임 must/have to/should × keep/stay/be × working/you work/you are working 그대로 27개) · p14 1 → 3 · p15 2 → 5 · p16 1 → 2 + targets[0] 에 'credited his success to' · p19 23 → 95(Can/Could/Will/Would × 말 8가지 — 기존 6 + the way to get to · how I can get to — × please 없음/앞/끝, 기존 23개는 모두 새 짜임 안) · p20 13 → 19(형용사 10가지 × make/cook — very tasty · really good · very good 을 더함) · (선택) p8 7 → 15 + targets[0] 에 'grew old' · 'got old'(기존 네 짜임 그대로) · p23 11 → 23(would like 판을 기존 12가지 짜임 그대로) · t2 3 → 4(every person) + note. 모두 목표형을 담고 기존 오답 패턴에 안 걸림(check-lessons 0). 증거: scratchpad g8fix/probe.cjs(실제 채점기) — 수정 전(probe-before.txt)에는 이 답들이 모두 틀림, 수정 뒤(probe-after.txt) 모두 정답이고 세 레슨의 모범 답 · 허용 답 587개가 전부 정답 · 목표형 포함, 의도한 오답(teach me how to · will make you · during working · lady's bag 등)은 여전히 틀림 + 힌트."
+  },
+  {
+    "lesson": "pg10-3",
+    "item": "pg10-3:p4 · p24 · p1 · p23 · p21 · p26 · p22",
+    "finding": "'버스가' · '고양이가'(a) · '친구들과'(with friends) · '아이들이'(kids) · '그 무거운'(that) · '신발 끈'(shoelace) · '지금'(right now)을 자연스럽게 옮긴 답이 틀림.",
+    "action": "fixed",
+    "note": "점검자 목록 그대로: p4 +1 · p24 +2 · p1 +4 · p23 +1 · p21 +1 · p26 +1 · p22 +2 에 같은 짜임의 'Right now, they are making/baking cookies.' 2개를 더해 +4. 모두 목표형 포함 · 기존 오답 패턴에 안 걸림, 실제 채점기로 정답 확인."
+  },
+  {
+    "lesson": "pg10-2",
+    "item": "pg10-2:p110 · p71 · t1",
+    "finding": "① wake 만 사전 꼴을 섞은 조합이 틀림이고 'woke woke' 힌트가 허용 답 waked - waked 와 어긋남 ② 설명 카드가 소리 [red]를 가르치는데 'read - red - red'에 힌트 없음 ③ t1 에서 '밖에서'를 from outside 로 옮긴 답이 틀림.",
+    "action": "fixed",
+    "note": "① accept += 'wake - woke - waked', 'wake - waked - woken'(1 → 3), EP[0].hint → '세 번째 칸은 과거분사예요. woke 는 과거 꼴이에요.' ② EP += {match 'red', hint \"red 는 '빨간'이라는 다른 낱말이에요. 소리는 같아도 글자가 달라요.\"} — 점검자 글 '소리만 비슷해요'는 과거 read[rɛd]와 red 가 소리가 똑같아 '같아도'로 고침. 'read - read - read' 는 정답 그대로. ③ t1 자체를 뺌(아래 '수정 중 발견' 항목 — 1권 pg04-1:t2 와 같은 문장) — 대신 넣은 t3 는 허용 답을 처음부터 넉넉히 둠. 채점기: wake 네 조합 정답 · 'wake - woke - woke' 틀림 + 새 힌트 · 'read - red - red' 틀림 + 새 힌트. 참고: 마이크로 read[rɛd]를 맞게 말해도 인식기가 red 로 적을 수 있음 — 이제는 힌트를 보고 글자를 고칠 수 있음(마이크 답의 동음이의어를 같게 볼지는 코드 쪽 판단)."
+  },
+  {
+    "lesson": "pg10-2",
+    "item": "pg10-2:p11 (bless) · p109 (upset)",
+    "finding": "blessed(형용사 [ˈblɛsɪd] / 동사 과거 [blɛst])와 upset(명사 앞 강세 / 동사 뒤 강세)이 낱말만 늘어놓은 en 이라 음성이 틀린 소리를 낼 수 있음 — 세 꼴을 소리 내어 외우는 레슨이라 틀린 소리를 외우게 됨.",
+    "action": "lead",
+    "note": "청취와 speakAs 결정은 음성 단계(이끄는 세션) 몫. 이 수정에서 한 것: 판정 TOPIC-10.json 의 동형이음어 note refs 에 pg10-2:p11 · p109 를 더하고(4 → 6) reason 에 청취 샘플에 넣을 까닭과 틀리면 달 speakAs 글('bless - blessed ⟨blɛst⟩ - blessed ⟨blɛst⟩' · 'upset ⟨ʌpˈsɛt⟩ - upset ⟨ʌpˈsɛt⟩ - upset ⟨ʌpˈsɛt⟩')을 적음. 지금 speakAs 를 달지 않은 까닭: 점검자 제안대로 먼저 듣고 틀릴 때만 발음 기호를 씀. 2권 음성은 아직 안 만들어서 사라지는 클립은 없음."
+  },
+  {
+    "lesson": "코드(pg10-2 · pg10-3 타일 사다리)",
+    "item": "src/components/passoff/ComposeCard.tsx — generateWordBank(item.en, pool)",
+    "finding": "'go - went - gone' 같은 낱말 꼴 문항의 사다리 ③ 단어 타일에 '-' 가 낱말 타일로 나와 학습자가 하이픈도 놓아야 하는지 헷갈림(126문항).",
+    "action": "lead",
+    "note": "이끄는 세션(코드) 몫 — 코드는 고치지 않음. 점검자 제안: 타일을 만들 때 문장부호뿐인 토큰을 빼거나 en 의 ' - ' 를 공백으로 바꿔 넘기고, 1권 목록 문항(쉼표) 타일에 영향이 없는지 확인. 이 수정 뒤에도 해당 문항 수는 126 그대로(pg10-2 '원형 - 과거 - 과거분사' · '현재 - 과거 - 과거분사' 114 + pg10-3 '원형 - 과거 - 현재분사' 12)."
+  },
+  {
+    "lesson": "pg10-1",
+    "item": "rule.koDiff",
+    "finding": "첫 문장이 조사와 '~에 대해'를 원인 · 결과로 이어 무엇이 다른지 흐림.",
+    "action": "fixed",
+    "note": "→ \"우리말은 '그 규칙을 설명해 줘'도 '그 규칙에 대해 설명해 줘'도 되지만, 영어는 동사마다 뒤에 오는 말이 정해져 있어요. explain 은 전치사 없이 바로 목적어를 써요(explain the rule). '냄새가 좋다'의 '좋다'는 smell 뒤에 형용사로 써요(smell good).\" 점검자 글에 원래 카드의 요점 한 줄('영어는 동사마다 뒤에 오는 말이 정해져 있어요' — 이 레슨의 핵심)을 살려 합침."
+  },
+  {
+    "lesson": "pg10-3",
+    "item": "p6~p17 condition · p22~p26 challengeNote",
+    "finding": "조건 칩 '원형 - -ed - -ing'가 하이픈이 겹쳐 오타처럼 보이고 pg10-2 의 '원형 - 과거 - 과거분사'와 이름 짓는 방식이 다름.",
+    "action": "fixed",
+    "note": "12문항 condition → '원형 - 과거 - 현재분사', challengeNote 5곳도 같은 이름으로(스크립트가 12 · 5 를 세고 파일에 옛 글자가 0 인지 확인). 설명 카드 표 머리글 '-ed (과거 · 과거분사)' · '-ing (현재분사)'와 같은 말."
+  },
+  {
+    "lesson": "pg10-2",
+    "item": "pg10-2:f1",
+    "finding": "내 문장 틀 'Yesterday I ate ___ for lunch.'에 흔히 넣을 hamburger · sandwich 를 관사 없이 넣으면 틀린 영어가 됨.",
+    "action": "fixed",
+    "note": "template → 'I got up at ___ this morning.', ko → '오늘 아침 나는 ___시에 일어났다.'(점검자 안 그대로 — 불규칙 get - got 을 쓰고, 시각은 무엇을 넣어도 맞는 영어)."
+  },
+  {
+    "lesson": "pg10-3",
+    "item": "pg10-3:t1 → t3",
+    "finding": "(선택) 제시문 '수은주가 영하 6도로 떨어졌다'의 '수은주'(mercury)가 초등 고학년 · 성인 초급에게 어려운 낱말.",
+    "action": "fixed",
+    "note": "바꿈: t1 을 빼고(id t1 은 비워 둠 — 1권 pg04-1 · pg09-3 과 같은 처리) 새 t3 = GRAMMAR II gh2-010#2 'She stayed there over a month.' / '그녀는 한 달 이상 그곳에 머물렀다.'(쉬운 한국어, 모음 + y 는 y 를 그대로 두고 -ed — t2 의 e 로 끝남 smiled 와 다른 규칙). 허용 답 15(GRAMMAR II 다른 답 2 + for · more than 판 × stayed/remained), targets [['stayed','remained']], 오답 패턴 staied · She stays, tags 는 이 레슨 + base 만. 고른 까닭: GRAMMAR I·II 에서 자음을 겹치는 규칙동사 과거 문장은 이 수은주 문장 · 건축 전공(for 절) · plan to(부정사 — 뒤 레슨) · Has it stopped(현재완료 — 뒤 레슨) · travelled(영국식)뿐이라, 쉬운 문장 가운데 규칙이 드러나는 것을 씀(찾기 스크립트 g8fix/find-transfer.cjs). 67레슨의 ①~⑤ 어디에도 없는 문장(스크립트 확인). 채점기: stayed · for more than · remained 판 정답, staied · stays 틀림 + 힌트."
+  },
+  {
+    "lesson": "pg10-2",
+    "item": "pg10-2:p113 fix.why",
+    "finding": "fix.why 가 \"'움츠리다'는 이 동사의 뜻으로 맞지 않아\"라고 적었지만 withdraw 는 withdraw into oneself · withdraw one's hand 처럼 그 뜻으로도 씀 — 원문 대조표에 남는 까닭이 사실과 다름.",
+    "action": "fixed",
+    "note": "fix.why → \"withdraw 의 대표 뜻은 '물러나다, 철회하다, (돈을) 인출하다'입니다. '움츠리다, 뒤로 빼다'(withdraw one's hand · withdraw into oneself)도 맞는 뜻이지만 좁은 뜻이라, 뜻 칸을 대표 뜻으로 바꿨습니다.\" 판정 TOPIC-10.json 의 let · take · hang · withdraw 항목 reason 에도 '(좁은 뜻 — 틀린 뜻은 아님) → 대표 뜻'을 적음. 뜻 칸('물러나다, 인출하다')은 점검자 판단대로 그대로 — 교재 추출자도 이 칸을 '대표 의미와 어긋나거나 좁다'로 적었음."
+  },
+  {
+    "lesson": "pg10-2",
+    "item": "pg10-2:t1 → t3 (수정 중 발견 — 점검자 지적 밖)",
+    "finding": "⑤ t1 'I heard a strange sound outside.'(grammar2:gh2-020#5)가 1권 pg04-1:t2 와 한국어 · 영어까지 같은 문장이라, pg04-1 을 한 학습자에게는 '처음 보는 문장'이 아님.",
+    "action": "fixed",
+    "note": "점검 ⑮-③(t1 from outside)을 고치다가, 67레슨의 ⑤ 문장을 모두 서로 대조하는 스크립트로 찾음(겹침은 이 한 쌍뿐). 1권 정리 A 가 pg04-1:t1(바로 앞 레슨 ⑤ 와 같음)을 바꾼 것과 같은 처리: pg10-2:t1 을 빼고(id 비워 둠, 1권 파일은 건드리지 않음) 새 t3 = GRAMMAR II gh2-019#12 'He kept his promise.' — 한국어는 GRAMMAR II '그는 그의 약속을 지켰다.'의 번역투 '그의'를 빼 '그는 약속을 지켰다.'(koSource '(고침)' · note 에 적음), 허용 답 3(He kept his word. · the promise · promises), 오답 패턴 keeped · He keeps, tags irregular-verbs + base. 바꾼 뒤 G8 ⑤ 여섯 문장 모두 67레슨 안에서 하나뿐(스크립트 확인). 채점기: kept 판 정답, keeped · keeps 틀림 + 힌트. 레슨 사이 ⑤ 겹침은 check-lessons 가 보지 않음 — 도구 보강은 이끄는 세션 몫."
+  }
+]

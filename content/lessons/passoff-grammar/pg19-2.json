@@ -1,0 +1,1663 @@
+{
+  "id": "pg19-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "전치사·접속사·부사의 비교",
+  "label": "TOPIC 19. 전치사",
+  "menuLabel": "19-2. 전치사·접속사·부사의 비교",
+  "unit": 19,
+  "part": 3,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(2) 전치사와 접속사 비교",
+  "grammarTags": [
+    "preposition-vs-conjunction"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg19-2:a1",
+          "en": "Although it rained a lot, they enjoyed themselves.",
+          "ko": "비가 많이 왔음에도 불구하고, 그들은 즐거운 시간을 보냈다.",
+          "koSource": "review 1 item 37 (고침)",
+          "focus": [
+            "Although"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 1",
+            "reviewWhere": "Review 1. item 37 (p41)"
+          },
+          "fix": {
+            "fromKo": "비가 많이 왔음에도 불구하고, 그들은 즐겼다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "enjoyed themselves 는 '즐거운 시간을 보냈다'라 '즐겼다'만으로는 무엇을 즐겼는지 빠집니다(19-1 과 같은 번역)."
+          }
+        },
+        {
+          "id": "pg19-2:a2",
+          "en": "In spite of the rain, they enjoyed themselves.",
+          "ko": "비에도 불구하고, 그들은 즐거운 시간을 보냈다.",
+          "koSource": "new (19-1 Review 20 고친 번역과 같게)",
+          "focus": [
+            "In spite of"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 2"
+          },
+          "note": "교재 줄 '= In spite of the rain, they enjoyed themselves. (= Despite)' — 앞 문장을 전치사로 바꾼 줄. '(= Despite)'는 despite 도 같다는 메모라 ④ 에서 despite 를 받음"
+        },
+        {
+          "id": "pg19-2:a3",
+          "en": "I have many relatives because my father and mother have many brothers and sisters.",
+          "ko": "나의 아버지와 어머니가 많은 남자형제와 여자형제가 있으시기 때문에 나는 많은 친척들이 있습니다.",
+          "koSource": "student:s4-2#1",
+          "focus": [
+            "because"
+          ],
+          "studentRef": {
+            "lesson": "s4-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 3",
+            "reviewWhere": "Review 1. item 39 (p41)"
+          },
+          "fix": {
+            "from": "I have many relatives because my father and have many brothers and sisters. (4과)",
+            "fromKo": "나는 아버지와 어머니가 많은 남동생과 여동생을 가졌기 때문에 친척이 많다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "Pass-Off 줄에서 mother 가 빠져 문장이 성립하지 않습니다(p34 Application 줄에는 my mother 가 있음 — 판정 p30). STUDENT 4-2 와 같은 문장이라 영어 · 한국어 모두 STUDENT 판 — 교재 한국어의 '남동생과 여동생'은 brothers and sisters(형제자매)의 오역이었습니다(판정 p41)."
+          }
+        },
+        {
+          "id": "pg19-2:a4",
+          "en": "Because of this, I have many friends.",
+          "ko": "이것 때문에 나는 친구들이 많습니다.",
+          "koSource": "student:s3-2#2",
+          "focus": [
+            "Because of"
+          ],
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 4",
+            "reviewWhere": "Review 1. item 40 (p41)"
+          },
+          "fix": {
+            "fromKo": "이것 때문에 나는 친구가 많다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT 3-2 와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(교재 한국어가 틀린 것은 아님). 교재 밑줄이 Because 에만 있어 of 까지 한 덩어리(Because of)로 강조합니다(판정 p34)."
+          }
+        },
+        {
+          "id": "pg19-2:a5",
+          "en": "Let's wait until it stops raining.",
+          "ko": "비가 그칠 때까지 기다리자.",
+          "koSource": "review 1 item 42 (고침)",
+          "focus": [
+            "until"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 5",
+            "reviewWhere": "Review 1. item 42 (p41)"
+          },
+          "fix": {
+            "fromKo": "비가 멈출 때까지 기다리자.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "비는 '그친다'가 자연스러워 '비가 그칠 때까지'로 고쳤습니다(점검 G15)."
+          }
+        },
+        {
+          "id": "pg19-2:a6",
+          "en": "I didn't get up until half past ten.",
+          "ko": "나는 10시 반까지 일어나지 않았다.",
+          "koSource": "review 1 item 43 (고침)",
+          "focus": [
+            "until"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 6",
+            "reviewWhere": "Review 1. item 43 (p41)"
+          },
+          "fix": {
+            "fromKo": "나는 10시 반이 될 때까지 일어나지 못했다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "didn't get up 은 '일어나지 않았다'(못했다 아님)입니다(판정 p41)."
+          }
+        },
+        {
+          "id": "pg19-2:a7",
+          "en": "When I was young, I learned to like history books and novels because I could read about the wisdom of many people.",
+          "ko": "내가 어렸을 때, 나는 많은 사람들의 지혜에 대해서 읽을 수 있었기 때문에 역사책과 소설책을 좋아하게 되었습니다.",
+          "koSource": "student:s13-1#1",
+          "focus": [
+            "When",
+            "because"
+          ],
+          "studentRef": {
+            "lesson": "s13-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 7",
+            "reviewWhere": "Review 1. item 46 (p41)"
+          },
+          "fix": {
+            "from": "Since I was young, I learned to like history books and novels because I could read about the wisdom of many people. (13과)",
+            "fromKo": "내가 어렸을 때 이후로, 나는 역사책과 소설책을 좋아하는 것을 알게 되었는데 왜냐하면, 내가 많은 사람들의 지혜에 관해 읽을 수 있어서였다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "since(~ 이래로)는 지금까지 이어지는 일이라 주절에 과거형 learned 를 쓸 수 없습니다(판정 p30). STUDENT 13-1 이 이미 고친 문장(When I was young, …)을 영어 · 한국어 그대로 씁니다(설계 기본값). 그래서 이 문장은 since 대신 접속사 When · because 를 보여 주고, since + 절은 설명 카드와 ④ '그녀는 이곳에 온 이후로 …'로 익힙니다."
+          }
+        },
+        {
+          "id": "pg19-2:a8",
+          "en": "Since the end of the war in 1953, the country has developed very quickly.",
+          "ko": "1953년 전쟁이 끝난 이래로, 그 나라는 매우 빠르게 발전해 왔다.",
+          "koSource": "student:s17-4#1 (앞부분 — Review 48 고침)",
+          "focus": [
+            "Since"
+          ],
+          "studentRef": {
+            "lesson": "s17-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 8",
+            "reviewWhere": "Review 1. item 48 (p42)"
+          },
+          "fix": {
+            "from": "Since the end of the war in 1953, the country began to develop very quickly. (17과)",
+            "fromKo": "1953년 전쟁이 끝난 후, 그 나라는 매우 빠르게 개발되기 시작되었다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "since + 과거 시점 뒤 주절에 과거형 began 은 맞지 않아 STUDENT 17-4 가 고친 대로 has developed 로 썼습니다(판정 p30). 한국어의 '개발되기 시작되었다'(이중 피동)와 '끝난 후'(since 는 '~ 이래로')도 고쳤습니다(판정 p42)."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg19-2:a1",
+          "pg19-2:a2",
+          "pg19-2:a4"
+        ],
+        "question": "Although 와 In spite of 는 뜻이 비슷해요. 바로 뒤에 오는 말은 어떻게 다를까요?",
+        "options": [
+          "Although 뒤에는 '주어 + 동사', In spite of 뒤에는 명사",
+          "둘 다 뒤에 명사만 온다",
+          "Although 뒤에는 명사, In spite of 뒤에는 '주어 + 동사'"
+        ],
+        "answer": 0,
+        "why": "Although it rained 처럼 접속사 뒤에는 주어와 동사가 있는 말(절)이, In spite of the rain · Because of this 처럼 전치사 뒤에는 명사가 와요."
+      },
+      "title": "접속사 뒤에는 '주어 + 동사', 전치사 뒤에는 명사",
+      "points": [
+        "뜻이 같아도 접속사 뒤엔 '주어 + 동사', 전치사 뒤엔 명사나 -ing 가 와요",
+        "짝: although ↔ in spite of · despite / because ↔ because of",
+        "until · since · before · after: 뒤에 명사면 전치사, 절이면 접속사(since · before · after 는 뒤가 비면 부사 — until 은 아님)",
+        "since(~ 이래로)가 있으면 주절은 보통 have/has + 과거분사(It's + 기간 + since … 꼴도 써요)",
+        "not ~ until … = '…이 되어서야 ~했다'(그 전엔 안 했음)"
+      ],
+      "table": {
+        "columns": [
+          "뜻",
+          "접속사 + 주어 + 동사",
+          "전치사 + 명사"
+        ],
+        "rows": [
+          [
+            "~인데도",
+            "although it rained",
+            "in spite of the rain · despite the rain"
+          ],
+          [
+            "~ 때문에",
+            "because it was cold",
+            "because of the cold"
+          ],
+          [
+            "~까지",
+            "until it stops raining",
+            "until half past ten"
+          ],
+          [
+            "~ 이래로",
+            "since I was a child",
+            "since the war"
+          ],
+          [
+            "~ 전에",
+            "before I go to school",
+            "before class"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '비가 왔는데도 · 비에도 불구하고'처럼 말끝(어미 · 조사)만 바꾸지만, 영어는 뒤에 '주어 + 동사'가 오면 접속사(although), 명사가 오면 전치사(in spite of)로 낱말 자체를 바꿔요.",
+      "mistakes": [
+        {
+          "wrong": "Because of it was cold, I stayed home.",
+          "right": "Because it was cold, I stayed home.",
+          "why": "뒤에 '주어 + 동사'(it was)가 오면 접속사 because 예요."
+        },
+        {
+          "wrong": "Since I was young, I learned to swim.",
+          "right": "When I was young, I learned to swim.",
+          "why": "since 는 '~ 이래로 (지금까지)'라서, 지난 어느 때 한 일에는 when 을 써요."
+        }
+      ],
+      "worked": [
+        "비 때문에 우리는 집에 있었다.",
+        "접속사로 쓰면: Because it rained, we stayed home.",
+        "전치사로 쓰면 뒤를 명사(the rain)로",
+        "Because of the rain, we stayed home."
+      ],
+      "check": {
+        "question": "'We stayed inside ___ the heavy rain.' 빈칸에 맞는 것은?",
+        "options": [
+          "because",
+          "because of",
+          "although"
+        ],
+        "answer": 1,
+        "why": "뒤에 명사(the heavy rain)만 있으니 전치사 because of 예요.",
+        "pointIndex": 0
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg19-2:s1",
+          "kind": "choice",
+          "instruction": "밑줄 친 until 은 무엇일까요?",
+          "sentence": "Let's wait until it stops raining.",
+          "underline": [
+            "until"
+          ],
+          "options": [
+            "전치사",
+            "접속사",
+            "부사"
+          ],
+          "answer": 1,
+          "why": "뒤에 '주어 + 동사'(it stops)가 와서 접속사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 5"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg19-2:s2",
+          "kind": "choice",
+          "instruction": "밑줄 친 until 은 무엇일까요?",
+          "sentence": "I didn't get up until half past ten.",
+          "underline": [
+            "until"
+          ],
+          "options": [
+            "전치사",
+            "접속사",
+            "부사"
+          ],
+          "answer": 0,
+          "why": "뒤에 명사(half past ten)만 와서 전치사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 6"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg19-2:s3",
+          "kind": "choice",
+          "instruction": "밑줄 친 Before 는 무엇일까요?",
+          "sentence": "Before I go to school, my mother gives me my allowance.",
+          "underline": [
+            "Before"
+          ],
+          "options": [
+            "전치사",
+            "접속사",
+            "부사"
+          ],
+          "answer": 1,
+          "why": "뒤에 '주어 + 동사'(I go)가 와서 접속사예요. before class 처럼 명사가 오면 전치사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 31,
+            "where": "passOff (3) item 15"
+          },
+          "source": "new",
+          "note": "교재는 이 문장을 '(3) 중요 전치사들'에 넣었지만 before 가 절(I go to school)을 이끄는 접속사라(판정 p31), 전치사 · 접속사를 가르는 이 레슨의 형태 찾기로 옮김. STUDENT 5-1 과 같은 문장(TOPIC 20 적용 p50 · 리뷰 p57 에 다시 나옴)."
+        },
+        {
+          "id": "pg19-2:s4",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "___ the heavy snow, the bus came on time.",
+          "underline": [],
+          "options": [
+            "Although",
+            "Despite",
+            "Because"
+          ],
+          "answer": 1,
+          "why": "뒤에 명사(the heavy snow)만 있고 뜻이 '~에도 불구하고'라서 전치사 Despite 예요. Although 는 뒤에 '주어 + 동사'가 와야 하고, Because 는 뜻이 달라요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg19-2:s5",
+          "kind": "choice",
+          "instruction": "밑줄 친 Since 는 무엇일까요?",
+          "sentence": "Since the end of the war in 1953, the country has developed very quickly.",
+          "underline": [
+            "Since"
+          ],
+          "options": [
+            "전치사",
+            "접속사",
+            "부사"
+          ],
+          "answer": 0,
+          "why": "뒤에 명사(the end of the war)가 와서 전치사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 8"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg19-2:s6",
+          "kind": "choice",
+          "instruction": "밑줄 친 before 는 무엇일까요?",
+          "sentence": "I have seen this movie before.",
+          "underline": [
+            "before"
+          ],
+          "options": [
+            "전치사",
+            "접속사",
+            "부사"
+          ],
+          "answer": 2,
+          "why": "뒤에 아무 말도 없이 '전에'라는 뜻으로 동사를 꾸며서 부사예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg19-2:s7",
+          "kind": "select",
+          "instruction": "'주어 + 동사'를 이끄는 접속사를 모두 누르세요",
+          "tokens": [
+            "When",
+            "I",
+            "was",
+            "young",
+            ",",
+            "I",
+            "learned",
+            "to",
+            "like",
+            "history",
+            "books",
+            "and",
+            "novels",
+            "because",
+            "I",
+            "could",
+            "read",
+            "about",
+            "the",
+            "wisdom",
+            "of",
+            "many",
+            "people",
+            "."
+          ],
+          "answer": [
+            0,
+            13
+          ],
+          "optional": [
+            11
+          ],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "When(~할 때) 뒤에 I was, because(~ 때문에) 뒤에 I could read 가 와요. and 는 명사(books and novels)를 잇는 접속사라 골라도 괜찮아요. about · of 는 뒤에 명사가 오는 전치사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 7"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg19-2:s8",
+          "kind": "short",
+          "instruction": "빈칸에 알맞은 한 낱말을 쓰세요 (비 때문에 그녀는 올 수 없었다.)",
+          "sentence": "She couldn't come ___ of the rain.",
+          "answer": [
+            "because"
+          ],
+          "why": "뒤에 of the rain(명사)이 있어 because of(~ 때문에)예요.",
+          "bookRef": null,
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg19-2:p1",
+          "ko": "비가 많이 왔음에도 불구하고, 그들은 즐거운 시간을 보냈다.",
+          "koSource": "review 1 item 37 (고침)",
+          "condition": "접속사로",
+          "promptEn": null,
+          "en": "Although it rained a lot, they enjoyed themselves.",
+          "accept": [
+            "Although it rained a lot, they had a good time.",
+            "Although it rained a lot, they had fun.",
+            "Though it rained a lot, they enjoyed themselves.",
+            "Though it rained a lot, they had a good time.",
+            "Though it rained a lot, they had fun.",
+            "Even though it rained a lot, they enjoyed themselves.",
+            "Even though it rained a lot, they had a good time.",
+            "Even though it rained a lot, they had fun.",
+            "They enjoyed themselves although it rained a lot.",
+            "They enjoyed themselves though it rained a lot.",
+            "They enjoyed themselves even though it rained a lot.",
+            "They had a good time although it rained a lot.",
+            "They had a good time though it rained a lot.",
+            "They had a good time even though it rained a lot.",
+            "They had fun although it rained a lot.",
+            "They had fun though it rained a lot.",
+            "They had fun even though it rained a lot.",
+            "Although it rained a lot, they had a great time.",
+            "Though it rained a lot, they had a great time.",
+            "Even though it rained a lot, they had a great time.",
+            "Although it rained heavily, they enjoyed themselves.",
+            "Though it rained heavily, they enjoyed themselves.",
+            "Even though it rained heavily, they enjoyed themselves.",
+            "Although it rained heavily, they had a good time.",
+            "Though it rained heavily, they had a good time.",
+            "Even though it rained heavily, they had a good time.",
+            "Although it rained heavily, they had fun.",
+            "Though it rained heavily, they had fun.",
+            "Even though it rained heavily, they had fun.",
+            "Although it rained heavily, they had a great time.",
+            "Though it rained heavily, they had a great time.",
+            "Even though it rained heavily, they had a great time.",
+            "They had a great time although it rained a lot.",
+            "They had a great time though it rained a lot.",
+            "They had a great time even though it rained a lot.",
+            "They enjoyed themselves although it rained heavily.",
+            "They enjoyed themselves though it rained heavily.",
+            "They enjoyed themselves even though it rained heavily.",
+            "They had a good time although it rained heavily.",
+            "They had a good time though it rained heavily.",
+            "They had a good time even though it rained heavily.",
+            "They had fun although it rained heavily.",
+            "They had fun though it rained heavily.",
+            "They had fun even though it rained heavily.",
+            "They had a great time although it rained heavily.",
+            "They had a great time though it rained heavily.",
+            "They had a great time even though it rained heavily."
+          ],
+          "targets": [
+            [
+              "Although",
+              "Though",
+              "Even though"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "in spite of it rained",
+              "hint": "in spite of 는 전치사라 뒤에 '주어 + 동사'가 올 수 없어요. 조건은 '접속사로'예요."
+            },
+            {
+              "match": "although the rain",
+              "hint": "although 는 접속사라 뒤에 '주어 + 동사'가 와요."
+            },
+            {
+              "match": "although it rained a lot but",
+              "hint": "although 와 but 을 한 문장에 같이 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "complex-sentence",
+            "pronoun-reflexive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 1",
+            "reviewWhere": "Review 1. item 37 (p41)"
+          },
+          "fix": {
+            "fromKo": "비가 많이 왔음에도 불구하고, 그들은 즐겼다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "enjoyed themselves 는 '즐거운 시간을 보냈다'라 '즐겼다'만으로는 무엇을 즐겼는지 빠집니다."
+          }
+        },
+        {
+          "id": "pg19-2:p2",
+          "ko": "비에도 불구하고, 그들은 즐거운 시간을 보냈다.",
+          "koSource": "new (앞 문장 바꿔쓰기 — 교재에 한국어 없음)",
+          "condition": "전치사로",
+          "promptEn": "Although it rained a lot, they enjoyed themselves.",
+          "en": "In spite of the rain, they enjoyed themselves.",
+          "accept": [
+            "In spite of the rain, they had a good time.",
+            "In spite of the heavy rain, they enjoyed themselves.",
+            "In spite of the heavy rain, they had a good time.",
+            "Despite the rain, they enjoyed themselves.",
+            "Despite the rain, they had a good time.",
+            "Despite the heavy rain, they enjoyed themselves.",
+            "Despite the heavy rain, they had a good time.",
+            "They enjoyed themselves in spite of the rain.",
+            "They enjoyed themselves in spite of the heavy rain.",
+            "They enjoyed themselves despite the rain.",
+            "They enjoyed themselves despite the heavy rain.",
+            "They had a good time in spite of the rain.",
+            "They had a good time in spite of the heavy rain.",
+            "They had a good time despite the rain.",
+            "They had a good time despite the heavy rain.",
+            "In spite of the rain, they had fun.",
+            "They had fun in spite of the rain.",
+            "In spite of the heavy rain, they had fun.",
+            "They had fun in spite of the heavy rain.",
+            "Despite the rain, they had fun.",
+            "They had fun despite the rain.",
+            "Despite the heavy rain, they had fun.",
+            "They had fun despite the heavy rain.",
+            "In spite of the rain, they had a great time.",
+            "They had a great time in spite of the rain.",
+            "In spite of the heavy rain, they had a great time.",
+            "They had a great time in spite of the heavy rain.",
+            "Despite the rain, they had a great time.",
+            "They had a great time despite the rain.",
+            "Despite the heavy rain, they had a great time.",
+            "They had a great time despite the heavy rain."
+          ],
+          "targets": [
+            [
+              "In spite of",
+              "Despite"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "in spite of it rained",
+              "hint": "in spite of 는 전치사라 뒤에 '주어 + 동사'가 올 수 없어요. 명사로 바꿔 보세요."
+            },
+            {
+              "match": "despite of",
+              "hint": "despite 는 한 낱말이에요. 뒤에 of 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "pronoun-reflexive",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 2"
+          },
+          "fix": null,
+          "note": "교재의 '= … (= Despite)' 바꿔쓰기 줄(Review 없음) — 앞 문장을 영어로 주고 전치사로 바꾸게 함"
+        },
+        {
+          "id": "pg19-2:p3",
+          "ko": "그는 비록 늙었지만 꽤 힘이 세다.",
+          "koSource": "review 1 item 38 (고침)",
+          "condition": "접속사로",
+          "promptEn": null,
+          "en": "He is quite strong, although he is old.",
+          "accept": [
+            "Although he is old, he is quite strong.",
+            "Though he is old, he is quite strong.",
+            "Even though he is old, he is quite strong.",
+            "He is quite strong, though he is old.",
+            "He is quite strong, even though he is old.",
+            "Although he is old, he is pretty strong.",
+            "He is pretty strong, although he is old.",
+            "Though he is old, he is pretty strong.",
+            "He is pretty strong, though he is old.",
+            "Even though he is old, he is pretty strong.",
+            "He is pretty strong, even though he is old.",
+            "Although he is old, he is fairly strong.",
+            "He is fairly strong, although he is old.",
+            "Though he is old, he is fairly strong.",
+            "He is fairly strong, though he is old.",
+            "Even though he is old, he is fairly strong.",
+            "He is fairly strong, even though he is old."
+          ],
+          "targets": [
+            [
+              "although",
+              "though",
+              "even though"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "although he is old but",
+              "hint": "although 와 but 을 한 문장에 같이 쓰지 않아요."
+            },
+            {
+              "match": "in spite of he is old",
+              "hint": "in spite of 뒤에는 '주어 + 동사'가 올 수 없어요. 조건은 '접속사로'예요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "complex-sentence",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 3",
+            "reviewWhere": "Review 1. item 38 (p41)"
+          },
+          "fix": {
+            "fromKo": "그는 비록 늙음에도 불구하고 상당히 강하다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'비록 늙음에도 불구하고'는 '비록'과 '-음에도 불구하고'가 겹친 번역투라 '비록 늙었지만 꽤 힘이 세다'로 고쳤습니다."
+          },
+          "note": "바꿔쓰기 짝: 다음 문항 p4 의 promptEn 이 이 문항의 모범 답과 같음 — 다시 풀기 · 날을 넘기는 복습에서 p4 를 이 문항보다 먼저 내면 답이 먼저 보임(코드 쪽 순서 요청 — 점검 G15)"
+        },
+        {
+          "id": "pg19-2:p4",
+          "ko": "그는 늙었음에도 불구하고 꽤 힘이 세다.",
+          "koSource": "new (앞 문장 바꿔쓰기 — 교재에 한국어 없음)",
+          "condition": "전치사로",
+          "promptEn": "He is quite strong, although he is old.",
+          "en": "He is quite strong in spite of being old.",
+          "accept": [
+            "He is quite strong in spite of his age.",
+            "He is quite strong in spite of his old age.",
+            "He is quite strong despite being old.",
+            "He is quite strong despite his age.",
+            "He is quite strong despite his old age.",
+            "In spite of being old, he is quite strong.",
+            "In spite of his age, he is quite strong.",
+            "In spite of his old age, he is quite strong.",
+            "Despite being old, he is quite strong.",
+            "Despite his age, he is quite strong.",
+            "Despite his old age, he is quite strong.",
+            "He is quite strong in spite of old age.",
+            "He is quite strong despite old age.",
+            "In spite of old age, he is quite strong.",
+            "Despite old age, he is quite strong.",
+            "He is quite strong in spite of his being old.",
+            "He is quite strong despite his being old.",
+            "In spite of his being old, he is quite strong.",
+            "Despite his being old, he is quite strong."
+          ],
+          "targets": [
+            [
+              "in spite of",
+              "despite"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "in spite of he is old",
+              "hint": "in spite of 는 전치사라 뒤에 '주어 + 동사'가 올 수 없어요. 명사나 -ing 로 바꿔 보세요."
+            },
+            {
+              "match": "in spite of old he",
+              "hint": "old 는 형용사예요. 전치사 뒤에는 명사나 동사 + -ing 가 와요."
+            },
+            {
+              "match": "despite old he",
+              "hint": "old 는 형용사예요. 전치사 뒤에는 명사나 동사 + -ing 가 와요."
+            },
+            {
+              "match": "despite of",
+              "hint": "despite 는 한 낱말이에요. 뒤에 of 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "gerund",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 4"
+          },
+          "fix": null,
+          "note": "교재의 '= He is quite strong in spite of being old.' 바꿔쓰기 줄(Review 없음)"
+        },
+        {
+          "id": "pg19-2:p5",
+          "ko": "나의 아버지와 어머니가 많은 남자형제와 여자형제가 있으시기 때문에 나는 많은 친척들이 있습니다.",
+          "koSource": "student:s4-2#1",
+          "condition": null,
+          "promptEn": null,
+          "en": "I have many relatives because my father and mother have many brothers and sisters.",
+          "accept": [
+            "I have many relatives because my father and my mother have many brothers and sisters.",
+            "I have a lot of relatives because my father and mother have many brothers and sisters.",
+            "I have a lot of relatives because my father and my mother have many brothers and sisters.",
+            "Because my father and mother have many brothers and sisters, I have many relatives.",
+            "Because my father and mother have many brothers and sisters, I have a lot of relatives.",
+            "Because my father and my mother have many brothers and sisters, I have many relatives.",
+            "Because my father and my mother have many brothers and sisters, I have a lot of relatives.",
+            "Since my father and mother have many brothers and sisters, I have many relatives.",
+            "Since my father and my mother have many brothers and sisters, I have many relatives.",
+            "Since my father and mother have many brothers and sisters, I have a lot of relatives.",
+            "Since my father and my mother have many brothers and sisters, I have a lot of relatives.",
+            "I have lots of relatives because my father and mother have many brothers and sisters.",
+            "Because my father and mother have many brothers and sisters, I have lots of relatives.",
+            "Since my father and mother have many brothers and sisters, I have lots of relatives.",
+            "I have lots of relatives because my father and my mother have many brothers and sisters.",
+            "Because my father and my mother have many brothers and sisters, I have lots of relatives.",
+            "Since my father and my mother have many brothers and sisters, I have lots of relatives."
+          ],
+          "targets": [
+            [
+              "because",
+              "since"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "because of my father",
+              "hint": "뒤에 '주어 + 동사'(my father and mother have)가 오면 of 없이 접속사로 써요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "complex-sentence",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s4-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 5",
+            "reviewWhere": "Review 1. item 39 (p41)"
+          },
+          "fix": {
+            "from": "I have many relatives because my father and have many brothers and sisters. (4과)",
+            "fromKo": "나는 아버지와 어머니가 많은 남동생과 여동생을 가졌기 때문에 친척이 많다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "Pass-Off 줄은 mother 가 빠졌고(Application 줄 'my father and my mother' 는 맞아 허용 답에 둠), STUDENT 4-2 와 같은 문장이라 영어 · 한국어 모두 STUDENT 판 — 교재 한국어 '남동생과 여동생'은 brothers and sisters(형제자매)의 오역이었습니다(판정 p30 · p41)."
+          }
+        },
+        {
+          "id": "pg19-2:p6",
+          "ko": "이것 때문에 나는 친구들이 많습니다.",
+          "koSource": "student:s3-2#2",
+          "condition": null,
+          "promptEn": null,
+          "en": "Because of this, I have many friends.",
+          "accept": [
+            "Because of this, I have a lot of friends.",
+            "I have many friends because of this.",
+            "I have a lot of friends because of this.",
+            "Because of this, I have lots of friends.",
+            "I have lots of friends because of this."
+          ],
+          "targets": [
+            [
+              "Because of"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "because this",
+              "hint": "뒤에 명사(this)만 있으면 because 만으로는 안 돼요. 전치사 역할을 하는 말이 더 필요해요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "have-has",
+            "pronoun-demonstrative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 6",
+            "reviewWhere": "Review 1. item 40 (p41)"
+          },
+          "fix": {
+            "fromKo": "이것 때문에 나는 친구가 많다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT 3-2 와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다. 교재 밑줄이 Because 에만 있어 목표형을 Because of 한 덩어리로 잡았습니다(판정 p34)."
+          }
+        },
+        {
+          "id": "pg19-2:p7",
+          "ko": "그녀는 아팠기 때문에 공부를 잘할 수 없었다.",
+          "koSource": "review 1 item 41 (고침)",
+          "condition": "접속사로",
+          "promptEn": null,
+          "en": "She couldn't study well because she was ill.",
+          "accept": [
+            "She couldn't study well because she was sick.",
+            "Because she was ill, she couldn't study well.",
+            "Because she was sick, she couldn't study well.",
+            "Since she was ill, she couldn't study well.",
+            "Since she was sick, she couldn't study well.",
+            "She wasn't able to study well because she was ill.",
+            "Because she was ill, she wasn't able to study well.",
+            "Since she was ill, she wasn't able to study well.",
+            "She wasn't able to study well because she was sick.",
+            "Because she was sick, she wasn't able to study well.",
+            "Since she was sick, she wasn't able to study well."
+          ],
+          "targets": [
+            [
+              "because",
+              "since"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "because of she",
+              "hint": "뒤에 '주어 + 동사'(she was)가 오면 of 없이 접속사로 써요."
+            },
+            {
+              "match": "because of her illness",
+              "hint": "조건은 '접속사로'예요. '아팠기 때문에'를 '주어 + 동사'로 써 보세요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "complex-sentence",
+            "modal-can"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 7",
+            "reviewWhere": "Review 1. item 41 (p41)"
+          },
+          "fix": {
+            "fromKo": "그녀는 아팠기 때문에 공부를 잘 할 수 없었다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'잘하다'(능숙하게 하다)는 한 낱말이라 '잘할 수'로 붙여 씁니다."
+          },
+          "note": "바꿔쓰기 짝: 다음 문항 p8 의 promptEn 이 이 문항의 모범 답과 같음 — 다시 풀기 · 날을 넘기는 복습에서 p8 을 이 문항보다 먼저 내면 답이 먼저 보임(코드 쪽 순서 요청 — 점검 G15)"
+        },
+        {
+          "id": "pg19-2:p8",
+          "ko": "그녀는 병 때문에 공부를 잘할 수 없었다.",
+          "koSource": "new (앞 문장 바꿔쓰기 — 교재에 한국어 없음)",
+          "condition": "전치사로",
+          "promptEn": "She couldn't study well because she was ill.",
+          "en": "She couldn't study well because of her illness.",
+          "accept": [
+            "She couldn't study well because of her sickness.",
+            "She couldn't study well due to her illness.",
+            "She couldn't study well due to her sickness.",
+            "Because of her illness, she couldn't study well.",
+            "Because of her sickness, she couldn't study well.",
+            "Due to her illness, she couldn't study well.",
+            "Due to her sickness, she couldn't study well."
+          ],
+          "targets": [
+            [
+              "because of",
+              "due to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "because of she was",
+              "hint": "because of 는 전치사라 뒤에 '주어 + 동사'가 올 수 없어요. 명사로 바꿔 보세요."
+            },
+            {
+              "match": "because of ill",
+              "hint": "ill 은 형용사예요. 전치사 뒤에는 명사(병)가 와요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "modal-can",
+            "pronoun-possessive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 8"
+          },
+          "fix": null,
+          "note": "교재의 '=She couldn't study well because of her illness.' 바꿔쓰기 줄(Review 없음, 밑줄 없음 — 판정 p34 대로 목표형 because of)"
+        },
+        {
+          "id": "pg19-2:p9",
+          "ko": "비가 그칠 때까지 기다리자.",
+          "koSource": "review 1 item 42 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Let's wait until it stops raining.",
+          "accept": [
+            "Let's wait until the rain stops.",
+            "Let's wait till it stops raining.",
+            "Let's wait till the rain stops."
+          ],
+          "targets": [
+            [
+              "until",
+              "till"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "until it will stop",
+              "hint": "때를 나타내는 접속사 뒤에서는 앞으로의 일도 현재형으로 써요."
+            },
+            {
+              "match": "until it stop raining",
+              "hint": "주어 it 은 3인칭 단수예요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "imperative",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 9",
+            "reviewWhere": "Review 1. item 42 (p41)"
+          },
+          "fix": {
+            "fromKo": "비가 멈출 때까지 기다리자.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "비는 '그친다'가 자연스러워 '비가 그칠 때까지'로 고쳤습니다(점검 G15)."
+          }
+        },
+        {
+          "id": "pg19-2:p10",
+          "ko": "나는 10시 반까지 일어나지 않았다.",
+          "koSource": "review 1 item 43 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I didn't get up until half past ten.",
+          "accept": [
+            "I didn't get up until ten thirty.",
+            "I didn't get up until 10:30.",
+            "I didn't get up until half past 10.",
+            "I didn't get up till half past ten.",
+            "I didn't get up till ten thirty.",
+            "I didn't get up till 10:30.",
+            "I didn't get up till half past 10.",
+            "I didn't wake up until half past ten.",
+            "I didn't wake up until ten thirty.",
+            "I didn't wake up until 10:30.",
+            "I didn't wake up until half past 10.",
+            "I didn't wake up till half past ten.",
+            "I didn't wake up till ten thirty.",
+            "I didn't wake up till 10:30.",
+            "I didn't wake up till half past 10."
+          ],
+          "targets": [
+            [
+              "until",
+              "till"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "by half past ten",
+              "hint": "그때까지 '계속' 안 일어난 상태예요. by 는 마감(그때까지 한 번)일 때 써요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "negative-basic",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 10",
+            "reviewWhere": "Review 1. item 43 (p41)"
+          },
+          "fix": {
+            "fromKo": "나는 10시 반이 될 때까지 일어나지 못했다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "didn't get up 은 '일어나지 않았다'(못했다 아님)입니다(판정 p41)."
+          }
+        },
+        {
+          "id": "pg19-2:p11",
+          "ko": "작년까지 그들은 자동차조차 갖고 있지 않았다.",
+          "koSource": "review 1 item 44 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Until last year, they didn't even own a car.",
+          "accept": [
+            "Until last year, they didn't even have a car.",
+            "Till last year, they didn't even own a car.",
+            "Till last year, they didn't even have a car.",
+            "They didn't even own a car until last year.",
+            "They didn't even own a car till last year.",
+            "They didn't even have a car until last year.",
+            "They didn't even have a car till last year."
+          ],
+          "targets": [
+            [
+              "until",
+              "till"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "by last year",
+              "hint": "작년까지 '계속' 없던 상태예요. by 는 마감(그때까지 한 번)일 때 써요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "negative-basic",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 11",
+            "reviewWhere": "Review 1. item 44 (p41)"
+          },
+          "fix": {
+            "fromKo": "작년까지, 그들은 자동차도 소유하지 못했다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "didn't even own 은 '~조차 갖고 있지 않았다'(못했다 아님)라서 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg19-2:p12",
+          "ko": "그녀가 영어를 가르치기 시작한 것은 서른 살이 되어서였다.",
+          "koSource": "review 1 item 45",
+          "condition": "It was not until 로",
+          "promptEn": null,
+          "en": "It was not until she was 30 that she started to teach English.",
+          "accept": [
+            "It was not until she was 30 that she started teaching English.",
+            "It was not until she was 30 that she began to teach English.",
+            "It was not until she was 30 that she began teaching English.",
+            "It was not until she was thirty that she started to teach English.",
+            "It was not until she was thirty that she started teaching English.",
+            "It was not until she was thirty that she began to teach English.",
+            "It was not until she was thirty that she began teaching English.",
+            "It was not until the age of 30 that she started to teach English.",
+            "It was not until the age of 30 that she started teaching English.",
+            "It was not until the age of 30 that she began to teach English.",
+            "It was not until the age of 30 that she began teaching English.",
+            "It was not until the age of thirty that she started to teach English.",
+            "It was not until the age of thirty that she started teaching English.",
+            "It was not until the age of thirty that she began to teach English.",
+            "It was not until the age of thirty that she began teaching English.",
+            "It was not until she turned 30 that she started to teach English.",
+            "It was not until she turned 30 that she started teaching English.",
+            "It was not until she turned 30 that she began to teach English.",
+            "It was not until she turned 30 that she began teaching English.",
+            "It was not until she turned thirty that she started to teach English.",
+            "It was not until she turned thirty that she started teaching English.",
+            "It was not until she turned thirty that she began to teach English.",
+            "It was not until she turned thirty that she began teaching English.",
+            "It was not until she was 30 years old that she started to teach English.",
+            "It was not until she was 30 years old that she started teaching English.",
+            "It was not until she was 30 years old that she began to teach English.",
+            "It was not until she was 30 years old that she began teaching English.",
+            "It was not until she was thirty years old that she started to teach English.",
+            "It was not until she was thirty years old that she started teaching English.",
+            "It was not until she was thirty years old that she began to teach English.",
+            "It was not until she was thirty years old that she began teaching English."
+          ],
+          "targets": [
+            [
+              "not until"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "until she was 30 when",
+              "hint": "It was not until … 뒤는 when 이 아니라 강조 구문의 이음말로 이어요."
+            },
+            {
+              "match": "it was until",
+              "hint": "'서른 살이 되어서야'는 그 전에는 안 했다는 뜻이라 not 이 필요해요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "it-cleft",
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 12",
+            "reviewWhere": "Review 1. item 45 (p41)"
+          },
+          "fix": null,
+          "note": "바꿔쓰기 짝: 다음 문항 p13 의 promptEn 이 이 문항의 모범 답과 같음 — 다시 풀기 · 날을 넘기는 복습에서 p13 을 이 문항보다 먼저 내면 답이 먼저 보임(코드 쪽 순서 요청 — 점검 G15)"
+        },
+        {
+          "id": "pg19-2:p13",
+          "ko": "그녀는 서른 살이 되어서야 영어를 가르치기 시작했다.",
+          "koSource": "new (앞 문장 바꿔쓰기 — 교재에 한국어 없음)",
+          "condition": "not ~ until 로",
+          "promptEn": "It was not until she was 30 that she started to teach English.",
+          "en": "She didn't start to teach English until the age of 30.",
+          "accept": [
+            "She didn't start to teach English until the age of thirty.",
+            "She didn't start to teach English until age 30.",
+            "She didn't start to teach English until she was 30.",
+            "She didn't start to teach English until she was thirty.",
+            "She didn't start teaching English until the age of 30.",
+            "She didn't start teaching English until the age of thirty.",
+            "She didn't start teaching English until age 30.",
+            "She didn't start teaching English until she was 30.",
+            "She didn't start teaching English until she was thirty.",
+            "She didn't begin to teach English until the age of 30.",
+            "She didn't begin to teach English until the age of thirty.",
+            "She didn't begin to teach English until age 30.",
+            "She didn't begin to teach English until she was 30.",
+            "She didn't begin to teach English until she was thirty.",
+            "She didn't begin teaching English until the age of 30.",
+            "She didn't begin teaching English until the age of thirty.",
+            "She didn't begin teaching English until age 30.",
+            "She didn't begin teaching English until she was 30.",
+            "She didn't begin teaching English until she was thirty.",
+            "She didn't start to teach English until she was 30 years old.",
+            "She didn't start to teach English until she was thirty years old.",
+            "She didn't start to teach English until she turned 30.",
+            "She didn't start to teach English until she turned thirty.",
+            "She didn't start teaching English until she was 30 years old.",
+            "She didn't start teaching English until she was thirty years old.",
+            "She didn't start teaching English until she turned 30.",
+            "She didn't start teaching English until she turned thirty.",
+            "She didn't begin to teach English until she was 30 years old.",
+            "She didn't begin to teach English until she was thirty years old.",
+            "She didn't begin to teach English until she turned 30.",
+            "She didn't begin to teach English until she turned thirty.",
+            "She didn't begin teaching English until she was 30 years old.",
+            "She didn't begin teaching English until she was thirty years old.",
+            "She didn't begin teaching English until she turned 30.",
+            "She didn't begin teaching English until she turned thirty."
+          ],
+          "targets": [
+            [
+              "until"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "until 30",
+              "hint": "until 뒤의 30 만으로는 나이인지 알 수 없어요. 나이라는 것이 드러나게 써 보세요."
+            },
+            {
+              "match": "until thirty",
+              "hint": "until 뒤의 thirty 만으로는 나이인지 알 수 없어요. 나이라는 것이 드러나게 써 보세요."
+            },
+            {
+              "match": "she started to teach english until",
+              "hint": "'서른 살이 되어서야 시작했다'는 그 전에는 시작하지 않았다는 뜻이라 not 이 필요해요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "negative-basic",
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 13"
+          },
+          "fix": {
+            "from": "She didn’t start to teach English until 30.",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "until 30 만으로는 나이를 뜻하지 못해 until the age of 30 으로 고쳤습니다(판정 p34). 교재가 보이려던 '전치사 until + 명사'가 살게 the age of 를 넣었고, until she was 30(접속사)도 같은 뜻이라 받습니다."
+          },
+          "note": "교재의 '=She didn’t start to teach English until 30.' 바꿔쓰기 줄(Review 없음)"
+        },
+        {
+          "id": "pg19-2:p14",
+          "ko": "내가 어렸을 때, 나는 많은 사람들의 지혜에 대해서 읽을 수 있었기 때문에 역사책과 소설책을 좋아하게 되었습니다.",
+          "koSource": "student:s13-1#1",
+          "condition": null,
+          "promptEn": null,
+          "en": "When I was young, I learned to like history books and novels because I could read about the wisdom of many people.",
+          "accept": [
+            "When I was young, I learnt to like history books and novels because I could read about the wisdom of many people.",
+            "When I was young, I came to like history books and novels because I could read about the wisdom of many people.",
+            "When I was little, I learned to like history books and novels because I could read about the wisdom of many people.",
+            "When I was little, I learnt to like history books and novels because I could read about the wisdom of many people.",
+            "When I was little, I came to like history books and novels because I could read about the wisdom of many people.",
+            "When I was a child, I learned to like history books and novels because I could read about the wisdom of many people.",
+            "When I was a child, I learnt to like history books and novels because I could read about the wisdom of many people.",
+            "When I was a child, I came to like history books and novels because I could read about the wisdom of many people.",
+            "When I was young, I began to like history books and novels because I could read about the wisdom of many people.",
+            "When I was little, I began to like history books and novels because I could read about the wisdom of many people.",
+            "When I was a child, I began to like history books and novels because I could read about the wisdom of many people.",
+            "When I was young, I started to like history books and novels because I could read about the wisdom of many people.",
+            "When I was little, I started to like history books and novels because I could read about the wisdom of many people.",
+            "When I was a child, I started to like history books and novels because I could read about the wisdom of many people.",
+            "When I was young, I grew to like history books and novels because I could read about the wisdom of many people.",
+            "When I was little, I grew to like history books and novels because I could read about the wisdom of many people.",
+            "When I was a child, I grew to like history books and novels because I could read about the wisdom of many people."
+          ],
+          "targets": [
+            [
+              "When"
+            ],
+            [
+              "because"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "since i was young i learned",
+              "hint": "since 는 '~ 이래로 (지금까지)'라서 주절에 have + 과거분사가 와요. '어렸을 때'는 다른 접속사로 말해요."
+            },
+            {
+              "match": "because of i could",
+              "hint": "because of 뒤에는 '주어 + 동사'가 올 수 없어요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "complex-sentence",
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s13-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 14",
+            "reviewWhere": "Review 1. item 46 (p41)"
+          },
+          "fix": {
+            "from": "Since I was young, I learned to like history books and novels because I could read about the wisdom of many people. (13과)",
+            "fromKo": "내가 어렸을 때 이후로, 나는 역사책과 소설책을 좋아하는 것을 알게 되었는데 왜냐하면, 내가 많은 사람들의 지혜에 관해 읽을 수 있어서였다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "since 절과 과거형 learned 가 맞지 않아(판정 p30) STUDENT 13-1 이 고친 문장을 영어 · 한국어 그대로 씁니다. 교재 한국어의 '좋아하는 것을 알게 되었는데'는 learned to like(좋아하게 되었다)의 오역이었습니다(판정 p41)."
+          }
+        },
+        {
+          "id": "pg19-2:p15",
+          "ko": "그녀는 이곳에 온 이후로 많이 배웠다.",
+          "koSource": "review 1 item 47 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "She has learned a lot since she has been here.",
+          "accept": [
+            "She has learned a lot since she came here.",
+            "She has learned a lot since she arrived here.",
+            "She has learned a lot since she got here.",
+            "She has learned a lot since coming here.",
+            "She has learnt a lot since she has been here.",
+            "She has learnt a lot since she came here.",
+            "She has learnt a lot since she arrived here.",
+            "She has learnt a lot since she got here.",
+            "She has learnt a lot since coming here.",
+            "She has learned a lot since arriving here.",
+            "She has learnt a lot since arriving here.",
+            "She has learned so much since she has been here.",
+            "She has learned so much since she came here.",
+            "She has learned so much since she arrived here.",
+            "She has learned so much since she got here.",
+            "She has learned so much since coming here.",
+            "She has learned so much since arriving here.",
+            "She has learnt so much since she has been here.",
+            "She has learnt so much since she came here.",
+            "She has learnt so much since she arrived here.",
+            "She has learnt so much since she got here.",
+            "She has learnt so much since coming here.",
+            "She has learnt so much since arriving here."
+          ],
+          "targets": [
+            [
+              "since"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "she learned a lot since",
+              "hint": "since(~ 이래로)가 있으면 지금까지 이어진 일이라 have/has + 과거분사로 써요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "present-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 15",
+            "reviewWhere": "Review 1. item 47 (p42)"
+          },
+          "fix": {
+            "fromKo": "그녀는 이곳에 있어온 이래로, 많이 배웠다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'있어온 이래로'는 번역투라 '온 이후로'로 고쳤고, 그 말대로 쓴 since she came here 도 받습니다."
+          }
+        },
+        {
+          "id": "pg19-2:p16",
+          "ko": "1953년 전쟁이 끝난 이래로, 그 나라는 매우 빠르게 발전해 왔다.",
+          "koSource": "student:s17-4#1 (앞부분 — Review 48 고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Since the end of the war in 1953, the country has developed very quickly.",
+          "accept": [
+            "Since the end of the war in 1953, the country has developed very rapidly.",
+            "Since the end of the war in 1953, the country has developed very fast.",
+            "The country has developed very quickly since the end of the war in 1953.",
+            "The country has developed very rapidly since the end of the war in 1953.",
+            "The country has developed very fast since the end of the war in 1953.",
+            "Since the war ended in 1953, the country has developed very quickly.",
+            "Since the war ended in 1953, the country has developed very rapidly.",
+            "Since the war ended in 1953, the country has developed very fast."
+          ],
+          "targets": [
+            [
+              "since"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "the country developed very",
+              "hint": "since(~ 이래로)는 지금까지 이어진 일이라 have/has + 과거분사로 써요."
+            },
+            {
+              "match": "began to develop",
+              "hint": "since(~ 이래로)는 지금까지 이어진 일이라 have/has + 과거분사로 써요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "present-perfect",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s17-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 16",
+            "reviewWhere": "Review 1. item 48 (p42)"
+          },
+          "fix": {
+            "from": "Since the end of the war in 1953, the country began to develop very quickly. (17과)",
+            "fromKo": "1953년 전쟁이 끝난 후, 그 나라는 매우 빠르게 개발되기 시작되었다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "since + 과거 시점 뒤 주절에 과거형 began 은 맞지 않아 STUDENT 17-4 가 고친 대로 has developed 로 썼습니다(판정 p30). 한국어의 이중 피동 '개발되기 시작되었다'와 '끝난 후'도 고쳤습니다(판정 p42)."
+          }
+        },
+        {
+          "id": "pg19-2:p17",
+          "ko": "그가 죽은 지 오랜 시간이 지났다.",
+          "koSource": "review 1 item 49 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "It's a long time since his death.",
+          "accept": [
+            "It has been a long time since his death.",
+            "It has been a long time since he died.",
+            "It is a long time since he died.",
+            "A long time has passed since his death.",
+            "A long time has passed since he died.",
+            "A long time has passed since he passed away.",
+            "It has been a long time since he passed away.",
+            "It is a long time since he passed away."
+          ],
+          "targets": [
+            [
+              "since"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "after his death",
+              "hint": "'죽은 지 (지금까지) 오래되었다'는 그때부터 지금까지를 나타내는 말을 써요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "it-dummy",
+            "present-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 34,
+            "where": "application (2) 라벨 없음(p34) item 17",
+            "reviewWhere": "Review 1. item 49 (p42)"
+          },
+          "fix": {
+            "fromKo": "그가 죽은 후에 긴 시간이 지났다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'죽은 후에 긴 시간이 지났다'는 번역투라 '죽은 지 오랜 시간이 지났다'로 고쳤습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg19-2:t1",
+          "ko": "너는 내가 마지막으로(지난번에) 본 이래로 많이 변했다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "You've changed a lot since I saw you last.",
+          "accept": [
+            "You've changed much since I saw you last.",
+            "You have changed a lot since I last saw you.",
+            "You've changed a lot since the last time I saw you.",
+            "You've changed so much since I saw you last.",
+            "You've changed so much since I last saw you.",
+            "You've changed so much since the last time I saw you.",
+            "You've changed much since I last saw you.",
+            "You've changed much since the last time I saw you."
+          ],
+          "targets": [
+            [
+              "since"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "you changed a lot since",
+              "hint": "since(~ 이래로)가 있으면 지금까지 이어진 일이라 have + 과거분사로 써요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "present-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar2:gh2-018#12",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        },
+        {
+          "id": "pg19-2:t2",
+          "ko": "왜 너는 내일까지 기다릴 수 없니?",
+          "condition": null,
+          "promptEn": null,
+          "en": "Why can't you wait till tomorrow?",
+          "accept": [
+            "Why can't you wait until tomorrow?",
+            "Why can you not wait until tomorrow?",
+            "Why can you not wait till tomorrow?"
+          ],
+          "targets": [
+            [
+              "until",
+              "till"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "wait by tomorrow",
+              "hint": "내일까지 '계속' 기다리는 거예요. by 는 마감(그때까지 한 번)일 때 써요."
+            }
+          ],
+          "tags": [
+            "preposition-vs-conjunction",
+            "question-wh",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar1:gh1-103#140",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg19-2:f1",
+      "template": "I have lived in ___ since I was born.",
+      "ko": "나는 태어났을 때부터 ___에서 살아왔다."
+    }
+  ]
+}

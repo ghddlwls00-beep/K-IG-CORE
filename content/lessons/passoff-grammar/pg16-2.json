@@ -1,0 +1,1286 @@
+{
+  "id": "pg16-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "가정법의 과거완료·미래",
+  "label": "TOPIC 16. 가정법",
+  "menuLabel": "16-2. 가정법의 과거완료·미래",
+  "unit": 16,
+  "part": 3,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(3) 가정법 과거완료 · 가정법 미래(If + should / were to)",
+  "grammarTags": [
+    "subjunctive-past-perfect",
+    "subjunctive-future"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg16-2:a1",
+          "en": "If I had known English, I could have been happy.",
+          "ko": "만약 내가 영어를 알았다면, 행복할 수 있었을 텐데.",
+          "koSource": "review (1) item 9 (쉼표 뒤 빈칸 정리)",
+          "focus": [
+            "had known",
+            "could have been"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (3) item 1",
+            "reviewWhere": "review (1) item 9 (p8)"
+          },
+          "fix": {
+            "from": "If I had known English, I should have been happy.",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "1인칭 뒤 should 를 would 처럼 쓰던 옛 영국식이라 요즘은 '행복했어야 했다(의무)'로 읽힙니다. 같은 문장이 Application(p6) · Review 에는 could have been 으로 인쇄되어 있고 한국어도 '행복할 수 있었을 텐데'라 그쪽으로 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg16-2:a2",
+          "en": "If I had been a bird, I would have flown to you.",
+          "ko": "만약 내가 새였다면, 나는 너에게 날아갔을 텐데.",
+          "koSource": "review (1) item 11 (고침)",
+          "focus": [
+            "had been",
+            "would have flown"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (3) item 2",
+            "reviewWhere": "review (1) item 11 (p9)"
+          },
+          "fix": {
+            "fromKo": "만약, 내가 새였다면, 나는 네게 날라갔을 텐데.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'날라갔을'은 '날아갔을'이 맞고(날다 + 가다), '만약,' 뒤 쉼표는 필요 없습니다."
+          }
+        },
+        {
+          "id": "pg16-2:a3",
+          "en": "He could have done that if he had tried.",
+          "ko": "그가 만약 시도했다면, 그는 그것을 할 수 있었을 텐데.",
+          "koSource": "review (1) item 13",
+          "focus": [
+            "could have done",
+            "had tried"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (3) item 3",
+            "reviewWhere": "review (1) item 13 (p9)"
+          },
+          "fix": {
+            "from": "He could have done that if he head tried.",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "head 는 had 의 오타입니다(Application p7 에는 had 로 바르게 인쇄됨)."
+          }
+        },
+        {
+          "id": "pg16-2:a4",
+          "en": "World history might have been changed if they had won the war.",
+          "ko": "만약 그들이 그 전쟁에서 이겼다면, 세계 역사가 바뀌었을지도 모른다.",
+          "koSource": "review (1) item 14 (고침)",
+          "focus": [
+            "might have been changed",
+            "had won"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (3) item 4",
+            "reviewWhere": "review (1) item 14 (p9)"
+          },
+          "fix": {
+            "fromKo": "만약 그들이 전쟁에서 이겼다면, 세계역사는 바뀌었을 것이다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "might(~했을지도 모른다)의 뜻이 빠지고 '바뀌었을 것이다'(would)로 옮겨져 있어 고쳤습니다. '세계역사'는 '세계 역사'로 띄어 씁니다."
+          }
+        },
+        {
+          "id": "pg16-2:a5",
+          "en": "If it should rain tomorrow, I would stay home.",
+          "ko": "혹시 내일 비가 온다면, 나는 집에 있을 거야.",
+          "koSource": "new",
+          "focus": [
+            "should rain"
+          ],
+          "source": "new",
+          "note": "D14 — 목차에만 있는 '가정법 미래'(본문에 예문 없음)를 If + should / were to 새 문장으로 채움(판정 p4 목차)."
+        },
+        {
+          "id": "pg16-2:a6",
+          "en": "If I were to be born again, I would be a doctor.",
+          "ko": "만약 내가 다시 태어난다면, 나는 의사가 될 텐데.",
+          "koSource": "new",
+          "focus": [
+            "were to be born",
+            "would be"
+          ],
+          "source": "new",
+          "note": "D14 — 목차에만 있는 '가정법 미래'(본문에 예문 없음)를 If + should / were to 새 문장으로 채움(판정 p4 목차)."
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg16-2:a2",
+          "pg16-2:a3",
+          "pg16-2:a4"
+        ],
+        "question": "세 문장의 if 절은 모두 had + 과거분사예요. 무엇과 반대로 가정할까요?",
+        "options": [
+          "지난 일(과거의 사실)",
+          "지금의 사실",
+          "앞으로 일어날 일"
+        ],
+        "answer": 0,
+        "why": "had + 과거분사로 지난 일과 반대로 가정하고, 주절의 would/could/might + have + 과거분사로 '~했을 텐데'를 나타내요."
+      },
+      "title": "가정법 과거완료와 가정법 미래",
+      "points": [
+        "지난 일과 반대로: If + had + 과거분사, would/could/might + have + 과거분사",
+        "그때 ~했더라면 지금 …할 텐데(혼합 가정법): If + had + 과거분사, would/could/might + 동사원형",
+        "혹시라도 ~하면: If + should + 동사원형 → 주절은 will · would · 명령문",
+        "거의 일어날 수 없는 미래: If + were to + 동사원형, would + 동사원형"
+      ],
+      "table": {
+        "columns": [
+          "가정법",
+          "if 절",
+          "주절",
+          "뜻"
+        ],
+        "rows": [
+          [
+            "과거완료",
+            "had + 과거분사",
+            "would/could/might + have + 과거분사",
+            "~했더라면 …했을 텐데(지난 일과 반대)"
+          ],
+          [
+            "혼합 가정법",
+            "had + 과거분사",
+            "would/could/might + 동사원형",
+            "그때 ~했더라면 지금 …할 텐데"
+          ],
+          [
+            "미래 (should)",
+            "should + 동사원형",
+            "will · would + 동사원형 · 명령문",
+            "혹시라도 ~하면"
+          ],
+          [
+            "미래 (were to)",
+            "were to + 동사원형",
+            "would + 동사원형",
+            "만약 ~한다면(거의 일어날 수 없음)"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '~했더라면 …했을 텐데'처럼 끝말로 지난 일의 반대를 나타내지만, 영어는 if 절을 had + 과거분사로, 주절을 would + have + 과거분사로 한 시제씩 뒤로 보내요. 결과가 지금 일이면 주절은 would + 동사원형이에요.",
+      "mistakes": [
+        {
+          "wrong": "If I studied harder, I would have passed the test.",
+          "right": "If I had studied harder, I would have passed the test.",
+          "why": "지난 일(시험)과 반대로 가정하면 if 절도 had + 과거분사예요."
+        },
+        {
+          "wrong": "If I had known it, I would have tell you.",
+          "right": "If I had known it, I would have told you.",
+          "why": "would have 뒤에는 과거분사(told)가 와요."
+        }
+      ],
+      "worked": [
+        "내가 그 버스를 탔더라면 늦지 않았을 텐데.",
+        "사실은? → 지난 일: 버스를 못 탔고, 늦었음",
+        "if 절: had + 과거분사 → If I had taken the bus",
+        "주절: would not + have + 과거분사 → I would not have been late",
+        "If I had taken the bus, I would not have been late."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'If I ___ earlier, I would have caught the train.' 빈칸에 맞는 것은?",
+        "options": [
+          "left",
+          "had left",
+          "would leave"
+        ],
+        "answer": 1,
+        "why": "주절이 would have + 과거분사(지난 일)라 if 절도 had + 과거분사예요.",
+        "pointIndex": 0
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg16-2:s1",
+          "kind": "choice",
+          "instruction": "밑줄 친 had won 의 뜻으로 알맞은 것은?",
+          "sentence": "World history might have been changed if they had won the war.",
+          "underline": [
+            "had won"
+          ],
+          "options": [
+            "이겼다면(사실은 이기지 못했다)",
+            "이겼기 때문에(실제로 이겼다)",
+            "앞으로 이긴다면"
+          ],
+          "answer": 0,
+          "why": "had + 과거분사로 지난 일(그 전쟁)과 반대로 가정했어요. 사실은 이기지 못했어요.",
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (3) item 4"
+          },
+          "source": "new",
+          "note": "TOPIC 16 Review 에는 영작 과제만 있어 형태 찾기 문항을 새로 만들었습니다."
+        },
+        {
+          "id": "pg16-2:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (내가 그의 주소를 알았더라면 그에게 편지를 썼을 텐데.)",
+          "sentence": "If I had known his address, I ___ to him.",
+          "underline": [],
+          "options": [
+            "would write",
+            "would have written",
+            "had written"
+          ],
+          "answer": 1,
+          "why": "지난 일과 반대로 가정했으니 주절은 would + have + 과거분사예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg16-2:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (어젯밤에 잠을 잘 잤더라면 지금 피곤하지 않을 텐데.)",
+          "sentence": "If I had slept well last night, I ___ tired now.",
+          "underline": [],
+          "options": [
+            "would not be",
+            "would not have been",
+            "will not be"
+          ],
+          "answer": 0,
+          "why": "조건은 지난 일(어젯밤)이지만 결과는 지금(now)이라 주절은 would + 동사원형이에요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg16-2:s4",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (만약 해가 서쪽에서 뜬다면, 나는 너를 믿을 텐데.)",
+          "sentence": "If the sun ___ rise in the west, I would believe you.",
+          "underline": [],
+          "options": [
+            "were to",
+            "will",
+            "is"
+          ],
+          "answer": 0,
+          "why": "거의 일어날 수 없는 미래의 일을 가정할 때는 If + were to + 동사원형이에요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "D14 — 목차에만 있는 '가정법 미래'(본문에 예문 없음)를 If + should / were to 새 문장으로 채움(판정 p4 목차)."
+        },
+        {
+          "id": "pg16-2:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (혹시 그녀가 전화하면, 내가 나갔다고 말해 줘.)",
+          "sentence": "If she ___ call, tell her I'm out.",
+          "underline": [],
+          "options": [
+            "should",
+            "will",
+            "is"
+          ],
+          "answer": 0,
+          "why": "'혹시라도 ~하면'(일어날 가능성이 낮은 미래)은 If + should + 동사원형이에요. if 절에는 앞으로의 일이어도 will 을 쓰지 않고, 주절은 명령문도 돼요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "D14 — 목차에만 있는 '가정법 미래'(본문에 예문 없음)를 If + should / were to 새 문장으로 채움(판정 p4 목차). 빈칸 쓰기로 두면 강조의 does(If she does call)도 맞는 영어라 정답이 둘로 읽혀 보기 고르기로 만듦."
+        },
+        {
+          "id": "pg16-2:s6",
+          "kind": "select",
+          "instruction": "if 절에서 had + 과거분사를 누르세요",
+          "tokens": [
+            "He",
+            "could",
+            "have",
+            "done",
+            "that",
+            "if",
+            "he",
+            "had",
+            "tried",
+            "."
+          ],
+          "answer": [
+            7,
+            8
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "if 절의 had tried(had + 과거분사)로 지난 일과 반대로 가정했어요. 주절은 could have done 이에요.",
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (3) item 3"
+          },
+          "source": "new",
+          "note": "TOPIC 16 Review 에는 영작 과제만 있어 형태 찾기 문항을 새로 만들었습니다."
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg16-2:p1",
+          "ko": "만약 내가 영어를 알았다면, 행복할 수 있었을 텐데.",
+          "koSource": "review (1) item 9 (쉼표 뒤 빈칸 정리)",
+          "condition": null,
+          "promptEn": null,
+          "en": "If I had known English, I could have been happy.",
+          "accept": [
+            "I could have been happy if I had known English."
+          ],
+          "targets": [
+            [
+              "had known"
+            ],
+            [
+              "could have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i knew english",
+              "hint": "지난 일과 반대로 가정해요. if 절은 had + 과거분사로 써 보세요."
+            },
+            {
+              "match": "i could be happy",
+              "hint": "'행복할 수 있었을 텐데'는 지난 일이에요. could 뒤를 have + 과거분사로."
+            },
+            {
+              "match": "i would have been happy",
+              "hint": "'행복할 수 있었을'이에요. '~할 수 있었을'에 맞는 조동사를 떠올려 보세요."
+            },
+            {
+              "match": "i should have been happy",
+              "hint": "should have 는 요즘 '~했어야 했다'로 읽혀요. '~할 수 있었을'에 맞는 조동사를 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 6,
+            "where": "application item 9",
+            "reviewWhere": "review (1) item 9 (p8)"
+          },
+          "fix": null,
+          "note": "Pass-Off 쪽(p5)의 I should have been happy 는 앵커 a1 에서 이 Application 판(could)으로 맞췄습니다."
+        },
+        {
+          "id": "pg16-2:p2",
+          "ko": "만약 내가 그를 더 일찍 만났다면, 나는 더 좋은 사람이 되었을 텐데.",
+          "koSource": "review (1) item 10",
+          "condition": null,
+          "promptEn": null,
+          "en": "If I had met him earlier, I would have been a better person.",
+          "accept": [
+            "I would have been a better person if I had met him earlier.",
+            "If I had met him earlier, I would have become a better person.",
+            "I would have become a better person if I had met him earlier.",
+            "If I had met him sooner, I would have been a better person.",
+            "I would have been a better person if I had met him sooner.",
+            "If I had met him sooner, I would have become a better person.",
+            "I would have become a better person if I had met him sooner."
+          ],
+          "targets": [
+            [
+              "had met"
+            ],
+            [
+              "would have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i met him earlier",
+              "hint": "지난 일과 반대로 가정해요. if 절은 had + 과거분사로 써 보세요."
+            },
+            {
+              "match": "i would be a better person",
+              "hint": "'되었을 텐데'는 지난 일이에요. would 뒤를 have + 과거분사로."
+            }
+          ],
+          "tags": [
+            "subjunctive-past-perfect",
+            "comparative",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 6,
+            "where": "application item 10",
+            "reviewWhere": "review (1) item 10 (p8)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg16-2:p3",
+          "ko": "만약 내가 새였다면, 나는 너에게 날아갔을 텐데.",
+          "koSource": "review (1) item 11 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "If I had been a bird, I would have flown to you.",
+          "accept": [
+            "I would have flown to you if I had been a bird."
+          ],
+          "targets": [
+            [
+              "had been"
+            ],
+            [
+              "would have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i were a bird",
+              "hint": "'새였다면'은 지난 일과 반대인 가정이에요. if 절을 had + 과거분사로 써 보세요."
+            },
+            {
+              "match": "would have flew",
+              "hint": "have 뒤에는 과거분사가 와요. fly 의 과거분사는?"
+            },
+            {
+              "match": "would have flied",
+              "hint": "fly 는 불규칙 동사예요. 과거분사 모양을 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past-perfect",
+            "irregular-verbs",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 6,
+            "where": "application item 11",
+            "reviewWhere": "review (1) item 11 (p9)"
+          },
+          "fix": {
+            "fromKo": "만약, 내가 새였다면, 나는 네게 날라갔을 텐데.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'날라갔을'은 '날아갔을'이 맞고, '만약,' 뒤 쉼표는 필요 없습니다."
+          }
+        },
+        {
+          "id": "pg16-2:p4",
+          "ko": "만약 네가 병원에 입원해 있다는 것을 알았더라면, 나는 너를 보러 갔을 텐데.",
+          "koSource": "review (1) item 12 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "If I had known you were in hospital, I would have gone to see you.",
+          "accept": [
+            "I would have gone to see you if I had known you were in hospital.",
+            "If I had known you were in hospital, I would have come to see you.",
+            "I would have come to see you if I had known you were in hospital.",
+            "If I had known you were in hospital, I would have visited you.",
+            "I would have visited you if I had known you were in hospital.",
+            "If I had known you were in hospital, I would have gone to visit you.",
+            "I would have gone to visit you if I had known you were in hospital.",
+            "If I had known you were in the hospital, I would have gone to see you.",
+            "I would have gone to see you if I had known you were in the hospital.",
+            "If I had known you were in the hospital, I would have come to see you.",
+            "I would have come to see you if I had known you were in the hospital.",
+            "If I had known you were in the hospital, I would have visited you.",
+            "I would have visited you if I had known you were in the hospital.",
+            "If I had known you were in the hospital, I would have gone to visit you.",
+            "I would have gone to visit you if I had known you were in the hospital.",
+            "If I had known that you were in hospital, I would have gone to see you.",
+            "I would have gone to see you if I had known that you were in hospital.",
+            "If I had known that you were in hospital, I would have come to see you.",
+            "I would have come to see you if I had known that you were in hospital.",
+            "If I had known that you were in hospital, I would have visited you.",
+            "I would have visited you if I had known that you were in hospital.",
+            "If I had known that you were in hospital, I would have gone to visit you.",
+            "I would have gone to visit you if I had known that you were in hospital.",
+            "If I had known that you were in the hospital, I would have gone to see you.",
+            "I would have gone to see you if I had known that you were in the hospital.",
+            "If I had known that you were in the hospital, I would have come to see you.",
+            "I would have come to see you if I had known that you were in the hospital.",
+            "If I had known that you were in the hospital, I would have visited you.",
+            "I would have visited you if I had known that you were in the hospital.",
+            "If I had known that you were in the hospital, I would have gone to visit you.",
+            "I would have gone to visit you if I had known that you were in the hospital.",
+            "If I had known you were hospitalized, I would have gone to see you.",
+            "I would have gone to see you if I had known you were hospitalized.",
+            "If I had known you were hospitalized, I would have come to see you.",
+            "I would have come to see you if I had known you were hospitalized.",
+            "If I had known you were hospitalized, I would have visited you.",
+            "I would have visited you if I had known you were hospitalized.",
+            "If I had known you were hospitalized, I would have gone to visit you.",
+            "I would have gone to visit you if I had known you were hospitalized.",
+            "If I had known that you were hospitalized, I would have gone to see you.",
+            "I would have gone to see you if I had known that you were hospitalized.",
+            "If I had known that you were hospitalized, I would have come to see you.",
+            "I would have come to see you if I had known that you were hospitalized.",
+            "If I had known that you were hospitalized, I would have visited you.",
+            "I would have visited you if I had known that you were hospitalized.",
+            "If I had known that you were hospitalized, I would have gone to visit you.",
+            "I would have gone to visit you if I had known that you were hospitalized.",
+            "If I had known you were hospitalised, I would have gone to see you.",
+            "I would have gone to see you if I had known you were hospitalised.",
+            "If I had known you were hospitalised, I would have come to see you.",
+            "I would have come to see you if I had known you were hospitalised.",
+            "If I had known you were hospitalised, I would have visited you.",
+            "I would have visited you if I had known you were hospitalised.",
+            "If I had known you were hospitalised, I would have gone to visit you.",
+            "I would have gone to visit you if I had known you were hospitalised.",
+            "If I had known that you were hospitalised, I would have gone to see you.",
+            "I would have gone to see you if I had known that you were hospitalised.",
+            "If I had known that you were hospitalised, I would have come to see you.",
+            "I would have come to see you if I had known that you were hospitalised.",
+            "If I had known that you were hospitalised, I would have visited you.",
+            "I would have visited you if I had known that you were hospitalised.",
+            "If I had known that you were hospitalised, I would have gone to visit you.",
+            "I would have gone to visit you if I had known that you were hospitalised."
+          ],
+          "targets": [
+            [
+              "had known"
+            ],
+            [
+              "would have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i knew you were",
+              "hint": "지난 일과 반대로 가정해요. if 절은 had + 과거분사로 써 보세요."
+            },
+            {
+              "match": "would have gone to you",
+              "hint": "병문안은 '너를 보러' 가는 거예요. go 뒤에 무엇을 하러 가는지 넣어 보세요."
+            },
+            {
+              "match": "would have went",
+              "hint": "have 뒤에는 과거분사가 와요. go 의 과거분사는?"
+            }
+          ],
+          "tags": [
+            "subjunctive-past-perfect",
+            "tense-agreement",
+            "infinitive",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 7,
+            "where": "application item 12",
+            "reviewWhere": "review (1) item 12 (p9)"
+          },
+          "fix": {
+            "from": "If I had known you were in hospital, I would have gone to you.",
+            "fromKo": "만약 내가 네가 병원에 입원했다는 것을 알았더라면, 나는 네게 갔었을 텐데.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "병문안은 gone to you 가 아니라 gone to see you(너를 보러 갔을)가 자연스럽습니다. in hospital(영국식)은 그대로 두고 in the hospital(미국식)도 받습니다. 한국어는 '내가 네가'가 겹치고 '갔었을'이 어색해 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg16-2:p5",
+          "ko": "그가 만약 시도했다면, 그는 그것을 할 수 있었을 텐데.",
+          "koSource": "review (1) item 13",
+          "condition": null,
+          "promptEn": null,
+          "en": "He could have done that if he had tried.",
+          "accept": [
+            "If he had tried, he could have done that.",
+            "If he had tried, he could have done it.",
+            "He could have done it if he had tried."
+          ],
+          "targets": [
+            [
+              "could have"
+            ],
+            [
+              "had tried"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if he tried",
+              "hint": "지난 일과 반대로 가정해요. if 절은 had + 과거분사로 써 보세요."
+            },
+            {
+              "match": "could have did",
+              "hint": "have 뒤에는 과거분사가 와요. do 의 과거분사는?"
+            },
+            {
+              "match": "he could do that",
+              "hint": "'할 수 있었을 텐데'는 지난 일이에요. could 뒤를 have + 과거분사로."
+            }
+          ],
+          "tags": [
+            "subjunctive-past-perfect",
+            "can-basic",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 7,
+            "where": "application item 13",
+            "reviewWhere": "review (1) item 13 (p9)"
+          },
+          "fix": null,
+          "note": "Pass-Off 쪽(p5)의 오타 'if he head tried'는 앵커 a3 에서 고쳤습니다."
+        },
+        {
+          "id": "pg16-2:p6",
+          "ko": "만약 그들이 그 전쟁에서 이겼다면, 세계 역사가 바뀌었을지도 모른다.",
+          "koSource": "review (1) item 14 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "World history might have been changed if they had won the war.",
+          "accept": [
+            "If they had won the war, world history might have been changed.",
+            "If they had won the war, world history might have changed.",
+            "World history might have changed if they had won the war.",
+            "If they had won the war, world history could have been changed.",
+            "World history could have been changed if they had won the war.",
+            "If they had won the war, world history could have changed.",
+            "World history could have changed if they had won the war."
+          ],
+          "targets": [
+            [
+              "might have",
+              "could have"
+            ],
+            [
+              "had won"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if they won the war",
+              "hint": "지난 일(그 전쟁)과 반대로 가정해요. if 절은 had + 과거분사로 써 보세요."
+            },
+            {
+              "match": "would have been changed",
+              "hint": "'바뀌었을지도 모른다'예요. '~였을지도 모른다'에 맞는 조동사를 떠올려 보세요."
+            },
+            {
+              "match": "might have been change",
+              "hint": "been 뒤에는 과거분사가 와요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past-perfect",
+            "passive",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 7,
+            "where": "application item 14",
+            "reviewWhere": "review (1) item 14 (p9)"
+          },
+          "fix": {
+            "fromKo": "만약 그들이 전쟁에서 이겼다면, 세계역사는 바뀌었을 것이다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "might(~했을지도 모른다)의 뜻이 빠지고 '바뀌었을 것이다'(would)로 옮겨져 있어 고쳤고, '세계 역사'로 띄어 썼습니다."
+          },
+          "note": "might 는 가정법 주절의 조동사(would · could · might + have + 과거분사)로 이 레슨 설명 카드 1번 줄에서 다룹니다 — 조동사 may 레슨(pg17-2) 태그를 달지 않음."
+        },
+        {
+          "id": "pg16-2:p7",
+          "ko": "혹시 내일 비가 온다면, 나는 집에 있을 거야.",
+          "koSource": "new",
+          "condition": "should를 써서",
+          "promptEn": null,
+          "en": "If it should rain tomorrow, I would stay home.",
+          "accept": [
+            "I would stay home if it should rain tomorrow.",
+            "If it should rain tomorrow, I would stay at home.",
+            "I would stay at home if it should rain tomorrow.",
+            "If it should rain tomorrow, I will stay home.",
+            "I will stay home if it should rain tomorrow.",
+            "If it should rain tomorrow, I will stay at home.",
+            "I will stay at home if it should rain tomorrow.",
+            "Should it rain tomorrow, I would stay home.",
+            "Should it rain tomorrow, I would stay at home.",
+            "Should it rain tomorrow, I will stay home.",
+            "Should it rain tomorrow, I will stay at home."
+          ],
+          "targets": [
+            [
+              "should"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if it will rain",
+              "hint": "if 절에는 will 을 쓰지 않아요. '혹시라도'의 느낌을 살려 보세요."
+            },
+            {
+              "match": "if it rains tomorrow",
+              "hint": "조건은 'should를 써서'예요. '혹시라도 ~하면'을 나타내 보세요."
+            }
+          ],
+          "tags": [
+            "subjunctive-future",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "D14 — 목차에만 있는 '가정법 미래'(본문에 예문 없음)를 If + should / were to 새 문장으로 채움(판정 p4 목차). 주절은 will · would 둘 다 맞음. 도치형 Should it rain tomorrow, …(p8 의 Should you see him 과 같은 꼴)도 받습니다."
+        },
+        {
+          "id": "pg16-2:p8",
+          "ko": "혹시 그를 보게 되면, 나에게 전화하라고 전해 줘.",
+          "koSource": "new",
+          "condition": "should를 써서",
+          "promptEn": null,
+          "en": "If you should see him, please tell him to call me.",
+          "accept": [
+            "If you should see him, tell him to call me.",
+            "If you should see him, please ask him to call me.",
+            "If you should see him, ask him to call me.",
+            "If you should meet him, please tell him to call me.",
+            "If you should meet him, tell him to call me.",
+            "If you should meet him, please ask him to call me.",
+            "If you should meet him, ask him to call me.",
+            "Should you see him, please tell him to call me.",
+            "Should you see him, tell him to call me.",
+            "Should you see him, please ask him to call me.",
+            "Should you see him, ask him to call me.",
+            "Please tell him to call me if you should see him.",
+            "Tell him to call me if you should see him."
+          ],
+          "targets": [
+            [
+              "should"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if you will see him",
+              "hint": "if 절에는 will 을 쓰지 않아요. '혹시라도'의 느낌을 살려 보세요."
+            },
+            {
+              "match": "if you see him",
+              "hint": "조건은 'should를 써서'예요. '혹시라도 ~하면'을 나타내 보세요."
+            },
+            {
+              "match": "tell him call me",
+              "hint": "tell + 사람 뒤에 '~하라고'는 to + 동사원형으로 써요."
+            }
+          ],
+          "tags": [
+            "subjunctive-future",
+            "imperative-basic",
+            "sentence-pattern-5",
+            "infinitive",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "D14 — 목차에만 있는 '가정법 미래'(본문에 예문 없음)를 If + should / were to 새 문장으로 채움(판정 p4 목차). If + should 뒤에는 명령문도 올 수 있음을 보이는 문장."
+        },
+        {
+          "id": "pg16-2:p9",
+          "ko": "만약 내가 다시 태어난다면, 나는 의사가 될 텐데.",
+          "koSource": "new",
+          "condition": "were to를 써서",
+          "promptEn": null,
+          "en": "If I were to be born again, I would be a doctor.",
+          "accept": [
+            "I would be a doctor if I were to be born again.",
+            "If I were to be born again, I would become a doctor.",
+            "I would become a doctor if I were to be born again.",
+            "If I were to be reborn, I would be a doctor.",
+            "I would be a doctor if I were to be reborn.",
+            "If I were to be reborn, I would become a doctor.",
+            "I would become a doctor if I were to be reborn.",
+            "Were I to be born again, I would be a doctor.",
+            "Were I to be born again, I would become a doctor.",
+            "Were I to be reborn, I would be a doctor.",
+            "Were I to be reborn, I would become a doctor."
+          ],
+          "targets": [
+            [
+              "were to",
+              "were I to"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i were born again",
+              "hint": "조건은 'were to를 써서'예요. 거의 일어날 수 없는 미래를 가정해 보세요."
+            },
+            {
+              "match": "if i am born again",
+              "hint": "거의 일어날 수 없는 미래의 가정이에요. were to + 동사원형으로 써 보세요."
+            },
+            {
+              "match": "i will be a doctor",
+              "hint": "were to 가정의 주절은 will 대신 한 시제 뒤의 조동사로 써요."
+            }
+          ],
+          "tags": [
+            "subjunctive-future",
+            "passive",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "D14 — 목차에만 있는 '가정법 미래'(본문에 예문 없음)를 If + should / were to 새 문장으로 채움(판정 p4 목차). be reborn(다시 태어나다)과 도치형 Were I to …(격식체 — p8 의 Should you see him 과 같은 기준)도 받습니다."
+        },
+        {
+          "id": "pg16-2:p10",
+          "ko": "만약 복권에 당첨된다면, 너는 무엇을 하겠니?",
+          "koSource": "new",
+          "condition": "were to를 써서",
+          "promptEn": null,
+          "en": "What would you do if you were to win the lottery?",
+          "accept": [
+            "If you were to win the lottery, what would you do?"
+          ],
+          "targets": [
+            [
+              "were to"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what will you do",
+              "hint": "were to 가정의 주절은 will 대신 한 시제 뒤의 조동사로 써요."
+            },
+            {
+              "match": "if you are to win",
+              "hint": "거의 일어날 수 없는 미래의 가정은 were to + 동사원형이에요."
+            }
+          ],
+          "tags": [
+            "subjunctive-future",
+            "question-wh",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "D14 — 목차에만 있는 '가정법 미래'(본문에 예문 없음)를 If + should / were to 새 문장으로 채움(판정 p4 목차)."
+        },
+        {
+          "id": "pg16-2:p11",
+          "ko": "만약 그가 의사의 충고를 받아들였다면, 그는 지금 살아 있을지도 모른다.",
+          "koSource": "review (1) item 20 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "If he had taken the doctor's advice, he might be alive.",
+          "accept": [
+            "He might be alive if he had taken the doctor's advice.",
+            "If he had taken the doctor's advice, he might be alive now.",
+            "He might be alive now if he had taken the doctor's advice.",
+            "If he had taken the doctor's advice, he might still be alive.",
+            "He might still be alive if he had taken the doctor's advice.",
+            "If he had taken the doctor's advice, he could be alive.",
+            "He could be alive if he had taken the doctor's advice.",
+            "If he had taken the doctor's advice, he could be alive now.",
+            "He could be alive now if he had taken the doctor's advice.",
+            "If he had taken the doctor's advice, he could still be alive.",
+            "He could still be alive if he had taken the doctor's advice.",
+            "If he had followed the doctor's advice, he might be alive.",
+            "He might be alive if he had followed the doctor's advice.",
+            "If he had followed the doctor's advice, he might be alive now.",
+            "He might be alive now if he had followed the doctor's advice.",
+            "If he had followed the doctor's advice, he might still be alive.",
+            "He might still be alive if he had followed the doctor's advice.",
+            "If he had followed the doctor's advice, he could be alive.",
+            "He could be alive if he had followed the doctor's advice.",
+            "If he had followed the doctor's advice, he could be alive now.",
+            "He could be alive now if he had followed the doctor's advice.",
+            "If he had followed the doctor's advice, he could still be alive.",
+            "He could still be alive if he had followed the doctor's advice.",
+            "If he had listened to the doctor's advice, he might be alive.",
+            "He might be alive if he had listened to the doctor's advice.",
+            "If he had listened to the doctor's advice, he might be alive now.",
+            "He might be alive now if he had listened to the doctor's advice.",
+            "If he had listened to the doctor's advice, he might still be alive.",
+            "He might still be alive if he had listened to the doctor's advice.",
+            "If he had listened to the doctor's advice, he could be alive.",
+            "He could be alive if he had listened to the doctor's advice.",
+            "If he had listened to the doctor's advice, he could be alive now.",
+            "He could be alive now if he had listened to the doctor's advice.",
+            "If he had listened to the doctor's advice, he could still be alive.",
+            "He could still be alive if he had listened to the doctor's advice.",
+            "If he had accepted the doctor's advice, he might be alive.",
+            "He might be alive if he had accepted the doctor's advice.",
+            "If he had accepted the doctor's advice, he might be alive now.",
+            "He might be alive now if he had accepted the doctor's advice.",
+            "If he had accepted the doctor's advice, he might still be alive.",
+            "He might still be alive if he had accepted the doctor's advice.",
+            "If he had accepted the doctor's advice, he could be alive.",
+            "He could be alive if he had accepted the doctor's advice.",
+            "If he had accepted the doctor's advice, he could be alive now.",
+            "He could be alive now if he had accepted the doctor's advice.",
+            "If he had accepted the doctor's advice, he could still be alive.",
+            "He could still be alive if he had accepted the doctor's advice."
+          ],
+          "targets": [
+            [
+              "had taken",
+              "had followed",
+              "had listened",
+              "had accepted"
+            ],
+            [
+              "might",
+              "could"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "might have been alive",
+              "hint": "'지금' 살아 있을지도 모른다는 뜻이에요. 지금의 결과는 might + 동사원형으로."
+            },
+            {
+              "match": "if he took the doctor's advice",
+              "hint": "충고를 받아들이지 않은 것은 지난 일이에요. if 절은 had + 과거분사로."
+            }
+          ],
+          "tags": [
+            "subjunctive-past-perfect",
+            "subjunctive-past",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 7,
+            "where": "application item 20",
+            "reviewWhere": "review (1) item 20 (p9)"
+          },
+          "fix": {
+            "fromKo": "만약 그가 의사의 충고를 받아들였다면, 그는 살아 있었을지도 모른다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 과거의 조건 → 지금의 결과(might be alive)인데 한국어는 '살아 있었을지도'(과거)라 might have been alive 를 쓰게 되어 '지금 살아 있을지도'로 고쳤습니다."
+          },
+          "note": "소제목 없이 I wish 문장 뒤에 인쇄된 혼합 가정법(과거의 조건 → 지금의 결과) — 가정법 과거완료를 넓힌 것이라 이 레슨 끝에 둠. might 는 가정법 주절의 조동사로 설명 카드에서 다룸."
+        },
+        {
+          "id": "pg16-2:p12",
+          "ko": "만약 그녀가 그 건물을 사지 않았다면, 그녀는 지금 돈이 많을 텐데.",
+          "koSource": "review (1) item 21 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "If she had not bought the building, she would have a lot of money now.",
+          "accept": [
+            "She would have a lot of money now if she had not bought the building.",
+            "If she had not bought the building, she would have lots of money now.",
+            "She would have lots of money now if she had not bought the building.",
+            "If she had not bought the building, she would now have a lot of money.",
+            "She would now have a lot of money if she had not bought the building.",
+            "If she had not bought the building, she would be rich now.",
+            "She would be rich now if she had not bought the building.",
+            "If she had not bought that building, she would have a lot of money now.",
+            "She would have a lot of money now if she had not bought that building.",
+            "If she had not bought that building, she would have lots of money now.",
+            "She would have lots of money now if she had not bought that building.",
+            "If she had not bought that building, she would now have a lot of money.",
+            "She would now have a lot of money if she had not bought that building.",
+            "If she had not bought that building, she would be rich now.",
+            "She would be rich now if she had not bought that building."
+          ],
+          "targets": [
+            [
+              "had not"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "she had a lot of money now",
+              "hint": "지금의 결과를 가정해요. 주어 뒤에 가정법의 조동사가 빠졌어요."
+            },
+            {
+              "match": "she would have had a lot of money",
+              "hint": "'지금' 돈이 많을 거라는 뜻이에요. 지금의 결과는 would + 동사원형으로."
+            },
+            {
+              "match": "if she did not buy",
+              "hint": "건물을 산 것은 지난 일이에요. if 절은 had + 과거분사로."
+            }
+          ],
+          "tags": [
+            "subjunctive-past-perfect",
+            "subjunctive-past",
+            "negative-basic",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 7,
+            "where": "application item 21",
+            "reviewWhere": "review (1) item 21 (p9)"
+          },
+          "fix": {
+            "from": "If she had not bought the building, she had a lot of money now.",
+            "fromKo": "만약 그녀가 그 건물을 사지 않았다면, 그녀는 많은 돈을 가졌을 텐데.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "과거의 조건 → 지금의 결과(혼합 가정법)라 주절은 would + 동사원형(would have)이어야 하는데 조동사가 빠졌습니다. 한국어도 '가졌을 텐데'(과거) · '많은 돈을 가졌을'(직역투)을 '지금 돈이 많을 텐데'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg16-2:p13",
+          "ko": "만약 내가 그들에게 의지하지 않았다면, 나는 지금 더 독립적일 텐데.",
+          "koSource": "review (1) item 22 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "If I hadn't depended on them, I would be more independent.",
+          "accept": [
+            "I would be more independent if I hadn't depended on them.",
+            "If I hadn't depended on them, I would be more independent now.",
+            "I would be more independent now if I hadn't depended on them.",
+            "If I hadn't relied on them, I would be more independent.",
+            "I would be more independent if I hadn't relied on them.",
+            "If I hadn't relied on them, I would be more independent now.",
+            "I would be more independent now if I hadn't relied on them."
+          ],
+          "targets": [
+            [
+              "had not"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i would have been more independent",
+              "hint": "'지금' 더 독립적일 거라는 뜻이에요. 지금의 결과는 would + 동사원형으로."
+            },
+            {
+              "match": "if i did not depend",
+              "hint": "의지한 것은 지난 일이에요. if 절은 had + 과거분사로."
+            },
+            {
+              "match": "depended them",
+              "hint": "'~에게 의지하다'는 depend 뒤에 전치사가 필요해요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past-perfect",
+            "subjunctive-past",
+            "comparative",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 7,
+            "where": "application item 22",
+            "reviewWhere": "review (1) item 22 (p9)"
+          },
+          "fix": {
+            "fromKo": "만약 내가 그들을 의지하지 않았다면, 나는 더 독립적이 되었을 텐데.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'그들을 의지하지'는 '그들에게 의지하지'가 맞고, 영어 would be 는 지금의 결과인데 '되었을 텐데'(과거)로 옮겨 '지금 더 독립적일 텐데'로 고쳤습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg16-2:t1",
+          "ko": "내가 너의 전화번호를 알았더라면 너에게 전화를 했을 텐데.",
+          "koSource": "grammar2:gh2-048#3",
+          "condition": null,
+          "promptEn": null,
+          "en": "If I had known your phone number, I would have called you.",
+          "accept": [
+            "Had I known your phone number, I would have called you.",
+            "If I had known your phone number, I would have given you a ring.",
+            "If I had known your phone number, I would have given you a call.",
+            "If I had known your telephone number, I would have called you.",
+            "If I had known your phone number, I would have phoned you.",
+            "I would have called you if I had known your phone number."
+          ],
+          "targets": [
+            [
+              "had"
+            ],
+            [
+              "would have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i knew your phone number",
+              "hint": "지난 일과 반대로 가정해요. if 절은 had + 과거분사로 써 보세요."
+            },
+            {
+              "match": "i would call you",
+              "hint": "'전화를 했을 텐데'는 지난 일이에요. would 뒤를 have + 과거분사로."
+            }
+          ],
+          "tags": [
+            "subjunctive-past-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-048#3"
+        },
+        {
+          "id": "pg16-2:t2",
+          "ko": "그가 한 학년을 낙제하지 않았더라면 지금 고등학교에 있을 텐데.",
+          "koSource": "grammar2:gh2-048#10",
+          "condition": null,
+          "promptEn": null,
+          "en": "He would be in high school now if he had not flunked a grade.",
+          "accept": [
+            "Had he not flunked a grade, he would be in high school now.",
+            "If he had not flunked a grade, he would be in high school now.",
+            "If he hadn't failed a grade, he would be in high school now.",
+            "He would be in high school now if he hadn't failed a grade.",
+            "He would now be in high school if he had not flunked a grade.",
+            "If he had not flunked a grade, he would now be in high school.",
+            "Had he not failed a grade, he would be in high school now."
+          ],
+          "targets": [
+            [
+              "had"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "would have been in high school",
+              "hint": "'지금' 고등학교에 있을 거라는 뜻이에요. 지금의 결과는 would + 동사원형으로."
+            },
+            {
+              "match": "if he did not fail",
+              "hint": "낙제한 것은 지난 일이에요. if 절은 had + 과거분사로."
+            }
+          ],
+          "tags": [
+            "subjunctive-past-perfect",
+            "subjunctive-past",
+            "negative-basic",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-048#10"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg16-2:f1",
+      "template": "If I had known about ___, I would have told you.",
+      "ko": "내가 ___에 대해 알았더라면, 너에게 말해 줬을 텐데."
+    }
+  ]
+}

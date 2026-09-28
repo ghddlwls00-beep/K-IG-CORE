@@ -1,0 +1,1698 @@
+{
+  "id": "pg12-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "과거 완료·미래 완료",
+  "label": "TOPIC 12. 완료와 진행",
+  "menuLabel": "12-2. 과거 완료·미래 완료",
+  "unit": 12,
+  "part": 2,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(2) 과거 완료와 미래 완료",
+  "grammarTags": [
+    "past-perfect",
+    "future-perfect"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg12-2:a1",
+          "en": "Mary didn't want to go to the movies because she had already seen the film.",
+          "ko": "메리는 이미 그 영화를 보았기 때문에 영화관에 가고 싶어 하지 않았다.",
+          "koSource": "review 3 item 11 (다듬음)",
+          "focus": [
+            "had",
+            "seen"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (2) item 1",
+            "reviewWhere": "review 3 item 11 (p49) · review 2 item 3 (p47)"
+          },
+          "fix": {
+            "fromKo": "메리는 이미 그 영화를 보았기 때문에 영화관에 가기를 원하지 않았다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'가기를 원하지 않았다'는 번역투라 '가고 싶어 하지 않았다'로 다듬었습니다(3인칭 주어라 '-고 싶어 하다')."
+          }
+        },
+        {
+          "id": "pg12-2:a2",
+          "en": "He had torn the tie when I got there.",
+          "ko": "내가 그곳에 도착했을 때 그는 넥타이를 찢은 뒤였다.",
+          "koSource": "review 3 item 13 (고침)",
+          "focus": [
+            "had",
+            "torn"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (2) item 2",
+            "reviewWhere": "review 3 item 13 (p50)"
+          },
+          "fix": {
+            "fromKo": "그는 내가 그곳에 도착했을 때 끈을 찢었었다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "tie 는 '넥타이'인데 '끈'으로 옮겨져 있어 고쳤습니다. 한국어 '도착했을 때 … 찢었었다'는 도착과 같은 때로도 읽혀 과거완료(도착하기 전에 이미 찢음) 뜻이 약해, '내가 그곳에 도착했을 때 그는 넥타이를 찢은 뒤였다'로 고쳤습니다(G10 점검 반영). 영어는 when I got there 가 기준 때라 과거완료 뜻이 드러나 그대로 두고, his tie · already · by the time 을 넣은 답도 허용합니다."
+          }
+        },
+        {
+          "id": "pg12-2:a3",
+          "en": "She had worked at a department store for several years before she got married.",
+          "ko": "그녀는 결혼하기 전에 수년 동안 백화점에서 일했었다.",
+          "koSource": "review 3 item 15 (고침)",
+          "focus": [
+            "had",
+            "worked"
+          ],
+          "studentRef": {
+            "lesson": "s2-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (2) item 3 (2과)",
+            "reviewWhere": "review 3 item 15 (p50) · review 2 item 4 (p47)"
+          },
+          "fix": {
+            "from": "She had worked at a department store for several years.",
+            "fromKo": "그녀는 수 년 동안 백화점에서 일해 왔었다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "기준이 되는 과거 시점 없이 홀로 쓴 과거완료라 before she got married 를 더했습니다(TOPIC 11 판정 · pg11-1:p11 과 같게 — STUDENT 2-3 에서 이 사람은 지금 가정주부). 한국어도 맞추고 '수년'은 붙여 씁니다."
+          },
+          "note": "교재 꼬리표 (2과): 원문은 옛 middle p02 와 글자까지 같고, 지금 STUDENT s2-3 은 같은 틀의 'She worked at a department store for several years.'(과거형)라 adapted(바꾼 문장)로 달았습니다(설계 §10 · 1권 정리 기준: 지금 STUDENT 문장과 같은 틀이면 adapted). 과거완료를 배우는 레슨이라 STUDENT 판(과거형)으로 바꾸지 않고, 교재 issue(p28 — where 에 TOPIC 12 p44 · p45 · p47 포함)의 TOPIC 11 판정대로 기준 시점 before she got married 를 더했습니다(pg11-1:p11 과 같은 문장 — pg19-3 은 STUDENT 판 과거형이라 세 레슨 모두 '홀로 쓴 과거완료는 고친다'로 판정이 같음)."
+        },
+        {
+          "id": "pg12-2:a4",
+          "en": "He had been sick for two days when the doctor came.",
+          "ko": "그는 의사가 도착했을 때, 이틀 동안 아팠었다.",
+          "koSource": "review 3 item 16",
+          "focus": [
+            "had been"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (2) item 4",
+            "reviewWhere": "review 3 item 16 (p50) · review 2 item 5 (p48)"
+          }
+        },
+        {
+          "id": "pg12-2:a5",
+          "en": "He will have arrived there before it gets dark.",
+          "ko": "그는 어둡기 전에 그곳에 도착해 있을 거야.",
+          "koSource": "review 3 item 17 (고침)",
+          "focus": [
+            "will have",
+            "arrived"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (2) item 5",
+            "reviewWhere": "review 3 item 17 (p50) · review 2 item 6 (p48)"
+          },
+          "fix": {
+            "from": "He will have arrived there before it gets dark",
+            "fromKo": "그는 어둡기 전에 도착해 있을 거야.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "Pass-Off 쪽(p44)과 Review 2 쪽(p48) 문장 끝 마침표가 빠져 있었습니다(Application p46 에는 있음). 한국어에는 there(그곳에)가 빠져 있어 넣었습니다."
+          }
+        },
+        {
+          "id": "pg12-2:a6",
+          "en": "He will have bought a new house in a few years.",
+          "ko": "몇 년 뒤면 그는 새 집을 사 놓았을 거야.",
+          "koSource": "review 3 item 19 (고침)",
+          "focus": [
+            "will have",
+            "bought"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (2) item 6",
+            "reviewWhere": "review 3 item 19 (p50)"
+          },
+          "fix": {
+            "fromKo": "그는 몇 년 안에 새 집을 사 버릴 거야.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'사 버리다'는 아쉬움 · 해치움의 느낌이 섞여 미래완료(그때쯤이면 사 놓은 상태)와 어긋나 '사 놓았을 거야'로 고쳤고, '몇 년 안에 … 사 놓았을 거야'는 지난 일의 추측으로도 읽혀 '몇 년 뒤면'으로 기준 때를 미래로 정했습니다(G10 점검 반영)."
+          }
+        },
+        {
+          "id": "pg12-2:a7",
+          "en": "I shall have met him twice if I meet him again.",
+          "ko": "만약 내가 그를 다시 만난다면, 나는 그를 두 번 만난 것이 된다.",
+          "koSource": "review 3 item 21 (고침)",
+          "focus": [
+            "shall have",
+            "met"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (2) item 7",
+            "reviewWhere": "review 3 item 21 (p50) · review 2 item 7 (p48)"
+          },
+          "fix": {
+            "fromKo": "만약 내가 그를 다시 만난다면, 나는 그를 두 번 만나게 되는 것이다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'두 번 만나게 되는 것이다'는 앞으로 만나게 된다는 뜻이라, 미래완료(그때까지 모두 두 번 만난 셈)가 드러나게 '두 번 만난 것이 된다'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg12-2:a8",
+          "en": "He will have been absent for a month tomorrow.",
+          "ko": "그는 내일이면 한 달간 결석한 것이 된다.",
+          "koSource": "review 3 item 22 (고침)",
+          "focus": [
+            "will have been"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (2) item 8",
+            "reviewWhere": "review 3 item 22 (p50)"
+          },
+          "fix": {
+            "fromKo": "그는 내일이면 한달 간 결석을 한 것이 될 것이다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'한 달간'으로 띄어 쓰고('간'은 붙임), 겹친 '것이 될 것이다'를 '것이 된다'로 다듬었습니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg12-2:a1",
+          "pg12-2:a5",
+          "pg12-2:a8"
+        ],
+        "question": "had + 과거분사와 will have + 과거분사는 각각 어느 때를 기준으로 '이미 ~한 일'을 말할까요?",
+        "options": [
+          "과거의 어느 때 / 미래의 어느 때",
+          "지금 / 과거의 어느 때",
+          "미래의 어느 때 / 지금"
+        ],
+        "answer": 0,
+        "why": "had + 과거분사(과거완료)는 과거의 어느 때(가기 싫었던 때)보다 먼저, will have + 과거분사(미래완료)는 미래의 어느 때(어두워지기 전 · 내일)까지 끝나거나 이어진 일이에요."
+      },
+      "title": "과거완료 had + 과거분사 · 미래완료 will have + 과거분사",
+      "points": [
+        "과거완료 = had + 과거분사: 과거의 어느 때보다 먼저 일어났거나 그때까지 이어진 일",
+        "before · after 로 순서가 분명하면 그냥 과거형으로도 써요.",
+        "미래완료 = will have + 과거분사: 미래의 어느 때까지 끝나 있거나 이어져 온 일",
+        "'~까지는 (이미)'는 by + 때: by six · by next week",
+        "when · if · before 뒤 미래 일은 현재형: before it gets dark"
+      ],
+      "table": {
+        "columns": [
+          "시제",
+          "모양",
+          "예문"
+        ],
+        "rows": [
+          [
+            "현재완료",
+            "have/has + 과거분사",
+            "He has lost his key."
+          ],
+          [
+            "과거완료",
+            "had + 과거분사",
+            "She had already seen the film."
+          ],
+          [
+            "미래완료",
+            "will have + 과거분사",
+            "He will have arrived there before it gets dark."
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '봤었다 · 사 놓았을 거야'처럼 끝말로 먼저 끝난 일을 나타내지만, 영어는 기준이 되는 때(과거 · 미래)를 먼저 정하고 그보다 앞선 일을 had / will have + 과거분사로 써요.",
+      "mistakes": [
+        {
+          "wrong": "When I arrived, the bus has already left.",
+          "right": "When I arrived, the bus had already left.",
+          "why": "기준(arrived)이 과거라 그보다 먼저 떠난 일은 had + 과거분사예요."
+        },
+        {
+          "wrong": "I will have finished it until six.",
+          "right": "I will have finished it by six.",
+          "why": "'여섯 시까지는 (이미 끝남)'은 by, until 은 '여섯 시까지 계속'이에요."
+        }
+      ],
+      "worked": [
+        "그가 전화했을 때 나는 이미 저녁을 먹었었다.",
+        "기준이 되는 때: 그가 전화했을 때(과거) → When he called",
+        "그보다 먼저 끝난 일 → had + 과거분사: had eaten",
+        "When he called, I had already eaten dinner."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'By tomorrow, she ___ the book.' 빈칸에 맞는 것은?",
+        "options": [
+          "had finished",
+          "will have finished",
+          "has finished"
+        ],
+        "answer": 1,
+        "why": "By tomorrow(내일까지는) — 미래의 어느 때까지 끝나 있을 일이라 미래완료(will have + 과거분사)예요.",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg12-2:s1",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 시제 이름은?",
+          "sentence": "Mary didn't want to go to the movies because she had already seen the film.",
+          "underline": [
+            "had already seen"
+          ],
+          "options": [
+            "과거",
+            "현재완료",
+            "과거완료"
+          ],
+          "answer": 2,
+          "why": "had + 과거분사 = 과거완료예요. 가기 싫었던 때(과거)보다 영화를 본 일이 먼저예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 47,
+            "where": "review 2 item 3 (해석 · 시제 이름)"
+          },
+          "fix": {
+            "from": "Mary didn’t want to go to the movies because she had already seen the film. (밑줄 없음)",
+            "field": "underline",
+            "kind": "answer_ambiguous",
+            "why": "교재는 밑줄 없이 '시제의 이름'을 물어 한 문장의 여러 동사 중 무엇을 답할지 정해지지 않았습니다. 물을 동사에 밑줄을 긋고 정답을 새로 적었습니다(교재에 시제 이름 정답이 없음)."
+          }
+        },
+        {
+          "id": "pg12-2:s2",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 시제 이름은?",
+          "sentence": "She had worked at a department store for several years before she got married.",
+          "underline": [
+            "had worked"
+          ],
+          "options": [
+            "현재완료",
+            "과거완료",
+            "미래완료"
+          ],
+          "answer": 1,
+          "why": "had + 과거분사 = 과거완료예요. 결혼한 때(과거)보다 먼저, 여러 해 동안 이어진 일이에요.",
+          "bookRef": {
+            "book": 2,
+            "page": 47,
+            "where": "review 2 item 4 (해석 · 시제 이름)"
+          },
+          "fix": {
+            "from": "She had worked at a department store for several years.",
+            "field": "sentence",
+            "kind": "english_unnatural",
+            "why": "a3 와 같게 기준 시점 before she got married 를 더함"
+          }
+        },
+        {
+          "id": "pg12-2:s3",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 시제 이름은?",
+          "sentence": "He had been sick for two days when the doctor came.",
+          "underline": [
+            "had been"
+          ],
+          "options": [
+            "과거완료",
+            "과거진행",
+            "과거완료진행"
+          ],
+          "answer": 0,
+          "why": "had been 뒤에 -ing 가 아니라 형용사(sick)가 와요. be동사의 과거완료이고 진행형이 아니에요.",
+          "bookRef": {
+            "book": 2,
+            "page": 48,
+            "where": "review 2 item 5 (해석 · 시제 이름)"
+          },
+          "fix": {
+            "from": "He had been sick for two days when the doctor came. (밑줄 없음)",
+            "field": "underline",
+            "kind": "answer_ambiguous",
+            "why": "교재는 밑줄 없이 '시제의 이름'을 물어 한 문장의 여러 동사 중 무엇을 답할지 정해지지 않았습니다. 물을 동사에 밑줄을 긋고 정답을 새로 적었습니다(교재에 시제 이름 정답이 없음)."
+          }
+        },
+        {
+          "id": "pg12-2:s4",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 시제 이름은?",
+          "sentence": "He will have arrived there before it gets dark.",
+          "underline": [
+            "will have arrived"
+          ],
+          "options": [
+            "미래",
+            "미래완료",
+            "현재완료"
+          ],
+          "answer": 1,
+          "why": "will have + 과거분사 = 미래완료예요. before 뒤의 gets 는 미래의 일을 현재형으로 쓴 것이에요.",
+          "bookRef": {
+            "book": 2,
+            "page": 48,
+            "where": "review 2 item 6 (해석 · 시제 이름)"
+          },
+          "fix": {
+            "from": "He will have arrived there before it gets dark",
+            "field": "sentence",
+            "kind": "english_grammar",
+            "why": "Review 2 쪽 문장 끝 마침표가 빠져 있었습니다."
+          }
+        },
+        {
+          "id": "pg12-2:s5",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 시제 이름은?",
+          "sentence": "I shall have met him twice if I meet him again.",
+          "underline": [
+            "shall have met"
+          ],
+          "options": [
+            "미래완료",
+            "과거완료",
+            "미래"
+          ],
+          "answer": 0,
+          "why": "shall(= will) have + 과거분사 = 미래완료예요. 영국식 · 격식 있는 영어에서는 I · we 뒤에 will 대신 shall 을 쓰기도 해요.",
+          "bookRef": {
+            "book": 2,
+            "page": 48,
+            "where": "review 2 item 7 (해석 · 시제 이름)"
+          }
+        },
+        {
+          "id": "pg12-2:s6",
+          "kind": "short",
+          "instruction": "빈칸에 알맞은 한 낱말을 쓰세요.",
+          "sentence": "The train ___ already left when I got to the station.",
+          "answer": [
+            "had"
+          ],
+          "why": "역에 도착한 때(과거)보다 기차가 먼저 떠났으니 had + 과거분사예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 47,
+            "where": "review 1 (공식: had + 과거분사)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg12-2:s7",
+          "kind": "select",
+          "instruction": "더 먼저 일어난 일을 나타내는 두 낱말(had + 과거분사)을 누르세요",
+          "tokens": [
+            "When",
+            "we",
+            "arrived",
+            ",",
+            "the",
+            "movie",
+            "had",
+            "already",
+            "started",
+            "."
+          ],
+          "answer": [
+            6,
+            8
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "도착한 때(arrived)보다 영화가 먼저 시작했어요 — had started(과거완료). already 는 사이에 들어간 부사예요.",
+          "bookRef": null,
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg12-2:s8",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "I will have read this book ___ Friday.",
+          "underline": [],
+          "options": [
+            "by",
+            "until",
+            "since"
+          ],
+          "answer": 0,
+          "why": "'금요일까지는 (이미 다 읽어 놓음)' — 끝나 있을 때를 말할 때는 by 예요. until 은 '그때까지 계속'이에요.",
+          "bookRef": null,
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg12-2:p1",
+          "ko": "메리는 이미 그 영화를 보았기 때문에 영화관에 가고 싶어 하지 않았다.",
+          "koSource": "review 3 item 11 (다듬음)",
+          "condition": "과거완료로",
+          "promptEn": null,
+          "en": "Mary didn't want to go to the movies because she had already seen the film.",
+          "accept": [
+            "Because Mary had already seen the film, she didn't want to go to the movies.",
+            "Mary didn't want to go to the movies because she had already seen the movie.",
+            "Because Mary had already seen the movie, she didn't want to go to the movies.",
+            "Mary didn't want to go to the movies because she had seen the film already.",
+            "Because Mary had seen the film already, she didn't want to go to the movies.",
+            "Mary didn't want to go to the movies because she had seen the movie already.",
+            "Because Mary had seen the movie already, she didn't want to go to the movies.",
+            "Mary didn't want to go to the movies because she had already watched the film.",
+            "Because Mary had already watched the film, she didn't want to go to the movies.",
+            "Mary didn't want to go to the movies because she had already watched the movie.",
+            "Because Mary had already watched the movie, she didn't want to go to the movies.",
+            "Mary didn't want to go to the cinema because she had already seen the film.",
+            "Because Mary had already seen the film, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the cinema because she had already seen the movie.",
+            "Because Mary had already seen the movie, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the cinema because she had seen the film already.",
+            "Because Mary had seen the film already, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the cinema because she had seen the movie already.",
+            "Because Mary had seen the movie already, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the cinema because she had already watched the film.",
+            "Because Mary had already watched the film, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the cinema because she had already watched the movie.",
+            "Because Mary had already watched the movie, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the movies since she had already seen the film.",
+            "Since Mary had already seen the film, she didn't want to go to the movies.",
+            "Mary didn't want to go to the movies since she had already seen the movie.",
+            "Since Mary had already seen the movie, she didn't want to go to the movies.",
+            "Mary didn't want to go to the movies since she had seen the film already.",
+            "Since Mary had seen the film already, she didn't want to go to the movies.",
+            "Mary didn't want to go to the movies since she had seen the movie already.",
+            "Since Mary had seen the movie already, she didn't want to go to the movies.",
+            "Mary didn't want to go to the movies since she had already watched the film.",
+            "Since Mary had already watched the film, she didn't want to go to the movies.",
+            "Mary didn't want to go to the movies since she had already watched the movie.",
+            "Since Mary had already watched the movie, she didn't want to go to the movies.",
+            "Mary didn't want to go to the cinema since she had already seen the film.",
+            "Since Mary had already seen the film, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the cinema since she had already seen the movie.",
+            "Since Mary had already seen the movie, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the cinema since she had seen the film already.",
+            "Since Mary had seen the film already, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the cinema since she had seen the movie already.",
+            "Since Mary had seen the movie already, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the cinema since she had already watched the film.",
+            "Since Mary had already watched the film, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the cinema since she had already watched the movie.",
+            "Since Mary had already watched the movie, she didn't want to go to the cinema.",
+            "Mary didn't want to go to the movie theater because she had already seen the film.",
+            "Because Mary had already seen the film, she didn't want to go to the movie theater.",
+            "Mary didn't want to go to the movie theater because she had already seen the movie.",
+            "Because Mary had already seen the movie, she didn't want to go to the movie theater.",
+            "Mary didn't want to go to the movie theater because she had seen the film already.",
+            "Because Mary had seen the film already, she didn't want to go to the movie theater.",
+            "Mary didn't want to go to the movie theater because she had seen the movie already.",
+            "Because Mary had seen the movie already, she didn't want to go to the movie theater.",
+            "Mary didn't want to go to the movie theater because she had already watched the film.",
+            "Because Mary had already watched the film, she didn't want to go to the movie theater.",
+            "Mary didn't want to go to the movie theater because she had already watched the movie.",
+            "Because Mary had already watched the movie, she didn't want to go to the movie theater.",
+            "Mary didn't want to go to the movie theater since she had already seen the film.",
+            "Since Mary had already seen the film, she didn't want to go to the movie theater.",
+            "Mary didn't want to go to the movie theater since she had already seen the movie.",
+            "Since Mary had already seen the movie, she didn't want to go to the movie theater.",
+            "Mary didn't want to go to the movie theater since she had seen the film already.",
+            "Since Mary had seen the film already, she didn't want to go to the movie theater.",
+            "Mary didn't want to go to the movie theater since she had seen the movie already.",
+            "Since Mary had seen the movie already, she didn't want to go to the movie theater.",
+            "Mary didn't want to go to the movie theater since she had already watched the film.",
+            "Since Mary had already watched the film, she didn't want to go to the movie theater.",
+            "Mary didn't want to go to the movie theater since she had already watched the movie.",
+            "Since Mary had already watched the movie, she didn't want to go to the movie theater."
+          ],
+          "targets": [
+            [
+              "had"
+            ],
+            [
+              "seen",
+              "watched"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "she has already seen",
+              "hint": "영화를 본 것은 가기 싫었던 때(과거)보다 더 먼저예요. have/has 대신 어떤 꼴을 쓸까요?"
+            },
+            {
+              "match": "had already saw",
+              "hint": "saw 는 과거형이에요. had 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "she already saw",
+              "hint": "조건은 '과거완료로'예요. 더 먼저 일어난 일은 had + 과거분사로 써요."
+            }
+          ],
+          "tags": [
+            "past-perfect",
+            "complex-sentence",
+            "want-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 11",
+            "reviewWhere": "review 3 item 11 (p49) · review 2 item 3 (p47)"
+          },
+          "fix": {
+            "fromKo": "메리는 이미 그 영화를 보았기 때문에 영화관에 가기를 원하지 않았다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'가기를 원하지 않았다'는 번역투라 '가고 싶어 하지 않았다'로 다듬었습니다(3인칭 주어라 '-고 싶어 하다')."
+          }
+        },
+        {
+          "id": "pg12-2:p2",
+          "ko": "우리는 미국에 이사 오기 전에 런던에서 살았다.",
+          "koSource": "review 3 item 12 (띄어쓰기 고침)",
+          "condition": "과거완료로",
+          "promptEn": null,
+          "en": "We had lived in London before we moved to America.",
+          "accept": [
+            "Before we moved to America, we had lived in London.",
+            "We had lived in London before moving to America.",
+            "We had lived in London before we moved to the United States.",
+            "Before we moved to the United States, we had lived in London.",
+            "We had lived in London before moving to the United States.",
+            "We had lived in London before we moved to the US.",
+            "Before we moved to the US, we had lived in London.",
+            "We had lived in London before moving to the US.",
+            "We had lived in London before we moved to the USA.",
+            "Before we moved to the USA, we had lived in London.",
+            "We had lived in London before moving to the USA.",
+            "We had been living in London before we moved to America.",
+            "Before we moved to America, we had been living in London.",
+            "We had been living in London before moving to America.",
+            "We had been living in London before we moved to the United States.",
+            "Before we moved to the United States, we had been living in London.",
+            "We had been living in London before moving to the United States.",
+            "We had been living in London before we moved to the US.",
+            "Before we moved to the US, we had been living in London.",
+            "We had been living in London before moving to the US.",
+            "We had been living in London before we moved to the USA.",
+            "Before we moved to the USA, we had been living in London.",
+            "We had been living in London before moving to the USA."
+          ],
+          "targets": [
+            [
+              "had"
+            ],
+            [
+              "lived",
+              "been living"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "have lived in london",
+              "hint": "이사 온 때(과거)보다 더 먼저 일이에요. have 대신 어떤 꼴을 쓸까요?"
+            },
+            {
+              "match": "moved in america",
+              "hint": "'미국으로 이사 오다'는 방향을 나타내는 전치사를 써요."
+            },
+            {
+              "match": "we lived in london",
+              "hint": "조건은 '과거완료로'예요. 이사 오기 전(더 먼저)의 일은 had + 과거분사로 써 보세요."
+            }
+          ],
+          "tags": [
+            "past-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 12",
+            "reviewWhere": "review 3 item 12 (p50)"
+          },
+          "fix": {
+            "fromKo": "우리는 미국에 이사오기 전에 런던에서 살았다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'이사 오다'는 띄어 씁니다."
+          },
+          "note": "before 로 순서가 분명해 과거형(We lived …)도 맞는 영어라 조건 칩 '과거완료로'를 붙였습니다(설명 카드 2번 줄). 과거완료진행(had been living)도 맞는 영어라 받습니다(G10 점검 반영 — 이 레슨 p5 의 had been working 과 같게)."
+        },
+        {
+          "id": "pg12-2:p3",
+          "ko": "내가 그곳에 도착했을 때 그는 넥타이를 찢은 뒤였다.",
+          "koSource": "review 3 item 13 (고침)",
+          "condition": "과거완료로",
+          "promptEn": null,
+          "en": "He had torn the tie when I got there.",
+          "accept": [
+            "When I got there, he had torn the tie.",
+            "He had torn the tie when I arrived there.",
+            "When I arrived there, he had torn the tie.",
+            "He had torn his tie when I got there.",
+            "When I got there, he had torn his tie.",
+            "He had torn his tie when I arrived there.",
+            "When I arrived there, he had torn his tie.",
+            "He had torn the necktie when I got there.",
+            "When I got there, he had torn the necktie.",
+            "He had torn the necktie when I arrived there.",
+            "When I arrived there, he had torn the necktie.",
+            "He had torn his necktie when I got there.",
+            "When I got there, he had torn his necktie.",
+            "He had torn his necktie when I arrived there.",
+            "When I arrived there, he had torn his necktie.",
+            "He had ripped the tie when I got there.",
+            "When I got there, he had ripped the tie.",
+            "He had ripped the tie when I arrived there.",
+            "When I arrived there, he had ripped the tie.",
+            "He had ripped his tie when I got there.",
+            "When I got there, he had ripped his tie.",
+            "He had ripped his tie when I arrived there.",
+            "When I arrived there, he had ripped his tie.",
+            "He had ripped the necktie when I got there.",
+            "When I got there, he had ripped the necktie.",
+            "He had ripped the necktie when I arrived there.",
+            "When I arrived there, he had ripped the necktie.",
+            "He had ripped his necktie when I got there.",
+            "When I got there, he had ripped his necktie.",
+            "He had ripped his necktie when I arrived there.",
+            "When I arrived there, he had ripped his necktie.",
+            "He had already torn the tie when I got there.",
+            "When I got there, he had already torn the tie.",
+            "He had already torn the tie when I arrived there.",
+            "When I arrived there, he had already torn the tie.",
+            "He had already torn his tie when I got there.",
+            "When I got there, he had already torn his tie.",
+            "He had already torn his tie when I arrived there.",
+            "When I arrived there, he had already torn his tie.",
+            "He had already torn the necktie when I got there.",
+            "When I got there, he had already torn the necktie.",
+            "He had already torn the necktie when I arrived there.",
+            "When I arrived there, he had already torn the necktie.",
+            "He had already torn his necktie when I got there.",
+            "When I got there, he had already torn his necktie.",
+            "He had already torn his necktie when I arrived there.",
+            "When I arrived there, he had already torn his necktie.",
+            "He had already ripped the tie when I got there.",
+            "When I got there, he had already ripped the tie.",
+            "He had already ripped the tie when I arrived there.",
+            "When I arrived there, he had already ripped the tie.",
+            "He had already ripped his tie when I got there.",
+            "When I got there, he had already ripped his tie.",
+            "He had already ripped his tie when I arrived there.",
+            "When I arrived there, he had already ripped his tie.",
+            "He had already ripped the necktie when I got there.",
+            "When I got there, he had already ripped the necktie.",
+            "He had already ripped the necktie when I arrived there.",
+            "When I arrived there, he had already ripped the necktie.",
+            "He had already ripped his necktie when I got there.",
+            "When I got there, he had already ripped his necktie.",
+            "He had already ripped his necktie when I arrived there.",
+            "When I arrived there, he had already ripped his necktie.",
+            "He had torn the tie by the time I got there.",
+            "By the time I got there, he had torn the tie.",
+            "He had already torn the tie by the time I got there.",
+            "By the time I got there, he had already torn the tie.",
+            "He had torn the tie by the time I arrived there.",
+            "By the time I arrived there, he had torn the tie.",
+            "He had already torn the tie by the time I arrived there.",
+            "By the time I arrived there, he had already torn the tie.",
+            "He had torn his tie by the time I got there.",
+            "By the time I got there, he had torn his tie.",
+            "He had already torn his tie by the time I got there.",
+            "By the time I got there, he had already torn his tie.",
+            "He had torn his tie by the time I arrived there.",
+            "By the time I arrived there, he had torn his tie.",
+            "He had already torn his tie by the time I arrived there.",
+            "By the time I arrived there, he had already torn his tie.",
+            "He had torn the necktie by the time I got there.",
+            "By the time I got there, he had torn the necktie.",
+            "He had already torn the necktie by the time I got there.",
+            "By the time I got there, he had already torn the necktie.",
+            "He had torn the necktie by the time I arrived there.",
+            "By the time I arrived there, he had torn the necktie.",
+            "He had already torn the necktie by the time I arrived there.",
+            "By the time I arrived there, he had already torn the necktie.",
+            "He had torn his necktie by the time I got there.",
+            "By the time I got there, he had torn his necktie.",
+            "He had already torn his necktie by the time I got there.",
+            "By the time I got there, he had already torn his necktie.",
+            "He had torn his necktie by the time I arrived there.",
+            "By the time I arrived there, he had torn his necktie.",
+            "He had already torn his necktie by the time I arrived there.",
+            "By the time I arrived there, he had already torn his necktie.",
+            "He had ripped the tie by the time I got there.",
+            "By the time I got there, he had ripped the tie.",
+            "He had already ripped the tie by the time I got there.",
+            "By the time I got there, he had already ripped the tie.",
+            "He had ripped the tie by the time I arrived there.",
+            "By the time I arrived there, he had ripped the tie.",
+            "He had already ripped the tie by the time I arrived there.",
+            "By the time I arrived there, he had already ripped the tie.",
+            "He had ripped his tie by the time I got there.",
+            "By the time I got there, he had ripped his tie.",
+            "He had already ripped his tie by the time I got there.",
+            "By the time I got there, he had already ripped his tie.",
+            "He had ripped his tie by the time I arrived there.",
+            "By the time I arrived there, he had ripped his tie.",
+            "He had already ripped his tie by the time I arrived there.",
+            "By the time I arrived there, he had already ripped his tie.",
+            "He had ripped the necktie by the time I got there.",
+            "By the time I got there, he had ripped the necktie.",
+            "He had already ripped the necktie by the time I got there.",
+            "By the time I got there, he had already ripped the necktie.",
+            "He had ripped the necktie by the time I arrived there.",
+            "By the time I arrived there, he had ripped the necktie.",
+            "He had already ripped the necktie by the time I arrived there.",
+            "By the time I arrived there, he had already ripped the necktie.",
+            "He had ripped his necktie by the time I got there.",
+            "By the time I got there, he had ripped his necktie.",
+            "He had already ripped his necktie by the time I got there.",
+            "By the time I got there, he had already ripped his necktie.",
+            "He had ripped his necktie by the time I arrived there.",
+            "By the time I arrived there, he had ripped his necktie.",
+            "He had already ripped his necktie by the time I arrived there.",
+            "By the time I arrived there, he had already ripped his necktie."
+          ],
+          "targets": [
+            [
+              "had"
+            ],
+            [
+              "torn",
+              "ripped"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "had teared",
+              "hint": "tear(찢다)는 불규칙 동사예요. 과거분사 모양을 떠올려 보세요."
+            },
+            {
+              "match": "had tore",
+              "hint": "tore 는 과거형이에요. had 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "he tore",
+              "hint": "조건은 '과거완료로'예요. 내가 도착하기 전에 이미 한 일이에요."
+            }
+          ],
+          "tags": [
+            "past-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 13",
+            "reviewWhere": "review 3 item 13 (p50)"
+          },
+          "fix": {
+            "fromKo": "그는 내가 그곳에 도착했을 때 끈을 찢었었다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "tie 는 '넥타이'인데 '끈'으로 옮겨져 있어 고쳤습니다. 한국어 '도착했을 때 … 찢었었다'는 도착과 같은 때로도 읽혀 과거완료(도착하기 전에 이미 찢음) 뜻이 약해, '내가 그곳에 도착했을 때 그는 넥타이를 찢은 뒤였다'로 고쳤습니다(G10 점검 반영). 영어는 when I got there 가 기준 때라 과거완료 뜻이 드러나 그대로 두고, his tie · already · by the time 을 넣은 답도 허용합니다."
+          }
+        },
+        {
+          "id": "pg12-2:p4",
+          "ko": "나는 택시에 우산을 두고 내렸다는 것을 깨달았다.",
+          "koSource": "review 3 item 14",
+          "condition": "과거완료로",
+          "promptEn": null,
+          "en": "I realized that I had left my umbrella in the cab.",
+          "accept": [
+            "I realized that I had left my umbrella in the taxi.",
+            "I realized that I had left my umbrella behind in the cab.",
+            "I realized that I had left my umbrella behind in the taxi.",
+            "I realized I had left my umbrella in the cab.",
+            "I realized I had left my umbrella in the taxi.",
+            "I realized I had left my umbrella behind in the cab.",
+            "I realized I had left my umbrella behind in the taxi.",
+            "I realised that I had left my umbrella in the cab.",
+            "I realised that I had left my umbrella in the taxi.",
+            "I realised that I had left my umbrella behind in the cab.",
+            "I realised that I had left my umbrella behind in the taxi.",
+            "I realised I had left my umbrella in the cab.",
+            "I realised I had left my umbrella in the taxi.",
+            "I realised I had left my umbrella behind in the cab.",
+            "I realised I had left my umbrella behind in the taxi.",
+            "I realized that I had left my umbrella in a taxi.",
+            "I realized that I had left my umbrella in a cab.",
+            "I realized that I had left my umbrella behind in a taxi.",
+            "I realized that I had left my umbrella behind in a cab.",
+            "I realized I had left my umbrella in a taxi.",
+            "I realized I had left my umbrella in a cab.",
+            "I realized I had left my umbrella behind in a taxi.",
+            "I realized I had left my umbrella behind in a cab.",
+            "I realised that I had left my umbrella in a taxi.",
+            "I realised that I had left my umbrella in a cab.",
+            "I realised that I had left my umbrella behind in a taxi.",
+            "I realised that I had left my umbrella behind in a cab.",
+            "I realised I had left my umbrella in a taxi.",
+            "I realised I had left my umbrella in a cab.",
+            "I realised I had left my umbrella behind in a taxi.",
+            "I realised I had left my umbrella behind in a cab."
+          ],
+          "targets": [
+            [
+              "had"
+            ],
+            [
+              "left"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i left my umbrella",
+              "hint": "조건은 '과거완료로'예요. 깨달은 때보다 먼저 두고 내렸어요."
+            },
+            {
+              "match": "have left",
+              "hint": "깨달은 때(과거)보다 더 먼저 일이에요. have 대신 어떤 꼴을 쓸까요?"
+            },
+            {
+              "match": "umbrella on",
+              "hint": "택시처럼 승용차 '안에' 두고 내린 거예요. on 대신 다른 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "past-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 14",
+            "reviewWhere": "review 3 item 14 (p50)"
+          },
+          "fix": {
+            "from": "I realized that I had left my umbrella on the cab.",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "택시(cab · taxi) 안에 두고 내린 것은 in the cab 입니다(버스 · 기차는 on)."
+          }
+        },
+        {
+          "id": "pg12-2:p5",
+          "ko": "그녀는 결혼하기 전에 수년 동안 백화점에서 일했었다.",
+          "koSource": "review 3 item 15 (고침)",
+          "condition": "과거완료로",
+          "promptEn": null,
+          "en": "She had worked at a department store for several years before she got married.",
+          "accept": [
+            "She had worked at a department store for several years before she married.",
+            "She had worked at a department store for several years before getting married.",
+            "She had worked at a department store for a few years before she got married.",
+            "She had worked at a department store for a few years before she married.",
+            "She had worked at a department store for a few years before getting married.",
+            "She had worked in a department store for several years before she got married.",
+            "She had worked in a department store for several years before she married.",
+            "She had worked in a department store for several years before getting married.",
+            "She had worked in a department store for a few years before she got married.",
+            "She had worked in a department store for a few years before she married.",
+            "She had worked in a department store for a few years before getting married.",
+            "She had worked for a department store for several years before she got married.",
+            "She had worked for a department store for several years before she married.",
+            "She had worked for a department store for several years before getting married.",
+            "She had worked for a department store for a few years before she got married.",
+            "She had worked for a department store for a few years before she married.",
+            "She had worked for a department store for a few years before getting married.",
+            "Before she got married, she had worked at a department store for several years.",
+            "Before she got married, she had worked at a department store for a few years.",
+            "Before she got married, she had worked in a department store for several years.",
+            "Before she got married, she had worked in a department store for a few years.",
+            "Before she got married, she had worked for a department store for several years.",
+            "Before she got married, she had worked for a department store for a few years.",
+            "Before she married, she had worked at a department store for several years.",
+            "Before she married, she had worked at a department store for a few years.",
+            "Before she married, she had worked in a department store for several years.",
+            "Before she married, she had worked in a department store for a few years.",
+            "Before she married, she had worked for a department store for several years.",
+            "Before she married, she had worked for a department store for a few years.",
+            "She had worked for several years at a department store before she got married.",
+            "She had worked for several years at a department store before she married.",
+            "She had worked for several years at a department store before getting married.",
+            "She had worked for a few years at a department store before she got married.",
+            "She had worked for a few years at a department store before she married.",
+            "She had worked for a few years at a department store before getting married.",
+            "She had worked for several years in a department store before she got married.",
+            "She had worked for several years in a department store before she married.",
+            "She had worked for several years in a department store before getting married.",
+            "She had worked for a few years in a department store before she got married.",
+            "She had worked for a few years in a department store before she married.",
+            "She had worked for a few years in a department store before getting married.",
+            "She had been working at a department store for several years before she got married.",
+            "She had been working at a department store for several years before she married.",
+            "She had been working at a department store for several years before getting married.",
+            "She had been working at a department store for a few years before she got married.",
+            "She had been working at a department store for a few years before she married.",
+            "She had been working at a department store for a few years before getting married.",
+            "She had been working in a department store for several years before she got married.",
+            "She had been working in a department store for several years before she married.",
+            "She had been working in a department store for several years before getting married.",
+            "She had been working in a department store for a few years before she got married.",
+            "She had been working in a department store for a few years before she married.",
+            "She had been working in a department store for a few years before getting married.",
+            "She had been working for several years at a department store before she got married.",
+            "She had been working for several years at a department store before she married.",
+            "She had been working for several years at a department store before getting married.",
+            "She had been working for a few years at a department store before she got married.",
+            "She had been working for a few years at a department store before she married.",
+            "She had been working for a few years at a department store before getting married.",
+            "She had been working for several years in a department store before she got married.",
+            "She had been working for several years in a department store before she married.",
+            "She had been working for several years in a department store before getting married.",
+            "She had been working for a few years in a department store before she got married.",
+            "She had been working for a few years in a department store before she married.",
+            "She had been working for a few years in a department store before getting married.",
+            "Before she got married, she had been working at a department store for several years.",
+            "Before she got married, she had been working at a department store for a few years.",
+            "Before she got married, she had been working in a department store for several years.",
+            "Before she got married, she had been working in a department store for a few years.",
+            "Before she married, she had been working at a department store for several years.",
+            "Before she married, she had been working at a department store for a few years.",
+            "Before she married, she had been working in a department store for several years.",
+            "Before she married, she had been working in a department store for a few years."
+          ],
+          "targets": [
+            [
+              "had"
+            ],
+            [
+              "worked",
+              "been working"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "she has worked",
+              "hint": "결혼하기 전, 즉 과거의 어느 때까지 이어진 일이에요. have/has 대신 어떤 꼴을 쓸까요?"
+            },
+            {
+              "match": "she worked",
+              "hint": "조건은 '과거완료로'예요. 결혼한 때보다 먼저 이어진 일은 had + 과거분사로 써요."
+            },
+            {
+              "match": "had work",
+              "hint": "had 뒤에는 동사원형이 아니라 과거분사가 와요."
+            }
+          ],
+          "tags": [
+            "past-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 15 (2과)",
+            "reviewWhere": "review 3 item 15 (p50) · review 2 item 4 (p47)"
+          },
+          "fix": {
+            "from": "She had worked at a department store for several years.",
+            "fromKo": "그녀는 수 년 동안 백화점에서 일해 왔었다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "기준이 되는 과거 시점 없이 홀로 쓴 과거완료라 before she got married 를 더했습니다(TOPIC 11 판정 · pg11-1:p11 과 같게 — STUDENT 2-3 에서 이 사람은 지금 가정주부). 한국어도 맞추고 '수년'은 붙여 씁니다."
+          },
+          "note": "교재 꼬리표 (2과): 원문은 옛 middle p02 와 글자까지 같고, 지금 STUDENT s2-3 은 같은 틀의 'She worked at a department store for several years.'(과거형)라 adapted(바꾼 문장)로 달았습니다(설계 §10 · 1권 정리 기준: 지금 STUDENT 문장과 같은 틀이면 adapted). 과거완료를 배우는 레슨이라 STUDENT 판(과거형)으로 바꾸지 않고, 교재 issue(p28 — where 에 TOPIC 12 p44 · p45 · p47 포함)의 TOPIC 11 판정대로 기준 시점 before she got married 를 더했습니다(pg11-1:p11 과 같은 문장 — pg19-3 은 STUDENT 판 과거형이라 세 레슨 모두 '홀로 쓴 과거완료는 고친다'로 판정이 같음)."
+        },
+        {
+          "id": "pg12-2:p6",
+          "ko": "그는 의사가 도착했을 때, 이틀 동안 아팠었다.",
+          "koSource": "review 3 item 16",
+          "condition": "과거완료로",
+          "promptEn": null,
+          "en": "He had been sick for two days when the doctor came.",
+          "accept": [
+            "When the doctor came, he had been sick for two days.",
+            "He had been sick for two days when the doctor arrived.",
+            "When the doctor arrived, he had been sick for two days.",
+            "He had been ill for two days when the doctor came.",
+            "When the doctor came, he had been ill for two days.",
+            "He had been ill for two days when the doctor arrived.",
+            "When the doctor arrived, he had been ill for two days.",
+            "He had been sick for two days by the time the doctor came.",
+            "By the time the doctor came, he had been sick for two days.",
+            "He had been sick for two days by the time the doctor arrived.",
+            "By the time the doctor arrived, he had been sick for two days.",
+            "He had been ill for two days by the time the doctor came.",
+            "By the time the doctor came, he had been ill for two days.",
+            "He had been ill for two days by the time the doctor arrived.",
+            "By the time the doctor arrived, he had been ill for two days."
+          ],
+          "targets": [
+            [
+              "had been"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "has been sick",
+              "hint": "의사가 온 때(과거)까지 이어진 일이에요. has 대신 어떤 꼴을 쓸까요?"
+            },
+            {
+              "match": "he was sick",
+              "hint": "조건은 '과거완료로'예요. 의사가 오기 전부터 그때까지 이어진 일이에요."
+            }
+          ],
+          "tags": [
+            "past-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 16",
+            "reviewWhere": "review 3 item 16 (p50) · review 2 item 5 (p48)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg12-2:p7",
+          "ko": "그는 어둡기 전에 그곳에 도착해 있을 거야.",
+          "koSource": "review 3 item 17 (고침)",
+          "condition": "미래완료로",
+          "promptEn": null,
+          "en": "He will have arrived there before it gets dark.",
+          "accept": [
+            "Before it gets dark, he will have arrived there.",
+            "He will have arrived there before dark.",
+            "Before dark, he will have arrived there.",
+            "He will have got there before it gets dark.",
+            "Before it gets dark, he will have got there.",
+            "He will have got there before dark.",
+            "Before dark, he will have got there.",
+            "He will have gotten there before it gets dark.",
+            "Before it gets dark, he will have gotten there.",
+            "He will have gotten there before dark.",
+            "Before dark, he will have gotten there.",
+            "He will have arrived there by the time it gets dark.",
+            "By the time it gets dark, he will have arrived there.",
+            "He will have got there by the time it gets dark.",
+            "By the time it gets dark, he will have got there.",
+            "He will have gotten there by the time it gets dark.",
+            "By the time it gets dark, he will have gotten there."
+          ],
+          "targets": [
+            [
+              "will have",
+              "'ll have"
+            ],
+            [
+              "arrived",
+              "got",
+              "gotten"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he will arrive",
+              "hint": "조건은 '미래완료로'예요. 어두워질 때쯤이면 이미 도착해 있을 일이에요."
+            },
+            {
+              "match": "will have arrive",
+              "hint": "will have 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "before it will get dark",
+              "hint": "before 뒤에서는 미래의 일도 현재형으로 써요."
+            }
+          ],
+          "tags": [
+            "future-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 46,
+            "where": "application item 17",
+            "reviewWhere": "review 3 item 17 (p50) · review 2 item 6 (p48)"
+          },
+          "fix": {
+            "fromKo": "그는 어둡기 전에 도착해 있을 거야.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어의 there(그곳에)가 한국어에 빠져 있어 넣었습니다."
+          }
+        },
+        {
+          "id": "pg12-2:p8",
+          "ko": "그녀는 2시까지 그 일을 마쳐 놓을 거야.",
+          "koSource": "review 3 item 18",
+          "condition": "미래완료로",
+          "promptEn": null,
+          "en": "She will have finished the job by two o'clock.",
+          "accept": [
+            "By two o'clock, she will have finished the job.",
+            "She will have finished the job by 2 o'clock.",
+            "By 2 o'clock, she will have finished the job.",
+            "She will have finished the job by two.",
+            "By two, she will have finished the job.",
+            "She will have finished the job by 2.",
+            "By 2, she will have finished the job.",
+            "She will have finished the job by 2:00.",
+            "By 2:00, she will have finished the job.",
+            "She will have finished the work by two o'clock.",
+            "By two o'clock, she will have finished the work.",
+            "She will have finished the work by 2 o'clock.",
+            "By 2 o'clock, she will have finished the work.",
+            "She will have finished the work by two.",
+            "By two, she will have finished the work.",
+            "She will have finished the work by 2.",
+            "By 2, she will have finished the work.",
+            "She will have finished the work by 2:00.",
+            "By 2:00, she will have finished the work.",
+            "She will have finished that job by two o'clock.",
+            "By two o'clock, she will have finished that job.",
+            "She will have finished that job by 2 o'clock.",
+            "By 2 o'clock, she will have finished that job.",
+            "She will have finished that job by two.",
+            "By two, she will have finished that job.",
+            "She will have finished that job by 2.",
+            "By 2, she will have finished that job.",
+            "She will have finished that job by 2:00.",
+            "By 2:00, she will have finished that job.",
+            "She will have finished that work by two o'clock.",
+            "By two o'clock, she will have finished that work.",
+            "She will have finished that work by 2 o'clock.",
+            "By 2 o'clock, she will have finished that work.",
+            "She will have finished that work by two.",
+            "By two, she will have finished that work.",
+            "She will have finished that work by 2.",
+            "By 2, she will have finished that work.",
+            "She will have finished that work by 2:00.",
+            "By 2:00, she will have finished that work.",
+            "She will have completed the job by two o'clock.",
+            "By two o'clock, she will have completed the job.",
+            "She will have completed the job by 2 o'clock.",
+            "By 2 o'clock, she will have completed the job.",
+            "She will have completed the job by two.",
+            "By two, she will have completed the job.",
+            "She will have completed the job by 2.",
+            "By 2, she will have completed the job.",
+            "She will have completed the job by 2:00.",
+            "By 2:00, she will have completed the job.",
+            "She will have completed the work by two o'clock.",
+            "By two o'clock, she will have completed the work.",
+            "She will have completed the work by 2 o'clock.",
+            "By 2 o'clock, she will have completed the work.",
+            "She will have completed the work by two.",
+            "By two, she will have completed the work.",
+            "She will have completed the work by 2.",
+            "By 2, she will have completed the work.",
+            "She will have completed the work by 2:00.",
+            "By 2:00, she will have completed the work.",
+            "She will have completed that job by two o'clock.",
+            "By two o'clock, she will have completed that job.",
+            "She will have completed that job by 2 o'clock.",
+            "By 2 o'clock, she will have completed that job.",
+            "She will have completed that job by two.",
+            "By two, she will have completed that job.",
+            "She will have completed that job by 2.",
+            "By 2, she will have completed that job.",
+            "She will have completed that job by 2:00.",
+            "By 2:00, she will have completed that job.",
+            "She will have completed that work by two o'clock.",
+            "By two o'clock, she will have completed that work.",
+            "She will have completed that work by 2 o'clock.",
+            "By 2 o'clock, she will have completed that work.",
+            "She will have completed that work by two.",
+            "By two, she will have completed that work.",
+            "She will have completed that work by 2.",
+            "By 2, she will have completed that work.",
+            "She will have completed that work by 2:00.",
+            "By 2:00, she will have completed that work."
+          ],
+          "targets": [
+            [
+              "will have",
+              "'ll have"
+            ],
+            [
+              "finished",
+              "completed"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "she will finish",
+              "hint": "조건은 '미래완료로'예요. 2시쯤에는 이미 끝나 있을 일이에요."
+            },
+            {
+              "match": "she will complete",
+              "hint": "조건은 '미래완료로'예요. 2시쯤에는 이미 끝나 있을 일이에요."
+            },
+            {
+              "match": "will have finish",
+              "hint": "will have 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "until",
+              "hint": "'2시까지는 (이미 끝냄)'은 until 이 아니라 다른 말을 써요."
+            }
+          ],
+          "tags": [
+            "future-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 46,
+            "where": "application item 18",
+            "reviewWhere": "review 3 item 18 (p50)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg12-2:p9",
+          "ko": "몇 년 뒤면 그는 새 집을 사 놓았을 거야.",
+          "koSource": "review 3 item 19 (고침)",
+          "condition": "미래완료로",
+          "promptEn": null,
+          "en": "He will have bought a new house in a few years.",
+          "accept": [
+            "In a few years, he will have bought a new house.",
+            "He will have bought a new house within a few years.",
+            "Within a few years, he will have bought a new house.",
+            "He will have bought a new home in a few years.",
+            "In a few years, he will have bought a new home.",
+            "He will have bought a new home within a few years.",
+            "Within a few years, he will have bought a new home."
+          ],
+          "targets": [
+            [
+              "will have",
+              "'ll have"
+            ],
+            [
+              "bought"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "will have brought",
+              "hint": "brought 는 bring(가져오다)의 과거분사예요. '사다'의 과거분사를 다시 보세요."
+            },
+            {
+              "match": "will have buy",
+              "hint": "will have 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "he will buy",
+              "hint": "조건은 '미래완료로'예요. 몇 년 뒤에는 이미 사 놓은 상태예요."
+            }
+          ],
+          "tags": [
+            "future-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 46,
+            "where": "application item 19",
+            "reviewWhere": "review 3 item 19 (p50)"
+          },
+          "fix": {
+            "fromKo": "그는 몇 년 안에 새 집을 사 버릴 거야.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'사 버리다'는 아쉬움 · 해치움의 느낌이 섞여 미래완료(그때쯤이면 사 놓은 상태)와 어긋나 '사 놓았을 거야'로 고쳤고, '몇 년 안에 … 사 놓았을 거야'는 지난 일의 추측으로도 읽혀 '몇 년 뒤면'으로 기준 때를 미래로 정했습니다(G10 점검 반영)."
+          }
+        },
+        {
+          "id": "pg12-2:p10",
+          "ko": "우리는 네가 정오까지 우리 파티에 도착해 있을 거라고 기대해.",
+          "koSource": "review 3 item 20 (고침)",
+          "condition": "미래완료로",
+          "promptEn": null,
+          "en": "We expect you will have arrived at our party by noon.",
+          "accept": [
+            "We expect you will have arrived at our party by 12 o'clock.",
+            "We expect you will have arrived at our party by twelve o'clock.",
+            "We expect you will have arrived at our party by midday.",
+            "We expect you will have arrived at our party by 12.",
+            "We expect that you will have arrived at our party by noon.",
+            "We expect that you will have arrived at our party by 12 o'clock.",
+            "We expect that you will have arrived at our party by twelve o'clock.",
+            "We expect that you will have arrived at our party by midday.",
+            "We expect that you will have arrived at our party by 12.",
+            "We hope you will have arrived at our party by noon.",
+            "We hope you will have arrived at our party by 12 o'clock.",
+            "We hope you will have arrived at our party by twelve o'clock.",
+            "We hope you will have arrived at our party by midday.",
+            "We hope you will have arrived at our party by 12.",
+            "We hope that you will have arrived at our party by noon.",
+            "We hope that you will have arrived at our party by 12 o'clock.",
+            "We hope that you will have arrived at our party by twelve o'clock.",
+            "We hope that you will have arrived at our party by midday.",
+            "We hope that you will have arrived at our party by 12."
+          ],
+          "targets": [
+            [
+              "will have",
+              "'ll have"
+            ],
+            [
+              "arrived"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "you will arrive",
+              "hint": "조건은 '미래완료로'예요. 정오쯤에는 이미 도착해 있을 일이에요."
+            },
+            {
+              "match": "until",
+              "hint": "'정오까지는 (이미)'는 until 이 아니라 다른 말을 써요."
+            },
+            {
+              "match": "arrived to our party",
+              "hint": "'파티에 도착하다'는 arrive 뒤에 to 가 아닌 다른 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "future-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 46,
+            "where": "application item 20",
+            "reviewWhere": "review 3 item 20 (p50)"
+          },
+          "fix": {
+            "fromKo": "우리는 네가 정오까지 우리의 파티에 도착할거라고 기대해.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'할 거라고'는 띄어 쓰고, 미래완료(그때쯤엔 이미 도착해 있음)가 드러나게 '도착해 있을 거라고'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg12-2:p11",
+          "ko": "만약 내가 그를 다시 만난다면, 나는 그를 두 번 만난 것이 된다.",
+          "koSource": "review 3 item 21 (고침)",
+          "condition": "미래완료로",
+          "promptEn": null,
+          "en": "I shall have met him twice if I meet him again.",
+          "accept": [
+            "If I meet him again, I shall have met him twice.",
+            "I will have met him twice if I meet him again.",
+            "If I meet him again, I will have met him twice.",
+            "If I see him again, I will have met him twice.",
+            "I will have met him twice if I see him again.",
+            "If I see him again, I shall have met him twice.",
+            "I shall have met him twice if I see him again."
+          ],
+          "targets": [
+            [
+              "will have",
+              "shall have",
+              "'ll have"
+            ],
+            [
+              "met"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "will meet him twice",
+              "hint": "조건은 '미래완료로'예요. 다시 만나면 그때까지 두 번 만난 셈이 돼요."
+            },
+            {
+              "match": "have meet",
+              "hint": "have 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "if i will meet",
+              "hint": "if 뒤에서는 미래의 일도 현재형으로 써요."
+            }
+          ],
+          "tags": [
+            "future-perfect",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 46,
+            "where": "application item 21",
+            "reviewWhere": "review 3 item 21 (p50) · review 2 item 7 (p48)"
+          },
+          "fix": {
+            "fromKo": "만약 내가 그를 다시 만난다면, 나는 그를 두 번 만나게 되는 것이다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'두 번 만나게 되는 것이다'는 앞으로 만나게 된다는 뜻이라, 미래완료(그때까지 모두 두 번 만난 셈)가 드러나게 '두 번 만난 것이 된다'로 고쳤습니다."
+          },
+          "note": "shall 은 I · we 뒤의 will(영국식 · 격식 표현)이라 will 로 쓴 답도 허용합니다."
+        },
+        {
+          "id": "pg12-2:p12",
+          "ko": "그는 내일이면 한 달간 결석한 것이 된다.",
+          "koSource": "review 3 item 22 (고침)",
+          "condition": "미래완료로",
+          "promptEn": null,
+          "en": "He will have been absent for a month tomorrow.",
+          "accept": [
+            "Tomorrow, he will have been absent for a month.",
+            "By tomorrow, he will have been absent for a month.",
+            "He will have been absent for a month by tomorrow.",
+            "He will have been absent for one month tomorrow.",
+            "Tomorrow, he will have been absent for one month.",
+            "By tomorrow, he will have been absent for one month.",
+            "He will have been absent for one month by tomorrow.",
+            "He will have been absent from school for a month tomorrow.",
+            "Tomorrow, he will have been absent from school for a month.",
+            "By tomorrow, he will have been absent from school for a month.",
+            "He will have been absent from school for a month by tomorrow.",
+            "He will have been absent from school for one month tomorrow.",
+            "Tomorrow, he will have been absent from school for one month.",
+            "By tomorrow, he will have been absent from school for one month.",
+            "He will have been absent from school for one month by tomorrow."
+          ],
+          "targets": [
+            [
+              "will have been",
+              "'ll have been"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "has been absent",
+              "hint": "기준이 지금이 아니라 내일(미래)이에요."
+            },
+            {
+              "match": "he will be absent",
+              "hint": "조건은 '미래완료로'예요. 내일이면 한 달을 채운 상태예요."
+            }
+          ],
+          "tags": [
+            "future-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 46,
+            "where": "application item 22",
+            "reviewWhere": "review 3 item 22 (p50)"
+          },
+          "fix": {
+            "fromKo": "그는 내일이면 한달 간 결석을 한 것이 될 것이다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'한 달간'으로 띄어 쓰고('간'은 붙임), 겹친 '것이 될 것이다'를 '것이 된다'로 다듬었습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg12-2:t1",
+          "ko": "그는 자신이 성공한 방법을 나에게 보여주었다.",
+          "koSource": "grammar2:gh2-044#12",
+          "condition": "과거완료로",
+          "promptEn": null,
+          "en": "He showed me how he had succeeded.",
+          "accept": [
+            "He showed me the way he had succeeded."
+          ],
+          "targets": [
+            [
+              "had"
+            ],
+            [
+              "succeeded"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "how he has succeeded",
+              "hint": "보여 준 때(과거)보다 먼저 일이에요. has 대신 어떤 꼴을 쓸까요?"
+            },
+            {
+              "match": "how did he succeed",
+              "hint": "문장 안에 들어간 의문사 절은 '주어 + 동사' 순서예요."
+            },
+            {
+              "match": "how he succeeded",
+              "hint": "조건은 '과거완료로'예요. 성공한 일은 보여 준 때보다 먼저예요."
+            }
+          ],
+          "tags": [
+            "past-perfect",
+            "indirect-question"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-044#12",
+          "note": "GRAMMAR II 허용 답 'He showed me how he succeeded.'는 과거완료를 쓰지 않아 뺐습니다(조건: 과거완료로)."
+        },
+        {
+          "id": "pg12-2:t2",
+          "ko": "내년이면 나는 여기서 산 지 10년이 된다.",
+          "koSource": "new",
+          "condition": "미래완료로",
+          "promptEn": null,
+          "en": "By next year, I will have lived here for ten years.",
+          "accept": [
+            "I will have lived here for ten years by next year.",
+            "Next year, I will have lived here for ten years.",
+            "By next year, I will have been living here for ten years.",
+            "I will have been living here for ten years by next year.",
+            "Next year, I will have been living here for ten years.",
+            "By next year, I will have lived here for 10 years.",
+            "I will have lived here for 10 years by next year.",
+            "Next year, I will have lived here for 10 years.",
+            "By next year, I will have been living here for 10 years.",
+            "I will have been living here for 10 years by next year.",
+            "Next year, I will have been living here for 10 years.",
+            "I will have lived here for ten years next year.",
+            "I will have lived here for 10 years next year.",
+            "I will have been living here for ten years next year.",
+            "I will have been living here for 10 years next year."
+          ],
+          "targets": [
+            [
+              "will have",
+              "'ll have"
+            ],
+            [
+              "lived",
+              "been living"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i will live here",
+              "hint": "조건은 '미래완료로'예요. 내년쯤이면 10년을 채운 상태예요."
+            },
+            {
+              "match": "since",
+              "hint": "'10년 동안'처럼 기간을 말할 때는 since 대신 다른 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "future-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "GRAMMAR I·II 에 미래완료 문장이 없어 새로 만들었습니다."
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg12-2:f1",
+      "template": "By the end of this year, I will have read ___.",
+      "ko": "올해가 끝날 때쯤이면 나는 ___을(를) 다 읽었을 것이다."
+    }
+  ]
+}

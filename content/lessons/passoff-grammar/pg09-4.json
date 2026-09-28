@@ -1,0 +1,1482 @@
+{
+  "id": "pg09-4",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "관사",
+  "label": "TOPIC 9. 형용사",
+  "menuLabel": "9-4. 관사",
+  "unit": 9,
+  "part": 2,
+  "order": 4,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(4) 관사 (a / the)",
+  "grammarTags": [
+    "article-rules"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg09-4:a1",
+          "en": "I had a sandwich and an apple for lunch.",
+          "ko": "나는 점심으로 샌드위치 하나와 사과 하나를 먹었다.",
+          "koSource": "new",
+          "focus": [
+            "a",
+            "an"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 1"
+          }
+        },
+        {
+          "id": "pg09-4:a2",
+          "en": "The sandwich wasn't very good, but the apple was delicious.",
+          "ko": "그 샌드위치는 별로 맛이 없었지만, 그 사과는 맛있었다.",
+          "koSource": "new",
+          "focus": [
+            "The sandwich",
+            "the apple"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 2"
+          }
+        },
+        {
+          "id": "pg09-4:a3",
+          "en": "The earth goes around the sun.",
+          "ko": "지구는 태양 주위를 돈다.",
+          "koSource": "review 4 item 5 (p14)",
+          "focus": [
+            "The earth",
+            "the sun"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 3"
+          }
+        },
+        {
+          "id": "pg09-4:a4",
+          "en": "Your sweater is the same color as mine.",
+          "ko": "네 스웨터는 나의 것과 같은 색깔이야.",
+          "koSource": "review 4 item 7 (p14)",
+          "focus": [
+            "the same"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 4"
+          }
+        },
+        {
+          "id": "pg09-4:a5",
+          "en": "What did you have for breakfast?",
+          "ko": "너는 아침으로 무엇을 먹었니?",
+          "koSource": "review 4 item 8 (p14)",
+          "focus": [
+            "for breakfast"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 5"
+          }
+        },
+        {
+          "id": "pg09-4:a6",
+          "en": "Claudia is at school and her mother wants to see her teacher at the school.",
+          "ko": "클라우디아는 수업 중이고 그녀의 엄마는 그 학교에서 그녀의 선생님을 뵙고 싶어 한다.",
+          "koSource": "review 4 item 9 (p14, 고침)",
+          "focus": [
+            "at school",
+            "at the school"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 6"
+          },
+          "fix": {
+            "fromKo": "클라우디아는 수업 중이고 그녀의 엄마는 학교에서 그녀의 선생님을 뵙기를 원한다.",
+            "field": "ko",
+            "kind": "answer_ambiguous",
+            "why": "at the school(그 학교 건물에서)의 the 가 한국어에 드러나지 않아 at school(수업 중)과 구별되지 않았습니다 — '그 학교에서'로 고쳤습니다. '뵙기를 원한다'는 want 를 글자대로 옮긴 번역투라 '뵙고 싶어 한다'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg09-4:a7",
+          "en": "He took me by the hand.",
+          "ko": "그는 내 손을 잡았다.",
+          "koSource": "review 4 item 10 (p14, 고침)",
+          "focus": [
+            "by the hand"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 7"
+          },
+          "fix": {
+            "fromKo": "그는 손으로 나를 잡았다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "take + 사람 + by the hand 는 '(누구)의 손을 잡다'입니다. '손으로 나를 잡았다'는 He grabbed me with his hand. 로 옮기게 되어 'by the + 신체 부위' 연습이 사라져 '그는 내 손을 잡았다'로 고쳤습니다(④ 에는 조건 'by를 써서')."
+          }
+        },
+        {
+          "id": "pg09-4:a8",
+          "en": "Who's going to do the cooking?",
+          "ko": "누가 요리를 할 거야?",
+          "koSource": "review 4 item 15 (p14, 고침)",
+          "focus": [
+            "do the cooking"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 12"
+          },
+          "fix": {
+            "fromKo": "누가 요리를 할거야?",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'할거야'는 '할 거야'로 띄어 씁니다(의존 명사 '거'). 교재는 이 줄을 다른 글꼴로 강조해 인쇄했는데, 다른 예문처럼 do the cooking 을 강조(focus)로 통일했습니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg09-4:a1",
+          "pg09-4:a2",
+          "pg09-4:a3"
+        ],
+        "question": "첫 문장의 a sandwich · an apple 이 둘째 문장에서 the sandwich · the apple 로 바뀐 까닭은?",
+        "options": [
+          "앞에서 이미 말해서 서로 아는 것이 되었으니까",
+          "샌드위치가 맛이 없어서",
+          "문장 맨 앞에 와서"
+        ],
+        "answer": 0,
+        "why": "처음 말할 때는 '하나의'라는 뜻으로 a · an, 이미 말해서 서로 아는 것을 다시 말할 때는 '그'라는 뜻으로 the 를 써요. The earth · the sun 처럼 하나뿐인 것에도 the 를 써요."
+      },
+      "title": "관사: a · an · the, 그리고 관사를 쓰지 않는 자리",
+      "points": [
+        "a · an: 셀 수 있는 명사 하나를 처음 말할 때 — 모음 소리 앞은 an(an apple · an hour)",
+        "the: 이미 말한 것 · 하나뿐인 것(the sun) · the same · the only 앞에",
+        "관사 없음: 식사(for breakfast — 앞에 형용사가 붙으면 a: a big breakfast) · 운동(play soccer) · 본래 목적으로 있는 곳(at school = 학교에서 공부하는 중)",
+        "악기 연주: play the guitar(미국 영어에서는 the 를 빼고 play guitar 라고도 해요) · 신체 부위: took me by the hand · hit him in the face",
+        "by the + 단위: by the day(하루 단위로) · by the pound(파운드 단위로) / 집안일: do the cooking"
+      ],
+      "table": {
+        "columns": [
+          "쓰는 곳",
+          "예",
+          "뜻"
+        ],
+        "rows": [
+          [
+            "처음 말하는 하나",
+            "a sandwich · an apple",
+            "(어떤) 하나"
+          ],
+          [
+            "모음 소리 앞",
+            "an apple · an hour · an umbrella",
+            "철자가 아니라 첫소리로"
+          ],
+          [
+            "이미 말한 것",
+            "the sandwich · the apple",
+            "그 ~"
+          ],
+          [
+            "하나뿐인 것",
+            "the earth · the sun · the sky",
+            "세상에 하나"
+          ],
+          [
+            "관사 없음",
+            "for breakfast · play soccer · at school",
+            "식사 · 운동 · 본래 목적"
+          ],
+          [
+            "by the + 단위",
+            "by the day · by the pound",
+            "~ 단위로"
+          ]
+        ]
+      },
+      "koDiff": "우리말에는 관사가 없어서 '샌드위치를 먹었다'처럼 그냥 말하지만, 영어는 셀 수 있는 명사 하나 앞에 a · an · the(또는 my · your · this 같은 말) 가운데 하나를 꼭 붙여요. 반대로 식사 · 운동 이름이나 at school(수업 중)처럼 관사를 붙이지 않는 자리도 있어요.",
+      "mistakes": [
+        {
+          "wrong": "I ate a apple.",
+          "right": "I ate an apple.",
+          "why": "apple 은 모음 소리로 시작해서 an."
+        },
+        {
+          "wrong": "We had the lunch at noon.",
+          "right": "We had lunch at noon.",
+          "why": "식사 이름 앞에는 관사를 쓰지 않아요."
+        }
+      ],
+      "worked": [
+        "나는 어제 개 한 마리를 봤다. 그 개는 아주 컸다.",
+        "처음 말하는 개 한 마리 → a dog",
+        "다시 말하는 '그 개' → the dog",
+        "I saw a dog yesterday. The dog was very big."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'Look at ___ moon! It's so bright.' 빈칸에 맞는 것은?",
+        "options": [
+          "a",
+          "an",
+          "the"
+        ],
+        "answer": 2,
+        "why": "달은 하나뿐이라 the 를 써요.",
+        "pointIndex": 1
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg09-4:s1",
+          "kind": "choice",
+          "instruction": "빈칸에 차례로 알맞은 것은?",
+          "sentence": "I had ___ sandwich and ___ apple for lunch.",
+          "underline": [],
+          "options": [
+            "a / a",
+            "a / an",
+            "an / a"
+          ],
+          "answer": 1,
+          "why": "sandwich 는 자음 소리, apple 은 모음 소리로 시작해서 a sandwich · an apple.",
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 1"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-4:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "What did you have for ___?",
+          "underline": [],
+          "options": [
+            "a breakfast",
+            "the breakfast",
+            "breakfast"
+          ],
+          "answer": 2,
+          "why": "식사 이름(breakfast · lunch · dinner) 앞에는 관사를 쓰지 않아요.",
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 5"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-4:s3",
+          "kind": "choice",
+          "instruction": "밑줄 친 두 부분의 뜻을 바르게 말한 것은?",
+          "sentence": "Claudia is at school and her mother wants to see her teacher at the school.",
+          "underline": [
+            "at school",
+            "at the school"
+          ],
+          "options": [
+            "at school 은 '학교에서 공부하는 중', at the school 은 '그 학교(건물)에서'",
+            "둘 다 뜻이 같다",
+            "at school 은 '그 학교 건물 안', at the school 은 '수업 중'"
+          ],
+          "answer": 0,
+          "why": "관사 없는 at school 은 학교에 간 본래 목적(공부)을, at the school 은 그 학교라는 장소를 말해요. 엄마는 공부하러 가는 게 아니라 선생님을 만나러 그 학교에 가요.",
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 6"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-4:s4",
+          "kind": "choice",
+          "instruction": "어법에 맞는 문장은?",
+          "options": [
+            "He took me by my hand.",
+            "He took me by the hand.",
+            "He took me by a hand."
+          ],
+          "answer": 1,
+          "why": "사람을 먼저 말하고(took me), 잡은 곳은 by the + 신체 부위로 써요.",
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 7"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-4:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "Your sweater is ___ color as mine.",
+          "underline": [],
+          "options": [
+            "a same",
+            "same",
+            "the same"
+          ],
+          "answer": 2,
+          "why": "same 앞에는 늘 the: the same ~ as …(…와 같은 ~).",
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 4"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-4:s6",
+          "kind": "short",
+          "instruction": "빈칸에 a 또는 an 을 쓰세요",
+          "sentence": "She is ___ honest girl.",
+          "answer": [
+            "an"
+          ],
+          "why": "honest 는 h 가 소리 나지 않아 모음 소리로 시작해요 → an.",
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #45 (an hour)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-4:s7",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "Who's going to do ___ cooking?",
+          "underline": [],
+          "options": [
+            "a",
+            "the",
+            "(관사 없음)"
+          ],
+          "answer": 1,
+          "why": "집안일을 do 로 말할 때는 do the + -ing(do the cooking · do the shopping).",
+          "bookRef": {
+            "book": 2,
+            "page": 6,
+            "where": "passOff (4) item 12"
+          },
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg09-4:p1",
+          "ko": "나는 점심으로 샌드위치 하나와 사과 하나를 먹었다.",
+          "koSource": "new",
+          "condition": "a/an을 써서",
+          "promptEn": null,
+          "en": "I had a sandwich and an apple for lunch.",
+          "accept": [
+            "I ate a sandwich and an apple for lunch.",
+            "For lunch, I had a sandwich and an apple.",
+            "For lunch, I ate a sandwich and an apple."
+          ],
+          "targets": [
+            [
+              "a"
+            ],
+            [
+              "an"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a apple",
+              "hint": "apple 은 모음 소리로 시작해요. 관사 모양을 보세요."
+            },
+            {
+              "match": "had sandwich",
+              "hint": "sandwich 는 셀 수 있는 명사예요. 하나를 처음 말할 때 붙는 말이 빠졌어요."
+            },
+            {
+              "match": "for the lunch",
+              "hint": "식사 이름 앞에는 관사를 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #42"
+          },
+          "fix": null,
+          "note": "교재 Review 에 한국어가 없는 문장이라 새로 옮김."
+        },
+        {
+          "id": "pg09-4:p2",
+          "ko": "그 샌드위치는 별로 맛이 없었지만, 그 사과는 맛있었다.",
+          "koSource": "new",
+          "condition": "관사를 써서",
+          "promptEn": null,
+          "en": "The sandwich wasn't very good, but the apple was delicious.",
+          "accept": [
+            "The sandwich wasn't very tasty, but the apple was delicious.",
+            "The sandwich wasn't very delicious, but the apple was delicious.",
+            "The sandwich didn't taste very good, but the apple was delicious.",
+            "The sandwich wasn't very good, but the apple was tasty.",
+            "The sandwich wasn't very good, but the apple was good.",
+            "The sandwich wasn't that good, but the apple was delicious.",
+            "The sandwich wasn't that good, but the apple was tasty.",
+            "The sandwich wasn't that good, but the apple was good.",
+            "The sandwich wasn't so good, but the apple was delicious.",
+            "The sandwich wasn't so good, but the apple was tasty.",
+            "The sandwich wasn't so good, but the apple was good.",
+            "The sandwich wasn't really good, but the apple was delicious.",
+            "The sandwich wasn't really good, but the apple was tasty.",
+            "The sandwich wasn't really good, but the apple was good.",
+            "The sandwich wasn't good, but the apple was delicious.",
+            "The sandwich wasn't good, but the apple was tasty.",
+            "The sandwich wasn't good, but the apple was good.",
+            "The sandwich wasn't very tasty, but the apple was tasty.",
+            "The sandwich wasn't very tasty, but the apple was good.",
+            "The sandwich didn't taste very good, but the apple was tasty.",
+            "The sandwich didn't taste very good, but the apple was good.",
+            "The sandwich didn't taste good, but the apple was delicious.",
+            "The sandwich didn't taste good, but the apple was tasty.",
+            "The sandwich didn't taste good, but the apple was good."
+          ],
+          "targets": [
+            [
+              "the"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a sandwich wasn't",
+              "hint": "앞에서 말한 그 샌드위치예요. 이미 말한 것을 다시 가리키는 관사는?"
+            },
+            {
+              "match": "but an apple",
+              "hint": "앞에서 말한 그 사과예요. 이미 말한 것을 다시 가리키는 관사는?"
+            },
+            {
+              "match": "but apple was",
+              "hint": "apple 은 셀 수 있는 명사예요. 앞에 관사가 빠졌어요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "be-past",
+            "negative-basic",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #43"
+          },
+          "fix": null,
+          "note": "교재 Review 에 한국어가 없는 문장이라 새로 옮김(정관사 the 가 드러나게 '그 샌드위치 · 그 사과'). 조건 '관사를 써서': '그 샌드위치 · 그 사과'를 that 으로 옮긴 맞는 답(That sandwich …)은 다시 말한 것의 the 연습을 피해 가므로 미리 알림. '별로 맛이 없었다'는 wasn't (very · that · so · really) good · wasn't very tasty · didn't taste (very) good 로, '맛있었다'는 delicious · tasty · good 으로 받음(G7 반박 점검)."
+        },
+        {
+          "id": "pg09-4:p3",
+          "ko": "나의 삼촌은 파일럿이다.",
+          "koSource": "review 4 item 1 (p13)",
+          "condition": null,
+          "promptEn": null,
+          "en": "My uncle is a pilot.",
+          "accept": [
+            "My uncle's a pilot."
+          ],
+          "targets": [
+            [
+              "a"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "uncle is pilot",
+              "hint": "직업을 말할 때도 셀 수 있는 명사 하나 앞에 붙는 말이 있어요."
+            },
+            {
+              "match": "is the pilot",
+              "hint": "여러 파일럿 가운데 (어떤) 한 명이라는 뜻이에요. 어떤 관사가 맞을까요?"
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #44",
+            "reviewWhere": "review 4 item 1 (p13)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-4:p4",
+          "ko": "나는 매일 저녁 영어를 한 시간 동안 공부한다.",
+          "koSource": "review 4 item 2 (p13)",
+          "condition": "a/an을 써서",
+          "promptEn": null,
+          "en": "I study English for an hour every evening.",
+          "accept": [
+            "Every evening I study English for an hour.",
+            "I study English for an hour each evening.",
+            "I study English every evening for an hour."
+          ],
+          "targets": [
+            [
+              "an hour"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a hour",
+              "hint": "hour 는 h 가 소리 나지 않아 모음 소리로 시작해요. 관사 모양을 보세요."
+            },
+            {
+              "match": "for hour",
+              "hint": "hour 는 셀 수 있는 명사예요. 앞에 관사가 빠졌어요."
+            },
+            {
+              "match": "every evenings",
+              "hint": "every 뒤에는 한 개 모양의 명사가 와요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #45",
+            "reviewWhere": "review 4 item 2 (p13)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-4:p5",
+          "ko": "이것은 과학 소설책이고 그 책은 매우 두껍다.",
+          "koSource": "review 4 item 3 (p13)",
+          "condition": "관사를 써서",
+          "promptEn": null,
+          "en": "This is a science fiction book, and the book is very thick.",
+          "accept": [
+            "This is a science fiction novel, and the novel is very thick.",
+            "This is a sci-fi book, and the book is very thick.",
+            "This is a sci-fi novel, and the novel is very thick.",
+            "It is a science fiction book, and the book is very thick.",
+            "It is a science fiction novel, and the novel is very thick.",
+            "It is a sci-fi book, and the book is very thick.",
+            "It is a sci-fi novel, and the novel is very thick.",
+            "This is a science fiction novel, and the book is very thick.",
+            "This is a sci-fi novel, and the book is very thick.",
+            "It is a science fiction novel, and the book is very thick.",
+            "It is a sci-fi novel, and the book is very thick."
+          ],
+          "targets": [
+            [
+              "a"
+            ],
+            [
+              "the"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "and it is very thick",
+              "hint": "'그 책은'을 옮겨 보세요. 앞에서 말한 책을 다시 가리킬 때 쓰는 관사는?"
+            },
+            {
+              "match": "and a book is",
+              "hint": "앞에서 말한 그 책이에요. 이미 말한 것을 다시 가리키는 관사는?"
+            },
+            {
+              "match": "scientific novel book",
+              "hint": "'과학 소설'은 영어로 science fiction 이라고 해요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "be-present",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #46",
+            "reviewWhere": "review 4 item 3 (p13)"
+          },
+          "fix": {
+            "from": "It’s a scientific novel book and the book is very thick.",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "'scientific novel book'은 영어에서 쓰지 않는 말(과학 소설은 science fiction, novel 과 book 이 겹침)이고, 한국어 '이것은'과 It's 도 어긋나 This is a science fiction book 으로 고쳤습니다(처음 a, 다시 the 연습은 그대로)."
+          },
+          "note": "조건 '관사를 써서': '그 책은'을 that book 으로 옮긴 맞는 답은 다시 말한 것의 the 연습을 피해 가므로 p2 와 같이 미리 알림(G7 반박 점검 — p2 와 같은 까닭으로 수정자가 더함)."
+        },
+        {
+          "id": "pg09-4:p6",
+          "ko": "하늘을 봐라. 무지개가 저기에 있어.",
+          "koSource": "review 4 item 4 (p14)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Look at the sky. There's a rainbow over there.",
+          "accept": [
+            "Look at the sky. There's a rainbow there."
+          ],
+          "targets": [
+            [
+              "the"
+            ],
+            [
+              "a"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "the rainbow is over there",
+              "hint": "처음 알려 주는 무지개예요. 처음 말하는 것 앞에는 어떤 관사를 쓸까요?"
+            },
+            {
+              "match": "a rainbow is over there",
+              "hint": "처음 알려 주는 것이 '어디에 있다'고 말할 때는 There is ~ 꼴로 써요."
+            },
+            {
+              "match": "look at sky",
+              "hint": "하늘은 하나뿐이에요. 하나뿐인 것 앞에 붙는 관사가 빠졌어요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "imperative-basic",
+            "there-be"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #47",
+            "reviewWhere": "review 4 item 4 (p14)"
+          },
+          "fix": {
+            "from": "Look at the sky. The rainbow is over there.",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "처음 알려 주는 무지개는 a 로 소개하는 것이 자연스럽습니다(There's a rainbow over there.). The rainbow 는 둘 다 이미 아는 무지개일 때만 맞고, 바로 앞 sandwich · apple 예문의 '처음 a, 다시 the' 규칙과도 어긋납니다. 한국어 '무지개가'(새로 알려 줌)와도 맞습니다."
+          }
+        },
+        {
+          "id": "pg09-4:p7",
+          "ko": "지구는 태양 주위를 돈다.",
+          "koSource": "review 4 item 5 (p14)",
+          "condition": null,
+          "promptEn": null,
+          "en": "The earth goes around the sun.",
+          "accept": [
+            "The earth moves around the sun.",
+            "The earth revolves around the sun.",
+            "The earth goes round the sun.",
+            "The earth travels around the sun.",
+            "The earth orbits the sun."
+          ],
+          "targets": [
+            [
+              "the"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "earth goes around sun",
+              "hint": "지구와 태양은 하나뿐이에요. 하나뿐인 것 앞에 붙는 관사가 빠졌어요."
+            },
+            {
+              "match": "a sun",
+              "hint": "태양은 하나뿐이에요. a 가 아니라 다른 관사를 써요."
+            },
+            {
+              "match": "the earth go",
+              "hint": "주어 The earth 는 하나예요. 동사 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #48",
+            "reviewWhere": "review 4 item 5 (p14)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-4:p8",
+          "ko": "그는 기타를 연주할 수 있고 그는 모든 종류의 스포츠도 할 수 있다.",
+          "koSource": "review 4 item 6 (p14)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He can play the guitar and he can play all kinds of sports, too.",
+          "accept": [
+            "He can play the guitar, and he can also play all kinds of sports.",
+            "He can play the guitar and all kinds of sports.",
+            "He can play the guitar and all kinds of sports, too.",
+            "He can play the guitar and can play all kinds of sports, too.",
+            "He can play the guitar and he can play all kinds of sports as well.",
+            "He can play guitar and he can play all kinds of sports, too.",
+            "He can play guitar, and he can also play all kinds of sports.",
+            "He can play guitar and all kinds of sports.",
+            "He can play guitar and all kinds of sports, too.",
+            "He can play guitar and can play all kinds of sports, too.",
+            "He can play guitar and he can play all kinds of sports as well.",
+            "He can play the guitar and also play all kinds of sports.",
+            "He can play guitar and also play all kinds of sports."
+          ],
+          "targets": [
+            [
+              "the guitar",
+              "play guitar"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "play a guitar",
+              "hint": "악기를 연주한다고 할 때 악기 이름 앞에 a 는 쓰지 않아요."
+            },
+            {
+              "match": "play the sports",
+              "hint": "운동 · sports 앞에는 관사를 쓰지 않아요."
+            },
+            {
+              "match": "all kind of",
+              "hint": "all kinds of 에서 kind 는 여럿 모양이에요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "can-basic",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s4-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #49",
+            "reviewWhere": "review 4 item 6 (p14)"
+          },
+          "fix": null,
+          "note": "STUDENT 4-6 의 He can play all kinds of sports, and he can play the piano and guitar pretty well. 을 두 절 순서를 바꿔 줄인 문장(교재에 과 표시 없음). 관사 없는 play guitar 는 미국 영어에서 흔히 쓰는 맞는 표현이라 허용 답으로 받음(pg03-2:p7 · pg05-1:p15 · pg11-1:p3 과 같게 — G7 점검)."
+        },
+        {
+          "id": "pg09-4:p9",
+          "ko": "네 스웨터는 나의 것과 같은 색깔이야.",
+          "koSource": "review 4 item 7 (p14)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Your sweater is the same color as mine.",
+          "accept": [
+            "Your sweater is the same colour as mine.",
+            "Your sweater is the same color as my sweater.",
+            "Your sweater has the same color as mine.",
+            "Your sweater and mine are the same color.",
+            "Your sweater and my sweater are the same color.",
+            "Your sweater and my sweater are the same colour.",
+            "Your sweater and mine are the same colour.",
+            "Your sweater is the same colour as my sweater.",
+            "Your sweater has the same colour as mine.",
+            "Your sweater's the same color as mine.",
+            "Your sweater's color is the same as mine.",
+            "The color of your sweater is the same as mine.",
+            "Your sweater's colour is the same as mine.",
+            "The colour of your sweater is the same as mine."
+          ],
+          "targets": [
+            [
+              "the same"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "same color with",
+              "hint": "the same ~ 뒤에서 비교하는 상대를 이끄는 말은 with 가 아니에요."
+            },
+            {
+              "match": "is same color",
+              "hint": "same 앞에는 늘 붙는 관사가 있어요."
+            },
+            {
+              "match": "as me",
+              "hint": "'나의 것'은 소유대명사로 써요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "pronoun-possessive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #50",
+            "reviewWhere": "review 4 item 7 (p14)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-4:p10",
+          "ko": "너는 아침으로 무엇을 먹었니?",
+          "koSource": "review 4 item 8 (p14)",
+          "condition": null,
+          "promptEn": null,
+          "en": "What did you have for breakfast?",
+          "accept": [
+            "What did you eat for breakfast?"
+          ],
+          "targets": [
+            [
+              "for breakfast"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "for the breakfast",
+              "hint": "식사 이름 앞에는 관사를 쓰지 않아요."
+            },
+            {
+              "match": "for a breakfast",
+              "hint": "식사 이름 앞에는 관사를 쓰지 않아요."
+            },
+            {
+              "match": "what did you had",
+              "hint": "did 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "question-wh",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #51",
+            "reviewWhere": "review 4 item 8 (p14)"
+          },
+          "fix": null,
+          "note": "GRAMMAR I gh1-081#21 과 같은 문장 — 그 허용 답(What did you eat for breakfast?)을 가져옴."
+        },
+        {
+          "id": "pg09-4:p11",
+          "ko": "클라우디아는 수업 중이고 그녀의 엄마는 그 학교에서 그녀의 선생님을 뵙고 싶어 한다.",
+          "koSource": "review 4 item 9 (p14, 고침)",
+          "condition": "school을 두 번 써서",
+          "promptEn": null,
+          "en": "Claudia is at school and her mother wants to see her teacher at the school.",
+          "accept": [
+            "Claudia is at school and her mother wants to meet her teacher at the school.",
+            "Claudia is at school and her mom wants to see her teacher at the school.",
+            "Claudia is at school and her mom wants to meet her teacher at the school.",
+            "Claudia's at school and her mother wants to see her teacher at the school.",
+            "Claudia is at school and her mother would like to see her teacher at the school.",
+            "Claudia is at school and her mother would like to meet her teacher at the school.",
+            "Claudia is at school and her mom would like to see her teacher at the school.",
+            "Claudia is at school and her mom would like to meet her teacher at the school."
+          ],
+          "targets": [
+            [
+              "at school"
+            ],
+            [
+              "at the school"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "claudia is at the school",
+              "hint": "클라우디아는 공부하러 학교에 가 있는 학생이에요. 본래 목적으로 있는 곳 앞에도 관사를 쓸까요?"
+            },
+            {
+              "match": "teacher at school",
+              "hint": "엄마는 공부하러 가는 것이 아니라 '그 학교'라는 장소에 가요."
+            },
+            {
+              "match": "in class",
+              "hint": "조건은 'school을 두 번 써서'예요. '수업 중'을 '(공부하러) 학교에 가 있다'로 바꿔 말해 보세요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "present-3sg-s",
+            "want-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #52",
+            "reviewWhere": "review 4 item 9 (p14)"
+          },
+          "fix": {
+            "fromKo": "클라우디아는 수업 중이고 그녀의 엄마는 학교에서 그녀의 선생님을 뵙기를 원한다.",
+            "field": "ko",
+            "kind": "answer_ambiguous",
+            "why": "at the school(그 학교 건물에서)의 the 가 한국어에 드러나지 않아 at school(수업 중)과 구별되지 않았습니다 — '그 학교에서'로 고쳤습니다. '뵙기를 원한다'는 want 를 글자대로 옮긴 번역투라 '뵙고 싶어 한다'로 고쳤습니다. '수업 중'은 in class 로도 옮겨지는 맞는 말이라 at school 연습이 사라지지 않게 조건 'school을 두 번 써서'를 붙였습니다."
+          }
+        },
+        {
+          "id": "pg09-4:p12",
+          "ko": "그는 내 손을 잡았다.",
+          "koSource": "review 4 item 10 (p14, 고침)",
+          "condition": "by를 써서",
+          "promptEn": null,
+          "en": "He took me by the hand.",
+          "accept": [
+            "He grabbed me by the hand.",
+            "He caught me by the hand.",
+            "He held me by the hand."
+          ],
+          "targets": [
+            [
+              "by the hand"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "by my hand",
+              "hint": "사람(me)을 먼저 말했으니, 신체 부위 앞에는 my 대신 쓰는 관사가 있어요."
+            },
+            {
+              "match": "took me by hand",
+              "hint": "신체 부위 앞에 관사가 빠졌어요."
+            },
+            {
+              "match": "my hand",
+              "hint": "조건은 'by를 써서'예요. 사람을 먼저 말하고 by 뒤에 신체 부위를 써 보세요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #53",
+            "reviewWhere": "review 4 item 10 (p14)"
+          },
+          "fix": {
+            "fromKo": "그는 손으로 나를 잡았다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "take + 사람 + by the hand 는 '(누구)의 손을 잡다'입니다. '손으로 나를 잡았다'는 He grabbed me with his hand. 로 옮기게 되어 'by the + 신체 부위' 연습이 사라져 '그는 내 손을 잡았다'로 고쳤습니다(④ 에는 조건 'by를 써서')."
+          }
+        },
+        {
+          "id": "pg09-4:p13",
+          "ko": "그 벽돌이 존의 얼굴을 쳤다.",
+          "koSource": "review 4 item 11 (p14)",
+          "condition": "in을 써서",
+          "promptEn": null,
+          "en": "The brick hit John in the face.",
+          "accept": [
+            "The brick struck John in the face.",
+            "That brick hit John in the face.",
+            "That brick struck John in the face."
+          ],
+          "targets": [
+            [
+              "in the face"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "in his face",
+              "hint": "사람(John)을 먼저 말했으니, 신체 부위 앞에는 his 대신 쓰는 관사가 있어요."
+            },
+            {
+              "match": "hit john's face",
+              "hint": "조건은 'in을 써서'예요. 사람을 먼저 말하고 in 뒤에 신체 부위를 써 보세요."
+            },
+            {
+              "match": "in face",
+              "hint": "신체 부위 앞에 관사가 빠졌어요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #54",
+            "reviewWhere": "review 4 item 11 (p14)"
+          },
+          "fix": null,
+          "note": "'그 벽돌이'를 That brick 으로 옮긴 답도 목표(in the face)를 그대로 써서 정답으로 받음(G7 반박 점검 — 수정자가 같은 레슨에서 더 찾음)."
+        },
+        {
+          "id": "pg09-4:p14",
+          "ko": "우리는 딸기를 파운드 단위로 살 수 있다.",
+          "koSource": "review 4 item 13 (p14, 고침)",
+          "condition": "by를 써서",
+          "promptEn": null,
+          "en": "We can buy strawberries by the pound.",
+          "accept": [],
+          "targets": [
+            [
+              "by the pound"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "buy strawberry by",
+              "hint": "딸기는 여러 개예요. 셀 수 있는 명사의 여럿 모양을 써요."
+            },
+            {
+              "match": "by a pound",
+              "hint": "단위를 말할 때는 by + 관사 + 단위예요. a 가 아닌 관사를 써요."
+            },
+            {
+              "match": "by pound",
+              "hint": "단위 앞에 관사가 빠졌어요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "can-basic",
+            "noun-plural-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #56",
+            "reviewWhere": "review 4 item 13 (p14)"
+          },
+          "fix": {
+            "from": "We can buy strawberry by the pound.",
+            "fromKo": "우리는 딸기를 파운드당으로 살수 있다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "strawberry 는 셀 수 있는 명사라 관사 없는 단수로 쓸 수 없어 strawberries 로 고쳤습니다(Pass-Off · Application · Review 정답 모두). 한국어는 '살수'를 '살 수'로 띄우고 어색한 '파운드당으로'를 '파운드 단위로'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg09-4:p15",
+          "ko": "이것을 할 수 있는 유일한 사람은 제우스이다.",
+          "koSource": "review 4 item 14 (p14, 고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "The only person who can do this is Zeus.",
+          "accept": [
+            "The only person who can do it is Zeus.",
+            "The only person who can do that is Zeus.",
+            "The only person that can do this is Zeus.",
+            "The only person that can do it is Zeus.",
+            "The only person that can do that is Zeus.",
+            "The only one who can do this is Zeus.",
+            "The only one who can do it is Zeus.",
+            "The only one who can do that is Zeus.",
+            "Zeus is the only person who can do this.",
+            "Zeus is the only person who can do it.",
+            "Zeus is the only person who can do that.",
+            "Zeus is the only one who can do this.",
+            "Zeus is the only one who can do it.",
+            "Zeus is the only one who can do that.",
+            "The only one that can do this is Zeus.",
+            "The only one that can do it is Zeus.",
+            "The only one that can do that is Zeus.",
+            "Zeus is the only person that can do this.",
+            "Zeus is the only person that can do it.",
+            "Zeus is the only person that can do that.",
+            "Zeus is the only one that can do this.",
+            "Zeus is the only one that can do it.",
+            "Zeus is the only one that can do that."
+          ],
+          "targets": [
+            [
+              "the only"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "a only",
+              "hint": "하나뿐인 것을 말할 때 only 앞에 쓰는 관사는 a 가 아니에요."
+            },
+            {
+              "match": "only zeus",
+              "hint": "맞는 영어지만, 이 문항은 한국어의 '유일한 사람'을 그대로 살려 써 보세요."
+            },
+            {
+              "match": "person which can",
+              "hint": "사람을 꾸밀 때는 which 가 아니라 다른 관계대명사를 써요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "relative-who",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #57",
+            "reviewWhere": "review 4 item 14 (p14)"
+          },
+          "fix": {
+            "fromKo": "그것을 할 수 있는 유일한 사람은 제우스이다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 this(이것)인데 한국어는 '그것'이라 '이것을'로 고쳤습니다(it · that 으로 쓴 답도 그대로 정답)."
+          }
+        },
+        {
+          "id": "pg09-4:p16",
+          "ko": "누가 요리를 할 거야?",
+          "koSource": "review 4 item 15 (p14, 고침)",
+          "condition": "do를 써서",
+          "promptEn": null,
+          "en": "Who's going to do the cooking?",
+          "accept": [
+            "Who will do the cooking?"
+          ],
+          "targets": [
+            [
+              "do the cooking"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "do cooking",
+              "hint": "집안일을 do 로 말할 때는 -ing 앞에 관사를 붙여요."
+            },
+            {
+              "match": "do a cooking",
+              "hint": "집안일을 do 로 말할 때 -ing 앞에 쓰는 관사는 a 가 아니에요."
+            },
+            {
+              "match": "cook",
+              "hint": "조건은 'do를 써서'예요. 요리하는 일을 do 로 말해 보세요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "question-wh"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "be going to 는 pg12-4 의 문법이지만 will(기초)로도 같은 뜻을 쓸 수 있어 도전으로 두지 않고 태그에서 뺌 — will 답도 정답.",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #58",
+            "reviewWhere": "review 4 item 15 (p14)"
+          },
+          "fix": {
+            "fromKo": "누가 요리를 할거야?",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'할거야'는 '할 거야'로 띄어 씁니다(의존 명사 '거')."
+          }
+        },
+        {
+          "id": "pg09-4:p17",
+          "ko": "누가 쇼핑을 할 거야?",
+          "koSource": "review 4 item 16 (p14, 고침)",
+          "condition": "do를 써서",
+          "promptEn": null,
+          "en": "Who's going to do the shopping?",
+          "accept": [
+            "Who will do the shopping?"
+          ],
+          "targets": [
+            [
+              "do the shopping"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "do shopping",
+              "hint": "집안일을 do 로 말할 때는 -ing 앞에 관사를 붙여요."
+            },
+            {
+              "match": "do a shopping",
+              "hint": "집안일을 do 로 말할 때 -ing 앞에 쓰는 관사는 a 가 아니에요."
+            },
+            {
+              "match": "go shopping",
+              "hint": "조건은 'do를 써서'예요. go shopping(쇼핑하러 가다)이 아니라, 장보기를 맡아 하는 일을 do 로 말해 보세요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "question-wh"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "be going to 는 pg12-4 의 문법이지만 will(기초)로도 같은 뜻을 쓸 수 있어 도전으로 두지 않고 태그에서 뺌 — will 답도 정답.",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #59",
+            "reviewWhere": "review 4 item 16 (p14)"
+          },
+          "fix": {
+            "fromKo": "누가 쇼핑을 할거야?",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'할거야'는 '할 거야'로 띄어 씁니다(의존 명사 '거')."
+          }
+        },
+        {
+          "id": "pg09-4:p18",
+          "ko": "그는 하루 단위로 고용된다.",
+          "koSource": "review 4 item 12 (p14, 고침)",
+          "condition": "by를 써서",
+          "promptEn": null,
+          "en": "He is hired by the day.",
+          "accept": [
+            "He is employed by the day.",
+            "He gets hired by the day."
+          ],
+          "targets": [
+            [
+              "by the day"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "by a day",
+              "hint": "단위를 말할 때는 by + 관사 + 단위예요. a 가 아닌 관사를 써요."
+            },
+            {
+              "match": "hired by day",
+              "hint": "단위 앞에 관사가 빠졌어요(by day 는 '낮에'라는 다른 뜻이에요)."
+            },
+            {
+              "match": "he hires",
+              "hint": "'고용된다'는 고용을 당하는 쪽이에요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "passive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "passive"
+          ],
+          "challengeNote": "'고용된다'(is hired)는 수동태라 수동태 없이 같은 뜻을 만들기 어려워 도전으로 둠.",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 9,
+            "where": "application #55",
+            "reviewWhere": "review 4 item 12 (p14)"
+          },
+          "fix": {
+            "fromKo": "그는 일용직으로 고용된다.",
+            "field": "ko",
+            "kind": "answer_ambiguous",
+            "why": "'일용직으로 고용된다'는 He is hired as a day laborer. 처럼도 옮겨져 by the day(하루 단위로)를 부르지 않아 '하루 단위로'로 고치고 조건 'by를 써서'를 붙였습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg09-4:t1",
+          "ko": "나는 그녀의 팔을 잡았다.",
+          "condition": "by를 써서",
+          "promptEn": null,
+          "en": "I took her by the arm.",
+          "accept": [
+            "I took her by the arms.",
+            "I grabbed her by the arm.",
+            "I caught her by the arm.",
+            "I held her by the arm."
+          ],
+          "targets": [
+            [
+              "by the arm",
+              "by the arms"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "by her arm",
+              "hint": "사람(her)을 먼저 말했으니, 신체 부위 앞에는 her 대신 쓰는 관사가 있어요."
+            },
+            {
+              "match": "took her by arm",
+              "hint": "신체 부위 앞에 관사가 빠졌어요."
+            },
+            {
+              "match": "her arm",
+              "hint": "조건은 'by를 써서'예요. 사람을 먼저 말하고 by 뒤에 신체 부위를 써 보세요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-018#17",
+          "bookRef": null,
+          "fix": null
+        },
+        {
+          "id": "pg09-4:t2",
+          "ko": "나는 네가 갖고 있는 것과 똑같은 시계를 갖고 있다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I have the same watch as you have.",
+          "accept": [
+            "I have the same watch as you do.",
+            "I have the same watch as you.",
+            "I have the same watch as yours.",
+            "I have the same watch that you have."
+          ],
+          "targets": [
+            [
+              "the same"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "same watch with",
+              "hint": "the same ~ 뒤에서 비교하는 상대를 이끄는 말은 with 가 아니에요."
+            },
+            {
+              "match": "have same watch",
+              "hint": "same 앞에는 늘 붙는 관사가 있어요."
+            },
+            {
+              "match": "a same watch",
+              "hint": "same 앞에는 a 가 아니라 다른 관사를 써요."
+            }
+          ],
+          "tags": [
+            "article-rules",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-043#13",
+          "bookRef": null,
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg09-4:f1",
+      "template": "I had ___ for breakfast.",
+      "ko": "나는 아침으로 ___을(를) 먹었다. (셀 수 있는 것 하나면 a/an 을 붙여서)"
+    }
+  ]
+}

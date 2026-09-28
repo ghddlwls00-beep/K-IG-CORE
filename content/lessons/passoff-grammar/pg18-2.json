@@ -1,0 +1,1590 @@
+{
+  "id": "pg18-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "부사의 형태·용법",
+  "label": "TOPIC 18. 부사",
+  "menuLabel": "18-2. 부사의 형태·용법",
+  "unit": 18,
+  "part": 3,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(2) 형용사와 형태가 같은 부사 · 부사의 여러 가지 용법",
+  "grammarTags": [
+    "adverb-flat-form",
+    "adverb-uses"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg18-2:a1",
+          "en": "Sue's job is very hard. Sue works very hard.",
+          "ko": "수의 일은 매우 힘들다. 수는 매우 열심히 일한다.",
+          "koSource": "new (앞 문장 — 교재에 번역 없음) · review 3 item 13 (뒤 문장, 고침)",
+          "focus": [
+            "hard"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (2) 형용사와 형태가 같은 부사 item 1",
+            "reviewWhere": "review 2 item 1 (p25) · review 3 item 13 (p27)"
+          },
+          "fix": {
+            "from": "Sue’s job is very hard = Sue works very hard.",
+            "fromKo": "수는 매우 힘들게 일한다.",
+            "field": "en+ko",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재는 '='(뜻이 같음)로 이었지만 두 문장은 뜻이 다름(판정 p18 grammar_explanation_wrong). 이 줄의 요점은 같은 낱말이 형용사(앞 문장)와 부사(뒤 문장)로 쓰인다는 대비라 '='를 빼고 두 문장으로 나눔. 뒤 문장 한국어 '힘들게 일한다'는 '열심히 일한다'(work hard)로 고침."
+          }
+        },
+        {
+          "id": "pg18-2:a2",
+          "en": "Ben is a fast runner. Ben can run fast.",
+          "ko": "벤은 달리기가 빠른 사람이다. 벤은 빠르게 달릴 수 있다.",
+          "koSource": "new (앞 문장 — 교재에 번역 없음) · review 3 item 14 (뒤 문장)",
+          "focus": [
+            "fast"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (2) 형용사와 형태가 같은 부사 item 2",
+            "reviewWhere": "review 2 item 2 (p25) · review 3 item 14 (p27)"
+          },
+          "fix": {
+            "from": "Ben is a fast runner = Ben can run fast.",
+            "field": "en",
+            "kind": "grammar_explanation_wrong",
+            "why": "두 문장의 뜻은 거의 같지만, 이 줄의 요점은 fast 가 형용사(a fast runner)와 부사(run fast)로 쓰인다는 대비라 다른 두 줄과 같이 '='를 빼고 두 문장으로 나눔(끝 마침표 보충)."
+          }
+        },
+        {
+          "id": "pg18-2:a3",
+          "en": "I was late. I got up late this morning.",
+          "ko": "나는 늦었다. 나는 오늘 아침에 늦게 일어났다.",
+          "koSource": "new (앞 문장 — 교재에 번역 없음) · review 3 item 15 (뒤 문장, 띄어쓰기 고침)",
+          "focus": [
+            "late"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (2) 형용사와 형태가 같은 부사 item 3",
+            "reviewWhere": "review 2 item 3 (p25) · review 3 item 15 (p27)"
+          },
+          "fix": {
+            "from": "I was late. = I got up late this morning.",
+            "fromKo": "나는 오늘아침에 늦게 일어났다.",
+            "field": "en+ko",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재는 '='(뜻이 같음)로 이었지만 두 문장은 뜻이 다름(판정 p18 grammar_explanation_wrong). 이 줄의 요점은 같은 낱말이 형용사(앞 문장)와 부사(뒤 문장)로 쓰인다는 대비라 '='를 빼고 두 문장으로 나눔. '늦었다'와 '늦게 일어났다'는 다른 뜻. 한국어 '오늘아침' → '오늘 아침'."
+          }
+        },
+        {
+          "id": "pg18-2:a4",
+          "en": "Birds sing merrily.",
+          "ko": "새들은 즐겁게 노래한다.",
+          "koSource": "review 3 item 17",
+          "focus": [
+            "merrily"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (2) 부사의 여러 가지 용법(두 번째 (2)) item 1",
+            "reviewWhere": "review 1 item 7 (p24) · review 3 item 17 (p27)"
+          }
+        },
+        {
+          "id": "pg18-2:a5",
+          "en": "Birds are very beautiful.",
+          "ko": "새들이 매우 아름답다.",
+          "koSource": "review 3 item 19",
+          "focus": [
+            "very"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (2) 부사의 여러 가지 용법(두 번째 (2)) item 2",
+            "reviewWhere": "review 1 item 8 (p24) · review 3 item 19 (p27)"
+          }
+        },
+        {
+          "id": "pg18-2:a6",
+          "en": "Perhaps he will come.",
+          "ko": "아마 그는 올 것이다.",
+          "koSource": "review 3 item 20",
+          "focus": [
+            "Perhaps"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (2) 부사의 여러 가지 용법(두 번째 (2)) item 3",
+            "reviewWhere": "review 1 item 9 (p24) · review 3 item 20 (p27)"
+          }
+        },
+        {
+          "id": "pg18-2:a7",
+          "en": "Even Homer sometimes nods.",
+          "ko": "호머라도 때때로 존다.",
+          "koSource": "review 3 item 22",
+          "focus": [
+            "Even"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (2) 부사의 여러 가지 용법(두 번째 (2)) item 4",
+            "reviewWhere": "review 1 item 10 (p24) · review 3 item 22 (p27)"
+          }
+        },
+        {
+          "id": "pg18-2:a8",
+          "en": "Only you can make it.",
+          "ko": "오직 그대만 할 수 있다.",
+          "koSource": "review 3 item 28",
+          "focus": [
+            "Only"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (2) 부사의 여러 가지 용법(두 번째 (2)) item 5",
+            "reviewWhere": "review 1 item 11 (p24) · review 3 item 28 (p28)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg18-2:a1",
+          "pg18-2:a2",
+          "pg18-2:a3"
+        ],
+        "question": "hard · fast · late 는 앞 문장(형용사)과 뒤 문장(부사)에서 모양이 어떤가요?",
+        "options": [
+          "형용사일 때와 부사일 때 모양이 같다",
+          "부사일 때 끝에 -ly 가 붙는다",
+          "부사일 때 끝에 -er 이 붙는다"
+        ],
+        "answer": 0,
+        "why": "a fast runner(형용사) · run fast(부사)처럼 모양은 같아요. 명사를 꾸미거나 be동사 뒤에 오면 형용사, 동사를 꾸미면 부사예요."
+      },
+      "title": "모양이 같은 부사, 여러 가지를 꾸미는 부사",
+      "points": [
+        "hard · fast · late · early 는 형용사와 부사의 모양이 같아요.",
+        "명사를 꾸미거나 be동사 뒤에 오면 형용사, 동사를 꾸미면 부사예요.",
+        "부사는 동사 · 형용사 · 다른 부사 · 문장 전체를 꾸며요. even · only 는 명사 · 대명사도 꾸며요.",
+        "too + 형용사 + to ~(너무 ~해서 …할 수 없다) · 형용사 + enough + to ~(…할 만큼 충분히 ~한)",
+        "Although ~(~이지만) · unless ~(~하지 않으면)는 접속사가 이끄는 절로, 문장 전체를 부사처럼 꾸며요(부사절)."
+      ],
+      "table": {
+        "columns": [
+          "낱말",
+          "형용사로",
+          "부사로"
+        ],
+        "rows": [
+          [
+            "hard",
+            "a hard job (힘든)",
+            "work hard (열심히)"
+          ],
+          [
+            "fast",
+            "a fast runner (빠른)",
+            "run fast (빨리)"
+          ],
+          [
+            "late",
+            "be late (늦은)",
+            "get up late (늦게)"
+          ],
+          [
+            "early",
+            "an early train (이른)",
+            "leave early (일찍)"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '빠른 → 빨리', '늦은 → 늦게'처럼 꾸미는 말의 모양이 바뀌지만, 영어 hard · fast · late 는 모양이 그대로예요. 그래서 문장 안에서 무엇을 꾸미는지를 보고 형용사인지 부사인지 가려야 해요.",
+      "mistakes": [
+        {
+          "wrong": "He runs fastly.",
+          "right": "He runs fast.",
+          "why": "fast 는 부사일 때도 -ly 를 붙이지 않아요."
+        },
+        {
+          "wrong": "The room is enough big.",
+          "right": "The room is big enough.",
+          "why": "enough 는 꾸미는 형용사 뒤에 와요."
+        }
+      ],
+      "worked": [
+        "그 상자는 옮기기에 너무 무거웠다.",
+        "'너무 ~해서 …할 수 없다' → too + 형용사 + to 동사원형",
+        "무거운 = heavy, 옮기다 = carry",
+        "The box was too heavy to carry."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'Tom can swim ___.' 빈칸에 알맞은 것은? (톰은 빨리 수영할 수 있다.)",
+        "options": [
+          "fast",
+          "fastly",
+          "fastest"
+        ],
+        "answer": 0,
+        "why": "fast 는 형용사와 부사의 모양이 같아요. fastly 라는 말은 없어요.",
+        "pointIndex": 0
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg18-2:s1",
+          "kind": "select",
+          "instruction": "부사를 모두 누르고, 무엇을 꾸미는지 고르세요",
+          "tokens": [
+            "Birds",
+            "sing",
+            "merrily",
+            "."
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [],
+          "labels": [
+            "동사",
+            "형용사",
+            "부사",
+            "문장 전체",
+            "명사·대명사"
+          ],
+          "labelAnswer": [
+            "동사"
+          ],
+          "why": "merrily(즐겁게)는 동사 sing 을 꾸며요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 7 (부사 밑줄)"
+          }
+        },
+        {
+          "id": "pg18-2:s2",
+          "kind": "select",
+          "instruction": "부사를 모두 누르고, 무엇을 꾸미는지 고르세요",
+          "tokens": [
+            "Birds",
+            "are",
+            "very",
+            "beautiful",
+            "."
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [],
+          "labels": [
+            "동사",
+            "형용사",
+            "부사",
+            "문장 전체",
+            "명사·대명사"
+          ],
+          "labelAnswer": [
+            "형용사"
+          ],
+          "why": "very(매우)는 형용사 beautiful 을 꾸며요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 8 (부사 밑줄)"
+          }
+        },
+        {
+          "id": "pg18-2:s3",
+          "kind": "select",
+          "instruction": "부사를 모두 누르고, 무엇을 꾸미는지 고르세요",
+          "tokens": [
+            "Perhaps",
+            "he",
+            "will",
+            "come",
+            "."
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": [
+            "동사",
+            "형용사",
+            "부사",
+            "문장 전체",
+            "명사·대명사"
+          ],
+          "labelAnswer": [
+            "문장 전체"
+          ],
+          "why": "Perhaps(아마)는 '그가 올 것이다'라는 문장 전체를 꾸며요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 9 (부사 밑줄)"
+          }
+        },
+        {
+          "id": "pg18-2:s4",
+          "kind": "select",
+          "instruction": "부사를 모두 누르고, 무엇을 꾸미는지 고르세요",
+          "tokens": [
+            "Even",
+            "Homer",
+            "sometimes",
+            "nods",
+            "."
+          ],
+          "answer": [
+            0,
+            2
+          ],
+          "optional": [],
+          "labels": [
+            "동사",
+            "형용사",
+            "부사",
+            "문장 전체",
+            "명사·대명사"
+          ],
+          "labelAnswer": [
+            "명사·대명사",
+            "동사"
+          ],
+          "why": "Even(~조차)은 명사 Homer 를 강조하고, sometimes(때때로)는 동사 nods 를 꾸며요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 10 (부사 밑줄)"
+          }
+        },
+        {
+          "id": "pg18-2:s5",
+          "kind": "select",
+          "instruction": "late 가 두 번 나와요. 각각 형용사인지 부사인지 고르세요",
+          "tokens": [
+            "I",
+            "was",
+            "late",
+            "for",
+            "school",
+            "because",
+            "I",
+            "got",
+            "up",
+            "late",
+            "."
+          ],
+          "answer": [
+            2,
+            9
+          ],
+          "optional": [],
+          "labels": [
+            "형용사",
+            "부사"
+          ],
+          "labelAnswer": [
+            "형용사",
+            "부사"
+          ],
+          "why": "was late 의 late 는 be동사 뒤에서 주어를 설명하는 형용사(늦은), got up late 의 late 는 동사를 꾸미는 부사(늦게)예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (2) 형용사와 형태가 같은 부사 item 3"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg18-2:s6",
+          "kind": "select",
+          "instruction": "hard 가 두 번 나와요. 각각 형용사인지 부사인지 고르세요",
+          "tokens": [
+            "The",
+            "test",
+            "was",
+            "hard",
+            ",",
+            "but",
+            "I",
+            "studied",
+            "hard",
+            "."
+          ],
+          "answer": [
+            3,
+            8
+          ],
+          "optional": [],
+          "labels": [
+            "형용사",
+            "부사"
+          ],
+          "labelAnswer": [
+            "형용사",
+            "부사"
+          ],
+          "why": "was hard 의 hard 는 be동사 뒤의 형용사(어려운), studied hard 의 hard 는 동사를 꾸미는 부사(열심히)예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (2) 형용사와 형태가 같은 부사 item 1"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg18-2:s7",
+          "kind": "select",
+          "instruction": "부사를 모두 누르고, 무엇을 꾸미는지 고르세요",
+          "tokens": [
+            "Only",
+            "you",
+            "can",
+            "make",
+            "it",
+            "."
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": [
+            "동사",
+            "형용사",
+            "부사",
+            "문장 전체",
+            "명사·대명사"
+          ],
+          "labelAnswer": [
+            "명사·대명사"
+          ],
+          "why": "Only(오직)는 대명사 you 를 강조해요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 11 (부사 밑줄)"
+          },
+          "note": "레슨 안 형태 찾기는 6개로 두고 나머지는 날을 넘기는 복습용(reserve).",
+          "reserve": true
+        },
+        {
+          "id": "pg18-2:s8",
+          "kind": "select",
+          "instruction": "부사를 누르세요",
+          "tokens": [
+            "I",
+            "am",
+            "busy",
+            "now",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "now(지금)는 때를 나타내는 부사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 24,
+            "where": "review 1 item 12 (부사 밑줄)"
+          },
+          "note": "이 문장은 ④ p18 의 정답이라(앵커 아님) 레슨 안에서는 내지 않고 날을 넘기는 복습용으로 둠. now 가 무엇을 꾸미는지는 답이 갈려 라벨 없이 부사만 고르게 함.",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg18-2:p1",
+          "ko": "수는 매우 열심히 일한다.",
+          "koSource": "review 3 item 13 (고침)",
+          "condition": "hard를 부사로 써서",
+          "promptEn": "Sue's job is very hard.",
+          "en": "Sue works very hard.",
+          "accept": [
+            "Sue works really hard.",
+            "Sue works so hard."
+          ],
+          "targets": [
+            [
+              "hard"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "works very hardly",
+              "hint": "hardly 는 '거의 ~않다'라는 뜻이에요. '열심히'는 형용사와 모양이 같아요."
+            },
+            {
+              "match": "Sue is a very hard worker",
+              "hint": "맞는 말이지만 조건은 'hard를 부사로 써서'예요. 동사 works 를 꾸며 보세요."
+            }
+          ],
+          "tags": [
+            "adverb-flat-form",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 20,
+            "where": "application item 13",
+            "reviewWhere": "review 2 item 1 (p25) · review 3 item 13 (p27)"
+          },
+          "fix": {
+            "from": "Sue’s job is very hard = Sue works very hard.",
+            "fromKo": "수는 매우 힘들게 일한다.",
+            "field": "en+ko",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재는 '='(뜻이 같음)로 이었지만 두 문장은 뜻이 다름(판정 p18 grammar_explanation_wrong). 이 줄의 요점은 같은 낱말이 형용사(앞 문장)와 부사(뒤 문장)로 쓰인다는 대비라 '='를 빼고 두 문장으로 나눔. Review 2(뜻이 같아지도록 영작) 와 Review 3(한→영)을 한 문항으로 합침 — 형용사 문장을 영어 제시문으로 보이고 한국어 뜻대로 부사 문장을 씀. 한국어 '힘들게 일한다'는 '열심히 일한다'(work hard)로 고침."
+          }
+        },
+        {
+          "id": "pg18-2:p2",
+          "ko": "벤은 빠르게 달릴 수 있다.",
+          "koSource": "review 3 item 14",
+          "condition": "fast를 부사로 써서",
+          "promptEn": "Ben is a fast runner.",
+          "en": "Ben can run fast.",
+          "accept": [
+            "Ben can run very fast."
+          ],
+          "targets": [
+            [
+              "fast"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "run fastly",
+              "hint": "fast 는 부사일 때도 끝에 아무것도 붙이지 않아요."
+            },
+            {
+              "match": "run quickly",
+              "hint": "맞는 말이지만 조건은 'fast를 부사로 써서'예요."
+            }
+          ],
+          "tags": [
+            "adverb-flat-form",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 14",
+            "reviewWhere": "review 2 item 2 (p25) · review 3 item 14 (p27)"
+          },
+          "fix": {
+            "from": "Ben is a fast runner = Ben can run fast.",
+            "field": "en",
+            "kind": "grammar_explanation_wrong",
+            "why": "'='를 빼고 형용사 문장(제시문) → 부사 문장(답)으로 나눔. Review 2 와 Review 3 을 한 문항으로 합침."
+          }
+        },
+        {
+          "id": "pg18-2:p3",
+          "ko": "나는 오늘 아침에 늦게 일어났다.",
+          "koSource": "review 3 item 15 (띄어쓰기 고침)",
+          "condition": "late를 부사로 써서",
+          "promptEn": "I was late.",
+          "en": "I got up late this morning.",
+          "accept": [
+            "I woke up late this morning.",
+            "This morning, I got up late.",
+            "This morning, I woke up late."
+          ],
+          "targets": [
+            [
+              "late"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "got up lately",
+              "hint": "lately 는 '최근에'라는 뜻이에요."
+            },
+            {
+              "match": "woke up lately",
+              "hint": "lately 는 '최근에'라는 뜻이에요."
+            },
+            {
+              "match": "overslept",
+              "hint": "맞는 말이지만 조건은 'late를 부사로 써서'예요."
+            }
+          ],
+          "tags": [
+            "adverb-flat-form",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 15",
+            "reviewWhere": "review 2 item 3 (p25) · review 3 item 15 (p27)"
+          },
+          "fix": {
+            "from": "I  was late. = I got up late this morning.",
+            "fromKo": "나는 오늘아침에 늦게 일어났다.",
+            "field": "en+ko",
+            "kind": "grammar_explanation_wrong",
+            "why": "교재는 '='(뜻이 같음)로 이었지만 두 문장은 뜻이 다름(판정 p18 grammar_explanation_wrong). 이 줄의 요점은 같은 낱말이 형용사(앞 문장)와 부사(뒤 문장)로 쓰인다는 대비라 '='를 빼고 두 문장으로 나눔. I 와 was 사이의 빈칸 두 칸도 한 칸으로(판정 p21), 한국어 '오늘아침' → '오늘 아침'(판정 p27)."
+          }
+        },
+        {
+          "id": "pg18-2:p4",
+          "ko": "그 버스는 10분 일찍 떠났다.",
+          "koSource": "review 3 item 16",
+          "condition": null,
+          "promptEn": null,
+          "en": "The bus left ten minutes early.",
+          "accept": [
+            "The bus left 10 minutes early.",
+            "The bus departed ten minutes early.",
+            "The bus departed 10 minutes early."
+          ],
+          "targets": [
+            [
+              "early"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "left early ten minutes",
+              "hint": "'10분 일찍'은 시간(ten minutes)을 early 앞에 둬요."
+            },
+            {
+              "match": "earlily",
+              "hint": "early 는 형용사와 부사의 모양이 같아요."
+            }
+          ],
+          "tags": [
+            "adverb-flat-form",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 16",
+            "reviewWhere": "review 3 item 16 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-2:p5",
+          "ko": "일찍 일어나는 새가 벌레를 잡는다.",
+          "koSource": "new (교재에 번역 없음)",
+          "condition": "영어 속담으로",
+          "promptEn": null,
+          "en": "The early bird catches the worm.",
+          "accept": [
+            "The early bird gets the worm."
+          ],
+          "targets": [
+            [
+              "early"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "early bird catch the worm",
+              "hint": "주어 The early bird 는 한 마리(3인칭 단수)예요."
+            },
+            {
+              "match": "The early bird can catch the worms",
+              "hint": "속담은 늘 그렇다는 말이라 can 없이 현재형으로, 벌레도 한 마리로 말해요."
+            },
+            {
+              "match": "up early",
+              "hint": "영어 속담은 '일찍 일어나는'을 early 하나로 bird 앞에서 꾸며요."
+            }
+          ],
+          "tags": [
+            "adverb-flat-form",
+            "present-3sg-s",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 18,
+            "where": "passOff (2) 형용사와 형태가 같은 부사 item 4"
+          },
+          "fix": {
+            "from": "The early bird can catch the worms.",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "Cf.) 로 든 속담의 원형은 The early bird catches the worm.(can · 복수 worms 없음). early 가 명사 bird 를 꾸미는 형용사로 쓰인 대비 예문(부사 early 는 앞 문장 The bus left ten minutes early.)."
+          },
+          "note": "교재 Cf.) 줄(Pass-Off 에만 있음) — 형용사 early 와 부사 early 의 대비. 교재 순서상 (2) 의 끝이라 Application 16 뒤에 둠."
+        },
+        {
+          "id": "pg18-2:p6",
+          "ko": "새들은 즐겁게 노래한다.",
+          "koSource": "review 3 item 17",
+          "condition": null,
+          "promptEn": null,
+          "en": "Birds sing merrily.",
+          "accept": [
+            "Birds sing happily.",
+            "Birds sing cheerfully.",
+            "Birds sing joyfully.",
+            "The birds sing merrily.",
+            "The birds sing happily.",
+            "The birds sing cheerfully.",
+            "The birds sing joyfully."
+          ],
+          "targets": [
+            [
+              "merrily",
+              "happily",
+              "cheerfully",
+              "joyfully"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Birds sing merry",
+              "hint": "동사 sing 을 꾸미는 말은 부사(-ly) 모양이에요."
+            },
+            {
+              "match": "merryly",
+              "hint": "y 로 끝나는 형용사는 y 를 i 로 바꾸고 -ly 를 붙여요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "adverb-ly",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 17",
+            "reviewWhere": "review 1 item 7 (p24) · review 3 item 17 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-2:p7",
+          "ko": "새들이 매우 아름답다.",
+          "koSource": "review 3 item 19",
+          "condition": null,
+          "promptEn": null,
+          "en": "Birds are very beautiful.",
+          "accept": [
+            "Birds are really beautiful.",
+            "Birds are so beautiful.",
+            "The birds are very beautiful.",
+            "The birds are really beautiful.",
+            "The birds are so beautiful."
+          ],
+          "targets": [
+            [
+              "very",
+              "really",
+              "so"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Birds very beautiful",
+              "hint": "'아름답다'는 be동사 + beautiful 이에요."
+            },
+            {
+              "match": "beautifully",
+              "hint": "be동사 뒤에서 주어(새들)를 설명하는 말은 형용사예요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 19",
+            "reviewWhere": "review 1 item 8 (p24) · review 3 item 19 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-2:p8",
+          "ko": "아마 그는 올 것이다.",
+          "koSource": "review 3 item 20",
+          "condition": null,
+          "promptEn": null,
+          "en": "Perhaps he will come.",
+          "accept": [
+            "Maybe he will come.",
+            "He will probably come.",
+            "Probably he will come.",
+            "He will perhaps come."
+          ],
+          "targets": [
+            [
+              "Perhaps",
+              "Maybe",
+              "probably"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "May be he will come",
+              "hint": "'아마'는 한 낱말(maybe)이에요. may be 는 '~일지도 모른다'라는 동사 덩어리예요."
+            },
+            {
+              "match": "Perhaps he comes",
+              "hint": "'올 것이다'는 앞으로의 일이에요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 20",
+            "reviewWhere": "review 1 item 9 (p24) · review 3 item 20 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-2:p9",
+          "ko": "호머라도 때때로 존다.",
+          "koSource": "review 3 item 22",
+          "condition": null,
+          "promptEn": null,
+          "en": "Even Homer sometimes nods.",
+          "accept": [
+            "Even Homer nods sometimes.",
+            "Sometimes even Homer nods.",
+            "Even Homer occasionally nods.",
+            "Even Homer sometimes dozes.",
+            "Even Homer sometimes dozes off.",
+            "Even Homer sometimes nods off.",
+            "Even Homer dozes sometimes.",
+            "Even Homer dozes off sometimes.",
+            "Even Homer nods off sometimes.",
+            "Sometimes even Homer dozes.",
+            "Sometimes even Homer dozes off.",
+            "Sometimes even Homer nods off.",
+            "Even Homer occasionally dozes.",
+            "Even Homer occasionally dozes off.",
+            "Even Homer occasionally nods off."
+          ],
+          "targets": [
+            [
+              "Even"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Homer even sometimes nods",
+              "hint": "even 은 강조하는 말(Homer) 바로 앞에 와요."
+            },
+            {
+              "match": "Even Homer sometimes nod",
+              "hint": "주어 Homer 는 3인칭 단수예요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 22",
+            "reviewWhere": "review 1 item 10 (p24) · review 3 item 22 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-2:p10",
+          "ko": "잭은 달걀도 못 삶는다.",
+          "koSource": "review 3 item 23",
+          "condition": null,
+          "promptEn": null,
+          "en": "Jack can't even boil an egg.",
+          "accept": [
+            "Jack can't even boil eggs."
+          ],
+          "targets": [
+            [
+              "even"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Jack even can't",
+              "hint": "even 은 can't 뒤, 동사 boil 바로 앞에 와요."
+            },
+            {
+              "match": "boil a egg",
+              "hint": "egg 는 모음 소리로 시작해요. a 와 an 중 무엇일까요?"
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "can-basic",
+            "negative-basic",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 23",
+            "reviewWhere": "review 3 item 23 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-2:p11",
+          "ko": "그 차는 마시기에 너무 뜨거웠다.",
+          "koSource": "review 3 item 24 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "The tea was too hot to drink.",
+          "accept": [
+            "The tea was too hot for me to drink."
+          ],
+          "targets": [
+            [
+              "too"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "too hot to drink it",
+              "hint": "주어(The tea)가 곧 마실 대상이면 to drink 뒤에 it 을 또 쓰지 않아요."
+            },
+            {
+              "match": "very hot to drink",
+              "hint": "'~하기에 너무 …하다'는 very 가 아니에요."
+            },
+            {
+              "match": "The tea is too hot",
+              "hint": "'뜨거웠다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "infinitive",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 24",
+            "reviewWhere": "review 3 item 24 (p27)"
+          },
+          "fix": {
+            "fromKo": "그 차가 마시기에 너무 뜨겁군.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 과거(was)인데 한국어는 지금의 감탄이라 '그 차는 마시기에 너무 뜨거웠다.'로 고침."
+          }
+        },
+        {
+          "id": "pg18-2:p12",
+          "ko": "이제 영화관에 가기에는 너무 늦었어.",
+          "koSource": "review 3 item 25 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "It's too late to go to the cinema.",
+          "accept": [
+            "It's too late to go to the movies.",
+            "It's too late to go to the movie theater.",
+            "It's too late to go to the theater.",
+            "It's too late to go to the cinema now.",
+            "It's now too late to go to the cinema.",
+            "Now it's too late to go to the cinema.",
+            "It's too late to go to the movies now.",
+            "It's now too late to go to the movies.",
+            "Now it's too late to go to the movies.",
+            "It's too late to go to the movie theater now.",
+            "It's now too late to go to the movie theater.",
+            "Now it's too late to go to the movie theater.",
+            "It's too late to go to the theater now.",
+            "It's now too late to go to the theater.",
+            "Now it's too late to go to the theater."
+          ],
+          "targets": [
+            [
+              "too"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "very late to go",
+              "hint": "'~하기에 너무 …하다'는 very 가 아니에요."
+            },
+            {
+              "match": "too late going",
+              "hint": "too ~ 뒤에는 to + 동사원형이 와요."
+            },
+            {
+              "match": "It was too late",
+              "hint": "'이제 … 늦었어'는 지난 일이 아니라 지금의 상태예요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "infinitive",
+            "it-dummy"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 25",
+            "reviewWhere": "review 3 item 25 (p27)"
+          },
+          "fix": {
+            "fromKo": "영화관에 가기에 너무 늦었어.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'늦었어'가 지난 일로도 읽혀 시제가 갈림 — '이제'로 지금 상태임을 밝힘"
+          }
+        },
+        {
+          "id": "pg18-2:p13",
+          "ko": "그 강은 수영할 수 있을 만큼 깨끗하지 않았다.",
+          "koSource": "review 3 item 26 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "The river wasn't clean enough to swim in.",
+          "accept": [
+            "The river wasn't clean enough for swimming.",
+            "The river wasn't clean enough for us to swim in."
+          ],
+          "targets": [
+            [
+              "enough"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "enough clean",
+              "hint": "enough 는 꾸미는 형용사 뒤에 와요."
+            },
+            {
+              "match": "The river was clean enough",
+              "hint": "'깨끗하지 않았다' — 부정문이에요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "infinitive",
+            "be-past",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 26",
+            "reviewWhere": "review 3 item 26 (p28)"
+          },
+          "fix": {
+            "fromKo": "그 강은 안에서 수영할 만큼 충분히 깨끗해.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 부정 · 과거(wasn't)인데 한국어는 긍정 · 현재라 뜻이 정반대였음. '안에서'도 어색함. '그 강은 수영할 수 있을 만큼 깨끗하지 않았다.'로 고침."
+          }
+        },
+        {
+          "id": "pg18-2:p14",
+          "ko": "이 코트는 겨울에 입을 만큼 충분히 따뜻하지 않아.",
+          "koSource": "review 3 item 27",
+          "condition": null,
+          "promptEn": null,
+          "en": "This coat is not warm enough to wear in winter.",
+          "accept": [
+            "This coat is not warm enough to wear in the winter."
+          ],
+          "targets": [
+            [
+              "enough"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "enough warm",
+              "hint": "enough 는 꾸미는 형용사 뒤에 와요."
+            },
+            {
+              "match": "This coat is warm enough",
+              "hint": "'따뜻하지 않아' — 부정문이에요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "infinitive",
+            "be-present",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 21,
+            "where": "application item 27",
+            "reviewWhere": "review 3 item 27 (p28)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-2:p15",
+          "ko": "오직 그대만 할 수 있다.",
+          "koSource": "review 3 item 28",
+          "condition": null,
+          "promptEn": null,
+          "en": "Only you can make it.",
+          "accept": [
+            "Only you can do it."
+          ],
+          "targets": [
+            [
+              "Only"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "You only can",
+              "hint": "only 는 강조하는 말 바로 앞에 와요. '그대만'이니 무엇 앞일까요?"
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 22,
+            "where": "application item 28",
+            "reviewWhere": "review 1 item 11 (p24) · review 3 item 28 (p28)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg18-2:p16",
+          "ko": "비가 많이 왔지만, 그들은 휴가를 즐겼다.",
+          "koSource": "review 3 item 29 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Although it rained a lot, they enjoyed their holidays.",
+          "accept": [
+            "Although it rained a lot, they enjoyed their holiday.",
+            "Although it rained a lot, they enjoyed their vacation.",
+            "Although it rained heavily, they enjoyed their holidays.",
+            "Although it rained heavily, they enjoyed their holiday.",
+            "Although it rained heavily, they enjoyed their vacation.",
+            "Though it rained a lot, they enjoyed their holidays.",
+            "Though it rained a lot, they enjoyed their holiday.",
+            "Though it rained a lot, they enjoyed their vacation.",
+            "Though it rained heavily, they enjoyed their holidays.",
+            "Though it rained heavily, they enjoyed their holiday.",
+            "Though it rained heavily, they enjoyed their vacation.",
+            "Even though it rained a lot, they enjoyed their holidays.",
+            "Even though it rained a lot, they enjoyed their holiday.",
+            "Even though it rained a lot, they enjoyed their vacation.",
+            "Even though it rained heavily, they enjoyed their holidays.",
+            "Even though it rained heavily, they enjoyed their holiday.",
+            "Even though it rained heavily, they enjoyed their vacation.",
+            "They enjoyed their holidays although it rained a lot.",
+            "They enjoyed their holiday although it rained a lot.",
+            "They enjoyed their vacation although it rained a lot.",
+            "They enjoyed their holidays although it rained heavily.",
+            "They enjoyed their holiday although it rained heavily.",
+            "They enjoyed their vacation although it rained heavily.",
+            "They enjoyed their holidays though it rained a lot.",
+            "They enjoyed their holiday though it rained a lot.",
+            "They enjoyed their vacation though it rained a lot.",
+            "They enjoyed their holidays though it rained heavily.",
+            "They enjoyed their holiday though it rained heavily.",
+            "They enjoyed their vacation though it rained heavily.",
+            "They enjoyed their holidays even though it rained a lot.",
+            "They enjoyed their holiday even though it rained a lot.",
+            "They enjoyed their vacation even though it rained a lot.",
+            "They enjoyed their holidays even though it rained heavily.",
+            "They enjoyed their holiday even though it rained heavily.",
+            "They enjoyed their vacation even though it rained heavily.",
+            "It rained a lot, but they enjoyed their holidays.",
+            "It rained a lot, but they enjoyed their holiday.",
+            "It rained a lot, but they enjoyed their vacation.",
+            "It rained heavily, but they enjoyed their holidays.",
+            "It rained heavily, but they enjoyed their holiday.",
+            "It rained heavily, but they enjoyed their vacation.",
+            "Although it rained a lot, they enjoyed their vacations.",
+            "Although it rained heavily, they enjoyed their vacations.",
+            "Although it rained hard, they enjoyed their holidays.",
+            "Although it rained hard, they enjoyed their holiday.",
+            "Although it rained hard, they enjoyed their vacation.",
+            "Although it rained hard, they enjoyed their vacations.",
+            "Though it rained a lot, they enjoyed their vacations.",
+            "Though it rained heavily, they enjoyed their vacations.",
+            "Though it rained hard, they enjoyed their holidays.",
+            "Though it rained hard, they enjoyed their holiday.",
+            "Though it rained hard, they enjoyed their vacation.",
+            "Though it rained hard, they enjoyed their vacations.",
+            "Even though it rained a lot, they enjoyed their vacations.",
+            "Even though it rained heavily, they enjoyed their vacations.",
+            "Even though it rained hard, they enjoyed their holidays.",
+            "Even though it rained hard, they enjoyed their holiday.",
+            "Even though it rained hard, they enjoyed their vacation.",
+            "Even though it rained hard, they enjoyed their vacations.",
+            "They enjoyed their vacations although it rained a lot.",
+            "They enjoyed their vacations although it rained heavily.",
+            "They enjoyed their holidays although it rained hard.",
+            "They enjoyed their holiday although it rained hard.",
+            "They enjoyed their vacation although it rained hard.",
+            "They enjoyed their vacations although it rained hard.",
+            "They enjoyed their vacations though it rained a lot.",
+            "They enjoyed their vacations though it rained heavily.",
+            "They enjoyed their holidays though it rained hard.",
+            "They enjoyed their holiday though it rained hard.",
+            "They enjoyed their vacation though it rained hard.",
+            "They enjoyed their vacations though it rained hard.",
+            "They enjoyed their vacations even though it rained a lot.",
+            "They enjoyed their vacations even though it rained heavily.",
+            "They enjoyed their holidays even though it rained hard.",
+            "They enjoyed their holiday even though it rained hard.",
+            "They enjoyed their vacation even though it rained hard.",
+            "They enjoyed their vacations even though it rained hard.",
+            "It rained a lot, but they enjoyed their vacations.",
+            "It rained heavily, but they enjoyed their vacations.",
+            "It rained hard, but they enjoyed their holidays.",
+            "It rained hard, but they enjoyed their holiday.",
+            "It rained hard, but they enjoyed their vacation.",
+            "It rained hard, but they enjoyed their vacations."
+          ],
+          "targets": [
+            [
+              "a lot",
+              "heavily",
+              "hard"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "although it rained a lot but",
+              "hint": "although 와 but 은 함께 쓰지 않아요. 둘 중 하나만 쓰세요."
+            },
+            {
+              "match": "though it rained a lot but",
+              "hint": "though 와 but 은 함께 쓰지 않아요. 둘 중 하나만 쓰세요."
+            },
+            {
+              "match": "it rained much",
+              "hint": "'비가 많이 오다'는 rained 뒤에 much 대신 다른 말을 써요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "complex-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 22,
+            "where": "application item 29",
+            "reviewWhere": "review 3 item 29 (p28)"
+          },
+          "fix": {
+            "fromKo": "비록 비가 많이 내렸더라도, 그들은 그 휴일은 즐겼다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "although 는 실제로 일어난 일(비가 많이 왔다)이라 '~했지만'이 맞고, holidays 는 '휴가', '그 휴일은'의 조사도 어색함. '비가 많이 왔지만, 그들은 휴가를 즐겼다.'로 고침."
+          },
+          "note": "판정 p22: although 는 부사가 아니라 부사절을 이끄는 접속사 — 설명 카드 5번째 줄로 가르침. 목표형은 동사를 꾸미는 부사 a lot(heavily). although 없이 but 으로 이은 답도 받음(같은 뜻)."
+        },
+        {
+          "id": "pg18-2:p17",
+          "ko": "당신이 멤버가 아니시면, 들어가실 수 없습니다.",
+          "koSource": "review 3 item 30",
+          "condition": null,
+          "promptEn": null,
+          "en": "You can't go in unless you are a member.",
+          "accept": [
+            "You can't come in unless you are a member.",
+            "You can't enter unless you are a member.",
+            "You can't get in unless you are a member.",
+            "You can't go in if you are not a member.",
+            "You can't come in if you are not a member.",
+            "You can't enter if you are not a member.",
+            "You can't get in if you are not a member.",
+            "If you are not a member, you can't go in.",
+            "If you are not a member, you can't come in.",
+            "If you are not a member, you can't enter.",
+            "If you are not a member, you can't get in.",
+            "Unless you are a member, you can't go in.",
+            "Unless you are a member, you can't come in.",
+            "Unless you are a member, you can't enter.",
+            "Unless you are a member, you can't get in."
+          ],
+          "targets": [
+            [
+              "unless",
+              "if"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "unless you are not",
+              "hint": "unless 에는 '~하지 않으면'이 이미 들어 있어요. not 을 또 쓰면 뜻이 반대가 돼요."
+            },
+            {
+              "match": "if you are a member",
+              "hint": "'멤버가 아니시면' — 부정이에요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "complex-sentence",
+            "can-basic",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 22,
+            "where": "application item 30",
+            "reviewWhere": "review 3 item 30 (p28)"
+          },
+          "fix": null,
+          "note": "판정 p22: unless 는 부사가 아니라 부사절을 이끄는 접속사 — 설명 카드 5번째 줄로 가르침. 목표형은 부사절을 여는 말(unless · if). 한국어 '아니시면'대로 if … not 으로 쓴 답, go in 대신 enter 로 쓴 답도 받음."
+        },
+        {
+          "id": "pg18-2:p18",
+          "ko": "나는 지금 바쁘다.",
+          "koSource": "review 3 item 31",
+          "condition": null,
+          "promptEn": null,
+          "en": "I am busy now.",
+          "accept": [
+            "I am busy right now."
+          ],
+          "targets": [
+            [
+              "now"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I busy now",
+              "hint": "'바쁘다'는 be동사 + busy 예요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 22,
+            "where": "application item 31",
+            "reviewWhere": "review 1 item 12 (p24) · review 3 item 31 (p28)"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg18-2:t1",
+          "ko": "나는 어젯밤 늦게 집에 도착했다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I got home late last night.",
+          "accept": [
+            "Last night, I got home late.",
+            "I arrived home late last night.",
+            "I came home late last night.",
+            "I returned home late last night.",
+            "I came back home late last night.",
+            "Last night, I came home late.",
+            "Last night, I arrived home late.",
+            "Last night, I returned home late.",
+            "Last night, I came back home late."
+          ],
+          "targets": [
+            [
+              "late"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "got home lately",
+              "hint": "lately 는 '최근에'라는 뜻이에요."
+            }
+          ],
+          "tags": [
+            "adverb-flat-form",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-019#9",
+          "note": "GRAMMAR II 허용 답(Last night, I got home late.)에 arrived · came home 을 더함."
+        },
+        {
+          "id": "pg18-2:t2",
+          "ko": "시계의 바늘은 매우 느리게 돈다(간다).",
+          "koSource": "grammar2:gh2-019#20 ('한 시계의 바늘이' → '시계의 바늘은': 어색한 직역을 다듬음)",
+          "condition": null,
+          "promptEn": null,
+          "en": "The hands of a clock turn very slowly.",
+          "accept": [
+            "A clock's hands turn very slowly.",
+            "Clock hands turn very slowly.",
+            "The hands of a clock turn really slowly.",
+            "The hands of a clock go very slowly.",
+            "The hands of a clock move very slowly.",
+            "The hands of a clock go really slowly.",
+            "The hands of a clock move really slowly.",
+            "A clock's hands turn really slowly.",
+            "A clock's hands go very slowly.",
+            "A clock's hands go really slowly.",
+            "A clock's hands move very slowly.",
+            "A clock's hands move really slowly.",
+            "Clock hands turn really slowly.",
+            "Clock hands go very slowly.",
+            "Clock hands go really slowly.",
+            "Clock hands move very slowly.",
+            "Clock hands move really slowly."
+          ],
+          "targets": [
+            [
+              "very",
+              "really"
+            ],
+            [
+              "slowly"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "turn very slow",
+              "hint": "동사 turn 을 꾸미는 말은 부사(-ly) 모양이에요."
+            }
+          ],
+          "tags": [
+            "adverb-uses",
+            "adverb-ly",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-019#20"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg18-2:f1",
+      "template": "I ___ very hard every day.",
+      "ko": "나는 매일 아주 열심히 ___."
+    }
+  ]
+}

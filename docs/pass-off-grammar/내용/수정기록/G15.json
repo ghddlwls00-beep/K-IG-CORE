@@ -1,0 +1,254 @@
+[
+  {
+    "lesson": "pg19-2",
+    "item": "pg19-2:rule.points[2]",
+    "finding": "'until · since · before · after: … 없으면 부사' — until 은 부사로 쓰지 않음(사전상 전치사 · 접속사만). 설명 카드가 틀린 사실을 가르침.",
+    "action": "fixed",
+    "note": "점검자 말이 맞음: Oxford Learner's · Cambridge · Merriam-Webster 모두 until 을 전치사 · 접속사로만 올림. 뒤가 빈 부사 용법은 since(I haven't seen him since.) · before(I have seen this movie before. — 이 레슨 ③ s6) · after(soon after)에만 있음. points[2] → \"until · since · before · after: 뒤에 명사면 전치사, 절이면 접속사(since · before · after 는 뒤가 비면 부사 — until 은 아님)\"."
+  },
+  {
+    "lesson": "pg19-2",
+    "item": "pg19-2:p4 errorPatterns[1] · accept",
+    "finding": "맞는 영어 'He is quite strong in spite of old age.'가 틀림이고, 패턴 'in spite of old'가 걸려 'old 는 형용사' 라는 틀린 힌트까지 나옴.",
+    "action": "fixed",
+    "note": "old age 는 셀 수 없는 명사구라 in spite of · despite 뒤에 맞음. accept +4(in spite of · despite old age × 앞 · 뒤). 패턴 'in spite of old' → 'in spite of old he'(정답 조각 'in spite of old age' 와 낱말 경계로 안 겹침), 같은 힌트로 'despite old he' 추가(패턴 4개 — 4개인 문항은 1·2권에도 19개 있음). 실제 채점기(scratchpad/g15fix/expect.cjs): 'He is quite strong in spite of old age.' · 'Despite old age, he is quite strong.' WRONG → CORRECT, 'In spite of old, …' · 'Despite old, …' 는 WRONG + 형용사 힌트, 'He quite strong in spite of old age.' 는 WRONG 이고 형용사 힌트 없음. 문장 끝에 둔 'He is quite strong in spite of old.'는 'old age' 와 낱말 경계로 가를 수 없어 힌트 없이 틀림(literal 은 축약형 전용이라 쓰지 않음). 수정자가 더함: 'in spite of his being old'(소유격 + 동명사, 맞는 영어 — 점검 탐침에서 틀림) 4꼴도 받음."
+  },
+  {
+    "lesson": "pg19-2",
+    "item": "pg19-2:rule.points[3] ↔ p17.en",
+    "finding": "카드 'since 는 … 주절에 have/has + 과거분사'가 같은 레슨 p17 모범 답 'It's a long time since his death.'(현재형, 맞는 영어)과 어긋남.",
+    "action": "fixed",
+    "note": "권장안대로 카드를 고침: points[3] → \"since(~ 이래로)가 있으면 주절은 보통 have/has + 과거분사(It's + 기간 + since … 꼴도 써요)\". p17 모범 답은 교재 문장 그대로(영국식으로 맞는 영어 — D6: 오류만 고침, 클립 비용 없음). p15 · p16 · t1 힌트의 'have/has + 과거분사'는 그 문항들의 과거형 오답(she learned a lot since · the country developed · you changed)에만 뜨므로 그대로 둠."
+  },
+  {
+    "lesson": "pg19-2",
+    "item": "pg19-2:p17.accept",
+    "finding": "'그가 죽은 지 오랜 시간이 지났다'를 그대로 옮긴 'A long time has passed since his death/he died.' · 'It has been a long time since he passed away.'가 틀림.",
+    "action": "fixed",
+    "note": "accept 3 → 8(+5): 점검자 3줄 + 'A long time has passed since he passed away.' · 'It is a long time since he passed away.'. 모두 목표형 since 포함. 실제 채점기: 3줄 WRONG → CORRECT, 'A long time has passed after his death.'는 WRONG + '지금까지' 힌트."
+  },
+  {
+    "lesson": "pg19-1",
+    "item": "pg19-1:p33.accept",
+    "finding": "'마침내'를 동사 앞에 둔 'She was finally able to …' · 'She finally succeeded …' · 'Eventually, …'가 틀림.",
+    "action": "fixed",
+    "note": "accept 8 → 17(+9): finally · eventually 를 동사 앞에(was … able to · managed to · succeeded) 6 + 'Eventually,' 문장 앞 3 — 점검자 6줄 포함. 목표형 without 모두 있음. 실제 채점기: 3줄 WRONG → CORRECT. 오답 패턴 'she could succeed' 를 'could succeed' 로 넓혀 'She finally could succeed …'에도 힌트가 뜨게 함(정답 어디에도 could 없음 — check-lessons 0)."
+  },
+  {
+    "lesson": "pg19-1",
+    "item": "pg19-1:p21.accept",
+    "finding": "관사 없는 'In spite of poverty, they got stronger.' · 'Despite poverty, they became stronger.'가 틀림.",
+    "action": "fixed",
+    "note": "accept 23 → 35(+12): {In spite of · Despite} poverty, they {got · became · grew} stronger. 6 + They {got · became · grew} stronger {in spite of · despite} poverty. 6. 오답 패턴 'in spite of poor' 와 안 겹침. p21.note · 판정 #24 reason 에 '관사 없는 poverty' 를 적음(판정 keep 은 그대로 — 교재 the poverty 도 맞음). 실제 채점기: 2줄 WRONG → CORRECT, 'In spite of poor, …'는 WRONG + 형용사 힌트."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:t1.accept",
+    "finding": "'와야 한다'의 흔한 영어 have to · must be here 등이 틀림(GRAMMAR II 대안 6개만 옮겨 조합이 들쭉날쭉).",
+    "action": "fixed",
+    "note": "accept 6 → 39(+33): {should · must · have to · need to} × {come here · be here} × {ten o'clock · 10 o'clock · ten · 10 · 10:00} 전체(모범 답 제외) — 점검자 9줄 포함, 점검자 탐침의 'You have to be here by 10 o'clock.'(점검자 고칠 목록에는 빠졌던 꼴)도 들어감. source(grammar2:gh2-013#9)는 그대로, note 에 'GRAMMAR II 대안 밖 허용 답 보탬'을 적음. 실제 채점기: 점검자 탐침 4줄 WRONG → CORRECT, 'You have to come here until ten o'clock.'은 WRONG + 마감 힌트."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:p42.condition · accept",
+    "finding": "한국어대로 쓴 'When she arrived, … had already left.'(맞는 영어)가 목표형 By the time 이 없어 힌트 없이 틀림. had gone 도 틀림.",
+    "action": "fixed",
+    "note": "condition null → \"by the time을 써서\"(이 레슨의 'through를 써서' · 'around를 써서'와 같은 꼴, time → 타임 이라 '을'). accept 7 → 23(+16): {had gone · had already gone} × {arrived · got there} × {앞 · 뒤} 8(점검자 4줄 포함) + 수정자가 더한 {were gone · were already gone} 8('이미 떠나고 없었다'의 흔한 맞는 영어 — 점검자 탐침에서 틀림). 오답 패턴(guest 단수 · until the time · 과거형 left)과 안 겹침. 판정 #54 reason 에 적음. 실제 채점기: 'had gone' · 'had already gone' · 'were gone' WRONG → CORRECT, 'When she arrived, …'는 WRONG(목표형 빠짐 — 이제 칩이 까닭을 보여 줌), 'guest had left' · 'guests left' 는 WRONG + 제 힌트."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:p5.accept · targets",
+    "finding": "'가게'를 store 로 쓴 답이 틀림. 'for a low price'(흔한 맞는 영어)도 목표형 at 이 없어 힌트 없이 틀림.",
+    "action": "fixed",
+    "note": "점검자의 두 안 가운데 ①을 고름: for(값 · 교환의 for)도 이 레슨(중요 전치사들)의 전치사이고 맞는 영어라 받지 않을 까닭이 없음 — ②(맞는 표현이지만 … 힌트)는 맞는 영어를 틀림으로 두는 거짓 오답. targets [[\"at\"]] → [[\"at\",\"for\"]], accept 5 → 23(+18): {Luckily · Fortunately} × {was able to buy · managed to buy · bought} × {shop · store} × {at · for} 전체(모범 답 제외 — 점검자 store 6줄 · for 6줄 포함). 'in a low price' · 'with a low price' 힌트('가격이라는 한 점')는 그대로. 오답 패턴 'i could buy the shop' → 'i could buy'(store 로 쓴 could 오답에도 힌트) · 힌트는 아래 22번대로 고침. 실제 채점기: 'the store at a low price' · 'the shop for a low price' WRONG → CORRECT, 'Fortunately, I could buy the store …'는 WRONG + could 힌트."
+  },
+  {
+    "lesson": "pg19-1 · pg19-3",
+    "item": "pg19-1:p19 · pg19-3:p7 · pg19-3:p25 accept",
+    "finding": "한국어 '마을'을 village 로 쓴 답이 세 문항 모두 틀림(town 만 받음).",
+    "action": "fixed",
+    "note": "'마을'의 첫 뜻이 village 라 맞음. pg19-1:p19 accept 5 → 11(+6: wanders · walks × about · around the village 4 + 'walks about the town' · 'walks about town' — 점검자 4줄 포함). pg19-3:p7 accept 7 → 15(+8: town 과 같은 짜임의 village 판 — 점검자 4줄 포함) + 오답 패턴 {'at our village', 기존 'at our town' 과 같은 힌트} 추가. pg19-3:p25 는 28번(walking)과 함께 village 판 8줄. 실제 채점기: 'He often wanders around the village.' · 'There are many historic places in our village.' · 'Don't waste time wandering around the village.' WRONG → CORRECT, 'He often wander about the village.' · '… at our village.'는 WRONG."
+  },
+  {
+    "lesson": "pg19-1",
+    "item": "pg19-1:p28.ko",
+    "finding": "'그는 할아버지의 이름을 땄다.'(교재 한국어, issues 에 없던 곳)가 능동으로 읽혀 수동 'He was named after his grandfather.'를 가리키지 못함.",
+    "action": "fixed",
+    "note": "점검자 말이 맞음. 다만 점검자 제안 '그의 이름은 … 지어졌다'는 학습자가 그대로 옮기면 'His name was named …'(틀린 영어)로 가기 쉬워, 주어를 모범 답과 같게 둔 \"그는 할아버지의 이름을 따서 이름이 지어졌다.\"(그는 ~ 이름이 지어졌다 = He was named, '따서' = after)로 고침. koSource → 'review 1 item 28 (고침)', fix {fromKo, field ko, kind translation_mismatch}. 점검자 선택안의 패턴 {'his name was named', '이름을 받은 사람(he)을 주어로 써 보세요.'}와, 새 한국어의 '할아버지의 이름을 따서'를 옮긴 'after his grandfather's name'(after 뒤에는 사람) 패턴을 더함 — 둘 다 정답과 안 겹침. 판정 TOPIC-19.json 에 newFinding 항목(p40 review 1 item 28) 추가. 실제 채점기: 두 오답 모두 WRONG + 제 힌트, 모범 답 CORRECT. 한국어만 바뀌어 소리 영향 없음."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:p2 errorPatterns[1] · targets · accept",
+    "finding": "'Let's start on Lesson 3.'(start on = ~을 시작하다, 맞는 영어)가 틀림이고 힌트가 on 을 틀렸다고 가르침. Chapter 3 · Unit 3 도 틀림.",
+    "action": "fixed",
+    "note": "start on something(~을 시작하다 · 착수하다)은 Cambridge 등에 있는 맞는 영어. 패턴 'start on lesson' 삭제, targets → [[\"at\",\"from\",\"with\",\"on\"]], accept 11 → 25(+14): 'Let's start on Lesson 3/three.' + {start · begin} × {at · from · with} × {Chapter 3 · Unit 3}(점검자 선택안 3줄 포함). 'start in lesson' 패턴은 그대로. 실제 채점기: 'Let's start on Lesson 3.' · 'at Chapter 3' · 'from Unit 3' WRONG → CORRECT, 'Let's start in Lesson 3.'은 WRONG + in 힌트."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:p31.accept",
+    "finding": "'그 후'를 After that · Afterwards 로 쓴 흔한 답이 틀림(STUDENT 모범 답의 Later 만 받음).",
+    "action": "fixed",
+    "note": "accept 2 → 12(+10): {After that · Afterwards · Afterward · Later on · Then} × {to · until}(점검자 3줄 포함). 한국어는 STUDENT 17-3 exact 그대로(check-lessons 영·한 대조 0). 실제 채점기: 'After that, …' · 'Afterwards, …' · 'Then …' WRONG → CORRECT, 교재 원문 'For a while, Korea was ruled by Japan.'과 'Korea ruled Japan' 은 WRONG."
+  },
+  {
+    "lesson": "pg19-1",
+    "item": "pg19-1:p36 errorPatterns[0] · accept",
+    "finding": "패턴 'without say good'이 흔한 철자 goodbye 에 안 걸림. 'He left without saying goodbye to them.'이 틀림.",
+    "action": "fixed",
+    "note": "패턴 match → 'without say'(정답의 'without saying' 과 낱말 경계로 안 겹침, 힌트 그대로). accept 0 → 2(+ 'He left without saying good-bye to them.' · 'goodbye to them.'). 실제 채점기: 'He left them without say goodbye.' WRONG(힌트 없음) → WRONG + -ing 힌트, 'He left without saying goodbye to them.' WRONG → CORRECT."
+  },
+  {
+    "lesson": "pg19-1",
+    "item": "pg19-1:p6.accept",
+    "finding": "조건 칩 'at을 써서'인데 at present · at this moment 가 틀림.",
+    "action": "fixed",
+    "note": "accept [] → ['Are you busy at present?', 'Are you busy at this moment?']. 실제 채점기: 둘 다 WRONG → CORRECT, 'Are you busy now?'는 WRONG + 조건 힌트, 부정 'Are you not busy at present?'는 WRONG."
+  },
+  {
+    "lesson": "pg19-2",
+    "item": "pg19-2:p13.accept · p12.accept",
+    "finding": "'서른 살이 되어서야'를 옮긴 'until she was 30 years old' · 'until she turned 30'(p13), 'It was not until the age of 30 …'(p12)이 틀림.",
+    "action": "fixed",
+    "note": "p13 accept 19 → 35(+16): {start · begin} × {to teach · teaching} × {she was 30 years old · she was thirty years old · she turned 30 · she turned thirty}(점검자 4줄 포함). p12 accept 7 → 31(+24): {the age of 30 · the age of thirty · she turned 30 · she turned thirty · she was 30 years old · she was thirty years old} × {started · began} × {to teach · teaching}(점검자 2줄 포함). 새 꼴에서 not 을 빠뜨린 답에도 같은 힌트가 뜨게 p12 패턴 'it was until she was' → 'it was until'(정답은 모두 'it was not until' — 안 겹침). 실제 채점기: 4줄 WRONG → CORRECT, 'She didn't start to teach English until 30.'(교재 원문)은 WRONG + 나이 힌트, 'It was until the age of 30 …'은 WRONG + not 힌트."
+  },
+  {
+    "lesson": "pg19-1 · pg19-3",
+    "item": "pg19-1:p24 · pg19-3:p7 · pg19-3:p19 condition",
+    "finding": "전치사 없이도 맞는 영어('She passes our office every day.' · 'Our town has many historic places.' · 'They helped people in need all their lives.')가 까닭 없이 틀림.",
+    "action": "fixed",
+    "note": "pg19-1:p24 · pg19-3:p7 condition → \"전치사를 써서\". pg19-3:p19 는 'people in need' 에 이미 전치사 in 이 있어 '전치사를 써서'가 모호하므로 \"'평생 동안'을 전치사로\"로 씀. 그 칩대로 'for their whole lives'(맞는 영어)로 쓰면 또 틀리지 않게 p19 targets → [[\"during\",\"throughout\",\"for\"]] 로 넓히고 for 꼴도 받음(28번 needy people 과 함께 accept 6 → 19). 수정자가 같은 까닭으로 더함: pg19-1:p12 '너는 무엇을 두려워하는가?'의 가장 곧은 옮김 'What do you fear?'도 전치사 없이 맞는 영어라 condition → \"전치사를 써서\", 점검자 탐침에서 틀림이던 'What are you frightened of?'를 받음. 실제 채점기: 전치사 없는 세 답은 여전히 WRONG(이제 칩이 까닭), 'She walks past our office every day.' · 'They helped people in need for their whole lives.' CORRECT."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:p40.accept",
+    "finding": "'자리를 비우다'를 be gone · be out · be absent 로 쓴 답이 틀림.",
+    "action": "fixed",
+    "note": "accept 3 → 15(+12): {will be · is going to be} × {gone · out · absent} × {until · till}(점검자 4줄 포함). 실제 채점기: 4줄 WRONG → CORRECT, 'Fred will be away by Monday.'는 WRONG + 마감 힌트."
+  },
+  {
+    "lesson": "pg19-1",
+    "item": "pg19-1:p7.accept",
+    "finding": "'사투리 억양'을 local accent 로 쓴 답이 틀림.",
+    "action": "fixed",
+    "note": "accept 1 → 3(+ 'He speaks with a local accent!' · 'He talks with a local accent!'). 모범 답(STUDENT s6-3 adapted)은 그대로. 실제 채점기: WRONG → CORRECT."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:p16.errorPatterns[2] · rule.points[2] · s5.why",
+    "finding": "힌트 · 카드 · s5 풀이가 in + 기간을 '~ 뒤에' 한 뜻으로 단정(in + 기간은 '~ 만에'도 됨). 패턴이 숫자 5 만이라 'in five minutes'에 힌트 없음.",
+    "action": "fixed",
+    "note": "점검자 말이 맞음(I finished it in 5 minutes = 5분 만에). p16 패턴 'in 5 minutes' 힌트 → \"in 5 minutes 는 흔히 '(지금부터) 5분 뒤에'로 읽혀요. '5분을 넘기지 않게'를 또렷하게 나타내는 전치사는?\", 같은 힌트로 'in five minutes' 추가('within five minutes' 와 낱말 경계로 안 겹침 — 패턴 4개). rule.points[2] → \"기간: for(얼마 동안) · during(그 기간 중) · within(그 안에) · in(~ 뒤에 · ~ 만에)\". s5.why 앞머리를 '앞으로의 일에서 in + 시간의 길이는 …'으로 한정. 판정 #30(keep) reason 에 적음. 실제 채점기: 'Boil the soup in five minutes.' WRONG(힌트 없음) → WRONG + 새 힌트, 'within five minutes' CORRECT."
+  },
+  {
+    "lesson": "pg19-3 · pg19-1",
+    "item": "pg19-3:p29.errorPatterns[0] · pg19-1:p29.errorPatterns[1]",
+    "finding": "'a cottage between the trees'(원어민도 흔히 씀) · 'by foot'(덜 흔할 뿐 쓰는 영어)을 힌트가 틀렸다고 단정.",
+    "action": "fixed",
+    "note": "판정은 그대로 오답(학교 문법의 between/among · on foot 구별이 이 문항의 목표), 힌트만 누그러뜨림. pg19-3:p29 → \"나무처럼 여럿에 둘러싸인 곳에는 between 보다 '여럿 사이'를 나타내는 전치사를 흔히 써요.\" — 점검자 제안문('보통 among 을 써요')은 정답 낱말 among 을 그대로 말해 데이터-형식 v1.3 '힌트는 정답을 그대로 말하지 않는다'에 걸려 낱말 대신 뜻으로 씀. pg19-1:p29 'by foot' → \"'걸어서'는 by 보다 다른 전치사로 더 흔히 말해요.\". 실제 채점기: 두 오답 WRONG + 새 힌트."
+  },
+  {
+    "lesson": "pg19-1 · pg19-3",
+    "item": "pg19-1:p27 · pg19-1:p33 · pg19-3:p5 · pg19-3:p39 errorPatterns hint",
+    "finding": "힌트가 고칠 꼴을 그대로 알려 줌(go after · was able to · will/should).",
+    "action": "fixed",
+    "note": "제안 그대로: pg19-1:p27 'follow after' → \"follow 에 이미 '뒤따르다'라는 뜻이 있어 after 와 겹쳐요. follow 대신 다른 동사와 after 를 써 보세요.\" · pg19-1:p33 · pg19-3:p5 could → \"과거에 실제로 해낸 한 번의 일에는 긍정문 could 를 쓰지 않아요. could 말고 다른 표현으로 써 보세요.\"(두 패턴의 match 도 'could succeed' · 'i could buy' 로 넓힘 — 5 · 9번) · pg19-3:p39 → \"받는 일은 앞으로의 일이에요. 현재형 receive 만으로는 앞으로의 일이 드러나지 않아요.\". 실제 채점기: 교재 원문 4문장 모두 WRONG + 새 힌트."
+  },
+  {
+    "lesson": "pg19-1",
+    "item": "pg19-1:rule.points[3]",
+    "finding": "\"'전치사 + 목적어'는 보통 문장 끝, 앞에 두면 쉼표로 나눠요\"가 명사를 꾸미는 전치사구(a habit of touching · Some of my friends — 이 레슨 앵커)와 맞지 않고, 짧은 구 뒤 쉼표는 필수가 아님.",
+    "action": "fixed",
+    "note": "points[3] → \"부사 역할의 '전치사 + 목적어'는 보통 문장 끝, 앞에 두면 흔히 쉼표를 찍어요: After a few minutes, …\"(부사 역할로 한정 · 쉼표는 '흔히')."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:rule.points[4]",
+    "finding": "'자리:' 아래에 through(통과) · into(안으로) · along(따라) — 자리가 아니라 움직임의 방향.",
+    "action": "fixed",
+    "note": "points[4] → \"사이 · 방향: between(둘 사이) · among(여럿 사이) · through(통과) · into(안으로) · along(따라)\"(점검자 제안 '곳 · 방향'은 바로 위 줄 '곳:'과 겹쳐 between/among 을 '사이'로). 같은 까닭으로 카드 제목의 '자리'도 '방향'으로: \"때 · 곳 · 기간 · 방향을 나타내는 중요 전치사\". check.pointIndex 3(~까지 줄)은 자리 그대로."
+  },
+  {
+    "lesson": "pg19-2",
+    "item": "pg19-2:p2.accept (판정 #39 반영)",
+    "finding": "판정 #39 가 'had fun 도 받음'이라 했는데 p2 에 had fun 이 없어 'In spite of the rain, they had fun.'이 틀림.",
+    "action": "fixed",
+    "note": "accept 15 → 31(+16): {had fun · had a great time} × {In spite of · Despite} × {the rain · the heavy rain} × {앞 · 뒤}(점검자 4줄 포함, had a great time 은 26번 pg19-1:p20 과 맞춤). 판정 #39 reason 에 반영 사실을 적음. 실제 채점기: 4줄 WRONG → CORRECT, 'Despite of the rain, …'은 WRONG + 한 낱말 힌트."
+  },
+  {
+    "lesson": "pg19-1",
+    "item": "pg19-1:p2 · p5 · p8 · p11 · p13 · p14 · p18 · p20 · p27 · p34 · t1 accept",
+    "finding": "흔한 동의 표현(on a vacation · take a vacation / at 7:00 in the morning · begin / help with / is known as / in order to · review a little / be successful / She has something special about her / had a great time / Can you · please · run after / a newspaper · without wearing glasses / the invitation)이 틀림.",
+    "action": "fixed",
+    "note": "점검자 줄을 모두 넣고 같은 짜임으로 채움(모두 풀어 쓴 문장, 목표형 포함 — check-lessons 0): p2 7 → 17(+10) · p5 17 → 39(+22 — 30번과 함께 {start · begin} × {routine · routines} × 시각 10꼴) · p8 +1 · p11 +1 · p13 3 → 11(+8) · p14 7 → 15(+8) · p18 +1 · p20 11 → 15(+4) · p27 2 → 15(+13: {Would · Could · Will · Can} you (please) {go · run} after him?) · p34 5 → 15(+10) · t1 1 → 5(+4 — for the/your invitation, Thanks 꼴). 수정자가 더함(점검 탐침에서 틀림으로 나왔지만 지적 목록에 없던, 흔하고 분명히 맞는 답): p15 'very tough situation' 3 · p16 'While we eat, …' 4 · p25 'After a few minutes, I finally get up.' 2. 실제 채점기: 점검자 탐침의 이 문항 답 22줄 모두 WRONG → CORRECT(scratchpad/g15fix/checker-cases-after.log)."
+  },
+  {
+    "lesson": "pg19-2",
+    "item": "pg19-2:p1 · p3 · p5 · p6 · p7 · p10 · p14 · p15 · t1 accept",
+    "finding": "rained heavily / pretty · fairly strong / lots of / since(이유) · wasn't able to / wake up / began · started to like / since arriving · so much / changed so much 가 틀림. p5 · p7 은 targets 에 since 가 있는데 since 꼴 accept 가 없음.",
+    "action": "fixed",
+    "note": "p1 17 → 47(+30: {Although · Though · Even though} × {rained a lot · rained heavily} × {enjoyed themselves · had a good time · had fun · had a great time} × {앞 · 뒤}) · p3 5 → 17(+12: pretty · fairly) · p5 7 → 17(+10: many · a lot of · lots of × 두 부모 표현 × because 뒤 · Because 앞 · Since 앞) · p6 +2 · p7 3 → 11(+8: couldn't · wasn't able to × ill · sick × because 뒤 · Because 앞 · Since 앞) · p10 7 → 15(+8: wake up) · p14 8 → 17(+9: began · started · grew to like) · p15 9 → 23(+14: learned · learnt × a lot · so much × 6꼴) · t1 3 → 8(+5: so much · much). 점검자 줄 모두 포함. 실제 채점기: 점검자 탐침의 이 문항 답 모두 WRONG → CORRECT, 'Although the rain, …' · 'because of she was' · 'She learned a lot since …' · 'You changed a lot since …' 는 WRONG + 제 힌트."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:p4 · p8 · p9 · p19 · p24 · p25 · p27 · p37 · p38 accept",
+    "finding": "rudeness / weaknesses · defects / I'm going to be back / needy people / really like / walking around / with the dog / closest friends / so much 가 틀림.",
+    "action": "fixed",
+    "note": "p4 31 → 39(+8: rudeness × annoyed/angry at·by·about) · p8 3 → 23(+20: flaws · weaknesses · defects · shortcomings × In my opinion · In my view · I think × theories · theory) + 패턴 'there is two flaws' → 'there is two'(새 명사에도 힌트) · p9 +3(am going to be back · come back · return) · p19 6 → 19(+13: people in need · needy people × during · throughout · for 7꼴 + 앞자리 — 17번 칩과 함께) · p24 1 → 7(+6: really like · like … very much/a lot) + 패턴 'love to be with my friends' → 'with my friends'(really like 로 쓴 with 답에도 칩 힌트, 정답에 with 없음) · p25 15 → 31(+16: walking 8 + village 8 — 10번 포함) · p27 3 → 7(+4: with the dog — 한국어 '개와 함께'에 '내'가 없어 the dog 이 곧은 옮김이라 한국어는 그대로 둠) · p37 +1 · p38 1 → 5(+4). 수정자가 더함: p15 'from memory alone'('기억만으로'의 '만' — 점검 탐침에서 틀림) 2. 실제 채점기: 점검자 탐침의 이 문항 답 모두 WRONG → CORRECT, 'She annoyed at …' · 'there is two weaknesses' · 'really like being with my friends' 는 WRONG + 제 힌트."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:p34.errorPatterns[0]",
+    "finding": "패턴 'pour the milk into'가 the 없는 'She pour milk into the glass.'에 안 걸림.",
+    "action": "fixed",
+    "note": "match → 'she pour'(힌트 그대로 — 정답의 'she pours' 와 낱말 경계로 안 겹침). 실제 채점기: 'She pour milk into the glass.' WRONG(힌트 없음) → WRONG + 3인칭 힌트, 'She pours milk into the glass.' CORRECT."
+  },
+  {
+    "lesson": "pg19-1",
+    "item": "pg19-1:p5.en (선택)",
+    "finding": "모범 답의 복수 'daily routines'는 틀린 문법은 아니나 원어민은 거의 단수 'my daily routine'으로 씀. 새 문장이라 바꿔도 비용이 같음.",
+    "action": "fixed",
+    "note": "받아들임: routine(하루 일과)은 한 사람의 정해진 순서 전체를 한 덩어리로 말할 때 단수로 쓰는 것이 보통(Oxford Learner's 예문 'part of your daily routine'), 복수는 여러 가지 일과를 따로 셀 때. 어색한 영어를 고친다는 기준(교재는 정답지가 아님)에 따라 en → \"I start my daily routine at 7:00.\", 교재 복수 꼴은 accept 맨 앞에 둠. fix → {from 'I start my daily routines at 7:00.', fromKo(그대로), field en+ko, kind english_unnatural}. 판정 #23 decision keep → fix · reason 고침. check-grading B: 교재 원문 → correct '내용 세션이 허용 답으로 둠'(따로 셈 26 → 27, FAIL 아님). 소리 내는 en 이 바뀜 — 3권은 음성 전이라 사라진 클립 없음, 음성 단계에서 새 클립(이끄는 세션에 알림)."
+  },
+  {
+    "lesson": "pg19-1",
+    "item": "pg19-1:p18.ko",
+    "finding": "'그녀에게는 특별한 것이 있다.'가 '특별한 물건을 가지고 있다'로도 읽힘(something special about her = 사람이 지닌 특별한 점).",
+    "action": "fixed",
+    "note": "ko → \"그녀에게는 뭔가 특별한 점이 있다.\", koSource → 'review 1 item 18 (고침)'. fix.kind 는 점검자 제안 korean_unnatural 대신 translation_mismatch — 까닭이 우리말 어색함이 아니라 한국어가 다른 뜻(물건)으로 읽혀 영어와 어긋나는 것이라서(kind 는 실제 이유대로). 판정 newFinding(p39 review 1 item 18) 추가. 26번의 'She has something special about her.'도 받음."
+  },
+  {
+    "lesson": "pg19-2",
+    "item": "pg19-2:a5.ko · p9.ko",
+    "finding": "'비가 멈출 때까지'보다 '비가 그칠 때까지'가 자연스러운 우리말.",
+    "action": "fixed",
+    "note": "a5 · p9 ko → \"비가 그칠 때까지 기다리자.\", koSource → 'review 1 item 42 (고침)', 두 문항에 fix {fromKo '비가 멈출 때까지 기다리자.', field ko, kind korean_unnatural}. 판정 newFinding(p41 review 1 item 42) 추가. 한국어만 바뀌어 소리 영향 없음."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:p31.fix.kind",
+    "finding": "fix.why 가 '사실과 어긋나'인데 kind 가 english_unnatural(1권에는 사실 오류용 kind 'fact' — pg06-2:p18).",
+    "action": "fixed",
+    "note": "p31.fix.kind → 'fact'. 1권 선례(pg06-2:p18)처럼 판정 #13 의 type 은 추출 issues 의 분류(english_unnatural) 그대로 두고 reason 에 '문항 fix.kind 는 fact' 를 적음. check-grading B 는 field 'en+ko' 로 계속 돌아 교재 원문 'For a while, Korea was ruled by Japan.' → 오답(그대로)."
+  },
+  {
+    "lesson": "pg19-3",
+    "item": "pg19-3:a7.fix",
+    "finding": "a7 한국어는 Review 89 를 고친 것인데 fix 에 fromKo 가 없어 원문 대조표에서 한국어 고친 기록이 빠짐(p39 에는 있음).",
+    "action": "fixed",
+    "note": "a7.fix 에 fromKo \"나는 오늘 편지를 부쳤고,그들은 월요일까지 그것을 받는다.\" 추가, field en → en+ko, why 에 한국어 고친 까닭 한 문장 보탬. 판정 #56(한국어 띄어쓰기 · 문장부호, '부쳤고,그들은' 포함) appliedTo 에 pg19-3:a7 추가."
+  },
+  {
+    "lesson": "pg19-2",
+    "item": "pg19-2:p4 · p8 · p13 promptEn",
+    "finding": "p4 · p8 · p13 의 promptEn 이 바로 앞 문항 p3 · p7 · p12(앵커 아님)의 모범 답과 같아, 그 문항을 다시 풀 때나 복습 순서가 바뀌면 답이 먼저 보임(검사 도구 규칙 밖 — 참고).",
+    "action": "lead",
+    "note": "지적은 맞음. 교재의 바꿔쓰기 짝(앞 문장을 주고 다른 꼴로)이라 문항 데이터는 그대로 둠 — promptEn 을 바꾸면 과제 자체가 사라짐. 데이터 쪽: p3 · p7 · p12 에 note 로 짝 관계를 적음(화면에 안 나오는 기록 칸). 코드 쪽(이끄는 세션 몫): ④ 다시 풀기(3~5문장 뒤) · 날을 넘기는 복습에서 짝의 뒤 문항(p4 · p8 · p13)을 앞 문항(p3 · p7 · p12)보다 먼저 내지 않기, 또는 앞 문항을 스스로 맞히기 전에는 뒤 문항을 내지 않기."
+  },
+  {
+    "lesson": "(검사 도구)",
+    "item": "docs/pass-off-grammar/검사/check-lessons.cjs 420행",
+    "finding": "판정 대조식 key.includes(norm(d.text).slice(0, 40))이 정규화하면 빈 글이 되는 판정(TOPIC-04.json p34 text \"]\")으로 모든 권의 p34 issue 를 '판정됨'으로 가리고, 권(book)도 비교하지 않음.",
+    "action": "lead",
+    "note": "코드(검사 도구)라 고치지 않음 — 이끄는 세션 몫. 수정자가 확인(읽기만, scratchpad/g15fix/p34-mask.cjs — 도구의 norm 을 도구 글에서 그대로 꺼내 420행 식으로 대조): TOPIC 19 의 p34 issue 두 건은 각각 판정 2개에 걸림 — TOPIC-04.json 의 text \"]\"(norm 빈 글)와 TOPIC-19.json 의 제 판정(#20 · #28, issue 글과 글자까지 같음). 그래서 이 그룹 결과에는 영향 없지만, 제 판정이 없어도 '판정됨'으로 보였을 것임(도구 빈틈이 실제로 있음). 제안(점검자와 같음): norm(d.text) 가 빈 글이면 건너뛰기 + 판정 파일의 권과 issue 의 권 일치 + 빈 글 판정으로 다른 issue 가 가려지는지 보는 깨기 사례를 --selftest 에 추가."
+  }
+]

@@ -1,0 +1,759 @@
+[
+ {
+  "page": 4,
+  "where": "목차(p4)·구성도(p3) 가정법 두 번째 말풍선 vs 본문 p5",
+  "text": "가정법의 과거완료 미 래",
+  "type": "layout_or_extraction",
+  "decision": "fix",
+  "reason": "사장님 결정 D14(가정법 미래 = If + should / were to)대로 pg16-2 에 새 문장으로 채웠습니다: 앵커 a5(If it should rain tomorrow, I would stay home.) · a6(If I were to be born again, I would be a doctor. — issue 가 권한 두 예문) · ④ p7–p10 · ③ s4 · s5. 목차의 레슨 이름('가정법의 과거완료·미래')은 설계 §2 그대로 두고, 목차에 없는 '(2) 가정법 현재'는 pg16-1 에 조건문으로 넣었습니다(판정 p5 소제목).",
+  "appliedTo": [
+   "pg16-2:a5",
+   "pg16-2:a6",
+   "pg16-2:p7",
+   "pg16-2:p8",
+   "pg16-2:p9",
+   "pg16-2:p10",
+   "pg16-2:s4",
+   "pg16-2:s5",
+   "pg16-2:rule"
+  ]
+ },
+ {
+  "page": 5,
+  "where": "TOPIC 16 passOff group#1 '(1) 가정법 과거' item 3; application item 3; Review (1) #3",
+  "text": "If you knew the answer, I would tell you.",
+  "type": "english_unnatural",
+  "decision": "fix",
+  "reason": "네가 이미 답을 안다면 내가 말해 줄 까닭이 없어 뜻이 맞지 않습니다. 가정법 과거의 대표 예문대로 'If I knew the answer, I would tell you.'(사실은 내가 모름)로 고치고 한국어도 '만약 내가 답을 안다면, 너에게 말해 줄 텐데.'로 맞췄습니다('말 할' 띄어쓰기 포함). 원문은 fix.from 에 두어 채점에서 오답이 됩니다.",
+  "appliedTo": [
+   "pg16-1:a3",
+   "pg16-1:p3"
+  ]
+ },
+ {
+  "page": 5,
+  "where": "TOPIC 16 passOff group#3 '(3) 가정법 과거완료' item 1",
+  "text": "If I had known English, I should have been happy.",
+  "type": "english_unnatural",
+  "decision": "fix",
+  "reason": "1인칭 뒤 should 를 would 처럼 쓰던 옛 영국식이라 요즘 학습자에게는 '행복했어야 했다(의무)'로 읽힙니다. 책 안에서도 Application(p6) · Review(p8)는 could have been 이고 한국어('행복할 수 있었을 텐데')도 could 라, 앵커를 could 판으로 맞췄습니다(원문은 fix.from, 채점에서 오답).",
+  "appliedTo": [
+   "pg16-2:a1",
+   "pg16-2:p1"
+  ]
+ },
+ {
+  "page": 5,
+  "where": "TOPIC 16 passOff group#3 '(3) 가정법 과거완료' item 3",
+  "text": "He could have done that if he head tried.",
+  "type": "english_grammar",
+  "decision": "fix",
+  "reason": "head 는 had 의 오타입니다(Application p7 은 had). 앵커를 고치고 원문은 fix.from 에 둡니다.",
+  "appliedTo": [
+   "pg16-2:a3",
+   "pg16-2:p5"
+  ]
+ },
+ {
+  "page": 5,
+  "where": "TOPIC 16 passOff group#2 제목",
+  "text": "(2) 가정법 현재",
+  "type": "grammar_explanation_wrong",
+  "decision": "fix",
+  "reason": "맞는 지적입니다. 'If I really want …, I need to …'는 일어날 수 있는 일을 말하는 조건문(직설법)이라 설명 카드에서 가정법 과거와 나눠 가르칩니다: 5번 줄 '실제로 일어날 수 있는 일은 조건문: If + 현재형, will + 동사원형', 표의 두 줄 비교, 용어 병기 '조건문(직설법) — 교재: 가정법 현재'(옛 참고서가 이 꼴을 가정법 현재라고 불렀음). 문장은 설계 §2 대로 pg16-1 에 두되 조건 칩 '가정법으로'를 붙이지 않았고, ③ s4 · ⑤ t2 로 조건문과 가정법을 가르게 했습니다.",
+  "appliedTo": [
+   "pg16-1:rule",
+   "pg16-1:a5",
+   "pg16-1:p8",
+   "pg16-1:s4",
+   "pg16-1:t2"
+  ]
+ },
+ {
+  "page": 5,
+  "where": "TOPIC 16 passOff group#2 item 1; application item 8; Review (1) #8 정답",
+  "text": "at improving English from now on.(16과)",
+  "type": "english_unnatural",
+  "decision": "fix",
+  "reason": "STUDENT 16과(s16-3) 원문은 improving my English 입니다. STUDENT 가 이미 고친 문장이라 영어 · 한국어 모두 STUDENT 판을 쓰고 studentRef exact 를 달았습니다.",
+  "appliedTo": [
+   "pg16-1:a5",
+   "pg16-1:p8"
+  ]
+ },
+ {
+  "page": 5,
+  "where": "TOPIC 16 passOff group#4 제목",
+  "text": "(4) I wish가정법",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "레슨 부제를 '(4) I wish 가정법'으로 띄어 썼습니다(레슨 제목 'I wish 가정법'도 설계 §2 대로 띄어 씀).",
+  "appliedTo": [
+   "pg16-3:subtitle"
+  ]
+ },
+ {
+  "page": 6,
+  "where": "TOPIC 16 application item 6; Review (1) #6 정답",
+  "text": "If I didn’t want to buy this camera, I wouldn’t buy.",
+  "type": "english_grammar",
+  "decision": "fix",
+  "reason": "buy 뒤에 무엇을 사는지(목적어 it)가 빠졌습니다 → 'I wouldn't buy it.'. 뜻이 약하다는 지적은 문장이 틀린 것은 아니라(사실은 사고 싶어서 산다는 가정) 교재 문장을 살리고, '이 카메라를 원하지 않는다면'(want this camera)도 받습니다. 한국어의 '사기 원치 않는다면'(번역투) · '안 살 거야'(will)도 '사고 싶지 않다면 … 사지 않을 텐데'로 고쳤습니다.",
+  "appliedTo": [
+   "pg16-1:p6"
+  ]
+ },
+ {
+  "page": 7,
+  "where": "TOPIC 16 application item 12; Review (1) #12 정답",
+  "text": "If I had known you were in hospital, I would have gone to you.",
+  "type": "english_unnatural",
+  "decision": "fix",
+  "reason": "gone to you 는 병문안의 뜻으로 어색해 gone to see you 로 고쳤습니다. in hospital(영국식)은 틀리지 않아 그대로 두고 in the hospital(미국식) · visited you · come to see you 도 받습니다. 한국어도 '내가 네가'가 겹치고 '갔었을'이 어색해 '만약 네가 병원에 입원해 있다는 것을 알았더라면, 나는 너를 보러 갔을 텐데.'로 다듬었습니다(교재 한국어는 레슨 fix.fromKo). 한국어 '입원해 있다'대로 쓴 you were hospitalized(영국 철자 hospitalised)도 받습니다.",
+  "appliedTo": [
+   "pg16-2:p4"
+  ]
+ },
+ {
+  "page": 7,
+  "where": "TOPIC 16 application item 17; Review (1) #17 정답",
+  "text": "I wish our apartment was more convenient.",
+  "type": "english_grammar",
+  "decision": "fix",
+  "reason": "가정법 be동사는 학교 문법 · 시험에서 were 가 원칙이라 모범 답을 were 로 두었습니다. 원문의 was 는 구어에서 흔히 쓰는 꼴로 틀린 영어는 아니어서 정답으로 받습니다(issue 권고대로 둘 다 인정) — 그래서 레슨 fix.kind 는 틀린 영어(english_grammar)가 아니라 덜 격식 있는 글(english_unnatural)로 적었습니다. 설명 카드에 '말로는 was 도 써요'를 적었습니다. 같은 기준으로 pg16-1 · pg16-3 의 다른 가정법 be동사 문항도 was 를 받습니다.",
+  "appliedTo": [
+   "pg16-3:p4",
+   "pg16-3:p7",
+   "pg16-3:t1",
+   "pg16-1:p4",
+   "pg16-1:p5"
+  ]
+ },
+ {
+  "page": 7,
+  "where": "TOPIC 16 application item 21; Review (1) #21 정답",
+  "text": "If she had not bought the building, she had a lot of money now.",
+  "type": "english_grammar",
+  "decision": "fix",
+  "reason": "과거의 조건 → 지금의 결과(혼합 가정법)라 주절에 조동사가 필요합니다 → 'she would have a lot of money now'. 원문은 fix.from 에 두어 채점에서 오답이 됩니다.",
+  "appliedTo": [
+   "pg16-2:p12"
+  ]
+ },
+ {
+  "page": 8,
+  "where": "TOPIC 16 Review (1) #1",
+  "text": "만약 당신이 운동한다면, 당신은 더 좋게 느낄 거야.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "'~거야'는 will 로 읽혀 가정법 과거(would)가 드러나지 않고 '더 좋게 느낄'은 직역투라 '만약 네가 운동을 한다면, 기분이 더 좋아질 텐데.'로 고치고, ④ 에 조건 칩 '가정법으로'를 붙였습니다.",
+  "appliedTo": [
+   "pg16-1:a1",
+   "pg16-1:p1"
+  ]
+ },
+ {
+  "page": 8,
+  "where": "TOPIC 16 Review (1) #2",
+  "text": "내가 너의 전화기를 써도 되겠니?",
+  "type": "answer_ambiguous",
+  "decision": "fix",
+  "reason": "제시문만으로는 Can/May I use your phone? 이 가장 자연스러워 목표 구문을 끌어낼 수 없어, '제가 전화를 좀 써도 괜찮을까요?'로 고치고(존댓말로 상대를 '당신'이라 부르는 번역투는 쓰지 않음) 조건 칩 'Would you mind if + 과거형으로'를 붙였습니다. mind if 뒤 현재형(use)은 가정법을 피해 가는 답이라 받지 않고 오답 힌트로 과거형을 이끕니다. used 대신 흔히 쓰는 borrowed 와 the phone 도 받습니다.",
+  "appliedTo": [
+   "pg16-1:a2",
+   "pg16-1:p2"
+  ]
+ },
+ {
+  "page": 8,
+  "where": "TOPIC 16 Review (1) #4",
+  "text": "만약 눈이 오지 않는다면, 우리는 등산 할 수 있을 텐데.",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "'등산 할' → '등산할' 띄어쓰기에 더해, 영어의 the mountain(그 산)이 드러나도록 '우리는 그 산에 오를 수 있을 텐데'로 옮겼습니다.",
+  "appliedTo": [
+   "pg16-1:a4",
+   "pg16-1:p4"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 16 Review (1) #11",
+  "text": "만약, 내가 새였다면, 나는 네게 날라갔을 텐데.",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "'날라갔을' → '날아갔을', '만약,' 뒤 쉼표를 뺐습니다: '만약 내가 새였다면, 나는 너에게 날아갔을 텐데.'",
+  "appliedTo": [
+   "pg16-2:a2",
+   "pg16-2:p3"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 16 Review (1) #14",
+  "text": "만약 그들이 전쟁에서 이겼다면, 세계역사는 바뀌었을 것이다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "might 의 '~했을지도 모른다'를 살려 '만약 그들이 그 전쟁에서 이겼다면, 세계 역사가 바뀌었을지도 모른다.'로 고쳤습니다('세계 역사' 띄어쓰기, the war = 그 전쟁). might · could have 는 받고 would have 는 오답 힌트로 가릅니다.",
+  "appliedTo": [
+   "pg16-2:a4",
+   "pg16-2:p6"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 16 Review (1) #15",
+  "text": "나는 비가 그치기를 원한다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "'I wish + would'는 '~하면 좋겠다'라 '비가 그치면 좋겠다.'로 고쳤습니다. 조건 칩 'I wish를 써서'를 붙이고 I want · I hope 답에는 조건을 알려 주는 힌트를 달았습니다.",
+  "appliedTo": [
+   "pg16-3:a1",
+   "pg16-3:p1"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 16 Review (1) #16",
+  "text": "나는 읽을 무언가가 있기를 원한다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "지금 사실과 반대인 바람이라 '읽을거리가 있으면 좋을 텐데.'로 고쳤습니다('읽을거리'는 한 낱말). I wish there were/was something to read 도 받습니다.",
+  "appliedTo": [
+   "pg16-3:p3"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 16 Review (1) #17",
+  "text": "나는 우리 아파트가 조금 더 편리하기를 원한다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "'우리 아파트가 더 편리하면 좋을 텐데.'로 고쳤습니다. 영어 more convenient 에 맞춰 '조금'은 뺐고, a little · a bit more 를 넣은 답도 받습니다.",
+  "appliedTo": [
+   "pg16-3:p4"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 16 Review (1) #18",
+  "text": "나는 내가 정선생님이 아팠다는 것을 알기를 원한다(그랬다면,)나는 그를 만나러 갔을 텐데.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "지난 일에 대한 아쉬움이라 '정 선생님이 편찮으셨다는 것을 알았더라면 좋았을 텐데. 나는 그분을 뵈러 갔을 텐데.'로 고쳤습니다('정 선생님' 띄어쓰기, 괄호 '(그랬다면,)'은 두 문장으로 풀고 Then 을 넣은 답도 받음). Mr. Jung 은 koreanWords 에 적었습니다(pg11-3 에 이미 있는 낱말).",
+  "appliedTo": [
+   "pg16-3:p5"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 16 Review (1) #19",
+  "text": "나는 날씨가 더 따듯하기를 바란다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "'I wish it had been warmer'는 지난 일이라 '날씨가 더 따뜻했더라면 좋았을 텐데.'로 고쳤습니다. I wish it were/was warmer 에는 지난 일이라는 힌트를 답니다.",
+  "appliedTo": [
+   "pg16-3:p6"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 16 Review (1) #20",
+  "text": "만약 그가 의사의 충고를 받아들였다면, 그는 살아 있었을지도 모른다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어는 과거의 조건 → 지금의 결과(might be alive)라 '그는 지금 살아 있을지도 모른다'로 고쳤습니다. might have been alive 에는 '지금의 결과'라는 힌트를 답니다.",
+  "appliedTo": [
+   "pg16-2:p11"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 16 Review (1) #21",
+  "text": "만약 그녀가 그 건물을 사지 않았다면, 그녀는 많은 돈을 가졌을 텐데.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "지금의 결과라 '그녀는 지금 돈이 많을 텐데'로 고쳤습니다('많은 돈을 가졌을'은 직역투). 영어 쪽 오류(조동사 빠짐)는 p7 판정에서 함께 고쳤습니다.",
+  "appliedTo": [
+   "pg16-2:p12"
+  ]
+ },
+ {
+  "page": 9,
+  "where": "TOPIC 16 Review (1) #22",
+  "text": "만약 내가 그들을 의지하지 않았다면, 나는 더 독립적이 되었을 텐데.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "'그들을 의지하지' → '그들에게 의지하지', 영어 would be(지금의 결과)에 맞춰 '나는 지금 더 독립적일 텐데'로 고쳤습니다.",
+  "appliedTo": [
+   "pg16-2:p13"
+  ]
+ },
+ {
+  "page": 10,
+  "where": "TOPIC 17 passOff group#1 item 1; application item 1; Review 1. #1, 2. #1 정답",
+  "text": "He can fix cars and play soccer very well(4과)",
+  "type": "english_grammar",
+  "decision": "fix",
+  "reason": "끝 마침표를 넣었습니다. STUDENT 4과(s4-6)와 글자까지 같은 문장이라 영어 · 한국어 모두 STUDENT 판(한국어 '그분은 차를 고치실 수 있고 축구를 매우 잘하십니다.')을 쓰고 studentRef exact 를 달았습니다.",
+  "appliedTo": [
+   "pg17-1:a1",
+   "pg17-1:p1",
+   "pg17-1:s1"
+  ]
+ },
+ {
+  "page": 10,
+  "where": "TOPIC 17 passOff group#3 제목",
+  "text": "(3)should / ought to / used to / had better",
+  "type": "layout_or_extraction",
+  "decision": "fix",
+  "reason": "부제를 '(3) should / ought to / used to / had better · must'로 띄어 쓰고 must 를 적었습니다. 소제목 없이 Application 에 나온 must 세 문장(She must call … / You must not park here. / He must have been asleep.)은 뜻이 가까운 이 레슨(의무 · 충고, 조동사 + have + 과거분사)에 두고 설명 카드 2 · 5번 줄과 표에서 가르칩니다. 레슨 구조(목록 · 제목)는 설계 §2 그대로입니다.",
+  "appliedTo": [
+   "pg17-3:subtitle",
+   "pg17-3:p1",
+   "pg17-3:p2",
+   "pg17-3:p3",
+   "pg17-3:s7",
+   "pg17-3:s6",
+   "pg17-3:rule"
+  ]
+ },
+ {
+  "page": 10,
+  "where": "TOPIC 17 passOff group#3 item 4; application item 29; Review 2. #28 정답",
+  "text": "The taxi driver is used to a danger",
+  "type": "english_grammar",
+  "decision": "fix",
+  "reason": "'위험 일반'의 danger 는 셀 수 없는 명사라 a 를 뺐습니다(p10 의 마침표 앞 빈칸도 뺌). 원문은 fix.from 에 두고 'used to a danger'에는 셀 수 없는 명사라는 힌트를 답니다.",
+  "appliedTo": [
+   "pg17-3:a4",
+   "pg17-3:p12"
+  ]
+ },
+ {
+  "page": 10,
+  "where": "TOPIC 17 passOff group#3 item 4 앞 공식",
+  "text": "*be used to ~ing:",
+  "type": "grammar_explanation_wrong",
+  "decision": "fix",
+  "reason": "공식은 '~ing'라면서 예문은 명사(danger)라 설명이 맞지 않습니다. 설명 카드에 'be used to + 명사 · -ing: ~에 익숙하다'로 적고, 조동사 used to + 동사원형과 나란히 비교하게 했습니다(4번 줄 · 표 · ✗/✓ · 발견 질문 해설).",
+  "appliedTo": [
+   "pg17-3:rule"
+  ]
+ },
+ {
+  "page": 11,
+  "where": "TOPIC 17 application item 2; Review 2. #2 정답",
+  "text": "I can’t speak Chinese, but someday, I ’ll learn.",
+  "type": "english_grammar",
+  "decision": "fix",
+  "reason": "I 와 ’ll 사이의 빈칸은 오타라 고쳤습니다. learn 은 목적어 없이 '배우다'로 쓸 수 있어(I can't swim, but I'll learn.) 모범 답은 교재대로 두고, learn it · learn Chinese 를 넣은 답도 받습니다. 한국어 '거야'대로 쓴 be going to 와, someday 대신 one day 를 쓴 답도 받습니다.",
+  "appliedTo": [
+   "pg17-1:p2"
+  ]
+ },
+ {
+  "page": 15,
+  "where": "TOPIC 17 Review 2. #7 (application item 7 'Last weekend I wasn’t able to see her.')",
+  "text": "지난주에 나는 그녀를 볼 수 없었다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어는 Last weekend 라 '지난 주말에 나는 그녀를 만날 수 없었다.'로 고쳤습니다. last week 에는 '지난 주말'이라는 힌트를 답니다.",
+  "appliedTo": [
+   "pg17-1:p7"
+  ]
+ },
+ {
+  "page": 15,
+  "where": "TOPIC 17 Review 2. #8 (application item 8)",
+  "text": "나는 언젠가 행복하게 살수 있기를 바란다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어는 will be able to 라 '나는 언젠가 행복하게 살 수 있을 것이다.'로 고쳤습니다('살 수' 띄어쓰기). I hope to … · I can live … 에는 힌트를 답니다.",
+  "appliedTo": [
+   "pg17-1:p8"
+  ]
+ },
+ {
+  "page": 15,
+  "where": "TOPIC 17 Review 2. #9 (application item 9)",
+  "text": "나는 내 꿈을 성취하고 많은 아이들이 배우고 자라도록 도울수 있기를 원한다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어는 will be able to 라 '나는 내 꿈을 이루고 많은 아이들이 배우고 성장하도록 도울 수 있을 것이다.'로 고쳤습니다('도울 수' 띄어쓰기). STUDENT 14과(s14-3) 문장의 뒤쪽 절이라 studentRef adapted.",
+  "appliedTo": [
+   "pg17-1:p9"
+  ]
+ },
+ {
+  "page": 15,
+  "where": "TOPIC 17 Review 2. #6",
+  "text": "나는 언젠가는 그가 하는 것 만큼 영어를 잘 말수 있기를 바란다.",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "이 문장은 STUDENT 7과(s7-3)와 글자까지 같아 한국어도 STUDENT 판('나는 언젠가 그분이 하시는 것과 마찬가지로 영어를 잘 말할 수 있기를 원합니다.')을 씁니다 — 교재의 '것 만큼' · '말수' 띄어쓰기 오류가 함께 사라집니다.",
+  "appliedTo": [
+   "pg17-1:a3",
+   "pg17-1:p6"
+  ]
+ },
+ {
+  "page": 15,
+  "where": "TOPIC 17 Review 2. #3",
+  "text": "너는 다른 외국어를 말할 수 있니?",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어에 없는 '다른'을 빼 '너는 외국어를 할 줄 아니?'로 고쳤습니다. Are you able to … 와 languages(복수)도 받습니다.",
+  "appliedTo": [
+   "pg17-1:a2",
+   "pg17-1:p3"
+  ]
+ },
+ {
+  "page": 15,
+  "where": "TOPIC 17 Review 2. #10",
+  "text": "그는 그의 사무실에 있을 거야.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "may(추측)를 살려 '그는 사무실에 있을지도 몰라.'로 고쳤습니다. 조건 칩 'may를 써서'를 붙이고 might 도 받습니다.",
+  "appliedTo": [
+   "pg17-2:a1",
+   "pg17-2:p1"
+  ]
+ },
+ {
+  "page": 15,
+  "where": "TOPIC 17 Review 2. #12",
+  "text": "제가 TV를 켜도 되요? 그래요. 됩니다.",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "'되요' → '돼요', 어색한 '그래요. 됩니다.' → '네, 돼요.'로 고쳤습니다.",
+  "appliedTo": [
+   "pg17-2:p3"
+  ]
+ },
+ {
+  "page": 12,
+  "where": "TOPIC 17 application item 18; Review 2. #17 정답",
+  "text": "Wherever you may go, I’ll never forget what you do to me.",
+  "type": "english_unnatural",
+  "decision": "fix",
+  "reason": "what you do to me 는 현재형이고 '나에게 (나쁜) 짓을 하다'로 읽혀 한국어 '네가 내게 한 일'(지난 일, 고마운 일)과 맞지 않아 what you have done for me 로 고쳤습니다(what you did for me 도 받음). 원문은 fix.from, 채점에서 오답. 한국어도 for me 에 맞춰 '네가 어디를 가더라도, 나는 네가 나를 위해 해 준 일을 결코 잊지 않을 거야.'로 고쳤습니다(교재 한국어 '네가 내게 한 일'은 레슨 fix.fromKo). 그 한국어대로 옮긴 what you did to me 에는 '~를 위해'에 맞는 전치사를 쓰라는 힌트를 답니다.",
+  "appliedTo": [
+   "pg17-2:p9"
+  ]
+ },
+ {
+  "page": 16,
+  "where": "TOPIC 17 Review 2. #16",
+  "text": "네가 혼돈스러워 하는 것은 당연하다.",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "'혼돈'(chaos) 대신 '혼란스러워하다'로, '-어하다'는 붙여 써 '네가 혼란스러워하는 것도 당연하다.'로 고쳤습니다.",
+  "appliedTo": [
+   "pg17-2:p8"
+  ]
+ },
+ {
+  "page": 16,
+  "where": "TOPIC 17 Review 2. #13",
+  "text": "그녀는 잠이 들었을 거야.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "may have been(~였을지도 모른다)에 맞춰 '그녀는 잠들어 있었을지도 몰라.'로 고쳤습니다(must have been '~였음에 틀림없다'와 구분).",
+  "appliedTo": [
+   "pg17-2:a2",
+   "pg17-2:p5"
+  ]
+ },
+ {
+  "page": 13,
+  "where": "TOPIC 17 application item 26; Review 2. #25",
+  "text": "Carter used to stay up.",
+  "type": "english_unnatural",
+  "decision": "fix",
+  "reason": "stay up 은 late 와 함께 써야 '밤늦게까지 안 자다'가 분명해 'Carter used to stay up late.'로 고치고, 한국어도 영어에 없는 '종종'을 빼 '카터는 예전에 밤늦게까지 자지 않곤 했다.'로 고쳤습니다.",
+  "appliedTo": [
+   "pg17-3:p9"
+  ]
+ },
+ {
+  "page": 13,
+  "where": "TOPIC 17 application item 35; Review 2. #34",
+  "text": "He had better spend time wisely.",
+  "type": "english_unnatural",
+  "decision": "keep",
+  "reason": "spend time wisely 는 틀린 영어가 아니라(확신도 낮음) 교재 영어를 모범 답으로 두고 spend his time wisely · use (his) time wisely 도 받습니다. 한국어 제시문의 '더'(영어에 없음)는 같은 문장의 한국어 오타 판정(p17 '드는 …')에서 함께 뺐습니다.",
+  "appliedTo": [
+   "pg17-3:p18"
+  ]
+ },
+ {
+  "page": 17,
+  "where": "TOPIC 17 Review 2. #30 (application item 31)",
+  "text": "제니는 일찍 일어나는 일에 익숙지 않다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어는 과거(wasn't)라 '제니는 일찍 일어나는 데 익숙하지 않았다.'로 고쳤습니다. is not used to 에는 지난 일이라는 힌트를 답니다.",
+  "appliedTo": [
+   "pg17-3:p14"
+  ]
+ },
+ {
+  "page": 17,
+  "where": "TOPIC 17 Review 2. #32 (application item 33)",
+  "text": "너는 일찍 집에 오는 것이 낫다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어에 없는 '일찍'을 빼 '너는 집에 오는 게 좋겠다!'로 고쳤습니다(영어 앵커 You had better come home! 는 그대로).",
+  "appliedTo": [
+   "pg17-3:a5",
+   "pg17-3:p16"
+  ]
+ },
+ {
+  "page": 17,
+  "where": "TOPIC 17 Review 2. #33 (application item 34)",
+  "text": "너는 지금 떠나는 것이 낫다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "영어는 부정(You'd better not leave now.)이라 정반대인 한국어를 '너는 지금 떠나지 않는 게 좋겠다.'로 고쳤습니다.",
+  "appliedTo": [
+   "pg17-3:p17"
+  ]
+ },
+ {
+  "page": 17,
+  "where": "TOPIC 17 Review 2. #34 (application item 35)",
+  "text": "드는 시간을 더 현명하게 쓰는 것이 낫다.",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "'드는' → '그는', 영어에 없는 '더'를 빼 '그는 시간을 현명하게 쓰는 게 좋겠다.'로 고쳤습니다.",
+  "appliedTo": [
+   "pg17-3:p18"
+  ]
+ },
+ {
+  "page": 17,
+  "where": "TOPIC 17 Review 2. #36",
+  "text": "너는 마지막 기차를 놓치지 않는 것이 낫다",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "끝 마침표를 넣고 had better 의 뜻에 맞춰 '너는 마지막 기차를 놓치지 않는 게 좋겠다.'로 다듬었습니다.",
+  "appliedTo": [
+   "pg17-3:p20"
+  ]
+ },
+ {
+  "page": 17,
+  "where": "TOPIC 17 Review 2. #26",
+  "text": "그녀는 그녀가 어렸을 때, 개를 가졌었다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "직역투를 '그녀는 어렸을 때 개를 키웠었다.'로 고쳤습니다.",
+  "appliedTo": [
+   "pg17-3:p10"
+  ]
+ },
+ {
+  "page": 15,
+  "where": "TOPIC 17 Review 2. #1",
+  "text": "그는 자동차 수리와 축구도 매우 잘 할 수 있다.",
+  "type": "korean_typo",
+  "decision": "fix",
+  "reason": "이 문장은 STUDENT 4과(s4-6)와 글자까지 같아 한국어도 STUDENT 판('그분은 차를 고치실 수 있고 축구를 매우 잘하십니다.')을 씁니다 — '잘 할' 띄어쓰기와 어색한 '축구도'가 함께 사라집니다.",
+  "appliedTo": [
+   "pg17-1:a1",
+   "pg17-1:p1"
+  ]
+ },
+ {
+  "page": 16,
+  "where": "TOPIC 17 Review 2. #14 (application item 15)",
+  "text": "너는 가게에서 그것을 두었을지도 몰라.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "left it in the store 에 맞춰 '너는 그것을 가게에 두고 왔을지도 몰라.'로 고쳤습니다.",
+  "appliedTo": [
+   "pg17-2:a3",
+   "pg17-2:p6"
+  ]
+ },
+ {
+  "page": 17,
+  "where": "TOPIC 17 Review 2. #35 (application item 36)",
+  "text": "그녀는 휴식을 가지는 것이 낫다.",
+  "type": "translation_mismatch",
+  "decision": "fix",
+  "reason": "직역투를 '그녀는 좀 쉬는 게 좋겠다.'로 고쳤습니다. take a rest · get some rest · rest 도 받습니다.",
+  "appliedTo": [
+   "pg17-3:p19"
+  ]
+ },
+ {
+  "page": 14,
+  "where": "TOPIC 17 Review 1. #3",
+  "text": "I want to be able to speak English as well as he does someday. (7과)",
+  "type": "answer_ambiguous",
+  "decision": "fix",
+  "reason": "이 문장에는 can · may 같은 조동사가 없고 조동사 역할을 하는 be able to 만 있어, 지시를 '조동사 역할을 하는 표현을 누르고, 뜻을 고르세요'로 바꾸고 정답을 be able to(능력)로 정했습니다(want to 는 덩어리 토큰으로 두고 뜻 보기 '바람'과 구분). 설명 카드 4번 줄이 be able to 를 can 대신 쓰는 자리를 가르칩니다.",
+  "appliedTo": [
+   "pg17-1:s3",
+   "pg17-1:rule"
+  ]
+ },
+ {
+  "page": 10,
+  "where": "TOPIC 17 passOff group#3 item 2; application item 23; Review 1. #9, 2. #22",
+  "text": "I shouldn’t have eaten too much chocolate.",
+  "type": "english_unnatural",
+  "decision": "keep",
+  "reason": "too much 와 shouldn't have 가 함께 쓰여도 틀린 문장이 아니라(확신도 낮음) 교재 영어를 모범 답으로 두고 so much · that much 도 받습니다. 한국어의 '너무 많은 초콜릿을 먹지'(번역투)는 '초콜릿을 너무 많이 먹지'로 다듬었습니다(아래 note).",
+  "appliedTo": [
+   "pg17-3:a2",
+   "pg17-3:p5"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 6,
+  "where": "application item 7 · review (1) item 7 (p8)",
+  "text": "만약 네가 내 입장이라면, 어느 것을 너는 선택할래?",
+  "reason": "issues 에 없던 것: 말 순서가 어색하고 가정(would)의 뜻이 약해 '만약 네가 내 입장이라면, 너는 어느 것을 고르겠니?'로 다듬었습니다.",
+  "refs": [
+   "pg16-1:p7"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 8,
+  "where": "review (1) item 9",
+  "text": "만약 내가 영어를 알았다면,  행복할 수 있었을 텐데.",
+  "reason": "issues 에 없던 것: 쉼표 뒤 빈칸 두 개를 하나로 줄였습니다(글은 그대로).",
+  "refs": [
+   "pg16-2:a1",
+   "pg16-2:p1"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 7,
+  "where": "application items 20–22 (소제목 없음)",
+  "text": "If he had taken the doctor’s advice, he might be alive. / If she had not bought the building, … / If I hadn’t depended on them, …",
+  "reason": "배치 판단: 소제목 없이 I wish 문장 뒤에 인쇄된 혼합 가정법(과거의 조건 → 지금의 결과) 세 문장은 가정법 과거완료를 넓힌 것이라 pg16-2 끝(p11–p13)에 두었습니다. 설명 카드 2번 줄 · 표 '혼합 가정법' · ③ s3 · ⑤ t2 가 같은 꼴을 다룹니다.",
+  "refs": [
+   "pg16-2:p11",
+   "pg16-2:p12",
+   "pg16-2:p13",
+   "pg16-2:rule"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 5,
+  "where": "passOff (4) item 2",
+  "text": "I wish somebody would answer me.",
+  "reason": "교재 어디에도 한국어가 없어 '누군가 나에게 대답해 주면 좋겠다.'로 새로 옮겼습니다. Pass-Off 에만 있는 문장이라 ④ 에도 넣었습니다.",
+  "refs": [
+   "pg16-3:a2",
+   "pg16-3:p2"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 5,
+  "where": "passOff (4) — 앵커 보충",
+  "text": "I wish I were taller. / I wish I had studied harder.",
+  "reason": "교재 Pass-Off (4) 는 I wish + would 두 문장뿐이라 지금(과거형) · 지난 일(had + 과거분사)의 바람을 보일 앵커 2개를 새로 넣었습니다(source new, 발견 질문에 앵커 3개 필요).",
+  "refs": [
+   "pg16-3:a3",
+   "pg16-3:a4",
+   "pg16-3:p7",
+   "pg16-3:p8"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 12,
+  "where": "application item 13",
+  "text": "James may be at school.",
+  "reason": "교재 어디에도 한국어가 없어 '제임스는 학교에 있을지도 모른다.'로 새로 옮겼습니다.",
+  "refs": [
+   "pg17-2:p4"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 10,
+  "where": "passOff (3) item 3",
+  "text": "He used to get up early.",
+  "reason": "교재 어디에도 한국어가 없어 '그는 예전에 일찍 일어나곤 했다.'로 새로 옮겼습니다. Pass-Off 에만 있는 문장이라 ④ 에도 넣었습니다.",
+  "refs": [
+   "pg17-3:a3",
+   "pg17-3:p6"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 16,
+  "where": "review 2. item 15",
+  "text": "너는 학교로 걸어가는 것이 좋겠다.",
+  "reason": "issues 에 없던 것: may as well(~하는 편이 낫다)의 뜻이 드러나게 '너는 학교에 걸어가는 편이 낫겠다.'로 다듬었습니다.",
+  "refs": [
+   "pg17-2:a4",
+   "pg17-2:p7"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 16,
+  "where": "review 2. item 22",
+  "text": "나는 너무 많은 초콜릿을 먹지 말았어야 했는데.",
+  "reason": "issues 에 없던 것: 영어 어순을 따른 번역투라 '나는 초콜릿을 너무 많이 먹지 말았어야 했는데.'로 다듬었습니다.",
+  "refs": [
+   "pg17-3:a2",
+   "pg17-3:p5"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 16,
+  "where": "review 2. item 23",
+  "text": "나의 어머니는 학교 선생님이셨다.",
+  "reason": "issues 에 없던 것: used to(예전에는 ~였다, 지금은 아님)의 뜻이 없어 My mother was a school teacher 도 답이 되므로 '우리 어머니는 예전에 학교 선생님이셨다.'로 고치고 조건 칩 'used to를 써서'를 붙였습니다.",
+  "refs": [
+   "pg17-3:p7"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 14,
+  "where": "review 1 (조동사 밑줄 + 뜻) 11문항",
+  "text": "다음 문장을 보고 조동사에 줄을 긋고 그 의미를 써 보세요.",
+  "reason": "배치: 11문항을 레슨별 ③ 에 나눔(can 3 → pg17-1 s1–s3, may 4 → pg17-2 s1–s4, should · used to · had better 4 → pg17-3 s1–s4). 제시문이 모두 Pass-Off(앵커) 문장이라 ③ 에 그대로 씀. 뜻 쓰기는 문항마다 한 가지만 맞는 뜻 보기 3개(라벨)로 바꿈. TOPIC 16 Review 는 영작뿐이라 pg16-1 · 16-2 · 16-3 의 ③ 은 모두 새 문항(source new).",
+  "refs": [
+   "pg17-1:s1",
+   "pg17-1:s2",
+   "pg17-1:s3",
+   "pg17-2:s1",
+   "pg17-2:s2",
+   "pg17-2:s3",
+   "pg17-2:s4",
+   "pg17-3:s1",
+   "pg17-3:s2",
+   "pg17-3:s3",
+   "pg17-3:s4"
+  ]
+ },
+ {
+  "coverage": "note",
+  "page": 15,
+  "where": "review 2. item 2",
+  "text": "나는 중국어는 못하지만 언젠가 나는 배울 거야.",
+  "reason": "issues 에 없던 것: 주어 '나는'이 두 번 나오는 번역투라 뒤의 '나는'을 빼 '나는 중국어는 못하지만 언젠가 배울 거야.'로 다듬었습니다(대조의 '중국어는'은 틀리지 않아 그대로).",
+  "refs": [
+   "pg17-1:p2"
+  ]
+ }
+]

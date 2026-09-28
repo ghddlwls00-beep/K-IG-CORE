@@ -1,0 +1,2438 @@
+{
+  "id": "pg11-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "12시제·현재와 과거",
+  "label": "TOPIC 11. 시제",
+  "menuLabel": "11-1. 12시제·현재와 과거",
+  "unit": 11,
+  "part": 2,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 12시제 · (2) 현재와 과거",
+  "grammarTags": [
+    "twelve-tenses",
+    "present-past-uses"
+  ],
+  "koreanWords": [
+    "Seoul",
+    "Hanguk"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg11-1:a1",
+          "en": "I live in Seoul.",
+          "ko": "나는 서울에서 살고 있다.",
+          "koSource": "review 4 item 1",
+          "focus": [
+            "live"
+          ],
+          "studentRef": {
+            "lesson": "s1-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 28,
+            "where": "passOff (1) item 1 (현재)",
+            "reviewWhere": "review 1 item 1 (p34) · review 4 item 1 (p39)"
+          }
+        },
+        {
+          "id": "pg11-1:a2",
+          "en": "We are studying English now.",
+          "ko": "우리는 지금 영어 공부를 하는 중이다.",
+          "koSource": "review 4 item 5",
+          "focus": [
+            "are studying"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 28,
+            "where": "passOff (1) item 3 (현재진행)",
+            "reviewWhere": "review 1 item 3 (p34) · review 4 item 5 (p39)"
+          },
+          "fix": {
+            "from": "We are studying English, now.",
+            "kind": "english_grammar",
+            "why": "문장 끝 now 앞의 쉼표는 필요 없어 뺐습니다."
+          }
+        },
+        {
+          "id": "pg11-1:a3",
+          "en": "Jane has just finished cleaning the room.",
+          "ko": "제인은 막 그 방 청소를 끝냈다.",
+          "koSource": "review 4 item 6",
+          "focus": [
+            "has just finished"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 28,
+            "where": "passOff (1) item 4 (현재완료)",
+            "reviewWhere": "review 1 item 4 (p34) · review 4 item 6 (p39)"
+          },
+          "fix": {
+            "from": "Jane has finished cleaning the room just now.",
+            "kind": "english_grammar",
+            "why": "just now(조금 전)는 지난 때를 콕 집는 말이라 현재완료와 함께 쓰지 않습니다(학교 문법의 대표 오답). '막'은 has 와 과거분사 사이의 just 로 고쳤습니다. 한국어는 그대로 맞습니다."
+          }
+        },
+        {
+          "id": "pg11-1:a4",
+          "en": "I have been studying English for three years so far.",
+          "ko": "나는 지금까지 3년간 영어를 공부해 오고 있다.",
+          "koSource": "review 4 item 7",
+          "focus": [
+            "have been studying"
+          ],
+          "studentRef": {
+            "lesson": "s1-5",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 28,
+            "where": "passOff (1) item 5 (현재완료진행)",
+            "reviewWhere": "review 1 item 5 (p34) · review 4 item 7 (p39)"
+          }
+        },
+        {
+          "id": "pg11-1:a5",
+          "en": "He was watering the garden then.",
+          "ko": "그는 그때 정원에 물을 주고 있었다.",
+          "koSource": "review 4 item 10",
+          "focus": [
+            "was watering"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 28,
+            "where": "passOff (1) item 8 (과거진행)",
+            "reviewWhere": "review 1 item 8 (p35) · review 4 item 10 (p39)"
+          }
+        },
+        {
+          "id": "pg11-1:a6",
+          "en": "His dream will come true.",
+          "ko": "그의 꿈은 실현될 것이다.",
+          "koSource": "review 4 item 13",
+          "focus": [
+            "will come"
+          ],
+          "studentRef": {
+            "lesson": "s3-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 28,
+            "where": "passOff (1) item 11 (미래)",
+            "reviewWhere": "review 1 item 11 (p35) · review 4 item 13 (p40)"
+          }
+        },
+        {
+          "id": "pg11-1:a7",
+          "en": "I get up at six o’clock every morning.",
+          "ko": "나는 매일 아침 6시에 일어납니다.",
+          "koSource": "student:s9-1#2",
+          "focus": [
+            "get up"
+          ],
+          "studentRef": {
+            "lesson": "s9-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 28,
+            "where": "passOff (2) item 2 (9과)",
+            "reviewWhere": "review 4 item 18 (p40)"
+          },
+          "fix": {
+            "fromKo": "나는 매일 아침 6시에 일어난다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT 9-1 과 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(교재 한국어가 틀린 것은 아님)."
+          }
+        },
+        {
+          "id": "pg11-1:a8",
+          "en": "The earth moves round the sun.",
+          "ko": "지구는 태양 주위를 돈다.",
+          "koSource": "review 4 item 19 (고침)",
+          "focus": [
+            "moves"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 28,
+            "where": "passOff (2) item 3",
+            "reviewWhere": "review 4 item 19 (p40)"
+          },
+          "fix": {
+            "fromKo": "지구는 태양 주변을 움직인다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "moves round the sun 은 태양 주위를 도는 것(공전)이라 '태양 주위를 돈다'로 고쳤습니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg11-1:a2",
+          "pg11-1:a5",
+          "pg11-1:a6"
+        ],
+        "question": "세 문장이 말하는 때는 각각 언제일까요?",
+        "options": [
+          "지금 · 그때(과거) · 앞으로",
+          "셋 다 지금",
+          "셋 다 지난 일"
+        ],
+        "answer": 0,
+        "why": "are studying 은 지금 하는 중, was watering 은 그때 하던 중, will come true 는 앞으로의 일이에요. 동사 모양이 때를 알려 줘요."
+      },
+      "title": "때와 모습에 따라 동사가 12가지 모양으로 바뀝니다",
+      "points": [
+        "때 3가지(현재·과거·미래) × 모습 4가지(기본·진행·완료·완료진행) = 12시제",
+        "진행 be + -ing(~하는 중) · 완료 have + 과거분사(p.p.) · 완료진행 have been + -ing",
+        "현재형은 지금의 사실·습관·변하지 않는 진리에 써요(I get up at six.).",
+        "과거형은 지난 일·역사적 사실에 써요(then · in 1950 같은 지난 때와 함께).",
+        "when · if 절(때·조건)에서는 앞으로의 일도 현재형으로 써요."
+      ],
+      "table": {
+        "columns": [
+          "시제",
+          "모양",
+          "예 (study)"
+        ],
+        "rows": [
+          [
+            "현재",
+            "동사원형(-s)",
+            "I study"
+          ],
+          [
+            "현재진행",
+            "am/is/are + -ing",
+            "I am studying"
+          ],
+          [
+            "현재완료",
+            "have/has + p.p.",
+            "I have studied"
+          ],
+          [
+            "현재완료진행",
+            "have/has been + -ing",
+            "I have been studying"
+          ],
+          [
+            "과거",
+            "과거형(-ed)",
+            "I studied"
+          ],
+          [
+            "과거진행",
+            "was/were + -ing",
+            "I was studying"
+          ],
+          [
+            "과거완료",
+            "had + p.p.",
+            "I had studied"
+          ],
+          [
+            "과거완료진행",
+            "had been + -ing",
+            "I had been studying"
+          ],
+          [
+            "미래",
+            "will + 동사원형",
+            "I will study"
+          ],
+          [
+            "미래진행",
+            "will be + -ing",
+            "I will be studying"
+          ],
+          [
+            "미래완료",
+            "will have + p.p.",
+            "I will have studied"
+          ],
+          [
+            "미래완료진행",
+            "will have been + -ing",
+            "I will have been studying"
+          ]
+        ]
+      },
+      "koDiff": "한국어 '-고 있다'는 진행(공부하고 있다)과 상태(서울에 살고 있다)를 함께 말하지만, 영어는 진행형(are studying)과 기본형(live)을 나눠 써요. 또 한국어에는 완료 모양이 따로 없어 '막 끝냈다 · ~해 왔다'로 풀어 말해요.",
+      "mistakes": [
+        {
+          "wrong": "Jane has finished cleaning the room just now.",
+          "right": "Jane has just finished cleaning the room.",
+          "why": "just now(조금 전)는 지난 때를 콕 집는 말이라 현재완료와 함께 쓰지 않아요."
+        },
+        {
+          "wrong": "When I will grow up, I will be a teacher.",
+          "right": "When I grow up, I will be a teacher.",
+          "why": "때를 나타내는 when 절에서는 앞으로의 일도 현재형으로 써요."
+        }
+      ],
+      "worked": [
+        "그는 그때 숙제를 하고 있었다.",
+        "때: 그때 → 과거",
+        "모습: ~하고 있었다 → 진행",
+        "과거진행 = was/were + -ing",
+        "He was doing his homework then."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'그녀는 그때 책을 읽고 있었다.'에 맞는 동사는?",
+        "options": [
+          "was reading",
+          "has read",
+          "reads"
+        ],
+        "answer": 0,
+        "why": "그때(과거) + 하는 중(진행) → 과거진행 was + -ing",
+        "pointIndex": 1
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg11-1:s1",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "We are studying English now.",
+          "underline": [
+            "are studying"
+          ],
+          "options": [
+            "현재",
+            "현재진행",
+            "현재완료진행"
+          ],
+          "answer": 1,
+          "why": "am/are/is + -ing = 현재진행(지금 하는 중)",
+          "bookRef": {
+            "book": 2,
+            "page": 34,
+            "where": "review 1 item 3 (시제 이름)"
+          }
+        },
+        {
+          "id": "pg11-1:s2",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "Jane has just finished cleaning the room.",
+          "underline": [
+            "has",
+            "finished"
+          ],
+          "options": [
+            "과거",
+            "현재완료",
+            "과거완료"
+          ],
+          "answer": 1,
+          "why": "has + 과거분사(finished) = 현재완료. just 는 '막'이에요.",
+          "bookRef": {
+            "book": 2,
+            "page": 34,
+            "where": "review 1 item 4 (시제 이름)"
+          },
+          "fix": {
+            "from": "Jane has finished cleaning the room just now.",
+            "field": "sentence",
+            "kind": "english_grammar",
+            "why": "just now 는 현재완료와 함께 쓰지 않아 고친 문장으로 물음(pg11-1:a3 과 같음)."
+          }
+        },
+        {
+          "id": "pg11-1:s3",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "I have been studying English for three years so far.",
+          "underline": [
+            "have been studying"
+          ],
+          "options": [
+            "현재완료",
+            "현재완료진행",
+            "과거완료진행"
+          ],
+          "answer": 1,
+          "why": "have been + -ing = 현재완료진행(지금까지 계속 해 오는 중)",
+          "bookRef": {
+            "book": 2,
+            "page": 34,
+            "where": "review 1 item 5 (시제 이름)"
+          }
+        },
+        {
+          "id": "pg11-1:s4",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "He was watering the garden then.",
+          "underline": [
+            "was watering"
+          ],
+          "options": [
+            "과거",
+            "과거진행",
+            "현재진행"
+          ],
+          "answer": 1,
+          "why": "was/were + -ing = 과거진행(그때 하던 중)",
+          "bookRef": {
+            "book": 2,
+            "page": 35,
+            "where": "review 1 item 8 (시제 이름)"
+          }
+        },
+        {
+          "id": "pg11-1:s5",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "His dream will come true.",
+          "underline": [
+            "will come"
+          ],
+          "options": [
+            "현재",
+            "미래",
+            "미래완료"
+          ],
+          "answer": 1,
+          "why": "will + 동사원형 = 미래",
+          "bookRef": {
+            "book": 2,
+            "page": 35,
+            "where": "review 1 item 11 (시제 이름)"
+          }
+        },
+        {
+          "id": "pg11-1:s6",
+          "kind": "choice",
+          "instruction": "밑줄 친 moves 가 현재형인 까닭은?",
+          "sentence": "The earth moves round the sun.",
+          "underline": [
+            "moves"
+          ],
+          "options": [
+            "변하지 않는 사실(진리)이라서",
+            "지금 이 순간 하는 중이라서",
+            "앞으로 할 일이라서"
+          ],
+          "answer": 0,
+          "why": "지구가 태양 주위를 도는 것은 언제나 맞는 사실이에요. 진리는 현재형으로 써요.",
+          "bookRef": {
+            "book": 2,
+            "page": 28,
+            "where": "passOff (2) item 3"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg11-1:s7",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "I live in Seoul.",
+          "underline": [
+            "live"
+          ],
+          "options": [
+            "현재",
+            "현재진행",
+            "과거"
+          ],
+          "answer": 0,
+          "why": "동사원형 live = 현재(지금의 사실)",
+          "bookRef": {
+            "book": 2,
+            "page": 34,
+            "where": "review 1 item 1 (시제 이름)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg11-1:s8",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "My sister attends Hanguk Elementary School.",
+          "underline": [
+            "attends"
+          ],
+          "options": [
+            "현재",
+            "과거",
+            "미래"
+          ],
+          "answer": 0,
+          "why": "3인칭 한 명 + 동사-s = 현재",
+          "bookRef": {
+            "book": 2,
+            "page": 34,
+            "where": "review 1 item 2 (시제 이름)"
+          },
+          "fix": {
+            "from": "My sister attends 한국elementary school.",
+            "field": "sentence",
+            "kind": "english_grammar",
+            "why": "영어 속 한글을 로마자 학교 이름 Hanguk Elementary School 로 고친 문장(pg11-1:p2 와 같음)."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg11-1:s9",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "He became the founder of Korea.",
+          "underline": [
+            "became"
+          ],
+          "options": [
+            "과거",
+            "현재완료",
+            "과거완료"
+          ],
+          "answer": 0,
+          "why": "become 의 과거형 became = 과거",
+          "bookRef": {
+            "book": 2,
+            "page": 34,
+            "where": "review 1 item 6 (시제 이름)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg11-1:s10",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "They fought against Japanese rule.",
+          "underline": [
+            "fought"
+          ],
+          "options": [
+            "과거",
+            "현재완료진행",
+            "과거진행"
+          ],
+          "answer": 0,
+          "why": "fight 의 과거형 fought = 과거",
+          "bookRef": {
+            "book": 2,
+            "page": 34,
+            "where": "review 1 item 7 (시제 이름)"
+          },
+          "fix": {
+            "from": "They fought against the Japanese rule.",
+            "field": "sentence",
+            "kind": "english_unnatural",
+            "why": "rule 앞의 the 를 뺀 문장(pg11-1:p9 와 같음)."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg11-1:s11",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "She had worked at a department store for several years before she got married.",
+          "underline": [
+            "had worked"
+          ],
+          "options": [
+            "과거",
+            "과거완료",
+            "현재완료"
+          ],
+          "answer": 1,
+          "why": "had + 과거분사 = 과거완료(결혼보다 앞선 일)",
+          "bookRef": {
+            "book": 2,
+            "page": 35,
+            "where": "review 1 item 9 (시제 이름 — 교재 꼬리표 '과거 완료')"
+          },
+          "fix": {
+            "from": "She had worked at a department store for several years.",
+            "field": "sentence",
+            "kind": "english_unnatural",
+            "why": "기준 시점 before she got married 를 더한 문장(pg11-1:p11 과 같음). 시제 이름은 붙여 써 '과거완료'."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg11-1:s12",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "He had been doing his military service for two years when I met him.",
+          "underline": [
+            "had been doing"
+          ],
+          "options": [
+            "과거진행",
+            "과거완료",
+            "과거완료진행"
+          ],
+          "answer": 2,
+          "why": "had been + -ing = 과거완료진행(만난 때까지 계속되던 일)",
+          "bookRef": {
+            "book": 2,
+            "page": 35,
+            "where": "review 1 item 10 (시제 이름)"
+          },
+          "fix": {
+            "from": "He had been having a military service for two years when I met him.",
+            "field": "sentence",
+            "kind": "english_unnatural",
+            "why": "have a military service 를 do his military service 로 고친 문장(pg11-1:p12 와 같음)."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg11-1:s13",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "Do as I tell you, and you will live.",
+          "underline": [
+            "will live"
+          ],
+          "options": [
+            "현재",
+            "미래",
+            "미래완료"
+          ],
+          "answer": 1,
+          "why": "will + 동사원형 = 미래",
+          "bookRef": {
+            "book": 2,
+            "page": 35,
+            "where": "review 1 item 12 (시제 이름)"
+          },
+          "fix": {
+            "from": "Do as I tell you, you shall live.",
+            "field": "sentence",
+            "kind": "english_grammar",
+            "why": "and 를 넣고 shall 을 will 로 고친 문장(pg11-1:p14 와 같음)."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg11-1:s14",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "If I visit LA again, I will have been there twice.",
+          "underline": [
+            "will have been"
+          ],
+          "options": [
+            "미래",
+            "미래완료",
+            "현재완료"
+          ],
+          "answer": 1,
+          "why": "will have + 과거분사 = 미래완료",
+          "bookRef": {
+            "book": 2,
+            "page": 35,
+            "where": "review 1 item 13 (시제 이름)"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg11-1:s15",
+          "kind": "choice",
+          "instruction": "밑줄 친 동사의 시제는?",
+          "sentence": "We will have been living here twenty-six years next year.",
+          "underline": [
+            "will have been living"
+          ],
+          "options": [
+            "미래진행",
+            "미래완료",
+            "미래완료진행"
+          ],
+          "answer": 2,
+          "why": "will have been + -ing = 미래완료진행",
+          "bookRef": {
+            "book": 2,
+            "page": 35,
+            "where": "review 1 item 14 (시제 이름)"
+          },
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg11-1:p1",
+          "ko": "나는 서울에서 살고 있다.",
+          "koSource": "review 4 item 1",
+          "condition": "현재형으로",
+          "promptEn": null,
+          "en": "I live in Seoul.",
+          "accept": [],
+          "targets": [
+            [
+              "live"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I am living in Seoul",
+              "hint": "조건은 현재형이에요. 사는 곳 같은 지금의 사실은 보통 -ing 없이 기본 현재형으로 말해요."
+            },
+            {
+              "match": "I lives",
+              "hint": "주어가 I 면 동사에 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "present-simple",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s1-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 1",
+            "reviewWhere": "review 4 item 1 (p39)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg11-1:p2",
+          "ko": "내 여동생은 한국 초등학교에 다닌다.",
+          "koSource": "review 4 item 2 (고침)",
+          "condition": "현재형으로",
+          "promptEn": null,
+          "en": "My sister attends Hanguk Elementary School.",
+          "accept": [
+            "My sister attends Hankuk Elementary School.",
+            "My sister attends Korea Elementary School.",
+            "My sister attends Korean Elementary School.",
+            "My sister goes to Hanguk Elementary School.",
+            "My sister goes to Hankuk Elementary School.",
+            "My sister goes to Korea Elementary School.",
+            "My sister goes to Korean Elementary School.",
+            "My sister attends a Korean elementary school.",
+            "My sister goes to a Korean elementary school.",
+            "My younger sister attends Hanguk Elementary School.",
+            "My younger sister attends Hankuk Elementary School.",
+            "My younger sister attends Korea Elementary School.",
+            "My younger sister attends Korean Elementary School.",
+            "My younger sister goes to Hanguk Elementary School.",
+            "My younger sister goes to Hankuk Elementary School.",
+            "My younger sister goes to Korea Elementary School.",
+            "My younger sister goes to Korean Elementary School.",
+            "My younger sister attends a Korean elementary school.",
+            "My younger sister goes to a Korean elementary school.",
+            "My little sister attends Hanguk Elementary School.",
+            "My little sister attends Hankuk Elementary School.",
+            "My little sister attends Korea Elementary School.",
+            "My little sister attends Korean Elementary School.",
+            "My little sister goes to Hanguk Elementary School.",
+            "My little sister goes to Hankuk Elementary School.",
+            "My little sister goes to Korea Elementary School.",
+            "My little sister goes to Korean Elementary School.",
+            "My little sister attends a Korean elementary school.",
+            "My little sister goes to a Korean elementary school."
+          ],
+          "targets": [
+            [
+              "attends",
+              "goes"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sister attend",
+              "hint": "My sister 는 3인칭 한 명이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "sister go to",
+              "hint": "My sister 는 3인칭 한 명이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "attends to",
+              "hint": "'~에 다니다'의 attend 는 전치사 없이 바로 학교를 써요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "present-simple",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-5",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 2",
+            "reviewWhere": "review 1 item 2 (p34) · review 4 item 2 (p39)"
+          },
+          "fix": {
+            "from": "My sister attends 한국elementary school.",
+            "fromKo": "내 누이는 한국 초등학교에 다닌다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "영어 문장 속 한글 '한국'을 로마자 Hanguk 으로 바꾸고, 학교 이름이라 대문자로 썼습니다(STUDENT 2-5 원문 'My sister attends (School Name) Elementary School.'의 학교 이름 자리). 한국어 이름이라 발음 기호가 필요합니다(koreanWords). 한국어 '내 누이는'은 요즘 잘 쓰지 않는 말이라, 초등학교에 다니는 동생을 가리키는 STUDENT 2-5 한국어처럼 '내 여동생은'으로 다듬었습니다(My younger · little sister 로 쓴 답도 정답)."
+          }
+        },
+        {
+          "id": "pg11-1:p3",
+          "ko": "그들은 피아노를 친다.",
+          "koSource": "review 4 item 3",
+          "condition": "현재형으로",
+          "promptEn": null,
+          "en": "They play the piano.",
+          "accept": [
+            "They play piano."
+          ],
+          "targets": [
+            [
+              "play"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "They plays",
+              "hint": "They 는 여럿이라 동사에 -s 를 붙이지 않아요."
+            },
+            {
+              "match": "They are playing",
+              "hint": "조건은 현재형이에요. 평소에 하는 일은 -ing 없이 기본 현재형으로 써요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "present-simple",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 3",
+            "reviewWhere": "review 4 item 3 (p39)"
+          },
+          "fix": null,
+          "note": "관사 없는 play piano 는 미국 영어에서 흔히 쓰는 맞는 표현이라 허용 답으로 받습니다(모범 답은 학교 문법대로 the piano)."
+        },
+        {
+          "id": "pg11-1:p4",
+          "ko": "그녀는 모든 종류의 동물을 좋아한다.",
+          "koSource": "review 4 item 4",
+          "condition": "현재형으로",
+          "promptEn": null,
+          "en": "She likes all kinds of animals.",
+          "accept": [
+            "She likes every kind of animal.",
+            "She likes all sorts of animals.",
+            "She likes all types of animals.",
+            "She likes every type of animal."
+          ],
+          "targets": [
+            [
+              "likes"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "She like all",
+              "hint": "She 는 3인칭 한 명이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "all kind of",
+              "hint": "'모든 종류'는 여러 종류라 kind 도 여럿의 모양이에요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "present-simple",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-6",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 4",
+            "reviewWhere": "review 4 item 4 (p39)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg11-1:p5",
+          "ko": "우리는 지금 영어 공부를 하는 중이다.",
+          "koSource": "review 4 item 5",
+          "condition": "현재진행형으로",
+          "promptEn": null,
+          "en": "We are studying English now.",
+          "accept": [
+            "Now we are studying English.",
+            "We are studying English right now.",
+            "Right now, we are studying English."
+          ],
+          "targets": [
+            [
+              "are studying"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "We study English now",
+              "hint": "조건은 현재진행형이에요. '~하는 중'은 be + -ing 로 써요."
+            },
+            {
+              "match": "We are study",
+              "hint": "be 뒤에서 '하는 중'은 동사에 -ing 를 붙여요."
+            },
+            {
+              "match": "We studying",
+              "hint": "'~하는 중'에는 be동사가 함께 있어야 해요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 5",
+            "reviewWhere": "review 1 item 3 (p34) · review 4 item 5 (p39)"
+          },
+          "fix": {
+            "from": "We are studying English, now.",
+            "kind": "english_grammar",
+            "why": "문장 끝 now 앞의 쉼표는 필요 없어 뺐습니다."
+          }
+        },
+        {
+          "id": "pg11-1:p6",
+          "ko": "제인은 막 그 방 청소를 끝냈다.",
+          "koSource": "review 4 item 6",
+          "condition": "현재완료형으로",
+          "promptEn": null,
+          "en": "Jane has just finished cleaning the room.",
+          "accept": [
+            "Jane has just cleaned the room.",
+            "Jane has just finished cleaning up the room.",
+            "Jane has just cleaned up the room.",
+            "Jane's just finished cleaning the room.",
+            "Jane's just cleaned the room.",
+            "Jane's just finished cleaning up the room.",
+            "Jane's just cleaned up the room."
+          ],
+          "targets": [
+            [
+              "has just finished",
+              "has just cleaned",
+              "Jane's just finished",
+              "Jane's just cleaned"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "just now",
+              "hint": "just now(조금 전)는 지난 때를 콕 집는 말이라 현재완료와 함께 쓰지 않아요. '막'을 나타낼 다른 자리를 찾아보세요."
+            },
+            {
+              "match": "Jane finished cleaning",
+              "hint": "조건은 현재완료형이에요. has + p.p. 로 써 보세요."
+            },
+            {
+              "match": "Jane just finished",
+              "hint": "조건은 현재완료형이에요. has + p.p. 로 써 보세요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "finished cleaning 의 동명사(pg13-3)는 허용 답 'Jane has just cleaned the room.'으로 피할 수 있어 도전으로 두지 않고 태그에서 뺌.",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 6",
+            "reviewWhere": "review 1 item 4 (p34) · review 4 item 6 (p39)"
+          },
+          "fix": {
+            "from": "Jane has finished cleaning the room just now.",
+            "kind": "english_grammar",
+            "why": "just now(조금 전)는 과거 시점 부사라 현재완료와 함께 쓰지 않습니다. '막'은 has 와 과거분사 사이의 just 로 고쳤습니다(한국어는 그대로 맞음)."
+          }
+        },
+        {
+          "id": "pg11-1:p7",
+          "ko": "나는 지금까지 3년간 영어를 공부해 오고 있다.",
+          "koSource": "review 4 item 7",
+          "condition": "현재완료진행형으로",
+          "promptEn": null,
+          "en": "I have been studying English for three years so far.",
+          "accept": [
+            "I have been studying English for 3 years so far.",
+            "I have been studying English for three years.",
+            "I have been studying English for 3 years.",
+            "So far, I have been studying English for three years.",
+            "So far, I have been studying English for 3 years."
+          ],
+          "targets": [
+            [
+              "have been studying"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I have studied English",
+              "hint": "조건은 현재완료진행형이에요. 지금도 계속하는 일은 have been + -ing 로 써요."
+            },
+            {
+              "match": "I am studying English for",
+              "hint": "과거부터 지금까지 이어지는 일은 현재진행형이 아니라 완료진행형으로 써요."
+            },
+            {
+              "match": "for three year",
+              "hint": "3년이니 year 는 여럿의 모양이에요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s1-5",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 7",
+            "reviewWhere": "review 1 item 5 (p34) · review 4 item 7 (p39)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg11-1:p8",
+          "ko": "그는 한국의 건국자가 되었습니다.",
+          "koSource": "student:s17-1#6",
+          "condition": "과거형으로",
+          "promptEn": null,
+          "en": "He became the founder of Korea.",
+          "accept": [
+            "He became Korea's founder."
+          ],
+          "targets": [
+            [
+              "became"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He becomes",
+              "hint": "'되었습니다'는 지난 일이에요. 과거형으로 써요."
+            },
+            {
+              "match": "He has become",
+              "hint": "조건은 과거형이에요. 지난 일을 그대로 말하는 모양으로 써요."
+            },
+            {
+              "match": "becamed",
+              "hint": "become 의 과거형은 불규칙이에요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "past-simple",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s17-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 8",
+            "reviewWhere": "review 1 item 6 (p34) · review 4 item 8 (p39)"
+          },
+          "fix": {
+            "fromKo": "그는 한국의 창립자가 되었다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'창립자'는 회사·단체에 쓰는 말이라 나라에는 '건국자'가 맞습니다. STUDENT 17-1 과 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다."
+          }
+        },
+        {
+          "id": "pg11-1:p9",
+          "ko": "그들은 일본의 지배에 맞서 싸웠다.",
+          "koSource": "review 4 item 9 (고침)",
+          "condition": "과거형으로",
+          "promptEn": null,
+          "en": "They fought against Japanese rule.",
+          "accept": [
+            "They fought against Japan's rule.",
+            "They fought Japanese rule.",
+            "They fought against the rule of Japan.",
+            "They fought against the Japanese rule."
+          ],
+          "targets": [
+            [
+              "fought"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "fighted",
+              "hint": "fight 의 과거형은 불규칙이에요."
+            },
+            {
+              "match": "They have fought",
+              "hint": "조건은 과거형이에요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "past-simple",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s17-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 9",
+            "reviewWhere": "review 1 item 7 (p34) · review 4 item 9 (p39)"
+          },
+          "fix": {
+            "from": "They fought against the Japanese rule.",
+            "fromKo": "그들은 일본의 지배에 맞서 싸워왔다.",
+            "field": "en+ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 단순과거(교재 꼬리표도 '과거')인데 한국어 '싸워왔다'는 현재완료처럼 읽혀 '싸웠다'로 고쳤습니다. 일제의 지배를 뜻하는 rule 앞의 the 는 어색해 STUDENT 17-3 원문(fought against Japanese rule)처럼 뺐습니다. 다만 the 를 넣은 교재 판도 틀린 영어가 아니라(덜 자연스러운 글) 허용 답으로 받습니다."
+          }
+        },
+        {
+          "id": "pg11-1:p10",
+          "ko": "그는 그때 정원에 물을 주고 있었다.",
+          "koSource": "review 4 item 10",
+          "condition": "과거진행형으로",
+          "promptEn": null,
+          "en": "He was watering the garden then.",
+          "accept": [
+            "He was watering the garden at that time.",
+            "At that time, he was watering the garden.",
+            "He was watering the garden at the time.",
+            "At the time, he was watering the garden."
+          ],
+          "targets": [
+            [
+              "was watering"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He watered the garden",
+              "hint": "조건은 과거진행형이에요. '~하고 있었다'는 was + -ing 로 써요."
+            },
+            {
+              "match": "He is watering",
+              "hint": "'그때 ~하고 있었다'는 지난 일이에요."
+            },
+            {
+              "match": "He was water the",
+              "hint": "was 뒤에서 '하는 중'은 동사에 -ing 를 붙여요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 10",
+            "reviewWhere": "review 1 item 8 (p35) · review 4 item 10 (p39)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg11-1:p11",
+          "ko": "그녀는 결혼하기 전에 수년 동안 백화점에서 일했었다.",
+          "koSource": "review 4 item 11 (고침)",
+          "condition": "과거완료형으로",
+          "promptEn": null,
+          "en": "She had worked at a department store for several years before she got married.",
+          "accept": [
+            "She had worked at a department store for several years before she married.",
+            "She had worked at a department store for several years before getting married.",
+            "She had worked at a department store for a few years before she got married.",
+            "She had worked at a department store for a few years before she married.",
+            "She had worked at a department store for a few years before getting married.",
+            "She had worked in a department store for several years before she got married.",
+            "She had worked in a department store for several years before she married.",
+            "She had worked in a department store for several years before getting married.",
+            "She had worked in a department store for a few years before she got married.",
+            "She had worked in a department store for a few years before she married.",
+            "She had worked in a department store for a few years before getting married.",
+            "She had worked for a department store for several years before she got married.",
+            "She had worked for a department store for several years before she married.",
+            "She had worked for a department store for several years before getting married.",
+            "She had worked for a department store for a few years before she got married.",
+            "She had worked for a department store for a few years before she married.",
+            "She had worked for a department store for a few years before getting married.",
+            "Before she got married, she had worked at a department store for several years.",
+            "Before she got married, she had worked at a department store for a few years.",
+            "Before she got married, she had worked in a department store for several years.",
+            "Before she got married, she had worked in a department store for a few years.",
+            "Before she got married, she had worked for a department store for several years.",
+            "Before she got married, she had worked for a department store for a few years.",
+            "Before she married, she had worked at a department store for several years.",
+            "Before she married, she had worked at a department store for a few years.",
+            "Before she married, she had worked in a department store for several years.",
+            "Before she married, she had worked in a department store for a few years.",
+            "Before she married, she had worked for a department store for several years.",
+            "Before she married, she had worked for a department store for a few years."
+          ],
+          "targets": [
+            [
+              "had worked"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "She worked at a department store",
+              "hint": "조건은 과거완료형이에요. 결혼보다 더 앞선 일은 had + p.p. 로 써요."
+            },
+            {
+              "match": "She worked in a department store",
+              "hint": "조건은 과거완료형이에요. 결혼보다 더 앞선 일은 had + p.p. 로 써요."
+            },
+            {
+              "match": "She has worked",
+              "hint": "결혼하기 전의 일이라 지금까지 이어지는 현재완료가 아니에요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 11",
+            "reviewWhere": "review 1 item 9 (p35) · review 4 item 11 (p39)"
+          },
+          "fix": {
+            "from": "She had worked at a department store for several years.",
+            "fromKo": "그녀는 수 년 동안 백화점에서 일했었다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "과거완료는 과거의 어느 때보다 앞선 일을 말하는데, 기준이 되는 과거 시점 없이 홀로 쓰여 부자연스럽습니다(한국어 '-었었-'처럼 '오래전 일'로 잘못 배우기 쉬움). STUDENT 2-3 에서 이 사람(어머니)은 지금 가정주부라 기준 시점 before she got married 를 더했고, 한국어도 맞추면서 '수년'을 붙여 썼습니다."
+          }
+        },
+        {
+          "id": "pg11-1:p12",
+          "ko": "내가 그를 만났을 때, 그는 2년째 군 복무를 하고 있었다.",
+          "koSource": "review 4 item 12 (고침)",
+          "condition": "과거완료진행형으로",
+          "promptEn": null,
+          "en": "He had been doing his military service for two years when I met him.",
+          "accept": [
+            "He had been doing his military service for 2 years when I met him.",
+            "He had been doing military service for two years when I met him.",
+            "He had been doing military service for 2 years when I met him.",
+            "He had been serving in the military for two years when I met him.",
+            "He had been serving in the military for 2 years when I met him.",
+            "He had been serving in the army for two years when I met him.",
+            "He had been serving in the army for 2 years when I met him.",
+            "When I met him, he had been doing his military service for two years.",
+            "When I met him, he had been doing his military service for 2 years.",
+            "When I met him, he had been doing military service for two years.",
+            "When I met him, he had been doing military service for 2 years.",
+            "When I met him, he had been serving in the military for two years.",
+            "When I met him, he had been serving in the military for 2 years.",
+            "When I met him, he had been serving in the army for two years.",
+            "When I met him, he had been serving in the army for 2 years."
+          ],
+          "targets": [
+            [
+              "had been doing",
+              "had been serving"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "had been having",
+              "hint": "'군 복무를 하다'에는 have 를 쓰지 않아요. 다른 동사를 떠올려 보세요."
+            },
+            {
+              "match": "He was doing his military service",
+              "hint": "조건은 과거완료진행형이에요. 만난 때까지 이어져 온 일은 had been + -ing 로 써요."
+            },
+            {
+              "match": "when I have met",
+              "hint": "'만났을 때'는 지난 한때라 과거형으로 써요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 12",
+            "reviewWhere": "review 1 item 10 (p35) · review 4 item 12 (p40)"
+          },
+          "fix": {
+            "from": "He had been having a military service for two years when I met him.",
+            "fromKo": "그는 내가 그를 만났을 때, 2년 동안 군 복무 중이었다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "'have a military service'는 쓰지 않는 표현입니다. '군 복무를 하다'는 do one's military service(또는 serve in the military)라 고쳤습니다. 한국어 '그는 내가 그를 만났을 때'는 영어 대명사를 그대로 옮긴 번역투이고 만난 때까지 2년이 이어졌다는 뜻(had been … for two years)도 흐려서 '내가 그를 만났을 때, 그는 2년째 군 복무를 하고 있었다.'로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg11-1:p13",
+          "ko": "그의 꿈은 실현될 것이다.",
+          "koSource": "review 4 item 13",
+          "condition": "미래형으로",
+          "promptEn": null,
+          "en": "His dream will come true.",
+          "accept": [
+            "His dream is going to come true.",
+            "His dream will be realized.",
+            "His dream will be fulfilled.",
+            "His dream's going to come true."
+          ],
+          "targets": [
+            [
+              "will",
+              "is going to",
+              "dream's going to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "His dream will comes",
+              "hint": "will 뒤에는 동사원형을 써요."
+            },
+            {
+              "match": "His dream will be come true",
+              "hint": "will 과 come 사이에 be 를 넣지 않아요."
+            },
+            {
+              "match": "His dream comes true",
+              "hint": "'실현될 것이다'는 앞으로의 일이에요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 13",
+            "reviewWhere": "review 1 item 11 (p35) · review 4 item 13 (p40)"
+          },
+          "fix": {
+            "from": "His dream will come true",
+            "kind": "layout_or_extraction",
+            "why": "Application 줄에 마침표가 빠졌고 과 표시(4과)도 틀렸습니다 — 이 문장은 STUDENT 3-4 에 있습니다(studentRef s3-4)."
+          }
+        },
+        {
+          "id": "pg11-1:p14",
+          "ko": "내가 말한 대로 하라, 그러면 네가 살 것이다.",
+          "koSource": "review 4 item 14",
+          "condition": "미래형으로",
+          "promptEn": null,
+          "en": "Do as I tell you, and you will live.",
+          "accept": [
+            "Do as I tell you, and you shall live.",
+            "Do as I say, and you will live.",
+            "Do as I say, and you shall live.",
+            "Do what I tell you, and you will live.",
+            "Do what I tell you, and you shall live.",
+            "Do what I say, and you will live.",
+            "Do what I say, and you shall live.",
+            "Do as I told you, and you will live.",
+            "Do what I told you, and you will live.",
+            "If you do as I tell you, you will live.",
+            "If you do as I tell you, you shall live.",
+            "If you do what I tell you, you will live.",
+            "If you do what I tell you, you shall live.",
+            "If you do as I say, you will live.",
+            "If you do as I say, you shall live.",
+            "If you do what I say, you will live.",
+            "If you do what I say, you shall live.",
+            "If you do as I told you, you will live.",
+            "If you do what I told you, you will live."
+          ],
+          "targets": [
+            [
+              "will",
+              "shall"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "you live",
+              "hint": "'살 것이다'는 앞으로의 일이에요. 조건대로 미래형으로 써 보세요."
+            },
+            {
+              "match": "If you will do",
+              "hint": "조건을 나타내는 if 절에서는 앞으로의 일도 현재형으로 써요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "future-will",
+            "imperative",
+            "compound-sentence",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 14",
+            "reviewWhere": "review 1 item 12 (p35) · review 4 item 14 (p40)"
+          },
+          "fix": {
+            "from": "Do as I tell you, you shall live.",
+            "kind": "english_grammar",
+            "why": "명령문과 결과를 쉼표만으로 이은 문장이라 '명령문, and ~' 꼴로 and 를 넣었습니다. 또 2인칭 you shall 은 말하는 사람의 의지·약속을 나타내는 옛 말투라 '미래' 예문에 맞게 will 로 바꿨습니다(shall 로 쓴 답도 정답)."
+          }
+        },
+        {
+          "id": "pg11-1:p15",
+          "ko": "그는 내일 이맘때 정원에 물을 주고 있을 것이다.",
+          "koSource": "new",
+          "condition": "미래진행형으로",
+          "promptEn": null,
+          "en": "He will be watering the garden at this time tomorrow.",
+          "accept": [
+            "He will be watering the garden this time tomorrow.",
+            "At this time tomorrow, he will be watering the garden.",
+            "This time tomorrow, he will be watering the garden.",
+            "He will be watering the garden tomorrow at this time.",
+            "Tomorrow at this time, he will be watering the garden.",
+            "He will be watering the garden around this time tomorrow.",
+            "He will be watering the garden about this time tomorrow.",
+            "Around this time tomorrow, he will be watering the garden.",
+            "About this time tomorrow, he will be watering the garden."
+          ],
+          "targets": [
+            [
+              "will be watering"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He will water the garden",
+              "hint": "조건은 미래진행형이에요. '~하고 있을 것이다'는 will be + -ing 로 써요."
+            },
+            {
+              "match": "He will watering",
+              "hint": "will 과 -ing 사이에 들어갈 말이 빠졌어요."
+            },
+            {
+              "match": "He is watering",
+              "hint": "내일 이맘때의 일이에요. 앞으로의 진행을 나타내는 모양으로 써요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 28,
+            "where": "passOff (1) 12시제 — 교재에 없는 미래진행 보충"
+          },
+          "fix": null,
+          "source": "new",
+          "note": "교재 (1) 12시제에 미래진행 예문이 없어 보충했습니다(설계 §2 pg11-1 · 교재 오류 후보 p28 '(1) 12시제'). 과거진행 예문 He was watering the garden then. 과 짝을 이룹니다."
+        },
+        {
+          "id": "pg11-1:p16",
+          "ko": "내가 LA를 다시 방문하면, 나는 그곳에 두 번 가 본 셈이 될 것이다.",
+          "koSource": "review 4 item 15 (고침)",
+          "condition": "미래완료형으로",
+          "promptEn": null,
+          "en": "If I visit LA again, I will have been there twice.",
+          "accept": [
+            "If I visit Los Angeles again, I will have been there twice.",
+            "If I go to LA again, I will have been there twice.",
+            "If I go to Los Angeles again, I will have been there twice.",
+            "When I visit LA again, I will have been there twice.",
+            "When I visit Los Angeles again, I will have been there twice.",
+            "When I go to LA again, I will have been there twice.",
+            "When I go to Los Angeles again, I will have been there twice.",
+            "If I visit LA again, I will have been there two times.",
+            "If I visit Los Angeles again, I will have been there two times.",
+            "If I go to LA again, I will have been there two times.",
+            "If I go to Los Angeles again, I will have been there two times.",
+            "When I visit LA again, I will have been there two times.",
+            "When I visit Los Angeles again, I will have been there two times.",
+            "When I go to LA again, I will have been there two times.",
+            "When I go to Los Angeles again, I will have been there two times."
+          ],
+          "targets": [
+            [
+              "will have been"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "If I will visit",
+              "hint": "조건을 나타내는 if 절에서는 앞으로의 일도 현재형으로 써요."
+            },
+            {
+              "match": "will have gone there",
+              "hint": "'가 본 적이 있다'(경험)는 have gone 이 아닌 다른 모양으로 써요."
+            },
+            {
+              "match": "I will be there twice",
+              "hint": "조건은 미래완료형이에요. will have + p.p. 로 써요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "present-past-uses",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 15",
+            "reviewWhere": "review 1 item 13 (p35) · review 4 item 15 (p40)"
+          },
+          "fix": {
+            "fromKo": "만약 내가 다시 LA를 방문한다면, 나는 그곳에 두 번째 방문이 될 것이다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'나는 … 방문이 될 것이다'는 주어와 서술어가 맞지 않는 비문이고, will have been there twice(두 번 가 본 셈이 된다)의 뜻도 살지 않아 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg11-1:p17",
+          "ko": "내년이면 우리는 여기서 26년째 살고 있는 셈이 될 것이다.",
+          "koSource": "review 4 item 16 (고침)",
+          "condition": "미래완료진행형으로",
+          "promptEn": null,
+          "en": "We will have been living here twenty-six years next year.",
+          "accept": [
+            "We will have been living here twenty-six years by next year.",
+            "We will have been living here 26 years next year.",
+            "We will have been living here 26 years by next year.",
+            "We will have been living here for twenty-six years next year.",
+            "We will have been living here for twenty-six years by next year.",
+            "We will have been living here for 26 years next year.",
+            "We will have been living here for 26 years by next year.",
+            "Next year, we will have been living here twenty-six years.",
+            "Next year, we will have been living here 26 years.",
+            "Next year, we will have been living here for twenty-six years.",
+            "Next year, we will have been living here for 26 years.",
+            "By next year, we will have been living here twenty-six years.",
+            "By next year, we will have been living here 26 years.",
+            "By next year, we will have been living here for twenty-six years.",
+            "By next year, we will have been living here for 26 years."
+          ],
+          "targets": [
+            [
+              "will have been living"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "We will have lived here",
+              "hint": "조건은 미래완료진행형이에요. 계속 이어지는 일은 have been + -ing 로 써요."
+            },
+            {
+              "match": "We will be living here",
+              "hint": "내년까지 이어져 온 기간을 말해요. 완료의 모양(have)이 들어가야 해요."
+            },
+            {
+              "match": "twenty six year next",
+              "hint": "26년이니 year 는 여럿의 모양으로 써요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 16",
+            "reviewWhere": "review 1 item 14 (p35) · review 4 item 16 (p40)"
+          },
+          "fix": {
+            "fromKo": "우리는 내년이 되면 여기서 26년간 살아오는 것이다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "어색한 직역이라 미래완료진행의 뜻(내년이면 26년째 살고 있는 셈)이 드러나게 고쳤습니다. 영어는 for 가 없어도 맞는 문장이라 그대로 두고, for · by next year 를 넣은 답도 정답으로 받습니다."
+          }
+        },
+        {
+          "id": "pg11-1:p18",
+          "ko": "저기 그가 온다.",
+          "koSource": "review 4 item 17 (고침)",
+          "condition": "Here로 시작해서",
+          "promptEn": null,
+          "en": "Here he comes.",
+          "accept": [],
+          "targets": [
+            [
+              "comes"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Here comes he",
+              "hint": "주어가 he 같은 대명사일 때는 Here 뒤의 순서가 어떻게 될까요?"
+            },
+            {
+              "match": "Here he is coming",
+              "hint": "눈앞의 짧은 동작을 Here 로 말할 때는 기본 현재형을 써요."
+            },
+            {
+              "match": "He comes here",
+              "hint": "뜻은 비슷해요. 이번에는 조건대로 Here 로 시작해 보세요."
+            }
+          ],
+          "tags": [
+            "present-past-uses",
+            "sentence-pattern-1"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 31,
+            "where": "application item 17",
+            "reviewWhere": "review 4 item 17 (p40)"
+          },
+          "fix": {
+            "fromKo": "여기로 그가 온다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "Here he comes. 는 다가오는 사람을 보며 하는 말이라 '저기 그가 온다'가 자연스럽습니다."
+          }
+        },
+        {
+          "id": "pg11-1:p19",
+          "ko": "나는 매일 아침 6시에 일어납니다.",
+          "koSource": "student:s9-1#2",
+          "condition": null,
+          "promptEn": null,
+          "en": "I get up at six o’clock every morning.",
+          "accept": [
+            "I get up at 6 o'clock every morning.",
+            "I get up at six every morning.",
+            "I get up at 6 every morning.",
+            "I get up at 6:00 every morning.",
+            "I wake up at six o'clock every morning.",
+            "I wake up at 6 o'clock every morning.",
+            "I wake up at six every morning.",
+            "I wake up at 6 every morning.",
+            "I wake up at 6:00 every morning.",
+            "Every morning, I get up at six o'clock.",
+            "Every morning, I get up at 6 o'clock.",
+            "Every morning, I get up at six.",
+            "Every morning, I get up at 6.",
+            "Every morning, I wake up at six o'clock.",
+            "Every morning, I wake up at 6 o'clock.",
+            "Every morning, I wake up at six.",
+            "Every morning, I wake up at 6.",
+            "I get up at 6 a.m. every morning.",
+            "I get up at six a.m. every morning.",
+            "I wake up at 6 a.m. every morning.",
+            "I wake up at six a.m. every morning.",
+            "Every morning, I get up at 6 a.m.",
+            "Every morning, I get up at six a.m.",
+            "Every morning, I wake up at 6 a.m.",
+            "Every morning, I wake up at six a.m."
+          ],
+          "targets": [
+            [
+              "get up",
+              "wake up"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I got up at",
+              "hint": "매일 되풀이하는 습관은 현재형으로 써요."
+            },
+            {
+              "match": "I am getting up",
+              "hint": "매일 하는 습관은 -ing 없이 기본 현재형으로 써요."
+            },
+            {
+              "match": "in every morning",
+              "hint": "every morning 앞에는 전치사를 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "present-past-uses",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s9-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 18 (9과)",
+            "reviewWhere": "review 4 item 18 (p40)"
+          },
+          "fix": {
+            "fromKo": "나는 매일 아침 6시에 일어난다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT 9-1 과 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(교재 한국어가 틀린 것은 아님)."
+          }
+        },
+        {
+          "id": "pg11-1:p20",
+          "ko": "지구는 태양 주위를 돈다.",
+          "koSource": "review 4 item 19 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "The earth moves round the sun.",
+          "accept": [
+            "The earth moves around the sun.",
+            "The earth goes round the sun.",
+            "The earth goes around the sun.",
+            "The earth revolves round the sun.",
+            "The earth revolves around the sun.",
+            "The earth orbits the sun.",
+            "The earth orbits around the sun."
+          ],
+          "targets": [
+            [
+              "moves",
+              "goes",
+              "revolves",
+              "orbits"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "The earth moved",
+              "hint": "언제나 맞는 사실(진리)은 현재형으로 써요."
+            },
+            {
+              "match": "The earth is moving",
+              "hint": "변하지 않는 진리는 -ing 없이 기본 현재형으로 써요."
+            },
+            {
+              "match": "The earth move",
+              "hint": "The earth 는 3인칭 하나예요. 동사 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "present-past-uses",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 19",
+            "reviewWhere": "review 4 item 19 (p40)"
+          },
+          "fix": {
+            "fromKo": "지구는 태양 주변을 움직인다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "moves round the sun 은 태양 주위를 도는 것(공전)이라 '태양 주위를 돈다'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg11-1:p21",
+          "ko": "1950년 북쪽의 군대가 남쪽을 침략하면서 한국 전쟁이 일어났습니다.",
+          "koSource": "student:s17-3#5",
+          "condition": null,
+          "promptEn": null,
+          "en": "The Korean War broke out in 1950 when armies from the North invaded the South.",
+          "accept": [
+            "A civil war broke out in 1950 when armies from the North invaded the South.",
+            "A civil war broke out in 1950 when the armies from the North invaded the South.",
+            "A civil war broke out in 1950 when the army from the North invaded the South.",
+            "A civil war broke out in 1950 when an army from the North invaded the South.",
+            "A civil war started in 1950 when armies from the North invaded the South.",
+            "A civil war started in 1950 when the armies from the North invaded the South.",
+            "A civil war started in 1950 when the army from the North invaded the South.",
+            "A civil war started in 1950 when an army from the North invaded the South.",
+            "A civil war began in 1950 when armies from the North invaded the South.",
+            "A civil war began in 1950 when the armies from the North invaded the South.",
+            "A civil war began in 1950 when the army from the North invaded the South.",
+            "A civil war began in 1950 when an army from the North invaded the South.",
+            "The Korean War broke out in 1950 when the armies from the North invaded the South.",
+            "The Korean War broke out in 1950 when the army from the North invaded the South.",
+            "The Korean War broke out in 1950 when an army from the North invaded the South.",
+            "The Korean War started in 1950 when armies from the North invaded the South.",
+            "The Korean War started in 1950 when the armies from the North invaded the South.",
+            "The Korean War started in 1950 when the army from the North invaded the South.",
+            "The Korean War started in 1950 when an army from the North invaded the South.",
+            "The Korean War began in 1950 when armies from the North invaded the South.",
+            "The Korean War began in 1950 when the armies from the North invaded the South.",
+            "The Korean War began in 1950 when the army from the North invaded the South.",
+            "The Korean War began in 1950 when an army from the North invaded the South.",
+            "In 1950, a civil war broke out when armies from the North invaded the South.",
+            "In 1950, the Korean War broke out when armies from the North invaded the South.",
+            "The Korean War broke out in 1950 when the army of the North invaded the South.",
+            "The Korean War broke out in 1950 when the armies of the North invaded the South.",
+            "The Korean War broke out in 1950 when the North's army invaded the South.",
+            "The Korean War broke out in 1950 when North Korean armies invaded the South.",
+            "The Korean War started in 1950 when the army of the North invaded the South.",
+            "The Korean War started in 1950 when the armies of the North invaded the South.",
+            "The Korean War started in 1950 when the North's army invaded the South.",
+            "The Korean War started in 1950 when North Korean armies invaded the South.",
+            "The Korean War began in 1950 when the army of the North invaded the South.",
+            "The Korean War began in 1950 when the armies of the North invaded the South.",
+            "The Korean War began in 1950 when the North's army invaded the South.",
+            "The Korean War began in 1950 when North Korean armies invaded the South.",
+            "A civil war broke out in 1950 when the army of the North invaded the South.",
+            "A civil war broke out in 1950 when the armies of the North invaded the South.",
+            "A civil war broke out in 1950 when the North's army invaded the South.",
+            "A civil war broke out in 1950 when North Korean armies invaded the South.",
+            "A civil war started in 1950 when the army of the North invaded the South.",
+            "A civil war started in 1950 when the armies of the North invaded the South.",
+            "A civil war started in 1950 when the North's army invaded the South.",
+            "A civil war started in 1950 when North Korean armies invaded the South.",
+            "A civil war began in 1950 when the army of the North invaded the South.",
+            "A civil war began in 1950 when the armies of the North invaded the South.",
+            "A civil war began in 1950 when the North's army invaded the South.",
+            "A civil war began in 1950 when North Korean armies invaded the South."
+          ],
+          "targets": [
+            [
+              "broke out",
+              "started",
+              "began"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "breaked out",
+              "hint": "break 의 과거형은 불규칙이에요."
+            },
+            {
+              "match": "has broken out",
+              "hint": "1950년처럼 지난 때를 콕 집은 역사적 사실은 과거형으로 써요."
+            },
+            {
+              "match": "when armies from the North invade",
+              "hint": "지난 일이라 when 절의 동사도 과거형으로 써요."
+            }
+          ],
+          "tags": [
+            "present-past-uses",
+            "past-simple",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s17-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 21 (17과)",
+            "reviewWhere": "review 4 item 21 (p40)"
+          },
+          "fix": {
+            "from": "A civil war broke out in 1950 when armies from the North invaded the South.",
+            "fromKo": "북쪽에서의 군대들이 남한을 침략했던 1950년대에 전쟁이 발발했다.",
+            "field": "en+ko",
+            "kind": "student_version",
+            "why": "STUDENT 17-3 이 이미 고친 문장이라 영어·한국어 모두 지금 STUDENT 판을 씁니다(기존 클립 재사용). 교재 문장은 옛 man 과정 m17-3 과 글자까지 같고, STUDENT 는 09-17 감사의 사실 항목(High)으로 A civil war 를 The Korean War 로 고쳤습니다(docs/qa-2026-09-18/student-original-exceptions.json). 교재 한국어의 '1950년대' 오역과 어색한 '북쪽에서의 군대들'도 함께 풀립니다. D6 은 민감하다는 이유로 바꾸지 않는다는 결정이라 STUDENT 판에 맞추는 것을 막지 않습니다. 교재 판 A civil war … 는 문법이 맞아 허용 답으로 둡니다."
+          }
+        },
+        {
+          "id": "pg11-1:p22",
+          "ko": "빌은 항상 콜라를 마신다.",
+          "koSource": "review 4 item 22",
+          "condition": null,
+          "promptEn": null,
+          "en": "Bill always drinks Coke.",
+          "accept": [
+            "Bill always drinks cola.",
+            "Bill drinks Coke all the time.",
+            "Bill drinks cola all the time."
+          ],
+          "targets": [
+            [
+              "drinks"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Bill always drink",
+              "hint": "Bill 은 3인칭 한 명이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "Bill is always drinking",
+              "hint": "'항상 마신다'는 습관이에요. 습관은 기본 현재형으로 말해요."
+            },
+            {
+              "match": "Bill drinks always",
+              "hint": "always 는 보통 일반동사 앞에 둬요."
+            }
+          ],
+          "tags": [
+            "present-past-uses",
+            "present-simple",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 22",
+            "reviewWhere": "review 4 item 22 (p40)"
+          },
+          "fix": {
+            "from": "Bill always drinks coke.",
+            "kind": "english_unnatural",
+            "why": "상표 이름 Coke 는 대문자로 씁니다(소문자 coke 는 다른 뜻도 있음). 채점은 대소문자를 보지 않습니다."
+          }
+        },
+        {
+          "id": "pg11-1:p23",
+          "ko": "우리 아버지는 음악에 재능이 있으시다.",
+          "koSource": "review 4 item 23 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "My father has a talent for music.",
+          "accept": [
+            "My father has a gift for music.",
+            "My dad has a talent for music.",
+            "My dad has a gift for music.",
+            "Our father has a talent for music.",
+            "Our father has a gift for music.",
+            "My father is talented in music.",
+            "My father is talented at music.",
+            "My dad is talented in music.",
+            "My dad is talented at music.",
+            "My father has musical talent.",
+            "My father is gifted in music.",
+            "My father is musically talented.",
+            "My dad has musical talent.",
+            "My dad is gifted in music.",
+            "My dad is musically talented.",
+            "My father's talented in music.",
+            "My father's talented at music.",
+            "My father's gifted in music.",
+            "My father's musically talented.",
+            "My dad's talented in music.",
+            "My dad's talented at music.",
+            "My dad's gifted in music.",
+            "My dad's musically talented."
+          ],
+          "targets": [
+            [
+              "has",
+              "is",
+              "father's",
+              "dad's"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "My father have",
+              "hint": "My father 는 3인칭 한 명이에요. have 의 모양이 달라져요."
+            },
+            {
+              "match": "My father had a talent",
+              "hint": "'있으시다'는 지금의 일이에요. 현재형으로 써요."
+            },
+            {
+              "match": "talent in music",
+              "hint": "'~에 재능이 있다'는 talent 뒤에 쓰는 전치사가 정해져 있어요."
+            }
+          ],
+          "tags": [
+            "present-past-uses",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 23",
+            "reviewWhere": "review 4 item 23 (p40)"
+          },
+          "fix": {
+            "fromKo": "저의 아버지는 음악에 재능이 있으시다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "겸양의 '저의'와 해라체 '있으시다'가 섞여 말투가 맞지 않아 '우리 아버지는'으로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg11-1:p24",
+          "ko": "신은 지구상의 모든 것을 창조하셨다.",
+          "koSource": "review 4 item 24",
+          "condition": null,
+          "promptEn": null,
+          "en": "God created all things on earth.",
+          "accept": [
+            "God created all things on the earth.",
+            "God created everything on earth.",
+            "God created everything on the earth.",
+            "God created all the things on earth.",
+            "God created all the things on the earth.",
+            "God made all things on earth.",
+            "God made all things on the earth.",
+            "God made everything on earth.",
+            "God made everything on the earth.",
+            "God made all the things on earth.",
+            "God made all the things on the earth."
+          ],
+          "targets": [
+            [
+              "created",
+              "made"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "God creates",
+              "hint": "'창조하셨다'는 지난 일이에요. 과거형으로 써요."
+            },
+            {
+              "match": "God has created",
+              "hint": "지난 한때 일어난 일을 그대로 말할 때는 과거형으로 써요."
+            }
+          ],
+          "tags": [
+            "present-past-uses",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 24",
+            "reviewWhere": "review 4 item 24 (p41)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg11-1:p25",
+          "ko": "그는 파티에 자주 늦었다.",
+          "koSource": "review 4 item 25",
+          "condition": null,
+          "promptEn": null,
+          "en": "He was often late for parties.",
+          "accept": [
+            "He was often late to parties.",
+            "He was frequently late for parties.",
+            "He was frequently late to parties.",
+            "He often came late to parties.",
+            "He often arrived late at parties.",
+            "He often arrived late to parties."
+          ],
+          "targets": [
+            [
+              "was",
+              "came",
+              "arrived"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He is often late",
+              "hint": "'늦었다'는 지난 일이에요."
+            },
+            {
+              "match": "late at the party",
+              "hint": "'자주'와 한 번의 파티(the party)는 어울리지 않아요. 여러 번의 파티를 말해 보세요."
+            },
+            {
+              "match": "late for the party",
+              "hint": "'자주'와 한 번의 파티(the party)는 어울리지 않아요. 여러 번의 파티를 말해 보세요."
+            }
+          ],
+          "tags": [
+            "present-past-uses",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 25",
+            "reviewWhere": "review 4 item 25 (p41)"
+          },
+          "fix": {
+            "from": "He was often late at the party.",
+            "kind": "english_unnatural",
+            "why": "often(자주)과 한 번의 파티(the party)가 맞지 않고, '~에 늦다'는 late for 라 He was often late for parties. 로 고쳤습니다(한국어는 그대로 맞음)."
+          }
+        },
+        {
+          "id": "pg11-1:p26",
+          "ko": "나는 그가 웃는 것을 한 번도 듣지 못했다.",
+          "koSource": "review 4 item 26 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I never heard him laugh.",
+          "accept": [
+            "I never heard him laughing.",
+            "I never once heard him laugh.",
+            "I have never heard him laugh.",
+            "I have never heard him laughing."
+          ],
+          "targets": [
+            [
+              "heard"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I never hear him",
+              "hint": "'듣지 못했다'는 지난 일이에요. 과거형으로 써요."
+            },
+            {
+              "match": "heard him laughed",
+              "hint": "hear + 사람 뒤에는 동사원형(또는 -ing)을 써요. 목적어 뒤 동사 모양을 다시 보세요."
+            },
+            {
+              "match": "heard him to laugh",
+              "hint": "hear + 사람 뒤에는 to 없이 동사를 써요."
+            }
+          ],
+          "tags": [
+            "present-past-uses",
+            "past-simple",
+            "sentence-pattern-5",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 26",
+            "reviewWhere": "review 4 item 26 (p41)"
+          },
+          "fix": {
+            "fromKo": "나는 그가 웃는 것을 결코 들어본 적이 없었다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'들어본 적이 없었다'는 과거완료(had never heard)로 읽혀, 단순과거 heard 의 뜻에 맞게 '한 번도 듣지 못했다'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg11-1:p27",
+          "ko": "내가 성인이 되면, 나는 해외로 영어 공부를 하러 갈 계획이다.",
+          "koSource": "review 4 item 20 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "When I grow up, I plan on going abroad to study English in another country.",
+          "accept": [
+            "When I grow up, I plan on going abroad to study English.",
+            "When I grow up, I plan on going to another country to study English.",
+            "When I grow up, I plan on going overseas to study English.",
+            "When I grow up, I plan to go abroad to study English in another country.",
+            "When I grow up, I plan to go abroad to study English.",
+            "When I grow up, I plan to go to another country to study English.",
+            "When I grow up, I plan to go overseas to study English.",
+            "When I grow up, I am planning on going abroad to study English in another country.",
+            "When I grow up, I am planning on going abroad to study English.",
+            "When I grow up, I am planning on going to another country to study English.",
+            "When I grow up, I am planning on going overseas to study English.",
+            "When I grow up, I am planning to go abroad to study English in another country.",
+            "When I grow up, I am planning to go abroad to study English.",
+            "When I grow up, I am planning to go to another country to study English.",
+            "When I grow up, I am planning to go overseas to study English.",
+            "When I become an adult, I plan on going abroad to study English in another country.",
+            "When I become an adult, I plan on going abroad to study English.",
+            "When I become an adult, I plan on going to another country to study English.",
+            "When I become an adult, I plan on going overseas to study English.",
+            "When I become an adult, I plan to go abroad to study English in another country.",
+            "When I become an adult, I plan to go abroad to study English.",
+            "When I become an adult, I plan to go to another country to study English.",
+            "When I become an adult, I plan to go overseas to study English.",
+            "When I become an adult, I am planning on going abroad to study English in another country.",
+            "When I become an adult, I am planning on going abroad to study English.",
+            "When I become an adult, I am planning on going to another country to study English.",
+            "When I become an adult, I am planning on going overseas to study English.",
+            "When I become an adult, I am planning to go abroad to study English in another country.",
+            "When I become an adult, I am planning to go abroad to study English.",
+            "When I become an adult, I am planning to go to another country to study English.",
+            "When I become an adult, I am planning to go overseas to study English.",
+            "When I grow up, I am going to go abroad to study English.",
+            "When I grow up, I am going to go abroad to study English in another country.",
+            "When I grow up, I am going to go to another country to study English.",
+            "When I grow up, I am going to go overseas to study English.",
+            "When I become an adult, I am going to go abroad to study English.",
+            "When I become an adult, I am going to go abroad to study English in another country.",
+            "When I become an adult, I am going to go to another country to study English.",
+            "When I become an adult, I am going to go overseas to study English."
+          ],
+          "targets": [
+            [
+              "When I grow up",
+              "When I become"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "When I will grow up",
+              "hint": "때를 나타내는 when 절에서는 앞으로의 일도 현재형으로 써요."
+            },
+            {
+              "match": "When I will become",
+              "hint": "때를 나타내는 when 절에서는 앞으로의 일도 현재형으로 써요."
+            },
+            {
+              "match": "I plan on go",
+              "hint": "on 같은 전치사 뒤에는 동사에 -ing 를 붙여요."
+            }
+          ],
+          "tags": [
+            "present-past-uses",
+            "complex-sentence",
+            "infinitive"
+          ],
+          "challenge": true,
+          "challengeTags": [
+            "infinitive"
+          ],
+          "challengeNote": "to study(목적의 to부정사)는 pg13-1 부정사 — to 없이 같은 뜻을 만들기 어려워 도전. plan on going 의 동명사는 plan to go(허용 답)로 피할 수 있어 태그에서 뺌.",
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s16-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 20 (16과)",
+            "reviewWhere": "review 4 item 20 (p40)"
+          },
+          "fix": {
+            "fromKo": "내가 성인이 될 때, 나는 다른 나라로 영어를 공부하러 가는 계획을 세울 것이다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어 plan on going 은 지금 세워 둔 계획(현재)인데 한국어는 '계획을 세울 것이다'(미래)로 시제가 바뀌었고, When I grow up(때를 나타내는 절의 현재형이 미래를 대신)의 요점도 흐려져 고쳤습니다. 영어의 abroad · in another country 겹침은 STUDENT 16-3 원문에도 있는 말이라 그대로 둡니다. 한국어는 STUDENT 16-3 한국어처럼 겹침 없이 '해외로 영어 공부를 하러 갈 계획이다'로 씁니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg11-1:t1",
+          "ko": "나는 운전자를 찾고 있었다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I was looking for a driver.",
+          "accept": [
+            "I was searching for a driver."
+          ],
+          "targets": [
+            [
+              "was looking",
+              "was searching"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I looked for a driver",
+              "hint": "'찾고 있었다'는 그때 하던 중인 일이에요."
+            },
+            {
+              "match": "I was looking a driver",
+              "hint": "'~을 찾다'의 look 뒤에는 전치사가 필요해요."
+            }
+          ],
+          "tags": [
+            "twelve-tenses",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-014#2"
+        },
+        {
+          "id": "pg11-1:t2",
+          "ko": "해는 동쪽에서 뜬다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "The sun rises in the east.",
+          "accept": [
+            "The sun comes up in the east."
+          ],
+          "targets": [
+            [
+              "rises",
+              "comes up"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "The sun rose in the east",
+              "hint": "언제나 맞는 사실(진리)은 현재형으로 써요."
+            },
+            {
+              "match": "The sun rise in",
+              "hint": "The sun 은 3인칭 하나예요. 동사 모양을 보세요."
+            },
+            {
+              "match": "from the east",
+              "hint": "'동쪽에서 뜬다'의 '에서'는 from 이 아닌 다른 전치사로 써요."
+            }
+          ],
+          "tags": [
+            "present-past-uses",
+            "present-simple",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg11-1:f1",
+      "template": "I get up at ___ every morning.",
+      "ko": "나는 매일 아침 ___에 일어난다."
+    }
+  ]
+}

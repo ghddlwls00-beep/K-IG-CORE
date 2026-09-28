@@ -1,0 +1,1490 @@
+{
+  "id": "pg17-3",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "조동사 3",
+  "label": "TOPIC 17. 조동사",
+  "menuLabel": "17-3. 조동사 3",
+  "unit": 17,
+  "part": 3,
+  "order": 3,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(3) should / ought to / used to / had better · must",
+  "grammarTags": [
+    "modal-should-ought-used-better"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg17-3:a1",
+          "en": "You should go to bed.",
+          "ko": "너는 잠자리에 들어야 한다.",
+          "koSource": "review 2. item 21",
+          "focus": [
+            "should"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 10,
+            "where": "passOff (3) item 1 (=ought to)",
+            "reviewWhere": "review 1. item 8 (p14) · review 2. item 21 (p16)"
+          }
+        },
+        {
+          "id": "pg17-3:a2",
+          "en": "I shouldn't have eaten too much chocolate.",
+          "ko": "나는 초콜릿을 너무 많이 먹지 말았어야 했는데.",
+          "koSource": "review 2. item 22 (다듬음)",
+          "focus": [
+            "shouldn't have eaten"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 10,
+            "where": "passOff (3) item 2",
+            "reviewWhere": "review 1. item 9 (p14) · review 2. item 22 (p16)"
+          },
+          "fix": {
+            "fromKo": "나는 너무 많은 초콜릿을 먹지 말았어야 했는데.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'너무 많은 초콜릿을 먹지'는 영어 어순을 따른 번역투라 '초콜릿을 너무 많이 먹지'로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg17-3:a3",
+          "en": "He used to get up early.",
+          "ko": "그는 예전에 일찍 일어나곤 했다.",
+          "koSource": "new(교재에 한국어 없음)",
+          "focus": [
+            "used to"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 10,
+            "where": "passOff (3) item 3 (*used to + 동원)",
+            "reviewWhere": "review 1. item 10 (p14)"
+          }
+        },
+        {
+          "id": "pg17-3:a4",
+          "en": "The taxi driver is used to danger.",
+          "ko": "그 택시 운전사는 위험에 익숙하다.",
+          "koSource": "review 2. item 28",
+          "focus": [
+            "is used to"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 10,
+            "where": "passOff (3) item 4 (*be used to ~ing)",
+            "reviewWhere": "review 2. item 28 (p17)"
+          },
+          "fix": {
+            "from": "The taxi driver is used to a danger .",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "'위험(한 상황) 일반'을 뜻하는 danger 는 셀 수 없는 명사라 a 를 붙이지 않습니다(마침표 앞 빈칸도 뺌)."
+          }
+        },
+        {
+          "id": "pg17-3:a5",
+          "en": "You had better come home!",
+          "ko": "너는 집에 오는 게 좋겠다!",
+          "koSource": "review 2. item 32 (고침)",
+          "focus": [
+            "had better"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 10,
+            "where": "passOff (3) item 5 (*had better + 동원)",
+            "reviewWhere": "review 1. item 11 (p14) · review 2. item 32 (p17)"
+          },
+          "fix": {
+            "fromKo": "너는 일찍 집에 오는 것이 낫다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어 You had better come home! 에 없는 '일찍'이 들어 있어 빼고, had better 의 뜻('~하는 게 좋겠다')으로 다듬었습니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg17-3:a1",
+          "pg17-3:a3",
+          "pg17-3:a5"
+        ],
+        "question": "should · used to · had better 뒤에 오는 동사의 모양은?",
+        "options": [
+          "동사원형(go · get · come)",
+          "-ing 형(going · getting)",
+          "과거형(went · got)"
+        ],
+        "answer": 0,
+        "why": "should · ought to · used to · had better · must 는 모두 뒤에 동사원형이 와요. 모양이 비슷한 be used to · get used to(~에 익숙하다 · ~에 익숙해지다)는 뒤에 명사나 -ing 가 와요."
+      },
+      "title": "should · must · had better · used to",
+      "points": [
+        "should(= ought to) + 동사원형: ~해야 한다 · ~하는 게 좋겠다(충고)",
+        "must + 동사원형: 꼭 ~해야 한다 · must not + 동사원형: ~하면 안 된다(금지)",
+        "had better + 동사원형: ~하는 게 좋겠다(안 그러면 곤란) · 부정은 had better not",
+        "used to + 동사원형: (예전에) ~하곤 했다 · ~였다 ↔ be used to + 명사 · -ing: ~에 익숙하다",
+        "should have + 과거분사: ~했어야 했는데(후회) · must have + 과거분사: ~였음에 틀림없다"
+      ],
+      "table": {
+        "columns": [
+          "표현",
+          "뜻",
+          "뒤에 오는 말",
+          "예문"
+        ],
+        "rows": [
+          [
+            "should / ought to",
+            "~해야 한다 · ~하는 게 좋겠다",
+            "동사원형",
+            "You should see a doctor."
+          ],
+          [
+            "must",
+            "꼭 ~해야 한다 · ~임에 틀림없다",
+            "동사원형",
+            "We must wear seat belts."
+          ],
+          [
+            "had better",
+            "~하는 게 좋겠다(강한 충고)",
+            "동사원형",
+            "You had better take an umbrella."
+          ],
+          [
+            "used to",
+            "(예전에) ~하곤 했다 · ~였다",
+            "동사원형",
+            "I used to play the piano."
+          ],
+          [
+            "be used to",
+            "~에 익숙하다",
+            "명사 · -ing",
+            "I am used to cold weather."
+          ],
+          [
+            "get used to",
+            "~에 익숙해지다",
+            "명사 · -ing",
+            "You will get used to it."
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '~해야 한다 · ~하는 게 좋겠다 · ~하곤 했다'를 끝말로 나타내지만, 영어는 동사 앞에 should · had better · used to 를 두고 뒤에 동사원형을 써요. 모양이 비슷한 be used to(~에 익숙하다)는 뒤에 명사나 -ing 가 와요.",
+      "mistakes": [
+        {
+          "wrong": "You had better to go now.",
+          "right": "You had better go now.",
+          "why": "had better 뒤에는 to 없이 동사원형이 와요."
+        },
+        {
+          "wrong": "She is used to drive at night.",
+          "right": "She is used to driving at night.",
+          "why": "be used to(~에 익숙하다) 뒤에는 -ing 가 와요."
+        }
+      ],
+      "worked": [
+        "너는 그 시험을 걱정하지 않는 게 좋겠다.",
+        "'~하지 않는 게 좋겠다'(충고) → had better not",
+        "had better not 뒤에는 동사원형: worry",
+        "You had better not worry about the test."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'Tom ___ play soccer every Sunday, but now he doesn't.' 빈칸에 맞는 것은?",
+        "options": [
+          "used to",
+          "is used to",
+          "had better"
+        ],
+        "answer": 0,
+        "why": "예전에는 했지만 지금은 안 하는 일은 used to + 동사원형이에요.",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg17-3:s1",
+          "kind": "select",
+          "instruction": "조동사를 누르고, 뜻을 고르세요",
+          "tokens": [
+            "You",
+            "should",
+            "go",
+            "to",
+            "bed",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "의무 · 충고(~해야 한다)",
+            "과거 습관(~하곤 했다)",
+            "~에 익숙하다"
+          ],
+          "labelAnswer": [
+            "의무 · 충고(~해야 한다)"
+          ],
+          "why": "should(= ought to) + 동사원형 = ~해야 한다 · ~하는 게 좋겠다예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 14,
+            "where": "review 1. item 8 (조동사 밑줄 + 뜻)"
+          }
+        },
+        {
+          "id": "pg17-3:s2",
+          "kind": "select",
+          "instruction": "조동사 부분을 누르고, 뜻을 고르세요",
+          "tokens": [
+            "I",
+            "shouldn't have eaten",
+            "too",
+            "much",
+            "chocolate",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "지난 일 후회(~하지 말았어야 했는데)",
+            "과거 습관(~하곤 했다)",
+            "강한 추측(~였음에 틀림없다)"
+          ],
+          "labelAnswer": [
+            "지난 일 후회(~하지 말았어야 했는데)"
+          ],
+          "why": "shouldn't have + 과거분사 = ~하지 말았어야 했는데(지난 일에 대한 후회)예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 14,
+            "where": "review 1. item 9 (조동사 밑줄 + 뜻)"
+          }
+        },
+        {
+          "id": "pg17-3:s3",
+          "kind": "select",
+          "instruction": "조동사 표현을 누르고, 뜻을 고르세요",
+          "tokens": [
+            "He",
+            "used to",
+            "get",
+            "up",
+            "early",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "과거 습관(~하곤 했다)",
+            "~에 익숙하다",
+            "의무(~해야 한다)"
+          ],
+          "labelAnswer": [
+            "과거 습관(~하곤 했다)"
+          ],
+          "why": "used to + 동사원형 = (예전에) ~하곤 했다. 지금은 그렇지 않다는 뜻이 들어 있어요.",
+          "bookRef": {
+            "book": 3,
+            "page": 14,
+            "where": "review 1. item 10 (조동사 밑줄 + 뜻)"
+          }
+        },
+        {
+          "id": "pg17-3:s4",
+          "kind": "select",
+          "instruction": "조동사 표현을 누르고, 뜻을 고르세요",
+          "tokens": [
+            "You",
+            "had better",
+            "come",
+            "home",
+            "!"
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "강한 충고(~하는 게 좋겠다)",
+            "과거 습관(~하곤 했다)",
+            "지난 일 후회(~했어야 했는데)"
+          ],
+          "labelAnswer": [
+            "강한 충고(~하는 게 좋겠다)"
+          ],
+          "why": "had better + 동사원형 = ~하는 게 좋겠다(안 그러면 곤란하다는 강한 충고)예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 14,
+            "where": "review 1. item 11 (조동사 밑줄 + 뜻)"
+          }
+        },
+        {
+          "id": "pg17-3:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (나는 매운 음식을 먹는 데 익숙하다.)",
+          "sentence": "I am used to ___ spicy food.",
+          "underline": [],
+          "options": [
+            "eat",
+            "eating",
+            "ate"
+          ],
+          "answer": 1,
+          "why": "be used to(~에 익숙하다) 뒤에는 명사나 -ing 가 와요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg17-3:s7",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (여기서 사진을 찍으면 안 된다.)",
+          "sentence": "You ___ take pictures here.",
+          "underline": [],
+          "options": [
+            "must not",
+            "don't have to",
+            "used to"
+          ],
+          "answer": 0,
+          "why": "'~하면 안 된다'(금지)는 must not 이에요. don't have to 는 '~할 필요가 없다'예요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "must 는 교재 소제목 '(3)should / ought to / used to / had better'에 없지만 Application 에 소제목 없이 may 와 should 사이에 인쇄되어, 뜻이 가까운 이 레슨(의무 · 충고)에서 다룹니다(판정 p10 소제목). 태그는 이 레슨 목표 태그로 묶음."
+        },
+        {
+          "id": "pg17-3:s6",
+          "kind": "choice",
+          "instruction": "밑줄 친 must 의 뜻은?",
+          "sentence": "He looks tired. He must be very busy.",
+          "underline": [
+            "must"
+          ],
+          "options": [
+            "~임에 틀림없다(강한 추측)",
+            "~해야 한다(의무)",
+            "~해도 된다(허락)"
+          ],
+          "answer": 0,
+          "why": "피곤해 보인다는 근거로 '매우 바쁜 게 틀림없다'고 강하게 추측하는 must 예요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "must 는 교재 소제목 '(3)should / ought to / used to / had better'에 없지만 Application 에 소제목 없이 may 와 should 사이에 인쇄되어, 뜻이 가까운 이 레슨(의무 · 충고)에서 다룹니다(판정 p10 소제목). 태그는 이 레슨 목표 태그로 묶음.",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg17-3:p1",
+          "ko": "그녀는 당장 부모님께 전화해야 한다.",
+          "koSource": "review 2. item 18",
+          "condition": "must를 써서",
+          "promptEn": null,
+          "en": "She must call her parents at once.",
+          "accept": [
+            "She must call her parents right away.",
+            "She must call her parents immediately.",
+            "She must call her parents right now.",
+            "She must phone her parents at once.",
+            "She must phone her parents right away.",
+            "She must phone her parents immediately.",
+            "She must phone her parents right now."
+          ],
+          "targets": [
+            [
+              "must"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "must calls",
+              "hint": "must 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "must to call",
+              "hint": "must 뒤에는 to 없이 동사원형이 와요."
+            },
+            {
+              "match": "she has to call",
+              "hint": "조건은 'must를 써서'예요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 19 (소제목 없음 — must)",
+            "reviewWhere": "review 2. item 18 (p16)"
+          },
+          "fix": null,
+          "note": "must 는 교재 소제목 '(3)should / ought to / used to / had better'에 없지만 Application 에 소제목 없이 may 와 should 사이에 인쇄되어, 뜻이 가까운 이 레슨(의무 · 충고)에서 다룹니다(판정 p10 소제목). 태그는 이 레슨 목표 태그로 묶음."
+        },
+        {
+          "id": "pg17-3:p2",
+          "ko": "너는 이곳에 주차해서는 안 된다.",
+          "koSource": "review 2. item 19",
+          "condition": "must를 써서",
+          "promptEn": null,
+          "en": "You must not park here.",
+          "accept": [
+            "You must not park in this place."
+          ],
+          "targets": [
+            [
+              "must not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "you do not have to park",
+              "hint": "don't have to 는 '~할 필요가 없다'예요. '~하면 안 된다'(금지)는?"
+            },
+            {
+              "match": "must not parking",
+              "hint": "must not 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "must not to park",
+              "hint": "must not 뒤에는 to 없이 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 20 (소제목 없음 — must)",
+            "reviewWhere": "review 2. item 19 (p16)"
+          },
+          "fix": null,
+          "note": "must 는 교재 소제목 '(3)should / ought to / used to / had better'에 없지만 Application 에 소제목 없이 may 와 should 사이에 인쇄되어, 뜻이 가까운 이 레슨(의무 · 충고)에서 다룹니다(판정 p10 소제목). 태그는 이 레슨 목표 태그로 묶음."
+        },
+        {
+          "id": "pg17-3:p3",
+          "ko": "그는 잠이 들었음에 틀림없다.",
+          "koSource": "review 2. item 20",
+          "condition": "must를 써서",
+          "promptEn": null,
+          "en": "He must have been asleep.",
+          "accept": [
+            "He must have been sleeping.",
+            "He must have fallen asleep."
+          ],
+          "targets": [
+            [
+              "must have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he must be asleep",
+              "hint": "잠이 든 것은 지난 일이에요. must 뒤를 have + 과거분사로."
+            },
+            {
+              "match": "may have been asleep",
+              "hint": "'~였을지도'가 아니라 '~였음에 틀림없다'(강한 확신)예요."
+            },
+            {
+              "match": "might have been asleep",
+              "hint": "'~였을지도'가 아니라 '~였음에 틀림없다'(강한 확신)예요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 21 (소제목 없음 — must)",
+            "reviewWhere": "review 2. item 20 (p16)"
+          },
+          "fix": null,
+          "note": "must 는 교재 소제목 '(3)should / ought to / used to / had better'에 없지만 Application 에 소제목 없이 may 와 should 사이에 인쇄되어, 뜻이 가까운 이 레슨(의무 · 충고)에서 다룹니다(판정 p10 소제목). 태그는 이 레슨 목표 태그로 묶음."
+        },
+        {
+          "id": "pg17-3:p4",
+          "ko": "너는 잠자리에 들어야 한다.",
+          "koSource": "review 2. item 21",
+          "condition": "should를 써서",
+          "promptEn": null,
+          "en": "You should go to bed.",
+          "accept": [
+            "You ought to go to bed.",
+            "You should go to sleep.",
+            "You ought to go to sleep."
+          ],
+          "targets": [
+            [
+              "should",
+              "ought to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "should to go",
+              "hint": "should 뒤에는 to 없이 동사원형이 와요."
+            },
+            {
+              "match": "ought go",
+              "hint": "ought 는 뒤에 to 를 붙여 씁니다: ought to + 동사원형."
+            },
+            {
+              "match": "you must go to bed",
+              "hint": "조건은 'should를 써서'예요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 22 (=ought to)",
+            "reviewWhere": "review 2. item 21 (p16) · review 1. item 8 (p14)"
+          },
+          "fix": null,
+          "note": "교재가 (=ought to)라고 적어 둔 대로 ought to 도 정답으로 받습니다."
+        },
+        {
+          "id": "pg17-3:p5",
+          "ko": "나는 초콜릿을 너무 많이 먹지 말았어야 했는데.",
+          "koSource": "review 2. item 22 (다듬음)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I shouldn't have eaten too much chocolate.",
+          "accept": [
+            "I shouldn't have eaten so much chocolate.",
+            "I shouldn't have eaten that much chocolate.",
+            "I ought not to have eaten too much chocolate.",
+            "I ought not to have eaten so much chocolate."
+          ],
+          "targets": [
+            [
+              "should not have",
+              "ought not to have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "should not have ate",
+              "hint": "have 뒤에는 과거분사가 와요. eat 의 과거분사는?"
+            },
+            {
+              "match": "i should not eat",
+              "hint": "'먹지 말았어야 했는데'는 지난 일에 대한 후회예요. should not 뒤를 have + 과거분사로."
+            },
+            {
+              "match": "must not have eaten",
+              "hint": "must not have 는 '~하지 않았음에 틀림없다'예요. 지난 일에 대한 후회는?"
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 23",
+            "reviewWhere": "review 2. item 22 (p16) · review 1. item 9 (p14)"
+          },
+          "fix": {
+            "fromKo": "나는 너무 많은 초콜릿을 먹지 말았어야 했는데.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'너무 많은 초콜릿을 먹지'는 영어 어순을 따른 번역투라 '초콜릿을 너무 많이 먹지'로 다듬었습니다. 영어 too much 는 틀리지 않아 그대로 두고 so much 도 받습니다."
+          }
+        },
+        {
+          "id": "pg17-3:p6",
+          "ko": "그는 예전에 일찍 일어나곤 했다.",
+          "koSource": "new(교재에 한국어 없음)",
+          "condition": "used to를 써서",
+          "promptEn": null,
+          "en": "He used to get up early.",
+          "accept": [
+            "He used to wake up early."
+          ],
+          "targets": [
+            [
+              "used to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "used to got",
+              "hint": "used to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "he is used to get",
+              "hint": "be used to 는 '~에 익숙하다'예요. '(예전에) ~하곤 했다'는 be동사 없이 써요."
+            },
+            {
+              "match": "he use to get",
+              "hint": "'(예전에) ~하곤 했다'는 긍정문에서 used to 로 써요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 10,
+            "where": "passOff (3) item 3 (*used to + 동원)",
+            "reviewWhere": "review 1. item 10 (p14)"
+          },
+          "fix": null,
+          "note": "Pass-Off 에만 있는 문장(Application · Review 영작에 없음)이라 ④ 에도 넣고 한국어를 새로 옮김. 순서는 Pass-Off 대로 used to 문장들 앞."
+        },
+        {
+          "id": "pg17-3:p7",
+          "ko": "우리 어머니는 예전에 학교 선생님이셨다.",
+          "koSource": "review 2. item 23 (고침)",
+          "condition": "used to를 써서",
+          "promptEn": null,
+          "en": "My mother used to be a school teacher.",
+          "accept": [
+            "My mom used to be a school teacher.",
+            "My mother used to be a schoolteacher.",
+            "My mom used to be a schoolteacher.",
+            "My mother used to be a teacher at a school."
+          ],
+          "targets": [
+            [
+              "used to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "used to was",
+              "hint": "used to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "my mother was a school teacher",
+              "hint": "조건은 'used to를 써서'예요. '예전에는 그랬지만 지금은 아님'을 나타내 보세요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 24",
+            "reviewWhere": "review 2. item 23 (p16)"
+          },
+          "fix": {
+            "fromKo": "나의 어머니는 학교 선생님이셨다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "used to(예전에는 ~였다, 지금은 아님)의 뜻이 한국어에 없어 '예전에'를 넣고, '나의 어머니'를 '우리 어머니'로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg17-3:p8",
+          "ko": "조는 담배를 많이 피웠었다.",
+          "koSource": "review 2. item 24",
+          "condition": "used to를 써서",
+          "promptEn": null,
+          "en": "Joe used to smoke a lot.",
+          "accept": [
+            "Joe used to smoke heavily."
+          ],
+          "targets": [
+            [
+              "used to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "used to smoking",
+              "hint": "'(예전에) ~하곤 했다'의 used to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "joe smoked a lot",
+              "hint": "조건은 'used to를 써서'예요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 25",
+            "reviewWhere": "review 2. item 24 (p16)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg17-3:p9",
+          "ko": "카터는 예전에 밤늦게까지 자지 않곤 했다.",
+          "koSource": "review 2. item 25 (고침)",
+          "condition": "used to를 써서",
+          "promptEn": null,
+          "en": "Carter used to stay up late.",
+          "accept": [
+            "Carter used to stay up late at night."
+          ],
+          "targets": [
+            [
+              "used to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "used to stayed",
+              "hint": "used to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "carter is used to staying up",
+              "hint": "be used to + -ing 는 '~에 익숙하다'예요. '(예전에) ~하곤 했다'는?"
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 26",
+            "reviewWhere": "review 2. item 25 (p17)"
+          },
+          "fix": {
+            "from": "Carter used to stay up.",
+            "fromKo": "카터는 종종 (밤에) 자지 않고 있었다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "stay up 은 보통 late 와 함께 써야 '밤늦게까지 안 자다'가 분명해 late 를 넣었고, 한국어의 '종종'은 영어에 없어 '예전에 … 자지 않곤 했다'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg17-3:p10",
+          "ko": "그녀는 어렸을 때 개를 키웠었다.",
+          "koSource": "review 2. item 26 (고침)",
+          "condition": "used to를 써서",
+          "promptEn": null,
+          "en": "She used to have a dog when she was a child.",
+          "accept": [
+            "When she was a child, she used to have a dog.",
+            "She used to have a dog when she was young.",
+            "When she was young, she used to have a dog.",
+            "She used to have a dog when she was little.",
+            "When she was little, she used to have a dog.",
+            "She used to keep a dog when she was a child.",
+            "When she was a child, she used to keep a dog.",
+            "She used to keep a dog when she was young.",
+            "When she was young, she used to keep a dog.",
+            "She used to keep a dog when she was little.",
+            "When she was little, she used to keep a dog.",
+            "She used to raise a dog when she was a child.",
+            "When she was a child, she used to raise a dog.",
+            "She used to raise a dog when she was young.",
+            "When she was young, she used to raise a dog.",
+            "She used to raise a dog when she was little.",
+            "When she was little, she used to raise a dog."
+          ],
+          "targets": [
+            [
+              "used to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "used to had",
+              "hint": "used to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "when she is a child",
+              "hint": "어렸을 때는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 27",
+            "reviewWhere": "review 2. item 26 (p17)"
+          },
+          "fix": {
+            "fromKo": "그녀는 그녀가 어렸을 때, 개를 가졌었다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'그녀는 그녀가' · '개를 가졌었다'는 직역투라 '어렸을 때 개를 키웠었다'로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg17-3:p11",
+          "ko": "나는 안경을 끼지 않았었지만 지금은 낀다.",
+          "koSource": "review 2. item 27",
+          "condition": "used to를 써서",
+          "promptEn": null,
+          "en": "I didn't use to wear glasses, but now I do.",
+          "accept": [
+            "I didn't use to wear glasses, but I do now.",
+            "I never used to wear glasses, but now I do.",
+            "I never used to wear glasses, but I do now.",
+            "I used not to wear glasses, but now I do.",
+            "I didn't use to wear glasses, but now I wear them.",
+            "I didn't use to wear glasses, but I wear them now.",
+            "I didn't use to wear glasses, but now I wear glasses.",
+            "I didn't use to wear glasses, but I wear glasses now.",
+            "I never used to wear glasses, but now I wear them.",
+            "I never used to wear glasses, but I wear them now.",
+            "I never used to wear glasses, but now I wear glasses.",
+            "I never used to wear glasses, but I wear glasses now.",
+            "I used not to wear glasses, but I do now.",
+            "I used not to wear glasses, but now I wear them.",
+            "I used not to wear glasses, but I wear them now.",
+            "I used not to wear glasses, but now I wear glasses.",
+            "I used not to wear glasses, but I wear glasses now."
+          ],
+          "targets": [
+            [
+              "use to",
+              "used to",
+              "used not to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "didn't used to",
+              "hint": "did 뒤에서는 used 가 아니라 원형 use 로 써요."
+            },
+            {
+              "match": "but now i am",
+              "hint": "'낀다'는 be동사가 아니라 일반동사예요. wear 를 다시 쓰거나 그것을 받는 말로 써 보세요."
+            },
+            {
+              "match": "i did not wear glasses",
+              "hint": "조건은 'used to를 써서'예요. '예전에는 ~하지 않았다'를 나타내 보세요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "negative-basic",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 28",
+            "reviewWhere": "review 2. item 27 (p17)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg17-3:p12",
+          "ko": "그 택시 운전사는 위험에 익숙하다.",
+          "koSource": "review 2. item 28",
+          "condition": "be used to를 써서",
+          "promptEn": null,
+          "en": "The taxi driver is used to danger.",
+          "accept": [
+            "The taxi driver is used to being in danger.",
+            "The taxi driver is used to dangerous situations."
+          ],
+          "targets": [
+            [
+              "is used to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "used to a danger",
+              "hint": "'위험'(일반적인 위험)은 셀 수 없는 명사라 앞에 a 를 붙이지 않아요."
+            },
+            {
+              "match": "the taxi driver used to danger",
+              "hint": "'~에 익숙하다'는 be동사 + used to 예요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "noun-countable-uncountable"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 29",
+            "reviewWhere": "review 2. item 28 (p17)"
+          },
+          "fix": {
+            "from": "The taxi driver is used to a danger.",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "'위험(한 상황) 일반'을 뜻하는 danger 는 셀 수 없는 명사라 a 를 붙이지 않습니다."
+          }
+        },
+        {
+          "id": "pg17-3:p13",
+          "ko": "한국 사람들은 회를 먹는 것에 익숙하다.",
+          "koSource": "review 2. item 29",
+          "condition": "be used to를 써서",
+          "promptEn": null,
+          "en": "Koreans are used to eating raw fish.",
+          "accept": [
+            "Korean people are used to eating raw fish."
+          ],
+          "targets": [
+            [
+              "are used to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "used to eat raw fish",
+              "hint": "'~에 익숙하다'의 be used to 뒤에는 명사나 -ing 가 와요."
+            },
+            {
+              "match": "koreans used to eating",
+              "hint": "'~에 익숙하다'는 be동사 + used to 예요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 30",
+            "reviewWhere": "review 2. item 29 (p17)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg17-3:p14",
+          "ko": "제니는 일찍 일어나는 데 익숙하지 않았다.",
+          "koSource": "review 2. item 30 (고침)",
+          "condition": "be used to를 써서",
+          "promptEn": null,
+          "en": "Jenny wasn't used to getting up early.",
+          "accept": [
+            "Jenny wasn't used to waking up early."
+          ],
+          "targets": [
+            [
+              "was not used to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "used to get up early",
+              "hint": "be used to 뒤에는 명사나 -ing 가 와요."
+            },
+            {
+              "match": "jenny is not used to",
+              "hint": "익숙하지 않았던 것은 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "gerund",
+            "be-past",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 31",
+            "reviewWhere": "review 2. item 30 (p17)"
+          },
+          "fix": {
+            "fromKo": "제니는 일찍 일어나는 일에 익숙지 않다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 과거(wasn't)인데 한국어는 현재라 isn't 를 쓰게 되어 '익숙하지 않았다'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg17-3:p15",
+          "ko": "나는 홀로 사는 것에 익숙해져야 한다.",
+          "koSource": "review 2. item 31",
+          "condition": "get used to를 써서",
+          "promptEn": null,
+          "en": "I have to get used to living alone.",
+          "accept": [
+            "I have to get used to living by myself.",
+            "I have to get used to living on my own.",
+            "I must get used to living alone.",
+            "I must get used to living by myself.",
+            "I must get used to living on my own.",
+            "I need to get used to living alone.",
+            "I need to get used to living by myself.",
+            "I need to get used to living on my own.",
+            "I should get used to living alone.",
+            "I should get used to living by myself.",
+            "I should get used to living on my own."
+          ],
+          "targets": [
+            [
+              "get used to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "get used to live",
+              "hint": "get used to 뒤에는 명사나 -ing 가 와요."
+            },
+            {
+              "match": "have to be used to",
+              "hint": "'익숙해지다'(변화)는 be 대신 get 을 써요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 32",
+            "reviewWhere": "review 2. item 31 (p17)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg17-3:p16",
+          "ko": "너는 집에 오는 게 좋겠다!",
+          "koSource": "review 2. item 32 (고침)",
+          "condition": "had better를 써서",
+          "promptEn": null,
+          "en": "You had better come home!",
+          "accept": [],
+          "targets": [
+            [
+              "better"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "had better to come",
+              "hint": "had better 뒤에는 to 없이 동사원형이 와요."
+            },
+            {
+              "match": "had better coming",
+              "hint": "had better 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "you have better",
+              "hint": "'~하는 게 좋겠다'는 지금 일이어도 have 로 바꾸지 않아요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 33",
+            "reviewWhere": "review 2. item 32 (p17) · review 1. item 11 (p14)"
+          },
+          "fix": {
+            "fromKo": "너는 일찍 집에 오는 것이 낫다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어 You had better come home! 에 없는 '일찍'이 들어 있어 빼고, had better 의 뜻('~하는 게 좋겠다')으로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg17-3:p17",
+          "ko": "너는 지금 떠나지 않는 게 좋겠다.",
+          "koSource": "review 2. item 33 (고침)",
+          "condition": "had better를 써서",
+          "promptEn": null,
+          "en": "You'd better not leave now.",
+          "accept": [],
+          "targets": [
+            [
+              "better"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "had not better",
+              "hint": "had better 의 부정은 better 뒤에 not 을 써요."
+            },
+            {
+              "match": "better do not leave",
+              "hint": "had better 의 부정은 better 뒤에 not + 동사원형이에요."
+            },
+            {
+              "match": "better leave now",
+              "hint": "'떠나지 않는 게'예요. 부정을 넣어 보세요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 34",
+            "reviewWhere": "review 2. item 33 (p17)"
+          },
+          "fix": {
+            "fromKo": "너는 지금 떠나는 것이 낫다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 부정(You'd better not leave now. 지금 떠나지 않는 게 좋겠다)인데 한국어는 긍정이라 정반대 뜻이어서 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg17-3:p18",
+          "ko": "그는 시간을 현명하게 쓰는 게 좋겠다.",
+          "koSource": "review 2. item 34 (고침)",
+          "condition": "had better를 써서",
+          "promptEn": null,
+          "en": "He had better spend time wisely.",
+          "accept": [
+            "He had better spend his time wisely.",
+            "He had better use his time wisely.",
+            "He had better use time wisely."
+          ],
+          "targets": [
+            [
+              "better"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "had better spends",
+              "hint": "had better 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "had better to spend",
+              "hint": "had better 뒤에는 to 없이 동사원형이 와요."
+            },
+            {
+              "match": "he has better",
+              "hint": "'~하는 게 좋겠다'는 주어가 he 여도 had 를 바꾸지 않아요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 35",
+            "reviewWhere": "review 2. item 34 (p17)"
+          },
+          "fix": {
+            "fromKo": "드는 시간을 더 현명하게 쓰는 것이 낫다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'드는'은 '그는'의 오타이고, 영어에 없는 '더'는 뺐습니다. spend time wisely 는 맞는 영어라 그대로 두고 his time 도 받습니다."
+          }
+        },
+        {
+          "id": "pg17-3:p19",
+          "ko": "그녀는 좀 쉬는 게 좋겠다.",
+          "koSource": "review 2. item 35 (고침)",
+          "condition": "had better를 써서",
+          "promptEn": null,
+          "en": "She had better have a rest.",
+          "accept": [
+            "She had better take a rest.",
+            "She had better get some rest.",
+            "She had better rest.",
+            "She had better have some rest.",
+            "She had better take a break."
+          ],
+          "targets": [
+            [
+              "better"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "had better has",
+              "hint": "had better 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "she has better",
+              "hint": "'~하는 게 좋겠다'는 주어가 she 여도 had 를 바꾸지 않아요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 36",
+            "reviewWhere": "review 2. item 35 (p17)"
+          },
+          "fix": {
+            "fromKo": "그녀는 휴식을 가지는 것이 낫다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'휴식을 가지는'은 have a rest 의 직역투라 '좀 쉬는 게 좋겠다'로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg17-3:p20",
+          "ko": "너는 마지막 기차를 놓치지 않는 게 좋겠다.",
+          "koSource": "review 2. item 36 (고침)",
+          "condition": "had better를 써서",
+          "promptEn": null,
+          "en": "You'd better not miss the last train.",
+          "accept": [],
+          "targets": [
+            [
+              "better"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "better not to miss",
+              "hint": "had better not 뒤에는 to 없이 동사원형이 와요."
+            },
+            {
+              "match": "had not better",
+              "hint": "had better 의 부정은 better 뒤에 not 을 써요."
+            },
+            {
+              "match": "better miss the last train",
+              "hint": "'놓치지 않는 게'예요. 부정을 넣어 보세요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 13,
+            "where": "application item 37",
+            "reviewWhere": "review 2. item 36 (p17)"
+          },
+          "fix": {
+            "fromKo": "너는 마지막 기차를 놓치지 않는 것이 낫다",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "끝 마침표가 빠졌고, '~하는 것이 낫다'를 had better 의 뜻('~하는 게 좋겠다')으로 다듬었습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg17-3:t1",
+          "ko": "당신은 현찰로 지불해야 한다.",
+          "koSource": "grammar2:gh2-008#12",
+          "condition": null,
+          "promptEn": null,
+          "en": "You must pay in cash.",
+          "accept": [
+            "You have to pay in cash.",
+            "You should pay in cash.",
+            "You need to pay in cash.",
+            "You ought to pay in cash.",
+            "You must pay with cash.",
+            "You must pay cash.",
+            "You have to pay with cash.",
+            "You have to pay cash.",
+            "You should pay with cash.",
+            "You should pay cash.",
+            "You need to pay with cash.",
+            "You need to pay cash.",
+            "You ought to pay with cash.",
+            "You ought to pay cash."
+          ],
+          "targets": [
+            [
+              "must",
+              "have to",
+              "should",
+              "need to",
+              "ought to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "must to pay",
+              "hint": "must 뒤에는 to 없이 동사원형이 와요."
+            },
+            {
+              "match": "must pays",
+              "hint": "must 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "should to pay",
+              "hint": "should 뒤에는 to 없이 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-008#12",
+          "note": "처음에 고른 GRAMMAR II gh2-013#9(You should come here by ten o'clock.)는 뒤 레슨 pg19-3 의 ⑤ 와 같은 문장이라 그 레슨의 '처음 보는 문장'이 깨지지 않게 이 문장으로 바꿈."
+        },
+        {
+          "id": "pg17-3:t2",
+          "ko": "그는 여기에 오는 것에 익숙하다.",
+          "koSource": "grammar2:gh2-046#11",
+          "condition": "be used to를 써서",
+          "promptEn": null,
+          "en": "He is used to coming here.",
+          "accept": [],
+          "targets": [
+            [
+              "is used to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "used to come here",
+              "hint": "'~에 익숙하다'의 be used to 뒤에는 명사나 -ing 가 와요."
+            },
+            {
+              "match": "he used to coming",
+              "hint": "'~에 익숙하다'는 be동사 + used to 예요."
+            }
+          ],
+          "tags": [
+            "modal-should-ought-used-better",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-046#11"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg17-3:f1",
+      "template": "I used to ___ when I was little.",
+      "ko": "나는 어렸을 때 ___하곤 했다."
+    }
+  ]
+}

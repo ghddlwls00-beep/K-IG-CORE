@@ -1,0 +1,191 @@
+[
+  {
+    "lesson": "pg18-2",
+    "item": "pg18-2:p13",
+    "finding": "accept 의 'The river wasn't clean enough to swim.'(전치사 in 빠짐)이 정답 처리됨. 주어 The river 는 swim in 의 목적어라 in 이 있어야 함.",
+    "action": "fixed",
+    "note": "점검자 말이 맞음: 형용사 + enough/too + to부정사에서 문장의 주어가 전치사의 목적어면 전치사를 남긴다(This chair is too hard to sit on · The water was too cold to swim in 과 같은 짜임 — 학교 문법의 단골 오답). accept 에서 그 한 줄만 뺌(3 → 2, 'for swimming' · 'for us to swim in' 은 그대로). 오답 패턴은 만들지 않음(정답 'to swim in' 의 조각이라). 실제 채점기(scratchpad/g14fix/probe-after.cjs): 'wasn't … to swim' correct → wrong, 'was not … to swim' wrong, 'to swim in' · 'for swimming' correct."
+  },
+  {
+    "lesson": "pg18-2",
+    "item": "pg18-2:p1 · p2 · p3",
+    "finding": "영어 제시문만 있고 condition 이 없어 'Ben can run quickly.' · 'Sue is a very hard worker.' 같은 맞는 영어가 답하기 전에 모르는 요구 때문에 오답.",
+    "action": "fixed",
+    "note": "제안대로 condition: p1 'hard를 부사로 써서' · p2 'fast를 부사로 써서' · p3 'late를 부사로 써서'(설계 '특정 형태를 요구하면 조건 칩', 조건 문구는 기존 'such를 써서' 꼴). 힌트: p1 errorPatterns[1] → \"맞는 말이지만 조건은 'hard를 부사로 써서'예요. 동사 works 를 꾸며 보세요.\", p2 errorPatterns[1] → \"맞는 말이지만 조건은 'fast를 부사로 써서'예요.\". 수정자가 더한 것: p3 에 같은 꼴의 패턴 {match 'overslept', hint \"맞는 말이지만 조건은 'late를 부사로 써서'예요.\"}(패턴 2 → 3 — '늦게 일어났다'를 overslept 로 옮긴 맞는 영어에도 칩 이유가 뜨게). 실제 채점기: 'Ben can run quickly.' · 'Sue is a very hard worker.' · 'I overslept this morning.' 모두 오답 + 새 조건 힌트. TOPIC-18.json '=' 항목 reason 에 반영."
+  },
+  {
+    "lesson": "pg18-1",
+    "item": "pg18-1:p3",
+    "finding": "'가방을 가지고'를 with the bag 으로 옮긴 답과 went out 꼴이 모두 오답(accept 53줄에 없음).",
+    "action": "fixed",
+    "note": "점검자 15줄 모두 포함해 accept 53 → 87(+34): with the bag 16 = quickly left · left … quickly · quickly came out of · came out of … quickly · quickly got out of · got out of … quickly · quickly went out of · went out of … quickly × shop · store / went out 18 = took · got · grabbed × shop · store × 'went out of the … quickly' · 'quickly went out of the …' · 'went out of the … fast'(기존 got/came/left 꼴과 같은 짜임). 모두 목표형 quickly · fast 포함, 기존 패턴(the shop quick · got out the shop)과 안 겹침(check-lessons 0). 탐침 4개 wrong → correct."
+  },
+  {
+    "lesson": "pg18-1",
+    "item": "pg18-1:p9",
+    "finding": "한국어 '학생들은'에 관사 단서가 없는데 관사 없는 students 꼴이 모두 오답(accept 31줄이 모두 the students).",
+    "action": "fixed",
+    "note": "한국어는 STUDENT exact(s5-5)라 그대로 두고 accept 만 넓힘 31 → 63(+32): 관사 없는 students × Usually · Normally × friendly · kind × each other · one another × 자리 4(기존 the 판과 같은 짜임 — 점검자 12줄 포함). 목표형 Usually · Normally 모두 있음. 탐침 2개 wrong → correct, 부정을 넣은 답은 여전히 오답."
+  },
+  {
+    "lesson": "pg18-1",
+    "item": "pg18-1:p19",
+    "finding": "'학교까지'를 곧게 옮긴 to school(your 없음)이 오답.",
+    "action": "fixed",
+    "note": "accept 6 → 21(+15). 점검자 6줄 중 'How long will it take to get to your school from your house?' 는 이미 있었고 나머지 5줄 + home · do you think 꼴(to school) 4줄 + 'How long will it take you to get …'(take you — 흔한 맞는 꼴이라 수정자가 더함) 6줄. 모두 How long 포함. 기존 패턴('your house and to your school' · 'How long does it take')과 안 겹침. 탐침 2개 wrong → correct."
+  },
+  {
+    "lesson": "pg18-2",
+    "item": "pg18-2:p6 · p7",
+    "finding": "'The birds …' 꼴이 오답. p7 '새들이'는 특정한 새들로 읽혀 The birds 가 오히려 가까움.",
+    "action": "fixed",
+    "note": "p6 accept 3 → 7(+ The birds × merrily · happily · cheerfully · joyfully), p7 accept 2 → 5(+ The birds are very · really · so beautiful). 앵커 문장(a4 · a5)은 그대로. 탐침 3개 wrong → correct."
+  },
+  {
+    "lesson": "pg18-2",
+    "item": "pg18-2:p9",
+    "finding": "'존다'를 곧게 옮긴 doze 꼴(과 nods off)이 모두 오답.",
+    "action": "fixed",
+    "note": "accept 3 → 15(+12): 점검자 6줄 + 'Even Homer nods off sometimes.' · 'Sometimes even Homer dozes.' · 'Sometimes even Homer nods off.' · occasionally × dozes · dozes off · nods off. targets Even 그대로. 기존 패턴 'Even Homer sometimes nod'(낱말 경계라 nods 에 안 걸림)와 안 겹침. 'Even Homer sometimes doze off.'(3인칭 -s 빠짐)는 여전히 오답."
+  },
+  {
+    "lesson": "pg18-4",
+    "item": "pg18-4:p9",
+    "finding": "condition 이 없는데 'She is the best singer in our class.'가 '맞는 말이지만 …' 힌트와 함께 오답.",
+    "action": "fixed",
+    "note": "condition = '동사 sing을 써서', errorPatterns[1].hint → \"맞는 말이지만 조건은 '동사 sing을 써서'예요. 동사를 꾸미는 부사의 최상급을 써 보세요.\"(제안 그대로). 실제 채점기: 그 답은 오답 + 새 힌트, 'She sings the best in our class.' 정답."
+  },
+  {
+    "lesson": "pg18-1",
+    "item": "pg18-1:rule.koDiff · p20",
+    "finding": "koDiff 가 '얼마나 크니? = How tall'로 익히게 하는데 ④ p20 '저 집은 얼마나 크니?'의 답은 How big. 'How tall is that house?'가 힌트 없이 오답.",
+    "action": "fixed",
+    "note": "koDiff 의 \"'얼마나 크니?'\" → \"'키가 얼마나 크니?'\". p20 errorPatterns 에 {match 'How tall is that house', hint \"높이가 아니라 집의 크기를 묻는 말이에요. '큰'을 뜻하는 다른 형용사를 떠올려 보세요.\"}(2 → 3, 정답 How big · How large 와 안 겹침). 실제 채점기: 'How tall is that house?' 오답 + 새 힌트."
+  },
+  {
+    "lesson": "pg18-1",
+    "item": "pg18-1:p2",
+    "finding": "get 수동태('didn't get seriously injured')와 부사를 뒤에 둔 맞는 답이 오답.",
+    "action": "fixed",
+    "note": "accept 5 → 23(+18): did not get × seriously · badly · severely × injured · hurt(6) · 'In the accident, Tom was not …'(6) · 'Tom was not injured/hurt + 부사 + in the accident'(6) — 점검자 7줄 모두 포함. 축약형(didn't · wasn't)은 채점기가 같게 봐서 따로 넣지 않음. 기존 패턴 'Tom did not seriously' 와 안 겹침. 부정을 뺀 'Tom got seriously injured …'는 오답."
+  },
+  {
+    "lesson": "pg18-1",
+    "item": "pg18-1:p5",
+    "finding": "'He is truly a smart person, …'과 '확신한다'를 certain 으로 옮긴 답이 오답(pg02-1:p3 은 truly a smart person 을 받음).",
+    "action": "fixed",
+    "note": "accept 7 → 31(+24): a truly · truly a · a really · really a smart person × sure · certain × that 유무 × come true · be realized 전체(기존 8꼴 제외 — 점검자 5줄 포함). 목표형 truly · really 모두 있음. 탐침 2개 wrong → correct."
+  },
+  {
+    "lesson": "pg18-1",
+    "item": "pg18-1:p27",
+    "finding": "'When do you leave?'(정해진 일정의 현재형)와 'When are you going to go away?'가 오답.",
+    "action": "fixed",
+    "note": "accept 4 → 6(+2, 제안 그대로). 과거 'When did you leave?'는 여전히 오답."
+  },
+  {
+    "lesson": "pg18-1",
+    "item": "pg18-1:p1 · p4 · p6 · p7 · p8 · p10 · p11 · p12 · p14 · p21",
+    "finding": "자주 나올 맞는 답이 빠져 오답(rather big · a bit slower · deeply · sorry about pushing · 부사 뒤 · recall · incredibly · passed by · married couple 풀어 쓰기 · far away · drive).",
+    "action": "fixed",
+    "note": "p1 +1(rather big) · p4 +6(a bit slower × Would · Could · Can × please 유무 — 점검자 3 + please 판 3) · p6 targets[0] + deeply, +9(deeply × for pushing · that we pushed · we pushed · about pushing 4 + about pushing × terribly · really · truly · awfully · extremely 5 — 점검자 5줄 포함) · p7 +8(badly · poorly 를 뒤에 × organized · organised · prepared · planned) · p8 +8(recall 판 — remember 판과 같은 짜임) · p10 targets[0] + incredibly, +1 · p11 +8(passed by × The time · Time × very quickly · really quickly · very fast · so quickly) · p12 +4(live · are living × very · really happily as a married couple) · p14 +1(How far away is that place?) · p21 +2(drive × How often · How frequently). '-ly 부사를 써서' 조건이 있는 p6 · p10 의 very · so 답은 여전히 오답 + 조건 힌트. 점검자 탐침 전부 wrong → correct."
+  },
+  {
+    "lesson": "pg18-1",
+    "item": "pg18-1:p23 · p29 (+ TOPIC-18.json)",
+    "finding": "'어디서 너는 사니?' · '언제 너는 대학을 졸업했니?'가 의문사를 맨 앞에 둔 영어식 어순(번역투). 같은 어순인 p24 · p27 은 이미 고쳐 어긋남.",
+    "action": "fixed",
+    "note": "일꾼의 '어순 취향' 판단에 동의하지 않음(점검자와 같음): 한국어 물음은 보통 주어(화제)를 먼저 둔다('너는 어디에 사니?'). p23: ko '너는 어디에 사니?', koSource 'review 3 item 46 (고침)', fix {fromKo, field ko, kind korean_unnatural, why}. p29: ko '너는 언제 대학을 졸업했니?', koSource 'review 3 item 52 (고침)', 기존 fix 의 field en → en+ko, fromKo 추가, why 끝에 한국어 어순 한 문장(kind 는 영어 고침 english_unnatural 그대로 — check-grading B 가 교재 원문을 '허용 답으로 둠'으로 계속 셈). TOPIC-18.json 에 newFinding 2개(page 29, korean_unnatural, appliedTo pg18-1:p23 · pg18-1:p29). 한국어는 소리 내지 않아 음성 영향 없음."
+  },
+  {
+    "lesson": "pg18-1 · pg18-3",
+    "item": "pg18-1:t2 (+ pg18-3:t1 선택)",
+    "finding": "GRAMMAR I 에서 가져온 '끝났나?'가 다른 문항의 '~니?'와 말투가 다름. pg18-3:t1 '나는 당신을 거의 들을 수 없습니다.'도 번역투.",
+    "action": "fixed",
+    "note": "t2: ko '그 모임은 얼마나 빨리 끝났니?' + koSource \"grammar1:gh1-098#103 ('끝났나?' → '끝났니?': 다른 문항과 같은 물음 끝)\" — gh1-098.json n=103 이 이 한국어, gh1-099 가 영어임을 파일에서 확인(source 는 gh1-099#103 그대로). 선택 항목도 고침(지침 '번역투 금지'): pg18-3:t1 ko '당신 말이 거의 들리지 않아요.' + koSource gh2-024-1#7(파일에서 확인), 새 한국어('당신 말이')대로 쓴 답도 맞게 accept 1 → 7(+ hardly · barely × what you are saying · what you say · your voice). 'I can't hardly hear you.'는 여전히 오답 + 기존 힌트."
+  },
+  {
+    "lesson": "pg18-1",
+    "item": "pg18-1:rule.worked[3]",
+    "finding": "\"'어떻게 말했나'를 꾸미므로 동사 spoke 뒤에\"가 어색하고, 부사가 꾸미는 것은 동사 spoke.",
+    "action": "fixed",
+    "note": "rule.worked[3] → \"'어떻게' 말했는지를 나타내 동사 spoke 를 꾸미므로 spoke 뒤에\"(제안 그대로). 설명 카드 글은 소리 내지 않음."
+  },
+  {
+    "lesson": "pg18-2",
+    "item": "pg18-2:p5",
+    "finding": "'일찍 일어나는 새가 벌레를 잡는다.'를 곧게 옮긴 'The bird that gets up early catches the worm.'이 힌트 없이 오답. 영어 속담 꼴을 요구한다는 표시가 없음.",
+    "action": "fixed",
+    "note": "condition = '영어 속담으로'. 오답 패턴은 점검자 제안 'up early catches' 대신 조금 넓게 {match 'up early', hint \"영어 속담은 '일찍 일어나는'을 early 하나로 bird 앞에서 꾸며요.\"} — 'wakes up early …' · '… gets up early gets the worm' 같은 꼴에도 같은 힌트. 정답 두 줄에 'up early'가 없어 check-lessons 0(패턴 2 → 3). 실제 채점기: 'The bird that gets up early …' · 'The bird which wakes up early …' 모두 오답 + 새 힌트, 교재 원문 'The early bird can catch the worms.'는 기존 힌트 그대로."
+  },
+  {
+    "lesson": "pg18-2",
+    "item": "pg18-2:rule.table · TOPIC-18.json p18 Cf.)",
+    "finding": "표 칸 'the early bird (이른)'이 ④ p5(앵커 아님) 답의 핵심 덩어리를 ② 에서 미리 보여 줌(검사 도구는 문장 전체만 봐서 못 잡음).",
+    "action": "fixed",
+    "note": "rule.table.rows[3][1] → 'an early train (이른)'. TOPIC-18.json 의 'Cf.) The early bird can catch the worms.' 항목 reason 에서 '설명 카드 표(the early bird)에도 씀'을 지우고 조건 칩 '영어 속담으로' · 패턴(up early) 반영을 적음, appliedTo 에서 'pg18-2:rule' 뺌. 도구가 덩어리 미리 보임을 못 잡는 것은 아래 lead 항목."
+  },
+  {
+    "lesson": "pg18-2",
+    "item": "pg18-2:rule.worked",
+    "finding": "풀이의 '들다 = carry'가 낱말 짝이 어긋남('(무거운 것을) 들다'는 lift, carry 는 옮기다 · 나르다).",
+    "action": "fixed",
+    "note": "rule.worked[0] → '그 상자는 옮기기에 너무 무거웠다.', rule.worked[2] → '무거운 = heavy, 옮기다 = carry'. 영어 'The box was too heavy to carry.'는 그대로."
+  },
+  {
+    "lesson": "pg18-2",
+    "item": "pg18-2:p12",
+    "finding": "'영화관에 가기에 너무 늦었어.'가 지금 상태로도 지난 일로도 읽혀, 'It was too late to go to the cinema.'가 힌트 없이 오답. 시제가 다른 답은 accept 에 넣지 않으므로 한국어를 고쳐야 함.",
+    "action": "fixed",
+    "note": "ko '이제 영화관에 가기에는 너무 늦었어.', koSource 'review 3 item 25 (고침)', fix {fromKo '영화관에 가기에 너무 늦었어.', field ko, kind translation_mismatch, why 제안대로}. accept 3 → 15(+12: 점검자 4줄 'It's too late to go to … now.' + 'It's now too late …' · 'Now it's too late …' × the cinema · the movies · the movie theater · the theater). 수정자가 더한 것: 패턴 {match 'It was too late', hint \"'이제 … 늦었어'는 지난 일이 아니라 지금의 상태예요.\"}(2 → 3) — 과거로 쓴 답에 시제 힌트. TOPIC-18.json 에 newFinding(page 27, Review 3 item 25). 실제 채점기: 과거 답 오답 + 새 힌트, now 붙인 답 · 옛 모범 답 모두 정답."
+  },
+  {
+    "lesson": "pg18-2",
+    "item": "pg18-2:p1 · p16 · t1 · t2",
+    "finding": "맞는 답이 오답: p1 'Sue works so hard.', p16 이 레슨 목표인 'rained hard'가 목표형 없음 · vacations, t1 'returned home', t2 'move really slowly'.",
+    "action": "fixed",
+    "note": "p1 +1 · p16 targets[0] + hard, accept 41 → 83(+42: Although · Though · Even though × a lot · heavily · hard × holidays · holiday · vacation · vacations × 앞뒤 + 'It rained …, but …' 꼴 — 점검자 6줄 포함, 'although … but' 패턴과 안 겹침) · t1 3 → 9(+ returned · came back home late last night, Last night 앞 꼴 4) · t2 5 → 17(+12: The hands of a clock · A clock's hands · Clock hands × turn · go · move × very · really — 점검자 4줄 포함). 탐침 5개 wrong → correct."
+  },
+  {
+    "lesson": "pg18-2",
+    "item": "pg18-2:f1",
+    "finding": "틀 'I get up early on ___.' / '나는 ___에 일찍 일어난다.'가 '아침'을 채우게 이끌어 'I get up early on morning.'이라는 틀린 영어가 됨.",
+    "action": "fixed",
+    "note": "template 'I ___ very hard every day.', ko '나는 매일 아주 열심히 ___.'(제안 그대로 — 빈칸이 동사라 study · work · practice 어느 것을 넣어도 맞고 이 레슨의 flat 부사 hard 를 씀). 틀은 소리 내지 않고 채점하지 않음."
+  },
+  {
+    "lesson": "pg18-3",
+    "item": "pg18-3:p6 · p7",
+    "finding": "'…그들을 보지 못했다'가 과거로도 현재완료로도 읽혀, 한국어대로 쓴 'I didn't see them for such a long time.'이 먼저 오답이 된 뒤에야 have + 과거분사 힌트가 나옴.",
+    "action": "fixed",
+    "note": "p6 condition 'such를 써서' → 'such를 써서, 현재완료로', p7 'so를 써서' → 'so를 써서, 현재완료로'(두 조건을 쉼표로 잇는 꼴은 pg14-2 '수동태로, me를 주어로' · pg15-1 '직접화법으로, 기원문으로'와 같음). 힌트는 그대로."
+  },
+  {
+    "lesson": "pg18-3",
+    "item": "pg18-3:p2 · p3 · p4",
+    "finding": "p3 에 There 칩이 없어 'A book was there.'가 목표형 없음, p2 는 'Here is one book.'을 안 받음(p3 은 one book 을 받음), p4 'but he was out of luck'이 오답.",
+    "action": "fixed",
+    "note": "p3 condition 'There로 시작해서'(p2 'Here로 시작해서'와 같은 꼴) · p2 accept 0 → 1('Here is one book.') · p4 accept 9 → 13(점검자 2줄 + he 없는 'but was out of luck' 2줄 — 기존 'but had no luck' 처럼)."
+  },
+  {
+    "lesson": "pg18-3",
+    "item": "pg18-3:rule.points[2]",
+    "finding": "규칙 줄이 'Here · There 로 시작하면 be동사가 주어 앞'이라 ③ s3 의 일반동사 문장 'Here comes the bus.'와 어긋남.",
+    "action": "fixed",
+    "note": "points[2] → 'Here · There 로 시작하면 동사가 주어 앞: Here is a book. · Here comes the train.(대명사 주어면 Here it is.)'(제안 그대로). ③ s3 은 the bus 라 문장이 겹치지 않고, ④ 정답을 담지 않음(check-lessons 0)."
+  },
+  {
+    "lesson": "pg18-4",
+    "item": "pg18-4:p2 · p3 · p5 · p8 · p11",
+    "finding": "맞는 답이 빠짐: p2 · p3 '꽤'를 rather 로 쓰면 목표형 없음, p5 dad + helps 꼴, p8 elder brother 가 '오타' · big brother 오답, p11 Would you · Can you · Could you please 꼴.",
+    "action": "fixed",
+    "note": "p2 targets[0] + rather, accept +2('I am a rather happy person.' · 'I am rather a happy person.' — quite a happy person 과 같은 어순도) · p3 targets[0] + rather, +1 · p5 +3 · p8 7 → 15(+8: elder · big brother × faster · more quickly × does 유무 — 점검자 4줄 포함; 'elder'는 이제 오타 표시 없이 정답) · p11 4 → 21(+17: Could · Would · Can you × please 유무 × more · a little more · a bit more carefully — 점검자 5줄 포함). 'Could you drive more careful?'은 여전히 오답 + 기존 힌트."
+  },
+  {
+    "lesson": "검사 도구(공용)",
+    "item": "docs/pass-off-grammar/검사/check-lessons.cjs — ② 카드가 ④ 정답을 먼저 보여 줌",
+    "finding": "검사가 ④ 문장 '전체'를 담은 카드 글만 잡아서, 'the early bird' 처럼 ④ 정답의 핵심 덩어리만 보이는 경우는 못 잡음(점검자 지적의 곁가지).",
+    "action": "lead",
+    "note": "이끄는 세션 몫(공용 코드 — 이 그룹은 데이터만 고침). 이 그룹의 해당 칸(pg18-2 표)은 위에서 고쳤음. 도구를 넓힌다면 예: 앵커가 아닌 ④ 정답에서 목표형이 든 3낱말 이상 조각이 카드 글에 그대로 있으면 경고 — 규칙 카드는 목표 문법을 보여 주는 곳이라 거짓 경보가 많을 수 있어 경고(문제 아님)로 두는 것을 권함."
+  }
+]

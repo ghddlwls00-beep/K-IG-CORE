@@ -1,0 +1,4922 @@
+{
+  "id": "pg10-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "불규칙 종류",
+  "label": "TOPIC 10. 동사",
+  "menuLabel": "10-2. 불규칙 종류",
+  "unit": 10,
+  "part": 2,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(2) 불규칙동사의 변화(현재-과거-과거분사)",
+  "grammarTags": [
+    "irregular-verbs"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg10-2:a1",
+          "en": "buy - bought - bought",
+          "ko": "사다 (buy)",
+          "koSource": "book table (2) 뜻 칸(사다)",
+          "focus": [
+            "bought"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 17"
+          }
+        },
+        {
+          "id": "pg10-2:a2",
+          "en": "come - came - come",
+          "ko": "오다 (come)",
+          "koSource": "book table (2) 뜻 칸(오다)",
+          "focus": [
+            "came",
+            "come"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 21"
+          }
+        },
+        {
+          "id": "pg10-2:a3",
+          "en": "cut - cut - cut",
+          "ko": "베다 (cut)",
+          "koSource": "book table (2) 뜻 칸(베다)",
+          "focus": [
+            "cut"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 23"
+          }
+        },
+        {
+          "id": "pg10-2:a4",
+          "en": "go - went - gone",
+          "ko": "가다 (go)",
+          "koSource": "book table (2) 뜻 칸(가다)",
+          "focus": [
+            "went",
+            "gone"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 41"
+          }
+        },
+        {
+          "id": "pg10-2:a5",
+          "en": "lay - laid - laid",
+          "ko": "놓다 (lay)",
+          "koSource": "book table (2) 뜻 칸(놓다)",
+          "focus": [
+            "laid"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 52"
+          }
+        },
+        {
+          "id": "pg10-2:a6",
+          "en": "lie - lay - lain",
+          "ko": "눕다 (lie)",
+          "koSource": "book table (2) 뜻 칸(눕다)",
+          "focus": [
+            "lay",
+            "lain"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 57"
+          }
+        },
+        {
+          "id": "pg10-2:a7",
+          "en": "make - made - made",
+          "ko": "만들다 (make)",
+          "koSource": "book table (2) 뜻 칸(만들다)",
+          "focus": [
+            "made"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 61"
+          }
+        },
+        {
+          "id": "pg10-2:a8",
+          "en": "read - read - read",
+          "ko": "읽다 (read)",
+          "koSource": "book table (2) 뜻 칸(읽다)",
+          "focus": [
+            "read"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 71"
+          },
+          "speakAs": "read ⟨riːd⟩ - read ⟨rɛd⟩ - read ⟨rɛd⟩"
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg10-2:a3",
+          "pg10-2:a1",
+          "pg10-2:a4"
+        ],
+        "question": "cut · buy · go 의 세 꼴을 보세요. 불규칙동사의 과거 · 과거분사는 어떻게 만들까요?",
+        "options": [
+          "-ed 를 붙이지 않고, 동사마다 모양이 따로 있다",
+          "모두 -ed 를 붙인다",
+          "과거와 과거분사는 늘 모양이 다르다"
+        ],
+        "answer": 0,
+        "why": "cut 은 세 꼴이 모두 같고, buy 는 과거와 과거분사가 같고(bought), go 는 셋이 다 달라요(went · gone). 정해진 -ed 규칙이 없어서 하나하나 외워야 해요."
+      },
+      "title": "불규칙동사는 과거 · 과거분사를 따로 외워요",
+      "points": [
+        "불규칙동사는 -ed 대신 과거 · 과거분사 모양이 따로 있어요.",
+        "과거는 지난 일(I went.), 과거분사는 have · be 뒤에 써요(have gone).",
+        "모양은 크게 넷: 셋이 같음 · 과거=과거분사 · 원형=과거분사 · 셋이 다름(원형과 과거만 같은 동사도 드물게 있어요).",
+        "세 번째 꼴은 과거분사예요. 과거완료(had + 과거분사)는 시제 이름이에요.",
+        "read 는 과거 · 과거분사도 read 로 쓰지만 소리는 [red]예요."
+      ],
+      "table": {
+        "columns": [
+          "모양",
+          "예"
+        ],
+        "rows": [
+          [
+            "셋이 같음",
+            "cut - cut - cut · read - read - read"
+          ],
+          [
+            "과거 = 과거분사",
+            "buy - bought - bought · make - made - made"
+          ],
+          [
+            "원형 = 과거분사",
+            "come - came - come"
+          ],
+          [
+            "셋이 다름",
+            "go - went - gone"
+          ],
+          [
+            "헷갈리는 짝",
+            "lie(눕다) - lay - lain · lay(놓다) - laid - laid"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '가다 → 갔다 → 간'처럼 끝만 바꾸면 되지만, 영어 불규칙동사는 go → went 처럼 낱말 모양이 통째로 바뀌기도 해요. 그래서 세 꼴을 한 묶음으로 소리 내어 외워요.",
+      "mistakes": [
+        {
+          "wrong": "I goed to school.",
+          "right": "I went to school.",
+          "why": "go 는 불규칙동사라 -ed 를 붙이지 않아요."
+        },
+        {
+          "wrong": "She has went home.",
+          "right": "She has gone home.",
+          "why": "has 뒤에는 과거(went)가 아니라 과거분사(gone)를 써요."
+        }
+      ],
+      "worked": [
+        "가다(go)를 세 꼴로 쓰면?",
+        "① 원형: go",
+        "② 지난 일(과거): went",
+        "③ have 뒤에 쓰는 꼴(과거분사): gone",
+        "go - went - gone"
+      ],
+      "terms": [],
+      "check": {
+        "question": "'She ___ here yesterday.' 빈칸에 맞는 것은?",
+        "options": [
+          "come",
+          "came",
+          "comes"
+        ],
+        "answer": 1,
+        "why": "yesterday(어제)는 지난 일이라 과거 came 을 써요. come 은 원형과 과거분사가 같은 꼴(come - came - come)이에요.",
+        "pointIndex": 1
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg10-2:s1",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "Yesterday I ___ to the library.",
+          "underline": [],
+          "options": [
+            "go",
+            "went",
+            "gone"
+          ],
+          "answer": 1,
+          "why": "Yesterday(어제)는 지난 일이라 과거 went 를 써요.",
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 41 (go)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg10-2:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "I have ___ a cake for you.",
+          "underline": [],
+          "options": [
+            "make",
+            "made",
+            "maked"
+          ],
+          "answer": 1,
+          "why": "have 뒤에는 과거분사를 써요. make 는 과거와 과거분사가 같은 made 예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 61 (make)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg10-2:s3",
+          "kind": "select",
+          "instruction": "과거분사를 누르세요",
+          "tokens": [
+            "I",
+            "have",
+            "bought",
+            "a",
+            "new",
+            "bag",
+            "."
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "have 뒤의 bought 가 과거분사예요. buy 는 과거와 과거분사가 같아요(bought - bought).",
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 17 (buy)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg10-2:s4",
+          "kind": "choice",
+          "instruction": "'눕다'라는 뜻의 lie 의 과거형은?",
+          "options": [
+            "lied",
+            "lay",
+            "laid"
+          ],
+          "answer": 1,
+          "why": "lie(눕다) - lay - lain 이에요. lied 는 lie(거짓말하다)의 과거, laid 는 lay(놓다)의 과거예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 57 (lie) · row 52 (lay)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg10-2:s5",
+          "kind": "choice",
+          "instruction": "세 꼴이 바르게 쓰인 것은?",
+          "options": [
+            "come - came - come",
+            "come - came - came",
+            "come - comed - comed"
+          ],
+          "answer": 0,
+          "why": "come 은 원형과 과거분사가 같은 꼴(come - came - come)이에요.",
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 21 (come)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg10-2:s6",
+          "kind": "short",
+          "instruction": "빈칸에 read 의 과거분사를 쓰세요",
+          "sentence": "I have ___ this book twice.",
+          "answer": [
+            "read"
+          ],
+          "why": "read - read - read: 글자는 같고 과거 · 과거분사의 소리만 [red]예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 71 (read)"
+          },
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg10-2:p1",
+          "ko": "일어나다 (arise)",
+          "koSource": "book table (2) 뜻 칸(일어나다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "arise - arose - arisen",
+          "accept": [],
+          "targets": [
+            [
+              "arose"
+            ],
+            [
+              "arisen"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "arised",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "arose arose",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 1"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p2",
+          "ko": "이다, 있다 (am, is)",
+          "koSource": "book table (2) 뜻 칸(이다/있다(be))",
+          "condition": "현재 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "am, is - was - been",
+          "accept": [
+            "am/is - was - been",
+            "am - was - been",
+            "is - was - been",
+            "be - was - been"
+          ],
+          "targets": [
+            [
+              "was"
+            ],
+            [
+              "been"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is were",
+              "hint": "주어가 I · he · she · it 일 때 be동사의 과거는 were 가 아니에요."
+            },
+            {
+              "match": "was was",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 2",
+            "reviewWhere": "review 2 item 1 (p24)"
+          },
+          "fix": null,
+          "note": "교재 표의 am/is 를 소리 내는 글에서는 쉼표로 적었습니다(빗금은 소리가 붙어 읽힘). am/is · be 로 쓴 답도 받습니다."
+        },
+        {
+          "id": "pg10-2:p3",
+          "ko": "이다, 있다 (are)",
+          "koSource": "book table (2) 뜻 칸(이다/있다(be))",
+          "condition": "현재 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "are - were - been",
+          "accept": [
+            "be - were - been"
+          ],
+          "targets": [
+            [
+              "were"
+            ],
+            [
+              "been"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "are was",
+              "hint": "주어가 you · we · they 일 때 be동사의 과거는 was 가 아니에요."
+            },
+            {
+              "match": "were were",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 3",
+            "reviewWhere": "review 2 item 2 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p4",
+          "ko": "낳다, 참다 (bear)",
+          "koSource": "book table (2) 뜻 칸(낳다, 참다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "bear - bore - borne",
+          "accept": [
+            "bear - bore - born"
+          ],
+          "targets": [
+            [
+              "bore"
+            ],
+            [
+              "borne",
+              "born"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "beared",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "bore bore",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 4",
+            "reviewWhere": "review 2 item 3 (p24)"
+          },
+          "fix": {
+            "from": "bear - bore - born",
+            "kind": "grammar_explanation_wrong",
+            "why": "'참다 · 나르다'와 능동의 '낳다'의 과거분사는 borne 입니다(I have borne the pain.). born 은 '태어나다'(be born)에만 씁니다. 모범 답을 borne 으로 하고, 뜻 칸에 '낳다'가 있어 born 도 정답으로 받습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p5",
+          "ko": "치다 (beat)",
+          "koSource": "book table (2) 뜻 칸(치다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "beat - beat - beaten",
+          "accept": [
+            "beat - beat - beat"
+          ],
+          "targets": [
+            [
+              "beat"
+            ],
+            [
+              "beaten",
+              "beat"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "beated",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 5",
+            "reviewWhere": "review 2 item 4 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p6",
+          "ko": "되다 (become)",
+          "koSource": "book table (2) 뜻 칸(되다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "become - became - become",
+          "accept": [],
+          "targets": [
+            [
+              "became"
+            ],
+            [
+              "become"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "becomed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "became became",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 6",
+            "reviewWhere": "review 2 item 5 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p7",
+          "ko": "시작하다 (begin)",
+          "koSource": "book table (2) 뜻 칸(시작하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "begin - began - begun",
+          "accept": [],
+          "targets": [
+            [
+              "began"
+            ],
+            [
+              "begun"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "begined",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "begun began",
+              "hint": "과거와 과거분사의 자리가 바뀌었어요."
+            },
+            {
+              "match": "began began",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 7",
+            "reviewWhere": "review 2 item 6 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p8",
+          "ko": "구부리다 (bend)",
+          "koSource": "book table (2) 뜻 칸(구부리다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "bend - bent - bent",
+          "accept": [],
+          "targets": [
+            [
+              "bent"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "bended",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 8",
+            "reviewWhere": "review 2 item 7 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p9",
+          "ko": "묶다 (bind)",
+          "koSource": "book table (2) 뜻 칸(묶다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "bind - bound - bound",
+          "accept": [],
+          "targets": [
+            [
+              "bound"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "binded",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 9",
+            "reviewWhere": "review 2 item 8 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p10",
+          "ko": "물다 (bite)",
+          "koSource": "book table (2) 뜻 칸(물다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "bite - bit - bitten",
+          "accept": [],
+          "targets": [
+            [
+              "bit"
+            ],
+            [
+              "bitten"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "bited",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "bit bit",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 10",
+            "reviewWhere": "review 2 item 9 (p24)"
+          },
+          "fix": {
+            "from": "bite - bit - bit",
+            "kind": "english_grammar",
+            "why": "bite 의 과거분사는 bitten 입니다(bit 는 옛 꼴). 교재 표와 Review 2 정답을 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p11",
+          "ko": "축복하다 (bless)",
+          "koSource": "book table (2) 뜻 칸(축복하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "bless - blessed - blessed",
+          "accept": [
+            "bless - blessed - blest",
+            "bless - blest - blessed",
+            "bless - blest - blest"
+          ],
+          "targets": [
+            [
+              "blessed",
+              "blest"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "blesed",
+              "hint": "bless 는 ss 로 끝나요. -ed 를 붙일 때 s 를 빼지 않아요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 11",
+            "reviewWhere": "review 2 item 10 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p12",
+          "ko": "불다 (blow)",
+          "koSource": "book table (2) 뜻 칸(불다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "blow - blew - blown",
+          "accept": [],
+          "targets": [
+            [
+              "blew"
+            ],
+            [
+              "blown"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "blowed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "blew blew",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 12",
+            "reviewWhere": "review 2 item 11 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p13",
+          "ko": "부수다 (break)",
+          "koSource": "book table (2) 뜻 칸(부수다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "break - broke - broken",
+          "accept": [],
+          "targets": [
+            [
+              "broke"
+            ],
+            [
+              "broken"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "breaked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "broke broke",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 13",
+            "reviewWhere": "review 2 item 12 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p14",
+          "ko": "가져오다 (bring)",
+          "koSource": "book table (2) 뜻 칸(가져오다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "bring - brought - brought",
+          "accept": [],
+          "targets": [
+            [
+              "brought"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "bringed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "brang",
+              "hint": "bring 은 sing - sang 처럼 모음만 바뀌는 동사가 아니에요."
+            },
+            {
+              "match": "bought",
+              "hint": "bought 는 buy(사다)의 과거예요. bring(가져오다)의 꼴을 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 14",
+            "reviewWhere": "review 2 item 13 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p15",
+          "ko": "짓다 (build)",
+          "koSource": "book table (2) 뜻 칸(짓다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "build - built - built",
+          "accept": [],
+          "targets": [
+            [
+              "built"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "builded",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 15",
+            "reviewWhere": "review 2 item 14 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p16",
+          "ko": "태우다 (burn)",
+          "koSource": "book table (2) 뜻 칸(태우다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "burn - burnt - burnt",
+          "accept": [
+            "burn - burnt - burned",
+            "burn - burned - burnt",
+            "burn - burned - burned"
+          ],
+          "targets": [
+            [
+              "burnt",
+              "burned"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "burnned",
+              "hint": "burn 은 끝 자음 n 을 겹치지 않아요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 16",
+            "reviewWhere": "review 2 item 15 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p17",
+          "ko": "사다 (buy)",
+          "koSource": "book table (2) 뜻 칸(사다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "buy - bought - bought",
+          "accept": [],
+          "targets": [
+            [
+              "bought"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "buyed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "brought",
+              "hint": "brought 는 bring(가져오다)의 과거예요. buy(사다)의 꼴을 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 15,
+            "where": "table (2) row 17",
+            "reviewWhere": "review 2 item 16 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p18",
+          "ko": "던지다 (cast)",
+          "koSource": "book table (2) 뜻 칸(던지다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "cast - cast - cast",
+          "accept": [],
+          "targets": [
+            [
+              "cast"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "casted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 18",
+            "reviewWhere": "review 2 item 17 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p19",
+          "ko": "잡다 (catch)",
+          "koSource": "book table (2) 뜻 칸(잡다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "catch - caught - caught",
+          "accept": [],
+          "targets": [
+            [
+              "caught"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "catched",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 19",
+            "reviewWhere": "review 2 item 18 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p20",
+          "ko": "선택하다 (choose)",
+          "koSource": "book table (2) 뜻 칸(선택하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "choose - chose - chosen",
+          "accept": [],
+          "targets": [
+            [
+              "chose"
+            ],
+            [
+              "chosen"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "choosed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "chose chose",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 20",
+            "reviewWhere": "review 2 item 19 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p21",
+          "ko": "오다 (come)",
+          "koSource": "book table (2) 뜻 칸(오다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "come - came - come",
+          "accept": [],
+          "targets": [
+            [
+              "came"
+            ],
+            [
+              "come"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "comed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "came came",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 21",
+            "reviewWhere": "review 2 item 20 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p22",
+          "ko": "비용이 들다 (cost)",
+          "koSource": "book table (2) 뜻 칸(비용이 들다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "cost - cost - cost",
+          "accept": [],
+          "targets": [
+            [
+              "cost"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "costed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 22",
+            "reviewWhere": "review 2 item 21 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p23",
+          "ko": "베다 (cut)",
+          "koSource": "book table (2) 뜻 칸(베다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "cut - cut - cut",
+          "accept": [],
+          "targets": [
+            [
+              "cut"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "cutted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 23",
+            "reviewWhere": "review 2 item 22 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p24",
+          "ko": "하다 (do)",
+          "koSource": "book table (2) 뜻 칸(하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "do - did - done",
+          "accept": [
+            "do, does - did - done"
+          ],
+          "targets": [
+            [
+              "did"
+            ],
+            [
+              "done"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "doed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "did did",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 24",
+            "reviewWhere": "review 2 item 23 (p24)"
+          },
+          "fix": null,
+          "note": "교재의 do (does)는 3인칭 단수 현재형을 함께 적은 것 — 모범 답에서는 빼고, does 를 넣어 쓴 답도 받습니다."
+        },
+        {
+          "id": "pg10-2:p25",
+          "ko": "끌다 (draw)",
+          "koSource": "book table (2) 뜻 칸(끌다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "draw - drew - drawn",
+          "accept": [],
+          "targets": [
+            [
+              "drew"
+            ],
+            [
+              "drawn"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "drawed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "drew drew",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 25",
+            "reviewWhere": "review 2 item 24 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p26",
+          "ko": "꿈꾸다 (dream)",
+          "koSource": "book table (2) 뜻 칸(꿈꾸다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "dream - dreamt - dreamt",
+          "accept": [
+            "dream - dreamt - dreamed",
+            "dream - dreamed - dreamt",
+            "dream - dreamed - dreamed"
+          ],
+          "targets": [
+            [
+              "dreamt",
+              "dreamed"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "dreamd",
+              "hint": "dream 은 e 로 끝나지 않아 -d 만 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 26",
+            "reviewWhere": "review 2 item 25 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p27",
+          "ko": "마시다 (drink)",
+          "koSource": "book table (2) 뜻 칸(마시다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "drink - drank - drunk",
+          "accept": [],
+          "targets": [
+            [
+              "drank"
+            ],
+            [
+              "drunk"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "drinked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "drunk drank",
+              "hint": "과거와 과거분사의 자리가 바뀌었어요."
+            },
+            {
+              "match": "drank drank",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 27",
+            "reviewWhere": "review 2 item 26 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p28",
+          "ko": "운전하다 (drive)",
+          "koSource": "book table (2) 뜻 칸(운전하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "drive - drove - driven",
+          "accept": [],
+          "targets": [
+            [
+              "drove"
+            ],
+            [
+              "driven"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "drived",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "drove drove",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 28",
+            "reviewWhere": "review 2 item 27 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p29",
+          "ko": "먹다 (eat)",
+          "koSource": "book table (2) 뜻 칸(먹다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "eat - ate - eaten",
+          "accept": [],
+          "targets": [
+            [
+              "ate"
+            ],
+            [
+              "eaten"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "eated",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "ate ate",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 29",
+            "reviewWhere": "review 2 item 28 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p30",
+          "ko": "떨어지다 (fall)",
+          "koSource": "book table (2) 뜻 칸(떨어지다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "fall - fell - fallen",
+          "accept": [],
+          "targets": [
+            [
+              "fell"
+            ],
+            [
+              "fallen"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "falled",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "fell fell",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 30",
+            "reviewWhere": "review 2 item 29 (p24)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p31",
+          "ko": "기르다, 먹이다 (feed)",
+          "koSource": "book table (2) 뜻 칸(기르다, 먹이다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "feed - fed - fed",
+          "accept": [],
+          "targets": [
+            [
+              "fed"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "feeded",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 31",
+            "reviewWhere": "review 2 item 30 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p32",
+          "ko": "느끼다 (feel)",
+          "koSource": "book table (2) 뜻 칸(느끼다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "feel - felt - felt",
+          "accept": [],
+          "targets": [
+            [
+              "felt"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "feeled",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 32",
+            "reviewWhere": "review 2 item 31 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p33",
+          "ko": "발견하다 (find)",
+          "koSource": "book table (2) 뜻 칸(발견하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "find - found - found",
+          "accept": [],
+          "targets": [
+            [
+              "found"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "finded",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 33",
+            "reviewWhere": "review 2 item 32 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p34",
+          "ko": "도망가다 (flee)",
+          "koSource": "book table (2) 뜻 칸(도망가다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "flee - fled - fled",
+          "accept": [],
+          "targets": [
+            [
+              "fled"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "fleed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "flew",
+              "hint": "flew 는 fly(날다)의 과거예요. flee(도망가다)의 꼴을 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 34",
+            "reviewWhere": "review 2 item 33 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p35",
+          "ko": "날다 (fly)",
+          "koSource": "book table (2) 뜻 칸(날다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "fly - flew - flown",
+          "accept": [],
+          "targets": [
+            [
+              "flew"
+            ],
+            [
+              "flown"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "flied",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "flew flew",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 35",
+            "reviewWhere": "review 2 item 34 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p36",
+          "ko": "금지하다 (forbid)",
+          "koSource": "book table (2) 뜻 칸(금지하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "forbid - forbade - forbidden",
+          "accept": [
+            "forbid - forbad - forbidden"
+          ],
+          "targets": [
+            [
+              "forbade",
+              "forbad"
+            ],
+            [
+              "forbidden"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "forbided",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "forbade forbade",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 36",
+            "reviewWhere": "review 2 item 35 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p37",
+          "ko": "저버리다, 버리다 (forsake)",
+          "koSource": "book table (2) 뜻 칸(저버리다 / 버리다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "forsake - forsook - forsaken",
+          "accept": [],
+          "targets": [
+            [
+              "forsook"
+            ],
+            [
+              "forsaken"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "forsaked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "forsook forsook",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 37"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p38",
+          "ko": "얼다 (freeze)",
+          "koSource": "book table (2) 뜻 칸(얼다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "freeze - froze - frozen",
+          "accept": [],
+          "targets": [
+            [
+              "froze"
+            ],
+            [
+              "frozen"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "freezed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "froze froze",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 38",
+            "reviewWhere": "review 2 item 36 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p39",
+          "ko": "얻다 (get)",
+          "koSource": "book table (2) 뜻 칸(얻다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "get - got - got",
+          "accept": [
+            "get - got - gotten"
+          ],
+          "targets": [
+            [
+              "got"
+            ],
+            [
+              "got",
+              "gotten"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "getted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 39",
+            "reviewWhere": "review 2 item 37 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p40",
+          "ko": "주다 (give)",
+          "koSource": "book table (2) 뜻 칸(주다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "give - gave - given",
+          "accept": [],
+          "targets": [
+            [
+              "gave"
+            ],
+            [
+              "given"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "gived",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "gave gave",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 40",
+            "reviewWhere": "review 2 item 38 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p41",
+          "ko": "가다 (go)",
+          "koSource": "book table (2) 뜻 칸(가다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "go - went - gone",
+          "accept": [],
+          "targets": [
+            [
+              "went"
+            ],
+            [
+              "gone"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "goed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "went went",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 41",
+            "reviewWhere": "review 2 item 39 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p42",
+          "ko": "자라다 (grow)",
+          "koSource": "book table (2) 뜻 칸(자라다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "grow - grew - grown",
+          "accept": [],
+          "targets": [
+            [
+              "grew"
+            ],
+            [
+              "grown"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "growed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "grew grew",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 42",
+            "reviewWhere": "review 2 item 40 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p43",
+          "ko": "매달리다 (hang)",
+          "koSource": "book table (2) 뜻 칸(매달리다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "hang - hung - hung",
+          "accept": [],
+          "targets": [
+            [
+              "hung"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "hanged",
+              "hint": "'걸다 · 매달리다'의 hang 은 -ed 를 붙이지 않아요(hanged 는 '교수형에 처하다'일 때)."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 43",
+            "reviewWhere": "review 2 item 41 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p44",
+          "ko": "가지다 (have)",
+          "koSource": "book table (2) 뜻 칸(가지다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "have - had - had",
+          "accept": [
+            "have, has - had - had"
+          ],
+          "targets": [
+            [
+              "had"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "haved",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 44",
+            "reviewWhere": "review 2 item 42 (p25)"
+          },
+          "fix": null,
+          "note": "교재의 have (has)는 3인칭 단수 현재형을 함께 적은 것 — 모범 답에서는 빼고, has 를 넣어 쓴 답도 받습니다."
+        },
+        {
+          "id": "pg10-2:p45",
+          "ko": "듣다 (hear)",
+          "koSource": "book table (2) 뜻 칸(듣다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "hear - heard - heard",
+          "accept": [],
+          "targets": [
+            [
+              "heard"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "heared",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 45",
+            "reviewWhere": "review 2 item 43 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p46",
+          "ko": "숨다 (hide)",
+          "koSource": "book table (2) 뜻 칸(숨다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "hide - hid - hidden",
+          "accept": [],
+          "targets": [
+            [
+              "hid"
+            ],
+            [
+              "hidden"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "hided",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "hid hid",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 46",
+            "reviewWhere": "review 2 item 44 (p25)"
+          },
+          "fix": {
+            "from": "hide - hid - hid",
+            "kind": "english_grammar",
+            "why": "hide 의 과거분사는 hidden 입니다(hid 는 옛 꼴). 교재 표와 Review 2 정답을 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p47",
+          "ko": "치다 (hit)",
+          "koSource": "book table (2) 뜻 칸(치다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "hit - hit - hit",
+          "accept": [],
+          "targets": [
+            [
+              "hit"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "hitted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 47",
+            "reviewWhere": "review 2 item 45 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p48",
+          "ko": "잡다 (hold)",
+          "koSource": "book table (2) 뜻 칸(잡다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "hold - held - held",
+          "accept": [],
+          "targets": [
+            [
+              "held"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "holded",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 48",
+            "reviewWhere": "review 2 item 46 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p49",
+          "ko": "상처 주다 (hurt)",
+          "koSource": "book table (2) 뜻 칸(상처 주다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "hurt - hurt - hurt",
+          "accept": [],
+          "targets": [
+            [
+              "hurt"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "hurted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 49",
+            "reviewWhere": "review 2 item 47 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p50",
+          "ko": "계속하다 (keep)",
+          "koSource": "book table (2) 뜻 칸(계속하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "keep - kept - kept",
+          "accept": [],
+          "targets": [
+            [
+              "kept"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "keeped",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 50",
+            "reviewWhere": "review 2 item 48 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p51",
+          "ko": "알다 (know)",
+          "koSource": "book table (2) 뜻 칸(알다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "know - knew - known",
+          "accept": [],
+          "targets": [
+            [
+              "knew"
+            ],
+            [
+              "known"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "knowed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "knew knew",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 16,
+            "where": "table (2) row 51",
+            "reviewWhere": "review 2 item 49 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p52",
+          "ko": "놓다 (lay)",
+          "koSource": "book table (2) 뜻 칸(놓다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "lay - laid - laid",
+          "accept": [],
+          "targets": [
+            [
+              "laid"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "layed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "lay lain",
+              "hint": "lain 은 lie(눕다)의 과거분사예요. lay(놓다)의 꼴을 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 52",
+            "reviewWhere": "review 2 item 50 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p53",
+          "ko": "인도하다 (lead)",
+          "koSource": "book table (2) 뜻 칸(인도하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "lead - led - led",
+          "accept": [],
+          "targets": [
+            [
+              "led"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "leaded",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 53",
+            "reviewWhere": "review 2 item 51 (p25)"
+          },
+          "fix": null,
+          "speakAs": "lead ⟨liːd⟩ - led - led"
+        },
+        {
+          "id": "pg10-2:p54",
+          "ko": "빌려주다 (lend)",
+          "koSource": "book table (2) 뜻 칸 (고침 — 교재: 빌리다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "lend - lent - lent",
+          "accept": [],
+          "targets": [
+            [
+              "lent"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "lended",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "borrowed",
+              "hint": "borrow 는 '빌리다'예요. '빌려주다'인 lend 의 꼴을 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 54",
+            "reviewWhere": "review 2 item 52 (p25)"
+          },
+          "fix": {
+            "fromKo": "빌리다",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "lend 는 '빌려주다'(lend A to B)이고 '빌리다'는 borrow 입니다. 뜻 칸을 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p55",
+          "ko": "~하게 두다, 허락하다 (let)",
+          "koSource": "book table (2) 뜻 칸 (고침 — 교재: 시키다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "let - let - let",
+          "accept": [],
+          "targets": [
+            [
+              "let"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "letted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 55",
+            "reviewWhere": "review 2 item 53 (p25)"
+          },
+          "fix": {
+            "fromKo": "시키다",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "let 은 '~하게 두다(허락하다)'이고, 억지로 '시키다'는 make · have 입니다. 뜻 칸을 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p56",
+          "ko": "떠나다 (leave)",
+          "koSource": "book table (2) 뜻 칸(떠나다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "leave - left - left",
+          "accept": [],
+          "targets": [
+            [
+              "left"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "leaved",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "lived",
+              "hint": "lived 는 live(살다)의 과거예요. leave(떠나다)의 꼴을 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 56",
+            "reviewWhere": "review 2 item 54 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p57",
+          "ko": "눕다 (lie)",
+          "koSource": "book table (2) 뜻 칸(눕다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "lie - lay - lain",
+          "accept": [],
+          "targets": [
+            [
+              "lay"
+            ],
+            [
+              "lain"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "lied",
+              "hint": "lied 는 lie(거짓말하다)의 과거예요. '눕다'의 lie 는 꼴이 달라요."
+            },
+            {
+              "match": "laid",
+              "hint": "laid 는 lay(놓다)의 과거예요. '눕다'의 lie 는 꼴이 달라요."
+            },
+            {
+              "match": "lay lay",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 57",
+            "reviewWhere": "review 2 item 55 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p58",
+          "ko": "눕히다 (lay)",
+          "koSource": "book table (2) 뜻 칸(눕히다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "lay - laid - laid",
+          "accept": [],
+          "targets": [
+            [
+              "laid"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "layed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "lay lain",
+              "hint": "lain 은 lie(눕다)의 과거분사예요. lay(눕히다)의 꼴을 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 58",
+            "reviewWhere": "review 2 item 56 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p59",
+          "ko": "잃다 (lose)",
+          "koSource": "book table (2) 뜻 칸(잃다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "lose - lost - lost",
+          "accept": [],
+          "targets": [
+            [
+              "lost"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "losed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 59",
+            "reviewWhere": "review 2 item 57 (p25)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p60",
+          "ko": "불을 붙이다 (light)",
+          "koSource": "book table (2) 뜻 칸 (고침 — 교재: 불 붙이다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "light - lit - lit",
+          "accept": [
+            "light - lit - lighted",
+            "light - lighted - lit",
+            "light - lighted - lighted"
+          ],
+          "targets": [
+            [
+              "lit",
+              "lighted"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "lightened",
+              "hint": "lighten(밝게 하다)은 다른 동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 60",
+            "reviewWhere": "review 2 item 58 (p25)"
+          },
+          "fix": {
+            "fromKo": "불 붙이다",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'불붙이다'는 한 낱말이라 띄어 쓰지 않습니다. 뜻이 잘 보이게 '불을 붙이다'로 썼습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p61",
+          "ko": "만들다 (make)",
+          "koSource": "book table (2) 뜻 칸(만들다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "make - made - made",
+          "accept": [],
+          "targets": [
+            [
+              "made"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "maked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 61",
+            "reviewWhere": "review 2 item 59 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p62",
+          "ko": "의미하다 (mean)",
+          "koSource": "book table (2) 뜻 칸(의미하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "mean - meant - meant",
+          "accept": [],
+          "targets": [
+            [
+              "meant"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "meaned",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 62",
+            "reviewWhere": "review 2 item 60 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p63",
+          "ko": "만나다 (meet)",
+          "koSource": "book table (2) 뜻 칸(만나다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "meet - met - met",
+          "accept": [],
+          "targets": [
+            [
+              "met"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "meeted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 63",
+            "reviewWhere": "review 2 item 61 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p64",
+          "ko": "잘못 알다, 오해하다 (mistake)",
+          "koSource": "book table (2) 뜻 칸 (고침 — 교재: 실수하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "mistake - mistook - mistaken",
+          "accept": [],
+          "targets": [
+            [
+              "mistook"
+            ],
+            [
+              "mistaken"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "mistaked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "mistook mistook",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 64",
+            "reviewWhere": "review 2 item 62 (p26)"
+          },
+          "fix": {
+            "fromKo": "실수하다",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "동사 mistake 는 '(A를 B로) 잘못 알다, 오해하다'(mistake A for B)입니다. '실수하다'는 make a mistake 라고 해서 뜻 칸을 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p65",
+          "ko": "극복하다 (overcome)",
+          "koSource": "book table (2) 뜻 칸(극복하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "overcome - overcame - overcome",
+          "accept": [],
+          "targets": [
+            [
+              "overcame"
+            ],
+            [
+              "overcome"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "overcomed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "overcame overcame",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 65"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p66",
+          "ko": "과식하다 (overeat)",
+          "koSource": "book table (2) 뜻 칸(과식하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "overeat - overate - overeaten",
+          "accept": [],
+          "targets": [
+            [
+              "overate"
+            ],
+            [
+              "overeaten"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "overeated",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "overate overate",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 66"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p67",
+          "ko": "지불하다 (pay)",
+          "koSource": "book table (2) 뜻 칸(지불하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "pay - paid - paid",
+          "accept": [],
+          "targets": [
+            [
+              "paid"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "payed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 67",
+            "reviewWhere": "review 2 item 63 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p68",
+          "ko": "놓다 (put)",
+          "koSource": "book table (2) 뜻 칸(놓다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "put - put - put",
+          "accept": [],
+          "targets": [
+            [
+              "put"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "putted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 68",
+            "reviewWhere": "review 2 item 64 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p69",
+          "ko": "증명하다 (prove)",
+          "koSource": "book table (2) 뜻 칸(증명하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "prove - proved - proven",
+          "accept": [
+            "prove - proved - proved"
+          ],
+          "targets": [
+            [
+              "proved"
+            ],
+            [
+              "proven",
+              "proved"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "proofed",
+              "hint": "proof 는 '증거'라는 명사예요. prove 의 꼴을 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 69",
+            "reviewWhere": "review 2 item 65 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p70",
+          "ko": "그만두다 (quit)",
+          "koSource": "book table (2) 뜻 칸(그만두다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "quit - quit - quit",
+          "accept": [
+            "quit - quit - quitted",
+            "quit - quitted - quit",
+            "quit - quitted - quitted"
+          ],
+          "targets": [
+            [
+              "quit",
+              "quitted"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "quited",
+              "hint": "quit 에 -ed 를 붙인다면 t 를 한 번 더 써야 해요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 70",
+            "reviewWhere": "review 2 item 66 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p71",
+          "ko": "읽다 (read)",
+          "koSource": "book table (2) 뜻 칸(읽다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "read - read - read",
+          "accept": [],
+          "targets": [
+            [
+              "read"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "readed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "red",
+              "hint": "red 는 '빨간'이라는 다른 낱말이에요. 소리는 같아도 글자가 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 71",
+            "reviewWhere": "review 2 item 67 (p26)"
+          },
+          "fix": null,
+          "speakAs": "read ⟨riːd⟩ - read ⟨rɛd⟩ - read ⟨rɛd⟩",
+          "note": "과거 · 과거분사 read 는 [red]로 소리 나서 speakAs 에 발음 기호를 적었습니다(화면 뜻 발음)."
+        },
+        {
+          "id": "pg10-2:p72",
+          "ko": "타다 (ride)",
+          "koSource": "book table (2) 뜻 칸(타다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "ride - rode - ridden",
+          "accept": [],
+          "targets": [
+            [
+              "rode"
+            ],
+            [
+              "ridden"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "rided",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "rode rode",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 72",
+            "reviewWhere": "review 2 item 68 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p73",
+          "ko": "울리다 (ring)",
+          "koSource": "book table (2) 뜻 칸(울리다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "ring - rang - rung",
+          "accept": [],
+          "targets": [
+            [
+              "rang"
+            ],
+            [
+              "rung"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "ringed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "rung rang",
+              "hint": "과거와 과거분사의 자리가 바뀌었어요."
+            },
+            {
+              "match": "rang rang",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 73",
+            "reviewWhere": "review 2 item 69 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p74",
+          "ko": "오르다 (rise)",
+          "koSource": "book table (2) 뜻 칸(오르다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "rise - rose - risen",
+          "accept": [],
+          "targets": [
+            [
+              "rose"
+            ],
+            [
+              "risen"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "rised",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "raised",
+              "hint": "raise(올리다)는 -ed 를 붙이는 다른 동사예요. rise(오르다)의 꼴을 다시 떠올려 보세요."
+            },
+            {
+              "match": "rose rose",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 74",
+            "reviewWhere": "review 2 item 70 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p75",
+          "ko": "달리다 (run)",
+          "koSource": "book table (2) 뜻 칸(달리다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "run - ran - run",
+          "accept": [],
+          "targets": [
+            [
+              "ran"
+            ],
+            [
+              "run"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "runned",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "ran ran",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 75",
+            "reviewWhere": "review 2 item 71 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p76",
+          "ko": "말하다 (say)",
+          "koSource": "book table (2) 뜻 칸(말하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "say - said - said",
+          "accept": [],
+          "targets": [
+            [
+              "said"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sayed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 76",
+            "reviewWhere": "review 2 item 72 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p77",
+          "ko": "보다 (see)",
+          "koSource": "book table (2) 뜻 칸(보다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "see - saw - seen",
+          "accept": [],
+          "targets": [
+            [
+              "saw"
+            ],
+            [
+              "seen"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "seed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "saw saw",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 77",
+            "reviewWhere": "review 2 item 73 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p78",
+          "ko": "찾다 (seek)",
+          "koSource": "book table (2) 뜻 칸(찾다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "seek - sought - sought",
+          "accept": [],
+          "targets": [
+            [
+              "sought"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "seeked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 78",
+            "reviewWhere": "review 2 item 74 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p79",
+          "ko": "팔다 (sell)",
+          "koSource": "book table (2) 뜻 칸(팔다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "sell - sold - sold",
+          "accept": [],
+          "targets": [
+            [
+              "sold"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "selled",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 79",
+            "reviewWhere": "review 2 item 75 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p80",
+          "ko": "보내다 (send)",
+          "koSource": "book table (2) 뜻 칸(보내다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "send - sent - sent",
+          "accept": [],
+          "targets": [
+            [
+              "sent"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sended",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "send send send",
+              "hint": "과거 · 과거분사는 원형과 모양이 달라요. 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 80",
+            "reviewWhere": "review 2 item 76 (p26)"
+          },
+          "fix": {
+            "from": "send - send - send",
+            "kind": "english_grammar",
+            "why": "send 의 과거 · 과거분사는 sent 입니다. 교재 표가 원형을 세 번 적었습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p81",
+          "ko": "놓다 (set)",
+          "koSource": "book table (2) 뜻 칸(놓다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "set - set - set",
+          "accept": [],
+          "targets": [
+            [
+              "set"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "setted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 81",
+            "reviewWhere": "review 2 item 77 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p82",
+          "ko": "흔들다 (shake)",
+          "koSource": "book table (2) 뜻 칸(흔들다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "shake - shook - shaken",
+          "accept": [],
+          "targets": [
+            [
+              "shook"
+            ],
+            [
+              "shaken"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "shaked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "shook shook",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 82",
+            "reviewWhere": "review 2 item 78 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p83",
+          "ko": "빛나다 (shine)",
+          "koSource": "book table (2) 뜻 칸(빛나다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "shine - shone - shone",
+          "accept": [
+            "shine - shone - shined",
+            "shine - shined - shone",
+            "shine - shined - shined"
+          ],
+          "targets": [
+            [
+              "shone",
+              "shined"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "shinned",
+              "hint": "shine 은 e 로 끝나요. 끝 자음을 겹치지 않아요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 83",
+            "reviewWhere": "review 2 item 79 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p84",
+          "ko": "쏘다 (shoot)",
+          "koSource": "book table (2) 뜻 칸(쏘다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "shoot - shot - shot",
+          "accept": [],
+          "targets": [
+            [
+              "shot"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "shooted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 17,
+            "where": "table (2) row 84",
+            "reviewWhere": "review 2 item 80 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p85",
+          "ko": "보여주다 (show)",
+          "koSource": "book table (2) 뜻 칸(보여주다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "show - showed - shown",
+          "accept": [
+            "show - showed - showed"
+          ],
+          "targets": [
+            [
+              "showed"
+            ],
+            [
+              "shown",
+              "showed"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "show show show",
+              "hint": "과거 · 과거분사는 원형과 모양이 달라요. 다시 떠올려 보세요."
+            },
+            {
+              "match": "showen",
+              "hint": "show 의 과거분사에는 e 를 넣지 않아요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 85",
+            "reviewWhere": "review 2 item 81 (p26)"
+          },
+          "fix": {
+            "from": "show - show - show",
+            "kind": "english_grammar",
+            "why": "show 의 과거는 showed, 과거분사는 shown(showed 도 씀)입니다. 교재 표가 원형을 세 번 적었습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p86",
+          "ko": "닫다 (shut)",
+          "koSource": "book table (2) 뜻 칸(닫다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "shut - shut - shut",
+          "accept": [],
+          "targets": [
+            [
+              "shut"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "shutted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 86",
+            "reviewWhere": "review 2 item 82 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p87",
+          "ko": "노래하다 (sing)",
+          "koSource": "book table (2) 뜻 칸(노래하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "sing - sang - sung",
+          "accept": [],
+          "targets": [
+            [
+              "sang"
+            ],
+            [
+              "sung"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "singed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "sung sang",
+              "hint": "과거와 과거분사의 자리가 바뀌었어요."
+            },
+            {
+              "match": "sang sang",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 87",
+            "reviewWhere": "review 2 item 83 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p88",
+          "ko": "가라앉다 (sink)",
+          "koSource": "book table (2) 뜻 칸(가라앉다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "sink - sank - sunk",
+          "accept": [
+            "sink - sunk - sunk"
+          ],
+          "targets": [
+            [
+              "sank",
+              "sunk"
+            ],
+            [
+              "sunk"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sinked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "sunk sank",
+              "hint": "과거와 과거분사의 자리가 바뀌었어요."
+            },
+            {
+              "match": "sank sank",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 88",
+            "reviewWhere": "review 2 item 84 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p89",
+          "ko": "앉다 (sit)",
+          "koSource": "book table (2) 뜻 칸(앉다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "sit - sat - sat",
+          "accept": [],
+          "targets": [
+            [
+              "sat"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sitted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "set",
+              "hint": "set 은 '놓다'라는 다른 동사예요. sit(앉다)의 꼴을 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 89",
+            "reviewWhere": "review 2 item 85 (p26)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p90",
+          "ko": "자다 (sleep)",
+          "koSource": "book table (2) 뜻 칸(자다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "sleep - slept - slept",
+          "accept": [],
+          "targets": [
+            [
+              "slept"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sleeped",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 90",
+            "reviewWhere": "review 2 item 86 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p91",
+          "ko": "냄새나다 (smell)",
+          "koSource": "book table (2) 뜻 칸 (고침 — 교재: 냄새 나다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "smell - smelt - smelt",
+          "accept": [
+            "smell - smelt - smelled",
+            "smell - smelled - smelt",
+            "smell - smelled - smelled"
+          ],
+          "targets": [
+            [
+              "smelt",
+              "smelled"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "smeled",
+              "hint": "smell 에 -ed 를 붙일 때 l 을 빼지 않아요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 91",
+            "reviewWhere": "review 2 item 87 (p27)"
+          },
+          "fix": {
+            "fromKo": "냄새 나다",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'냄새나다'는 한 낱말이라 붙여 씁니다."
+          }
+        },
+        {
+          "id": "pg10-2:p92",
+          "ko": "말하다 (speak)",
+          "koSource": "book table (2) 뜻 칸(말하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "speak - spoke - spoken",
+          "accept": [],
+          "targets": [
+            [
+              "spoke"
+            ],
+            [
+              "spoken"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "speaked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "spoke spoke",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 92",
+            "reviewWhere": "review 2 item 88 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p93",
+          "ko": "쓰다, 소비하다 (spend)",
+          "koSource": "book table (2) 뜻 칸(쓰다, 소비하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "spend - spent - spent",
+          "accept": [],
+          "targets": [
+            [
+              "spent"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "spended",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 93",
+            "reviewWhere": "review 2 item 89 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p94",
+          "ko": "튀어 오르다 (spring)",
+          "koSource": "book table (2) 뜻 칸(튀어 오르다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "spring - sprang - sprung",
+          "accept": [
+            "spring - sprung - sprung"
+          ],
+          "targets": [
+            [
+              "sprang",
+              "sprung"
+            ],
+            [
+              "sprung"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "springed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "sprang sprang",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 94",
+            "reviewWhere": "review 2 item 90 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p95",
+          "ko": "퍼지다 (spread)",
+          "koSource": "book table (2) 뜻 칸(퍼지다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "spread - spread - spread",
+          "accept": [],
+          "targets": [
+            [
+              "spread"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "spreaded",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 95",
+            "reviewWhere": "review 2 item 91 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p96",
+          "ko": "서다 (stand)",
+          "koSource": "book table (2) 뜻 칸(서다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "stand - stood - stood",
+          "accept": [],
+          "targets": [
+            [
+              "stood"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "standed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 96",
+            "reviewWhere": "review 2 item 92 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p97",
+          "ko": "훔치다 (steal)",
+          "koSource": "book table (2) 뜻 칸(훔치다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "steal - stole - stolen",
+          "accept": [],
+          "targets": [
+            [
+              "stole"
+            ],
+            [
+              "stolen"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "stealed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "stole stole",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 97",
+            "reviewWhere": "review 2 item 93 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p98",
+          "ko": "치다 (strike)",
+          "koSource": "book table (2) 뜻 칸(치다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "strike - struck - struck",
+          "accept": [
+            "strike - struck - stricken"
+          ],
+          "targets": [
+            [
+              "struck"
+            ],
+            [
+              "struck",
+              "stricken"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "striked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 98",
+            "reviewWhere": "review 2 item 94 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p99",
+          "ko": "노력하다, 애쓰다 (strive)",
+          "koSource": "book table (2) 뜻 칸(노력하다, 애쓰다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "strive - strove - striven",
+          "accept": [
+            "strive - strove - strived",
+            "strive - strived - striven",
+            "strive - strived - strived"
+          ],
+          "targets": [
+            [
+              "strove",
+              "strived"
+            ],
+            [
+              "striven",
+              "strived"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "stove",
+              "hint": "stove 는 '난로'라는 다른 낱말이에요."
+            },
+            {
+              "match": "strove strove",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 99",
+            "reviewWhere": "review 2 item 95 (p27)"
+          },
+          "fix": {
+            "from": "strive - stove - striven",
+            "kind": "english_grammar",
+            "why": "과거형 stove(난로)는 오타이고 strove 가 맞습니다(strived 도 씀)."
+          }
+        },
+        {
+          "id": "pg10-2:p100",
+          "ko": "쓸다 (sweep)",
+          "koSource": "book table (2) 뜻 칸(쓸다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "sweep - swept - swept",
+          "accept": [],
+          "targets": [
+            [
+              "swept"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sweeped",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 100",
+            "reviewWhere": "review 2 item 96 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p101",
+          "ko": "헤엄치다 (swim)",
+          "koSource": "book table (2) 뜻 칸(헤엄치다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "swim - swam - swum",
+          "accept": [],
+          "targets": [
+            [
+              "swam"
+            ],
+            [
+              "swum"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "swimmed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "swum swam",
+              "hint": "과거와 과거분사의 자리가 바뀌었어요."
+            },
+            {
+              "match": "swam swam",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 101",
+            "reviewWhere": "review 2 item 97 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p102",
+          "ko": "가져가다, 데려가다 (take)",
+          "koSource": "book table (2) 뜻 칸 (고침 — 교재: 가지다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "take - took - taken",
+          "accept": [],
+          "targets": [
+            [
+              "took"
+            ],
+            [
+              "taken"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "taked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "took took",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 102",
+            "reviewWhere": "review 2 item 98 (p27)"
+          },
+          "fix": {
+            "fromKo": "가지다",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "take 는 '가져가다, 데려가다, 잡다'이고 '가지다'는 have 입니다(44행 have 의 뜻과도 겹침). 뜻 칸을 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p103",
+          "ko": "가르치다 (teach)",
+          "koSource": "book table (2) 뜻 칸(가르치다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "teach - taught - taught",
+          "accept": [],
+          "targets": [
+            [
+              "taught"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "teached",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "thought",
+              "hint": "thought 는 think(생각하다)의 과거예요. teach 의 꼴을 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 103",
+            "reviewWhere": "review 2 item 99 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p104",
+          "ko": "찢다 (tear)",
+          "koSource": "book table (2) 뜻 칸(찢다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "tear - tore - torn",
+          "accept": [],
+          "targets": [
+            [
+              "tore"
+            ],
+            [
+              "torn"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "teared",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "tore tore",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 104",
+            "reviewWhere": "review 2 item 100 (p27)"
+          },
+          "fix": null,
+          "speakAs": "tear ⟨tɛr⟩ - tore - torn",
+          "note": "tear 는 '눈물'[tɪr]과 글자가 같아 speakAs 에 '찢다'의 발음 기호를 적었습니다."
+        },
+        {
+          "id": "pg10-2:p105",
+          "ko": "말하다 (tell)",
+          "koSource": "book table (2) 뜻 칸(말하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "tell - told - told",
+          "accept": [],
+          "targets": [
+            [
+              "told"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "telled",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 105",
+            "reviewWhere": "review 2 item 101 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p106",
+          "ko": "생각하다 (think)",
+          "koSource": "book table (2) 뜻 칸(생각하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "think - thought - thought",
+          "accept": [],
+          "targets": [
+            [
+              "thought"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "thinked",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "taught",
+              "hint": "taught 는 teach(가르치다)의 과거예요. think 의 꼴을 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 106",
+            "reviewWhere": "review 2 item 102 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p107",
+          "ko": "던지다 (throw)",
+          "koSource": "book table (2) 뜻 칸(던지다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "throw - threw - thrown",
+          "accept": [],
+          "targets": [
+            [
+              "threw"
+            ],
+            [
+              "thrown"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "throwed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "threw threw",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 107",
+            "reviewWhere": "review 2 item 103 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p108",
+          "ko": "이해하다 (understand)",
+          "koSource": "book table (2) 뜻 칸(이해하다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "understand - understood - understood",
+          "accept": [],
+          "targets": [
+            [
+              "understood"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "understanded",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "understand understand understand",
+              "hint": "과거 · 과거분사는 원형과 모양이 달라요. 다시 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 108",
+            "reviewWhere": "review 2 item 104 (p27)"
+          },
+          "fix": {
+            "from": "understand - understand - understand",
+            "kind": "english_grammar",
+            "why": "understand 의 과거 · 과거분사는 understood 입니다. 교재 표가 원형을 세 번 적었습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p109",
+          "ko": "속상하게 하다, 뒤엎다 (upset)",
+          "koSource": "book table (2) 뜻 칸 (고침 — 교재: 화내다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "upset - upset - upset",
+          "accept": [],
+          "targets": [
+            [
+              "upset"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "upsetted",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 109",
+            "reviewWhere": "review 2 item 105 (p27)"
+          },
+          "fix": {
+            "fromKo": "화내다",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "동사 upset 은 '(남을) 속상하게 하다, 뒤엎다'입니다. '화내다'는 get angry · get upset 이라 뜻 칸을 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p110",
+          "ko": "깨우다 (wake)",
+          "koSource": "book table (2) 뜻 칸(깨우다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "wake - woke - woken",
+          "accept": [
+            "wake - waked - waked",
+            "wake - woke - waked",
+            "wake - waked - woken"
+          ],
+          "targets": [
+            [
+              "woke",
+              "waked"
+            ],
+            [
+              "woken",
+              "waked"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "woke woke",
+              "hint": "세 번째 칸은 과거분사예요. woke 는 과거 꼴이에요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 110",
+            "reviewWhere": "review 2 item 106 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p111",
+          "ko": "울다 (weep)",
+          "koSource": "book table (2) 뜻 칸(울다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "weep - wept - wept",
+          "accept": [],
+          "targets": [
+            [
+              "wept"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "weeped",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 111",
+            "reviewWhere": "review 2 item 107 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p112",
+          "ko": "이기다 (win)",
+          "koSource": "book table (2) 뜻 칸(이기다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "win - won - won",
+          "accept": [],
+          "targets": [
+            [
+              "won"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "winned",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 112",
+            "reviewWhere": "review 2 item 108 (p27)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg10-2:p113",
+          "ko": "물러나다, 인출하다 (withdraw)",
+          "koSource": "book table (2) 뜻 칸 (고침 — 교재: 움츠리다, 뒤로 빼다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "withdraw - withdrew - withdrawn",
+          "accept": [],
+          "targets": [
+            [
+              "withdrew"
+            ],
+            [
+              "withdrawn"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "withdrawed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "withdrew withdrew",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 113",
+            "reviewWhere": "review 2 item 109 (p27)"
+          },
+          "fix": {
+            "fromKo": "움츠리다, 뒤로 빼다",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "withdraw 의 대표 뜻은 '물러나다, 철회하다, (돈을) 인출하다'입니다. '움츠리다, 뒤로 빼다'(withdraw one's hand · withdraw into oneself)도 맞는 뜻이지만 좁은 뜻이라, 뜻 칸을 대표 뜻으로 바꿨습니다."
+          }
+        },
+        {
+          "id": "pg10-2:p114",
+          "ko": "쓰다 (write)",
+          "koSource": "book table (2) 뜻 칸(쓰다)",
+          "condition": "원형 - 과거 - 과거분사",
+          "promptEn": null,
+          "en": "write - wrote - written",
+          "accept": [],
+          "targets": [
+            [
+              "wrote"
+            ],
+            [
+              "written"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "writed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "wrote wrote",
+              "hint": "세 번째 칸은 과거분사예요. 이 동사는 과거와 과거분사의 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 18,
+            "where": "table (2) row 114",
+            "reviewWhere": "review 2 item 110 (p27)"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg10-2:t3",
+          "ko": "그는 약속을 지켰다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "He kept his promise.",
+          "accept": [
+            "He kept his word.",
+            "He kept the promise.",
+            "He kept his promises."
+          ],
+          "targets": [
+            [
+              "kept"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "keeped",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "He keeps",
+              "hint": "'지켰다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs",
+            "past-simple",
+            "pronoun-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-019#12",
+          "koSource": "grammar gh2-019-1#12 (고침)",
+          "note": "t1(I heard a strange sound outside. — grammar2:gh2-020#5)은 1권 pg04-1 의 ⑤ t2 와 한국어 · 영어가 같은 문장이라 '처음 보는 문장'이 아니어서 빼고(id t1 은 비워 둠 — pg04-1:t1 과 같은 처리), GRAMMAR II gh2-019#12 로 바꿈. GRAMMAR II 한국어 '그는 그의 약속을 지켰다.'의 번역투 '그의'를 뺐고(영어는 그대로), 허용 답은 GRAMMAR II 다른 답(He kept his word.) + '약속을'대로 옮긴 the promise · promises."
+        },
+        {
+          "id": "pg10-2:t2",
+          "ko": "그는 턱수염을 길렀다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "He grew a beard.",
+          "accept": [
+            "He grew his beard."
+          ],
+          "targets": [
+            [
+              "grew"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "growed",
+              "hint": "이 동사는 -ed 를 붙이지 않는 불규칙동사예요."
+            },
+            {
+              "match": "He grows a",
+              "hint": "'길렀다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "irregular-verbs",
+            "past-simple",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-018#16",
+          "note": "GRAMMAR II 에는 허용 답이 없어 한국어대로 옮긴 He grew his beard. 를 더했습니다."
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg10-2:f1",
+      "template": "I got up at ___ this morning.",
+      "ko": "오늘 아침 나는 ___시에 일어났다."
+    }
+  ]
+}

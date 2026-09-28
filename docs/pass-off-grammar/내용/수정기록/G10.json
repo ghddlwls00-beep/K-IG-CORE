@@ -1,0 +1,163 @@
+[
+  {
+    "lesson": "pg12-2",
+    "item": "pg12-2:a3 · pg12-2:p5 · pg12-2:s2 · 판정 TOPIC-12.json(p44 department store note)",
+    "finding": "교재 issue(g2-p28-51.json p28, english_unnatural)의 where 가 TOPIC 12 p44 · p45 · p47 까지 가리키는데, pg11-1(before she got married 추가) · pg19-3(과거형으로 고침)과 달리 pg12-2 만 기준 시점 없는 원문 'She had worked at a department store for several years.'를 앵커 · 모범 답 · ③ 문장으로 둠. 설명 카드 1번 줄('과거의 어느 때보다 먼저')과도 안 맞음.",
+    "action": "fixed",
+    "note": "점검자 말이 맞음(issue 원문을 다시 읽어 where 에 'TOPIC 12 passOff (2) item 3 (p44) · application item 15 (p45) · review 2. item 4 (p47)'이 있음을 확인, TOPIC-11.json 판정 reason 도 '같은 판정을 권함'). a3 · p5: en = 'She had worked at a department store for several years before she got married.' · ko = '그녀는 결혼하기 전에 수년 동안 백화점에서 일했었다.'(pg11-1:p11 과 글자까지 같음) · koSource 'review 3 item 15 (고침)' · fix{from 원문, fromKo '그녀는 수 년 동안 백화점에서 일해 왔었다.', field en+ko, kind english_unnatural} · note 갱신(studentRef adapted 유지). p5.accept = pg11-1:p11 의 29개 + 점검자 5개를 포함하는 44개 더(had been working · 'for … years'를 앞에 둔 어순 · 결혼 절을 앞에 둔 어순을 빠짐없이 짬 — 모두 73). targets 그대로. 오답 힌트 두 줄은 점검자 글 그대로. 점검자 제안에 더해 p5 tags 에 complex-sentence 를 넣음(이 레슨의 다른 절 문장 p1~p4 · p6 과 pg11-1:p11 처럼 — 앞 레슨 태그라 도전 아님). s2: sentence 새 영어 · why · fix{from 원문, field sentence, kind english_unnatural}. 판정 TOPIC-12.json note 의 reason 을 'TOPIC 11 p28 issue 판정과 같게 fix'로 바꾸고 refs 에 pg12-2:s2. 증거(실제 채점기 · 화면 모양 viewBlocks): 원문(before 절 없음)은 오답(힌트 없음), 'She worked … before she got married.' → 힌트 she worked, 'She has worked …' → 힌트 she has worked, 'She had work …' → 힌트 had work. check-grading B 가 fix.from 을 오답으로 셈. — 이 수정 전체의 확인(만든 쪽 · 점검 · 수정이 모두 같은 AI 계열이라 독립 검수가 아님): ① check-lessons --topics 12 → 문제 0 · exit 0(대주제 12 교재 문장 50 빠짐 0 · issues 27 미판정 0) ② check-lessons --selftest → 일부러 깬 22가지 모두 잡음(빠짐 273/273) ③ check-grading → PASS(레슨 67 · ④⑤ 1,290문항 · 정답 9,607 · 원문 오류 문장 오답 142) ④ checkPassoffFreeLeak → PASS ⑤ 실제 채점기 + viewBlocks 로 G10 네 레슨의 모범 답 · 허용 답 1,089개가 타자 · 마이크 모두 정답 · 목표형 빠짐 0 · 정답에 걸리는 오답 패턴 0, 점검자가 제안한 새 답 151개 모두 정답(타자 · 마이크 302번), 틀린 답 48개 모두 오답 + 기대한 힌트, 고친 글 15곳이 파일에 있고 옛 글 7가지가 화면 글에 없음 — 스크립트 scratchpad\\g10fix\\verify.cjs, 정답 하나를 틀린 답으로 기대하게 깨면(--break) exit 1. 바꾸기 전 값을 하나하나 확인하고 바꾼 스크립트 scratchpad\\g10fix\\apply.cjs · apply2.cjs, 백업 scratchpad\\g10fix\\backup\\, 구조 비교 diff.cjs(뜻밖의 칸 변화 0 — 빠진 허용 답은 p5 의 before 절 없는 옛 15개와 t2 의 Pakistanis 4개뿐). 못 본 것: 실제 화면 · 음성 · 사장님 확인. 새 소리가 필요한 글(음성 단계 — 2권은 아직 음성 전이라 사라진 클립 없음): pg12-4:t2 'Many trees are being cut down in the forest.', pg12-2:a3 · p5 는 pg11-1:p11 과 같은 글이라 그 클립을 같이 씀."
+  },
+  {
+    "lesson": "pg12-3",
+    "item": "pg12-3:rule.koDiff",
+    "finding": "koDiff 가 '서울에 살고 있다'를 진행형으로 쓰지 않는 상태의 예로 들었는데, I'm living in Seoul 은 맞는 영어(pg12-1:p8 도 have been living 을 받음).",
+    "action": "fixed",
+    "note": "맞음 — live 는 진행형이 되는 동사(임시로 사는 중)라 카드가 맞는 영어를 틀린 것처럼 가르침. 예를 카드 points[3] 목록의 have(가지다)로 바꿈: \"우리말 '-고 있다'는 '그를 알고 있다 · 차를 가지고 있다'처럼 상태에도 쓰지만, …\"(나머지 글 그대로 — ④ 정답을 새로 담지 않음, check-lessons 0)."
+  },
+  {
+    "lesson": "pg12-2",
+    "item": "pg12-2:rule.points[0] · points[2]",
+    "finding": "과거완료 · 미래완료 줄이 '그때까지 이어진 일(계속)'을 빼먹어 앵커 절반(a3 · a4 · a7 · a8)을 규칙에 대응시킬 수 없음.",
+    "action": "fixed",
+    "note": "맞음. points[0] = '과거완료 = had + 과거분사: 과거의 어느 때보다 먼저 일어났거나 그때까지 이어진 일' · points[2] = '미래완료 = will have + 과거분사: 미래의 어느 때까지 끝나 있거나 이어져 온 일'. check.pointIndex 2 는 그대로 맞음(By tomorrow … will have finished)."
+  },
+  {
+    "lesson": "pg12-4",
+    "item": "pg12-4:t2",
+    "finding": "GRAMMAR I gh1-123#75 'Five Pakistanis are being questioned.'는 어휘(Pakistanis · questioned · interrogated)가 대상 수준보다 어렵고 뉴스 심문 문맥이라, 규칙대로 new 로 바꾸기를 권함.",
+    "action": "fixed",
+    "note": "받아들임. 까닭의 중심은 수준: ⑤ 는 배운 문법(be being + 과거분사)을 처음 보는 문장에 쓰는지 보는 자리인데, 국적 낱말 철자 · 심문 어휘 때문에 문법과 상관없이 틀리게 됨('Five people from Pakistan …'도 오답). D6 은 교재 예문을 그대로 두라는 결정이라 새로 고르는 문장에는 해당 없음. GRAMMAR I·II 전체에서 am/is/are/was/were + being + 낱말을 다시 찾아 진행형 수동은 gh1-123#75 하나뿐임을 확인(gh2-038#7 은 동명사 father's being rich), content/ 전체에 새 문장과 같은 글 없음. t2(id 그대로): ko '숲에서 많은 나무가 베어지고 있다.' · koSource new · condition 'being을 써서' · en 'Many trees are being cut down in the forest.' · source new · tags [being-progressive-passive] · note 갱신. 점검자 안에서 넓힘: accept 는 Many / A lot of / Lots of × cut down / cut / chopped down × the forest / the woods × 어순 3 = 53, targets [[are being, 're being], [cut, chopped]], 오답 패턴은 같은 힌트로 더 넓게 'are cutting' · 'are cut'('are being cut' 에는 안 걸림 — 낱말 경계) · 'cutted'(점검자 안 'trees are cut down' 은 'Many trees in the forest are cut down.'을 못 잡음). 판정 D14 note 의 '전이 2(… gh1-123#75)' 글도 고침. 만든 쪽 uncertain 의 t2 줄은 워크플로우 결과(파일이 아님)라 고칠 수 없어 이 기록이 대신함(이끄는 세션 몫에 적음). 새 소리 필요(음성 단계): 'Many trees are being cut down in the forest.'"
+  },
+  {
+    "lesson": "pg12-2",
+    "item": "pg12-2:p4",
+    "finding": "'택시에'에 관사 단서가 없는데 허용 답이 모두 the cab · the taxi 라 'in a taxi · in a cab' 이 오답. 오답 패턴 'on the' 는 'on a taxi' 를 못 잡고 문장 어디의 on the 에나 걸림.",
+    "action": "fixed",
+    "note": "맞음. accept 에 realized/realised × that 있음/없음 × behind 있음/없음 × a taxi/a cab 16개(점검자 8개 + 이미 있던 behind 판에 맞춘 8개, 15 → 31). 패턴 'on the' → 'umbrella on'(힌트 그대로). 확인: 'on the cab' · 'on a taxi' → 힌트 umbrella on, 'I realized on the way home that I had left my umbrella in the taxi.'에는 이제 엉뚱한 힌트가 안 뜸."
+  },
+  {
+    "lesson": "pg12-2",
+    "item": "pg12-2:p1",
+    "finding": "'영화관에'를 글자대로 옮긴 'go to the movie theater'와 because 대신 since 를 쓴 맞는 답이 오답.",
+    "action": "fixed",
+    "note": "맞음. 점검자 8개만 넣으면 'since … cinema' · 'movie theater … watched' 같은 짝이 여전히 오답이라, 이미 있던 짜임을 넓혀 the movies/the cinema/the movie theater × because/since × already seen/seen … already/already watched × the film/the movie × 어순 2 로 빠짐없이 짬(23 → 71, 이미 있던 23개는 모두 남음). 틀린 답 'she has already seen' · 'she already saw' 힌트 그대로."
+  },
+  {
+    "lesson": "pg12-3",
+    "item": "pg12-3:p10",
+    "finding": "한국어 '친구와'인데 허용 답이 모두 her friend 라 'a friend' 답이 오답, 'talking on the phone to her friend' 어순도 오답.",
+    "action": "fixed",
+    "note": "맞음. 이미 있던 짜임(talking/speaking × 세 어순 × got/came/arrived/came back home × 절 순서)에 her friend/a friend 와 'on the phone to X' 어순을 더해 빠짐없이 짬(47 → 127, 점검자 8개 포함). 'She was talking to a friend …' → 힌트 she was(조건), 'She has been talking …' → 힌트 has been talking 그대로."
+  },
+  {
+    "lesson": "pg12-4",
+    "item": "pg12-4:p6",
+    "finding": "'비가 올 것 같아'를 옮긴 'It seems like it's going to rain.' · 'I think it's going to rain.'이 오답.",
+    "action": "fixed",
+    "note": "맞음. 구름 6가지(those dark · the dark · those black · the black · those · the) × 뒷문장 5가지(It is going to rain · It looks like / It seems like / It seems / I think it is going to rain)로 짬(11 → 29, 점검자 5개 포함, 모범 답과 축약형만 다른 것은 뺌). 'I think it will rain.' → 힌트 it will rain 그대로."
+  },
+  {
+    "lesson": "pg12-1 · pg12-3 · pg12-4",
+    "item": "pg12-3:p1 · pg12-1:p6 · pg12-4:t1 · pg12-4:p9",
+    "finding": "채점기가 대명사 뒤 's 만 is/has 로 펴서 'Bob's working …' · 'Jill's seen …' · 'Professor McCarthy's going to …' · 'The road's being repaired now.'이 타자 · 마이크 모두 오답. 코드가 고쳐지기 전까지 내용에서 막기.",
+    "action": "fixed",
+    "note": "맞음(passoffGrading.ts:138 S_SUBJECT 가 대명사 목록). 's 판을 accept 에 넣음: p1 2 · p6 5(모범 답 + 허용 답 4의 's 판) · t1 18(give/give us/set × difficult/hard × examination/exam/test 전부) · p9 16(road/street × repaired/fixed × now/right now/at the moment/now being). 점검자 안 그대로 넣었더니 check-lessons 가 42줄을 냈음 — 검사 도구의 목표형 찾기도 대명사 뒤 's 만 펴서 'Bob's working' 안의 \"'s working\"을 못 찾음(check-lessons.cjs:48-64). 그래서 같은 any-of 묶음에 's 꼴을 더함: p6 [has, 's, Jill's] · p1 [is working, 's working, Bob's working] · p9 [… road's being, street's being, road's now being, street's now being] · t1 [is going to, 's going to, McCarthy's going to](같은 문법의 다른 맞는 꼴 — 채점기 · 검사 도구 둘 다 찾음, 뒤 묶음 seen · repaired 등은 그대로 필요해서 'Jill's saw …' · 'Bob's work …' · \"The road's being repair now.\"는 오답 유지). 문항 note 에 '채점기가 고쳐지면 빼도 됨'을 적음. 코드 쪽 요청은 이끄는 세션 몫에 그대로."
+  },
+  {
+    "lesson": "pg12-4",
+    "item": "pg12-4:p9",
+    "finding": "'The road is now being repaired.'는 목표형 'is being' 이 붙어 있지 않아 오답, 'at the moment' 판도 오답, 'The road is now repaired.'에는 힌트 없음.",
+    "action": "fixed",
+    "note": "맞음. targets[0] = [is being, 's being, is now being, 's now being](+ 위 's 꼴), accept 에 road/street × repaired/fixed × at the moment · now being 판(위 's 판과 합쳐 7 → 31). 오답 패턴 {is now repaired} 를 더해 4개(다른 레슨에도 4개 이상인 문항 11개 있음). 'is repairing' · 'is being repair' 는 오답 + 힌트 그대로."
+  },
+  {
+    "lesson": "pg12-2",
+    "item": "pg12-2:p8",
+    "finding": "'마쳐 놓다'의 흔한 영어 completed 가 목표형에 없어 오답, 'She will complete …'에 힌트 없음.",
+    "action": "fixed",
+    "note": "맞음. targets[1] = [finished, completed]. accept 는 이미 있던 finished 짜임(the job/the work/that job/that work × 시각 5가지 × 어순 2)을 completed 로 그대로 옮겨 40개(점검자 4개 포함, 39 → 79). 오답 패턴 {she will complete, \"조건은 '미래완료로'예요. 2시쯤에는 이미 끝나 있을 일이에요.\"}를 'she will finish' 바로 뒤에 넣음. 'until' 판은 오답 + 힌트 그대로."
+  },
+  {
+    "lesson": "pg12-1",
+    "item": "pg12-1:t1",
+    "finding": "'본 적이 없어'에 흔히 붙는 before 와 haven't ever 꼴이 오답. GRAMMAR I 한국어 '나는 너의 집을 결코 본 적이 없어.'는 번역투.",
+    "action": "fixed",
+    "note": "맞음. accept 6개(before 판 3 · haven't ever 판 3, 2 → 8). ko = '나는 네 집을 한 번도 본 적이 없어.' · koSource 'grammar1:gh1-109#63 (다듬음)' · note 에 다듬은 까닭. 'I have ever seen …' · 'I never saw …'는 오답 + 힌트 그대로."
+  },
+  {
+    "lesson": "pg12-4",
+    "item": "pg12-4:rule.points[3] · points[4] · table.rows[1]",
+    "finding": "be being + 과거분사를 '지금 ~되고 있다'로만 적었는데 a6 · p8 은 과거(was being cleaned). be being + 형용사가 아무 형용사나 되는 것처럼 읽힘(He is being tall 같은 틀린 일반화).",
+    "action": "fixed",
+    "note": "맞음. points[3] = 'be동사 + being + 과거분사: ~되고 있다(was being ~ 는 ~되고 있었다) · be + 과거분사 = ~되다' · points[4] = 'be being + 행동 형용사(rude · kind · good): (평소와 달리) 지금 ~하게 굴다' · table.rows[1][1] = '~되고 있다(있었다)'. 같은 까닭으로 표 셋째 줄 첫 칸 'be being + 형용사'도 'be being + 행동 형용사'로 맞춤(점검자가 짚은 5번 줄과 같은 말이 표에도 있어서). check.pointIndex 3 그대로."
+  },
+  {
+    "lesson": "pg12-3",
+    "item": "pg12-3:a6 · pg12-3:p11",
+    "finding": "'그는 내일까지 6일간 일해 온 것이 될 것이다.'의 겹친 '것이 될 것이다'를 그대로 둠(pg12-2:a8 · p12 는 '것이 된다'로 다듬음).",
+    "action": "fixed",
+    "note": "맞음. a6 · p11 ko = '그는 내일이면 6일 동안 계속 일해 온 것이 된다.' · koSource 'review 3 item 32 (다듬음)' · fix{fromKo 원문, field ko, kind korean_unnatural, why}. p11 accept 에 tomorrow 판 4개(six/6 × 끝/앞, 3 → 7). 판정 TOPIC-12.json 에 note 1건(page 51, review 3 item 32). 'will have worked' · 'will be working'은 오답 + 힌트 그대로."
+  },
+  {
+    "lesson": "pg12-2 · pg12-3",
+    "item": "pg12-2:a6 · p9 / pg12-2:a2 · p3 / pg12-3:t1",
+    "finding": "(1) '몇 년 안에 … 사 놓았을 거야'도 과거 추측으로 읽힘 (2) '도착했을 때 넥타이를 찢었었다'는 동시로도 읽혀 과거완료 뜻이 약함 (3) '그동안'은 앞의 기간을 받는 말이라 문장 하나로는 어색함.",
+    "action": "fixed",
+    "note": "셋 다 맞음. (1) a6 · p9 ko = '몇 년 뒤면 그는 새 집을 사 놓았을 거야.'(fix.why 에 기준 때를 미래로 정함을 더함) (2) a2 · p3 ko = '내가 그곳에 도착했을 때 그는 넥타이를 찢은 뒤였다.'(fix.why 에 과거완료 뜻이 드러나게 고침을 더함) (3) t1 ko = '그는 지금까지 계속 단서를 찾고 있다.'(note 갱신). 판정 TOPIC-12.json 의 p44 tie · p50 item 19 reason 에도 새 한국어를 적음."
+  },
+  {
+    "lesson": "pg12-4",
+    "item": "pg12-4:p1~p6 · pg12-4:t1 condition",
+    "finding": "같은 문장에 pg11-3:p5 는 'be going to를 써서', pg12-4 는 'be going to로' — 같은 문법의 칩 글자가 레슨마다 다름.",
+    "action": "fixed",
+    "note": "맞음(pg11-3 의 be going to 문항 조건이 모두 'be going to를 써서'임을 확인). p1~p6 · t1 condition 7곳과 오답 힌트 속 \"조건은 'be going to로'예요.\" 7곳을 \"조건은 'be going to를 써서'예요.\"로. t1 note 속 '조건(be going to로)'도 같이 고침 — 레슨 파일에 'be going to로' 글자 0(스크립트가 확인)."
+  },
+  {
+    "lesson": "pg12-2 · pg12-3",
+    "item": "pg12-2:f1 · pg12-3:f1",
+    "finding": "빈칸 뒤 복수 명사를 고정해 1 을 넣으면 틀린 영어('read one books' · 'for one years').",
+    "action": "fixed",
+    "note": "맞음. pg12-2:f1 template 'By the end of this year, I will have read ___.' · ko '올해가 끝날 때쯤이면 나는 ___을(를) 다 읽었을 것이다.' / pg12-3:f1 template 'I have been learning English for ___.' · ko '나는 ___ 동안 영어를 배워 왔다.'"
+  },
+  {
+    "lesson": "pg12-1",
+    "item": "pg12-1:rule.koDiff · pg12-1:p3 errorPatterns[0].hint",
+    "finding": "koDiff '모두 -었-으로'는 예의 '가 봤다 · 일해 왔다'가 -았- 이라 부정확. have gone to 를 '가 버렸다'로만 단정(미국 영어는 Have you ever gone to ~? 도 경험으로 씀).",
+    "action": "fixed",
+    "note": "맞음(판정은 그대로 — 학교 문법의 been/gone 구분은 맞고 말만 누그러뜨림). koDiff '… 모두 -았/었-으로 말해 …' · 끝 '… have gone to 는 주로 ~에 가 버렸다(지금 여기 없다)는 뜻이에요.' p3 힌트 = \"'가 본 적이 있니?'(경험)는 보통 gone 이 아닌 다른 과거분사로 물어요. gone to 는 주로 '가 버렸다'는 뜻이에요.\"(정답 낱말 been 은 말하지 않음). 'Have you gone to Seoul?'은 오답 + 새 힌트."
+  },
+  {
+    "lesson": "pg12-1 · pg12-2 · pg12-3 · pg12-4",
+    "item": "pg12-1:p4 · p9 · t2 / pg12-2:p2 · p3 · p6 · p7 · p11 · p12 · t2 / pg12-3:p2 · p3 · p6 · p8 / pg12-4:p2 · p3 · p7 · t1",
+    "finding": "흔한 맞는 답이 오답(for the past ten years · his entire life · He still hasn't come · had been living · by the time … · If I see him again · absent from school · … next year · really loudly/very loud · when the show was finished · around Jeju Island · … now · visit Grandma · go overseas to study · … near the river now · give us a difficult exam).",
+    "action": "fixed",
+    "note": "모두 맞는 영어라 받아들임. 점검자 목록을 모두 넣고, 이미 있던 짜임과 짝이 어긋나지 않게 같은 틀로 넓힘: pg12-1 p4 +4 · p9 +6(entire life 세 틀 × 2) · t2 +3 + 오답 패턴 {still didn't come} / pg12-2 p2 targets [[had],[lived, been living]] + 12(나라 4 × 3 틀) · p3 +64(when/by the time × got/arrived × torn/ripped × tie 4가지 × already × 어순 — 127) · p6 +8 · p7 +6 · p11 +4 · p12 +8 · t2 +4 / pg12-3 p2 +6(so/too/very/really × loudly/loud × speaking/talking — 15) · p3 +2 · p6 +12(around Jeju Island × 때 3 × 철자 2 × 어순 2) · p8 +4 / pg12-4 p2 +8(Grandma × 동사 4 × 어순 2) · p3 +2 · p7 +1 · t1 +3(give us — 's 판은 위 항목). 틀린 답은 계속 오답: 'We have been living … before we moved' · 'He still didn't come.'(힌트 still didn't come) · 'He hasn't came yet.' 등."
+  },
+  {
+    "lesson": "pg12-2 (검사 도구)",
+    "item": "check-lessons 의 교재 issue 판정 세기",
+    "finding": "check-lessons 가 대주제의 쪽(44–51)에 있는 issue 만 세서, 다른 쪽 issue(p28)의 where 에 적힌 TOPIC 12 몫을 못 잡음.",
+    "action": "lead",
+    "note": "이끄는 세션 몫(공용 검사 도구). issue 의 where 에 'TOPIC N' 이 적힌 것도 그 대주제의 판정 대상으로 세게 하면 이번 같은 레슨끼리 판정 모순을 기계가 잡음. 이번 건은 판정 TOPIC-12.json note 로 처리함."
+  },
+  {
+    "lesson": "pg12-1 · pg12-3 · pg12-4 (코드 · 검사 도구)",
+    "item": "passoffGrading.ts S_SUBJECT · check-lessons.cjs containsTarget",
+    "finding": "채점기가 이름 · 명사 뒤 's 를 is/has 로 펴지 않음(대명사 뒤만). 검사 도구 check-lessons 의 목표형 찾기도 같은 한계.",
+    "action": "lead",
+    "note": "이끄는 세션 몫(코드). 채점기가 이름 · 명사 + 's 를 대명사처럼 is/has 두 가지로 읽게 되면, 이번에 넣은 's 허용 답(pg12-3:p1 · pg12-1:p6 · pg12-4:t1 · p9)과 목표형의 's 꼴(Bob's working · Jill's · McCarthy's going to · road's/street's (now) being)은 빼도 됨 — 각 문항 note 에 적음. check-lessons 의 containsTarget(48-64줄)도 채점기와 같은 규칙으로 맞춰야 목표형 's 꼴 없이 통과함. 다른 레슨에도 이름 + 's 문장이 있으면 같은 거짓 오답이 있음(G10 밖이라 세지 않음)."
+  },
+  {
+    "lesson": "pg11-1 (G10 밖)",
+    "item": "pg11-1:p11 · 판정 TOPIC-11.json(p28)",
+    "finding": "같은 제시문 · 같은 모범 답인데 pg12-2:p5 는 had been working 판을 받고 pg11-1:p11 은 targets [[had worked]] 라 오답 — 레슨마다 같은 답의 판정이 다름. TOPIC-11 판정은 'TOPIC 12 p44 는 다른 그룹 몫이라 손대지 않음'으로 남아 있음.",
+    "action": "lead",
+    "note": "이끄는 세션 몫(다른 그룹 파일). pg12-2:p5 는 수정 전에도 had been working 을 받았고(점검자 안에도 있음) 같은 그룹 pg12-1:p4 가 '현재완료로'에 has been working 을 받는 선례를 따라 그대로 둠. 맞추려면 pg11-1:p11 에 had been working 판과 목표형을 더하거나 pg12-2:p5 에서 빼는 것 중 하나를 고름. TOPIC-11.json p28 판정의 appliedTo 에 pg12-2:a3 · p5 · s2 를 더하고 reason 의 '손대지 않았습니다'를 '같은 판정으로 반영됨'으로 고칠 수 있음."
+  },
+  {
+    "lesson": "pg12-4",
+    "item": "만든 쪽(G10 만들기) 결과의 uncertain 중 t2 줄",
+    "finding": "점검자가 '만든 쪽 uncertain 의 t2 줄도 갱신'을 요청.",
+    "action": "lead",
+    "note": "uncertain 은 만들기 일꾼이 워크플로우에 돌려준 결과(StructuredOutput)라 파일이 아니어서 수정자가 고칠 수 없음. 이끄는 세션이 보고에 쓸 때는 이 기록(t2 를 'Many trees are being cut down in the forest.'로 바꿈)으로 갈음할 것."
+  }
+]

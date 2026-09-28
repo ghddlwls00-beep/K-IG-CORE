@@ -1,0 +1,471 @@
+[
+  {
+    "page": 18,
+    "where": "TOPIC 18 passOff group#3 제목",
+    "text": "(2) 부사의 여러 가지 용법",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "소주제 번호 (2)가 두 번 인쇄됨. 웹 레슨 부제에서 겹친 번호를 뺌: pg18-2 부제 '(2) 형용사와 형태가 같은 부사 · 부사의 여러 가지 용법'. 다른 레슨 부제와 bookRef 는 사장님이 쪽 사진과 맞춰 보기 쉽게 인쇄된 번호((1) · (3) · (4) · (5)) 그대로 두고, 두 번째 (2)는 bookRef 에 '(두 번째 (2))'로 적음.",
+    "appliedTo": [
+      "pg18-2:subtitle"
+    ]
+  },
+  {
+    "page": 18,
+    "where": "TOPIC 18 passOff group#2 item 4",
+    "text": "Cf.) The early bird can catch the worms.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "속담 원형 The early bird catches the worm.(can · 복수 worms 없음)으로 고쳐 ④ 영작 문항으로 넣음(교재 번역이 없어 한국어 '일찍 일어나는 새가 벌레를 잡는다.'를 새로 씀). 원문 문장은 오답 패턴(힌트: 속담은 can 없이 현재형, 벌레도 한 마리)으로 잡힘. 한국어를 글자대로 옮긴 답(The bird that gets up early …)과 가르려고 조건 칩 '영어 속담으로'와 오답 패턴(up early)을 붙임(G14 점검 반영). 설명 카드 표에는 ④ 정답을 미리 보이지 않게 이 문장을 쓰지 않음.",
+    "appliedTo": [
+      "pg18-2:p5"
+    ]
+  },
+  {
+    "page": 18,
+    "where": "TOPIC 18 passOff group#2 items 1–3; application items 13–15; Review 2. #1–3",
+    "text": "Sue’s job is very hard = Sue works very hard.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "'='로 이었지만 뜻이 같지 않음(일이 힘들다 ≠ 열심히 일한다, 늦었다 ≠ 늦게 일어났다). 이 줄의 요점은 같은 낱말(hard · fast · late)이 형용사 · 부사로 쓰인다는 대비라 ① 예문은 '='를 빼고 두 문장(형용사 문장. 부사 문장.)으로 나눔. ④ 는 Review 2(뜻이 같아지도록 영작)와 Review 3(한→영)을 한 문항으로 합쳐, 형용사 문장을 영어 제시문(promptEn)으로 보이고 한국어 뜻대로 부사 문장을 쓰게 함 — '뜻이 같다'가 아니라 '같은 낱말을 부사로 써서'. 발견 질문 · 설명 카드 표도 형용사 ↔ 부사 대비로 씀. G14 점검 반영: ④ p1 · p2 · p3 에 조건 칩 'hard를 부사로 써서' · 'fast를 부사로 써서' · 'late를 부사로 써서'를 붙여 답하기 전에 요구가 보이게 함(전에는 Ben can run quickly. 같은 맞는 영어가 칩 없이 오답).",
+    "appliedTo": [
+      "pg18-2:a1",
+      "pg18-2:a2",
+      "pg18-2:a3",
+      "pg18-2:p1",
+      "pg18-2:p2",
+      "pg18-2:p3",
+      "pg18-2:rule"
+    ]
+  },
+  {
+    "page": 19,
+    "where": "TOPIC 18 passOff group#4 item 4",
+    "text": "She hardly ate anything, she was really sad.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "쉼표만으로 두 문장을 이은 comma splice. Application · Review 판과 같게 and 를 넣음(She hardly ate anything, and she was really sad.). issue 가 권한 because 는 한국어(먹지 않았고, 정말 슬펐다)와 뜻이 달라져 쓰지 않음.",
+    "appliedTo": [
+      "pg18-3:a4",
+      "pg18-3:p5"
+    ]
+  },
+  {
+    "page": 19,
+    "where": "TOPIC 18 passOff group#4 item 6; application item 39; Review 2. #5a·5b",
+    "text": "I am not happy = Neither am I =Nor am I",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "Neither am I · Nor am I 는 'I am not happy, either.(나도 행복하지 않아)'와 같은 뜻. ① 예문은 대화(A: I am not happy. → B: Neither am I.)로 보이고, ④ 바꿔 쓰기(Review 2 의 = Nei___ · = Nor___ 두 칸 → 두 문항)의 영어 제시문은 I am not happy, either. 로 고침. '=Nor' 띄어쓰기 · 끝 마침표도 고침. 설명 카드 표에 긍정(So) · 부정(Neither · Nor) 짝을 정리.",
+    "appliedTo": [
+      "pg18-3:a6",
+      "pg18-3:p9",
+      "pg18-3:p10",
+      "pg18-3:rule"
+    ]
+  },
+  {
+    "page": 19,
+    "where": "TOPIC 18 passOff group#4 item 7; application item 40; Review 2. #6",
+    "text": "It was cold yesterday. = So it was. (정말 그렇다)",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "So it was. 는 과거라 풀이를 '정말 그랬어'로 고침. ① 예문은 대화(A: It was cold yesterday. → B: So it was.), ④ 는 조건 칩 'So로 시작해서'. 순서를 바꾼 So was it(= 그것도 그랬어)은 오답 패턴으로 가름. 발견 질문이 So am I(뒤집힘)와 So it was(그대로)의 순서 차이를 묻게 함.",
+    "appliedTo": [
+      "pg18-3:a7",
+      "pg18-3:p11",
+      "pg18-3:rule"
+    ]
+  },
+  {
+    "page": 19,
+    "where": "TOPIC 18 passOff group#5 제목",
+    "text": "(4) 비교급과 최상급 / 위치",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "제목은 비교급 · 최상급 · 위치인데 예문은 정도부사 pretty 2개뿐. 레슨 구조(pg18-4 제목)는 그대로 두고 내용을 보충: STUDENT 문장 3개(빈도부사 자리 — s9-3 · s2-4 · s11-1, 글자까지 같음 → 음성 재사용)와 새 문장 6개(She is never late for school. · Jake runs faster than his brother. · She sings the best in our class. · My father gets up earlier than my mother. · Please drive more carefully. · Who runs the fastest in your class?). 교재 Application 18(Tom always goes to work by car.)도 빈도부사 자리 연습이라 이 레슨에 둠. 형태 찾기 6개 · 설명 카드(자리 · 비교급 · 최상급 · 불규칙)도 새로 씀.",
+    "appliedTo": [
+      "pg18-4:a3",
+      "pg18-4:a4",
+      "pg18-4:a5",
+      "pg18-4:a6",
+      "pg18-4:a7",
+      "pg18-4:p1",
+      "pg18-4:p4",
+      "pg18-4:p5",
+      "pg18-4:p6",
+      "pg18-4:p7",
+      "pg18-4:p8",
+      "pg18-4:p9",
+      "pg18-4:p10",
+      "pg18-4:p11",
+      "pg18-4:p12",
+      "pg18-4:s1",
+      "pg18-4:s2",
+      "pg18-4:s3",
+      "pg18-4:s4",
+      "pg18-4:s5",
+      "pg18-4:s6",
+      "pg18-4:rule"
+    ]
+  },
+  {
+    "page": 22,
+    "where": "TOPIC 18 application item 37; Review 3. #36 정답",
+    "text": "I haven’t seen them for so long time.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "'so long time'은 비문(so 는 명사 앞에 바로 오지 못함). 모범 답을 I haven't seen them for so long. 으로 고치고 so long a time · in so long 도 받음. 원문은 오답 패턴(so 뒤에는 명사 없이 형용사 · 부사만)으로 잡힘.",
+    "appliedTo": [
+      "pg18-3:p7"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 18 Review 3. #35·#36 (application items 36·37)",
+    "text": "나는 매우 긴 시간 동안 그들을 보지 못했다.",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "#35(such a long time)와 #36(so long)의 한국어가 사실상 같아 어느 쪽인지 알 수 없음. 두 문항에 조건 칩(such를 써서 · so를 써서)을 붙이고, #36 한국어는 '매우'(very를 부름)를 빼 '나는 그렇게 오랫동안 그들을 보지 못했다.'로 고침. 현재완료(haven't seen)를 한국어 '보지 못했다'로 옮기는 것은 자연스러워 그대로 두고, didn't see 로 쓴 답에는 '지금까지 계속 못 본 것 → have + 과거분사' 힌트를 붙임.",
+    "appliedTo": [
+      "pg18-3:p6",
+      "pg18-3:p7"
+    ]
+  },
+  {
+    "page": 23,
+    "where": "TOPIC 18 application item 46; Review 3. #42 정답",
+    "text": "How long will it take from your house and to your school?",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "from A to B 사이에 and 가 든 비문. 모범 답 How long will it take to get from your house to your school?, to get 없는 꼴 · do you think it will take 꼴도 받음. 원문은 오답 패턴(from A to B 사이에 and 를 넣지 않음)으로 잡힘.",
+    "appliedTo": [
+      "pg18-1:p19"
+    ]
+  },
+  {
+    "page": 23,
+    "where": "TOPIC 18 application item 53; Review 3. #49 정답",
+    "text": "Where is a fire station?",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "정해진 소방서를 묻는 말은 the 가 자연스러워 모범 답을 Where is the fire station? 으로 고침. 교재 문장은 틀린 문법이 아니라 덜 자연스러운 글이라 허용 답으로 둠(check-grading B '내용 세션이 허용 답으로 둠'으로 따로 셈). 관사 없는 Where is fire station 은 오답 패턴.",
+    "appliedTo": [
+      "pg18-1:p26"
+    ]
+  },
+  {
+    "page": 23,
+    "where": "TOPIC 18 application item 56; Review 3. #52 정답",
+    "text": "When did you graduate from your university?",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "'대학을 졸업하다'는 graduate from university(college)가 굳은 말이라 모범 답에서 your 를 뺌. 교재 문장도 틀린 문법은 아니라 허용 답으로 둠(from college · from the university 도 받음).",
+    "appliedTo": [
+      "pg18-1:p29"
+    ]
+  },
+  {
+    "page": 22,
+    "where": "TOPIC 18 application items 29·30",
+    "text": "Although it rained a lot, they enjoyed their holidays.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "although · unless 는 부사가 아니라 부사절을 이끄는 접속사. 문장은 그대로 두고 설명 카드 5번째 줄에 'Although ~ · unless ~ 는 접속사가 이끄는 절로, 문장 전체를 부사처럼 꾸며요(부사절)'라고 밝힘. 목표형은 #29 는 동사를 꾸미는 부사 a lot(heavily), #30 은 부사절을 여는 말 unless · if(한국어 '아니시면'대로 if … not 으로 쓴 답도 받음). 종속 접속사 절은 앞 레슨(pg04-3 복문)의 complex-sentence 태그라 도전이 아님(2권 다른 레슨과 같은 처리). although 와 but 을 함께 쓴 답 · unless … not 은 오답 패턴.",
+    "appliedTo": [
+      "pg18-2:rule",
+      "pg18-2:p16",
+      "pg18-2:p17"
+    ]
+  },
+  {
+    "page": 21,
+    "where": "TOPIC 18 application item 15",
+    "text": "I  was late. = I got up late this morning.",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "I 와 was 사이의 빈칸 두 칸을 한 칸으로. '=' 문제는 p18 판정과 같이 두 문장으로 나눔.",
+    "appliedTo": [
+      "pg18-2:a3",
+      "pg18-2:p3"
+    ]
+  },
+  {
+    "page": 26,
+    "where": "TOPIC 18 Review 3. #12 (application item 12)",
+    "text": "앨리스와 조는 매우 행복하게 결혼했다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "are very happily married 는 지금의 상태인데 한국어는 과거의 사건이라 got married 를 쓰게 됨. issue 제안(행복한 결혼 생활을 하고 있다)은 형용사 happy 를 불러 목표 부사를 피해 가게 되어, 부사 단서 '행복하게'를 살린 '앨리스와 조는 매우 행복하게 결혼 생활을 하고 있다.'로 고침.",
+    "appliedTo": [
+      "pg18-1:p12"
+    ]
+  },
+  {
+    "page": 26,
+    "where": "TOPIC 18 Review 3. #7",
+    "text": "그 회의는 나쁘게 조직되어 있었다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "직역투. issue 제안(준비가 엉망이었다)은 부사 없는 영어(The preparation was a mess.)로도 옮겨져, 수동 + 부사가 드러나는 '그 회의는 엉망으로 준비되었다.'로 고침. badly · poorly × organized(organised) · prepared · planned 모두 정답.",
+    "appliedTo": [
+      "pg18-1:p7"
+    ]
+  },
+  {
+    "page": 26,
+    "where": "TOPIC 18 Review 3. #9",
+    "text": "보통 학급에서, 학생들은 서로 서로에게 매우 친절하다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "in class 는 '수업 시간에', '서로 서로'는 겹말. STUDENT 5과(s5-5 1번)와 영어가 글자까지 같은 문장이라 한국어도 STUDENT 판 '보통 수업 시간에, 학생들은 서로서로에게 매우 친절합니다.'를 씀(사장님 결정).",
+    "appliedTo": [
+      "pg18-1:a5",
+      "pg18-1:p9"
+    ]
+  },
+  {
+    "page": 27,
+    "where": "TOPIC 18 Review 3. #15",
+    "text": "나는 오늘아침에 늦게 일어났다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'오늘 아침'으로 띄어 씀.",
+    "appliedTo": [
+      "pg18-2:a3",
+      "pg18-2:p3"
+    ]
+  },
+  {
+    "page": 27,
+    "where": "TOPIC 18 Review 3. #21 (application item 21)",
+    "text": "그녀는 내게 거의 말하지 않는다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어가 과거(spoke)라 '그녀는 내게 거의 말을 하지 않았다.'로 고침. 이 문장은 hard · hardly 를 가려 쓰는 소주제(3) 레슨 pg18-3 에 둠(교재 Application 순서상으로는 (2) 여러 용법 쪽).",
+    "appliedTo": [
+      "pg18-3:p1"
+    ]
+  },
+  {
+    "page": 27,
+    "where": "TOPIC 18 Review 3. #24 (application item 24)",
+    "text": "그 차가 마시기에 너무 뜨겁군.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어가 과거(was)라 '그 차는 마시기에 너무 뜨거웠다.'로 고침. '마시기에'가 있어 차(tea)와 차(car)가 헷갈리지 않으므로 issue 제안의 한자 병기(茶)는 넣지 않음.",
+    "appliedTo": [
+      "pg18-2:p11"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 18 Review 3. #26 (application item 26)",
+    "text": "그 강은 안에서 수영할 만큼 충분히 깨끗해.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어는 부정 · 과거인데 한국어는 긍정 · 현재라 뜻이 정반대. '그 강은 수영할 수 있을 만큼 깨끗하지 않았다.'로 고침. 긍정으로 쓴 답(The river was clean enough)은 오답 패턴. 전치사 in 을 뺀 to swim(주어 The river 가 swim in 의 목적어라 in 이 있어야 함)은 허용 답에서 뺌(G14 점검).",
+    "appliedTo": [
+      "pg18-2:p13"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 18 Review 3. #29 (application item 29)",
+    "text": "비록 비가 많이 내렸더라도, 그들은 그 휴일은 즐겼다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "although 는 실제로 일어난 일이라 '~했지만', holidays 는 '휴가', 조사 '그 휴일은'도 어색 → '비가 많이 왔지만, 그들은 휴가를 즐겼다.'. although · though · even though · but 로 쓴 답, holiday · vacation 모두 받음.",
+    "appliedTo": [
+      "pg18-2:p16"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 18 Review 3. #37·#38 (application items 41·42)",
+    "text": "나는 매우 행복한 사람이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "목표 부사 pretty 는 '꽤'인데 '매우'(very)라 이 소주제를 연습하지 못함. #37 '나는 꽤 행복한 사람이다.', #38 '그들은 꽤 열심히 공부하고 있다.'로 고치고, very 로 쓴 답에는 '꽤는 very 보다 약한 말' 힌트. pretty · fairly · quite 모두 받음.",
+    "appliedTo": [
+      "pg18-4:a1",
+      "pg18-4:a2",
+      "pg18-4:p2",
+      "pg18-4:p3"
+    ]
+  },
+  {
+    "page": 29,
+    "where": "TOPIC 18 Review 3. #50 (application item 54)",
+    "text": "언제 너는 갈 거니?",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "going away 는 '(여행 · 이사 등으로) 떠나다' — '너는 언제 떠나니?'로 고침. When are you leaving? · When will you leave? · When are you going to leave? 도 받음.",
+    "appliedTo": [
+      "pg18-1:p27"
+    ]
+  },
+  {
+    "page": 24,
+    "where": "TOPIC 18 Review 1. #5",
+    "text": "Usually in class, the students are very friendly to each other. (5과)",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "정답은 Usually · very(friendly 는 -ly 로 끝나도 형용사 — 풀이에 적음). in class 는 부사구라 한 토큰으로 묶어 optional(골라도 감점 없음)로 두어 기준을 정함.",
+    "appliedTo": [
+      "pg18-1:s4"
+    ]
+  },
+  {
+    "page": 27,
+    "where": "Review 3 item 13 (application item 13 '=' 뒤 문장)",
+    "text": "수는 매우 힘들게 일한다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "work hard 는 '열심히 일하다'. '힘들게'는 일이 고되다는 뜻(형용사 hard — 앞 문장 Sue's job is very hard)과 섞여 hardly(거의 ~않다)로 잘못 옮기기 쉬움 → '수는 매우 열심히 일한다.'로 고침. 추출 issues 에 없던 것을 이번 작업(G14)에서 찾음(같은 AI 계열 판단).",
+    "appliedTo": [
+      "pg18-2:a1",
+      "pg18-2:p1"
+    ],
+    "newFinding": true
+  },
+  {
+    "page": 29,
+    "where": "Review 3 item 47 (application item 51)",
+    "text": "어디로 너는 가니?",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "Where are you going? 은 지금 가고 있는 중(진행)인데 '어디로 너는 가니?'는 늘 하는 일로도 읽혀 Where do you go? 를 쓰게 됨 → '너는 어디 가고 있니?'로 고침. 추출 issues 에 없던 것을 이번 작업(G14)에서 찾음.",
+    "appliedTo": [
+      "pg18-1:p24"
+    ],
+    "newFinding": true
+  },
+  {
+    "page": 29,
+    "where": "Review 3 item 46 (application item 50)",
+    "text": "어디서 너는 사니?",
+    "type": "korean_unnatural",
+    "decision": "fix",
+    "reason": "의문사를 맨 앞에, 주어를 그 뒤에 둔 영어식 어순이라 번역투 → '너는 어디에 사니?'로 고침. 같은 어순이던 #47 · #50 은 이미 '너는 어디 가고 있니?' · '너는 언제 떠나니?'로 고쳤음. 추출 issues 에 없던 것을 G14 점검이 찾음(같은 AI 계열 판단).",
+    "appliedTo": [
+      "pg18-1:p23"
+    ],
+    "newFinding": true
+  },
+  {
+    "page": 29,
+    "where": "Review 3 item 52 (application item 56)",
+    "text": "언제 너는 대학을 졸업했니?",
+    "type": "korean_unnatural",
+    "decision": "fix",
+    "reason": "의문사를 맨 앞에 둔 영어식 어순이라 번역투 → '너는 언제 대학을 졸업했니?'로 고침. 같은 문항의 영어 고침(your 를 뺌, 위 english_unnatural 항목)과 함께 fix 하나에 적음(field en+ko). 추출 issues 에 없던 것을 G14 점검이 찾음(같은 AI 계열 판단).",
+    "appliedTo": [
+      "pg18-1:p29"
+    ],
+    "newFinding": true
+  },
+  {
+    "page": 27,
+    "where": "Review 3 item 25 (application item 25)",
+    "text": "영화관에 가기에 너무 늦었어.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어 It's too late to go to the cinema. 는 지금의 상태인데 '늦었어'는 지난 일(It was too late)로도 읽혀 시제가 갈림 → '이제 영화관에 가기에는 너무 늦었어.'로 고치고 now 를 붙인 답도 받음. It was too late 로 쓴 답에는 '지금의 상태' 힌트. 추출 issues 에 없던 것을 G14 점검이 찾음(같은 AI 계열 판단).",
+    "appliedTo": [
+      "pg18-2:p12"
+    ],
+    "newFinding": true
+  },
+  {
+    "coverage": "note",
+    "page": 21,
+    "where": "application item 21 (추출자 impliedGroup: (2) 부사의 여러 가지 용법)",
+    "text": "She hardly spoke to me.",
+    "reason": "hard · hardly 를 가려 쓰는 소주제(3) 레슨 pg18-3 의 ④ 첫 문항으로 둠(내용 배치 — 레슨 구조는 그대로).",
+    "refs": [
+      "pg18-3:p1"
+    ]
+  },
+  {
+    "coverage": "note",
+    "page": 21,
+    "where": "application item 18 (추출자 impliedGroup: (2) 부사의 여러 가지 용법)",
+    "text": "Tom always goes to work by car.",
+    "reason": "빈도부사 always 의 자리(일반동사 앞)가 요점이라 위치를 다루는 소주제(4) 레슨 pg18-4 의 ④ 첫 문항으로 둠.",
+    "refs": [
+      "pg18-4:p1"
+    ]
+  },
+  {
+    "coverage": "not-in-anchors",
+    "page": 18,
+    "where": "passOff (1) item 6",
+    "text": "I am awfully hungry.",
+    "reason": "pg18-1 은 (1) -ly 부사 6 + (5) 의문부사 5 = Pass-Off 11문장이라 ① 예문은 8개(-ly 5 · 의문부사 3)만 둠. 이 문장은 ④ 영작(조건 칩 '-ly 부사를 써서')과 날을 넘기는 복습용 형태 찾기에 있음.",
+    "refs": [
+      "pg18-1:p10",
+      "pg18-1:s8"
+    ]
+  },
+  {
+    "coverage": "not-in-anchors",
+    "page": 19,
+    "where": "passOff (5) item 3",
+    "text": "How tall is this tree?",
+    "reason": "① 예문 8개 제한으로 How tall are you?(같은 How tall)를 예문으로 두고 이 문장은 ④ 영작에만(교재 번역이 없어 '이 나무는 높이가 얼마나 되니?'를 새로 씀).",
+    "refs": [
+      "pg18-1:p16"
+    ]
+  },
+  {
+    "coverage": "not-in-anchors",
+    "page": 19,
+    "where": "passOff (5) item 4",
+    "text": "How long is that bridge?",
+    "reason": "① 예문 8개 제한으로 ④ 영작에만(교재 번역이 없어 '저 다리는 얼마나 기니?'를 새로 씀).",
+    "refs": [
+      "pg18-1:p17"
+    ]
+  },
+  {
+    "coverage": "not-in-anchors",
+    "page": 18,
+    "where": "passOff (2) 부사의 여러 가지 용법 item 6 (두 번째 (2))",
+    "text": "I am busy now.",
+    "reason": "pg18-2 는 Pass-Off 10문장(형용사와 같은 형태 4 + 여러 용법 6)이라 ① 예문은 8개만. 이 문장은 ④ 영작과 날을 넘기는 복습용 형태 찾기에 있음.",
+    "refs": [
+      "pg18-2:p18",
+      "pg18-2:s8"
+    ]
+  },
+  {
+    "coverage": "merged",
+    "page": 25,
+    "where": "Review 2 items 1–3 (p25) + Review 3 items 13–15 (p27)",
+    "text": "Sue’s job is very hard = / Ben is a fast runner = / I was late. =",
+    "reason": "Review 2(= 뒤에 영작)와 Review 3(한→영)의 답이 같아 한 문항으로 합침 — 형용사 문장을 영어 제시문(promptEn)으로, 한국어 뜻대로 부사 문장을 씀.",
+    "refs": [
+      "pg18-2:p1",
+      "pg18-2:p2",
+      "pg18-2:p3"
+    ]
+  },
+  {
+    "coverage": "note",
+    "page": 19,
+    "where": "passOff (3) items 2 · 5 · 6 · 7, passOff (5) items 3 · 4 · 5, passOff (2) Cf.)",
+    "text": "교재에 한국어가 없는 문장 8개",
+    "reason": "There was a book. · So am I · Neither am I · So it was · How tall is this tree? · How long is that bridge? · How much is this book? · The early bird catches the worm. 은 교재 어디에도 번역이 없어 한국어를 새로 씀(koSource new).",
+    "refs": [
+      "pg18-3:a2",
+      "pg18-3:a5",
+      "pg18-3:a6",
+      "pg18-3:a7",
+      "pg18-1:p16",
+      "pg18-1:p17",
+      "pg18-1:a8",
+      "pg18-2:p5"
+    ]
+  }
+]

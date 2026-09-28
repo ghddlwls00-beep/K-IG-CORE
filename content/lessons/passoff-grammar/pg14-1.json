@@ -1,0 +1,1485 @@
+{
+  "id": "pg14-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "능동태",
+  "label": "TOPIC 14. 태",
+  "menuLabel": "14-1. 능동태",
+  "unit": 14,
+  "part": 2,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "능동태 · 수동태 대조표 — 수동태를 능동태로 바꾸기",
+  "grammarTags": [
+    "active-voice"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg14-1:a1",
+          "en": "We make butter from milk.",
+          "ko": "우리는 우유로 버터를 만든다.",
+          "koSource": "new",
+          "promptEn": "Butter is made from milk.",
+          "focus": [
+            "We",
+            "make"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "passOff 능동태 item 1"
+          }
+        },
+        {
+          "id": "pg14-1:a2",
+          "en": "Someone cleans these rooms every day.",
+          "ko": "누군가가 매일 이 방들을 청소한다.",
+          "koSource": "new",
+          "promptEn": "These rooms are cleaned every day.",
+          "focus": [
+            "Someone",
+            "cleans"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "passOff 능동태 item 2"
+          },
+          "fix": {
+            "from": "Some one cleans these rooms everyday.",
+            "field": "en+promptEn",
+            "kind": "english_grammar",
+            "why": "'누군가'는 한 낱말 someone, '매일'은 두 낱말 every day 로 씁니다(붙여 쓴 everyday 는 '일상의'라는 형용사). 짝인 수동태 These rooms are cleaned everyday. 도 every day 로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg14-1:a3",
+          "en": "People never invite me to parties.",
+          "ko": "사람들은 나를 파티에 절대 초대하지 않는다.",
+          "koSource": "new",
+          "promptEn": "I am never invited to parties.",
+          "focus": [
+            "People",
+            "invite",
+            "me"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "passOff 능동태 item 3",
+            "reviewWhere": "review 1 item 5 (p64)"
+          }
+        },
+        {
+          "id": "pg14-1:a4",
+          "en": "How do they make butter?",
+          "ko": "사람들은 버터를 어떻게 만드나요?",
+          "koSource": "new",
+          "promptEn": "How is butter made?",
+          "focus": [
+            "they",
+            "make"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "passOff 능동태 item 4",
+            "reviewWhere": "review 1 item 6 (p64)"
+          }
+        },
+        {
+          "id": "pg14-1:a5",
+          "en": "They have painted the door.",
+          "ko": "그들은 그 문을 칠해 놓았다.",
+          "koSource": "new",
+          "promptEn": "The door has been painted.",
+          "focus": [
+            "They",
+            "have painted"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "passOff 능동태 item 5",
+            "reviewWhere": "review 1 item 7 (p64)"
+          }
+        },
+        {
+          "id": "pg14-1:a6",
+          "en": "They are building some houses near the river.",
+          "ko": "그들은 강 근처에 집 몇 채를 짓고 있다.",
+          "koSource": "new",
+          "promptEn": "Some houses are being built near the river.",
+          "focus": [
+            "They",
+            "are building"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "passOff 능동태 item 6",
+            "reviewWhere": "review 1 item 8 (p64)"
+          }
+        },
+        {
+          "id": "pg14-1:a7",
+          "en": "I saw him run.",
+          "ko": "나는 그가 달리는 것을 보았다.",
+          "koSource": "new",
+          "promptEn": "He was seen to run by me.",
+          "focus": [
+            "I",
+            "saw",
+            "him",
+            "run"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "passOff 능동태 item 7"
+          },
+          "fix": {
+            "from": "I saw him run",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "문장 끝 마침표가 빠져 있었습니다(p63 표에는 있음)."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg14-1:a1",
+          "pg14-1:a5",
+          "pg14-1:a6"
+        ],
+        "question": "세 문장의 주어(We · They)는 어떤 쪽일까요?",
+        "options": [
+          "동작을 하는 쪽",
+          "동작을 받는 쪽",
+          "동작이 일어난 장소"
+        ],
+        "answer": 0,
+        "why": "능동태는 동작을 하는 쪽이 주어예요. 우리가 버터를 만들고, 그들이 문을 칠하고, 그들이 집을 짓고 있어요."
+      },
+      "title": "능동태: 동작을 하는 쪽이 주어입니다",
+      "points": [
+        "능동태는 동작을 하는 쪽이 주어예요(We make butter.).",
+        "수동태를 바꿀 때는 by 뒤의 말이 주어가 돼요(by him → He).",
+        "수동태의 주어는 동사 뒤 목적어로 가요(I → me).",
+        "시제는 그대로 둬요: be동사를 보고 동사 모양을 정해요.",
+        "by ~ 가 없으면 people · they · we · someone 을 주어로"
+      ],
+      "table": {
+        "columns": [
+          "종류",
+          "수동태",
+          "능동태"
+        ],
+        "rows": [
+          [
+            "현재",
+            "is made",
+            "make · makes"
+          ],
+          [
+            "과거",
+            "was painted",
+            "painted"
+          ],
+          [
+            "현재완료",
+            "has been painted",
+            "have · has painted"
+          ],
+          [
+            "진행",
+            "are being built",
+            "are building"
+          ],
+          [
+            "조동사",
+            "can be used",
+            "can use"
+          ],
+          [
+            "지각동사",
+            "was seen to run",
+            "saw … run (to 없이)"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '버터는 우유로 만든다'처럼 누가 하는지 빼고도 자연스럽게 말하지만, 영어 능동태 문장에는 주어가 꼭 있어야 해요. 그래서 by ~ 가 없는 수동태를 능동태로 바꿀 때는 people · they · someone 같은 주어를 넣어요.",
+      "mistakes": [
+        {
+          "wrong": "Her made the cake.",
+          "right": "She made the cake.",
+          "why": "The cake was made by her. 의 her 가 주어 자리로 오면 주격 She 로 바꿔요."
+        },
+        {
+          "wrong": "Tom breaks the window.",
+          "right": "Tom broke the window.",
+          "why": "The window was broken by Tom. 의 was 는 과거예요. 능동태도 과거로 써요."
+        }
+      ],
+      "worked": [
+        "Some houses are being built near the river.",
+        "by ~ 가 없음 → 짓는 사람을 They 로",
+        "are being built(진행형) → are building",
+        "주어였던 some houses 는 동사 뒤 목적어로",
+        "They are building some houses near the river."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'The song was sung by the children.'을 능동태로 바르게 바꾼 것은?",
+        "options": [
+          "The children sang the song.",
+          "The children sing the song.",
+          "The song sang the children."
+        ],
+        "answer": 0,
+        "why": "by 뒤의 the children 이 주어가 되고, was sung 은 과거라 sang 으로 써요.",
+        "pointIndex": 1
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg14-1:s1",
+          "kind": "choice",
+          "instruction": "능동태 문장을 고르세요",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "The door has been painted.",
+            "They have painted the door.",
+            "The door was painted by them."
+          ],
+          "answer": 1,
+          "why": "주어 They 가 칠하는 동작을 한 쪽이라 능동태예요. 나머지 둘은 문(받는 쪽)이 주어인 수동태예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "passOff 능동태 item 5 · 수동태 item 5"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg14-1:s2",
+          "kind": "select",
+          "instruction": "동작을 한 사람(능동태의 주어가 될 말)을 누르세요",
+          "tokens": [
+            "The",
+            "floor",
+            "was",
+            "painted",
+            "by",
+            "him",
+            "."
+          ],
+          "answer": [
+            5
+          ],
+          "optional": [
+            4
+          ],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "by 뒤의 him 이 칠한 사람이에요. 능동태로 바꾸면 주어 He 가 돼요.",
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 수동태(표 오른쪽 열) item 1"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg14-1:s3",
+          "kind": "select",
+          "instruction": "능동태로 바꿀 때 동사 뒤 목적어가 될 말을 누르세요",
+          "tokens": [
+            "I",
+            "am",
+            "never",
+            "invited",
+            "to",
+            "parties",
+            "."
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "수동태의 주어 I 는 능동태에서 동사 뒤 목적어 me 가 돼요.",
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "passOff 수동태 item 3"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg14-1:s4",
+          "kind": "choice",
+          "instruction": "'This car is washed by my dad every Sunday.'를 능동태로 바꿀 때 동사로 알맞은 것은?",
+          "sentence": "My dad ___ this car every Sunday.",
+          "underline": [],
+          "options": [
+            "washes",
+            "wash",
+            "washed"
+          ],
+          "answer": 0,
+          "why": "is washed 는 현재예요. 주어 my dad 는 한 명(3인칭 단수)이라 washes 예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg14-1:s5",
+          "kind": "short",
+          "instruction": "능동태로 바꿀 때 빈칸에 알맞은 한 낱말을 쓰세요",
+          "sentence": "These rooms are cleaned every day. → Someone ___ these rooms every day.",
+          "answer": [
+            "cleans"
+          ],
+          "why": "are cleaned 는 현재예요. 주어 someone 은 한 사람이라 cleans 예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "passOff 수동태 item 2 · 능동태 item 2"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg14-1:s6",
+          "kind": "choice",
+          "instruction": "'This bridge was built in 1990.'을 능동태로 바꿀 때 주어로 알맞은 것은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "They",
+            "This bridge",
+            "1990"
+          ],
+          "answer": 0,
+          "why": "by ~ 가 없어 누가 지었는지 모르니 they 같은 주어를 넣어요: They built this bridge in 1990.",
+          "bookRef": null,
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg14-1:p1",
+          "ko": "그는 바닥을 칠했다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "The floor was painted by him.",
+          "en": "He painted the floor.",
+          "accept": [],
+          "targets": [
+            [
+              "He"
+            ],
+            [
+              "painted"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Him painted",
+              "hint": "능동태의 주어 자리에는 주격 대명사를 써요."
+            },
+            {
+              "match": "He paints",
+              "hint": "was painted 는 과거예요. 능동태도 같은 시제로 써요."
+            },
+            {
+              "match": "The floor painted",
+              "hint": "칠한 사람(by 뒤의 말)이 능동태의 주어예요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "pronoun-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 1"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg14-1:p2",
+          "ko": "제이콥은 이 그림을 그리지 않았다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "This picture wasn't drawn by Jacob.",
+          "en": "Jacob didn't draw this picture.",
+          "accept": [],
+          "targets": [
+            [
+              "didn't draw"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Jacob doesn't draw",
+              "hint": "wasn't drawn 은 과거예요. 능동태도 과거로 써요."
+            },
+            {
+              "match": "didn't drew",
+              "hint": "did 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "didn't drawn",
+              "hint": "did 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "negative-basic",
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 2"
+          },
+          "fix": {
+            "from": "Jacob doesn’t draw this picture. / This picture isn’t drawn by Jacob.",
+            "field": "en+promptEn",
+            "kind": "english_unnatural",
+            "why": "그림 한 장(this picture)에 습관을 뜻하는 현재 시제를 쓰면 어색해 과거로 고쳤습니다(짝인 수동태도 wasn't drawn)."
+          }
+        },
+        {
+          "id": "pg14-1:p3",
+          "ko": "그녀가 그 편지를 썼다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "The letter was written by her.",
+          "en": "She wrote the letter.",
+          "accept": [],
+          "targets": [
+            [
+              "She"
+            ],
+            [
+              "wrote"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Her wrote",
+              "hint": "능동태의 주어 자리에는 주격 대명사를 써요."
+            },
+            {
+              "match": "She writes",
+              "hint": "was written 은 과거예요. 능동태도 과거로 써요."
+            },
+            {
+              "match": "She written",
+              "hint": "과거 문장의 동사는 과거분사가 아니라 과거형으로 써요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 3"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg14-1:p4",
+          "ko": "우리는 우유로 버터를 만든다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "Butter is made from milk.",
+          "en": "We make butter from milk.",
+          "accept": [
+            "We make butter out of milk."
+          ],
+          "targets": [
+            [
+              "We"
+            ],
+            [
+              "make"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "make butter of milk",
+              "hint": "우유가 모양이 바뀌어 버터가 돼요. 재료가 변할 때 쓰는 전치사를 떠올려 보세요."
+            },
+            {
+              "match": "We makes",
+              "hint": "We 는 여럿이라 동사에 -s 를 붙이지 않아요."
+            },
+            {
+              "match": "Milk makes butter",
+              "hint": "버터를 만드는 쪽(우리)이 주어예요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "present-simple",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 4 (passOff 능동태 item 1)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg14-1:p5",
+          "ko": "캐빈은 이 방을 쓸 수 있다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "This room can be used by Cavin.",
+          "en": "Cavin can use this room.",
+          "accept": [],
+          "targets": [
+            [
+              "can use"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "can uses",
+              "hint": "can 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "can used",
+              "hint": "can 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "Cavin can be used",
+              "hint": "캐빈은 방을 쓰는 쪽이에요. 능동태로 바꿔요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 5"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg14-1:p6",
+          "ko": "화이트 씨는 이 책들을 쓰지 않았다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "These books were not written by Mr. White.",
+          "en": "Mr. White didn't write these books.",
+          "accept": [],
+          "targets": [
+            [
+              "didn't write"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "didn't wrote",
+              "hint": "did 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "doesn't write",
+              "hint": "were not written 은 과거예요. 능동태도 과거로 써요."
+            },
+            {
+              "match": "didn't written",
+              "hint": "did 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "negative-basic",
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 6"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg14-1:p7",
+          "ko": "싱가포르에서는 사람들이 영어를 쓴다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "English is spoken in Singapore.",
+          "en": "People speak English in Singapore.",
+          "accept": [
+            "In Singapore, people speak English.",
+            "People use English in Singapore.",
+            "In Singapore, people use English.",
+            "People in Singapore speak English.",
+            "People in Singapore use English.",
+            "They speak English in Singapore.",
+            "They use English in Singapore.",
+            "In Singapore, they speak English.",
+            "In Singapore, they use English."
+          ],
+          "targets": [
+            [
+              "People",
+              "They"
+            ],
+            [
+              "speak",
+              "use"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "People speaks",
+              "hint": "People 은 여럿이라 동사에 -s 를 붙이지 않아요."
+            },
+            {
+              "match": "People uses",
+              "hint": "People 은 여럿이라 동사에 -s 를 붙이지 않아요."
+            },
+            {
+              "match": "Singapore speaks",
+              "hint": "by ~ 가 없으면 영어를 쓰는 '사람들'을 주어로 넣어요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "present-simple",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 7"
+          },
+          "fix": null,
+          "note": "한국어 '영어를 쓴다'대로 use 로 쓴 답, '사람들'을 일반 주어 they 로 쓴 답(p10 모범 답과 같은 쓰임)도 정답(G12 점검 반영)."
+        },
+        {
+          "id": "pg14-1:p8",
+          "ko": "누군가가 매일 이 방들을 청소한다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "These rooms are cleaned every day.",
+          "en": "Someone cleans these rooms every day.",
+          "accept": [
+            "Somebody cleans these rooms every day.",
+            "Every day, someone cleans these rooms.",
+            "Every day, somebody cleans these rooms."
+          ],
+          "targets": [
+            [
+              "Someone",
+              "Somebody"
+            ],
+            [
+              "cleans"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "some one",
+              "hint": "'누군가'는 한 낱말로 붙여 써요."
+            },
+            {
+              "match": "everyday",
+              "hint": "'매일'은 두 낱말로 띄어 써요(붙여 쓰면 '일상의'라는 뜻)."
+            },
+            {
+              "match": "someone clean these",
+              "hint": "someone 은 한 사람(3인칭 단수)이에요. 동사 모양은?"
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "present-simple",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 8 (passOff 능동태 item 2)"
+          },
+          "fix": {
+            "from": "Some one cleans these rooms everyday. / These rooms are cleaned everyday.",
+            "field": "en+promptEn",
+            "kind": "english_grammar",
+            "why": "'누군가'는 한 낱말 someone, '매일'은 두 낱말 every day(everyday 는 '일상의'라는 형용사). 짝인 수동태도 every day 로."
+          }
+        },
+        {
+          "id": "pg14-1:p9",
+          "ko": "사람들은 나를 파티에 절대 초대하지 않는다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "I am never invited to parties.",
+          "en": "People never invite me to parties.",
+          "accept": [
+            "People don't ever invite me to parties.",
+            "They never invite me to parties.",
+            "They don't ever invite me to parties."
+          ],
+          "targets": [
+            [
+              "People",
+              "They"
+            ],
+            [
+              "invite"
+            ],
+            [
+              "me"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "invite I",
+              "hint": "동사 뒤 목적어 자리에는 목적격 대명사를 써요."
+            },
+            {
+              "match": "never invites",
+              "hint": "주어(사람들)는 여럿이라 동사에 -s 를 붙이지 않아요."
+            },
+            {
+              "match": "People never invited",
+              "hint": "am invited 는 현재예요. 능동태도 현재로 써요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "present-simple",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 9 (passOff 능동태 item 3)",
+            "reviewWhere": "review 1 item 5 (p64)"
+          },
+          "fix": null,
+          "note": "행위자가 없는 수동태라 주어는 한국어 제시문(사람들은)대로 people. '사람들은'을 일반 주어 they 로 쓴 답도 정답(p10 모범 답과 같은 쓰임 — G12 점검 반영). 교재 오류 후보(p64 Review 1 item 5~8, answer_ambiguous) 참고."
+        },
+        {
+          "id": "pg14-1:p10",
+          "ko": "사람들은 버터를 어떻게 만드나요?",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "How is butter made?",
+          "en": "How do they make butter?",
+          "accept": [
+            "How do people make butter?",
+            "How do you make butter?"
+          ],
+          "targets": [
+            [
+              "How do"
+            ],
+            [
+              "make"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "How they make butter",
+              "hint": "묻는 문장이에요. 일반동사 의문문은 주어 앞에 무엇이 필요할까요?"
+            },
+            {
+              "match": "How does they",
+              "hint": "they 에 맞는 do 모양은?"
+            },
+            {
+              "match": "How do they made",
+              "hint": "do 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "question-wh",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 10 (passOff 능동태 item 4)",
+            "reviewWhere": "review 1 item 6 (p64)"
+          },
+          "fix": null,
+          "note": "they 는 '사람들 일반'을 뜻해 한국어는 '사람들은'. people · you 로 쓴 답도 정답(교재 오류 후보 p64 answer_ambiguous 참고)."
+        },
+        {
+          "id": "pg14-1:p11",
+          "ko": "그들은 그 문을 칠해 놓았다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "The door has been painted.",
+          "en": "They have painted the door.",
+          "accept": [],
+          "targets": [
+            [
+              "They"
+            ],
+            [
+              "have painted"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "They painted the door",
+              "hint": "has been painted 는 현재완료예요. 능동태도 현재완료로 써요."
+            },
+            {
+              "match": "They has painted",
+              "hint": "They 에 맞는 have 모양은?"
+            },
+            {
+              "match": "They have paint",
+              "hint": "have 뒤에는 과거분사가 와요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "present-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 11 (passOff 능동태 item 5)",
+            "reviewWhere": "review 1 item 7 (p64)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg14-1:p12",
+          "ko": "그들은 강 근처에 집 몇 채를 짓고 있다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "Some houses are being built near the river.",
+          "en": "They are building some houses near the river.",
+          "accept": [],
+          "targets": [
+            [
+              "They"
+            ],
+            [
+              "are building"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "They are built",
+              "hint": "are being built 는 진행형이에요. 능동태 진행형은 be동사 + -ing 예요."
+            },
+            {
+              "match": "They build some houses",
+              "hint": "진행형 수동태예요. 능동태도 진행형으로 써요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "progressive",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 12 (passOff 능동태 item 6)",
+            "reviewWhere": "review 1 item 8 (p64)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg14-1:p13",
+          "ko": "삼촌이 나에게 이 게임기를 주셨다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "I was given this game player by my uncle.",
+          "en": "My uncle gave me this game player.",
+          "accept": [
+            "My uncle gave this game player to me."
+          ],
+          "targets": [
+            [
+              "gave"
+            ],
+            [
+              "me"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "gave I",
+              "hint": "동사 뒤 목적어 자리에는 목적격 대명사를 써요."
+            },
+            {
+              "match": "My uncle gives",
+              "hint": "was given 은 과거예요. 능동태도 과거로 써요."
+            },
+            {
+              "match": "gave to me this",
+              "hint": "'누구에게'를 동사 바로 뒤에 쓸 때는 전치사 없이 써요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "sentence-pattern-4",
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 13"
+          },
+          "fix": {
+            "from": "I was given this game player by my uncle..",
+            "field": "promptEn",
+            "kind": "english_grammar",
+            "why": "짝인 수동태 문장 끝에 마침표가 두 개 찍혀 있어 하나로 고쳤습니다."
+          },
+          "note": "표 13 · 14행은 왼쪽(능동태)이 같은 문장이고 오른쪽 수동태만 다름 — 이 레슨에서는 바꿀 수동태가 달라 두 문항으로 둠."
+        },
+        {
+          "id": "pg14-1:p14",
+          "ko": "삼촌이 나에게 이 게임기를 주셨다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "This game player was given to me by my uncle.",
+          "en": "My uncle gave me this game player.",
+          "accept": [
+            "My uncle gave this game player to me."
+          ],
+          "targets": [
+            [
+              "gave"
+            ],
+            [
+              "me"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "gave I",
+              "hint": "동사 뒤 목적어 자리에는 목적격 대명사를 써요."
+            },
+            {
+              "match": "My uncle gives",
+              "hint": "was given 은 과거예요. 능동태도 과거로 써요."
+            },
+            {
+              "match": "gave to me this",
+              "hint": "'누구에게'를 동사 바로 뒤에 쓸 때는 전치사 없이 써요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "sentence-pattern-4",
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 14"
+          },
+          "fix": null,
+          "note": "표 13 · 14행은 왼쪽(능동태)이 같은 문장 — 3형식으로 쓴 답(gave this game player to me)도 정답."
+        },
+        {
+          "id": "pg14-1:p15",
+          "ko": "그는 그녀에게 새 차를 주겠다고 약속했다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "She was promised a new car by him.",
+          "en": "He promised her a new car.",
+          "accept": [
+            "He promised a new car to her.",
+            "He promised to give her a new car.",
+            "He promised to give a new car to her.",
+            "He promised that he would give her a new car.",
+            "He promised he would give her a new car."
+          ],
+          "targets": [
+            [
+              "He"
+            ],
+            [
+              "promised"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "promised she",
+              "hint": "동사 뒤 목적어 자리에는 목적격 대명사를 써요."
+            },
+            {
+              "match": "Him promised",
+              "hint": "능동태의 주어 자리에는 주격 대명사를 써요."
+            },
+            {
+              "match": "He promises",
+              "hint": "was promised 는 과거예요. 능동태도 과거로 써요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "sentence-pattern-4"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 15"
+          },
+          "fix": null,
+          "note": "표 15 · 16행은 왼쪽(능동태)이 같은 문장 — 바꿀 수동태가 달라 두 문항으로 둠. 한국어 '주겠다고 약속했다'대로 쓴 promised to give · promised (that) he would give 도 능동태이고 뜻이 같아 정답(G12 점검 반영)."
+        },
+        {
+          "id": "pg14-1:p16",
+          "ko": "그는 그녀에게 새 차를 주겠다고 약속했다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "A new car was promised to her by him.",
+          "en": "He promised her a new car.",
+          "accept": [
+            "He promised a new car to her.",
+            "He promised to give her a new car.",
+            "He promised to give a new car to her.",
+            "He promised that he would give her a new car.",
+            "He promised he would give her a new car."
+          ],
+          "targets": [
+            [
+              "He"
+            ],
+            [
+              "promised"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "promised she",
+              "hint": "동사 뒤 목적어 자리에는 목적격 대명사를 써요."
+            },
+            {
+              "match": "Him promised",
+              "hint": "능동태의 주어 자리에는 주격 대명사를 써요."
+            },
+            {
+              "match": "He promises",
+              "hint": "was promised 는 과거예요. 능동태도 과거로 써요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "sentence-pattern-4"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 16"
+          },
+          "fix": {
+            "from": "A new car was promised to me by him.",
+            "field": "promptEn",
+            "kind": "english_grammar",
+            "why": "짝인 수동태가 능동태 He promised her a new car. 의 간접목적어 her 를 to me 로 바꿔 틀려 있었습니다 → to her."
+          },
+          "note": "한국어 '주겠다고 약속했다'대로 쓴 promised to give · promised (that) he would give 도 능동태이고 뜻이 같아 정답(G12 점검 반영)."
+        },
+        {
+          "id": "pg14-1:p17",
+          "ko": "어머니가 나에게 닭고기 수프를 만들어 주셨다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "Chicken soup was made for me by my mother.",
+          "en": "My mother made me chicken soup.",
+          "accept": [
+            "My mother made chicken soup for me.",
+            "My mom made me chicken soup.",
+            "My mom made chicken soup for me.",
+            "Mom made me chicken soup.",
+            "Mom made chicken soup for me."
+          ],
+          "targets": [
+            [
+              "made"
+            ],
+            [
+              "me"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "made chicken soup to me",
+              "hint": "make 는 '누구에게'를 뒤로 보낼 때 to 가 아닌 다른 전치사를 써요."
+            },
+            {
+              "match": "makes me chicken soup",
+              "hint": "was made 는 과거예요. 능동태도 과거로 써요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "sentence-pattern-4"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 17"
+          },
+          "fix": {
+            "from": "Chicken soup was made for me by Mom.",
+            "field": "promptEn",
+            "kind": "grammar_explanation_wrong",
+            "why": "짝인 수동태가 능동태 주어 My mother 를 Mom 으로 바꿔 놓았습니다. 바꾸기 연습이라 행위자를 원문 그대로(by my mother) 둡니다."
+          }
+        },
+        {
+          "id": "pg14-1:p18",
+          "ko": "나는 그가 달리는 것을 보았다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "He was seen to run by me.",
+          "en": "I saw him run.",
+          "accept": [],
+          "targets": [
+            [
+              "saw"
+            ],
+            [
+              "him"
+            ],
+            [
+              "run"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "saw him to run",
+              "hint": "능동태에서는 see + 목적어 뒤에 to 없이 동사원형을 써요."
+            },
+            {
+              "match": "Me saw",
+              "hint": "능동태의 주어 자리에는 주격 대명사를 써요."
+            },
+            {
+              "match": "saw he",
+              "hint": "동사 뒤 목적어 자리에는 목적격 대명사를 써요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "sentence-pattern-5",
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 18 (passOff 능동태 item 7)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg14-1:p19",
+          "ko": "그들은 그를 잭이라고 불렀다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "He was called Jack by them.",
+          "en": "They called him Jack.",
+          "accept": [],
+          "targets": [
+            [
+              "They"
+            ],
+            [
+              "called"
+            ],
+            [
+              "him"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "called he",
+              "hint": "동사 뒤 목적어 자리에는 목적격 대명사를 써요."
+            },
+            {
+              "match": "called Jack him",
+              "hint": "call + 목적어(누구를) + 이름 순서예요."
+            },
+            {
+              "match": "They call him",
+              "hint": "was called 는 과거예요. 능동태도 과거로 써요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "sentence-pattern-5"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 19"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg14-1:p20",
+          "ko": "그 소식은 나를 행복하게 했다.",
+          "koSource": "new",
+          "condition": "능동태로",
+          "promptEn": "I was made happy by the news.",
+          "en": "The news made me happy.",
+          "accept": [],
+          "targets": [
+            [
+              "made"
+            ],
+            [
+              "me"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "made I",
+              "hint": "동사 뒤 목적어 자리에는 목적격 대명사를 써요."
+            },
+            {
+              "match": "made me happily",
+              "hint": "made me 뒤에는 상태를 나타내는 형용사가 와요."
+            },
+            {
+              "match": "The news makes",
+              "hint": "was made 는 과거예요. 능동태도 과거로 써요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "past-simple",
+            "sentence-pattern-5"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "application 능동태(표 왼쪽 열) item 20"
+          },
+          "fix": null
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg14-1:t1",
+          "ko": "한국인들은 숟가락을 사용한다.",
+          "koSource": "grammar",
+          "condition": "능동태로",
+          "promptEn": "Spoons are used by Koreans.",
+          "en": "Koreans use spoons.",
+          "accept": [
+            "Korean people use spoons."
+          ],
+          "targets": [
+            [
+              "Koreans",
+              "Korean people"
+            ],
+            [
+              "use"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Koreans uses",
+              "hint": "Koreans 는 여럿이라 동사에 -s 를 붙이지 않아요."
+            },
+            {
+              "match": "Spoons use",
+              "hint": "by 뒤의 말(숟가락을 쓰는 사람)이 능동태의 주어예요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "present-simple",
+            "noun-plural-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-085#6",
+          "bookRef": null,
+          "fix": null,
+          "note": "영어 제시문(수동태)은 이 레슨에서 만든 것 — 모범 답 · 한국어 · 허용 답은 GRAMMAR I 그대로."
+        },
+        {
+          "id": "pg14-1:t2",
+          "ko": "그 절에서는 매시간마다 종을 울린다.",
+          "koSource": "grammar",
+          "condition": "능동태로",
+          "promptEn": "The bell is sounded every hour at the temple.",
+          "en": "They sound the bell every hour at the temple.",
+          "accept": [
+            "At the temple, they sound the bell every hour.",
+            "They sound the bell at the temple every hour.",
+            "People sound the bell every hour at the temple.",
+            "At the temple, people sound the bell every hour.",
+            "People sound the bell at the temple every hour."
+          ],
+          "targets": [
+            [
+              "They",
+              "People"
+            ],
+            [
+              "sound"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "They sounds",
+              "hint": "They 는 여럿이라 동사에 -s 를 붙이지 않아요."
+            },
+            {
+              "match": "The bell sounds",
+              "hint": "종은 울리는 동작을 받는 쪽이에요. by ~ 가 없으니 they 같은 주어를 넣어요."
+            }
+          ],
+          "tags": [
+            "active-voice",
+            "present-simple",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-020#6",
+          "bookRef": null,
+          "fix": null,
+          "note": "영어 제시문(수동태)은 이 레슨에서 만든 것 — 모범 답 · 한국어 · 허용 답 셋은 GRAMMAR II 그대로, people 로 쓴 답을 더함(by ~ 없는 수동태의 일반 주어)."
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg14-1:f1",
+      "template": "My ___ made dinner for me yesterday.",
+      "ko": "어제 우리 ___이(가) 나에게 저녁을 만들어 줬다."
+    }
+  ]
+}

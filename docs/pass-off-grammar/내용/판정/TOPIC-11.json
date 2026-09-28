@@ -1,0 +1,590 @@
+[
+  {
+    "page": 28,
+    "where": "TOPIC 11 passOff (1) 소단원 제목",
+    "text": "(1) 12시제",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "12시제 표를 설명 카드에 넣고(12줄 — 때 3 × 모습 4, study 로 모양만 보여 줌) 빠진 미래진행은 새 영작 문항(He will be watering the garden at this time tomorrow. — 과거진행 예문과 짝)으로 보충했습니다. 현재·과거·미래가 2문장씩 겹치는 것은 교재 예문이라 그대로 둡니다.",
+    "appliedTo": [
+      "pg11-1:rule",
+      "pg11-1:p15"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 11 passOff (1) item 4 · application item 6 (p31) · review 1. item 4 (p34)",
+    "text": "Jane has finished cleaning the room just now.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "just now 는 현재완료와 함께 쓰지 않아 Jane has just finished cleaning the room. 으로 고쳤습니다(한국어는 그대로 맞음). 원래 문장은 설명 카드의 흔한 실수(✗)로 보여 주고, 영작에서 쓰면 오답 힌트가 뜹니다.",
+    "appliedTo": [
+      "pg11-1:a3",
+      "pg11-1:p6",
+      "pg11-1:s2",
+      "pg11-1:rule"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 11 passOff (1) item 2 · application item 2 (p31) · review 1. item 2 (p34)",
+    "text": "My sister attends 한국elementary school.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "영어 속 한글을 로마자 학교 이름 Hanguk Elementary School 로 바꾸고 레슨 koreanWords 에 Hanguk 을 적었습니다(새 발음 — 사장님 샘플 확인 대상). Korea · Korean Elementary School, a Korean elementary school 로 쓴 답도 정답. 한국어 '내 누이는'은 요즘 잘 쓰지 않는 말이라 STUDENT 2-5 한국어처럼 '내 여동생은'으로 다듬고, My younger · little sister 로 쓴 답도 받습니다(점검 09-28).",
+    "appliedTo": [
+      "pg11-1:p2",
+      "pg11-1:s8"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 11 passOff (1) item 10 · application item 12 (p31) · review 1. item 10 (p35)",
+    "text": "He had been having a military service for two years when I met him.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "have a military service 는 쓰지 않는 표현이라 He had been doing his military service for two years when I met him. 으로 고쳤습니다(serving in the military · army 도 정답). 한국어 '그는 내가 그를 만났을 때, …'는 번역투라 '내가 그를 만났을 때, 그는 2년째 군 복무를 하고 있었다.'로 다듬었습니다(점검 09-28).",
+    "appliedTo": [
+      "pg11-1:p12",
+      "pg11-1:s12"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 11 passOff (1) item 12 · application item 14 (p31) · review 1. item 12 (p35)",
+    "text": "Do as I tell you, you shall live.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "쉼표만으로 이은 명령문 + 결과를 '명령문, and ~' 꼴로 고치고, 2인칭 you shall(말하는 이의 의지, 옛 말투)을 '미래' 예문에 맞게 will 로 바꿨습니다. shall · as I say · what I tell you 로 쓴 답도 정답이고, and 를 빼면 오답(빠진 자리 표시)입니다. 같은 뜻의 조건문(If you do as I tell you, you will live.)도 정답으로 받습니다 — 이 조건문이 and 를 뺀 명령문을 그대로 품고 있어 'and 빠짐' 힌트는 둘 수 없어 뺐습니다(점검 09-28).",
+    "appliedTo": [
+      "pg11-1:p14",
+      "pg11-1:s13"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 11 passOff (1) item 9 · application item 11 (p31) · review 1. item 9 (p35) / TOPIC 12 passOff (2) item 3 (p44) · application item 15 (p45) · review 2. item 4 (p47)",
+    "text": "She had worked at a department store for several years.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "기준 시점 없이 홀로 쓴 과거완료라 before she got married 를 더했습니다(STUDENT 2-3 에서 이 사람은 지금 가정주부). '-었었-'을 '오래전 일'로 잘못 배우는 흔한 오류를 막으려는 것입니다. TOPIC 12 p44 의 같은 문장은 다른 그룹 몫이고, pg12-2(a3 · s2 · p5)도 같은 판(영어 before she got married · 한국어 '결혼하기 전에 수년 동안 … 일했었다')으로 맞춰져 있습니다(09-28 확인).",
+    "appliedTo": [
+      "pg11-1:p11",
+      "pg11-1:s11"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 11 passOff (1) item 7 · application item 9 (p31) · review 1. item 7 (p34)",
+    "text": "They fought against the Japanese rule.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "rule 앞의 the 를 빼 STUDENT 17-3 원문(fought against Japanese rule)과 같게 고쳤습니다. the 를 넣은 교재 판도 틀린 영어는 아니라(덜 자연스러운 글) 허용 답으로 받습니다(점검 09-28).",
+    "appliedTo": [
+      "pg11-1:p9",
+      "pg11-1:s10"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 11 passOff (1) item 14 · application item 16 (p31) · review 1. item 14 (p35)",
+    "text": "We will have been living here twenty-six years next year.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "for 없이 기간을 쓰고 next year 로 때를 말하는 것은 맞는 영어(구어에서 흔함)라 교재 문장을 그대로 둡니다. for · by next year 를 넣은 답도 모두 정답으로 받습니다.",
+    "appliedTo": [
+      "pg11-1:p17",
+      "pg11-1:s15"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 11 passOff (1) item 3 · application item 5 (p31) · review 1. item 3 (p34)",
+    "text": "We are studying English, now.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "now 앞의 쉼표를 뺐습니다(채점은 문장부호를 보지 않음).",
+    "appliedTo": [
+      "pg11-1:a2",
+      "pg11-1:p5",
+      "pg11-1:s1"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 11 passOff (1) item 9 태그",
+    "text": "(과거 완료)",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "시제 이름을 모두 붙여 '과거완료'로 씁니다(설명 카드 표 · 형태 찾기 보기).",
+    "appliedTo": [
+      "pg11-1:rule",
+      "pg11-1:s11"
+    ]
+  },
+  {
+    "page": 28,
+    "where": "TOPIC 11 passOff (2) item 4 · application item 20 (p32)",
+    "text": "When I grow up, I plan on going abroad to study English in another country.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "abroad 와 in another country 의 겹침은 STUDENT 16-3 원문에도 있는 말이고 틀린 영어가 아니라 그대로 둡니다. in another country 를 뺀 답 · to another country · overseas 로 쓴 답도 정답입니다.",
+    "appliedTo": [
+      "pg11-1:p27"
+    ]
+  },
+  {
+    "page": 29,
+    "where": "TOPIC 11 passOff (4) item 11 · application item 37 (p33) · review 3. item 11 (p38)",
+    "text": "I am gong to go around, and you should show me your paper.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "gong 을 going 으로 고쳤습니다. gong 으로 쓰면 오답 힌트(철자)가 뜹니다.",
+    "appliedTo": [
+      "pg11-3:p16",
+      "pg11-3:s16"
+    ]
+  },
+  {
+    "page": 29,
+    "where": "TOPIC 11 passOff (4) item 13 (p29) · review 3. item 13 (p38) ↔ application item 49 (p33)",
+    "text": "Joseph is about to send him when the mayor comes.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "Pass-Off(p29) · Review 3(p38)의 현재형 판을 Application(p33)의 과거형 Joseph was about to send him when the mayor came. 하나로 맞췄습니다(앵커 · 영작 · 해석 문항 모두). 현재형으로 쓰면 힌트가 뜹니다.",
+    "appliedTo": [
+      "pg11-3:a7",
+      "pg11-3:p12",
+      "pg11-3:s6"
+    ]
+  },
+  {
+    "page": 29,
+    "where": "TOPIC 11 passOff (4) item 6 · application item 43 (p33) · review 3. item 6 (p37)",
+    "text": "She will find a lot of change.",
+    "type": "grammar_explanation_wrong",
+    "decision": "keep",
+    "reason": "문장은 맞는 영어라 그대로 두고, 설명 카드 표 첫 줄에 기본 미래 will 을 두어 '대용 표현과 견주는 기본 미래' 문장으로 씁니다. change 의 뜻은 한국어 '많은 변화'가 정해 주고, changes · notice · be going to 로 쓴 답도 정답입니다.",
+    "appliedTo": [
+      "pg11-3:p6",
+      "pg11-3:rule",
+      "pg11-3:s13"
+    ]
+  },
+  {
+    "page": 29,
+    "where": "TOPIC 11 passOff (4) item 15 · application item 51 (p33) · review 3. item 15 (p38)",
+    "text": "Emma will call him when I meet her.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "문법은 맞고 상황도 말이 되는 문장(내가 엠마를 만나면 엠마가 그에게 전화함)이라 그대로 둡니다. when 절 현재형(meet)이 이 문장의 요점입니다. 한국어는 '그녀'가 엠마 자신을 가리키는 번역투라 '내가 엠마를 만나면 엠마가 그에게 전화할 것이다.'(해석 문항 s18 의 정답 보기와 같은 글)로 다듬었고, '-면'은 if 로도 옮길 수 있어 If I meet Emma, she will call him. 도 받습니다(점검 09-28).",
+    "appliedTo": [
+      "pg11-3:p14",
+      "pg11-3:s18"
+    ]
+  },
+  {
+    "page": 33,
+    "where": "TOPIC 11 application item 52 (p33) ↔ passOff (4) item 16 (p29) · review 3. item 16 (p38)",
+    "text": "If it rains tomorrow, our picnic will be cancelled.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "모범 답은 canceled 로 맞추고 cancelled · called off · 능동(we will cancel our picnic)으로 쓴 답도 정답으로 받습니다.",
+    "appliedTo": [
+      "pg11-3:a8",
+      "pg11-3:p15"
+    ]
+  },
+  {
+    "page": 30,
+    "where": "TOPIC 11 passOff (5) item 4 · item 8",
+    "text": "I know that he has done it / I knew that he had done it",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "두 문장 끝에 마침표를 넣었습니다(채점은 문장부호를 보지 않음).",
+    "appliedTo": [
+      "pg11-4:a4",
+      "pg11-4:a7",
+      "pg11-4:p3",
+      "pg11-4:p6"
+    ]
+  },
+  {
+    "page": 30,
+    "where": "TOPIC 11 passOff (5) 시제 일치 전체",
+    "text": "(5) 시제 일치",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "설명 카드에 규칙(주절이 과거면 한 걸음 과거로 · will→would · can→could · 진행형)과 예외(진리는 현재, 역사적 사실은 과거)를 넣고, 영작에 would · was doing 문항과 뜻이 있는 보충 문장 4개(is→was · will→would · 진리 · 역사)를 더했습니다. 기준 시점 없이 어색한 두 문장에는 before I came · for ten years by next year 를 더했습니다.",
+    "appliedTo": [
+      "pg11-4:rule",
+      "pg11-4:a5",
+      "pg11-4:p4",
+      "pg11-4:p5",
+      "pg11-4:p8",
+      "pg11-4:p9",
+      "pg11-4:p10",
+      "pg11-4:p11",
+      "pg11-4:p12",
+      "pg11-4:p13"
+    ]
+  },
+  {
+    "page": 31,
+    "where": "TOPIC 11 application item 13",
+    "text": "His dream will come true(4과)",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "마침표를 넣고 과 표시는 STUDENT 3-4 로 바로잡았습니다(studentRef s3-4 adapted).",
+    "appliedTo": [
+      "pg11-1:a6",
+      "pg11-1:p13"
+    ]
+  },
+  {
+    "page": 32,
+    "where": "TOPIC 11 application item 29",
+    "text": "He doesn’t like to talk to new people.. (3과)",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "두 번 찍힌 마침표를 하나로 고쳤습니다.",
+    "appliedTo": [
+      "pg11-2:p3"
+    ]
+  },
+  {
+    "page": 32,
+    "where": "TOPIC 11 application item 30 · review 4. item 30 (p41)",
+    "text": "She walks to school with my brother everyday.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "everyday → every day, 한국어는 '내 남동생'으로 고쳤습니다. everyday 로 쓰면 힌트가 뜹니다.",
+    "appliedTo": [
+      "pg11-2:p4",
+      "pg11-2:s8"
+    ]
+  },
+  {
+    "page": 32,
+    "where": "TOPIC 11 application item 31 · review 4. item 31 (p41)",
+    "text": "Nick reads Bible for an hour everyday.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "the Bible, every day 로 고쳤습니다. 관사를 빼거나 everyday 로 쓰면 힌트가 뜹니다.",
+    "appliedTo": [
+      "pg11-2:p5",
+      "pg11-2:s7"
+    ]
+  },
+  {
+    "page": 32,
+    "where": "TOPIC 11 application item 34 · review 4. item 34 (p42)",
+    "text": "Lilly wears a red blouse today.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "Lilly is wearing a red blouse today. / 릴리는 오늘 빨간 블라우스를 입고 있다. 로 고치고, '-s 현재형은 습관 · 오늘 잠깐의 일은 is + -ing'를 가르는 문장으로 씁니다(설명 카드 5번째 줄). 원래 문장으로 쓰면 힌트가 뜹니다.",
+    "appliedTo": [
+      "pg11-2:p8",
+      "pg11-2:s10",
+      "pg11-2:rule"
+    ]
+  },
+  {
+    "page": 32,
+    "where": "TOPIC 11 application item 25 · review 4. item 25 (p41)",
+    "text": "He was often late at the party.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "He was often late for parties. 로 고쳤습니다(한국어는 그대로 맞음). late to parties · often came late 도 정답, the party 로 쓰면 힌트가 뜹니다.",
+    "appliedTo": [
+      "pg11-1:p25"
+    ]
+  },
+  {
+    "page": 32,
+    "where": "TOPIC 11 application item 22",
+    "text": "Bill always drinks coke.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "상표 이름이라 Coke 로 대문자(채점은 대소문자를 보지 않음). cola 로 쓴 답도 정답입니다.",
+    "appliedTo": [
+      "pg11-1:p22"
+    ]
+  },
+  {
+    "page": 36,
+    "where": "TOPIC 11 review 2. 지시문",
+    "text": "빈 칸에 올 수 있는 시제들로",
+    "type": "korean_typo",
+    "decision": "na",
+    "reason": "Review 2 의 지시문은 웹 문항에 쓰지 않습니다(칸마다 조건 칩 'that 절을 ○○로'로 바꿈).",
+    "appliedTo": []
+  },
+  {
+    "page": 36,
+    "where": "TOPIC 11 review 2. items 1~7",
+    "text": "I know that ____ (5칸) / I knew that he ____ (2칸)",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "칸마다 목표 시제를 조건 칩('that 절을 미래로' 등)과 한국어 뜻으로 정해, 한 칸에 정답이 하나가 되게 했습니다. 같은 시제의 흔한 다른 답(that 생략 · be going to 등)은 허용 답에 넣었습니다.",
+    "appliedTo": [
+      "pg11-4:p1",
+      "pg11-4:p2",
+      "pg11-4:p3",
+      "pg11-4:p4",
+      "pg11-4:p5",
+      "pg11-4:p6",
+      "pg11-4:p7"
+    ]
+  },
+  {
+    "page": 39,
+    "where": "TOPIC 11 review 4. item 8 (+ review 1. item 6의 답)",
+    "text": "그는 한국의 창립자가 되었다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "STUDENT 17-1 과 글자까지 같은 문장이라 한국어도 STUDENT 판 '그는 한국의 건국자가 되었습니다.'를 씁니다.",
+    "appliedTo": [
+      "pg11-1:p8"
+    ]
+  },
+  {
+    "page": 39,
+    "where": "TOPIC 11 review 4. item 9 (+ review 1. item 7의 답)",
+    "text": "그들은 일본의 지배에 맞서 싸워왔다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그들은 일본의 지배에 맞서 싸웠다.'(단순과거)로 고쳤습니다.",
+    "appliedTo": [
+      "pg11-1:p9"
+    ]
+  },
+  {
+    "page": 39,
+    "where": "TOPIC 11 review 4. item 11 (p39) · TOPIC 12 review 3. item 15 (p50)",
+    "text": "그녀는 수 년 동안 백화점에서 일했었다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'수년'으로 붙여 쓰고, 영어에 더한 기준 시점에 맞춰 '결혼하기 전에'를 넣었습니다. TOPIC 12 p50 의 같은 한국어는 다른 그룹 몫입니다.",
+    "appliedTo": [
+      "pg11-1:p11"
+    ]
+  },
+  {
+    "page": 40,
+    "where": "TOPIC 11 review 4. item 15 (+ review 1. item 13의 답)",
+    "text": "만약 내가 다시 LA를 방문한다면, 나는 그곳에 두 번째 방문이 될 것이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'내가 LA를 다시 방문하면, 나는 그곳에 두 번 가 본 셈이 될 것이다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg11-1:p16"
+    ]
+  },
+  {
+    "page": 40,
+    "where": "TOPIC 11 review 4. item 16 (+ review 1. item 14의 답)",
+    "text": "우리는 내년이 되면 여기서 26년간 살아오는 것이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'내년이면 우리는 여기서 26년째 살고 있는 셈이 될 것이다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg11-1:p17"
+    ]
+  },
+  {
+    "page": 40,
+    "where": "TOPIC 11 review 4. item 17",
+    "text": "여기로 그가 온다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'저기 그가 온다.'로 고치고 조건 칩 'Here로 시작해서'를 붙였습니다(1권 pg03-1 의 같은 문장과 같은 방식).",
+    "appliedTo": [
+      "pg11-1:p18"
+    ]
+  },
+  {
+    "page": 40,
+    "where": "TOPIC 11 review 4. item 19",
+    "text": "지구는 태양 주변을 움직인다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'지구는 태양 주위를 돈다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg11-1:a8",
+      "pg11-1:p20"
+    ]
+  },
+  {
+    "page": 40,
+    "where": "TOPIC 11 review 4. item 20",
+    "text": "내가 성인이 될 때, 나는 다른 나라로 영어를 공부하러 가는 계획을 세울 것이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'내가 성인이 되면, 나는 해외로 영어 공부를 하러 갈 계획이다.'로 고쳐 지금 세운 계획(plan)과 when 절 현재형을 살렸습니다. 영어의 abroad · in another country 겹침은 한국어에서는 STUDENT 16-3 한국어처럼 '해외로' 하나로 씁니다(점검 09-28).",
+    "appliedTo": [
+      "pg11-1:p27"
+    ]
+  },
+  {
+    "page": 40,
+    "where": "TOPIC 11 review 4. item 21 (+ passOff (2) item 5 · application item 21)",
+    "text": "북쪽에서의 군대들이 남한을 침략했던 1950년대에 전쟁이 발발했다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "STUDENT 17-3 이 이미 고친 문장이라 영어·한국어 모두 지금 STUDENT 판 'The Korean War broke out in 1950 when armies from the North invaded the South.' / '1950년 북쪽의 군대가 남쪽을 침략하면서 한국 전쟁이 일어났습니다.'를 씁니다(설계 §0 기본값 — 음성 재사용). 교재 문장은 옛 man 과정 m17-3 과 글자까지 같고, STUDENT 는 09-17 감사의 사실 항목(High)으로 A civil war 를 The Korean War 로 고쳤습니다(docs/qa-2026-09-18/student-original-exceptions.json). 교재 한국어의 '1950년대' 오역도 함께 풀립니다. D6 은 민감하다는 이유로 바꾸지 않는다는 결정이라 STUDENT 판에 맞추는 것을 막지 않습니다. 교재 판 A civil war … 는 문법이 맞아 허용 답으로 둡니다(G9 점검 권고 — 사실 문제로 보아 뺄지는 총괄 판단)(점검 09-28).",
+    "appliedTo": [
+      "pg11-1:p21"
+    ]
+  },
+  {
+    "page": 40,
+    "where": "TOPIC 11 review 4. item 23",
+    "text": "저의 아버지는 음악에 재능이 있으시다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'우리 아버지는 음악에 재능이 있으시다.'로 말투를 맞췄습니다.",
+    "appliedTo": [
+      "pg11-1:p23"
+    ]
+  },
+  {
+    "page": 42,
+    "where": "TOPIC 11 review 4. item 36",
+    "text": "이것은 나의 개이고 그것은 많이 짓는다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'이것은 내 개인데, 많이 짖는다.'로 고쳤습니다(오타 짓는다 → 짖는다, 어색한 '그것은').",
+    "appliedTo": [
+      "pg11-2:p10"
+    ]
+  },
+  {
+    "page": 42,
+    "where": "TOPIC 11 review 4. item 37 (+ review 3. item 11의 답)",
+    "text": "내가 돌아다니면, 너희들은 나에게 자신의 종이를 보여줘야 해.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'내가 돌아다닐 테니, 너희는 각자 종이를 나에게 보여 줘야 해.'로 고쳤습니다(be going to 의 '~할 테니'). paper 는 학생이 쓴 종이라 '과제물'로 좁히지 않고 '종이'로 둡니다.",
+    "appliedTo": [
+      "pg11-3:p16",
+      "pg11-3:s16"
+    ]
+  },
+  {
+    "page": 42,
+    "where": "TOPIC 11 review 4. item 38 (+ review 3. item 1의 답)",
+    "text": "그는 월요일 오후에 테니스를 치는 중이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그는 월요일 오후에 테니스를 칠 예정이다.'로 고치고, 해석 고르기 문항에서 '지금 치는 중이다'를 오답 보기로 씁니다.",
+    "appliedTo": [
+      "pg11-3:a1",
+      "pg11-3:p1",
+      "pg11-3:s1"
+    ]
+  },
+  {
+    "page": 42,
+    "where": "TOPIC 11 review 4. item 39 (+ review 3. item 2의 답)",
+    "text": "비행가 11시 30분에 시카고로 떠날 예정이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그 비행기는 11시 30분에 시카고를 떠난다.'로 고치고, '시카고로 떠난다'는 해석 고르기의 오답 보기로 씁니다.",
+    "appliedTo": [
+      "pg11-3:a2",
+      "pg11-3:p2",
+      "pg11-3:s2"
+    ]
+  },
+  {
+    "page": 42,
+    "where": "TOPIC 11 review 4. item 42 (+ review 3. item 5의 답)",
+    "text": "너는 오늘밤에 TV를 볼 예정이니?",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'오늘 밤'으로 띄어 썼습니다.",
+    "appliedTo": [
+      "pg11-3:a3",
+      "pg11-3:p5",
+      "pg11-3:s7"
+    ]
+  },
+  {
+    "page": 43,
+    "where": "TOPIC 11 review 4. item 44 (+ review 3. item 7의 답)",
+    "text": "직장에서 집에 도착할 때 내가 네게 전화할게.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'퇴근해서 집에 도착하면 다시 전화할게.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg11-3:a4",
+      "pg11-3:p7",
+      "pg11-3:s8"
+    ]
+  },
+  {
+    "page": 43,
+    "where": "TOPIC 11 review 4. item 46 (+ review 3. item 9의 답)",
+    "text": "내가 돌아올 때 여기서 기다릴게.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'내가 돌아올 때까지 여기서 기다려.'로 고치고, 책의 해석은 해석 고르기의 오답 보기로 씁니다.",
+    "appliedTo": [
+      "pg11-3:a5",
+      "pg11-3:p9",
+      "pg11-3:s3"
+    ]
+  },
+  {
+    "page": 43,
+    "where": "TOPIC 11 review 4. item 48 (+ review 3. item 12의 답)",
+    "text": "정선생님은 오늘 밤에 연설하기로 되어 있다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'정 선생님'으로 띄어 썼습니다. Mr. Jung 은 로마자 한국어 성이라 레슨 koreanWords 에 Jung 을 적었습니다(새 발음 — 사장님 샘플 확인 대상).",
+    "appliedTo": [
+      "pg11-3:a6",
+      "pg11-3:p11",
+      "pg11-3:s9"
+    ]
+  },
+  {
+    "page": 43,
+    "where": "TOPIC 11 review 4. item 49",
+    "text": "조셉은 시장이 올 때, 그를 막 보내려 했다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'시장이 왔을 때 조셉은 막 그를 보내려던 참이었다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg11-3:a7",
+      "pg11-3:p12",
+      "pg11-3:s6"
+    ]
+  },
+  {
+    "page": 43,
+    "where": "TOPIC 11 review 4. item 50 (+ review 3. item 14의 답)",
+    "text": "우리의 비행기는 떠날 예정이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'우리 비행기는 10분 후에 떠난다.'로 고쳤습니다(in ten minutes). after ten minutes 로 쓰면 힌트가 뜹니다.",
+    "appliedTo": [
+      "pg11-3:p13",
+      "pg11-3:s17"
+    ]
+  },
+  {
+    "page": 43,
+    "where": "TOPIC 11 review 4. item 52 (+ review 3. item 16의 답)",
+    "text": "만약, 내일 비가 온다면, 소풍은 취소될 것이다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'만약 내일 비가 온다면, 우리 소풍은 취소될 것이다.'로 고쳤습니다(쉼표 빼고 our 의 '우리'를 넣음).",
+    "appliedTo": [
+      "pg11-3:a8",
+      "pg11-3:p15",
+      "pg11-3:s10"
+    ]
+  }
+]

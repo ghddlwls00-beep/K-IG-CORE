@@ -1,0 +1,772 @@
+[
+  {
+    "page": 30,
+    "where": "TOPIC 19 passOff 1) item 5 (for) · application 5) item 1 (p32)",
+    "text": "I do a little interview to prepare for school. (8과)",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "interview 는 오식 — STUDENT 8-4 원문 review(복습)로 고침. 교재 원문은 오답 패턴 힌트('복습은 interview 가 아니에요')로 짚음.",
+    "appliedTo": [
+      "pg19-1:p13"
+    ],
+    "issueId": "g3-p30-57-001"
+  },
+  {
+    "page": 30,
+    "where": "TOPIC 19 passOff 1) item 8 (before) · application 7) item 3 (p33)",
+    "text": "We meet before class with our teacher for morning session. (5과)",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "morning session 앞 관사 the 를 넣음(STUDENT 5-3 이 이미 고친 꼴). 관사 빠진 답은 오답 패턴으로 짚음.",
+    "appliedTo": [
+      "pg19-1:p22"
+    ],
+    "issueId": "g3-p30-57-002"
+  },
+  {
+    "page": 30,
+    "where": "TOPIC 19 passOff 1) item 11 (without) · application 7) item 14 (p33)",
+    "text": "Finally she could succeed without their help.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "과거에 실제로 한 번 해낸 일에는 긍정문 could 를 쓰지 않아 was able to 로 고침(managed to · succeeded 도 받음). 교재의 could 는 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-1:p33"
+    ],
+    "issueId": "g3-p30-57-003"
+  },
+  {
+    "page": 30,
+    "where": "TOPIC 19 passOff 2) item 3",
+    "text": "I have many relatives because my father and have many brothers and sisters. (4과)",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "빠진 mother 를 넣어 STUDENT 4-2 와 글자까지 같은 문장으로(영어 · 한국어 STUDENT 판, studentRef exact). Application 줄의 'my father and my mother' 는 허용 답.",
+    "appliedTo": [
+      "pg19-2:a3",
+      "pg19-2:p5"
+    ],
+    "issueId": "g3-p30-57-004"
+  },
+  {
+    "page": 30,
+    "where": "TOPIC 19 passOff 2) item 7 · application 8) item 14 (p34)",
+    "text": "Since I was young, I learned to like history books and novels because I could read about the wisdom of many people. (13과)",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "since 절과 과거형 learned 가 맞지 않음. 설계 기본값(STUDENT 가 이미 고친 문장은 STUDENT 판)대로 STUDENT 13-1 의 'When I was young, …'을 영어 · 한국어 그대로 씀. since + 절은 설명 카드 · ④ p15 · ⑤ t1 로 익히고, 교재식 'Since I was young, I learned' 는 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-2:a7",
+      "pg19-2:p14"
+    ],
+    "issueId": "g3-p30-57-005"
+  },
+  {
+    "page": 30,
+    "where": "TOPIC 19 passOff 2) item 8 · application 8) item 16 (p34)",
+    "text": "Since the end of the war in 1953, the country began to develop very quickly. (17과)",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "since + 과거 시점 뒤 주절을 STUDENT 17-4 가 고친 has developed 로(뒤의 'especially during the 1970s' 는 뺀 adapted). began to develop 은 오답 패턴.",
+    "appliedTo": [
+      "pg19-2:a8",
+      "pg19-2:p16",
+      "pg19-2:s5"
+    ],
+    "issueId": "g3-p30-57-006"
+  },
+  {
+    "page": 30,
+    "where": "TOPIC 19 문장부호 여러 곳: passOff 1) item 7 (p30) · passOff 1) item 9 (p30)과 application 7) item 6 (p33) · application 9) items 10, 26, 28, 37 (p35-37)",
+    "text": "In spite of the rain, they enjoyed themselves / After a few minutes , I finally get out of bed. / I like visiting my relatives on Sunday afternoons(11과) / After that, I quickly write in my journal about my day (9과) / The land of Korea is a peninsula located between China and Japan(20과) / She is one of my best friends(3과)",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "끝 마침표를 넣고 'minutes ,' 의 빈칸을 없앰. 채점은 문장부호를 보지 않지만 화면 · 소리 글은 고친 판.",
+    "appliedTo": [
+      "pg19-1:a6",
+      "pg19-1:p20",
+      "pg19-1:a7",
+      "pg19-1:p25",
+      "pg19-3:p10",
+      "pg19-3:p26",
+      "pg19-3:p28",
+      "pg19-3:p37"
+    ],
+    "issueId": "g3-p30-57-007"
+  },
+  {
+    "page": 31,
+    "where": "TOPIC 19 passOff 3) item 6 · application 9) item 20 (p36)",
+    "text": "She had worked at a department store for several years. (1과)",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "교재의 '(1과)'는 틀림 — 이 문장은 STUDENT 2-3 에 있어 studentRef 를 s2-3 으로 달았음.",
+    "appliedTo": [
+      "pg19-3:a2",
+      "pg19-3:p20"
+    ],
+    "issueId": "g3-p30-57-008"
+  },
+  {
+    "page": 31,
+    "where": "TOPIC 19 passOff 3) item 6 · application 9) item 20 (p36) · review 1) item 69 (p43)",
+    "text": "She had worked at a department store for several years.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "기준 시점 없는 과거완료라 STUDENT 2-3 이 고친 'She worked …'를 영어 · 한국어 그대로(studentRef exact). had worked 는 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-3:a2",
+      "pg19-3:p20"
+    ],
+    "issueId": "g3-p30-57-009"
+  },
+  {
+    "page": 31,
+    "where": "TOPIC 19 passOff 3) item 4 · application 9) item 15 (p35) · review 1) item 64 (p43)",
+    "text": "I can draw his face within my memory.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "within my memory 는 쓰지 않는 영어 — 'I can draw his face from memory.'(기억만으로 그리다)로 고침. within 은 같은 레슨의 p16 · p17 로 익힘. 교재 원문은 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-3:p15"
+    ],
+    "issueId": "g3-p30-57-010"
+  },
+  {
+    "page": 31,
+    "where": "TOPIC 19 passOff 3) item 10 · application 9) item 27 (p36)",
+    "text": "I like to walk along the park with my dog.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "along 은 길게 이어진 것(강 · 길)을 따라갈 때 써서 along the river 로 고침(한국어도 '강을 따라'). 신뢰도 낮은 지적이지만 along 의 예문으로 쓰기에 부적절해 고침.",
+    "appliedTo": [
+      "pg19-3:p27"
+    ],
+    "issueId": "g3-p30-57-011"
+  },
+  {
+    "page": 36,
+    "where": "TOPIC 19 application 9) item 27",
+    "text": "I like to walk along the park with my dog.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "밑줄이 with 에 잘못 그어져 있어 이 문항의 목표형(targets)을 along 으로 둠.",
+    "appliedTo": [
+      "pg19-3:p27"
+    ],
+    "issueId": "g3-p30-57-012"
+  },
+  {
+    "page": 31,
+    "where": "TOPIC 19 passOff 3) item 14 · application 9) item 31 (p36) · review 1) item 80 (p44)",
+    "text": "For a while, Korea was ruled by Japan. (17과)",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "35년 지배를 '잠시 동안'이라 한 것은 사실과 어긋남 — STUDENT 17-3 이 고친 'Later, Korea was ruled by Japan from 1910 to 1945.'를 영어 · 한국어 그대로(studentRef exact). 민감 예문을 피한 것이 아니라 사실 오류를 고친 것(D6). 문항 fix.kind 는 fact(점검 G15). After that · Afterwards 로 쓴 '그 후'도 받음.",
+    "appliedTo": [
+      "pg19-3:p31"
+    ],
+    "issueId": "g3-p30-57-013"
+  },
+  {
+    "page": 31,
+    "where": "TOPIC 19 passOff 3) item 15",
+    "text": "Before I go to school, my mother gives me my allowance. (5과)",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "before 가 절을 이끄는 접속사라 '중요 전치사' 예문이 아님. 문장은 그대로(STUDENT 5-1) 두고, 전치사 · 접속사 · 부사를 가르는 pg19-2 의 형태 찾기(Before = 접속사)로 옮김.",
+    "appliedTo": [
+      "pg19-2:s3"
+    ],
+    "issueId": "g3-p30-57-014"
+  },
+  {
+    "page": 31,
+    "where": "TOPIC 19 passOff 3) item 23 · application 9) item 40 (p37) · review 1) item 89 (p45)",
+    "text": "I mailed the letter today, so they receive it by Monday.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "앞으로의 일이라 should receive 로 고침(will 도 받음). 교재의 현재형은 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-3:a7",
+      "pg19-3:p39"
+    ],
+    "issueId": "g3-p30-57-015"
+  },
+  {
+    "page": 37,
+    "where": "TOPIC 19 application 9) item 40",
+    "text": "I mailed the letter today, so they receive it by Monday.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "밑줄이 so 에 잘못 그어져 있어 앵커 강조(focus)와 목표형을 by 로 둠.",
+    "appliedTo": [
+      "pg19-3:a7",
+      "pg19-3:p39"
+    ],
+    "issueId": "g3-p30-57-016"
+  },
+  {
+    "page": 31,
+    "where": "TOPIC 19 passOff 3) item 25 · application 9) item 43 (p37)",
+    "text": "... By the time she arrived, most of the other guest had left.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "most of the other guests 로 고침. guest(단수)는 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-3:p42"
+    ],
+    "issueId": "g3-p30-57-017"
+  },
+  {
+    "page": 37,
+    "where": "TOPIC 19 application 9) item 43",
+    "text": "By the time she arrived, most of the other guest had left.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "밑줄이 of 에 잘못 그어져 있어 목표형을 By the time 으로 둠.",
+    "appliedTo": [
+      "pg19-3:p42"
+    ],
+    "issueId": "g3-p30-57-018"
+  },
+  {
+    "page": 31,
+    "where": "TOPIC 19 passOff 3) item 25 주석",
+    "text": "(그 즈음에)",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "by the time 은 '~했을 때는 이미'(그 전에 끝남)라 한국어를 '도착했을 때는 … 이미 떠나고 없었다'로 쓰고, 설명 카드 규칙 줄(4번)에 \"by the time + 절 = '~했을 때는 이미'\"로 적음.",
+    "appliedTo": [
+      "pg19-3:p42"
+    ],
+    "issueId": "g3-p30-57-019"
+  },
+  {
+    "page": 34,
+    "where": "TOPIC 19 application 8) items 6 · 8",
+    "text": "Because of this, I have many friends.(3과) / =She couldn’t study well because of her illness.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "앵커 강조 · 목표형을 Because of 한 덩어리로, 밑줄 없던 바꿔쓰기 줄(because of her illness)도 목표형 because of 로 둠.",
+    "appliedTo": [
+      "pg19-2:a4",
+      "pg19-2:p6",
+      "pg19-2:p8"
+    ],
+    "issueId": "g3-p30-57-020"
+  },
+  {
+    "page": 32,
+    "where": "TOPIC 19 application 3) item 3 · review 1) item 9 (p38)",
+    "text": "She can give a lot of benefits to everyone with her wisdom.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "give … benefits 는 '(복지) 혜택을 주다'로 들려 모범 답을 bring … benefits to 로 고침. 교재 답(give)도 뜻은 통해 허용 답에 둠(check-grading B: 허용 답으로 둔 덜 자연스러운 글).",
+    "appliedTo": [
+      "pg19-1:p9"
+    ],
+    "issueId": "g3-p30-57-021"
+  },
+  {
+    "page": 32,
+    "where": "TOPIC 19 application 4) item 2 · review 1) item 11 (p38)",
+    "text": "These palaces are called the house of David.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "여러 궁전을 집 하나라고 부르는 수 어긋남 — 'This palace is called the House of David.'로 고치고, 한국어 '데이빗'은 외래어 표기법대로 '데이비드'. David's house 도 맞는 영어라 조건 칩 'of를 써서'.",
+    "appliedTo": [
+      "pg19-1:p11"
+    ],
+    "issueId": "g3-p30-57-022"
+  },
+  {
+    "page": 32,
+    "where": "TOPIC 19 application 2) item 2",
+    "text": "I start my daily routines at 7:00.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "daily routine(하루 일과)은 보통 단수로 써서 모범 답을 'I start my daily routine at 7:00.'로 고침(점검 G15 — 처음 판정은 keep). 여러 일과를 뜻하는 복수 routines 도 틀린 영어는 아니라 허용 답에 둠. 한국어 '일상생활'은 '하루 일과'로 고침(문항 fix, field en+ko).",
+    "appliedTo": [
+      "pg19-1:p5"
+    ],
+    "issueId": "g3-p30-57-023"
+  },
+  {
+    "page": 33,
+    "where": "TOPIC 19 application 7) item 2",
+    "text": "In spite of the poverty, they got stronger.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "앞에서 말한 그 가난을 가리키는 the poverty 도 문법상 맞아 그대로 두고, 더 자연스러운 their poverty · 관사 없는 poverty(점검 G15) · grew/became stronger 를 허용 답에 둠.",
+    "appliedTo": [
+      "pg19-1:p21"
+    ],
+    "issueId": "g3-p30-57-024"
+  },
+  {
+    "page": 33,
+    "where": "TOPIC 19 application 7) item 5",
+    "text": "She passes before our office every day.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "'~ 앞을 지나가다'의 pass before 는 지금 일상 영어에서 거의 안 써 모범 답을 in front of 로(by · past 도 받음). 교재 답도 틀린 문법은 아니라 허용 답에 둠. 장소의 before 는 바로 앞 문항 'He stood before the audience.'(격식체)로 익힘.",
+    "appliedTo": [
+      "pg19-1:p24"
+    ],
+    "issueId": "g3-p30-57-025"
+  },
+  {
+    "page": 33,
+    "where": "TOPIC 19 application 7) item 8",
+    "text": "Would you follow after him?",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "follow after 는 뜻이 겹치는 옛 성경투라 after 를 살린 'Would you go after him?'(그의 뒤를 따라가 주겠어요?)으로 고치고 조건 칩 'after를 써서'. follow after 는 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-1:p27"
+    ],
+    "issueId": "g3-p30-57-026"
+  },
+  {
+    "page": 33,
+    "where": "TOPIC 19 application 7) item 12",
+    "text": "He entered the living room by the backdoor.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "back door(두 낱말)로 고침. 채점기는 띄어쓰기만 다른 답을 같게 봐 backdoor 로 써도 맞음 처리(check-grading B '띄어쓰기만 다름'). 한국어 '후문을 통해서'는 '뒷문으로'로 — by · through 둘 다 받음.",
+    "appliedTo": [
+      "pg19-1:p31"
+    ],
+    "issueId": "g3-p30-57-027"
+  },
+  {
+    "page": 34,
+    "where": "TOPIC 19 application 8) item 13",
+    "text": "=She didn’t start to teach English until 30.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "until 30 만으로는 나이를 뜻하지 못해 until the age of 30 으로(전치사 until 이 살게). until age 30 · until she was 30 도 받고, until 30 은 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-2:p13"
+    ],
+    "issueId": "g3-p30-57-028"
+  },
+  {
+    "page": 35,
+    "where": "TOPIC 19 application 9) item 5 · review 1) item 54 (p42)",
+    "text": "Luckily I could buy the shop at a low price.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "실제로 해낸 한 번의 일이라 was able to 로 고침(managed to · bought 도 받음). 교재의 could 는 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-3:p5"
+    ],
+    "issueId": "g3-p30-57-029"
+  },
+  {
+    "page": 35,
+    "where": "TOPIC 19 application 9) item 16",
+    "text": "Boil the soup within 5 minutes.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "요리 지시로는 드물지만 틀린 영어가 아니고, within(~ 이내에)의 뜻이 또렷해 그대로 둠. for 5 minutes · in 5 minutes 는 뜻이 다른 답이라 오답 패턴 힌트로 가름. in + 기간은 '~ 만에'로도 쓰여, in 5 minutes 힌트는 '흔히 5분 뒤로 읽힘'으로 누그러뜨림(점검 G15).",
+    "appliedTo": [
+      "pg19-3:p16"
+    ],
+    "issueId": "g3-p30-57-030"
+  },
+  {
+    "page": 36,
+    "where": "TOPIC 19 application 9) item 19 · review 1) item 68 (p43)",
+    "text": "They had helped people in need during life.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "during their lifetime 으로, 기준 시점 없는 had helped 는 helped 로 고침. 한국어 '가난한 사람들'은 people in need 에 맞게 '어려운 사람들'.",
+    "appliedTo": [
+      "pg19-3:p19"
+    ],
+    "issueId": "g3-p30-57-031"
+  },
+  {
+    "page": 36,
+    "where": "TOPIC 19 application 9) item 25",
+    "text": "Don’t waste time in wandering around the town.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "모범 답을 지금 표준인 waste time -ing(in 없이)로 고침. in 을 넣은 교재 답도 틀린 것은 아니라 허용 답에 둠.",
+    "appliedTo": [
+      "pg19-3:p25"
+    ],
+    "issueId": "g3-p30-57-032"
+  },
+  {
+    "page": 36,
+    "where": "TOPIC 19 application 9) item 22",
+    "text": "Draw the line from A through B to C.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "그림 속 정해진 선이면 the line 도 맞는 영어라 그대로 두고 a line 도 허용 답에 둠.",
+    "appliedTo": [
+      "pg19-3:p22"
+    ],
+    "issueId": "g3-p30-57-033"
+  },
+  {
+    "page": 38,
+    "where": "TOPIC 19 review 1) item 3",
+    "text": "너는 저녁에 얼마나 자주 외출하니?",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어(Do you often …?)에 맞게 '너는 저녁에 자주 외출하니?'로. How often 으로 쓴 답은 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-1:p3"
+    ],
+    "issueId": "g3-p30-57-034"
+  },
+  {
+    "page": 38,
+    "where": "TOPIC 19 review 1) item 8",
+    "text": "제가 이 책으로 당신을 도울 수 있어요.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'이 책은 제가 도와 드릴 수 있어요.'로 — '이 책으로'는 '이 책을 써서'(도구)로 읽혀 help … with 의 뜻과 어긋남.",
+    "appliedTo": [
+      "pg19-1:p8"
+    ],
+    "issueId": "g3-p30-57-035"
+  },
+  {
+    "page": 39,
+    "where": "TOPIC 19 review 1) item 13",
+    "text": "나는 학교를 위해 준비한 작은 인터뷰를 한다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "STUDENT 8-4 한국어를 바탕으로 '나는 학교 수업을 준비하기 위해 약간의 복습을 한다.'로.",
+    "appliedTo": [
+      "pg19-1:p13"
+    ],
+    "issueId": "g3-p30-57-036"
+  },
+  {
+    "page": 39,
+    "where": "TOPIC 19 review 1) item 15",
+    "text": "나는 그들에게 미안하다. 그들은 매우 다른 상황에 있다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'나는 그들이 안쓰럽다. 그들은 매우 어려운 상황에 있다.'로 — feel sorry for · difficult 오역 두 곳. different 로 쓴 답은 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-1:p15"
+    ],
+    "issueId": "g3-p30-57-037"
+  },
+  {
+    "page": 39,
+    "where": "TOPIC 19 review 1) item 19",
+    "text": "그는 자주 마을 근처를 돌아다닌다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'마을 여기저기를'로 — about the town 은 마을 안 여기저기. around the town 도 받음.",
+    "appliedTo": [
+      "pg19-1:p19"
+    ],
+    "issueId": "g3-p30-57-038"
+  },
+  {
+    "page": 39,
+    "where": "TOPIC 19 review 1) item 20",
+    "text": "비가 옴에도 불구하고, 그들은 자신을 즐겼다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'비에도 불구하고, 그들은 즐거운 시간을 보냈다.'로 — enjoyed themselves 의 직역을 고침. had a good time · had fun 도 받음. (pg19-2:p2 에 빠져 있던 had fun 은 점검 G15 뒤 넣음 — had a great time 도 받음)",
+    "appliedTo": [
+      "pg19-1:a6",
+      "pg19-1:p20",
+      "pg19-2:a2",
+      "pg19-2:p2"
+    ],
+    "issueId": "g3-p30-57-039"
+  },
+  {
+    "page": 40,
+    "where": "TOPIC 19 review 1) item 24",
+    "text": "그는 매일 우리 사무실 앞을 지난다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어 주어 She 에 맞게 '그녀는 매일 우리 사무실 앞을 지나간다.'로.",
+    "appliedTo": [
+      "pg19-1:p24"
+    ],
+    "issueId": "g3-p30-57-040"
+  },
+  {
+    "page": 41,
+    "where": "TOPIC 19 review 1) item 39",
+    "text": "나는 아버지와 어머니가 많은 남동생과 여동생을 가졌기 때문에 친척이 많다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "STUDENT 4-2 와 같은 문장이라 한국어도 STUDENT 판('남자형제와 여자형제') — '남동생과 여동생'은 오역.",
+    "appliedTo": [
+      "pg19-2:a3",
+      "pg19-2:p5"
+    ],
+    "issueId": "g3-p30-57-041"
+  },
+  {
+    "page": 41,
+    "where": "TOPIC 19 review 1) item 43",
+    "text": "나는 10시 반이 될 때까지 일어나지 못했다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "didn't 는 '않았다'라 '나는 10시 반까지 일어나지 않았다.'로(until 을 그대로 쓰게 '~까지 … 않았다').",
+    "appliedTo": [
+      "pg19-2:a6",
+      "pg19-2:p10"
+    ],
+    "issueId": "g3-p30-57-042"
+  },
+  {
+    "page": 41,
+    "where": "TOPIC 19 review 1) item 46",
+    "text": "내가 어렸을 때 이후로, 나는 역사책과 소설책을 좋아하는 것을 알게 되었는데 왜냐하면, 내가 많은 사람들의 지혜에 관해 읽을 수 있어서였다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "영어를 STUDENT 13-1 판으로 바꾸면서 한국어도 STUDENT 판(learned to like = '좋아하게 되었습니다').",
+    "appliedTo": [
+      "pg19-2:a7",
+      "pg19-2:p14"
+    ],
+    "issueId": "g3-p30-57-043"
+  },
+  {
+    "page": 42,
+    "where": "TOPIC 19 review 1) item 48",
+    "text": "1953년 전쟁이 끝난 후, 그 나라는 매우 빠르게 개발되기 시작되었다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'1953년 전쟁이 끝난 이래로, 그 나라는 매우 빠르게 발전해 왔다.'로 — 이중 피동 · since 의 뜻 · 현재완료를 살림(STUDENT 17-4 한국어와 같은 뜻).",
+    "appliedTo": [
+      "pg19-2:a8",
+      "pg19-2:p16"
+    ],
+    "issueId": "g3-p30-57-044"
+  },
+  {
+    "page": 42,
+    "where": "TOPIC 19 review 1) items 55 · 67 (p43)",
+    "text": "나는 저녁에 무엇을 할까요? / 주중에 나는 무엇을 할까요?",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'나는 저녁에 무엇을 하나요?' · '나는 주중에 무엇을 하나요?'로 — '할까요?'는 제안으로 읽힘.",
+    "appliedTo": [
+      "pg19-3:p6",
+      "pg19-3:p18"
+    ],
+    "issueId": "g3-p30-57-045"
+  },
+  {
+    "page": 42,
+    "where": "TOPIC 19 review 1) item 57",
+    "text": "내 의견으로. 그들의 이론에는 두 결점이 있다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'내 의견으로는, 그들의 이론에는 두 가지 결점이 있다.'로.",
+    "appliedTo": [
+      "pg19-3:p8"
+    ],
+    "issueId": "g3-p30-57-046"
+  },
+  {
+    "page": 42,
+    "where": "TOPIC 19 review 1) item 58",
+    "text": "나는 며칠 안에 돌아올 거야.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "in a few days = '며칠 후에'. within 으로 쓴 답은 오답 패턴 힌트로 in · within 을 가름.",
+    "appliedTo": [
+      "pg19-3:p9"
+    ],
+    "issueId": "g3-p30-57-047"
+  },
+  {
+    "page": 43,
+    "where": "TOPIC 19 review 1) item 59",
+    "text": "나는 내 친척들을 방문하기를 좋아해.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "빠진 '일요일 오후에'를 넣어 STUDENT 11-4 한국어 그대로(STUDENT 와 글자까지 같은 문장, studentRef exact).",
+    "appliedTo": [
+      "pg19-3:a1",
+      "pg19-3:p10"
+    ],
+    "issueId": "g3-p30-57-048"
+  },
+  {
+    "page": 43,
+    "where": "TOPIC 19 review 1) item 60",
+    "text": "나는 TV로 게임을 보았다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'나는 TV로 그 경기를 보았다.'로(match 도 받음).",
+    "appliedTo": [
+      "pg19-3:p11"
+    ],
+    "issueId": "g3-p30-57-049"
+  },
+  {
+    "page": 43,
+    "where": "TOPIC 19 review 1) item 63",
+    "text": "그는 무례해, 그는 항상 전화를 먼저 끊는다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그는 무례하다. 그는 늘 내가 말하는 중에 전화를 끊어 버린다.'로 — on me 의 뜻을 살리고 영어처럼 두 문장.",
+    "appliedTo": [
+      "pg19-3:p14"
+    ],
+    "issueId": "g3-p30-57-050"
+  },
+  {
+    "page": 44,
+    "where": "TOPIC 19 review 1) item 78",
+    "text": "나의 집은 나무들 사이에 초가이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'나의 집은 나무들 사이에 있는 작은 시골집이다.'로.",
+    "appliedTo": [
+      "pg19-3:a5",
+      "pg19-3:p29"
+    ],
+    "issueId": "g3-p30-57-051"
+  },
+  {
+    "page": 45,
+    "where": "TOPIC 19 review 1) item 90",
+    "text": "프레드는 월요일까지 돌아올 것이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'프레드는 월요일까지 계속 자리를 비울 것이다.'로 — by · until 구별을 거꾸로 가르치던 곳. by Monday 로 쓴 답은 오답 패턴 힌트로 짚음.",
+    "appliedTo": [
+      "pg19-3:a8",
+      "pg19-3:p40"
+    ],
+    "issueId": "g3-p30-57-052"
+  },
+  {
+    "page": 45,
+    "where": "TOPIC 19 review 1) item 91",
+    "text": "제인의 차가 파티로 가는 도중에 부서졌다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'제인의 차가 파티에 가는 도중에 고장 났다.'로(broke down = 고장 났다).",
+    "appliedTo": [
+      "pg19-3:p41"
+    ],
+    "issueId": "g3-p30-57-053"
+  },
+  {
+    "page": 45,
+    "where": "TOPIC 19 review 1) item 92",
+    "text": "그녀가 도착할 즈음에, 다른 손님들의 대부분이 떠났다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'그녀가 도착했을 때는 다른 손님들 대부분이 이미 떠나고 없었다.'로 — by the time · had left 의 뜻을 살림(already 를 넣은 답도 받음). when 으로 쓴 맞는 영어가 까닭 없이 틀리던 곳이라 조건 칩 'by the time을 써서'를 달고, had gone · were gone 도 받음(점검 G15).",
+    "appliedTo": [
+      "pg19-3:p42"
+    ],
+    "issueId": "g3-p30-57-054"
+  },
+  {
+    "page": 45,
+    "where": "TOPIC 19 review 1) items 25 (p40) · 88 (p45)",
+    "text": "몇 분 후에, 나는 마침내 침대에서 일어난다. / 몇 분 후에, 나는 마침내 자리에서 일어난다.",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "같은 영어가 한 리뷰에 두 번 나와 pg19-1 의 한 문항으로 합치고 한국어는 '침대에서 일어난다'로 통일(pg19-3 에서는 다시 내지 않음 — 아래 coverage merged).",
+    "appliedTo": [
+      "pg19-1:p25"
+    ],
+    "issueId": "g3-p30-57-055"
+  },
+  {
+    "page": 40,
+    "where": "TOPIC 19 review 1) items 31, 32 (p40) · 54 (p42) · 82 (p44) · 89 (p45)",
+    "text": "들어 왔다 / 복습 함으로써 / 살수 있었다 / 나뉘어 졌다 / 부쳤고,그들은",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "들어왔다 · 복습함으로써 · 살 수 있었다 · 나뉘었다 · 부쳤으니, 그들은 — 띄어쓰기 · 문장부호를 고치고 31번 '후문'은 '뒷문'으로.",
+    "appliedTo": [
+      "pg19-1:p31",
+      "pg19-1:p32",
+      "pg19-3:p5",
+      "pg19-3:p33",
+      "pg19-3:a7",
+      "pg19-3:p39"
+    ],
+    "issueId": "g3-p30-57-056"
+  },
+  {
+    "page": 39,
+    "where": "TOPIC 19 review 1) item 18",
+    "text": "그녀에게는 특별한 것이 있다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "특별한 물건을 가졌다는 뜻으로도 읽혀 '그녀에게는 뭔가 특별한 점이 있다.'로 고침(something special about her = 사람이 지닌 특별한 점). 'She has something special about her.'도 받음. 추출 issues 에 없던 것을 G15 점검이 찾음(같은 AI 계열 판단).",
+    "appliedTo": [
+      "pg19-1:p18"
+    ],
+    "newFinding": true
+  },
+  {
+    "page": 40,
+    "where": "TOPIC 19 review 1) item 28",
+    "text": "그는 할아버지의 이름을 땄다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "그가 (무엇에) 할아버지 이름을 따 붙였다는 능동으로 읽혀 was named after(이름을 받은 쪽)를 가리키지 못함 → '그는 할아버지의 이름을 따서 이름이 지어졌다.'로 고침. 'His name was named …' · 'after his grandfather's name' 은 오답 패턴 힌트로 짚음. 추출 issues 에 없던 것을 G15 점검이 찾음(같은 AI 계열 판단).",
+    "appliedTo": [
+      "pg19-1:p28"
+    ],
+    "newFinding": true
+  },
+  {
+    "page": 41,
+    "where": "TOPIC 19 review 1) item 42",
+    "text": "비가 멈출 때까지 기다리자.",
+    "type": "korean_unnatural",
+    "decision": "fix",
+    "reason": "비는 '그친다'가 자연스러워 '비가 그칠 때까지 기다리자.'로 고침. 추출 issues 에 없던 것을 G15 점검이 찾음(같은 AI 계열 판단).",
+    "appliedTo": [
+      "pg19-2:a5",
+      "pg19-2:p9"
+    ],
+    "newFinding": true
+  },
+  {
+    "coverage": "merged",
+    "where": "p37 application (3) item 39 · Review 1 item 88(p45) · passOff (3) item 22",
+    "text": "After a few minutes, I finally get out of bed.",
+    "refs": [
+      "pg19-1:p25",
+      "pg19-1:a7"
+    ],
+    "reason": "(1) 전치사의 after 문장(p30 passOff · p33 application · Review 25)과 같은 문장이라 pg19-1 의 한 문항으로 합침(판정 p45 answer_ambiguous). 검사 도구의 교재 문장 대조는 TOPIC 19 전체에서 찾으므로 빠짐 아님."
+  },
+  {
+    "coverage": "moved",
+    "where": "p31 passOff (3) item 15",
+    "text": "Before I go to school, my mother gives me my allowance.",
+    "refs": [
+      "pg19-2:s3"
+    ],
+    "reason": "before 가 접속사인 문장이라 '중요 전치사들'(pg19-3)이 아니라 전치사 · 접속사 · 부사를 가르는 pg19-2 의 형태 찾기로 옮김(판정 p31 grammar_explanation_wrong). TOPIC 19 Application · Review 에는 없음."
+  },
+  {
+    "coverage": "moved",
+    "where": "p31 passOff (3) item 17",
+    "text": "When I come home after school, my mother is always glad to see me.",
+    "refs": [
+      "pg19-3:a6"
+    ],
+    "reason": "TOPIC 19 Application · Review 에는 없는 Pass-Off 문장 — after school(전치사 after)의 예문으로 pg19-3 앵커에 둠(STUDENT 8-1 과 같은 문장, studentRef exact)."
+  }
+]

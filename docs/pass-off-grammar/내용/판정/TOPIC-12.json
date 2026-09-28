@@ -1,0 +1,414 @@
+[
+  {
+    "page": 44,
+    "where": "TOPIC 12 passOff (1) item 1 · application item 1 (p45)",
+    "text": "I have just have lunch.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "현재완료는 have + 과거분사라 두 번째 have 는 had 의 오타입니다. 앵커 · 영작 모범 답을 'I have just had lunch.'로 고치고, 원문은 fix.from 에 두어 채점에서 오답이 되게 했습니다(오답 패턴 'have just have' 힌트 포함).",
+    "appliedTo": [
+      "pg12-1:a1",
+      "pg12-1:p1",
+      "pg12-1:s3"
+    ]
+  },
+  {
+    "page": 44,
+    "where": "TOPIC 12 passOff (2) item 5 (p44) · review 2. item 6 (p48)",
+    "text": "He will have arrived there before it gets dark",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "Pass-Off(p44) · Review 2(p48) 쪽 끝 마침표를 보충했습니다(Application p46 과 같게). 같은 앵커의 한국어에 빠진 there(그곳에)도 넣었습니다.",
+    "appliedTo": [
+      "pg12-2:a5",
+      "pg12-2:s4"
+    ]
+  },
+  {
+    "page": 44,
+    "where": "TOPIC 12 passOff (3) item 4 · application item 29 (p46) · review 2. item 11 (p48)",
+    "text": "I have known him for 3years so far.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "'3years'를 '3 years'로 띄어 썼습니다. 원문은 fix.from 에 둡니다(채점기에서는 띄어쓰기만 다른 글로 따로 셈).",
+    "appliedTo": [
+      "pg12-3:a4",
+      "pg12-3:p7",
+      "pg12-3:s4"
+    ]
+  },
+  {
+    "page": 44,
+    "where": "TOPIC 12 passOff (3) item 4",
+    "text": "(3) 진행형 — I have known him for 3years so far.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "문장은 틀린 영어가 아니라 그대로 두고, 빠진 설명을 넣었습니다: 설명 카드에 'know · like · want · have(가지다) 같은 상태 동사는 진행형으로 쓰지 않는다'와 한국어와 다른 점('그를 알고 있다' = I know him · '3년째 알고 지낸다' = I have known him for 3 years)을 적고, 형태 찾기에서 이 문장의 시제 이름을 '현재완료'로 묻습니다(진행형이 아님). 영작에는 'been knowing' 오답 패턴을 붙였습니다. issue 가 제안한 '현재완료진행 예문으로 바꾸기'는 교재 문장을 빼는 대신, 비어 있던 현재완료진행(have been + -ing) 예문을 새로 하나 더했습니다(pg12-3:p8).",
+    "appliedTo": [
+      "pg12-3:rule",
+      "pg12-3:a4",
+      "pg12-3:p7",
+      "pg12-3:s4",
+      "pg12-3:s7",
+      "pg12-3:p8"
+    ]
+  },
+  {
+    "page": 48,
+    "where": "TOPIC 12 review 2. item 12 (p48) ↔ passOff (3) item 5 (p44)",
+    "text": "The sun was shining, but the ground was wet. It had been raining",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "Review 2 쪽(p48) 끝 마침표를 보충했습니다(p44 · p46 에는 있음). 형태 찾기 문항은 마침표가 있는 문장을 쓰고 물을 동사(had been raining)에 밑줄을 그었습니다.",
+    "appliedTo": [
+      "pg12-3:s5"
+    ]
+  },
+  {
+    "page": 44,
+    "where": "TOPIC 12 passOff (2) item 2 · application item 13 (p45) · review 3. item 13 (p50)",
+    "text": "He had torn the tie when I got there.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "한국어 '끈'을 '넥타이'로 고쳤고, '도착했을 때 … 찢었었다'는 도착과 같은 때로도 읽혀 '내가 그곳에 도착했을 때 그는 넥타이를 찢은 뒤였다.'로 과거완료 뜻이 드러나게 했습니다(G10 점검 반영). 영어는 when I got there 가 기준 때라 과거완료 뜻이 드러나는 맞는 문장이라 그대로 두고, issue 가 제안한 his tie · already 를 넣은 답(과 by the time 판)은 허용 답으로 받습니다.",
+    "appliedTo": [
+      "pg12-2:a2",
+      "pg12-2:p3"
+    ]
+  },
+  {
+    "page": 45,
+    "where": "TOPIC 12 application item 6 · review 3. item 6 (p49)",
+    "text": "Jill has seen the rainbow.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "'무지개를 본 적이 있다'(경험)는 a rainbow 가 자연스러워 모범 답을 'Jill has seen a rainbow.'로 고쳤습니다. the rainbow 는 틀린 문장이 아니라 덜 자연스러운 글이라 허용 답으로 둡니다(check-grading 이 '허용 답으로 둔 덜 자연스러운 글'로 따로 셈).",
+    "appliedTo": [
+      "pg12-1:p6"
+    ]
+  },
+  {
+    "page": 45,
+    "where": "TOPIC 12 application item 9 · review 3. item 9 (p49)",
+    "text": "He has lived a whole life as a timeserver.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "'a whole life'를 'his whole life'로 고쳤습니다. timeserver(기회주의자)는 틀린 낱말이 아니라 모범 답에 두고, 학습자가 흔히 떠올릴 opportunist · all his life · has been … all his life 를 허용 답으로 받습니다.",
+    "appliedTo": [
+      "pg12-1:p9"
+    ]
+  },
+  {
+    "page": 45,
+    "where": "TOPIC 12 application item 14 · review 3. item 14 (p50)",
+    "text": "I realized that I had left my umbrella on the cab.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "택시 안에 두고 내린 것은 in the cab 이라 고쳤습니다. 'on the' 오답 패턴과 힌트('승용차 안에')를 붙였습니다.",
+    "appliedTo": [
+      "pg12-2:p4"
+    ]
+  },
+  {
+    "page": 46,
+    "where": "TOPIC 12 application item 28 · review 3. item 28 (p51)",
+    "text": "At this time next month, I will be traveling in Je-Ju.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "'Je-Ju'를 표준 표기 Jeju 로(STUDENT s20-5 와 같음), 한국어는 '다음 달 이맘때 나는 제주를 여행하고 있을 거야.'로 고쳤습니다. 레슨 koreanWords 에 Jeju 를 적었습니다(발음 기호 행은 lessonSpeechForm.ts 에 이미 있음 — 페이지 행 추가는 코드 쪽).",
+    "appliedTo": [
+      "pg12-3:p6"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "TOPIC 12 review 3. item 3 (+ review 2. item 1의 답)",
+    "text": "너는 서울에 가 본적이 있니?",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'본 적'으로 띄어 썼습니다.",
+    "appliedTo": [
+      "pg12-1:a3",
+      "pg12-1:p3"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "TOPIC 12 review 3. item 5",
+    "text": "나는 일본에 세 번 방문했다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "경험(현재완료)이 드러나게 '나는 일본을 세 번 방문한 적이 있다.'로 고쳤습니다. '방문하다'의 목적어도 '일본을'로 맞췄습니다.",
+    "appliedTo": [
+      "pg12-1:p5"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "TOPIC 12 review 3. item 7",
+    "text": "너는 전에 티나를 본 적이 있니?",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "met 은 '만나다'라 '너는 전에 티나를 만난 적이 있니?'로 고쳤습니다.",
+    "appliedTo": [
+      "pg12-1:p7"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "TOPIC 12 review 3. item 8",
+    "text": "얼마나 오랫동안 한국에서 살았나요?",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "지금도 한국에 사는 '계속'인데 '살았나요'가 끝난 과거로 읽혀 '한국에서 산 지 얼마나 되었나요?'로 고쳤습니다.",
+    "appliedTo": [
+      "pg12-1:p8"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "TOPIC 12 review 3. item 10",
+    "text": "그는 월요일 이후에 독감에 걸려 있다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "since Monday = '월요일부터', a bad cold = '심한 감기'(독감은 flu)라 '그는 월요일부터 심한 감기에 걸려 있다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg12-1:p10"
+    ]
+  },
+  {
+    "page": 50,
+    "where": "TOPIC 12 review 3. item 12",
+    "text": "우리는 미국에 이사오기 전에 런던에서 살았다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'이사 오기'로 띄어 썼습니다('미국에'는 틀린 말이 아니라 그대로 둠).",
+    "appliedTo": [
+      "pg12-2:p2"
+    ]
+  },
+  {
+    "page": 50,
+    "where": "TOPIC 12 review 3. item 19",
+    "text": "그는 몇 년 안에 새 집을 사 버릴 거야.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "'사 버리다'는 아쉬움 · 해치움의 느낌이라 미래완료(그때쯤이면 사 놓은 상태)가 드러나게 '사 놓았을 거야'로 고쳤습니다. issue 가 제안한 '샀을 거야'는 과거 추측으로도 읽혀 쓰지 않았고, 같은 까닭으로 '몇 년 안에'도 '몇 년 뒤면'으로 바꿔 기준 때를 미래로 정했습니다: '몇 년 뒤면 그는 새 집을 사 놓았을 거야.'(G10 점검 반영).",
+    "appliedTo": [
+      "pg12-2:a6",
+      "pg12-2:p9"
+    ]
+  },
+  {
+    "page": 50,
+    "where": "TOPIC 12 review 3. item 20",
+    "text": "우리는 네가 정오까지 우리의 파티에 도착할거라고 기대해.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'할 거라고'를 띄어 쓰고, 미래완료가 드러나게 '우리는 네가 정오까지 우리 파티에 도착해 있을 거라고 기대해.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg12-2:p10"
+    ]
+  },
+  {
+    "page": 50,
+    "where": "TOPIC 12 review 3. item 22",
+    "text": "그는 내일이면 한달 간 결석을 한 것이 될 것이다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'한 달간'으로 띄어 쓰고 겹친 '것이 될 것이다'를 줄여 '그는 내일이면 한 달간 결석한 것이 된다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg12-2:a8",
+      "pg12-2:p12"
+    ]
+  },
+  {
+    "page": 51,
+    "where": "TOPIC 12 review 3. item 25",
+    "text": "우리는 쇼가 끝났을 때, 주차장에서 걷고 있었다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "park 는 '공원'이라 '쇼가 끝났을 때 우리는 공원에서 걷고 있었다.'로 고쳤습니다.",
+    "appliedTo": [
+      "pg12-3:p3"
+    ]
+  },
+  {
+    "page": 51,
+    "where": "TOPIC 12 review 3. item 27 (+ review 2. item 10의 답)",
+    "text": "그는 내일 아침까지 그 집을 칠하고 있을 것이다.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "tomorrow morning 은 '내일 아침에'라 고쳤습니다. 형태 찾기의 해석 고르기(s3)에서는 '내일 아침까지 … 다 칠할 것이다'를 틀린 보기로 씁니다.",
+    "appliedTo": [
+      "pg12-3:a3",
+      "pg12-3:p5",
+      "pg12-3:s3"
+    ]
+  },
+  {
+    "page": 51,
+    "where": "TOPIC 12 review 3. item 30 (+ review 2. item 12의 답)",
+    "text": "태양은 빛났지만, 땅은 젖었어. 비가 오고 있었을 거야.",
+    "type": "translation_mismatch",
+    "decision": "fix",
+    "reason": "과거진행(was shining)과 과거완료진행(had been raining, 사실 서술)이 드러나게 '해가 비치고 있었지만 땅은 젖어 있었다. 비가 오고 있었던 것이다.'로 고쳤습니다. issue 제안의 괄호 '(그때까지)'는 제시문에 괄호를 두지 않으려고 뺐습니다.",
+    "appliedTo": [
+      "pg12-3:a5",
+      "pg12-3:p9"
+    ]
+  },
+  {
+    "page": 51,
+    "where": "TOPIC 12 review 3. item 31",
+    "text": "그녀는 내가 집에 도착했을 때, 전화 상으로 그녀의 친구와 이야기를 하고 있었다.",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "'전화 상으로'를 '전화로'로, 과거완료진행(그때까지 계속 통화함)이 드러나게 '그때까지'를 넣어 '내가 집에 도착했을 때 그녀는 그때까지 친구와 전화로 이야기하고 있었다.'로 고쳤습니다. 과거진행(was talking)도 맞는 영어라 조건 칩 '완료진행형으로'를 붙였습니다.",
+    "appliedTo": [
+      "pg12-3:p10"
+    ]
+  },
+  {
+    "page": 47,
+    "where": "TOPIC 12 review 1.",
+    "text": "1. 완료시제 3가지와 진행시제 3가지의 공식을 적어보세요.",
+    "type": "answer_missing",
+    "decision": "fix",
+    "reason": "공식을 설명 카드 표에 적었습니다(pg12-1 현재완료 · pg12-2 현재 · 과거 · 미래완료 · pg12-3 진행 3가지와 issue 가 빠졌다고 한 완료진행 3가지). 공식을 쓰는 문항은 형태 찾기로 옮겼습니다: pg12-1:s6(has + 과거분사 쓰기) · pg12-2:s6(had 쓰기) · pg12-3:s1(be동사 + -ing 누르기).",
+    "appliedTo": [
+      "pg12-1:rule",
+      "pg12-1:s6",
+      "pg12-2:rule",
+      "pg12-2:s6",
+      "pg12-3:rule",
+      "pg12-3:s1"
+    ]
+  },
+  {
+    "page": 47,
+    "where": "TOPIC 12 review 2. (13문항)",
+    "text": "2. 다음을 해석하고 시제의 이름을 적으시오.",
+    "type": "answer_missing",
+    "decision": "fix",
+    "reason": "시제 이름 정답을 새로 적어 보기 고르기로 옮겼습니다(물을 동사에 밑줄). 13문항 중 pg12-1 의 두 문항(모두 현재완료라 시제 이름이 뻔함)은 현재완료의 쓰임(경험 · 계속) 고르기로 바꿨고, 해석은 ① 예문 떠올리기(한국어 → 영어)와 pg12-3:s3(뜻이 다른 해석 3개 중 고르기)로 다룹니다.",
+    "appliedTo": [
+      "pg12-1:s1",
+      "pg12-1:s2",
+      "pg12-2:s1",
+      "pg12-2:s2",
+      "pg12-2:s3",
+      "pg12-2:s4",
+      "pg12-2:s5",
+      "pg12-3:s1",
+      "pg12-3:s2",
+      "pg12-3:s3",
+      "pg12-3:s4",
+      "pg12-3:s5",
+      "pg12-3:s6"
+    ]
+  },
+  {
+    "page": 47,
+    "where": "TOPIC 12 review 2. item 3 · item 5 · item 11 · item 12",
+    "text": "Mary didn’t want…had already seen the film. / He had been sick… / I have known him… / The sun was shining… It had been raining",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "시제를 물을 동사에 밑줄을 그어 대상을 하나로 정했습니다: had already seen(과거완료) · had been(과거완료 — 뒤가 형용사라 진행형 아님) · have known(현재완료 — 상태 동사) · had been raining(과거완료진행). 이유 칸에 헷갈리는 까닭을 적었습니다.",
+    "appliedTo": [
+      "pg12-2:s1",
+      "pg12-2:s3",
+      "pg12-3:s4",
+      "pg12-3:s5"
+    ]
+  },
+  {
+    "page": 49,
+    "where": "TOPIC 12 review 3. 번호",
+    "text": "(1) 나는 막 점심을 먹었다.",
+    "type": "layout_or_extraction",
+    "decision": "na",
+    "reason": "웹 문항은 레슨 · 문항 id 로 따로 번호가 붙어 교재 Review 3 의 번호 인쇄 문제는 이 과정 데이터에 해당 없습니다.",
+    "appliedTo": []
+  },
+  {
+    "coverage": "note",
+    "page": 49,
+    "where": "review 3 item 11 (passOff (2) item 1 · application item 11)",
+    "text": "메리는 이미 그 영화를 보았기 때문에 영화관에 가기를 원하지 않았다.",
+    "reason": "issues 에 없던 것: '가기를 원하지 않았다'는 번역투라 '가고 싶어 하지 않았다'로 다듬었습니다(3인칭 주어라 '-고 싶어 하다').",
+    "refs": [
+      "pg12-2:a1",
+      "pg12-2:p1"
+    ]
+  },
+  {
+    "coverage": "note",
+    "page": 50,
+    "where": "review 3 item 21 (passOff (2) item 7 · application item 21)",
+    "text": "만약 내가 그를 다시 만난다면, 나는 그를 두 번 만나게 되는 것이다.",
+    "reason": "issues 에 없던 것: '두 번 만나게 되는 것이다'는 앞으로 만나게 된다는 뜻이라 미래완료(그때까지 모두 두 번 만난 셈)가 드러나게 '두 번 만난 것이 된다'로 고쳤습니다.",
+    "refs": [
+      "pg12-2:a7",
+      "pg12-2:p11"
+    ]
+  },
+  {
+    "coverage": "note",
+    "page": 50,
+    "where": "review 3 item 17 (passOff (2) item 5 · application item 17)",
+    "text": "그는 어둡기 전에 도착해 있을 거야.",
+    "reason": "issues 에 없던 것: 영어의 there(그곳에)가 한국어 제시문에 빠져 있어 '그는 어둡기 전에 그곳에 도착해 있을 거야.'로 넣었습니다(마침표 issue 와 같은 문장).",
+    "refs": [
+      "pg12-2:a5",
+      "pg12-2:p7"
+    ]
+  },
+  {
+    "coverage": "note",
+    "page": 44,
+    "where": "passOff (2) item 3 · application item 15 · review 3 item 15",
+    "text": "She had worked at a department store for several years. (2과)",
+    "reason": "TOPIC 11 p28 issue(english_unnatural — where 에 TOPIC 12 p44 · p45 · p47 포함)의 판정과 같게 fix — 기준 시점 없이 홀로 쓴 과거완료라 before she got married 를 더했습니다(pg11-1:p11 · s11 과 같은 문장이고, pg19-3 은 STUDENT 판 과거형으로 고쳐 세 레슨의 판정이 일치). 한국어는 '그녀는 결혼하기 전에 수년 동안 백화점에서 일했었다.'(pg11-1:p11 과 같음 — '수 년'은 '수년'). 원문(before 절 없음)은 fix.from 에 두어 채점에서 오답입니다. (2과) 꼬리표는 지금 STUDENT s2-3 의 'She worked …'와 같은 틀이라 studentRef adapted 를 그대로 둡니다. G10 점검 반영(처음에는 원문 그대로 두었음).",
+    "refs": [
+      "pg12-2:a3",
+      "pg12-2:p5",
+      "pg12-2:s2"
+    ]
+  },
+  {
+    "coverage": "note",
+    "page": 45,
+    "where": "application item 4 · passOff (1) item 4",
+    "text": "He has worked there for ten years. (2과)",
+    "reason": "STUDENT s2-3 'He has worked there for almost ten years.'에서 almost 를 뺀 문장이라 studentRef adapted(바꾼 문장)로 달았습니다.",
+    "refs": [
+      "pg12-1:a4",
+      "pg12-1:p4"
+    ]
+  },
+  {
+    "coverage": "note",
+    "page": 44,
+    "where": "D14 (pg12-4, 본문 없는 칸) · 앵커 출처: TOPIC 11 passOff (4) item 5(p29) · TOPIC 14 passOff 수동태 item 6(p62)",
+    "text": "Going · Being (목차에만 있는 칸)",
+    "reason": "D14 대로 be going to(예정 · 의도)와 being(진행형 수동태 is being + 과거분사 · be being + 형용사)으로 채웠습니다. 앵커는 교재 다른 단원 예문 두 개(Are you going to watch TV tonight? · Some houses are being built near the river.) + 새 문장 5, 영작 11(새 문장 9), 형태 찾기 6(모두 새로), 전이 2(GRAMMAR I gh1-109#65 · 새 문장 1 — 처음 고른 gh1-123#75 는 어휘가 대상 수준보다 어렵고 뉴스 심문 문맥이라 G10 점검 반영으로 바꿈). 교재 TOPIC 11 한국어 '오늘밤'은 '오늘 밤'으로 띄었습니다. 사장님 확인 대상.",
+    "refs": [
+      "pg12-4:a1",
+      "pg12-4:a5",
+      "pg12-4:p1",
+      "pg12-4:p7"
+    ]
+  },
+  {
+    "coverage": "note",
+    "page": 51,
+    "where": "review 3 item 32 (passOff (3) item 6 · application item 32)",
+    "text": "그는 내일까지 6일간 일해 온 것이 될 것이다.",
+    "reason": "issues 에 없던 것(G10 점검 반영): 겹친 '것이 될 것이다'를 pg12-2:a8 처럼 '것이 된다'로 줄이고 '내일까지'도 '내일이면'으로 맞춰, 완료진행이 드러나게 '계속'을 넣었습니다: '그는 내일이면 6일 동안 계속 일해 온 것이 된다.' 영작은 '내일이면'을 옮긴 tomorrow 판도 받습니다.",
+    "refs": [
+      "pg12-3:a6",
+      "pg12-3:p11"
+    ]
+  }
+]

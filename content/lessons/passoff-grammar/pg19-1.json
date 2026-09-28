@@ -1,0 +1,2521 @@
+{
+  "id": "pg19-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "종류/목적어·부사의 위치",
+  "label": "TOPIC 19. 전치사",
+  "menuLabel": "19-1. 종류/목적어·부사의 위치",
+  "unit": 19,
+  "part": 3,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 전치사",
+  "grammarTags": [
+    "preposition-object"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg19-1:a1",
+          "en": "I want to learn to speak English in the future.",
+          "ko": "나는 미래에 영어 말하기를 배우고 싶다.",
+          "koSource": "review 1 item 1 (고침)",
+          "focus": [
+            "in"
+          ],
+          "studentRef": {
+            "lesson": "s7-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) in : item 1",
+            "reviewWhere": "Review 1. item 1 (p38)"
+          },
+          "fix": {
+            "fromKo": "나는 미래에 영어 말하기를 배우기 원한다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'배우기 원한다'는 번역투라 '배우고 싶다'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg19-1:a2",
+          "en": "Some of my friends are really good at memorizing words and phrases.",
+          "ko": "나의 친구들 중 몇몇은 단어와 숙어 암기를 정말 잘합니다.",
+          "koSource": "student:s7-3#3",
+          "focus": [
+            "at"
+          ],
+          "studentRef": {
+            "lesson": "s7-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) at : item 2",
+            "reviewWhere": "Review 1. item 4 (p38)"
+          },
+          "fix": {
+            "fromKo": "내 친구들 중 몇몇은 단어와 구를 외우는 것을 정말 잘한다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT 7-3 과 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(교재 한국어가 틀린 것은 아님)."
+          }
+        },
+        {
+          "id": "pg19-1:a3",
+          "en": "He speaks with a regional accent!",
+          "ko": "그는 사투리 억양으로 말한다.",
+          "koSource": "review 1 item 7 (고침 — STUDENT s6-3 판)",
+          "focus": [
+            "with"
+          ],
+          "studentRef": {
+            "lesson": "s6-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) with : item 3",
+            "reviewWhere": "Review 1. item 7 (p38)"
+          },
+          "fix": {
+            "from": "He speaks with a funny accent! (6과)",
+            "fromKo": "그는 재미있는 억양으로 말한다.",
+            "field": "en+ko",
+            "kind": "student_version",
+            "why": "STUDENT 6-3 이 이미 고친 문장입니다. 선생님의 지방 말씨를 funny(우스운)라고 하면 영어로는 놀림으로 들려 regional(지방의)로 고쳤고, 한국어도 STUDENT 판 '사투리 억양'. 설계 기본값(STUDENT 가 이미 고친 문장은 STUDENT 판)대로."
+          }
+        },
+        {
+          "id": "pg19-1:a4",
+          "en": "He has a habit of touching his nose.",
+          "ko": "그는 코를 만지는 버릇이 있다.",
+          "koSource": "review 1 item 10 (고침)",
+          "focus": [
+            "of"
+          ],
+          "studentRef": {
+            "lesson": "s6-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) of : item 4",
+            "reviewWhere": "Review 1. item 10 (p38)"
+          },
+          "fix": {
+            "fromKo": "그는 코를 만지는 습관을 가지고 있다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'습관을 가지고 있다'는 번역투라 '버릇이 있다'로(STUDENT 6-3 한국어도 '버릇이 있으십니다')."
+          }
+        },
+        {
+          "id": "pg19-1:a5",
+          "en": "When we eat, my father usually talks about his day.",
+          "ko": "우리가 먹을 때, 아버지는 보통 자신의 하루에 대해 말씀하신다.",
+          "koSource": "review 1 item 16 (고침)",
+          "focus": [
+            "about"
+          ],
+          "studentRef": {
+            "lesson": "s9-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) about : item 6",
+            "reviewWhere": "Review 1. item 16 (p39)"
+          },
+          "fix": {
+            "fromKo": "우리가 먹을 때, 아버지는 보통 그의 하루에 대해 말씀하신다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "아버지 자신의 하루라 '그의 하루'(번역투)를 '자신의 하루'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg19-1:a6",
+          "en": "In spite of the rain, they enjoyed themselves.",
+          "ko": "비에도 불구하고, 그들은 즐거운 시간을 보냈다.",
+          "koSource": "review 1 item 20 (고침)",
+          "focus": [
+            "In spite of"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) in spite of : item 7",
+            "reviewWhere": "Review 1. item 20 (p39)"
+          },
+          "fix": {
+            "from": "In spite of the rain, they enjoyed themselves",
+            "fromKo": "비가 옴에도 불구하고, 그들은 자신을 즐겼다.",
+            "field": "en+ko",
+            "kind": "translation_mismatch",
+            "why": "Pass-Off 줄 끝에 빠진 마침표를 넣었고(판정 p30 문장부호), enjoyed themselves 는 '즐거운 시간을 보냈다'라서 '자신을 즐겼다'(직역)를 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg19-1:a7",
+          "en": "After a few minutes, I finally get out of bed.",
+          "ko": "몇 분 후에, 나는 마침내 침대에서 일어난다.",
+          "koSource": "review 1 item 25",
+          "focus": [
+            "After"
+          ],
+          "studentRef": {
+            "lesson": "s10-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) after : item 9",
+            "reviewWhere": "Review 1. item 25 (p40)"
+          },
+          "fix": {
+            "from": "After a few minutes , I finally get out of bed.",
+            "field": "en",
+            "kind": "layout_or_extraction",
+            "why": "쉼표 앞 빈칸을 없앴습니다(판정 p30 문장부호)."
+          }
+        },
+        {
+          "id": "pg19-1:a8",
+          "en": "I can get to school more quickly by bicycle than I can on foot.",
+          "ko": "내가 걸어서 가는 것보다 자전거를 타고 가는 것이 학교에 좀 더 빨리 도착할 수 있습니다.",
+          "koSource": "student:s5-2#4",
+          "focus": [
+            "by"
+          ],
+          "studentRef": {
+            "lesson": "s5-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) by : item 10",
+            "reviewWhere": "Review 1. item 29 (p40)"
+          },
+          "fix": {
+            "fromKo": "나는 걷는 것보다 자전거를 타면 더 빨리 학교에 도착할 수 있다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT 5-2 와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(교재 한국어가 틀린 것은 아님)."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg19-1:a2",
+          "pg19-1:a4",
+          "pg19-1:a6"
+        ],
+        "question": "at · of · In spite of 바로 뒤에 온 말(memorizing … · touching … · the rain)은 어떤 말일까요?",
+        "options": [
+          "명사처럼 쓰이는 말(명사 · 동사 + -ing)",
+          "주어와 동사가 다 있는 문장",
+          "동사원형"
+        ],
+        "answer": 0,
+        "why": "전치사 뒤에는 명사(the rain)나 동사에 -ing 를 붙인 말(memorizing · touching)이 와요. 이 말을 전치사의 목적어라고 해요."
+      },
+      "title": "전치사 + 목적어(명사 · 목적격 대명사 · -ing)",
+      "points": [
+        "전치사는 명사 앞에서 때 · 곳 · 방법 · 까닭을 나타내요: in the future · by bicycle",
+        "한 낱말(in · at · of · for · by …)도, 여러 낱말 한 덩어리(in spite of)도 있어요",
+        "목적어: 명사 · 목적격 대명사(with me) · 동사 + -ing(good at memorizing)",
+        "부사 역할의 '전치사 + 목적어'는 보통 문장 끝, 앞에 두면 흔히 쉼표를 찍어요: After a few minutes, …",
+        "묻는 말에서 목적어가 앞으로 가면 전치사는 끝에 남아요: Who are you waiting for?"
+      ],
+      "table": {
+        "columns": [
+          "전치사의 목적어",
+          "예"
+        ],
+        "rows": [
+          [
+            "명사",
+            "in the future · with a regional accent · without money"
+          ],
+          [
+            "목적격 대명사",
+            "with me · for you · about him"
+          ],
+          [
+            "동사 + -ing",
+            "good at memorizing · a habit of touching · before leaving"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '미래에 · 자전거로'처럼 조사(-에 · -로)를 명사 뒤에 붙이지만, 영어 전치사는 명사 앞(in the future · by bicycle)에 와요. 우리말 '외우는 것을 잘한다'의 '-는 것'은 전치사 뒤 동사에 -ing 를 붙여 나타내요.",
+      "mistakes": [
+        {
+          "wrong": "She is good at swim.",
+          "right": "She is good at swimming.",
+          "why": "전치사 at 뒤의 동사는 -ing 모양이에요."
+        },
+        {
+          "wrong": "Can you come with I?",
+          "right": "Can you come with me?",
+          "why": "전치사 뒤의 대명사는 목적격(me · him · her · them)이에요."
+        }
+      ],
+      "worked": [
+        "나는 영어를 공부하는 것에 관심이 있다.",
+        "'~에 관심이 있다' → be interested in",
+        "in 은 전치사 → 뒤의 동사 study 는 -ing 로: studying",
+        "I am interested in studying English."
+      ],
+      "check": {
+        "question": "'He left without ___ a word.' 빈칸에 맞는 것은?",
+        "options": [
+          "say",
+          "saying",
+          "to say"
+        ],
+        "answer": 1,
+        "why": "전치사 without 뒤에 동사가 오면 -ing 모양이에요.",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg19-1:s1",
+          "kind": "select",
+          "instruction": "전치사를 누르세요",
+          "tokens": [
+            "I",
+            "want",
+            "to",
+            "learn",
+            "to",
+            "speak",
+            "English",
+            "in",
+            "the",
+            "future",
+            "."
+          ],
+          "answer": [
+            7
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "in(미래에)이 전치사예요. want to · learn to 의 to 는 동사원형 앞에 붙는 to(부정사)라 전치사가 아니에요.",
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) in : item 1"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg19-1:s2",
+          "kind": "select",
+          "instruction": "전치사를 모두 누르세요",
+          "tokens": [
+            "Some",
+            "of",
+            "my",
+            "friends",
+            "are",
+            "really",
+            "good",
+            "at",
+            "memorizing",
+            "words",
+            "and",
+            "phrases",
+            "."
+          ],
+          "answer": [
+            1,
+            7
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "Some of(~ 중 몇몇)의 of 와 good at(~을 잘하는)의 at 이 전치사예요. at 뒤의 동사는 -ing(memorizing)로 써요.",
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) at : item 2"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg19-1:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "He has a habit of ___ his nose.",
+          "underline": [],
+          "options": [
+            "touch",
+            "touching",
+            "to touch"
+          ],
+          "answer": 1,
+          "why": "전치사 of 뒤에 동사가 오면 -ing 모양으로 써요.",
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) of : item 4"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg19-1:s4",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "Please come with ___.",
+          "underline": [],
+          "options": [
+            "I",
+            "me",
+            "my"
+          ],
+          "answer": 1,
+          "why": "전치사 with 뒤의 대명사는 목적격(me)으로 써요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg19-1:s5",
+          "kind": "choice",
+          "instruction": "밑줄 친 In spite of 자리에 그대로 바꿔 넣을 수 있는 것은?",
+          "sentence": "In spite of the rain, they enjoyed themselves.",
+          "underline": [
+            "In spite of"
+          ],
+          "options": [
+            "Despite",
+            "Because",
+            "Although"
+          ],
+          "answer": 0,
+          "why": "in spite of = despite(~에도 불구하고). 둘 다 뒤에 명사(the rain)가 와요. Although 는 뜻은 비슷하지만 뒤에 '주어 + 동사'가 와야 해서 이 자리에 못 들어가요.",
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (2) item 2"
+          },
+          "source": "new",
+          "note": "교재 Pass-Off (2) 2번 줄의 '(= Despite)' 메모를 문항으로 만듦"
+        },
+        {
+          "id": "pg19-1:s6",
+          "kind": "select",
+          "instruction": "전치사를 모두 누르세요",
+          "tokens": [
+            "I",
+            "can",
+            "get",
+            "to",
+            "school",
+            "more",
+            "quickly",
+            "by",
+            "bicycle",
+            "than",
+            "I",
+            "can",
+            "on",
+            "foot",
+            "."
+          ],
+          "answer": [
+            3,
+            7,
+            12
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "get to school(학교로)의 to, by bicycle(자전거로)의 by, on foot(걸어서)의 on 이 전치사예요. to 뒤에 명사(school)가 오면 전치사예요. than 뒤에는 I can 이 와서 접속사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 30,
+            "where": "passOff (1) by : item 10"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg19-1:s7",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은? (너는 무엇을 보고 있니?)",
+          "sentence": "What are you looking ___?",
+          "underline": [],
+          "options": [
+            "at",
+            "for",
+            "on"
+          ],
+          "answer": 0,
+          "why": "look at(~을 보다)에서 목적어 what 이 앞으로 나가 전치사 at 만 끝에 남았어요. look for 는 '~을 찾다'라 뜻이 달라요.",
+          "bookRef": null,
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg19-1:p1",
+          "ko": "나는 미래에 영어 말하기를 배우고 싶다.",
+          "koSource": "review 1 item 1 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I want to learn to speak English in the future.",
+          "accept": [
+            "I want to learn how to speak English in the future.",
+            "I would like to learn to speak English in the future.",
+            "I would like to learn how to speak English in the future.",
+            "In the future, I want to learn to speak English.",
+            "In the future, I want to learn how to speak English.",
+            "In the future, I would like to learn to speak English.",
+            "In the future, I would like to learn how to speak English."
+          ],
+          "targets": [
+            [
+              "in"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "at the future",
+              "hint": "'미래에'처럼 넓은 때에는 at 대신 '~ 안에'의 뜻을 가진 전치사를 써요."
+            },
+            {
+              "match": "on the future",
+              "hint": "'미래에'처럼 넓은 때에는 on 대신 '~ 안에'의 뜻을 가진 전치사를 써요."
+            },
+            {
+              "match": "learn speaking english",
+              "hint": "'말하는 것을 배우다'는 learn 뒤에 to + 동사원형을 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "want-to",
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s7-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) in : item 1",
+            "reviewWhere": "Review 1. item 1 (p38)"
+          },
+          "fix": {
+            "fromKo": "나는 미래에 영어 말하기를 배우기 원한다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'배우기 원한다'는 번역투라 '배우고 싶다'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg19-1:p2",
+          "ko": "나는 2월에 휴가를 갈 것이다.",
+          "koSource": "review 1 item 2",
+          "condition": null,
+          "promptEn": null,
+          "en": "I am going to go on holiday in February.",
+          "accept": [
+            "I am going to go on vacation in February.",
+            "I am going on holiday in February.",
+            "I am going on vacation in February.",
+            "I will go on holiday in February.",
+            "I will go on vacation in February.",
+            "In February, I am going to go on holiday.",
+            "In February, I am going to go on vacation.",
+            "I am going to go on a vacation in February.",
+            "I am going to go on a holiday in February.",
+            "I am going on a vacation in February.",
+            "I am going on a holiday in February.",
+            "I will go on a vacation in February.",
+            "I will go on a holiday in February.",
+            "I am going to take a vacation in February.",
+            "I am going to take a holiday in February.",
+            "I will take a vacation in February.",
+            "I will take a holiday in February."
+          ],
+          "targets": [
+            [
+              "in"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "on february",
+              "hint": "'2월에'처럼 달 앞에는 on 대신 다른 전치사를 써요."
+            },
+            {
+              "match": "at february",
+              "hint": "'2월에'처럼 달 앞에는 at 대신 다른 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "be-going-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) in : item 2",
+            "reviewWhere": "Review 1. item 2 (p38)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg19-1:p3",
+          "ko": "너는 저녁에 자주 외출하니?",
+          "koSource": "review 1 item 3 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Do you often go out in the evening?",
+          "accept": [
+            "Do you often go out in the evenings?",
+            "Do you go out often in the evening?",
+            "Do you go out often in the evenings?"
+          ],
+          "targets": [
+            [
+              "in"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "at the evening",
+              "hint": "'저녁에'처럼 하루 중 한때에는 at 대신 다른 전치사를 써요."
+            },
+            {
+              "match": "how often do you go out",
+              "hint": "'자주 ~하니?'는 예/아니오로 답하는 질문이에요. 얼마나 자주인지 묻는 말이 아니에요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "question-yes-no",
+            "adverb-position"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) in : item 3",
+            "reviewWhere": "Review 1. item 3 (p38)"
+          },
+          "fix": {
+            "fromKo": "너는 저녁에 얼마나 자주 외출하니?",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 예/아니오 질문(Do you often …?)인데 '얼마나 자주'는 How often …? 이라 다른 문장을 쓰게 됩니다(판정 p38)."
+          }
+        },
+        {
+          "id": "pg19-1:p4",
+          "ko": "나의 친구들 중 몇몇은 단어와 숙어 암기를 정말 잘합니다.",
+          "koSource": "student:s7-3#3",
+          "condition": null,
+          "promptEn": null,
+          "en": "Some of my friends are really good at memorizing words and phrases.",
+          "accept": [
+            "Some of my friends are really good at memorizing words and expressions.",
+            "Some of my friends are really good at memorising words and phrases.",
+            "Some of my friends are really good at memorising words and expressions."
+          ],
+          "targets": [
+            [
+              "at"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "good at memorize",
+              "hint": "전치사 at 뒤에 동사가 오면 -ing 모양으로 써요."
+            },
+            {
+              "match": "good in memorizing",
+              "hint": "'~을 잘하다'는 good 뒤에 in 대신 다른 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "gerund",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s7-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) at : item 1",
+            "reviewWhere": "Review 1. item 4 (p38)"
+          },
+          "fix": {
+            "fromKo": "내 친구들 중 몇몇은 단어와 구를 외우는 것을 정말 잘한다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT 7-3 과 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(교재 한국어가 틀린 것은 아님)."
+          }
+        },
+        {
+          "id": "pg19-1:p5",
+          "ko": "나는 아침 7시에 하루 일과를 시작한다.",
+          "koSource": "review 1 item 5 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I start my daily routine at 7:00.",
+          "accept": [
+            "I start my daily routines at 7:00.",
+            "I start my daily routines at 7.",
+            "I start my daily routines at seven.",
+            "I start my daily routines at seven o'clock.",
+            "I start my daily routines at 7 o'clock.",
+            "I start my daily routines at 7 a.m.",
+            "I start my daily routines at 7:00 a.m.",
+            "I start my daily routines at seven in the morning.",
+            "I start my daily routines at 7 in the morning.",
+            "I start my daily routines at 7:00 in the morning.",
+            "I start my daily routine at 7.",
+            "I start my daily routine at seven.",
+            "I start my daily routine at seven o'clock.",
+            "I start my daily routine at 7 o'clock.",
+            "I start my daily routine at 7 a.m.",
+            "I start my daily routine at 7:00 a.m.",
+            "I start my daily routine at seven in the morning.",
+            "I start my daily routine at 7 in the morning.",
+            "I start my daily routine at 7:00 in the morning.",
+            "I begin my daily routine at 7:00.",
+            "I begin my daily routine at 7.",
+            "I begin my daily routine at seven.",
+            "I begin my daily routine at seven o'clock.",
+            "I begin my daily routine at 7 o'clock.",
+            "I begin my daily routine at 7 a.m.",
+            "I begin my daily routine at 7:00 a.m.",
+            "I begin my daily routine at seven in the morning.",
+            "I begin my daily routine at 7 in the morning.",
+            "I begin my daily routine at 7:00 in the morning.",
+            "I begin my daily routines at 7:00.",
+            "I begin my daily routines at 7.",
+            "I begin my daily routines at seven.",
+            "I begin my daily routines at seven o'clock.",
+            "I begin my daily routines at 7 o'clock.",
+            "I begin my daily routines at 7 a.m.",
+            "I begin my daily routines at 7:00 a.m.",
+            "I begin my daily routines at seven in the morning.",
+            "I begin my daily routines at 7 in the morning.",
+            "I begin my daily routines at 7:00 in the morning."
+          ],
+          "targets": [
+            [
+              "at"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "in 7",
+              "hint": "'7시에'처럼 시각 앞에는 한 점을 나타내는 전치사를 써요."
+            },
+            {
+              "match": "in seven",
+              "hint": "'7시에'처럼 시각 앞에는 한 점을 나타내는 전치사를 써요."
+            },
+            {
+              "match": "in 7:00",
+              "hint": "'7시에'처럼 시각 앞에는 한 점을 나타내는 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) at : item 2",
+            "reviewWhere": "Review 1. item 5 (p38)"
+          },
+          "fix": {
+            "from": "I start my daily routines at 7:00.",
+            "fromKo": "나는 아침 7시에 일상생활을 시작한다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "daily routine(하루 일과)은 보통 단수로 써서 모범 답을 단수 routine 으로 고쳤습니다(점검 G15). 교재의 복수 routines 도 틀린 영어는 아니라 허용 답에 둡니다. 한국어 '일상생활'은 daily routine 의 뜻 '하루 일과'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg19-1:p6",
+          "ko": "너는 지금 바쁘니?",
+          "koSource": "review 1 item 6",
+          "condition": "at을 써서",
+          "promptEn": null,
+          "en": "Are you busy at the moment?",
+          "accept": [
+            "Are you busy at present?",
+            "Are you busy at this moment?"
+          ],
+          "targets": [
+            [
+              "at"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "are you busy now",
+              "hint": "조건은 'at을 써서'예요. '지금'을 at 과 함께 쓰는 말로 바꿔 보세요."
+            },
+            {
+              "match": "in the moment",
+              "hint": "'지금(이 순간)'은 한 시점이라 in 이 아닌 조건의 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "be-present",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) at : item 3",
+            "reviewWhere": "Review 1. item 6 (p38)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg19-1:p7",
+          "ko": "그는 사투리 억양으로 말한다.",
+          "koSource": "review 1 item 7 (고침 — STUDENT s6-3 판)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He speaks with a regional accent!",
+          "accept": [
+            "He talks with a regional accent!",
+            "He speaks with a local accent!",
+            "He talks with a local accent!"
+          ],
+          "targets": [
+            [
+              "with"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "speaks a regional accent",
+              "hint": "'~ 억양으로' 말하는 것은 그 억양을 지니고 말하는 거예요. 전치사가 필요해요."
+            },
+            {
+              "match": "he speak with",
+              "hint": "주어 He 는 3인칭 단수예요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s6-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) with : item 1",
+            "reviewWhere": "Review 1. item 7 (p38)"
+          },
+          "fix": {
+            "from": "He speaks with a funny accent! (6과)",
+            "fromKo": "그는 재미있는 억양으로 말한다.",
+            "field": "en+ko",
+            "kind": "student_version",
+            "why": "STUDENT 6-3 이 이미 고친 문장(funny → regional: 선생님의 지방 말씨를 '우스운'이라 하면 영어로는 놀림으로 들림)이라 영어 · 한국어 모두 STUDENT 판에 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg19-1:p8",
+          "ko": "이 책은 제가 도와 드릴 수 있어요.",
+          "koSource": "review 1 item 8 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I can help you with this book.",
+          "accept": [
+            "I can help with this book."
+          ],
+          "targets": [
+            [
+              "with"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "help you by this book",
+              "hint": "'이 책(에 관한 일)'을 돕는 거예요. by 대신 '~을 가지고 · ~에 관해'의 뜻인 전치사를 써 보세요."
+            },
+            {
+              "match": "help you this book",
+              "hint": "help you 뒤에 도울 일을 붙일 때는 전치사가 필요해요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) with : item 2",
+            "reviewWhere": "Review 1. item 8 (p38)"
+          },
+          "fix": {
+            "fromKo": "제가 이 책으로 당신을 도울 수 있어요.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "help you with this book 은 '이 책(에 관한 일)을 도와주다'인데 '이 책으로'는 '이 책을 써서'로 읽혀 with 의 뜻이 달라집니다(판정 p38)."
+          }
+        },
+        {
+          "id": "pg19-1:p9",
+          "ko": "그녀는 자신의 지혜로 모두에게 많은 이익을 가져다줄 수 있다.",
+          "koSource": "review 1 item 9 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "She can bring a lot of benefits to everyone with her wisdom.",
+          "accept": [
+            "She can bring many benefits to everyone with her wisdom.",
+            "She can give a lot of benefits to everyone with her wisdom.",
+            "She can give many benefits to everyone with her wisdom.",
+            "With her wisdom, she can bring a lot of benefits to everyone.",
+            "With her wisdom, she can bring many benefits to everyone.",
+            "With her wisdom, she can give a lot of benefits to everyone.",
+            "With her wisdom, she can give many benefits to everyone."
+          ],
+          "targets": [
+            [
+              "with"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "by her wisdom",
+              "hint": "'지혜로(지혜를 가지고)'는 by 보다 '~을 가지고'의 뜻인 전치사가 자연스러워요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "can-basic",
+            "sentence-pattern-3"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) with : item 3",
+            "reviewWhere": "Review 1. item 9 (p38)"
+          },
+          "fix": {
+            "from": "She can give a lot of benefits to everyone with her wisdom.",
+            "fromKo": "그녀는 그녀의 지혜로 모두에게 많은 이익을 줄 수 있어요.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "give … benefits 는 '(복지) 혜택을 주다'로 들려 어색해 흔히 쓰는 bring benefits to 로 고쳤습니다(판정 p32). 교재 답(give)도 뜻은 통해 허용 답에 둡니다. 한국어 '그녀의 지혜'는 '자신의 지혜'로."
+          }
+        },
+        {
+          "id": "pg19-1:p10",
+          "ko": "그는 코를 만지는 버릇이 있다.",
+          "koSource": "review 1 item 10 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He has a habit of touching his nose.",
+          "accept": [
+            "He has the habit of touching his nose."
+          ],
+          "targets": [
+            [
+              "of"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "habit of touch his",
+              "hint": "전치사 of 뒤에 동사가 오면 -ing 모양으로 써요."
+            },
+            {
+              "match": "habit to touch",
+              "hint": "habit 뒤에 동사를 이을 때는 to 대신 전치사 + -ing 를 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "gerund",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s6-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) of : item 1",
+            "reviewWhere": "Review 1. item 10 (p38)"
+          },
+          "fix": {
+            "fromKo": "그는 코를 만지는 습관을 가지고 있다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'습관을 가지고 있다'는 번역투라 '버릇이 있다'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg19-1:p11",
+          "ko": "이 궁전은 '데이비드의 집'이라고 불린다.",
+          "koSource": "review 1 item 11 (고침)",
+          "condition": "of를 써서",
+          "promptEn": null,
+          "en": "This palace is called the House of David.",
+          "accept": [
+            "This palace is known as the House of David."
+          ],
+          "targets": [
+            [
+              "of"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "david's house",
+              "hint": "조건은 'of를 써서'예요. '데이비드의 집'을 of 로 이어 보세요."
+            },
+            {
+              "match": "these palaces are called",
+              "hint": "'이 궁전'은 하나예요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "passive",
+            "sentence-pattern-5"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) of : item 2",
+            "reviewWhere": "Review 1. item 11 (p38)"
+          },
+          "fix": {
+            "from": "These palaces are called the house of David.",
+            "fromKo": "이 궁전들은 데이빗의 집이라 불린다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "여러 궁전(These palaces)을 집 하나(the house of David)라고 부르는 것이 맞지 않아 한 궁전으로 고치고, 이름이라 대문자(the House of David)로 썼습니다(판정 p32). 한국어 '데이빗'은 외래어 표기법대로 '데이비드', '데이비드의 집'은 David's house 로도 쓸 수 있어 조건 칩 'of를 써서'를 달았습니다."
+          }
+        },
+        {
+          "id": "pg19-1:p12",
+          "ko": "너는 무엇을 두려워하는가?",
+          "koSource": "review 1 item 12",
+          "condition": "전치사를 써서",
+          "promptEn": null,
+          "en": "What are you afraid of?",
+          "accept": [
+            "What are you scared of?",
+            "What are you frightened of?"
+          ],
+          "targets": [
+            [
+              "of"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what do you afraid",
+              "hint": "afraid 는 형용사라 be동사와 함께 써요."
+            },
+            {
+              "match": "what are you afraid about",
+              "hint": "'~을 두려워하다'는 afraid 뒤에 about 대신 다른 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "question-wh",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) of : item 3",
+            "reviewWhere": "Review 1. item 12 (p39)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg19-1:p13",
+          "ko": "나는 학교 수업을 준비하기 위해 약간의 복습을 한다.",
+          "koSource": "student:s8-4#4 (앞부분 — Review 13 고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I do a little review to prepare for school.",
+          "accept": [
+            "I do a little review to get ready for school.",
+            "I do some review to prepare for school.",
+            "I do some review to get ready for school.",
+            "I do a little review in order to prepare for school.",
+            "I do a little review in order to get ready for school.",
+            "I do some review in order to prepare for school.",
+            "I do some review in order to get ready for school.",
+            "I review a little to prepare for school.",
+            "I review a little to get ready for school.",
+            "I review a little in order to prepare for school.",
+            "I review a little in order to get ready for school."
+          ],
+          "targets": [
+            [
+              "for"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "prepare school",
+              "hint": "'학교 수업을 준비하다'는 prepare 뒤에 무엇을 위한 준비인지 나타내는 전치사가 필요해요."
+            },
+            {
+              "match": "interview",
+              "hint": "'복습'은 interview(면접 · 인터뷰)가 아니에요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s8-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) for : item 1",
+            "reviewWhere": "Review 1. item 13 (p39)"
+          },
+          "fix": {
+            "from": "I do a little interview to prepare for school. (8과)",
+            "fromKo": "나는 학교를 위해 준비한 작은 인터뷰를 한다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "interview 는 오식입니다. STUDENT 8-4 원문은 review(복습)이고(판정 p30), 한국어도 오식을 따라 틀려 STUDENT 8-4 한국어로 바꿨습니다(to prepare for school = 학교 수업을 준비하기 위해 — 판정 p39)."
+          }
+        },
+        {
+          "id": "pg19-1:p14",
+          "ko": "나는 인생에서 내 가족을 위해 반드시 성공해야만 한다.",
+          "koSource": "review 1 item 14",
+          "condition": null,
+          "promptEn": null,
+          "en": "I must succeed in my life for my family.",
+          "accept": [
+            "I must succeed in life for my family.",
+            "I have to succeed in my life for my family.",
+            "I have to succeed in life for my family.",
+            "For my family, I must succeed in my life.",
+            "For my family, I must succeed in life.",
+            "For my family, I have to succeed in my life.",
+            "For my family, I have to succeed in life.",
+            "I must be successful in life for my family.",
+            "I must be successful in my life for my family.",
+            "I have to be successful in life for my family.",
+            "I have to be successful in my life for my family.",
+            "For my family, I must be successful in life.",
+            "For my family, I must be successful in my life.",
+            "For my family, I have to be successful in life.",
+            "For my family, I have to be successful in my life."
+          ],
+          "targets": [
+            [
+              "for"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "succeed to my family",
+              "hint": "'가족을 위해'는 누구를 위한 것인지 나타내는 전치사를 써요."
+            },
+            {
+              "match": "must succeeds",
+              "hint": "must 뒤에는 동사원형을 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) for : item 2",
+            "reviewWhere": "Review 1. item 14 (p39)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg19-1:p15",
+          "ko": "나는 그들이 안쓰럽다. 그들은 매우 어려운 상황에 있다.",
+          "koSource": "review 1 item 15 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I feel sorry for them. They are in a very difficult situation.",
+          "accept": [
+            "I feel sorry for them. They are in a very hard situation.",
+            "I am sorry for them. They are in a very difficult situation.",
+            "I am sorry for them. They are in a very hard situation.",
+            "I feel bad for them. They are in a very difficult situation.",
+            "I feel bad for them. They are in a very hard situation.",
+            "I feel sorry for them. They are in a very tough situation.",
+            "I am sorry for them. They are in a very tough situation.",
+            "I feel bad for them. They are in a very tough situation."
+          ],
+          "targets": [
+            [
+              "for"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sorry to them",
+              "hint": "'~이 안쓰럽다(불쌍하다)'는 sorry 뒤에 to 대신 다른 전치사를 써요."
+            },
+            {
+              "match": "different situation",
+              "hint": "difficult(어려운)와 different(다른)는 다른 낱말이에요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "pronoun-3rd",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) for : item 3",
+            "reviewWhere": "Review 1. item 15 (p39)"
+          },
+          "fix": {
+            "fromKo": "나는 그들에게 미안하다. 그들은 매우 다른 상황에 있다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "feel sorry for 는 '안쓰럽다 · 안됐다'(미안하다 아님), difficult 는 '어려운'(다른 아님) — 두 곳 모두 오역이었습니다(판정 p39)."
+          }
+        },
+        {
+          "id": "pg19-1:p16",
+          "ko": "우리가 먹을 때, 아버지는 보통 자신의 하루에 대해 말씀하신다.",
+          "koSource": "review 1 item 16 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "When we eat, my father usually talks about his day.",
+          "accept": [
+            "When we eat, my dad usually talks about his day.",
+            "My father usually talks about his day when we eat.",
+            "My dad usually talks about his day when we eat.",
+            "While we eat, my father usually talks about his day.",
+            "While we eat, my dad usually talks about his day.",
+            "My father usually talks about his day while we eat.",
+            "My dad usually talks about his day while we eat."
+          ],
+          "targets": [
+            [
+              "about"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "talks his day",
+              "hint": "'~에 대해 말하다'는 talk 뒤에 전치사가 필요해요."
+            },
+            {
+              "match": "usually talk about",
+              "hint": "주어 my father 는 3인칭 단수예요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "complex-sentence",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s9-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) about : item 1",
+            "reviewWhere": "Review 1. item 16 (p39)"
+          },
+          "fix": {
+            "fromKo": "우리가 먹을 때, 아버지는 보통 그의 하루에 대해 말씀하신다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "아버지 자신의 하루라 '그의 하루'(번역투)를 '자신의 하루'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg19-1:p17",
+          "ko": "나는 그것에 대해 생각해야 한다.",
+          "koSource": "review 1 item 17",
+          "condition": null,
+          "promptEn": null,
+          "en": "I have to think about that.",
+          "accept": [
+            "I have to think about it.",
+            "I need to think about that.",
+            "I need to think about it.",
+            "I must think about that.",
+            "I must think about it."
+          ],
+          "targets": [
+            [
+              "about"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "to think that",
+              "hint": "'~에 대해 생각하다'는 think 뒤에 전치사가 필요해요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "pronoun-demonstrative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) about : item 2",
+            "reviewWhere": "Review 1. item 17 (p39)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg19-1:p18",
+          "ko": "그녀에게는 뭔가 특별한 점이 있다.",
+          "koSource": "review 1 item 18 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "There is something special about her.",
+          "accept": [
+            "She has something special about her."
+          ],
+          "targets": [
+            [
+              "about"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "special something",
+              "hint": "something 을 꾸미는 형용사는 뒤에 와요."
+            },
+            {
+              "match": "something special to her",
+              "hint": "그녀라는 사람이 지닌 특별한 점이에요. to 대신 '~에 관해'의 뜻인 전치사를 써 보세요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "there-be",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) about : item 3",
+            "reviewWhere": "Review 1. item 18 (p39)"
+          },
+          "fix": {
+            "fromKo": "그녀에게는 특별한 것이 있다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'특별한 것이 있다'는 특별한 물건을 가졌다는 뜻으로도 읽혀, 사람이 지닌 특별한 점(something special about her)이 드러나게 '뭔가 특별한 점'으로 고쳤습니다(점검 G15)."
+          }
+        },
+        {
+          "id": "pg19-1:p19",
+          "ko": "그는 자주 마을 여기저기를 돌아다닌다.",
+          "koSource": "review 1 item 19 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He often wanders about the town.",
+          "accept": [
+            "He often wanders about town.",
+            "He often wanders around the town.",
+            "He often wanders around town.",
+            "He often walks around the town.",
+            "He often walks around town.",
+            "He often wanders about the village.",
+            "He often wanders around the village.",
+            "He often walks about the village.",
+            "He often walks around the village.",
+            "He often walks about the town.",
+            "He often walks about town."
+          ],
+          "targets": [
+            [
+              "about",
+              "around"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "often wander about",
+              "hint": "주어 He 는 3인칭 단수예요."
+            },
+            {
+              "match": "wonders",
+              "hint": "wonder(궁금해하다)와 wander(돌아다니다)는 다른 낱말이에요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "present-3sg-s",
+            "adverb-position"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 32,
+            "where": "application (1) about : item 4",
+            "reviewWhere": "Review 1. item 19 (p39)"
+          },
+          "fix": {
+            "fromKo": "그는 자주 마을 근처를 돌아다닌다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "wander about the town 은 마을 안 여기저기를 돌아다니는 것이라, 마을 주변으로 읽히는 '근처'를 '여기저기'로 고쳤습니다(판정 p39)."
+          }
+        },
+        {
+          "id": "pg19-1:p20",
+          "ko": "비에도 불구하고, 그들은 즐거운 시간을 보냈다.",
+          "koSource": "review 1 item 20 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "In spite of the rain, they enjoyed themselves.",
+          "accept": [
+            "In spite of the rain, they had a good time.",
+            "In spite of the rain, they had fun.",
+            "Despite the rain, they enjoyed themselves.",
+            "Despite the rain, they had a good time.",
+            "Despite the rain, they had fun.",
+            "They enjoyed themselves in spite of the rain.",
+            "They enjoyed themselves despite the rain.",
+            "They had a good time in spite of the rain.",
+            "They had a good time despite the rain.",
+            "They had fun in spite of the rain.",
+            "They had fun despite the rain.",
+            "In spite of the rain, they had a great time.",
+            "Despite the rain, they had a great time.",
+            "They had a great time in spite of the rain.",
+            "They had a great time despite the rain."
+          ],
+          "targets": [
+            [
+              "In spite of",
+              "Despite"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "in spite of it rained",
+              "hint": "in spite of 는 전치사라 뒤에 '주어 + 동사'가 올 수 없어요. 명사로 써 보세요."
+            },
+            {
+              "match": "despite of",
+              "hint": "despite 는 한 낱말로 in spite of 와 뜻이 같아요. 뒤에 of 를 붙이지 않아요."
+            },
+            {
+              "match": "enjoyed them",
+              "hint": "enjoy 로 '즐거운 시간을 보냈다'를 말하려면 주어 자신을 가리키는 말이 필요해요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "pronoun-reflexive",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 1",
+            "reviewWhere": "Review 1. item 20 (p39)"
+          },
+          "fix": {
+            "from": "In spite of the rain, they enjoyed themselves",
+            "fromKo": "비가 옴에도 불구하고, 그들은 자신을 즐겼다.",
+            "field": "en+ko",
+            "kind": "translation_mismatch",
+            "why": "Pass-Off 줄 끝에 빠진 마침표를 넣었고(판정 p30), enjoyed themselves 는 '즐거운 시간을 보냈다'라서 '자신을 즐겼다'(직역)를 고쳤습니다(판정 p39). 교재 메모 '(= Despite)'대로 despite 도 받습니다."
+          }
+        },
+        {
+          "id": "pg19-1:p21",
+          "ko": "가난에도 불구하고, 그들은 더 강해졌다.",
+          "koSource": "review 1 item 21",
+          "condition": null,
+          "promptEn": null,
+          "en": "In spite of the poverty, they got stronger.",
+          "accept": [
+            "In spite of the poverty, they became stronger.",
+            "In spite of the poverty, they grew stronger.",
+            "In spite of their poverty, they got stronger.",
+            "In spite of their poverty, they became stronger.",
+            "In spite of their poverty, they grew stronger.",
+            "Despite the poverty, they got stronger.",
+            "Despite the poverty, they became stronger.",
+            "Despite the poverty, they grew stronger.",
+            "Despite their poverty, they got stronger.",
+            "Despite their poverty, they became stronger.",
+            "Despite their poverty, they grew stronger.",
+            "They got stronger in spite of the poverty.",
+            "They got stronger in spite of their poverty.",
+            "They got stronger despite the poverty.",
+            "They got stronger despite their poverty.",
+            "They became stronger in spite of the poverty.",
+            "They became stronger in spite of their poverty.",
+            "They became stronger despite the poverty.",
+            "They became stronger despite their poverty.",
+            "They grew stronger in spite of the poverty.",
+            "They grew stronger in spite of their poverty.",
+            "They grew stronger despite the poverty.",
+            "They grew stronger despite their poverty.",
+            "In spite of poverty, they got stronger.",
+            "In spite of poverty, they became stronger.",
+            "In spite of poverty, they grew stronger.",
+            "Despite poverty, they got stronger.",
+            "Despite poverty, they became stronger.",
+            "Despite poverty, they grew stronger.",
+            "They got stronger in spite of poverty.",
+            "They got stronger despite poverty.",
+            "They became stronger in spite of poverty.",
+            "They became stronger despite poverty.",
+            "They grew stronger in spite of poverty.",
+            "They grew stronger despite poverty."
+          ],
+          "targets": [
+            [
+              "In spite of",
+              "Despite"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "in spite of poor",
+              "hint": "poor(가난한)는 형용사예요. 전치사 뒤에는 명사(가난)를 써요."
+            },
+            {
+              "match": "more strong",
+              "hint": "strong 의 비교급은 -er 을 붙여요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "comparative",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 2",
+            "reviewWhere": "Review 1. item 21 (p39)"
+          },
+          "fix": null,
+          "note": "판정 p33: the poverty 는 틀린 것이 아니라 그대로 두고, 더 자연스러운 their poverty · 관사 없는 poverty 도 받음(관사 없는 꼴은 점검 G15)"
+        },
+        {
+          "id": "pg19-1:p22",
+          "ko": "우리는 수업 전에 아침 조회를 위해 선생님과 만난다.",
+          "koSource": "review 1 item 22 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "We meet before class with our teacher for the morning session.",
+          "accept": [
+            "We meet with our teacher before class for the morning session.",
+            "Before class, we meet with our teacher for the morning session.",
+            "We meet our teacher before class for the morning session.",
+            "Before class, we meet our teacher for the morning session."
+          ],
+          "targets": [
+            [
+              "before"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "for morning session",
+              "hint": "정해진 그 아침 조회라 앞에 관사가 필요해요."
+            },
+            {
+              "match": "after class",
+              "hint": "'수업 전에'예요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "present-simple",
+            "article-rules"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s5-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 3",
+            "reviewWhere": "Review 1. item 22 (p39)"
+          },
+          "fix": {
+            "from": "We meet before class with our teacher for morning session. (5과)",
+            "fromKo": "우리는 수업 전에 아침조회를 위해 선생님과 만난다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "morning session 앞에 관사 the 가 빠졌습니다 — STUDENT 5-3 이 이미 고친 꼴(for the morning session)을 씁니다(판정 p30). 한국어 '아침조회'는 '아침 조회'로 띄어 씁니다."
+          }
+        },
+        {
+          "id": "pg19-1:p23",
+          "ko": "그는 청중 앞에 섰다.",
+          "koSource": "review 1 item 23",
+          "condition": null,
+          "promptEn": null,
+          "en": "He stood before the audience.",
+          "accept": [
+            "He stood in front of the audience."
+          ],
+          "targets": [
+            [
+              "before",
+              "in front of"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "standed",
+              "hint": "stand 의 과거형은 불규칙이에요."
+            },
+            {
+              "match": "stood front of",
+              "hint": "'~ 앞에'를 front 로 말하려면 앞뒤에 전치사가 필요해요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "past-simple",
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 4",
+            "reviewWhere": "Review 1. item 23 (p39)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg19-1:p24",
+          "ko": "그녀는 매일 우리 사무실 앞을 지나간다.",
+          "koSource": "review 1 item 24 (고침)",
+          "condition": "전치사를 써서",
+          "promptEn": null,
+          "en": "She passes in front of our office every day.",
+          "accept": [
+            "She passes by our office every day.",
+            "She walks past our office every day.",
+            "She goes past our office every day.",
+            "She walks by our office every day.",
+            "She goes by our office every day.",
+            "She walks in front of our office every day.",
+            "She passes before our office every day.",
+            "Every day, she passes in front of our office.",
+            "Every day, she passes by our office.",
+            "Every day, she walks past our office."
+          ],
+          "targets": [
+            [
+              "in front of",
+              "before",
+              "by",
+              "past"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he passes",
+              "hint": "'그녀는'이에요. 주어를 다시 보세요."
+            },
+            {
+              "match": "everyday",
+              "hint": "'매일'은 두 낱말(every day)이에요. 붙여 쓴 everyday 는 '일상의'라는 뜻이에요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 5",
+            "reviewWhere": "Review 1. item 24 (p40)"
+          },
+          "fix": {
+            "from": "She passes before our office every day.",
+            "fromKo": "그는 매일 우리 사무실 앞을 지난다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "'~ 앞을 지나가다'의 pass before 는 지금 일상 영어에서 거의 쓰지 않아(장소의 before 는 stood before the audience 같은 격식체) 모범 답을 in front of 로 고쳤습니다(판정 p33). 교재 답도 틀린 문법은 아니라 허용 답에 둡니다. 한국어 주어 '그는'은 영어(She)에 맞게 '그녀는'(판정 p40)."
+          }
+        },
+        {
+          "id": "pg19-1:p25",
+          "ko": "몇 분 후에, 나는 마침내 침대에서 일어난다.",
+          "koSource": "review 1 item 25",
+          "condition": null,
+          "promptEn": null,
+          "en": "After a few minutes, I finally get out of bed.",
+          "accept": [
+            "I finally get out of bed after a few minutes.",
+            "After a few minutes, I finally get up.",
+            "I finally get up after a few minutes."
+          ],
+          "targets": [
+            [
+              "After"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "for a few minutes",
+              "hint": "'몇 분 후에'는 시간이 지난 뒤예요. '~ 동안'이 아니에요."
+            },
+            {
+              "match": "get out from bed",
+              "hint": "'침대에서 나오다'는 get out 뒤에 from 대신 다른 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "adverb-ly",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s10-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 6",
+            "reviewWhere": "Review 1. item 25 (p40)"
+          },
+          "fix": {
+            "from": "After a few minutes , I finally get out of bed. (10과)",
+            "field": "en",
+            "kind": "layout_or_extraction",
+            "why": "쉼표 앞 빈칸을 없앴습니다(판정 p30). 같은 문장이 (3) 중요 전치사들(p37 · Review 88 '자리에서 일어난다')에도 있어 이 문항 하나로 합치고, 한국어는 이 문항의 '침대에서'로 통일했습니다(판정 p45)."
+          }
+        },
+        {
+          "id": "pg19-1:p26",
+          "ko": "몇 시니? 6시 10분이야.",
+          "koSource": "review 1 item 26 (고침)",
+          "condition": "after를 써서",
+          "promptEn": null,
+          "en": "What time is it? It's ten minutes after six.",
+          "accept": [
+            "What time is it? It's ten minutes after 6.",
+            "What time is it? It's ten after six.",
+            "What time is it? It's ten after 6.",
+            "What time is it? It's 10 minutes after six.",
+            "What time is it? It's 10 minutes after 6.",
+            "What time is it? It's 10 after six.",
+            "What time is it? It's 10 after 6.",
+            "What's the time? It's ten minutes after six.",
+            "What's the time? It's ten minutes after 6.",
+            "What's the time? It's ten after six.",
+            "What's the time? It's ten after 6.",
+            "What's the time? It's 10 minutes after six.",
+            "What's the time? It's 10 minutes after 6.",
+            "What's the time? It's 10 after six.",
+            "What's the time? It's 10 after 6."
+          ],
+          "targets": [
+            [
+              "after"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "six ten",
+              "hint": "조건은 'after를 써서'예요. '6시에서 10분 지난'으로 말해 보세요."
+            },
+            {
+              "match": "minutes before six",
+              "hint": "'10분 지난' 거예요. before 는 '~ 전'이에요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "it-dummy",
+            "question-wh"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 7",
+            "reviewWhere": "Review 1. item 26 (p40)"
+          },
+          "fix": {
+            "fromKo": "몇 시니? 여섯 시 십분 (십분 지난 6시)",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'십분'은 '10분'으로 띄어 쓰고, 괄호 속 풀이 '(십분 지난 6시)'는 조건 칩 'after를 써서'로 옮겼습니다."
+          }
+        },
+        {
+          "id": "pg19-1:p27",
+          "ko": "그의 뒤를 따라가 주겠어요?",
+          "koSource": "review 1 item 27 (고침)",
+          "condition": "after를 써서",
+          "promptEn": null,
+          "en": "Would you go after him?",
+          "accept": [
+            "Could you go after him?",
+            "Will you go after him?",
+            "Would you please go after him?",
+            "Could you please go after him?",
+            "Will you please go after him?",
+            "Can you go after him?",
+            "Can you please go after him?",
+            "Would you run after him?",
+            "Would you please run after him?",
+            "Could you run after him?",
+            "Could you please run after him?",
+            "Will you run after him?",
+            "Will you please run after him?",
+            "Can you run after him?",
+            "Can you please run after him?"
+          ],
+          "targets": [
+            [
+              "after"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "follow after",
+              "hint": "follow 에 이미 '뒤따르다'라는 뜻이 있어 after 와 겹쳐요. follow 대신 다른 동사와 after 를 써 보세요."
+            },
+            {
+              "match": "would you follow him",
+              "hint": "조건은 'after를 써서'예요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "question-yes-no"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 8",
+            "reviewWhere": "Review 1. item 27 (p40)"
+          },
+          "fix": {
+            "from": "Would you follow after him?",
+            "fromKo": "당신들은 그를 따르겠습니까?",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "follow after 는 follow 와 after 가 겹치는 옛 성경투 말이라, after 를 살려 go after(~의 뒤를 따라가다)로 고쳤습니다(판정 p33). 한국어도 '그의 뒤를 따라가 주겠어요?'로 맞추고(영어에 복수 표시가 없어 '당신들은'은 뺌), Would you follow him? 도 맞는 영어라 조건 칩 'after를 써서'를 달았습니다."
+          }
+        },
+        {
+          "id": "pg19-1:p28",
+          "ko": "그는 할아버지의 이름을 따서 이름이 지어졌다.",
+          "koSource": "review 1 item 28 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He was named after his grandfather.",
+          "accept": [
+            "He was named for his grandfather."
+          ],
+          "targets": [
+            [
+              "after",
+              "for"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "named by his grandfather",
+              "hint": "할아버지가 이름을 지은 게 아니라 할아버지 이름을 '따서' 지은 거예요. '~을 본떠서'의 뜻인 전치사는?"
+            },
+            {
+              "match": "his name was named",
+              "hint": "이름을 받은 사람(he)을 주어로 써 보세요."
+            },
+            {
+              "match": "after his grandfather's name",
+              "hint": "after 뒤에는 '이름'이 아니라 그 이름의 주인(사람)을 바로 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "passive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 9",
+            "reviewWhere": "Review 1. item 28 (p40)"
+          },
+          "fix": {
+            "fromKo": "그는 할아버지의 이름을 땄다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'그는 할아버지의 이름을 땄다'는 그가 (무엇에) 할아버지 이름을 따 붙였다는 능동으로 읽혀, 이름을 받은 쪽의 수동 was named after 를 가리키지 못했습니다. '이름이 지어졌다'로 받는 쪽을 드러냈습니다(점검 G15)."
+          }
+        },
+        {
+          "id": "pg19-1:p29",
+          "ko": "내가 걸어서 가는 것보다 자전거를 타고 가는 것이 학교에 좀 더 빨리 도착할 수 있습니다.",
+          "koSource": "student:s5-2#4",
+          "condition": null,
+          "promptEn": null,
+          "en": "I can get to school more quickly by bicycle than I can on foot.",
+          "accept": [
+            "I can get to school more quickly by bicycle than on foot.",
+            "I can get to school more quickly by bike than I can on foot.",
+            "I can get to school more quickly by bike than on foot.",
+            "I can get to school faster by bicycle than I can on foot.",
+            "I can get to school faster by bicycle than on foot.",
+            "I can get to school faster by bike than I can on foot.",
+            "I can get to school faster by bike than on foot."
+          ],
+          "targets": [
+            [
+              "by"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "by a bicycle",
+              "hint": "교통수단을 by 로 말할 때는 관사를 붙이지 않아요."
+            },
+            {
+              "match": "by foot",
+              "hint": "'걸어서'는 by 보다 다른 전치사로 더 흔히 말해요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "adverb-comparison",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s5-2",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 10",
+            "reviewWhere": "Review 1. item 29 (p40)"
+          },
+          "fix": {
+            "fromKo": "나는 걷는 것보다 자전거를 타면 더 빨리 학교에 도착할 수 있다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT 5-2 와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(교재 한국어가 틀린 것은 아님)."
+          }
+        },
+        {
+          "id": "pg19-1:p30",
+          "ko": "와서 내 옆에 앉아라.",
+          "koSource": "review 1 item 30",
+          "condition": null,
+          "promptEn": null,
+          "en": "Come and sit by me.",
+          "accept": [
+            "Come and sit beside me.",
+            "Come and sit next to me.",
+            "Come sit by me.",
+            "Come sit beside me.",
+            "Come sit next to me."
+          ],
+          "targets": [
+            [
+              "by",
+              "beside",
+              "next to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "sit by i",
+              "hint": "전치사 뒤 대명사는 목적격으로 써요."
+            },
+            {
+              "match": "sit besides me",
+              "hint": "besides 는 '~ 말고도'라는 다른 말이에요. '~ 옆에'는 s 가 없어요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "imperative-basic",
+            "pronoun-1st"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 11",
+            "reviewWhere": "Review 1. item 30 (p40)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg19-1:p31",
+          "ko": "그는 뒷문으로 거실에 들어왔다.",
+          "koSource": "review 1 item 31 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He entered the living room by the back door.",
+          "accept": [
+            "He entered the living room through the back door.",
+            "He came into the living room by the back door.",
+            "He came into the living room through the back door."
+          ],
+          "targets": [
+            [
+              "by",
+              "through"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "entered into the living room",
+              "hint": "enter 는 바로 뒤에 들어간 곳을 써요. into 가 필요 없어요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "past-simple",
+            "verb-transitivity"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 12",
+            "reviewWhere": "Review 1. item 31 (p40)"
+          },
+          "fix": {
+            "from": "He entered the living room by the backdoor.",
+            "fromKo": "그는 후문을 통해서 거실로 들어 왔다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "집의 뒷문은 두 낱말 back door 입니다(한 낱말 backdoor 는 주로 '뒷거래' — 판정 p33). 한국어는 집이라 '후문'을 '뒷문'으로, '들어 왔다'를 '들어왔다'로 붙여 썼고(판정 p40), '뒷문으로'는 by · through 둘 다 맞아 둘 다 받습니다."
+          }
+        },
+        {
+          "id": "pg19-1:p32",
+          "ko": "지난 과를 복습함으로써 수업을 시작하자.",
+          "koSource": "review 1 item 32 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Let's begin the lesson by reviewing the last lesson.",
+          "accept": [
+            "Let's begin the lesson by reviewing the previous lesson.",
+            "Let's begin the class by reviewing the last lesson.",
+            "Let's begin the class by reviewing the previous lesson.",
+            "Let's start the lesson by reviewing the last lesson.",
+            "Let's start the lesson by reviewing the previous lesson.",
+            "Let's start the class by reviewing the last lesson.",
+            "Let's start the class by reviewing the previous lesson."
+          ],
+          "targets": [
+            [
+              "by"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "by review the",
+              "hint": "전치사 by 뒤에 동사가 오면 -ing 모양으로 써요."
+            },
+            {
+              "match": "with reviewing",
+              "hint": "'~함으로써'(방법)는 with 대신 다른 전치사 + -ing 로 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "gerund",
+            "imperative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 13",
+            "reviewWhere": "Review 1. item 32 (p40)"
+          },
+          "fix": {
+            "fromKo": "지난 과를 복습 함으로써 수업을 시작하자.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'복습 함으로써'는 한 낱말 '복습함으로써'로 붙여 씁니다(판정 p40)."
+          }
+        },
+        {
+          "id": "pg19-1:p33",
+          "ko": "마침내 그녀는 그들의 도움 없이 성공할 수 있었다.",
+          "koSource": "review 1 item 33 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Finally, she was able to succeed without their help.",
+          "accept": [
+            "Finally, she managed to succeed without their help.",
+            "Finally, she succeeded without their help.",
+            "In the end, she was able to succeed without their help.",
+            "In the end, she managed to succeed without their help.",
+            "In the end, she succeeded without their help.",
+            "At last, she was able to succeed without their help.",
+            "At last, she managed to succeed without their help.",
+            "At last, she succeeded without their help.",
+            "She was finally able to succeed without their help.",
+            "She finally managed to succeed without their help.",
+            "She finally succeeded without their help.",
+            "She was eventually able to succeed without their help.",
+            "She eventually managed to succeed without their help.",
+            "She eventually succeeded without their help.",
+            "Eventually, she was able to succeed without their help.",
+            "Eventually, she managed to succeed without their help.",
+            "Eventually, she succeeded without their help."
+          ],
+          "targets": [
+            [
+              "without"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "could succeed",
+              "hint": "과거에 실제로 해낸 한 번의 일에는 긍정문 could 를 쓰지 않아요. could 말고 다른 표현으로 써 보세요."
+            },
+            {
+              "match": "without them help",
+              "hint": "'그들의 도움'은 소유를 나타내는 말로 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "modal-can",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 14",
+            "reviewWhere": "Review 1. item 33 (p40)"
+          },
+          "fix": {
+            "from": "Finally she could succeed without their help.",
+            "fromKo": "마침내, 그녀는 다른 사람들의 도움 없이 성공할 수 있었다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "과거에 실제로 한 번 해낸 일에는 긍정문 could 를 쓰지 않아 was able to 로 고쳤습니다(판정 p30). 한국어 '다른 사람들의'는 their(그들의)에 맞게 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg19-1:p34",
+          "ko": "그는 안경 없이 신문을 읽을 수 있다.",
+          "koSource": "review 1 item 34",
+          "condition": null,
+          "promptEn": null,
+          "en": "He can read the newspaper without glasses.",
+          "accept": [
+            "He can read the newspaper without his glasses.",
+            "He can read the paper without glasses.",
+            "He can read the paper without his glasses.",
+            "He can read newspapers without glasses.",
+            "He can read newspapers without his glasses.",
+            "He can read the newspaper without wearing glasses.",
+            "He can read the newspaper without wearing his glasses.",
+            "He can read a newspaper without glasses.",
+            "He can read a newspaper without his glasses.",
+            "He can read a newspaper without wearing glasses.",
+            "He can read a newspaper without wearing his glasses.",
+            "He can read the paper without wearing glasses.",
+            "He can read the paper without wearing his glasses.",
+            "He can read newspapers without wearing glasses.",
+            "He can read newspapers without wearing his glasses."
+          ],
+          "targets": [
+            [
+              "without"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "without glass",
+              "hint": "'안경'은 늘 여럿 모양(-es)으로 써요."
+            },
+            {
+              "match": "can reads",
+              "hint": "can 뒤에는 동사원형을 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 15",
+            "reviewWhere": "Review 1. item 34 (p40)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg19-1:p35",
+          "ko": "경쟁이 없다면, 발전은 멈춘다.",
+          "koSource": "review 1 item 35",
+          "condition": null,
+          "promptEn": null,
+          "en": "Without competition, progress stops.",
+          "accept": [
+            "Progress stops without competition."
+          ],
+          "targets": [
+            [
+              "Without"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "progress stop",
+              "hint": "progress 는 셀 수 없는 명사라 3인칭 단수 동사를 써요."
+            },
+            {
+              "match": "if there is no competition",
+              "hint": "'경쟁이 없다면'을 문장 대신 전치사 하나로 짧게 말해 보세요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "noun-countable-uncountable",
+            "present-3sg-s"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 16",
+            "reviewWhere": "Review 1. item 35 (p40)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg19-1:p36",
+          "ko": "그는 작별 인사도 하지 않고 그들을 떠났다.",
+          "koSource": "review 1 item 36 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He left them without saying good-bye.",
+          "accept": [
+            "He left without saying good-bye to them.",
+            "He left without saying goodbye to them."
+          ],
+          "targets": [
+            [
+              "without"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "without say",
+              "hint": "전치사 without 뒤에 동사가 오면 -ing 모양으로 써요."
+            },
+            {
+              "match": "without to say",
+              "hint": "전치사 without 뒤에 동사가 오면 -ing 모양으로 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "gerund",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 33,
+            "where": "application (1) 라벨 없음(p33) item 17",
+            "reviewWhere": "Review 1. item 36 (p41)"
+          },
+          "fix": {
+            "fromKo": "그는 작별인사 없이 그들을 떠났다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'작별 인사'는 띄어 쓰고, without saying good-bye(작별 인사를 하지 않고)에 맞게 '작별 인사도 하지 않고'로 고쳤습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg19-1:t1",
+          "ko": "나를 초대해주신 것에 대하여 당신에게 감사합니다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "Thank you for inviting me.",
+          "accept": [
+            "Thanks for inviting me.",
+            "Thank you for the invitation.",
+            "Thank you for your invitation.",
+            "Thanks for the invitation.",
+            "Thanks for your invitation."
+          ],
+          "targets": [
+            [
+              "for"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "thank you for invite me",
+              "hint": "전치사 for 뒤에 동사가 오면 -ing 모양으로 써요."
+            },
+            {
+              "match": "thank you to invite me",
+              "hint": "'~해 준 것에 감사하다'는 thank you 뒤에 전치사 + -ing 를 써요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar2:gh2-029#6",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        },
+        {
+          "id": "pg19-1:t2",
+          "ko": "학교에 가는 대신 그는 낚시하러 갔다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "Instead of going to school, he went fishing.",
+          "accept": [
+            "He went fishing instead of going to school."
+          ],
+          "targets": [
+            [
+              "Instead of"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "instead of go to school",
+              "hint": "instead of 뒤에 동사가 오면 -ing 모양으로 써요."
+            },
+            {
+              "match": "instead going",
+              "hint": "'~ 대신에'는 instead 뒤에 of 가 함께 와요."
+            }
+          ],
+          "tags": [
+            "preposition-object",
+            "gerund",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar2:gh2-016#17",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg19-1:f1",
+      "template": "When we eat, my family usually talks about ___.",
+      "ko": "우리가 먹을 때, 우리 가족은 보통 ___에 대해 이야기한다."
+    }
+  ]
+}

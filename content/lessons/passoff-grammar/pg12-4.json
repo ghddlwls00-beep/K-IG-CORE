@@ -1,0 +1,1139 @@
+{
+  "id": "pg12-4",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "Going Being",
+  "label": "TOPIC 12. 완료와 진행",
+  "menuLabel": "12-4. Going Being",
+  "unit": 12,
+  "part": 2,
+  "order": 4,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "be going to(~할 예정) · being(~되고 있다 · ~하게 굴다)",
+  "grammarTags": [
+    "be-going-to",
+    "being-progressive-passive"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg12-4:a1",
+          "en": "Are you going to watch TV tonight?",
+          "ko": "너는 오늘 밤에 TV를 볼 예정이니?",
+          "koSource": "TOPIC 11 review 4 item 42 (띄어쓰기 고침)",
+          "focus": [
+            "Are",
+            "going to"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 29,
+            "where": "TOPIC 11 passOff (4) 미래시제 대용 item 5",
+            "reviewWhere": "TOPIC 11 review 4 item 42 (p42) · review 3 item 5 (p37)"
+          },
+          "fix": {
+            "fromKo": "너는 오늘밤에 TV를 볼 예정이니?",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'오늘 밤'은 띄어 씁니다."
+          },
+          "note": "D14 — 목차에만 있는 칸(본문 없음). 사장님이 돌아오시면 확인하실 레슨. 교재 다른 단원(TOPIC 11) 예문을 앵커로 씀(같은 문장이 pg11-3 에도 있음)."
+        },
+        {
+          "id": "pg12-4:a2",
+          "en": "I am going to visit my grandmother this weekend.",
+          "ko": "나는 이번 주말에 할머니를 찾아뵐 예정이다.",
+          "koSource": "new",
+          "focus": [
+            "am going to"
+          ],
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:a3",
+          "en": "I am not going to give up.",
+          "ko": "나는 포기하지 않을 거야.",
+          "koSource": "new",
+          "focus": [
+            "am not going to"
+          ],
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:a4",
+          "en": "Look at those dark clouds. It's going to rain.",
+          "ko": "저 먹구름 좀 봐. 비가 올 것 같아.",
+          "koSource": "new",
+          "focus": [
+            "going to"
+          ],
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:a5",
+          "en": "Some houses are being built near the river.",
+          "ko": "강 근처에 집 몇 채가 지어지고 있다.",
+          "koSource": "new(교재에 한국어 없음)",
+          "focus": [
+            "are being built"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "TOPIC 14 passOff 수동태 item 6",
+            "reviewWhere": "TOPIC 14 review 1 item 3 · 8 (p64) · review 2 item 12 (p66)"
+          },
+          "note": "D14 — 목차에만 있는 칸(본문 없음). 사장님이 돌아오시면 확인하실 레슨. 교재 다른 단원(TOPIC 14 수동태) 예문을 앵커로 씀."
+        },
+        {
+          "id": "pg12-4:a6",
+          "en": "The classroom was being cleaned when I arrived.",
+          "ko": "내가 도착했을 때 교실은 청소되고 있었다.",
+          "koSource": "new",
+          "focus": [
+            "was being cleaned"
+          ],
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:a7",
+          "en": "You are being very rude.",
+          "ko": "너 지금 아주 무례하게 굴고 있어.",
+          "koSource": "new",
+          "focus": [
+            "are being"
+          ],
+          "bookRef": null,
+          "source": "new"
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg12-4:a1",
+          "pg12-4:a2",
+          "pg12-4:a3"
+        ],
+        "question": "세 문장의 'be going to + 동사원형'은 어떤 일을 말할까요?",
+        "options": [
+          "앞으로 하려고 정해 둔 일",
+          "지금 어디로 가고 있는 일",
+          "지난번에 하려다 못 한 일"
+        ],
+        "answer": 0,
+        "why": "TV를 볼 예정 · 할머니를 뵈러 갈 예정 · 포기하지 않을 생각 — 모두 앞으로 하려고 정해 둔 일이에요. 실제로 '가는' 것과는 상관없어요."
+      },
+      "title": "be going to(~할 예정) · being(~되고 있다 · ~하게 굴다)",
+      "points": [
+        "be going to + 동사원형: 미리 정해 둔 계획 · 생각(~할 예정이다)",
+        "묻기는 be동사를 주어 앞으로, 부정은 be동사 뒤에 not",
+        "지금 보이는 근거로 곧 일어날 일도 말해요: It's going to rain.",
+        "be동사 + being + 과거분사: ~되고 있다(was being ~ 는 ~되고 있었다) · be + 과거분사 = ~되다",
+        "be being + 행동 형용사(rude · kind · good): (평소와 달리) 지금 ~하게 굴다"
+      ],
+      "table": {
+        "columns": [
+          "모양",
+          "뜻",
+          "예문"
+        ],
+        "rows": [
+          [
+            "be going to + 동사원형",
+            "~할 예정이다 · ~할 것 같다",
+            "Are you going to watch TV tonight?"
+          ],
+          [
+            "be being + 과거분사",
+            "~되고 있다(있었다)",
+            "Some houses are being built near the river."
+          ],
+          [
+            "be being + 행동 형용사",
+            "지금 ~하게 굴다",
+            "You are being very rude."
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '~할 거야' 하나로 미리 정한 계획도 그 자리에서 정한 일도 말하지만, 영어는 미리 정해 둔 계획을 흔히 be going to 로 말해요. '지어지고 있다'처럼 '-되고 있다'는 be동사 + being + 과거분사로 써요(수동태는 TOPIC 14 에서 자세히 배워요).",
+      "mistakes": [
+        {
+          "wrong": "She is going to buying a new bag.",
+          "right": "She is going to buy a new bag.",
+          "why": "going to 뒤에는 동사원형이 와요."
+        },
+        {
+          "wrong": "The house is building now.",
+          "right": "The house is being built now.",
+          "why": "집은 '짓는' 쪽이 아니라 '지어지는' 쪽이라 being + 과거분사로 써요."
+        }
+      ],
+      "worked": [
+        "다리가 지금 칠해지고 있다.",
+        "다리는 '칠해지는' 쪽 → be동사 + 과거분사(painted)",
+        "'지금 ~되고 있다' → be동사 + being + 과거분사",
+        "주어 The bridge(하나) → is",
+        "The bridge is being painted now."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'The patient ___ examined by the doctor now.' 빈칸에 맞는 것은?",
+        "options": [
+          "is examining",
+          "is being",
+          "being"
+        ],
+        "answer": 1,
+        "why": "환자는 '진찰받는' 쪽이에요. 지금 ~되고 있다는 is being + 과거분사예요.",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg12-4:s1",
+          "kind": "select",
+          "instruction": "be going to 를 이루는 낱말을 모두 누르세요",
+          "tokens": [
+            "Are",
+            "you",
+            "going to",
+            "watch",
+            "TV",
+            "tonight",
+            "?"
+          ],
+          "answer": [
+            0,
+            2
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "be동사(Are) + going to 가 한 묶음이에요. 묻는 문장이라 be동사가 주어 앞에 왔어요.",
+          "bookRef": {
+            "book": 2,
+            "page": 29,
+            "where": "TOPIC 11 passOff (4) item 5"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "My brother ___ going to visit his friend next week.",
+          "underline": [],
+          "options": [
+            "am",
+            "is",
+            "are"
+          ],
+          "answer": 1,
+          "why": "My brother 는 한 명(3인칭 단수)이라 is 예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "We are going to ___ soccer after school.",
+          "underline": [],
+          "options": [
+            "play",
+            "playing",
+            "played"
+          ],
+          "answer": 0,
+          "why": "going to 뒤에는 동사원형이 와요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:s4",
+          "kind": "choice",
+          "instruction": "밑줄 친 부분의 뜻으로 알맞은 것은?",
+          "sentence": "Some houses are being built near the river.",
+          "underline": [
+            "are being built"
+          ],
+          "options": [
+            "짓고 있다",
+            "지어지고 있다",
+            "지어졌다"
+          ],
+          "answer": 1,
+          "why": "being + 과거분사(built)는 '지금 ~되고 있다' — 집이 지금 지어지는 중이에요.",
+          "bookRef": {
+            "book": 2,
+            "page": 62,
+            "where": "TOPIC 14 passOff 수동태 item 6"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "The car is ___ washed now.",
+          "underline": [],
+          "options": [
+            "be",
+            "been",
+            "being"
+          ],
+          "answer": 2,
+          "why": "'지금 ~되고 있다'는 is being + 과거분사예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:s6",
+          "kind": "choice",
+          "instruction": "두 문장의 뜻 차이로 알맞은 것은?",
+          "sentence": "He is rude. / He is being rude.",
+          "underline": [],
+          "options": [
+            "앞은 원래 무례한 사람, 뒤는 지금 무례하게 구는 것",
+            "두 문장은 뜻이 같다",
+            "앞은 지금만 그렇고, 뒤는 늘 그렇다"
+          ],
+          "answer": 0,
+          "why": "be + 형용사는 늘 그런 성질, be being + 형용사는 (평소와 달리) 지금 그렇게 행동하는 것이에요.",
+          "bookRef": null,
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg12-4:p1",
+          "ko": "너는 오늘 밤에 TV를 볼 예정이니?",
+          "koSource": "TOPIC 11 review 4 item 42 (띄어쓰기 고침)",
+          "condition": "be going to를 써서",
+          "promptEn": null,
+          "en": "Are you going to watch TV tonight?",
+          "accept": [
+            "Are you going to watch television tonight?"
+          ],
+          "targets": [
+            [
+              "Are"
+            ],
+            [
+              "going to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "do you going to",
+              "hint": "be going to 로 물을 때는 be동사를 주어 앞으로 보내요."
+            },
+            {
+              "match": "you are going to watch",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내요."
+            },
+            {
+              "match": "will you watch",
+              "hint": "조건은 'be going to를 써서'예요."
+            }
+          ],
+          "tags": [
+            "be-going-to",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 33,
+            "where": "TOPIC 11 application (4) item 42",
+            "reviewWhere": "TOPIC 11 review 4 item 42 (p42)"
+          },
+          "fix": {
+            "fromKo": "너는 오늘밤에 TV를 볼 예정이니?",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'오늘 밤'은 띄어 씁니다."
+          },
+          "note": "D14 — 목차에만 있는 칸(본문 없음). 사장님이 돌아오시면 확인하실 레슨. 교재 다른 단원(TOPIC 11) 예문."
+        },
+        {
+          "id": "pg12-4:p2",
+          "ko": "나는 이번 주말에 할머니를 찾아뵐 예정이다.",
+          "koSource": "new",
+          "condition": "be going to를 써서",
+          "promptEn": null,
+          "en": "I am going to visit my grandmother this weekend.",
+          "accept": [
+            "This weekend, I am going to visit my grandmother.",
+            "I am going to visit my grandma this weekend.",
+            "This weekend, I am going to visit my grandma.",
+            "I am going to see my grandmother this weekend.",
+            "This weekend, I am going to see my grandmother.",
+            "I am going to see my grandma this weekend.",
+            "This weekend, I am going to see my grandma.",
+            "I am going to go to see my grandmother this weekend.",
+            "This weekend, I am going to go to see my grandmother.",
+            "I am going to go to see my grandma this weekend.",
+            "This weekend, I am going to go to see my grandma.",
+            "I am going to go and see my grandmother this weekend.",
+            "This weekend, I am going to go and see my grandmother.",
+            "I am going to go and see my grandma this weekend.",
+            "This weekend, I am going to go and see my grandma.",
+            "I am going to visit Grandma this weekend.",
+            "This weekend, I am going to visit Grandma.",
+            "I am going to see Grandma this weekend.",
+            "This weekend, I am going to see Grandma.",
+            "I am going to go to see Grandma this weekend.",
+            "This weekend, I am going to go to see Grandma.",
+            "I am going to go and see Grandma this weekend.",
+            "This weekend, I am going to go and see Grandma."
+          ],
+          "targets": [
+            [
+              "am going to",
+              "'m going to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "going to visiting",
+              "hint": "going to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "i going to",
+              "hint": "be going to 에서 be동사가 빠졌어요."
+            },
+            {
+              "match": "i will visit",
+              "hint": "조건은 'be going to를 써서'예요."
+            }
+          ],
+          "tags": [
+            "be-going-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:p3",
+          "ko": "그녀는 내년에 유학을 갈 예정이다.",
+          "koSource": "new",
+          "condition": "be going to를 써서",
+          "promptEn": null,
+          "en": "She is going to study abroad next year.",
+          "accept": [
+            "Next year, she is going to study abroad.",
+            "She is going to study overseas next year.",
+            "Next year, she is going to study overseas.",
+            "She is going to go abroad to study next year.",
+            "Next year, she is going to go abroad to study.",
+            "She is going to go to study abroad next year.",
+            "Next year, she is going to go to study abroad.",
+            "She is going to study in a foreign country next year.",
+            "Next year, she is going to study in a foreign country.",
+            "She is going to go overseas to study next year.",
+            "Next year, she is going to go overseas to study."
+          ],
+          "targets": [
+            [
+              "is going to",
+              "'s going to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "she are going",
+              "hint": "She 는 한 명이에요. be동사 모양은?"
+            },
+            {
+              "match": "she going to",
+              "hint": "be going to 에서 be동사가 빠졌어요."
+            },
+            {
+              "match": "she will",
+              "hint": "조건은 'be going to를 써서'예요."
+            }
+          ],
+          "tags": [
+            "be-going-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:p4",
+          "ko": "나는 포기하지 않을 거야.",
+          "koSource": "new",
+          "condition": "be going to를 써서",
+          "promptEn": null,
+          "en": "I am not going to give up.",
+          "accept": [
+            "I am not going to quit."
+          ],
+          "targets": [
+            [
+              "am",
+              "'m"
+            ],
+            [
+              "not going to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i am going to not",
+              "hint": "be going to 의 부정은 be동사 바로 뒤에 not 을 둬요."
+            },
+            {
+              "match": "i don't going to",
+              "hint": "be going to 의 부정은 do 가 아니라 be동사 뒤에 not 을 둬요."
+            },
+            {
+              "match": "i won't",
+              "hint": "조건은 'be going to를 써서'예요."
+            }
+          ],
+          "tags": [
+            "be-going-to",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:p5",
+          "ko": "너는 방과 후에 무엇을 할 거니?",
+          "koSource": "new",
+          "condition": "be going to를 써서",
+          "promptEn": null,
+          "en": "What are you going to do after school?",
+          "accept": [],
+          "targets": [
+            [
+              "are"
+            ],
+            [
+              "going to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what you are going to do",
+              "hint": "묻는 문장이에요. be동사를 주어 앞으로 보내요."
+            },
+            {
+              "match": "going to doing",
+              "hint": "going to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "what will you do",
+              "hint": "조건은 'be going to를 써서'예요."
+            }
+          ],
+          "tags": [
+            "be-going-to",
+            "question-wh"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-4:p6",
+          "ko": "저 먹구름 좀 봐. 비가 올 것 같아.",
+          "koSource": "new",
+          "condition": "be going to를 써서",
+          "promptEn": null,
+          "en": "Look at those dark clouds. It's going to rain.",
+          "accept": [
+            "Look at those dark clouds. It looks like it is going to rain.",
+            "Look at the dark clouds. It is going to rain.",
+            "Look at the dark clouds. It looks like it is going to rain.",
+            "Look at those black clouds. It is going to rain.",
+            "Look at those black clouds. It looks like it is going to rain.",
+            "Look at the black clouds. It is going to rain.",
+            "Look at the black clouds. It looks like it is going to rain.",
+            "Look at those clouds. It is going to rain.",
+            "Look at those clouds. It looks like it is going to rain.",
+            "Look at the clouds. It is going to rain.",
+            "Look at the clouds. It looks like it is going to rain.",
+            "Look at those dark clouds. It seems like it is going to rain.",
+            "Look at those dark clouds. It seems it is going to rain.",
+            "Look at those dark clouds. I think it is going to rain.",
+            "Look at the dark clouds. It seems like it is going to rain.",
+            "Look at the dark clouds. It seems it is going to rain.",
+            "Look at the dark clouds. I think it is going to rain.",
+            "Look at those black clouds. It seems like it is going to rain.",
+            "Look at those black clouds. It seems it is going to rain.",
+            "Look at those black clouds. I think it is going to rain.",
+            "Look at the black clouds. It seems like it is going to rain.",
+            "Look at the black clouds. It seems it is going to rain.",
+            "Look at the black clouds. I think it is going to rain.",
+            "Look at those clouds. It seems like it is going to rain.",
+            "Look at those clouds. It seems it is going to rain.",
+            "Look at those clouds. I think it is going to rain.",
+            "Look at the clouds. It seems like it is going to rain.",
+            "Look at the clouds. It seems it is going to rain.",
+            "Look at the clouds. I think it is going to rain."
+          ],
+          "targets": [
+            [
+              "going to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "going to raining",
+              "hint": "going to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "its going to",
+              "hint": "Its 는 '그것의'라는 뜻이에요. It is 를 줄여 쓸 때는 아포스트로피를 써요."
+            },
+            {
+              "match": "it will rain",
+              "hint": "조건은 'be going to를 써서'예요."
+            }
+          ],
+          "tags": [
+            "be-going-to",
+            "it-dummy",
+            "imperative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "D14 는 '예정 · 의도'만 적었지만, be going to 의 다른 흔한 쓰임(지금 보이는 근거로 하는 예측)을 한 문장 넣었습니다(사장님 확인 대상)."
+        },
+        {
+          "id": "pg12-4:p7",
+          "ko": "강 근처에 집 몇 채가 지어지고 있다.",
+          "koSource": "new(교재에 한국어 없음)",
+          "condition": "being을 써서",
+          "promptEn": null,
+          "en": "Some houses are being built near the river.",
+          "accept": [
+            "Some houses are being built by the river.",
+            "Some houses are being built close to the river.",
+            "A few houses are being built near the river.",
+            "A few houses are being built by the river.",
+            "A few houses are being built close to the river.",
+            "Several houses are being built near the river.",
+            "Several houses are being built by the river.",
+            "Several houses are being built close to the river.",
+            "Some houses are being built near the river now."
+          ],
+          "targets": [
+            [
+              "are being",
+              "'re being"
+            ],
+            [
+              "built"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "are being build",
+              "hint": "being 뒤에는 과거분사가 와요. build 의 과거분사는?"
+            },
+            {
+              "match": "houses are building",
+              "hint": "집은 '짓는' 쪽이 아니라 '지어지는' 쪽이에요."
+            },
+            {
+              "match": "houses are built",
+              "hint": "지금 한창 지어지는 중이에요. be동사와 과거분사 사이에 들어갈 말은?"
+            }
+          ],
+          "tags": [
+            "being-progressive-passive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 63,
+            "where": "TOPIC 14 application 수동태 item 12",
+            "reviewWhere": "TOPIC 14 review 2 item 12 (p66)"
+          },
+          "fix": null,
+          "note": "D14 — 목차에만 있는 칸(본문 없음). 사장님이 돌아오시면 확인하실 레슨. 교재 다른 단원(TOPIC 14) 예문. 수동태(passive)는 뒤 레슨(pg14-2)의 목표지만, 이 레슨의 목표 being-progressive-passive 가 곧 '진행 중인 수동(be being + 과거분사)'이라 passive 태그를 따로 달지 않았습니다(D14 가 이 레슨에 정한 문법). 설명 카드에서 be + 과거분사 = '~되다'를 짧게 알려 줍니다."
+        },
+        {
+          "id": "pg12-4:p8",
+          "ko": "내가 도착했을 때 교실은 청소되고 있었다.",
+          "koSource": "new",
+          "condition": "being을 써서",
+          "promptEn": null,
+          "en": "The classroom was being cleaned when I arrived.",
+          "accept": [
+            "When I arrived, the classroom was being cleaned.",
+            "The classroom was being cleaned when I got there.",
+            "When I got there, the classroom was being cleaned."
+          ],
+          "targets": [
+            [
+              "was being"
+            ],
+            [
+              "cleaned"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "classroom was cleaning",
+              "hint": "교실은 '청소하는' 쪽이 아니라 '청소되는' 쪽이에요."
+            },
+            {
+              "match": "classroom is being",
+              "hint": "도착한 때는 과거예요. be동사를 과거로 바꿔 보세요."
+            },
+            {
+              "match": "classroom was cleaned",
+              "hint": "도착한 그때 한창 청소되는 중이었어요. be동사와 과거분사 사이에 들어갈 말은?"
+            }
+          ],
+          "tags": [
+            "being-progressive-passive",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "수동태(passive)는 뒤 레슨(pg14-2)의 목표지만, 이 레슨의 목표 being-progressive-passive 가 곧 '진행 중인 수동(be being + 과거분사)'이라 passive 태그를 따로 달지 않았습니다(D14 가 이 레슨에 정한 문법). 설명 카드에서 be + 과거분사 = '~되다'를 짧게 알려 줍니다."
+        },
+        {
+          "id": "pg12-4:p9",
+          "ko": "그 도로는 지금 수리되고 있다.",
+          "koSource": "new",
+          "condition": "being을 써서",
+          "promptEn": null,
+          "en": "The road is being repaired now.",
+          "accept": [
+            "The road is being repaired right now.",
+            "The road is being fixed now.",
+            "The road is being fixed right now.",
+            "The street is being repaired now.",
+            "The street is being repaired right now.",
+            "The street is being fixed now.",
+            "The street is being fixed right now.",
+            "The road is being repaired at the moment.",
+            "The road is now being repaired.",
+            "The road's being repaired now.",
+            "The road's being repaired right now.",
+            "The road's being repaired at the moment.",
+            "The road's now being repaired.",
+            "The road is being fixed at the moment.",
+            "The road is now being fixed.",
+            "The road's being fixed now.",
+            "The road's being fixed right now.",
+            "The road's being fixed at the moment.",
+            "The road's now being fixed.",
+            "The street is being repaired at the moment.",
+            "The street is now being repaired.",
+            "The street's being repaired now.",
+            "The street's being repaired right now.",
+            "The street's being repaired at the moment.",
+            "The street's now being repaired.",
+            "The street is being fixed at the moment.",
+            "The street is now being fixed.",
+            "The street's being fixed now.",
+            "The street's being fixed right now.",
+            "The street's being fixed at the moment.",
+            "The street's now being fixed."
+          ],
+          "targets": [
+            [
+              "is being",
+              "'s being",
+              "is now being",
+              "'s now being",
+              "road's being",
+              "street's being",
+              "road's now being",
+              "street's now being"
+            ],
+            [
+              "repaired",
+              "fixed"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is being repair",
+              "hint": "being 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "is repairing",
+              "hint": "도로는 '수리하는' 쪽이 아니라 '수리되는' 쪽이에요."
+            },
+            {
+              "match": "is repaired now",
+              "hint": "지금 한창 수리되는 중이에요. be동사와 과거분사 사이에 들어갈 말은?"
+            },
+            {
+              "match": "is now repaired",
+              "hint": "지금 한창 수리되는 중이에요. be동사와 과거분사 사이에 들어갈 말은?"
+            }
+          ],
+          "tags": [
+            "being-progressive-passive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "수동태(passive)는 뒤 레슨(pg14-2)의 목표지만, 이 레슨의 목표 being-progressive-passive 가 곧 '진행 중인 수동(be being + 과거분사)'이라 passive 태그를 따로 달지 않았습니다(D14 가 이 레슨에 정한 문법). 설명 카드에서 be + 과거분사 = '~되다'를 짧게 알려 줍니다. 명사 뒤 's(The road's being …)는 채점기가 아직 is 로 펴지 않아 's 판을 허용 답에 넣었습니다(G10 점검 반영 — 채점기가 고쳐지면 빼도 됨). 목표형에도 같은 's 꼴을 더했습니다(검사 도구 check-lessons 가 대명사 뒤 's 만 펴서)."
+        },
+        {
+          "id": "pg12-4:p10",
+          "ko": "너 지금 아주 무례하게 굴고 있어.",
+          "koSource": "new",
+          "condition": "being을 써서",
+          "promptEn": null,
+          "en": "You are being very rude.",
+          "accept": [
+            "You are being very rude now.",
+            "You are being very rude right now.",
+            "You are being very impolite.",
+            "You are being very impolite now.",
+            "You are being very impolite right now.",
+            "You are being so rude.",
+            "You are being so rude now.",
+            "You are being so rude right now.",
+            "You are being so impolite.",
+            "You are being so impolite now.",
+            "You are being so impolite right now.",
+            "You are being really rude.",
+            "You are being really rude now.",
+            "You are being really rude right now.",
+            "You are being really impolite.",
+            "You are being really impolite now.",
+            "You are being really impolite right now."
+          ],
+          "targets": [
+            [
+              "are being",
+              "'re being"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "rudely",
+              "hint": "be being 뒤에는 부사(-ly)가 아니라 형용사가 와요."
+            },
+            {
+              "match": "you are very rude",
+              "hint": "조건은 'being을 써서'예요. 늘 그런 게 아니라 지금 그렇게 구는 거예요."
+            }
+          ],
+          "tags": [
+            "being-progressive-passive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "be being + 형용사 — 태그.json 에 따로 태그가 없어 이 레슨 목표 태그(being-progressive-passive)를 씁니다."
+        },
+        {
+          "id": "pg12-4:p11",
+          "ko": "아이들이 오늘은 아주 얌전하게 굴고 있다.",
+          "koSource": "new",
+          "condition": "being을 써서",
+          "promptEn": null,
+          "en": "The children are being very good today.",
+          "accept": [
+            "Today, the children are being very good.",
+            "The children are being very well-behaved today.",
+            "Today, the children are being very well-behaved.",
+            "The children are being really good today.",
+            "Today, the children are being really good.",
+            "The children are being really well-behaved today.",
+            "Today, the children are being really well-behaved.",
+            "The children are being so good today.",
+            "Today, the children are being so good.",
+            "The children are being so well-behaved today.",
+            "Today, the children are being so well-behaved.",
+            "The kids are being very good today.",
+            "Today, the kids are being very good.",
+            "The kids are being very well-behaved today.",
+            "Today, the kids are being very well-behaved.",
+            "The kids are being really good today.",
+            "Today, the kids are being really good.",
+            "The kids are being really well-behaved today.",
+            "Today, the kids are being really well-behaved.",
+            "The kids are being so good today.",
+            "Today, the kids are being so good.",
+            "The kids are being so well-behaved today.",
+            "Today, the kids are being so well-behaved."
+          ],
+          "targets": [
+            [
+              "are being",
+              "'re being"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "children is being",
+              "hint": "The children 은 여럿이에요. be동사 모양은?"
+            },
+            {
+              "match": "are very good",
+              "hint": "조건은 'being을 써서'예요. 오늘 그렇게 행동하는 중이에요."
+            }
+          ],
+          "tags": [
+            "being-progressive-passive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "be being + 형용사 — 태그.json 에 따로 태그가 없어 이 레슨 목표 태그(being-progressive-passive)를 씁니다."
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg12-4:t1",
+          "ko": "McCarthy 교수는 어려운 시험을 낼 것이다.",
+          "koSource": "grammar1:gh1-109#65",
+          "condition": "be going to를 써서",
+          "promptEn": null,
+          "en": "Professor McCarthy is going to give a difficult examination.",
+          "accept": [
+            "Professor McCarthy is going to give a difficult exam.",
+            "Professor McCarthy is going to give a difficult test.",
+            "Professor McCarthy is going to give a hard examination.",
+            "Professor McCarthy is going to give a hard exam.",
+            "Professor McCarthy is going to give a hard test.",
+            "Professor McCarthy is going to set a difficult examination.",
+            "Professor McCarthy is going to set a difficult exam.",
+            "Professor McCarthy is going to set a difficult test.",
+            "Professor McCarthy is going to set a hard examination.",
+            "Professor McCarthy is going to set a hard exam.",
+            "Professor McCarthy is going to set a hard test.",
+            "Professor McCarthy is going to give us a difficult examination.",
+            "Professor McCarthy is going to give us a difficult exam.",
+            "Professor McCarthy is going to give us a difficult test.",
+            "Professor McCarthy is going to give us a hard examination.",
+            "Professor McCarthy is going to give us a hard exam.",
+            "Professor McCarthy is going to give us a hard test.",
+            "Professor McCarthy's going to give a difficult examination.",
+            "Professor McCarthy's going to give a difficult exam.",
+            "Professor McCarthy's going to give a difficult test.",
+            "Professor McCarthy's going to give a hard examination.",
+            "Professor McCarthy's going to give a hard exam.",
+            "Professor McCarthy's going to give a hard test.",
+            "Professor McCarthy's going to give us a difficult examination.",
+            "Professor McCarthy's going to give us a difficult exam.",
+            "Professor McCarthy's going to give us a difficult test.",
+            "Professor McCarthy's going to give us a hard examination.",
+            "Professor McCarthy's going to give us a hard exam.",
+            "Professor McCarthy's going to give us a hard test.",
+            "Professor McCarthy's going to set a difficult examination.",
+            "Professor McCarthy's going to set a difficult exam.",
+            "Professor McCarthy's going to set a difficult test.",
+            "Professor McCarthy's going to set a hard examination.",
+            "Professor McCarthy's going to set a hard exam.",
+            "Professor McCarthy's going to set a hard test."
+          ],
+          "targets": [
+            [
+              "is going to",
+              "'s going to",
+              "McCarthy's going to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "going to giving",
+              "hint": "going to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "mccarthy going to",
+              "hint": "be going to 에서 be동사가 빠졌어요."
+            },
+            {
+              "match": "will give",
+              "hint": "조건은 'be going to를 써서'예요."
+            }
+          ],
+          "tags": [
+            "be-going-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-109#65",
+          "note": "GRAMMAR I 허용 답 중 will 꼴은 조건(be going to를 써서)과 맞지 않아 뺐고, test · set 꼴을 더했습니다. 처음 고른 GRAMMAR II gh2-024#22(We are going to have a three-day weekend.)는 pg11-3 ⑤ 에서 먼저 나와 바꿨습니다. 이름 뒤 's(McCarthy's going to)는 채점기가 아직 is 로 펴지 않아 's 판을 허용 답에 넣었습니다(G10 점검 반영 — 채점기가 고쳐지면 빼도 됨). 목표형에도 같은 's 꼴을 더했습니다(검사 도구 check-lessons 가 대명사 뒤 's 만 펴서)."
+        },
+        {
+          "id": "pg12-4:t2",
+          "ko": "숲에서 많은 나무가 베어지고 있다.",
+          "koSource": "new",
+          "condition": "being을 써서",
+          "promptEn": null,
+          "en": "Many trees are being cut down in the forest.",
+          "accept": [
+            "In the forest, many trees are being cut down.",
+            "Many trees in the forest are being cut down.",
+            "Many trees are being cut down in the woods.",
+            "In the woods, many trees are being cut down.",
+            "Many trees in the woods are being cut down.",
+            "Many trees are being cut in the forest.",
+            "In the forest, many trees are being cut.",
+            "Many trees in the forest are being cut.",
+            "Many trees are being cut in the woods.",
+            "In the woods, many trees are being cut.",
+            "Many trees in the woods are being cut.",
+            "Many trees are being chopped down in the forest.",
+            "In the forest, many trees are being chopped down.",
+            "Many trees in the forest are being chopped down.",
+            "Many trees are being chopped down in the woods.",
+            "In the woods, many trees are being chopped down.",
+            "Many trees in the woods are being chopped down.",
+            "A lot of trees are being cut down in the forest.",
+            "In the forest, a lot of trees are being cut down.",
+            "A lot of trees in the forest are being cut down.",
+            "A lot of trees are being cut down in the woods.",
+            "In the woods, a lot of trees are being cut down.",
+            "A lot of trees in the woods are being cut down.",
+            "A lot of trees are being cut in the forest.",
+            "In the forest, a lot of trees are being cut.",
+            "A lot of trees in the forest are being cut.",
+            "A lot of trees are being cut in the woods.",
+            "In the woods, a lot of trees are being cut.",
+            "A lot of trees in the woods are being cut.",
+            "A lot of trees are being chopped down in the forest.",
+            "In the forest, a lot of trees are being chopped down.",
+            "A lot of trees in the forest are being chopped down.",
+            "A lot of trees are being chopped down in the woods.",
+            "In the woods, a lot of trees are being chopped down.",
+            "A lot of trees in the woods are being chopped down.",
+            "Lots of trees are being cut down in the forest.",
+            "In the forest, lots of trees are being cut down.",
+            "Lots of trees in the forest are being cut down.",
+            "Lots of trees are being cut down in the woods.",
+            "In the woods, lots of trees are being cut down.",
+            "Lots of trees in the woods are being cut down.",
+            "Lots of trees are being cut in the forest.",
+            "In the forest, lots of trees are being cut.",
+            "Lots of trees in the forest are being cut.",
+            "Lots of trees are being cut in the woods.",
+            "In the woods, lots of trees are being cut.",
+            "Lots of trees in the woods are being cut.",
+            "Lots of trees are being chopped down in the forest.",
+            "In the forest, lots of trees are being chopped down.",
+            "Lots of trees in the forest are being chopped down.",
+            "Lots of trees are being chopped down in the woods.",
+            "In the woods, lots of trees are being chopped down.",
+            "Lots of trees in the woods are being chopped down."
+          ],
+          "targets": [
+            [
+              "are being",
+              "'re being"
+            ],
+            [
+              "cut",
+              "chopped"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "are cutting",
+              "hint": "나무는 '베는' 쪽이 아니라 '베어지는' 쪽이에요."
+            },
+            {
+              "match": "are cut",
+              "hint": "지금 한창 베어지는 중이에요. be동사와 과거분사 사이에 들어갈 말은?"
+            },
+            {
+              "match": "cutted",
+              "hint": "cut 은 불규칙 동사예요. 과거분사 모양을 떠올려 보세요."
+            }
+          ],
+          "tags": [
+            "being-progressive-passive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new",
+          "note": "GRAMMAR I·II 의 진행형 수동(be being + 과거분사) 문장은 gh1-123#75 'Five Pakistanis are being questioned.' 하나뿐인데(09-28 전체 검색으로 확인), 어휘(Pakistanis · questioned · interrogated)가 대상(초등 고학년~성인 초급)에게 어려워 문법이 아니라 낱말 · 철자 때문에 틀리게 되고('Five people from Pakistan …'도 오답), 뉴스 심문 문맥이라 새로 만들었습니다(G10 점검 반영 — 교재 문장이 아니라 D6 과 상관없음)."
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg12-4:f1",
+      "template": "Next year, I am going to learn ___.",
+      "ko": "내년에 나는 ___을(를) 배울 거야."
+    }
+  ]
+}

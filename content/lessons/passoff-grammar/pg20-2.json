@@ -1,0 +1,3351 @@
+{
+  "id": "pg20-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "종속접속사",
+  "label": "TOPIC 20. 접속사",
+  "menuLabel": "20-2. 종속접속사",
+  "unit": 20,
+  "part": 3,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(2) 종속접속사 : when · until · as · if · unless · because · so that · though 등",
+  "grammarTags": [
+    "subordinating-conjunction"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg20-2:a1",
+          "en": "When I get home, I chat on the computer with my friends.",
+          "ko": "내가 집에 도착할 때, 나는 친구들과 컴퓨터로 채팅을 한다.",
+          "koSource": "review 2 item 15 (고침)",
+          "focus": [
+            "When"
+          ],
+          "studentRef": {
+            "lesson": "s10-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 46,
+            "where": "passOff (2) when : item 1",
+            "reviewWhere": "review 1 item 5 (p51) · review 2 item 15 (p54)"
+          },
+          "fix": {
+            "from": "when I get home, I chat on the computer with my friends(10과)",
+            "fromKo": "내가 집에 도착할 때, 나는 친구들과 컴퓨터로 잡담한다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "첫 글자 When 을 대문자로 쓰고 끝에 마침표를 넣었습니다. chat on the computer 는 '컴퓨터로 채팅하다'(STUDENT 10-4 한국어도 '채팅')라 '잡담한다'를 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg20-2:a2",
+          "en": "I will wait here until you come back.",
+          "ko": "나는 당신이 돌아올 때까지 여기서 기다릴 겁니다.",
+          "koSource": "review 2 item 19 (고침)",
+          "focus": [
+            "until"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 46,
+            "where": "passOff (2) Until (till) : item 2",
+            "reviewWhere": "review 1 item 6 (p51) · review 2 item 19 (p54)"
+          },
+          "fix": {
+            "fromKo": "나는 당신이 돌아올 때까지 기다릴 겁니다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어의 here(여기서)가 한국어에 빠져 있어 넣었습니다."
+          }
+        },
+        {
+          "id": "pg20-2:a3",
+          "en": "He went home as soon as he got the phone call.",
+          "ko": "그는 그 전화를 받자마자 집으로 갔다.",
+          "koSource": "review 2 item 26",
+          "focus": [
+            "as soon as"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 46,
+            "where": "passOff (2) As soon as : item 4",
+            "reviewWhere": "review 1 item 8 (p51) · review 2 item 26 (p55)"
+          }
+        },
+        {
+          "id": "pg20-2:a4",
+          "en": "Sometimes if there is a special day like a birthday party, we celebrate it on a Saturday afternoon.",
+          "ko": "가끔씩 생일 파티 같은 특별한 날이 있으면, 우리는 토요일 오후에 축하를 합니다.",
+          "koSource": "student:s11-1#6",
+          "focus": [
+            "if"
+          ],
+          "studentRef": {
+            "lesson": "s11-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 46,
+            "where": "passOff (2) If : item 7",
+            "reviewWhere": "review 1 item 11 (p52) · review 2 item 31 (p55)"
+          }
+        },
+        {
+          "id": "pg20-2:a5",
+          "en": "You can use my car as long as you drive carefully.",
+          "ko": "네가 주의 깊게 운전하기만 하면, 내 차를 써도 돼.",
+          "koSource": "review 2 item 34 (고침)",
+          "focus": [
+            "as long as"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 46,
+            "where": "passOff (2) As long as : item 8",
+            "reviewWhere": "review 1 item 12 (p52) · review 2 item 34 (p55)"
+          },
+          "fix": {
+            "fromKo": "너는 주의 깊게 운전한다면, 내 차를 써도 돼.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "as long as 는 '~하기만 하면(~하는 한)'으로 조건을 좁히는 말이라 '운전하기만 하면'으로 고쳤고, 종속절의 주어는 '너는'보다 '네가'가 자연스러워 고쳤습니다(if 로 쓴 답도 정답)."
+          }
+        },
+        {
+          "id": "pg20-2:a6",
+          "en": "My favorite time is Friday night because it is the start of the weekend.",
+          "ko": "내가 가장 좋아하는 시간은 금요일 밤입니다. 왜냐하면 그것은 주말의 시작이기 때문입니다.",
+          "koSource": "student:s10-5#1",
+          "focus": [
+            "because"
+          ],
+          "studentRef": {
+            "lesson": "s10-5",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 46,
+            "where": "passOff (2) Because : item 9",
+            "reviewWhere": "review 1 item 13 (p52) · review 2 item 37 (p56)"
+          }
+        },
+        {
+          "id": "pg20-2:a7",
+          "en": "I must learn to speak English well so that I can communicate with them comfortably.",
+          "ko": "그들과 편하게 의사소통할 수 있도록, 나는 영어를 잘 말하는 법을 배워야 한다.",
+          "koSource": "review 2 item 39 (고침)",
+          "focus": [
+            "so that"
+          ],
+          "studentRef": {
+            "lesson": "s16-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 46,
+            "where": "passOff (2) So~ that : item 10",
+            "reviewWhere": "review 1 item 14 (p52) · review 2 item 39 (p56)"
+          },
+          "fix": {
+            "fromKo": "나는 그들과 편리하게 의사소통 할 수 있기 위해서 나는 영어를 잘 말하는 것을 배워야만 한다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "comfortably 는 '편하게'(편리하게 아님)이고, '나는'이 두 번 나오며 '의사소통 할'은 붙여 씁니다. '-기 위해서' 대신 so that 의 뜻 '-도록'으로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg20-2:a8",
+          "en": "Though it stopped raining, the wind was still blowing.",
+          "ko": "비는 그쳤지만, 바람은 여전히 불었다.",
+          "koSource": "review 2 item 44",
+          "focus": [
+            "Though"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 46,
+            "where": "passOff (2) Though (Although) : item 12",
+            "reviewWhere": "review 1 item 16 (p52) · review 2 item 44 (p56)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg20-2:a1",
+          "pg20-2:a6",
+          "pg20-2:a8"
+        ],
+        "question": "When · because · Though 가 이끄는 부분만 떼어 내면 어떻게 될까요?",
+        "options": [
+          "혼자서는 말이 끝나지 않아 다른 문장(주절)에 기대야 한다",
+          "혼자서도 완전한 한 문장이 된다",
+          "명사 하나로 바뀐다"
+        ],
+        "answer": 0,
+        "why": "'When I get home'만 말하면 '내가 집에 도착할 때…?' 하고 말이 끝나지 않아요. 이렇게 주절에 딸린 절(종속절)을 이끄는 말이 종속접속사예요."
+      },
+      "title": "종속접속사는 때 · 까닭 · 조건 · 양보 · 목적의 절을 주절에 딸리게 합니다",
+      "points": [
+        "종속접속사 + 주어 + 동사 = 종속절이에요. 혼자서는 문장이 안 되고 주절에 딸려요.",
+        "종속절은 주절 앞에도 뒤에도 와요. 앞에 오면 종속절 끝에 쉼표를 찍어요.",
+        "때 · 조건을 나타내는 종속절에서는 앞으로 올 일도 현재형으로 써요(until you come back).",
+        "unless 는 if ~ not(~하지 않으면)이라 뒤에 not 을 또 쓰지 않아요.",
+        "though · although 와 but, because 와 so 는 한 문장에 함께 쓰지 않아요."
+      ],
+      "table": {
+        "columns": [
+          "뜻",
+          "접속사",
+          "예"
+        ],
+        "rows": [
+          [
+            "때",
+            "when · while · as · before · after · until(till) · as soon as · as long as(~하는 만큼 오래)",
+            "I will wait here until you come back."
+          ],
+          [
+            "까닭",
+            "because · since · as",
+            "I was late because I missed the bus."
+          ],
+          [
+            "조건",
+            "if · unless(= if ~ not) · as long as(~하는 한)",
+            "You can use my car as long as you drive carefully."
+          ],
+          [
+            "양보(~지만)",
+            "though · although · even though",
+            "Though it stopped raining, the wind was still blowing."
+          ],
+          [
+            "방식 · 비교",
+            "as(~대로 · ~듯이) · as ~ as(~만큼)",
+            "Do as I say. · I study as hard as you do."
+          ],
+          [
+            "목적(~하도록)",
+            "so that(말할 때는 that 없이 so 만 쓰기도 함) · in order that · lest ~ (should)(~하지 않도록, 딱딱한 글말)",
+            "He saved money so that he could buy a bike."
+          ],
+          [
+            "참고: 명사 + when",
+            "명사를 꾸미는 when 은 관계부사(접속사 아님)",
+            "the day when we met(우리가 만난 날)"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '-할 때 · -때문에 · -면 · -지만 · -도록'처럼 말끝을 바꿔 앞 문장을 뒤 문장에 딸리게 하지만, 영어는 종속절 맨 앞에 접속사를 두고, 종속절이 주절 뒤에 올 수도 있어요(I will wait here until you come back). 또 '-면 · -할 때까지'가 앞으로 올 일이어도 영어 종속절은 현재형으로 써요.",
+      "mistakes": [
+        {
+          "wrong": "Although it was cold, but we went swimming.",
+          "right": "Although it was cold, we went swimming.",
+          "why": "although 와 but 은 한 문장에 함께 쓰지 않아요. 둘 중 하나만 써요."
+        },
+        {
+          "wrong": "I will call you when I will arrive.",
+          "right": "I will call you when I arrive.",
+          "why": "때를 나타내는 종속절에서는 앞으로 올 일도 현재형으로 써요."
+        }
+      ],
+      "worked": [
+        "비가 그치면 우리는 산책하러 갈 것이다.",
+        "'비가 그치면' = 조건 → If + 주어 + 동사",
+        "앞으로 올 일이어도 if 절은 현재형: if it stops raining",
+        "주절: we will go for a walk (종속절이 앞이면 사이에 쉼표)",
+        "If it stops raining, we will go for a walk."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'I can't sleep ___ I drink warm milk.' (따뜻한 우유를 마시지 않으면 잠을 못 잔다) 빈칸에 알맞은 것은?",
+        "options": [
+          "unless",
+          "because",
+          "though"
+        ],
+        "answer": 0,
+        "why": "'~하지 않으면'은 unless(= if ~ not)예요.",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg20-2:s1",
+          "kind": "select",
+          "instruction": "접속사를 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "When",
+            "I",
+            "get",
+            "home",
+            ",",
+            "I",
+            "chat",
+            "on",
+            "the",
+            "computer",
+            "with",
+            "my",
+            "friends",
+            "."
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속"
+          ],
+          "why": "When 은 때(~할 때)를 나타내는 절을 이끌어 주절에 딸리게 하는 종속접속사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 51,
+            "where": "review 1 item 5"
+          }
+        },
+        {
+          "id": "pg20-2:s2",
+          "kind": "select",
+          "instruction": "접속사를 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "Sometimes",
+            "if",
+            "there",
+            "is",
+            "a",
+            "special",
+            "day",
+            "like",
+            "a",
+            "birthday",
+            "party",
+            ",",
+            "we",
+            "celebrate",
+            "it",
+            "on",
+            "a",
+            "Saturday",
+            "afternoon",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속"
+          ],
+          "why": "if 는 조건(~하면)을 나타내는 절을 이끄는 종속접속사예요. like(~ 같은)는 명사 앞에 오는 전치사라 접속사가 아니에요.",
+          "bookRef": {
+            "book": 3,
+            "page": 52,
+            "where": "review 1 item 11"
+          }
+        },
+        {
+          "id": "pg20-2:s3",
+          "kind": "select",
+          "instruction": "접속사를 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "I",
+            "must",
+            "learn",
+            "to",
+            "speak",
+            "English",
+            "well",
+            "so that",
+            "I",
+            "can",
+            "communicate",
+            "with",
+            "them",
+            "comfortably",
+            "."
+          ],
+          "answer": [
+            7
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속"
+          ],
+          "why": "so that 은 목적(~하도록)을 나타내는 절을 이끄는 종속접속사예요. learn to speak 의 to 는 접속사가 아니에요.",
+          "bookRef": {
+            "book": 3,
+            "page": 52,
+            "where": "review 1 item 14"
+          }
+        },
+        {
+          "id": "pg20-2:s4",
+          "kind": "select",
+          "instruction": "접속사를 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "Though",
+            "it",
+            "stopped",
+            "raining",
+            ",",
+            "the",
+            "wind",
+            "was",
+            "still",
+            "blowing",
+            "."
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속"
+          ],
+          "why": "Though 는 양보(비록 ~지만)를 나타내는 절을 이끄는 종속접속사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 52,
+            "where": "review 1 item 16"
+          }
+        },
+        {
+          "id": "pg20-2:s5",
+          "kind": "select",
+          "instruction": "접속사를 모두 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "When",
+            "the",
+            "bell",
+            "rang",
+            ",",
+            "the",
+            "students",
+            "stood",
+            "up",
+            "and",
+            "left",
+            "."
+          ],
+          "answer": [
+            0,
+            9
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속",
+            "등위"
+          ],
+          "why": "When 은 때를 나타내는 절을 이끄는 종속접속사, and 는 두 동사(stood up · left)를 같은 자격으로 잇는 등위접속사예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg20-2:s6",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 접속사는? (서두르지 않으면 늦을 거야.)",
+          "sentence": "You will be late ___ you hurry.",
+          "underline": [],
+          "options": [
+            "unless",
+            "because",
+            "until"
+          ],
+          "answer": 0,
+          "why": "'~하지 않으면'은 unless(= if ~ not)예요. unless 에 이미 not 의 뜻이 있어요.",
+          "bookRef": {
+            "book": 3,
+            "page": 46,
+            "where": "passOff (2) Unless : item 5 자리 (교재 예문은 뺌 — 판정 TOPIC-20 p46)"
+          },
+          "source": "new",
+          "note": "교재의 unless 예문(Never a moment goes by unless I think of him.)은 unless 를 어색하게 써서 레슨에서 뺐습니다(판정 TOPIC-20). 같은 접속사의 뜻을 새 문장으로 묻습니다."
+        },
+        {
+          "id": "pg20-2:s7",
+          "kind": "select",
+          "instruction": "접속사를 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "I",
+            "will",
+            "wait",
+            "here",
+            "until",
+            "you",
+            "come",
+            "back",
+            "."
+          ],
+          "answer": [
+            4
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속"
+          ],
+          "why": "until 은 '~할 때까지'를 나타내는 절을 이끄는 종속접속사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 51,
+            "where": "review 1 item 6"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg20-2:s8",
+          "kind": "select",
+          "instruction": "접속사를 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "He",
+            "went",
+            "home",
+            "as soon as",
+            "he",
+            "got",
+            "the",
+            "phone",
+            "call",
+            "."
+          ],
+          "answer": [
+            3
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속"
+          ],
+          "why": "as soon as(~하자마자)는 세 낱말이 한 덩어리로 종속접속사 구실을 해요.",
+          "bookRef": {
+            "book": 3,
+            "page": 51,
+            "where": "review 1 item 8"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg20-2:s9",
+          "kind": "select",
+          "instruction": "접속사를 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "You",
+            "can",
+            "use",
+            "my",
+            "car",
+            "as long as",
+            "you",
+            "drive",
+            "carefully",
+            "."
+          ],
+          "answer": [
+            5
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속"
+          ],
+          "why": "as long as(~하는 한)는 조건을 나타내는 종속접속사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 52,
+            "where": "review 1 item 12"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg20-2:s10",
+          "kind": "select",
+          "instruction": "접속사를 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "My",
+            "favorite",
+            "time",
+            "is",
+            "Friday",
+            "night",
+            "because",
+            "it",
+            "is",
+            "the",
+            "start",
+            "of",
+            "the",
+            "weekend",
+            "."
+          ],
+          "answer": [
+            6
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속"
+          ],
+          "why": "because 는 까닭을 나타내는 절을 이끄는 종속접속사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 52,
+            "where": "review 1 item 13"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg20-2:s11",
+          "kind": "select",
+          "instruction": "접속사를 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "As",
+            "I",
+            "am",
+            "walking",
+            "to",
+            "school",
+            ",",
+            "I",
+            "often",
+            "see",
+            "my",
+            "friends",
+            "."
+          ],
+          "answer": [
+            0
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속"
+          ],
+          "why": "As 는 여기서 '~하는 동안(~할 때)'이라는 뜻의 종속접속사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 51,
+            "where": "review 1 item 7"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg20-2:s12",
+          "kind": "select",
+          "instruction": "접속사를 모두 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "Don't",
+            "tell",
+            "Sue",
+            "what",
+            "I",
+            "said",
+            "if",
+            "she",
+            "doesn't",
+            "ask",
+            "you",
+            "."
+          ],
+          "answer": [
+            6
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속"
+          ],
+          "why": "if 만 접속사(종속)예요. what 은 '~한 것'이라는 관계대명사라 접속사가 아니에요.",
+          "bookRef": {
+            "book": 3,
+            "page": 52,
+            "where": "review 1 item 10"
+          },
+          "fix": {
+            "from": "다음 문장을 보고 접속사에 밑줄을 긋고, 종속접속사는 종속, 등위접속사는 등위라고 적으시오.",
+            "field": "instruction",
+            "kind": "answer_ambiguous",
+            "why": "what(관계대명사)을 접속사로 착각할 여지가 있었고 정답이 없었어요. '모두' 누르게 하고 정답은 if 하나, 풀이에 what 이 접속사가 아닌 까닭을 적었습니다."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg20-2:s13",
+          "kind": "select",
+          "instruction": "접속사를 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "Be",
+            "careful",
+            "lest",
+            "you",
+            "should",
+            "fall",
+            "from",
+            "the",
+            "tree",
+            "."
+          ],
+          "answer": [
+            2
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속"
+          ],
+          "why": "lest(~하지 않도록)는 목적을 나타내는 종속접속사예요. 뒤의 should 는 조동사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 52,
+            "where": "review 1 item 15"
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg20-2:s14",
+          "kind": "select",
+          "instruction": "접속사를 모두 누르고, 등위인지 종속인지 고르세요",
+          "tokens": [
+            "Even though",
+            "it",
+            "is",
+            "hard",
+            "work",
+            ",",
+            "I",
+            "am",
+            "happy",
+            "to",
+            "learn",
+            "new",
+            "things",
+            "and",
+            "spend",
+            "time",
+            "with",
+            "my",
+            "friends",
+            "."
+          ],
+          "answer": [
+            0,
+            13
+          ],
+          "optional": [],
+          "labels": [
+            "등위",
+            "종속"
+          ],
+          "labelAnswer": [
+            "종속",
+            "등위"
+          ],
+          "why": "Even though(비록 ~지만)는 종속접속사, and 는 두 동사(learn · spend)를 같은 자격으로 잇는 등위접속사예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 52,
+            "where": "review 1 item 17"
+          },
+          "fix": {
+            "from": "다음 문장을 보고 접속사에 밑줄을 긋고, 종속접속사는 종속, 등위접속사는 등위라고 적으시오.",
+            "field": "instruction",
+            "kind": "answer_ambiguous",
+            "why": "한 문장에 Even though 와 and 가 함께 있어 밑줄 칠 곳이 정해져 있지 않았고 정답이 없었어요. '모두' 누르게 하고 각각 종속 · 등위로 정답을 정했습니다."
+          },
+          "reserve": true
+        },
+        {
+          "id": "pg20-2:s15",
+          "kind": "choice",
+          "instruction": "밑줄 친 when 의 쓰임은?",
+          "sentence": "I remember the day when we first met.",
+          "underline": [
+            "when"
+          ],
+          "options": [
+            "때를 나타내는 종속접속사(~할 때)",
+            "앞의 명사 the day 를 꾸미는 관계부사",
+            "때를 묻는 의문사(언제)"
+          ],
+          "answer": 1,
+          "why": "명사(the day) 뒤에서 '~한 (날)'로 그 명사를 꾸미는 when 은 관계부사예요. There are times when … 의 when 도 같아요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "교재가 when 예문으로 둔 There are times when I like chocolate. 의 when 은 관계부사(판정 TOPIC-20 p48) — 복습에서 구분하게 더함.",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg20-2:p1",
+          "ko": "내가 집에 도착할 때, 나는 친구들과 컴퓨터로 채팅을 한다.",
+          "koSource": "review 2 item 15 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "When I get home, I chat on the computer with my friends.",
+          "accept": [
+            "When I get home, I chat with my friends on the computer.",
+            "When I arrive home, I chat on the computer with my friends.",
+            "When I arrive home, I chat with my friends on the computer.",
+            "I chat on the computer with my friends when I get home.",
+            "I chat on the computer with my friends when I arrive home.",
+            "I chat with my friends on the computer when I get home.",
+            "I chat with my friends on the computer when I arrive home."
+          ],
+          "targets": [
+            [
+              "When"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "when I get to home",
+              "hint": "home 앞에는 to 를 쓰지 않아요."
+            },
+            {
+              "match": "chat my friends",
+              "hint": "'친구들과' — 전치사가 필요해요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s10-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 1",
+            "reviewWhere": "review 2 item 15 (p54)"
+          },
+          "fix": {
+            "fromKo": "내가 집에 도착할 때, 나는 친구들과 컴퓨터로 잡담한다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "chat on the computer 는 '컴퓨터로 채팅하다'(STUDENT 10-4 한국어도 '채팅')라 '잡담한다'를 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p2",
+          "ko": "그들이 미국에 왔을 때, 그들은 무일푼이었다.",
+          "koSource": "review 2 item 16",
+          "condition": null,
+          "promptEn": null,
+          "en": "They were penniless when they came to America.",
+          "accept": [
+            "They had no money when they came to America.",
+            "They were broke when they came to America.",
+            "When they came to America, they were penniless.",
+            "When they came to America, they had no money.",
+            "When they came to America, they were broke.",
+            "They didn't have any money when they came to America.",
+            "When they came to America, they didn't have any money."
+          ],
+          "targets": [
+            [
+              "when"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "when they come to America",
+              "hint": "'왔을 때' — 지난 일이에요."
+            },
+            {
+              "match": "came to the America",
+              "hint": "나라 이름 America 앞에는 the 를 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "be-past",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 2",
+            "reviewWhere": "review 2 item 16 (p54)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg20-2:p3",
+          "ko": "나는 초콜릿이 좋을 때가 있다.",
+          "koSource": "review 2 item 17 (고침)",
+          "condition": "when을 써서",
+          "promptEn": null,
+          "en": "There are times when I like chocolate.",
+          "accept": [
+            "There are some times when I like chocolate.",
+            "There are moments when I like chocolate."
+          ],
+          "targets": [
+            [
+              "when"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "there were times",
+              "hint": "'좋을 때가 있다' — 지금 이야기예요."
+            },
+            {
+              "match": "sometimes I like chocolate",
+              "hint": "뜻은 맞아요. 조건은 'when을 써서'예요. '좋을 때'의 '때'를 when 으로 살려 써 보세요."
+            },
+            {
+              "match": "I sometimes like chocolate",
+              "hint": "뜻은 맞아요. 조건은 'when을 써서'예요. '좋을 때'의 '때'를 when 으로 살려 써 보세요."
+            }
+          ],
+          "tags": [
+            "there-be",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 3",
+            "reviewWhere": "review 2 item 17 (p54)"
+          },
+          "fix": {
+            "fromKo": "내가 초콜릿을 좋아하던 시절이 있었다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어는 현재(There are times when I like chocolate. — 초콜릿이 좋을 때가 있다)인데 한국어는 과거('좋아하던 시절이 있었다')라 한국어를 영어에 맞췄습니다."
+          },
+          "note": "이 when 은 times 를 꾸미는 관계부사입니다(설명 카드 표 '참고' 줄 · 복습 ③ s15). 교재가 when 예문으로 둔 문장이라 ④ 에 두되, 종속접속사가 아니라 tags 에 subordinating-conjunction 을 달지 않고, 'Sometimes I like chocolate.'도 같은 뜻이라 조건 칩 'when을 써서'를 답니다."
+        },
+        {
+          "id": "pg20-2:p4",
+          "ko": "내가 학교를 마친 후 집에 오면 나의 어머니께서는 항상 나를 반겨 주십니다.",
+          "koSource": "student:s8-1#1",
+          "condition": null,
+          "promptEn": null,
+          "en": "When I come home after school, my mother is always glad to see me.",
+          "accept": [
+            "When I come home after school, my mother is always happy to see me.",
+            "When I come home after school, my mom is always glad to see me.",
+            "When I come home after school, my mom is always happy to see me.",
+            "When I come home from school, my mother is always glad to see me.",
+            "When I come home from school, my mother is always happy to see me.",
+            "When I come home from school, my mom is always glad to see me.",
+            "When I come home from school, my mom is always happy to see me.",
+            "When I get home after school, my mother is always glad to see me.",
+            "When I get home after school, my mother is always happy to see me.",
+            "When I get home after school, my mom is always glad to see me.",
+            "When I get home after school, my mom is always happy to see me.",
+            "When I get home from school, my mother is always glad to see me.",
+            "When I get home from school, my mother is always happy to see me.",
+            "When I get home from school, my mom is always glad to see me.",
+            "When I get home from school, my mom is always happy to see me.",
+            "My mother is always glad to see me when I come home after school.",
+            "My mother is always glad to see me when I come home from school.",
+            "My mother is always glad to see me when I get home after school.",
+            "My mother is always glad to see me when I get home from school.",
+            "My mother is always happy to see me when I come home after school.",
+            "My mother is always happy to see me when I come home from school.",
+            "My mother is always happy to see me when I get home after school.",
+            "My mother is always happy to see me when I get home from school.",
+            "My mom is always glad to see me when I come home after school.",
+            "My mom is always glad to see me when I come home from school.",
+            "My mom is always glad to see me when I get home after school.",
+            "My mom is always glad to see me when I get home from school.",
+            "My mom is always happy to see me when I come home after school.",
+            "My mom is always happy to see me when I come home from school.",
+            "My mom is always happy to see me when I get home after school.",
+            "My mom is always happy to see me when I get home from school.",
+            "When I come home after school, my mother always welcomes me.",
+            "When I come home after school, my mom always welcomes me.",
+            "When I come home from school, my mother always welcomes me.",
+            "When I come home from school, my mom always welcomes me.",
+            "When I get home after school, my mother always welcomes me.",
+            "When I get home after school, my mom always welcomes me.",
+            "When I get home from school, my mother always welcomes me.",
+            "When I get home from school, my mom always welcomes me.",
+            "My mother always welcomes me when I come home after school.",
+            "My mother always welcomes me when I come home from school.",
+            "My mother always welcomes me when I get home after school.",
+            "My mother always welcomes me when I get home from school.",
+            "My mom always welcomes me when I come home after school.",
+            "My mom always welcomes me when I come home from school.",
+            "My mom always welcomes me when I get home after school.",
+            "My mom always welcomes me when I get home from school."
+          ],
+          "targets": [
+            [
+              "When"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "when I came home",
+              "hint": "'오면 … 반겨 주십니다' — 늘 그런 일(지금)이에요."
+            },
+            {
+              "match": "glad to seeing",
+              "hint": "to 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "present-simple",
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s8-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 4",
+            "reviewWhere": "review 2 item 18 (p54)"
+          },
+          "fix": {
+            "fromKo": "내가 하교 후에 집에 도착했을 때, 나의 어머니는 항상 나를 보고 기뻐하셨다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "Review 한국어는 과거였지만 영어(8과)는 늘 있는 일(현재)이에요. STUDENT 8과와 글자까지 같은 문장이라 STUDENT 한국어를 씁니다."
+          }
+        },
+        {
+          "id": "pg20-2:p5",
+          "ko": "나는 당신이 돌아올 때까지 여기서 기다릴 겁니다.",
+          "koSource": "review 2 item 19 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I will wait here until you come back.",
+          "accept": [
+            "I will wait here until you get back.",
+            "I will wait here until you return.",
+            "I will wait here till you come back.",
+            "I will wait here till you get back.",
+            "I will wait here till you return.",
+            "Until you come back, I will wait here.",
+            "Until you get back, I will wait here.",
+            "Until you return, I will wait here.",
+            "Till you come back, I will wait here.",
+            "Till you get back, I will wait here.",
+            "Till you return, I will wait here."
+          ],
+          "targets": [
+            [
+              "until",
+              "till"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "until you will come",
+              "hint": "때를 나타내는 절에서는 앞으로 올 일도 현재형으로 써요."
+            },
+            {
+              "match": "wait here by",
+              "hint": "'~할 때까지 (계속)'는 by 로 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 5",
+            "reviewWhere": "review 2 item 19 (p54)"
+          },
+          "fix": {
+            "fromKo": "나는 당신이 돌아올 때까지 기다릴 겁니다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어의 here(여기서)가 한국어에 빠져 있어 넣었습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p6",
+          "ko": "그녀는 그가 말을 마칠 때까지 기다렸다.",
+          "koSource": "review 2 item 20 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "She waited until he had finished speaking.",
+          "accept": [
+            "She waited until he had finished talking.",
+            "She waited until he finished speaking.",
+            "She waited until he finished talking.",
+            "She waited till he had finished speaking.",
+            "She waited till he had finished talking.",
+            "She waited till he finished speaking.",
+            "She waited till he finished talking."
+          ],
+          "targets": [
+            [
+              "until",
+              "till"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "finished to speak",
+              "hint": "finish 뒤에는 -ing 가 와요."
+            },
+            {
+              "match": "she waits",
+              "hint": "'기다렸다' — 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "past-perfect",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 6",
+            "reviewWhere": "review 2 item 20 (p54)"
+          },
+          "fix": {
+            "fromKo": "그녀는 그가 말하기를 마쳤을 때까지 기다렸다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'마쳤을 때까지'는 어색한 직역이라 '말을 마칠 때까지'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p7",
+          "ko": "비가 멈출 때까지 기다립시다.",
+          "koSource": "review 2 item 21",
+          "condition": null,
+          "promptEn": null,
+          "en": "Let's wait until it stops raining.",
+          "accept": [
+            "Let's wait until the rain stops.",
+            "Let's wait till it stops raining.",
+            "Let's wait till the rain stops."
+          ],
+          "targets": [
+            [
+              "until",
+              "till"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "until it will stop",
+              "hint": "때를 나타내는 절에서는 앞으로 올 일도 현재형으로 써요."
+            },
+            {
+              "match": "stops to rain",
+              "hint": "'비가 그치다'는 stop 뒤에 -ing 를 써요."
+            },
+            {
+              "match": "until it stop raining",
+              "hint": "it 은 3인칭 한 개예요. 동사 모양은?"
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "imperative",
+            "it-dummy",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 7",
+            "reviewWhere": "review 2 item 21 (p54)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg20-2:p8",
+          "ko": "그녀는 서른 살이 되어서야 영어를 가르치기 시작했다.",
+          "koSource": "review 2 item 22 (고침)",
+          "condition": "until을 접속사로 써서",
+          "promptEn": null,
+          "en": "It was not until she was 30 that she started to teach English.",
+          "accept": [
+            "It was not until she was 30 that she started teaching English.",
+            "It was not until she was 30 that she began to teach English.",
+            "It was not until she was 30 that she began teaching English.",
+            "It was not until she was thirty that she started to teach English.",
+            "It was not until she was thirty that she started teaching English.",
+            "It was not until she was thirty that she began to teach English.",
+            "It was not until she was thirty that she began teaching English.",
+            "She didn't start to teach English until she was 30.",
+            "She didn't start to teach English until she was thirty.",
+            "She didn't start teaching English until she was 30.",
+            "She didn't start teaching English until she was thirty.",
+            "She didn't begin to teach English until she was 30.",
+            "She didn't begin to teach English until she was thirty.",
+            "She didn't begin teaching English until she was 30.",
+            "She didn't begin teaching English until she was thirty.",
+            "It was not until she turned 30 that she started to teach English.",
+            "It was not until she turned 30 that she started teaching English.",
+            "It was not until she turned 30 that she began to teach English.",
+            "It was not until she turned 30 that she began teaching English.",
+            "It was not until she turned thirty that she started to teach English.",
+            "It was not until she turned thirty that she started teaching English.",
+            "It was not until she turned thirty that she began to teach English.",
+            "It was not until she turned thirty that she began teaching English.",
+            "She didn't start to teach English until she turned 30.",
+            "She didn't start to teach English until she turned thirty.",
+            "She didn't start teaching English until she turned 30.",
+            "She didn't start teaching English until she turned thirty.",
+            "She didn't begin to teach English until she turned 30.",
+            "She didn't begin to teach English until she turned thirty.",
+            "She didn't begin teaching English until she turned 30.",
+            "She didn't begin teaching English until she turned thirty."
+          ],
+          "targets": [
+            [
+              "until",
+              "till"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "it was until she was",
+              "hint": "'서른 살이 되어서야' — 그전에는 가르치지 않았다는 뜻이에요. 무엇이 빠졌을까요?"
+            },
+            {
+              "match": "started to teaching",
+              "hint": "to 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "until the age of",
+              "hint": "뜻은 맞아요. 조건은 'until을 접속사로 써서'예요. until 뒤에 주어 + 동사를 써 보세요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "it-cleft",
+            "infinitive",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 8",
+            "reviewWhere": "review 2 item 22 (p54)"
+          },
+          "fix": {
+            "fromKo": "그녀가 영어를 가르치기 시작한 것은 서른 살이 되어서였다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "It was not until … that 은 '~되어서야 (비로소)'라 그 전에는 안 했다는 뜻이 드러나게 고쳤습니다('~한 것은 서른 살이 되어서였다'는 '서른 살 때였다'로 읽혀 when 으로 쓴 답을 부름 — 오답 힌트도 '되어서야'를 인용)."
+          }
+        },
+        {
+          "id": "pg20-2:p9",
+          "ko": "내가 학교로 걸어가는 동안, 나는 자주 내 친구들을 만난다.",
+          "koSource": "review 2 item 23",
+          "condition": null,
+          "promptEn": null,
+          "en": "As I am walking to school, I often see my friends.",
+          "accept": [
+            "As I am walking to school, I often meet my friends.",
+            "As I walk to school, I often see my friends.",
+            "As I walk to school, I often meet my friends.",
+            "When I am walking to school, I often see my friends.",
+            "When I am walking to school, I often meet my friends.",
+            "When I walk to school, I often see my friends.",
+            "When I walk to school, I often meet my friends.",
+            "While I am walking to school, I often see my friends.",
+            "While I am walking to school, I often meet my friends.",
+            "While I walk to school, I often see my friends.",
+            "While I walk to school, I often meet my friends.",
+            "I often see my friends as I am walking to school.",
+            "I often see my friends as I walk to school.",
+            "I often see my friends when I am walking to school.",
+            "I often see my friends when I walk to school.",
+            "I often see my friends while I am walking to school.",
+            "I often see my friends while I walk to school.",
+            "I often meet my friends as I am walking to school.",
+            "I often meet my friends as I walk to school.",
+            "I often meet my friends when I am walking to school.",
+            "I often meet my friends when I walk to school.",
+            "I often meet my friends while I am walking to school.",
+            "I often meet my friends while I walk to school.",
+            "While walking to school, I often see my friends.",
+            "While walking to school, I often meet my friends.",
+            "When walking to school, I often see my friends.",
+            "When walking to school, I often meet my friends."
+          ],
+          "targets": [
+            [
+              "As",
+              "When",
+              "While"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "as I walking",
+              "hint": "as 뒤에는 주어 + 동사가 와요. 빠진 말이 있어요."
+            },
+            {
+              "match": "during I am walking",
+              "hint": "during 은 전치사라 뒤에 주어 + 동사가 올 수 없어요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "progressive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s5-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 9",
+            "reviewWhere": "review 2 item 23 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg20-2:p10",
+          "ko": "그들은 우리가 원하는 것만큼 평화를 원한다.",
+          "koSource": "review 2 item 24",
+          "condition": null,
+          "promptEn": null,
+          "en": "They want peace as much as we do.",
+          "accept": [
+            "They want peace as much as we want it.",
+            "They want peace just as much as we do.",
+            "They want peace just as much as we want it."
+          ],
+          "targets": [
+            [
+              "as much as"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "as much as we are",
+              "hint": "앞의 동사 want 를 대신하는 말은 be동사가 아니에요."
+            },
+            {
+              "match": "as many as we",
+              "hint": "peace 는 셀 수 없는 명사예요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "comparative",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 10",
+            "reviewWhere": "review 2 item 24 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg20-2:p11",
+          "ko": "경찰이 올 때까지 우리는 모든 것을 있는 그대로 두는 게 좋겠다.",
+          "koSource": "new (Review 에 한국어 없음)",
+          "condition": null,
+          "promptEn": null,
+          "en": "We'd better leave things as they are until the police arrive.",
+          "accept": [
+            "We'd better leave things as they are until the police come.",
+            "We'd better leave things as they are until the police get here.",
+            "We'd better leave things as they are till the police arrive.",
+            "We'd better leave things as they are till the police come.",
+            "We'd better leave things as they are till the police get here.",
+            "We'd better leave everything as it is until the police arrive.",
+            "We'd better leave everything as it is until the police come.",
+            "We'd better leave everything as it is until the police get here.",
+            "We'd better leave everything as it is till the police arrive.",
+            "We'd better leave everything as it is till the police come.",
+            "We'd better leave everything as it is till the police get here.",
+            "We should leave things as they are until the police arrive.",
+            "We should leave things as they are until the police come.",
+            "We should leave things as they are until the police get here.",
+            "We should leave things as they are till the police arrive.",
+            "We should leave things as they are till the police come.",
+            "We should leave things as they are till the police get here.",
+            "We should leave everything as it is until the police arrive.",
+            "We should leave everything as it is until the police come.",
+            "We should leave everything as it is until the police get here.",
+            "We should leave everything as it is till the police arrive.",
+            "We should leave everything as it is till the police come.",
+            "We should leave everything as it is till the police get here."
+          ],
+          "targets": [
+            [
+              "as"
+            ],
+            [
+              "until",
+              "till"
+            ],
+            [
+              "better",
+              "should"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "until the police will arrive",
+              "hint": "때를 나타내는 절에서는 앞으로 올 일도 현재형으로 써요."
+            },
+            {
+              "match": "the police arrives",
+              "hint": "police(경찰)는 여럿으로 보는 말이라 동사에 -s 를 붙이지 않아요."
+            },
+            {
+              "match": "had better to leave",
+              "hint": "had better 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 11 (Review 에 대응 문항 없음)"
+          },
+          "fix": null,
+          "note": "Review 2 에 대응하는 한국어가 없어 새로 번역했습니다. better 는 had better(pg17-3)의 일부라 한 글자 틀림도 봐주지 않게 목표형에 넣었습니다(pg17-3 · pg15-1:p18 과 같음 — 채점기도 'd 바로 뒤 낱말의 오타는 'd 풀이가 달라져 어차피 틀림으로 봄). '~하는 게 좋겠다'는 should 로도 옮기므로 같은 묶음에 should 를 넣고 should 답도 받습니다(이 문항의 목표는 as · until — G16 반박 점검)."
+        },
+        {
+          "id": "pg20-2:p12",
+          "ko": "너도 알다시피, 요즘 로빈은 훨씬 나아졌어.",
+          "koSource": "new (Review 에 한국어 없음)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Robin, as you know, is much better these days.",
+          "accept": [
+            "Robin, as you know, is much better nowadays.",
+            "Robin, as you know, is a lot better these days.",
+            "Robin, as you know, is a lot better nowadays.",
+            "As you know, Robin is much better these days.",
+            "As you know, Robin is much better nowadays.",
+            "As you know, Robin is a lot better these days.",
+            "As you know, Robin is a lot better nowadays.",
+            "Robin, as you know, has gotten much better lately.",
+            "Robin, as you know, has gotten a lot better lately.",
+            "As you know, Robin has gotten much better lately.",
+            "As you know, Robin has gotten a lot better lately.",
+            "As you know, Robin has gotten much better recently.",
+            "As you know, Robin has gotten a lot better recently.",
+            "Robin, as you know, has gotten much better recently.",
+            "Robin, as you know, has gotten a lot better recently.",
+            "As you know, Robin has improved a lot lately.",
+            "As you know, Robin has improved a lot recently.",
+            "Robin, as you know, has improved a lot lately.",
+            "Robin, as you know, has improved a lot recently."
+          ],
+          "targets": [
+            [
+              "as"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "has been better nowadays",
+              "hint": "nowadays(요즘)는 has been 과 어울리지 않고, has been better 는 '요즘은 좋지 않다'로도 읽혀요. 지금 상태를 말하는 동사로 써 보세요."
+            },
+            {
+              "match": "as you knows",
+              "hint": "you 에는 동사에 -s 를 붙이지 않아요."
+            },
+            {
+              "match": "like you know",
+              "hint": "'알다시피'는 like 가 아니라 다른 접속사로 써요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "be-present",
+            "comparative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 48,
+            "where": "application (2) item 12 (Review 에 대응 문항 없음)"
+          },
+          "fix": {
+            "from": "Robin, as you know, has been better nowadays.",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "nowadays 는 현재완료(has been)와 어울리지 않고, has been better 는 '전에는 더 나았다(요즘은 좋지 않다)'로도 읽혀 뜻이 헷갈려요. is much better these days 로 고쳤습니다. Review 에 한국어가 없어 새로 번역했습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p13",
+          "ko": "그녀가 그의 얼굴을 보는 순간, 그녀는 무엇인가가 잘못되었다는 것을 알았다.",
+          "koSource": "review 2 item 25",
+          "condition": null,
+          "promptEn": null,
+          "en": "As soon as she saw his face, she knew something was wrong.",
+          "accept": [
+            "As soon as she saw his face, she knew that something was wrong.",
+            "As soon as she saw his face, she knew something had gone wrong.",
+            "The moment she saw his face, she knew something was wrong.",
+            "The moment she saw his face, she knew that something was wrong.",
+            "The moment she saw his face, she knew something had gone wrong.",
+            "She knew something was wrong as soon as she saw his face.",
+            "She knew something was wrong the moment she saw his face.",
+            "She knew that something was wrong as soon as she saw his face.",
+            "She knew that something was wrong the moment she saw his face.",
+            "She knew something had gone wrong as soon as she saw his face.",
+            "She knew something had gone wrong the moment she saw his face.",
+            "As soon as she saw his face, she realized something was wrong.",
+            "As soon as she saw his face, she realized that something was wrong.",
+            "As soon as she saw his face, she realised something was wrong.",
+            "As soon as she saw his face, she realised that something was wrong.",
+            "The moment she saw his face, she realized something was wrong.",
+            "The moment she saw his face, she realized that something was wrong.",
+            "The moment she saw his face, she realised something was wrong.",
+            "The moment she saw his face, she realised that something was wrong.",
+            "She realized something was wrong as soon as she saw his face.",
+            "She realized something was wrong the moment she saw his face.",
+            "She realized that something was wrong as soon as she saw his face.",
+            "She realized that something was wrong the moment she saw his face.",
+            "She realised something was wrong as soon as she saw his face.",
+            "She realised something was wrong the moment she saw his face.",
+            "She realised that something was wrong as soon as she saw his face.",
+            "She realised that something was wrong the moment she saw his face."
+          ],
+          "targets": [
+            [
+              "As soon as",
+              "The moment"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "as soon as she sees",
+              "hint": "'보는 순간 … 알았다' — 지난 일이에요. 동사 시제를 맞춰요."
+            },
+            {
+              "match": "something is wrong",
+              "hint": "'알았다'가 지난 일이라 안의 동사도 과거로 맞춰요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "past-simple",
+            "pronoun-indefinite",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 13",
+            "reviewWhere": "review 2 item 25 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg20-2:p14",
+          "ko": "그는 그 전화를 받자마자 집으로 갔다.",
+          "koSource": "review 2 item 26",
+          "condition": null,
+          "promptEn": null,
+          "en": "He went home as soon as he got the phone call.",
+          "accept": [
+            "He went home as soon as he got the call.",
+            "He went home as soon as he received the phone call.",
+            "He went home as soon as he received the call.",
+            "He went home the moment he got the phone call.",
+            "He went home the moment he got the call.",
+            "He went home the moment he received the phone call.",
+            "He went home the moment he received the call.",
+            "As soon as he got the phone call, he went home.",
+            "As soon as he got the call, he went home.",
+            "As soon as he received the phone call, he went home.",
+            "As soon as he received the call, he went home.",
+            "The moment he got the phone call, he went home.",
+            "The moment he got the call, he went home.",
+            "The moment he received the phone call, he went home.",
+            "The moment he received the call, he went home."
+          ],
+          "targets": [
+            [
+              "as soon as",
+              "the moment"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "as soon as he gets",
+              "hint": "'받자마자 … 갔다' — 지난 일이에요."
+            },
+            {
+              "match": "went to home",
+              "hint": "home 앞에는 to 를 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 14",
+            "reviewWhere": "review 2 item 26 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg20-2:p15",
+          "ko": "당신이 그에게 책을 읽어 주지 않으면, 그는 자지 않을 거예요.",
+          "koSource": "review 2 item 27 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He will not go to sleep unless you read books to him.",
+          "accept": [
+            "Unless you read books to him, he will not go to sleep.",
+            "He will not go to sleep unless you read to him.",
+            "Unless you read to him, he will not go to sleep.",
+            "He will not go to sleep unless you read him books.",
+            "Unless you read him books, he will not go to sleep.",
+            "He will not go to sleep unless you read him a book.",
+            "Unless you read him a book, he will not go to sleep.",
+            "He will not go to sleep unless you read a book to him.",
+            "Unless you read a book to him, he will not go to sleep.",
+            "He will not go to sleep if you don't read books to him.",
+            "If you don't read books to him, he will not go to sleep.",
+            "He will not go to sleep if you don't read to him.",
+            "If you don't read to him, he will not go to sleep.",
+            "He will not go to sleep if you don't read him books.",
+            "If you don't read him books, he will not go to sleep.",
+            "He will not go to sleep if you don't read him a book.",
+            "If you don't read him a book, he will not go to sleep.",
+            "He will not go to sleep if you don't read a book to him.",
+            "If you don't read a book to him, he will not go to sleep.",
+            "He will not sleep unless you read books to him.",
+            "Unless you read books to him, he will not sleep.",
+            "He will not sleep unless you read to him.",
+            "Unless you read to him, he will not sleep.",
+            "He will not sleep unless you read him books.",
+            "Unless you read him books, he will not sleep.",
+            "He will not sleep unless you read him a book.",
+            "Unless you read him a book, he will not sleep.",
+            "He will not sleep unless you read a book to him.",
+            "Unless you read a book to him, he will not sleep.",
+            "He will not sleep if you don't read books to him.",
+            "If you don't read books to him, he will not sleep.",
+            "He will not sleep if you don't read to him.",
+            "If you don't read to him, he will not sleep.",
+            "He will not sleep if you don't read him books.",
+            "If you don't read him books, he will not sleep.",
+            "He will not sleep if you don't read him a book.",
+            "If you don't read him a book, he will not sleep.",
+            "He will not sleep if you don't read a book to him.",
+            "If you don't read a book to him, he will not sleep."
+          ],
+          "targets": [
+            [
+              "unless",
+              "if"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "read books for him",
+              "hint": "'그에게 (소리 내어) 읽어 주다'에 for 를 쓰면 '그 대신 읽다'라는 뜻이 돼요."
+            },
+            {
+              "match": "unless you don't",
+              "hint": "unless 에는 이미 '~하지 않으면'의 뜻이 있어요. not 을 또 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "future-will",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 15",
+            "reviewWhere": "review 2 item 27 (p55)"
+          },
+          "fix": {
+            "from": "He will not go to sleep unless you read books for him.",
+            "fromKo": "그는 당신이 그를 위해 책을 읽어주지 않으면, 자러 가지 않을 겁니다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "read books for him 은 '그를 대신해 읽다'로 읽혀요. 소리 내어 읽어 주는 것은 read (books) to him 이라 고쳤고, 한국어의 '그를 위해'를 빼고 '읽어 주지'로 띄어 썼습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p16",
+          "ko": "그녀가 안전하지 않다면, 나는 그녀를 떠날 수 없어요.",
+          "koSource": "review 2 item 28 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I can't leave her unless she is safe.",
+          "accept": [
+            "I can't leave her if she isn't safe.",
+            "Unless she is safe, I can't leave her.",
+            "If she isn't safe, I can't leave her."
+          ],
+          "targets": [
+            [
+              "unless",
+              "if"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "unless she isn't safe",
+              "hint": "unless 에는 이미 '~하지 않으면'의 뜻이 있어요. not 을 또 쓰지 않아요."
+            },
+            {
+              "match": "if she is safe",
+              "hint": "'안전하지 않다면' — 조건에 '않다'가 들어가요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "can-basic",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 16",
+            "reviewWhere": "review 2 item 28 (p55)"
+          },
+          "fix": {
+            "fromKo": "나는 그녀가 안전하지 않는다면, 그녀를 떠날 수 없어요.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "형용사 '안전하다'의 부정은 '안전하지 않다면'('않는다면'은 틀림)이라 고치고, 종속절을 앞에 두어 주어를 정리했습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p17",
+          "ko": "만약 수가 당신에게 묻지 않는다면, 내가 한 말을 그녀에게 말하지 마세요.",
+          "koSource": "review 2 item 30 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Don't tell Sue what I said if she doesn't ask you.",
+          "accept": [
+            "Don't tell Sue what I said unless she asks you.",
+            "If she doesn't ask you, don't tell Sue what I said.",
+            "Unless she asks you, don't tell Sue what I said.",
+            "If Sue doesn't ask you, don't tell her what I said.",
+            "Unless Sue asks you, don't tell her what I said."
+          ],
+          "targets": [
+            [
+              "if",
+              "unless"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "unless she doesn't",
+              "hint": "unless 에는 이미 '~하지 않으면'의 뜻이 있어요. not 을 또 쓰지 않아요."
+            },
+            {
+              "match": "unless Sue doesn't",
+              "hint": "unless 에는 이미 '~하지 않으면'의 뜻이 있어요. not 을 또 쓰지 않아요."
+            },
+            {
+              "match": "what did I say",
+              "hint": "'내가 한 말'은 묻는 말이 아니에요. 주어 + 동사 순서로 써요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "imperative",
+            "relative-what",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 18",
+            "reviewWhere": "review 2 item 30 (p55)"
+          },
+          "fix": {
+            "fromKo": "만약 그녀가 당신에게 묻지 않는다면, 내가 말했던 것을 수에게 말하지 마세요.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'그녀'가 가리킬 '수'보다 먼저 나와 누구인지 알 수 없어 순서를 바꾸고 '내가 말했던 것'을 '내가 한 말'로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p18",
+          "ko": "가끔씩 생일 파티 같은 특별한 날이 있으면, 우리는 토요일 오후에 축하를 합니다.",
+          "koSource": "student:s11-1#6",
+          "condition": null,
+          "promptEn": null,
+          "en": "Sometimes if there is a special day like a birthday party, we celebrate it on a Saturday afternoon.",
+          "accept": [
+            "Sometimes if there is a special day like a birthday party, we celebrate it on Saturday afternoon.",
+            "Sometimes if there is a special day like a birthday party, we celebrate it on Saturday afternoons.",
+            "Sometimes if there is a special day like a birthday party, we celebrate on a Saturday afternoon.",
+            "Sometimes if there is a special day like a birthday party, we celebrate on Saturday afternoon.",
+            "Sometimes if there is a special day like a birthday party, we celebrate on Saturday afternoons.",
+            "Sometimes when there is a special day like a birthday party, we celebrate it on a Saturday afternoon.",
+            "Sometimes when there is a special day like a birthday party, we celebrate it on Saturday afternoon.",
+            "Sometimes when there is a special day like a birthday party, we celebrate it on Saturday afternoons.",
+            "Sometimes when there is a special day like a birthday party, we celebrate on a Saturday afternoon.",
+            "Sometimes when there is a special day like a birthday party, we celebrate on Saturday afternoon.",
+            "Sometimes when there is a special day like a birthday party, we celebrate on Saturday afternoons."
+          ],
+          "targets": [
+            [
+              "if",
+              "when"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if there will be",
+              "hint": "조건을 나타내는 절에서는 앞으로 올 일도 현재형으로 써요."
+            },
+            {
+              "match": "like birthday party",
+              "hint": "party 는 셀 수 있는 명사예요. 앞에 필요한 말이 있어요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "there-be",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s11-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 19",
+            "reviewWhere": "review 2 item 31 (p55)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg20-2:p19",
+          "ko": "만약 그들이 학생들에게 깊은 감명을 준다면, 학생들의 인생을 바꿀 수 있을 텐데.",
+          "koSource": "review 2 item 32 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "If they made a deep impression on the students, they could change their lives.",
+          "accept": [
+            "If they made a deep impression on the students, they could change the students' lives.",
+            "If they made a deep impression on the students, they would be able to change their lives.",
+            "If they made a deep impression on the students, they would be able to change the students' lives.",
+            "If they impressed the students deeply, they could change their lives.",
+            "If they impressed the students deeply, they could change the students' lives.",
+            "If they impressed the students deeply, they would be able to change their lives.",
+            "If they impressed the students deeply, they would be able to change the students' lives.",
+            "They could change the students' lives if they made a deep impression on the students.",
+            "They could change the students' lives if they impressed the students deeply.",
+            "They would be able to change the students' lives if they made a deep impression on the students.",
+            "They would be able to change the students' lives if they impressed the students deeply.",
+            "If they deeply impressed the students, they could change their lives.",
+            "If they deeply impressed the students, they could change the students' lives.",
+            "If they deeply impressed the students, they would be able to change their lives.",
+            "If they deeply impressed the students, they would be able to change the students' lives.",
+            "They could change the students' lives if they deeply impressed the students.",
+            "They would be able to change the students' lives if they deeply impressed the students."
+          ],
+          "targets": [
+            [
+              "If"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "gave the students deep impression",
+              "hint": "impression 은 셀 수 있는 명사라 관사가 필요하고, '~에게 인상을 주다'는 give 대신 다른 동사 + 전치사로 흔히 써요."
+            },
+            {
+              "match": "they can change",
+              "hint": "'바꿀 수 있을 텐데' — 사실과 다른 상상이에요. can 을 과거형으로 써 보세요."
+            },
+            {
+              "match": "if they make a deep",
+              "hint": "'준다면 … 텐데'는 사실과 다른 상상이에요. if 절의 동사를 과거형으로 써요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "subjunctive-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 20",
+            "reviewWhere": "review 2 item 32 (p55)"
+          },
+          "fix": {
+            "from": "If they gave the students deep impression, they could change their lives.",
+            "fromKo": "만약, 그들이 학생들에게 깊은 감명을 준다면, 그들은 그 인생을 바꿀 수 있을 텐데.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "impression 은 셀 수 있는 명사라 관사가 필요하고 '~에게 깊은 인상을 주다'는 make a deep impression on 이라 고쳤습니다. 한국어의 '그 인생'은 누구 인생인지 불분명해 '학생들의 인생'으로, '만약,' 뒤 쉼표도 뺐습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p20",
+          "ko": "내가 너라면, 그 일은 걱정하지 않을 거야.",
+          "koSource": "review 2 item 33 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I wouldn't worry about it if I were you.",
+          "accept": [
+            "If I were you, I wouldn't worry about it.",
+            "I wouldn't worry about that if I were you.",
+            "If I were you, I wouldn't worry about that."
+          ],
+          "targets": [
+            [
+              "if"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if I am you",
+              "hint": "'내가 너라면'은 사실이 아닌 상상이에요. if 절의 be동사를 과거형으로 써요."
+            },
+            {
+              "match": "I won't worry",
+              "hint": "상상 속의 일이라 will 대신 과거형 조동사를 써요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "subjunctive-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 21",
+            "reviewWhere": "review 2 item 33 (p55)"
+          },
+          "fix": {
+            "fromKo": "내가 너라면, 나는 걱정하지 않아.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "wouldn't worry 는 '걱정하지 않을 거야'(상상)이고 about it(그 일)이 빠져 있어 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p21",
+          "ko": "네가 주의 깊게 운전하기만 하면, 내 차를 써도 돼.",
+          "koSource": "review 2 item 34 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "You can use my car as long as you drive carefully.",
+          "accept": [
+            "You can use my car so long as you drive carefully.",
+            "You can use my car if you drive carefully.",
+            "You can use my car provided you drive carefully.",
+            "You can use my car provided that you drive carefully.",
+            "You can use my car only if you drive carefully.",
+            "As long as you drive carefully, you can use my car.",
+            "So long as you drive carefully, you can use my car.",
+            "If you drive carefully, you can use my car.",
+            "Provided you drive carefully, you can use my car.",
+            "You may use my car as long as you drive carefully.",
+            "You may use my car so long as you drive carefully.",
+            "You may use my car if you drive carefully.",
+            "You may use my car provided you drive carefully.",
+            "You may use my car provided that you drive carefully.",
+            "You may use my car only if you drive carefully.",
+            "As long as you drive carefully, you may use my car.",
+            "So long as you drive carefully, you may use my car.",
+            "If you drive carefully, you may use my car.",
+            "Provided you drive carefully, you may use my car.",
+            "Provided that you drive carefully, you may use my car.",
+            "Provided that you drive carefully, you can use my car."
+          ],
+          "targets": [
+            [
+              "as long as",
+              "so long as",
+              "if",
+              "provided"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "as long as you will drive",
+              "hint": "조건을 나타내는 절에서는 앞으로 올 일도 현재형으로 써요."
+            },
+            {
+              "match": "drive careful",
+              "hint": "'주의 깊게'는 동사 drive 를 꾸미는 말이라 -ly 가 붙은 모양이에요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 22",
+            "reviewWhere": "review 2 item 34 (p55)"
+          },
+          "fix": {
+            "fromKo": "너는 주의 깊게 운전한다면, 내 차를 써도 돼.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "as long as 는 '~하기만 하면(~하는 한)'으로 조건을 좁히는 말이라 '운전하기만 하면'으로 고쳤고, 종속절의 주어는 '너는'보다 '네가'가 자연스러워 고쳤습니다(if 로 쓴 답도 정답)."
+          }
+        },
+        {
+          "id": "pg20-2:p22",
+          "ko": "그는 원하는 만큼 얼마든지 궁전에 머물 수 있었다.",
+          "koSource": "review 2 item 35 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He could stay in the palace as long as he wanted.",
+          "accept": [
+            "He could stay in the palace as long as he liked.",
+            "He could stay in the palace for as long as he wanted.",
+            "He could stay in the palace for as long as he liked.",
+            "He could stay at the palace as long as he wanted.",
+            "He could stay at the palace as long as he liked.",
+            "He could stay at the palace for as long as he wanted.",
+            "He could stay at the palace for as long as he liked."
+          ],
+          "targets": [
+            [
+              "as long as"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "stay the palace",
+              "hint": "stay 는 목적어를 바로 받지 않아요. 장소 앞에 전치사가 필요해요."
+            },
+            {
+              "match": "he can stay",
+              "hint": "'머물 수 있었다' — 지난 일이에요."
+            },
+            {
+              "match": "palace if he wanted",
+              "hint": "'원하는 만큼' — 조건(if)이 아니라 기간을 나타내는 접속사로 써 보세요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "modal-can"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 23",
+            "reviewWhere": "review 2 item 35 (p56)"
+          },
+          "fix": {
+            "from": "He could stay the palace as long as he wanted.",
+            "fromKo": "그는 원한다면, 얼마든지 궁전에 머물 수 있었다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "stay 는 자동사라 stay in the palace 로 고쳤고, 한국어의 '원한다면'(if)은 영어에 없어 '원하는 만큼'(as long as he wanted)으로 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p23",
+          "ko": "우리가 계속 경기를 잘하는 한, 우리는 그 경기에서 이길 거야.",
+          "koSource": "review 2 item 36 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "As long as we keep playing well, we will win the game.",
+          "accept": [
+            "As long as we continue to play well, we will win the game.",
+            "As long as we continue playing well, we will win the game.",
+            "So long as we keep playing well, we will win the game.",
+            "So long as we continue to play well, we will win the game.",
+            "So long as we continue playing well, we will win the game.",
+            "We will win the game as long as we keep playing well.",
+            "We will win the game as long as we continue to play well.",
+            "We will win the game as long as we continue playing well.",
+            "We will win the game so long as we keep playing well.",
+            "We will win the game so long as we continue to play well.",
+            "We will win the game so long as we continue playing well."
+          ],
+          "targets": [
+            [
+              "as long as",
+              "so long as"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "as long as we will keep",
+              "hint": "조건을 나타내는 절에서는 앞으로 올 일도 현재형으로 써요."
+            },
+            {
+              "match": "keep to play",
+              "hint": "keep 뒤에는 -ing 가 와요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "gerund",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 24",
+            "reviewWhere": "review 2 item 36 (p56)"
+          },
+          "fix": {
+            "fromKo": "우리가 잘 경기하는 한, 경기에서 승리할 거야.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "keep playing(계속 ~하다)이 한국어에 빠져 있고 '잘 경기하는'이 어색해 '계속 경기를 잘하는 한'으로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p24",
+          "ko": "내가 가장 좋아하는 시간은 금요일 밤입니다. 왜냐하면 그것은 주말의 시작이기 때문입니다.",
+          "koSource": "student:s10-5#1",
+          "condition": null,
+          "promptEn": null,
+          "en": "My favorite time is Friday night because it is the start of the weekend.",
+          "accept": [
+            "My favorite time is Friday night because it is the beginning of the weekend.",
+            "My favorite time is Friday night since it is the start of the weekend.",
+            "My favorite time is Friday night since it is the beginning of the weekend.",
+            "My favourite time is Friday night because it is the start of the weekend.",
+            "My favourite time is Friday night because it is the beginning of the weekend.",
+            "My favourite time is Friday night since it is the start of the weekend.",
+            "My favourite time is Friday night since it is the beginning of the weekend.",
+            "My favorite time is Friday night as it is the start of the weekend.",
+            "My favorite time is Friday night as it is the beginning of the weekend.",
+            "My favourite time is Friday night as it is the start of the weekend.",
+            "My favourite time is Friday night as it is the beginning of the weekend."
+          ],
+          "targets": [
+            [
+              "because",
+              "since",
+              "as"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "because of it is",
+              "hint": "because of 뒤에는 명사가 와요. 주어 + 동사가 오면 of 를 빼요."
+            },
+            {
+              "match": "Friday night so it is",
+              "hint": "금요일 밤을 좋아하는 까닭이 뒤에 와요. 까닭을 이끄는 접속사는?"
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s10-5",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 25",
+            "reviewWhere": "review 2 item 37 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg20-2:p25",
+          "ko": "우리는 날씨가 추워졌기 때문에 소풍을 즐길 수 없었다.",
+          "koSource": "review 2 item 38",
+          "condition": null,
+          "promptEn": null,
+          "en": "We didn't enjoy the picnic because the weather was getting cold.",
+          "accept": [
+            "We didn't enjoy the picnic because it was getting cold.",
+            "We didn't enjoy the picnic because the weather got cold.",
+            "We didn't enjoy the picnic because it got cold.",
+            "We couldn't enjoy the picnic because the weather was getting cold.",
+            "We couldn't enjoy the picnic because it was getting cold.",
+            "We couldn't enjoy the picnic because the weather got cold.",
+            "We couldn't enjoy the picnic because it got cold.",
+            "Because the weather was getting cold, we didn't enjoy the picnic.",
+            "Because the weather was getting cold, we couldn't enjoy the picnic.",
+            "Because it was getting cold, we didn't enjoy the picnic.",
+            "Because it was getting cold, we couldn't enjoy the picnic.",
+            "Because the weather got cold, we didn't enjoy the picnic.",
+            "Because the weather got cold, we couldn't enjoy the picnic.",
+            "Because it got cold, we didn't enjoy the picnic.",
+            "Because it got cold, we couldn't enjoy the picnic.",
+            "We didn't enjoy the picnic since the weather was getting cold.",
+            "We didn't enjoy the picnic since it was getting cold.",
+            "We didn't enjoy the picnic since the weather got cold.",
+            "We didn't enjoy the picnic since it got cold.",
+            "We couldn't enjoy the picnic since the weather was getting cold.",
+            "We couldn't enjoy the picnic since it was getting cold.",
+            "We couldn't enjoy the picnic since the weather got cold.",
+            "We couldn't enjoy the picnic since it got cold.",
+            "Since the weather was getting cold, we didn't enjoy the picnic.",
+            "Since the weather was getting cold, we couldn't enjoy the picnic.",
+            "Since it was getting cold, we didn't enjoy the picnic.",
+            "Since it was getting cold, we couldn't enjoy the picnic.",
+            "Since the weather got cold, we didn't enjoy the picnic.",
+            "Since the weather got cold, we couldn't enjoy the picnic.",
+            "Since it got cold, we didn't enjoy the picnic.",
+            "Since it got cold, we couldn't enjoy the picnic."
+          ],
+          "targets": [
+            [
+              "because",
+              "since"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "because of the weather was",
+              "hint": "because of 뒤에는 명사만 와요. 주어 + 동사가 오면 of 를 빼요."
+            },
+            {
+              "match": "we don't enjoy",
+              "hint": "'즐길 수 없었다' — 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "progressive",
+            "past-simple",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 49,
+            "where": "application (2) item 26",
+            "reviewWhere": "review 2 item 38 (p56)"
+          },
+          "fix": null,
+          "note": "한국어 '즐길 수 없었다 · 추워졌기'에 맞춰 couldn't enjoy · got cold 도 정답으로 받습니다."
+        },
+        {
+          "id": "pg20-2:p26",
+          "ko": "그들과 편하게 의사소통할 수 있도록, 나는 영어를 잘 말하는 법을 배워야 한다.",
+          "koSource": "review 2 item 39 (고침)",
+          "condition": "종속접속사로",
+          "promptEn": null,
+          "en": "I must learn to speak English well so that I can communicate with them comfortably.",
+          "accept": [
+            "I must learn to speak English well so that I can communicate with them easily.",
+            "I must learn to speak English well in order that I can communicate with them comfortably.",
+            "I must learn to speak English well in order that I can communicate with them easily.",
+            "I must learn to speak English well so I can communicate with them comfortably.",
+            "I must learn to speak English well so I can communicate with them easily.",
+            "I have to learn to speak English well so that I can communicate with them comfortably.",
+            "I have to learn to speak English well so that I can communicate with them easily.",
+            "I have to learn to speak English well in order that I can communicate with them comfortably.",
+            "I have to learn to speak English well in order that I can communicate with them easily.",
+            "I have to learn to speak English well so I can communicate with them comfortably.",
+            "I have to learn to speak English well so I can communicate with them easily.",
+            "I must learn how to speak English well so that I can communicate with them comfortably.",
+            "I must learn how to speak English well so that I can communicate with them easily.",
+            "I must learn how to speak English well in order that I can communicate with them comfortably.",
+            "I must learn how to speak English well in order that I can communicate with them easily.",
+            "I must learn how to speak English well so I can communicate with them comfortably.",
+            "I must learn how to speak English well so I can communicate with them easily.",
+            "I have to learn how to speak English well so that I can communicate with them comfortably.",
+            "I have to learn how to speak English well so that I can communicate with them easily.",
+            "I have to learn how to speak English well in order that I can communicate with them comfortably.",
+            "I have to learn how to speak English well in order that I can communicate with them easily.",
+            "I have to learn how to speak English well so I can communicate with them comfortably.",
+            "I have to learn how to speak English well so I can communicate with them easily."
+          ],
+          "targets": [
+            [
+              "so that",
+              "in order that",
+              "so"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "well to communicate",
+              "hint": "뜻은 맞아요. 조건은 '종속접속사로'예요. '~할 수 있도록'을 주어 + 동사가 있는 절로 써 보세요."
+            },
+            {
+              "match": "well in order to communicate",
+              "hint": "뜻은 맞아요. 조건은 '종속접속사로'예요. '~할 수 있도록'을 주어 + 동사가 있는 절로 써 보세요."
+            },
+            {
+              "match": "learn speaking English",
+              "hint": "learn 뒤에는 to + 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "infinitive",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s16-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 27",
+            "reviewWhere": "review 2 item 39 (p56)"
+          },
+          "fix": {
+            "fromKo": "나는 그들과 편리하게 의사소통 할 수 있기 위해서 나는 영어를 잘 말하는 것을 배워야만 한다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "comfortably 는 '편하게'(편리하게 아님)이고, '나는'이 두 번 나오며 '의사소통 할'은 붙여 씁니다. '-기 위해서' 대신 so that 의 뜻 '-도록'으로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p27",
+          "ko": "내가 당신 말을 들을 수 있도록 크게 말하세요.",
+          "koSource": "review 2 item 40 (고침)",
+          "condition": "종속접속사로",
+          "promptEn": null,
+          "en": "Speak loudly so that I may hear you.",
+          "accept": [
+            "Speak loudly so that I can hear you.",
+            "Speak loudly so I can hear you.",
+            "Speak loudly in order that I may hear you.",
+            "Speak loudly in order that I can hear you.",
+            "Speak loud so that I may hear you.",
+            "Speak loud so that I can hear you.",
+            "Speak loud so I can hear you.",
+            "Speak loud in order that I may hear you.",
+            "Speak loud in order that I can hear you.",
+            "Please speak loudly so that I may hear you.",
+            "Please speak loudly so that I can hear you.",
+            "Please speak loudly so I can hear you.",
+            "Please speak loudly in order that I may hear you.",
+            "Please speak loudly in order that I can hear you.",
+            "Speak louder so that I may hear you.",
+            "Speak louder so that I can hear you.",
+            "Speak louder so I can hear you.",
+            "Speak louder in order that I may hear you.",
+            "Speak louder in order that I can hear you.",
+            "Please speak louder so that I may hear you.",
+            "Please speak louder so that I can hear you.",
+            "Please speak louder so I can hear you.",
+            "Please speak louder in order that I may hear you.",
+            "Please speak louder in order that I can hear you.",
+            "Speak up so that I can hear you.",
+            "Speak up so I can hear you.",
+            "Please speak up so that I can hear you.",
+            "Please speak up so I can hear you."
+          ],
+          "targets": [
+            [
+              "so that",
+              "in order that",
+              "so"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "loudly to hear",
+              "hint": "뜻은 맞아요. 조건은 '종속접속사로'예요. 듣는 사람(나)이 주어인 절로 '~할 수 있도록'을 써 보세요."
+            },
+            {
+              "match": "loudly for me to hear",
+              "hint": "뜻은 맞아요. 조건은 '종속접속사로'예요. 듣는 사람(나)이 주어인 절로 '~할 수 있도록'을 써 보세요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "imperative",
+            "modal-may"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 28",
+            "reviewWhere": "review 2 item 40 (p56)"
+          },
+          "fix": {
+            "fromKo": "내가 당신을 들을 수 있기 위해서 크게 말하세요.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'당신을 들을 수'는 비문에 가까운 직역이라 '당신 말을 들을 수 있도록'으로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p28",
+          "ko": "제가 그들에게 맞설 수 있도록 저에게 힘을 주세요.",
+          "koSource": "review 2 item 41 (고침)",
+          "condition": "종속접속사로",
+          "promptEn": null,
+          "en": "Give me strength so that I can stand against them.",
+          "accept": [
+            "Give me strength so that I may stand against them.",
+            "Give me strength so I can stand against them.",
+            "Give me strength in order that I may stand against them.",
+            "Give me strength in order that I can stand against them.",
+            "Give me strength that I may stand against them.",
+            "Please give me strength so that I can stand against them.",
+            "Please give me strength so that I may stand against them.",
+            "Please give me strength so I can stand against them.",
+            "Please give me strength in order that I may stand against them.",
+            "Please give me strength in order that I can stand against them.",
+            "Please give me strength that I may stand against them."
+          ],
+          "targets": [
+            [
+              "so that",
+              "in order that",
+              "so",
+              "that"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "strength to stand against",
+              "hint": "뜻은 맞아요. 조건은 '종속접속사로'예요. '제가 ~할 수 있도록'을 주어 + 동사가 있는 절로 써 보세요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "imperative",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 29",
+            "reviewWhere": "review 2 item 41 (p56)"
+          },
+          "fix": {
+            "from": "Give me strength that I may stand against them.",
+            "fromKo": "제가 그들과 맞설 수 있게 나에게 힘을 주세요.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "so 없이 쓴 that I may 는 성경 · 옛 글투예요. 모범 답은 지금 쓰는 so that I can 으로 두고 교재 글도 정답으로 받습니다. 한국어는 '제가 … 나에게'의 높임이 어긋나 '저에게'로 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p29",
+          "ko": "나무에서 떨어지지 않도록 조심하세요.",
+          "koSource": "review 2 item 42",
+          "condition": "종속접속사로",
+          "promptEn": null,
+          "en": "Be careful lest you should fall from the tree.",
+          "accept": [
+            "Be careful lest you fall from the tree.",
+            "Be careful so that you don't fall from the tree.",
+            "Be careful so that you won't fall from the tree.",
+            "Be careful so you don't fall from the tree.",
+            "Be careful so you won't fall from the tree.",
+            "Be careful that you don't fall from the tree."
+          ],
+          "targets": [
+            [
+              "lest",
+              "so that",
+              "so",
+              "that"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "lest you should not",
+              "hint": "lest 에는 이미 '~하지 않도록'의 뜻이 있어요. not 을 또 쓰지 않아요."
+            },
+            {
+              "match": "careful not to fall",
+              "hint": "뜻은 맞아요. 조건은 '종속접속사로'예요. '떨어지지 않도록'을 주어 + 동사가 있는 절로 써 보세요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "imperative",
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 30",
+            "reviewWhere": "review 2 item 42 (p56)"
+          },
+          "fix": null,
+          "note": "lest ~ should 는 맞는 영어지만 딱딱한 글말이라(판정 TOPIC-20 p46 keep) 지금 쓰는 so that … don't 도 정답으로 받습니다."
+        },
+        {
+          "id": "pg20-2:p30",
+          "ko": "그녀는 당신이 그의 사무실에서 실수하지 않도록 당신에게 조언을 해 주었다.",
+          "koSource": "review 2 item 43 (고침)",
+          "condition": "종속접속사로",
+          "promptEn": null,
+          "en": "She gave you some advice lest you should make mistakes in his office.",
+          "accept": [
+            "She gave you some advice lest you make mistakes in his office.",
+            "She gave you some advice so that you wouldn't make mistakes in his office.",
+            "She gave you some advice so you wouldn't make mistakes in his office.",
+            "She gave you advice lest you should make mistakes in his office.",
+            "She gave you advice lest you make mistakes in his office.",
+            "She gave you advice so that you wouldn't make mistakes in his office.",
+            "She gave you advice so you wouldn't make mistakes in his office.",
+            "She gave you some advice so that you wouldn't make any mistakes in his office.",
+            "She gave you some advice so you wouldn't make any mistakes in his office.",
+            "She gave you advice so that you wouldn't make any mistakes in his office.",
+            "She gave you advice so you wouldn't make any mistakes in his office."
+          ],
+          "targets": [
+            [
+              "lest",
+              "so that",
+              "so"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "lest you should not",
+              "hint": "lest 에는 이미 '~하지 않도록'의 뜻이 있어요. not 을 또 쓰지 않아요."
+            },
+            {
+              "match": "advices",
+              "hint": "advice 는 셀 수 없는 명사라 -s 를 붙이지 않아요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "past-simple",
+            "modal-should-ought-used-better"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 31",
+            "reviewWhere": "review 2 item 43 (p56)"
+          },
+          "fix": {
+            "fromKo": "그녀는 그의 사무실에서 당신이 실수하지 않도록 당신에게 조언을 주었다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "in his office 는 실수하는 곳이라 '그의 사무실에서'를 '실수하지' 앞으로 옮기고, 번역투 '조언을 주었다'를 '조언을 해 주었다'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p31",
+          "ko": "비는 그쳤지만, 바람은 여전히 불었다.",
+          "koSource": "review 2 item 44",
+          "condition": "종속접속사로",
+          "promptEn": null,
+          "en": "Though it stopped raining, the wind was still blowing.",
+          "accept": [
+            "Though it stopped raining, the wind still blew.",
+            "Though it had stopped raining, the wind was still blowing.",
+            "Though it had stopped raining, the wind still blew.",
+            "Though the rain stopped, the wind was still blowing.",
+            "Though the rain stopped, the wind still blew.",
+            "Though the rain had stopped, the wind was still blowing.",
+            "Though the rain had stopped, the wind still blew.",
+            "Although it stopped raining, the wind was still blowing.",
+            "Although it stopped raining, the wind still blew.",
+            "Although it had stopped raining, the wind was still blowing.",
+            "Although it had stopped raining, the wind still blew.",
+            "Although the rain stopped, the wind was still blowing.",
+            "Although the rain stopped, the wind still blew.",
+            "Although the rain had stopped, the wind was still blowing.",
+            "Although the rain had stopped, the wind still blew.",
+            "Even though it stopped raining, the wind was still blowing.",
+            "Even though it stopped raining, the wind still blew.",
+            "Even though it had stopped raining, the wind was still blowing.",
+            "Even though it had stopped raining, the wind still blew.",
+            "Even though the rain stopped, the wind was still blowing.",
+            "Even though the rain stopped, the wind still blew.",
+            "Even though the rain had stopped, the wind was still blowing.",
+            "Even though the rain had stopped, the wind still blew.",
+            "The wind was still blowing though it had stopped raining.",
+            "The wind was still blowing though the rain had stopped.",
+            "The wind was still blowing though it stopped raining.",
+            "The wind was still blowing though the rain stopped.",
+            "The wind was still blowing although it had stopped raining.",
+            "The wind was still blowing although the rain had stopped.",
+            "The wind was still blowing although it stopped raining.",
+            "The wind was still blowing although the rain stopped.",
+            "The wind was still blowing even though it had stopped raining.",
+            "The wind was still blowing even though the rain had stopped.",
+            "The wind was still blowing even though it stopped raining.",
+            "The wind was still blowing even though the rain stopped.",
+            "The wind still blew though it had stopped raining.",
+            "The wind still blew though the rain had stopped.",
+            "The wind still blew though it stopped raining.",
+            "The wind still blew though the rain stopped.",
+            "The wind still blew although it had stopped raining.",
+            "The wind still blew although the rain had stopped.",
+            "The wind still blew although it stopped raining.",
+            "The wind still blew although the rain stopped.",
+            "The wind still blew even though it had stopped raining.",
+            "The wind still blew even though the rain had stopped.",
+            "The wind still blew even though it stopped raining.",
+            "The wind still blew even though the rain stopped."
+          ],
+          "targets": [
+            [
+              "Though",
+              "Although",
+              "Even though"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "though it stopped raining but",
+              "hint": "though 와 but 은 한 문장에 함께 쓰지 않아요."
+            },
+            {
+              "match": "stopped raining but the wind",
+              "hint": "조건은 '종속접속사로'예요. '~지만'은 종속접속사로 앞 절을 시작해서 나타내고, 그때는 but 을 함께 쓰지 않아요."
+            },
+            {
+              "match": "stopped to rain",
+              "hint": "'비가 그치다'는 stop 뒤에 -ing 를 써요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "gerund",
+            "progressive",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 32",
+            "reviewWhere": "review 2 item 44 (p56)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg20-2:p32",
+          "ko": "비록 그녀에게는 친구가 될 사람이 아무도 없었지만, 그녀는 혼자 배우고 성장하는 데서 만족을 찾을 수 있었다.",
+          "koSource": "review 2 item 45 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Though she had no one to be friends with, she was able to find satisfaction in learning and growing on her own.",
+          "accept": [
+            "Though she had no one to be friends with, she was able to find satisfaction in learning and growing by herself.",
+            "Though she had no one to be friends with, she could find satisfaction in learning and growing on her own.",
+            "Though she had no one to be friends with, she could find satisfaction in learning and growing by herself.",
+            "Though she had no one to be friends with, she was able to be satisfied with learning and growing on her own.",
+            "Though she had no one to be friends with, she was able to be satisfied with learning and growing by herself.",
+            "Though she had no one to be friends with, she could be satisfied with learning and growing on her own.",
+            "Though she had no one to be friends with, she could be satisfied with learning and growing by herself.",
+            "Although she had no one to be friends with, she was able to find satisfaction in learning and growing on her own.",
+            "Although she had no one to be friends with, she was able to find satisfaction in learning and growing by herself.",
+            "Although she had no one to be friends with, she could find satisfaction in learning and growing on her own.",
+            "Although she had no one to be friends with, she could find satisfaction in learning and growing by herself.",
+            "Although she had no one to be friends with, she was able to be satisfied with learning and growing on her own.",
+            "Although she had no one to be friends with, she was able to be satisfied with learning and growing by herself.",
+            "Although she had no one to be friends with, she could be satisfied with learning and growing on her own.",
+            "Although she had no one to be friends with, she could be satisfied with learning and growing by herself.",
+            "Even though she had no one to be friends with, she was able to find satisfaction in learning and growing on her own.",
+            "Even though she had no one to be friends with, she was able to find satisfaction in learning and growing by herself.",
+            "Even though she had no one to be friends with, she could find satisfaction in learning and growing on her own.",
+            "Even though she had no one to be friends with, she could find satisfaction in learning and growing by herself.",
+            "Even though she had no one to be friends with, she was able to be satisfied with learning and growing on her own.",
+            "Even though she had no one to be friends with, she was able to be satisfied with learning and growing by herself.",
+            "Even though she had no one to be friends with, she could be satisfied with learning and growing on her own.",
+            "Even though she had no one to be friends with, she could be satisfied with learning and growing by herself.",
+            "Though she had no one to be friends with, she was able to find satisfaction in learning and growing alone.",
+            "Though she had no one to be friends with, she could find satisfaction in learning and growing alone.",
+            "Though she had no one to be friends with, she was able to be satisfied with learning and growing alone.",
+            "Though she had no one to be friends with, she could be satisfied with learning and growing alone.",
+            "Although she had no one to be friends with, she was able to find satisfaction in learning and growing alone.",
+            "Although she had no one to be friends with, she could find satisfaction in learning and growing alone.",
+            "Although she had no one to be friends with, she was able to be satisfied with learning and growing alone.",
+            "Although she had no one to be friends with, she could be satisfied with learning and growing alone.",
+            "Even though she had no one to be friends with, she was able to find satisfaction in learning and growing alone.",
+            "Even though she had no one to be friends with, she could find satisfaction in learning and growing alone.",
+            "Even though she had no one to be friends with, she was able to be satisfied with learning and growing alone.",
+            "Even though she had no one to be friends with, she could be satisfied with learning and growing alone."
+          ],
+          "targets": [
+            [
+              "Though",
+              "Although",
+              "Even though"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "friends with but",
+              "hint": "'비록 ~지만'은 but 이 아니라 종속접속사로 앞 절을 시작해요. 종속접속사와 but 을 함께 쓰지도 않아요."
+            },
+            {
+              "match": "no one to be friends she",
+              "hint": "'친구가 될 사람' — be friends 뒤에 '~와'에 해당하는 전치사가 필요해요."
+            },
+            {
+              "match": "growing herself",
+              "hint": "herself 만 쓰면 '자기 자신을 키우다'라는 뜻이 돼요. '혼자(힘으로)'는 다른 말로 써요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "infinitive",
+            "gerund",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 33",
+            "reviewWhere": "review 2 item 45 (p56)"
+          },
+          "fix": {
+            "from": "Though she had no one to be friends, she could be satisfied with learning and growing herself.",
+            "fromKo": "비록 그녀는 친구가 될 사람이 아무도 없었지만, 스스로 배우고 발전함에 만족할 수 있었다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "be friends 뒤에 with 가 빠졌고, growing herself 는 '자기 자신을 키우다'로 읽혀요. no one to be friends with · on her own 으로 고치고 '만족을 찾을 수 있었다'(was able to find satisfaction)로 다듬었습니다. 한국어의 '발전함에'도 '성장하는 데서'로 고쳤습니다. could be satisfied with 로 쓴 답도 정답입니다."
+          }
+        },
+        {
+          "id": "pg20-2:p33",
+          "ko": "지미는 그 실험이 위험했는데도 그것을 강행했다.",
+          "koSource": "review 2 item 46 (고침)",
+          "condition": "종속접속사로",
+          "promptEn": null,
+          "en": "Jimmy went ahead with the experiment even though it was dangerous.",
+          "accept": [
+            "Jimmy went ahead with the experiment though it was dangerous.",
+            "Jimmy went ahead with the experiment although it was dangerous.",
+            "Jimmy carried out the experiment even though it was dangerous.",
+            "Jimmy carried out the experiment though it was dangerous.",
+            "Jimmy carried out the experiment although it was dangerous.",
+            "Jimmy proceeded with the experiment even though it was dangerous.",
+            "Jimmy proceeded with the experiment though it was dangerous.",
+            "Jimmy proceeded with the experiment although it was dangerous.",
+            "Even though the experiment was dangerous, Jimmy went ahead with it.",
+            "Even though the experiment was dangerous, Jimmy carried it out.",
+            "Even though the experiment was dangerous, Jimmy proceeded with it.",
+            "Though the experiment was dangerous, Jimmy went ahead with it.",
+            "Though the experiment was dangerous, Jimmy carried it out.",
+            "Though the experiment was dangerous, Jimmy proceeded with it.",
+            "Although the experiment was dangerous, Jimmy went ahead with it.",
+            "Although the experiment was dangerous, Jimmy carried it out.",
+            "Although the experiment was dangerous, Jimmy proceeded with it."
+          ],
+          "targets": [
+            [
+              "even though",
+              "though",
+              "although"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "dangerous but Jimmy",
+              "hint": "조건은 '종속접속사로'예요. '-는데도'는 but 이 아니라 종속접속사로 나타내고, 그때는 but 을 함께 쓰지 않아요."
+            },
+            {
+              "match": "went ahead the experiment",
+              "hint": "go ahead 뒤에 '그 일을'을 이어 줄 전치사가 필요해요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "past-simple",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 34",
+            "reviewWhere": "review 2 item 46 (p57)"
+          },
+          "fix": {
+            "fromKo": "지미는 그것이 위험했었지만, 그 실험을 먼저 했다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "went ahead with 는 '(위험해도) 밀고 나가다 · 강행하다'예요. '먼저 했다'는 오역이라 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p34",
+          "ko": "비록 그것이 어려운 일일지라도, 나는 새로운 것들을 배우는 것과 나의 친구들과 시간을 보내는 것이 행복합니다.",
+          "koSource": "student:s10-3#5",
+          "condition": null,
+          "promptEn": null,
+          "en": "Even though it is hard work, I am happy to learn new things and spend time with my friends.",
+          "accept": [
+            "Even though it is hard work, I am happy to learn new things and to spend time with my friends.",
+            "Even though it is difficult work, I am happy to learn new things and spend time with my friends.",
+            "Even though it is difficult work, I am happy to learn new things and to spend time with my friends.",
+            "Though it is hard work, I am happy to learn new things and spend time with my friends.",
+            "Though it is hard work, I am happy to learn new things and to spend time with my friends.",
+            "Though it is difficult work, I am happy to learn new things and spend time with my friends.",
+            "Though it is difficult work, I am happy to learn new things and to spend time with my friends.",
+            "Although it is hard work, I am happy to learn new things and spend time with my friends.",
+            "Although it is hard work, I am happy to learn new things and to spend time with my friends.",
+            "Although it is difficult work, I am happy to learn new things and spend time with my friends.",
+            "Although it is difficult work, I am happy to learn new things and to spend time with my friends."
+          ],
+          "targets": [
+            [
+              "Even though",
+              "Though",
+              "Although"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "hard work but I am",
+              "hint": "'비록 ~일지라도'는 but 이 아니라 종속접속사로 앞 절을 시작해요. 종속접속사와 but 을 함께 쓰지도 않아요."
+            },
+            {
+              "match": "happy to learning",
+              "hint": "to 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "infinitive",
+            "be-present",
+            "coordinating-conjunction"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s10-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 35 (passOff 라벨 'As if (even though)')",
+            "reviewWhere": "review 2 item 47 (p57)"
+          },
+          "fix": {
+            "fromKo": "그것이 비록 힘든 일이었지만, 나는 내 친구들과 / 새로운 것을 배우고 친구들과 시간을 보내는 것이 행복하다.",
+            "field": "ko",
+            "kind": "layout_or_extraction",
+            "why": "교재는 한 문장을 두 줄로 떨어뜨려 인쇄해 '친구들과'가 겹치고 시제도 과거였어요. STUDENT 10과와 글자까지 같은 문장이라 STUDENT 한국어를 씁니다. Pass-Off 라벨 'As if'(마치 ~처럼)도 이 문장의 even though 와 뜻이 달라 쓰지 않았습니다."
+          }
+        },
+        {
+          "id": "pg20-2:p35",
+          "ko": "내가 학교에 가기 전에 어머니께서는 나에게 용돈을 주십니다.",
+          "koSource": "student:s5-1#4",
+          "condition": null,
+          "promptEn": null,
+          "en": "Before I go to school, my mother gives me my allowance.",
+          "accept": [
+            "Before I go to school, my mom gives me my allowance.",
+            "My mother gives me my allowance before I go to school.",
+            "My mom gives me my allowance before I go to school.",
+            "Before I go to school, my mother gives me pocket money.",
+            "Before I go to school, my mother gives me my pocket money.",
+            "Before I go to school, my mom gives me pocket money.",
+            "Before I go to school, my mom gives me my pocket money.",
+            "My mother gives me pocket money before I go to school.",
+            "My mother gives me my pocket money before I go to school.",
+            "My mom gives me pocket money before I go to school.",
+            "My mom gives me my pocket money before I go to school."
+          ],
+          "targets": [
+            [
+              "Before"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "before going to school",
+              "hint": "학교에 가는 사람은 '나'이고 주절의 주어는 어머니예요. before 뒤에 주어 + 동사를 써요."
+            },
+            {
+              "match": "before I will go",
+              "hint": "때를 나타내는 절에서는 앞으로 올 일도 현재형으로 써요."
+            },
+            {
+              "match": "my mother give",
+              "hint": "my mother 는 3인칭 한 명이에요. 동사 모양은?"
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "present-3sg-s",
+            "sentence-pattern-4"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s5-1",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 36",
+            "reviewWhere": "review 2 item 48 (p57)"
+          },
+          "fix": null,
+          "note": "TOPIC 19 Pass-Off(3) item 15 에도 전치사 예로 실린 문장이지만 여기 before 는 절을 이끄는 종속접속사입니다."
+        },
+        {
+          "id": "pg20-2:p36",
+          "ko": "나는 그가 외국에 가기 며칠 전에 그를 보았다.",
+          "koSource": "review 2 item 49",
+          "condition": null,
+          "promptEn": null,
+          "en": "I saw him a few days before he went abroad.",
+          "accept": [
+            "I saw him a few days before he went overseas.",
+            "I saw him a few days before he left the country.",
+            "I met him a few days before he went abroad.",
+            "I met him a few days before he went overseas.",
+            "I met him a few days before he left the country.",
+            "A few days before he went abroad, I saw him.",
+            "A few days before he went abroad, I met him.",
+            "I saw him several days before he went abroad.",
+            "I saw him several days before he went overseas.",
+            "I saw him several days before he left the country.",
+            "I met him several days before he went abroad.",
+            "I met him several days before he went overseas.",
+            "I met him several days before he left the country.",
+            "Several days before he went abroad, I saw him.",
+            "Several days before he went abroad, I met him."
+          ],
+          "targets": [
+            [
+              "before"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "before going abroad",
+              "hint": "외국에 간 사람은 '그'예요. before 뒤에 주어 + 동사를 써요."
+            },
+            {
+              "match": "went to abroad",
+              "hint": "abroad 는 '외국에(로)'라는 부사라 앞에 to 를 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 37",
+            "reviewWhere": "review 2 item 49 (p57)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg20-2:p37",
+          "ko": "너는 면허를 따기 전에 몇 가지 시험을 통과해야 한다.",
+          "koSource": "review 2 item 50 (고침)",
+          "condition": "종속접속사로",
+          "promptEn": null,
+          "en": "You have to pass several tests before you get a license.",
+          "accept": [
+            "You have to pass several tests before you get a licence.",
+            "You have to pass a few tests before you get a license.",
+            "You have to pass a few tests before you get a licence.",
+            "You have to pass some tests before you get a license.",
+            "You have to pass some tests before you get a licence.",
+            "You must pass several tests before you get a license.",
+            "You must pass several tests before you get a licence.",
+            "You must pass a few tests before you get a license.",
+            "You must pass a few tests before you get a licence.",
+            "You must pass some tests before you get a license.",
+            "You must pass some tests before you get a licence.",
+            "You have to pass several tests before you can get a license.",
+            "You have to pass several tests before you can get a licence.",
+            "You have to pass a few tests before you can get a license.",
+            "You have to pass a few tests before you can get a licence.",
+            "You have to pass some tests before you can get a license.",
+            "You have to pass some tests before you can get a licence.",
+            "You must pass several tests before you can get a license.",
+            "You must pass several tests before you can get a licence.",
+            "You must pass a few tests before you can get a license.",
+            "You must pass a few tests before you can get a licence.",
+            "You must pass some tests before you can get a license.",
+            "You must pass some tests before you can get a licence."
+          ],
+          "targets": [
+            [
+              "before"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "before getting a",
+              "hint": "뜻은 맞아요. 조건은 '종속접속사로'예요. before 뒤에 주어 + 동사를 써 보세요."
+            },
+            {
+              "match": "before you will get",
+              "hint": "때를 나타내는 절에서는 앞으로 올 일도 현재형으로 써요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 50,
+            "where": "application (2) item 38",
+            "reviewWhere": "review 2 item 50 (p57)"
+          },
+          "fix": {
+            "fromKo": "너는 자격증을 얻기 전에 몇 가지 시험을 통과해야 한다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "license 는 '면허(증)'예요. 자격증은 certificate 라 '면허를 따기 전에'로 고쳤습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg20-2:t1",
+          "ko": "우리가 전화했을 때 그 집 안에는 아무도 없었다.",
+          "koSource": "grammar2 gh2-008-1#7",
+          "condition": null,
+          "promptEn": null,
+          "en": "Nobody was in the house when we called.",
+          "accept": [
+            "No one was in the house when we called.",
+            "There was nobody in the house when we called.",
+            "There was no one in the house when we called.",
+            "When we called, nobody was in the house.",
+            "When we called, there was nobody in the house.",
+            "When we called, no one was in the house.",
+            "Nobody was in the house when we phoned.",
+            "When we called, there was no one in the house."
+          ],
+          "targets": [
+            [
+              "when"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "when we call",
+              "hint": "'전화했을 때' — 지난 일이에요."
+            },
+            {
+              "match": "nobody wasn't",
+              "hint": "nobody 에 이미 '아무도 ~않다'의 뜻이 있어요. not 을 또 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "pronoun-indefinite",
+            "be-past",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar2:gh2-008#7",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null
+        },
+        {
+          "id": "pg20-2:t2",
+          "ko": "나는 살아있는 한 이것을 결코 잊지 않을 것이다.",
+          "koSource": "grammar2 gh2-046-1#2",
+          "condition": null,
+          "promptEn": null,
+          "en": "I will never forget this as long as I live.",
+          "accept": [
+            "As long as I live, I will never forget this.",
+            "I will never forget this as long as I am alive.",
+            "As long as I am alive, I will never forget this."
+          ],
+          "targets": [
+            [
+              "as long as"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "as long as I will live",
+              "hint": "조건 · 때를 나타내는 절에서는 앞으로 올 일도 현재형으로 써요."
+            },
+            {
+              "match": "as long as I alive",
+              "hint": "alive(살아 있는)는 형용사라 앞에 be동사가 필요해요."
+            }
+          ],
+          "tags": [
+            "subordinating-conjunction",
+            "complex-sentence",
+            "future-will",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "source": "grammar2:gh2-046#2",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "note": "GRAMMAR II 허용 답 2개를 그대로 가져오고 As long as I am alive 로 시작하는 답을 더함."
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg20-2:f1",
+      "template": "I feel happy when I am with ___.",
+      "ko": "나는 ___와(과) 함께 있을 때 행복하다."
+    }
+  ]
+}

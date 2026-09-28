@@ -1,0 +1,1022 @@
+{
+  "id": "pg11-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "3인칭 단수 현재",
+  "label": "TOPIC 11. 시제",
+  "menuLabel": "11-2. 3인칭 단수 현재",
+  "unit": 11,
+  "part": 2,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(3) 3인칭 단수현재동사",
+  "grammarTags": [
+    "present-3sg-uses"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg11-2:a1",
+          "en": "He loves children and makes learning fun.",
+          "ko": "그는 아이들을 사랑하고 학습을 재미있게 만든다.",
+          "koSource": "review 4 item 27",
+          "focus": [
+            "loves",
+            "makes"
+          ],
+          "studentRef": {
+            "lesson": "s6-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 29,
+            "where": "passOff (3) item 1 (6과)",
+            "reviewWhere": "review 4 item 27 (p41)"
+          }
+        },
+        {
+          "id": "pg11-2:a2",
+          "en": "He teaches us very well.",
+          "ko": "그는 우리를 매우 잘 가르친다.",
+          "koSource": "review 4 item 28",
+          "focus": [
+            "teaches"
+          ],
+          "studentRef": {
+            "lesson": "s7-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 29,
+            "where": "passOff (3) item 2 (7과)",
+            "reviewWhere": "review 4 item 28 (p41)"
+          }
+        },
+        {
+          "id": "pg11-2:a3",
+          "en": "He doesn't like to talk to new people.",
+          "ko": "그는 낯선 사람들과 말하는 것을 좋아하지 않는다.",
+          "koSource": "review 4 item 29",
+          "focus": [
+            "doesn't like"
+          ],
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 29,
+            "where": "passOff (3) item 3 (3과)",
+            "reviewWhere": "review 4 item 29 (p41)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg11-2:a1",
+          "pg11-2:a2",
+          "pg11-2:a3"
+        ],
+        "question": "세 문장의 동사(loves · teaches · doesn't like)가 이런 모양인 까닭은?",
+        "options": [
+          "주어 He 가 3인칭 한 명이라서",
+          "지난 일이라서",
+          "주어가 여러 명이라서"
+        ],
+        "answer": 0,
+        "why": "주어가 He(3인칭 · 한 명)이고 지금의 일이라 동사에 -s · -es 가 붙고, 부정에는 doesn't 를 써요."
+      },
+      "title": "주어가 3인칭 한 명이면 현재 동사에 -s 를 붙입니다",
+      "points": [
+        "주어가 3인칭 한 명(he · she · it · Tom)이면 현재 동사에 -s 를 붙여요.",
+        "-s · -x · -ch · -sh 로 끝나는 동사와 go · do 는 -es, 자음 + y 는 y → i + es",
+        "have 는 has 로 바뀌어요.",
+        "부정은 doesn't, 질문은 Does — 그 뒤 동사는 원형(doesn't like)",
+        "-s 현재형은 습관·사실에 써요. 오늘·지금 잠깐의 일은 is + -ing 로 말해요."
+      ],
+      "table": {
+        "columns": [
+          "동사 끝",
+          "붙이는 법",
+          "예"
+        ],
+        "rows": [
+          [
+            "대부분",
+            "+ s",
+            "love → loves, make → makes"
+          ],
+          [
+            "-s · -x · -ch · -sh · go · do",
+            "+ es",
+            "teach → teaches, go → goes"
+          ],
+          [
+            "자음 + y",
+            "y → i + es",
+            "study → studies, fly → flies"
+          ],
+          [
+            "모음 + y",
+            "+ s",
+            "play → plays"
+          ],
+          [
+            "have",
+            "has",
+            "have → has"
+          ]
+        ]
+      },
+      "koDiff": "한국어 동사는 주어가 누구든 '가르친다'로 같지만, 영어는 주어가 3인칭 한 명이고 현재일 때만 teaches 처럼 모양이 바뀌어요.",
+      "mistakes": [
+        {
+          "wrong": "He don't like to talk to new people.",
+          "right": "He doesn't like to talk to new people.",
+          "why": "3인칭 한 명의 부정은 doesn't 예요."
+        },
+        {
+          "wrong": "He teachs us very well.",
+          "right": "He teaches us very well.",
+          "why": "-ch 로 끝나는 동사는 -es 를 붙여요."
+        }
+      ],
+      "worked": [
+        "내 남동생은 매일 영어를 공부한다.",
+        "주어: My brother → 3인칭 한 명",
+        "매일 하는 일(습관) → 현재형",
+        "study: 자음 + y → studies",
+        "My brother studies English every day."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'She ___ TV after dinner.' 빈칸에 맞는 것은? (watch)",
+        "options": [
+          "watch",
+          "watchs",
+          "watches"
+        ],
+        "answer": 2,
+        "why": "-ch 로 끝나는 동사는 -es 를 붙여요.",
+        "pointIndex": 1
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg11-2:s1",
+          "kind": "select",
+          "instruction": "3인칭 단수 현재 동사를 모두 누르세요",
+          "tokens": [
+            "He",
+            "loves",
+            "children",
+            "and",
+            "makes",
+            "learning",
+            "fun",
+            "."
+          ],
+          "answer": [
+            1,
+            4
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "주어 He(3인칭 한 명)에 맞춰 love → loves, make → makes. learning 은 동사가 아니라 '학습'이라는 뜻으로 쓰였어요.",
+          "bookRef": {
+            "book": 2,
+            "page": 29,
+            "where": "passOff (3) item 1"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg11-2:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "He ___ us very well.",
+          "underline": [],
+          "options": [
+            "teach",
+            "teachs",
+            "teaches"
+          ],
+          "answer": 2,
+          "why": "-ch 로 끝나는 동사는 -es: teaches",
+          "bookRef": {
+            "book": 2,
+            "page": 29,
+            "where": "passOff (3) item 2"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg11-2:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "He ___ like to talk to new people.",
+          "underline": [],
+          "options": [
+            "don't",
+            "doesn't",
+            "isn't"
+          ],
+          "answer": 1,
+          "why": "3인칭 한 명의 일반동사 부정은 doesn't + 동사원형",
+          "bookRef": {
+            "book": 2,
+            "page": 29,
+            "where": "passOff (3) item 3"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg11-2:s4",
+          "kind": "short",
+          "instruction": "괄호 안 동사를 알맞은 모양으로 쓰세요",
+          "sentence": "The baby ___ a lot at night. (cry)",
+          "answer": [
+            "cries"
+          ],
+          "why": "자음 + y 로 끝나면 y 를 i 로 바꾸고 -es: cries",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg11-2:s5",
+          "kind": "short",
+          "instruction": "괄호 안 동사를 알맞은 모양으로 쓰세요",
+          "sentence": "My uncle ___ two cars. (have)",
+          "answer": [
+            "has"
+          ],
+          "why": "have 의 3인칭 단수 현재형은 has",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg11-2:s6",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "Look! My dog ___ now.",
+          "underline": [],
+          "options": [
+            "sleeps",
+            "is sleeping",
+            "sleep"
+          ],
+          "answer": 1,
+          "why": "지금 이 순간 하는 중인 일은 -s 현재형이 아니라 is + -ing 로 써요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg11-2:s7",
+          "kind": "short",
+          "instruction": "괄호 안 동사를 알맞은 모양으로 쓰세요",
+          "sentence": "Nick ___ the Bible for an hour every day. (read)",
+          "answer": [
+            "reads"
+          ],
+          "why": "주어 Nick(3인칭 한 명) + 매일의 습관 → reads",
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 31"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg11-2:s8",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "She ___ to school with my brother every day.",
+          "underline": [],
+          "options": [
+            "walk",
+            "walks",
+            "walking"
+          ],
+          "answer": 1,
+          "why": "주어 She(3인칭 한 명) + 매일의 습관 → walks",
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 30"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg11-2:s9",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "This is my dog and it ___ a lot.",
+          "underline": [],
+          "options": [
+            "bark",
+            "barks",
+            "barking"
+          ],
+          "answer": 1,
+          "why": "주어 it(3인칭 하나) → barks",
+          "bookRef": {
+            "book": 2,
+            "page": 33,
+            "where": "application item 36"
+          },
+          "source": "new",
+          "reserve": true
+        },
+        {
+          "id": "pg11-2:s10",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "Lilly ___ a red blouse today.",
+          "underline": [],
+          "options": [
+            "wears",
+            "is wearing",
+            "wear"
+          ],
+          "answer": 1,
+          "why": "today(오늘 하루)의 잠깐의 일은 is + -ing 로 써요.",
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 34"
+          },
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg11-2:p1",
+          "ko": "그는 아이들을 사랑하고 학습을 재미있게 만든다.",
+          "koSource": "review 4 item 27",
+          "condition": null,
+          "promptEn": null,
+          "en": "He loves children and makes learning fun.",
+          "accept": [
+            "He loves children and makes learning interesting.",
+            "He loves children and makes learning enjoyable.",
+            "He loves children and makes studying fun.",
+            "He loves children and makes studying interesting.",
+            "He loves children and makes studying enjoyable.",
+            "He loves kids and makes learning fun.",
+            "He loves kids and makes learning interesting.",
+            "He loves kids and makes learning enjoyable.",
+            "He loves kids and makes studying fun.",
+            "He loves kids and makes studying interesting.",
+            "He loves kids and makes studying enjoyable.",
+            "He loves children, and he makes learning fun.",
+            "He loves kids, and he makes learning fun."
+          ],
+          "targets": [
+            [
+              "loves"
+            ],
+            [
+              "makes"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He love children",
+              "hint": "He 는 3인칭 한 명이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "He love kids",
+              "hint": "He 는 3인칭 한 명이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "and make learning",
+              "hint": "and 뒤의 동사도 주어 He 에 맞춰요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses",
+            "sentence-pattern-5"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s6-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 27 (6과)",
+            "reviewWhere": "review 4 item 27 (p41)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg11-2:p2",
+          "ko": "그는 우리를 매우 잘 가르친다.",
+          "koSource": "review 4 item 28",
+          "condition": null,
+          "promptEn": null,
+          "en": "He teaches us very well.",
+          "accept": [
+            "He teaches us really well.",
+            "He teaches us so well."
+          ],
+          "targets": [
+            [
+              "teaches"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He teach us",
+              "hint": "He 는 3인칭 한 명이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "He teachs",
+              "hint": "-ch 로 끝나는 동사는 -s 만 붙이지 않아요."
+            },
+            {
+              "match": "teaches us very good",
+              "hint": "'잘'은 동사를 꾸미는 말이라 good 과 모양이 달라요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s7-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 28 (7과)",
+            "reviewWhere": "review 4 item 28 (p41)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg11-2:p3",
+          "ko": "그는 낯선 사람들과 말하는 것을 좋아하지 않는다.",
+          "koSource": "review 4 item 29",
+          "condition": null,
+          "promptEn": null,
+          "en": "He doesn't like to talk to new people.",
+          "accept": [
+            "He doesn't like to talk to strangers.",
+            "He doesn't like to talk with new people.",
+            "He doesn't like to talk with strangers.",
+            "He doesn't like talking to new people.",
+            "He doesn't like talking to strangers.",
+            "He doesn't like talking with new people.",
+            "He doesn't like talking with strangers.",
+            "He doesn't like to speak to new people.",
+            "He doesn't like to speak to strangers.",
+            "He doesn't like to speak with new people.",
+            "He doesn't like to speak with strangers.",
+            "He doesn't like speaking to new people.",
+            "He doesn't like speaking to strangers.",
+            "He doesn't like speaking with new people.",
+            "He doesn't like speaking with strangers."
+          ],
+          "targets": [
+            [
+              "doesn't like",
+              "does not like"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He don't like",
+              "hint": "주어 He(3인칭 한 명)의 부정은 don't 와 모양이 달라요."
+            },
+            {
+              "match": "doesn't likes",
+              "hint": "doesn't 뒤에는 동사원형을 써요."
+            },
+            {
+              "match": "He not like",
+              "hint": "일반동사의 부정에는 do 동사의 도움이 필요해요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses",
+            "negative-basic",
+            "like-to"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-2",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 29 (3과)",
+            "reviewWhere": "review 4 item 29 (p41)"
+          },
+          "fix": {
+            "from": "He doesn’t like to talk to new people..",
+            "kind": "english_grammar",
+            "why": "Application 줄 끝에 마침표가 두 번 찍혀 있어 하나로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg11-2:p4",
+          "ko": "그녀는 매일 내 남동생과 함께 학교에 걸어간다.",
+          "koSource": "review 4 item 30 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "She walks to school with my brother every day.",
+          "accept": [
+            "She walks to school with my little brother every day.",
+            "She walks to school with my younger brother every day.",
+            "Every day, she walks to school with my brother.",
+            "Every day, she walks to school with my little brother.",
+            "Every day, she walks to school with my younger brother.",
+            "She walks to school every day with my brother.",
+            "She goes to school on foot with my brother every day.",
+            "She walks to school with my brother each day.",
+            "She walks to school with my little brother each day.",
+            "She walks to school with my younger brother each day.",
+            "She walks to school every day with my younger brother.",
+            "She walks to school every day with my little brother."
+          ],
+          "targets": [
+            [
+              "walks",
+              "goes"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "everyday",
+              "hint": "'매일'은 두 낱말로 띄어 써요. 붙여 쓰면 '일상의'라는 다른 낱말이 돼요."
+            },
+            {
+              "match": "She walk to",
+              "hint": "She 는 3인칭 한 명이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "walks to the school",
+              "hint": "공부하러 다니는 학교는 school 앞에 관사를 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 30",
+            "reviewWhere": "review 4 item 30 (p41)"
+          },
+          "fix": {
+            "from": "She walks to school with my brother everyday.",
+            "fromKo": "그녀는 매일 남동생과 함께 학교로 걸어간다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "everyday 는 '일상의'(형용사)라 '매일'은 every day 로 띄어 씁니다. 한국어에는 my(내)가 빠져 누구의 동생인지 모호해 '내 남동생'으로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg11-2:p5",
+          "ko": "닉은 매일 한 시간씩 성경을 읽는다.",
+          "koSource": "review 4 item 31",
+          "condition": null,
+          "promptEn": null,
+          "en": "Nick reads the Bible for an hour every day.",
+          "accept": [
+            "Nick reads the Bible for an hour each day.",
+            "Nick reads the Bible for an hour a day.",
+            "Nick reads the Bible for an hour daily.",
+            "Nick reads the Bible for one hour every day.",
+            "Nick reads the Bible for one hour each day.",
+            "Nick reads the Bible for one hour a day.",
+            "Nick reads the Bible for one hour daily.",
+            "Every day, Nick reads the Bible for an hour.",
+            "Every day, Nick reads the Bible for one hour.",
+            "Each day, Nick reads the Bible for an hour.",
+            "Each day, Nick reads the Bible for one hour.",
+            "Nick reads the Bible an hour every day."
+          ],
+          "targets": [
+            [
+              "reads"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "reads Bible",
+              "hint": "성경처럼 하나뿐인 책 이름 앞에는 관사가 필요해요."
+            },
+            {
+              "match": "everyday",
+              "hint": "'매일'은 두 낱말로 띄어 써요. 붙여 쓰면 '일상의'라는 다른 낱말이 돼요."
+            },
+            {
+              "match": "Nick read the",
+              "hint": "Nick 은 3인칭 한 명이에요. 동사 모양을 보세요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 31",
+            "reviewWhere": "review 4 item 31 (p41)"
+          },
+          "fix": {
+            "from": "Nick reads Bible for an hour everyday.",
+            "kind": "english_grammar",
+            "why": "성경은 정관사를 붙여 the Bible 로 쓰고, '매일'은 every day 로 띄어 씁니다."
+          }
+        },
+        {
+          "id": "pg11-2:p6",
+          "ko": "테드는 어머니와 함께 병원에서 점심을 먹는다.",
+          "koSource": "review 4 item 32",
+          "condition": null,
+          "promptEn": null,
+          "en": "Ted eats lunch at the hospital with his mother.",
+          "accept": [
+            "Ted eats lunch at the hospital with his mom.",
+            "Ted eats lunch in the hospital with his mother.",
+            "Ted eats lunch in the hospital with his mom.",
+            "Ted has lunch at the hospital with his mother.",
+            "Ted has lunch at the hospital with his mom.",
+            "Ted has lunch in the hospital with his mother.",
+            "Ted has lunch in the hospital with his mom.",
+            "Ted eats lunch with his mother at the hospital.",
+            "Ted eats lunch with his mother in the hospital.",
+            "Ted eats lunch with his mom at the hospital.",
+            "Ted eats lunch with his mom in the hospital.",
+            "Ted has lunch with his mother at the hospital.",
+            "Ted has lunch with his mother in the hospital.",
+            "Ted has lunch with his mom at the hospital.",
+            "Ted has lunch with his mom in the hospital."
+          ],
+          "targets": [
+            [
+              "eats",
+              "has"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Ted eat lunch",
+              "hint": "Ted 는 3인칭 한 명이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "Ted have lunch",
+              "hint": "Ted 는 3인칭 한 명이에요. have 의 모양이 달라져요."
+            },
+            {
+              "match": "eats a lunch",
+              "hint": "식사 이름(breakfast · lunch · dinner) 앞에는 보통 관사를 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 32",
+            "reviewWhere": "review 4 item 32 (p41)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg11-2:p7",
+          "ko": "그는 음악을 많이 듣는다.",
+          "koSource": "review 4 item 33",
+          "condition": null,
+          "promptEn": null,
+          "en": "He listens to music a lot.",
+          "accept": [
+            "He listens to a lot of music.",
+            "He listens to lots of music."
+          ],
+          "targets": [
+            [
+              "listens"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He listens music",
+              "hint": "'~을 듣다'의 listen 뒤에는 전치사가 필요해요."
+            },
+            {
+              "match": "He listen to",
+              "hint": "He 는 3인칭 한 명이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "He hears music",
+              "hint": "귀 기울여 듣는 것은 hear 가 아닌 다른 동사예요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 33",
+            "reviewWhere": "review 4 item 33 (p41)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg11-2:p8",
+          "ko": "릴리는 오늘 빨간 블라우스를 입고 있다.",
+          "koSource": "review 4 item 34 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Lilly is wearing a red blouse today.",
+          "accept": [
+            "Today, Lilly is wearing a red blouse.",
+            "Lilly's wearing a red blouse today.",
+            "Today, Lilly's wearing a red blouse."
+          ],
+          "targets": [
+            [
+              "is wearing",
+              "Lilly's wearing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Lilly wears a red blouse today",
+              "hint": "'오늘 입고 있다'는 오늘 하루 잠깐의 일이에요. 습관을 말하는 -s 현재형 말고 다른 모양으로 써요."
+            },
+            {
+              "match": "Lilly is wear",
+              "hint": "be 뒤에서 '~하고 있다'는 동사에 -ing 를 붙여요."
+            },
+            {
+              "match": "Lilly wearing",
+              "hint": "'~하고 있다'에는 be동사가 함께 있어야 해요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses",
+            "twelve-tenses",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 32,
+            "where": "application item 34",
+            "reviewWhere": "review 4 item 34 (p42)"
+          },
+          "fix": {
+            "from": "Lilly wears a red blouse today.",
+            "fromKo": "릴리는 오늘 빨간 블라우스를 입는다.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "today(오늘 하루)의 잠깐의 일에는 현재진행형이 자연스럽습니다. -s 현재형은 습관·사실에 쓰는 모양이라 이 레슨에서 둘을 가르는 문장으로 씁니다. 한국어도 '입고 있다'로 맞췄습니다."
+          }
+        },
+        {
+          "id": "pg11-2:p9",
+          "ko": "여름에는 비가 많이 내린다.",
+          "koSource": "review 4 item 35",
+          "condition": null,
+          "promptEn": null,
+          "en": "In summer, it rains a lot.",
+          "accept": [
+            "It rains a lot in summer.",
+            "In the summer, it rains a lot.",
+            "It rains a lot in the summer."
+          ],
+          "targets": [
+            [
+              "rains"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "it rain a lot",
+              "hint": "주어 it 은 3인칭 하나예요. 동사 모양을 보세요."
+            },
+            {
+              "match": "In summer rains a lot",
+              "hint": "날씨를 말할 때도 주어 자리를 비우지 않아요."
+            },
+            {
+              "match": "it is raining a lot",
+              "hint": "여름마다 되풀이되는 일이에요. 습관·사실은 기본 현재형으로 써요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses",
+            "it-dummy"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 33,
+            "where": "application item 35",
+            "reviewWhere": "review 4 item 35 (p42)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg11-2:p10",
+          "ko": "이것은 내 개인데, 많이 짖는다.",
+          "koSource": "review 4 item 36 (고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "This is my dog and it barks a lot.",
+          "accept": [
+            "This is my dog, and he barks a lot.",
+            "This is my dog, and she barks a lot.",
+            "This is my dog. It barks a lot.",
+            "This is my dog. He barks a lot.",
+            "This is my dog. She barks a lot."
+          ],
+          "targets": [
+            [
+              "barks"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "it bark a lot",
+              "hint": "주어 it 은 3인칭 하나예요. 동사 모양을 보세요."
+            },
+            {
+              "match": "and barks a lot",
+              "hint": "and 뒤 문장에도 주어를 써요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses",
+            "pronoun-demonstrative",
+            "compound-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 33,
+            "where": "application item 36",
+            "reviewWhere": "review 4 item 36 (p42)"
+          },
+          "fix": {
+            "fromKo": "이것은 나의 개이고 그것은 많이 짓는다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'짓는다'(만들다)는 오타로, 개가 소리를 내는 것은 '짖는다'입니다. '그것은'도 어색해 '이것은 내 개인데, 많이 짖는다.'로 고쳤습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg11-2:t1",
+          "ko": "그는 매년 그곳에 간다.(each year)",
+          "condition": null,
+          "promptEn": null,
+          "en": "He goes there each year.",
+          "accept": [
+            "Each year, he goes there.",
+            "He goes there every year.",
+            "Every year, he goes there."
+          ],
+          "targets": [
+            [
+              "goes"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "He go there",
+              "hint": "He 는 3인칭 한 명이에요. 동사 모양을 보세요."
+            },
+            {
+              "match": "He gos there",
+              "hint": "go 에는 -s 만 붙이지 않아요."
+            },
+            {
+              "match": "goes to there",
+              "hint": "there(그곳에) 앞에는 to 를 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-015#39",
+          "note": "GRAMMAR I 허용 답(Each year, he goes there.)에 같은 뜻의 every year 판을 더했습니다."
+        },
+        {
+          "id": "pg11-2:t2",
+          "ko": "그녀는 그것을 좋아하지 않는다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "She doesn't like it.",
+          "accept": [
+            "She doesn't like that."
+          ],
+          "targets": [
+            [
+              "doesn't like",
+              "does not like"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "She don't like",
+              "hint": "주어 She(3인칭 한 명)의 부정은 don't 와 모양이 달라요."
+            },
+            {
+              "match": "doesn't likes",
+              "hint": "doesn't 뒤에는 동사원형을 써요."
+            }
+          ],
+          "tags": [
+            "present-3sg-uses",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-015#25"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg11-2:f1",
+      "template": "My father drinks ___ every morning.",
+      "ko": "우리 아버지는 매일 아침 ___을/를 드신다."
+    }
+  ]
+}

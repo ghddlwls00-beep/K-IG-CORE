@@ -1,0 +1,935 @@
+{
+  "id": "pg17-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "조동사 2",
+  "label": "TOPIC 17. 조동사",
+  "menuLabel": "17-2. 조동사 2",
+  "unit": 17,
+  "part": 3,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(2) 조동사 may",
+  "grammarTags": [
+    "modal-may"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg17-2:a1",
+          "en": "He may be in his office.",
+          "ko": "그는 사무실에 있을지도 몰라.",
+          "koSource": "review 2. item 10 (고침)",
+          "focus": [
+            "may be"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 10,
+            "where": "passOff (2) item 1",
+            "reviewWhere": "review 1. item 4 (p14) · review 2. item 10 (p15)"
+          },
+          "fix": {
+            "fromKo": "그는 그의 사무실에 있을 거야.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "may(추측, ~일지도 모른다)를 '있을 거야'(will)로 옮겨 조동사 뜻이 흐려져 '있을지도 몰라'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg17-2:a2",
+          "en": "She may have been asleep.",
+          "ko": "그녀는 잠들어 있었을지도 몰라.",
+          "koSource": "review 2. item 13 (고침)",
+          "focus": [
+            "may have been"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 10,
+            "where": "passOff (2) item 2",
+            "reviewWhere": "review 1. item 5 (p14) · review 2. item 13 (p16)"
+          },
+          "fix": {
+            "fromKo": "그녀는 잠이 들었을 거야.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "may have been(지난 일 추측 '~였을지도 모른다')을 '잠이 들었을 거야'로 옮겨 확신 정도가 달라지고 must have been('~였음에 틀림없다')과 구분이 약해 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg17-2:a3",
+          "en": "You might have left it in the store.",
+          "ko": "너는 그것을 가게에 두고 왔을지도 몰라.",
+          "koSource": "review 2. item 14 (고침)",
+          "focus": [
+            "might have left"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 10,
+            "where": "passOff (2) item 3",
+            "reviewWhere": "review 1. item 6 (p14) · review 2. item 14 (p16)"
+          },
+          "fix": {
+            "fromKo": "너는 가게에서 그것을 두었을지도 몰라.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "left it in the store 는 '가게에 두고 왔다'인데 '가게에서 … 두었을지도'는 어색해 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg17-2:a4",
+          "en": "You may as well walk to school.",
+          "ko": "너는 학교에 걸어가는 편이 낫겠다.",
+          "koSource": "review 2. item 15 (다듬음)",
+          "focus": [
+            "may as well"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 10,
+            "where": "passOff (2) item 4",
+            "reviewWhere": "review 1. item 7 (p14) · review 2. item 15 (p16)"
+          },
+          "fix": {
+            "fromKo": "너는 학교로 걸어가는 것이 좋겠다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "may as well(~하는 편이 낫다)의 뜻이 드러나게 '걸어가는 편이 낫겠다'로 다듬었습니다('학교로'도 '학교에'로)."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg17-2:a1",
+          "pg17-2:a2",
+          "pg17-2:a4"
+        ],
+        "question": "세 문장 가운데 may 가 '~일지도 모른다(추측)'의 뜻이 아닌 것은?",
+        "options": [
+          "You may as well walk to school.",
+          "He may be in his office.",
+          "She may have been asleep."
+        ],
+        "answer": 0,
+        "why": "may as well + 동사원형은 '~하는 편이 낫다'라는 한 덩어리 표현이에요. 나머지 둘은 지금 · 지난 일에 대한 추측이에요."
+      },
+      "title": "may = ~일지도 모른다(추측) · ~해도 된다(허락)",
+      "points": [
+        "may + 동사원형: ~일지도 모른다(추측) · ~해도 된다(허락). 허락의 부정 may not 은 ~하면 안 된다(금지)",
+        "might 는 may 보다 약한 추측이에요: He might be busy.",
+        "지난 일 추측: may/might + have + 과거분사 = ~였을지도 모른다",
+        "May I …? = ~해도 될까요? — 대답은 Yes, you may. / No, you may not.",
+        "may as well + 동사원형 = ~하는 편이 낫다 · may well + 동사원형 = ~하는 것도 당연하다 · 아마 ~일 것이다"
+      ],
+      "table": {
+        "columns": [
+          "모양",
+          "뜻",
+          "예문"
+        ],
+        "rows": [
+          [
+            "may + 동사원형",
+            "~일지도 모른다(추측)",
+            "It may rain this evening."
+          ],
+          [
+            "may + 동사원형",
+            "~해도 된다(허락)",
+            "You may sit here."
+          ],
+          [
+            "may/might + have + 과거분사",
+            "~였을지도 모른다",
+            "They may have gone home."
+          ],
+          [
+            "may as well + 동사원형",
+            "~하는 편이 낫다",
+            "We may as well take a taxi."
+          ],
+          [
+            "may well + 동사원형",
+            "~하는 것도 당연하다 · 아마 ~일 것이다",
+            "She may well be angry."
+          ],
+          [
+            "wherever … may + 동사원형",
+            "어디에(어디로) ~하더라도",
+            "Wherever you may live, keep in touch."
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '~일지도 몰라 · ~해도 돼'처럼 끝말로 추측과 허락을 나누지만, 영어는 같은 may 를 쓰고 앞뒤 뜻으로 구별해요. 지난 일을 추측할 때도 may 는 그대로 두고 뒤를 have + 과거분사로 바꿔요.",
+      "mistakes": [
+        {
+          "wrong": "He may is at home.",
+          "right": "He may be at home.",
+          "why": "may 뒤에는 동사원형(be)이 와요."
+        },
+        {
+          "wrong": "She may has left already.",
+          "right": "She may have left already.",
+          "why": "may 뒤에는 원형 have 가 와요. 지난 일 추측은 may have + 과거분사예요."
+        }
+      ],
+      "worked": [
+        "그는 버스를 놓쳤을지도 몰라.",
+        "지난 일에 대한 추측 → may/might + have + 과거분사",
+        "놓치다 miss → 과거분사 missed",
+        "He may have missed the bus."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'You ___ as well go to bed now.' 빈칸에 맞는 것은? (지금 자러 가는 편이 낫겠다)",
+        "options": [
+          "may",
+          "must",
+          "can"
+        ],
+        "answer": 0,
+        "why": "may as well + 동사원형 = ~하는 편이 낫다예요.",
+        "pointIndex": 4
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg17-2:s1",
+          "kind": "select",
+          "instruction": "조동사를 누르고, 뜻을 고르세요",
+          "tokens": [
+            "He",
+            "may",
+            "be",
+            "in",
+            "his",
+            "office",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "추측(~일지도 모른다)",
+            "능력(~할 수 있다)",
+            "의무(~해야 한다)"
+          ],
+          "labelAnswer": [
+            "추측(~일지도 모른다)"
+          ],
+          "why": "may + 동사원형 = ~일지도 모른다(추측). 사무실에 있는지 확실하지 않아요.",
+          "bookRef": {
+            "book": 3,
+            "page": 14,
+            "where": "review 1. item 4 (조동사 밑줄 + 뜻)"
+          }
+        },
+        {
+          "id": "pg17-2:s2",
+          "kind": "select",
+          "instruction": "조동사 부분을 누르고, 뜻을 고르세요",
+          "tokens": [
+            "She",
+            "may have been",
+            "asleep",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "지난 일 추측(~였을지도 모른다)",
+            "허락(~해도 된다)",
+            "능력(~할 수 있었다)"
+          ],
+          "labelAnswer": [
+            "지난 일 추측(~였을지도 모른다)"
+          ],
+          "why": "may have + 과거분사 = 지난 일에 대한 추측(~였을지도 모른다)이에요.",
+          "bookRef": {
+            "book": 3,
+            "page": 14,
+            "where": "review 1. item 5 (조동사 밑줄 + 뜻)"
+          }
+        },
+        {
+          "id": "pg17-2:s3",
+          "kind": "select",
+          "instruction": "조동사 부분을 누르고, 뜻을 고르세요",
+          "tokens": [
+            "You",
+            "might have left",
+            "it",
+            "in",
+            "the",
+            "store",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "지난 일 추측(~였을지도 모른다)",
+            "의무(~해야 했다)",
+            "능력(~할 수 있었다)"
+          ],
+          "labelAnswer": [
+            "지난 일 추측(~였을지도 모른다)"
+          ],
+          "why": "might have + 과거분사 = ~했을지도 모른다(may 보다 약한 추측)예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 14,
+            "where": "review 1. item 6 (조동사 밑줄 + 뜻)"
+          }
+        },
+        {
+          "id": "pg17-2:s4",
+          "kind": "select",
+          "instruction": "조동사 표현을 누르고, 뜻을 고르세요",
+          "tokens": [
+            "You",
+            "may as well",
+            "walk",
+            "to",
+            "school",
+            "."
+          ],
+          "answer": [
+            1
+          ],
+          "optional": [],
+          "labels": [
+            "~하는 편이 낫다",
+            "~일지도 모른다",
+            "~할 수 있다"
+          ],
+          "labelAnswer": [
+            "~하는 편이 낫다"
+          ],
+          "why": "may as well + 동사원형 = ~하는 편이 낫다(달리 좋은 방법이 없으니)예요.",
+          "bookRef": {
+            "book": 3,
+            "page": 14,
+            "where": "review 1. item 7 (조동사 밑줄 + 뜻)"
+          }
+        },
+        {
+          "id": "pg17-2:s5",
+          "kind": "choice",
+          "instruction": "밑줄 친 may 의 뜻은?",
+          "sentence": "You may use my pen.",
+          "underline": [
+            "may"
+          ],
+          "options": [
+            "~해도 된다(허락)",
+            "~일지도 모른다(추측)",
+            "~해야 한다(의무)"
+          ],
+          "answer": 0,
+          "why": "'내 펜을 써도 된다' — 허락의 may 예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg17-2:s6",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (그녀는 어제 아팠을지도 모른다.)",
+          "sentence": "She may ___ sick yesterday.",
+          "underline": [],
+          "options": [
+            "be",
+            "have been",
+            "was"
+          ],
+          "answer": 1,
+          "why": "어제(지난 일)에 대한 추측이라 may + have + 과거분사(have been)예요.",
+          "bookRef": null,
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg17-2:p1",
+          "ko": "그는 사무실에 있을지도 몰라.",
+          "koSource": "review 2. item 10 (고침)",
+          "condition": "may나 might를 써서",
+          "promptEn": null,
+          "en": "He may be in his office.",
+          "accept": [
+            "He may be at his office.",
+            "He may be in the office.",
+            "He may be at the office.",
+            "He might be in his office.",
+            "He might be at his office.",
+            "He might be in the office.",
+            "He might be at the office."
+          ],
+          "targets": [
+            [
+              "may",
+              "might"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he may is",
+              "hint": "may 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "maybe he is",
+              "hint": "조건은 'may나 might를 써서'예요. '~일지도 모른다'를 조동사로 써 보세요."
+            },
+            {
+              "match": "he will be in",
+              "hint": "'있을지도 몰라'는 확실하지 않은 추측이에요."
+            }
+          ],
+          "tags": [
+            "modal-may",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 11,
+            "where": "application item 10",
+            "reviewWhere": "review 2. item 10 (p15) · review 1. item 4 (p14)"
+          },
+          "fix": {
+            "fromKo": "그는 그의 사무실에 있을 거야.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "may(추측, ~일지도 모른다)를 '있을 거야'(will)로 옮겨 조동사 뜻이 흐려져 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg17-2:p2",
+          "ko": "너는 식당에서 기다려도 되지만, 담배 피우는 것은 안 된다.",
+          "koSource": "review 2. item 11",
+          "condition": "may를 써서",
+          "promptEn": null,
+          "en": "You may wait in the restaurant, but you may not smoke.",
+          "accept": [
+            "You may wait in the restaurant, but you may not smoke there.",
+            "You may wait in the restaurant, but may not smoke.",
+            "You may wait in the restaurant, but may not smoke there."
+          ],
+          "targets": [
+            [
+              "may"
+            ],
+            [
+              "may not"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "may not to smoke",
+              "hint": "may not 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "you can wait",
+              "hint": "조건은 'may를 써서'예요."
+            },
+            {
+              "match": "can not smoke",
+              "hint": "조건은 'may를 써서'예요. '~하면 안 된다'도 may 로 나타내 보세요."
+            }
+          ],
+          "tags": [
+            "modal-may",
+            "negative-basic",
+            "conjunction-and-but-or-so",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 11,
+            "where": "application item 11",
+            "reviewWhere": "review 2. item 11 (p15)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg17-2:p3",
+          "ko": "제가 TV를 켜도 돼요? 네, 돼요.",
+          "koSource": "review 2. item 12 (고침)",
+          "condition": "may를 써서",
+          "promptEn": null,
+          "en": "May I turn on the TV? Yes, you may.",
+          "accept": [
+            "May I turn the TV on? Yes, you may.",
+            "May I turn on the television? Yes, you may.",
+            "May I turn the television on? Yes, you may."
+          ],
+          "targets": [
+            [
+              "May I"
+            ],
+            [
+              "you may"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "yes you can",
+              "hint": "may 로 물었으니 대답도 같은 조동사로 해 보세요."
+            },
+            {
+              "match": "yes i may",
+              "hint": "대답의 주어는 묻는 사람(I)을 가리키는 you 예요."
+            },
+            {
+              "match": "may i turn off",
+              "hint": "'켜다'예요."
+            }
+          ],
+          "tags": [
+            "modal-may",
+            "question-basic",
+            "short-answer"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 11,
+            "where": "application item 12",
+            "reviewWhere": "review 2. item 12 (p15)"
+          },
+          "fix": {
+            "fromKo": "제가 TV를 켜도 되요? 그래요. 됩니다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'되요'는 '돼요'가 맞고, '그래요. 됩니다.'는 어색해 '네, 돼요.'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg17-2:p4",
+          "ko": "제임스는 학교에 있을지도 모른다.",
+          "koSource": "new(교재에 한국어 없음)",
+          "condition": "may나 might를 써서",
+          "promptEn": null,
+          "en": "James may be at school.",
+          "accept": [
+            "James might be at school.",
+            "James may be in school.",
+            "James might be in school."
+          ],
+          "targets": [
+            [
+              "may",
+              "might"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "james may is",
+              "hint": "may 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "maybe james is",
+              "hint": "조건은 'may나 might를 써서'예요. '~일지도 모른다'를 조동사로 써 보세요."
+            }
+          ],
+          "tags": [
+            "modal-may",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 13"
+          },
+          "fix": null,
+          "note": "교재 어디에도 한국어가 없는 문장이라 새로 옮김."
+        },
+        {
+          "id": "pg17-2:p5",
+          "ko": "그녀는 잠들어 있었을지도 몰라.",
+          "koSource": "review 2. item 13 (고침)",
+          "condition": "may나 might를 써서",
+          "promptEn": null,
+          "en": "She may have been asleep.",
+          "accept": [
+            "She might have been asleep.",
+            "She may have been sleeping.",
+            "She might have been sleeping.",
+            "She may have fallen asleep.",
+            "She might have fallen asleep."
+          ],
+          "targets": [
+            [
+              "may have",
+              "might have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "she may be asleep",
+              "hint": "'잠들어 있었을지도'는 지난 일에 대한 추측이에요. may 뒤를 have + 과거분사로."
+            },
+            {
+              "match": "may have be",
+              "hint": "have 뒤에는 과거분사가 와요."
+            }
+          ],
+          "tags": [
+            "modal-may"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 14",
+            "reviewWhere": "review 2. item 13 (p16) · review 1. item 5 (p14)"
+          },
+          "fix": {
+            "fromKo": "그녀는 잠이 들었을 거야.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "may have been(지난 일 추측 '~였을지도 모른다')을 '잠이 들었을 거야'로 옮겨 확신 정도가 달라져 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg17-2:p6",
+          "ko": "너는 그것을 가게에 두고 왔을지도 몰라.",
+          "koSource": "review 2. item 14 (고침)",
+          "condition": "may나 might를 써서",
+          "promptEn": null,
+          "en": "You might have left it in the store.",
+          "accept": [
+            "You might have left it at the store.",
+            "You might have left it in the shop.",
+            "You may have left it in the store.",
+            "You may have left it at the store.",
+            "You may have left it in the shop.",
+            "You might have left it at the shop.",
+            "You may have left it at the shop."
+          ],
+          "targets": [
+            [
+              "might have",
+              "may have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "have leave",
+              "hint": "have 뒤에는 과거분사가 와요. leave 의 과거분사는?"
+            },
+            {
+              "match": "have leaved",
+              "hint": "leave 는 불규칙 동사예요. 과거분사 모양을 떠올려 보세요."
+            },
+            {
+              "match": "you might leave it",
+              "hint": "두고 온 것은 지난 일이에요. might 뒤를 have + 과거분사로."
+            }
+          ],
+          "tags": [
+            "modal-may",
+            "irregular-verbs"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 15",
+            "reviewWhere": "review 2. item 14 (p16) · review 1. item 6 (p14)"
+          },
+          "fix": {
+            "fromKo": "너는 가게에서 그것을 두었을지도 몰라.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "left it in the store 는 '가게에 두고 왔다'인데 '가게에서 … 두었을지도'는 어색해 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg17-2:p7",
+          "ko": "너는 학교에 걸어가는 편이 낫겠다.",
+          "koSource": "review 2. item 15 (다듬음)",
+          "condition": "may as well을 써서",
+          "promptEn": null,
+          "en": "You may as well walk to school.",
+          "accept": [
+            "You might as well walk to school."
+          ],
+          "targets": [
+            [
+              "may as well",
+              "might as well"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "as well to walk",
+              "hint": "may as well 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "as well walking",
+              "hint": "may as well 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "you had better walk",
+              "hint": "조건은 'may as well을 써서'예요."
+            }
+          ],
+          "tags": [
+            "modal-may",
+            "preposition-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 16",
+            "reviewWhere": "review 2. item 15 (p16) · review 1. item 7 (p14)"
+          },
+          "fix": {
+            "fromKo": "너는 학교로 걸어가는 것이 좋겠다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "may as well(~하는 편이 낫다)의 뜻이 드러나게 '걸어가는 편이 낫겠다'로 다듬었습니다('학교로'도 '학교에'로)."
+          }
+        },
+        {
+          "id": "pg17-2:p8",
+          "ko": "네가 혼란스러워하는 것도 당연하다.",
+          "koSource": "review 2. item 16 (고침)",
+          "condition": "may well을 써서",
+          "promptEn": null,
+          "en": "You may well get confused.",
+          "accept": [
+            "You may well be confused."
+          ],
+          "targets": [
+            [
+              "may well"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "may well to get",
+              "hint": "may well 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "get confusing",
+              "hint": "혼란을 느끼는 사람은 -ed 형(혼란스러워진)으로 써요."
+            },
+            {
+              "match": "be confusing",
+              "hint": "혼란을 느끼는 사람은 -ed 형(혼란스러워진)으로 써요."
+            }
+          ],
+          "tags": [
+            "modal-may",
+            "adjective-ing-ed"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 17",
+            "reviewWhere": "review 2. item 16 (p16)"
+          },
+          "fix": {
+            "fromKo": "네가 혼돈스러워 하는 것은 당연하다.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "confused 는 '혼란스러워하다'가 자연스럽고('혼돈'은 chaos) '-어하다'는 붙여 씁니다."
+          }
+        },
+        {
+          "id": "pg17-2:p9",
+          "ko": "네가 어디를 가더라도, 나는 네가 나를 위해 해 준 일을 결코 잊지 않을 거야.",
+          "koSource": "review 2. item 17 (고침)",
+          "condition": "may를 써서",
+          "promptEn": null,
+          "en": "Wherever you may go, I'll never forget what you have done for me.",
+          "accept": [
+            "Wherever you may go, I'll never forget what you did for me.",
+            "No matter where you may go, I'll never forget what you have done for me.",
+            "No matter where you may go, I'll never forget what you did for me.",
+            "I'll never forget what you have done for me, wherever you may go.",
+            "I'll never forget what you did for me, wherever you may go."
+          ],
+          "targets": [
+            [
+              "may"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "wherever you go",
+              "hint": "조건은 'may를 써서'예요. '어디를 가더라도'를 may 로 나타내 보세요."
+            },
+            {
+              "match": "what did you do",
+              "hint": "'네가 한 일'은 묻는 말이 아니에요. what + 주어 + 동사 순서로 써요."
+            },
+            {
+              "match": "what you do to me",
+              "hint": "'나를 위해 해 준 일'은 지난 일이에요. '~를 위해'에 맞는 전치사를 써 보세요."
+            },
+            {
+              "match": "what you did to me",
+              "hint": "'나를 위해' 해 준 일이에요. '~를 위해'에 맞는 전치사를 써 보세요."
+            }
+          ],
+          "tags": [
+            "modal-may",
+            "relative-what",
+            "present-perfect",
+            "future-will",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 12,
+            "where": "application item 18",
+            "reviewWhere": "review 2. item 17 (p16)"
+          },
+          "fix": {
+            "from": "Wherever you may go, I’ll never forget what you do to me.",
+            "fromKo": "네가 어디를 가더라도, 나는 결코 네가 내게 한 일을 잊지 않을 거야.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "what you do to me 는 현재형이고 '나에게 (나쁜) 짓을 하다'로 읽혀, 한국어 '네가 내게 한 일'(지난 일, 고마운 일)과 맞지 않아 what you have done for me 로 고쳤습니다(what you did for me 도 받음). 한국어도 for me 에 맞춰 '네가 내게 한 일'을 '네가 나를 위해 해 준 일'로 고쳤습니다(교재 한국어대로면 what you did to me 도 맞는 번역이라 제시문과 모범 답의 뜻이 달랐음)."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg17-2:t1",
+          "ko": "그는 백만장자일지 모른다.",
+          "koSource": "grammar2:gh2-013#18",
+          "condition": "may나 might를 써서",
+          "promptEn": null,
+          "en": "He may be a millionaire.",
+          "accept": [
+            "He might be a millionaire."
+          ],
+          "targets": [
+            [
+              "may",
+              "might"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he may is",
+              "hint": "may 뒤에는 동사원형이 와요."
+            },
+            {
+              "match": "maybe he is",
+              "hint": "조건은 'may나 might를 써서'예요. '~일지 모른다'를 조동사로 써 보세요."
+            }
+          ],
+          "tags": [
+            "modal-may",
+            "article-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-013#18"
+        },
+        {
+          "id": "pg17-2:t2",
+          "ko": "그는 영어를 공부했을지 모른다.",
+          "koSource": "grammar2:gh2-016#4",
+          "condition": "may나 might를 써서",
+          "promptEn": null,
+          "en": "He might have studied English.",
+          "accept": [
+            "He may have studied English."
+          ],
+          "targets": [
+            [
+              "might have",
+              "may have"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he might study",
+              "hint": "공부한 것은 지난 일이에요. might 뒤를 have + 과거분사로."
+            },
+            {
+              "match": "might have study",
+              "hint": "have 뒤에는 과거분사가 와요."
+            }
+          ],
+          "tags": [
+            "modal-may"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-016#4"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg17-2:f1",
+      "template": "May I ___?",
+      "ko": "제가 ___해도 될까요?"
+    }
+  ]
+}

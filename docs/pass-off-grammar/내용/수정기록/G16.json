@@ -1,0 +1,149 @@
+[
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2:p31 · p32 · p33 (+ p34)",
+    "finding": "though/although 와 but 을 겹쳐 쓴 답 · but 만 쓴 답에 엉뚱한 힌트(p31 Although…, but → '뜻은 맞아요 … 앞 절을 시작해 보세요' · p32 but 만 → 'though 와 but …' · p33 Even though…, but → '뜻은 맞아요 … 종속접속사로 써 보세요'). p33 은 '-는데도'를 but 으로 옮긴 맞는 답이 칩 없이 오답(p31 에는 칩이 있어 기준이 어긋남).",
+    "action": "fixed",
+    "note": "점검자 말이 맞음(채점기로 같은 결과 재현). p31 errorPatterns[1] 힌트 → \"조건은 '종속접속사로'예요. '~지만'은 종속접속사로 앞 절을 시작해서 나타내고, 그때는 but 을 함께 쓰지 않아요.\"(제안 그대로) · p32 errorPatterns[0] → \"'비록 ~지만'은 but 이 아니라 종속접속사로 앞 절을 시작해요. 종속접속사와 but 을 함께 쓰지도 않아요.\"(제안 그대로) · p33 condition null → '종속접속사로', errorPatterns[0] → 칩을 달았으므로 p31 과 같은 꼴로 \"조건은 '종속접속사로'예요. '-는데도'는 but 이 아니라 종속접속사로 나타내고, 그때는 but 을 함께 쓰지 않아요.\"(점검자 문구 앞에 칩 이름만 붙임). 수정자가 더한 것: p34('비록 ~일지라도')도 'Although it is hard work, but …'에 겹쳐 쓰기를 짚지 않는 힌트가 떠서 끝에 '종속접속사와 but 을 함께 쓰지도 않아요.'를 더함. p32 · p34 는 한국어에 '비록'이 있어 칩을 달지 않음(점검자 판단 그대로, pg04-3:p7 과 같음). scratchpad/g16fix/probe-after.cjs(실제 채점기 passoffGrading.ts — 고친 뒤 106/106, 고치기 전 파일(--against=backup)로는 37/106): 다섯 오답 모두 새 힌트, 모범 답 · 허용 답 정답."
+  },
+  {
+    "lesson": "pg20-1",
+    "item": "pg20-1:p5 · p6 · p7",
+    "finding": "'-지만'을 although 로 옮긴 맞는 답이 조건 칩 없이 오답('뜻은 맞아요 …' 힌트). 같은 레슨 p12~p14 에는 '등위접속사로' 칩이 있어 기준이 어긋남.",
+    "action": "fixed",
+    "note": "제안 그대로: 세 문항 condition → '등위접속사로', 세 '뜻은 맞아요' 패턴(p5 'history he always' · p6 'an old car, it's very nice' · p7 'like to, I am')의 힌트 → \"뜻은 맞아요. 조건은 '등위접속사로'예요. 앞 문장 뒤에 접속사를 넣어 두 문장을 같은 자격으로 이어 보세요.\". p5 는 STUDENT exact(s13-2)라 en · ko 는 그대로. 채점기: Although 답 3개 오답 + 새 힌트, 'It's an old car, but it's very nice.' 정답."
+  },
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2:p8",
+    "finding": "오답 힌트는 '서른 살이 되어서야'를 인용하는데 제시문은 '…서른 살이 되어서였다'(3권 54쪽). '서른 살 때였다'로 읽혀 한국어대로 쓴 when 답이 칩 없이 오답, turned 30 답도 오답.",
+    "action": "fixed",
+    "note": "쪽 사진 g3/p054.png 로 인쇄된 '되어서였다' 확인 — 점검자 말이 맞음. ko → '그녀는 서른 살이 되어서야 영어를 가르치기 시작했다.', koSource → 'review 2 item 22 (고침)', fix {fromKo, field ko, kind translation_mismatch, why}, accept +16(turned 30 · thirty × started · began × to teach · teaching × It was not until … / She didn't … until — 점검자 6줄 포함). 제안과 다르게 한 곳: 칩을 'until을 써서' 대신 'until을 접속사로 써서'로. 새 한국어가 pg19-2:p13 의 제시문과 글자까지 같은데 그 문항의 모범 답은 전치사 until('She didn't start to teach English until the age of 30.')이라, 앞 레슨에서 온 학습자가 그 답을 쓰면 'until을 써서' 칩을 지켰는데도 힌트 없이 오답이었음(채점기로 확인). 이 레슨 목표는 접속사 until 이라 그 답은 받지 않고 칩으로 알리며, 오답 패턴 'until the age of'(힌트 \"뜻은 맞아요. 조건은 'until을 접속사로 써서'예요. until 뒤에 주어 + 동사를 써 보세요.\")를 더함(패턴 3개). TOPIC-20.json 에 p54 review 2 item 22 판정 추가(foundBy 'G16 반박 점검(추출 issues 밖)'). 채점기: turned 30 답 정답, when 답 · until the age of 답 오답(뒤는 새 힌트)."
+  },
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2:p11",
+    "finding": "목표형 [\"better\"] 때문에 '두는 게 좋겠다'를 should 로 쓴 맞는 답이 오답이고, 목표형이 모든 accept 에 있어야 해서 should 답을 넣을 수도 없음.",
+    "action": "fixed",
+    "note": "제안 그대로: targets[2] → [\"better\",\"should\"], accept +12(should × things as they are · everything as it is × until · till × arrive · come · get here). better 는 여전히 목표 낱말이라 엄격함 — 채점기: 'We'd betetr …' · 'We shuold …' 오답, 'We had better …' 정답, check-grading C3 · D PASS. note 에 까닭 한 줄 더함."
+  },
+  {
+    "lesson": "pg20-1",
+    "item": "pg20-1:p3",
+    "finding": "'몇 시간이고 … 계속 기다리고 있다'를 현재완료 단순형으로 쓴 맞는 답(We have waited for hours and hours.)이 오답.",
+    "action": "fixed",
+    "note": "점검자 말이 맞음: wait 처럼 계속되는 동작은 for + 기간과 함께 현재완료(have waited)로도 '지금까지 계속'을 나타냄(진행형이 계속을 더 드러낼 뿐 — Swan, Practical English Usage 의 present perfect simple/progressive 항목). 시제는 이 문항의 목표(and)가 아님. accept +2(제안 그대로; We've 는 채점기가 같게 봄). fix.why 의 '현재완료진행으로 써야 합니다'를 '현재진행으로는 못 쓰고 현재완료진행으로 씀(현재완료 have waited 도 맞음)'으로 고치고 TOPIC-20 p47 판정 reason 에도 적음. 교재 원문 'We are waiting for hours and hours.'는 여전히 오답 + 힌트."
+  },
+  {
+    "lesson": "pg20-1",
+    "item": "pg20-1:p10",
+    "finding": "'TV나 라디오를 가지고 있지 않다'를 neither … nor 로 쓴 맞는 답이 오답(목표형 or 없음).",
+    "action": "fixed",
+    "note": "제안 그대로 targets [[\"or\",\"nor\"]] + accept 2(neither a television / TV nor a radio). 수정자가 더한 것: 부정문의 either … or 도 같은 뜻의 맞는 영어라 'He doesn't have either a television / TV or a radio.' 2줄. neither 없이 쓴 'He doesn't have a TV nor a radio.'는 오답 그대로(채점기 확인)."
+  },
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2:p19",
+    "finding": "주절을 앞으로 옮기고 their lives 를 둔 accept 4개는 their 가 앞 주어 They 를 받아 '자기들 인생'으로 읽혀 한국어 '학생들의 인생을'과 뜻이 다른데 정답 처리됨. 흔한 어순 'If they deeply impressed the students, …'는 오답.",
+    "action": "fixed",
+    "note": "점검자 말이 맞음: 대명사는 앞에 나온 주어를 먼저 받고(They … their), 뒤따르는 부사절 속 명사(the students)를 앞질러 받는 읽기는 부자연스러움. 한국어가 '학생들의 인생'이라 뜻이 바뀌는 답(규칙: 넣지 않음). accept 4개 삭제(제안 그대로 — the students' lives 로 쓴 역순 4개는 둠), accept +6(If they deeply impressed the students × could · would be able to × their · the students' lives 4 + 역순 the students' lives 2 — 점검자 2줄 포함). 채점기: 삭제한 답 오답, 새 답 정답."
+  },
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2:p4 · p13 · p26 · p35 · p2",
+    "finding": "한국어를 그대로 옮긴 가장 흔한 맞는 답이 빠져 거짓 오답(p4 welcomes · p13 realized · p26 learn how to speak · p35 pocket money · p2 didn't have any money).",
+    "action": "fixed",
+    "note": "STUDENT s8-1 '반겨 주십니다' · s5-1 '용돈' 확인. accept — p4 +16(always welcomes me: come · get home × after · from school × mother · mom × 앞뒤 자리 — 기존 glad · happy 목록과 같은 짜임, 점검자 6줄 포함) · p13 +16(realized · realised × that 유무 × As soon as · The moment × 앞뒤 — 점검자 6줄 포함) · p26 +12(제안 그대로: 모범 답과 accept 11개의 learn to speak → learn how to speak) · p35 +8(pocket money · my pocket money × mother · mom × 앞뒤 — 점검자 4줄 포함) · p2 +2(제안 그대로). 목표형 · 오답 패턴과 안 겹침(check-lessons 0). 채점기: 각 대표 답 정답, 'When I came home …' · 'something is wrong' · 'Before going to school …'은 오답 + 기존 힌트."
+  },
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2 rule.table (② 설명 카드)",
+    "finding": "④ 의 as 세 문항(p10 as much as · p11 as they are · p12 as you know)의 뜻이 카드 표에 없고, '종속접속사로' 칩 아래 so 만 쓴 답(so I can hear you)을 받는데 카드에 설명이 없음.",
+    "action": "fixed",
+    "note": "제안 그대로: '목적' 행 앞에 ['방식 · 비교', 'as(~대로 · ~듯이) · as ~ as(~만큼)', 'Do as I say. · I study as hard as you do.'] 행, '목적' 칸 → 'so that(말할 때는 that 없이 so 만 쓰기도 함) · in order that · lest ~ (should)(~하지 않도록, 딱딱한 글말)'. as ~ as 의 둘째 as 는 비교절을 이끄는 접속사, so(= so that)는 목적의 종속접속사(결과의 등위 so 와 다름)라 표 내용이 맞음. 두 예문은 레슨 ④ · ⑤ 에 없음(check-lessons '카드가 ④ 정답을 먼저 보임' · '⑤ 가 앞에 나옴' 0). 카드 표는 소리를 내지 않음(scripts/lib/spoken-texts.cjs 는 anchors · produce · transfer 만)."
+  },
+  {
+    "lesson": "pg20-2 · 판정 TOPIC-20",
+    "item": "판정 p46 'Never a moment goes by unless I think of him.' · coverage excluded",
+    "finding": "교재 문장을 레슨에서 뺀 까닭 중 '뜻을 살린 영어의 when 이 관계부사라 종속접속사 레슨 문장이 될 수 없다'가 같은 레슨 ④ p3(There are times when … — when 이 관계부사인데 ④ 에 둠)과 기준이 반대. 과정 전체에서 처음 교재 문장을 뺀 결정.",
+    "action": "fixed",
+    "note": "기준 어긋남은 맞음. 점검자가 권한 (가)(뺀 채로 둠)의 까닭으로 판정 p46 reason 과 coverage excluded reason 을 고침: '교재 영어가 unless 를 어색하게 쓴 오류라 고쳐야 하는데, 뜻을 살린 자연스러운 영어(Not a moment goes by when/that I don't think of him.)에는 unless 가 남지 않아 이 레슨의 연습 문장이 되지 못함. p3 은 고칠 필요 없는 맞는 영어라 교재대로 둔 것과 다름'. 수정자 판단도 (가): (나)는 관계부사 when 문장을 종속접속사 레슨 ④ 에 하나 더 두는 것이라(이번에 p3 도 tags 에서 subordinating-conjunction 을 뺌) 레슨 목표와 어긋남. 레슨 파일은 그대로(p38 안 만듦). 확정과 작업기록 한 줄은 아래 lead 기록."
+  },
+  {
+    "lesson": "pg20-2 · 판정 TOPIC-20",
+    "item": "판정 p46 · coverage excluded — 확정 · 작업기록",
+    "finding": "(위 기록의 나머지) 이끄는 세션이 (가) · (나) 중 하나로 정하고 '과정에서 처음 뺀 교재 문장'을 작업기록에 남길 것.",
+    "action": "lead",
+    "note": "이끄는 세션 몫(공용 문서 작업기록.md). 이 수정자는 (가)로 판정 파일의 까닭만 맞춤. (나)로 정하면 점검자 안대로 ④ 에 pg20-2:p38(p16 과 p17 사이, en 'Not a moment goes by when I don't think of him.', accept 'Not a moment goes by that I don't think of him.', targets [[\"when\",\"that\"]], tags [negative-basic, present-simple], fix english_unnatural)을 넣고 판정 #2 appliedTo · #20(na → fix) · coverage excluded 를 고쳐야 함."
+  },
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2:p22",
+    "finding": "제시문 '그는 원한다면, 얼마든지 궁전에 머물 수 있었다.'의 '원한다면'(if)이 모범 답(as long as he wanted)에 없어 한국어대로 쓴 'If he wanted, he could stay … as long as he liked.'가 오답.",
+    "action": "fixed",
+    "note": "쪽 사진 g3/p056.png 확인. 제안 그대로: ko → '그는 원하는 만큼 얼마든지 궁전에 머물 수 있었다.', koSource → 'review 2 item 35 (고침)', fix → {from 'He could stay the palace as long as he wanted.', fromKo, field en+ko, kind english_grammar, why}(from 을 남겨 check-grading B 가 교재 원문을 계속 오답으로 확인), errorPatterns[2] 힌트 → \"'원하는 만큼' — 조건(if)이 아니라 기간을 나타내는 접속사로 써 보세요.\". TOPIC-20 에 p56 review 2 item 35 판정 추가. 채점기: 'He could stay in the palace if he wanted.' 오답 + 새 힌트, 교재 원문 오답."
+  },
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2:p17",
+    "finding": "제시문 '만약 그녀가 당신에게 묻지 않는다면, 내가 말했던 것을 수에게 말하지 마세요.'는 '그녀'가 가리킬 '수'보다 먼저 나와 누구인지 알 수 없음. 'If Sue doesn't ask you, don't tell her what I said.'도 오답.",
+    "action": "fixed",
+    "note": "쪽 사진 g3/p055.png 확인. 제안 그대로: ko → '만약 수가 당신에게 묻지 않는다면, 내가 한 말을 그녀에게 말하지 마세요.', koSource '(고침)', fix {fromKo, ko, korean_unnatural}, accept +2. 수정자가 더한 것 2: ① 오답 힌트 'what did I say'가 옛 한국어 '내가 말했던 것'을 인용해 '내가 한 말'로 고침 ② 새로 받는 'Unless Sue …' 꼴의 이중 부정 'Unless Sue doesn't ask you, …'에 힌트가 안 떠서(채점기 확인 — 기존 패턴은 'unless she doesn't') 패턴 'unless Sue doesn't'(같은 힌트)를 더함(패턴 3개). TOPIC-20 에 p55 review 2 item 30 판정 추가."
+  },
+  {
+    "lesson": "pg20-1",
+    "item": "pg20-1:a4 · p12",
+    "finding": "'우리가 조용해지도록 시키기 위해서'는 띄어쓰기만 고쳤고 번역투가 남음(STUDENT 5-3 한국어는 '우리를 조용히 시키기 위해서는'). 'to make us quiet' · must 답도 오답.",
+    "action": "fixed",
+    "note": "STUDENT s5-3 #3 한국어 확인. 제안 그대로: a4 · p12 ko → '학생들이 매우 시끄러워서, 선생님은 우리를 조용히 시키려고 우리에게 소리치셔야 한다.', koSource → 'review 2 item 12 (고침)', fix → {fromKo, ko, korean_unnatural, why}(korean_typo 에서 바꿈). p12 accept +14({has to · must} × {shout · yell} × 여섯 꼴 — make us quiet 포함, 점검자 4줄 포함). TOPIC-20 p53 korean_typo 판정 reason 의 '조용해지도록'을 새 한국어로 고침."
+  },
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2:a1 · p1",
+    "finding": "chat on the computer 를 '컴퓨터로 잡담한다'로 옮김(교재 54쪽). STUDENT 10-4 한국어는 '컴퓨터로 채팅을 합니다'.",
+    "action": "fixed",
+    "note": "쪽 사진 g3/p054.png '잡담한다' · STUDENT s10-4 #1 '채팅을 합니다' 확인. 제안 그대로: a1 · p1 ko → '내가 집에 도착할 때, 나는 친구들과 컴퓨터로 채팅을 한다.', koSource → 'review 2 item 15 (고침)', a1.fix → {from, fromKo, en+ko, english_grammar, why(대문자 · 마침표 + 채팅)}, p1.fix(null) → {fromKo, ko, korean_unnatural, why}. TOPIC-20 에 p54 review 2 item 15 판정 추가."
+  },
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2:p30",
+    "finding": "'그녀는 그의 사무실에서 당신이 실수하지 않도록 당신에게 조언을 주었다.'는 '그의 사무실에서'가 조언한 곳으로도 읽히고 '조언을 주었다'는 번역투.",
+    "action": "fixed",
+    "note": "쪽 사진 g3/p056.png 확인. 제안 그대로: ko → '그녀는 당신이 그의 사무실에서 실수하지 않도록 당신에게 조언을 해 주었다.', koSource → 'review 2 item 43 (고침)', fix(null) → {fromKo, ko, korean_unnatural, why}. TOPIC-20 에 p56 review 2 item 43 판정 추가."
+  },
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2:p3",
+    "finding": "이 when 은 times 를 꾸미는 관계부사(카드 표 '참고' 줄도 '접속사 아님')인데 tags 에 subordinating-conjunction. '나는 초콜릿이 좋을 때가 있다'를 그대로 옮긴 'Sometimes I like chocolate.'가 칩 없이 오답.",
+    "action": "fixed",
+    "note": "제안 그대로: tags → [there-be, present-simple](레슨 태그 없는 ④ 는 pg07-2:p1 선례, check-lessons 도 요구 안 함), condition → 'when을 써서', errorPatterns[1] 힌트 → \"뜻은 맞아요. 조건은 'when을 써서'예요. '좋을 때'의 '때'를 when 으로 살려 써 보세요.\". 수정자가 더한 것: 어순만 다른 'I sometimes like chocolate.'에도 같은 힌트가 뜨게 패턴 1개(패턴 3개). note 와 TOPIC-20 p48 판정 reason 에 칩 · 태그 까닭을 적음."
+  },
+  {
+    "lesson": "pg20-1",
+    "item": "pg20-1 rule.points[0] · rule.worked[3] · s2.why",
+    "finding": "(1) points[0] '등위접속사(and · but · or · so)는 낱말 · 구 · 문장을 …' — so 는 문장끼리만 이음 (2) worked[3] '(문장끼리 이으면 but 앞에 쉼표)'가 규칙처럼 적혔지만 p6 · a1 모범 답에는 쉼표 없음 (3) s2.why 'before himself 의 before 는 명사 앞의 전치사' — himself 는 대명사.",
+    "action": "fixed",
+    "note": "세 지적 모두 맞음. points[0] → '등위접속사 and · but · or 는 낱말 · 구 · 문장을, so 는 문장끼리 같은 자격으로 이어요. 한쪽을 딸리게 하면 종속접속사(다음 레슨).'(점검자 문장에 용어 '등위접속사'와 뒤 문장을 남김 — 종속접속사와 대비하는 줄이 카드 points 에 이것뿐이라) · worked[3] → \"'-지만' = 반대 → but (문장끼리 이을 때는 보통 but 앞에 쉼표 — 짧으면 빼기도 해요)\"(제안 그대로) · s2.why 의 '명사 앞의 전치사' → '대명사(himself) 앞의 전치사'."
+  },
+  {
+    "lesson": "pg20-1",
+    "item": "pg20-1:p2 · p4 · p9 · p13",
+    "finding": "흔한 맞는 답이 빠졌거나 힌트가 잘못 뜸: p9 'go to see a movie' · 'go to a movie', p4 'in a box', p2 'He likes fish and chips.', p13 'made her own sandwich'에 재귀대명사 힌트(match 'made her'가 너무 넓음).",
+    "action": "fixed",
+    "note": "p9 +8 · p4 +4(점검자 3 + 'She picked the kitten up and put it into a box.') · p2 +3(fish and chips 에 French fries · fries 꼴도 — 기존 accept 와 같은 짜임). p13: 'made her'를 좁힘. 제안과 다르게 한 곳: 점검자 안의 셋 중 'made her sandwiches'는 넣지 않음 — her + 관사 없는 복수는 목적어(그녀에게 샌드위치를)로도, 소유격(her sandwiches = 자기 샌드위치)으로도 읽혀 맞는 답일 수 있는 글에 '재귀대명사를 써라' 힌트가 뜰 수 있음. 'her a …' · 'her some …'은 목적어로만 읽혀 'made her a sandwich' · 'made her some sandwiches' 둘만 둠. 1~3개 규칙에 맞추려고 'because she felt hungry' · 'because she was hungry'(같은 힌트)를 'because she' 하나로 합침(패턴 3개). 수정자가 더한 것: 'her own sandwich(es)'는 한국어 '자기가 먹을 샌드위치'를 그대로 옮긴 맞는 영어라 accept +4(felt · was × sandwich · sandwiches). 채점기: 'her own' 정답, 'made her a sandwich' · 'made her some sandwiches' 오답 + 재귀 힌트, 'made her sandwiches' 오답(힌트 없음), because 답 오답 + 칩 힌트."
+  },
+  {
+    "lesson": "pg20-2",
+    "item": "pg20-2:p12 · p21 · p27 · p31 · p32 · p36 · p37 · p24 · p25 · p9",
+    "finding": "같은 뜻의 흔한 맞는 답이 빠져 거짓 오답(p12 recently · p21 may · Provided that 앞자리 · p27 louder · p32 alone · p36 several days · p37 before you can get · p31 뒷자리 still blew · p24/p25 since · as 기준 어긋남 · p9 While walking).",
+    "action": "fixed",
+    "note": "accept — p12 +8(점검자 4 + has improved a lot × lately · recently × 두 자리) · p21 +12(may × as long as · so long as · if · provided · provided that · only if 뒷자리 6, 앞자리 5 + 'Provided that …, you can use my car.' — 점검자 3 포함) · p27 +14(Speak louder · Please speak louder × so that I may · so that I can · so I can · in order that I may · in order that I can 10 + Speak up · Please speak up × so that I can · so I can 4 — 점검자 5 포함) · p31 +12(제안 그대로) · p32 +12(alone × Though · Although · Even though × 네 꼴 — 점검자 3 포함) · p36 +8(several days × saw · met × went abroad · went overseas · left the country + 앞자리 2) · p37 +12(before you can get × have to · must × several · a few · some × license · licence — 점검자 2 포함) · p24 targets + as, accept +4(favorite · favourite × start · beginning) · p25 targets [[because, since]], accept +16(since × didn't · couldn't × 네 꼴 × 앞뒤 — 점검자 3 포함; as 는 '~하는 동안'으로도 읽혀 점검자 안대로 넣지 않음) · p9 +4(While · When walking × see · meet). 모두 목표형 있음 · 오답 패턴과 안 겹침(check-lessons 0) · 채점기 정답(check-grading A PASS). 부정 뒤집기 · 시제 틀림 답은 여전히 오답(예 'You may not use my car …', 'before you will get')."
+  },
+  {
+    "lesson": "pg19-2(G16 밖)",
+    "item": "pg19-2:p12 (· p13 참고)",
+    "finding": "(점검자 참고) pg19-2:p12 오답 힌트도 '서른 살이 되어서야'를 인용하는데 제시문은 '…서른 살이 되어서였다.'(pg20-2:p8 과 같은 인용 불일치).",
+    "action": "lead",
+    "note": "다른 그룹 파일이라 고치지 않음(읽기만 해서 확인: pg19-2.json 1177 행 ko '…되어서였다', 1227 행 힌트 '서른 살이 되어서야…'). 참고: pg20-2:p8 의 새 한국어는 pg19-2:p13 의 한국어('그녀는 서른 살이 되어서야 영어를 가르치기 시작했다.')와 같음 — 목표가 다름(p13 전치사 until 'until the age of 30' / p8 접속사 until)이라 p8 칩을 'until을 접속사로 써서'로 두고 전치사 답에 힌트를 줌."
+  }
+]

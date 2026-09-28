@@ -1,0 +1,375 @@
+[
+  {
+    "page": 62,
+    "where": "passOff 능동태 item 2 · 수동태 item 2 · application row 8 양쪽(p63) · Review 1 item 2(p64) · Review 2 item 8(p65)",
+    "text": "Some one cleans these rooms everyday.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "'누군가'는 한 낱말 someone, '매일'은 두 낱말 every day(everyday 는 '일상의'라는 형용사)로 여섯 곳 모두 고쳤습니다. 붙여 쓴 everyday · 띄어 쓴 some one 은 오답 패턴 힌트로 짚습니다. 채점기도 everyday ≠ every day, some one ≠ someone 으로 봅니다.",
+    "appliedTo": [
+      "pg14-1:a2",
+      "pg14-1:p8",
+      "pg14-1:s5",
+      "pg14-2:a2",
+      "pg14-2:p8"
+    ],
+    "issueId": "g2-p52-71-037"
+  },
+  {
+    "page": 62,
+    "where": "passOff 능동태 item 7",
+    "text": "I saw him run",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "끝 마침표를 보충했습니다(p63 표에는 있음).",
+    "appliedTo": [
+      "pg14-1:a7",
+      "pg14-2:a7"
+    ],
+    "issueId": "g2-p52-71-038"
+  },
+  {
+    "page": 63,
+    "where": "application row 16 수동태 · Review 2 item 16 정답(p66)",
+    "text": "A new car was promised to me by him.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "능동태 He promised her a new car. 의 간접목적어는 her 라서 답을 A new car was promised to her by him. 으로 고쳤습니다. 교재 답의 to me 는 오답 패턴 힌트('약속받은 사람은 누구인가요?')로 짚습니다. 능동으로 바꾸는 pg14-1 에서는 제시문을 고친 문장으로 씁니다.",
+    "appliedTo": [
+      "pg14-2:p16",
+      "pg14-1:p16"
+    ],
+    "issueId": "g2-p52-71-039"
+  },
+  {
+    "page": 63,
+    "where": "application row 13 수동태 · Review 2 item 13 정답",
+    "text": "I was given this game player by my uncle..",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "마침표를 하나로 고쳤습니다(채점에는 문장부호를 쓰지 않아 답 판정은 같음).",
+    "appliedTo": [
+      "pg14-2:p13",
+      "pg14-1:p13"
+    ],
+    "issueId": "g2-p52-71-040"
+  },
+  {
+    "page": 63,
+    "where": "application row 17 수동태 · Review 2 item 17 정답(p66)",
+    "text": "Chicken soup was made for me by Mom.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "바꾸기 연습이라 모범 답은 행위자를 그대로 옮긴 by my mother 로 두고, 교재 답(by Mom)과 by my mom 도 같은 사람을 가리키는 맞는 영어라 허용 답에 둡니다. pg14-1 의 제시문도 by my mother 로.",
+    "appliedTo": [
+      "pg14-2:p17",
+      "pg14-1:p17"
+    ],
+    "issueId": "g2-p52-71-041"
+  },
+  {
+    "page": 63,
+    "where": "application row 2 양쪽 · Review 2 item 2(p65)",
+    "text": "Jacob doesn’t draw this picture.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "그림 한 장(this picture)에 습관을 뜻하는 현재 시제는 어색해 과거로 고쳤습니다: Jacob didn't draw this picture. / This picture wasn't drawn by Jacob. 교재의 현재형(isn't drawn)은 오답 패턴 힌트('didn't draw 는 과거예요')로 짚습니다.",
+    "appliedTo": [
+      "pg14-1:p2",
+      "pg14-2:p2"
+    ],
+    "issueId": "g2-p52-71-042"
+  },
+  {
+    "page": 62,
+    "where": "passOff 수동태 item 7 · application row 18·19·20 수동태(p63) · Review 1 item 4 · Review 2 item 18~20 정답",
+    "text": "He was seen to run by me.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "문장은 문법적으로 맞는 학교문법의 대표 바꾸기라 모범 답은 교재 그대로 두고, 설명 카드에 '뻔하거나 모르는 행위자(by me · by them · by people)는 보통 뺀다'와 표의 (by me) · (by them) 괄호를 넣었습니다. by me · by them 을 뺀 He was seen to run. · He was called Jack. 도 정답으로 받습니다. I was made happy by the news. 는 바꿀 수 있는 수동태가 이것뿐이라 그대로 둡니다.",
+    "appliedTo": [
+      "pg14-2:rule",
+      "pg14-2:a7",
+      "pg14-2:p18",
+      "pg14-2:p19"
+    ],
+    "issueId": "g2-p52-71-043"
+  },
+  {
+    "page": 64,
+    "where": "Review 1 item 5~8 (수동태 → 능동태)",
+    "text": "I am never invited to parties.",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "행위자가 없는 수동태를 능동태로 바꿀 때 주어가 여럿일 수 있어, 한국어 제시문에 주어를 밝혔습니다(사람들은 · 누군가가 · 그들은). How is butter made? 는 you · people 로 쓴 답도 정답, I am never invited to parties. 는 '사람들은'을 일반 주어 they 로 쓴 답도 정답(G12 점검 반영), 누군가(someone)는 somebody 도 정답. 설명 카드에 'by ~ 가 없으면 people · they · we · someone 을 주어로'를 적었습니다.",
+    "appliedTo": [
+      "pg14-1:p8",
+      "pg14-1:p9",
+      "pg14-1:p10",
+      "pg14-1:p11",
+      "pg14-1:p12",
+      "pg14-1:rule",
+      "pg14-1:s6"
+    ],
+    "issueId": "g2-p52-71-044"
+  },
+  {
+    "page": 66,
+    "where": "Review 2 item 15 조건 괄호",
+    "text": "He promised her a new car. (her을 주어로)",
+    "type": "korean_typo",
+    "decision": "fix",
+    "reason": "her 는 모음 소리[허]로 끝나 조사 '를'로 고쳤습니다: 조건 칩 '수동태로, her를 주어로'.",
+    "appliedTo": [
+      "pg14-2:p15"
+    ],
+    "issueId": "g2-p52-71-045"
+  },
+  {
+    "page": 63,
+    "where": "application row 5 · Review 2 item 5",
+    "text": "Cavin can use this room.",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "Cavin 은 드물지만 실제로 쓰는 이름이라 오류로 볼 근거가 없습니다(표기 취향은 바꾸지 않음). 이 문장은 두 레슨 모두 영어 제시문에 이름이 보여 학습자가 철자를 보고 씁니다.",
+    "appliedTo": [
+      "pg14-1:p5",
+      "pg14-2:p5"
+    ],
+    "issueId": "g2-p52-71-046"
+  },
+  {
+    "page": 67,
+    "where": "passOff 소제목 (1)",
+    "text": "(1) 평서문과 의문문 화법전환",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "(1)에는 평서문만 있으므로 레슨 부제를 '(1) 평서문 (2) 의문문 (3) 명령문 (4) 감탄문 · 기원문의 화법 전환'으로 적었고, 설명 카드 표도 종류별로 나눴습니다.",
+    "appliedTo": [
+      "pg15-2:subtitle",
+      "pg15-2:rule",
+      "pg15-1:subtitle"
+    ],
+    "issueId": "g2-p52-71-047"
+  },
+  {
+    "page": 67,
+    "where": "passOff (1) item 3 · application 왼쪽 row 2(p69) · Review item 2(p70)",
+    "text": "He says “ I want to be a police officer, fire fighter, teacher, doctor, interpreter.",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "says 뒤 쉼표 · 따옴표 모양 · 닫는 따옴표를 고치고, 직업 나열은 STUDENT s3-4 가 이미 고친 꼴(a police officer, a firefighter, a teacher, a doctor, or an interpreter)로 맞췄습니다. 간접화법 답(He tells me …)과 맞도록 듣는 사람 to me 를 넣었습니다(아래 p67 두 번째 건).",
+    "appliedTo": [
+      "pg15-1:p2",
+      "pg15-2:p2"
+    ],
+    "issueId": "g2-p52-71-048"
+  },
+  {
+    "page": 67,
+    "where": "passOff (1) item 4 · application 오른쪽 row 2(p69) · Review item 2 정답",
+    "text": "Interpreter and he wants to serve the community.(3과)",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "추출자 제안(답을 He says that … 으로)과 달리, STUDENT s3-4(He/She sometimes tells me that …)와 이어지는 교재 답 He tells me that … 을 살리고 직접화법 쪽에 듣는 사람 to me 를 넣어 says to me → tells me 가 되게 맞췄습니다. 두 번째 절은 and that he wants 로(STUDENT 판), 문장 가운데의 대문자 Interpreter 를 고쳤습니다. 한국어는 STUDENT s3-4 판(때때로 · 그녀 뺌), studentRef adapted.",
+    "appliedTo": [
+      "pg15-2:p2",
+      "pg15-1:p2"
+    ],
+    "issueId": "g2-p52-71-049"
+  },
+  {
+    "page": 67,
+    "where": "passOff (1) item 5 · (2) item 1 · (3) item 8 · (4) item 9 및 application·Review의 같은 문장",
+    "text": "Tom said “ Jim is sick.”",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "직접화법의 전달 동사 뒤 쉼표를 넣고(Tom said, · He said to me, · He cried,) 여는 따옴표 뒤 빈칸과 닫는 모양의 여는 따옴표를 모두 고쳤습니다. 채점에는 문장부호를 쓰지 않으므로, 따옴표 쓰는 법은 pg15-1 설명 카드(쉼표 · 대문자 · 문장부호는 따옴표 안)로 가르칩니다.",
+    "appliedTo": [
+      "pg15-1:a2",
+      "pg15-1:a3",
+      "pg15-1:a4",
+      "pg15-1:a5",
+      "pg15-1:p3",
+      "pg15-1:p15",
+      "pg15-1:p18",
+      "pg15-1:rule",
+      "pg15-2:a2",
+      "pg15-2:a3",
+      "pg15-2:a4",
+      "pg15-2:p3",
+      "pg15-2:p10",
+      "pg15-2:p16",
+      "pg15-1:p6",
+      "pg15-2:p6"
+    ],
+    "issueId": "g2-p52-71-050"
+  },
+  {
+    "page": 68,
+    "where": "passOff (3) item 10 · application 왼쪽 row 12(p69) · Review item 11(p71)",
+    "text": "She asked to us “Would you be quiet, please?”",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "ask 는 전치사 to 없이 목적어를 받으므로 직접화법을 She said to us, \"Would you be quiet, please?\" 로 고쳤습니다(asked us 로 쓴 답도 정답). 간접화법 답 She asked us to be quiet. 은 교재 그대로이고, asked to us 는 두 레슨 모두 오답 패턴 힌트로 짚습니다.",
+    "appliedTo": [
+      "pg15-1:p10",
+      "pg15-2:p11"
+    ],
+    "issueId": "g2-p52-71-051"
+  },
+  {
+    "page": 68,
+    "where": "passOff (3) item 2 · application 오른쪽 row 7(p69) · Review item 5 정답",
+    "text": "=> The doctor told me to stay in bed.",
+    "type": "grammar_explanation_wrong",
+    "decision": "fix",
+    "reason": "화법을 바꿀 때 내용을 빠뜨리면 안 되므로 The doctor told me to stay in bed for a few days. 로 고쳤습니다. 교재 답(for a few days 없음)은 오답으로 처리됩니다.",
+    "appliedTo": [
+      "pg15-2:a5",
+      "pg15-2:p7"
+    ],
+    "issueId": "g2-p52-71-052"
+  },
+  {
+    "page": 68,
+    "where": "passOff (4) item 1 · application 왼쪽 row 13·14(p69) · Review item 12(p71)",
+    "text": "He said, “What a great movie it is!",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "네 곳 모두 닫는 따옴표를 넣었습니다.",
+    "appliedTo": [
+      "pg15-1:a7",
+      "pg15-1:p11",
+      "pg15-2:a7",
+      "pg15-2:p12"
+    ],
+    "issueId": "g2-p52-71-053"
+  },
+  {
+    "page": 68,
+    "where": "passOff (4) item 2 · application 오른쪽 row 13(p69) · Review item 12 정답",
+    "text": "=> He said that it was a very great movie.",
+    "type": "english_unnatural",
+    "decision": "fix",
+    "reason": "모범 답을 He said that it was a really great movie. 로 고쳤습니다. 교재 답(very great)은 틀린 영어가 아니라 덜 자연스러운 것이라 허용 답에 두고, 교재의 두 번째 답 He cried out what a great movie it was. 와 exclaimed that … 으로 쓴 답도 정답으로 받습니다(exclaim 처럼 말하는 방식을 나타내는 동사 뒤에서는 that 을 빼지 않으므로 He exclaimed it was … 는 받지 않음 — G12 점검 반영).",
+    "appliedTo": [
+      "pg15-2:a7",
+      "pg15-2:p12"
+    ],
+    "issueId": "g2-p52-71-054"
+  },
+  {
+    "page": 69,
+    "where": "application 오른쪽 row 18 · Review item 14 두 번째 정답",
+    "text": "- Kenedy told me that how stupid I was..",
+    "type": "english_grammar",
+    "decision": "fix",
+    "reason": "that 과 감탄의 how 를 겹쳐 쓸 수 없어 Kenedy told me how stupid I was. 로 고쳐 허용 답에 두었고, 교재 원문은 오답 패턴 'that how'(힌트: how 로 시작하는 감탄 절 앞에는 that 을 쓰지 않아요)로 짚습니다.",
+    "appliedTo": [
+      "pg15-2:p14"
+    ],
+    "issueId": "g2-p52-71-055"
+  },
+  {
+    "page": 69,
+    "where": "application row 17·18 양쪽 · Review item 14(p71)",
+    "text": "Kenedy said, “How stupid you are!”",
+    "type": "english_unnatural",
+    "decision": "keep",
+    "reason": "Kenedy 는 드문 철자지만 이름이라 오류로 볼 근거가 없어 교재 그대로 둡니다. 영작(pg15-1)에서는 한국어 제시문에 '케네디(Kenedy)'로 철자를 밝혔고, 흔한 철자 Kennedy 로 쓰면 채점기가 한 글자 오타로 표시합니다.",
+    "appliedTo": [
+      "pg15-1:p13",
+      "pg15-2:p14"
+    ],
+    "issueId": "g2-p52-71-056"
+  },
+  {
+    "page": 68,
+    "where": "passOff (4) item 14·15 · application row 23(p69) · Review item 18 정답",
+    "text": "=> He expressed  his wish that we might succeed.",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "직접화법에 듣는 사람이 없어 you 를 무엇으로 바꿀지 정해지지 않으므로, 교재 답(we)을 살리고 한국어 제시문에 '우리가 성공하기를'을 밝혀 답이 하나로 정해지게 했습니다(영어 문장은 교재 그대로). He prayed that we might succeed. 같은 흔한 바꾸기도 정답이고, you · I 로 쓴 답은 힌트로 한국어 제시문을 보게 합니다. 같은 까닭으로 God bless you!(나를) · How stupid you are!(나에게)도 한국어 제시문에 듣는 사람을 밝혔습니다.",
+    "appliedTo": [
+      "pg15-2:p18",
+      "pg15-2:p17",
+      "pg15-2:p14"
+    ],
+    "issueId": "g2-p52-71-057"
+  },
+  {
+    "page": 68,
+    "where": "passOff (4) item 4~6 · application row 15·16 · Review item 13",
+    "text": "“How deep your love is!” she exclaimed.",
+    "type": "answer_ambiguous",
+    "decision": "fix",
+    "reason": "영어 문장은 교재 그대로 두고, 한국어 제시문에 '나에게 · 내 사랑'을 밝혀 교재 답(She told me how deep my love was.)의 가정이 드러나게 했습니다. 추출자 제안대로 She exclaimed how deep my love was. 와 교재의 두 번째 답(that my love was very deep)도 정답.",
+    "appliedTo": [
+      "pg15-2:p13"
+    ],
+    "issueId": "g2-p52-71-058"
+  },
+  {
+    "page": 68,
+    "where": "passOff (4) item 9·10 · application row 20 · Review item 16",
+    "text": "=> He cried with regret that the plane had taken off.",
+    "type": "grammar_explanation_wrong",
+    "decision": "keep",
+    "reason": "Gosh 는 놀람뿐 아니라 당황 · 실망에도 쓰는 감탄사이고, 비행기가 떠나 버린 상황이라 '안타까움(with regret)'으로 전하는 것이 틀렸다고 보기 어렵습니다. 교재 답을 그대로 두고, 한국어 제시문에 '안타까워하며'를 밝혀 답이 하나로 정해지게 했습니다.",
+    "appliedTo": [
+      "pg15-2:p16"
+    ],
+    "issueId": "g2-p52-71-059"
+  },
+  {
+    "coverage": "merged",
+    "where": "p69 application 9 · 10행",
+    "text": "Bill said, “Let’s go to the movies.”",
+    "refs": [
+      "pg15-1:p9",
+      "pg15-2:p9"
+    ],
+    "reason": "답이 둘이라 같은 직접화법 문장을 두 번 인쇄함 — 한 문항으로 합치고 두 답(Bill suggested going … · Bill suggested that we (should) go …)을 모두 정답으로 받음."
+  },
+  {
+    "coverage": "merged",
+    "where": "p69 application 13 · 14행",
+    "text": "He said, “What a great movie it is!",
+    "refs": [
+      "pg15-1:p11",
+      "pg15-2:p12"
+    ],
+    "reason": "같은 방식으로 합침 — 두 번째 답 He cried out what a great movie it was. 는 허용 답."
+  },
+  {
+    "coverage": "merged",
+    "where": "p69 application 15 · 16행",
+    "text": "“How deep your love is!” she exclaimed.",
+    "refs": [
+      "pg15-1:p12",
+      "pg15-2:p13"
+    ],
+    "reason": "같은 방식으로 합침 — 두 번째 답 She told me that my love was very deep. 는 허용 답."
+  },
+  {
+    "coverage": "merged",
+    "where": "p69 application 17 · 18행",
+    "text": "Kenedy said, “How stupid you are!”",
+    "refs": [
+      "pg15-1:p13",
+      "pg15-2:p14"
+    ],
+    "reason": "같은 방식으로 합침 — 두 번째 답(틀린 영어)은 고쳐서 허용 답(Kenedy told me how stupid I was.)."
+  },
+  {
+    "coverage": "merged",
+    "where": "p69 application 21 · 22행",
+    "text": "She said, “God bless you!”",
+    "refs": [
+      "pg15-1:p16",
+      "pg15-2:p17"
+    ],
+    "reason": "같은 방식으로 합침 — 두 번째 답 She prayed for God to bless me. 는 허용 답."
+  }
+]

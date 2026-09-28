@@ -1,0 +1,1543 @@
+{
+  "id": "pg15-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "간접 화법",
+  "label": "TOPIC 15. 화법",
+  "menuLabel": "15-2. 간접 화법",
+  "unit": 15,
+  "part": 2,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 평서문 (2) 의문문 (3) 명령문 (4) 감탄문 · 기원문의 화법 전환",
+  "grammarTags": [
+    "indirect-speech"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg15-2:a1",
+          "en": "Rick says that he'll be back soon.",
+          "ko": "릭은 곧 돌아오겠다고 말한다.",
+          "koSource": "new",
+          "promptEn": "Rick says, \"I'll be back soon!\"",
+          "focus": [
+            "says that",
+            "he'll"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 67,
+            "where": "passOff (1) item 2",
+            "reviewWhere": "review 1 item 1 (p70)"
+          }
+        },
+        {
+          "id": "pg15-2:a2",
+          "en": "Tom said that Jim was sick.",
+          "ko": "톰은 짐이 아프다고 말했다.",
+          "koSource": "new",
+          "promptEn": "Tom said, \"Jim is sick.\"",
+          "focus": [
+            "said that",
+            "was"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 67,
+            "where": "passOff (1) item 6",
+            "reviewWhere": "review 1 item 6 (p70)"
+          },
+          "fix": {
+            "from": "Tom said “ Jim is sick.”",
+            "field": "promptEn",
+            "kind": "english_grammar",
+            "why": "짝인 직접화법의 said 뒤 쉼표가 빠졌고 여는 따옴표 뒤에 빈칸이 있었습니다."
+          }
+        },
+        {
+          "id": "pg15-2:a3",
+          "en": "He asked me if my mother was in.",
+          "ko": "그는 나에게 우리 어머니가 집에 계신지 물었다.",
+          "koSource": "new",
+          "promptEn": "He said to me, \"Is your mother in?\"",
+          "focus": [
+            "asked me if",
+            "my mother was"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 67,
+            "where": "passOff (2) item 2",
+            "reviewWhere": "review 1 item 10 (p70)"
+          },
+          "fix": {
+            "from": "He said to me ,”Is your mother in?”",
+            "field": "promptEn",
+            "kind": "english_grammar",
+            "why": "짝인 직접화법의 쉼표 앞 빈칸과 여는 따옴표 모양(”)을 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg15-2:a4",
+          "en": "He asked me what I was doing.",
+          "ko": "그는 나에게 내가 무엇을 하고 있는지 물었다.",
+          "koSource": "new",
+          "promptEn": "He said to me, \"What are you doing?\"",
+          "focus": [
+            "asked me",
+            "what I was doing"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 67,
+            "where": "passOff (2) item 4",
+            "reviewWhere": "review 1 item 3 (p70)"
+          },
+          "fix": {
+            "from": "He said to me, “ What are you doing?”",
+            "field": "promptEn",
+            "kind": "english_grammar",
+            "why": "짝인 직접화법의 여는 따옴표 뒤 빈칸을 없앴습니다."
+          }
+        },
+        {
+          "id": "pg15-2:a5",
+          "en": "The doctor told me to stay in bed for a few days.",
+          "ko": "의사는 나에게 며칠 동안 침대에 누워 있으라고 말했다.",
+          "koSource": "new",
+          "promptEn": "\"Stay in bed for a few days,\" the doctor said to me.",
+          "focus": [
+            "told me to stay"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 68,
+            "where": "passOff (3) item 2",
+            "reviewWhere": "review 1 item 5 (p70)"
+          },
+          "fix": {
+            "from": "The doctor told me to stay in bed. / “ Stay in bed for a few days,” the doctor said to me.",
+            "field": "en+promptEn",
+            "kind": "grammar_explanation_wrong",
+            "why": "직접화법의 for a few days 가 간접화법에서 빠져 있었습니다. 화법을 바꿀 때 내용을 빠뜨리면 안 되므로 넣었습니다(짝인 직접화법의 따옴표 뒤 빈칸도 없앰)."
+          }
+        },
+        {
+          "id": "pg15-2:a6",
+          "en": "Bill suggested going to the movies.",
+          "ko": "빌은 영화 보러 가자고 제안했다.",
+          "koSource": "new",
+          "promptEn": "Bill said, \"Let's go to the movies.\"",
+          "focus": [
+            "suggested going"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 68,
+            "where": "passOff (3) item 6",
+            "reviewWhere": "review 1 item 8 (p70)"
+          }
+        },
+        {
+          "id": "pg15-2:a7",
+          "en": "He said that it was a really great movie.",
+          "ko": "그는 그것이 정말 대단한 영화라고 말했다.",
+          "koSource": "new",
+          "promptEn": "He said, \"What a great movie it is!\"",
+          "focus": [
+            "said that",
+            "it was"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 68,
+            "where": "passOff (4) item 2",
+            "reviewWhere": "review 1 item 12 (p71)"
+          },
+          "fix": {
+            "from": "He said that it was a very great movie. / He said, “What a great movie it is!",
+            "field": "en+promptEn",
+            "kind": "english_unnatural",
+            "why": "great(대단한)는 very 와 잘 어울리지 않아 really great 로 고쳤습니다(교재 답도 허용 답에 둠). 짝인 직접화법에 빠진 닫는 따옴표도 넣었습니다."
+          }
+        },
+        {
+          "id": "pg15-2:a8",
+          "en": "She prayed that God might bless me.",
+          "ko": "그녀는 신이 나를 축복해 주시기를 기도했다.",
+          "koSource": "new",
+          "promptEn": "She said, \"God bless you!\"",
+          "focus": [
+            "prayed that",
+            "might bless me"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 68,
+            "where": "passOff (4) item 12",
+            "reviewWhere": "review 1 item 17 (p71)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg15-2:a1",
+          "pg15-2:a2",
+          "pg15-2:a4"
+        ],
+        "question": "직접화법을 간접화법으로 바꾸면 따옴표 안의 말은 어떻게 될까요?",
+        "options": [
+          "전하는 사람의 입장에 맞게 인칭 · 시제가 바뀐다",
+          "따옴표만 없어지고 낱말은 그대로다",
+          "전달 동사가 문장 끝으로 간다"
+        ],
+        "answer": 0,
+        "why": "I'll → he'll, is → was, are you doing → I was doing 처럼 전하는 사람의 입장에 맞게 인칭과 시제가 바뀌어요."
+      },
+      "title": "간접화법: 한 말을 전하는 사람의 입장에서 바꿔 전합니다",
+      "points": [
+        "평서문: said to me → told me, 따옴표 대신 that + 주어 + 동사",
+        "인칭은 전하는 입장으로 바꿔요(I → he · she, you → me).",
+        "전달 동사가 과거면 안의 시제를 한 걸음 과거 쪽으로(is → was, has → had).",
+        "의문문: ask + if(의문사 없을 때) 또는 의문사 + 주어 + 동사",
+        "명령문: tell · ask · advise + 목적어 + (not) to + 동사원형"
+      ],
+      "table": {
+        "columns": [
+          "종류",
+          "직접화법",
+          "간접화법"
+        ],
+        "rows": [
+          [
+            "평서문",
+            "Tom said, \"Jim is sick.\"",
+            "Tom said that Jim was sick."
+          ],
+          [
+            "의문문",
+            "He said to me, \"What are you doing?\"",
+            "He asked me what I was doing."
+          ],
+          [
+            "명령문",
+            "\"Stay in bed for a few days,\" the doctor said to me.",
+            "The doctor told me to stay in bed for a few days."
+          ],
+          [
+            "권유(Let's)",
+            "Bill said, \"Let's go to the movies.\"",
+            "Bill suggested going to the movies."
+          ],
+          [
+            "감탄문",
+            "He said, \"What a great movie it is!\"",
+            "He said that it was a really great movie."
+          ],
+          [
+            "감탄사",
+            "She said, \"Wow! I won!\"",
+            "She cried with delight that she had won."
+          ],
+          [
+            "기원문",
+            "She said, \"God bless you!\"",
+            "She prayed that God might bless me."
+          ],
+          [
+            "조동사",
+            "will · can · may · shall",
+            "would · could · might · should"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 “아파.”를 '아프다고 말했다'처럼 '-다고 · -냐고 · -라고'로 전하고 안의 시제는 그대로 두지만, 영어는 전달 동사가 과거(said)면 안의 동사도 한 걸음 과거 쪽으로 옮겨요(is → was). 전달 동사가 현재(says)면 그대로 두고, 늘 참인 사실은 said 뒤에서도 현재로 둘 수 있어요.",
+      "mistakes": [
+        {
+          "wrong": "He asked me what was I doing.",
+          "right": "He asked me what I was doing.",
+          "why": "간접의문문은 의문사 + 주어 + 동사 순서예요."
+        },
+        {
+          "wrong": "She said me that she was busy.",
+          "right": "She told me that she was busy.",
+          "why": "said 뒤에 바로 me 를 쓰지 않아요. said to me 는 told me 로 바꿔요."
+        }
+      ],
+      "worked": [
+        "She said to me, \"I am hungry.\"",
+        "said to me → told me, 따옴표 대신 that",
+        "I → she (말한 사람)",
+        "am → was (said 가 과거)",
+        "She told me that she was hungry."
+      ],
+      "terms": [],
+      "check": {
+        "question": "간접화법으로 바르게 바꾼 것은? He said to me, \"I will help you.\"",
+        "options": [
+          "He told me that he would help me.",
+          "He told me that I will help you.",
+          "He told me that he will help you."
+        ],
+        "answer": 0,
+        "why": "I → he, you → me 로 인칭을 바꾸고, said 가 과거라 will → would 로 써요.",
+        "pointIndex": 2
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg15-2:s1",
+          "kind": "choice",
+          "instruction": "간접화법으로 바꿀 때 밑줄 친 said to me 는 보통 무엇이 되나요?",
+          "sentence": "He said to me, \"I like pizza.\"",
+          "underline": [
+            "said to me"
+          ],
+          "options": [
+            "told me",
+            "asked me",
+            "said me"
+          ],
+          "answer": 0,
+          "why": "평서문을 전할 때 said to me 는 told me 로 바꿔요: He told me that he liked pizza.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg15-2:s2",
+          "kind": "choice",
+          "instruction": "의문사가 없는 질문을 간접화법으로 바꿀 때 빈칸에 알맞은 것은?",
+          "sentence": "She said to me, \"Are you hungry?\" → She asked me ___ I was hungry.",
+          "underline": [],
+          "options": [
+            "if",
+            "that",
+            "what"
+          ],
+          "answer": 0,
+          "why": "yes · no 로 답하는 질문은 if(또는 whether)로 '~인지'를 전해요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg15-2:s3",
+          "kind": "choice",
+          "instruction": "He said to me, \"Where do you live?\"를 간접화법으로 바르게 바꾼 것은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "He asked me where I lived.",
+            "He asked me where did I live.",
+            "He asked me where do I live."
+          ],
+          "answer": 0,
+          "why": "간접의문문은 의문사 + 주어 + 동사 순서이고, asked 가 과거라 live → lived 예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg15-2:s4",
+          "kind": "select",
+          "instruction": "간접화법에서 시제가 바뀐 동사를 누르세요",
+          "tokens": [
+            "Tom",
+            "said",
+            "that",
+            "Jim",
+            "was",
+            "sick",
+            "."
+          ],
+          "answer": [
+            4
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "직접화법의 is 가 전달 동사 said(과거)에 맞춰 was 로 바뀌었어요.",
+          "bookRef": {
+            "book": 2,
+            "page": 67,
+            "where": "passOff (1) item 6"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg15-2:s5",
+          "kind": "choice",
+          "instruction": "The teacher said to us, \"Open your books.\"를 간접화법으로 바르게 바꾼 것은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "The teacher told us to open our books.",
+            "The teacher told us that open our books.",
+            "The teacher said us open your books."
+          ],
+          "answer": 0,
+          "why": "명령문은 told + 목적어 + to + 동사원형으로 전하고, your 는 전하는 입장(우리)에 맞춰 our 로 바꿔요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg15-2:s6",
+          "kind": "choice",
+          "instruction": "Mom said to me, \"Don't run.\"을 간접화법으로 바르게 바꾼 것은?",
+          "sentence": null,
+          "underline": [],
+          "options": [
+            "Mom told me not to run.",
+            "Mom told me to run.",
+            "Mom told me don't run."
+          ],
+          "answer": 0,
+          "why": "부정 명령문은 not + to + 동사원형으로 전해요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg15-2:s7",
+          "kind": "short",
+          "instruction": "간접화법에서 빈칸에 알맞은 한 낱말을 쓰세요",
+          "sentence": "She said, \"I will call you.\" → She said that she ___ call me.",
+          "answer": [
+            "would"
+          ],
+          "why": "전달 동사 said 가 과거라 will 은 would 로 바꿔요.",
+          "bookRef": null,
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg15-2:p1",
+          "ko": "릭은 곧 돌아오겠다고 말한다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "Rick says, \"I'll be back soon!\"",
+          "en": "Rick says that he'll be back soon.",
+          "accept": [
+            "Rick says he'll be back soon.",
+            "Rick says that he'll come back soon.",
+            "Rick says he'll come back soon."
+          ],
+          "targets": [
+            [
+              "says"
+            ],
+            [
+              "he'll"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I'll be back",
+              "hint": "따옴표 안의 I 는 말한 릭이에요. 전하는 문장에서는 릭을 가리키는 대명사로 바꿔요."
+            },
+            {
+              "match": "Rick said",
+              "hint": "전달 동사 says 는 현재예요. 그대로 두세요."
+            },
+            {
+              "match": "he would be back",
+              "hint": "전달 동사가 현재(says)이면 안의 시제는 바꾸지 않아요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "present-simple",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 1 (passOff (1) item 2)",
+            "reviewWhere": "review 1 item 1 (p70)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg15-2:p2",
+          "ko": "그는 경찰관, 소방관, 선생님, 의사, 통역사가 되어 지역 사회에 봉사하고 싶다고 나에게 말합니다.",
+          "koSource": "student:s3-4#1 (그는/그녀는 → 그는, '때때로' 뺌)",
+          "condition": "간접화법으로",
+          "promptEn": "He says to me, \"I want to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and I want to serve the community.\"",
+          "en": "He tells me that he wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that he wants to serve the community.",
+          "accept": [
+            "He tells me that he wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and he wants to serve the community.",
+            "He tells me he wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and that he wants to serve the community.",
+            "He tells me he wants to be a police officer, a firefighter, a teacher, a doctor, or an interpreter, and he wants to serve the community."
+          ],
+          "targets": [
+            [
+              "tells me"
+            ],
+            [
+              "he wants to be"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I want to be",
+              "hint": "따옴표 안의 I 는 말한 '그'예요. 전하는 입장의 대명사로 바꿔요."
+            },
+            {
+              "match": "says to me that",
+              "hint": "간접화법에서 says to me 는 보통 다른 동사로 바꿔요."
+            },
+            {
+              "match": "he want to be",
+              "hint": "he 는 3인칭 단수예요. 동사 모양은?"
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "present-simple",
+            "want-to",
+            "conjunction-and-but-or-so"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s3-4",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 2 (passOff (1) item 4)",
+            "reviewWhere": "review 1 item 2 (p70)"
+          },
+          "fix": {
+            "from": "He tells me that he wants to be a police officer, fire fighter, teacher, doctor, Interpreter and he wants to serve the community.(3과)",
+            "field": "en+promptEn",
+            "kind": "grammar_explanation_wrong",
+            "why": "직접화법 He says “…”에는 듣는 사람이 없는데 교재 답은 He tells me 로 바뀌어 있었습니다 → 직접화법에 to me 를 넣어 says to me → tells me 가 되게 맞췄습니다. 직업 나열은 STUDENT s3-4 가 이미 고친 꼴(관사 · firefighter · or), 두 번째 절은 and that he wants 로 전하는 말임을 분명히 하고, 문장 가운데의 대문자 Interpreter 를 고쳤습니다. 한국어는 STUDENT s3-4 판."
+          }
+        },
+        {
+          "id": "pg15-2:p3",
+          "ko": "톰은 짐이 아프다고 말했다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "Tom said, \"Jim is sick.\"",
+          "en": "Tom said that Jim was sick.",
+          "accept": [
+            "Tom said Jim was sick.",
+            "Tom said that Jim was ill.",
+            "Tom said Jim was ill."
+          ],
+          "targets": [
+            [
+              "said"
+            ],
+            [
+              "Jim was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "Jim is",
+              "hint": "전달 동사 said 가 과거예요. 안의 동사도 시제를 맞춰요."
+            },
+            {
+              "match": "Tom told that",
+              "hint": "told 뒤에는 '누구에게'가 와야 해요. 듣는 사람이 없으면 said 를 그대로 써요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 3 (passOff (1) item 6)",
+            "reviewWhere": "review 1 item 6 (p70)"
+          },
+          "fix": {
+            "from": "Tom said “Jim is sick.”",
+            "field": "promptEn",
+            "kind": "english_grammar",
+            "why": "짝인 직접화법의 said 뒤 쉼표가 빠져 있었습니다."
+          }
+        },
+        {
+          "id": "pg15-2:p4",
+          "ko": "그는 나에게 우리 어머니가 집에 계신지 물었다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "He said to me, \"Is your mother in?\"",
+          "en": "He asked me if my mother was in.",
+          "accept": [
+            "He asked me if my mother was home.",
+            "He asked me if my mother was at home.",
+            "He asked me whether my mother was in.",
+            "He asked me whether my mother was home.",
+            "He asked me whether my mother was at home."
+          ],
+          "targets": [
+            [
+              "asked me"
+            ],
+            [
+              "if",
+              "whether"
+            ],
+            [
+              "my mother was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "is your mother",
+              "hint": "간접화법에서는 질문을 '주어 + 동사' 순서로 바꾸고, your 도 전하는 입장으로 바꿔요."
+            },
+            {
+              "match": "asked me that",
+              "hint": "의문사가 없는 질문을 전할 때는 that 대신 '~인지'를 뜻하는 말을 써요."
+            },
+            {
+              "match": "said to me if",
+              "hint": "질문을 전할 때는 said to 대신 '묻다' 뜻의 동사를 써요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 4 (passOff (2) item 2)",
+            "reviewWhere": "review 1 item 10 (p70)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg15-2:p5",
+          "ko": "그는 나에게 내가 무엇을 하고 있는지 물었다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "He said to me, \"What are you doing?\"",
+          "en": "He asked me what I was doing.",
+          "accept": [],
+          "targets": [
+            [
+              "asked me"
+            ],
+            [
+              "what I was doing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what was I doing",
+              "hint": "간접의문문은 의문사 + 주어 + 동사 순서예요."
+            },
+            {
+              "match": "what you were doing",
+              "hint": "you 는 듣는 '나'예요. 전하는 입장의 대명사로 바꿔요."
+            },
+            {
+              "match": "what I am doing",
+              "hint": "asked 가 과거라 am 도 과거로 바꿔요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "indirect-question",
+            "progressive",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 5 (passOff (2) item 4)",
+            "reviewWhere": "review 1 item 3 (p70)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg15-2:p6",
+          "ko": "그녀는 나에게 자기가 무엇을 해야 할지 물었다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "\"What shall I do?\" she said to me.",
+          "en": "She asked me what she should do.",
+          "accept": [
+            "She asked me what to do."
+          ],
+          "targets": [
+            [
+              "asked me"
+            ],
+            [
+              "what she should do",
+              "what to do"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "what should she do",
+              "hint": "간접의문문은 의문사 + 주어 + 동사 순서예요."
+            },
+            {
+              "match": "what I shall do",
+              "hint": "I 는 말한 '그녀'예요. 전하는 입장으로 바꾸고, shall 도 과거 쪽 모양으로 바꿔요."
+            },
+            {
+              "match": "what she shall do",
+              "hint": "asked 가 과거라 shall 도 과거 쪽 모양으로 바꿔요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "indirect-question",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 6 (passOff (2) item 6)",
+            "reviewWhere": "review 1 item 4 (p70)"
+          },
+          "fix": {
+            "from": "“ What shall I do?” she said to me.",
+            "field": "promptEn",
+            "kind": "english_grammar",
+            "why": "짝인 직접화법(passOff (2) item 5)은 여는 따옴표 뒤에 빈칸이 있었습니다(Application 6행은 바름)."
+          },
+          "note": "shall → should 는 화법 전환의 시제 바꾸기(설명 카드 표 '조동사' 줄). what to do 로 쓴 답도 같은 뜻이라 정답."
+        },
+        {
+          "id": "pg15-2:p7",
+          "ko": "의사는 나에게 며칠 동안 침대에 누워 있으라고 말했다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "\"Stay in bed for a few days,\" the doctor said to me.",
+          "en": "The doctor told me to stay in bed for a few days.",
+          "accept": [
+            "The doctor advised me to stay in bed for a few days."
+          ],
+          "targets": [
+            [
+              "told me",
+              "advised me"
+            ],
+            [
+              "to stay"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "told me stay",
+              "hint": "'~하라고 말했다'는 told me 뒤에 to부정사로 써요."
+            },
+            {
+              "match": "said to me to",
+              "hint": "명령을 전할 때는 said to 대신 '시키다 · 말하다' 뜻의 다른 동사를 써요."
+            },
+            {
+              "match": "told me that stay",
+              "hint": "명령문은 that 절이 아니라 to부정사로 전해요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "infinitive",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 7 (passOff (3) item 2)",
+            "reviewWhere": "review 1 item 5 (p70)"
+          },
+          "fix": {
+            "from": "The doctor told me to stay in bed.",
+            "field": "en",
+            "kind": "grammar_explanation_wrong",
+            "why": "직접화법의 for a few days 가 교재 답에서 빠져 있었습니다. 화법을 바꿀 때 내용을 빠뜨리면 안 되므로 넣었습니다."
+          }
+        },
+        {
+          "id": "pg15-2:p8",
+          "ko": "앤은 나에게 무슨 일이 있었는지 아무에게도 말하지 말아 달라고 부탁했다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "\"Please don't tell anybody what happened,\" Ann said to me.",
+          "en": "Ann asked me not to tell anybody what had happened.",
+          "accept": [
+            "Ann asked me not to tell anybody what happened.",
+            "Ann asked me not to tell anyone what had happened.",
+            "Ann asked me not to tell anyone what happened."
+          ],
+          "targets": [
+            [
+              "asked me"
+            ],
+            [
+              "not to tell"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "asked me don't tell",
+              "hint": "부정 명령을 전할 때는 don't 대신 not + to부정사로 써요."
+            },
+            {
+              "match": "said to me not",
+              "hint": "부탁(Please)을 전할 때는 said to 대신 '부탁하다' 뜻의 동사를 써요."
+            },
+            {
+              "match": "told me not to tell",
+              "hint": "Please 가 붙은 부탁이에요. '부탁하다' 뜻의 동사를 써 보세요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "infinitive",
+            "past-perfect",
+            "relative-what",
+            "pronoun-indefinite",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 8 (passOff (3) item 4)",
+            "reviewWhere": "review 1 item 7 (p70)"
+          },
+          "fix": null,
+          "note": "교재 답 what (had) happened 의 괄호는 둘 다 맞다는 뜻 — had happened 를 모범 답, happened 를 허용 답으로."
+        },
+        {
+          "id": "pg15-2:p9",
+          "ko": "빌은 영화 보러 가자고 제안했다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "Bill said, \"Let's go to the movies.\"",
+          "en": "Bill suggested going to the movies.",
+          "accept": [
+            "Bill suggested that we should go to the movies.",
+            "Bill suggested that we go to the movies.",
+            "Bill suggested we should go to the movies.",
+            "Bill suggested we go to the movies."
+          ],
+          "targets": [
+            [
+              "suggested"
+            ],
+            [
+              "going",
+              "go"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "suggested to go",
+              "hint": "suggest 뒤에는 to부정사를 쓰지 않아요."
+            },
+            {
+              "match": "said let's",
+              "hint": "Let's 로 시작하는 권유는 '제안하다' 뜻의 동사로 전해요."
+            },
+            {
+              "match": "suggested go to",
+              "hint": "suggest 바로 뒤에 동사를 쓸 때는 -ing 모양으로 써요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 9 · item 10 (passOff (3) item 6 · item 7)",
+            "reviewWhere": "review 1 item 8 (p70)"
+          },
+          "fix": null,
+          "note": "교재의 두 답(going · that we (should) go)을 한 문항으로 합침. that 절 답은 가정법 현재(pg16-1) 모양이라 모범 답은 동명사로."
+        },
+        {
+          "id": "pg15-2:p10",
+          "ko": "그는 나에게 교회에 늦지 말라고 충고했다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "He said to me, \"You'd better not be late for church.\"",
+          "en": "He advised me not to be late for church.",
+          "accept": [
+            "He told me that I had better not be late for church.",
+            "He told me I had better not be late for church."
+          ],
+          "targets": [
+            [
+              "advised me",
+              "told me"
+            ],
+            [
+              "not to be late",
+              "better not be late"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "told me not to be late",
+              "hint": "한국어 제시문은 '충고했다'예요. '충고하다' 뜻의 동사를 써 보세요."
+            },
+            {
+              "match": "advised to me",
+              "hint": "advise 는 전치사 없이 '누구에게'를 바로 받아요."
+            },
+            {
+              "match": "said to me not to",
+              "hint": "충고를 전할 때는 said to 대신 '충고하다' 뜻의 동사를 써요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 11 (passOff (3) item 9)",
+            "reviewWhere": "review 1 item 9 (p70)"
+          },
+          "fix": {
+            "from": "He said to me “You’d better not be late for church.”",
+            "field": "promptEn",
+            "kind": "english_grammar",
+            "why": "짝인 직접화법의 said to me 뒤 쉼표가 빠져 있었습니다."
+          },
+          "note": "had better 를 그대로 살려 전한 답(He told me that I'd better not …)도 맞는 영어라 정답."
+        },
+        {
+          "id": "pg15-2:p11",
+          "ko": "그녀는 우리에게 조용히 해 달라고 부탁했다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "She said to us, \"Would you be quiet, please?\"",
+          "en": "She asked us to be quiet.",
+          "accept": [
+            "She asked us to please be quiet."
+          ],
+          "targets": [
+            [
+              "asked us"
+            ],
+            [
+              "to be quiet",
+              "to please be quiet"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "asked to us",
+              "hint": "ask 는 전치사 없이 '누구에게'를 바로 받아요."
+            },
+            {
+              "match": "asked us would you",
+              "hint": "부탁을 전할 때는 ask + 목적어 + to부정사로 써요."
+            },
+            {
+              "match": "asked us be quiet",
+              "hint": "asked us 뒤에는 to부정사가 와요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "infinitive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 12 (passOff (3) item 11)",
+            "reviewWhere": "review 1 item 11 (p71)"
+          },
+          "fix": {
+            "from": "She asked to us “Would you be quiet, please?”",
+            "field": "promptEn",
+            "kind": "english_grammar",
+            "why": "짝인 직접화법이 ask 뒤에 전치사 to 를 붙인 틀린 영어였습니다 → said to us 로 고치고 쉼표를 넣음. 간접화법 답 She asked us to be quiet. 은 교재 그대로."
+          }
+        },
+        {
+          "id": "pg15-2:p12",
+          "ko": "그는 그것이 정말 대단한 영화라고 말했다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "He said, \"What a great movie it is!\"",
+          "en": "He said that it was a really great movie.",
+          "accept": [
+            "He said that it was a very great movie.",
+            "He said it was a really great movie.",
+            "He said it was a very great movie.",
+            "He said that it was such a great movie.",
+            "He said it was such a great movie.",
+            "He exclaimed that it was a really great movie.",
+            "He exclaimed that it was a very great movie.",
+            "He exclaimed that it was such a great movie.",
+            "He exclaimed what a great movie it was.",
+            "He cried out what a great movie it was.",
+            "He said what a great movie it was.",
+            "He said that it was a really great film.",
+            "He said it was a really great film.",
+            "He said that it was such a great film.",
+            "He said it was such a great film.",
+            "He exclaimed that it was a really great film.",
+            "He exclaimed that it was such a great film.",
+            "He exclaimed what a great film it was.",
+            "He cried out what a great film it was.",
+            "He said what a great film it was."
+          ],
+          "targets": [
+            [
+              "it was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "it is a",
+              "hint": "said 가 과거라 is 도 과거로 바꿔요."
+            },
+            {
+              "match": "movie it is",
+              "hint": "said 가 과거라 is 도 과거로 바꿔요."
+            },
+            {
+              "match": "said that what",
+              "hint": "what 으로 시작하는 감탄 절 앞에는 that 을 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "exclamative",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 13 · item 14 (passOff (4) item 2 · item 3)",
+            "reviewWhere": "review 1 item 12 (p71)"
+          },
+          "fix": {
+            "from": "He said that it was a very great movie.",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "great(대단한)는 very 와 잘 어울리지 않아 모범 답을 really great 로 고쳤습니다. 교재 답(very great)과 두 번째 답(He cried out what a great movie it was.)은 틀린 영어가 아니라 허용 답에 둡니다. 짝인 직접화법에 빠진 닫는 따옴표도 넣었습니다."
+          },
+          "note": "exclaim 은 말하는 방식을 나타내는 동사라 that 을 빼지 않으므로 He exclaimed it was … 는 허용 답에서 뺌(said 는 뺄 수 있음). such a great movie · film 꼴을 더함(G12 점검 반영)."
+        },
+        {
+          "id": "pg15-2:p13",
+          "ko": "그녀는 나에게 내 사랑이 얼마나 깊은지 말했다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "\"How deep your love is!\" she exclaimed.",
+          "en": "She told me how deep my love was.",
+          "accept": [
+            "She told me that my love was very deep.",
+            "She told me that my love was really deep.",
+            "She told me my love was very deep.",
+            "She told me my love was really deep.",
+            "She exclaimed how deep my love was.",
+            "She exclaimed that my love was very deep.",
+            "She exclaimed that my love was really deep."
+          ],
+          "targets": [
+            [
+              "my love was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "your love",
+              "hint": "your 는 듣는 '나'의 것이에요. 전하는 입장으로 바꿔요."
+            },
+            {
+              "match": "how deep was my love",
+              "hint": "감탄 절은 how + 형용사 + 주어 + 동사 순서예요."
+            },
+            {
+              "match": "my love is",
+              "hint": "전달 동사가 과거라 is 도 과거로 바꿔요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "exclamative",
+            "tense-agreement",
+            "pronoun-possessive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 15 · item 16 (passOff (4) item 5 · item 6)",
+            "reviewWhere": "review 1 item 13 (p71)"
+          },
+          "fix": null,
+          "note": "직접화법에 듣는 사람이 없어 교재 답은 '나에게 말했다'로 봄 — 한국어 제시문에 '나에게 · 내 사랑'을 밝힘. exclaimed 로 쓴 답도 정답."
+        },
+        {
+          "id": "pg15-2:p14",
+          "ko": "케네디는 나에게 내가 매우 어리석다고 말했다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "Kenedy said, \"How stupid you are!\"",
+          "en": "Kenedy told me that I was very stupid.",
+          "accept": [
+            "Kenedy told me that I was really stupid.",
+            "Kenedy told me I was very stupid.",
+            "Kenedy told me I was really stupid.",
+            "Kenedy told me how stupid I was."
+          ],
+          "targets": [
+            [
+              "told me"
+            ],
+            [
+              "I was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "that how",
+              "hint": "how 로 시작하는 감탄 절 앞에는 that 을 쓰지 않아요."
+            },
+            {
+              "match": "you are",
+              "hint": "you 는 듣는 '나'예요. 인칭과 시제를 전하는 입장으로 바꿔요."
+            },
+            {
+              "match": "you were",
+              "hint": "you 는 듣는 '나'예요. 전하는 입장의 대명사로 바꿔요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "exclamative",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 17 · item 18",
+            "reviewWhere": "review 1 item 14 (p71)"
+          },
+          "fix": {
+            "from": "Kenedy told me that how stupid I was..",
+            "field": "accept",
+            "kind": "english_grammar",
+            "why": "교재의 두 번째 답은 that 과 감탄의 how 를 한 절에 겹쳐 써서 틀렸고 마침표도 두 개였습니다 → Kenedy told me how stupid I was. 로 고쳐 허용 답에 둡니다."
+          },
+          "note": "직접화법에 듣는 사람이 없어 교재 답은 '나에게 말했다'로 봄 — 한국어 제시문에 '나에게'를 밝힘."
+        },
+        {
+          "id": "pg15-2:p15",
+          "ko": "필립은 그것을 찾았다고 기뻐하며 외쳤다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "Phillip said, \"Hurrah! I've found it!\"",
+          "en": "Phillip cried with delight that he had found it.",
+          "accept": [
+            "Phillip cried with joy that he had found it.",
+            "Phillip exclaimed with delight that he had found it.",
+            "Phillip exclaimed with joy that he had found it.",
+            "Phillip shouted with delight that he had found it.",
+            "Phillip shouted with joy that he had found it.",
+            "Phillip cried out with delight that he had found it.",
+            "Phillip cried out with joy that he had found it."
+          ],
+          "targets": [
+            [
+              "with delight",
+              "with joy"
+            ],
+            [
+              "he had found"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he has found",
+              "hint": "cried 가 과거라 has found 는 한 걸음 과거 쪽 시제로 바꿔요."
+            },
+            {
+              "match": "I have found",
+              "hint": "I 는 말한 필립이에요. 전하는 입장으로 바꿔요."
+            },
+            {
+              "match": "said hurrah",
+              "hint": "Hurrah! 같은 감탄사는 그대로 옮기지 않고 '기뻐하며' 같은 말로 바꿔 전해요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "past-perfect",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 19 (passOff (4) item 8)",
+            "reviewWhere": "review 1 item 15 (p71)"
+          },
+          "fix": null,
+          "note": "cry · exclaim · shout 처럼 말하는 방식을 나타내는 동사 뒤에서는, 특히 with delight 처럼 다른 말이 끼어 있으면 that 을 빼지 않으므로(say · tell 과 다름) that 없는 답은 허용 답에서 뺌. 교재가 p12 에서 쓴 cried out 꼴을 더함(G12 점검 반영)."
+        },
+        {
+          "id": "pg15-2:p16",
+          "ko": "그는 비행기가 떠나 버렸다고 안타까워하며 외쳤다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "He cried, \"Gosh! The plane has taken off.\"",
+          "en": "He cried with regret that the plane had taken off.",
+          "accept": [
+            "He exclaimed with regret that the plane had taken off."
+          ],
+          "targets": [
+            [
+              "with regret"
+            ],
+            [
+              "had taken off"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "has taken off",
+              "hint": "cried 가 과거라 has taken off 는 한 걸음 과거 쪽 시제로 바꿔요."
+            },
+            {
+              "match": "cried gosh",
+              "hint": "Gosh! 같은 감탄사는 그대로 옮기지 않고 느낌을 나타내는 말로 바꿔 전해요."
+            },
+            {
+              "match": "with delight",
+              "hint": "비행기가 떠나 버린 상황이에요. 한국어 제시문의 느낌(안타까움)을 나타내는 말을 써요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "past-perfect",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 20 (passOff (4) item 10)",
+            "reviewWhere": "review 1 item 16 (p71)"
+          },
+          "fix": {
+            "from": "He cried “Gosh! The plane has taken off.”",
+            "field": "promptEn",
+            "kind": "english_grammar",
+            "why": "짝인 직접화법의 cried 뒤 쉼표가 빠져 있었습니다."
+          },
+          "note": "Gosh 는 놀람뿐 아니라 당황 · 실망에도 쓰는 감탄사라 교재 답(with regret)을 그대로 두고, 한국어 제시문에 '안타까워하며'를 밝힘. cry · exclaim 뒤에 with regret 가 끼면 that 을 빼지 않으므로 that 없는 답은 허용 답에서 뺌(G12 점검 반영)."
+        },
+        {
+          "id": "pg15-2:p17",
+          "ko": "그녀는 신이 나를 축복해 주시기를 기도했다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "She said, \"God bless you!\"",
+          "en": "She prayed that God might bless me.",
+          "accept": [
+            "She prayed for God to bless me.",
+            "She prayed God might bless me.",
+            "She prayed that God would bless me.",
+            "She prayed God would bless me."
+          ],
+          "targets": [
+            [
+              "prayed"
+            ],
+            [
+              "bless me"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "bless you",
+              "hint": "you 는 듣는 '나'예요. 전하는 입장의 대명사로 바꿔요."
+            },
+            {
+              "match": "may bless",
+              "hint": "prayed 가 과거라 may 도 과거 모양으로 바꿔요."
+            },
+            {
+              "match": "said God bless",
+              "hint": "기원문은 '기도하다' 뜻의 동사 + that 절로 전해요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "optative",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 21 · item 22 (passOff (4) item 12 · item 13)",
+            "reviewWhere": "review 1 item 17 (p71)"
+          },
+          "fix": null,
+          "note": "직접화법에 듣는 사람이 없어 교재 답은 '나'로 봄 — 한국어 제시문에 '나를'을 밝힘. 교재 두 번째 답(for God to bless me)도 정답."
+        },
+        {
+          "id": "pg15-2:p18",
+          "ko": "그는 우리가 성공하기를 바라는 마음을 나타냈다.",
+          "koSource": "new",
+          "condition": "간접화법으로",
+          "promptEn": "He said, \"May you succeed.\"",
+          "en": "He expressed his wish that we might succeed.",
+          "accept": [
+            "He expressed his wish that we would succeed.",
+            "He expressed his hope that we might succeed.",
+            "He expressed his hope that we would succeed.",
+            "He prayed that we might succeed.",
+            "He prayed that we would succeed.",
+            "He prayed we might succeed.",
+            "He prayed we would succeed."
+          ],
+          "targets": [
+            [
+              "we might succeed",
+              "we would succeed"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "you might succeed",
+              "hint": "you 는 듣는 사람이에요. 한국어 제시문에서 누가 성공하기를 바랐는지 보세요."
+            },
+            {
+              "match": "may succeed",
+              "hint": "전달 동사가 과거라 may 도 과거 모양으로 바꿔요."
+            },
+            {
+              "match": "I might succeed",
+              "hint": "한국어 제시문에서 성공하기를 바란 대상이 누구인지 보세요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "optative",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 69,
+            "where": "application 간접화법(오른쪽 열) item 23 (passOff (4) item 15)",
+            "reviewWhere": "review 1 item 18 (p71)"
+          },
+          "fix": null,
+          "note": "직접화법에 듣는 사람이 없어 you 가 누구인지 정해지지 않음 — 교재 답(we)대로 한국어 제시문에 '우리가'를 밝힘. prayed that … might 로 쓴 답도 정답."
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg15-2:t1",
+          "ko": "그 출납계원은 나에게 고액권을 원하는지 물었다.",
+          "koSource": "grammar",
+          "condition": "간접화법으로",
+          "promptEn": "The teller asked me, \"Do you want large bills?\"",
+          "en": "The teller asked me if I wanted large bills.",
+          "accept": [
+            "The teller asked me whether I wanted large bills.",
+            "The cashier asked me if I wanted large bills.",
+            "The teller asked me if I would like large bills."
+          ],
+          "targets": [
+            [
+              "asked me"
+            ],
+            [
+              "if I wanted",
+              "whether I wanted",
+              "if I would like"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "do you want",
+              "hint": "질문을 '~인지' 절로 바꾸고, you 도 전하는 입장으로 바꿔요."
+            },
+            {
+              "match": "if I want large",
+              "hint": "asked 가 과거라 want 도 과거로 바꿔요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-049#6",
+          "bookRef": null,
+          "fix": null,
+          "note": "영어 제시문은 GRAMMAR II gh2-049#5(짝인 직접화법) 그대로."
+        },
+        {
+          "id": "pg15-2:t2",
+          "ko": "그는 나에게 그가 나를 사랑했다고 말했다.",
+          "koSource": "grammar",
+          "condition": "간접화법으로",
+          "promptEn": "He said to me, \"I loved you.\"",
+          "en": "He told me that he had loved me.",
+          "accept": [
+            "He told me he had loved me."
+          ],
+          "targets": [
+            [
+              "told me"
+            ],
+            [
+              "he had loved me"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he loved me",
+              "hint": "said 가 과거이고 한 말도 과거(loved)예요. 한 걸음 더 과거 쪽 시제로 바꿔요."
+            },
+            {
+              "match": "said to me that",
+              "hint": "간접화법에서 said to me 는 보통 다른 동사로 바꿔요."
+            },
+            {
+              "match": "I loved you",
+              "hint": "I 는 말한 '그', you 는 듣는 '나'예요. 전하는 입장으로 바꿔요."
+            }
+          ],
+          "tags": [
+            "indirect-speech",
+            "past-simple",
+            "past-perfect",
+            "tense-agreement"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar2:gh2-050#4",
+          "bookRef": null,
+          "fix": null,
+          "note": "영어 제시문은 GRAMMAR II gh2-050#3(짝인 직접화법) 그대로."
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg15-2:f1",
+      "template": "I told my friend that my favorite food was ___.",
+      "ko": "나는 친구에게 내가 가장 좋아하는 음식이 ___(이)라고 말했다."
+    }
+  ]
+}

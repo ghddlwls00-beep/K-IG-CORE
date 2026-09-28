@@ -1,0 +1,1037 @@
+{
+  "id": "pg12-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "현재 완료",
+  "label": "TOPIC 12. 완료와 진행",
+  "menuLabel": "12-1. 현재 완료",
+  "unit": 12,
+  "part": 2,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 현재 완료",
+  "grammarTags": [
+    "present-perfect"
+  ],
+  "koreanWords": [
+    "Seoul"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg12-1:a1",
+          "en": "I have just had lunch.",
+          "ko": "나는 막 점심을 먹었다.",
+          "koSource": "review 3 item 1",
+          "focus": [
+            "have",
+            "had"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (1) item 1",
+            "reviewWhere": "review 3 item 1 (p49)"
+          },
+          "fix": {
+            "from": "I have just have lunch.",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "현재완료는 have + 과거분사인데 두 번째 have 가 원형으로 인쇄되었습니다(had 의 오타). have 의 과거분사 had 로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg12-1:a2",
+          "en": "He has lost his key.",
+          "ko": "그는 열쇠를 잃어버렸다.",
+          "koSource": "review 3 item 2",
+          "focus": [
+            "has lost"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (1) item 2",
+            "reviewWhere": "review 3 item 2 (p49)"
+          }
+        },
+        {
+          "id": "pg12-1:a3",
+          "en": "Have you been to Seoul?",
+          "ko": "너는 서울에 가 본 적이 있니?",
+          "koSource": "review 3 item 3 (띄어쓰기 고침)",
+          "focus": [
+            "Have",
+            "been"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (1) item 3",
+            "reviewWhere": "review 3 item 3 (p49) · review 2 item 1 (p47)"
+          },
+          "fix": {
+            "fromKo": "너는 서울에 가 본적이 있니?",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'본 적'의 '적'은 의존 명사라 띄어 씁니다."
+          }
+        },
+        {
+          "id": "pg12-1:a4",
+          "en": "He has worked there for ten years.",
+          "ko": "그는 그곳에서 10년간 일해 오고 있다.",
+          "koSource": "review 3 item 4",
+          "focus": [
+            "has worked"
+          ],
+          "studentRef": {
+            "lesson": "s2-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (1) item 4 (2과)",
+            "reviewWhere": "review 3 item 4 (p49) · review 2 item 2 (p47)"
+          },
+          "note": "교재 꼬리표 (2과): STUDENT s2-3 'He has worked there for almost ten years.'에서 almost 를 뺀 문장이라 adapted."
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg12-1:a1",
+          "pg12-1:a3",
+          "pg12-1:a4"
+        ],
+        "question": "세 문장에서 have · has 와 짝을 이루는 동사(had · been · worked)는 어떤 모양일까요?",
+        "options": [
+          "과거분사",
+          "동사원형",
+          "-ing 꼴"
+        ],
+        "answer": 0,
+        "why": "have(has) + 과거분사가 현재완료예요. had 는 have 의, been 은 be 의, worked 는 work 의 과거분사예요."
+      },
+      "title": "현재완료 = have/has + 과거분사",
+      "points": [
+        "현재완료 = have/has + 과거분사: 과거의 일이 지금과 이어져요.",
+        "완료: 막 · 이미 끝냈다 — just · already · yet",
+        "경험: ~한 적이 있다 — ever · never · before · ~ times",
+        "계속: ~해 왔다(for 기간 · since 시작점) · 결과: 그래서 지금 그렇다",
+        "yesterday · ago · When ~? 처럼 지난 때를 짚으면 과거형으로 써요."
+      ],
+      "table": {
+        "columns": [
+          "쓰임",
+          "예문",
+          "함께 자주 오는 말"
+        ],
+        "rows": [
+          [
+            "완료",
+            "I have just had lunch.",
+            "just · already · yet"
+          ],
+          [
+            "경험",
+            "Have you been to Seoul?",
+            "ever · never · before · ~ times"
+          ],
+          [
+            "계속",
+            "He has worked there for ten years.",
+            "for · since · How long ~?"
+          ],
+          [
+            "결과",
+            "He has lost his key.",
+            "(그래서 지금 열쇠가 없음)"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '먹었다 · 가 봤다 · 일해 왔다'처럼 모두 '-았/었-'으로 말해 그냥 지난 일과 구별이 잘 안 되지만, 영어는 지금과 이어진 과거를 have/has + 과거분사로 따로 나타내요. have been to 는 '~에 가 본 적이 있다', have gone to 는 주로 '~에 가 버렸다(지금 여기 없다)'는 뜻이에요.",
+      "mistakes": [
+        {
+          "wrong": "I have seen him yesterday.",
+          "right": "I saw him yesterday.",
+          "why": "yesterday 처럼 지난 때를 딱 짚으면 현재완료가 아니라 과거형으로 써요."
+        },
+        {
+          "wrong": "He has worked there since ten years.",
+          "right": "He has worked there for ten years.",
+          "why": "기간(10년 동안)은 for, 시작점(2020년부터)은 since 예요."
+        }
+      ],
+      "worked": [
+        "나는 그 책을 이미 다 읽었다.",
+        "이미 끝낸 일이 지금과 이어짐 → 현재완료(완료)",
+        "주어 I → have, read 의 과거분사 → read(발음 [red])",
+        "already 는 보통 have 와 과거분사 사이에",
+        "I have already read the book."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'She ___ in Busan since 2019.' 빈칸에 맞는 것은?",
+        "options": [
+          "lives",
+          "has lived",
+          "lived"
+        ],
+        "answer": 1,
+        "why": "since 2019(2019년부터 지금까지) — 계속이라 현재완료(has + 과거분사)예요.",
+        "pointIndex": 3
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg12-1:s1",
+          "kind": "choice",
+          "instruction": "밑줄 친 현재완료는 어떤 뜻으로 쓰였나요?",
+          "sentence": "Have you been to Seoul?",
+          "underline": [
+            "Have",
+            "been"
+          ],
+          "options": [
+            "완료(막 · 이미 ~했다)",
+            "경험(~한 적이 있다)",
+            "계속(~해 왔다)"
+          ],
+          "answer": 1,
+          "why": "'서울에 가 본 적이 있니?' — 경험을 묻는 현재완료예요. have been to 는 '~에 가 본 적이 있다'예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 47,
+            "where": "review 2 item 1 (해석 · 시제 이름 → 쓰임 고르기)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg12-1:s2",
+          "kind": "choice",
+          "instruction": "밑줄 친 현재완료는 어떤 뜻으로 쓰였나요?",
+          "sentence": "He has worked there for ten years.",
+          "underline": [
+            "has worked"
+          ],
+          "options": [
+            "경험(~한 적이 있다)",
+            "계속(~해 왔다)",
+            "결과(~해 버려 지금 그렇다)"
+          ],
+          "answer": 1,
+          "why": "for ten years(10년 동안) — 과거부터 지금까지 이어진 계속이에요.",
+          "bookRef": {
+            "book": 2,
+            "page": 47,
+            "where": "review 2 item 2 (해석 · 시제 이름 → 쓰임 고르기)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg12-1:s3",
+          "kind": "choice",
+          "instruction": "밑줄 친 현재완료는 어떤 뜻으로 쓰였나요?",
+          "sentence": "I have just had lunch.",
+          "underline": [
+            "have just had"
+          ],
+          "options": [
+            "완료(막 · 이미 ~했다)",
+            "경험(~한 적이 있다)",
+            "계속(~해 왔다)"
+          ],
+          "answer": 0,
+          "why": "just(막) — 방금 끝난 일이 지금과 이어지는 완료예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (1) item 1"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg12-1:s4",
+          "kind": "choice",
+          "instruction": "밑줄 친 현재완료는 어떤 뜻으로 쓰였나요?",
+          "sentence": "He has lost his key.",
+          "underline": [
+            "has lost"
+          ],
+          "options": [
+            "경험(~한 적이 있다)",
+            "계속(~해 왔다)",
+            "결과(~해 버려 지금 그렇다)"
+          ],
+          "answer": 2,
+          "why": "열쇠를 잃어버려서 지금도 없다 — 그 일의 결과가 지금 남아 있는 결과예요.",
+          "bookRef": {
+            "book": 2,
+            "page": 44,
+            "where": "passOff (1) item 2"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg12-1:s5",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "I have known her ___ five years.",
+          "underline": [],
+          "options": [
+            "since",
+            "for",
+            "during"
+          ],
+          "answer": 1,
+          "why": "five years 는 기간이라 for 예요. since 뒤에는 2020 · Monday 같은 시작점이 와요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg12-1:s6",
+          "kind": "short",
+          "instruction": "괄호 안 동사를 알맞은 모양으로 쓰세요.",
+          "sentence": "My father has ___ (buy) a new car.",
+          "answer": [
+            "bought"
+          ],
+          "why": "has 뒤에는 과거분사가 와요: buy - bought - bought.",
+          "bookRef": {
+            "book": 2,
+            "page": 47,
+            "where": "review 1 (공식: have/has + 과거분사)"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg12-1:s7",
+          "kind": "select",
+          "instruction": "현재완료를 이루는 두 낱말을 누르세요",
+          "tokens": [
+            "She",
+            "has",
+            "already",
+            "finished",
+            "her",
+            "homework",
+            "."
+          ],
+          "answer": [
+            1,
+            3
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "has + 과거분사(finished)가 현재완료예요. already 는 사이에 들어간 부사예요.",
+          "bookRef": null,
+          "source": "new",
+          "reserve": true
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg12-1:p1",
+          "ko": "나는 막 점심을 먹었다.",
+          "koSource": "review 3 item 1",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "I have just had lunch.",
+          "accept": [
+            "I have just eaten lunch.",
+            "I have just had my lunch.",
+            "I have just eaten my lunch.",
+            "I have just finished lunch.",
+            "I have just finished my lunch."
+          ],
+          "targets": [
+            [
+              "have",
+              "'ve"
+            ],
+            [
+              "had",
+              "eaten",
+              "finished"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "have just have",
+              "hint": "have 뒤에는 동사의 과거분사가 와요. have 의 과거분사는?"
+            },
+            {
+              "match": "have just ate",
+              "hint": "ate 는 과거형이에요. have 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "i just had",
+              "hint": "조건은 '현재완료로'예요. have + 과거분사로 써 보세요."
+            }
+          ],
+          "tags": [
+            "present-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 1",
+            "reviewWhere": "review 3 item 1 (p49)"
+          },
+          "fix": {
+            "from": "I have just have lunch.",
+            "field": "en",
+            "kind": "english_grammar",
+            "why": "현재완료는 have + 과거분사인데 두 번째 have 가 원형으로 인쇄되었습니다(had 의 오타). 원문은 틀린 문장이라 오답입니다."
+          }
+        },
+        {
+          "id": "pg12-1:p2",
+          "ko": "그는 열쇠를 잃어버렸다.",
+          "koSource": "review 3 item 2",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "He has lost his key.",
+          "accept": [
+            "He has lost his keys.",
+            "He has lost the key.",
+            "He has lost the keys."
+          ],
+          "targets": [
+            [
+              "has",
+              "'s"
+            ],
+            [
+              "lost"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "has lose",
+              "hint": "has 뒤에는 과거분사가 와요. lose 의 과거분사는?"
+            },
+            {
+              "match": "have lost",
+              "hint": "주어 He 는 3인칭 한 명이에요. have 의 모양은?"
+            },
+            {
+              "match": "he lost",
+              "hint": "조건은 '현재완료로'예요. has + 과거분사로 써 보세요."
+            }
+          ],
+          "tags": [
+            "present-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 2",
+            "reviewWhere": "review 3 item 2 (p49)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg12-1:p3",
+          "ko": "너는 서울에 가 본 적이 있니?",
+          "koSource": "review 3 item 3 (띄어쓰기 고침)",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "Have you been to Seoul?",
+          "accept": [
+            "Have you ever been to Seoul?",
+            "Have you visited Seoul?",
+            "Have you ever visited Seoul?",
+            "Have you been to Seoul before?",
+            "Have you visited Seoul before?",
+            "Have you ever been to Seoul before?",
+            "Have you ever visited Seoul before?"
+          ],
+          "targets": [
+            [
+              "Have"
+            ],
+            [
+              "been",
+              "visited"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "have you gone to",
+              "hint": "'가 본 적이 있니?'(경험)는 보통 gone 이 아닌 다른 과거분사로 물어요. gone to 는 주로 '가 버렸다'는 뜻이에요."
+            },
+            {
+              "match": "have you go",
+              "hint": "have 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "did you",
+              "hint": "조건은 '현재완료로'예요. Have + 주어 + 과거분사로 물어 보세요."
+            }
+          ],
+          "tags": [
+            "present-perfect",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 3",
+            "reviewWhere": "review 3 item 3 (p49) · review 2 item 1 (p47)"
+          },
+          "fix": {
+            "fromKo": "너는 서울에 가 본적이 있니?",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'본 적'의 '적'은 의존 명사라 띄어 씁니다."
+          }
+        },
+        {
+          "id": "pg12-1:p4",
+          "ko": "그는 그곳에서 10년간 일해 오고 있다.",
+          "koSource": "review 3 item 4",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "He has worked there for ten years.",
+          "accept": [
+            "He has worked there for 10 years.",
+            "He has been working there for ten years.",
+            "He has been working there for 10 years.",
+            "He has worked there for the past ten years.",
+            "He has worked there for the past 10 years.",
+            "He has been working there for the past ten years.",
+            "He has been working there for the past 10 years."
+          ],
+          "targets": [
+            [
+              "has",
+              "'s"
+            ],
+            [
+              "worked",
+              "been working"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he works there",
+              "hint": "10년 전부터 지금까지 이어진 일이에요. 현재형으로는 나타낼 수 없어요."
+            },
+            {
+              "match": "he worked there",
+              "hint": "조건은 '현재완료로'예요. has + 과거분사로 써 보세요."
+            },
+            {
+              "match": "since",
+              "hint": "'10년 동안'처럼 기간을 말할 때는 since 대신 다른 전치사를 써요."
+            }
+          ],
+          "tags": [
+            "present-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-3",
+            "kind": "adapted"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 4 (2과)",
+            "reviewWhere": "review 3 item 4 (p49) · review 2 item 2 (p47)"
+          },
+          "fix": null,
+          "note": "교재 꼬리표 (2과): STUDENT s2-3 'He has worked there for almost ten years.'에서 almost 를 뺀 문장. 한국어 '일해 오고 있다'를 따라 쓴 완료진행(has been working)도 맞는 영어라 허용합니다."
+        },
+        {
+          "id": "pg12-1:p5",
+          "ko": "나는 일본을 세 번 방문한 적이 있다.",
+          "koSource": "review 3 item 5 (고침)",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "I have visited Japan three times.",
+          "accept": [
+            "I have visited Japan 3 times.",
+            "I have been to Japan three times.",
+            "I have been to Japan 3 times."
+          ],
+          "targets": [
+            [
+              "have",
+              "'ve"
+            ],
+            [
+              "visited",
+              "been"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "i visited japan",
+              "hint": "조건은 '현재완료로'예요. have + 과거분사로 써 보세요."
+            },
+            {
+              "match": "have visit",
+              "hint": "have 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "three time",
+              "hint": "세 번이니 time 도 여러 번의 모양으로 써요."
+            }
+          ],
+          "tags": [
+            "present-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 5",
+            "reviewWhere": "review 3 item 5 (p49)"
+          },
+          "fix": {
+            "fromKo": "나는 일본에 세 번 방문했다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "현재완료의 '경험'이 드러나게 '~한 적이 있다'로, '방문하다'의 목적어는 '일본을'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg12-1:p6",
+          "ko": "질은 무지개를 본 적이 있다.",
+          "koSource": "review 3 item 6",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "Jill has seen a rainbow.",
+          "accept": [
+            "Jill has seen the rainbow.",
+            "Jill has seen a rainbow before.",
+            "Jill has seen rainbows.",
+            "Jill has seen rainbows before.",
+            "Jill's seen a rainbow.",
+            "Jill's seen the rainbow.",
+            "Jill's seen a rainbow before.",
+            "Jill's seen rainbows.",
+            "Jill's seen rainbows before."
+          ],
+          "targets": [
+            [
+              "has",
+              "'s",
+              "Jill's"
+            ],
+            [
+              "seen"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "has ever seen",
+              "hint": "ever(한 번이라도)는 보통 묻는 문장에 써요. '본 적이 있다'는 ever 없이 써요."
+            },
+            {
+              "match": "has saw",
+              "hint": "saw 는 과거형이에요. has 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "jill saw",
+              "hint": "조건은 '현재완료로'예요. has + 과거분사로 써 보세요."
+            }
+          ],
+          "tags": [
+            "present-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 6",
+            "reviewWhere": "review 3 item 6 (p49)"
+          },
+          "fix": {
+            "from": "Jill has seen the rainbow.",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "'무지개를 본 적이 있다'(경험)는 특정한 무지개가 아니라 무지개 하나를 본 일이라 a rainbow 가 자연스럽습니다. 교재의 the rainbow 는 틀린 문장이 아니라서 허용 답으로 둡니다."
+          },
+          "note": "이름 뒤 's(Jill's seen)는 채점기가 아직 has 로 펴지 않아(대명사 뒤만 폄) 's 판을 허용 답에 넣었습니다 — 마이크 인식기가 'Jill has'를 'Jill's'로 적어도 정답이 되게. 채점기가 고쳐지면 빼도 됩니다(G10 점검 반영, 코드 쪽 요청은 이끄는 세션에). 목표형에도 같은 's 꼴을 더했습니다(검사 도구 check-lessons 가 대명사 뒤 's 만 펴서)."
+        },
+        {
+          "id": "pg12-1:p7",
+          "ko": "너는 전에 티나를 만난 적이 있니?",
+          "koSource": "review 3 item 7 (고침)",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "Have you met Tina before?",
+          "accept": [
+            "Have you ever met Tina?",
+            "Have you ever met Tina before?"
+          ],
+          "targets": [
+            [
+              "Have"
+            ],
+            [
+              "met"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "have you meet",
+              "hint": "have 뒤에는 과거분사가 와요. meet 의 과거분사는?"
+            },
+            {
+              "match": "did you meet",
+              "hint": "조건은 '현재완료로'예요. Have + 주어 + 과거분사로 물어 보세요."
+            }
+          ],
+          "tags": [
+            "present-perfect",
+            "question-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 7",
+            "reviewWhere": "review 3 item 7 (p49)"
+          },
+          "fix": {
+            "fromKo": "너는 전에 티나를 본 적이 있니?",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "met 은 '만나다'라서 '만난 적이 있니'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg12-1:p8",
+          "ko": "한국에서 산 지 얼마나 되었나요?",
+          "koSource": "review 3 item 8 (고침)",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "How long have you lived in Korea?",
+          "accept": [
+            "How long have you been living in Korea?",
+            "How long have you been in Korea?",
+            "How long have you lived in South Korea?",
+            "How long have you been living in South Korea?"
+          ],
+          "targets": [
+            [
+              "have"
+            ],
+            [
+              "lived",
+              "been"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "how long do you live",
+              "hint": "지금까지 이어져 온 기간을 물을 때는 현재형을 쓰지 않아요."
+            },
+            {
+              "match": "how long did you live",
+              "hint": "조건은 '현재완료로'예요. 지금도 사는 곳이니 과거형으로 묻지 않아요."
+            },
+            {
+              "match": "how long you have",
+              "hint": "묻는 문장이에요. have 를 주어 앞으로 보내요."
+            }
+          ],
+          "tags": [
+            "present-perfect",
+            "question-wh"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 8",
+            "reviewWhere": "review 3 item 8 (p49)"
+          },
+          "fix": {
+            "fromKo": "얼마나 오랫동안 한국에서 살았나요?",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "현재완료의 '계속'(지금도 한국에 삶)인데 '살았나요'는 끝난 과거로 읽혀서 '산 지 얼마나 되었나요'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg12-1:p9",
+          "ko": "그는 평생을 기회주의자로 살아왔다.",
+          "koSource": "review 3 item 9",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "He has lived his whole life as a timeserver.",
+          "accept": [
+            "He has lived his whole life as an opportunist.",
+            "He has lived all his life as a timeserver.",
+            "He has lived all his life as an opportunist.",
+            "He has been a timeserver all his life.",
+            "He has been an opportunist all his life.",
+            "He has been a timeserver his whole life.",
+            "He has been an opportunist his whole life.",
+            "He has lived as an opportunist all his life.",
+            "He has lived as a timeserver all his life.",
+            "He has lived as an opportunist his whole life.",
+            "He has lived as a timeserver his whole life.",
+            "He has lived his entire life as a timeserver.",
+            "He has lived his entire life as an opportunist.",
+            "He has been a timeserver his entire life.",
+            "He has been an opportunist his entire life.",
+            "He has lived as a timeserver his entire life.",
+            "He has lived as an opportunist his entire life."
+          ],
+          "targets": [
+            [
+              "has",
+              "'s"
+            ],
+            [
+              "lived",
+              "been"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he lived",
+              "hint": "조건은 '현재완료로'예요. 지금까지 이어진 삶이에요."
+            },
+            {
+              "match": "a whole life",
+              "hint": "'평생'은 그 사람의 삶 전체예요. a 대신 누구의 삶인지 나타내 보세요."
+            },
+            {
+              "match": "as opportunist",
+              "hint": "opportunist 는 셀 수 있는 명사라 앞에 관사가 필요해요."
+            }
+          ],
+          "tags": [
+            "present-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 9",
+            "reviewWhere": "review 3 item 9 (p49)"
+          },
+          "fix": {
+            "from": "He has lived a whole life as a timeserver.",
+            "field": "en",
+            "kind": "english_unnatural",
+            "why": "'평생'은 그 사람의 삶 전체라 a whole life 가 아니라 his whole life 입니다. timeserver(기회주의자)는 드문 낱말이라 흔히 쓰는 opportunist 도 허용 답으로 둡니다."
+          }
+        },
+        {
+          "id": "pg12-1:p10",
+          "ko": "그는 월요일부터 심한 감기에 걸려 있다.",
+          "koSource": "review 3 item 10 (고침)",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "He has had a bad cold since Monday.",
+          "accept": [
+            "He has had a terrible cold since Monday.",
+            "He has had a severe cold since Monday.",
+            "He has had a heavy cold since Monday."
+          ],
+          "targets": [
+            [
+              "has",
+              "'s"
+            ],
+            [
+              "had"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "has a bad cold since",
+              "hint": "월요일부터 지금까지 이어진 일이에요. 현재형으로는 나타낼 수 없어요."
+            },
+            {
+              "match": "from monday",
+              "hint": "'월요일부터 (지금까지)'는 from 이 아니라 다른 말로 써요."
+            },
+            {
+              "match": "has caught",
+              "hint": "감기에 '걸려 있는' 상태가 이어지는 거예요. catch 대신 '가지다'를 뜻하는 동사를 써 보세요."
+            }
+          ],
+          "tags": [
+            "present-perfect"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 45,
+            "where": "application item 10",
+            "reviewWhere": "review 3 item 10 (p49)"
+          },
+          "fix": {
+            "fromKo": "그는 월요일 이후에 독감에 걸려 있다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "since Monday 는 '월요일부터', a bad cold 는 '심한 감기'(독감은 flu)라서 고쳤습니다."
+          }
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg12-1:t1",
+          "ko": "나는 네 집을 한 번도 본 적이 없어.",
+          "koSource": "grammar1:gh1-109#63 (다듬음)",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "I've never seen your place.",
+          "accept": [
+            "I've never seen your house.",
+            "I've never seen your home.",
+            "I've never seen your place before.",
+            "I've never seen your house before.",
+            "I've never seen your home before.",
+            "I haven't ever seen your place.",
+            "I haven't ever seen your house.",
+            "I haven't ever seen your home."
+          ],
+          "targets": [
+            [
+              "have",
+              "'ve"
+            ],
+            [
+              "seen"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "never saw",
+              "hint": "saw 는 과거형이에요. '본 적이 없다'(경험)는 have + 과거분사로 써요."
+            },
+            {
+              "match": "have ever seen",
+              "hint": "'본 적이 없다'는 ever 가 아니라 부정의 뜻을 가진 말을 써요."
+            }
+          ],
+          "tags": [
+            "present-perfect",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar1:gh1-109#63",
+          "note": "GRAMMAR I 한국어 '나는 너의 집을 결코 본 적이 없어.'는 '너의' · '결코'가 번역투라 '나는 네 집을 한 번도 본 적이 없어.'로 다듬었습니다(뜻은 같음 — never). GRAMMAR I 허용 답 'I have never seen your home.'은 'I've never seen your home.'과 축약형만 달라(채점기가 같게 봄) 따로 넣지 않았습니다. '본 적이 없어'에 흔히 붙는 before 와 haven't ever 꼴도 받습니다(G10 점검 반영)."
+        },
+        {
+          "id": "pg12-1:t2",
+          "ko": "그는 아직 오지 않았다.",
+          "koSource": "grammar2:gh2-016#30",
+          "condition": "현재완료로",
+          "promptEn": null,
+          "en": "He hasn't come yet.",
+          "accept": [
+            "He hasn't arrived yet.",
+            "He has not yet come.",
+            "He has not yet arrived.",
+            "He hasn't come here yet.",
+            "He still hasn't come.",
+            "He still hasn't arrived.",
+            "He hasn't arrived here yet."
+          ],
+          "targets": [
+            [
+              "has"
+            ],
+            [
+              "come",
+              "arrived"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he didn't come yet",
+              "hint": "조건은 '현재완료로'예요. yet(아직)과 함께 '아직 안 했다'는 has + not + 과거분사로 써 보세요."
+            },
+            {
+              "match": "hasn't came",
+              "hint": "came 은 과거형이에요. has 뒤에는 과거분사가 와요."
+            },
+            {
+              "match": "still didn't come",
+              "hint": "조건은 '현재완료로'예요. '아직 안 했다'는 has + not + 과거분사로 써 보세요."
+            }
+          ],
+          "tags": [
+            "present-perfect",
+            "negative-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-016#30"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg12-1:f1",
+      "template": "I have been to ___.",
+      "ko": "나는 ___에 가 본 적이 있다."
+    }
+  ]
+}

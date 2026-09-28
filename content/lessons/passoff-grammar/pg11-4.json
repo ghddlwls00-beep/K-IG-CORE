@@ -1,0 +1,1234 @@
+{
+  "id": "pg11-4",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "시제 일치",
+  "label": "TOPIC 11. 시제",
+  "menuLabel": "11-4. 시제 일치",
+  "unit": 11,
+  "part": 2,
+  "order": 4,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(5) 시제 일치",
+  "grammarTags": [
+    "tense-agreement"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg11-4:a1",
+          "en": "I know that he will do it.",
+          "ko": "나는 그가 그것을 할 거라는 걸 안다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "will do"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) item 1 (주절이 현재일 때)",
+            "reviewWhere": "review 2 item 1 (p36)"
+          }
+        },
+        {
+          "id": "pg11-4:a2",
+          "en": "I know that he does it.",
+          "ko": "나는 그가 그것을 한다는 걸 안다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "does"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) item 2",
+            "reviewWhere": "review 2 네모 문장 (p36)"
+          }
+        },
+        {
+          "id": "pg11-4:a3",
+          "en": "I know that he did it.",
+          "ko": "나는 그가 그것을 했다는 걸 안다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "did"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) item 3",
+            "reviewWhere": "review 2 item 2 (p36)"
+          }
+        },
+        {
+          "id": "pg11-4:a4",
+          "en": "I know that he has done it.",
+          "ko": "나는 그가 그것을 해 놓았다는 걸 안다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "has done"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) item 4",
+            "reviewWhere": "review 2 item 3 (p36)"
+          },
+          "fix": {
+            "from": "I know that he has done it",
+            "kind": "english_grammar",
+            "why": "문장 끝 마침표가 빠져 있었습니다."
+          }
+        },
+        {
+          "id": "pg11-4:a5",
+          "en": "I know that he had done it before I came.",
+          "ko": "내가 오기 전에 그가 그것을 했었다는 걸 나는 안다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "had done"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) item 5",
+            "reviewWhere": "review 2 item 4 (p36)"
+          },
+          "fix": {
+            "from": "I know that he had done it.",
+            "kind": "english_unnatural",
+            "why": "과거완료는 과거의 어느 때보다 앞선 일을 말하는데, 기준이 되는 과거 시점 없이 홀로 쓰여 어색합니다. 기준 시점 before I came 을 더했습니다(오류 후보 p30 '(5) 시제 일치')."
+          }
+        },
+        {
+          "id": "pg11-4:a6",
+          "en": "I knew that he did it.",
+          "ko": "나는 그가 그것을 했다는 걸 알았다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "knew",
+            "did"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) item 7 (주절이 과거일 때)",
+            "reviewWhere": "review 2 네모 문장 (p36)"
+          }
+        },
+        {
+          "id": "pg11-4:a7",
+          "en": "I knew that he had done it.",
+          "ko": "나는 그가 그것을 했었다는 걸 알았다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "knew",
+            "had done"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) item 8",
+            "reviewWhere": "review 2 item 6 (p36)"
+          },
+          "fix": {
+            "from": "I knew that he had done it",
+            "kind": "english_grammar",
+            "why": "문장 끝 마침표가 빠져 있었습니다."
+          }
+        },
+        {
+          "id": "pg11-4:a8",
+          "en": "I knew that he had been doing it.",
+          "ko": "나는 그가 그것을 계속 해 오고 있었다는 걸 알았다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "focus": [
+            "knew",
+            "had been doing"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) item 9",
+            "reviewWhere": "review 2 item 7 (p36)"
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg11-4:a1",
+          "pg11-4:a3",
+          "pg11-4:a7"
+        ],
+        "question": "주절이 know(현재)일 때와 knew(과거)일 때, that 절의 동사는 어떻게 다를까요?",
+        "options": [
+          "know 뒤에는 뜻에 맞는 어떤 시제든, knew 뒤에는 과거 쪽 시제가 온다",
+          "know 뒤에는 현재형만 온다",
+          "knew 뒤에는 will 이 그대로 온다"
+        ],
+        "answer": 0,
+        "why": "know(현재) 뒤에는 will do · did 처럼 뜻에 맞는 시제가 오지만, knew(과거) 뒤에는 과거나 과거완료처럼 한 걸음 과거 쪽으로 옮긴 시제가 와요."
+      },
+      "title": "주절이 과거면 that 절도 과거 쪽으로 옮깁니다",
+      "points": [
+        "주절이 현재(know)면 that 절에는 뜻에 맞는 어떤 시제든 써요.",
+        "주절이 과거(knew)면 that 절도 한 걸음 과거로: is → was, will → would",
+        "주절보다 앞선 일은 과거완료(had + p.p.) — did 그대로 둘 때도 있어요.",
+        "can → could, is doing → was doing 처럼 조동사·진행형도 옮겨요.",
+        "예외: 변하지 않는 진리는 현재, 역사적 사실은 과거 그대로 써요."
+      ],
+      "table": {
+        "columns": [
+          "주절이 현재",
+          "주절이 과거"
+        ],
+        "rows": [
+          [
+            "I know that she is busy.",
+            "I knew that she was busy."
+          ],
+          [
+            "I know that she is sleeping.",
+            "I knew that she was sleeping."
+          ],
+          [
+            "I know that she will come.",
+            "I knew that she would come."
+          ],
+          [
+            "I know that she can swim.",
+            "I knew that she could swim."
+          ],
+          [
+            "I know that she has left.",
+            "I knew that she had left."
+          ]
+        ]
+      },
+      "koDiff": "한국어는 '나는 그녀가 바쁘다는 걸 알았다'처럼 안긴 문장을 현재로 두지만, 영어는 주절이 과거(knew)면 that 절도 과거(was busy)로 맞춰요.",
+      "mistakes": [
+        {
+          "wrong": "I knew that she is busy.",
+          "right": "I knew that she was busy.",
+          "why": "주절이 과거(knew)면 that 절의 is 도 과거 was 로 옮겨요."
+        },
+        {
+          "wrong": "I knew that she will come.",
+          "right": "I knew that she would come.",
+          "why": "주절이 과거면 will 은 would 로 옮겨요."
+        }
+      ],
+      "worked": [
+        "나는 그 가게가 문을 닫았다는 걸 알았다.",
+        "주절: 알았다 → knew (과거)",
+        "that 절: 닫았다(알기 전에 이미 끝난 일) → has closed",
+        "주절이 과거라 한 걸음 더 과거로 → had closed",
+        "I knew that the shop had closed."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'I know that he ___ it yesterday.' 빈칸에 맞는 것은?",
+        "options": [
+          "does",
+          "did",
+          "will do"
+        ],
+        "answer": 1,
+        "why": "주절이 현재(know)면 that 절은 뜻대로 써요. yesterday(어제)의 일이니 과거 did.",
+        "pointIndex": 0
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg11-4:s1",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "I knew that my sister ___ hungry.",
+          "underline": [],
+          "options": [
+            "is",
+            "was",
+            "will be"
+          ],
+          "answer": 1,
+          "why": "주절이 과거(knew)라 that 절의 현재 is 는 과거 was 로 옮겨요.",
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) 주절이 과거일 때"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg11-4:s2",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "I thought that she ___ come to the party.",
+          "underline": [],
+          "options": [
+            "will",
+            "would",
+            "can"
+          ],
+          "answer": 1,
+          "why": "주절이 과거(thought)라 will 은 would 로 옮겨요.",
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) 주절이 과거일 때"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg11-4:s3",
+          "kind": "choice",
+          "instruction": "밑줄 친 moves 가 과거로 바뀌지 않은 까닭은?",
+          "sentence": "We learned that the earth moves round the sun.",
+          "underline": [
+            "moves"
+          ],
+          "options": [
+            "변하지 않는 진리라서",
+            "주절이 현재라서",
+            "앞으로의 일이라서"
+          ],
+          "answer": 0,
+          "why": "지구가 태양 주위를 도는 것은 언제나 맞는 진리라 주절이 과거(learned)여도 현재형 그대로 써요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg11-4:s4",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은?",
+          "sentence": "We learned that Columbus ___ America in 1492.",
+          "underline": [],
+          "options": [
+            "reached",
+            "reaches",
+            "will reach"
+          ],
+          "answer": 0,
+          "why": "1492년처럼 지난 때가 분명한 역사적 사실은 과거형 그대로 써요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg11-4:s5",
+          "kind": "choice",
+          "instruction": "주절을 과거로 바꿀 때 빈칸에 맞는 것은?",
+          "sentence": "I know that he does it. → I knew that he ___ it.",
+          "underline": [],
+          "options": [
+            "does",
+            "did",
+            "will do"
+          ],
+          "answer": 1,
+          "why": "주절이 과거가 되면 that 절의 현재 does 도 과거 did 로 옮겨요.",
+          "bookRef": {
+            "book": 2,
+            "page": 36,
+            "where": "review 2 네모 문장"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg11-4:s6",
+          "kind": "select",
+          "instruction": "that 절의 동사 부분을 누르세요",
+          "tokens": [
+            "I",
+            "knew",
+            "that",
+            "he",
+            "had been doing",
+            "it",
+            "."
+          ],
+          "answer": [
+            4
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "주절 knew 는 과거, that 절 had been doing 은 과거완료진행 — 안 때보다 앞서 계속되던 일이에요.",
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) item 9"
+          },
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg11-4:p1",
+          "ko": "나는 그가 그것을 할 거라는 걸 안다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "that 절을 미래로",
+          "promptEn": "I know that he does it.",
+          "en": "I know that he will do it.",
+          "accept": [
+            "I know he will do it.",
+            "I know that he is going to do it.",
+            "I know he is going to do it."
+          ],
+          "targets": [
+            [
+              "will do",
+              "is going to do"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he will does",
+              "hint": "will 뒤에는 동사원형을 써요."
+            },
+            {
+              "match": "I know that he would do it",
+              "hint": "주절이 현재(know)라 that 절을 과거 쪽으로 옮길 까닭이 없어요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "complex-sentence",
+            "future-will"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 36,
+            "where": "review 2 item 1",
+            "reviewWhere": "passOff (5) item 1 (p30)"
+          },
+          "fix": null,
+          "note": "교재 Review 2 는 네모 문장 아래 빈칸만 주고 어느 시제로 쓸지 정하지 않아(오류 후보 p36 answer_ambiguous) 칸마다 조건 칩으로 시제를 정하고 한국어 뜻을 붙였습니다."
+        },
+        {
+          "id": "pg11-4:p2",
+          "ko": "나는 그가 그것을 했다는 걸 안다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "that 절을 과거로",
+          "promptEn": "I know that he does it.",
+          "en": "I know that he did it.",
+          "accept": [
+            "I know he did it."
+          ],
+          "targets": [
+            [
+              "did"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he has done it",
+              "hint": "조건은 과거예요."
+            },
+            {
+              "match": "he done it",
+              "hint": "과거형과 과거분사(done)를 구별해 보세요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "complex-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 36,
+            "where": "review 2 item 2",
+            "reviewWhere": "passOff (5) item 3 (p30)"
+          },
+          "fix": null,
+          "note": "교재 Review 2 는 네모 문장 아래 빈칸만 주고 어느 시제로 쓸지 정하지 않아(오류 후보 p36 answer_ambiguous) 칸마다 조건 칩으로 시제를 정하고 한국어 뜻을 붙였습니다."
+        },
+        {
+          "id": "pg11-4:p3",
+          "ko": "나는 그가 그것을 해 놓았다는 걸 안다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "that 절을 현재완료로",
+          "promptEn": "I know that he does it.",
+          "en": "I know that he has done it.",
+          "accept": [
+            "I know he has done it."
+          ],
+          "targets": [
+            [
+              "has done"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he have done",
+              "hint": "주어 he 에 맞춰 have 의 모양을 보세요."
+            },
+            {
+              "match": "he has did",
+              "hint": "have/has 뒤에는 과거분사를 써요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "twelve-tenses",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 36,
+            "where": "review 2 item 3",
+            "reviewWhere": "passOff (5) item 4 (p30)"
+          },
+          "fix": {
+            "from": "I know that he has done it",
+            "kind": "english_grammar",
+            "why": "문장 끝 마침표가 빠져 있었습니다."
+          },
+          "note": "교재 Review 2 는 네모 문장 아래 빈칸만 주고 어느 시제로 쓸지 정하지 않아(오류 후보 p36 answer_ambiguous) 칸마다 조건 칩으로 시제를 정하고 한국어 뜻을 붙였습니다."
+        },
+        {
+          "id": "pg11-4:p4",
+          "ko": "내가 오기 전에 그가 그것을 했었다는 걸 나는 안다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "that 절을 과거완료로",
+          "promptEn": "I know that he does it.",
+          "en": "I know that he had done it before I came.",
+          "accept": [
+            "I know that he had done it before I arrived.",
+            "I know he had done it before I came.",
+            "I know he had done it before I arrived.",
+            "I know that he had done it before I got here."
+          ],
+          "targets": [
+            [
+              "had done"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "before I had come",
+              "hint": "'오기 전에'는 지난 한때라 before 절은 과거형으로 충분해요."
+            },
+            {
+              "match": "he has done it before",
+              "hint": "조건은 과거완료예요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "twelve-tenses",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 36,
+            "where": "review 2 item 4",
+            "reviewWhere": "passOff (5) item 5 (p30)"
+          },
+          "fix": {
+            "from": "I know that he had done it.",
+            "kind": "english_unnatural",
+            "why": "과거완료는 과거의 어느 때보다 앞선 일을 말하는데 기준이 되는 과거 시점이 없어 어색해 before I came 을 더했습니다."
+          },
+          "note": "교재 Review 2 는 네모 문장 아래 빈칸만 주고 어느 시제로 쓸지 정하지 않아(오류 후보 p36 answer_ambiguous) 칸마다 조건 칩으로 시제를 정하고 한국어 뜻을 붙였습니다."
+        },
+        {
+          "id": "pg11-4:p5",
+          "ko": "그가 내년이면 그것을 10년째 하고 있는 셈이 된다는 걸 나는 안다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "that 절을 미래완료진행으로",
+          "promptEn": "I know that he does it.",
+          "en": "I know that he will have been doing it for ten years by next year.",
+          "accept": [
+            "I know that he will have been doing it for ten years next year.",
+            "I know that he will have been doing it for 10 years by next year.",
+            "I know that he will have been doing it for 10 years next year.",
+            "I know he will have been doing it for ten years by next year.",
+            "I know he will have been doing it for ten years next year.",
+            "I know he will have been doing it for 10 years by next year.",
+            "I know he will have been doing it for 10 years next year.",
+            "I know that by next year he will have been doing it for ten years.",
+            "I know that by next year he will have been doing it for 10 years."
+          ],
+          "targets": [
+            [
+              "will have been doing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "will have done it for",
+              "hint": "조건은 미래완료진행이에요. 계속 이어지는 일은 have been + -ing 로 써요."
+            },
+            {
+              "match": "will be doing it for",
+              "hint": "내년까지 이어지는 기간이에요. 완료의 모양(have)이 들어가야 해요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "twelve-tenses",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 36,
+            "where": "review 2 item 5",
+            "reviewWhere": "passOff (5) item 6 (p30)"
+          },
+          "fix": {
+            "from": "I know that he will have been doing it.",
+            "kind": "english_unnatural",
+            "why": "미래완료진행은 앞으로의 어느 때까지 이어지는 일인데 기준 시점과 기간이 없어 어색해 for ten years by next year 를 더했습니다."
+          },
+          "note": "교재 Review 2 는 네모 문장 아래 빈칸만 주고 어느 시제로 쓸지 정하지 않아(오류 후보 p36 answer_ambiguous) 칸마다 조건 칩으로 시제를 정하고 한국어 뜻을 붙였습니다."
+        },
+        {
+          "id": "pg11-4:p6",
+          "ko": "나는 그가 그것을 했었다는 걸 알았다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "that 절을 과거완료로",
+          "promptEn": "I knew that he did it.",
+          "en": "I knew that he had done it.",
+          "accept": [
+            "I knew he had done it."
+          ],
+          "targets": [
+            [
+              "had done"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I knew that he has done",
+              "hint": "주절이 과거(knew)면 현재완료도 한 걸음 과거로 옮겨요."
+            },
+            {
+              "match": "I knew he has done",
+              "hint": "주절이 과거(knew)면 현재완료도 한 걸음 과거로 옮겨요."
+            },
+            {
+              "match": "he had did",
+              "hint": "had 뒤에는 과거분사를 써요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "twelve-tenses",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 36,
+            "where": "review 2 item 6",
+            "reviewWhere": "passOff (5) item 8 (p30)"
+          },
+          "fix": {
+            "from": "I knew that he had done it",
+            "kind": "english_grammar",
+            "why": "문장 끝 마침표가 빠져 있었습니다."
+          },
+          "note": "교재 Review 2 는 네모 문장 아래 빈칸만 주고 어느 시제로 쓸지 정하지 않아(오류 후보 p36 answer_ambiguous) 칸마다 조건 칩으로 시제를 정하고 한국어 뜻을 붙였습니다."
+        },
+        {
+          "id": "pg11-4:p7",
+          "ko": "나는 그가 그것을 계속 해 오고 있었다는 걸 알았다.",
+          "koSource": "new (교재에 한국어 없음)",
+          "condition": "that 절을 과거완료진행으로",
+          "promptEn": "I knew that he did it.",
+          "en": "I knew that he had been doing it.",
+          "accept": [
+            "I knew he had been doing it."
+          ],
+          "targets": [
+            [
+              "had been doing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "he has been doing",
+              "hint": "주절이 과거(knew)면 has been + -ing 도 한 걸음 과거로 옮겨요."
+            },
+            {
+              "match": "he had been done",
+              "hint": "'계속 해 오고 있었다'는 진행의 모양(-ing)으로 써요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "twelve-tenses",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 36,
+            "where": "review 2 item 7",
+            "reviewWhere": "passOff (5) item 9 (p30)"
+          },
+          "fix": null,
+          "note": "교재 Review 2 는 네모 문장 아래 빈칸만 주고 어느 시제로 쓸지 정하지 않아(오류 후보 p36 answer_ambiguous) 칸마다 조건 칩으로 시제를 정하고 한국어 뜻을 붙였습니다."
+        },
+        {
+          "id": "pg11-4:p8",
+          "ko": "나는 그가 그것을 할 거라는 걸 알았다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": "I knew that he did it.",
+          "en": "I knew that he would do it.",
+          "accept": [
+            "I knew he would do it.",
+            "I knew that he was going to do it.",
+            "I knew he was going to do it."
+          ],
+          "targets": [
+            [
+              "would",
+              "was going to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I knew that he will do",
+              "hint": "주절이 과거(knew)면 will 도 한 걸음 과거로 옮겨요."
+            },
+            {
+              "match": "I knew he will do",
+              "hint": "주절이 과거(knew)면 will 도 한 걸음 과거로 옮겨요."
+            },
+            {
+              "match": "he would did",
+              "hint": "would 뒤에는 동사원형을 써요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) 주절이 과거일 때 — 교재에 없는 would 보충"
+          },
+          "fix": null,
+          "source": "new",
+          "note": "교재 (5)에 주절이 과거일 때의 will → would 예문이 없어 보충했습니다(오류 후보 p30 '(5) 시제 일치'의 제안 문장)."
+        },
+        {
+          "id": "pg11-4:p9",
+          "ko": "나는 그가 그것을 하고 있다는 걸 알았다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": "I knew that he did it.",
+          "en": "I knew that he was doing it.",
+          "accept": [
+            "I knew he was doing it."
+          ],
+          "targets": [
+            [
+              "was doing"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I knew that he is doing",
+              "hint": "주절이 과거(knew)면 is + -ing 도 한 걸음 과거로 옮겨요."
+            },
+            {
+              "match": "I knew he is doing",
+              "hint": "주절이 과거(knew)면 is + -ing 도 한 걸음 과거로 옮겨요."
+            },
+            {
+              "match": "he was do it",
+              "hint": "was 뒤에서 '하고 있다'는 -ing 로 써요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "twelve-tenses",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) 주절이 과거일 때 — 교재에 없는 과거진행 보충"
+          },
+          "fix": null,
+          "source": "new",
+          "note": "교재 (5)에 is doing → was doing 예문이 없어 보충했습니다(오류 후보 p30 '(5) 시제 일치'의 제안 문장)."
+        },
+        {
+          "id": "pg11-4:p10",
+          "ko": "나는 그가 아프다고 생각했다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "I thought that he was sick.",
+          "accept": [
+            "I thought he was sick.",
+            "I thought that he was ill.",
+            "I thought he was ill."
+          ],
+          "targets": [
+            [
+              "was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I thought that he is",
+              "hint": "주절이 과거(thought)면 that 절의 is 도 과거로 옮겨요."
+            },
+            {
+              "match": "I thought he is",
+              "hint": "주절이 과거(thought)면 that 절의 is 도 과거로 옮겨요."
+            },
+            {
+              "match": "I think that he was",
+              "hint": "'생각했다'는 지난 일이에요. 주절의 시제부터 보세요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "complex-sentence",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) — 보충 문장"
+          },
+          "fix": null,
+          "source": "new",
+          "note": "시제 일치를 뜻이 있는 문장으로 연습하도록 보충(오류 후보 p30 '(5) 시제 일치' — 설명 없이 he did it 꼴 예문만 있음)."
+        },
+        {
+          "id": "pg11-4:p11",
+          "ko": "나는 우리 팀이 이길 거라고 확신했다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "I was sure that our team would win.",
+          "accept": [
+            "I was sure that our team was going to win.",
+            "I was sure that my team would win.",
+            "I was sure that my team was going to win.",
+            "I was sure our team would win.",
+            "I was sure our team was going to win.",
+            "I was sure my team would win.",
+            "I was sure my team was going to win.",
+            "I was certain that our team would win.",
+            "I was certain that our team was going to win.",
+            "I was certain that my team would win.",
+            "I was certain that my team was going to win.",
+            "I was certain our team would win.",
+            "I was certain our team was going to win.",
+            "I was certain my team would win.",
+            "I was certain my team was going to win.",
+            "I was confident that our team would win.",
+            "I was confident that our team was going to win.",
+            "I was confident that my team would win.",
+            "I was confident that my team was going to win.",
+            "I was confident our team would win.",
+            "I was confident our team was going to win.",
+            "I was confident my team would win.",
+            "I was confident my team was going to win.",
+            "I was sure that we would win.",
+            "I was sure we would win.",
+            "I was certain that we would win.",
+            "I was certain we would win.",
+            "I was sure that we were going to win.",
+            "I was sure we were going to win.",
+            "I was certain that we were going to win.",
+            "I was certain we were going to win.",
+            "I was confident that we would win.",
+            "I was confident we would win.",
+            "I was confident that we were going to win.",
+            "I was confident we were going to win."
+          ],
+          "targets": [
+            [
+              "would",
+              "was going to",
+              "were going to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "our team will win",
+              "hint": "주절이 과거(was sure)면 will 도 한 걸음 과거로 옮겨요."
+            },
+            {
+              "match": "my team will win",
+              "hint": "주절이 과거(was sure)면 will 도 한 걸음 과거로 옮겨요."
+            },
+            {
+              "match": "I am sure that",
+              "hint": "'확신했다'는 지난 일이에요. 주절부터 과거로 써요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "complex-sentence",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) — 보충 문장"
+          },
+          "fix": null,
+          "source": "new",
+          "note": "will → would 를 뜻이 있는 문장으로 연습하도록 보충."
+        },
+        {
+          "id": "pg11-4:p12",
+          "ko": "선생님은 우리에게 물이 100도에서 끓는다고 가르쳐 주셨다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Our teacher taught us that water boils at 100 degrees.",
+          "accept": [
+            "Our teacher taught us that water boils at 100 degrees Celsius.",
+            "Our teacher taught us that water boils at one hundred degrees.",
+            "Our teacher taught us that water boils at one hundred degrees Celsius.",
+            "Our teacher taught us water boils at 100 degrees.",
+            "Our teacher taught us water boils at 100 degrees Celsius.",
+            "Our teacher taught us water boils at one hundred degrees.",
+            "Our teacher taught us water boils at one hundred degrees Celsius.",
+            "Our teacher told us that water boils at 100 degrees.",
+            "Our teacher told us that water boils at 100 degrees Celsius.",
+            "Our teacher told us that water boils at one hundred degrees.",
+            "Our teacher told us that water boils at one hundred degrees Celsius.",
+            "Our teacher told us water boils at 100 degrees.",
+            "Our teacher told us water boils at 100 degrees Celsius.",
+            "Our teacher told us water boils at one hundred degrees.",
+            "Our teacher told us water boils at one hundred degrees Celsius.",
+            "My teacher taught us that water boils at 100 degrees.",
+            "My teacher taught us that water boils at 100 degrees Celsius.",
+            "My teacher taught us that water boils at one hundred degrees.",
+            "My teacher taught us that water boils at one hundred degrees Celsius.",
+            "My teacher taught us water boils at 100 degrees.",
+            "My teacher taught us water boils at 100 degrees Celsius.",
+            "My teacher taught us water boils at one hundred degrees.",
+            "My teacher taught us water boils at one hundred degrees Celsius.",
+            "My teacher told us that water boils at 100 degrees.",
+            "My teacher told us that water boils at 100 degrees Celsius.",
+            "My teacher told us that water boils at one hundred degrees.",
+            "My teacher told us that water boils at one hundred degrees Celsius.",
+            "My teacher told us water boils at 100 degrees.",
+            "My teacher told us water boils at 100 degrees Celsius.",
+            "My teacher told us water boils at one hundred degrees.",
+            "My teacher told us water boils at one hundred degrees Celsius.",
+            "The teacher taught us that water boils at 100 degrees.",
+            "The teacher taught us that water boils at 100 degrees Celsius.",
+            "The teacher taught us that water boils at one hundred degrees.",
+            "The teacher taught us that water boils at one hundred degrees Celsius.",
+            "The teacher taught us water boils at 100 degrees.",
+            "The teacher taught us water boils at 100 degrees Celsius.",
+            "The teacher taught us water boils at one hundred degrees.",
+            "The teacher taught us water boils at one hundred degrees Celsius.",
+            "The teacher told us that water boils at 100 degrees.",
+            "The teacher told us that water boils at 100 degrees Celsius.",
+            "The teacher told us that water boils at one hundred degrees.",
+            "The teacher told us that water boils at one hundred degrees Celsius.",
+            "The teacher told us water boils at 100 degrees.",
+            "The teacher told us water boils at 100 degrees Celsius.",
+            "The teacher told us water boils at one hundred degrees.",
+            "The teacher told us water boils at one hundred degrees Celsius.",
+            "Our teacher taught us that water boils at 100°C.",
+            "Our teacher taught us water boils at 100°C.",
+            "Our teacher told us that water boils at 100°C.",
+            "Our teacher told us water boils at 100°C.",
+            "My teacher taught us that water boils at 100°C.",
+            "My teacher taught us water boils at 100°C.",
+            "My teacher told us that water boils at 100°C.",
+            "My teacher told us water boils at 100°C.",
+            "The teacher taught us that water boils at 100°C.",
+            "The teacher taught us water boils at 100°C.",
+            "The teacher told us that water boils at 100°C.",
+            "The teacher told us water boils at 100°C."
+          ],
+          "targets": [
+            [
+              "boils"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "water boiled at",
+              "hint": "물이 100도에서 끓는 것은 변하지 않는 진리예요. 주절이 과거여도 진리는 현재형으로 써요."
+            },
+            {
+              "match": "water boil at",
+              "hint": "water 는 셀 수 없는 하나의 덩어리예요. 동사 모양을 보세요."
+            },
+            {
+              "match": "taught to us that",
+              "hint": "teach 뒤에는 사람을 전치사 없이 바로 써요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "complex-sentence",
+            "sentence-pattern-4",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) — 교재에 없는 예외(진리) 보충"
+          },
+          "fix": null,
+          "source": "new",
+          "note": "시제 일치의 예외(변하지 않는 진리는 현재)를 교재가 다루지 않아 보충(오류 후보 p30 '(5) 시제 일치')."
+        },
+        {
+          "id": "pg11-4:p13",
+          "ko": "우리는 한국 전쟁이 1950년에 일어났다는 것을 배웠다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "We learned that the Korean War broke out in 1950.",
+          "accept": [
+            "We learned that the Korean War started in 1950.",
+            "We learned that the Korean War began in 1950.",
+            "We learned that the Korean War happened in 1950.",
+            "We learned that the Korean War occurred in 1950.",
+            "We learned that the Korean War took place in 1950.",
+            "We learned the Korean War broke out in 1950.",
+            "We learned the Korean War started in 1950.",
+            "We learned the Korean War began in 1950.",
+            "We learned the Korean War happened in 1950.",
+            "We learned the Korean War occurred in 1950.",
+            "We learned the Korean War took place in 1950.",
+            "We learnt that the Korean War broke out in 1950.",
+            "We learnt that the Korean War started in 1950.",
+            "We learnt that the Korean War began in 1950.",
+            "We learnt that the Korean War happened in 1950.",
+            "We learnt that the Korean War occurred in 1950.",
+            "We learnt that the Korean War took place in 1950.",
+            "We learnt the Korean War broke out in 1950.",
+            "We learnt the Korean War started in 1950.",
+            "We learnt the Korean War began in 1950.",
+            "We learnt the Korean War happened in 1950.",
+            "We learnt the Korean War occurred in 1950.",
+            "We learnt the Korean War took place in 1950."
+          ],
+          "targets": [
+            [
+              "broke out",
+              "started",
+              "began",
+              "happened",
+              "occurred",
+              "took place"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "had broken out",
+              "hint": "1950년처럼 때가 분명한 역사적 사실은 주절이 과거여도 과거형 그대로 써요."
+            },
+            {
+              "match": "had started in",
+              "hint": "1950년처럼 때가 분명한 역사적 사실은 주절이 과거여도 과거형 그대로 써요."
+            },
+            {
+              "match": "breaks out in 1950",
+              "hint": "1950년의 일이에요. 지난 일은 과거형으로 써요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "complex-sentence",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 30,
+            "where": "passOff (5) — 교재에 없는 예외(역사적 사실) 보충"
+          },
+          "fix": null,
+          "source": "new",
+          "note": "시제 일치의 예외(역사적 사실은 과거 그대로)를 교재가 다루지 않아 보충(오류 후보 p30 '(5) 시제 일치')."
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg11-4:t1",
+          "ko": "나는 그 영화가 재미있다고 생각했다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I thought that the movie was interesting.",
+          "accept": [
+            "I thought that the movie was fun.",
+            "I thought that the film was interesting.",
+            "I thought that the film was fun.",
+            "I thought the movie was interesting.",
+            "I thought the movie was fun.",
+            "I thought the film was interesting.",
+            "I thought the film was fun.",
+            "I thought that movie was interesting.",
+            "I thought that film was interesting.",
+            "I thought that movie was fun.",
+            "I thought that film was fun."
+          ],
+          "targets": [
+            [
+              "was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "the movie is interesting",
+              "hint": "주절이 과거(thought)면 that 절의 is 도 과거로 옮겨요."
+            },
+            {
+              "match": "the movie is fun",
+              "hint": "주절이 과거(thought)면 that 절의 is 도 과거로 옮겨요."
+            },
+            {
+              "match": "the movie was interested",
+              "hint": "영화가 재미를 주는 쪽이면 -ed 가 아닌 다른 모양이에요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "complex-sentence",
+            "be-past"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new"
+        },
+        {
+          "id": "pg11-4:t2",
+          "ko": "나는 그 문제를 풀 수 있다고 생각했다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I thought that I could solve the problem.",
+          "accept": [
+            "I thought that I could solve the question.",
+            "I thought that I could solve that problem.",
+            "I thought that I could solve that question.",
+            "I thought that I would be able to solve the problem.",
+            "I thought that I would be able to solve the question.",
+            "I thought that I would be able to solve that problem.",
+            "I thought that I would be able to solve that question.",
+            "I thought I could solve the problem.",
+            "I thought I could solve the question.",
+            "I thought I could solve that problem.",
+            "I thought I could solve that question.",
+            "I thought I would be able to solve the problem.",
+            "I thought I would be able to solve the question.",
+            "I thought I would be able to solve that problem.",
+            "I thought I would be able to solve that question."
+          ],
+          "targets": [
+            [
+              "could",
+              "would be able to"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "I can solve",
+              "hint": "주절이 과거(thought)면 can 도 한 걸음 과거로 옮겨요."
+            },
+            {
+              "match": "I could solved",
+              "hint": "could 뒤에는 동사원형을 써요."
+            }
+          ],
+          "tags": [
+            "tense-agreement",
+            "complex-sentence",
+            "can-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "new"
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg11-4:f1",
+      "template": "I knew that you were ___.",
+      "ko": "나는 네가 ___다는 걸 알았다."
+    }
+  ]
+}

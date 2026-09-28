@@ -1,0 +1,1005 @@
+{
+  "id": "pg16-1",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "가정법 과거",
+  "label": "TOPIC 16. 가정법",
+  "menuLabel": "16-1. 가정법 과거",
+  "unit": 16,
+  "part": 3,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(1) 가정법 과거 · (2) 가정법 현재(조건문)",
+  "grammarTags": [
+    "subjunctive-past",
+    "subjunctive-present"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg16-1:a1",
+          "en": "If you got exercise, you would feel better.",
+          "ko": "만약 네가 운동을 한다면, 기분이 더 좋아질 텐데.",
+          "koSource": "review (1) item 1 (고침)",
+          "focus": [
+            "got",
+            "would feel"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (1) item 1",
+            "reviewWhere": "review (1) item 1 (p8)"
+          },
+          "fix": {
+            "fromKo": "만약 당신이 운동한다면, 당신은 더 좋게 느낄 거야.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'~거야'는 will(실제로 있을 법한 일)로 읽혀 가정법 과거(would)가 드러나지 않고, '더 좋게 느낄'은 직역투라 '기분이 더 좋아질 텐데'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg16-1:a2",
+          "en": "Would you mind if I used your phone?",
+          "ko": "제가 전화를 좀 써도 괜찮을까요?",
+          "koSource": "review (1) item 2 (고침)",
+          "focus": [
+            "Would you mind",
+            "used"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (1) item 2",
+            "reviewWhere": "review (1) item 2 (p8)"
+          },
+          "fix": {
+            "fromKo": "내가 너의 전화기를 써도 되겠니?",
+            "field": "ko",
+            "kind": "answer_ambiguous",
+            "why": "제시문만으로는 Can/May I use your phone? 이 가장 자연스러운 답이라 목표 구문을 끌어낼 수 없어, 공손한 말투('제가 전화를 좀 써도 괜찮을까요?')로 고치고 ④ 에 조건 칩 'Would you mind if + 과거형으로'를 붙였습니다. 존댓말로 상대를 '당신'이라 부르는 번역투는 쓰지 않았습니다."
+          }
+        },
+        {
+          "id": "pg16-1:a3",
+          "en": "If I knew the answer, I would tell you.",
+          "ko": "만약 내가 답을 안다면, 너에게 말해 줄 텐데.",
+          "koSource": "review (1) item 3 (고침)",
+          "focus": [
+            "knew",
+            "would tell"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (1) item 3",
+            "reviewWhere": "review (1) item 3 (p8)"
+          },
+          "fix": {
+            "from": "If you knew the answer, I would tell you.",
+            "fromKo": "만약 네가 답을 안다면 내가 네게 말 할 텐데.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "네가 이미 답을 안다면 내가 말해 줄 까닭이 없어 뜻이 맞지 않습니다. 가정법 과거의 대표 예문대로 '내가 답을 안다면'(사실은 지금 모름)으로 고쳤고, 한국어 '말 할'도 '말해 줄'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg16-1:a4",
+          "en": "If it were not snowy, we could climb the mountain.",
+          "ko": "만약 눈이 오지 않는다면, 우리는 그 산에 오를 수 있을 텐데.",
+          "koSource": "review (1) item 4 (고침)",
+          "focus": [
+            "were",
+            "could climb"
+          ],
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (1) item 4",
+            "reviewWhere": "review (1) item 4 (p8)"
+          },
+          "fix": {
+            "fromKo": "만약 눈이 오지 않는다면, 우리는 등산 할 수 있을 텐데.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'등산 할'은 '등산할'로 붙여 쓰는데, 영어의 the mountain(그 산)이 드러나도록 '그 산에 오를 수 있을 텐데'로 옮겼습니다."
+          }
+        },
+        {
+          "id": "pg16-1:a5",
+          "en": "If I really want to become a great interpreter, I need to work hard at improving my English from now on.",
+          "ko": "만약 내가 정말로 훌륭한 통역사가 되고 싶다면, 나는 지금부터 영어 실력을 향상시키기 위해 열심히 해야만 합니다.",
+          "koSource": "student:s16-3#5",
+          "focus": [
+            "want",
+            "need"
+          ],
+          "studentRef": {
+            "lesson": "s16-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (2) item 1 (16과)",
+            "reviewWhere": "review (1) item 8 (p8)"
+          },
+          "fix": {
+            "from": "If I really want to become a great interpreter, I need to work hard at improving English from now on.",
+            "fromKo": "만약 내가 훌륭한 통역가가 되기를 정말 원한다면, 지금부터 영어를 향상시키기 위해서 나는 열심히 공부해야 해.",
+            "field": "en+ko",
+            "kind": "student_version",
+            "why": "교재는 improving 뒤 my 가 빠졌습니다(STUDENT 16과 원문은 improving my English). STUDENT 가 이미 고친 문장이라 영어 · 한국어 모두 STUDENT 판을 씁니다. 교재가 '가정법 현재'라고 부른 이 문장은 일어날 수 있는 일을 말하는 조건문이라 설명 카드에서 가정법 과거와 나눠 가르칩니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg16-1:a1",
+          "pg16-1:a3",
+          "pg16-1:a4"
+        ],
+        "question": "세 문장의 if 뒤 동사(got · knew · were)는 과거형이에요. 말하는 때는 언제일까요?",
+        "options": [
+          "지금(사실과 반대로 가정)",
+          "지난 일",
+          "앞으로 꼭 일어날 일"
+        ],
+        "answer": 0,
+        "why": "과거형을 썼지만 뜻은 '지금'이에요. 지금 사실과 반대로 가정할 때 동사를 한 시제 뒤(과거형)로 보내요."
+      },
+      "title": "가정법 과거: 지금 사실과 반대로 '~라면 …할 텐데'",
+      "points": [
+        "지금 사실과 반대로 가정: If + 주어 + 과거형, 주어 + would/could + 동사원형",
+        "모양은 과거형이지만 뜻은 지금이에요(If I knew … = 사실은 지금 모름).",
+        "be동사는 주어와 상관없이 were 가 원칙이에요(말로는 I · he 뒤에 was 도 써요).",
+        "Would you mind if I + 과거형 …? = 제가 ~해도 괜찮을까요?(공손한 부탁)",
+        "실제로 일어날 수 있는 일은 조건문: If + 현재형, 주절은 will + 동사원형 · 현재형(I need to …) · 명령문"
+      ],
+      "table": {
+        "columns": [
+          "구분",
+          "if 절",
+          "주절",
+          "예문"
+        ],
+        "rows": [
+          [
+            "가정법 과거(지금 사실과 반대)",
+            "과거형 · were",
+            "would/could + 동사원형",
+            "If I had wings, I could fly."
+          ],
+          [
+            "조건문(일어날 수 있는 일)",
+            "현재형",
+            "will + 동사원형 · 현재형 · 명령문",
+            "If it is sunny tomorrow, we will go on a picnic."
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '~라면 ~할 텐데'처럼 끝말로 사실이 아님을 나타내지만, 영어는 동사를 한 시제 뒤로(지금 일 → 과거형) 보내서 나타내요. 그래서 지금 일인데도 과거형을 써요.",
+      "mistakes": [
+        {
+          "wrong": "If I am you, I would call him.",
+          "right": "If I were you, I would call him.",
+          "why": "'내가 너라면'은 지금 사실과 반대인 가정이라 be동사는 were 예요."
+        },
+        {
+          "wrong": "If I knew her number, I will call her.",
+          "right": "If I knew her number, I would call her.",
+          "why": "가정법 과거의 주절은 will 이 아니라 would 예요."
+        }
+      ],
+      "worked": [
+        "내가 부자라면 세계 여행을 할 텐데.",
+        "사실은? → 지금 부자가 아님(지금 사실과 반대)",
+        "if 절: be동사 → were: If I were rich",
+        "주절: would + 동사원형: I would travel around the world",
+        "If I were rich, I would travel around the world."
+      ],
+      "terms": [
+        {
+          "now": "조건문(직설법)",
+          "book": "가정법 현재"
+        }
+      ],
+      "check": {
+        "question": "'If he ___ harder, he would pass the test.' 빈칸에 맞는 것은? (사실은 지금 열심히 공부하지 않는다)",
+        "options": [
+          "studies",
+          "studied",
+          "will study"
+        ],
+        "answer": 1,
+        "why": "지금 사실과 반대로 가정하니 if 절은 과거형 studied 예요.",
+        "pointIndex": 0
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg16-1:s1",
+          "kind": "choice",
+          "instruction": "이 문장에서 사실은 무엇일까요?",
+          "sentence": "If you got exercise, you would feel better.",
+          "underline": [],
+          "options": [
+            "너는 지금 운동을 하지 않는다.",
+            "너는 어제 운동을 했다.",
+            "너는 내일 운동을 할 것이다."
+          ],
+          "answer": 0,
+          "why": "if 절이 과거형(got)이지만 지난 일이 아니라, 지금 운동을 하지 않는 사실과 반대로 가정한 말이에요.",
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (1) item 1"
+          },
+          "source": "new",
+          "note": "TOPIC 16 Review 에는 영작 과제만 있어 형태 찾기 문항을 새로 만들었습니다."
+        },
+        {
+          "id": "pg16-1:s2",
+          "kind": "select",
+          "instruction": "가정법 과거를 이루는 두 낱말(if 절의 동사 · 주절의 조동사)을 누르세요",
+          "tokens": [
+            "If",
+            "it",
+            "were",
+            "not",
+            "snowy",
+            ",",
+            "we",
+            "could",
+            "climb",
+            "the",
+            "mountain",
+            "."
+          ],
+          "answer": [
+            2,
+            7
+          ],
+          "optional": [],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "if 절은 주어와 상관없이 were, 주절은 could + 동사원형(climb)이에요. 지금 눈이 와서 오를 수 없다는 뜻이에요.",
+          "bookRef": {
+            "book": 3,
+            "page": 5,
+            "where": "passOff (1) item 4"
+          },
+          "source": "new",
+          "note": "TOPIC 16 Review 에는 영작 과제만 있어 형태 찾기 문항을 새로 만들었습니다."
+        },
+        {
+          "id": "pg16-1:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (내가 새라면 너에게 날아갈 텐데.)",
+          "sentence": "If I ___ a bird, I would fly to you.",
+          "underline": [],
+          "options": [
+            "am",
+            "were",
+            "will be"
+          ],
+          "answer": 1,
+          "why": "지금 사실(나는 새가 아님)과 반대로 가정하니 be동사는 were 예요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg16-1:s4",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (내일 비가 오면 나는 집에 있을 것이다.)",
+          "sentence": "If it rains tomorrow, I ___ stay home.",
+          "underline": [],
+          "options": [
+            "will",
+            "would",
+            "were"
+          ],
+          "answer": 0,
+          "why": "내일 비가 올 수도 있는 진짜 조건(조건문)이라 if 절은 현재형(rains), 주절은 will 이에요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg16-1:s5",
+          "kind": "choice",
+          "instruction": "문장의 뜻으로 알맞은 것은?",
+          "sentence": "If I had a car, I would drive you home.",
+          "underline": [],
+          "options": [
+            "내가 차가 있다면 너를 집까지 태워 줄 텐데.(사실은 차가 없다)",
+            "내가 차가 있어서 너를 집까지 태워 주었다.",
+            "나는 차가 있으니 너를 집까지 태워 줄 것이다."
+          ],
+          "answer": 0,
+          "why": "had 는 과거형이지만 지금 사실(차가 없음)과 반대로 가정한 말이에요.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg16-1:s6",
+          "kind": "choice",
+          "instruction": "빈칸에 맞는 것은? (우리에게 시간이 더 있다면 그것을 끝낼 수 있을 텐데.)",
+          "sentence": "If we ___ more time, we could finish it.",
+          "underline": [],
+          "options": [
+            "have",
+            "had",
+            "will have"
+          ],
+          "answer": 1,
+          "why": "주절이 could + 동사원형(지금 사실과 반대)이라 if 절은 have 의 과거형 had 예요.",
+          "bookRef": null,
+          "source": "new",
+          "note": "빈칸 쓰기로 두면 got(얻는다면)도 맞는 영어라 정답이 둘로 읽혀 보기 고르기로 만듦."
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg16-1:p1",
+          "ko": "만약 네가 운동을 한다면, 기분이 더 좋아질 텐데.",
+          "koSource": "review (1) item 1 (고침)",
+          "condition": "가정법으로",
+          "promptEn": null,
+          "en": "If you got exercise, you would feel better.",
+          "accept": [
+            "You would feel better if you got exercise.",
+            "If you got some exercise, you would feel better.",
+            "You would feel better if you got some exercise.",
+            "If you exercised, you would feel better.",
+            "You would feel better if you exercised.",
+            "If you did some exercise, you would feel better.",
+            "You would feel better if you did some exercise.",
+            "If you took exercise, you would feel better.",
+            "You would feel better if you took exercise.",
+            "If you worked out, you would feel better.",
+            "You would feel better if you worked out."
+          ],
+          "targets": [
+            [
+              "got",
+              "exercised",
+              "did",
+              "took",
+              "worked"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if you get exercise",
+              "hint": "지금 사실과 반대로 가정하는 말이에요. if 절의 동사를 한 시제 뒤(과거형)로 보내 보세요."
+            },
+            {
+              "match": "you will feel better",
+              "hint": "'~할 텐데'는 will 이 아니라 가정법의 조동사로 써요."
+            },
+            {
+              "match": "would felt",
+              "hint": "would 뒤에는 동사원형이 와요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 6,
+            "where": "application item 1",
+            "reviewWhere": "review (1) item 1 (p8)"
+          },
+          "fix": {
+            "fromKo": "만약 당신이 운동한다면, 당신은 더 좋게 느낄 거야.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "'~거야'는 will 로 읽혀 가정법 과거(would)가 드러나지 않고, '더 좋게 느낄'은 직역투라 고쳤습니다. 조건 칩 '가정법으로'를 붙였습니다."
+          }
+        },
+        {
+          "id": "pg16-1:p2",
+          "ko": "제가 전화를 좀 써도 괜찮을까요?",
+          "koSource": "review (1) item 2 (고침)",
+          "condition": "Would you mind if + 과거형으로",
+          "promptEn": null,
+          "en": "Would you mind if I used your phone?",
+          "accept": [
+            "Would you mind if I used your cell phone?",
+            "Would you mind if I used your cellphone?",
+            "Would you mind if I used your mobile phone?",
+            "Would you mind if I used your telephone?",
+            "Would you mind if I used the phone?",
+            "Would you mind if I used the telephone?",
+            "Would you mind if I borrowed your phone?",
+            "Would you mind if I borrowed your cell phone?",
+            "Would you mind if I borrowed your cellphone?",
+            "Would you mind if I borrowed your mobile phone?",
+            "Would you mind if I borrowed your telephone?",
+            "Would you mind if I borrowed the phone?"
+          ],
+          "targets": [
+            [
+              "Would"
+            ],
+            [
+              "used",
+              "borrowed"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i use",
+              "hint": "Would you mind if 뒤는 가정법 과거라 동사를 과거형으로 써요(더 공손한 말투)."
+            },
+            {
+              "match": "can i",
+              "hint": "조건은 'Would you mind if + 과거형으로'예요."
+            },
+            {
+              "match": "may i",
+              "hint": "조건은 'Would you mind if + 과거형으로'예요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past",
+            "question-basic",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 6,
+            "where": "application item 2",
+            "reviewWhere": "review (1) item 2 (p8)"
+          },
+          "fix": {
+            "fromKo": "내가 너의 전화기를 써도 되겠니?",
+            "field": "ko",
+            "kind": "answer_ambiguous",
+            "why": "제시문만 보면 Can/May I use your phone? 이 가장 자연스러운 답이라 목표 구문을 끌어낼 수 없어, 공손한 말투('제가 전화를 좀 써도 괜찮을까요?')로 고치고 조건 칩 'Would you mind if + 과거형으로'를 붙였습니다. 존댓말로 상대를 '당신'이라 부르는 번역투는 쓰지 않았습니다."
+          },
+          "note": "Would you mind if I use …?(현재형)도 말로는 쓰지만, 이 레슨은 가정법 과거(과거형)를 연습하므로 조건 칩이 과거형을 요구하고 현재형에는 오답 힌트를 답니다. used 대신 흔히 쓰는 borrowed 와 the phone 도 받습니다."
+        },
+        {
+          "id": "pg16-1:p3",
+          "ko": "만약 내가 답을 안다면, 너에게 말해 줄 텐데.",
+          "koSource": "review (1) item 3 (고침)",
+          "condition": "가정법으로",
+          "promptEn": null,
+          "en": "If I knew the answer, I would tell you.",
+          "accept": [
+            "I would tell you if I knew the answer.",
+            "If I knew the answer, I would let you know.",
+            "I would let you know if I knew the answer."
+          ],
+          "targets": [
+            [
+              "knew"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i know the answer",
+              "hint": "지금 사실(답을 모름)과 반대로 가정해요. if 절의 동사를 과거형으로 써 보세요."
+            },
+            {
+              "match": "i will tell you",
+              "hint": "'~해 줄 텐데'는 will 대신 가정법의 조동사로 써요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 6,
+            "where": "application item 3",
+            "reviewWhere": "review (1) item 3 (p8)"
+          },
+          "fix": {
+            "from": "If you knew the answer, I would tell you.",
+            "fromKo": "만약 네가 답을 안다면 내가 네게 말 할 텐데.",
+            "field": "en+ko",
+            "kind": "english_unnatural",
+            "why": "네가 이미 답을 안다면 내가 말해 줄 까닭이 없어 뜻이 맞지 않아, 가정법 과거의 대표 예문대로 '내가 답을 안다면'(사실은 모름)으로 고쳤습니다. 한국어 '말 할'도 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg16-1:p4",
+          "ko": "만약 눈이 오지 않는다면, 우리는 그 산에 오를 수 있을 텐데.",
+          "koSource": "review (1) item 4 (고침)",
+          "condition": "가정법으로",
+          "promptEn": null,
+          "en": "If it were not snowy, we could climb the mountain.",
+          "accept": [
+            "We could climb the mountain if it were not snowy.",
+            "If it were not snowy, we would be able to climb the mountain.",
+            "We would be able to climb the mountain if it were not snowy.",
+            "If it were not snowy, we could go up the mountain.",
+            "We could go up the mountain if it were not snowy.",
+            "If it was not snowy, we could climb the mountain.",
+            "We could climb the mountain if it was not snowy.",
+            "If it was not snowy, we would be able to climb the mountain.",
+            "We would be able to climb the mountain if it was not snowy.",
+            "If it was not snowy, we could go up the mountain.",
+            "We could go up the mountain if it was not snowy.",
+            "If it were not snowing, we could climb the mountain.",
+            "We could climb the mountain if it were not snowing.",
+            "If it were not snowing, we would be able to climb the mountain.",
+            "We would be able to climb the mountain if it were not snowing.",
+            "If it were not snowing, we could go up the mountain.",
+            "We could go up the mountain if it were not snowing.",
+            "If it was not snowing, we could climb the mountain.",
+            "We could climb the mountain if it was not snowing.",
+            "If it was not snowing, we would be able to climb the mountain.",
+            "We would be able to climb the mountain if it was not snowing.",
+            "If it was not snowing, we could go up the mountain.",
+            "We could go up the mountain if it was not snowing.",
+            "If it did not snow, we could climb the mountain.",
+            "We could climb the mountain if it did not snow.",
+            "If it did not snow, we would be able to climb the mountain.",
+            "We would be able to climb the mountain if it did not snow.",
+            "If it did not snow, we could go up the mountain.",
+            "We could go up the mountain if it did not snow."
+          ],
+          "targets": [
+            [
+              "were",
+              "was",
+              "did"
+            ],
+            [
+              "could",
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if it is not snowy",
+              "hint": "지금 사실(눈이 옴)과 반대로 가정해요. be동사를 가정법 모양으로 바꿔 보세요."
+            },
+            {
+              "match": "if it does not snow",
+              "hint": "지금 사실(눈이 옴)과 반대로 가정해요. if 절의 동사를 과거형으로 바꿔 보세요."
+            },
+            {
+              "match": "we can climb",
+              "hint": "'~할 수 있을 텐데'는 can 을 한 시제 뒤로 보낸 모양으로 써요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past",
+            "negative-basic",
+            "can-basic",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 6,
+            "where": "application item 4",
+            "reviewWhere": "review (1) item 4 (p8)"
+          },
+          "fix": {
+            "fromKo": "만약 눈이 오지 않는다면, 우리는 등산 할 수 있을 텐데.",
+            "field": "ko",
+            "kind": "korean_typo",
+            "why": "'등산 할'은 '등산할'로 붙여 쓰는데, 영어의 the mountain(그 산)이 드러나도록 '그 산에 오를 수 있을 텐데'로 옮겼습니다."
+          },
+          "note": "가정법의 be동사는 were 가 원칙이지만 구어의 was 도 틀린 영어가 아니라 정답으로 받습니다(설명 카드 3번 줄). 일반동사로 쓴 If it did not snow(가정법 과거 — 'if it does not snow' 오답 힌트가 이끄는 답)도 받습니다."
+        },
+        {
+          "id": "pg16-1:p5",
+          "ko": "내가 너라면 그 차를 안 살 텐데.",
+          "koSource": "review (1) item 5",
+          "condition": "가정법으로",
+          "promptEn": null,
+          "en": "I wouldn't buy that car if I were you.",
+          "accept": [
+            "If I were you, I wouldn't buy that car.",
+            "If I were you, I wouldn't buy the car.",
+            "If I was you, I wouldn't buy that car.",
+            "If I was you, I wouldn't buy the car.",
+            "I wouldn't buy that car if I was you.",
+            "I wouldn't buy the car if I were you.",
+            "I wouldn't buy the car if I was you."
+          ],
+          "targets": [
+            [
+              "would"
+            ],
+            [
+              "were",
+              "was"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i am you",
+              "hint": "'내가 너라면'은 지금 사실과 반대인 가정이에요. be동사를 가정법 모양으로 써 보세요."
+            },
+            {
+              "match": "i will not buy",
+              "hint": "'안 살 텐데'는 will 대신 가정법의 조동사로 써요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past",
+            "negative-basic",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 6,
+            "where": "application item 5",
+            "reviewWhere": "review (1) item 5 (p8)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg16-1:p6",
+          "ko": "만약 내가 이 카메라를 사고 싶지 않다면, 사지 않을 텐데.",
+          "koSource": "review (1) item 6 (고침)",
+          "condition": "가정법으로",
+          "promptEn": null,
+          "en": "If I didn't want to buy this camera, I wouldn't buy it.",
+          "accept": [
+            "If I didn't want this camera, I wouldn't buy it."
+          ],
+          "targets": [
+            [
+              "didn't"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i do not want",
+              "hint": "지금 사실과 반대로 가정해요. if 절의 동사를 과거형으로 써 보세요."
+            },
+            {
+              "match": "i will not buy",
+              "hint": "'사지 않을 텐데'는 will 대신 가정법의 조동사로 써요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past",
+            "want-to",
+            "negative-basic",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 6,
+            "where": "application item 6",
+            "reviewWhere": "review (1) item 6 (p8)"
+          },
+          "fix": {
+            "from": "If I didn’t want to buy this camera, I wouldn’t buy.",
+            "fromKo": "만약 내가 이 카메라를 사기 원치 않는다면 나는 안 살 거야.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "buy 뒤에 무엇을 사는지(목적어 it)가 빠졌습니다. 한국어는 '사기 원치 않는다면'이 번역투이고 '안 살 거야'는 가정법(would)이 드러나지 않아 '사고 싶지 않다면 … 사지 않을 텐데'로 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg16-1:p7",
+          "ko": "만약 네가 내 입장이라면, 너는 어느 것을 고르겠니?",
+          "koSource": "review (1) item 7 (다듬음)",
+          "condition": "가정법으로",
+          "promptEn": null,
+          "en": "If you were in my position, which one would you choose?",
+          "accept": [
+            "Which one would you choose if you were in my position?",
+            "If you were in my position, which would you choose?",
+            "Which would you choose if you were in my position?",
+            "If you were in my position, which one would you pick?",
+            "Which one would you pick if you were in my position?",
+            "If you were in my position, which would you pick?",
+            "Which would you pick if you were in my position?",
+            "If you were in my shoes, which one would you choose?",
+            "Which one would you choose if you were in my shoes?",
+            "If you were in my shoes, which would you choose?",
+            "Which would you choose if you were in my shoes?",
+            "If you were in my shoes, which one would you pick?",
+            "Which one would you pick if you were in my shoes?",
+            "If you were in my shoes, which would you pick?",
+            "Which would you pick if you were in my shoes?",
+            "If you were me, which one would you choose?",
+            "Which one would you choose if you were me?",
+            "If you were me, which would you choose?",
+            "Which would you choose if you were me?",
+            "If you were me, which one would you pick?",
+            "Which one would you pick if you were me?",
+            "If you were me, which would you pick?",
+            "Which would you pick if you were me?",
+            "If you were in my place, which one would you choose?",
+            "Which one would you choose if you were in my place?",
+            "If you were in my place, which one would you pick?",
+            "Which one would you pick if you were in my place?",
+            "If you were in my place, which would you choose?",
+            "Which would you choose if you were in my place?",
+            "If you were in my place, which would you pick?",
+            "Which would you pick if you were in my place?"
+          ],
+          "targets": [
+            [
+              "were"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if you are in my position",
+              "hint": "'네가 내 입장이라면'은 지금 사실과 반대인 가정이에요. be동사를 가정법 모양으로."
+            },
+            {
+              "match": "which one will you choose",
+              "hint": "가정법 문장의 주절은 will 대신 한 시제 뒤의 조동사로 써요."
+            },
+            {
+              "match": "which one you would choose",
+              "hint": "묻는 문장이에요. 조동사를 주어 앞으로 보내요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past",
+            "question-wh",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 3,
+            "page": 6,
+            "where": "application item 7",
+            "reviewWhere": "review (1) item 7 (p8)"
+          },
+          "fix": {
+            "fromKo": "만약 네가 내 입장이라면, 어느 것을 너는 선택할래?",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "'어느 것을 너는 선택할래?'는 말 순서가 어색하고 가정(would)의 뜻이 약해 '너는 어느 것을 고르겠니?'로 다듬었습니다."
+          }
+        },
+        {
+          "id": "pg16-1:p8",
+          "ko": "만약 내가 정말로 훌륭한 통역사가 되고 싶다면, 나는 지금부터 영어 실력을 향상시키기 위해 열심히 해야만 합니다.",
+          "koSource": "student:s16-3#5",
+          "condition": null,
+          "promptEn": null,
+          "en": "If I really want to become a great interpreter, I need to work hard at improving my English from now on.",
+          "accept": [
+            "If I really want to become a great interpreter, I need to work hard to improve my English from now on.",
+            "If I really want to become a great interpreter, I have to work hard at improving my English from now on.",
+            "If I really want to become a great interpreter, I have to work hard to improve my English from now on.",
+            "If I really want to become a great interpreter, I must work hard at improving my English from now on.",
+            "If I really want to become a great interpreter, I must work hard to improve my English from now on.",
+            "If I really want to become a good interpreter, I need to work hard at improving my English from now on.",
+            "If I really want to become a good interpreter, I need to work hard to improve my English from now on.",
+            "If I really want to become a good interpreter, I have to work hard at improving my English from now on.",
+            "If I really want to become a good interpreter, I have to work hard to improve my English from now on.",
+            "If I really want to become a good interpreter, I must work hard at improving my English from now on.",
+            "If I really want to become a good interpreter, I must work hard to improve my English from now on.",
+            "If I truly want to become a great interpreter, I need to work hard at improving my English from now on.",
+            "If I truly want to become a great interpreter, I need to work hard to improve my English from now on.",
+            "If I truly want to become a great interpreter, I have to work hard at improving my English from now on.",
+            "If I truly want to become a great interpreter, I have to work hard to improve my English from now on.",
+            "If I truly want to become a great interpreter, I must work hard at improving my English from now on.",
+            "If I truly want to become a great interpreter, I must work hard to improve my English from now on.",
+            "If I really want to be a great interpreter, I need to work hard at improving my English from now on.",
+            "If I really want to be a great interpreter, I need to work hard to improve my English from now on.",
+            "If I really want to be a great interpreter, I have to work hard at improving my English from now on.",
+            "If I really want to be a great interpreter, I have to work hard to improve my English from now on.",
+            "If I really want to be a great interpreter, I must work hard at improving my English from now on.",
+            "If I really want to be a great interpreter, I must work hard to improve my English from now on.",
+            "If I really want to become a great interpreter, from now on I need to work hard at improving my English.",
+            "If I really want to become a great interpreter, from now on I need to work hard to improve my English.",
+            "If I really want to become a great interpreter, from now on I have to work hard at improving my English.",
+            "If I really want to become a great interpreter, from now on I have to work hard to improve my English.",
+            "If I really want to become a great interpreter, I need to work hard from now on to improve my English.",
+            "If I really want to become a great interpreter, I have to work hard from now on to improve my English.",
+            "If I really want to become a great interpreter, I will need to work hard at improving my English from now on.",
+            "If I really want to become a great interpreter, I will need to work hard to improve my English from now on.",
+            "If I really want to become a great interpreter, I will need to work hard on improving my English from now on.",
+            "If I really want to become a great interpreter, I will have to work hard at improving my English from now on.",
+            "If I really want to become a great interpreter, I will have to work hard to improve my English from now on.",
+            "If I really want to become a great interpreter, I will have to work hard on improving my English from now on.",
+            "If I really want to become a great interpreter, I need to work hard on improving my English from now on.",
+            "If I really want to become a great interpreter, I have to work hard on improving my English from now on.",
+            "If I really want to become a great interpreter, I must work hard on improving my English from now on."
+          ],
+          "targets": [
+            [
+              "want"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i really wanted",
+              "hint": "실제로 일어날 수 있는 일(조건문)이에요. if 절에 현재형을 그대로 써요."
+            },
+            {
+              "match": "i would need to",
+              "hint": "실제로 일어날 수 있는 일(조건문)이라 주절에 가정법의 would 를 쓰지 않아요."
+            },
+            {
+              "match": "at improve",
+              "hint": "전치사 at 뒤에는 동사의 -ing 형이 와요."
+            }
+          ],
+          "tags": [
+            "subjunctive-present",
+            "complex-sentence",
+            "want-to",
+            "infinitive",
+            "gerund"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s16-3",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 3,
+            "page": 6,
+            "where": "application item 8 (16과)",
+            "reviewWhere": "review (1) item 8 (p8)"
+          },
+          "fix": {
+            "from": "If I really want to become a great interpreter, I need to work hard at improving English from now on.",
+            "fromKo": "만약 내가 훌륭한 통역가가 되기를 정말 원한다면, 지금부터 영어를 향상시키기 위해서 나는 열심히 공부해야 해.",
+            "field": "en+ko",
+            "kind": "student_version",
+            "why": "교재는 improving 뒤 my 가 빠졌습니다(STUDENT 16과 원문은 improving my English). STUDENT 가 이미 고친 문장이라 영어 · 한국어 모두 STUDENT 판을 씁니다."
+          },
+          "note": "교재 소제목 '(2) 가정법 현재'의 문장 — 지금 교과서로는 일어날 수 있는 일을 말하는 조건문이라 조건 칩 '가정법으로'를 붙이지 않았습니다(판정 p5 소제목)."
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg16-1:t1",
+          "ko": "내가 충분한 돈을 갖고 있다면 너에게 다이아 반지를 사 줄 텐데.",
+          "koSource": "grammar2:gh2-048#1",
+          "condition": "가정법으로",
+          "promptEn": null,
+          "en": "If I had enough money, I would buy you a diamond ring.",
+          "accept": [
+            "Had I enough money, I would buy you a diamond ring.",
+            "If I had enough money, I would buy a diamond ring for you.",
+            "If I had enough money, I would get you a diamond ring.",
+            "I would buy you a diamond ring if I had enough money.",
+            "I would buy a diamond ring for you if I had enough money."
+          ],
+          "targets": [
+            [
+              "had"
+            ],
+            [
+              "would"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if i have enough money",
+              "hint": "지금 사실(돈이 충분하지 않음)과 반대로 가정해요. if 절의 동사를 과거형으로 써 보세요."
+            },
+            {
+              "match": "i will buy you",
+              "hint": "'사 줄 텐데'는 will 대신 가정법의 조동사로 써요."
+            }
+          ],
+          "tags": [
+            "subjunctive-past",
+            "sentence-pattern-4",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-048#1"
+        },
+        {
+          "id": "pg16-1:t2",
+          "ko": "그것이 탁자 위에 없다면, 서랍 안에 있을 것이다.",
+          "koSource": "grammar2:gh2-016#9 (겹친 '그렇다면 그것은'을 다듬음)",
+          "condition": null,
+          "promptEn": null,
+          "en": "If it's not on the table, then it will be in the drawer.",
+          "accept": [
+            "If that's not on the table, then it will be in the drawer.",
+            "If it's not on the table, it will be in the drawer.",
+            "It will be in the drawer if it's not on the table."
+          ],
+          "targets": [
+            [
+              "will"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "if it will not be on the table",
+              "hint": "조건을 나타내는 if 절에는 앞으로의 일이어도 will 대신 현재형을 써요."
+            }
+          ],
+          "tags": [
+            "subjunctive-present",
+            "negative-basic",
+            "future-will",
+            "preposition-basic",
+            "complex-sentence"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": null,
+          "fix": null,
+          "source": "grammar2:gh2-016#9",
+          "note": "일어날 수 있는 일을 말하는 조건문(교재: 가정법 현재) — t1(가정법 과거)과 짝. GRAMMAR II 한국어 '만일 그것이 탁자 위에 없다면 그렇다면 그것은 서랍 안에 있을 것이다.'의 겹친 말을 다듬었습니다."
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg16-1:f1",
+      "template": "If I had a lot of money, I would ___.",
+      "ko": "내가 돈이 많다면, ___할 텐데."
+    }
+  ]
+}

@@ -1,0 +1,1066 @@
+{
+  "id": "pg09-2",
+  "course": "passoff-grammar",
+  "series": "pg",
+  "variant": "main",
+  "pairId": null,
+  "title": "형용사의 비교급",
+  "label": "TOPIC 9. 형용사",
+  "menuLabel": "9-2. 형용사의 비교급",
+  "unit": 9,
+  "part": 2,
+  "order": 2,
+  "audio": [],
+  "video": [],
+  "legacyPath": null,
+  "legacyEncoding": null,
+  "subtitle": "(2) 비교급",
+  "grammarTags": [
+    "comparative"
+  ],
+  "blocks": [
+    {
+      "type": "anchors",
+      "items": [
+        {
+          "id": "pg09-2:a1",
+          "en": "It's cheaper than that one.",
+          "ko": "그것은 저것보다 더 싸다.",
+          "koSource": "review 2 item 11 (p11)",
+          "focus": [
+            "cheaper than"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (2) item 1"
+          }
+        },
+        {
+          "id": "pg09-2:a2",
+          "en": "The exam was easier than we expected.",
+          "ko": "그 시험은 우리가 예상한 것보다 더 쉬웠다.",
+          "koSource": "review 2 item 12 (p12)",
+          "focus": [
+            "easier than"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (2) item 2"
+          }
+        },
+        {
+          "id": "pg09-2:a3",
+          "en": "I know him well — probably better than anybody else does.",
+          "ko": "나는 그를 잘 안다. 아마 누구보다도 더 잘 알 것이다.",
+          "koSource": "review 2 item 17 (p12, 고침)",
+          "focus": [
+            "better than"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (2) item 3"
+          },
+          "fix": {
+            "from": "I know him well-probably better than anybody else does.",
+            "fromKo": "나는 그를 잘 안다- 아마 누구보다도 더 잘 안다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "두 부분을 잇는 줄표(—) 자리에 하이픈(-)을 붙여 써서 well-probably 가 한 낱말처럼 보였습니다. 영어는 줄표로 고치고, 한국어도 '안다- 아마'를 두 문장으로 나눴습니다(채점은 문장부호를 보지 않음)."
+          }
+        },
+        {
+          "id": "pg09-2:a4",
+          "en": "She is more talented than me.",
+          "ko": "그녀는 나보다 재능이 많습니다.",
+          "koSource": "student:s2-5#4",
+          "focus": [
+            "more talented than"
+          ],
+          "studentRef": {
+            "lesson": "s2-5",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (2) item 4"
+          }
+        },
+        {
+          "id": "pg09-2:a5",
+          "en": "The warmer the weather, the better I feel.",
+          "ko": "날씨가 따뜻할수록 나는 기분이 더 좋다.",
+          "koSource": "review 2 item 19 (p12, 고침)",
+          "focus": [
+            "The warmer",
+            "the better"
+          ],
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (2) item 5"
+          },
+          "fix": {
+            "fromKo": "날씨가 더 따뜻할수록, 나는 더 나아지는 것 같다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "feel better 는 '기분이 더 좋다'인데 '더 나아지는 것 같다'는 병이 낫는 느낌이라 I seem to get better 처럼 옮기게 되어 한국어를 고쳤습니다."
+          }
+        }
+      ]
+    },
+    {
+      "type": "rule",
+      "discovery": {
+        "anchorIds": [
+          "pg09-2:a1",
+          "pg09-2:a2",
+          "pg09-2:a4"
+        ],
+        "question": "cheaper · easier 와 more talented 는 '더 ~한'을 어떻게 다르게 만들었나요?",
+        "options": [
+          "짧은 낱말은 뒤에 -er, 긴 낱말은 앞에 more",
+          "지금 일은 -er, 지난 일은 more",
+          "문장 끝에 오면 -er, 가운데 오면 more"
+        ],
+        "answer": 0,
+        "why": "cheap · easy 처럼 짧은 낱말은 -er(easy → easier)을 붙이고, talented 처럼 긴 낱말은 앞에 more 를 써요. 비교하는 상대는 than(~보다) 뒤에 와요."
+      },
+      "title": "비교급: -er than · more ~ than",
+      "points": [
+        "둘을 비교할 때: 비교급 + than(~보다) — cheaper than that one",
+        "짧은 형용사와 -y 로 끝나는 형용사는 -er: nicer(e 로 끝나면 -r) · easier(y → i) · hotter(짧은 모음 + 자음 하나는 자음을 겹침)",
+        "그 밖의 긴 형용사(대부분의 2음절 이상)와, 짧아도 -ed · -ing 로 끝나는 형용사는 앞에 more — more talented, more serious, more tired",
+        "불규칙: good · well → better, bad → worse, many · much → more",
+        "The + 비교급 ~, the + 비교급 …: ~할수록 더 …하다 — The warmer the weather, the better I feel."
+      ],
+      "table": {
+        "columns": [
+          "원래 모양",
+          "비교급",
+          "만드는 법"
+        ],
+        "rows": [
+          [
+            "old · cheap · small",
+            "older · cheaper · smaller",
+            "+ er"
+          ],
+          [
+            "nice · large",
+            "nicer · larger",
+            "e 로 끝나면 + r"
+          ],
+          [
+            "easy · pretty",
+            "easier · prettier",
+            "자음 + y → y 를 i 로 + er"
+          ],
+          [
+            "hot · big · fat",
+            "hotter · bigger · fatter",
+            "짧은 모음 + 자음 하나 → 자음 겹치고 + er"
+          ],
+          [
+            "serious · talented",
+            "more serious · more talented",
+            "앞에 more"
+          ],
+          [
+            "good · well / bad / many · much",
+            "better / worse / more",
+            "불규칙"
+          ]
+        ]
+      },
+      "koDiff": "우리말은 '더'만 앞에 붙이면 되지만('더 싸다' · '더 재능이 있다'), 영어는 낱말 길이에 따라 -er 을 붙이거나 앞에 more 를 써요. 둘을 한꺼번에 쓰지 않아요(more cheaper ✗). 또 우리말 '~보다'는 상대 뒤에 붙지만, 영어 than 은 상대 앞에 와요.",
+      "mistakes": [
+        {
+          "wrong": "This bag is more cheaper than that one.",
+          "right": "This bag is cheaper than that one.",
+          "why": "-er 과 more 를 겹쳐 쓰지 않아요."
+        },
+        {
+          "wrong": "Tom is the tallest of the two.",
+          "right": "Tom is the taller of the two.",
+          "why": "둘 중에서 더 ~한 쪽은 최상급이 아니라 the + 비교급 + of the two 로 써요."
+        }
+      ],
+      "worked": [
+        "이 상자는 저 상자보다 더 무겁다.",
+        "'더 무거운' → heavy 의 비교급 — 자음 + y 로 끝남",
+        "y → i + er → heavier, '~보다' → than",
+        "This box is heavier than that one."
+      ],
+      "terms": [],
+      "check": {
+        "question": "'Tom is ___ than his brother.'(톰은 형보다 키가 더 크다) 빈칸에 맞는 것은?",
+        "options": [
+          "tall",
+          "taller",
+          "more tall"
+        ],
+        "answer": 1,
+        "why": "tall 은 짧은 낱말이라 -er 을 붙여 taller. more 는 긴 낱말 앞에 써요.",
+        "pointIndex": 1
+      }
+    },
+    {
+      "type": "drill",
+      "select": [
+        {
+          "id": "pg09-2:s1",
+          "kind": "short",
+          "instruction": "괄호 안 낱말을 비교급으로 쓰세요",
+          "sentence": "The exam was ___ than we expected. (easy)",
+          "answer": [
+            "easier"
+          ],
+          "why": "easy 는 자음 + y 로 끝나서 y 를 i 로 바꾸고 -er 을 붙여요 → easier.",
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (2) item 2"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-2:s2",
+          "kind": "short",
+          "instruction": "괄호 안 낱말을 비교급으로 쓰세요",
+          "sentence": "She is ___ than me. (talented)",
+          "answer": [
+            "more talented"
+          ],
+          "why": "talented 는 긴 낱말이라 앞에 more 를 써요 → more talented.",
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (2) item 4"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-2:s3",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은?",
+          "sentence": "I know him well — probably ___ than anybody else does.",
+          "underline": [],
+          "options": [
+            "more well",
+            "weller",
+            "better"
+          ],
+          "answer": 2,
+          "why": "well(잘)의 비교급은 불규칙 better 예요(good 도 better).",
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (2) item 3"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-2:s4",
+          "kind": "select",
+          "instruction": "비교급을 모두 누르세요",
+          "tokens": [
+            "The",
+            "warmer",
+            "the",
+            "weather",
+            ",",
+            "the",
+            "better",
+            "I",
+            "feel",
+            "."
+          ],
+          "answer": [
+            1,
+            6
+          ],
+          "optional": [
+            0,
+            5
+          ],
+          "labels": null,
+          "labelAnswer": null,
+          "why": "The + 비교급 ~, the + 비교급 … 은 '~할수록 더 …하다'. warmer 는 warm + er, better 는 good · well 의 불규칙 비교급이에요. 앞의 the 는 골라도 틀리지 않아요.",
+          "bookRef": {
+            "book": 2,
+            "page": 5,
+            "where": "passOff (2) item 5"
+          },
+          "source": "new"
+        },
+        {
+          "id": "pg09-2:s5",
+          "kind": "choice",
+          "instruction": "hot 의 비교급을 바르게 쓴 것은?",
+          "options": [
+            "hoter",
+            "hotter",
+            "more hot"
+          ],
+          "answer": 1,
+          "why": "hot 처럼 짧은 모음 + 자음 하나로 끝나면 자음을 한 번 더 쓰고 -er → hotter.",
+          "bookRef": null,
+          "source": "new"
+        },
+        {
+          "id": "pg09-2:s6",
+          "kind": "choice",
+          "instruction": "빈칸에 알맞은 것은? (내 연필이 네 것보다 더 길다.)",
+          "sentence": "My pencil is ___ than yours.",
+          "underline": [],
+          "options": [
+            "longer",
+            "more long",
+            "more longer"
+          ],
+          "answer": 0,
+          "why": "long 은 짧은 낱말이라 -er 만 붙여요. more 와 -er 을 겹쳐 쓰지 않아요.",
+          "bookRef": null,
+          "source": "new"
+        }
+      ],
+      "produce": [
+        {
+          "id": "pg09-2:p1",
+          "ko": "피터는 존보다 나이가 많다.",
+          "koSource": "new",
+          "condition": null,
+          "promptEn": null,
+          "en": "Peter is older than John.",
+          "accept": [
+            "Peter is older than John is.",
+            "Peter's older than John."
+          ],
+          "targets": [
+            [
+              "older than"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "elder than",
+              "hint": "elder 는 than 과 함께 쓰지 않아요. old 의 보통 비교급을 써 보세요."
+            },
+            {
+              "match": "more old",
+              "hint": "old 는 짧은 낱말이라 more 대신 -er 을 붙여요."
+            },
+            {
+              "match": "older then",
+              "hint": "'~보다'는 then 이 아니라 than 이에요."
+            }
+          ],
+          "tags": [
+            "comparative",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #23"
+          },
+          "fix": null,
+          "note": "교재 Review 에 한국어가 없는 문장이라 새로 옮김."
+        },
+        {
+          "id": "pg09-2:p2",
+          "ko": "그것은 저것보다 더 싸다.",
+          "koSource": "review 2 item 11 (p11)",
+          "condition": null,
+          "promptEn": null,
+          "en": "It's cheaper than that one.",
+          "accept": [
+            "It's cheaper than that."
+          ],
+          "targets": [
+            [
+              "cheaper than"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "more cheaper",
+              "hint": "-er 과 more 를 겹쳐 쓰지 않아요."
+            },
+            {
+              "match": "more cheap",
+              "hint": "cheap 은 짧은 낱말이라 more 대신 -er 을 붙여요."
+            },
+            {
+              "match": "cheaper then",
+              "hint": "'~보다'는 then 이 아니라 than 이에요."
+            }
+          ],
+          "tags": [
+            "comparative",
+            "be-present",
+            "pronoun-indefinite"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #24",
+            "reviewWhere": "review 2 item 11 (p11)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-2:p3",
+          "ko": "그 시험은 우리가 예상한 것보다 더 쉬웠다.",
+          "koSource": "review 2 item 12 (p12)",
+          "condition": null,
+          "promptEn": null,
+          "en": "The exam was easier than we expected.",
+          "accept": [
+            "The exam was easier than we thought.",
+            "The test was easier than we expected.",
+            "The test was easier than we thought.",
+            "The exam was easier than we had expected.",
+            "The exam was easier than we had thought.",
+            "The test was easier than we had expected.",
+            "The test was easier than we had thought.",
+            "The exam was easier than expected.",
+            "The test was easier than expected."
+          ],
+          "targets": [
+            [
+              "easier than"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "easyer",
+              "hint": "자음 + y 로 끝나는 낱말은 y 를 i 로 바꾸고 -er 을 붙여요."
+            },
+            {
+              "match": "more easy",
+              "hint": "easy 는 more 대신 -er 을 붙이는 낱말이에요."
+            },
+            {
+              "match": "exam is easier",
+              "hint": "'쉬웠다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "comparative",
+            "be-past",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #25",
+            "reviewWhere": "review 2 item 12 (p12)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-2:p4",
+          "ko": "레이첼은 레아보다 더 예쁘다.",
+          "koSource": "review 2 item 13 (p12)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Rachael is prettier than Leah.",
+          "accept": [
+            "Rachael is prettier than Lea.",
+            "Rachel is prettier than Leah.",
+            "Rachel is prettier than Lea.",
+            "Rachael is more beautiful than Leah.",
+            "Rachael is more beautiful than Lea.",
+            "Rachel is more beautiful than Leah.",
+            "Rachel is more beautiful than Lea.",
+            "Rachael's prettier than Leah.",
+            "Rachel's prettier than Leah."
+          ],
+          "targets": [
+            [
+              "prettier than",
+              "more beautiful than"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "prettyer",
+              "hint": "자음 + y 로 끝나는 낱말은 y 를 i 로 바꾸고 -er 을 붙여요."
+            },
+            {
+              "match": "more pretty",
+              "hint": "pretty 는 more 대신 -er 을 붙이는 낱말이에요."
+            },
+            {
+              "match": "more prettier",
+              "hint": "-er 과 more 를 겹쳐 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "comparative",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #26",
+            "reviewWhere": "review 2 item 13 (p12)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-2:p5",
+          "ko": "너는 그녀보다 더 뚱뚱해.",
+          "koSource": "review 2 item 14 (p12)",
+          "condition": null,
+          "promptEn": null,
+          "en": "You are fatter than her.",
+          "accept": [
+            "You are fatter than she is.",
+            "You are fatter than she."
+          ],
+          "targets": [
+            [
+              "fatter than"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "fater",
+              "hint": "짧은 모음 + 자음 하나로 끝나면 자음을 한 번 더 쓰고 -er 을 붙여요."
+            },
+            {
+              "match": "more fat",
+              "hint": "fat 은 짧은 낱말이라 more 대신 -er 을 붙여요."
+            },
+            {
+              "match": "you is",
+              "hint": "you 가 주어면 be동사 모양은?"
+            }
+          ],
+          "tags": [
+            "comparative",
+            "be-present",
+            "pronoun-basic"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #27",
+            "reviewWhere": "review 2 item 14 (p12)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-2:p6",
+          "ko": "불행하게도, 그녀의 병은 우리가 처음 생각했던 것보다 더 심각했다.",
+          "koSource": "review 2 item 15 (p12, 고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Unfortunately her illness was more serious than we thought at first.",
+          "accept": [
+            "Unfortunately, her illness was more serious than we first thought.",
+            "Unfortunately, her illness was more serious than we had thought at first.",
+            "Unfortunately, her sickness was more serious than we thought at first.",
+            "Unfortunately, her sickness was more serious than we first thought.",
+            "Unfortunately, her sickness was more serious than we had thought at first.",
+            "Unfortunately, her disease was more serious than we thought at first.",
+            "Unfortunately, her disease was more serious than we first thought.",
+            "Unfortunately, her disease was more serious than we had thought at first.",
+            "Sadly, her illness was more serious than we thought at first.",
+            "Sadly, her illness was more serious than we first thought.",
+            "Sadly, her illness was more serious than we had thought at first.",
+            "Sadly, her sickness was more serious than we thought at first.",
+            "Sadly, her sickness was more serious than we first thought.",
+            "Sadly, her sickness was more serious than we had thought at first.",
+            "Sadly, her disease was more serious than we thought at first.",
+            "Sadly, her disease was more serious than we first thought.",
+            "Sadly, her disease was more serious than we had thought at first.",
+            "Unfortunately, her illness was more serious than we had first thought.",
+            "Unfortunately, her sickness was more serious than we had first thought.",
+            "Unfortunately, her disease was more serious than we had first thought.",
+            "Sadly, her illness was more serious than we had first thought.",
+            "Sadly, her sickness was more serious than we had first thought.",
+            "Sadly, her disease was more serious than we had first thought."
+          ],
+          "targets": [
+            [
+              "more serious than"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "seriouser",
+              "hint": "serious 처럼 긴 낱말은 -er 대신 앞에 more 를 써요."
+            },
+            {
+              "match": "more serious then",
+              "hint": "'~보다'는 then 이 아니라 than 이에요."
+            },
+            {
+              "match": "illness is more serious",
+              "hint": "'심각했다'는 지난 일이에요."
+            }
+          ],
+          "tags": [
+            "comparative",
+            "be-past",
+            "past-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #28",
+            "reviewWhere": "review 2 item 15 (p12)"
+          },
+          "fix": {
+            "fromKo": "불행하게도, 그녀의 병은 우리가 처음 생각했던 것보다 훨씬 더 심각했다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "영어에는 '훨씬'(much)이 없어서 한국어에서 '훨씬'을 뺐습니다(영어 문장은 교재 그대로 — 틀린 곳이 없음)."
+          }
+        },
+        {
+          "id": "pg09-2:p7",
+          "ko": "나의 방은 내 남동생 것보다 더 작다.",
+          "koSource": "review 2 item 16 (p12)",
+          "condition": null,
+          "promptEn": null,
+          "en": "My room is smaller than my brother's.",
+          "accept": [
+            "My room is smaller than my brother's room.",
+            "My room is smaller than my younger brother's.",
+            "My room is smaller than my younger brother's room.",
+            "My room is smaller than my little brother's.",
+            "My room is smaller than my little brother's room.",
+            "My room's smaller than my brother's."
+          ],
+          "targets": [
+            [
+              "smaller than"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "smaller than my brother",
+              "hint": "방은 방과 비교해요. '남동생 것'은 어떻게 쓸까요?"
+            },
+            {
+              "match": "smaller than my younger brother",
+              "hint": "방은 방과 비교해요. '남동생 것'은 어떻게 쓸까요?"
+            },
+            {
+              "match": "more small",
+              "hint": "small 은 짧은 낱말이라 more 대신 -er 을 붙여요."
+            }
+          ],
+          "tags": [
+            "comparative",
+            "be-present",
+            "pronoun-possessive"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #29",
+            "reviewWhere": "review 2 item 16 (p12)"
+          },
+          "fix": null
+        },
+        {
+          "id": "pg09-2:p8",
+          "ko": "나는 그를 잘 안다. 아마 누구보다도 더 잘 알 것이다.",
+          "koSource": "review 2 item 17 (p12, 고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "I know him well — probably better than anybody else does.",
+          "accept": [
+            "I know him well — probably better than anybody else.",
+            "I know him well — probably better than anyone else does.",
+            "I know him well — probably better than anyone else.",
+            "I know him well — maybe better than anybody else does.",
+            "I know him well — maybe better than anybody else.",
+            "I know him well — maybe better than anyone else does.",
+            "I know him well — maybe better than anyone else.",
+            "I know him well — perhaps better than anybody else does.",
+            "I know him well — perhaps better than anybody else.",
+            "I know him well — perhaps better than anyone else does.",
+            "I know him well — perhaps better than anyone else.",
+            "I know him well. I probably know him better than anybody else does.",
+            "I know him well. I probably know him better than anybody else.",
+            "I know him well. I probably know him better than anyone else does.",
+            "I know him well. I probably know him better than anyone else.",
+            "I know him well — probably better than anybody does.",
+            "I know him well — probably better than anybody.",
+            "I know him well — probably better than anyone does.",
+            "I know him well — probably better than anyone.",
+            "I know him well — maybe better than anybody does.",
+            "I know him well — maybe better than anybody.",
+            "I know him well — maybe better than anyone does.",
+            "I know him well — maybe better than anyone.",
+            "I know him well — perhaps better than anybody does.",
+            "I know him well — perhaps better than anybody.",
+            "I know him well — perhaps better than anyone does.",
+            "I know him well — perhaps better than anyone.",
+            "I know him well. I probably know him better than anybody does.",
+            "I know him well. I probably know him better than anybody.",
+            "I know him well. I probably know him better than anyone does.",
+            "I know him well. I probably know him better than anyone."
+          ],
+          "targets": [
+            [
+              "better than"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "more well",
+              "hint": "well 의 비교급은 불규칙이에요."
+            },
+            {
+              "match": "weller",
+              "hint": "well 의 비교급은 불규칙이에요."
+            },
+            {
+              "match": "better then",
+              "hint": "'~보다'는 then 이 아니라 than 이에요."
+            }
+          ],
+          "tags": [
+            "comparative",
+            "present-simple"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "challengeNote": "better 는 여기서 부사 well(잘)의 비교급이지만 모양(good · well → better)과 than 은 이 레슨 규칙 그대로라 도전으로 두지 않음 — 부사의 비교는 pg18-4 에서 다시.",
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #30",
+            "reviewWhere": "review 2 item 17 (p12)"
+          },
+          "fix": {
+            "from": "I know him well-probably better than anybody else does.",
+            "fromKo": "나는 그를 잘 안다- 아마 누구보다도 더 잘 안다.",
+            "field": "en+ko",
+            "kind": "english_grammar",
+            "why": "두 부분을 잇는 줄표(—) 자리에 하이픈(-)을 붙여 써서 well-probably 가 한 낱말처럼 보였습니다. 영어는 줄표로 고치고, 한국어도 '안다- 아마'를 두 문장으로 나눴습니다(채점은 문장부호를 보지 않음)."
+          }
+        },
+        {
+          "id": "pg09-2:p9",
+          "ko": "그녀는 나보다 재능이 많습니다.",
+          "koSource": "student:s2-5#4",
+          "condition": null,
+          "promptEn": null,
+          "en": "She is more talented than me.",
+          "accept": [
+            "She is more talented than I am.",
+            "She is more talented than I.",
+            "She has more talent than me.",
+            "She has more talent than I do."
+          ],
+          "targets": [
+            [
+              "more talented",
+              "more talent"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "talenteder",
+              "hint": "talented 처럼 긴 낱말은 -er 대신 앞에 more 를 써요."
+            },
+            {
+              "match": "more talented then",
+              "hint": "'~보다'는 then 이 아니라 than 이에요."
+            },
+            {
+              "match": "she is talented than",
+              "hint": "'더 ~한'을 만드는 말이 빠졌어요."
+            }
+          ],
+          "tags": [
+            "comparative",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": {
+            "lesson": "s2-5",
+            "kind": "exact"
+          },
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #31",
+            "reviewWhere": "review 2 item 18 (p12)"
+          },
+          "fix": {
+            "fromKo": "그녀는 나보다 더 재능이 있다.",
+            "field": "ko",
+            "kind": "student_version",
+            "why": "STUDENT 2-5 와 글자까지 같은 문장이라 한국어도 STUDENT 판을 씁니다(음성 재사용). 교재 표시 (2과)는 맞습니다."
+          }
+        },
+        {
+          "id": "pg09-2:p10",
+          "ko": "날씨가 따뜻할수록 나는 기분이 더 좋다.",
+          "koSource": "review 2 item 19 (p12, 고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "The warmer the weather, the better I feel.",
+          "accept": [
+            "The warmer it is, the better I feel.",
+            "The warmer the weather is, the better I feel.",
+            "The warmer it gets, the better I feel.",
+            "The warmer the weather gets, the better I feel.",
+            "The warmer the weather, the happier I feel.",
+            "The warmer it is, the happier I feel.",
+            "The warmer the weather is, the happier I feel.",
+            "The warmer it gets, the happier I feel.",
+            "The warmer the weather gets, the happier I feel."
+          ],
+          "targets": [
+            [
+              "The warmer"
+            ],
+            [
+              "the better",
+              "the happier"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "the more warm",
+              "hint": "warm 은 짧은 낱말이라 more 대신 -er 을 붙여요."
+            },
+            {
+              "match": "if the weather is warmer",
+              "hint": "'~할수록 더 …하다'는 The + 비교급 ~, the + 비교급 … 꼴로 써 보세요."
+            },
+            {
+              "match": "the gooder",
+              "hint": "good · well 의 비교급은 불규칙이에요."
+            }
+          ],
+          "tags": [
+            "comparative"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #32",
+            "reviewWhere": "review 2 item 19 (p12)"
+          },
+          "fix": {
+            "fromKo": "날씨가 더 따뜻할수록, 나는 더 나아지는 것 같다.",
+            "field": "ko",
+            "kind": "translation_mismatch",
+            "why": "feel better 는 '기분이 더 좋다'인데 '더 나아지는 것 같다'는 병이 낫는 느낌이라 I seem to get better 처럼 옮기게 되어 한국어를 고쳤습니다."
+          }
+        },
+        {
+          "id": "pg09-2:p11",
+          "ko": "둘 중에서 누가 더 키가 크니?",
+          "koSource": "review 2 item 21 (p12, 고침)",
+          "condition": null,
+          "promptEn": null,
+          "en": "Which is the taller of the two?",
+          "accept": [
+            "Who is the taller of the two?",
+            "Which of the two is taller?",
+            "Who is taller?",
+            "Which one is taller?",
+            "Which is taller?",
+            "Which one of the two is taller?",
+            "Of the two, who is taller?",
+            "Of the two, which is taller?",
+            "Of the two, which one is taller?"
+          ],
+          "targets": [
+            [
+              "taller"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "tallest of the two",
+              "hint": "둘을 비교할 때는 최상급이 아니라 비교급을 써요."
+            },
+            {
+              "match": "more tall",
+              "hint": "tall 은 짧은 낱말이라 more 대신 -er 을 붙여요."
+            },
+            {
+              "match": "more taller",
+              "hint": "-er 과 more 를 겹쳐 쓰지 않아요."
+            }
+          ],
+          "tags": [
+            "comparative",
+            "question-wh"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "bookRef": {
+            "book": 2,
+            "page": 8,
+            "where": "application #34",
+            "reviewWhere": "review 2 item 21 (p12)"
+          },
+          "fix": {
+            "fromKo": "둘 중에서 누가 더 크니?",
+            "field": "ko",
+            "kind": "answer_ambiguous",
+            "why": "'크다'가 키(taller)와 몸집(bigger) 둘로 읽혀, 교재 영어의 taller 를 가리키게 '키가'를 넣었습니다(영어는 교재 그대로)."
+          },
+          "note": "교재 Application 은 이 문장을 최상급 문장들 사이(8쪽)에 인쇄했고 Review 도 최상급 과제(3.)가 아닌 일반 영작(2.) 끝에 두었다. the + 비교급 + of the two 는 비교급이라 이 레슨 끝에 둠. 한국어가 '누가'라 Who 로 시작하는 답 · Which of the two is taller? 도 정답(판정 TOPIC-09 p12)."
+        }
+      ],
+      "transfer": [
+        {
+          "id": "pg09-2:t1",
+          "ko": "그것은 나의 집보다 더 좋아.",
+          "condition": null,
+          "promptEn": null,
+          "en": "It's nicer than my place.",
+          "accept": [
+            "It's nicer than my house.",
+            "It's better than my place.",
+            "It's better than my house.",
+            "That's nicer than my place.",
+            "That's nicer than my house.",
+            "That's better than my place.",
+            "That's better than my house.",
+            "It's better than my home.",
+            "It's nicer than my home.",
+            "That's better than my home.",
+            "That's nicer than my home."
+          ],
+          "targets": [
+            [
+              "nicer than",
+              "better than"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "more nicer",
+              "hint": "-er 과 more 를 겹쳐 쓰지 않아요."
+            },
+            {
+              "match": "more nice",
+              "hint": "nice 는 짧은 낱말이라 more 대신 -r 을 붙여요."
+            },
+            {
+              "match": "nicer then",
+              "hint": "'~보다'는 then 이 아니라 than 이에요."
+            }
+          ],
+          "tags": [
+            "comparative",
+            "be-present"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-109#62",
+          "bookRef": null,
+          "fix": null
+        },
+        {
+          "id": "pg09-2:t2",
+          "ko": "나는 너보다 더 많은 돈을 갖고 있다.",
+          "condition": null,
+          "promptEn": null,
+          "en": "I have more money than you.",
+          "accept": [
+            "I have more money than you do.",
+            "I have more money than you have.",
+            "I've got more money than you."
+          ],
+          "targets": [
+            [
+              "more money than"
+            ]
+          ],
+          "errorPatterns": [
+            {
+              "match": "much money than",
+              "hint": "'더 많은'은 much 의 비교급으로 써요."
+            },
+            {
+              "match": "more money then",
+              "hint": "'~보다'는 then 이 아니라 than 이에요."
+            },
+            {
+              "match": "many money",
+              "hint": "money 는 셀 수 없는 명사예요."
+            }
+          ],
+          "tags": [
+            "comparative",
+            "have-has"
+          ],
+          "challenge": false,
+          "challengeTags": [],
+          "paidStudent": false,
+          "studentRef": null,
+          "source": "grammar1:gh1-017#14",
+          "bookRef": null,
+          "fix": null
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "pg09-2:f1",
+      "template": "I am ___ than my best friend.",
+      "ko": "나는 가장 친한 친구보다 더 ___. (비교급으로)"
+    }
+  ]
+}
