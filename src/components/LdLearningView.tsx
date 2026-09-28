@@ -645,6 +645,9 @@ function LdLessonView({
 
   const switchStep = (n: StepNo) => {
     if (n === step) return; // the current tab again: keep the work on screen
+    // 2026-09-28 (사장님 — the rule of STUDENT 060705c · VOCA): a step change never starts sound. Checked that day: nothing here or
+    // in a step's first paint plays (the players have no autoplay) — each step waits for its own play button; '다음 문장' inside
+    // Step 2 plays the next line (goLine(…, true)) because the learner pressed it. Keep it that way.
     stopAll();
     // D28: Steps 2–4 continue on the same line — but after the last line of a finished dictation, Steps 3 · 4 start from line 1
     if ((n === 3 || n === 4) && step === 2 && lineIdx === total - 1 && allChecked) {
