@@ -281,8 +281,8 @@ if (secretsFile) {
     const m0h = await get(`/${COURSE}/map?topic=1`, { cookie });
     const m0r = await get(`/${COURSE}/map?topic=1`, { rsc: true, cookie });
     const m0Leak = [...found(m0h.body, allNeedles), ...found(m0r.body, allNeedles)];
-    check(`P10a 이용권 구성도(TOPIC 1 레슨 전): '대주제의 레슨을 마친 뒤' · 레슨 글 ${allNeedles.length}개 중 0(HTML · RSC)`,
-      m0h.status === 200 && m0h.body.includes("대주제의 레슨을 마친 뒤") && m0Leak.length === 0, `${m0h.status} · 글 ${m0Leak.length}${m0Leak.length ? ` (${m0Leak[0]})` : ""}`);
+    check(`P10a 이용권 구성도(TOPIC 1 레슨 전): '대주제의 강의를 마친 뒤' · 레슨 글 ${allNeedles.length}개 중 0(HTML · RSC)`,
+      m0h.status === 200 && m0h.body.includes("대주제의 강의를 마친 뒤") && m0Leak.length === 0, `${m0h.status} · 글 ${m0Leak.length}${m0Leak.length ? ` (${m0Leak[0]})` : ""}`);
     await fetch(`${BASE}/api/progress/${COURSE}`, {
       method: "POST",
       headers: { "content-type": "application/json", cookie },

@@ -227,9 +227,9 @@ const layouts = [];
     await sleep(1500);
     await kit();
     let s = await waitFor((x) => x.step === "items" || x.step === "done", 15000);
-    check(`R2 복습 쪽: '다음 날 확인 1 / ${plan.items.length}' · 첫 문항 ${TEST[0].key} · 레슨 이름 '2인칭' · '어제 배운 레슨의 문항이에요'`,
+    check(`R2 복습 쪽: '다음 날 확인 1 / ${plan.items.length}' · 첫 문항 ${TEST[0].key} · 레슨 이름 '2인칭' · '어제 배운 강의의 문항이에요'`,
       s.step === "items" && s.item === TEST[0].key && s.mode === "test" && s.text.includes(`다음 날 확인 1 / ${plan.items.length}`) && s.text.includes("2인칭") &&
-        s.text.includes("어제 배운 레슨의 문항이에요"),
+        s.text.includes("어제 배운 강의의 문항이에요"),
       `${s.step} ${s.item} ${s.mode} · ${s.text.slice(0, 160)}`);
     await layout("다음 날 확인 카드");
 
