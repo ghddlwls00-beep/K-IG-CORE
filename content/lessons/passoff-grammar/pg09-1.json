@@ -1191,6 +1191,10 @@
             {
               "match": "which is your book",
               "hint": "'어느 책'처럼 which 가 명사 book 을 바로 꾸미게 써 보세요."
+            },
+            {
+              "match": "which one",
+              "hint": "맞는 영어지만, 이 문항은 한국어의 '어느 책'처럼 which 가 명사 book 을 바로 꾸미게 써 보세요."
             }
           ],
           "tags": [
@@ -1208,7 +1212,8 @@
             "where": "application #9",
             "reviewWhere": "review 1 item 9 (p10, 밑줄 과제)"
           },
-          "fix": null
+          "fix": null,
+          "note": "Which one is yours?(which + 대명사 one)는 맞는 영어지만 한국어 '어느 책'의 book 이 빠져 이 레슨 목표(which 가 명사를 바로 꾸밈)를 피해 가므로 오답으로 두고, '맞는 영어지만 …' 힌트(match 'which one' — Which one is your book? 도 잡음)로 안내(G7 1차 점검 #16)."
         },
         {
           "id": "pg09-1:p10",
@@ -1287,6 +1292,10 @@
             {
               "match": "sounds like",
               "hint": "조건은 '형용사로'예요. sound 바로 뒤에 형용사를 써 보세요(sound like 뒤에는 명사가 와요)."
+            },
+            {
+              "match": "it sound",
+              "hint": "주어 It 은 3인칭 한 개예요. 동사 모양을 보세요."
             }
           ],
           "tags": [
@@ -1305,7 +1314,7 @@
             "reviewWhere": "review 1 item 11 (p10, 밑줄 과제)"
           },
           "fix": null,
-          "note": "조건 '형용사로': It sounds like fun. 은 맞는 영어지만 sound + 형용사(서술적 용법)를 피해 가므로 p14 · p15 처럼 조건으로 미리 알림(G7 반박 점검)."
+          "note": "조건 '형용사로': It sounds like fun. 은 맞는 영어지만 sound + 형용사(서술적 용법)를 피해 가므로 p14 · p15 처럼 조건으로 미리 알림(G7 반박 점검). 'it sound'(3인칭 -s 빠짐) 힌트는 09-27 수정 때 옛 '패턴 3개' 한도로 'sounds like' 와 바꿨던 것을 되살림(문항당 1~4개 허용 — 이끄는 세션 09-28 결정, G7 1차 점검 #16)."
         },
         {
           "id": "pg09-1:p12",
@@ -1350,7 +1359,8 @@
             "where": "application #12",
             "reviewWhere": "review 1 item 12 (p10, 밑줄 과제)"
           },
-          "fix": null
+          "fix": null,
+          "note": "Jinna 는 로마자로 적은 한국 이름(진나)으로 판단해 레슨 koreanWords 에 둠 — 흔한 영어 이름의 철자가 아니고(Jenna · Gina 와 다름), 화면 한국어도 '진나'. 영어 문장 속 한국 이름은 한국어 소리로(사장님 규칙). 교재에는 이 문장의 한국어가 없어 '진나'는 만든 쪽이 읽은 것이라, 소리 꼴(lessonSpeechForm.ts 행 · korean-names-in-speech KO)은 코드 쪽이 사장님 샘플 청취 뒤에 넣고 그 전에는 이 문장 클립을 만들지 않음(2권 음성은 아직 없음). 같은 레슨의 Danny · Jane 은 영어 이름(G7 1차 점검 #22)."
         },
         {
           "id": "pg09-1:p13",

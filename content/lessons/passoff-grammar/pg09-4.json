@@ -978,6 +978,10 @@
             {
               "match": "in class",
               "hint": "조건은 'school을 두 번 써서'예요. '수업 중'을 '(공부하러) 학교에 가 있다'로 바꿔 말해 보세요."
+            },
+            {
+              "match": "mother want to",
+              "hint": "주어 her mother 는 한 명이에요. 동사 모양을 보세요."
             }
           ],
           "tags": [
@@ -1000,7 +1004,8 @@
             "field": "ko",
             "kind": "answer_ambiguous",
             "why": "at the school(그 학교 건물에서)의 the 가 한국어에 드러나지 않아 at school(수업 중)과 구별되지 않았습니다 — '그 학교에서'로 고쳤습니다. '뵙기를 원한다'는 want 를 글자대로 옮긴 번역투라 '뵙고 싶어 한다'로 고쳤습니다. '수업 중'은 in class 로도 옮겨지는 맞는 말이라 at school 연습이 사라지지 않게 조건 'school을 두 번 써서'를 붙였습니다."
-          }
+          },
+          "note": "오답 패턴 'mother want to'(3인칭 -s 빠짐)는 09-27 수정 때 옛 '패턴 3개' 한도로 'in class' 와 바꿨던 것을 되살림(문항당 1~4개 허용 — 이끄는 세션 09-28 결정, G7 1차 점검 #3)."
         },
         {
           "id": "pg09-4:p12",
@@ -1083,6 +1088,10 @@
             {
               "match": "in face",
               "hint": "신체 부위 앞에 관사가 빠졌어요."
+            },
+            {
+              "match": "on the face",
+              "hint": "조건은 'in을 써서'예요. 얼굴 앞의 전치사를 조건에 맞춰 보세요."
             }
           ],
           "tags": [
@@ -1100,7 +1109,7 @@
             "reviewWhere": "review 4 item 11 (p14)"
           },
           "fix": null,
-          "note": "'그 벽돌이'를 That brick 으로 옮긴 답도 목표(in the face)를 그대로 써서 정답으로 받음(G7 반박 점검 — 수정자가 같은 레슨에서 더 찾음)."
+          "note": "'그 벽돌이'를 That brick 으로 옮긴 답도 목표(in the face)를 그대로 써서 정답으로 받음(G7 반박 점검 — 수정자가 같은 레슨에서 더 찾음). hit John on the face 는 조건 'in을 써서'를 어긴 답이라 오답으로 두고 힌트(match 'on the face' — struck · That brick 꼴도 잡음)로 안내(G7 1차 점검 #16)."
         },
         {
           "id": "pg09-4:p14",

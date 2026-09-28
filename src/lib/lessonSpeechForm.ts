@@ -87,6 +87,12 @@ export const KOREAN_WORD_SOUNDS: Record<string, [string, string[]]> = {
   hanji: ["한지", ["ˈhɑnˌdʒi"]],
   "Hanseong Sunbo": ["한성순보", ["ˈhɑnˌsʌŋ", "ˈsunˌboʊ"]],
   "Hanseong Jubo": ["한성주보", ["ˈhɑnˌsʌŋ", "ˈdʒuˌboʊ"]],
+  // PASS-OFF GRAMMAR's own words (2026-09-28) — the same rules as above: lenis ㄷ ㅈ at a word's start as d dʒ, ㅐ as ɛ,
+  // ㅓ as ʌ, one stress mark per syllable. The owner hears them in the voice stage's samples (작업기록 할 일 28).
+  Daehan: ["대한", ["ˈdɛˌhɑn"]],
+  Hanguk: ["한국", ["ˈhɑnˌɡuk"]],
+  Jung: ["정", ["ˈdʒʌŋ"]],
+  Jinna: ["진나", ["ˈdʒinˌnɑ"]],
 };
 
 /** Which romanized Korean words each page says in Korean — per page, so an American "Kim" elsewhere stays English. */
@@ -135,13 +141,24 @@ const KOREAN_WORD_PAGES: Record<string, string[]> = {
   "reading/pr202-1": ["Hanseong Sunbo", "Hanseong Jubo"],
   // PASS-OFF GRAMMAR (2026-09-27) — each lesson file lists its words as `koreanWords` (docs/pass-off-grammar/데이터-형식.md
   // 음성); only the lessons whose spoken `en` holds one are here. pg01-1's a3 is STUDENT s1-2's own sentence, so it gets
-  // STUDENT's clip. Daehan (pg01-3 · pg05-2) is a word no page says yet: it gets a row once the owner has heard a sample,
-  // and its two sentences get no clip before that (the voice stage holds them — docs/pass-off-grammar/작업기록.md).
+  // STUDENT's clip. Daehan · Hanguk · Jung are words no other page says: they follow the approved rules above instead of
+  // waiting unvoiced for the owner (away until about 09-30), and are in the owner's listening samples — a changed tag is
+  // a new clip name, so a correction costs one regeneration (이끄는 세션 2026-09-28, 작업기록 할 일 28).
   "passoff-grammar/pg01-1": ["Hong Gil Dong", "Seoul"],
+  "passoff-grammar/pg01-3": ["Daehan"],
   "passoff-grammar/pg03-3": ["Dangun"],
   "passoff-grammar/pg05-1": ["Seoul"],
+  "passoff-grammar/pg05-2": ["Daehan"],
   "passoff-grammar/pg06-1": ["Chuseok", "Songnisan"],
   "passoff-grammar/pg08-2": ["songpyeon"],
+  "passoff-grammar/pg09-1": ["Jinna"],
+  "passoff-grammar/pg10-1": ["Seoul"],
+  "passoff-grammar/pg11-1": ["Seoul", "Hanguk"],
+  "passoff-grammar/pg11-3": ["Jung"],
+  "passoff-grammar/pg12-1": ["Seoul"],
+  "passoff-grammar/pg12-3": ["Jeju"],
+  "passoff-grammar/pg13-1": ["Yi Sun-sin"],
+  "passoff-grammar/pg16-3": ["Jung"],
 };
 
 /** The written word with its IPA tag — one tag per written word of a phrase ("Yi ⟨ˈi⟩ Sun-sin ⟨ˈsunˌʃin⟩"). */

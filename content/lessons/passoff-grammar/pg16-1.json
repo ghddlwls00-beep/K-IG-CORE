@@ -460,6 +460,10 @@
             {
               "match": "may i",
               "hint": "조건은 'Would you mind if + 과거형으로'예요."
+            },
+            {
+              "match": "if i borrow",
+              "hint": "Would you mind if 뒤는 가정법 과거라 동사를 과거형으로 써요(더 공손한 말투)."
             }
           ],
           "tags": [

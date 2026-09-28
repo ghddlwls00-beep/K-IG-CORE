@@ -119,8 +119,11 @@ const KO = {
   seollal: "설날", chuseok: "추석", songpyeon: "송편", hanbok: "한복", kimchi: "김치", bulgogi: "불고기", hangul: "한글", hanji: "한지",
   hanseong: "한성", sunbo: "순보", jubo: "주보", "sun-sin": "순신", hong: "홍", gil: "길", dong: "동",
   // PASS-OFF GRAMMAR 1권(2026-09-27): "He is Daehan." · "My best friend is Daehan." — 교재의 "He is 대한." 을 로마자로 적은 이름.
-  // 새 발음이라 사장님이 샘플을 들은 뒤 lessonSpeechForm.ts 에 행을 넣는다(그 전에는 이 도구가 '한국어 낱말이 든 글' 로 보여 줌)
+  // 2026-09-28(이끄는 세션, 작업기록 할 일 28): 승인된 규칙대로 lessonSpeechForm.ts 에 기호와 행을 넣고 클립을 만듦 — 사장님은 샘플로 확인
   daehan: "대한",
+  // PASS-OFF GRAMMAR 2·3권(2026-09-28): Hanguk Elementary School(pg11-1) · Mr. Jung(pg11-3 · pg16-3) · Jinna(pg09-1 — 교재에 한국어가
+  // 없는 문장이라 '진나'는 내용 세션의 읽기, 샘플에서 진나/지나 확인)
+  hanguk: "한국", jung: "정", jinna: "진나",
 };
 // 한국어 이름인데 이 글에서는 한국어가 아닌 사람 · 영어 낱말인 것(과정 · 까닭) — 낱말 판정보다 먼저 본다
 const NOT_IN = [
@@ -142,7 +145,11 @@ const NOT = new Set(("korea korean koreans korea's korea’s i'm i’m we're we�
   "surname oral angela marta irene fulton estelle managing missouri mining poe likewise rarer " +
   // PASS-OFF GRAMMAR 1권(2026-09-27): 영어 이름 — Jamie eats lunch · Jane kisses Cheetah · Is Jane a teacher? · Tina kept calm ·
   // Joshua will have finished · Emma and Jill · Homer's poems · the well of Abraham
-  "jamie jane tina joshua emma homer abraham").split(/\s+/));
+  "jamie jane tina joshua emma homer abraham " +
+  // PASS-OFF GRAMMAR 2·3권(2026-09-28, 이끄는 세션): 영어 이름 · 낱말 — Rachael is prettier than Leah(pg09-2) · Tim helped me(pg10-1) ·
+  // If I visit LA again(pg11-1, 로스앤젤레스) · Kira needs to take(pg13-1) · Alice and Jo(pg18-1) · Jake runs faster(pg18-4) ·
+  // Robin, as you know(pg20-2) · barking · Singapore · you'd
+  "rachael tim la kira jo jake robin barking singapore you'd").split(/\s+/));
 // 한국어 이름 판정에서 뺀 낱말 가운데 성씨처럼 쓰일 수 있는 영어 낱말(문장 가운데 대문자면 따로 봄)
 const SURNAME_LIKE = /(?<=\S\s+)(Park|Oh|Moon|Song|Son|Lee|Choi|Jung|Kang|Cho|Yoon|Jang|Lim|Shin|Kwon|Hwang|Ahn|Yoo|Jeon|Ko|Bae|Baek|Nam|Min|Ryu|Jin)(?![A-Za-z])/;
 const unjudged = candidates.filter((k) => !(k in KO) && !NOT.has(k) && !english.has(k));

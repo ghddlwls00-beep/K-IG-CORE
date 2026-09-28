@@ -665,6 +665,10 @@
             {
               "match": "teacher conducts",
               "hint": "맞는 영어지만 제시문은 '하고 있을 때'(진행)예요. 진행 중인 동작 모양으로 써 보세요."
+            },
+            {
+              "match": "students is",
+              "hint": "students 는 여럿이에요. be동사 모양을 보세요."
             }
           ],
           "tags": [

@@ -159,5 +159,145 @@
     "finding": "(수정자가 알림) B 는 oldEnglish 가 '(=oldest)' · '(4과)' 같은 메모를 떼고 채점해서, 메모만 뗀 고침(pg09-3:p3 — 영어는 원래 맞음)을 '문장부호 · 대소문자만 다름'으로 셈.",
     "action": "lead",
     "note": "판정(실패 아님)은 맞지만 까닭 글이 실제(메모만 뗌)와 다름. 코드(검사 도구) 몫이라 고치지 않음 — 이끄는 세션 몫(급하지 않음)."
+  },
+  {
+    "lesson": "pg09-4",
+    "item": "pg09-4:p8 (accept · targets · errorPatterns) + rule.points[3]",
+    "finding": "[09-27 1차 점검] 관사 없는 맞는 영어(미국 영어) 'He can play guitar and …'가 오답이고, 힌트 · 설명 카드가 악기 앞 the 를 단정 — pg03-2:p7 · pg05-1:p15 · pg11-1:p3 과 판정이 반대.",
+    "action": "already",
+    "note": "09-27 에 끊긴 첫 수정이 이미 반영(이번에는 확인만): accept 에 play guitar 꼴 6개(09-28 수정이 2개 더), targets [['the guitar','play guitar']], 'play guitar' 패턴 → {match 'play a guitar', hint '악기를 연주한다고 할 때 악기 이름 앞에 a 는 쓰지 않아요.'}, points[3] = '악기 연주: play the guitar(미국 영어에서는 the 를 빼고 play guitar 라고도 해요) · 신체 부위: took me by the hand · hit him in the face'. 실제 채점기(화면 문항): 점검이 적은 6개 정답 6/6(점검 때 파일로는 0/6), 대조 play a guitar · play the sports · all kind of 는 오답 + 각 힌트 3/3. 증거: scratchpad\\g7fix3\\(grade.cjs · cases.json · review-time.log · before.log · after.log)."
+  },
+  {
+    "lesson": "pg09-4",
+    "item": "pg09-4:p11 (condition · errorPatterns)",
+    "finding": "[09-27 1차 점검] 한국어대로 옮긴 맞는 영어 'Claudia is in class and her mother wants to …'가 조건 칩 · 힌트 없이 오답(at school 은 '수업 중'을 풀어 쓴 말이라 한국어만 보고는 나오기 어려움).",
+    "action": "already",
+    "note": "09-27 첫 수정이 반영: condition null → 'school을 두 번 써서', 오답 패턴 {match 'in class', hint \"조건은 'school을 두 번 써서'예요. '수업 중'을 '(공부하러) 학교에 가 있다'로 바꿔 말해 보세요.\"}, 앵커 a6 영어 그대로. 실제 채점기: in class 답 2개 모두 오답 + 이 힌트 2/2(점검 때 파일 0/2), 모범 답 · 허용 답은 정답(check-grading A). 이번에 더 한 것: 점검 안이 '패턴을 3개로 맞추려면' 바꾸라고 해서 빠졌던 {match 'mother want to', hint '주어 her mother 는 한 명이에요. 동사 모양을 보세요.'}를 4번째 패턴으로 되살림 — 이끄는 세션 09-28 결정(문항당 1~4개)으로 3개 한도가 없어짐. 채점기로 '… her mother want to see …': 점검 때 파일 힌트 있음 → 이번 시작 때 없음 → 지금 있음. 기록용 note 에 까닭."
+  },
+  {
+    "lesson": "pg09-1 (+ 판정 TOPIC-09)",
+    "item": "pg09-1:p5 (en · accept · note) + 판정 TOPIC-09 7쪽 Danny 항목",
+    "finding": "[09-27 1차 점검] 판정 이유는 '쉼표로 나열한 형용사는 순서를 바꿔도 됨'(keep)인데 순서를 바꾼 답 대부분이 오답이고, 같은 레슨 p7(쉼표 나열)은 순서를 틀렸다고 가르쳐 판정 이유와 어긋남.",
+    "action": "already",
+    "note": "09-27 첫 수정이 점검의 '최소안'으로 반영: 모범 답은 교재 문장 그대로(교재 영어가 틀리지 않음 — 판정 reason 에 까닭), 빠졌던 순서 9개를 accept 에, 판정 reason 을 '사람의 성질(키 · 나이 · 성격)을 나란히 늘어놓은 경우'로 좁혀 p6 · p7(사물을 꾸미며 쌓음)과 가름, 설명 카드 points[4] = 쌓는 순서(의견 → 크기 → 나이 → 모양 → 색 → 재료) + '사람의 키 · 나이 · 성격을 쉼표나 and 로 나란히 늘어놓을 때는 순서를 바꿔도 돼요'. 권장안(en 을 and 꼴로)은 따르지 않음 — 판정 reason 에 적힌 기준(오류가 아닌 표기는 바꾸지 않음). 실제 채점기: 교재 문장 · and 꼴 · 순서를 바꾼 9개 등 점검이 적은 12개 12/12 정답(점검 때 파일 3/12), 대조 a interesting(힌트) · an young 은 오답 2/2."
+  },
+  {
+    "lesson": "공통(채점기) · pg09-1 · pg09-2 · pg09-4",
+    "item": "이름 · 명사 주어 + 's(= is) 축약",
+    "finding": "[09-27 1차 점검] 채점기가 's 를 대명사 · 의문사 뒤에서만 is/has 로 펴서 Peter's older than John. · The weather's nice today. 같은 이름 · 명사 주어 축약이 타이핑 · 마이크 모두 오답.",
+    "action": "lead",
+    "note": "코드 할 일 1(채점기 명사 + 's)로 넘김. 점검이 적은 16개를 실제 채점기로 돌림: 지금 오답인 것 없음 — 타이핑 16/16 · 마이크 16/16 정답인데 모두 우회 허용 답 덕분(pg09 의 우회 답 20개: 09-27 첫 수정이 넣은 15개 + 09-28 수정이 넣은 5개(p1 Today's … 4 · p2 The weather's great today.) — scratchpad\\g7fix3\\detours.cjs). 우회 답을 뺀 문항(= 채점기만)으로는 16개 모두 오답(타이핑 0/16 · 마이크 0/16). 우회 답이 없는 같은 꼴은 지금도 오답: Rachael's more beautiful than Leah. · Danny's a young, tall, interesting person. · My room's smaller than my brother's room. · Claudia's at school and her mom wants to see her teacher at the school. — 5개 중 4개 오답(타이핑 · 마이크 같음; 나머지 1개 Your sweater's the same colour as mine. 은 우회 답과 한 글자 차이라 '오타'). 채점기 고침이 필요한 까닭. 대조 Jane's boring. · My uncle's pilot. 은 오답 2/2. 이번에는 우회 답을 더하지도 빼지도 않음(작업기록 할 일 1: 고친 뒤 그대로 둬도 됨)."
+  },
+  {
+    "lesson": "pg09-4",
+    "item": "pg09-4:p17 errorPatterns",
+    "finding": "[09-27 1차 점검] 'who is going to go shopping' 힌트가 목표형 do the shopping 을 글자 그대로 알려 주고, will 을 허용하는 문항인데 'Who will go shopping?'에는 힌트가 없음.",
+    "action": "already",
+    "note": "09-27 첫 수정이 반영: 패턴 → {match 'go shopping', hint \"조건은 'do를 써서'예요. go shopping(쇼핑하러 가다)이 아니라, 장보기를 맡아 하는 일을 do 로 말해 보세요.\"} — 힌트에 do the shopping 이 없고, will · Who's 답도 같은 패턴에 걸림. 실제 채점기: Who is going to go shopping? · Who will go shopping? · Who's going to go shopping? 모두 오답 + 이 힌트 3/3(점검 때 파일 0/3)."
+  },
+  {
+    "lesson": "pg09-4 (+ 판정 TOPIC-09)",
+    "item": "pg09-4:p15 (accept · ko)",
+    "finding": "[09-27 1차 점검] that 을 쓴 허용 답이 반쪽(Zeus is the only person that can do this. 등 오답)이고, ko '그것을'이 en 의 this(이것)와 다름.",
+    "action": "already",
+    "note": "09-27 첫 수정이 반영: accept +9(that × person · one × this · it · that), ko '이것을 할 수 있는 유일한 사람은 제우스이다.', fix {fromKo '그것을 할 수 있는 유일한 사람은 제우스이다.', field ko, kind translation_mismatch}, 판정 TOPIC-09 14쪽 새 항목. 실제 채점기: 점검이 적은 9개 9/9 정답(점검 때 파일 0/9), 대조 a only(힌트) · 관사 빠진 답 오답 2/2."
+  },
+  {
+    "lesson": "pg09-2 (+ 판정 TOPIC-09)",
+    "item": "pg09-2:p11 (accept · ko)",
+    "finding": "[09-27 1차 점검] Which one of the two is taller? · Of the two, who is taller? 같은 맞는 답이 오답이고, '누가 더 크니?'의 '크다'가 bigger 로도 읽힘.",
+    "action": "already",
+    "note": "09-27 첫 수정이 반영: accept +4, ko '둘 중에서 누가 더 키가 크니?', fix {fromKo '둘 중에서 누가 더 크니?', field ko, kind answer_ambiguous}, 판정 TOPIC-09 12쪽 항목 reason 에 덧붙임. 실제 채점기: 점검이 적은 4개 4/4 정답(점검 때 파일 0/4), 대조 Which is the tallest of the two? 는 오답 + 힌트. bigger 답은 한국어가 '키가'로 바뀌어 다른 낱말(목표형 taller 없음)로 오답."
+  },
+  {
+    "lesson": "pg09-2",
+    "item": "pg09-2:p3 · p6 · p10 · t2 (accept · targets)",
+    "finding": "[09-27 1차 점검] had expected · than expected · had first thought · the happier I feel · I've got more money than you. 같은 맞는 답이 오답.",
+    "action": "already",
+    "note": "09-27 첫 수정이 반영: p3 +6, p6 +6(Unfortunately · Sadly × illness · sickness · disease 의 had first thought), p10 +5 · targets [['The warmer'],['the better','the happier']], t2 +1. 실제 채점기: 점검이 적은 13개 13/13 정답(점검 때 파일 0/13)."
+  },
+  {
+    "lesson": "pg09-1",
+    "item": "pg09-1:p6 · p7 · p10 · p14 · p15 · p17 · p20 (accept)",
+    "finding": "[09-27 1차 점검] has got · I've got … wood table · seem to be · darkness · soundly asleep · feel satisfied · stood astonished at the huge robot 같은 맞는 답이 오답.",
+    "action": "already",
+    "note": "09-27 첫 수정이 모두 반영(p6 +2 · p7 +1 · p10 +1 · p14 +6 · p15 +1 · p17 +1 · p20 +6). 실제 채점기: 점검이 적은 18개 18/18 정답(점검 때 파일 0/18)."
+  },
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3:p1 · p4 · p5 · p7 (accept)",
+    "finding": "[09-27 1차 점검] What day was the happiest day … · summer of their life · You need to make the most of … · It was the hottest day of the year yesterday. 가 오답.",
+    "action": "already",
+    "note": "09-27 첫 수정이 반영(p1 +1 · p4 +2 · p5 +2 · p7 +4 — 09-28 수정이 p7 에 조건을 지키는 다른 최상급 답 32개를 더 넣음). 실제 채점기: 점검이 적은 8개 8/8 정답(점검 때 파일 0/8)."
+  },
+  {
+    "lesson": "pg09-1 · pg09-2 · pg09-4",
+    "item": "오답 패턴 보강 — pg09-1:p8 · p9 · p11 · p15, pg09-2:p7, pg09-4:p12 · p13 · p16 · t1",
+    "finding": "[09-27 1차 점검] 목표 문법을 피한 흔한 답이 힌트 없이 틀림 표시만 됨(What kind of book · Which one is yours? · That sounds like fun. · He is sleeping deeply. · my brothers · grabbed · held my hand · John on the face · Who will cook? · grabbed · held her arm).",
+    "action": "fixed",
+    "note": "하나씩: (1) p8 What kind of book is this? — 09-28 반박 점검이 '이 레슨 문법 그대로'라며 정답으로 바꿈(지금 정답). (2) p9 Which one is yours? — 힌트 없었음 → 이번에 {match 'which one', hint \"맞는 영어지만, 이 문항은 한국어의 '어느 책'처럼 which 가 명사 book 을 바로 꾸미게 써 보세요.\"}(Which one is your book? 도 잡음, 기록용 note). (3) p11 That sounds like fun. — 09-28 수정이 조건 '형용사로' + 'sounds like' 힌트. 이번에 09-27 수정이 옛 3개 한도로 바꿔 버렸던 {match 'it sound', hint '주어 It 은 3인칭 한 개예요. 동사 모양을 보세요.'}를 4번째로 되살림(문항당 1~4개 — 이끄는 세션 09-28 결정, 기록용 note). (4) p15 He is sleeping deeply. — 09-27 수정이 'is fast sleeping' → 'sleeping' 으로 넓힘. (5) pg09-2:p7 My room is smaller than my brothers. — 안 함(아래). (6) pg09-4:p12 grabbed · held my hand — 09-27 수정이 'took my hand' → 'my hand'. (7) p13 The brick hit John on the face. — 힌트 없었음 → 이번에 {match 'on the face', hint \"조건은 'in을 써서'예요. 얼굴 앞의 전치사를 조건에 맞춰 보세요.\"}(점검 안 'john on the face' 보다 넓혀 struck · That brick 꼴도 잡음, 기록용 note). (8) p16 Who will cook? — 09-27 수정이 'cook'. (9) t1 grabbed · held her arm — 09-27 수정이 'her arm'. (5)를 안 한 까닭: 틀린 곳이 아포스트로피 하나뿐이라, 보통 패턴 'smaller than my brothers' 는 check-lessons 규칙(정답과 같은 정규화 — 아포스트로피를 뗌)으로 정답 3개에 걸리고(scratchpad\\g7fix3\\patcheck.cjs 가 check-lessons 의 정규화를 그대로 떼어 와 봄: FAIL 3, 새 패턴 둘은 0), literal 패턴은 마이크로 바르게 말한 답(인식기는 아포스트로피를 못 들음)을 오답으로 만듦(probe.cjs: 'My room is smaller than my brothers' 마이크 → wrong). 타이핑 답은 지금도 오답이고 화면 비교가 brothers 한 낱말을 틀린 곳으로 표시함. 실제 채점기: 점검이 적은 10개가 오답 + 힌트 7/10 → 9/10(점검 때 파일 0/10, 남은 1 = (5)), 더 넣은 확인 7/7(Which book is yours? · The brick hit John in the face. 는 정답 그대로). check-lessons 문제 0 · 경고 0, check-grading PASS(E 보통 오답 패턴 3037 → 3041 — 이번에 넣은 패턴 4개)."
+  },
+  {
+    "lesson": "pg09-3 · pg09-1",
+    "item": "pg09-3:p7 · pg09-1:p13 errorPatterns hint",
+    "finding": "[09-27 1차 점검] make the best of 힌트의 뜻 풀이가 틀림('그럭저럭 견디다'), 'these fishes' 힌트('fish 는 여럿이어도 모양이 그대로')가 지나친 단정.",
+    "action": "already",
+    "note": "09-27 첫 수정이 점검 문안 그대로 반영: pg09-3:p7 \"make the best of 는 '(좋지 않은 형편에서) 그런대로 최선을 다하다'라는 뜻이에요. '기회를 최대한 이용하다'는 다른 표현이에요.\" · pg09-1:p13 \"물고기 여러 마리는 보통 fish 그대로 써요.\" 실제 채점기: You must make the best of your chance. · These fishes are alive. 모두 오답 + 새 힌트 2/2."
+  },
+  {
+    "lesson": "pg09-1 · pg09-3 · pg09-4",
+    "item": "fix.kind — pg09-1:a7 · p21, pg09-3:a2 · p8, pg09-4:a6 · p11",
+    "finding": "[09-27 1차 점검] 교재 한국어가 틀려서가 아니라 답을 좁히려고 고친 한국어 여섯 곳이 translation_mismatch 로 적혀 원문 대조표의 교재 오역 수를 부풀림.",
+    "action": "already",
+    "note": "09-27 첫 수정이 여섯 곳 모두 answer_ambiguous 로 바꿈(지금 파일로 확인). 이끄는 세션 규칙(korean_unnatural = 뜻은 같고 한국어만 어색 · translation_mismatch = 한국어가 영어와 다른 말 · answer_ambiguous = 교재 한국어가 틀리지 않았지만 여러 답을 허용해 좁힘)으로 다시 봐도 셋 다 answer_ambiguous: a7 · p21 '재미있는' → '신나는'(같은 레슨 interesting 과 헷갈리지 않게), a2 · p8 '지금까지' 넣음(I saw 도 한국어와 맞게 되던 것), a6 · p11 '학교에서' → '그 학교에서'(at school 과 가름). a6 · p11 의 '뵙기를 원한다 → 뵙고 싶어 한다'(korean_unnatural 성격)는 같은 fix.why 에 덧붙인 둘째 이유라 kind 는 주된 이유대로 둠. kind 일괄 스크립트(작업기록 할 일 15)를 돌릴 때 이 여섯은 그대로 둘 것."
+  },
+  {
+    "lesson": "pg09-1 · pg09-4",
+    "item": "pg09-1 rule.worked[0] · pg09-4:a6 · p11 ko",
+    "finding": "[09-27 1차 점검] 풀이 예시 '그 영화는 지루해서 …'의 조사가 어색하고, a6 · p11 '… 뵙기를 원한다'가 번역투.",
+    "action": "already",
+    "note": "09-27 첫 수정이 반영: worked[0] '그 영화가 지루해서 나는 지루했다.', a6 · p11 ko '클라우디아는 수업 중이고 그녀의 엄마는 그 학교에서 그녀의 선생님을 뵙고 싶어 한다.', 두 fix.why 에 \"'뵙기를 원한다'는 want 를 글자대로 옮긴 번역투라 '뵙고 싶어 한다'로 고쳤습니다.\" — 판정 TOPIC-09 14쪽 Claudia 항목에도 적힘. 영어는 그대로라 음성 영향 없음."
+  },
+  {
+    "lesson": "pg09-2 · pg09-4",
+    "item": "pg09-2:f1 · pg09-4:f1 (frame ko)",
+    "finding": "[09-27 1차 점검] 채점하지 않는 내 문장 틀이 관사 빠진 영어(I had apple for breakfast.) · 원급(I am tall than …)을 부르기 쉽고, '을' 표기가 1권 틀과 다름.",
+    "action": "already",
+    "note": "09-27 첫 수정이 점검 문안 그대로 반영: pg09-4:f1 '나는 아침으로 ___을(를) 먹었다. (셀 수 있는 것 하나면 a/an 을 붙여서)' · pg09-2:f1 '나는 가장 친한 친구보다 더 ___. (비교급으로)'. template(영어)은 그대로."
+  },
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3:t2 (⑤ 처음 보는 문장)",
+    "finding": "[09-27 1차 점검] ⑤ 두 문장이 모두 불규칙형(best · worst)이라 이 레슨의 규칙형(-est · the most)을 새 문장으로 확인하지 않고, t2 는 부정의문문 어순까지 겹침.",
+    "action": "already",
+    "note": "09-27 첫 수정이 반영: t2(grammar1:gh1-093#52 'Isn't wine your worst enemy?')를 빼고 번호는 비워 둠, t3 'This is the biggest room in our house.'(source new, 허용 답 7, 오답 패턴 bigest · most big · room of — 점검 안 'room of our house' 보다 넓힘). 이 문장은 과정 전체에서 pg09-3:t3 에만 있음(content 전체 검색 · check-lessons 의 레슨끼리 ⑤ 겹침 검사 문제 0). 실제 채점기: 점검이 적은 허용 답 3/3 정답, 대조 bigest · most big · of our house(각 힌트) · the bigger · 관사 빠진 답 5/5 오답. 새 음성 클립 필요: 'This is the biggest room in our house.'(09-27 수정이 만든 문장 — 2권 음성은 아직 없어 사라진 클립 없음)."
+  },
+  {
+    "lesson": "pg09-1 · pg09-2",
+    "item": "koreanWords Jinna · 이름 Rachael (음성 관문)",
+    "finding": "[09-27 1차 점검] korean-names-in-speech.cjs 의 로마자 음절 체에 jinna · rachael 이 판정 없는 후보로 걸려 pg09 가 validRoutes 에 들어가면 도구가 멈춤 — Jinna 는 IPA 행 · 사장님 청취 전까지 pg09-1:p12 클립 보류.",
+    "action": "lead",
+    "note": "판정: Jinna = 로마자로 적은 한국 이름(진나) — 흔한 영어 이름의 철자가 아니고(Jenna · Gina 와 다름) 화면 한국어도 '진나'라 pg09-1 koreanWords 에 그대로 둠(이미 들어 있어 바꾼 것 없음). Rachael(Rachel 의 다른 철자) · Leah = 영어 이름(교재 한국어도 레이첼 · 레아) — 영어 소리 그대로, koreanWords 에 넣지 않음(pg09-2 에 koreanWords 없음 — 그대로). 판정과 까닭을 pg09-1:p12 · pg09-2:p4 기록용 note 에 적음. 코드 쪽으로 넘김: korean-names-in-speech KO 에 jinna:'진나'(lessonSpeechForm.ts 'passoff-grammar/pg09-1': ['Jinna'] 행은 사장님 샘플 청취 뒤), NOT 에 rachael, 작업기록 할 일 22 의 사장님 발음 샘플 목록에 Jinna(pg09-1:p12 'Jinna is diligent.'). 교재에는 이 문장의 한국어가 없어 '진나'는 처음 만든 쪽이 읽은 것 — 샘플을 들을 때 진나/지나 중 어느 이름인지도 확인 필요. 그 전에는 이 문장 클립을 만들지 않음."
+  },
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3:p6",
+    "finding": "[09-28 이끄는 세션] 오답 패턴을 '문항당 1~3개' 작업 규칙 때문에만 뺐던 곳 — 규칙이 바뀜(데이터-형식 v1.7: 개수 제한 없음, 앞 패턴에 가려 안 뜨는 패턴만 금지).",
+    "action": "fixed",
+    "note": "패턴 되살림 {\"match\":\"wiseest\",\"hint\":\"e 로 끝나는 낱말은 -st 만 붙여요.\"} (글의 출처: backup(g16-break 사본)). check-lessons 가 정답에 걸리지 않음 · 가려지지 않음을 봄."
+  },
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3:p7",
+    "finding": "[09-28 이끄는 세션] 오답 패턴을 '문항당 1~3개' 작업 규칙 때문에만 뺐던 곳 — 규칙이 바뀜(데이터-형식 v1.7: 개수 제한 없음, 앞 패턴에 가려 안 뜨는 패턴만 금지).",
+    "action": "fixed",
+    "note": "패턴 되살림 {\"match\":\"must to make\",\"hint\":\"must 뒤에는 to 없이 동사원형이 와요.\"} (글의 출처: backup-part23-1117). check-lessons 가 정답에 걸리지 않음 · 가려지지 않음을 봄."
+  },
+  {
+    "lesson": "pg09-3",
+    "item": "pg09-3:p3",
+    "finding": "[09-28 이끄는 세션] 오답 패턴을 '문항당 1~3개' 작업 규칙 때문에만 뺐던 곳 — 규칙이 바뀜(데이터-형식 v1.7: 개수 제한 없음, 앞 패턴에 가려 안 뜨는 패턴만 금지).",
+    "action": "fixed",
+    "note": "패턴 되살림 {\"match\":\"most old\",\"hint\":\"old 는 짧은 낱말이라 most 대신 -est 를 붙여요.\"} (글의 출처: backup-part23-1117). check-lessons 가 정답에 걸리지 않음 · 가려지지 않음을 봄."
   }
 ]

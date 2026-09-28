@@ -184,8 +184,8 @@
           "why": "-er 과 more 를 겹쳐 쓰지 않아요."
         },
         {
-          "wrong": "Tom is the tallest of the two.",
-          "right": "Tom is the taller of the two.",
+          "wrong": "This box is the heaviest of the two.",
+          "right": "This box is the heavier of the two.",
           "why": "둘 중에서 더 ~한 쪽은 최상급이 아니라 the + 비교급 + of the two 로 써요."
         }
       ],
@@ -527,7 +527,8 @@
             "where": "application #26",
             "reviewWhere": "review 2 item 13 (p12)"
           },
-          "fix": null
+          "fix": null,
+          "note": "Rachael(Rachel 의 다른 철자) · Leah 는 영어 이름(교재 한국어도 레이첼 · 레아)이라 koreanWords 에 넣지 않고 영어 소리 그대로 둠. korean-names-in-speech 의 로마자 음절 체에는 rachael 이 후보로 걸리므로(ra + chael) 코드 쪽이 NOT 목록에 넣을 것(G7 1차 점검 #22)."
         },
         {
           "id": "pg09-2:p5",

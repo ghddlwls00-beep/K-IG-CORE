@@ -1,7 +1,7 @@
 {
  "course": "passoff-grammar",
  "tab": "passoff-grammar",
- "lessonCount": 29,
+ "lessonCount": 67,
  "groups": [
   {
    "title": "TOPIC 1. 인칭",
@@ -78,6 +78,116 @@
     "pg08-2",
     "pg08-3",
     "pg08-4"
+   ]
+  },
+  {
+   "title": "TOPIC 9. 형용사",
+   "label": "TOPIC 9. 형용사",
+   "lessons": [
+    "pg09-1",
+    "pg09-2",
+    "pg09-3",
+    "pg09-4"
+   ]
+  },
+  {
+   "title": "TOPIC 10. 동사",
+   "label": "TOPIC 10. 동사",
+   "lessons": [
+    "pg10-1",
+    "pg10-2",
+    "pg10-3"
+   ]
+  },
+  {
+   "title": "TOPIC 11. 시제",
+   "label": "TOPIC 11. 시제",
+   "lessons": [
+    "pg11-1",
+    "pg11-2",
+    "pg11-3",
+    "pg11-4"
+   ]
+  },
+  {
+   "title": "TOPIC 12. 완료와 진행",
+   "label": "TOPIC 12. 완료와 진행",
+   "lessons": [
+    "pg12-1",
+    "pg12-2",
+    "pg12-3",
+    "pg12-4"
+   ]
+  },
+  {
+   "title": "TOPIC 13. 준동사",
+   "label": "TOPIC 13. 준동사",
+   "lessons": [
+    "pg13-1",
+    "pg13-2",
+    "pg13-3",
+    "pg13-4"
+   ]
+  },
+  {
+   "title": "TOPIC 14. 태",
+   "label": "TOPIC 14. 태",
+   "lessons": [
+    "pg14-1",
+    "pg14-2"
+   ]
+  },
+  {
+   "title": "TOPIC 15. 화법",
+   "label": "TOPIC 15. 화법",
+   "lessons": [
+    "pg15-1",
+    "pg15-2"
+   ]
+  },
+  {
+   "title": "TOPIC 16. 가정법",
+   "label": "TOPIC 16. 가정법",
+   "lessons": [
+    "pg16-1",
+    "pg16-2",
+    "pg16-3"
+   ]
+  },
+  {
+   "title": "TOPIC 17. 조동사",
+   "label": "TOPIC 17. 조동사",
+   "lessons": [
+    "pg17-1",
+    "pg17-2",
+    "pg17-3"
+   ]
+  },
+  {
+   "title": "TOPIC 18. 부사",
+   "label": "TOPIC 18. 부사",
+   "lessons": [
+    "pg18-1",
+    "pg18-2",
+    "pg18-3",
+    "pg18-4"
+   ]
+  },
+  {
+   "title": "TOPIC 19. 전치사",
+   "label": "TOPIC 19. 전치사",
+   "lessons": [
+    "pg19-1",
+    "pg19-2",
+    "pg19-3"
+   ]
+  },
+  {
+   "title": "TOPIC 20. 접속사",
+   "label": "TOPIC 20. 접속사",
+   "lessons": [
+    "pg20-1",
+    "pg20-2"
    ]
   }
  ],
@@ -429,6 +539,462 @@
    "order": 4,
    "hasAudio": false,
    "menuLabel": "8-4. 관계대명사 What"
+  },
+  {
+   "id": "pg09-1",
+   "title": "용법과 종류",
+   "label": "TOPIC 9. 형용사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 9,
+   "part": 2,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "9-1. 용법과 종류"
+  },
+  {
+   "id": "pg09-2",
+   "title": "형용사의 비교급",
+   "label": "TOPIC 9. 형용사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 9,
+   "part": 2,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "9-2. 형용사의 비교급"
+  },
+  {
+   "id": "pg09-3",
+   "title": "형용사의 최상급",
+   "label": "TOPIC 9. 형용사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 9,
+   "part": 2,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "9-3. 형용사의 최상급"
+  },
+  {
+   "id": "pg09-4",
+   "title": "관사",
+   "label": "TOPIC 9. 형용사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 9,
+   "part": 2,
+   "order": 4,
+   "hasAudio": false,
+   "menuLabel": "9-4. 관사"
+  },
+  {
+   "id": "pg10-1",
+   "title": "동사의 종류",
+   "label": "TOPIC 10. 동사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 10,
+   "part": 2,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "10-1. 동사의 종류"
+  },
+  {
+   "id": "pg10-2",
+   "title": "불규칙 종류",
+   "label": "TOPIC 10. 동사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 10,
+   "part": 2,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "10-2. 불규칙 종류"
+  },
+  {
+   "id": "pg10-3",
+   "title": "ed와 -ing",
+   "label": "TOPIC 10. 동사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 10,
+   "part": 2,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "10-3. ed와 -ing"
+  },
+  {
+   "id": "pg11-1",
+   "title": "12시제·현재와 과거",
+   "label": "TOPIC 11. 시제",
+   "series": "pg",
+   "variant": "main",
+   "unit": 11,
+   "part": 2,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "11-1. 12시제·현재와 과거"
+  },
+  {
+   "id": "pg11-2",
+   "title": "3인칭 단수 현재",
+   "label": "TOPIC 11. 시제",
+   "series": "pg",
+   "variant": "main",
+   "unit": 11,
+   "part": 2,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "11-2. 3인칭 단수 현재"
+  },
+  {
+   "id": "pg11-3",
+   "title": "미래",
+   "label": "TOPIC 11. 시제",
+   "series": "pg",
+   "variant": "main",
+   "unit": 11,
+   "part": 2,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "11-3. 미래"
+  },
+  {
+   "id": "pg11-4",
+   "title": "시제 일치",
+   "label": "TOPIC 11. 시제",
+   "series": "pg",
+   "variant": "main",
+   "unit": 11,
+   "part": 2,
+   "order": 4,
+   "hasAudio": false,
+   "menuLabel": "11-4. 시제 일치"
+  },
+  {
+   "id": "pg12-1",
+   "title": "현재 완료",
+   "label": "TOPIC 12. 완료와 진행",
+   "series": "pg",
+   "variant": "main",
+   "unit": 12,
+   "part": 2,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "12-1. 현재 완료"
+  },
+  {
+   "id": "pg12-2",
+   "title": "과거 완료·미래 완료",
+   "label": "TOPIC 12. 완료와 진행",
+   "series": "pg",
+   "variant": "main",
+   "unit": 12,
+   "part": 2,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "12-2. 과거 완료·미래 완료"
+  },
+  {
+   "id": "pg12-3",
+   "title": "진행형",
+   "label": "TOPIC 12. 완료와 진행",
+   "series": "pg",
+   "variant": "main",
+   "unit": 12,
+   "part": 2,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "12-3. 진행형"
+  },
+  {
+   "id": "pg12-4",
+   "title": "Going Being",
+   "label": "TOPIC 12. 완료와 진행",
+   "series": "pg",
+   "variant": "main",
+   "unit": 12,
+   "part": 2,
+   "order": 4,
+   "hasAudio": false,
+   "menuLabel": "12-4. Going Being"
+  },
+  {
+   "id": "pg13-1",
+   "title": "부정사",
+   "label": "TOPIC 13. 준동사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 13,
+   "part": 2,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "13-1. 부정사"
+  },
+  {
+   "id": "pg13-2",
+   "title": "분사",
+   "label": "TOPIC 13. 준동사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 13,
+   "part": 2,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "13-2. 분사"
+  },
+  {
+   "id": "pg13-3",
+   "title": "동명사",
+   "label": "TOPIC 13. 준동사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 13,
+   "part": 2,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "13-3. 동명사"
+  },
+  {
+   "id": "pg13-4",
+   "title": "관용 표현",
+   "label": "TOPIC 13. 준동사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 13,
+   "part": 2,
+   "order": 4,
+   "hasAudio": false,
+   "menuLabel": "13-4. 관용 표현"
+  },
+  {
+   "id": "pg14-1",
+   "title": "능동태",
+   "label": "TOPIC 14. 태",
+   "series": "pg",
+   "variant": "main",
+   "unit": 14,
+   "part": 2,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "14-1. 능동태"
+  },
+  {
+   "id": "pg14-2",
+   "title": "수동태",
+   "label": "TOPIC 14. 태",
+   "series": "pg",
+   "variant": "main",
+   "unit": 14,
+   "part": 2,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "14-2. 수동태"
+  },
+  {
+   "id": "pg15-1",
+   "title": "직접 화법",
+   "label": "TOPIC 15. 화법",
+   "series": "pg",
+   "variant": "main",
+   "unit": 15,
+   "part": 2,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "15-1. 직접 화법"
+  },
+  {
+   "id": "pg15-2",
+   "title": "간접 화법",
+   "label": "TOPIC 15. 화법",
+   "series": "pg",
+   "variant": "main",
+   "unit": 15,
+   "part": 2,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "15-2. 간접 화법"
+  },
+  {
+   "id": "pg16-1",
+   "title": "가정법 과거",
+   "label": "TOPIC 16. 가정법",
+   "series": "pg",
+   "variant": "main",
+   "unit": 16,
+   "part": 3,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "16-1. 가정법 과거"
+  },
+  {
+   "id": "pg16-2",
+   "title": "가정법의 과거완료·미래",
+   "label": "TOPIC 16. 가정법",
+   "series": "pg",
+   "variant": "main",
+   "unit": 16,
+   "part": 3,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "16-2. 가정법의 과거완료·미래"
+  },
+  {
+   "id": "pg16-3",
+   "title": "I wish 가정법",
+   "label": "TOPIC 16. 가정법",
+   "series": "pg",
+   "variant": "main",
+   "unit": 16,
+   "part": 3,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "16-3. I wish 가정법"
+  },
+  {
+   "id": "pg17-1",
+   "title": "조동사 1",
+   "label": "TOPIC 17. 조동사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 17,
+   "part": 3,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "17-1. 조동사 1"
+  },
+  {
+   "id": "pg17-2",
+   "title": "조동사 2",
+   "label": "TOPIC 17. 조동사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 17,
+   "part": 3,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "17-2. 조동사 2"
+  },
+  {
+   "id": "pg17-3",
+   "title": "조동사 3",
+   "label": "TOPIC 17. 조동사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 17,
+   "part": 3,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "17-3. 조동사 3"
+  },
+  {
+   "id": "pg18-1",
+   "title": "부사의 종류",
+   "label": "TOPIC 18. 부사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 18,
+   "part": 3,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "18-1. 부사의 종류"
+  },
+  {
+   "id": "pg18-2",
+   "title": "부사의 형태·용법",
+   "label": "TOPIC 18. 부사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 18,
+   "part": 3,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "18-2. 부사의 형태·용법"
+  },
+  {
+   "id": "pg18-3",
+   "title": "주의할 부사들·도치",
+   "label": "TOPIC 18. 부사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 18,
+   "part": 3,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "18-3. 주의할 부사들·도치"
+  },
+  {
+   "id": "pg18-4",
+   "title": "부사의 위치·비교급·최상급",
+   "label": "TOPIC 18. 부사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 18,
+   "part": 3,
+   "order": 4,
+   "hasAudio": false,
+   "menuLabel": "18-4. 부사의 위치·비교급·최상급"
+  },
+  {
+   "id": "pg19-1",
+   "title": "종류/목적어·부사의 위치",
+   "label": "TOPIC 19. 전치사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 19,
+   "part": 3,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "19-1. 종류/목적어·부사의 위치"
+  },
+  {
+   "id": "pg19-2",
+   "title": "전치사·접속사·부사의 비교",
+   "label": "TOPIC 19. 전치사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 19,
+   "part": 3,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "19-2. 전치사·접속사·부사의 비교"
+  },
+  {
+   "id": "pg19-3",
+   "title": "중요 전치사들",
+   "label": "TOPIC 19. 전치사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 19,
+   "part": 3,
+   "order": 3,
+   "hasAudio": false,
+   "menuLabel": "19-3. 중요 전치사들"
+  },
+  {
+   "id": "pg20-1",
+   "title": "등위접속사",
+   "label": "TOPIC 20. 접속사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 20,
+   "part": 3,
+   "order": 1,
+   "hasAudio": false,
+   "menuLabel": "20-1. 등위접속사"
+  },
+  {
+   "id": "pg20-2",
+   "title": "종속접속사",
+   "label": "TOPIC 20. 접속사",
+   "series": "pg",
+   "variant": "main",
+   "unit": 20,
+   "part": 3,
+   "order": 2,
+   "hasAudio": false,
+   "menuLabel": "20-2. 종속접속사"
   }
  ]
 }
