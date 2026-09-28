@@ -10,8 +10,8 @@
  * "girlfriend" = "girl friend" but "maybe" ≠ "may be". That file is not changed and not imported: its verify
  * script transpiles it alone, and a change there must not move this course's verdicts (or the other way round).
  * What differs here, on purpose:
- *   - NFKC first (a Korean keyboard's full-width "Ｉ ａｍ"), and a hyphen or dash between words is a word break
- *     ("4th-grade" = "4th grade").
+ *   - NFKC first (a Korean keyboard's full-width "Ｉ ａｍ"), and a hyphen, a dash or a slash between words is a word
+ *     break ("4th-grade" = "4th grade", "go/went/gone" = "go - went - gone").
  *   - A TYPED answer keeps an apostrophe inside a word: "its" ≠ "it's", "were" ≠ "we're", "ones" ≠ "one's".
  *     Each is a word of its own and the confusion is what a grammar course marks wrong — GRAMMAR drops every
  *     apostrophe, which let "Were good friends." pass for "We're good friends." (점검 2026-09-27). A MICROPHONE
@@ -20,6 +20,19 @@
  *     been" is wrong); before another participle it can be either ("It's broken" · "He's broken it") — a
  *     learner's is tried both ways, a reference's is read as the item spells it elsewhere (referenceForms);
  *     "is" otherwise.
+ *   - A noun's or a name's `'s` in a LEARNER's answer (Tom's · Mom's · The door's) is tried as written — a
+ *     possessive, "Tom's book" — and as is/has read the same way ("Tom's been here" = "Tom has been here",
+ *     "Mom's in the garage" = "Mom is in the garage"); whichever matches a reference. Only with a word after it: at
+ *     a clause's end it is a possessive ("It's Tom's." — "Yes, Tom is." never shortens). A REFERENCE's noun `'s` is
+ *     read as written, so its possessive never turns into "is" ("It is Tom is book." ≠ "It is Tom's book.").
+ *     (작업기록 할 일 1, 2026-09-28 — lessons had added "Peter's older than John." as accepted answers to get round it.)
+ *   - A MICROPHONE answer is first spelt the way the reference it is closest to writes what a recogniser cannot tell
+ *     apart (heardAs): the spacing of a meaning-changing join ("everyday" / "every day" — the learner said the same
+ *     sounds; other joins already count as the same, "girlfriend" = "girl friend") and a short list of words said the
+ *     same way ("red" for the past "read"). So it is not wrong for them, and it gets no hint about a spelling the
+ *     learner never typed (작업기록 할 일 3). A typed answer is not touched.
+ *   - A TYPED answer that is a reference but for a possessive's apostrophe ("… my brothers." for "… my brother's.")
+ *     stays wrong and carries the grader's own hint (`possessive`) — the diff alone showed only a wavy word.
  *
  * THE ORDER (§8):
  *   1. Hangul in the answer → "hangul" ("영어 자판으로 바꿔 주세요"), not an attempt.
@@ -37,7 +50,9 @@
  *   5. Anything else is WRONG — there is no partial credit here ("partial 은 정답이 아님"): a wrong function
  *      word is the lesson's point. What comes back tells the learner where: the target groups missing
  *      (`targets`, any-of), the first error pattern the answer contains (word boundaries, same normalising),
- *      and the words lined up (LCS) against the closest reference — missing · wrong · extra · moved.
+ *      the words lined up (LCS) against the closest reference — missing · wrong · extra · moved — and, for a
+ *      typed answer that is a reference but for a possessive's apostrophe, the grader's own hint (`possessive`).
+ * A microphone's answer goes through the same order after heardAs has spelt it (numbers as words first).
  * Punctuation never decides (a microphone's commas are the recogniser's); it only counts in the school
  * writing score (writingIssues), which is shown apart and never decides a pass.
  */
@@ -56,6 +71,8 @@ interface Reading {
   /** an ambiguous `'s` (before a participle other than been · got · gotten · had): is (the default) or has */
   s?: "is" | "has";
   apostrophes?: Apostrophes;
+  /** which noun `'s` (a bit each, in order) are read as is/has — the rest stay as written, a possessive (0: all) */
+  nouns?: number;
 }
 
 const CONTRACTIONS: [RegExp, string][] = [
@@ -168,6 +185,53 @@ function expandIsHas(text: string, either?: "is" | "has"): string {
   });
 }
 
+/**
+ * Any other word's `'s` — a noun's or a name's (Tom's · Mom's · The door's) — is a possessive ("Tom's book") or is/has
+ * ("Tom's been here" · "Mom's in the garage"). A learner's is tried both ways (userForms, like `'d`) and the reading
+ * that matches a reference wins; a reference's is read as written (its possessive never becomes "is").
+ */
+const NOUN_S = /\b([a-z]+)'s\b/g;
+/** the words whose `'s` S_SUBJECT reads (always is/has), and let's */
+const NOT_NOUN_S = new Set(["he", "she", "it", "that", "this", "there", "what", "who", "where", "here", "how", "when", "let"]);
+/** at most this many noun `'s` of one answer are tried both ways (2^n readings); any after them stay as written */
+const MAX_NOUN_S = 4;
+
+/** The noun `'s` words of a text, in order ("room's" · "brother's") — a pronoun's and let's aside. */
+function nounSWords(text: string): string[] {
+  const out: string[] = [];
+  String(text ?? "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[’‘]/g, "'")
+    .replace(NOUN_S, (match: string, word: string) => {
+      if (!NOT_NOUN_S.has(word)) out.push(match);
+      return match;
+    });
+  return out;
+}
+
+/** The noun `'s` readings to try: a bit per `'s` (set: is/has, clear: as written) — every choice, 0 first. */
+function nounReadings(text: string): number[] {
+  const n = Math.min(nounSWords(text).length, MAX_NOUN_S);
+  return Array.from({ length: 1 << n }, (_, mask) => mask);
+}
+
+/** The chosen noun `'s` as is or has, read by the word after it like a pronoun's (readingOfS). */
+function expandNounS(text: string, chosen = 0, either?: "is" | "has"): string {
+  if (!chosen) return text;
+  let k = -1;
+  return text.replace(NOUN_S, (match: string, word: string, offset: number, whole: string) => {
+    if (NOT_NOUN_S.has(word)) return match;
+    k++;
+    if (k >= MAX_NOUN_S || !(chosen & (1 << k))) return match;
+    const rest = whole.slice(offset + match.length);
+    // at a clause's end it is a possessive ("It's Tom's.") — "Yes, Tom is." never shortens to "Yes, Tom's."
+    if (!WORD_AFTER.test(rest)) return match;
+    const reading = readingOfS(word, rest);
+    return `${word} ${reading === "either" ? either ?? "is" : reading}`;
+  });
+}
+
 /** Words whose slip is grammar, not spelling — never a "typo" here (grammarGrading.ts FUNCTION_WORDS, copied). */
 const FUNCTION_WORDS = new Set([
   "a", "an", "the",
@@ -206,6 +270,21 @@ const MEANING_CHANGING_JOINS = new Set([
   "infact", "nowhere", "somewhat", "whatever", "whenever", "however",
 ]);
 
+/**
+ * Each meaning-changing join and the two words it is when split — the same letters said the same way, so a
+ * recogniser's choice between them is not the learner's (heardAs). Only these: other same-letter pairs can sound
+ * different ("notable" / "not able", "often" / "of ten"). already · altogether · alright split into other letters.
+ */
+const JOIN_SPLITS = new Map<string, string>([
+  ["maybe", "may be"], ["everyday", "every day"], ["sometime", "some time"], ["sometimes", "some times"],
+  ["anyone", "any one"], ["anybody", "any body"], ["awhile", "a while"], ["someone", "some one"],
+  ["somebody", "some body"], ["into", "in to"], ["onto", "on to"], ["everyone", "every one"],
+  ["everybody", "every body"], ["anyway", "any way"], ["someday", "some day"], ["nobody", "no body"],
+  ["apart", "a part"], ["alot", "a lot"], ["infact", "in fact"], ["nowhere", "no where"],
+  ["somewhat", "some what"], ["whatever", "what ever"], ["whenever", "when ever"], ["however", "how ever"],
+]);
+const SPLIT_JOINS = new Map([...JOIN_SPLITS].map(([joined, split]) => [split, joined]));
+
 /** NFKC (full-width keyboard letters → ASCII), whitespace collapsed. */
 function prepare(text: string): string {
   return String(text ?? "").normalize("NFKC").replace(/\s+/g, " ").trim();
@@ -224,8 +303,9 @@ function normalizeLiteral(text: string, apostrophes: Apostrophes = "keep"): stri
     .toLowerCase()
     .replace(/[’‘]/g, "'")
     .replace(/[“”„]/g, '"')
-    // PASS-OFF: a hyphen or dash between words is a word break ("4th-grade" = "4th grade", "No-one" = "No one")
-    .replace(/[-‐‑‒–—―]/g, " ");
+    // PASS-OFF: a hyphen, a dash or a slash between words is a word break ("4th-grade" = "4th grade", "No-one" =
+    // "No one", "go/went/gone" = "go / went / gone" = "go - went - gone" — pg10-2 · 작업기록 할 일 2)
+    .replace(/[-‐‑‒–—―/]/g, " ");
   const marked =
     apostrophes === "keep"
       ? lower.replace(/'/g, (mark: string, at: number, whole: string) => (isWordChar(whole[at - 1]) && isWordChar(whole[at + 1]) ? mark : ""))
@@ -239,16 +319,21 @@ function normalizeLiteral(text: string, apostrophes: Apostrophes = "keep"): stri
 /** The grader's comparison form: contractions expanded (grammarGrading.ts normalizeForComparison), read as `reading` says. */
 export function normalizeForComparison(text: string, reading: Reading = {}): string {
   let normalized = expandWouldHad(String(text ?? "").normalize("NFKC").toLowerCase().replace(/[’‘]/g, "'"), reading.d);
+  normalized = expandNounS(normalized, reading.nouns, reading.s);
   normalized = expandIsHas(normalized, reading.s);
   for (const [pattern, replacement] of CONTRACTIONS) normalized = normalized.replace(pattern, replacement);
   return normalizeLiteral(normalized, reading.apostrophes);
 }
 
-/** Every reading of a learner's answer: its `'d` as written, as would and as had × its `'s` before a participle as is and as has. */
+/**
+ * Every reading of a learner's answer: its `'d` as written, as would and as had × its `'s` before a participle as is
+ * and as has × each noun `'s` as written (a possessive) and as is/has.
+ */
 function userForms(answer: string, apostrophes: Apostrophes): string[] {
   const out = new Set<string>();
+  const nounMasks = nounReadings(answer);
   for (const d of [undefined, "would", "had"] as const) {
-    for (const s of ["is", "has"] as const) out.add(normalizeForComparison(answer, { d, s, apostrophes }));
+    for (const s of ["is", "has"] as const) for (const nouns of nounMasks) out.add(normalizeForComparison(answer, { d, s, apostrophes, nouns }));
   }
   return [...out].filter(Boolean);
 }
@@ -317,22 +402,27 @@ function editDistance(a: string, b: string): number {
   return d[a.length][b.length];
 }
 
-/** Longest common subsequence of two word lists, with the matched indices on each side (grammarGrading.ts align, copied). */
-function align(userWords: string[], modelWords: string[]) {
+/**
+ * Longest common subsequence of two word lists, with the matched indices on each side (grammarGrading.ts align, copied)
+ * and the matched pairs. `same` decides a match (equal words; heardAs also takes words said the same way).
+ */
+function align(userWords: string[], modelWords: string[], same: (user: string, model: string) => boolean = (a, b) => a === b) {
   const dp = Array.from({ length: userWords.length + 1 }, () => new Array<number>(modelWords.length + 1).fill(0));
   for (let i = 1; i <= userWords.length; i++) {
     for (let j = 1; j <= modelWords.length; j++) {
-      dp[i][j] = userWords[i - 1] === modelWords[j - 1] ? dp[i - 1][j - 1] + 1 : Math.max(dp[i - 1][j], dp[i][j - 1]);
+      dp[i][j] = same(userWords[i - 1], modelWords[j - 1]) ? dp[i - 1][j - 1] + 1 : Math.max(dp[i - 1][j], dp[i][j - 1]);
     }
   }
   const matchedUser = new Set<number>();
   const matchedModel = new Set<number>();
+  const pairs: [number, number][] = [];
   let i = userWords.length;
   let j = modelWords.length;
   while (i > 0 && j > 0) {
-    if (userWords[i - 1] === modelWords[j - 1] && dp[i][j] === dp[i - 1][j - 1] + 1) {
+    if (same(userWords[i - 1], modelWords[j - 1]) && dp[i][j] === dp[i - 1][j - 1] + 1) {
       matchedUser.add(i - 1);
       matchedModel.add(j - 1);
+      pairs.push([i - 1, j - 1]);
       i--;
       j--;
     } else if (dp[i - 1][j] >= dp[i][j - 1]) {
@@ -341,7 +431,7 @@ function align(userWords: string[], modelWords: string[]) {
       j--;
     }
   }
-  return { length: dp[userWords.length][modelWords.length], matchedUser, matchedModel };
+  return { length: dp[userWords.length][modelWords.length], matchedUser, matchedModel, pairs };
 }
 
 /** "girlfriend" = "girl friend"; a meaning-changing join ("maybe" / "may be") is not (grammarGrading.ts gradeSpacingOnly). */
@@ -427,6 +517,125 @@ export function spokenNumbersAsWords(text: string): string {
     .replace(/\b(\d+)(?:st|nd|rd|th)\b/gi, (m, d: string) => ordinal(Number(d)) ?? m)
     .replace(/\b\d+\b/g, (m) => cardinal(Number(m)) ?? m)
     .replace(/\b(twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)-(one|two|three|four|five|six|seven|eight|nine|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth)\b/gi, "$1 $2");
+}
+
+/**
+ * Words said the same way, which a recogniser may write for one another — a MICROPHONE answer only (heardAs, 작업기록
+ * 할 일 3). A small list on purpose: the same sound in American English, mostly forms of the irregular-verb table
+ * (pg10-2), where a word said on its own gives the recogniser nothing to choose a spelling by ("know - knew - known"
+ * can come back "no new known"), and four sets of function words. Apostrophes are not heard: "theyre" is they're.
+ */
+const HEARD_AS_GROUPS =
+  "know,no|knew,new|ate,eight|see,sea|seen,scene|meet,meat|buy,by,bye|hear,here|heard,herd|blew,blue|threw,through|" +
+  "thrown,throne|won,one|write,right|wrote,rote|break,brake|sent,cent,scent|flew,flu|grown,groan|ring,wring|" +
+  "rung,wrung|made,maid|rode,road,rowed|rose,rows|steal,steel|sell,cell|bore,boar|borne,born|bear,bare|beat,beet|" +
+  "find,fined|flee,flea|taught,taut|to,too,two|there,their,theyre|your,youre|whose,whos";
+const HEARD_AS = new Map<string, Set<string>>();
+for (const group of HEARD_AS_GROUPS.split("|")) {
+  const same = group.split(",");
+  for (const w of same) HEARD_AS.set(w, new Set([...(HEARD_AS.get(w) ?? []), ...same.filter((x) => x !== w)]));
+}
+// one way only: "red" is always said like the past "read" (pg10-2:p71 "read - read - read" came back "read red red"),
+// but "read" is also said like "reed", so "read" never stands for "red"
+HEARD_AS.set("red", new Set(["read"]));
+
+const soundsAlike = (user: string, reference: string): boolean => user === reference || Boolean(HEARD_AS.get(user)?.has(reference));
+
+/** A token's leading marks, its letters, its trailing marks ("Everyday," → "" · "Everyday" · ","). */
+function splitToken(token: string): [string, string, string] {
+  const lead = (/^[^A-Za-z0-9]*/.exec(token) ?? [""])[0];
+  const rest = token.slice(lead.length);
+  const trail = (/[^A-Za-z0-9]*$/.exec(rest) ?? [""])[0];
+  return [lead, rest.slice(0, rest.length - trail.length), trail];
+}
+
+/** `word` in the place of `first` (… `last`): their outer marks kept, and a capital letter if `first` had one. */
+function rewriteToken(first: string, word: string, last: string = first): string {
+  const [lead, letters] = splitToken(first);
+  const trail = splitToken(last)[2];
+  return `${lead}${/^[A-Z]/.test(letters) ? word.charAt(0).toUpperCase() + word.slice(1) : word}${trail}`;
+}
+
+/** The one word a token is, as a microphone's answer is compared (apostrophes not heard) — null for none or several. */
+function soleWord(token: string): string | null {
+  const ws = normalizeLiteral(token, "drop").split(" ").filter(Boolean);
+  return ws.length === 1 ? ws[0] : null;
+}
+
+/**
+ * A microphone's answer spelt the way `reference` writes what the recogniser could not tell apart: ① spacing — a
+ * meaning-changing join the reference writes split ("everyday" → "every day", JOIN_SPLITS) or split where it writes
+ * it joined, only where the reference does not also write it the learner's way; ② a word said the same way
+ * (HEARD_AS) where the answer and the reference line up ("read red red" → "read read read"). Nothing else changes.
+ */
+function heardToward(answer: string, reference: string): string {
+  const refWords: string[] = [];
+  const refSpelling: string[] = [];
+  for (const token of reference.split(" ").filter(Boolean)) {
+    const ws = normalizeLiteral(token, "drop").split(" ").filter(Boolean);
+    for (const w of ws) {
+      refWords.push(w);
+      refSpelling.push(ws.length === 1 ? splitToken(token)[1].toLowerCase() : w);
+    }
+  }
+  const refSet = new Set(refWords);
+  const refPairs = new Set<string>();
+  for (let i = 0; i + 1 < refWords.length; i++) refPairs.add(`${refWords[i]} ${refWords[i + 1]}`);
+  // ① spacing
+  const tokens = answer.split(" ").filter(Boolean);
+  const spaced: string[] = [];
+  for (let t = 0; t < tokens.length; t++) {
+    const a = soleWord(tokens[t]);
+    const b = t + 1 < tokens.length ? soleWord(tokens[t + 1]) : null;
+    const joined = a && b ? SPLIT_JOINS.get(`${a} ${b}`) : undefined;
+    const split = a ? JOIN_SPLITS.get(a) : undefined;
+    if (joined && refSet.has(joined) && !refPairs.has(`${a} ${b}`) && !splitToken(tokens[t])[2] && !splitToken(tokens[t + 1])[0]) {
+      spaced.push(rewriteToken(tokens[t], joined, tokens[t + 1]));
+      t++;
+    } else if (split && !refSet.has(a as string) && refPairs.has(split)) {
+      spaced.push(rewriteToken(tokens[t], split));
+    } else spaced.push(tokens[t]);
+  }
+  // ② words said the same way
+  const out = spaced.join(" ").split(" ").filter(Boolean);
+  const userWords: string[] = [];
+  const owner: number[] = [];
+  out.forEach((token, t) => {
+    const sole = soleWord(token);
+    if (sole) {
+      userWords.push(sole);
+      owner.push(t);
+    } else {
+      for (const w of normalizeLiteral(token, "drop").split(" ").filter(Boolean)) {
+        userWords.push(w);
+        owner.push(-1);
+      }
+    }
+  });
+  for (const [u, r] of align(userWords, refWords, soundsAlike).pairs) {
+    if (userWords[u] !== refWords[r] && owner[u] >= 0) out[owner[u]] = rewriteToken(out[owner[u]], refSpelling[r]);
+  }
+  return out.join(" ");
+}
+
+/**
+ * A microphone's answer spelt toward the reference it comes closest to that way (heardToward) — the recogniser's
+ * spacing and its choice among words said the same way are not the learner's (pg11-2:p4 "every day" written
+ * "everyday", pg10-2:p71 "read" written "red"). The answer itself when no reference brings it closer.
+ */
+function heardAs(answer: string, references: readonly string[]): string {
+  const share = (text: string, reference: string) => {
+    const u = normalizeLiteral(text, "drop").split(" ").filter(Boolean);
+    const r = normalizeLiteral(reference, "drop").split(" ").filter(Boolean);
+    return align(u, r).length / Math.max(1, u.length, r.length);
+  };
+  let best = { text: answer, share: -1 };
+  for (const reference of references) {
+    const text = heardToward(answer, reference);
+    const s = share(text, reference);
+    if (s > best.share) best = { text, share: s };
+  }
+  return best.text;
 }
 
 // ---------------------------------------------------------------------------
@@ -518,7 +727,7 @@ interface OwnedWords {
 function ownedWords(text: string, reading: Reading = {}): OwnedWords {
   const raw = prepare(text).split(" ").filter(Boolean);
   const out: OwnedWords = { raw, words: [], owner: [] };
-  let joined = expandIsHas(expandWouldHad(raw.join(TOKEN_SEP).toLowerCase().replace(/[’‘]/g, "'"), reading.d), reading.s);
+  let joined = expandIsHas(expandNounS(expandWouldHad(raw.join(TOKEN_SEP).toLowerCase().replace(/[’‘]/g, "'"), reading.d), reading.nouns, reading.s), reading.s);
   for (const [pattern, replacement] of CONTRACTIONS) joined = joined.replace(pattern, replacement);
   const pieces = joined.split(TOKEN_SEP);
   if (pieces.length === raw.length) {
@@ -621,12 +830,30 @@ function lineUp(user: OwnedWords, ref: OwnedWords): DiffToken[] {
 }
 
 /**
+ * How to read the learner's noun `'s` against one reference: the choice (possessive or is/has, each) whose words line up
+ * best with it — so "Tom's been here yesterday." is marked at "yesterday", not at "Tom's" against "Tom has been here.".
+ */
+function readingToward(answer: string, reference: string, apostrophes: Apostrophes): Reading {
+  const ref = ownedWords(reference, { apostrophes }).words;
+  let best: Reading = { apostrophes };
+  let most = -1;
+  for (const nouns of nounReadings(answer)) {
+    const n = align(ownedWords(answer, { apostrophes, nouns }).words, ref).length;
+    if (n > most) {
+      most = n;
+      best = { apostrophes, nouns };
+    }
+  }
+  return best;
+}
+
+/**
  * The learner's words against one reference — missing · wrong · extra · moved, in the learner's spelling. A typed
  * answer by default; `spoken` compares without apostrophes, as the grader does for a microphone's answer.
  */
 export function diffAnswer(answer: string, reference: string, options: GradeOptions = {}): DiffToken[] {
   const apostrophes: Apostrophes = options.spoken ? "drop" : "keep";
-  return lineUp(ownedWords(answer, { apostrophes }), ownedWords(reference, { apostrophes }));
+  return lineUp(ownedWords(answer, readingToward(answer, reference, apostrophes)), ownedWords(reference, { apostrophes }));
 }
 
 function tagStart(ws: string[]): number {
@@ -640,8 +867,8 @@ function tagStart(ws: string[]): number {
 }
 
 /** An odd number of negations left unmatched — the answer says the opposite (a question tag and an answering "No," aside). */
-function flipsNegation(answer: string, reference: string, apostrophes: Apostrophes): boolean {
-  const user = ownedWords(answer, { apostrophes });
+function flipsNegation(answer: string, reference: string, apostrophes: Apostrophes, reading: Reading = { apostrophes }): boolean {
+  const user = ownedWords(answer, reading);
   const ref = ownedWords(reference, { apostrophes });
   const { matchedUser, matchedModel } = align(user.words, ref.words);
   const count = (ws: string[], matched: Set<number>, raw: string) => {
@@ -680,6 +907,11 @@ export interface ProduceResult {
   typo: { typed: string; expected: string } | null;
   /** the answer adds or drops a negation against `reference` */
   negationFlip: boolean;
+  /**
+   * a TYPED wrong answer that is a reference but for a possessive's apostrophe ("my brothers" for "my brother's"):
+   * the learner's word, and the grader's own hint — it names the slip, never the answer (작업기록 할 일 9 · 31)
+   */
+  possessive: { typed: string; hint: string } | null;
 }
 
 export interface GradeOptions {
@@ -876,6 +1108,58 @@ function apostropheSlip(answer: string, reference: string): { typed: string; exp
   return { typed: "", expected: "" };
 }
 
+/** The grader's own hint for a possessive written without its apostrophe — the kind of slip, not the answer. */
+export const POSSESSIVE_HINT = "'~의'를 나타내는 소유격의 아포스트로피(')를 확인해 보세요.";
+
+/**
+ * The noun `'s` of a reference (by their place among its noun `'s`) that the item reads as is/has: spelt out, that
+ * reference is another of the item's references ("My room's smaller …" — "My room is smaller …"). The others are
+ * possessives.
+ */
+function contractedNounS(reference: string, models: readonly string[], apostrophes: Apostrophes): Set<number> {
+  const out = new Set<number>();
+  const plain = normalizeForComparison(reference, { apostrophes });
+  const n = Math.min(nounSWords(reference).length, MAX_NOUN_S);
+  for (let k = 0; k < n; k++) {
+    for (const s of ["is", "has"] as const) {
+      const form = normalizeForComparison(reference, { apostrophes, s, nouns: 1 << k });
+      if (form !== plain && models.includes(form)) out.add(k);
+    }
+  }
+  return out;
+}
+
+/**
+ * A TYPED answer that is a reference but for the apostrophe of a possessive `'s` — "My room is smaller than my
+ * brothers." for "… my brother's." (pg09-2:p7). Still wrong (Toms ≠ Tom's). Only when every difference is such an
+ * apostrophe left out: not an apostrophe added ("It's tail" — its/it's is grammar), not a contraction's (its · were),
+ * and not a noun `'s` the item reads as is/has ("Jills seen a rainbow" — the item spells it "Jill has seen").
+ */
+function possessiveSlipIn(answer: string, references: readonly string[], models: readonly string[]): string | null {
+  const answerBare = normalizeLiteral(answer, "drop");
+  const answerKept = words(normalizeLiteral(answer, "keep"));
+  for (const reference of references) {
+    if (!answerBare || normalizeLiteral(reference, "drop") !== answerBare) continue;
+    const refKept = words(normalizeLiteral(reference, "keep"));
+    if (refKept.length !== answerKept.length) continue;
+    const nouns = nounSWords(reference);
+    const contracted = contractedNounS(reference, models, "keep");
+    let slip: string | null = null;
+    let possessiveOnly = true;
+    for (let i = 0; i < refKept.length && possessiveOnly; i++) {
+      if (refKept[i] === answerKept[i]) continue;
+      const m = /^([a-z]+)'s$/.exec(refKept[i]);
+      // which of the reference's noun `'s` this is: the same word's n-th time
+      const nth = refKept.slice(0, i).filter((w) => w === refKept[i]).length;
+      const k = nouns.findIndex((w, at) => w === refKept[i] && nouns.slice(0, at).filter((x) => x === w).length === nth);
+      if (!m || NOT_NOUN_S.has(m[1]) || answerKept[i] !== `${m[1]}s` || k < 0 || contracted.has(k)) possessiveOnly = false;
+      else slip = slip ?? answerKept[i];
+    }
+    if (possessiveOnly && slip) return slip;
+  }
+  return null;
+}
+
 /** The references of an item: the model answer first, then the accepted answers (blank and repeated ones dropped). */
 export function referencesOf(item: ProduceItemLike): string[] {
   const out: string[] = [];
@@ -883,13 +1167,16 @@ export function referencesOf(item: ProduceItemLike): string[] {
   return out;
 }
 
+/** The reference the answer shares the most words with (its noun `'s` read either way). */
 function closest(answer: string, references: string[], apostrophes: Apostrophes): string {
-  const user = ownedWords(answer, { apostrophes });
+  const readings = nounReadings(answer).map((nouns) => ownedWords(answer, { apostrophes, nouns }));
   let best = { ref: references[0] ?? "", share: -1 };
   for (const reference of references) {
     const ref = ownedWords(reference, { apostrophes });
-    const share = align(user.words, ref.words).length / Math.max(1, ref.words.length, user.words.length);
-    if (share > best.share) best = { ref: reference, share };
+    for (const user of readings) {
+      const share = align(user.words, ref.words).length / Math.max(1, ref.words.length, user.words.length);
+      if (share > best.share) best = { ref: reference, share };
+    }
   }
   return best.ref;
 }
@@ -907,6 +1194,7 @@ export function gradeProduce(answerRaw: string, item: ProduceItemLike, options: 
     pattern: null,
     typo: null,
     negationFlip: false,
+    possessive: null,
   };
   if (!answer) return { ...base, verdict: "empty" };
   if (hasHangul(answer)) return { ...base, verdict: "hangul" };
@@ -914,8 +1202,9 @@ export function gradeProduce(answerRaw: string, item: ProduceItemLike, options: 
   const spoken = Boolean(options.spoken);
   // a typed answer keeps its apostrophes (its ≠ it's); a microphone's cannot have heard them
   const apostrophes: Apostrophes = spoken ? "drop" : "keep";
-  const graded = spoken ? spokenNumbersAsWords(answer) : answer;
   const refs = spoken ? refsAsWritten.map(spokenNumbersAsWords) : refsAsWritten;
+  // a microphone's answer spelt as the closest reference writes what the recogniser could not tell apart (heardAs)
+  const graded = spoken ? heardAs(spokenNumbersAsWords(answer), refs) : answer;
   const models = referenceForms(refs, item.targets, apostrophes);
   const asWritten = (i: number) => refsAsWritten[i] ?? refsAsWritten[0] ?? "";
   const patterns = (item.errorPatterns ?? []).filter((p) => p && typeof p.match === "string" && p.match.trim());
@@ -950,14 +1239,18 @@ export function gradeProduce(answerRaw: string, item: ProduceItemLike, options: 
   const nearIndex = Math.max(0, refs.indexOf(near));
   const forms = formsOf(graded, apostrophes);
   const hit = literalHit ?? patterns.find((p) => !p.literal && patternHit(forms, p.match, apostrophes)) ?? null;
+  const reading = readingToward(graded, near, apostrophes);
+  // a possessive's apostrophe left out — typed only: a recogniser cannot hear one
+  const possessive = spoken ? null : possessiveSlipIn(graded, refs, models);
   return {
     ...base,
     verdict: "wrong",
     reference: asWritten(nearIndex),
-    diff: lineUp(ownedWords(graded, { apostrophes }), ownedWords(near, { apostrophes })),
+    diff: lineUp(ownedWords(graded, reading), ownedWords(near, { apostrophes })),
     missingTargets: missing,
     pattern: hit ? { match: hit.match, hint: hit.hint, literal: Boolean(hit.literal) } : null,
-    negationFlip: flipsNegation(graded, near, apostrophes),
+    negationFlip: flipsNegation(graded, near, apostrophes, reading),
+    possessive: possessive ? { typed: possessive, hint: POSSESSIVE_HINT } : null,
   };
 }
 

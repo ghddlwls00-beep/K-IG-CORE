@@ -240,6 +240,8 @@ export function ComposeCard({
           <DiffLine tokens={result.diff} reveal={false} font={font} />
           <p className="text-caption text-ink-faint">빈 네모 = 빠진 낱말 · 물결 = 틀린 낱말 · 가운데 줄 = 필요 없는 낱말 · 점선 = 자리가 바뀐 낱말</p>
           {result.pattern ? <p className={`${FONT[font].text} text-ink`}>{result.pattern.hint}</p> : null}
+          {/* the grader's own hint: a possessive typed without its apostrophe ("my brothers") — names the slip, not the answer */}
+          {result.possessive ? <p className={`${FONT[font].text} text-ink`}>{result.possessive.hint}</p> : null}
           {result.negationFlip ? <p className="text-body text-ink">뜻이 반대가 됐어요. not · no · never 가 있어야 하는지 보세요.</p> : null}
           {result.diff.some((t) => t.opposite) ? <p className="text-body text-ink">뜻이 반대인 낱말을 썼어요(앞에 붙는 말을 확인하세요).</p> : null}
           {rung >= 2 ? (
