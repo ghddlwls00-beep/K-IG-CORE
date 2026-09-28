@@ -22,34 +22,34 @@
     {
       "id": "d007-q2",
       "type": "세부 사실",
-      "prompt": "존이 태어난 날짜로 옳은 것은?",
+      "prompt": "존의 외국어 실력에 대한 설명으로 옳은 것은?",
       "options": [
-        "1953년 5월 9일",
-        "1933년 9월 9일",
-        "1954년 6월 4일",
-        "1931년 11월 12일"
+        "프랑스어와 독일어로 말을 잘한다",
+        "이탈리아어를 조금 할 줄 안다",
+        "프랑스어와 독일어를 잘 읽는다",
+        "폴란드어를 어머니에게 배웠다"
       ],
       "answer": 2,
       "evidence": [
-        7
+        9
       ],
-      "note": "'John was born in Philadelphia on June 4, 1954'에서 태어난 날짜를 알 수 있음."
+      "note": "'he reads French and German quite well, but he does not speak these two languages'에서 알 수 있음."
     },
     {
       "id": "d007-q3",
       "type": "다음 할 일",
       "prompt": "존이 앞으로 하고자 하는 일로 옳은 것은?",
       "options": [
-        "법학을 공부하는 것",
-        "외국에서 교사로 일하는 것",
-        "고향으로 돌아가는 것",
-        "의학 분야로 진출하는 것"
+        "의학 대신 법학을 택하는 것",
+        "독일에 가서 의학을 배우는 것",
+        "의학 공부를 그만두는 것",
+        "의학의 길로 나아가는 것"
       ],
       "answer": 3,
       "evidence": [
         10
       ],
-      "note": "'John hopes to enter the field of medicine'에서 앞으로 할 일을 알 수 있음."
+      "note": "'John hopes to enter the field of medicine'에서 알 수 있음."
     }
   ]
 }

@@ -6,37 +6,36 @@
     {
       "id": "d040-q1",
       "type": "세부 사실",
-      "prompt": "존 삼촌이 들려준 이야기에 나온 나라들로 옳은 것은?",
+      "prompt": "존 삼촌에 대해 말한 내용으로 옳은 것은?",
       "options": [
-        "일본, 중국, 인도네시아",
-        "일본, 호주, 브라질",
-        "호주, 캐나다, 브라질",
-        "미국, 일본, 브라질"
+        "여러 나라의 책을 모아 두고 읽었다",
+        "여러 나라를 여행하며 볼 만한 것을 다 보았다",
+        "여러 나라 말을 자유롭게 할 줄 알았다",
+        "여러 나라에서 온 친구들과 자주 편지를 주고받았다"
       ],
       "answer": 1,
       "evidence": [
         3
       ],
-      "note": "3번 'places like Japan, Australia, and Brazil'가 근거"
+      "note": "3번 'He had traveled and seen all there was to see'가 근거"
     },
     {
       "id": "d040-q2",
       "type": "중심 내용",
       "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "나는 어릴 때 분야마다 잘 아는 어른들의 말을 그대로 믿었다",
-        "나는 어릴 때 어른들의 말을 전혀 믿지 않았다",
-        "나는 어릴 때부터 야구보다 식물과 동물 같은 자연 공부를 훨씬 더 좋아했다",
-        "나는 존 삼촌보다 이웃 풀턴 씨의 생각을 더 존중했다"
+        "어릴 때 나는 존경하는 어른들의 말을 그대로 믿었다",
+        "어릴 때 나는 야구보다 자연 공부를 더 좋아했다",
+        "어릴 때 나는 존 삼촌보다 풀턴 씨의 말을 더 믿었다",
+        "어릴 때 나는 엘리스 선생님처럼 선생님이 되고 싶었다"
       ],
       "answer": 0,
       "evidence": [
         1,
         3,
-        4,
         6
       ],
-      "note": "1번 'some people whose ideas I respected' · 3번 'I believed anything he told me' · 4번 'I asked our neighbor Mr. Fulton' · 6번 'an expert on nature'가 근거"
+      "note": "1번 'some people whose ideas I respected' · 3번 'I believed anything he told me' · 6번 'I always believed all of the things she told our class'가 근거"
     }
   ]
 }

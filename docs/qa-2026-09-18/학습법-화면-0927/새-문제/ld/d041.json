@@ -6,29 +6,30 @@
     {
       "id": "d041-q1",
       "type": "세부 사실",
-      "prompt": "말하는 사람이 부모님의 의견을 존중하게 된 나이로 옳은 것은?",
+      "prompt": "말하는 사람이 16살과 18살 때 부모님에 대해 가진 생각으로 옳은 것은?",
       "options": [
-        "12살",
-        "14살",
-        "16살",
-        "18살"
+        "16살에는 너무 엄하다고 여겼고 18살에는 친구처럼 편하게 여겼다",
+        "16살에는 사랑하지 않았고 18살이 되어서야 사랑하게 되었다",
+        "16살에는 늘 바쁘다고 여겼고 18살에는 다정하다고 여겼다",
+        "16살에는 아는 게 별로 없다고 여겼고 18살에는 의견을 존중했다"
       ],
       "answer": 3,
       "evidence": [
+        1,
         3,
         4
       ],
-      "note": "3번 'when I was 18' · 4번 'I now respected their opinions'가 근거"
+      "note": "1번 'When I was 16' · 'really didn't know very much' · 3번 'when I was 18' · 4번 'I now respected their opinions'가 근거"
     },
     {
       "id": "d041-q2",
       "type": "중심 내용",
       "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "달라진 것은 부모님이 아니라 자라면서 바뀐 내 생각이었다",
+        "부모님은 그대로였고 달라진 건 나였다",
         "부모님이 실제로 2년 만에 새로운 지식을 많이 얻으셨다",
-        "나는 16살 이후로 줄곧 부모님의 의견을 무시했다",
-        "나는 나이가 들어서도 여전히 모든 것을 가장 잘 안다고 믿는다"
+        "부모님은 내가 자라는 동안 생각을 여러 번 바꾸셨다",
+        "나와 부모님은 끝내 서로의 생각을 이해하지 못했다"
       ],
       "answer": 0,
       "evidence": [
@@ -36,7 +37,7 @@
         3,
         5
       ],
-      "note": "1번 'really didn't know very much' · 3번 'had learned a lot in just two years' · 5번 'two years of growing up' · 'they had these opinions and ideas all the time'가 근거"
+      "note": "1번 'really didn't know very much' · 3번 'had learned a lot in just two years' · 5번 'they had these opinions and ideas all the time'가 근거"
     },
     {
       "id": "d041-q3",
@@ -46,7 +47,7 @@
         "모든 주제에 대해 곧바로 자기 의견을 내놓는다",
         "어떤 주제에 대해서도 자기 의견을 갖지 않는다",
         "질문에 답하기 전에 그 주제를 먼저 공부한다",
-        "다른 사람의 의견을 자기 생각 없이 그대로 따른다"
+        "어떤 주제든 남의 의견을 자기 생각 없이 따른다"
       ],
       "answer": 2,
       "evidence": [

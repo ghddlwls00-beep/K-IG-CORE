@@ -22,36 +22,36 @@
     {
       "id": "d029-q2",
       "type": "세부 사실",
-      "prompt": "마르타 페레즈에 대한 설명으로 가장 적절한 것은?",
+      "prompt": "마르타 페레즈가 50미터 배영 말고도 잘한다고 한 종목으로 옳은 것은?",
       "options": [
-        "4번 레인에 자리를 잡았다",
-        "50미터 배영에 특히 강하다",
-        "100미터 자유형은 잘하지 못한다",
-        "100미터 자유형을 50미터 배영보다 잘한다"
+        "200미터 평영",
+        "400미터 개인혼영",
+        "50미터 접영",
+        "100미터 자유형"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         2
       ],
-      "note": "2번 줄 'always been better at the 50 meter backstroke' · 'good at the 100 meter freestyle, too'에서 확인."
+      "note": "2번 줄 'better at the 50 meter backstroke' · 'good at the 100 meter freestyle, too'에서 확인."
     },
     {
       "id": "d029-q3",
       "type": "말한 사람의 목적/태도",
-      "prompt": "화자가 샐리 밀러에 대해 전달하려는 내용으로 가장 적절한 것은?",
+      "prompt": "화자가 샐리 밀러에 대해 예상하는 것으로 가장 적절한 것은?",
       "options": [
-        "친구가 없어서 경기에 불리하다",
-        "이미 우승이 확정되었다",
-        "친구들의 응원 덕분에 이길 수도 있다",
-        "다리 부상을 입어서 경기를 기권할 것이다"
+        "친구들이 다른 선수를 응원해서 불리하다",
+        "응원 덕분에 이길 수도 있다",
+        "응원 소리에 긴장해 실수할 것이다",
+        "응원이 없어도 쉽게 우승할 것이다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         5,
         6,
         7
       ],
-      "note": "5~7번 줄 'friends have come' · 'cheering for Sally' · 'may win'에서 확인."
+      "note": "5~7번 줄 'A lot of her friends have come' · 'all cheering for Sally' · 'Sally may win with all that help'에서 확인."
     }
   ]
 }

@@ -6,24 +6,24 @@
     {
       "id": "d066-q1",
       "type": "세부 사실",
-      "prompt": "시카고의 한 양조장이 새로 선보인, 살이 가장 덜 찐다는 맥주의 이름으로 알맞은 것은?",
+      "prompt": "신문에 난 새 광고를 본 사람들의 반응으로 알맞은 것은?",
       "options": [
-        "라이트 소프",
-        "라이트",
-        "시카고 라거",
-        "소피 비어"
+        "새 맥주를 사러 몰려갔다",
+        "영문을 몰라 어리둥절했다",
+        "신문사에 항의 전화를 걸었다",
+        "재미있다며 크게 웃었다"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        2
+        3,
+        4
       ],
-      "note": "'introduced a new beer'와 'they called it Lite'가 새 맥주 이름이 라이트임을 보여줌"
+      "note": "'strange new ads appeared in the Chicago newspapers'와 'The public, of course, was confused'가 사람들이 어리둥절했음을 보여줌"
     },
     {
       "id": "d066-q2",
       "type": "세부 사실",
-      "prompt": "새 맥주가 팔리기 시작한 뒤 이상한 새 광고가 신문에 나오기까지 걸린 기간으로 알맞은 것은?",
+      "prompt": "새 맥주가 팔리기 시작한 뒤 새 광고가 신문에 나오기까지 걸린 기간으로 알맞은 것은?",
       "options": [
         "1주일",
         "2주일",
@@ -39,20 +39,19 @@
     {
       "id": "d066-q3",
       "type": "세부 사실",
-      "prompt": "광고 문구 '라이트는 비누 맛이 난다'가 실제로 알리려던 것은?",
+      "prompt": "'라이트는 비누 맛이 난다'라는 광고에 대한 설명으로 알맞은 것은?",
       "options": [
-        "라이트 소프사의 제품",
-        "라이트 맥주의 새로운 맛",
-        "라이트 맥주 회사의 사과문",
-        "라이트 맥주의 가격 인하"
+        "라이트 맥주 이야기가 아니었다",
+        "라이트 맥주의 값을 알리는 광고였다",
+        "라이트 맥주를 만든 양조장이 냈다",
+        "라이트 맥주의 이름을 바꾸라고 했다"
       ],
       "answer": 0,
       "evidence": [
         4,
-        6,
-        7
+        6
       ],
-      "note": "'weren't talking about Lite beer'와 'for a product of the Lite Soap Company'가 광고의 실제 대상을 보여줌"
+      "note": "'They said, \"Lite tastes soapy.\"'와 'The new ads weren't talking about Lite beer'가 그 광고가 라이트 맥주 이야기가 아니었음을 보여줌"
     }
   ]
 }
