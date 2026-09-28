@@ -20,12 +20,12 @@ export interface LandingTab extends Tab {
   courseDetails: CourseDetail[];
 }
 
-/** A roll of the wheel moves a slide once it adds up to this much (one mouse notch is about 100px; a trackpad adds up small steps). */
-const WHEEL_STEP_PX = 40;
-/** Wheel events closer together than this are one roll or swipe — a trackpad keeps sending them after the fingers lift. */
-const WHEEL_QUIET_MS = 200;
-/** How long one slide move is given before the wheel can move the next one. */
-const SLIDE_MOVE_MS = 800;
+/** How quickly the page catches up with the wheel — the time constant of the glide (smaller is snappier). */
+const GLIDE_MS = 90;
+/** Once the wheel (or a trackpad's after-swipe momentum) has been still this long, the page glides onto a slide. */
+const SETTLE_AFTER_MS = 160;
+/** A roll that moved the page at least this share of a slide lands on the next slide its way; a smaller nudge goes back. */
+const SETTLE_SHARE = 0.04;
 
 /**
  * Section background photo. Renders the 20px blurred placeholder immediately,
@@ -97,73 +97,130 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
   const [scrollActive, setScrollActive] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const activeIdxRef = useRef(0);
-  const isAnimatingRef = useRef(false);
+  // set by the glide effect below: glide to slide n (the dots and the NEXT arrow use it too)
+  const glideToRef = useRef<(index: number) => void>(() => {});
 
   // Synchronize activeIdxRef whenever scrollActive changes
   useEffect(() => {
     activeIdxRef.current = scrollActive;
   }, [scrollActive]);
 
-  const scrollToTab = useCallback(
-    (index: number) => {
-      const el = containerRef.current;
-      if (!el) return;
-      const targetIdx = Math.min(Math.max(index, 0), tabs.length - 1);
-      activeIdxRef.current = targetIdx;
-      setScrollActive(targetIdx);
-      isAnimatingRef.current = true;
-      el.style.scrollSnapType = "none";
-      el.scrollTo({
-        top: targetIdx * el.clientHeight,
-        behavior: "smooth",
-      });
-      setTimeout(() => {
-        // back to the container's own mandatory snapping
-        if (el) el.style.scrollSnapType = "";
-        isAnimatingRef.current = false;
-      }, 600);
-    },
-    [tabs.length],
-  );
+  const scrollToTab = useCallback((index: number) => glideToRef.current(index), []);
 
-  // 2026-09-27 (점검 FRAME-U13 · 사장님 "그냥 다로 해": 원래 슬라이드 그대로, 불편한 점만): the arrow / space / page keys
-  // are not taken over — they scroll the browser's own way, and the container's mandatory snap stops them on a slide.
-  // 2026-09-28 (사장님 "데스크탑 렌딩 페이지 보면 페이지 내리고 올리는데 부자연스러워 이거 해결해", then — told that one
-  // roll of the wheel now stays where it stops — "마우스 휠을 한번 굴리면 아래 페이지로 내려가게 해줘"): one roll of the
-  // mouse wheel, or one trackpad swipe, moves exactly one slide, as the dots and the NEXT arrow do. Free scrolling
-  // (the first answer to 부자연스러워) was not what was meant. A trackpad keeps sending wheel events after the fingers
-  // lift, so after a move the wheel waits until it has been quiet for WHEEL_QUIET_MS before it can move again — one
-  // swipe never skips two slides. Pinch-zoom (ctrl + wheel) and sideways scrolling stay the browser's. A touch screen
-  // swipes one slide at a time through the same mandatory snap. The look (full-screen slides, dots, arrows) is the same.
+  // How the page moves between slides with a mouse wheel, a trackpad or the keys. History (the owner's words):
+  // 09-27 점검 FRAME-U13 took away the old one-notch-one-slide wheel takeover; 09-28 "페이지 내리고 올리는데 부자연스러워"
+  // → free scrolling with a mouse; then "마우스 휠을 한번 굴리면 아래 페이지로 내려가게 해줘" → strict paging (one roll = one
+  // slide, further rolls ignored until the move ended); 09-29 "너무 빡빡해 사이트 올리고 내리기가 부드럽게 해라" → this:
+  // the page follows the wheel smoothly and never ignores it, and when the wheel (or a trackpad's momentum) has been
+  // still for SETTLE_AFTER_MS it glides onto the next slide the way the user was going — so one roll still ends on the
+  // next page, a longer roll passes slides fluidly, and a tiny nudge slides back. The arrow / page / space / home / end
+  // keys glide a slide at a time (with a mouse there is no CSS snap to stop them on a slide). Pinch-zoom (ctrl + wheel)
+  // and sideways scrolling stay the browser's. A touch screen keeps the browser's own one-slide-per-swipe mandatory
+  // snap. With prefers-reduced-motion the page jumps instead of gliding. The look (slides, dots, arrows) is the same.
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
-    let added = 0;
-    let lastAt = 0;
-    let lockedUntil = 0;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let pos = el.scrollTop; // where the glide has the page (float — scrollTop rounds)
+    let target = pos;
+    let frame = 0;
+    let lastT = 0;
+    let settleTimer = 0;
+    let gestureFrom: number | null = null;
+
+    const count = tabs.length;
+    const height = () => el.clientHeight || 1;
+    const clamp = (y: number) => Math.min(Math.max(y, 0), Math.max(0, el.scrollHeight - el.clientHeight));
+    const showSlide = (n: number) => {
+      activeIdxRef.current = n;
+      setScrollActive(n);
+    };
+
+    const step = (t: number) => {
+      const dt = lastT ? Math.min(t - lastT, 64) : 16;
+      lastT = t;
+      pos += (target - pos) * (1 - Math.exp(-dt / GLIDE_MS));
+      if (Math.abs(target - pos) < 0.5) {
+        pos = target;
+        el.scrollTop = pos;
+        frame = 0;
+        lastT = 0;
+        el.style.scrollSnapType = ""; // back to the container's own snapping (touch screens)
+        return;
+      }
+      el.scrollTop = pos;
+      frame = requestAnimationFrame(step);
+    };
+    const glide = () => {
+      if (reduce.matches) {
+        pos = target;
+        el.scrollTop = pos;
+        return;
+      }
+      if (!frame) {
+        pos = el.scrollTop;
+        lastT = 0;
+        el.style.scrollSnapType = "none"; // a snapping container would pull every frame of the glide to a slide
+        frame = requestAnimationFrame(step);
+      }
+    };
+    const glideTo = (n: number) => {
+      const i = Math.min(Math.max(n, 0), count - 1);
+      target = clamp(i * height());
+      showSlide(i);
+      glide();
+    };
+    glideToRef.current = glideTo;
+
+    const settle = () => {
+      const from = gestureFrom ?? target;
+      gestureFrom = null;
+      const at = target / height();
+      const moved = target - from;
+      const n = Math.abs(moved) >= height() * SETTLE_SHARE ? (moved > 0 ? Math.ceil(at - 0.001) : Math.floor(at + 0.001)) : Math.round(at);
+      glideTo(n);
+    };
+
     const onWheel = (e: WheelEvent) => {
       if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
       e.preventDefault();
-      const now = performance.now();
-      const gap = now - lastAt;
-      lastAt = now;
-      if (now < lockedUntil) {
-        // the rest of the roll or swipe that just moved a slide
-        lockedUntil = Math.max(lockedUntil, now + WHEEL_QUIET_MS);
-        return;
-      }
-      if (gap > WHEEL_QUIET_MS) added = 0;
-      added += e.deltaMode === 1 ? e.deltaY * 16 : e.deltaMode === 2 ? e.deltaY * el.clientHeight : e.deltaY;
-      if (Math.abs(added) < WHEEL_STEP_PX) return;
-      const next = activeIdxRef.current + (added > 0 ? 1 : -1);
-      added = 0;
-      if (next < 0 || next >= tabs.length) return;
-      lockedUntil = now + SLIDE_MOVE_MS;
-      scrollToTab(next);
+      if (!frame) target = pos = el.scrollTop;
+      if (gestureFrom === null) gestureFrom = target;
+      const dy = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaMode === 2 ? e.deltaY * height() : e.deltaY;
+      target = clamp(target + dy);
+      glide();
+      window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(settle, SETTLE_AFTER_MS);
     };
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.defaultPrevented || e.altKey || e.ctrlKey || e.metaKey) return;
+      const k = e.key;
+      const onControl = e.target instanceof Element && e.target.closest("a, button, input, textarea, select, [contenteditable]");
+      if (k === " " && onControl) return; // Space presses the focused link or button
+      const here = Math.round((frame ? target : el.scrollTop) / height());
+      let n: number;
+      if (k === "ArrowDown" || k === "PageDown" || (k === " " && !e.shiftKey)) n = here + 1;
+      else if (k === "ArrowUp" || k === "PageUp" || (k === " " && e.shiftKey)) n = here - 1;
+      else if (k === "Home") n = 0;
+      else if (k === "End") n = count - 1;
+      else return;
+      e.preventDefault();
+      window.clearTimeout(settleTimer);
+      gestureFrom = null;
+      glideTo(n);
+    };
+
     el.addEventListener("wheel", onWheel, { passive: false });
-    return () => el.removeEventListener("wheel", onWheel);
-  }, [scrollToTab, tabs.length]);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      el.removeEventListener("wheel", onWheel);
+      window.removeEventListener("keydown", onKey);
+      window.clearTimeout(settleTimer);
+      if (frame) cancelAnimationFrame(frame);
+      glideToRef.current = () => {};
+    };
+  }, [tabs.length]);
 
   // A resize re-aligns the slide in view.
   useEffect(() => {
@@ -218,7 +275,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       <div
         ref={containerRef}
         onScroll={handleScroll}
-        className="relative h-full w-full overflow-y-auto select-text overscroll-y-contain no-scrollbar [scroll-snap-type:y_mandatory]"
+        className="relative h-full w-full overflow-y-auto select-text overscroll-y-contain no-scrollbar [scroll-snap-type:y_mandatory] [@media(pointer:fine)]:[scroll-snap-type:none]"
         style={{
           WebkitOverflowScrolling: "touch",
         }}
