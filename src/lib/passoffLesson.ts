@@ -232,7 +232,11 @@ export interface PassoffWork {
   wrapCheck: boolean;
   /** ⑤ my own sentence — what I wrote in each blank of the frame, kept on this device only */
   frame: string[];
-  /** all five steps finished (the completion was recorded once) */
+  /**
+   * the lesson was finished and its completion recorded once: the learner pressed '이 강의 학습 완료' after the five steps
+   * (단계 2-나 E2 — the five steps alone do not set it), or a lesson already complete on this device was done again through
+   * '처음부터 다시 하기' (PassoffLearningView sends that completion once more by itself — there is nothing to press)
+   */
   lessonDone: boolean;
 }
 

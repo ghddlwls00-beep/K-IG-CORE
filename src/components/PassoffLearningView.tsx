@@ -50,10 +50,11 @@ import { FONT_LABEL, segmentButton, spokenOf, usePassoffLearner, type FontSize, 
  *
  * Practice state stays on this device (localStorage kig:passoff:work:<lessonKey>, src/lib/passoffLesson.ts) —
  * an answer is kept the moment it is given, and one not passed on with '다음' before the learner left is passed on
- * when the lesson opens again (settleOpen). Every answer and, when all five steps are done, the lesson itself go
- * to the common learning engine (src/lib/passoffLearning.ts) — review across days is the engine's, not this
- * page's — and the lesson is marked complete in the course list (ProgressProvider) and on the server, where it
- * counts toward opening the next topic (PassoffProgressProvider — 설계 §5).
+ * when the lesson opens again (settleOpen). Every answer goes to the common learning engine (src/lib/passoffLearning.ts)
+ * — review across days is the engine's, not this page's — and so does the lesson itself once it is finished: when the
+ * learner presses '이 강의 학습 완료' after the five steps (단계 2-나 E2 — below; the five steps alone no longer finish it).
+ * Then the lesson is marked complete in the course list (ProgressProvider) and on the server, where it counts toward
+ * opening the next topic (PassoffProgressProvider — 설계 §5).
  *
  * 2026-09-28 — on main's common parts (docs/디자인-규칙.md §6 · §7), so the lesson looks and moves like the other courses:
  *   - the step tabs are the shared StepTabs (44px · one row on a phone · "Step N · 이름" — LessonStepNavigation, the bar

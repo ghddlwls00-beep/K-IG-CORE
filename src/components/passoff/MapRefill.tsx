@@ -36,6 +36,11 @@ import { PrimaryButton, SecondaryButton, tone, usePassoffLearner } from "./ui";
  * Merged onto E1's records per learner: the lessons brought forward are this licence's (usePassoffLearner — its record on
  * the device and its queue); a licence still being checked on a page opened afresh is waited for a few seconds, as the map
  * refill itself waits (PassoffProgressProvider.recordMapRefill).
+ *
+ * 점검 18: moving to another stage (a press — place → a box → the next box → the result, and back) removes the button pressed,
+ * so the new stage's heading takes the focus (tabIndex -1 — the place stage's is for screen readers only, its progress line
+ * already says '레슨 놓기') and the stage starts at the top, as the review's items and screens do (ReviewSession). Not when
+ * the page opens.
  */
 type Stage = { at: "place" } | { at: "pick"; box: number } | { at: "result" };
 type Save =
@@ -66,6 +71,22 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
   useEffect(() => {
     learnerRef.current = learner;
   }, [learner]);
+
+  const topRef = useRef<HTMLDivElement | null>(null);
+  const headingRef = useRef<HTMLHeadingElement | null>(null);
+  /** the learner pressed their way to another stage — its heading takes the focus (the button pressed is gone) */
+  const moved = useRef(false);
+  useEffect(() => {
+    if (!moved.current) return;
+    moved.current = false;
+    const top = topRef.current;
+    if (top && top.getBoundingClientRect().top < 0) window.scrollTo({ top: Math.max(0, top.getBoundingClientRect().top + window.scrollY - 72) });
+    headingRef.current?.focus({ preventScroll: true });
+  }, [stage]);
+  function go(next: Stage) {
+    moved.current = true;
+    setStage(next);
+  }
 
   const chips = useMemo(() => mapChips(data), [data]);
   const ruleOptions = useMemo(() => mapRuleOptions(data), [data]);
@@ -124,7 +145,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
     const missed = mapMissedLessons(graded);
     setResults(graded);
     setNextWasOpen(Boolean(progress && (progress.everyTopicOpen || progress.topics.find((t) => t.topic > data.topic)?.unlocked)));
-    setStage({ at: "result" });
+    go({ at: "result" });
     // the map refill on the server, and the wrong boxes' lessons forward (this device at once, the server with it)
     void record(missed);
   }
@@ -135,12 +156,15 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
     setSentences(empty());
     setResults([]);
     setBroughtHere(false);
-    setStage({ at: "place" });
+    go({ at: "place" });
   }
 
   if (stage.at === "place") {
     return (
-      <div className="flex flex-col gap-4" data-passoff-map-stage="place">
+      <div ref={topRef} className="flex flex-col gap-4" data-passoff-map-stage="place">
+        <h2 ref={headingRef} tabIndex={-1} className="sr-only">
+          레슨 놓기
+        </h2>
         <Progress label="레슨 놓기" at={placed} of={n} name="구성도 진행" />
         <p className="text-label leading-relaxed text-ink-soft">
           대주제의 레슨을 순서대로 칸에 놓으세요. 레슨 이름을 누르면 빈 칸에 들어가고, 놓은 칸을 누르면 빠져요.
@@ -178,7 +202,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
             ))}
         </div>
         <div className="flex justify-end">
-          <PrimaryButton disabled={placed < n} onClick={() => setStage({ at: "pick", box: 0 })}>
+          <PrimaryButton disabled={placed < n} onClick={() => go({ at: "pick", box: 0 })}>
             다음
           </PrimaryButton>
         </div>
@@ -191,15 +215,15 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
     const lessonId = boxes[box];
     const sentenceOptions = lessonId ? mapSentenceOptions(data, lessonId) : [];
     return (
-      <div className="flex flex-col gap-4" data-passoff-map-stage="pick" data-passoff-map-box={box + 1}>
+      <div ref={topRef} className="flex flex-col gap-4" data-passoff-map-stage="pick" data-passoff-map-box={box + 1}>
         <Progress label="칸 채우기" at={box + 1} of={n} name="구성도 진행" />
-        <p className="text-title-s font-bold text-ink">
+        <h2 ref={headingRef} tabIndex={-1} className="text-title-s font-bold text-ink">
           <span className="tabular-nums text-ink-soft">{box + 1}.</span> {titleOf(lessonId)}
-        </p>
+        </h2>
         <section aria-labelledby="map-rule" className="flex flex-col gap-2">
-          <h2 id="map-rule" className="text-label font-semibold text-ink-soft">
+          <h3 id="map-rule" className="text-label font-semibold text-ink-soft">
             이 레슨의 규칙 한 줄
-          </h2>
+          </h3>
           <div className="flex flex-col gap-2" role="group" aria-labelledby="map-rule">
             {ruleOptions.map((option) => (
               <button
@@ -217,9 +241,9 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
           </div>
         </section>
         <section aria-labelledby="map-sentence" className="flex flex-col gap-2">
-          <h2 id="map-sentence" className="text-label font-semibold text-ink-soft">
+          <h3 id="map-sentence" className="text-label font-semibold text-ink-soft">
             이 규칙을 보여 주는 대표 문장
-          </h2>
+          </h3>
           <div className="flex flex-col gap-2" role="group" aria-labelledby="map-sentence">
             {sentenceOptions.map((option) => (
               <button
@@ -238,10 +262,10 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
           </div>
         </section>
         <div className="flex items-center justify-between gap-2">
-          <SecondaryButton onClick={() => setStage(box > 0 ? { at: "pick", box: box - 1 } : { at: "place" })}>이전</SecondaryButton>
+          <SecondaryButton onClick={() => go(box > 0 ? { at: "pick", box: box - 1 } : { at: "place" })}>이전</SecondaryButton>
           <PrimaryButton
             disabled={!rules[box] || !sentences[box]}
-            onClick={() => (box + 1 < n ? setStage({ at: "pick", box: box + 1 }) : finish())}
+            onClick={() => (box + 1 < n ? go({ at: "pick", box: box + 1 }) : finish())}
           >
             {box + 1 < n ? "다음 칸" : "결과 보기"}
           </PrimaryButton>
@@ -258,9 +282,9 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
   const nextTopic = saved ? saved.progress.topics.find((t) => t.topic > data.topic) : undefined;
   const opened = Boolean(saved && taken && !saved.progress.everyTopicOpen && nextTopic?.unlocked && !nextWasOpen);
   return (
-    <div className="flex flex-col gap-4" data-passoff-map-stage="result">
+    <div ref={topRef} className="flex flex-col gap-4" data-passoff-map-stage="result">
       <section aria-labelledby="map-result" className="flex flex-col gap-3 rounded-card border border-line bg-raised p-4">
-        <h2 id="map-result" className="text-title-s font-bold text-ink">
+        <h2 id="map-result" ref={headingRef} tabIndex={-1} className="text-title-s font-bold text-ink">
           구성도 결과
         </h2>
         <p className="text-body text-ink" role="status">

@@ -13,8 +13,11 @@
  *   E2 앞으로 당기기(applyBringForward — E2 수정): 그 레슨의 배우는 중 문항만 '내일' 낼 차례(오늘이 아님 — 오늘 복습에서 이미 푼
  *      문항이 오늘 계획에 되돌아오지 않고, 아직 안 푼 문항도 오늘로 당겨 간격이 줄지 않음) · 내일까지 낼 차례인 문항 · 오늘 처음 배운
  *      문항 · 통과한 문항 · 다른 레슨 그대로 · 내일 계획에 들어감 · forwardedItems 가 내일까지 나올 수를 셈
- *   E3 '내 답도 맞아요'가 그날 첫 답이면(복습 화면이 틀린 첫 답을 붙잡아 두었다가 신고로 바꿈) 맞음도 틀림도 아님 — lapses 0 ·
- *      통과한 날 그대로 · 내일 다시 · 신고 1(엔진 reportMyAnswer 그대로)
+ *   E3 '내 답도 맞아요'가 그날 첫 답이면 맞음도 틀림도 아님 — 복습 화면 자체(src/components/learning/ReviewSession.tsx 를 그대로
+ *      트랜스파일 · 아래 '대신 선 React' 로 그 함수를 돌림 — 기기 기록 · 진짜 record.ts)에 기기 모드로 두 문항을 내고, 첫 문항을 틀린 뒤
+ *      (기록 0 — 쥔 답 칸에만) '내 답도 맞아요' → pending · lapses 0 · 통과한 날 그대로 · 내일 다시 · 신고 1 · 그날 답 [pending] 이
+ *      답한 시각으로 / 둘째 문항을 틀리고 신고 없이 넘기면 그때 wrong 이 답한 시각으로(점검 17 — 전에는 엔진 applyAttempt(pending)만
+ *      불러 화면이 틀린 첫 답을 쥐는지는 안 봤음)
  *   E4 API view "notes"(레슨 없이): 오답노트 = 열린 레슨의 틀린 문항만(열쇠 · 종류 · 내 답) · 문항 글 0(모든 레슨의 문항 글 중 응답에
  *      있는 것 0) · items 비어 있음
  *   E5 API view "notes" + lesson: 그 레슨의 틀린 문항 데이터만(열쇠 = 목록의 그 레슨 열쇠) · 다른 문항 글 0
@@ -38,7 +41,9 @@
  *     forward-locked(잠긴 레슨도 당김) · report-case(대소문자가 다르면 다른 답으로) · admin-open(관리자 확인 없음) ·
  *     map-grade(규칙이 틀려도 맞은 칸) · record-items(view "record" 에도 계획 문항 데이터를 보냄) ·
  *     (E2 수정) practice-early(낼 차례인 문항도 연습에 냄) · forward-not-sent(기기 기록을 안 받으면 forward 도 안 함 — 점검 전 판) ·
- *     map-by-box(규칙을 놓은 레슨이 아니라 칸의 레슨으로 채점 — 점검 전 판) · reports-no-page(관리자 신고가 after 를 무시)
+ *     map-by-box(규칙을 놓은 레슨이 아니라 칸의 레슨으로 채점 — 점검 전 판) · reports-no-page(관리자 신고가 after 를 무시) ·
+ *     (점검 17) review-no-hold(복습 화면 ReviewSession.tsx 가 틀린 첫 답을 쥐지 않고 바로 기록 → E3 FAIL)
+ *     깨기 글은 CRLF 를 LF 로 맞춘 원본에 댄다(윈도 체크아웃). 깨기가 맞지 않거나 그 파일을 끝내 읽지 않으면 exit 2(1 이 아님).
  * exit 0 = 실패 0
  */
 const fs = require("fs");
@@ -56,6 +61,7 @@ const PRACTICE_FILE = path.join(REPO, "src/lib/learning/practice.ts");
 const REVIEW_FILE = path.join(REPO, "src/lib/learning/review.ts");
 const STORE_FILE = path.join(REPO, "src/lib/learning/serverStore.ts");
 const MAP_FILE = path.join(REPO, "src/lib/passoffMap.ts");
+const REVIEW_SCREEN_FILE = path.join(REPO, "src/components/learning/ReviewSession.tsx");
 const BREAKS = {
   "practice-moves": [PRACTICE_FILE, /if \(record\.log\.length > LOG_LIMIT\) record\.log\.splice\(0, record\.log\.length - LOG_LIMIT\);/, "if (record.log.length > LOG_LIMIT) record.log.splice(0, record.log.length - LOG_LIMIT); if (record.items[itemKey]) record.items[itemKey].dueDay = addDays(day, 2);"],
   "forward-all": [PRACTICE_FILE, /if \(!lessons\.has\(state\.lessonId\) \|\| state\.stage !== "learning"\) continue;/, 'if (state.stage !== "learning") continue;'],
@@ -75,6 +81,8 @@ const BREAKS = {
   "forward-not-sent": [ROUTE_FILE, /if \(!forward\.length\) return \{ record: stored, changed: false \};/, "return { record: stored, changed: false };"],
   "map-by-box": [MAP_FILE, /const ruleOk = placed !== null && picks\.rules\[box\] === placed\.id;/, "const ruleOk = picks.rules[box] === lesson.id;"],
   "reports-no-page": [STORE_FILE, /const start = after !== null && \/\^\\d\+\$\/\.test\(after\) \? Number\(after\) : 0;/, "const start = 0;"],
+  // 점검 17: the review screen's own hold — a wrong FIRST answer recorded at once instead of held for a report
+  "review-no-hold": [REVIEW_SCREEN_FILE, /if \(first && !given\.correct\) \{/, "if (false) {"],
 };
 
 if (process.argv.includes("--prove-breaks")) {
@@ -113,6 +121,107 @@ Date.now = () => (NOW === null ? realNow() : NOW);
 const kst = (day, hour = 10) => Date.parse(`${day}T00:00:00Z`) + (hour - 9) * 3_600_000;
 const D = "2026-10-05";
 
+// --- a client component's own function in Node (E3 — 점검 17) ---
+/**
+ * A stand-in React, enough to run one client component's function the way the page runs it: state by call order, refs,
+ * memo and callbacks by their deps, effects after each render (cleanups on unmount), a render again while state changed.
+ * Elements are plain objects { type, props } — the frame's own function runs; what it returns (a course's card, a link)
+ * is looked at, never drawn. It stands in for "react" and "react/jsx-runtime" only in the files this check transpiles.
+ */
+function makeStandInReact() {
+  let slots = [];
+  let at = 0;
+  let queue = [];
+  let dirty = false;
+  const changed = (prev, deps) => !prev || !deps || prev.length !== deps.length || deps.some((d, k) => !Object.is(d, prev[k]));
+  const React = {
+    useState(init) {
+      const k = at++;
+      if (!(k in slots)) slots[k] = { value: typeof init === "function" ? init() : init };
+      const slot = slots[k];
+      const set = (next) => {
+        const value = typeof next === "function" ? next(slot.value) : next;
+        if (!Object.is(value, slot.value)) {
+          slot.value = value;
+          dirty = true;
+        }
+      };
+      return [slot.value, set];
+    },
+    useRef(init) {
+      const k = at++;
+      if (!(k in slots)) slots[k] = { current: init };
+      return slots[k];
+    },
+    useMemo(make, deps) {
+      const k = at++;
+      if (!(k in slots) || changed(slots[k].deps, deps)) slots[k] = { value: make(), deps };
+      return slots[k].value;
+    },
+    useCallback(fn, deps) {
+      return React.useMemo(() => fn, deps);
+    },
+    useEffect(effect, deps) {
+      const k = at++;
+      const prev = slots[k];
+      if (prev && !changed(prev.deps, deps)) return;
+      slots[k] = { deps, cleanup: prev && prev.cleanup };
+      queue.push(() => {
+        const slot = slots[k];
+        if (typeof slot.cleanup === "function") slot.cleanup();
+        const cleanup = effect();
+        slot.cleanup = typeof cleanup === "function" ? cleanup : undefined;
+      });
+    },
+  };
+  const element = (type, props, key) => ({ type, props: props || {}, key });
+  const runtime = { jsx: element, jsxs: element, Fragment: Symbol.for("stand-in.fragment") };
+  function mount(Component, props) {
+    slots = [];
+    let tree = null;
+    const render = () => {
+      for (let round = 0; ; round++) {
+        if (round > 50) throw new Error("stand-in React: the renders do not settle");
+        dirty = false;
+        at = 0;
+        queue = [];
+        tree = Component(props);
+        const effects = queue;
+        queue = [];
+        for (const run of effects) run();
+        if (!dirty) break;
+      }
+    };
+    render();
+    return {
+      tree: () => tree,
+      /** a press (a handler the frame gave its card), then what it changed drawn again */
+      act(press) {
+        const out = press();
+        render();
+        return out;
+      },
+      unmount() {
+        for (const slot of slots) if (slot && typeof slot.cleanup === "function") slot.cleanup();
+        slots = [];
+      },
+    };
+  }
+  return { React, runtime, mount };
+}
+/** the elements of a drawn tree that pass `test` */
+function findElements(node, test, out = []) {
+  if (Array.isArray(node)) {
+    for (const n of node) findElements(n, test, out);
+    return out;
+  }
+  if (!node || typeof node !== "object" || !node.props) return out;
+  if (test(node)) out.push(node);
+  findElements(node.props.children, test, out);
+  return out;
+}
+const STAND_IN = makeStandInReact();
+
 // --- loading the source as it is ---
 const ts = require(path.join(REPO, "node_modules/typescript"));
 let SESSION = null;
@@ -126,9 +235,17 @@ const OVERRIDES = {
   },
   "@/lib/adminAuth": { verifyAdminSession: () => ADMIN },
   "next/headers": { cookies: async () => ({ get: () => undefined }) },
+  // the review screen (E3) — a client component: the stand-in React above, a link that is never drawn
+  react: STAND_IN.React,
+  "react/jsx-runtime": STAND_IN.runtime,
+  "next/link": { __esModule: true, default: function Link() {
+    return null;
+  } },
 };
 function makeLoader(transforms) {
   const cache = new Map();
+  /** the transforms that met their text — a break whose file was never read is not a break (exit 2 at the end) */
+  const applied = new Set();
   const resolveSpec = (spec, fromDir) => {
     let p;
     if (spec.startsWith("@/")) p = path.join(REPO, "src", spec.slice(2));
@@ -150,9 +267,16 @@ function makeLoader(transforms) {
         process.exit(2);
       }
       text = changed;
+      applied.add(pattern);
     }
     const out = ts.transpileModule(text, {
-      compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true, resolveJsonModule: true },
+      compilerOptions: {
+        module: ts.ModuleKind.CommonJS,
+        target: ts.ScriptTarget.ES2022,
+        esModuleInterop: true,
+        resolveJsonModule: true,
+        jsx: ts.JsxEmit.ReactJSX,
+      },
       fileName: file,
     }).outputText;
     const m = { exports: {} };
@@ -167,6 +291,7 @@ function makeLoader(transforms) {
     new Function("require", "module", "exports", "__filename", "__dirname", out)(req, m, m.exports, file, dir);
     return m.exports;
   };
+  load.applied = applied;
   return load;
 }
 
@@ -329,17 +454,90 @@ const check = (name, ok, note) => results.push({ name, ok: Boolean(ok), note: St
       `오늘 답 ${todayEffect} · 옮김 ${moved}/${learningT0.length - 1} · 내일 ${allTomorrow} · 통과 ${passedKept} · 다른 레슨 ${otherKept} · 오늘 배운 ${todayKept} · 오늘 계획에 없음 ${notToday} · 같은 날 두 번째 ${againToday} · 셈 ${counted}`);
   }
 
-  // ---- E3 a report as the day's first answer -------------------------------------------------------------------------
+  // ---- E3 a report as the day's first answer — through the review screen itself (점검 17) --------------------------------------
+  // ReviewSession.tsx transpiled as it is, its function run by the stand-in React above on a stand-in window (the device's
+  // localStorage): the free trial's device mode, two sentences due today. The card is never drawn — the frame's own answer,
+  // report and next handlers (the props it gives a course's card) are called as a card calls them.
   {
-    NOW = kst(D, 10);
-    const r = recordOf([t1[1]], kst(day(-9), 9));
-    const key = reviewItemsOf(t1[1]).find((e) => e.kind === "produce").key;
-    Object.assign(r.items[key], { step: 2, dueDay: D, lastDay: day(-2), lastCorrect: true, reviewDay: day(-2), passDays: [day(-6), day(-2)] });
-    const effect = E.applyAttempt(r, key, review(t1[1], "produce", false, { pending: true, answer: junk(3) }), NOW, PROFILE);
-    const s = r.items[key];
-    check(`E3 '내 답도 맞아요'가 그날 첫 답(복습 화면이 틀린 첫 답 대신 넣음) → pending · lapses 0 · 통과한 날 2개 그대로 · step 그대로 · 내일(${day(1)}) 다시 · 신고 1`,
-      effect === "pending" && s.lapses === 0 && s.passDays.length === 2 && s.step === 2 && s.dueDay === day(1) && s.pending === true && r.reports.length === 1,
-      `${effect} · lapses ${s.lapses} · passDays ${s.passDays.length} · step ${s.step} · due ${s.dueDay} · 신고 ${r.reports.length}`);
+    const lesson = t1[1];
+    const [A, B] = reviewItemsOf(lesson).filter((e) => e.kind === "produce").slice(0, 2);
+    const seed = recordOf([lesson], kst(day(-9), 9));
+    // both answered right on day -6 and day -2 (the engine's own shape: step 2, due today)
+    for (const e of [A, B]) Object.assign(seed.items[e.key], { step: 2, dueDay: D, lastDay: day(-2), lastCorrect: true, reviewDay: day(-2), passDays: [day(-6), day(-2)] });
+    seed.lastStudyDay = day(-2);
+    const RECORD = "kig-learning:passoff-grammar";
+    const HELD = "kig-learning-held:passoff-grammar";
+    const box = new Map([[RECORD, JSON.stringify(seed)]]);
+    const saved = { window: global.window, document: global.document, CustomEvent: global.CustomEvent };
+    global.window = {
+      localStorage: { getItem: (k) => (box.has(k) ? box.get(k) : null), setItem: (k, v) => void box.set(k, String(v)), removeItem: (k) => void box.delete(k) },
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      dispatchEvent: () => true,
+      scrollTo: () => {},
+      scrollY: 0,
+    };
+    global.document = { visibilityState: "visible", addEventListener: () => {}, removeEventListener: () => {} };
+    global.CustomEvent = class {
+      constructor(type, init) {
+        this.type = type;
+        this.detail = init && init.detail;
+      }
+    };
+    const notes = [];
+    let ok = false;
+    try {
+      const RS = load(REVIEW_SCREEN_FILE);
+      const device = () => JSON.parse(box.get(RECORD));
+      const effectsOf = (rec, key) => rec.log.filter((x) => x.item === key && x.day === D && x.where === "review");
+      const course = { profile: PROFILE, listHref: "/passoff-grammar", renderItem: () => null, resultLine: () => null };
+      const t0 = kst(D, 10);
+      NOW = t0;
+      const page = STAND_IN.mount(RS.ReviewSession, { course, source: { kind: "device", items: { [A.key]: { key: A.key }, [B.key]: { key: B.key } } } });
+      const card = () => findElements(page.tree(), (n) => n.type === RS.CourseItem)[0] || null;
+      const c1 = card();
+      const X = c1 && c1.props.entry.key;
+      // 1. X answered wrong: held — nothing in the record yet, only in the device's held-answer entry
+      page.act(() => c1.props.onAnswer({ correct: false, help: "none", mode: "typed", answer: junk(3) }));
+      const xHeld = device().items[X];
+      const heldOk = xHeld && xHeld.lastDay === day(-2) && xHeld.lapses === 0 && effectsOf(device(), X).length === 0 && String(box.get(HELD) || "").includes(X);
+      // 2. a minute later, "내 답도 맞아요" on its result: the report is the day's answer, at the time the answer was given
+      NOW = t0 + 60_000;
+      page.act(() => card().props.onReport({ answer: junk(3), mode: "typed" }));
+      const xs = device().items[X];
+      const xLog = effectsOf(device(), X);
+      const reportOk = xs && xs.pending === true && xs.lapses === 0 && xs.passDays.length === 2 && xs.step === 2 && xs.dueDay === day(1) &&
+        xLog.map((x) => x.effect).join() === "pending" && xLog[0].at === new Date(t0).toISOString() && device().reports.length === 1 && !box.has(HELD);
+      // 3. on to Y: answered wrong at +2 min, passed on at +7 min without a report — then recorded as it was, at +2 min
+      page.act(() => card().props.onNext());
+      const c2 = card();
+      const Y = c2 && c2.props.entry.key;
+      NOW = t0 + 120_000;
+      page.act(() => c2.props.onAnswer({ correct: false, help: "none", mode: "typed", answer: junk(4) }));
+      const yHeld = device().items[Y];
+      const yHeldOk = yHeld && yHeld.lastDay === day(-2) && effectsOf(device(), Y).length === 0;
+      NOW = t0 + 420_000;
+      page.act(() => card().props.onNext());
+      const ys = device().items[Y];
+      const yLog = effectsOf(device(), Y);
+      const moveOk = ys && ys.lapses === 1 && ys.lastCorrect === false && ys.passDays.length === 0 && ys.dueDay === day(1) && !ys.pending &&
+        yLog.map((x) => x.effect).join() === "wrong" && yLog[0].at === new Date(t0 + 120_000).toISOString();
+      // the X report stays the day's only answer of X after the end
+      const xAfter = effectsOf(device(), X).map((x) => x.effect).join();
+      page.unmount();
+      notes.push(`${X} 쥠 ${heldOk} · 신고 ${JSON.stringify(xs && { p: xs.pending, l: xs.lapses, pd: xs.passDays.length, s: xs.step, d: xs.dueDay })} [${xLog.map((x) => `${x.effect}@${x.at.slice(11, 16)}`).join()}] 신고 ${device().reports.length} · 끝 [${xAfter}]`);
+      notes.push(`${Y} 쥠 ${yHeldOk} · 넘김 ${JSON.stringify(ys && { l: ys.lapses, c: ys.lastCorrect, d: ys.dueDay })} [${yLog.map((x) => `${x.effect}@${x.at.slice(11, 16)}`).join()}]`);
+      ok = Boolean(X && Y && X !== Y && c1.props.mode === "practice" && heldOk && reportOk && yHeldOk && moveOk && xAfter === "pending");
+    } catch (e) {
+      notes.push(`예외 ${e && e.message}`);
+    } finally {
+      Object.assign(global, saved);
+      if (saved.window === undefined) delete global.window;
+      if (saved.document === undefined) delete global.document;
+      if (saved.CustomEvent === undefined) delete global.CustomEvent;
+    }
+    check(`E3 '내 답도 맞아요'가 그날 첫 답 — 복습 화면(ReviewSession.tsx 그대로 · 기기 모드)이 틀린 첫 답을 쥐고(기록 0 · 쥔 답 칸에만) 신고로 바꿈 → pending · lapses 0 · 통과한 날 2개 · step 2 그대로 · 내일(${day(1)}) 다시 · 신고 1 · 그날 답 [pending] 이 답한 시각으로 / 신고 없이 넘긴 틀린 답은 그때 wrong(답한 시각)`,
+      ok, notes.join(" / "));
   }
 
   // ---- E4 · E5 · E6 the wrong-answer list through the API --------------------------------------------------------------
@@ -553,6 +751,13 @@ const check = (name, ok, note) => results.push({ name, ok: Boolean(ok), note: St
       checked === topics.length && bad.length === 0, `${checked}/${topics.length} · 어긋남 ${bad.length}${bad.length ? ` (${bad.slice(0, 3).join(" | ")})` : ""}`);
   }
 
+  // a break whose file this run never read did not break anything: not a FAIL of the check (exit 2, as a text that did not match)
+  if (BREAK && !load.applied.size) {
+    console.error(`깨기가 적용되지 않음 — ${path.relative(REPO, BREAKS[BREAK][0])} 를 이 실행이 읽지 않았음(${BREAK})`);
+    process.chdir(REPO);
+    fs.rmSync(TMP, { recursive: true, force: true });
+    process.exit(2);
+  }
   for (const x of results) console.log(`${x.ok ? "PASS" : "FAIL"}  ${x.name}  — ${x.note}`);
   const failed = results.filter((x) => !x.ok).length;
   console.log(`\n${BREAK ? `[--break=${BREAK}] ` : ""}${failed ? "FAIL" : "PASS"} — 실패 ${failed} / ${results.length}`);
