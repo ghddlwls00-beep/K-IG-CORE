@@ -36,7 +36,7 @@
           },
           "fix": {
             "from": "얼마나 추운지!",
-            "kind": "translation_mismatch",
+            "kind": "korean_unnatural",
             "why": "말이 끝나지 않은 어색한 감탄 표현이라 '정말 춥구나!'로 고쳤습니다."
           }
         },
@@ -300,7 +300,7 @@
           },
           "fix": {
             "from": "얼마나 추운지!",
-            "kind": "translation_mismatch",
+            "kind": "korean_unnatural",
             "why": "말이 끝나지 않은 어색한 감탄 표현이라 '정말 춥구나!'로 고쳤습니다."
           },
           "challengeNote": "끝의 it is 는 날씨를 말하는 비인칭 it(pg07-2)이지만, 감탄문은 끝의 주어 + 동사를 뺄 수 있어(설명 카드 5번째 줄) How cold!(허용 답)로 같은 뜻을 만들 수 있으므로 도전으로 두지 않고 it-dummy 태그를 뺌(정리-1권-A)"

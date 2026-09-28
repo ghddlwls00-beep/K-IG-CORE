@@ -268,11 +268,11 @@
         }
       ],
       "worked": [
-        "비가 그치면 우리는 산책하러 갈 것이다.",
-        "'비가 그치면' = 조건 → If + 주어 + 동사",
-        "앞으로 올 일이어도 if 절은 현재형: if it stops raining",
+        "네가 일찍 끝내면 우리는 산책하러 갈 것이다.",
+        "'네가 일찍 끝내면' = 조건 → If + 주어 + 동사",
+        "앞으로 올 일이어도 if 절은 현재형: if you finish early",
         "주절: we will go for a walk (종속절이 앞이면 사이에 쉼표)",
-        "If it stops raining, we will go for a walk."
+        "If you finish early, we will go for a walk."
       ],
       "terms": [],
       "check": {
@@ -1200,7 +1200,7 @@
           "fix": {
             "fromKo": "그녀는 그가 말하기를 마쳤을 때까지 기다렸다.",
             "field": "ko",
-            "kind": "translation_mismatch",
+            "kind": "korean_unnatural",
             "why": "'마쳤을 때까지'는 어색한 직역이라 '말을 마칠 때까지'로 고쳤습니다."
           }
         },
@@ -2572,7 +2572,7 @@
           "fix": {
             "fromKo": "내가 당신을 들을 수 있기 위해서 크게 말하세요.",
             "field": "ko",
-            "kind": "translation_mismatch",
+            "kind": "korean_unnatural",
             "why": "'당신을 들을 수'는 비문에 가까운 직역이라 '당신 말을 들을 수 있도록'으로 고쳤습니다."
           }
         },

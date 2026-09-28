@@ -865,7 +865,7 @@
         },
         {
           "id": "pg03-1:p8",
-          "ko": "여기에 그가 온다.",
+          "ko": "저기 그가 온다.",
           "koSource": "review",
           "condition": "Here로 시작해서",
           "promptEn": null,
@@ -900,7 +900,12 @@
             "where": "application 1) item 8",
             "reviewWhere": "review 3 item 8 (p24)"
           },
-          "fix": null
+          "fix": {
+            "from": "여기에 그가 온다.",
+            "field": "ko",
+            "kind": "korean_unnatural",
+            "why": "Here he comes. 는 다가오는 사람을 보며 하는 말이라 '저기 그가 온다'가 자연스럽습니다(3권 pg11-1:p18 과 같게)."
+          }
         },
         {
           "id": "pg03-1:p9",
@@ -1114,10 +1119,6 @@
           "errorPatterns": [
             {
               "match": "I will late",
-              "hint": "late 는 형용사예요. will 뒤에 무엇이 필요할까요?"
-            },
-            {
-              "match": "I'll late",
               "hint": "late 는 형용사예요. will 뒤에 무엇이 필요할까요?"
             },
             {

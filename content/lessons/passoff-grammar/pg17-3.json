@@ -884,7 +884,7 @@
           "fix": {
             "fromKo": "그녀는 그녀가 어렸을 때, 개를 가졌었다.",
             "field": "ko",
-            "kind": "translation_mismatch",
+            "kind": "korean_unnatural",
             "why": "'그녀는 그녀가' · '개를 가졌었다'는 직역투라 '어렸을 때 개를 키웠었다'로 다듬었습니다."
           }
         },
@@ -1330,7 +1330,7 @@
           "fix": {
             "fromKo": "그녀는 휴식을 가지는 것이 낫다.",
             "field": "ko",
-            "kind": "translation_mismatch",
+            "kind": "korean_unnatural",
             "why": "'휴식을 가지는'은 have a rest 의 직역투라 '좀 쉬는 게 좋겠다'로 다듬었습니다."
           }
         },

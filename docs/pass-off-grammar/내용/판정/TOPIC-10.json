@@ -512,5 +512,16 @@
     "refs": [
       "pg10-3:rule"
     ]
+  },
+  {
+    "page": 4,
+    "where": "앞부분(1~4쪽) · 연결고리 구성도(3쪽) · 목차(4쪽)의 동사 줄 ↔ TOPIC 10 본문(15~27쪽)",
+    "text": "동 사 — 동사의 종류 · 불규칙 종류 · ed와 –ing",
+    "type": "layout_or_extraction",
+    "decision": "fix",
+    "reason": "목차 · 구성도에만 있고 본문에 없는 'ed와 -ing' 소주제는 사장님 결정 D14 대로 pg10-3 레슨으로 새로 만들었습니다(판정 p15 'ed와 -ing' 과 같은 처리). 웹 과정은 레슨 목록이 목차라 책의 목차 글은 쓰지 않습니다. (09-28 이끄는 세션: check-lessons 가 issue where 의 'TOPIC 10' 으로 이 issue 를 TOPIC 10 몫으로 세면서 드러남)",
+    "appliedTo": [
+      "pg10-3:rule"
+    ]
   }
 ]

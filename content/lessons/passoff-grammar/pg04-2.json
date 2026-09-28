@@ -488,10 +488,6 @@
               "hint": "중문은 문장 두 개를 이어요. or 뒤에도 주어 + 동사를 써 보세요."
             },
             {
-              "match": "salad, or some dessert",
-              "hint": "중문은 문장 두 개를 이어요. or 뒤에도 주어 + 동사를 써 보세요."
-            },
-            {
               "match": "Are you want",
               "hint": "일반동사 want 로 묻는 문장은 be동사가 아니라 무엇으로 시작할까요?"
             }
@@ -676,10 +672,6 @@
           "errorPatterns": [
             {
               "match": "outside or watch",
-              "hint": "중문은 뒤 문장에도 주어 + 동사를 써요. or 뒤에 누가 무엇을 할 수 있나요?"
-            },
-            {
-              "match": "outside, or watch",
               "hint": "중문은 뒤 문장에도 주어 + 동사를 써요. or 뒤에 누가 무엇을 할 수 있나요?"
             },
             {

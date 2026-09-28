@@ -81,7 +81,7 @@
           "fix": {
             "fromKo": "너는 가게에서 그것을 두었을지도 몰라.",
             "field": "ko",
-            "kind": "translation_mismatch",
+            "kind": "korean_unnatural",
             "why": "left it in the store 는 '가게에 두고 왔다'인데 '가게에서 … 두었을지도'는 어색해 고쳤습니다."
           }
         },
@@ -679,7 +679,7 @@
           "fix": {
             "fromKo": "너는 가게에서 그것을 두었을지도 몰라.",
             "field": "ko",
-            "kind": "translation_mismatch",
+            "kind": "korean_unnatural",
             "why": "left it in the store 는 '가게에 두고 왔다'인데 '가게에서 … 두었을지도'는 어색해 고쳤습니다."
           }
         },

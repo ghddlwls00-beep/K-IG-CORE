@@ -642,7 +642,7 @@
           "fix": {
             "fromKo": "나는 내가 휴가를 보낼 때 많은 책을 읽을 예정이다.",
             "field": "options",
-            "kind": "translation_mismatch",
+            "kind": "korean_unnatural",
             "why": "책의 해석은 번역투(나는 내가 …)라 다듬은 해석을 정답으로 씁니다."
           },
           "reserve": true
@@ -1242,7 +1242,7 @@
           "fix": {
             "fromKo": "나는 내가 휴가를 보낼 때 많은 책을 읽을 예정이다.",
             "field": "ko",
-            "kind": "translation_mismatch",
+            "kind": "korean_unnatural",
             "why": "'나는 내가 …'는 번역투(어색한 한국어)라 '나는 휴가 동안 책을 많이 읽을 예정이다.'로 다듬었습니다."
           }
         },
