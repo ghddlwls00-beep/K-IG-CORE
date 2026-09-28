@@ -66,7 +66,9 @@
 const fs = require("fs");
 const path = require("path");
 
-const REPO_DIR = "C:/Users/ghddl/.gemini/antigravity/scratch/K-IG-CORE";
+// 2026-09-28 (설계 세션 확인 일꾼이 짚음): the repository this file sits in (or KIG_REPO) — with the fixed main path a run from
+// another checkout (the clean copy the design session measures in) silently read main's lesson data. Same rule as tsload.cjs.
+const REPO_DIR = process.env.KIG_REPO || require("path").resolve(__dirname, "../../..");
 // content.ts resolves content/ from process.cwd() at module load time.
 try {
   process.chdir(REPO_DIR);
