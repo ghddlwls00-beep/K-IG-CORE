@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr028",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr028-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "마음을 가라앉히고 이성적으로 말하라",
+        "화가 나면 참지 말고 바로 표현하라",
+        "후회할 말을 했다면 곧바로 취소하면 된다",
+        "상처 주는 말도 진심이라면 해도 괜찮다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "3번 'Before you say something needlessly hurtful, calm down', 4번 'Speak with reason, not just emotion'이 근거"
+    },
+    {
+      "id": "pr028-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "이 글의 'can't be recalled'에서 recalled가 뜻하는 것으로 가장 적절한 것은?",
+      "options": [
+        "기억해 내다",
+        "큰 소리로 반복하다",
+        "취소하고 되돌리다",
+        "조용히 잊어버리다"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "2번 'words once spoken, like bullets once fired, can't be recalled'에서 recalled는 '되돌리다'"
+    }
+  ]
+}

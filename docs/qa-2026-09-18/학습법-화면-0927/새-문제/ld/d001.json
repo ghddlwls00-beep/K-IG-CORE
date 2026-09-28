@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "d001",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d001-q1",
+      "type": "세부 사실",
+      "prompt": "왓슨 부인의 아들 이름으로 옳은 것은?",
+      "options": [
+        "로버트",
+        "엘리",
+        "톰",
+        "바버라"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        6
+      ],
+      "note": "'I'm Mrs. Watson', 'We also have a young son. His name is Tom'에서 아들의 이름을 알 수 있음."
+    },
+    {
+      "id": "d001-q2",
+      "type": "세부 사실",
+      "prompt": "왓슨 부부가 사는 곳으로 옳은 것은?",
+      "options": [
+        "콜로라도",
+        "위스콘신",
+        "펜실베이니아",
+        "텍사스"
+      ],
+      "answer": 1,
+      "evidence": [
+        2
+      ],
+      "note": "'My husband and I live in Wisconsin'에서 사는 곳을 알 수 있음."
+    }
+  ]
+}

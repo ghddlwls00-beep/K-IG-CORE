@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "lesson": "pr055",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr055-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "학생의 성적이 좋아야 학교가 성공한다",
+        "학교의 시설이 좋아야 학생들이 안정감을 느낀다",
+        "교사에게는 학생보다 부모와의 관계가 훨씬 더 중요하다",
+        "신뢰를 바탕으로 한 관계가 성공적인 학교를 만든다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        4
+      ],
+      "note": "1번 relationships among the people ... school community, 4번 community built on trust and openness가 근거"
+    },
+    {
+      "id": "pr055-q2",
+      "type": "한 단계 추론",
+      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "options": [
+        "신뢰가 쌓이면 교사와 부모가 학교 발전에 더 힘쓴다",
+        "학생 수가 많을수록 학교 공동체의 신뢰는 낮아진다",
+        "부모가 학교 운영에 참여하면 교사의 권위가 약해진다",
+        "교사와 학생의 관계는 학생의 학습에 영향을 주지 않는다"
+      ],
+      "answer": 0,
+      "evidence": [
+        4,
+        7,
+        8,
+        9
+      ],
+      "note": "4번 community built on trust and openness, 7번 teachers feel valued and supported, 8번 Parents feel included, 9번 more likely to contribute가 근거"
+    }
+  ]
+}

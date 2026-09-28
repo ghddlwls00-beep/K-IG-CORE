@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr001",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr001-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "options": [
+        "성별이 다른 부모와 자녀는 결국 서로 뜻이 통하지 않게 되어 있다",
+        "어머니의 조언은 아들에게 아무런 도움도 주지 못한다",
+        "부모가 자녀의 다른 말하기 방식을 존중해야 대화가 잘 통한다",
+        "아들과 딸이 부모와 똑같이 말하는 법을 배우면 문제가 사라진다"
+      ],
+      "answer": 2,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "That doesn't mean ... doomed to miscommunicate / more successful if parents respect ... different way of speaking로 확인"
+    },
+    {
+      "id": "pr001-q2",
+      "type": "세부 사실",
+      "prompt": "과학자들에 따르면, 말하는 방식의 차이 때문에 문제가 생기는 경우로 옳은 것은?",
+      "options": [
+        "어머니가 아들에게, 아버지가 딸에게 말할 때",
+        "어머니가 딸에게, 아버지가 아들에게 말할 때",
+        "남자아이와 여자아이가 서로 말할 때",
+        "어머니와 아버지가 서로 대화할 때"
+      ],
+      "answer": 0,
+      "evidence": [
+        2
+      ],
+      "note": "their differences create problems when mothers talk to sons and fathers talk to daughters로 확인"
+    }
+  ]
+}

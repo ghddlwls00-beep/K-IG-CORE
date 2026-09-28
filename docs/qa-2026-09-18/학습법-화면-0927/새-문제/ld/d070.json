@@ -1,0 +1,55 @@
+{
+  "v": 1,
+  "lesson": "d070",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d070-q1",
+      "type": "세부 사실",
+      "prompt": "증기로 달리는 세계 최초의 공공철도가 개통된 해로 알맞은 것은?",
+      "options": [
+        "1825년",
+        "1852년",
+        "1885년",
+        "1925년"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "'was opened in England in 1825'가 개통 연도를 보여줌"
+    },
+    {
+      "id": "d070-q2",
+      "type": "세부 사실",
+      "prompt": "개통식 날 열차들이 물을 보충하기 위해 멈추기 전까지 달린 거리로 알맞은 것은?",
+      "options": [
+        "7마일",
+        "8마일",
+        "17마일",
+        "29마일"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "'After traveling for 17 miles, the trains had to stop for water'가 정차까지의 거리를 보여줌"
+    },
+    {
+      "id": "d070-q3",
+      "type": "세부 사실",
+      "prompt": "허스키슨 씨가 열차에서 내린 목적으로 알맞은 것은?",
+      "options": [
+        "물을 가지러 가려고",
+        "다른 열차의 친구와 이야기하려고",
+        "사고가 난 곳을 자세히 살펴보려고",
+        "기관사에게 항의하려고"
+      ],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
+      "note": "'got out of his train to talk to a friend on one of the other trains'가 내린 목적을 보여줌"
+    }
+  ]
+}

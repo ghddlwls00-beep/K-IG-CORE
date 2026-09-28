@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr054",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr054-q1",
+      "type": "세부 사실",
+      "prompt": "데이터베이스 마케팅 역량을 활용하면 얻을 수 있는 효과로 이 글에 언급된 것은 무엇인가?",
+      "options": [
+        "비용은 줄이고 이익은 늘릴 수 있다",
+        "직원 수를 늘릴 수 있다",
+        "제품 가격을 낮출 수 있다",
+        "광고 비용을 전혀 들이지 않고도 매출을 늘릴 수 있다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "3번 increase profits while decreasing expenses가 근거"
+    },
+    {
+      "id": "pr054-q2",
+      "type": "낱말 뜻/가리키는 것",
+      "prompt": "'this important topic'이 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "통계학 이론 전반",
+        "세미나를 주최하는 회사의 발전 역사",
+        "데이터베이스 마케팅",
+        "고객 만족도를 조사하는 방법"
+      ],
+      "answer": 2,
+      "evidence": [
+        2,
+        5
+      ],
+      "note": "2번 Database Marketing Seminar, 5번 explore this important topic이 근거"
+    }
+  ]
+}

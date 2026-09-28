@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr025",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr025-q1",
+      "type": "중심 생각",
+      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "options": [
+        "생각만 하기보다 행동하면 부정적 감정이 풀린다",
+        "일은 놀이보다 긴장을 더 많이 풀어 준다",
+        "다른 사람과 감정을 나누면 분노가 더 심해진다",
+        "새로운 생각은 문제를 피할 때 잘 떠오른다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        6
+      ],
+      "note": "1번 'can be eased if we act instead of just thinking over problems', 6번 'Action relieves tensions and sets us free'가 근거"
+    },
+    {
+      "id": "pr025-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 '일'이 하는 역할로 언급된 것은?",
+      "options": [
+        "다른 사람과 감정을 나누게 한다",
+        "분노를 풀고 에너지를 쓰게 한다",
+        "몸을 편안히 쉬게 해 준다",
+        "새로운 고민거리를 만들어 낸다"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "4번 'Work ... working off anger and using overflowing energy'가 근거"
+    }
+  ]
+}

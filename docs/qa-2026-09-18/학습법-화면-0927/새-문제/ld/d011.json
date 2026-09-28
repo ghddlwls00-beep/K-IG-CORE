@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d011",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d011-q1",
+      "type": "세부 사실",
+      "prompt": "킴이 현재 머물고 있는 곳으로 옳은 것은?",
+      "options": [
+        "오션시티의 베키네 여름 별장",
+        "워싱턴에 있는 로라 베킷의 옛집",
+        "뉴저지에 있는 자신의 집",
+        "필라델피아에 있는 호텔"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        4
+      ],
+      "note": "'the houseguest of her friend Becky Field', 'their summer home here at the beach'에서 킴이 베키네 여름 별장에 머물고 있음을 알 수 있음."
+    },
+    {
+      "id": "d011-q2",
+      "type": "세부 사실",
+      "prompt": "베키에 대한 설명으로 옳은 것은?",
+      "options": [
+        "로라와 어릴 때부터 가장 친한 친구이다",
+        "금발의 곱슬머리를 가지고 있다",
+        "짧은 검은 머리에 늘 웃는 소녀이다",
+        "말이 없고 진지한 성격이다"
+      ],
+      "answer": 2,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'Do you remember Becky?' 다음에 'the short black hair', 'smiles and laughs all the time'이라고 베키를 설명함."
+    },
+    {
+      "id": "d011-q3",
+      "type": "목적/태도",
+      "prompt": "킴이 수영복을 두고 온 것에 대해 느낀 감정으로 가장 알맞은 것은?",
+      "options": [
+        "오히려 홀가분하고 기뻤다",
+        "몹시 화가 났다",
+        "새로 사면 된다고 대수롭지 않게 여겼다",
+        "무척 재미있고 신이 났다"
+      ],
+      "answer": 1,
+      "evidence": [
+        10,
+        11
+      ],
+      "note": "'I forgot to bring it', 'I was really mad'에서 킴의 감정을 알 수 있음."
+    }
+  ]
+}

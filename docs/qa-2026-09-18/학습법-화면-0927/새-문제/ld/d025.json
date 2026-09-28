@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d025",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d025-q1",
+      "type": "세부 사실",
+      "prompt": "카를로스와 킴이 해변에 도착한 시각으로 옳은 것은?",
+      "options": [
+        "오전 10시경",
+        "오전 10시 30분경",
+        "오전 11시 30분경",
+        "낮 12시 30분경"
+      ],
+      "answer": 2,
+      "evidence": [
+        5
+      ],
+      "note": "5행 'They got to the beach around 11:30' 참고"
+    },
+    {
+      "id": "d025-q2",
+      "type": "세부 사실",
+      "prompt": "카를로스와 킴이 해변에 가져가지 않은 것은?",
+      "options": [
+        "잡지",
+        "수건",
+        "샌드위치",
+        "파라솔"
+      ],
+      "answer": 3,
+      "evidence": [
+        3,
+        4,
+        5
+      ],
+      "note": "3행 'some magazines, a few towels, and some food for lunch', 4행 'a lot of sandwiches', 5행 'a small rubber boat' 참고"
+    },
+    {
+      "id": "d025-q3",
+      "type": "다음에 할 일",
+      "prompt": "글의 마지막 부분으로 보아, 이어서 일어날 일로 가장 적절한 것은?",
+      "options": [
+        "바람이 점점 세져서 보트를 젓기가 힘들어진다",
+        "날이 추워져서 두 사람이 서둘러 집으로 돌아간다",
+        "바람이 멎어서 두 사람이 보트에서 일광욕을 즐긴다",
+        "갑자기 비가 쏟아져서 두 사람이 급히 짐을 챙긴다"
+      ],
+      "answer": 0,
+      "evidence": [
+        9,
+        10,
+        11
+      ],
+      "note": "9행 'took the rubber boat to the shallow water and got in it', 10행 'Carlos rowed the boat', 11행 'it was becoming windy' 참고"
+    }
+  ]
+}

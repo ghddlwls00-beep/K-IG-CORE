@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d008",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d008-q1",
+      "type": "중심 내용",
+      "prompt": "낸시가 이 편지에서 페기에게 전하려는 주된 내용으로 가장 알맞은 것은?",
+      "options": [
+        "시내에 있는 새 아파트로 이사한다는 소식을 전함",
+        "아이들의 학교 성적을 자랑함",
+        "겨울에 난방이 고장 났다고 알림",
+        "새 농장을 소개하고 놀러 오라고 초대함"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "'we are going to have a farm', 'we want you to come and see it', 'stay with us'에서 농장을 갖게 된 소식을 전하며 페기를 초대함을 알 수 있음."
+    },
+    {
+      "id": "d008-q2",
+      "type": "세부 사실",
+      "prompt": "농장에 있는 집에 대한 설명으로 옳은 것은?",
+      "options": [
+        "침실이 3개 있다",
+        "침실이 4개 있다",
+        "화장실이 2개 있다",
+        "지어진 지 얼마 안 된 새집이다"
+      ],
+      "answer": 1,
+      "evidence": [
+        7
+      ],
+      "note": "'The house isn't new', '4 bedrooms and a bathroom'에서 새집이 아니고 침실이 4개임을 알 수 있음."
+    },
+    {
+      "id": "d008-q3",
+      "type": "다음에 할 일",
+      "prompt": "낸시네 가족이 내년에 하려는 일로 옳은 것은?",
+      "options": [
+        "헛간에도 전기가 들어오게 한다",
+        "아이들에게 말을 한 마리 사 준다",
+        "소를 100마리쯤 들여와 키운다",
+        "집에 새 난방 장치를 설치한다"
+      ],
+      "answer": 0,
+      "evidence": [
+        8
+      ],
+      "note": "'we are going to put it in the barn next year'에서 내년에 헛간에도 전기를 넣으려 함을 알 수 있음."
+    }
+  ]
+}

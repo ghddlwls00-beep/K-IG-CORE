@@ -1,0 +1,44 @@
+{
+  "v": 1,
+  "lesson": "pr064",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr064-q1",
+      "type": "vocab",
+      "prompt": "이 글에서 'these things'가 가리키는 것으로 가장 적절한 것은?",
+      "options": [
+        "회사에서 새로 받게 될 여러 복지 혜택",
+        "동료들과 함께 즐길 수 있는 취미 활동",
+        "직장을 계속 다니려면 조심해야 할 점들",
+        "회사가 정해 둔 출근과 퇴근 시간"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "note": "1번 'keep your job, remember these things' 뒤에 2번 'should not stop every hour for coffee', 3번 'should not leave early too often', 5번 'difficult to work with', 6번 'do not make friends'가 이어진다"
+    },
+    {
+      "id": "pr064-q2",
+      "type": "detail",
+      "prompt": "직장을 계속 다니기 위해 하지 말아야 할 행동으로 이 글에 나온 것은?",
+      "options": [
+        "출근하면 동료에게 먼저 인사를 건네는 것",
+        "매시간 커피를 마시려고 일을 멈추는 것",
+        "회의 시간에 자기 의견을 분명히 말하는 것",
+        "정해진 퇴근 시간에 맞춰 일을 마치는 것"
+      ],
+      "answer": 1,
+      "evidence": [
+        2
+      ],
+      "note": "2번 'You should not stop every hour for coffee'"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "lesson": "pr019",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr019-q1",
+      "type": "main",
+      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "options": [
+        "이누이트 주술사는 유럽인들에게 진리를 감추었다",
+        "고통스러운 시기를 거쳐야 살아 있는 기쁨을 맛본다",
+        "애벌레는 나비가 된 뒤에도 계속 외로움을 느낀다",
+        "사람은 변화를 겪지 않아도 언제나 행복할 수 있다"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3,
+        5
+      ],
+      "note": "2번 'the long transformation into a butterfly', 3번 'we too must go through such a time', 5번 'even if suffering is our only companion ... we will taste the joy of being alive'를 종합하면 알 수 있다."
+    },
+    {
+      "id": "pr019-q2",
+      "type": "vocab",
+      "prompt": "이 글에서 'the great loneliness'가 뜻하는 것으로 가장 알맞은 것은?",
+      "options": [
+        "변화를 겪는 동안 홀로 견뎌야 하는 고독한 시간",
+        "유럽 방문객들이 이누이트 마을에서 느낀 외로움",
+        "나비가 짝을 찾지 못해 느끼는 외로움",
+        "사람들을 영원히 떠나 외딴곳에서 홀로 살아가는 삶"
+      ],
+      "answer": 0,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "1번 'out in the great loneliness', 2번 'the loneliness a caterpillar endures ... the long transformation into a butterfly', 3번 'we too must go through such a time'으로 뜻을 알 수 있다."
+    }
+  ]
+}

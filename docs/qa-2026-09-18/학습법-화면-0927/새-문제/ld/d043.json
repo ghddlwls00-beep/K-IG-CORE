@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "d043",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d043-q1",
+      "type": "중심 내용",
+      "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
+      "options": [
+        "조지가 대학 시절 여자 친구와 크게 다투고 결국 헤어진 이야기",
+        "조지가 시카고에서 일자리를 구하지 못해 고생한 이야기",
+        "조지가 대학촌을 다시 찾아가 피트와 우연히 재회한 이야기",
+        "조지가 다음 토요일에 결혼식을 올리는 이야기"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        5,
+        6
+      ],
+      "note": "'went back to his university town', 'wanted to call on Pete', 'ran into him downtown' 표현에서 알 수 있다."
+    },
+    {
+      "id": "d043-q2",
+      "type": "다음에 할 일",
+      "prompt": "조지와 피트가 다음 토요일에 함께 하기로 한 일로 가장 적절한 것은?",
+      "options": [
+        "저녁 식사를 한다",
+        "시내에서 쇼핑을 한다",
+        "대학 동창회에 참석한다",
+        "시카고에 함께 간다"
+      ],
+      "answer": 0,
+      "evidence": [
+        6
+      ],
+      "note": "'They are going to have dinner together next Saturday' 표현에서 알 수 있다."
+    }
+  ]
+}

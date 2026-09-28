@@ -1,0 +1,41 @@
+{
+  "v": 1,
+  "lesson": "pr013",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr013-q1",
+      "type": "main",
+      "prompt": "이 글에서 A의 주장으로 가장 알맞은 것은?",
+      "options": [
+        "아이들에게 대학을 졸업할 때까지 모든 과목을 계속 똑같이 가르쳐야 한다",
+        "적성 검사 결과보다 아이 스스로의 흥미를 우선해야 한다",
+        "아이들의 적성을 일찍 검사해 잘하는 분야에 집중하게 해야 한다",
+        "중고등학교 때는 폭넓은 과목을 공부하도록 두어야 한다"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
+      "note": "1번 'focus on areas in which they excel'과 2번 'test our children’s aptitudes ... during their last year of elementary school'에 A의 주장이 나온다"
+    },
+    {
+      "id": "pr013-q2",
+      "type": "detail",
+      "prompt": "이 글에서 B가 문제 삼은 적성 검사의 시기로 가장 알맞은 것은?",
+      "options": [
+        "아이가 11세나 12세일 때",
+        "아이가 초등학교에 막 입학했을 때",
+        "아이가 대학 입시를 앞두었을 때",
+        "아이가 고등학교를 졸업할 때"
+      ],
+      "answer": 0,
+      "evidence": [
+        7
+      ],
+      "note": "7번 'an aptitude test taken when they are 11 or 12 years old'에 정답이 그대로 나온다"
+    }
+  ]
+}

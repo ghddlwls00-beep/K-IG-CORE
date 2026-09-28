@@ -1,0 +1,40 @@
+{
+  "v": 1,
+  "lesson": "pr018",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr018-q1",
+      "type": "detail",
+      "prompt": "이 글에 따르면, 요즈음 젊은이들이 책을 읽는 것보다 더 좋아하는 것으로 언급된 것은?",
+      "options": [
+        "컴퓨터 게임을 새로 만드는 것",
+        "텔레비전 드라마로 각색된 소설을 보는 것",
+        "인터넷 검색을 하는 것",
+        "박물관에서 옛 소설을 구경하는 것"
+      ],
+      "answer": 2,
+      "evidence": [
+        3
+      ],
+      "note": "3번 'prefer surfing the Internet to reading books'에서 확인된다."
+    },
+    {
+      "id": "pr018-q2",
+      "type": "inference",
+      "prompt": "이 글에서 글쓴이가 문학 소설의 미래에 대해 암시하는 것으로 가장 알맞은 것은?",
+      "options": [
+        "문학 소설은 앞으로 텔레비전을 대신하게 될 것이다",
+        "젊은이들은 앞으로 인쇄된 소설을 더 많이 찾게 될 것이다",
+        "전자 매체는 앞으로 소설과 관계없이 홀로 발전할 것이다",
+        "문학 소설은 앞으로 낡은 장르로 여겨질 수도 있다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        5
+      ],
+      "note": "1번 'a rumor that the novel is dying'과 5번 'an old-fashioned genre ... like an extinct species'로 보아 알 수 있다."
+    }
+  ]
+}

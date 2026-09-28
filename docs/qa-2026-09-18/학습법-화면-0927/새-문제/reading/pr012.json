@@ -1,0 +1,42 @@
+{
+  "v": 1,
+  "lesson": "pr012",
+  "course": "reading",
+  "questions": [
+    {
+      "id": "pr012-q1",
+      "type": "detail",
+      "prompt": "이 글에 따르면, 벌이 달리는 시간의 길이가 다른 벌들에게 알려 주는 것은 무엇인가?",
+      "options": [
+        "해가 어느 방향에 떠 있는지",
+        "꽃이 많이 피어 있는 방향이 정확히 어느 쪽인지",
+        "꽃이 벌집에서 얼마나 멀리 떨어져 있는지",
+        "벌집으로 돌아가는 길이 얼마나 안전한지"
+      ],
+      "answer": 2,
+      "evidence": [
+        5
+      ],
+      "note": "5번 'The length of the run tells the other bees how far away the flowers are'에 정답이 그대로 나온다"
+    },
+    {
+      "id": "pr012-q2",
+      "type": "inference",
+      "prompt": "이 글로 미루어 볼 때, 꿀벌이 8자 춤을 추는 목적으로 가장 알맞은 것은?",
+      "options": [
+        "다른 벌들과 함께 놀이를 즐기려는 것",
+        "다른 벌들에게 꽃이 있는 방향과 거리를 알려 주려는 것",
+        "해가 하늘에서 움직여 위치가 달라졌음을 다른 벌들에게 알리려는 것",
+        "몸에 묻은 꽃가루를 떨어내려는 것"
+      ],
+      "answer": 1,
+      "evidence": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "note": "1번 'shares the news with other bees', 2번 'a special movement called the waggle dance', 4번 'shows the direction of the flowers', 5번 'how far away the flowers are'를 종합하면 춤의 목적을 알 수 있다"
+    }
+  ]
+}

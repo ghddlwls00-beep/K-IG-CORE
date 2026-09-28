@@ -1,0 +1,58 @@
+{
+  "v": 1,
+  "lesson": "d016",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d016-q1",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "options": [
+        "새 집으로 이사하는 트럭을 운전하다가 길을 잃어버렸다",
+        "이웃집에서 기르는 커다란 개를 하루 종일 돌보다가 결국 물리고 말았다",
+        "경찰과 함께 도둑을 잡으러 밤새 이웃집을 뒤졌다",
+        "어머니를 도와 일한 뒤 지친 채로 엉뚱한 집에 들어가려 했다"
+      ],
+      "answer": 3,
+      "evidence": [
+        1,
+        4,
+        6,
+        8
+      ],
+      "note": "“Peter Patralis was helping his mother”, “Peter was very tired by 9:15”, “He decided to climb in the kitchen window”, “He was at the wrong house”에서 알 수 있다."
+    },
+    {
+      "id": "d016-q2",
+      "type": "세부 사실",
+      "prompt": "피터가 일을 시작한 시각으로 알맞은 것은?",
+      "options": [
+        "3시 30분",
+        "9시 15분",
+        "3시 15분",
+        "9시 30분"
+      ],
+      "answer": 0,
+      "evidence": [
+        2
+      ],
+      "note": "“He started at 3:30 in the afternoon”라고 했다."
+    },
+    {
+      "id": "d016-q3",
+      "type": "세부 사실",
+      "prompt": "커다란 검은 개가 뒤에서 뛰어올랐을 때 피터의 심정으로 가장 알맞은 것은?",
+      "options": [
+        "화가 나고 짜증이 났다",
+        "겁이 나고 깜짝 놀랐다",
+        "기쁘고 반가웠다",
+        "느긋하고 편안했다"
+      ],
+      "answer": 1,
+      "evidence": [
+        7
+      ],
+      "note": "“Peter was both frightened and surprised”라고 했다."
+    }
+  ]
+}

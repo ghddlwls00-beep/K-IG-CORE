@@ -1,0 +1,57 @@
+{
+  "v": 1,
+  "lesson": "d002",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d002-q1",
+      "type": "세부 사실",
+      "prompt": "로드 왓슨이 살고 있는 도시로 옳은 것은?",
+      "options": [
+        "매디슨",
+        "덴버",
+        "시카고",
+        "피닉스"
+      ],
+      "answer": 1,
+      "evidence": [
+        2
+      ],
+      "note": "'I live in Denver, Colorado'에서 사는 도시를 알 수 있음."
+    },
+    {
+      "id": "d002-q2",
+      "type": "세부 사실",
+      "prompt": "로드 왓슨의 집 주소로 옳은 것은?",
+      "options": [
+        "클레이턴가 1490번지",
+        "클레이턴가 1940번지",
+        "제퍼슨가 1616번지",
+        "매디슨가 1490번지"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'I live on Clayton Street. The number is 1490'에서 주소를 알 수 있음."
+    },
+    {
+      "id": "d002-q3",
+      "type": "목적/태도",
+      "prompt": "로드 왓슨의 일에 대한 태도로 가장 알맞은 것은?",
+      "options": [
+        "무척 즐겁게 일한다",
+        "지루하고 힘들어한다",
+        "그만두고 싶어 한다",
+        "좋지도 싫지도 않다"
+      ],
+      "answer": 0,
+      "evidence": [
+        7,
+        8
+      ],
+      "note": "'I have a nice office', 'I enjoy my work very much'에서 태도를 알 수 있음."
+    }
+  ]
+}

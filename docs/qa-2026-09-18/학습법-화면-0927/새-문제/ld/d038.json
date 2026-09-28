@@ -1,0 +1,59 @@
+{
+  "v": 1,
+  "lesson": "d038",
+  "course": "ld",
+  "questions": [
+    {
+      "id": "d038-q1",
+      "type": "중심 내용",
+      "prompt": "의사가 설명한 바비의 병에 대한 내용으로 가장 적절한 것은?",
+      "options": [
+        "야구 경기를 보고 싶어 생긴 꾀병에 가깝다",
+        "몸에 심각한 이상이 있어 오래 치료받아야 하는 병이다",
+        "학교 급식을 잘못 먹어서 생긴 심한 배탈이다",
+        "동네에 전염병이 퍼져 아이들이 심하게 앓는 것이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "note": "2번 'comes and goes very quickly' · 3번 'the most important baseball game of the year' · 4번 'he will be fine when the game is finished' · 5번 'the only cure'가 근거"
+    },
+    {
+      "id": "d038-q2",
+      "type": "다음에 할 일",
+      "prompt": "의사가 이어서 할 일로 가장 적절한 것은?",
+      "options": [
+        "병원으로 돌아가 예약한 다른 환자들을 진료한다",
+        "바비와 함께 거실에서 텔레비전으로 야구 경기를 본다",
+        "알프레드를 바비네 집으로 불러 함께 진찰한다",
+        "길 건너 모턴 씨네 아들 알프레드를 보러 간다"
+      ],
+      "answer": 3,
+      "evidence": [
+        6
+      ],
+      "note": "6번 'go across the street to see the Mortons' boy, Alfred'가 근거"
+    },
+    {
+      "id": "d038-q3",
+      "type": "세부 사실",
+      "prompt": "의사가 알프레드에 대해 한 말로 옳은 것은?",
+      "options": [
+        "어제부터 심하게 앓다가 병원에 입원했다",
+        "바비와 같은 병을 앓고 있는 것 같다",
+        "바비와는 전혀 다른 병을 앓고 있는 것 같다",
+        "병이 다 나아서 오늘 아침 학교에 갔다"
+      ],
+      "answer": 1,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "6번 'the Mortons' boy, Alfred' · 7번 'the same thing Bobby has today'가 근거"
+    }
+  ]
+}
