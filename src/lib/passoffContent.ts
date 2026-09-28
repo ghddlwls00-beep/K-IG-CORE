@@ -7,6 +7,7 @@ import { planOpensCourse } from "./license";
 import { LICENSE_SESSION_COOKIE_NAME, verifyLicenseSessionToken } from "./licenseSession";
 import { attachPaidItems, type PaidSupplement } from "./passoffSupplement";
 import { viewBlocks } from "./passoffView";
+import { attachWordForms } from "./passoffWordForms";
 
 /**
  * PASS-OFF GRAMMAR — what a lesson page may hand its view (설계 §7).
@@ -50,29 +51,30 @@ function sentenceCount(supplement: PaidSupplement): number {
 }
 
 // ONLY WHAT THE VIEW DRAWS goes into the page — the five steps' blocks without the source table and the
-// record-only fields (src/lib/passoffView.ts viewBlocks, which the grading check also runs).
+// record-only fields (src/lib/passoffView.ts viewBlocks, which the grading check also runs) — and, on each ④ · ⑤ item,
+// the few word forms its grading needs (src/lib/passoffWordForms.ts attachWordForms: the irregular-verb table stays here).
 
 export async function passoffLessonBlocks(
   course: string,
   lesson: Lesson,
 ): Promise<{ blocks: Block[]; lockedExtraCount: number }> {
   const supplement = readSupplement(lesson.id);
-  if (!supplement || supplement.items.length === 0) return { blocks: viewBlocks(lesson.blocks), lockedExtraCount: 0 };
+  if (!supplement || supplement.items.length === 0) return { blocks: attachWordForms(viewBlocks(lesson.blocks)), lockedExtraCount: 0 };
   const session = await verifyLicenseSessionToken(
     (await cookies()).get(LICENSE_SESSION_COOKIE_NAME)?.value,
   );
   if (session && planOpensCourse(session.payload.plan, course)) {
-    return { blocks: viewBlocks(attachPaidItems(lesson.blocks, supplement.items)), lockedExtraCount: 0 };
+    return { blocks: attachWordForms(viewBlocks(attachPaidItems(lesson.blocks, supplement.items))), lockedExtraCount: 0 };
   }
-  return { blocks: viewBlocks(lesson.blocks), lockedExtraCount: sentenceCount(supplement) };
+  return { blocks: attachWordForms(viewBlocks(lesson.blocks)), lockedExtraCount: sentenceCount(supplement) };
 }
 
 /**
  * The same view blocks for the review screen's items (src/lib/passoffReview.ts — 공통-학습-엔진.md §8): the paid STUDENT
  * sentences only when `withPaid` — the learning API, whose caller holds a licence that opens the course. The free review
- * page asks without them.
+ * page asks without them. The word forms are attached to what is handed out, as on the lesson page.
  */
 export function passoffReviewBlocks(lesson: Lesson, { withPaid }: { withPaid: boolean }): Block[] {
   const supplement = withPaid ? readSupplement(lesson.id) : null;
-  return viewBlocks(supplement && supplement.items.length ? attachPaidItems(lesson.blocks, supplement.items) : lesson.blocks);
+  return attachWordForms(viewBlocks(supplement && supplement.items.length ? attachPaidItems(lesson.blocks, supplement.items) : lesson.blocks));
 }

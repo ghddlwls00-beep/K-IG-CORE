@@ -143,6 +143,11 @@ export interface PassoffProduceItem extends PassoffItemBase {
   /** record-only: why a sentence is or is not a challenge */
   challengeNote?: string;
   studentRef?: PassoffStudentRef | null;
+  /**
+   * NOT A LESSON-FILE FIELD — the server attaches it to what a page or the review hands out (src/lib/passoffWordForms.ts):
+   * the irregular-verb and plural table's words this item's answers can meet, for the grader's typo rule.
+   */
+  wordForms?: string[];
 }
 
 /**
