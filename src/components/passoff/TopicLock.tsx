@@ -125,7 +125,7 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
                 레슨 {current.requiredCount}개 이상 마치기 (지금 {completedCount}/{lessons.length})
               </Condition>
               {last ? (
-                <Condition ok={counted(last)}>마지막 레슨 &lsquo;{last.title}&rsquo; 5단계까지 마치기</Condition>
+                <Condition ok={counted(last)}>마지막 레슨 &lsquo;{last.title}&rsquo; 학습 완료하기</Condition>
               ) : null}
               {current.mapRefillRequired ? (
                 <Condition ok={mapRefilled}>
