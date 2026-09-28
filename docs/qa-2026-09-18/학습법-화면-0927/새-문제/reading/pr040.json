@@ -25,10 +25,10 @@
       "type": "inference",
       "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
       "options": [
-        "부모와 떨어져 살면 그 영향에서 완전히 벗어날 수 있다",
-        "부모의 영향은 자녀에게 부정적인 결과만 남긴다",
-        "독립했다고 느껴도 부모의 영향은 사라지지 않는다",
-        "사람은 성인이 되면 부모에게서 아무것도 배우지 않는다"
+        "부모와 떨어져 살면 그 그림자에서 완전히 벗어난다",
+        "부모의 그림자는 자녀에게 부정적인 결과만 남긴다",
+        "독립했다고 느껴도 부모의 흔적은 우리 삶에 남아 있다",
+        "성인이 되면 부모에게서 아무것도 배우지 않는다"
       ],
       "answer": 2,
       "evidence": [
@@ -36,7 +36,7 @@
         7,
         8
       ],
-      "note": "1번 'Our parents cast long shadows over our lives', 7번 'we can walk in the sun, free of the shadows', 8번 'still the shadows have not gone'으로 보아 독립했다고 느껴도 부모의 영향은 사라지지 않는다."
+      "note": "1번 'Our parents cast long shadows over our lives', 7번 'we can walk in the sun, free of the shadows', 8번 'still the shadows have not gone'으로 보아 독립했다고 느껴도 부모의 흔적은 우리 삶에 남아 있다."
     }
   ]
 }
