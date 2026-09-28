@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { optionOrder, ruleQuestionKey } from "@/lib/passoffLesson";
 import type { PassoffAnchor, PassoffRuleBlock } from "@/lib/passoffTypes";
 import { IconCheck, IconX } from "../icons";
 import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, Verdict, tone, type FontSize } from "./ui";
@@ -13,9 +14,13 @@ import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, Verdict, ton
  *
  * The step tabs are free to press, so ② can come before ①: a sentence whose English ① has not opened yet is
  * shown by its Korean here — the English would give away ①'s "먼저 떠올리기" (점검 2026-09-27).
+ *
+ * Both questions show their options in the lesson's own stable order (passoffLesson.ts optionOrder, keyed by
+ * ruleQuestionKey — 작업기록 할 일 5); the choice kept and checked is the option's own index (`data-option`).
  */
 export function RuleStep({
   rule,
+  lessonId,
   anchors,
   revealed,
   discovery,
@@ -27,6 +32,8 @@ export function RuleStep({
   onNext,
 }: {
   rule: PassoffRuleBlock | null;
+  /** the lesson's id — the key of its rule questions' option order */
+  lessonId: string;
   anchors: PassoffAnchor[];
   /** ① sentences whose English was opened */
   revealed: readonly string[];
@@ -76,13 +83,15 @@ export function RuleStep({
           ) : null}
           <p className={`${FONT[font].text} text-ink`}>{d.question}</p>
           <div className="flex flex-wrap gap-2" role="group" aria-label="고르기">
-            {d.options.map((option, i) => {
+            {optionOrder(ruleQuestionKey(lessonId, "discovery"), d.options.length).map((i) => {
+              const option = d.options[i];
               const chosen = discovery === i;
               const isAnswer = discovery !== null && i === d.answer;
               return (
                 <button
                   key={i}
                   type="button"
+                  data-option={i}
                   aria-pressed={chosen}
                   disabled={discovery !== null}
                   onClick={() => onDiscovery(i)}
@@ -115,6 +124,7 @@ export function RuleStep({
               </h3>
               <RuleCheck
                 check={rule.check}
+                orderKey={ruleQuestionKey(lessonId, "check")}
                 points={rule.points}
                 done={checkDone}
                 font={font}
@@ -243,10 +253,12 @@ export function RuleCard({ rule, font, highlight }: { rule: PassoffRuleBlock; fo
 
 /**
  * One rule-check question. A wrong choice says so, points at the rule line it is about (`pointIndex`) and
- * leaves the other choices open; a right one shows why and calls `onRight` once.
+ * leaves the other choices open; a right one shows why and calls `onRight` once. The options come in the order of
+ * `orderKey` (ruleQuestionKey — the same in ② and ⑤); what is checked is the option's own index.
  */
 export function RuleCheck({
   check,
+  orderKey,
   points,
   done,
   font,
@@ -255,6 +267,8 @@ export function RuleCheck({
   showPointInline,
 }: {
   check: NonNullable<PassoffRuleBlock["check"]>;
+  /** the key of the options' order (passoffLesson.ts optionOrder) */
+  orderKey: string;
   points: string[];
   done: boolean;
   font: FontSize;
@@ -286,13 +300,15 @@ export function RuleCheck({
     <div className="flex flex-col gap-3">
       <p className={`${FONT[font].text} text-ink`}>{check.question}</p>
       <div className="flex flex-wrap gap-2" role="group" aria-label="고르기">
-        {check.options.map((option, i) => {
+        {optionOrder(orderKey, check.options.length).map((i) => {
+          const option = check.options[i];
           const isRight = right && i === check.answer;
           const isWrong = wrong.includes(i);
           return (
             <button
               key={i}
               type="button"
+              data-option={i}
               disabled={right || isWrong}
               onClick={() => choose(i)}
               className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-control border px-4 text-body transition-colors disabled:cursor-default ${

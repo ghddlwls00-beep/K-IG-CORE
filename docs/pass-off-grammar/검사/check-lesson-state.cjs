@@ -24,7 +24,9 @@ const ts = require(path.join(REPO, "node_modules/typescript"));
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
 if (BREAK && BREAK !== "settle") throw new Error(`모르는 --break=${BREAK} (settle)`);
 
-let src = fs.readFileSync(path.join(REPO, "src/lib/passoffLesson.ts"), "utf8");
+// line ends as LF: on a Windows checkout (CRLF) the break text with "\n" was not found and the run stopped with an
+// error instead of a FAIL (2026-09-28 — the same fix as check-grading's loadTsAlone)
+let src = fs.readFileSync(path.join(REPO, "src/lib/passoffLesson.ts"), "utf8").replace(/\r\n/g, "\n");
 if (BREAK === "settle") {
   const from = "export function settleOpen(w: PassoffWork, lists: { forms: readonly string[]; composeSet: readonly string[]; transfers: readonly string[] }): boolean {\n";
   if (src.split(from).length !== 2) throw new Error("--break=settle: settleOpen 을 못 찾음 — 깨기가 안 먹음");

@@ -82,6 +82,12 @@ export interface ReviewCourse<T> {
   toolbar?: ReactNode;
   /** under the progress line while it is open (that button's settings) */
   toolbarPanel?: ReactNode;
+  /**
+   * The course's own order inside the day: the plan's items (the same ones) in the order to show them — PASS-OFF puts a
+   * sentence whose prompt is another's answer after that one (src/lib/passoffLesson.ts orderReviewPlan). The plan's
+   * order when absent. A module-level function, so it does not change between renders.
+   */
+  orderItems?: (items: PlanItem[], data: Record<string, T>) => PlanItem[];
 }
 
 export type ReviewSource<T> =
@@ -142,7 +148,7 @@ function segmentsOf<T>(plan: Plan, items: Record<string, T>, record: CourseRecor
 const STEP_LABEL = { test: "다음 날 확인", practice: "복습", again: "다시 풀기" } as const;
 
 export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; source: ReviewSource<T> }) {
-  const { profile } = course;
+  const { profile, orderItems } = course;
   const unit = course.unit ?? "강의";
   const [step, setStep] = useState<Step>({ at: "loading" });
   const [segments, setSegments] = useState<Segment<T>[]>([]);
@@ -224,13 +230,13 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
         items = fetched.items;
       }
     }
-    const list = segmentsOf(plan, items, record, today);
+    const list = segmentsOf(orderItems ? { ...plan, items: orderItems(plan.items, items) } : plan, items, record, today);
     setSegments(list);
     setComeback(plan.comeback);
     setStudied(Object.keys(record.items).length > 0);
     if (list.length) setStep({ at: "items", segment: 0, index: 0 });
     else void finish(tomorrow);
-  }, [deviceItems, finish, learner, profile, readRecord]);
+  }, [deviceItems, finish, learner, orderItems, profile, readRecord]);
   const started = useRef(false);
   useEffect(() => {
     if (started.current) return;

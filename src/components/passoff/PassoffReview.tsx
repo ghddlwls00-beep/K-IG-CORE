@@ -3,8 +3,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { PassoffFormItem, PassoffProduceItem } from "@/lib/passoffTypes";
 import { twoLineScore } from "@/lib/passoffGrading";
+import { orderReviewPlan } from "@/lib/passoffLesson";
 import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
 import { speakText, stopSpeech } from "@/lib/speech";
+import type { PlanItem } from "@/lib/learning/types";
 import {
   PASSOFF_COURSE,
   PASSOFF_PROFILE,
@@ -45,6 +47,16 @@ function formLine(item: PassoffFormItem): string | null {
 }
 
 type FirstAnswer = { answer: string; verdict: string; reference: string };
+
+/**
+ * The day's order: the engine's plan with a sentence whose English prompt is another's model answer after that one when
+ * both come today (pg19-2 p3 → p4 … — 작업기록 할 일 6), as in the lesson's queue.
+ */
+const orderItems = (entries: PlanItem[], data: Record<string, PassoffReviewItem>): PlanItem[] =>
+  orderReviewPlan(entries, (key) => {
+    const found = data[key];
+    return found && isSentence(found) ? found.item : null;
+  });
 
 export function PassoffReview({ source }: { source: ReviewSource<PassoffReviewItem> }) {
   const [font, setFont] = useState<FontSize>("normal");
@@ -223,6 +235,7 @@ export function PassoffReview({ source }: { source: ReviewSource<PassoffReviewIt
     resultScore,
     toolbar,
     toolbarPanel,
+    orderItems,
   };
 
   return <ReviewSession course={course} source={source} />;

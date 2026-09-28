@@ -18,6 +18,8 @@
  *   2026-09-28 main 합친 뒤(공통 틀 2 — 과정 목록을 새로 짬): 대주제 머리의 칩('학습 가능' · '🔒 잠금' · '확인 중')과 레슨 카드의
  *   '해금 조건 보기' 가 없어지고, 잠긴 대주제는 자물쇠 아이콘(svg aria-label="잠김"), 레슨은 한 줄(상태 글 'TOPIC N을 마치면 열림').
  *   진도율 글('학습 진도율: N / T개 완료')은 h2 가 아니라 '진도' 칸의 글. 단계 탭은 공통 StepTabs(nav aria-label "학습 단계" 그대로).
+ *   2026-09-28(작업기록 할 일 5): ③ 보기 · ② 규칙 확인 · ⑤ 다시 확인의 보기가 문항 id 로 정한 순서로 보이므로, 정답은 자리가 아니라
+ *   보기의 원래 번호(단추의 data-option)로 누른다.
  *   D5 다시 열면 알림 없음
  *   D6 잠금 화면 pg03-1 'TOPIC 2를 마치면 열려요' · 기기에 남은 완료(pg02-1~3)를 보내면 서버 답으로 레슨이 열림
  *   D7 잠금 화면 가로 넘침 0 · 누를 곳 44px · 콘솔 오류 0(음성 파일이 없어 나는 502 제외)
@@ -166,7 +168,8 @@ async function finishRule(tab, rule) {
     await sleep(300);
   }
   if (rule.check) {
-    await tab.eval(`(() => { const sec = document.querySelector('section[aria-labelledby="passoff-rule-check"]'); const b = [...sec.querySelectorAll('[role=group] button')][${rule.check.answer}]; b.click(); return true; })()`);
+    // the options come in an order taken from the question (작업기록 할 일 5): the answer by its own index, not its place
+    await tab.eval(`(() => { const sec = document.querySelector('section[aria-labelledby="passoff-rule-check"]'); const b = sec.querySelector('[role=group] button[data-option="${rule.check.answer}"]'); b.click(); return true; })()`);
     await sleep(300);
   }
 }
@@ -186,7 +189,7 @@ async function answerForm(tab, lesson, id) {
     return tab.eval(clickIn(3, "확인"));
   }
   if (item.kind === "choice") {
-    return tab.eval(`(() => { const g = document.querySelector('section[aria-labelledby="passoff-step-3"] [aria-label="보기"]'); const b = [...g.querySelectorAll('button')][${item.answer}]; b.click(); return 'clicked'; })()`);
+    return tab.eval(`(() => { const g = document.querySelector('section[aria-labelledby="passoff-step-3"] [aria-label="보기"]'); const b = g.querySelector('button[data-option="${item.answer}"]'); b.click(); return 'clicked'; })()`);
   }
   await tab.eval(setField(3, "input", item.answer[0]));
   await sleep(100);
@@ -247,7 +250,7 @@ async function finishSteps(tab, id) {
     await sleep(450);
   }
   if (L.rule.check) {
-    await tab.eval(`(() => { const sec = document.querySelector('section[aria-labelledby="passoff-wrap-check"]'); const b = [...sec.querySelectorAll('[role=group] button')][${L.rule.check.answer}]; b.click(); return true; })()`);
+    await tab.eval(`(() => { const sec = document.querySelector('section[aria-labelledby="passoff-wrap-check"]'); const b = sec.querySelector('[role=group] button[data-option="${L.rule.check.answer}"]'); b.click(); return true; })()`);
     await sleep(900);
   }
   return tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.includes('레슨 완료')`);

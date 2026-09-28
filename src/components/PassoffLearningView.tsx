@@ -13,6 +13,7 @@ import {
   formItemDone,
   newComposeState,
   newFormState,
+  promptPartners,
   queueOf,
   sanitizeWork,
   settleOpen,
@@ -131,6 +132,8 @@ export function PassoffLearningView({
     }),
     [content],
   );
+  // a sentence whose English prompt is another's model answer waits until that one is off the queue (작업기록 할 일 6)
+  const partners = useMemo(() => promptPartners([...content.produce, ...content.transfers]), [content]);
 
   const [step, setStep] = useState(0);
   const [font, setFont] = useState<FontSize>("normal");
@@ -242,8 +245,8 @@ export function PassoffLearningView({
   const onScreenSet = (content.sets[setIndex] ?? []).map((p) => p.id);
   const transferIds = content.transfers.map((t) => t.id);
   const formQueue = queueOf(work.formQueue, ids.forms, (id) => Boolean(work.form[id]?.done));
-  const composeQueue = queueOf(work.composeQueue, onScreenSet, composeDone);
-  const transferQueue = queueOf(work.transferQueue, transferIds, composeDone);
+  const composeQueue = queueOf(work.composeQueue, onScreenSet, composeDone, partners);
+  const transferQueue = queueOf(work.transferQueue, transferIds, composeDone, partners);
 
   // the new step's heading takes the focus when a button inside the old step moved there — that button is now hidden
   useEffect(() => {
@@ -441,6 +444,7 @@ export function PassoffLearningView({
         {heading(1)}
         <RuleStep
           rule={content.rule}
+          lessonId={lessonId}
           anchors={content.anchors}
           revealed={work.revealed}
           discovery={work.discovery}

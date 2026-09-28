@@ -2,7 +2,7 @@
 
 import type { PassoffFrameBlock, PassoffProduceItem, PassoffRuleBlock } from "@/lib/passoffTypes";
 import { hasHangul } from "@/lib/passoffGrading";
-import { frameParts, type ComposeItemState } from "@/lib/passoffLesson";
+import { frameParts, ruleQuestionKey, type ComposeItemState } from "@/lib/passoffLesson";
 import { ComposeRun } from "./ComposeStep";
 import type { ComposeReport } from "./ComposeCard";
 import { RuleCheck } from "./RuleStep";
@@ -96,7 +96,15 @@ export function WrapUpStep({
           <h3 id="passoff-wrap-check" className="text-body font-semibold text-ink">
             규칙 다시 확인
           </h3>
-          <RuleCheck check={check} points={rule?.points ?? []} done={checkDone} font={font} onRight={onCheckRight} showPointInline />
+          <RuleCheck
+            check={check}
+            orderKey={ruleQuestionKey(lessonId, "check")}
+            points={rule?.points ?? []}
+            done={checkDone}
+            font={font}
+            onRight={onCheckRight}
+            showPointInline
+          />
         </section>
       ) : null}
 

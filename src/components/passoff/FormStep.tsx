@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import type { PassoffFormItem } from "@/lib/passoffTypes";
 import { expectedLabel, gradeChoice, gradeSelect, gradeShort, hasHangul } from "@/lib/passoffGrading";
 import { notePassoffAttempt, type PassoffAttempt } from "@/lib/passoffLearning";
-import type { FormItemState } from "@/lib/passoffLesson";
+import { optionOrder, type FormItemState } from "@/lib/passoffLesson";
 import { IconCheck } from "../icons";
 import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, tone, usePassoffLearner, type FontSize } from "./ui";
 
@@ -92,6 +92,9 @@ type Phase = "answer" | "retry" | "right" | "shown";
  * passed on at once with no result (the results come together at the end). `missed` is that check's wrong answer when the
  * item comes once more after the results: it counts as the first try, so the card opens on '한 번 더' (the option picked
  * struck out, the word typed still in the box) and a second miss shows the answer. Without them the card is the lesson's.
+ *
+ * A choice item's options come in the order its id gives (passoffLesson.ts optionOrder — the same on every reload, device
+ * and in the review; 작업기록 할 일 5); a button hands back its option's own index (`data-option`), which gradeChoice checks.
  */
 export function FormItemCard({
   item,
@@ -316,13 +319,15 @@ export function FormItemCard({
             </p>
           ) : null}
           <div className="flex flex-wrap gap-2" role="group" aria-label="보기">
-            {item.options.map((option, i) => {
+            {optionOrder(item.id, item.options.length).map((i) => {
+              const option = item.options[i];
               const isAnswer = settled && i === item.answer;
               const isWrong = wrongOptions.includes(i);
               return (
                 <button
                   key={i}
                   type="button"
+                  data-option={i}
                   disabled={settled || isWrong}
                   onClick={() => chooseOption(i)}
                   className={`inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-control border px-4 text-body transition-colors disabled:cursor-default ${
