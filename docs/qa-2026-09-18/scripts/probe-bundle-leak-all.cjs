@@ -31,17 +31,43 @@
  *   - its letters are in a src/ .ts/.tsx file (not src/lib/generated) AS IT WAS at APP_CODE_REV, the commit before PASS-OFF
  *     GRAMMAR was registered — read from git, so no code written after the lessons can excuse a line;
  *   - its lesson (or held-back) file did not exist at APP_CODE_REV, so that code cannot be a copy of it.
- *   node probe-bundle-leak-all.cjs
+ *
+ * 2026-09-28 (PASS-OFF GRAMMAR 출시 뒤 운영 탐침): pg10-1's "to become an interpreter" was counted a leak in /search-index.json,
+ * where it is part of STUDENT s16-2's title ("Why I Want to Become an Interpreter" — the index keeps a lower-case copy for
+ * search). That title is on STUDENT's anonymous list, so the words are public already. The 7-1 k rule is widened, for every
+ * course: a paid needle CONTAINED IN a title-type field (the same five) of ANY course's lesson that an anonymous list page
+ * shows — letters compared without case — is counted with skippedOnList too (listed in listTitleExamples · "(목록 제목)" lines
+ * with the title it sits in). Still only title-type fields that the list really shows (the list page's HTML · RSC as fetched):
+ * body text on a list page, or a paid needle that merely CONTAINS a title, is still a leak.
+ *
+ *   node probe-bundle-leak-all.cjs [--base <url>] [--cache <file>]   --base: 어느 사이트를 볼지(기본 운영 https://k-ig-core.vercel.app ·
+ *                                                                    환경 BASE 도 됨) — 올리기 전 로컬 운영 빌드(npx next start)에 돌릴 때
  *   node probe-bundle-leak-all.cjs --break=index      일부러 깨기: 유료 강의 본문 한 문장을 /search-index.json 사본(메모리)에 넣음 → inJson 1 · exit 1
  *   node probe-bundle-leak-all.cjs --break=js         일부러 깨기: 유료 PASS-OFF 레슨 문장 하나를 JS 사본(메모리)에 넣음 → 앱 코드 예외가 있어도 inJs 1 · exit 1
  *   node probe-bundle-leak-all.cjs --break=app-code   일부러 깨기: 앱 코드 예외를 끔 → 그 바늘들이 다시 유출로 셈 · exit 1
  *   node probe-bundle-leak-all.cjs --break=question   (2026-09-28 새 문제) 유료 강의 문제 물음 하나를 같은 사본에 넣음 → inJson 1 · exit 1
+ *   node probe-bundle-leak-all.cjs --break=list-scope (2026-09-28) 어느 과정 목록의 공개 제목에도 들어 있지 않은(다른 과정에도 없는) 유료
+ *                                                     PASS-OFF 레슨 문장 하나를 /search-index.json 사본에 넣음 → 넓힌 목록 제목 예외가 삼키지 않음:
+ *                                                     inJson 1 · exit 1
+ *   심는 깨기(index · js · question · list-scope)가 심을 것을 못 찾으면 exit 2 로 멈춤 — 통과(0)도 잡힘(1)도 아님. 2026-09-28: 문제 파일
+ *   (content/questions)이 아직 없는 트리에서 --break=question 은 null 을 심고도 exit 1 이었음(다른 곳의 진짜 걸림 때문).
  *   2026-09-28: LISTENING · READING 의 바늘에 그 강의 새 문제(content/questions/<과정>/<본 id>.json)의 물음 · 보기(12글자 이상)도 들어감.
  */
 const fs = require("fs");
 const path = require("path");
 const REPO = path.resolve(__dirname, "../../..");
-const BASE = process.env.BASE || "https://k-ig-core.vercel.app";
+/** `--base <url>` or `--base=<url>` (2026-09-28 — a local production build before a release), else env BASE, else production */
+function baseArg() {
+  const at = process.argv.indexOf("--base");
+  if (at >= 0) {
+    const v = process.argv[at + 1];
+    if (!v || v.startsWith("--")) throw new Error("--base 다음에 사이트 주소를 주어야 함(예: --base http://127.0.0.1:3761)");
+    return v;
+  }
+  const eq = process.argv.find((a) => a.startsWith("--base="));
+  return eq ? eq.slice("--base=".length) : null;
+}
+const BASE = (baseArg() || process.env.BASE || "https://k-ig-core.vercel.app").replace(/\/+$/, "");
 const OUT = path.join(__dirname, "../out");
 const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
 const vr = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
@@ -247,23 +273,54 @@ async function crawl() {
   // free strings (not a leak if they also exist in free lessons or home HTML)
   const freeFlat = new Set();
   for (const c of COURSES) for (const id of vr.lessons[c] || []) if (isFree(c, id)) for (const n of lessonNeedles(c, id)) freeFlat.add(n.f);
+
+  // 2026-09-28 (header): the title-type fields of EVERY course's lessons that an anonymous list page shows — as fetched
+  // (listFlat: the list pages' HTML · RSC). A paid needle whose letters sit inside one of them (case aside) is public already.
+  const publicTitles = [];
+  for (const c of COURSES) for (const id of vr.lessons[c] || []) {
+    const file = path.join(REPO, "content/lessons", c, `${id}.json`);
+    if (!fs.existsSync(file)) continue;
+    const d = JSON.parse(fs.readFileSync(file, "utf8"));
+    for (const k of META_KEYS) {
+      if (typeof d[k] !== "string") continue;
+      const f = flat(d[k]);
+      // a needle has 12 letters or more (questions), 20 for the rest — a shorter title holds none
+      if (f.length >= 12 && listFlat.includes(f)) publicTitles.push({ course: c, id, raw: d[k], lower: f.toLowerCase() });
+    }
+  }
+  const titlesLower = publicTitles.map((t) => t.lower).join("|"); // "|" is never a letter, so no match spans two titles
+  /** the public title (a list shows it) that holds the needle's letters, case aside — or null */
+  const titleHolding = (f) => {
+    const x = f.toLowerCase();
+    return titlesLower.includes(x) ? publicTitles.find((t) => t.lower.includes(x)) : null;
+  };
+
   const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
   let planted = null;
+  /**
+   * A break that found nothing to plant proves nothing — it stops with exit 2, never 0 (a pass) or 1 (caught). 2026-09-28: on a
+   * tree without content/questions, --break=question planted null and still exited 1, only because of a real hit elsewhere.
+   */
+  const nothingToPlant = (what) => {
+    console.log(`!!! --break=${BREAK}: 심을 ${what} 없음 — 이 깨기는 아무것도 증명하지 못함(exit 2 — 통과도 잡힘도 아님)`);
+    process.exit(2);
+  };
   if (BREAK === "index") {
     // one paid lesson body sentence into an in-memory copy of the search index
     const idx = jsonBodies.find((j) => j.url === "/search-index.json");
     outer: for (const c of COURSES) for (const id of vr.lessons[c] || []) {
       if (isFree(c, id)) continue;
-      for (const n of lessonNeedles(c, id)) if (!n.meta && /^[A-Z][^()]*[.?!]$/.test(n.raw.trim()) && !freeFlat.has(n.f) && !homeFlat.includes(n.f)) { planted = { course: c, id, text: n.raw.slice(0, 80) }; idx.flat += n.f; break outer; }
+      for (const n of lessonNeedles(c, id)) if (!n.meta && /^[A-Z][^()]*[.?!]$/.test(n.raw.trim()) && !freeFlat.has(n.f) && !homeFlat.includes(n.f) && !titleHolding(n.f)) { planted = { course: c, id, text: n.raw.slice(0, 80) }; idx.flat += n.f; break outer; }
     }
+    if (!planted) nothingToPlant("유료 본문 문장이");
     console.log(`[일부러 깸] /search-index.json 사본에 유료 본문 한 문장: ${JSON.stringify(planted)}`);
   } else if (BREAK === "js") {
     // one paid PASS-OFF GRAMMAR lesson sentence into an in-memory copy of the JS — the app-code exception must not hide it
     outer: for (const id of vr.lessons["passoff-grammar"] || []) {
       if (isFree("passoff-grammar", id)) continue;
-      for (const n of lessonNeedles("passoff-grammar", id)) if (!n.meta && /^[A-Z][^()]*[.?!]$/.test(n.raw.trim()) && !freeFlat.has(n.f) && !homeFlat.includes(n.f) && !js.includes(n.f)) { planted = { course: "passoff-grammar", id, text: n.raw.slice(0, 80) }; js += "\n" + n.f; break outer; }
+      for (const n of lessonNeedles("passoff-grammar", id)) if (!n.meta && /^[A-Z][^()]*[.?!]$/.test(n.raw.trim()) && !freeFlat.has(n.f) && !homeFlat.includes(n.f) && !titleHolding(n.f) && !js.includes(n.f)) { planted = { course: "passoff-grammar", id, text: n.raw.slice(0, 80) }; js += "\n" + n.f; break outer; }
     }
-    if (!planted) throw new Error("--break=js: 심을 유료 PASS-OFF 문장이 없음 — 이 깨기는 아무것도 증명하지 못함");
+    if (!planted) nothingToPlant("유료 PASS-OFF 문장이");
     console.log(`[일부러 깸] JS 사본에 유료 PASS-OFF 레슨 한 문장: ${JSON.stringify(planted)}`);
   } else if (BREAK === "app-code") {
     console.log("[일부러 깸] 앱 코드 예외를 끔 — 앱 코드와 글자가 같은 바늘도 유출로 셈");
@@ -272,14 +329,32 @@ async function crawl() {
     const idx = jsonBodies.find((j) => j.url === "/search-index.json");
     outer: for (const c of ["ld", "reading"]) for (const id of vr.lessons[c] || []) {
       if (isFree(c, id)) continue;
-      for (const n of lessonNeedles(c, id)) if (n.kind === "question" && !freeFlat.has(n.f) && !homeFlat.includes(n.f)) { planted = { course: c, id, text: n.raw.slice(0, 80) }; idx.flat += n.f; break outer; }
+      for (const n of lessonNeedles(c, id)) if (n.kind === "question" && !freeFlat.has(n.f) && !homeFlat.includes(n.f) && !titleHolding(n.f)) { planted = { course: c, id, text: n.raw.slice(0, 80) }; idx.flat += n.f; break outer; }
     }
+    if (!planted) nothingToPlant("유료 문제 물음이(content/questions/ld · reading 에 문제 파일이 없음)");
     console.log(`[일부러 깸] /search-index.json 사본에 유료 문제 물음 하나: ${JSON.stringify(planted)}`);
+  } else if (BREAK === "list-scope") {
+    // 2026-09-28: a paid PASS-OFF lesson sentence that NO public title holds, into the in-memory copy of the search index —
+    // the widened list-title exception (above) must not swallow it. An English sentence (kind "text") whose letters hold no
+    // other paid needle of any course or lesson, so exactly one needle becomes a leak.
+    const idx = jsonBodies.find((j) => j.url === "/search-index.json");
+    const everyPaid = [];
+    for (const c of COURSES) {
+      for (const id of vr.lessons[c] || []) if (!isFree(c, id)) for (const n of lessonNeedles(c, id)) everyPaid.push(`${c}/${id}\u0000${n.f}`);
+      for (const h of heldNeedles(c)) for (const n of h.needles) everyPaid.push(`${c}/${h.id}\u0000${n.f}`);
+    }
+    const holds = (f) => new Set(everyPaid.filter((x) => f.includes(x.slice(x.indexOf("\u0000") + 1)))).size;
+    outer: for (const id of vr.lessons["passoff-grammar"] || []) {
+      if (isFree("passoff-grammar", id)) continue;
+      for (const n of lessonNeedles("passoff-grammar", id)) if (n.kind === "text" && !n.meta && /^[A-Z][^()가-힣]*[.?!]$/.test(n.raw.trim()) && !freeFlat.has(n.f) && !homeFlat.includes(n.f) && !titleHolding(n.f) && !idx.flat.includes(n.f) && !js.includes(n.f) && holds(n.f) === 1) { planted = { course: "passoff-grammar", id, text: n.raw.slice(0, 80) }; idx.flat += n.f; break outer; }
+    }
+    if (!planted) nothingToPlant("어느 공개 제목에도 없는 유료 PASS-OFF 문장이");
+    console.log(`[일부러 깸] /search-index.json 사본에 어느 공개 제목에도 없는 유료 PASS-OFF 문장 하나: ${JSON.stringify(planted)}`);
   } else if (BREAK) throw new Error(`모르는 --break=${BREAK}`);
 
   const result = { at: new Date().toISOString(), base: BASE, pages, chunks: chunkList.length, jsKB: Math.round(jsBytes / 1024), badChunks, json: jsonBodies.map((j) => ({ url: j.url, status: j.status, kb: Math.round(j.bytes / 1024) })), courses: {} };
   for (const c of COURSES) {
-    const stat = { paidLessons: 0, needles: 0, skippedAlsoFree: 0, skippedOnList: 0, inJs: 0, inJson: 0, inAppCode: 0, lessonsWithLeak: 0, examples: [], appCodeExamples: [] };
+    const stat = { paidLessons: 0, needles: 0, skippedAlsoFree: 0, skippedOnList: 0, inJs: 0, inJson: 0, inAppCode: 0, lessonsWithLeak: 0, examples: [], appCodeExamples: [], listTitleExamples: [] };
     const paidSets = (vr.lessons[c] || []).filter((id) => !isFree(c, id)).map((id) => ({ id, needles: lessonNeedles(c, id) }));
     for (const { id, needles } of [...paidSets, ...heldNeedles(c)]) {
       stat.paidLessons++;
@@ -290,6 +365,13 @@ async function crawl() {
         seen.add(n.f);
         if (freeFlat.has(n.f) || homeFlat.includes(n.f)) { stat.skippedAlsoFree++; continue; }
         if (n.meta && listFlat.includes(n.f)) { stat.skippedOnList++; continue; }
+        // 2026-09-28: inside a title a list shows — any course's (header)
+        const title = titleHolding(n.f);
+        if (title) {
+          stat.skippedOnList++;
+          if (stat.listTitleExamples.length < 15) stat.listTitleExamples.push({ id, text: n.raw.slice(0, 80), title: `${title.course}/${title.id} "${title.raw.slice(0, 80)}"` });
+          continue;
+        }
         stat.needles++;
         const inJs = js.includes(n.f);
         const inJson = jsonBodies.filter((j) => j.flat.includes(n.f)).map((j) => j.url);
@@ -310,7 +392,7 @@ async function crawl() {
       if (leaked) stat.lessonsWithLeak++;
     }
     result.courses[c] = stat;
-    console.log(c, JSON.stringify({ ...stat, examples: stat.examples.slice(0, 3), appCodeExamples: stat.appCodeExamples.slice(0, 4) }));
+    console.log(c, JSON.stringify({ ...stat, examples: stat.examples.slice(0, 3), appCodeExamples: stat.appCodeExamples.slice(0, 4), listTitleExamples: undefined }));
   }
   fs.mkdirSync(OUT, { recursive: true });
   if (!BREAK) fs.writeFileSync(path.join(OUT, "bundle-leak-all.json"), JSON.stringify(result, null, 1));
@@ -320,6 +402,7 @@ async function crawl() {
   const inAppCode = Object.values(result.courses).reduce((s, x) => s + x.inAppCode, 0);
   console.log(`유출 ${leaks} (JS · JSON) · 익명 과정 목록에 이미 보이는 제목이라 뺀 것 ${onList} · 레슨보다 먼저 있던 앱 코드와 글자가 같아 따로 센 것 ${inAppCode}${BREAK ? ` [일부러 깸: ${BREAK}]` : ""}`);
   for (const [c, x] of Object.entries(result.courses)) for (const e of x.appCodeExamples) console.log(`  (앱 코드) ${c}/${e.id} "${e.text}" ← ${e.code}`);
+  for (const [c, x] of Object.entries(result.courses)) for (const e of x.listTitleExamples) console.log(`  (목록 제목) ${c}/${e.id} "${e.text}" ⊂ ${e.title}`);
   if (result.badChunks.length) console.log(`!!! 받지 못한 청크 ${result.badChunks.length} — 이 판정은 그 청크를 못 본 것 · exit 1`);
   process.exit(leaks || result.badChunks.length ? 1 : 0);
 })();

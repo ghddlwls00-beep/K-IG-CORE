@@ -5,8 +5,10 @@
  * src/lib/passoffGrading.ts 를 그대로(단독 트랜스파일 — import 없는 파일) 불러, 레슨 파일 전부의 문항을 채점해 본다.
  * **기대는 레슨 파일에서, 채점은 휴대폰이 받는 문항으로**: 무료 체험 레슨이 떼어 둔 유료 보충 문항(content/private/…/<id>.paid.json)
  * 을 앱과 같은 함수(src/lib/passoffSupplement.ts attachPaidItems)로 붙이고, 페이지가 화면에 넘기는 모양
- * (src/lib/passoffView.ts viewBlocks — 기록용 칸 · reserve 문항을 뺀 것)으로 바꾼 문항을 채점기에 넣는다.
- * 그래서 페이지가 accept · targets 를 잘못 빼면 여기서 드러난다.
+ * (src/lib/passoffView.ts viewBlocks — 기록용 칸 · reserve 문항을 뺀 것)으로 바꾼 뒤, 서버가 붙이는 낱말 꼴
+ * (src/lib/passoffWordForms.ts attachWordForms — 불규칙 동사 · 복수 표에서 그 문항 답이 만날 낱말만, 2026-09-28 유출 고침)까지
+ * 붙인 문항을 채점기에 넣는다. 그래서 페이지가 accept · targets 를 잘못 빼거나 낱말 꼴을 안 붙이면 여기서 드러난다.
+ * 앞 G 고정 표본의 손으로 만든 문항에도 같은 함수로 낱말 꼴을 붙인다(served).
  *
  *   V. 화면에 넘기는 문항: 기록용 칸(bookRef · fix · source · koSource · note · challengeNote · paidStudent · tags ·
  *      challengeTags) 0 · reserve 문항 0 · 레슨의 나머지 문항은 모두 있음.
@@ -46,7 +48,12 @@
  *      is/has 로도 읽는지). N2 절 끝의 "X is" · "X has"(Peter is older than John is.)를 "X's" 로 쓴 답은 '정답' 아님(소유격으로만 읽음).
  *   G. 한글 섞인 답 → 'hangul' · 고정 표본(접두 반의어 예외 interesting · invaluable, 서술형 두 줄 점수, 아포스트로피, 어미, 마이크 숫자,
  *      's = is/has — "She is been" 오답, 같은 낱말의 다른 꼴, 명사 's — Tom's book 정답 · It is Tom is book 오답 · G7 #6 답, 빗금,
- *      마이크 동음 · 띄어쓰기, 소유격 힌트).
+ *      마이크 동음 · 띄어쓰기, 소유격 힌트, 마이크 서수 1st~100th).
+ *   W. 낱말 꼴(2026-09-28 — 표가 채점기에서 서버로): 모범 답 · 허용 답 낱말(또는 그 끝)이 표의 낱말이고 그 자리에 한 글자 차이인 표의
+ *      낱말을 넣을 수 있을 때(학습자가 쓸 수 있는 다른 꼴 — 이 검사의 낱말 자르기 · osa 로 찾음)
+ *      W1 그 두 낱말이 화면 문항의 wordForms 에 있음 · wordForms 는 표 안의 낱말만
+ *      W2 그런 짝마다 답 하나를 타이핑 · 마이크로 — 화면 문항으로 채점한 결과가 표 전체(ALL_WORD_FORMS — 고치기 전 채점기가 알던 것)를
+ *         준 사본으로 채점한 것과 같음.
  *
  *   node docs/pass-off-grammar/검사/check-grading.cjs
  *   node docs/pass-off-grammar/검사/check-grading.cjs --list              따로 센 것 · 실패 전부
@@ -56,6 +63,11 @@
  *   node docs/pass-off-grammar/검사/check-grading.cjs --break=fix         일부러 깨기: fix.from 에 한 글자 오타 꼴을 넣은 사본 → B FAIL
  *   node docs/pass-off-grammar/검사/check-grading.cjs --break=accept      일부러 깨기: accept 에 부정 뒤집은 답을 넣은 사본 → C1 FAIL
  *   node docs/pass-off-grammar/검사/check-grading.cjs --break=view        일부러 깨기: 화면 문항에서 accept 를 뺀 사본 → A FAIL
+ *   node docs/pass-off-grammar/검사/check-grading.cjs --break=word-forms  일부러 깨기: 서버가 낱말 꼴을 안 붙인 판(화면 문항 · 고정 표본 모두)
+ *                                                                         → C5 · G · W1 · W2 FAIL
+ *   node docs/pass-off-grammar/검사/check-grading.cjs --break=word-forms-near 일부러 깨기: passoffWordForms.ts 가 답의 낱말 꼴만 붙이고 한 글자
+ *                                                                         차이인 표의 낱말은 안 붙임(메모리 사본 — 답 낱말 자신만 붙이는 판)
+ *                                                                         → W1 · W2 · C5 · G FAIL(forget/forgot · bought/brought 같은 것)
  *   아래는 채점기 글(메모리 사본)을 한 곳 바꿔 옛 동작으로 되돌림 — 바꿀 글을 못 찾으면 멈춤(깨기가 조용히 안 먹는 일 없게). 줄 끝은
  *   LF 로 맞춘 뒤 찾음(윈도 체크아웃의 CRLF 에서는 '\n' 이 든 깨기 글을 못 찾아 FAIL 이 아니라 멈춤으로 끝났음 — 2026-09-28 고침):
  *   node docs/pass-off-grammar/검사/check-grading.cjs --break=apostrophe  타이핑한 답도 아포스트로피를 모두 지움(점검 전) → C4 FAIL
@@ -87,7 +99,7 @@ const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("
 /** breaks of the grader itself: [the text in passoffGrading.ts, what it becomes] — the old behaviour, in memory only */
 const CODE_BREAKS = {
   apostrophe: ['const apostrophes: Apostrophes = spoken ? "drop" : "keep";', 'const apostrophes: Apostrophes = "drop";'],
-  inflection: ["  if (differentWord(typed, expected)) return false;\n", ""],
+  inflection: ["  if (differentWord(typed, expected, known)) return false;\n", ""],
   "is-has": ['  if (S_HAS.has(word)) return "has";\n', ""],
   "ref-reading": ["const plain = new Set(asIs.filter((form, i) => form === asHas[i]));", "const plain = new Set<string>();"],
   // 2026-09-28 (작업기록 할 일 1 · 2 · 3 · 9)
@@ -101,12 +113,20 @@ const CODE_BREAKS = {
     '  const asIs = refs.map((r) => normalizeForComparison(r, { s: "is", apostrophes, nouns: 15 }));\n  const asHas = refs.map((r) => normalizeForComparison(r, { s: "has", apostrophes, nouns: 15 }));',
   ],
 };
+/** breaks of the server's word forms (src/lib/passoffWordForms.ts): [its text, what it becomes] — in memory only */
+const FORMS_BREAKS = {
+  "word-forms-near": ["  for (const other of ALL_WORD_FORMS) if (other !== end && Math.abs(other.length - end.length) <= 1 && editDistance(start + other, word) === 1) out.push(other);\n", ""],
+};
 /** breaks of this check itself (its own old behaviour) */
 const CHECK_BREAKS = ["memo-reason"];
-const BREAKS = ["targets", "targets-all", "fix", "accept", "view", ...Object.keys(CODE_BREAKS), ...CHECK_BREAKS];
+const BREAKS = ["targets", "targets-all", "fix", "accept", "view", "word-forms", ...Object.keys(CODE_BREAKS), ...Object.keys(FORMS_BREAKS), ...CHECK_BREAKS];
 if (BREAK && !BREAKS.includes(BREAK)) throw new Error(`모르는 --break=${BREAK} (${BREAKS.join(" · ")})`);
 
-function loadTsAlone(rel, patch = null) {
+/**
+ * A source file transpiled on its own. `imports`: what its require() may return — the grader's pure files have none
+ * (import-free, 설계 §8 — a type-only import is erased); the server's word forms import the grader and "server-only".
+ */
+function loadTsAlone(rel, patch = null, imports = null) {
   // line ends as LF: a Windows checkout has CRLF, where a break text with "\n" was never found (the run stopped
   // instead of failing — so --break=inflection · is-has had not been shown to FAIL there)
   let src = fs.readFileSync(path.join(REPO, rel), "utf8").replace(/\r\n/g, "\n");
@@ -118,18 +138,31 @@ function loadTsAlone(rel, patch = null) {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 },
   }).outputText;
   const mod = { exports: {} };
-  // no require: these files must stand alone (import-free, 설계 §8 — a type-only import is erased)
-  new Function("module", "exports", js)(mod, mod.exports);
+  const req = (spec) => {
+    if (imports && Object.prototype.hasOwnProperty.call(imports, spec)) return imports[spec];
+    throw new Error(`${rel} 가 ${spec} 를 불러옴 — 이 검사가 모르는 import`);
+  };
+  new Function("require", "module", "exports", js)(req, mod, mod.exports);
   return mod.exports;
 }
 const G = loadTsAlone("src/lib/passoffGrading.ts", CODE_BREAKS[BREAK] || null);
 const { attachPaidItems } = loadTsAlone("src/lib/passoffSupplement.ts");
 const { viewBlocks } = loadTsAlone("src/lib/passoffView.ts");
+// the server's word forms, graded by the same (possibly broken) grader the page's phone runs
+const W = loadTsAlone("src/lib/passoffWordForms.ts", FORMS_BREAKS[BREAK] || null, { "server-only": {}, "./passoffGrading": G });
 for (const name of ["gradeProduce", "isCorrect", "gradeSelect", "gradeChoice", "gradeShort", "missingTargets", "typoEligible", "writingIssues", "twoLineScore", "isPrefixedOpposite", "expectedLabel", "normalizeForComparison"]) {
   if (typeof G[name] !== "function") throw new Error(`${name} 를 passoffGrading.ts 에서 못 찾음 — 이 검사가 아무것도 안 봄`);
 }
 if (typeof G.POSSESSIVE_HINT !== "string" || !G.POSSESSIVE_HINT.includes("소유격")) throw new Error("POSSESSIVE_HINT 를 passoffGrading.ts 에서 못 찾음 — 소유격 힌트 검사가 아무것도 안 봄");
 if (typeof viewBlocks !== "function" || typeof attachPaidItems !== "function") throw new Error("viewBlocks · attachPaidItems 를 못 찾음");
+if (typeof W.attachWordForms !== "function" || typeof W.wordFormsOf !== "function" || !Array.isArray(W.ALL_WORD_FORMS) || W.ALL_WORD_FORMS.length < 300) {
+  throw new Error("attachWordForms · wordFormsOf · ALL_WORD_FORMS 를 passoffWordForms.ts 에서 못 찾음 — 낱말 꼴 검사가 아무것도 안 봄");
+}
+const ALL_FORMS = new Set(W.ALL_WORD_FORMS);
+/** what the server hands out: the view blocks with the word forms (passoffContent.ts) — without them for --break=word-forms */
+const served = (blocks) => (BREAK === "word-forms" ? blocks : W.attachWordForms(blocks));
+/** a hand-made item as the server would hand it out (G): its word forms attached the same way */
+const servedItem = (item) => served([{ type: "drill", produce: [item] }])[0].produce[0];
 
 // ── 도우미
 const clone = (x) => JSON.parse(JSON.stringify(x));
@@ -302,10 +335,12 @@ for (const L of lessons) {
     L.file = clone(L.file);
     if (!broken) broken = breakFile(L);
   }
-  L.view = clone(viewBlocks(L.file));
+  L.view = clone(served(viewBlocks(L.file)));
   if (BREAK && ["targets", "view"].includes(BREAK) && !broken) broken = breakView(L);
 }
 if (CODE_BREAKS[BREAK]) broken = `passoffGrading.ts 의 "${CODE_BREAKS[BREAK][0].trim()}" 을 바꾼 사본(메모리)`;
+if (FORMS_BREAKS[BREAK]) broken = `passoffWordForms.ts 의 "${FORMS_BREAKS[BREAK][0].trim()}" 을 지운 사본(메모리)`;
+if (BREAK === "word-forms") broken = "화면 문항 · 고정 표본에 낱말 꼴(wordForms)을 붙이지 않음";
 if (BREAK === "memo-reason") broken = "이 검사의 B 까닭을 메모를 뗀 글로만 정함(고치기 전 동작)";
 if (BREAK && !broken) throw new Error(`--break=${BREAK}: 깰 문항을 못 찾음`);
 if (BREAK) console.log(`(깨기 시험 --break=${BREAK} — ${broken})`);
@@ -605,6 +640,43 @@ for (const L of lessons) {
       const res = G.gradeProduce(typo, q);
       if (res.verdict !== "typo") fail("D", `${p.id} "${typo}" → ${res.verdict}(한 글자 오타를 봐주지 않음)`);
     }
+    // W — the word forms (2026-09-28): an answer word — or its end (overtaken · firemen) — that is a table word, and a table
+    // word one letter away put in its place (what a learner may type). W1: both are in the view item's wordForms (this
+    // check's own tokens and osa, not the server's). W2: one answer per such pair, graded typed and by microphone with the
+    // view item and with a copy that knows the whole table (what the grader knew before the table moved to the server) —
+    // the same result.
+    const itemForms = new Set(q.wordForms || []);
+    for (const f of itemForms) if (!ALL_FORMS.has(f)) fail("W1", `${p.id} wordForms 에 표에 없는 낱말 "${f}"`);
+    const pairs = new Map();
+    for (const r of refs) {
+      tokensOf(r).forEach((t, i) => {
+        const word = bare(t);
+        if (!/^[A-Za-z]+$/.test(word)) return;
+        const lower = word.toLowerCase();
+        for (let cut = 0; cut < lower.length; cut++) {
+          const end = lower.slice(cut);
+          if (!ALL_FORMS.has(end)) continue;
+          for (const other of W.ALL_WORD_FORMS) {
+            const swapped = lower.slice(0, cut) + other;
+            if (osa(swapped, lower) !== 1 || pairs.has(`${lower}>${swapped}`)) continue;
+            pairs.set(`${lower}>${swapped}`, { end, other, word, swapped, answer: replaceToken(r, i, matchCase(word, swapped)) });
+          }
+        }
+      });
+    }
+    const whole = { ...q, wordForms: W.ALL_WORD_FORMS };
+    for (const { end, other, word, swapped, answer } of pairs.values()) {
+      count("W1 답 낱말(끝) · 한 글자 차이인 표의 낱말이 wordForms 에 있음");
+      if (!itemForms.has(end) || !itemForms.has(other)) fail("W1", `${p.id} "${word}" → "${swapped}": wordForms 에 ${[end, other].filter((w) => !itemForms.has(w)).join(" · ")} 없음`);
+      for (const spoken of [false, true]) {
+        count("W2 그 답 — 표 전체로 채점한 것과 같음(타이핑 · 마이크)");
+        const got = G.gradeProduce(answer, q, { spoken });
+        const want = G.gradeProduce(answer, whole, { spoken });
+        if (JSON.stringify(got) !== JSON.stringify(want)) {
+          fail("W2", `${p.id} ${spoken ? "마이크" : "타이핑"} "${answer}" → ${got.verdict}${got.typo ? ` (오타 ${got.typo.typed})` : ""} · 표 전체로는 ${want.verdict}("${word}" 대신 "${swapped}")`);
+        }
+      }
+    }
     // E
     for (const e of p.errorPatterns || []) {
       const res = G.gradeProduce(e.match, q);
@@ -653,57 +725,65 @@ for (const L of lessons) {
 }
 
 // G — 고정 표본
+// the hand-made items are handed out as the server would: their word forms attached (servedItem — 2026-09-28)
+const gradeServed = (answer, item, options) => G.gradeProduce(answer, servedItem(item), options);
 const expect = (label, got, want) => { count("G 고정 표본"); if (JSON.stringify(got) !== JSON.stringify(want)) fail("G", `${label}: ${JSON.stringify(got)} ≠ ${JSON.stringify(want)}`); };
 expect("possible ↔ impossible 은 반대말", G.isPrefixedOpposite("possible", "impossible"), true);
 expect("happy ↔ unhappy 은 반대말", G.isPrefixedOpposite("happy", "unhappy"), true);
 expect("teresting ↔ interesting 은 반대말 아님(과민 예외)", G.isPrefixedOpposite("teresting", "interesting"), false);
 expect("valuable ↔ invaluable 은 반대말 아님(과민 예외)", G.isPrefixedOpposite("valuable", "invaluable"), false);
 const sample = { en: "I am eleven years old.", accept: ["I'm eleven years old."], targets: [["am", "'m"]], errorPatterns: [] };
-const graded = ["I am eleven years old.", "i am eleven years old.", "I am eleven years old", "I am elevan years old.", "I is eleven years old."].map((a) => ({ answer: a, result: G.gradeProduce(a, sample) }));
+const graded = ["I am eleven years old.", "i am eleven years old.", "I am eleven years old", "I am elevan years old.", "I is eleven years old."].map((a) => ({ answer: a, result: gradeServed(a, sample) }));
 expect("서술형 두 줄 점수", G.twoLineScore(graded), { total: 5, grammar: 4, written: 1, capital: 1, punctuation: 1, spelling: 1 });
 // apostrophes (점검 2026-09-27 · 설계 §8): a slip only in a contraction that is no other word and is not the target
-expect("목표형 'm 을 아포스트로피 없이(Im) → 오답(목표 낱말은 엄격)", G.gradeProduce("Im eleven years old.", sample).verdict, "wrong");
-expect("목표가 아닌 축약형의 아포스트로피를 뺌(dont) → 오타(철자)", G.gradeProduce("I dont know what he said.", { en: "I don't know what he said.", targets: [["what"]] }).verdict, "typo");
+expect("목표형 'm 을 아포스트로피 없이(Im) → 오답(목표 낱말은 엄격)", gradeServed("Im eleven years old.", sample).verdict, "wrong");
+expect("목표가 아닌 축약형의 아포스트로피를 뺌(dont) → 오타(철자)", gradeServed("I dont know what he said.", { en: "I don't know what he said.", targets: [["what"]] }).verdict, "typo");
 const were = { en: "We're good friends.", accept: ["We are good friends."], targets: [["are", "'re"]] };
-expect("We're → Were(다른 낱말) → 오답", G.gradeProduce("Were good friends.", were).verdict, "wrong");
+expect("We're → Were(다른 낱말) → 오답", gradeServed("Were good friends.", were).verdict, "wrong");
 const itsDog = { en: "It's a dog and its hair is gray.", accept: ["It is a dog and its hair is gray."], targets: [["It's", "It is"], ["its"]] };
-expect("It's → Its → 오답", G.gradeProduce("Its a dog and its hair is gray.", itsDog).verdict, "wrong");
-expect("마이크 답의 its(인식기가 쓴 철자) → 오타로 봐줌", G.gradeProduce("its a dog and its hair is gray", itsDog, { spoken: true }).verdict, "typo");
-expect("소유격 one's → ones → 오답", G.gradeProduce("One should obey ones parents.", { en: "One should obey one's parents." }).verdict, "wrong");
-expect("its ≠ it's(아포스트로피를 더한 것은 봐주지 않음)", G.isCorrect(G.gradeProduce("It's tail is long.", { en: "Its tail is long." })), false);
-expect("walk ↔ walks 는 오타가 아님(어미)", G.gradeProduce("He walk to school.", { en: "He walks to school." }).verdict, "wrong");
+expect("It's → Its → 오답", gradeServed("Its a dog and its hair is gray.", itsDog).verdict, "wrong");
+expect("마이크 답의 its(인식기가 쓴 철자) → 오타로 봐줌", gradeServed("its a dog and its hair is gray", itsDog, { spoken: true }).verdict, "typo");
+expect("소유격 one's → ones → 오답", gradeServed("One should obey ones parents.", { en: "One should obey one's parents." }).verdict, "wrong");
+expect("its ≠ it's(아포스트로피를 더한 것은 봐주지 않음)", G.isCorrect(gradeServed("It's tail is long.", { en: "Its tail is long." })), false);
+expect("walk ↔ walks 는 오타가 아님(어미)", gradeServed("He walk to school.", { en: "He walks to school." }).verdict, "wrong");
 // two forms of one word · two look-alike words are never a one-letter typo
-expect("forget → forgot 는 오타가 아님", G.gradeProduce("Don't forgot it.", { en: "Don't forget it." }).verdict, "wrong");
-expect("bought → brought 는 오타가 아님", G.gradeProduce("He brought the book.", { en: "He bought the book." }).verdict, "wrong");
-expect("woman → women 은 오타가 아님", G.gradeProduce("The women was his wife.", { en: "The woman was his wife." }).verdict, "wrong");
-expect("later → latter 는 오타가 아님", G.gradeProduce("Two months latter, it was gone.", { en: "Two months later, it was gone." }).verdict, "wrong");
-expect("그래도 진짜 한 글자 오타는 봐줌(Englisj)", G.gradeProduce("He studies Englisj every morning.", { en: "He studies English every morning." }).verdict, "typo");
+expect("forget → forgot 는 오타가 아님", gradeServed("Don't forgot it.", { en: "Don't forget it." }).verdict, "wrong");
+expect("bought → brought 는 오타가 아님", gradeServed("He brought the book.", { en: "He bought the book." }).verdict, "wrong");
+expect("woman → women 은 오타가 아님", gradeServed("The women was his wife.", { en: "The woman was his wife." }).verdict, "wrong");
+expect("later → latter 는 오타가 아님", gradeServed("Two months latter, it was gone.", { en: "Two months later, it was gone." }).verdict, "wrong");
+expect("그래도 진짜 한 글자 오타는 봐줌(Englisj)", gradeServed("He studies Englisj every morning.", { en: "He studies English every morning." }).verdict, "typo");
 // 's = is or has (점검 2026-09-27)
 const been = { en: "She has been to Paris.", accept: ["She's been to Paris."] };
-expect("She is been → 오답('s been = has been)", G.gradeProduce("She is been to Paris.", been).verdict, "wrong");
-expect("She's been → 정답(허용 답 없이도)", G.gradeProduce("She's been to Paris.", { en: "She has been to Paris." }).verdict, "correct");
-expect("모범 답이 She's been 뿐이어도 She is been → 오답", G.gradeProduce("She is been to Paris.", { en: "She's been to Paris." }).verdict, "wrong");
-expect("모범 답이 She's been 뿐이어도 She has been → 정답", G.gradeProduce("She has been to Paris.", { en: "She's been to Paris." }).verdict, "correct");
+expect("She is been → 오답('s been = has been)", gradeServed("She is been to Paris.", been).verdict, "wrong");
+expect("She's been → 정답(허용 답 없이도)", gradeServed("She's been to Paris.", { en: "She has been to Paris." }).verdict, "correct");
+expect("모범 답이 She's been 뿐이어도 She is been → 오답", gradeServed("She is been to Paris.", { en: "She's been to Paris." }).verdict, "wrong");
+expect("모범 답이 She's been 뿐이어도 She has been → 정답", gradeServed("She has been to Paris.", { en: "She's been to Paris." }).verdict, "correct");
 const gone = { en: "He has gone home.", accept: ["He's gone home."] };
-expect("He is gone home → 오답(허용 답의 's 는 모범 답대로 has)", G.gradeProduce("He is gone home.", gone).verdict, "wrong");
-expect("He's gone home → 정답", G.gradeProduce("He's gone home.", gone).verdict, "correct");
-expect("It's made of wood → 정답(is + 분사)", G.gradeProduce("It's made of wood.", { en: "It is made of wood." }).verdict, "correct");
-expect("모범 답이 It's made 뿐이어도 It is made → 정답", G.gradeProduce("It is made of wood.", { en: "It's made of wood." }).verdict, "correct");
-expect("She is tired → 정답(모범 답 She's tired)", G.gradeProduce("She is tired today.", { en: "She's tired today." }).verdict, "correct");
-expect("Where's he gone → 정답(Where has he gone)", G.gradeProduce("Where's he gone?", { en: "Where has he gone?" }).verdict, "correct");
-expect("마이크 답의 숫자(11 = eleven)", G.gradeProduce("I am 11 years old", { ...sample, accept: [] }, { spoken: true }).verdict, "correct");
-expect("타이핑한 숫자는 그대로(11 ≠ eleven)", G.gradeProduce("I am 11 years old", { ...sample, accept: [] }).verdict, "wrong");
+expect("He is gone home → 오답(허용 답의 's 는 모범 답대로 has)", gradeServed("He is gone home.", gone).verdict, "wrong");
+expect("He's gone home → 정답", gradeServed("He's gone home.", gone).verdict, "correct");
+expect("It's made of wood → 정답(is + 분사)", gradeServed("It's made of wood.", { en: "It is made of wood." }).verdict, "correct");
+expect("모범 답이 It's made 뿐이어도 It is made → 정답", gradeServed("It is made of wood.", { en: "It's made of wood." }).verdict, "correct");
+expect("She is tired → 정답(모범 답 She's tired)", gradeServed("She is tired today.", { en: "She's tired today." }).verdict, "correct");
+expect("Where's he gone → 정답(Where has he gone)", gradeServed("Where's he gone?", { en: "Where has he gone?" }).verdict, "correct");
+expect("마이크 답의 숫자(11 = eleven)", gradeServed("I am 11 years old", { ...sample, accept: [] }, { spoken: true }).verdict, "correct");
+expect("타이핑한 숫자는 그대로(11 ≠ eleven)", gradeServed("I am 11 years old", { ...sample, accept: [] }).verdict, "wrong");
+// microphone ordinals (2026-09-28 — made from the cardinal words by rule, no list): the recogniser's "12th" is "twelfth"
+const suffixOf = (n) => (n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] || "th");
+for (const [n, word] of [[1, "first"], [2, "second"], [3, "third"], [4, "fourth"], [5, "fifth"], [8, "eighth"], [9, "ninth"], [11, "eleventh"], [12, "twelfth"], [19, "nineteenth"], [20, "twentieth"], [21, "twenty-first"], [40, "fortieth"], [52, "fifty-second"], [99, "ninety-ninth"], [100, "one hundredth"]]) {
+  expect(`마이크 서수 ${n}${suffixOf(n)} = ${word}`, gradeServed(`It is the ${n}${suffixOf(n)} day`, { en: `It is the ${word} day.` }, { spoken: true }).verdict, "correct");
+}
+expect("마이크 서수 12th ≠ eleventh", gradeServed("It is the 12th day", { en: "It is the eleventh day." }, { spoken: true }).verdict, "wrong");
 // a noun's 's (작업기록 할 일 1 — 2026-09-28): the learner's is read both ways, a reference's possessive as written
 const tomBeen = { en: "Tom has been here.", targets: [["has"]] };
-expect("Tom's been here → 정답(Tom has been here)", G.gradeProduce("Tom's been here.", tomBeen).verdict, "correct");
-expect("마이크 Tom's been here → 정답", G.gradeProduce("Tom's been here", tomBeen, { spoken: true }).verdict, "correct");
-expect("Tom is been here → 오답('s been = has been)", G.gradeProduce("Tom is been here.", tomBeen).verdict, "wrong");
+expect("Tom's been here → 정답(Tom has been here)", gradeServed("Tom's been here.", tomBeen).verdict, "correct");
+expect("마이크 Tom's been here → 정답", gradeServed("Tom's been here", tomBeen, { spoken: true }).verdict, "correct");
+expect("Tom is been here → 오답('s been = has been)", gradeServed("Tom is been here.", tomBeen).verdict, "wrong");
 const tomBook = { en: "Tom's book is red." };
-expect("Tom's book is red → 정답(소유격 그대로)", G.gradeProduce("Tom's book is red.", tomBook).verdict, "correct");
-expect("Toms book is red → 타이핑 오답(그대로)", G.gradeProduce("Toms book is red.", tomBook).verdict, "wrong");
-expect("마이크 Toms book is red → 정답(그대로)", G.gradeProduce("Toms book is red", tomBook, { spoken: true }).verdict, "correct");
-expect("It is Tom is book → 오답(모범 답의 소유격은 is 가 아님)", G.gradeProduce("It is Tom is book.", { en: "It is Tom's book." }).verdict, "wrong");
-expect("Yes, Tom's. → 오답(절 끝의 's 는 소유격 — Yes, Tom is.)", G.gradeProduce("Yes, Tom's.", { en: "Yes, Tom is." }).verdict, "wrong");
+expect("Tom's book is red → 정답(소유격 그대로)", gradeServed("Tom's book is red.", tomBook).verdict, "correct");
+expect("Toms book is red → 타이핑 오답(그대로)", gradeServed("Toms book is red.", tomBook).verdict, "wrong");
+expect("마이크 Toms book is red → 정답(그대로)", gradeServed("Toms book is red", tomBook, { spoken: true }).verdict, "correct");
+expect("It is Tom is book → 오답(모범 답의 소유격은 is 가 아님)", gradeServed("It is Tom is book.", { en: "It is Tom's book." }).verdict, "wrong");
+expect("Yes, Tom's. → 오답(절 끝의 's 는 소유격 — Yes, Tom is.)", gradeServed("Yes, Tom's.", { en: "Yes, Tom is." }).verdict, "wrong");
 /** the item the page receives, and the same item without its detour accepts and noun-'s target forms (N) */
 const viewItem = (id) => {
   for (const L of lessons) for (const b of L.view) for (const list of ["produce", "transfer"]) for (const it of b[list] || []) if (it.id === id) return it;
@@ -740,32 +820,32 @@ for (const [id, a] of [
     continue;
   }
   const bareItem = withoutDetours(it);
-  expect(`${id} "${a}" 타이핑(우회 허용 답 없이) → 정답`, G.gradeProduce(a, bareItem).verdict, "correct");
-  expect(`${id} "${a}" 마이크(우회 허용 답 없이) → 정답`, G.gradeProduce(a, bareItem, { spoken: true }).verdict, "correct");
+  expect(`${id} "${a}" 타이핑(우회 허용 답 없이) → 정답`, gradeServed(a, bareItem).verdict, "correct");
+  expect(`${id} "${a}" 마이크(우회 허용 답 없이) → 정답`, gradeServed(a, bareItem, { spoken: true }).verdict, "correct");
 }
-expect("pg09-2:p1 Peter is older than John's → 오답(절 끝)", G.isCorrect(G.gradeProduce("Peter is older than John's.", viewItem("pg09-2:p1") || { en: "x" })), false);
+expect("pg09-2:p1 Peter is older than John's → 오답(절 끝)", G.isCorrect(gradeServed("Peter is older than John's.", viewItem("pg09-2:p1") || { en: "x" })), false);
 // a slash is a word break (할 일 2)
 const goItem = viewItem("pg10-2:p41") || { en: "go - went - gone", targets: [["went"], ["gone"]] };
-expect("pg10-2:p41 go/went/gone → 정답", G.gradeProduce("go/went/gone", goItem).verdict, "correct");
-expect("pg10-2:p41 go / went / gone → 정답", G.gradeProduce("go / went / gone", goItem).verdict, "correct");
-expect("pg10-2:p41 go/went/goed → 오답", G.gradeProduce("go/went/goed", goItem).verdict, "wrong");
+expect("pg10-2:p41 go/went/gone → 정답", gradeServed("go/went/gone", goItem).verdict, "correct");
+expect("pg10-2:p41 go / went / gone → 정답", gradeServed("go / went / gone", goItem).verdict, "correct");
+expect("pg10-2:p41 go/went/goed → 오답", gradeServed("go/went/goed", goItem).verdict, "wrong");
 // microphone: words said the same way · spacing (할 일 3) — typed answers as before
 const readItem = viewItem("pg10-2:p71") || { en: "read - read - read", targets: [["read"]], errorPatterns: [{ match: "red", hint: "x" }] };
-expect("pg10-2:p71 마이크 read red red → 정답", G.gradeProduce("read red red", readItem, { spoken: true }).verdict, "correct");
-expect("pg10-2:p71 타이핑 read red red → 오답 + red 힌트(그대로)", ((r) => [r.verdict, r.pattern && r.pattern.match])(G.gradeProduce("read red red", readItem)), ["wrong", "red"]);
-expect("pg10-2:p71 마이크 read reed reed → 오답(reed 는 목록에 없음)", G.gradeProduce("read reed reed", readItem, { spoken: true }).verdict, "wrong");
+expect("pg10-2:p71 마이크 read red red → 정답", gradeServed("read red red", readItem, { spoken: true }).verdict, "correct");
+expect("pg10-2:p71 타이핑 read red red → 오답 + red 힌트(그대로)", ((r) => [r.verdict, r.pattern && r.pattern.match])(gradeServed("read red red", readItem)), ["wrong", "red"]);
+expect("pg10-2:p71 마이크 read reed reed → 오답(reed 는 목록에 없음)", gradeServed("read reed reed", readItem, { spoken: true }).verdict, "wrong");
 const walkItem = viewItem("pg11-2:p4") || { en: "She walks to school with my brother every day.", targets: [["walks"]] };
-expect("pg11-2:p4 마이크 …brother everyday → 정답", G.gradeProduce("She walks to school with my brother everyday", walkItem, { spoken: true }).verdict, "correct");
-expect("pg11-2:p4 타이핑 …brother everyday. → 오답 + everyday 힌트(그대로)", ((r) => [r.verdict, r.pattern && r.pattern.match])(G.gradeProduce("She walks to school with my brother everyday.", walkItem)), ["wrong", "everyday"]);
-expect("pg11-2:p4 마이크 She walk to … everyday → 오답, 힌트는 She walk to", ((r) => [r.verdict, r.pattern && r.pattern.match])(G.gradeProduce("She walk to school with my brother everyday", walkItem, { spoken: true })), ["wrong", "She walk to"]);
-expect("pg11-2:p5 마이크 …an hour everyday → 정답", G.gradeProduce("Nick reads the Bible for an hour everyday", viewItem("pg11-2:p5") || walkItem, { spoken: true }).verdict, "correct");
+expect("pg11-2:p4 마이크 …brother everyday → 정답", gradeServed("She walks to school with my brother everyday", walkItem, { spoken: true }).verdict, "correct");
+expect("pg11-2:p4 타이핑 …brother everyday. → 오답 + everyday 힌트(그대로)", ((r) => [r.verdict, r.pattern && r.pattern.match])(gradeServed("She walks to school with my brother everyday.", walkItem)), ["wrong", "everyday"]);
+expect("pg11-2:p4 마이크 She walk to … everyday → 오답, 힌트는 She walk to", ((r) => [r.verdict, r.pattern && r.pattern.match])(gradeServed("She walk to school with my brother everyday", walkItem, { spoken: true })), ["wrong", "She walk to"]);
+expect("pg11-2:p5 마이크 …an hour everyday → 정답", gradeServed("Nick reads the Bible for an hour everyday", viewItem("pg11-2:p5") || walkItem, { spoken: true }).verdict, "correct");
 // the possessive hint (할 일 9 · 31)
 const roomItem = viewItem("pg09-2:p7") || { en: "My room is smaller than my brother's." };
-expect("pg09-2:p7 My room is smaller than my brothers. → 오답 + 소유격 힌트", ((r) => [r.verdict, r.possessive && r.possessive.hint])(G.gradeProduce("My room is smaller than my brothers.", roomItem)), ["wrong", G.POSSESSIVE_HINT]);
-expect("pg09-2:p7 마이크 my room is smaller than my brothers → 정답 · 힌트 없음", ((r) => [r.verdict, r.possessive])(G.gradeProduce("my room is smaller than my brothers", roomItem, { spoken: true })), ["correct", null]);
+expect("pg09-2:p7 My room is smaller than my brothers. → 오답 + 소유격 힌트", ((r) => [r.verdict, r.possessive && r.possessive.hint])(gradeServed("My room is smaller than my brothers.", roomItem)), ["wrong", G.POSSESSIVE_HINT]);
+expect("pg09-2:p7 마이크 my room is smaller than my brothers → 정답 · 힌트 없음", ((r) => [r.verdict, r.possessive])(gradeServed("my room is smaller than my brothers", roomItem, { spoken: true })), ["correct", null]);
 expect("소유격 힌트는 정답 낱말(…'s)을 말하지 않음", /[A-Za-z]['’]s\b/.test(G.POSSESSIVE_HINT), false);
-expect("Its a dog … → 소유격 힌트 없음(it's 는 축약형)", G.gradeProduce("Its a dog and its hair is gray.", itsDog).possessive, null);
-expect("It's tail is long → 소유격 힌트 없음(아포스트로피를 더함)", G.gradeProduce("It's tail is long.", { en: "Its tail is long." }).possessive, null);
+expect("Its a dog … → 소유격 힌트 없음(it's 는 축약형)", gradeServed("Its a dog and its hair is gray.", itsDog).possessive, null);
+expect("It's tail is long → 소유격 힌트 없음(아포스트로피를 더함)", gradeServed("It's tail is long.", { en: "Its tail is long." }).possessive, null);
 
 // ── 결과
 const items = lessons.reduce((n, L) => n + writeItems(L.file).length, 0);

@@ -47,6 +47,10 @@
  *      number, an ending (walk/walks, like/liked), two forms of one word (forget/forgot, broke/broken,
  *      woman/women) or two look-alike words (bought/brought, later/latter): those are grammar or a different
  *      word. A microphone answer keeps GRAMMAR's leniency for apostrophes (a slip, before the targets).
+ *      The forms of one word come WITH THE ITEM (`wordForms`): the server attaches the words of the irregular-verb and
+ *      irregular-plural table that the item's own answers can meet (src/lib/passoffWordForms.ts). The table is not in
+ *      this file — every lesson page's JavaScript carries this file, and the table was pg10-2's paid lines (점검
+ *      2026-09-28). An item without `wordForms` knows no such forms.
  *   5. Anything else is WRONG — there is no partial credit here ("partial 은 정답이 아님"): a wrong function
  *      word is the lesson's point. What comes back tells the learner where: the target groups missing
  *      (`targets`, any-of), the first error pattern the answer contains (word boundaries, same normalising),
@@ -385,8 +389,11 @@ export function hasHangul(text: string): boolean {
   return HANGUL.test(String(text ?? ""));
 }
 
-/** Optimal-string-alignment distance: a transposition ("teh") counts as one edit (grammarGrading.ts, copied). */
-function editDistance(a: string, b: string): number {
+/**
+ * Optimal-string-alignment distance: a transposition ("teh") counts as one edit (grammarGrading.ts, copied). Exported for
+ * the server's word forms (passoffWordForms.ts), which must measure "one letter away" exactly as the typo rule does.
+ */
+export function editDistance(a: string, b: string): number {
   const rows = a.length + 1;
   const cols = b.length + 1;
   const d: number[][] = Array.from({ length: rows }, () => new Array<number>(cols).fill(0));
@@ -479,11 +486,6 @@ const ONES = [
   "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
 ];
 const TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-const ORDINAL_ONES = [
-  "zeroth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth",
-  "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth",
-];
-const ORDINAL_TENS = ["", "", "twentieth", "thirtieth", "fortieth", "fiftieth", "sixtieth", "seventieth", "eightieth", "ninetieth"];
 
 function cardinal(n: number): string | null {
   if (!Number.isInteger(n) || n < 0 || n > 100) return null;
@@ -493,12 +495,20 @@ function cardinal(n: number): string | null {
   return ones ? `${TENS[Math.floor(n / 10)]} ${ONES[ones]}` : TENS[n / 10];
 }
 
+/**
+ * Ordinals are made from the cardinal words by the spelling rules — no list of them is kept (점검 2026-09-28: the list
+ * was pg06-3's paid lines, in every lesson page's JavaScript). Only the last word changes: the irregular few, a ten's
+ * -y → -ieth (twenty → twentieth), otherwise + th (four → fourth, thirteen → thirteenth, hundred → hundredth).
+ * The same words as the old list for 1 to 100 (docs/pass-off-grammar/검사/check-leak-fix.cjs compares the two).
+ */
+const IRREGULAR_ORDINALS: Readonly<Record<string, string>> = { one: "first", two: "second", three: "third", five: "fifth", eight: "eighth", nine: "ninth", twelve: "twelfth" };
+const ordinalWord = (word: string): string => IRREGULAR_ORDINALS[word] ?? (word.endsWith("y") ? `${word.slice(0, -1)}ieth` : `${word}th`);
+
 function ordinal(n: number): string | null {
   if (!Number.isInteger(n) || n < 1 || n > 100) return null;
-  if (n === 100) return "one hundredth";
-  if (n < 20) return ORDINAL_ONES[n];
-  const ones = n % 10;
-  return ones ? `${TENS[Math.floor(n / 10)]} ${ORDINAL_ONES[ones]}` : ORDINAL_TENS[n / 10];
+  const words = cardinal(n) ?? "";
+  const last = words.lastIndexOf(" ") + 1;
+  return words.slice(0, last) + ordinalWord(words.slice(last));
 }
 
 /**
@@ -890,6 +900,12 @@ export interface ProduceItemLike {
   accept?: readonly string[] | null;
   targets?: readonly (readonly string[])[] | null;
   errorPatterns?: readonly ErrorPatternLike[] | null;
+  /**
+   * The words of the irregular-verb and irregular-plural table that this item's answers can meet — its answers' table
+   * words and the table words one letter away from them. The server attaches them (src/lib/passoffWordForms.ts); a lesson
+   * file never holds them. A one-letter difference between two of them is never a typo (differentWord).
+   */
+  wordForms?: readonly string[] | null;
 }
 
 export interface ProduceResult {
@@ -934,36 +950,13 @@ function changesEnding(a: string, b: string): boolean {
   return a.length === b.length && a.slice(0, -1) === b.slice(0, -1) && /[sd]$/.test(a) && /[sd]$/.test(b);
 }
 
-/**
- * Irregular verbs (base · past · past participle — the textbook's table, pg10-2, and the common ones around it)
- * and irregular plurals, one group per word. Two forms that differ by one letter are two forms of one word
- * (forget/forgot · broke/broken · woman/women) or two different words (bought/brought · taught/caught) — never a
- * spelling slip. (A plain -n / -t ending is not taken as grammar on its own: seven/seve · student/studen are
- * real slips; the irregular -n / -t forms are all here.)
+/*
+ * Two forms of one word (forget/forgot · broke/broken · woman/women) or two words of the irregular-verb and plural table
+ * (bought/brought · taught/caught) that differ by one letter are never a spelling slip. The table is on the server
+ * (src/lib/passoffWordForms.ts); each item brings the table words its answers can meet (`wordForms`, `known` below).
  */
-const WORD_FORMS =
-  "arise,arose,arisen|awake,awoke,awoken|bear,bore,borne,born|beat,beaten|become,became|begin,began,begun|bend,bent|" +
-  "bind,bound|bite,bit,bitten|bleed,bled|blow,blew,blown|break,broke,broken|breed,bred|bring,brought|build,built|" +
-  "burn,burnt,burned|buy,bought|catch,caught|choose,chose,chosen|cling,clung|come,came|creep,crept|deal,dealt|dig,dug|" +
-  "do,did,done|draw,drew,drawn|dream,dreamt,dreamed|drink,drank,drunk|drive,drove,driven|eat,ate,eaten|fall,fell,fallen|" +
-  "feed,fed|feel,felt|fight,fought|find,found|flee,fled|fling,flung|fly,flew,flown|forbid,forbade,forbidden|" +
-  "forget,forgot,forgotten|forgive,forgave,forgiven|freeze,froze,frozen|get,got,gotten|give,gave,given|go,went,gone|" +
-  "grind,ground|grow,grew,grown|hang,hung|hear,heard|hide,hid,hidden|hold,held|keep,kept|kneel,knelt|know,knew,known|" +
-  "lay,laid|lead,led|lean,leant,leaned|leap,leapt,leaped|learn,learnt,learned|leave,left|lend,lent|lie,lay,lain|" +
-  "light,lit|lose,lost|make,made|mean,meant|meet,met|mistake,mistook,mistaken|pay,paid|prove,proved,proven|" +
-  "ride,rode,ridden|ring,rang,rung|rise,rose,risen|run,ran|say,said|see,saw,seen|seek,sought|sell,sold|send,sent|" +
-  "sew,sewed,sewn|shake,shook,shaken|shine,shone|shoot,shot|show,showed,shown|shrink,shrank,shrunk|sing,sang,sung|" +
-  "sink,sank,sunk|sit,sat|sleep,slept|slide,slid|smell,smelt,smelled|speak,spoke,spoken|speed,sped|spell,spelt,spelled|" +
-  "spend,spent|spill,spilt,spilled|spin,spun|spit,spat|spoil,spoilt,spoiled|spring,sprang,sprung|stand,stood|" +
-  "steal,stole,stolen|stick,stuck|sting,stung|stink,stank,stunk|strike,struck|string,strung|strive,strove,striven|" +
-  "swear,swore,sworn|sweep,swept|swell,swelled,swollen|swim,swam,swum|swing,swung|take,took,taken|teach,taught|" +
-  "tear,tore,torn|tell,told|think,thought|throw,threw,thrown|tread,trod,trodden|understand,understood|wake,woke,woken|" +
-  "wear,wore,worn|weave,wove,woven|weep,wept|win,won|wind,wound|withdraw,withdrew,withdrawn|write,wrote,written|" +
-  "man,men|woman,women|child,children|foot,feet|tooth,teeth|goose,geese|mouse,mice|person,people|leaf,leaves|" +
-  "life,lives|knife,knives|wife,wives|half,halves|wolf,wolves|shelf,shelves|thief,thieves|loaf,loaves|ox,oxen";
-const KNOWN_FORMS = new Set(WORD_FORMS.split(/[|,]/));
 
-/** Look-alike words a learner mixes up, one letter apart and both real (bought/brought is in WORD_FORMS). */
+/** Look-alike words a learner mixes up, one letter apart and both real (bought/brought is in the server's word-form table). */
 const LOOK_ALIKES = new Set(
   (
     "better,bitter|later,latter|quiet,quite|loose,lose|desert,dessert|cloth,clothe|breath,breathe|advice,advise|" +
@@ -979,22 +972,23 @@ const LOOK_ALIKES = new Set(
 
 /**
  * Two different words, or two forms of one word — the whole words, or their ends after a shared start
- * (overtake/overtaken · fireman/firemen).
+ * (overtake/overtaken · fireman/firemen). `known`: the item's word forms (ProduceItemLike.wordForms).
  */
-function differentWord(a: string, b: string): boolean {
+function differentWord(a: string, b: string, known: ReadonlySet<string>): boolean {
   if (LOOK_ALIKES.has([a, b].sort().join(","))) return true;
   let shared = 0;
   while (shared < a.length && shared < b.length && a[shared] === b[shared]) shared++;
-  for (let cut = 0; cut <= shared; cut++) if (KNOWN_FORMS.has(a.slice(cut)) && KNOWN_FORMS.has(b.slice(cut))) return true;
+  for (let cut = 0; cut <= shared; cut++) if (known.has(a.slice(cut)) && known.has(b.slice(cut))) return true;
   return false;
 }
 
 /**
  * One slip of one letter in a content word of five letters or more — never a target, function or negation
  * word, never an apostrophe (its/it's · one's/ones are grammar; a contraction typed without one is
- * restoreApostrophes'), and never a word that another word or form is one letter away from (differentWord).
+ * restoreApostrophes'), and never a word that another word or form is one letter away from (differentWord — `known`:
+ * the item's word forms).
  */
-function isTypo(typed: string, expected: string, strict: Set<string>): boolean {
+function isTypo(typed: string, expected: string, strict: Set<string>, known: ReadonlySet<string>): boolean {
   if (expected.length < 5) return false;
   if (/\d/.test(typed) || /\d/.test(expected)) return false;
   if (typed.includes("'") || expected.includes("'")) return false;
@@ -1004,7 +998,7 @@ function isTypo(typed: string, expected: string, strict: Set<string>): boolean {
   if (isPrefixedOpposite(typed, expected)) return false;
   if (editDistance(typed, expected) !== 1) return false;
   if (changesEnding(typed, expected)) return false;
-  if (differentWord(typed, expected)) return false;
+  if (differentWord(typed, expected, known)) return false;
   return true;
 }
 
@@ -1019,7 +1013,14 @@ export function typoEligible(word: string, targets?: readonly (readonly string[]
 }
 
 /** A one-letter slip in one word of the learner's `forms` against a reference's comparison form `model`. */
-function typoAgainst(forms: readonly string[], model: string, reference: string, strict: Set<string>, apostrophes: Apostrophes): { typed: string; expected: string } | null {
+function typoAgainst(
+  forms: readonly string[],
+  model: string,
+  reference: string,
+  strict: Set<string>,
+  known: ReadonlySet<string>,
+  apostrophes: Apostrophes,
+): { typed: string; expected: string } | null {
   const modelWords = words(model);
   if (!modelWords.length) return null;
   for (const form of forms) {
@@ -1035,7 +1036,7 @@ function typoAgainst(forms: readonly string[], model: string, reference: string,
       }
       at = i;
     }
-    if (single && at >= 0 && isTypo(user[at], modelWords[at], strict)) {
+    if (single && at >= 0 && isTypo(user[at], modelWords[at], strict, known)) {
       const ref = ownedWords(reference, { apostrophes });
       return { typed: user[at], expected: referenceWord(ref, at) };
     }
@@ -1227,8 +1228,9 @@ export function gradeProduce(answerRaw: string, item: ProduceItemLike, options: 
     }
     if (!missing.length) {
       const strict = targetWords(item.targets);
+      const known = new Set(item.wordForms ?? []);
       for (let i = 0; i < refs.length; i++) {
-        const typo = typoAgainst(forms, models[i], refs[i], strict, apostrophes);
+        const typo = typoAgainst(forms, models[i], refs[i], strict, known, apostrophes);
         if (typo) return { ...base, verdict: "typo", reference: asWritten(i), typo };
       }
     }

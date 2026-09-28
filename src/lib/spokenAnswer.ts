@@ -21,11 +21,6 @@ const ONES = [
   "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
 ];
 const TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-const ORDINAL_ONES = [
-  "zeroth", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth",
-  "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth",
-];
-const ORDINAL_TENS = ["", "", "twentieth", "thirtieth", "fortieth", "fiftieth", "sixtieth", "seventieth", "eightieth", "ninetieth"];
 
 function cardinal(n: number): string | null {
   if (!Number.isInteger(n) || n < 0 || n > 100) return null;
@@ -35,12 +30,21 @@ function cardinal(n: number): string | null {
   return ones ? `${TENS[Math.floor(n / 10)]} ${ONES[ones]}` : TENS[n / 10];
 }
 
+/**
+ * Ordinals are made from the cardinal words by the spelling rules — no list of them is kept (2026-09-28: the list was a
+ * paid PASS-OFF GRAMMAR lesson's lines, pg06-3, in the public JavaScript of every GRAMMAR page). Only the last word
+ * changes: the irregular few, a ten's -y → -ieth (twenty → twentieth), otherwise + th (four → fourth, thirteen →
+ * thirteenth, hundred → hundredth). The same words as the old list for 1 to 100 (docs/pass-off-grammar/검사/
+ * check-leak-fix.cjs compares the two).
+ */
+const IRREGULAR_ORDINALS: Readonly<Record<string, string>> = { one: "first", two: "second", three: "third", five: "fifth", eight: "eighth", nine: "ninth", twelve: "twelfth" };
+const ordinalWord = (word: string): string => IRREGULAR_ORDINALS[word] ?? (word.endsWith("y") ? `${word.slice(0, -1)}ieth` : `${word}th`);
+
 function ordinal(n: number): string | null {
   if (!Number.isInteger(n) || n < 1 || n > 100) return null;
-  if (n === 100) return "one hundredth";
-  if (n < 20) return ORDINAL_ONES[n];
-  const ones = n % 10;
-  return ones ? `${TENS[Math.floor(n / 10)]} ${ORDINAL_ONES[ones]}` : ORDINAL_TENS[n / 10];
+  const words = cardinal(n) ?? "";
+  const last = words.lastIndexOf(" ") + 1;
+  return words.slice(0, last) + ordinalWord(words.slice(last));
 }
 
 const TENS_WORD = "twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety";
