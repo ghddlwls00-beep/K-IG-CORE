@@ -110,7 +110,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       behavior: "smooth",
     });
     setTimeout(() => {
-      // back to the container's own snapping classes (mandatory on phones, proximity from md)
+      // back to the container's own snapping classes (mandatory on a touch screen, none with a mouse or trackpad)
       if (el) el.style.scrollSnapType = "";
       isAnimatingRef.current = false;
     }, 600);
@@ -121,6 +121,10 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
   // of the wheel used to move a whole screen and the keys could do nothing else. Scrolling is the browser's
   // own again: slides still snap into place on a phone, and only gently near a slide from md up (see the
   // container's scroll-snap classes). A resize still re-aligns the slide in view.
+  // 2026-09-28 (사장님 "데스크탑 렌딩 페이지 보면 페이지 내리고 올리는데 부자연스러워 이거 해결해"): with a mouse or
+  // trackpad (pointer: fine) there is no snapping at all — the gentle snap still pulled the page to the nearest slide
+  // after every wheel or trackpad stop, and scroll-snap-stop: always held it at each slide, so the page moved against
+  // the hand. A touch screen keeps the one-slide-per-swipe snap. The look (full-screen slides, dots, arrows) is the same.
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -173,7 +177,7 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
       <div
         ref={containerRef}
         onScroll={handleScroll}
-        className="relative h-full w-full overflow-y-auto select-text overscroll-y-contain no-scrollbar [scroll-snap-type:y_mandatory] md:[scroll-snap-type:y_proximity]"
+        className="relative h-full w-full overflow-y-auto select-text overscroll-y-contain no-scrollbar [scroll-snap-type:y_mandatory] [@media(pointer:fine)]:[scroll-snap-type:none]"
         style={{
           WebkitOverflowScrolling: "touch",
         }}
