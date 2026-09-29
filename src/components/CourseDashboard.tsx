@@ -49,19 +49,27 @@ export interface DashboardSection {
  * aria-expanded on the section headers.
  */
 
-// When the browser last fired popstate (BACK / FORWARD in this tab). The App Router renders the page it goes back to
-// right after, so a course list mounting within a moment of it was reached through history, not by coming in.
-let lastPopstateAt = 0;
+// Where the browser's last BACK / FORWARD in this tab landed, and when (popstate). The App Router renders that page right
+// after, so a course list mounting at that very address shortly after was reached through history, not by coming in.
+// Each history arrival is used once: a list reached afterwards by the menu or '← 목록' starts closed — the first
+// version kept a 3-second window open whatever came next, and the pre-release check (45374ad) measured ☰ → /ld 0.5 s
+// after a BACK and '← 목록' 0.9 s after one both bringing back saved sections.
+let popped: { href: string; at: number } | null = null;
+let documentEntryUsed = false;
 if (typeof window !== "undefined") {
   window.addEventListener("popstate", () => {
-    lastPopstateAt = Date.now();
+    popped = { href: window.location.href, at: Date.now() };
   });
 }
-/** Was this course list reached with the browser's BACK / FORWARD (in the app, or a history load of the page itself)? */
+/** Was this course list reached with the browser's BACK / FORWARD (in the app, or a history load of this page itself)? */
 function cameBackByHistory(): boolean {
-  if (Date.now() - lastPopstateAt < 3000) return true;
+  const p = popped;
+  popped = null;
+  if (p && p.href === window.location.href && Date.now() - p.at < 10000) return true;
+  if (documentEntryUsed) return false;
+  documentEntryUsed = true;
   const nav = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
-  return nav?.type === "back_forward" && performance.now() < 5000;
+  return nav?.type === "back_forward" && nav.name === window.location.href && performance.now() < 10000;
 }
 
 const LessonRow = memo(function LessonRow({
