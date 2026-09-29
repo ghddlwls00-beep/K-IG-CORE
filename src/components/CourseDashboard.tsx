@@ -39,8 +39,8 @@ export interface DashboardSection {
  * 2026-09-27 — the course list rebuilt to docs/디자인-규칙.md (점검 FRAME-U02 · U12 · L02 · L09):
  *   - '이어서 학습' (the last lesson opened in THIS course) or '처음부터' at the top; visitors get
  *     '무료로 먼저 해 보기' with the two free lessons instead of an empty progress card
- *   - the section holding that lesson opens by itself and scrolls to it; which sections are open is
- *     kept for the tab (sessionStorage), so BACK from a lesson returns to the same list
+ *   - every section starts closed (사장님 2026-09-29 — it used to open the one holding that lesson); which
+ *     sections are open is kept for the tab (sessionStorage), and BACK from a lesson returns to the same list
  *   - one 52px row per lesson: title · state (완료 · 무료 · 잠금) · bookmark. The repeated badge,
  *     subtitle, file id and '학습하기' of the old cards are gone; titles are unchanged
  *   - a chevron (not ▶, which read as a play button), no gradient, no emerald/blue/amber
@@ -48,6 +48,21 @@ export interface DashboardSection {
  * '학습 진도율: N / T개 완료 (P%)', the filter labels '전체 (N)' · '북마크 (N)' · '미완료 (N)', and
  * aria-expanded on the section headers.
  */
+
+// When the browser last fired popstate (BACK / FORWARD in this tab). The App Router renders the page it goes back to
+// right after, so a course list mounting within a moment of it was reached through history, not by coming in.
+let lastPopstateAt = 0;
+if (typeof window !== "undefined") {
+  window.addEventListener("popstate", () => {
+    lastPopstateAt = Date.now();
+  });
+}
+/** Was this course list reached with the browser's BACK / FORWARD (in the app, or a history load of the page itself)? */
+function cameBackByHistory(): boolean {
+  if (Date.now() - lastPopstateAt < 3000) return true;
+  const nav = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
+  return nav?.type === "back_forward" && performance.now() < 5000;
+}
 
 const LessonRow = memo(function LessonRow({
   lesson,
@@ -284,29 +299,28 @@ export function CourseDashboard({
       .filter((sec) => sec.lessons.length > 0);
   }, [sections, filter, courseSlug, isBookmarked, isDoneHere]);
 
-  // Which sections are open. Kept for this tab (sessionStorage) so BACK from a lesson finds the list
-  // as it was; the first visit opens the section with the recent lesson, or the first section.
+  // Which sections are open. Coming into a course list (menu, a link, '← 목록', a typed address) starts with every
+  // section closed (사장님 2026-09-29 "각 섹션을 들어가면 첫 강의가 열려있는데 모든 섹션이 다 닫혀 있게 해줘" — it used
+  // to open the section with the recent lesson, or the first one); '이어서 학습 / 처음부터' and '무료로 먼저 해 보기'
+  // above the list still start a lesson in one tap. Only the browser's BACK / FORWARD finds the list as it was left
+  // (kept for this tab in sessionStorage — 공통 틀 2 '뒤로 가면 보던 자리').
   const openKey = `kig:list-open:${courseSlug}`;
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
   const openRestoredRef = useRef(false);
   useEffect(() => {
     if (openRestoredRef.current) return;
-    let restored: Record<string, boolean> | null = null;
-    try {
-      const saved = window.sessionStorage.getItem(openKey);
-      if (saved) restored = JSON.parse(saved);
-    } catch {
-      // ignore
-    }
-    if (!restored) {
-      const home = recentListed
-        ? sections.find((s) => s.lessons.some((l) => l.id === recentListed.id))
-        : sections[0];
-      restored = home ? { [home.label]: true } : {};
+    let restored: Record<string, boolean> = {};
+    if (cameBackByHistory()) {
+      try {
+        const saved = window.sessionStorage.getItem(openKey);
+        if (saved) restored = JSON.parse(saved);
+      } catch {
+        // ignore
+      }
     }
     openRestoredRef.current = true;
     setOpenSections(restored);
-  }, [openKey, recentListed, sections]);
+  }, [openKey]);
 
   const toggleSection = (label: string) => {
     setOpenSections((prev) => {
