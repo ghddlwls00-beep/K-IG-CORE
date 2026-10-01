@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "pr176-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "본문에서 설명서를 읽는 것만으로 컴퓨터 사용법을 익히는 것 같다고 한 사람들은?",
       "options": [
-        "사람은 눈보다 귀로 들을 때 무언가를 더 잘 익힌다",
-        "사람은 직접 해 볼 때 무언가를 가장 잘 익힌다",
-        "사람은 읽고 쓰면서 무언가를 더 오래 익힌다",
-        "사람은 저마다 다른 방법으로 무언가를 익힌다"
+        "많은 사람들",
+        "몇몇 사람들",
+        "글쓴이의 친구들",
+        "대부분의 젊은이들"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        1,
-        2,
-        3,
-        7
+        6
       ],
-      "note": "'some people use their ears more, and others use their eyes more' · 'people learn things in different ways' — 사람마다 배우는 방식이 다르다"
+      "note": "'many people seem to learn how to use a computer just by reading the manual'"
     },
     {
       "id": "pr176-q2",

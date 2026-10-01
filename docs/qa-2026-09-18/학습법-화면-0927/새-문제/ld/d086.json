@@ -5,52 +5,53 @@
   "questions": [
     {
       "id": "d086-q1",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "type": "순서",
+      "prompt": "이야기에서 컴퓨터의 쓰임을 소개한 순서로 가장 알맞은 것은?",
       "options": [
-        "재정 기록부터 로켓·자동차까지 컴퓨터가 쓰이는 여러 분야",
-        "재정 기록부터 로켓·자동차까지 컴퓨터가 바꾼 여러 직업",
-        "재정 기록에서 로켓·자동차로 컴퓨터 쓰임이 옮겨 간 순서",
-        "로켓·자동차보다 재정 기록에 컴퓨터가 더 널리 쓰이는 까닭"
+        "공장 기계 제어 → 정부·병원 → 로켓·비행기",
+        "정부·병원 → 공장 기계 제어 → 로켓·비행기",
+        "공장 기계 제어 → 로켓·비행기 → 정부·병원",
+        "로켓·비행기 → 공장 기계 제어 → 정부·병원"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        7
+        3,
+        4,
+        5
       ],
-      "note": "'Computers are used in many different ways' · 'computers have so many uses'가 컴퓨터의 여러 쓰임새를 다룬 글임을 보여 줌"
+      "note": "'computers are used to control other machines' → 'Governments, hospitals' → 'rockets, airplanes'"
     },
     {
       "id": "d086-q2",
       "type": "세부 사실",
-      "prompt": "많은 산업 분야에서 컴퓨터가 제어하는 것으로 가장 알맞은 것은?",
+      "prompt": "정부, 병원, 학교와 함께 컴퓨터를 쓰는 곳으로 소개된 것으로 가장 알맞은 것은?",
       "options": [
-        "회사의 재정 기록과 장부",
-        "선박과 자동차의 운행 장치",
-        "공장 직원들의 출퇴근 기록",
-        "제품을 만드는 다른 기계들"
+        "방송국",
+        "보험 회사",
+        "통신 회사",
+        "신문사"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        3
+        4
       ],
-      "note": "'In many industries, computers are used to control other machines that make products'가 제품을 만드는 기계를 제어한다는 것을 보여 줌"
+      "note": "'Governments, hospitals, schools, and communication companies work with computers'"
     },
     {
       "id": "d086-q3",
       "type": "세부 사실",
-      "prompt": "일부 사람들이 집에 두고 있다고 한 것으로 가장 알맞은 것은?",
+      "prompt": "컴퓨터 산업에 대해 말한 것으로 가장 알맞은 것은?",
       "options": [
-        "가계 재정 기록을 맡는 컴퓨터",
-        "자가용에 맞춰 만든 특별한 컴퓨터",
-        "가전 기계를 제어하는 컴퓨터",
-        "작은 규모의 컴퓨터 시스템"
+        "세계에서 가장 빨리 성장하는 산업 가운데 하나가 됐다",
+        "세계 최대 규모의 산업 가운데 하나로 꼽히게 됐다",
+        "세계에서 가장 빨리 일자리가 느는 산업 가운데 하나가 됐다",
+        "세계에서 가장 빨리 이익이 느는 산업 가운데 하나가 됐다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        6
+        7
       ],
-      "note": "'Some people have small computer systems in their homes'가 집에 작은 컴퓨터 시스템을 둔다는 것을 보여 줌"
+      "note": "'the computer industry has become one of the largest industries in the world'"
     }
   ]
 }

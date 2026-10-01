@@ -21,20 +21,19 @@
     },
     {
       "id": "pr146-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글에서 추론할 수 있는 것은?",
+      "type": "조건",
+      "prompt": "글에 따르면, 제조업자가 돈을 더 많이 벌게 되는 경우는?",
       "options": [
-        "제조업자는 사람들이 고장 나면 회사 수리 센터에 맡기기를 바란다",
-        "제조업자는 사람들이 할인할 때 물건을 여러 개 사 두기를 바란다",
-        "제조업자는 사람들이 비싼 고급 모델을 골라 사기를 바란다",
-        "제조업자는 사람들이 고장 나면 곧바로 새 모델을 사기를 바란다"
+        "옛 모델이 유행에서 밀려나자마자 새 모델을 살 때",
+        "새 모델이 시장에 나오자마자 새 모델을 살 때",
+        "옛 모델이 고장 나자마자 새 모델을 살 때",
+        "할인 행사가 시작되자마자 새 모델을 살 때"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        1,
         2
       ],
-      "note": "'encourage the \"new is better\" attitude', 'make more money if we buy a new model as soon as the old one fails' 참고"
+      "note": "'make more money if we buy a new model as soon as the old one fails' 참고"
     }
   ]
 }

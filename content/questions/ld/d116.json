@@ -6,36 +6,36 @@
     {
       "id": "d116-q1",
       "type": "세부 사실",
-      "prompt": "대평원 인디언의 생활로 옳은 것은?",
+      "prompt": "이야기에서 부족의 여자와 남자가 맡은 일로 말한 것으로 옳은 것은?",
       "options": [
-        "여름엔 천막에, 겨울엔 강가 흙집 마을에 머물렀다",
-        "머무는 곳마다 풀과 나뭇가지로 오두막을 새로 엮었다",
-        "들소 가죽 배를 타고 강을 따라 옮겨 다녔다",
-        "쉽게 걷어서 옮길 수 있는 천막에서 살았다"
+        "여자는 농사를, 남자는 사냥과 고기잡이를 맡았다",
+        "여자는 농사와 고기잡이를, 남자는 사냥을 맡았다",
+        "남자는 농사와 사냥을, 여자는 열매 따기를 맡았다",
+        "남자는 농사를, 여자는 고기잡이와 열매 따기를 맡았다"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        2
+        8
       ],
-      "note": "'The Plains Indians lived in tents that were easily moved'가 옮기기 쉬운 천막에서 살았음을 보여 줌"
+      "note": "'The women used to manage the crops while the men provided additional food by hunting and fishing'이 여자는 농사, 남자는 사냥과 고기잡이를 맡았음을 보여 줌"
     },
     {
       "id": "d116-q2",
-      "type": "세부 사실",
-      "prompt": "미시시피강 동쪽의 원주민 사회에서 여성이 맡은 일로 옳은 것은?",
+      "type": "가리키는 것",
+      "prompt": "유럽 정착민을 가장 먼저 만난 무리에 들었다고 한 부족들로 옳은 것은?",
       "options": [
-        "가죽을 손질해 옷과 거처를 짓는 일",
-        "부족 회의에서 우두머리를 뽑는 일",
-        "밭에서 자라는 작물을 맡아 돌보는 일",
-        "숲에서 열매와 견과를 모으는 일"
+        "들소 떼를 따라 천막을 옮기던 부족들",
+        "멕시코 북쪽 사막에서 살던 부족들",
+        "큰 강에서 고기잡이로 살던 부족들",
+        "영구 마을에서 농사를 짓던 부족들"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         6,
         7,
-        8
+        9
       ],
-      "note": "'living east of the Mississippi River' · 'these societies' · 'The women used to manage the crops'가 여성이 농작물을 돌보았음을 보여 줌"
+      "note": "'Most of these societies had built permanent villages and lived by farming', 'These tribes were among the first to meet the European settlers'가 영구 마을의 농사 부족임을 보여 줌"
     },
     {
       "id": "d116-q3",

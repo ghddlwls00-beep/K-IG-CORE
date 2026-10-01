@@ -5,36 +5,38 @@
   "questions": [
     {
       "id": "pr103-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에 따르면, 농업이 매우 빠르게 발전해 온 기간은?",
       "options": [
-        "앞으로 농업은 부유한 나라를 중심으로 빠르게 발전할 것이다",
-        "앞으로 농업은 지금처럼 빠르게 여러 방향으로 발전할 것이다",
-        "앞으로 농업은 큰 기업 농장이 이끄는 방향으로 발전할 것이다",
-        "앞으로 농업은 환경을 지키는 기술을 중심으로 발전할 것이다"
+        "지난 100년",
+        "지난 3,000년",
+        "지난 300년",
+        "지난 12,000년"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        2,
-        3
+        1
       ],
-      "note": "'no signs that the speed of development will slow down' · 'continue to develop in three main ways'로 확인"
+      "note": "'it has developed very quickly in the last 300 years'로 확인"
     },
     {
       "id": "pr103-q2",
-      "type": "세부 사실",
-      "prompt": "이 글의 내용과 일치하는 것은?",
+      "type": "순서",
+      "prompt": "글에서 농업이 발전할 방향으로 두 번째에 든 것은?",
       "options": [
-        "농업은 약 12,000년 전부터 빠르게 발전해 왔다",
-        "새 재배 방식은 부유한 사람들을 위해 먼저 개발될 것이다",
-        "농산물은 앞으로 주로 식량으로 쓰일 것이다",
-        "농업의 많은 과정을 컴퓨터가 제어하게 된다"
+        "새로운 기술로 농사가 더 효율적이 된다",
+        "농작물을 기르고 팔 새 방식이 생긴다",
+        "농산물이 여러 가지 방식으로 쓰인다",
+        "농사짓는 땅이 점점 더 넓어진다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        5
+        3,
+        4,
+        6,
+        7
       ],
-      "note": "'Many processes will be controlled by computers'로 확인"
+      "note": "'First, ... more efficient' · 'Second, new ways of growing, storing and selling crops' · 'Third, ... used in many ways'로 확인"
     }
   ]
 }

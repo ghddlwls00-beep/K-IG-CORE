@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "d215-q1",
-      "type": "세부사실",
-      "prompt": "원시인의 부적이 위험이나 싸움 앞에서 해 준 일로 옳은 것은?",
+      "type": "세부 사실",
+      "prompt": "강의에서 부적이 원시인에게 주었다고 한 것은?",
       "options": [
-        "용기를 내어 맞서 싸울 수 있게 해 주었다",
-        "적이 겁을 먹고 물러서게 해 주었다",
-        "적의 움직임을 미리 알려 주었다",
-        "신들의 노여움을 풀어 주었다"
+        "병을 이기는 건강",
+        "앞날을 내다보는 지혜",
+        "살림을 늘리는 재산",
+        "위험 앞에서의 용기"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        1,
         2
       ],
-      "note": "'good luck charms' · 'giving him bravery when confronted with danger' — 위험이나 싸움 앞에서 용기를 줌"
+      "note": "'giving him bravery when confronted with danger' — 위험 앞에서 용기를 줌"
     },
     {
       "id": "d215-q2",
@@ -38,20 +37,19 @@
     },
     {
       "id": "d215-q3",
-      "type": "중심내용",
-      "prompt": "이 강의의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "원시인의 부적이 무엇으로부터 그를 지켜 주도록 만들어졌다고 했는가?",
       "options": [
-        "옛사람들은 부적보다 제사장의 기도가 행운을 가져온다고 믿었다",
-        "옛사람들은 부적과 여러 동물이 행운을 상징한다고 여겼다",
-        "옛사람들은 제사장이 축복한 부적이 행운을 가져온다고 믿었다",
-        "옛사람들은 행운을 부르는 동물을 잡아 신에게 바쳤다"
+        "사나운 짐승",
+        "악한 힘",
+        "오랜 굶주림",
+        "무서운 병"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        5
+        1
       ],
-      "note": "'many good luck charms' · 'symbols of good fortune' — 부적과 여러 동물이 행운을 준다고 믿음"
+      "note": "'charms designed to protect him from evil' — 악으로부터 지켜 줌"
     }
   ]
 }

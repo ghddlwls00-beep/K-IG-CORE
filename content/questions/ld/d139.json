@@ -5,21 +5,20 @@
   "questions": [
     {
       "id": "d139-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "이유",
+      "prompt": "부부가 지난주에 새로 막을 올린 연극을 보러 가기로 한 이유로 알맞은 것은?",
       "options": [
-        "신문 평이 엇갈려 토요일 대신 일요일 공연을 고른 이야기",
-        "토요일에 본 새 코미디가 신문 평보다 훨씬 재미있었던 이야기",
-        "신문 평을 보고 토요일 밤에 새 코미디를 보러 가기로 한 이야기",
-        "토요일 공연을 보고 와서 신문에 짧은 평을 보낸 이야기"
+        "신문 평에서 배우들의 연기가 뛰어나다고 해서",
+        "신문 평에서 곧 공연이 끝난다고 알려 줘서",
+        "신문 평에서 아주 재미있는 작품이라고 해서",
+        "신문 평에서 무대 장치가 화려하다고 해서"
       ],
       "answer": 2,
       "evidence": [
         3,
-        4,
         5
       ],
-      "note": "'read the review in our newspaper' · 'a new comedy opened' · 'said it was very amusing so we decided to go'가 신문 평이 좋아 새 코미디를 보기로 했음을 보여 줌"
+      "note": "'we usually read the review in our newspaper' · 'The newspaper story said it was very amusing so we decided to go'가 신문 평에서 아주 재미있다고 해서임을 보여 줌"
     },
     {
       "id": "d139-q2",

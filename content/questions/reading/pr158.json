@@ -5,36 +5,36 @@
   "questions": [
     {
       "id": "pr158-q1",
-      "type": "중심 생각",
-      "prompt": "다음 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 우리 앞에 놓인 두 가지 가능성의 예로 든 것은?",
       "options": [
-        "윤리는 우리가 남의 처지를 헤아려 보는 데서 시작된다",
-        "윤리는 우리가 행동을 고른다는 것을 깨닫는 데서 시작된다",
-        "윤리는 우리가 옳고 그름을 배워 익히는 데서 시작된다",
-        "윤리는 우리가 사회의 규칙을 받아들이는 데서 시작된다"
+        "약속을 지키거나 어기는 것",
+        "진실이나 거짓을 말하는 것",
+        "남을 돕거나 모른 척하는 것",
+        "잘못을 털어놓거나 숨기는 것"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        8
+        2,
+        3
       ],
-      "note": "'Ethics begins with our being conscious that we choose how we behave', 'conscious that they face genuine alternatives'가 중심 생각이다"
+      "note": "'we can either tell the truth or tell a lie', 'These two possibilities'라고 했다"
     },
     {
       "id": "pr158-q2",
-      "type": "세부 사실",
-      "prompt": "돌에 관한 설명으로 이 글의 내용과 일치하는 것은?",
+      "type": "이유",
+      "prompt": "이 글에서 돌이 행동을 선택하지 못하는 까닭으로 든 것은?",
       "options": [
-        "돌은 무거워서 바깥의 힘을 받아도 거의 움직이지 않는다",
-        "돌은 같은 힘을 받아도 놓인 자리에 따라 다르게 움직인다",
-        "돌은 바깥의 힘이 움직이게 하는 대로 행동한다",
-        "돌은 바깥의 힘이 없어도 비탈에서는 저절로 굴러간다"
+        "살아 있는 생명체가 아니어서",
+        "아픔이나 기쁨을 느낄 수 없어서",
+        "여러 행동을 구별하지 못해서",
+        "생각을 말로 나타내지 못해서"
       ],
       "answer": 2,
       "evidence": [
-        6
+        5
       ],
-      "note": "'A stone can behave only in the way an outside force makes it behave'라고 했다"
+      "note": "'because it cannot distinguish between different courses of action'이라고 했다"
     }
   ]
 }

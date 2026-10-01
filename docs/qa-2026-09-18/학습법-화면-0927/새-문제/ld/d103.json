@@ -6,37 +6,35 @@
     {
       "id": "d103-q1",
       "type": "세부 사실",
-      "prompt": "이 경주가 출발하는 곳과 도착하는 곳으로 알맞은 것은?",
+      "prompt": "이 경주가 이어지는 기간으로 알맞은 것은?",
       "options": [
-        "네나나를 떠나 1925년 약을 나른 길로 놈에 닿는다",
-        "놈을 떠나 알래스카를 가로질러 앵커리지에 닿는다",
-        "앵커리지를 떠나 알래스카를 가로질러 놈에 닿는다",
-        "앵커리지를 떠나 개썰매 길을 따라 네나나에 닿는다"
+        "약 3~4주",
+        "약 2~3주",
+        "약 4~5주",
+        "약 1~2주"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        6
+        4,
+        5
       ],
-      "note": "'The race goes across Alaska from Anchorage to Nome' — 경주는 앵커리지에서 출발해 놈까지 감"
+      "note": "'The Iditarod Trail Race' · 'It lasts about 1 to 2 weeks'"
     },
     {
       "id": "d103-q2",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "오늘날 일부 알래스카 사람들이 개썰매 경주에서 하나로 묶는다고 한 두 가지는 무엇인가?",
       "options": [
-        "해마다 알래스카를 가로지르는 세계에서 가장 긴 개썰매 경주",
-        "1925년 약을 나른 사람들을 기리려고 시작된 개썰매 경주",
-        "앵커리지와 놈 사이 1,700킬로미터를 잇던 개썰매 우편 길",
-        "개썰매가 유일한 교통수단이던 시절 알래스카 사람들의 겨울"
+        "명예와 상금",
+        "전통과 관광",
+        "재미와 고된 일",
+        "우정과 경쟁"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        3,
-        4,
-        5,
-        6
+        3
       ],
-      "note": "'an annual dog sled race' · 'the longest dog sled race in the world' · 'covers almost 1,700 kilometers' · 'from Anchorage to Nome' — 세계에서 가장 긴 개썰매 경주를 소개함"
+      "note": "'some Alaskans combine fun and hard work in an annual dog sled race'"
     },
     {
       "id": "d103-q3",

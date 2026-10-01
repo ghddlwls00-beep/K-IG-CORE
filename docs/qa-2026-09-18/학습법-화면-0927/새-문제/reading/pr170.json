@@ -6,18 +6,18 @@
     {
       "id": "pr170-q1",
       "type": "세부 사실",
-      "prompt": "본문에서 언급된 지역과 식사 방법의 짝으로 옳은 것은?",
+      "prompt": "본문에서 일부 전통 음식을 오른손으로 먹는다고 언급된 나라는?",
       "options": [
-        "인도 - 오른손",
-        "에티오피아 - 오른손",
-        "태국 - 숟가락과 포크",
-        "중국 - 젓가락"
+        "인도",
+        "에티오피아",
+        "스리랑카",
+        "사우디아라비아"
       ],
       "answer": 3,
       "evidence": [
-        2
+        3
       ],
-      "note": "'in China chopsticks are the common choice' — 중국에서는 젓가락을 흔히 쓴다"
+      "note": "'In parts of Saudi Arabia, some traditional dishes are eaten with the right hand' — 사우디아라비아 일부 지역"
     },
     {
       "id": "pr170-q2",

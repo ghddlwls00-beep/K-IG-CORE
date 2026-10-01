@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "d175-q1",
-      "type": "세부 사실(숫자)",
-      "prompt": "시합이 끝난 뒤 잰 결과로 옳은 것은?",
+      "type": "세부 사실",
+      "prompt": "존 헨리가 기계에 맞서 장담한 것으로 옳은 것은?",
       "options": [
-        "존 헨리 45피트, 기계 9피트",
-        "존 헨리 45피트, 기계 30피트",
-        "존 헨리 15피트, 기계 9피트",
-        "존 헨리 30피트, 기계 15피트"
+        "어떤 기계보다 더 깊이, 더 멀리 뚫을 수 있다",
+        "어떤 기계보다 더 오래, 쉬지 않고 일할 수 있다",
+        "어떤 기계보다 더 열심히, 더 빨리 일할 수 있다",
+        "어떤 기계보다 더 단단한 바위도 깰 수 있다"
       ],
       "answer": 2,
       "evidence": [
-        6,
-        7
+        1
       ],
-      "note": "'After 45 minutes, the work was measured' · 'The machine had drilled only 9 feet, John Henry 15 feet' — 기계 9피트, 존 헨리 15피트"
+      "note": "'He insisted he could work harder and faster than any machine' — 어떤 기계보다 열심히, 빨리 일할 수 있다고 장담함"
     },
     {
       "id": "d175-q2",
@@ -38,20 +37,19 @@
     },
     {
       "id": "d175-q3",
-      "type": "다음에 할 일/결말",
-      "prompt": "시합이 끝난 뒤 존 헨리에게 일어난 일로 옳은 것은?",
+      "type": "세부 사실",
+      "prompt": "시합의 승자를 가리는 기준으로 정한 것은?",
       "options": [
-        "기계를 이긴 뒤 철도 공사의 감독이 되었다",
-        "기계를 이겼지만 망치를 쥔 채 숨을 거두었다",
-        "기계를 이겼지만 망치를 놓고 철도 일을 떠났다",
-        "기계를 이겼지만 다쳐서 망치를 들지 못하게 됐다"
+        "바위를 가장 먼저 뚫고 나간 쪽",
+        "바위 속으로 가장 깊이 뚫고 들어간 쪽",
+        "정해진 시간에 구멍을 가장 많이 뚫은 쪽",
+        "끝까지 포기하지 않고 버틴 쪽"
       ],
       "answer": 1,
       "evidence": [
-        8,
-        9
+        4
       ],
-      "note": "'the effort had been too much even for this giant of a man' · 'he died with the hammer in his hand' — 무리 끝에 망치를 쥔 채 숨짐"
+      "note": "'The winner would be the man or machine who had drilled farthest into the rock' — 바위 속으로 가장 깊이 뚫은 쪽이 승자"
     }
   ]
 }

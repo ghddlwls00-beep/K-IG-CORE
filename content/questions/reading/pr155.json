@@ -5,36 +5,36 @@
   "questions": [
     {
       "id": "pr155-q1",
-      "type": "중심 생각",
-      "prompt": "다음 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 사람의 몸과 함께 예로 든 것은?",
       "options": [
-        "자연은 부분이 계속 바뀌어도 전체는 그대로 유지된다",
-        "자연은 부분이 계속 바뀌면 전체도 따라서 바뀌어 간다",
-        "자연은 사람이 계속 돌보아야 전체가 그대로 유지된다",
-        "자연은 큰 변화가 일어나지 않아야 전체가 유지된다"
+        "바다",
+        "숲",
+        "강",
+        "사막"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        2,
-        6
+        3,
+        4
       ],
-      "note": "'tension between change and balance', 'The elements of nature are continually changing, but nature itself remains constant'가 중심 생각이다"
+      "note": "'In the case of human beings', 'Likewise, the forest remains a forest'라고 했다"
     },
     {
       "id": "pr155-q2",
       "type": "세부 사실",
-      "prompt": "이 글의 내용과 일치하는 것은?",
+      "prompt": "이 글에서 사람의 몸에 관해 비교적 일정하게 유지된다고 한 것은?",
       "options": [
-        "사람의 몸은 약 7년이 지나면 세포가 새것으로 바뀐다",
-        "숲에서 죽은 생물은 흙이 되어 다른 생물의 양분이 된다",
-        "숲은 나무와 풀이 죽고 나면 점차 풀밭으로 바뀐다",
-        "숲에서 죽은 생물은 다른 동물의 먹이가 되어 사라진다"
+        "몸의 체온과 맥박의 빠르기",
+        "몸의 전체 모양과 크기",
+        "몸속 뼈와 근육의 개수",
+        "몸의 무게와 피의 전체 양"
       ],
       "answer": 1,
       "evidence": [
-        5
+        3
       ],
-      "note": "숲속 생물의 사체는 'turned into soil', 그 흙은 'nourishes other organisms'라고 했다"
+      "note": "'the general shape and size of our body remains relatively constant'라고 했다"
     }
   ]
 }

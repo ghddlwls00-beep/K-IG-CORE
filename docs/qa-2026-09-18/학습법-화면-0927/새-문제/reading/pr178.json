@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "pr178-q1",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "글에서 \"This remained in my mind\"의 This가 가리키는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 식당에서 본 소년의 나이로 글에 나온 것은?",
       "options": [
-        "어린 소년이 요즘 조금 우울했다고 솔직하게 말한 것",
-        "어린 소년이 요즘 학교 공부가 힘들다고 털어놓은 것",
-        "어린 소년이 요즘 사는 게 너무 바쁘다고 불평한 것",
-        "어린 소년이 요즘 친구가 없어 외롭다고 말한 것"
+        "5살이나 6살",
+        "7살이나 8살",
+        "9살이나 10살",
+        "11살이나 12살"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        4,
-        5
+        4
       ],
-      "note": "소년이 'replied, Frankly, I've been a little depressed lately' 라고 한 바로 뒤에 'This remained in my mind' — This 는 소년의 대답"
+      "note": "'the boy, no more than seven or eight years old' — 7살이나 8살"
     },
     {
       "id": "pr178-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이와 친구들이 자신이 \"우울하다\"는 것을 알게 된 때는 언제인가?",
       "options": [
-        "예전 아이들은 지금보다 부모의 말을 더 잘 들었다",
-        "예전 아이들은 지금보다 바깥에서 더 많이 뛰어놀았다",
-        "예전 아이들은 지금보다 더 아이답게 말하고 행동했다",
-        "예전 아이들은 지금보다 어른의 비밀을 더 빨리 알았다"
+        "초등학교에 다닐 때",
+        "중학교에 들어간 뒤",
+        "대학교에 들어간 뒤",
+        "고등학교에 다닐 때"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        8,
-        9
+        6
       ],
-      "note": "'Children don't seem childlike anymore', 'behave more like adults than in the past' — 예전 아이들은 지금보다 더 아이다웠다는 뜻"
+      "note": "'my friends and I didn't realize we were \"depressed\" until high school' — 고등학교 때"
     }
   ]
 }

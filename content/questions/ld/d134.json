@@ -24,19 +24,18 @@
     {
       "id": "d134-q2",
       "type": "세부 사실",
-      "prompt": "말하는 이의 형에 대한 설명으로 알맞은 것은?",
+      "prompt": "말하는 이가 여행 가방을 원하는 만큼 가져갈 수 있다고 한 교통수단으로 알맞은 것은?",
       "options": [
-        "짐을 잘 싸서 가족의 가방까지 대신 꾸려 준다",
-        "큰 가방 하나에 무거운 것부터 차곡차곡 담는다",
-        "어디를 가든 작은 가방 하나로 충분하다",
-        "어디를 가든 짐 없이 가서 필요한 것은 사서 쓴다"
+        "기차와 배",
+        "기차와 자동차",
+        "자동차와 배",
+        "버스와 기차"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        8,
-        9
+        2
       ],
-      "note": "'My brother has no problem' · 'just carries one small suitcase wherever he goes and always has everything he needs'가 형은 작은 가방 하나로 충분함을 보여 줌"
+      "note": "'We can take as many suitcases as we wish on the train and the ship'이 기차와 배에서는 가방을 원하는 만큼 가져갈 수 있음을 보여 줌"
     },
     {
       "id": "d134-q3",

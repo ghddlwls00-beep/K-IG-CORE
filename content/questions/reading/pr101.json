@@ -5,35 +5,35 @@
   "questions": [
     {
       "id": "pr101-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에 따르면, 최근의 많은 연구가 보여 준 것은?",
       "options": [
-        "최근 연구는 몸의 병이 마음까지 약하게 만든다고 본다",
-        "최근 연구는 마음의 병은 약으로 고칠 수 있다고 본다",
-        "최근 연구는 마음이 병과 그 치료에 영향을 준다고 본다",
-        "최근 연구는 건강을 몸의 문제로 보는 것이 옳다고 본다"
-      ],
-      "answer": 2,
-      "evidence": [
-        3
-      ],
-      "note": "'Recently ... a lot of research that shows our mind affects illness and healing'로 확인"
-    },
-    {
-      "id": "pr101-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "이 글에서 'organic disease'가 뜻하는 것으로 가장 적절한 것은?",
-      "options": [
-        "유기농이 아닌 음식을 먹어서 생긴 병",
-        "오래 지나도 잘 낫지 않고 이어지는 병",
-        "검사로는 원인을 찾기 어려운 병",
-        "몸속 기관에 실제로 탈이 난 병"
+        "마음의 병이 몸의 병보다 더 많아지고 있다",
+        "마음의 병은 약으로 고치기 어렵다",
+        "몸의 병이 마음까지 약하게 만든다",
+        "마음이 병과 그 치유에 영향을 준다"
       ],
       "answer": 3,
       "evidence": [
+        3
+      ],
+      "note": "'a lot of research that shows our mind affects illness and healing'으로 확인"
+    },
+    {
+      "id": "pr101-q2",
+      "type": "세부 사실",
+      "prompt": "한 의료 센터가 보고한 내용으로 알맞은 것은?",
+      "options": [
+        "환자 중 더 많은 수가 상담을 받은 뒤 병이 빨리 나았다",
+        "환자 중 더 많은 수가 마음의 병 때문에 몸까지 아팠다",
+        "환자 중 더 많은 수가 몸에 병이 없이 심리적 도움을 원했다",
+        "환자 중 더 많은 수가 잠을 잘 못 자서 병원을 찾았다"
+      ],
+      "answer": 2,
+      "evidence": [
         4
       ],
-      "note": "'did not have an organic disease but were seeking psychological help'로 확인"
+      "note": "'a larger portion of their patients ... did not have an organic disease but were seeking psychological help'로 확인"
     }
   ]
 }

@@ -37,19 +37,21 @@
     },
     {
       "id": "d187-q3",
-      "type": "다음에 할 일",
-      "prompt": "결국 직원이 한 일로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "변호사와 호텔에 다녀온 뒤 손님이 처음 데스크에 돈을 찾으러 간 때로 알맞은 것은?",
       "options": [
-        "변호사에게 100달러를 건네며 없던 일로 하자고 했다",
-        "손님이 처음 맡긴 100달러를 돌려주었다",
-        "100달러를 내주며 경찰에 알리지 말라고 했다",
-        "돈은 지배인이 가져갔다며 발뺌했다"
+        "30분 뒤",
+        "다음 날 아침",
+        "1시간 뒤",
+        "2시간 뒤"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        11
+        1,
+        2,
+        3
       ],
-      "note": "'He gave me back the first $100 bill' — 첫 번째 100달러를 돌려줌"
+      "note": "'return to the hotel with him and deposit another $100 bill' / 'We did this.' / 'An hour later, I went back to the desk and claimed my money' — 1시간 뒤"
     }
   ]
 }

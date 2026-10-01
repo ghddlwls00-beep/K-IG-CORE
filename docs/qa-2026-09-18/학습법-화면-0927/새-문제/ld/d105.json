@@ -5,55 +5,53 @@
   "questions": [
     {
       "id": "d105-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
-      "options": [
-        "격언이 상황을 평하는 쓰임과 진리를 전하는 쓰임의 차이",
-        "상황을 빗댄 격언이 곧바로 말하는 격언보다 나은 까닭",
-        "비유가 사람과 일을 견주어 진리를 드러내는 원리",
-        "격언이 진리를 곧바로 말하거나 상황으로 암시하는 두 방식"
-      ],
-      "answer": 3,
-      "evidence": [
-        1,
-        2,
-        4
-      ],
-      "note": "'to express a truth' · 'Some proverbs state a fact or truth directly' · 'Most proverbs, however, use a specific situation to suggest a general truth' — 격언이 진리를 곧바로 말하거나 구체적인 상황으로 암시하는 두 방식을 설명함"
-    },
-    {
-      "id": "d105-q2",
       "type": "세부 사실",
-      "prompt": "'Too many cooks spoil the broth'라는 격언의 뜻으로 알맞은 것은?",
+      "prompt": "사실이나 진리를 곧바로 말하는 격언의 예로 든 것은?",
       "options": [
-        "사람이 많이 달라붙을수록 일이 쉽고 빨리 끝난다",
-        "한 가지 일에 여럿이 동시에 매달리면 일을 그르친다",
-        "한 사람이 여러 일을 한꺼번에 벌이면 결과가 나빠진다",
-        "일을 함께 하는 사람이 많으면 공을 두고 다투게 된다"
-      ],
-      "answer": 1,
-      "evidence": [
-        5,
-        6
-      ],
-      "note": "'Too many cooks spoil the broth' · 'if too many people work on the same project at the same time, the result will not be good' — 한 일에 사람이 너무 많으면 결과가 나쁘다는 뜻"
-    },
-    {
-      "id": "d105-q3",
-      "type": "세부 사실",
-      "prompt": "'Honesty is the best policy'에 대한 설명으로 알맞은 것은?",
-      "options": [
-        "'policy'라는 말로 정직을 살림에 빗댄 격언이다",
-        "구체적 상황을 들어 일반적 진리를 암시하는 격언이다",
-        "꾸밈없이 사실이나 진리를 곧바로 말해 주는 격언이다",
-        "'Too many cooks'처럼 진리를 전하는 격언이다"
+        "Practice makes perfect",
+        "Health is better than wealth",
+        "Honesty is the best policy",
+        "Seeing is believing"
       ],
       "answer": 2,
       "evidence": [
         2,
         3
       ],
-      "note": "'Some proverbs state a fact or truth directly' · 'Honesty is the best policy' — 사실이나 진리를 곧바로 말하는 격언의 예"
+      "note": "'Some proverbs state a fact or truth directly' · 'Honesty is the best policy'"
+    },
+    {
+      "id": "d105-q2",
+      "type": "세부 사실",
+      "prompt": "'Too many cooks spoil the broth'가 뜻한다고 한 상황으로 알맞은 것은?",
+      "options": [
+        "너무 많은 사람이 같은 일에 저마다 의견을 낼 때",
+        "너무 많은 사람이 같은 일을 한꺼번에 할 때",
+        "너무 많은 사람이 같은 일을 차례로 고칠 때",
+        "너무 많은 사람이 같은 일을 서로 미룰 때"
+      ],
+      "answer": 1,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'if too many people work on the same project at the same time, the result will not be good' — 같은 일을 한꺼번에 할 때"
+    },
+    {
+      "id": "d105-q3",
+      "type": "세부 사실",
+      "prompt": "격언을 설명한 말로 알맞은 것은?",
+      "options": [
+        "사람들에게 익숙한 문장",
+        "옛사람들이 남긴 오래된 문장",
+        "짧고 운율이 있는 문장",
+        "어른들이 아이를 가르치는 문장"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "'Proverbs are familiar sentences that people use'"
     }
   ]
 }

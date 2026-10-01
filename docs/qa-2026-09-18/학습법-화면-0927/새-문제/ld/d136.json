@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "d136-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "두 친구가 집에 가기 전에 원래 하려던 일로 알맞은 것은?",
       "options": [
-        "스웨터까지 장만하느라 극장에 갈 돈이 부족했던 이야기",
-        "셔츠와 양말값을 치르니 버스비도 모자라 걸어온 이야기",
-        "양말과 셔츠를 사고 나니 영화 볼 돈이 남지 않은 이야기",
-        "영화부터 보느라 스웨터 살 돈이 모자랐던 이야기"
+        "식당에 가서 저녁을 먹는 것",
+        "서점에 가서 책을 사는 것",
+        "극장에 가서 영화를 보는 것",
+        "공원에 가서 산책을 하는 것"
       ],
       "answer": 2,
       "evidence": [
-        1,
-        2,
         7
       ],
-      "note": "'decided to buy several pairs' · 'Don had to get some shirts' · 'intended to go to the movies' · 'after they paid for all their new clothes, they had only enough money to ride home on the bus'가 옷값을 치르고 나니 영화 볼 돈이 없었음을 보여 줌"
+      "note": "'The boys intended to go to the movies before going home'이 집에 가기 전에 영화를 보러 가려 했음을 보여 줌"
     },
     {
       "id": "d136-q2",

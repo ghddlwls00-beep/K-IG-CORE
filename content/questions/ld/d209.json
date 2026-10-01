@@ -8,10 +8,10 @@
       "type": "중심 내용",
       "prompt": "남녀 학생 사교 클럽에 대한 이 글의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "엄격한 성적 기준과 고유한 전통을 지닌 사교 모임이다",
-        "정식 가입 절차와 고유한 신고식을 지닌 사교 모임이다",
-        "정식 가입 절차와 고유한 전통을 지닌 사교 모임이다",
-        "정식 가입 절차와 졸업생 후원 제도를 지닌 사교 모임이다"
+        "대표적인 학생 사교 모임으로, 성적 기준과 이름 짓는 전통이 있다",
+        "대표적인 학생 사교 모임으로, 가입 절차와 졸업생 후원 제도가 있다",
+        "대표적인 학생 사교 모임으로, 가입 절차와 이름 짓는 전통이 있다",
+        "대표적인 학생 사교 모임으로, 가입 절차와 신고식 전통이 지금도 있다"
       ],
       "answer": 2,
       "evidence": [
@@ -19,23 +19,23 @@
         3,
         5
       ],
-      "note": "'Foremost among the student social organizations' · 'must make formal application and be approved by the old members' · 'Traditionally ... Greek letters' — 정식 가입 절차와 고유한 전통을 지닌 사교 모임"
+      "note": "'Foremost among the student social organizations' · 'make formal application and be approved' · 'Traditionally ... names consisting of two or three Greek letters' — 대표적 사교 모임, 가입 절차, 이름 짓는 전통"
     },
     {
       "id": "d209-q2",
       "type": "세부 사실",
-      "prompt": "신입 회원을 괴롭히는 신고식(hazing)이 오늘날 어떻게 되었는지로 옳은 것은?",
+      "prompt": "이 글에서 남학생 사교 클럽 회관에 대해 말한 것은?",
       "options": [
-        "대부분의 주에서 허용되나 클럽들이 스스로 금한다",
-        "대부분의 주에서 불법이고 클럽들도 스스로 금한다",
-        "연방 법으로 불법이고 클럽들도 스스로 금한다",
-        "대부분의 주에서 불법이고 대학들도 따로 금한다"
+        "엄격한 분위기에서 살며 공부할 수 있는 곳이다",
+        "즐거운 분위기에서 살며 쉴 수 있는 곳이다",
+        "엄격한 분위기에서 살며 쉴 수 있는 곳이다",
+        "즐거운 분위기에서 살며 공부할 수 있는 곳이다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        4
+        2
       ],
-      "note": "'such hazing is now illegal in most states and banned by the fraternities themselves' — 대부분의 주에서 불법 · 클럽 스스로 금지"
+      "note": "'a place where the student can live and study in a pleasant atmosphere' — 즐거운 분위기에서 살며 공부하는 곳"
     }
   ]
 }

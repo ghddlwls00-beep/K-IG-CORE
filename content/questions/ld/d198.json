@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "d198-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "그 고양이가 무엇이 있는지 알아보려고 머리를 들이민 곳은?",
       "options": [
-        "고양이는 호기심 때문에 곤란한 일을 겪기도 한다",
-        "고양이는 호기심 덕분에 위험을 미리 알아차린다",
-        "고양이는 호기심 때문에 다른 동물과 쉽게 친해진다",
-        "고양이는 호기심 덕분에 새로운 사냥법을 익힌다"
+        "집 마루 밑의 틈",
+        "땅에 난 구멍",
+        "헛간 구석의 나무 상자",
+        "쓰러진 통나무 속"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        1,
-        3,
-        9
+        4
       ],
-      "note": "'cats possess a great curiosity', 'Sometimes his curiosity gets him into trouble', 'a real social outcast because of his curiosity' — 호기심 많은 고양이가 호기심 때문에 곤경에 빠지고 따돌림받는 신세가 됨"
+      "note": "'One cat poked his head into a hole in the ground to find out what was in it' — 땅에 난 구멍에 머리를 들이밂"
     },
     {
       "id": "d198-q2",
@@ -40,19 +38,19 @@
     {
       "id": "d198-q3",
       "type": "세부 사실",
-      "prompt": "냄새 때문에 그 고양이가 겪은 일로 옳은 것은?",
+      "prompt": "냄새가 빠지는 동안 그 고양이에게 일어난 일로 옳은 것은?",
       "options": [
-        "한동안 집 안에 갇혀 지내야 했다",
-        "한동안 이웃집에 맡겨져 지내야 했다",
-        "한동안 집 근처에 오지 못하게 되었다",
-        "한동안 마당의 우리에 갇혀 지내야 했다"
+        "집 근처에 오지 못하게 되었다",
+        "다른 고양이들이 피해 다녔다",
+        "아이들이 만지지 못하게 되었다",
+        "동물 병원에 맡겨지게 되었다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
         7,
         8
       ],
-      "note": "'for the odor to wear away', 'During that time, the cat was not allowed near the house' — 냄새가 빠지는 동안 고양이는 집 근처에 오지 못함"
+      "note": "'It took about a month for the odor to wear away', 'During that time, the cat was not allowed near the house' — 그동안 집 근처에 오지 못함"
     }
   ]
 }

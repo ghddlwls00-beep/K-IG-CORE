@@ -22,19 +22,19 @@
     },
     {
       "id": "d186-q2",
-      "type": "목적/태도",
-      "prompt": "다음 날 아침 직원이 보인 태도로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "손님이 디트로이트 호텔에 묵었던 때로 알맞은 것은?",
       "options": [
-        "돈을 이미 돌려주었다며 손님이 착각했다고 했다",
-        "손님의 돈에 대해 아는 바가 없다고 했다",
-        "영수증이 없으니 돈을 내줄 수 없다고 했다",
-        "금고에 넣어 둔 돈을 밤새 도둑맞았다고 했다"
+        "약 1년 전",
+        "약 2년 전",
+        "약 6개월 전",
+        "약 3년 전"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        4
+        1
       ],
-      "note": "'the clerk denied any knowledge of my money' — 돈을 전혀 모른다고 잡아뗌"
+      "note": "'About a year ago, I checked into a room in a Detroit hotel' — 약 1년 전"
     },
     {
       "id": "d186-q3",

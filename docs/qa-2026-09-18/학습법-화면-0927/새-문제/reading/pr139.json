@@ -5,38 +5,38 @@
   "questions": [
     {
       "id": "pr139-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "학교는 창의성을 해치므로 가르치는 방식을 바꿔야 한다",
-        "학교는 사회 질서와 창의성을 함께 길러 주는 곳이다",
-        "학교는 탐험가 같은 창의적 인재를 길러 내야 한다",
-        "학교는 사회 질서를 가르치는 곳이라 창의성과 부딪치기 쉽다"
+        "학교가 창의성을 막는 것은 교사가 부족하기 때문이다",
+        "학교가 창의성을 막는 것은 시험 위주의 교육 때문이다",
+        "학교가 창의성을 막는 것은 사회를 위한 역할 때문이다",
+        "학교가 창의성을 막는 것은 학생 수가 너무 많기 때문이다"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         3,
         4,
         5,
         6
       ],
-      "note": "'not a criticism of schools' · 'the function of schools to civilize' · 'destructive to creativity' · 'conflict' — 학교는 사회 질서를 위한 곳이라 창의성과 부딪침"
+      "note": "'not a criticism of schools' · 'function of schools to civilize' · 'social order demands unity ... destructive to creativity' — 학교의 사회적 역할이 창의성과 부딪침"
     },
     {
       "id": "pr139-q2",
       "type": "세부 사실",
-      "prompt": "글에서 아인슈타인이 한 말로 옳은 것은?",
+      "prompt": "아인슈타인이 한 유명한 과학자에 대해 그가 지켜 냈다고 말한 것은?",
       "options": [
-        "한 과학자는 학교를 오래 다니며 자유롭게 생각하는 힘을 길렀다",
-        "한 과학자는 학교를 그만둔 뒤에 자유롭게 생각하는 힘을 되찾았다",
-        "한 과학자는 학교에 다니지 않아서 자유롭게 생각하는 힘을 지켰다",
-        "한 과학자는 학교에서 좋은 스승을 만나 자유롭게 생각하는 힘을 얻었다"
+        "자유롭게 생각하는 능력",
+        "끝까지 파고드는 능력",
+        "꼼꼼히 관찰하는 능력",
+        "끝없이 질문하는 능력"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
         1
       ],
-      "note": "'a famous scientist' · 'never went to school' · 'preserved the rare gift of thinking freely' — 한 과학자는 학교에 안 다녀 자유로운 생각을 지킴"
+      "note": "'preserved the rare gift of thinking freely' — 자유롭게 생각하는 재능을 지킴"
     }
   ]
 }

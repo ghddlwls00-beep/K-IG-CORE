@@ -6,19 +6,18 @@
     {
       "id": "d113-q1",
       "type": "세부 사실",
-      "prompt": "포모족이 만든 바구니의 쓰임으로 옳은 것은?",
+      "prompt": "퍼킨스 교수가 말한, 포모족이 무리 지어 살던 곳으로 옳은 것은?",
       "options": [
-        "옷과 살림살이를 넣어 보관하는 데 썼다",
-        "이웃 부족과 물건을 바꿀 때 값으로 주었다",
-        "먹을거리를 모으고 저장하고 손질하는 데 썼다",
-        "아기를 눕혀 업고 다니는 요람으로 썼다"
+        "공사 현장 가까이, 시스코강에서 4마일쯤 떨어진 곳",
+        "시스코강 가까이, 바닷가에서 4마일쯤 떨어진 곳",
+        "바닷가 가까이, 시스코강에서 4마일쯤 떨어진 곳",
+        "시스코강 가까이, 공사 현장에서 4마일쯤 떨어진 곳"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        7,
-        8
+        2
       ],
-      "note": "'make beautiful baskets' · 'collected, stored, and prepared food in the baskets'가 바구니에 음식을 모으고 저장하고 손질했음을 보여 줌"
+      "note": "'live near the Cisco River, about four miles from the construction site'가 시스코강 가까이, 공사 현장에서 4마일쯤 떨어진 곳임을 보여 줌"
     },
     {
       "id": "d113-q2",

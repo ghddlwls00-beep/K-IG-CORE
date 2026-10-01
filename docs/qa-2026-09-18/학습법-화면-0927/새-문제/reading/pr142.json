@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "pr142-q1",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 성공적인 팀워크의 열쇠로 든 것은?",
       "options": [
-        "경력이 짧은 신입 직원은 평가에서 불리하다",
-        "남과 잘 협력하지 못하는 직원은 평가에서 불리하다",
-        "야근을 잘 하지 않으려는 직원은 평가에서 불리하다",
-        "업무 관련 자격증이 적은 직원은 평가에서 불리하다"
+        "존중, 예의, 사려 깊은 행동",
+        "소통, 신뢰, 책임 있는 행동",
+        "성실, 인내, 정직한 행동",
+        "열정, 창의, 적극적인 행동"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        3,
-        6
+        5
       ],
-      "note": "'employers always consider teamwork when they judge' · 'working well with others is one of the most important job skills' — 협력하지 못하면 평가에서 불리함"
+      "note": "'Respect, good manners, and thoughtful behaviors are keys to successful teamwork'"
     },
     {
       "id": "pr142-q2",

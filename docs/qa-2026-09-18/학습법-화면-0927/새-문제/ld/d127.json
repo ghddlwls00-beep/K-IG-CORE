@@ -5,38 +5,37 @@
   "questions": [
     {
       "id": "d127-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "가리키는 것",
+      "prompt": "글쓴이가 바다가 지나치게 많이 품으면 물고기와 식물이 위험해진다고 한 'these things'가 가리키는 것은?",
       "options": [
-        "조력 발전 기술로 석유 의존을 줄여 바다를 지켜야 한다",
-        "인구가 늘어 바다 산물이 더 필요하니 유정 개발을 서둘러야 한다",
-        "에너지와 석유를 내주는 바다를 모두가 오염으로부터 지켜야 한다",
-        "바다 생물이 위험해지지 않게 유정과 조력 발전소를 줄여야 한다"
+        "바다 밑 유정에서 새어 나온 기름",
+        "도시들이 바다에 내다 버린 쓰레기",
+        "조력 발전소가 바다로 내보낸 물질",
+        "큰 배들이 바다에 흘려보낸 연료"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        1,
-        5,
-        10,
-        11
+        8,
+        9
       ],
-      "note": "'provide a source of energy', 'a major source of oil', 'need more products from the sea', 'keeping the oceans free from pollution'에서 확인"
+      "note": "\"barges carry garbage, industrial waste ... dump them in the ocean\" / \"cannot hold too much of these things\""
     },
     {
       "id": "d127-q2",
-      "type": "세부 사실",
-      "prompt": "몇몇 도시에서 바지선이 하는 일로 옳은 것은?",
+      "type": "이유",
+      "prompt": "글쓴이가 바다를 오염에서 지켜야 한다며 든 까닭으로 옳은 것은?",
       "options": [
-        "도시 쓰레기와 폐기물을 먼 바다로 싣고 나가 버린다",
-        "유정에서 뽑은 석유를 나르다 바다에 기름을 흘린다",
-        "산업 폐기물을 해안 습지로 실어 와 몰래 묻어 버린다",
-        "도시 쓰레기를 실어 와 얕은 바다를 메워 땅을 만든다"
+        "인구가 늘면 바다에서 얻을 산물이 더 필요해서",
+        "오염된 바다는 되살리는 데 수백 년이 걸려서",
+        "바다가 오염되면 조력 발전소를 돌릴 수 없어서",
+        "오염된 바다에서 난 먹을거리가 건강을 해쳐서"
       ],
       "answer": 0,
       "evidence": [
-        8
+        10,
+        11
       ],
-      "note": "'barges carry garbage, industrial waste and other materials out to sea and dump them in the ocean'에서 확인"
+      "note": "\"As the world population increases, people will need more products from the sea\" → \"protect these products by keeping the oceans free from pollution\""
     },
     {
       "id": "d127-q3",

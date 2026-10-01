@@ -21,37 +21,35 @@
     },
     {
       "id": "d104-q2",
-      "type": "다음에 할 일",
-      "prompt": "개들이 달리기를 멈추고 쉴 때 운전자가 해야 하는 일로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "경주에서 개들의 하루 일정으로 알맞은 것은?",
       "options": [
-        "개들 곁에서 4시간 동안 푹 잠을 잔다",
-        "지친 개들을 다른 개들로 바꿔 맨다",
-        "개들을 썰매에서 풀어 두고 썰매를 손본다",
-        "개들에게 먹이를 먹이고 몸 상태를 돌봐 준다"
-      ],
-      "answer": 3,
-      "evidence": [
-        3,
-        5
-      ],
-      "note": "'run for about four hours and then rest for four hours' · 'must feed and take care of the dogs during the rest period' — 개들이 쉬는 동안 운전자는 개들에게 먹이를 주고 돌봐야 함"
-    },
-    {
-      "id": "d104-q3",
-      "type": "목적/태도",
-      "prompt": "많은 운전자들이 이 경주를 대하는 태도로 알맞은 것은?",
-      "options": [
-        "우승을 바라기보다 끝까지 달리는 것을 승리로 본다",
-        "개들이 다치지 않게 지키는 것을 우승보다 앞세운다",
-        "순위보다 해마다 자기 기록을 줄이는 데 힘쓴다",
-        "힘든 경주인 만큼 꼭 우승해 이름을 남기려 한다"
+        "4시간쯤 달리고 4시간 쉰다",
+        "4시간쯤 달리고 2시간 쉰다",
+        "2시간쯤 달리고 4시간 쉰다",
+        "8시간쯤 달리고 4시간 쉰다"
       ],
       "answer": 0,
       "evidence": [
-        7,
-        8
+        3
       ],
-      "note": "'many drivers don't expect to win' · 'just being able to finish is a victory' — 우승을 바라지 않고 끝까지 달리는 것만으로도 승리로 여김"
+      "note": "'the dogs run for about four hours and then rest for four hours'"
+    },
+    {
+      "id": "d104-q3",
+      "type": "세부 사실",
+      "prompt": "약을 나른 사람들이 뚫고 지나갔다고 한 것은?",
+      "options": [
+        "깊은 눈더미",
+        "꽁꽁 언 강",
+        "험한 얼음산",
+        "사나운 폭풍"
+      ],
+      "answer": 3,
+      "evidence": [
+        1
+      ],
+      "note": "'carried the badly needed medicine through bad storms' — 사나운 폭풍을 뚫고 약을 나름"
     }
   ]
 }

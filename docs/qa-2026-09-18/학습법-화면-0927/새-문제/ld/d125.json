@@ -5,23 +5,21 @@
   "questions": [
     {
       "id": "d125-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "순서",
+      "prompt": "우물로 땅 밑의 물을 끌어 올리는 법을 익힌 때로 글에서 말한 것은?",
       "options": [
-        "강가 정착지의 생활과 수증기가 비가 되는 과정",
-        "사람들이 물을 다뤄 온 기술과 지구 담수가 있는 곳",
-        "댐과 우물이 늘어난 까닭과 땅속 담수가 줄어드는 문제",
-        "물을 얻는 옛 방식과 앞으로 닥칠 담수 부족 걱정"
+        "첫 정착지가 강가에 생기기 전부터",
+        "강에 댐을 쌓기 시작한 것과 같은 무렵에",
+        "댐 쌓기에 이어 오랜 세월에 걸쳐",
+        "강가 정착지에 물이 모자라게 된 뒤에"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        1,
-        4,
-        5,
-        7,
-        8
+        2,
+        3,
+        4
       ],
-      "note": "'build dams', 'by using wells', 'lakes, rivers, and the water vapor in the air', 'frozen in glaciers and ice caps', 'deep underground'가 중심 내용을 보여 줌"
+      "note": "'building dams became one of the first technological activities', 'Over the years, people developed other techniques', 'wells'"
     },
     {
       "id": "d125-q2",
@@ -42,21 +40,20 @@
     },
     {
       "id": "d125-q3",
-      "type": "다음에 할 일",
-      "prompt": "이 글에서 앞으로 일어날 수도 있다고 한 일로 옳은 것은?",
+      "type": "세부 사실",
+      "prompt": "땅속 깊은 곳에 있는 담수에 대해 말한 것으로 옳은 것은?",
       "options": [
-        "기술이 발전해 땅속 깊이 있는 담수 일부를 쓰게 되는 일",
-        "새 기술로 공기 속 수증기를 모아 날마다 쓰는 일",
-        "새 기술로 빙하에 얼어 있는 담수를 녹여 쓰는 일",
-        "새 기술로 땅속 깊은 곳에 강물을 모아 두는 일"
+        "세계 담수의 대부분을 차지한다",
+        "우물로 끌어 올려 날마다 쓰고 있다",
+        "새 기술로 그 일부를 쓰게 될 수도 있다",
+        "강과 호수로 흘러들어 담수를 채워 준다"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        7,
         8,
         9
       ],
-      "note": "'frozen in glaciers and ice caps', 'deep underground', 'new technology might make some of this water available'가 보여 줌"
+      "note": "'Another large amount of fresh water is deep underground', 'new technology might make some of this water available'"
     }
   ]
 }

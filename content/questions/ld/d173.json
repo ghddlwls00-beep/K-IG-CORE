@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "d173-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 지금 캘리포니아에 있다고 한 고속도로와 자동차의 규모로 옳은 것은?",
       "options": [
-        "도시도 자연도 옛날과 크게 달라진 오늘날의 캘리포니아",
-        "개발에 밀려 옛 자연이 사라진 오늘날의 캘리포니아",
-        "영화 산업이 떠나 다시 작은 도시가 된 오늘날의 로스앤젤레스",
-        "텔레비전에 밀려 영화가 사라진 오늘날의 할리우드"
+        "수백 마일의 고속도로와 수백만 대의 자동차",
+        "수천 마일의 고속도로와 수천만 대의 자동차",
+        "수천 마일의 고속도로와 수백만 대의 자동차",
+        "수만 마일의 고속도로와 수십만 대의 자동차"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        1,
-        4,
-        6,
         8
       ],
-      "note": "'had become ... the movie capital of the world' · 'no longer just a movie city' · 'The California scenery has changed too' · 'superhighways ... smog' — 예전과 달라진 캘리포니아"
+      "note": "'thousands of miles of superhighways, millions of cars' — 수천 마일의 고속도로와 수백만 대의 자동차"
     },
     {
       "id": "d173-q2",

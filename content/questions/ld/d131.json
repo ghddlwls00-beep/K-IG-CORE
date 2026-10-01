@@ -38,19 +38,19 @@
     },
     {
       "id": "d131-q3",
-      "type": "목적/태도",
-      "prompt": "대학생들을 주로 직원으로 쓰는 방식에 대한 글쓴이의 평가로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "캐빈 한 채의 구성으로 옳은 것은?",
       "options": [
-        "학생과 해마다 오는 손님 모두 덕을 보는 방식이다",
-        "히크먼 가족은 덕을 보지만 학생들은 고된 방식이다",
-        "학생들은 덕을 보지만 히크먼 가족은 손이 많이 간다",
-        "히크먼 가족과 일하는 학생 모두 덕을 보는 방식이다"
+        "작은 침실 3개와 벽난로가 있는 거실",
+        "큰 침실 1개와 벽난로가 있는 거실",
+        "큰 침실 2개와 벽난로가 있는 거실",
+        "작은 침실 2개와 벽난로가 있는 거실"
       ],
       "answer": 3,
       "evidence": [
-        9
+        3
       ],
-      "note": "'a very convenient arrangement for both the Hickmans and the students'에서 확인"
+      "note": "\"two small bedrooms and a comfortable sitting room with a fireplace\""
     }
   ]
 }

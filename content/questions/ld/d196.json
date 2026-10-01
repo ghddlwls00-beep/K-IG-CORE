@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "d196-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "뚱뚱한 부인이 거의 견딜 수 없다고 느끼는 것으로 알맞은 것은?",
       "options": [
-        "구경거리가 된 별난 출연자들의 딱한 처지",
-        "묘기를 하다 다친 출연자들의 딱한 처지",
-        "재주가 모자라 밀려난 출연자들의 딱한 처지",
-        "더위에 공연을 쉬게 된 출연자들의 딱한 처지"
+        "관객들의 따가운 시선",
+        "여름의 찌는 듯한 더위",
+        "좁은 천막 속 생활",
+        "동료들의 짓궂은 놀림"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        2,
-        4,
-        5,
-        6
+        5
       ],
-      "note": "몸이나 재주가 남달라 구경거리가 된 사람들의 딱한 처지: 'unusual simply because of some physical deformity or strange talent' · 'all pathetic in a way'"
+      "note": "여름 더위가 견디기 힘듦: 'doesn't mind the stares ... but the summer heat is almost unbearable'"
     },
     {
       "id": "d196-q2",

@@ -43,21 +43,20 @@
     },
     {
       "id": "d204-q3",
-      "type": "목적/태도",
-      "prompt": "노파가 새 하숙생에게 파이를 권할 때 보인 태도로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 노파가 여러 해 동안 기쁨으로 여겨 온 것은?",
       "options": [
-        "상대가 사양해도 그 자리에서 한 조각 먹으라고 고집했다",
-        "상대가 사양해도 나중에 먹으라며 방에 파이를 두고 갔다",
-        "상대가 사양해도 다른 하숙생들을 불러 함께 먹자고 했다",
-        "상대가 사양하자 서운한 마음에 파이를 도로 가져갔다"
+        "하숙생들이 고마워하며 건네는 인사를 듣는 것",
+        "하숙생들이 고마워하며 보내는 눈길을 받는 것",
+        "하숙생들이 고마워하며 짓는 미소를 보는 것",
+        "하숙생들이 고마워하며 빈 접시를 돌려받는 것"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        6,
-        7,
-        8
+        3,
+        4
       ],
-      "note": "'insisted that the man eat a piece then and there' · 'made many attempts to refuse' · 'would not take no for an answer' — 여러 번 사양해도 끝까지 고집함"
+      "note": "'delighted in watching the smile of appreciation that her thankful boarders turned upon her' — 하숙생들의 고마워하는 미소를 보는 것이 기쁨"
     }
   ]
 }

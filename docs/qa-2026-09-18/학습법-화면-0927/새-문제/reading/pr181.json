@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "pr181-q1",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "글에서 \"they show us what really happened\"의 they가 가리키는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "사진에 대해 사람들이 하던 말로 이 글에 나오지 않은 것은?",
       "options": [
-        "사람들의 말",
-        "법정의 판결",
-        "사건의 목격자",
-        "사진들"
+        "보는 것이 믿는 것이다",
+        "말하지 말고 보여 달라",
+        "사진 한 장이 천 마디 말만큼 값지다",
+        "카메라는 거짓말을 하지 않는다"
       ],
       "answer": 3,
       "evidence": [
-        1
+        2
       ],
-      "note": "'photographs tell us the truth; they show us what really happened' — they 는 바로 앞의 photographs"
+      "note": "'Seeing is believing', 'Don't tell me, show me', 'One picture is worth a thousand words' — 카메라 이야기는 없음"
     },
     {
       "id": "pr181-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 컴퓨터에 대해 말한 것은?",
       "options": [
-        "이제는 컴퓨터로 사진을 고치는 일이 법으로 금지되었다",
-        "이제는 사진을 보고 그대로 믿기가 어려워졌다",
-        "이제는 사진보다 말이 더 믿을 만한 증거가 되었다",
-        "이제는 컴퓨터 덕분에 사진이 더 정확해졌다"
+        "사진을 오래 보관하는 데 쓰인다",
+        "사진을 바꾸는 데 쓰일 수 있다",
+        "가짜 사진을 가려내는 데 쓰인다",
+        "법정 증거를 정리하는 데 쓰인다"
       ],
       "answer": 1,
       "evidence": [
-        4,
         5
       ],
-      "note": "'matters are not so simple', 'Photographs can be changed by computer; photographs are sometimes false' — 이제는 사진을 그대로 믿기 어려움"
+      "note": "'Photographs can be changed by computer' — 컴퓨터로 사진을 바꿀 수 있음"
     }
   ]
 }

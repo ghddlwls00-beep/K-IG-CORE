@@ -21,20 +21,20 @@
     },
     {
       "id": "pr162-q2",
-      "type": "한 단계 추론",
-      "prompt": "'We are chosen'이라는 말에 담긴 뜻으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "다른 스타 선수들이 자신들의 선택이라고 말한 것은 무엇인가?",
       "options": [
-        "구단이 스타 선수를 홍보 모델로 내세운다",
-        "언론이 스타 선수를 본보기로 만들어 낸다",
-        "선수가 스스로 본보기가 될 길을 고른다",
-        "사람들이 스타 선수를 본보기로 삼는다"
+        "좋은 본보기가 될지 나쁜 본보기가 될지",
+        "본보기가 될지 그러지 않을지",
+        "사생활을 공개할지 감출지",
+        "팬을 위해 뛸지 돈을 위해 뛸지"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        6,
+        5,
         7
       ],
-      "note": "\"sports stars are role models for people\" · \"We do not choose to be role models. We are chosen.\" — 스스로 고르는 것이 아니라 사람들이 본보기로 삼음"
+      "note": "\"other star players\" · \"Our choice is whether to be good role models or bad ones\""
     }
   ]
 }

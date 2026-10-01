@@ -23,19 +23,19 @@
     },
     {
       "id": "d193-q2",
-      "type": "세부사실",
-      "prompt": "갑자기 쏟아진 폭우 때문에 일어난 일로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "추적자가 다른 마을에서 같은 발자국을 다시 본 것은 처음 본 지 얼마 뒤인가?",
       "options": [
-        "발자국이 진흙에 깊이 찍혀 더 또렷해졌다",
-        "경찰이 추적을 그만두고 추적자를 돌려보냈다",
-        "추적자가 빗물에 남은 새 발자국을 찾아냈다",
-        "발자국이 씻겨 나가 더는 따라갈 수 없었다"
+        "몇 주 뒤",
+        "몇 달 뒤",
+        "며칠쯤 뒤",
+        "1년 뒤"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        1
+        2
       ],
-      "note": "비가 발자국을 씻어 냄: 'a flash rainstorm broke and washed the tracks away'"
+      "note": "'the same boot prints he had seen days before'"
     },
     {
       "id": "d193-q3",

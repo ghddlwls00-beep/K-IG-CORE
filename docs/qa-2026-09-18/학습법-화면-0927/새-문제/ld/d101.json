@@ -22,24 +22,19 @@
     },
     {
       "id": "d101-q2",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "가리키는 것",
+      "prompt": "글에서 '수백'이라는 말로 그 수를 나타낸 것은?",
       "options": [
-        "작은 배에서 공장 선박까지 고기잡이가 발전해 온 역사",
-        "옛 고기잡이 방식이 물고기를 지키는 데 더 나은 까닭",
-        "여러 가지 고기잡이 방식과 물고기를 지키려는 나라들의 노력",
-        "공장 선박이 생선을 곧바로 포장해 신선도를 지키는 방법"
+        "옛 방식으로 고기를 잡는 곳",
+        "사라질 위험에 놓인 물고기 종류",
+        "물고기 수를 살피는 해양학자",
+        "공장 선박에 타고 있는 일꾼"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        3,
-        5,
-        7,
-        10
+        4
       ],
-      "note": "'old fishing methods' · 'large ships' · 'helicopters and electronic equipment' · 'catch too much fish' · 'programs to make sure that there will always be plenty of fish' · 'suggest ways to protect fish' — 여러 고기잡이 방법과 물고기를 지키려는 노력을 함께 다룸"
+      "note": "'Factory ships carry hundreds of workers' — 수백이라고 한 것은 공장 선박의 일꾼"
     },
     {
       "id": "d101-q3",

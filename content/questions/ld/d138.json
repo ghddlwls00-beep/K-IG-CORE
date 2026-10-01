@@ -5,38 +5,36 @@
   "questions": [
     {
       "id": "d138-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "말하는 이가 새벽 5시쯤부터 시작된다고 말한 일로 알맞은 것은?",
       "options": [
-        "할머니의 푸짐한 상차림과 손주들의 왕성한 식욕",
-        "어머니의 푸짐한 상차림과 아버지의 디저트 사랑",
-        "어머니의 푸짐한 상차림과 아버지의 까다로운 입맛",
-        "어머니의 푸짐한 상차림과 아버지의 엄청난 식사량"
+        "아버지가 농장에서 고된 일을 시작하시는 것",
+        "어머니가 손주들의 음식을 만드시는 것",
+        "부모님이 도시에 오실 채비를 하시는 것",
+        "아버지가 하루의 첫 식사를 하시는 것"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        1,
-        3,
-        4
+        5
       ],
-      "note": "'Their grandmother, my mother, prepares everything they like' · 'always serves plenty of chocolate ice cream and cake' · 'when I see how much he eats'가 어머니의 푸짐한 음식과 아버지의 엄청난 식사량을 보여 줌"
+      "note": "'he works very hard on the farm from about 5:00 in the morning'이 새벽 5시쯤부터 아버지가 농장 일을 하심을 보여 줌"
     },
     {
       "id": "d138-q2",
       "type": "세부 사실",
-      "prompt": "아버지의 몸무게가 많이 늘지 않는 까닭으로 알맞은 것은?",
+      "prompt": "부모님을 식당에 모시고 가는 것에 대해 말하는 이가 알고 있는 것은?",
       "options": [
-        "새벽 5시마다 농장 둘레를 달리며 운동하셔서",
-        "새벽 5시에 일어나 농장까지 걸어서 오가셔서",
-        "새벽 5시부터 어두워질 때까지 농장에서 일하셔서",
-        "오후 5시 이후로는 음식을 드시지 않아서"
+        "부모님이 오래 앉아 계시기를 힘들어하신다",
+        "부모님이 그 외식을 무척 즐거워하신다",
+        "부모님이 음식값이 비싸다고 걱정하신다",
+        "부모님이 외식보다 집밥을 더 좋아하신다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        4,
-        5
+        6,
+        7
       ],
-      "note": "'my father doesn't weigh a lot more' · 'works very hard on the farm from about 5:00 in the morning until it gets dark'가 새벽부터 해 질 때까지 일하셔서임을 보여 줌"
+      "note": "'we usually take them to a restaurant' · 'I know how they enjoy it'이 부모님이 외식을 즐거워하심을 보여 줌"
     },
     {
       "id": "d138-q3",

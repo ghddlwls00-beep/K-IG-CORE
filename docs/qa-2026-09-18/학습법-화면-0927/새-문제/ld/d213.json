@@ -5,38 +5,37 @@
   "questions": [
     {
       "id": "d213-q1",
-      "type": "중심내용",
-      "prompt": "이 강의의 중심 내용으로 가장 적절한 것은?",
+      "type": "이유",
+      "prompt": "표지가 있는데도 동물에게 먹이를 주는 사람들의 속마음으로 강의에서 말한 것은?",
       "options": [
-        "동물원은 먹이 금지 표지를 더 눈에 띄게 붙여야 한다",
-        "관람객이 주는 먹이로 동물이 사람과 친해진다",
-        "관람객이 주는 먹이가 동물에게 해가 될 수 있다",
-        "관람객이 주는 먹이 때문에 동물이 사람을 겁내지 않게 된다"
+        "동물을 더 가까이서 보려는 것",
+        "함께 온 아이들을 즐겁게 하려는 것",
+        "동물에게 친절하게 대하려는 것",
+        "동물원의 규칙을 일부러 어기려는 것"
       ],
       "answer": 2,
       "evidence": [
         4,
-        7,
-        8
-      ],
-      "note": "'insist on feeding the animals' · 'refrain from feeding them' · 'kill it with kindness' — 관람객이 주는 먹이가 동물을 해칠 수 있음"
-    },
-    {
-      "id": "d213-q2",
-      "type": "세부사실",
-      "prompt": "관람객들이 동물에게 먹이를 주는 까닭으로 말한 것은?",
-      "options": [
-        "먹이를 먹는 동물을 가까이서 보려는 마음에서",
-        "일부러 동물원 규칙을 어겨 보려는 마음에서",
-        "아이들에게 즐거운 경험을 주려는 마음에서",
-        "그저 친절을 베풀어 보려는 마음에서"
-      ],
-      "answer": 3,
-      "evidence": [
         5,
         6
       ],
-      "note": "'not deliberately trying to be contrary' · 'merely trying to be kind' — 일부러 맞서려는 게 아니라 그저 친절하려는 마음"
+      "note": "'not deliberately trying to be contrary' · 'merely trying to be kind' — 친절하려는 마음"
+    },
+    {
+      "id": "d213-q2",
+      "type": "세부 사실",
+      "prompt": "동물을 진심으로 위하는 사람이라면 어떻게 할 것이라고 했는가?",
+      "options": [
+        "그 동물에게 먹이를 주는 일을 삼갈 것이다",
+        "동물에게 맞는 먹이를 골라 줄 것이다",
+        "먹이를 주기 전에 사육사에게 물을 것이다",
+        "다른 관람객에게 표지를 알려 줄 것이다"
+      ],
+      "answer": 0,
+      "evidence": [
+        7
+      ],
+      "note": "'best interests of the animals at heart' · 'refrain from feeding them' — 먹이를 주지 않음"
     },
     {
       "id": "d213-q3",

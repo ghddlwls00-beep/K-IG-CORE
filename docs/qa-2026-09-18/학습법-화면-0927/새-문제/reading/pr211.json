@@ -6,35 +6,35 @@
     {
       "id": "pr211-q1",
       "type": "세부 사실",
-      "prompt": "아인슈타인, 뉴턴, 다윈에 대해 이 글과 일치하는 것은?",
+      "prompt": "이 글에서 예로 든 과학자가 아닌 사람은?",
       "options": [
-        "세 사람은 흔히 젊은 모습으로 떠올려진다",
-        "세 사람은 20~30대에 큰 발견을 했다",
-        "세 사람은 권위를 순순히 받아들이는 편이었다",
-        "세 사람은 젊은 시절 실패를 거듭했다"
+        "아인슈타인",
+        "갈릴레이",
+        "뉴턴",
+        "다윈"
       ],
       "answer": 1,
       "evidence": [
+        2,
         3
       ],
-      "note": "'made by people in their 20s and 30s—and that includes Einstein, Newton and Darwin'"
+      "note": "'Albert Einstein's disheveled hair, Charles Darwin's majestic beard, and Isaac Newton's wrinkled face'"
     },
     {
       "id": "pr211-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아, 나이 든 과학자들에 대해 짐작할 수 있는 것은?",
+      "type": "이유",
+      "prompt": "이 글에서 젊은 과학자들이 불가능한 일을 해낼 수 있다고 한 까닭은?",
       "options": [
-        "권위 있는 학설에도 쉽게 의문을 품는 편이다",
-        "젊은 과학자의 성과를 시기하는 편이다",
-        "나이가 들수록 더 큰 발견을 해내는 편이다",
-        "새로운 학설을 들으면 엉뚱하다고 여기는 편이다"
+        "실패해도 잃을 것이 적어서",
+        "시간과 체력이 넉넉해서",
+        "최신 장비를 잘 다룰 줄 알아서",
+        "새 생각이 엉뚱하다는 말을 믿지 않아서"
       ],
       "answer": 3,
       "evidence": [
-        4,
         6
       ],
-      "note": "'less affected by the intellectual dogma of the day than their elders', 'told that a new idea is crazy'"
+      "note": "'They do not believe it when they are told that a new idea is crazy, so they are free to do the impossible'"
     }
   ]
 }

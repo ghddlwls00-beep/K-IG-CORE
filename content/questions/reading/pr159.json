@@ -21,21 +21,19 @@
     },
     {
       "id": "pr159-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "이유",
+      "prompt": "이 글에서 '당신'이 바다 그림을 좋아했을 수 있는 까닭으로 든 것은?",
       "options": [
-        "그림의 느낌은 그림에 쓰인 색에 따라 달라진다",
-        "그림의 느낌은 화가의 의도에 따라 달라진다",
-        "그림의 느낌은 보는 사람의 경험에 따라 달라진다",
-        "그림의 느낌은 그림을 보는 장소에 따라 달라진다"
+        "고향에서 보낸 멋진 추억이 떠올라서",
+        "가족과 떠난 여행의 추억이 떠올라서",
+        "친구와 배를 탄 추억이 떠올라서",
+        "바닷가에서 일한 추억이 떠올라서"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        1,
-        2,
-        3
+        2
       ],
-      "note": "'the same painting', 'different reactions', 'wonderful memories', 'sailing on a rough sea'에서 경험에 따라 느낌이 달라짐을 알 수 있다"
+      "note": "'reminded you of the wonderful memories you had in your hometown'이라고 했다"
     }
   ]
 }

@@ -5,54 +5,51 @@
   "questions": [
     {
       "id": "d195-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "서커스 공연자들이 목숨을 걸고 있다고 한 때로 알맞은 것은?",
       "options": [
-        "서커스 공연자들이 사고로 다친 동료를 돌보며 일하는 삶",
-        "서커스 공연자들이 위험이 두려워 떨면서 일하는 삶",
-        "서커스 공연자들이 날마다 목숨을 걸고 일하는 삶",
-        "서커스 공연자들이 다쳐서 일찍 무대를 떠나는 삶"
+        "주말 공연 때마다",
+        "새 묘기를 익힐 때",
+        "하루도 빠짐없이",
+        "큰 도시 공연 때"
       ],
       "answer": 2,
       "evidence": [
-        1,
-        2,
-        3,
-        4
+        1
       ],
-      "note": "날마다 목숨을 걸고 위험에 익숙함: 'risk their lives every day' · 'used to danger'"
+      "note": "'Circus performers risk their lives every day'"
     },
     {
       "id": "d195-q2",
-      "type": "세부사실",
-      "prompt": "서커스 공연자들이 훈련을 받기 시작한 때로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "공연자들이 큰 천막 아래의 공연자가 되도록 훈련받기 시작한 때로 알맞은 것은?",
       "options": [
-        "10대가 되면서부터",
-        "어린아이였을 때부터",
-        "서커스 학교에 가서부터",
-        "처음 무대에 서면서부터"
-      ],
-      "answer": 1,
-      "evidence": [
-        6
-      ],
-      "note": "어릴 때부터 훈련받음: 'trained from childhood'"
-    },
-    {
-      "id": "d195-q3",
-      "type": "세부사실",
-      "prompt": "서커스 공연자들의 기술이 전해지는 방식으로 알맞은 것은?",
-      "options": [
-        "단장에게서 새 단원에게로 전해진다",
-        "서커스 학교의 교본으로 전해진다",
-        "고대 장인 조합을 거쳐 전해진다",
-        "윗세대에서 아랫세대로 이어져 전해진다"
+        "입단 뒤부터",
+        "10대 후반부터",
+        "스무 살부터",
+        "어린 시절부터"
       ],
       "answer": 3,
       "evidence": [
-        7
+        6
       ],
-      "note": "대대로 전해짐('like'는 빗댄 말): 'like the art of the ancient craft guilds' · 'handed down from generation to generation'"
+      "note": "'They have been trained from childhood'"
+    },
+    {
+      "id": "d195-q3",
+      "type": "결과",
+      "prompt": "한 번 미끄러진 공중그네 곡예사에게 일어난다고 한 일로 알맞은 것은?",
+      "options": [
+        "곤두박질쳐 목숨을 잃는다",
+        "떨어져 평생 불구가 된다",
+        "떨어져 무대를 영영 떠난다",
+        "그물 위로 떨어져 무사하다"
+      ],
+      "answer": 0,
+      "evidence": [
+        2
+      ],
+      "note": "'One slip and the trapeze artist will go plunging to his death'"
     }
   ]
 }

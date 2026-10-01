@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr172-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "이유",
+      "prompt": "평범한 재능을 가진 사람들이 훌륭한 성과를 거둔 바탕으로 본문에서 든 것은?",
       "options": [
-        "직원을 평가하는 최종 기준은 일에 대한 성실한 태도이다",
-        "직원을 평가하는 최종 기준은 맡은 일에서 낸 결과이다",
-        "직원을 평가하는 최종 기준은 일에 대한 흥미와 열정이다",
-        "직원을 평가하는 최종 기준은 고용주에 대한 충성심이다"
+        "근면함과 일에 대한 깊은 흥미",
+        "근면함과 동료들과의 긴밀한 협력",
+        "근면함과 꾸준한 자기 계발",
+        "근면함과 고용주의 이익에 대한 충성"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        3
+        2
       ],
-      "note": "'do not always go hand in hand' · 'the final test of any employee is his performance on the job' — 최종 평가 기준은 업무 성과"
+      "note": "'persons with mediocre talents ... through their industry and their loyalty to the interests of their employers'"
     },
     {
       "id": "pr172-q2",

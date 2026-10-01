@@ -5,22 +5,20 @@
   "questions": [
     {
       "id": "d172-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "1848년에 금이 발견되자 캘리포니아로 몰려든 사람들로 글에서 말한 것은?",
       "options": [
-        "금으로 부자가 된 사람들이 키워 낸 캘리포니아의 영화 산업",
-        "금으로 부자가 되지 못해 영화 일로 돌아선 광부들",
-        "금과 영화로 부자가 되려고 캘리포니아로 몰려든 사람들",
-        "금을 찾아 몰려든 사람들이 영화 촬영지로 바꾼 광산촌들"
+        "세계 여러 나라에서 건너온 사람들",
+        "이웃한 멕시코에서 건너온 사람들",
+        "미국 전국 각지에서 몰려든 사람들",
+        "가까운 이웃 주들에서 온 사람들"
       ],
       "answer": 2,
       "evidence": [
-        3,
-        4,
-        7,
-        8
+        2,
+        3
       ],
-      "note": "'rushed to California' · 'dreamed of making their fortunes panning for gold' · 'people again rushed to California' · 'not in gold, but in the movies' — 금, 다음엔 영화를 꿈꾸며 몰려듦"
+      "note": "'In 1848' · 'Gold was discovered and people from all over the country rushed to California' — 나라 곳곳에서 사람들이 몰려듦"
     },
     {
       "id": "d172-q2",

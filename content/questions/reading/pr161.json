@@ -21,20 +21,19 @@
     },
     {
       "id": "pr161-q2",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "어른이 되어 유치원에서 배운 규칙을 적용하지 않는 곳으로 글에 언급된 것은?",
       "options": [
-        "어른들은 유치원에서 배운 규칙을 어른의 삶에서도 지켜야 한다",
-        "어른들은 유치원에서 배운 규칙을 시대에 맞게 고쳐야 한다",
-        "어른들은 유치원에서 배운 규칙을 아이들에게 더 엄하게 가르쳐야 한다",
-        "어른들은 유치원에서 배운 규칙보다 사회의 법을 따라야 한다"
+        "취미 생활",
+        "이웃 관계",
+        "친구 관계",
+        "가정 생활"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        1,
         2
       ],
-      "note": "\"we learned in kindergarten\" · \"Sadly, however, we don't apply these rules\" — 어른이 되어 이 규칙을 적용하지 않는 것을 안타까워함"
+      "note": "\"we don't apply these rules to our family life, work or government\" — 어른이 된 뒤 가정생활에 적용하지 않음"
     }
   ]
 }

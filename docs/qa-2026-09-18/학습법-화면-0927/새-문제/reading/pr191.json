@@ -5,35 +5,35 @@
   "questions": [
     {
       "id": "pr191-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 지휘하는 사람이 소리쳐 외치는 말은?",
       "options": [
-        "끝까지 버티는 끈기가 성취로 이끄는 출발점이다",
-        "할 수 있다는 믿음이 성취로 이끄는 출발점이다",
-        "철저하게 세운 계획이 성취로 이끄는 출발점이다",
-        "앞장서는 용기가 성취로 이끄는 출발점이다"
+        "우리는 이 땅을 지킬 수 있다",
+        "우리는 저들을 이길 수 있다",
+        "우리는 끝까지 버틸 수 있다",
+        "우리는 다시 해낼 수 있다"
       ],
       "answer": 1,
-      "evidence": [
-        2
-      ],
-      "note": "'the act of believing that is the starting force… that leads great men and women to accomplishment' 인용."
-    },
-    {
-      "id": "pr191-q2",
-      "type": "세부 사실",
-      "prompt": "이 글에서 지휘하는 사람(someone in command)이 외친 말로 알맞은 것은?",
-      "options": [
-        "힘내라, 우리는 저들을 이길 수 있다",
-        "버텨라, 조금 더 견디면 된다",
-        "침착하라, 계획대로 움직이면 된다",
-        "두려워 마라, 내가 앞장서겠다"
-      ],
-      "answer": 0,
       "evidence": [
         3
       ],
       "note": "'\"Come on, men, we can beat them,\" shouts someone in command' 인용."
+    },
+    {
+      "id": "pr191-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 믿는 행위를 위대한 사람들에게 어떤 힘이라고 설명한 것은?",
+      "options": [
+        "실패에서 다시 일으키는 회복의 힘",
+        "서로를 하나로 묶는 단결의 힘",
+        "두려움을 이기게 하는 용기의 힘",
+        "사람을 성취로 이끄는 출발의 힘"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "'the act of believing that is the starting force… that leads great men and women to accomplishment' 인용."
     }
   ]
 }

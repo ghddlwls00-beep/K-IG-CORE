@@ -5,20 +5,20 @@
   "questions": [
     {
       "id": "d099-q1",
-      "type": "목적/태도",
-      "prompt": "프랭클린이 친구 오스카에게 전화를 건 까닭으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "프랭클린이 오스카에게 더 짓겠다고 말한 것으로 알맞은 것은?",
       "options": [
-        "시장으로서 품은 희망과 계획을 들려주려고",
-        "십턴의 교통 문제를 해결했다는 소식을 전하려고",
-        "교통 문제를 풀 방법을 오스카에게 물어보려고",
-        "선거 때 도와준 오스카에게 고마움을 전하려고"
+        "학교와 도서관",
+        "도로와 주차장",
+        "아파트와 공원",
+        "병원과 체육관"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        1,
-        2
+        3,
+        4
       ],
-      "note": "'became mayor of Shipton' · 'told him about his hopes and ideas' — 시장이 된 뒤 품은 희망과 생각을 말하려고 전화함"
+      "note": "'Oscar, I'm really excited' · 'build more apartments and parks' — 아파트와 공원을 더 짓겠다고 함"
     },
     {
       "id": "d099-q2",

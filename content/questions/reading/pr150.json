@@ -21,21 +21,19 @@
     },
     {
       "id": "pr150-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글에서 추론할 수 있는 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 인류가 만들어 낸 문제로 든 것은?",
       "options": [
-        "환경 문제는 기술이 더 발전하면 나아질 수 있다",
-        "환경 문제는 지금부터 행동에 나서면 나아질 수 있다",
-        "환경 문제는 다음 세대가 힘쓰면 나아질 수 있다",
-        "환경 문제는 정부가 규제를 늘리면 나아질 수 있다"
+        "교통 공해",
+        "소음 공해",
+        "토양 오염",
+        "해양 쓰레기"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        4,
-        5,
-        6
+        3
       ],
-      "note": "'These problems are very serious for our future', 'we can do something now', 'people have already taken action to improve the environment' 참고"
+      "note": "'We have created traffic pollution, global warming, and acid rain' 참고"
     }
   ]
 }

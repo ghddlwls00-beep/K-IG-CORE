@@ -23,20 +23,19 @@
     },
     {
       "id": "pr196-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은",
+      "type": "세부 사실",
+      "prompt": "이 글에서 지식이 적을 때보다 많을 때 더 나은 성과를 낸다고 한 사람은",
       "options": [
-        "지식을 넓히려면 생각하는 법부터 익혀야 한다",
-        "지식이 쌓이면 생각하는 법은 익히지 않아도 된다",
-        "생각하는 기술이 좋으면 지식의 양은 중요하지 않다",
-        "많이 아는 사람도 생각하는 법은 따로 익혀야 한다"
+        "생각하는 기술을 기르고 있는 사람",
+        "호기심을 키워 가고 있는 사람",
+        "이미 많은 지식을 쌓아 둔 사람",
+        "생각이 필요한 곳을 잘 아는 사람"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        2,
         3
       ],
-      "note": "근거 문장의 핵심 표현: \"not necessarily a good thinker\", \"developing good techniques for thinking\", \"a better job with much knowledge\""
+      "note": "근거 문장의 핵심 표현: \"the person who is developing good techniques for thinking will do a better job with much knowledge than he would with little\""
     }
   ]
 }

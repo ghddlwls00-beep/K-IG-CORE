@@ -40,20 +40,19 @@
     {
       "id": "d128-q3",
       "type": "세부 사실",
-      "prompt": "테드의 언어 실력에 대한 설명으로 옳은 것은?",
+      "prompt": "테드가 조금 할 줄 안다고 한 언어로 옳은 것은?",
       "options": [
-        "노르웨이어와 영어를 잘하고 나머지 언어는 조금씩 안다",
-        "8개 언어를 잘하는데 그리스어와 미얀마어를 가장 늦게 배웠다",
-        "터키어와 중국어는 약하고 다른 5~6개 언어는 능숙하다",
-        "5~6개 언어를 잘하고 그리스어와 미얀마어도 조금 안다"
+        "터키어와 중국어",
+        "중국어와 버마어",
+        "그리스어와 터키어",
+        "그리스어와 버마어"
       ],
       "answer": 3,
       "evidence": [
-        10,
         11,
         12
       ],
-      "note": "'speak five or six languages well', 'Norwegian, French, Italian, Turkish, Chinese and English', 'a little Greek and Burmese'에서 확인"
+      "note": "\"He can speak ... Turkish, Chinese and English\" / \"He knows a little Greek and Burmese\""
     }
   ]
 }

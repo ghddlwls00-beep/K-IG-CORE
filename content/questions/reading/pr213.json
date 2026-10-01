@@ -22,22 +22,20 @@
     },
     {
       "id": "pr213-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아, 로버트에 대해 짐작할 수 있는 것은?",
+      "type": "이유",
+      "prompt": "로버트가 자전거 타는 법을 배우고 싶어 한 까닭은?",
       "options": [
-        "아픈 날에도 맡은 일을 끝까지 하는 사람이다",
-        "넘어져 다쳐도 거듭 다시 해 보는 사람이다",
-        "남에게 기대지 않고 혼자 연습하는 사람이다",
-        "친구들의 놀림을 웃어넘길 줄 아는 사람이다"
+        "친구들이 못 탄다고 놀려서",
+        "형이 새 자전거를 선물해 주어서",
+        "학교에 자전거를 타고 다니고 싶어서",
+        "신문 배달 일을 해 보고 싶어서"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        12,
-        13,
-        14,
-        15
+        8,
+        9
       ],
-      "note": "'he could not balance himself and fell', 'Robert got up and tried again', 'The same thing happened again and again', 'Robert kept trying and finally learned to ride a bike'"
+      "note": "'Robert's friends made fun of him because he could not ride a bicycle', 'So Robert wanted to learn'"
     }
   ]
 }

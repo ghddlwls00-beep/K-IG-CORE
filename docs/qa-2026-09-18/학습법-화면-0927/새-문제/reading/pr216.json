@@ -6,35 +6,36 @@
     {
       "id": "pr216-q1",
       "type": "세부 사실",
-      "prompt": "이 글에 따르면, 봄과 여름에 잎이 초록색인 까닭으로 알맞은 것은?",
+      "prompt": "이 글에서 다루지 않은 내용은?",
       "options": [
-        "잎에 엽록소가 가득 들어 있어서",
-        "엽록소가 햇빛을 받아 초록빛을 내서",
-        "엽록소가 밤사이 잎으로 모여들어서",
-        "엽록소가 잎의 물기에 녹아 퍼져서"
+        "노란색과 주황색을 내는 물질의 이름",
+        "잎을 초록색으로 만드는 물질의 이름",
+        "엽록소가 식물에서 하는 일",
+        "빨간색이 특히 선명해지는 날씨"
       ],
       "answer": 0,
       "evidence": [
-        2
+        2,
+        4,
+        6
       ],
-      "note": "'leaves are green because they are full of chlorophyll'"
+      "note": "'full of chlorophyll, which plants use to make food from sunlight' / 'Yellow and orange colors, which were in the leaves all along' / 'many sunny days and cool nights'"
     },
     {
       "id": "pr216-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아, 가을에 흐린 낮과 따뜻한 밤이 이어진 해의 단풍에 대해 짐작할 수 있는 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면, 나무가 엽록소를 더 만들지 않게 되는 것은 어떤 때인가?",
       "options": [
-        "빨간색이 덜 선명할 것이다",
-        "노란색이 덜 선명하게 보일 것이다",
-        "노란색이 빨갛게 바뀔 것이다",
-        "주황색이 새로 만들어질 것이다"
+        "낮이 맑고 밤이 서늘해질 때",
+        "날이 짧아지고 서늘해질 때",
+        "잎이 노랗게 물들기 시작할 때",
+        "잎에 빨간색이 생기기 시작할 때"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        5,
-        6
+        3
       ],
-      "note": "'especially when the days are sunny and the nights are cool', 'especially bright in years with many sunny days and cool nights'"
+      "note": "'As the days get shorter and cooler, trees stop making chlorophyll'"
     }
   ]
 }

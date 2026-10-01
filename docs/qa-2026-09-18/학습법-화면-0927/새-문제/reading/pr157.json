@@ -22,20 +22,19 @@
     },
     {
       "id": "pr157-q2",
-      "type": "낱말 뜻",
-      "prompt": "본문에서 'faction'이 뜻하는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 글쓴이가 매디슨이 보였을 것이라고 짐작한 반응은?",
       "options": [
-        "자기 몫을 더 챙기려는 무리",
-        "정부에 맞서 싸우려는 무리",
-        "새 나라를 세우려는 무리",
-        "한 지도자를 끝까지 따르는 무리"
+        "크게 실망했을 것이다",
+        "크게 뿌듯해했을 것이다",
+        "크게 걱정했을 것이다",
+        "크게 놀랐을 것이다"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        2,
-        4
+        3
       ],
-      "note": "'special-interest groups constantly pressing for advantage', 'its numberless pieces'에서 자기 이익을 좇는 무리임을 알 수 있다"
+      "note": "'the prescient coauthor ... might be amazed'라고 했다"
     }
   ]
 }

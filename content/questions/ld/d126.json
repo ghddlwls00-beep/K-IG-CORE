@@ -6,35 +6,34 @@
     {
       "id": "d126-q1",
       "type": "세부 사실",
-      "prompt": "대양 연구에 대한 설명으로 옳은 것은?",
+      "prompt": "세계 어업에 대한 설명으로 옳은 것은?",
       "options": [
-        "오랫동안 해 온 끝에 대양의 대부분을 밝혀냈다",
-        "얼마 전에 시작되어 이제 막 성과가 나오고 있다",
-        "긴 세월 이어졌어도 밝혀지지 않은 것이 많다",
-        "주로 태평양과 대서양에서 오랫동안 해 왔다"
+        "해마다 잡는 물고기의 양이 줄고 있다",
+        "세계 식량의 절반쯤을 차지한다",
+        "세계 식량의 3분의 1쯤을 차지한다",
+        "세계 식량의 작은 몫을 차지한다"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        3
+        7
       ],
-      "note": "'people have been studying the oceans for many years, there is still much that we do not know about them'가 보여 줌"
+      "note": "'The fishing industry, however, produces only a small percentage of the world's food'"
     },
     {
       "id": "d126-q2",
-      "type": "목적/태도",
-      "prompt": "해양학자들이 새로운 방법을 찾는 목적으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 많은 바닷속 식물에 들어 있다고 한 것은?",
       "options": [
-        "대양에서 얻는 먹을거리의 양을 늘리기 위해",
-        "해저 식물의 미네랄로 새 약을 만들기 위해",
-        "수십억 킬로그램씩 잡히는 물고기를 지키기 위해",
-        "바다 밑 광물 자원을 찾아 캐내기 위해"
+        "비타민과 미네랄",
+        "단백질과 미네랄",
+        "식이섬유와 미네랄",
+        "기름 성분과 미네랄"
       ],
       "answer": 0,
       "evidence": [
-        4,
-        8
+        9
       ],
-      "note": "'oceanographers are looking for new ways to use the ocean', 'seeking ways to increase the amount of food taken from the ocean'가 목적을 보여 줌"
+      "note": "'Many undersea plants contain vitamins and minerals'"
     },
     {
       "id": "d126-q3",

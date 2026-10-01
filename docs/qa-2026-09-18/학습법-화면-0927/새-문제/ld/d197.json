@@ -5,52 +5,52 @@
   "questions": [
     {
       "id": "d197-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 광대에 대해 '거의 언제나' 그렇다고 한 것은?",
       "options": [
-        "광대는 대개 서커스단에서 가장 실력이 뛰어난 단원이다",
-        "광대는 대개 서커스단에서 가장 인기를 누리는 단원이다",
-        "광대는 대개 서커스단에서 가장 고된 훈련을 받는 단원이다",
-        "광대는 대개 서커스단에서 가장 외로움을 타는 단원이다"
+        "서커스단에서 가장 인기 있는 단원이다",
+        "서커스단에서 가장 실력 있는 단원이다",
+        "서커스단에서 가장 오래 일하는 단원이다",
+        "서커스단에서 가장 먼저 무대에 선다"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        1,
         8
       ],
-      "note": "'One indispensable member of the circus troupe is the clown', 'Almost always, the clown is the most popular member of the circus troupe' — 광대는 서커스단에서 빼놓을 수 없고 거의 언제나 가장 인기 있는 단원"
+      "note": "'Almost always, the clown is the most popular member of the circus troupe' — 광대는 거의 언제나 서커스단에서 가장 인기 있는 단원"
     },
     {
       "id": "d197-q2",
-      "type": "말한 사람의 목적/태도",
-      "prompt": "글쓴이가 뜻밖이라고 여긴 것은 무엇인가?",
+      "type": "세부 사실",
+      "prompt": "글에서 에밋 켈리를 어떤 광대라고 소개했는가?",
       "options": [
-        "슬픈 얼굴의 떠돌이 광대가 실제로 떠돌이 생활을 했다는 것",
-        "슬픈 얼굴의 떠돌이 광대가 어른들에게 더 사랑받는다는 것",
-        "슬픈 얼굴의 떠돌이 광대가 가장 사랑받는 광대에 든다는 것",
-        "슬픈 얼굴의 떠돌이 광대가 원래 곡예사 출신이라는 것"
+        "지난 세기에 으뜸가던 서커스 광대",
+        "서커스 역사상 으뜸가는 광대",
+        "오늘날 으뜸가는 서커스 광대",
+        "미국 서커스계에서 으뜸가는 광대"
       ],
       "answer": 2,
       "evidence": [
-        5
+        6
       ],
-      "note": "'Yet surprisingly enough', 'one of the most beloved clowns of the modern circus world is a sad-faced hobo' — 놀랍게도 가장 사랑받는 광대 중 하나가 슬픈 얼굴의 떠돌이"
+      "note": "'Emmett Kelly, the foremost circus clown of our day' — 오늘날 으뜸가는 서커스 광대"
     },
     {
       "id": "d197-q3",
       "type": "세부 사실",
-      "prompt": "광대의 태평스러운 농담과 짓궂은 장난이 주는 것으로 언급된 것은?",
+      "prompt": "에밋 켈리의 유머와 외로움이 마음을 사로잡았다고 한 사람들은?",
       "options": [
-        "반복되는 일상에서 잠시나마 벗어나는 즐거움",
-        "반복되는 일상에서 웃음거리를 찾아내는 즐거움",
-        "반복되는 일상에서 웃음을 남과 나누는 즐거움",
-        "반복되는 일상에서 실수를 웃어넘기는 즐거움"
+        "미국 전역의 서커스 관객",
+        "전 세계의 서커스 관객",
+        "유럽 각지의 서커스 관객",
+        "그가 태어난 고장의 관객"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        4
+        6,
+        7
       ],
-      "note": "'His carefree jokes and pranks provide a pleasant escape from the routine of everyday life' — 농담과 장난이 일상의 틀에서 벗어나는 즐거움을 줌"
+      "note": "'this clown is Emmett Kelly', 'have captivated the hearts of circus audiences the world over' — 전 세계 서커스 관객의 마음을 사로잡음"
     }
   ]
 }

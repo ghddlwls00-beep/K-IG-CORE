@@ -5,21 +5,20 @@
   "questions": [
     {
       "id": "pr195-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은",
+      "type": "세부 사실",
+      "prompt": "이 글에서 별의 폭발 시각을 지구의 과학자와 다르게 기록할 것이라고 한 사람은",
       "options": [
-        "시간은 기분에 따라 사람마다 다르게 느껴진다",
-        "별에서 일어난 일의 시각은 지구에서 재야 정확하다",
-        "누구에게나 똑같이 들어맞는 하나의 시간은 없다",
-        "우주에서는 지구보다 시간이 느리게 흐른다"
+        "지구의 다른 나라에서 관측하는 과학자",
+        "그 별 가까이에서 폭발을 지켜본 사람",
+        "지구 둘레를 아주 빠르게 도는 우주인",
+        "우주의 다른 곳을 다른 속도로 지나는 사람"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        4,
-        7,
-        8
+        6,
+        7
       ],
-      "note": "근거 문장의 핵심 표현: \"Both are\", \"record the time differently\", \"no single absolute time for everyone\""
+      "note": "근거 문장의 핵심 표현: \"scientists on the earth would record the time\", \"someone traveling through another part of the universe at a very different speed would record the time differently\""
     },
     {
       "id": "pr195-q2",

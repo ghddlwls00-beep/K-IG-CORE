@@ -6,19 +6,18 @@
     {
       "id": "d185-q1",
       "type": "세부 사실",
-      "prompt": "캐플런이 계산을 처음부터 다시 하지 않았다면 벌어졌을 수도 있는 일은 무엇인가?",
+      "prompt": "캐플런이 소유주에게 약속한 작업 결과로 알맞은 것은?",
       "options": [
-        "다이아몬드가 예상보다 작게 나왔을 수도 있다",
-        "다이아몬드의 빛깔이 흐려졌을 수도 있다",
-        "다이아몬드를 완전히 망가뜨렸을 수도 있다",
-        "다이아몬드의 결함이 드러났을 수도 있다"
+        "빼어난 다이아몬드 2개와 일등급 작은 다이아몬드 6개",
+        "빼어난 다이아몬드 1개와 일등급 작은 다이아몬드 12개",
+        "빼어난 다이아몬드 2개와 일등급 작은 다이아몬드 12개",
+        "빼어난 다이아몬드 1개와 일등급 작은 다이아몬드 6개"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        2,
-        3
+        5
       ],
-      "note": "'He had to begin his calculations all over again' / 'Otherwise, he might have destroyed the stone' — 다시 계산하지 않았다면 돌을 망가뜨렸을 수도"
+      "note": "'one exquisite diamond ... plus 12 smaller diamonds of first-class quality' — 빼어난 1개와 작은 12개"
     },
     {
       "id": "d185-q2",

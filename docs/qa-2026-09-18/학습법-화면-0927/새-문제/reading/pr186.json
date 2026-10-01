@@ -5,22 +5,20 @@
   "questions": [
     {
       "id": "pr186-q1",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "'They are aware of its existence'에서 They가 가리키는 것은?",
+      "type": "세부 사실",
+      "prompt": "감상자(observers)가 미술을 자신에게 의미 있게 만들려고 들였다고 한 것은?",
       "options": [
-        "작품을 만든 예술가들",
-        "작품을 모으는 수집가들",
-        "작품 앞의 구경꾼들",
-        "작품을 즐기는 감상자들"
+        "시간과 돈",
+        "에너지와 관심",
+        "시간과 에너지",
+        "돈과 관심"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         4,
-        5,
-        6,
-        7
+        5
       ],
-      "note": "'Observers, on the other hand…' 뒤로 'They have spent…', 'They don't simply exist…', 'They are aware of its existence' 가 이어짐."
+      "note": "'Observers… have spent the time and energy to make art meaningful to themselves' 인용."
     },
     {
       "id": "pr186-q2",

@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "pr100-q1",
-      "type": "중심 생각",
-      "prompt": "이 실험이 보여 주는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "부드러운 쪽의 가짜 엄마를 덮고 있던 것으로 글에 나온 것은?",
       "options": [
-        "새끼 원숭이는 몸에 닿는 부드러운 감촉을 원했다",
-        "새끼 원숭이는 몸에 전해지는 따뜻한 온기를 원했다",
-        "새끼 원숭이는 어미와 닮은 익숙한 냄새를 원했다",
-        "새끼 원숭이는 젖을 주는 어미의 보살핌을 원했다"
+        "부드러운 수건 천",
+        "부드러운 담요 천",
+        "부드러운 양털 천",
+        "부드러운 벨벳 천"
       ],
       "answer": 0,
       "evidence": [
-        3,
-        4
+        2
       ],
-      "note": "'repeatedly chose to spend their time with the towel cloth mothers' · 'looked for the comfort supplied by their contact'로 확인"
+      "note": "'others were covered with soft towel cloth'로 확인"
     },
     {
       "id": "pr100-q2",
       "type": "세부 사실",
-      "prompt": "이 실험에 대한 설명으로 글의 내용과 일치하는 것은?",
+      "prompt": "글에 따르면, 이 실험은 새끼 원숭이들의 무엇에 관한 실험이었는가?",
       "options": [
-        "새끼 원숭이들은 젖을 뗀 뒤에 실험에 참여했다",
-        "새끼 원숭이들은 진짜 어미와 가짜 엄마를 번갈아 만났다",
-        "새끼 원숭이들은 태어나자마자 어미와 떨어져 지냈다",
-        "새끼 원숭이들은 가짜 엄마를 고를 수 없었다"
+        "감정",
+        "행동",
+        "기억",
+        "학습"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         1
       ],
-      "note": "'separated from their mothers at birth'로 확인"
+      "note": "'In an experiment on their behavior, baby monkeys'로 확인"
     }
   ]
 }

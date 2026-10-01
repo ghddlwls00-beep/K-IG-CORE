@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "pr214-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 인기 가수가 인터넷에 곡을 공개하는 것을 몇 석짜리 극장 공연에 빗대었는가?",
       "options": [
-        "음악과 공연 예술에서 컴퓨터는 관객보다 연주자에게 더 쓸모 있다",
-        "음악과 공연 예술에서 컴퓨터가 해 온 역할은 상당히 컸다",
-        "음악과 공연 예술에서 컴퓨터가 작곡가의 자리를 대신하고 있다",
-        "음악과 공연 예술에서 컴퓨터 덕분에 음악을 더 싸게 즐기게 되었다"
+        "2,000만 석",
+        "200만 석",
+        "1억 석",
+        "1,000만 석"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        1,
-        2
+        5
       ],
-      "note": "'his argument is not persuasive', 'the role of computers in music and the performing arts has been considerable'"
+      "note": "'like playing in a theater with 20 million seats'"
     },
     {
       "id": "pr214-q2",

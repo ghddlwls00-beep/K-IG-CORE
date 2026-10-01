@@ -22,20 +22,19 @@
     },
     {
       "id": "pr209-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "'is not to be despised'에서 despised의 뜻으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 평판과 인격이 정반대일 수 있음을 무엇에 빗대어 말했는가?",
       "options": [
-        "절망하다",
-        "업신여기다",
-        "갈망하다",
-        "묘사하다"
+        "물과 기름",
+        "빛과 어둠",
+        "하늘과 땅",
+        "불과 얼음"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        2
+        5
       ],
-      "note": "'It is desirable to have a good reputation', 'is not to be despised'"
+      "note": "'as opposite as light and darkness'"
     }
   ]
 }

@@ -5,26 +5,19 @@
   "questions": [
     {
       "id": "pr215-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "type": "순서",
+      "prompt": "이 글에서 가장 먼저 예로 든 분야는 무엇인가?",
       "options": [
-        "과학의 발전은 기쁨과 함께 새로운 걱정도 가져온다",
-        "과학의 발전이 낳은 문제는 또 다른 과학으로 풀 수 있다",
-        "과학의 발전은 자연을 지키는 방향으로 나아가야 한다",
-        "과학의 발전이 빨라질수록 사람들은 더 행복해진다"
+        "농업 화학",
+        "항공 운송",
+        "우주 개발",
+        "의학"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8
+        1
       ],
-      "note": "'happy with developments in medicine', 'rivers become so polluted', 'frightened by the horrors of air crashes', 'see the other side there, too'"
+      "note": "'People are happy with developments in medicine'"
     },
     {
       "id": "pr215-q2",

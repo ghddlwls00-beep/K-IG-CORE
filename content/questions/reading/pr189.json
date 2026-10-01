@@ -6,35 +6,34 @@
     {
       "id": "pr189-q1",
       "type": "세부 사실",
-      "prompt": "'아무것도 사지 않는 날'(Buy Nothing Day)에 관한 설명으로 이 글의 내용과 일치하는 것은?",
+      "prompt": "이 글에서 우리가 돈을 쓰기도 전에 치르는 대가로 든 것은?",
       "options": [
-        "여러 나라 정부가 함께 정한 휴일이다",
-        "한 나라 국민들이 따로 지키는 날이다",
-        "여러 나라 사람들이 함께 지키는 날이다",
-        "여러 나라 상점들이 하루 문을 닫는 날이다"
+        "숲과 강과 바다",
+        "전기와 석유와 천연가스",
+        "깨끗한 물과 공기와 흙",
+        "나무와 금속 광물과 석유"
       ],
       "answer": 2,
       "evidence": [
-        1
+        4
       ],
-      "note": "'an international day for buying nothing at all' 인용."
+      "note": "'Even before we spend our money… can cost a lot in pure water, air, and soil' 인용."
     },
     {
       "id": "pr189-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "'our shopping habits can have considerable effects on the environment'에서 considerable의 의미로 가장 가까운 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 우리가 사는 물건이 돈을 쓰기도 전에 환경에 대가를 치르게 하는 과정으로 든 것은?",
       "options": [
-        "배려하는",
-        "상당히 큰",
-        "오래가는",
-        "뜻밖의"
+        "만들고 광고하고 포장하는 일",
+        "만들고 운반하고 보관하는 일",
+        "광고하고 보관하고 진열하는 일",
+        "포장하고 운반하고 진열하는 일"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        4,
-        5
+        4
       ],
-      "note": "'can cost a lot in pure water, air, and soil', 'In short… considerable effects on the environment' 인용."
+      "note": "'Even before we spend our money, making, advertising, and packaging what we buy can cost a lot' 인용."
     }
   ]
 }

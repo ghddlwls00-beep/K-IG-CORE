@@ -5,38 +5,35 @@
   "questions": [
     {
       "id": "d194-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "큰 천막을 세우는 동안 일꾼들이 한 일로 알맞은 것은?",
       "options": [
-        "서커스가 마을에 와서 큰 천막을 세우는 모습",
-        "천막 안에서 조련사와 곡예사가 공연하는 모습",
-        "빈터에 세운 천막에서 아이들이 공연을 보는 모습",
-        "서커스 단원들이 마을에 공연을 알리러 다니는 모습"
-      ],
-      "answer": 0,
-      "evidence": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "note": "서커스가 와서 천막을 세움: 'the coming of the circus to town' · 'hoisting the big top' · 'a miniature canvas city'"
-    },
-    {
-      "id": "d194-q2",
-      "type": "세부사실",
-      "prompt": "서커스에서 사람들을 도와 일한 동물로 알맞은 것은?",
-      "options": [
-        "말",
-        "낙타",
-        "황소",
-        "코끼리"
+        "노래를 부르며 박자를 맞췄다",
+        "휘파람을 불어 코끼리를 부렸다",
+        "구경 온 아이들을 물러서게 했다",
+        "소리를 지르며 안간힘을 썼다"
       ],
       "answer": 3,
       "evidence": [
         3
       ],
-      "note": "코끼리가 기둥 세우기를 도움: 'the circus elephants help hoist the huge tent poles into place'"
+      "note": "'men shout and strain'"
+    },
+    {
+      "id": "d194-q2",
+      "type": "순서",
+      "prompt": "서커스 열차가 마을에 들어온 뒤 큰 천막을 올릴 준비가 시작되는 때로 알맞은 것은?",
+      "options": [
+        "들어오자마자 곧바로",
+        "들어온 날 오후에",
+        "들어온 날 해가 진 뒤",
+        "들어온 이튿날 아침"
+      ],
+      "answer": 0,
+      "evidence": [
+        2
+      ],
+      "note": "'the circus train pulls into town and immediately preparations begin'"
     }
   ]
 }

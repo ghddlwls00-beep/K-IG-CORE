@@ -6,18 +6,20 @@
     {
       "id": "pr129-q1",
       "type": "세부 사실",
-      "prompt": "글에서 많은 건물이 온수에 대해 한 일로 옳은 것은?",
+      "prompt": "글에서 건물의 물 설비에 변화가 생긴 배경으로 든 것은?",
       "options": [
-        "세균을 없애려고 온수 온도를 높였다",
-        "화상을 막으려고 온수 온도를 낮췄다",
-        "에너지를 아끼려고 온수 온도를 낮췄다",
-        "에너지를 아끼려고 온수 공급 시간을 줄였다"
+        "에어컨 냉각탑 설비의 보급",
+        "필라델피아에서의 집단 발병",
+        "1970년대 세계적인 석유 부족",
+        "수돗물 수질 검사 기준의 강화"
       ],
       "answer": 2,
       "evidence": [
+        1,
+        2,
         3
       ],
-      "note": "'To save energy'가 온수 온도를 낮춘(lowered the temperature of their hot water) 까닭"
+      "note": "'In the 1970s, there was a worldwide shortage of oil. To save energy, many buildings lowered the temperature of their hot water.'"
     },
     {
       "id": "pr129-q2",

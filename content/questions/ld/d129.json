@@ -6,18 +6,18 @@
     {
       "id": "d129-q1",
       "type": "세부 사실",
-      "prompt": "이 노인이 미얀마 곳곳을 여행할 때 탄 동물로 옳은 것은?",
+      "prompt": "글쓴이가 이 노인이 정말 흥미진진한 모험을 겪었다고 한 때는 언제인가?",
       "options": [
-        "물소",
-        "코끼리",
-        "노새",
-        "조랑말"
+        "낯선 나라의 음식을 먹을 때",
+        "동물을 타고 다닐 때",
+        "배를 타고 큰 바다를 건널 때",
+        "높은 산을 걸어서 넘을 때"
       ],
       "answer": 1,
       "evidence": [
-        3
+        4
       ],
-      "note": "'traveled all over Burma on an elephant'에서 확인"
+      "note": "\"He has had some really exciting adventures while riding animals\""
     },
     {
       "id": "d129-q2",
@@ -37,20 +37,20 @@
     },
     {
       "id": "d129-q3",
-      "type": "목적/태도",
-      "prompt": "이 노인의 이야기에 대한 글쓴이의 태도로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 이 노인이 낯설고 놀라운 음식을 먹어 본 나라로 든 곳이 아닌 것은?",
       "options": [
-        "처음엔 의심했지만 듣다 보니 대부분 믿게 되었다",
-        "재미있게 듣지만 아이들이 다 믿을까 봐 염려한다",
-        "가끔 믿기 어렵지만 아이들처럼 즐겨 듣는다",
-        "믿기 어려운 대목은 직접 알아보면서 듣는다"
+        "독일",
+        "시리아",
+        "버마",
+        "아프가니스탄"
       ],
       "answer": 2,
       "evidence": [
-        8,
-        10
+        3,
+        6
       ],
-      "note": "'Sometimes I don't know whether to believe him or not', 'Children love to listen to his stories and so do I'에서 확인"
+      "note": "\"traveled all over Burma on an elephant\" / \"eaten strange and wonderful things in Japan, China, Germany, Syria, Peru, Afghanistan and Tibet\""
     }
   ]
 }

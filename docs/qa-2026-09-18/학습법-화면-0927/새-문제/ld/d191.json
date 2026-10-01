@@ -5,21 +5,20 @@
   "questions": [
     {
       "id": "d191-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "화자가 여인과 처음 마주치게 된 과정으로 알맞은 것은?",
       "options": [
-        "여인이 화자에게 목적지 가는 길을 일러 준 일",
-        "여인이 화자와 함께 목적지를 찾아 헤맨 일",
-        "여인이 화자를 목적지 대신 골목으로 끌고 간 일",
-        "여인이 화자를 가려던 곳까지 곧장 데려다준 일"
+        "화자가 지나가던 여인에게 길을 물었다",
+        "여인이 먼저 화자에게 말을 걸어왔다",
+        "화자가 여인의 발소리를 듣고 뒤따라갔다",
+        "여인이 화자의 등불을 보고 다가왔다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        3,
-        5,
-        8
+        1,
+        2
       ],
-      "note": "여인을 따라가 목적지에 닿음: 'the young woman' · 'followed her' · 'led me straight to my destination'"
+      "note": "여인이 먼저 말을 걺: 'I heard a voice come out of the fog' · 'I suppose you are lost. Can I help you?'"
     },
     {
       "id": "d191-q2",

@@ -21,19 +21,19 @@
     },
     {
       "id": "pr210-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "'this vast, irresponsive world'에서 irresponsive의 뜻으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 세상의 불공평함과 삶의 고단함 앞에서 우리가 어떻게 된다고 했는가?",
       "options": [
-        "책임지려 하지 않는",
-        "되돌릴 수 없는",
-        "거부할 수 없는",
-        "반응해 주지 않는"
+        "화가 치민다",
+        "충격을 받는다",
+        "슬픔에 잠긴다",
+        "두려움을 느낀다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        3
+        4
       ],
-      "note": "'We all feel lonely in this vast, irresponsive world'"
+      "note": "'We are shocked by the injustice of the world and the hardships of life'"
     }
   ]
 }

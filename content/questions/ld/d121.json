@@ -5,54 +5,53 @@
   "questions": [
     {
       "id": "d121-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "이유",
+      "prompt": "18세기 전까지 사망률이 매우 높았던 까닭으로 글에서 말한 것은?",
       "options": [
-        "늘어나는 인구를 식량 생산이 따라가지 못하리라는 걱정",
-        "인구가 크게 늘어 지구의 물과 땅이 모자라리라는 걱정",
-        "늘어나는 인구로 일자리가 모자라 가난이 번지리라는 걱정",
-        "기근과 전쟁이 되풀이되어 세계 인구가 크게 줄리라는 걱정"
+        "도시가 붐비고 더러워서",
+        "보건 의료가 형편없어서",
+        "일이 고되고 위험해서",
+        "기근이 자주 들어서"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        1,
-        2,
-        3
+        4,
+        5
       ],
-      "note": "'food production will not keep up with population growth', 'the world will soon be overpopulated', 'more people than the Earth can support'가 중심 내용을 보여 줌"
+      "note": "'Because of poor health care, death rates were very high', 'Then during the 18th century'"
     },
     {
       "id": "d121-q2",
       "type": "세부 사실",
-      "prompt": "18세기에 인구가 빠르게 늘기 시작한 까닭으로 옳은 것은?",
+      "prompt": "식량 생산이 인구 증가를 따라가지 못하리라고 믿는다고 한 사람들은?",
       "options": [
-        "전쟁이 줄어 사망률이 떨어져서",
-        "결혼이 빨라져 출생률이 올라서",
-        "새 대륙으로 퍼져 살 땅이 넓어져서",
-        "질병을 다스리게 되어 사망률이 떨어져서"
+        "정치가와 경제학자",
+        "과학자와 의사",
+        "과학자와 경제학자",
+        "정치가와 의사"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        5,
-        6
+        1
       ],
-      "note": "'living conditions began to improve and people learned to control many diseases', 'the death rate began to drop and the population grew quickly'가 까닭을 보여 줌"
+      "note": "'Many scientists and economists believe that food production will not keep up with population growth'"
     },
     {
       "id": "d121-q3",
-      "type": "다음에 할 일",
-      "prompt": "약 80년 뒤에 일어날 수 있다고 한 일로 옳은 것은?",
+      "type": "세부 사실",
+      "prompt": "세계 인구가 두 배쯤으로 늘면 생기리라고 많은 사람이 믿는 일로 글에서 든 것은?",
       "options": [
-        "세계 인구가 늘어나는 속도가 두 배가 될 수 있다",
-        "세계 인구가 지금보다 갑절로 불어날 수 있다",
-        "세계의 식량 생산이 두 배가 될 수 있다",
-        "지구가 먹여 살릴 인구가 두 배가 될 수 있다"
+        "기근과 전쟁 같은 재난",
+        "기근과 전염병 같은 재난",
+        "기근과 물 부족 같은 재난",
+        "기근과 환경 오염 같은 재난"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        7
+        7,
+        8
       ],
-      "note": "'if the population continues to grow at its present rate, the world population will double in about 80 years'가 세계 인구가 두 배가 됨을 보여 줌"
+      "note": "'the world population will double', 'such a high population would cause famines, wars and other disasters'"
     }
   ]
 }

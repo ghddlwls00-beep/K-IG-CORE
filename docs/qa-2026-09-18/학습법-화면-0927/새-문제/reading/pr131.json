@@ -21,19 +21,19 @@
     },
     {
       "id": "pr131-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "'because it applies to'에서 it이 가리키는 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 공간의 질서를 줄 수 없는 내면 세계의 예로 든 것은?",
       "options": [
-        "시간",
-        "공간",
-        "내면 세계",
-        "공간의 질서"
+        "인상, 감정, 생각",
+        "기억, 꿈, 상상",
+        "감각, 의지, 판단",
+        "욕구, 믿음, 기대"
       ],
       "answer": 0,
       "evidence": [
         1
       ],
-      "note": "'Time is more general than space, because it applies to' — it은 앞 절의 주어 Time"
+      "note": "'the inner world of impressions, emotions, and ideas' — 인상·감정·생각"
     }
   ]
 }

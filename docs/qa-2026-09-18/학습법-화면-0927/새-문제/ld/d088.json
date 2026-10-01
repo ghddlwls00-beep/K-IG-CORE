@@ -5,37 +5,37 @@
   "questions": [
     {
       "id": "d088-q1",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "형제가 처음으로 기계를 하늘에 띄운 때로 가장 알맞은 것은?",
       "options": [
-        "두 형제가 1899년 시작한 연구 끝에 1903년 동력 비행을 해냈다",
-        "두 형제가 1899년 출판된 자료대로 만든 기계로 1903년 날았다",
-        "두 형제가 1899년 처음 난 뒤 1903년 더 멀리 날았다",
-        "두 형제가 1899년 바람 터널 실험 뒤 1903년 비행기를 팔았다"
+        "서늘하고 바람이 부는 아침",
+        "춥고 바람이 잔잔한 아침",
+        "서늘하고 바람이 부는 오후",
+        "춥고 바람이 잔잔한 오후"
       ],
       "answer": 0,
       "evidence": [
         1,
-        2,
-        3
+        2
       ],
-      "note": "'did something that most people believed could never be done' · 'lifted a man into the air' · 'was a success' · 'They had spent several years developing it'가 여러 해 연구한 끝에 비행에 성공했음을 보여 줌"
+      "note": "'On a cool windy morning in December 1903' · 'a large noisy machine lifted a man into the air'가 서늘하고 바람 부는 아침이었음을 보여 줌"
     },
     {
       "id": "d088-q2",
       "type": "세부 사실",
-      "prompt": "'37미터'가 나타내는 것으로 가장 알맞은 것은?",
+      "prompt": "플라이어호의 성공에 대한 형제의 반응과 그날 한 일로 가장 알맞은 것은?",
       "options": [
-        "첫 비행 때 기계가 땅에서 떠오른 높이",
-        "그날 맨 처음 비행에서 날아간 거리",
-        "이륙 전에 기계가 땅 위를 달린 거리",
-        "네 번의 비행 가운데 마지막에 난 거리"
+        "크게 놀라며 이튿날 세 번 더 날았다",
+        "놀라지 않고 그날 세 번 더 날았다",
+        "크게 놀라며 그날 세 번 더 날았다",
+        "놀라지 않고 이튿날 세 번 더 날았다"
       ],
       "answer": 1,
       "evidence": [
-        2
+        2,
+        3
       ],
-      "note": "'carried him for 37 meters' · 'The brothers made three more flights that day'가 37미터는 그날 첫 비행에서 날아간 거리임을 보여 줌"
+      "note": "'The brothers made three more flights that day' · 'The brothers weren't surprised that their machine, the Flyer, was a success'"
     },
     {
       "id": "d088-q3",

@@ -21,20 +21,19 @@
     },
     {
       "id": "pr192-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 과학자들이 지금 애쓰고 있다고 한 일은?",
       "options": [
-        "옛 바이올린이 특별한 까닭은 오래된 나이 때문으로 밝혀졌다",
-        "옛 바이올린을 그대로 본뜬 악기가 요즘 다시 만들어지고 있다",
-        "옛 바이올린이 특별한 까닭은 아직 확실히 알려지지 않았다",
-        "옛 바이올린보다 요즘 바이올린을 찾는 음악가가 늘고 있다"
+        "옛 바이올린에 쓰인 나무를 알아내는 일",
+        "옛 바이올린과 새 바이올린 소리를 견주는 일",
+        "옛 바이올린 같은 악기를 만들어 내는 일",
+        "옛 바이올린의 나이를 밝혀내는 일"
       ],
       "answer": 2,
       "evidence": [
-        6,
-        7
+        4
       ],
-      "note": "'Why are these old Italian violins so special?', 'No one really knows' 인용."
+      "note": "'Violin makers and scientists now try to make instruments like the Italian violins' 인용."
     }
   ]
 }

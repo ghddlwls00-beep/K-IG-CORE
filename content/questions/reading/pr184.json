@@ -6,39 +6,34 @@
     {
       "id": "pr184-q1",
       "type": "세부 사실",
-      "prompt": "이 글에 따르면 예전 한국인의 직장 생활에 관한 설명으로 옳은 것은?",
+      "prompt": "한국과 미국의 고용 형태를 연구한 사람은 누구인가?",
       "options": [
-        "대기업에 들어가려고 시험을 오래 준비했다",
-        "집안의 가게나 농사를 물려받아 일했다",
-        "나이가 들면 일찍 회사를 그만두고 쉬었다",
-        "젊을 때 처음 들어간 회사에서 평생 일했다"
+        "경제학 교수",
+        "사회학 교수",
+        "역사학 교수",
+        "경영학 교수"
       ],
       "answer": 3,
       "evidence": [
-        4,
-        5
+        1
       ],
-      "note": "'Koreans tended to have one job for their whole life', 'When they were young, they went to work for a company, and they stayed with that company' — 젊을 때 들어간 회사에 계속 머묾"
+      "note": "'A professor of business studied employment patterns in Korea and the United States' — 경영학 교수"
     },
     {
       "id": "pr184-q2",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 연구자가 두 나라의 중요한 차이를 소개한 곳은?",
       "options": [
-        "한국과 미국은 한 직장에 머무는 기간이 다르다",
-        "한국과 미국은 직장을 구하는 방법이 다르다",
-        "한국과 미국은 일을 그만두는 나이가 다르다",
-        "한국과 미국은 가업을 물려받는 비율이 다르다"
+        "자신이 쓴 책",
+        "자신이 쓴 논문",
+        "신문에 쓴 칼럼",
+        "방송에서 한 강연"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        2,
-        3,
-        4,
-        6
+        2
       ],
-      "note": "'employment patterns in Korea and the United States', 'some important differences', 'the number of years a person stays with a job' — 두 나라의 근속 햇수 차이가 중심"
+      "note": "'She described in her book some important differences' — 자신의 책에서 소개함"
     }
   ]
 }

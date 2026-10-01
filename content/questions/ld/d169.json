@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "d169-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "가리키는 것",
+      "prompt": "글에서 약 400피트라고 한 것은 무엇인가?",
       "options": [
-        "덱스터가 사막에 서핑 대회를 열어 세계의 서퍼들을 모은 일",
-        "덱스터가 파도 기계를 만들어 사막에서도 서핑을 하게 한 일",
-        "덱스터가 파도 기계를 바다 없는 도시들에 팔아 큰돈을 번 일",
-        "덱스터가 파도 기계로 바다의 큰 파도를 막아 해변을 지킨 일"
+        "석호 둘레를 한 바퀴 도는 거리",
+        "서퍼가 파도를 타고 가는 거리",
+        "저수지에서 석호까지 물길의 길이",
+        "카지노 실험장 수조의 길이"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        2,
-        7
+        5
       ],
-      "note": "'returned to Arizona' · 'built a machine that could produce waves several feet high' · 'Surfing in the desert is a fantastic success' — 사막에서 기계로 만든 파도로 서핑이 성공함"
+      "note": "'The surfers catch the waves and ride them for about 400 feet' — 서퍼가 파도를 타고 가는 거리가 약 400피트"
     },
     {
       "id": "d169-q2",

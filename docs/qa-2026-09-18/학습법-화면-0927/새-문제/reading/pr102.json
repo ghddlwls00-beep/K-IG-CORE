@@ -5,37 +5,36 @@
   "questions": [
     {
       "id": "pr102-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
-      "options": [
-        "경쟁은 개인과 기업이 서로 협력하도록 이끈다",
-        "경쟁은 개인과 기업이 비용을 아끼도록 이끈다",
-        "경쟁은 개인과 기업이 스스로 발전하도록 이끈다",
-        "경쟁은 개인과 기업이 규칙을 잘 지키도록 이끈다"
-      ],
-      "answer": 2,
-      "evidence": [
-        1,
-        2,
-        4
-      ],
-      "note": "'an important part of development' · 'allows us to become the best individual we can be' · 'making companies develop new ideas'로 확인"
-    },
-    {
-      "id": "pr102-q2",
       "type": "세부 사실",
-      "prompt": "이 글의 내용과 일치하는 것은?",
+      "prompt": "글에서 개인 차원의 경쟁을 보여 주려고 예로 든 것은?",
       "options": [
-        "회사들은 남의 제품보다 한발 나은 제품을 만들려 한다",
-        "회사들은 다른 회사와 손잡고 제품을 만들려 한다",
-        "회사들은 이미 잘 팔리는 제품을 따라 만들려 한다",
-        "회사들은 한번 만든 제품을 오래 팔려고 한다"
+        "운동 경기에서 겨루는 것",
+        "학교 시험에서 겨루는 것",
+        "음악 대회에서 겨루는 것",
+        "취업 면접에서 겨루는 것"
       ],
       "answer": 0,
       "evidence": [
-        5
+        2,
+        3
       ],
-      "note": "'trying to develop products that are one step better than those of other companies'로 확인"
+      "note": "'At the personal level' · 'competing with others in sports'로 확인"
+    },
+    {
+      "id": "pr102-q2",
+      "type": "이유",
+      "prompt": "글에 따르면, 경쟁 때문에 회사들이 새로운 아이디어를 개발하는 목적은?",
+      "options": [
+        "고객의 믿음을 얻기 위해서",
+        "회사가 살아남기 위해서",
+        "이익을 늘리기 위해서",
+        "정부의 규칙을 따르기 위해서"
+      ],
+      "answer": 1,
+      "evidence": [
+        4
+      ],
+      "note": "'making companies develop new ideas to ensure survival'로 확인"
     }
   ]
 }

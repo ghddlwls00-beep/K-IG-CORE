@@ -6,34 +6,34 @@
     {
       "id": "pr160-q1",
       "type": "세부 사실",
-      "prompt": "토끼에 관한 설명으로 이 글의 내용과 일치하는 것은?",
+      "prompt": "이 글에서 토끼가 겨울에 먹는다고 한 것은?",
       "options": [
-        "눈이 녹아야 어린 나무의 겨울눈에 닿을 수 있다",
-        "주로 다 자란 나무의 겨울눈을 먹으며 지낸다",
-        "눈 무게에 휜 나무의 뿌리를 파 먹는다",
-        "눈이 깊을수록 겨울눈에 더 많이 닿는다"
+        "어린 나무의 껍질",
+        "땅에 떨어진 열매",
+        "어린 나무의 겨울눈",
+        "눈 아래의 마른 풀"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         3
       ],
-      "note": "'the deeper icy snow helps the animal to reach more buds'라고 했다"
+      "note": "'it feeds on the winter buds of young trees'라고 했다"
     },
     {
       "id": "pr160-q2",
       "type": "세부 사실",
-      "prompt": "사슴에 관한 설명으로 이 글의 내용과 일치하는 것은?",
+      "prompt": "이 글에서 사슴에 관해 말한 것은?",
       "options": [
-        "깊은 눈 때문에 걷기와 먹이 찾기가 힘들다",
-        "깊은 눈 때문에 걷기와 잠자리 찾기가 힘들다",
-        "깊은 눈 때문에 숨기와 먹이 찾기가 힘들다",
-        "깊은 눈 때문에 숨기와 잠자리 찾기가 힘들다"
+        "깊은 눈 때문에 많은 수가 굶주린다",
+        "깊은 눈을 피해 낮은 곳으로 옮겨 간다",
+        "깊은 눈 속에서 나무껍질로 겨울을 난다",
+        "깊은 눈 속에서 무리 지어 길을 낸다"
       ],
       "answer": 0,
       "evidence": [
         7
       ],
-      "note": "'Deep snow makes it hard for deer to walk and to find food'라고 했다"
+      "note": "'Deep snow makes it hard for deer to walk and to find food, so many of them go hungry'라고 했다"
     }
   ]
 }

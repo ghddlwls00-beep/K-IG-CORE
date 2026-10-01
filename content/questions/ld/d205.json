@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "d205-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 복숭아 파이 사건을 두고 한 말로 옳은 것은?",
       "options": [
-        "지나친 친절은 베푼 사람 자신에게 독이 될 수 있다",
-        "겉치레로 베푼 친절은 상대에게 독이 될 수 있다",
-        "좋은 뜻으로 베푼 친절도 상대에게는 독이 될 수 있다",
-        "정중한 거절도 친절을 베푼 사람에게는 독이 될 수 있다"
+        "말 그대로 친절로 사람을 죽인 경우이다",
+        "비유적으로 친절로 사람을 죽인 경우이다",
+        "말 그대로 예의가 사람을 해친 경우이다",
+        "비유적으로 예의가 사람을 해친 경우이다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        1,
-        2,
-        4,
-        5
+        1
       ],
-      "note": "'killing with kindness' · 'the things we enjoy are not necessarily the things others enjoy' · 'good intentions can put others to serious inconvenience' · 'One man's meat is another man's poison' — 좋은 뜻의 친절도 남에게 괴로움이 될 수 있음"
+      "note": "'The incident of the peach pie is literally a case of killing with kindness' — 말 그대로 친절로 사람을 죽인 경우"
     },
     {
       "id": "d205-q2",

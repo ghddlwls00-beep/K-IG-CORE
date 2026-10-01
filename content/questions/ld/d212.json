@@ -22,36 +22,35 @@
     },
     {
       "id": "d212-q2",
-      "type": "목적태도",
-      "prompt": "손가락을 다친 아이의 태도로 가장 적절한 것은?",
+      "type": "세부사실",
+      "prompt": "손가락을 다친 아이가 한 말로 옳은 것은?",
       "options": [
-        "토끼가 오히려 더 좋아진 듯했다",
-        "동물원 측을 크게 원망하는 듯했다",
-        "다친 일을 별로 개의치 않는 듯했다",
-        "다친 뒤로 동물 만지기를 겁내는 듯했다"
+        "손가락을 그렇게 잃은 사람은 아마 세상에 자기 하나일 것이다",
+        "다시는 동물원에 있는 동물을 손으로 만지지 않겠다",
+        "동물이 겁이 나서 문 것이니 동물을 탓할 일이 아니다",
+        "손가락을 물린 일을 친구들에게 꼭 자랑하고 싶다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        7,
         8
       ],
-      "note": "'didn't seem to mind' · 'the only person in the world' — 개의치 않고 오히려 세상에 자기뿐일 거라고 말함"
+      "note": "'he was probably the only person in the world to have had his finger bitten off' — 세상에 자기 하나일 것"
     },
     {
       "id": "d212-q3",
       "type": "세부사실",
-      "prompt": "많은 동물원의 어린이 구역에서 아이들이 할 수 있다고 한 것은?",
+      "prompt": "어린이 구역에서 아이들이 만질 수 있는 동물을 강의에서는 어떻게 표현했는가?",
       "options": [
-        "토끼나 오리를 손으로 쓰다듬어 볼 수 있다",
-        "토끼나 오리에게 직접 먹이를 줘 볼 수 있다",
-        "토끼나 오리와 함께 사진을 찍어 볼 수 있다",
-        "토끼나 오리의 새끼를 직접 돌봐 볼 수 있다"
+        "토끼나 오리 같은 작은 동물",
+        "토끼나 오리 같은 어린 동물",
+        "토끼나 오리 같은 순한 동물",
+        "토끼나 오리 같은 깨끗한 동물"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
         2
       ],
-      "note": "'where they can pet rabbits, ducks, and other gentle animals' — 토끼 · 오리 같은 순한 동물을 쓰다듬을 수 있음"
+      "note": "'pet rabbits, ducks, and other gentle animals' — 순한 동물"
     }
   ]
 }

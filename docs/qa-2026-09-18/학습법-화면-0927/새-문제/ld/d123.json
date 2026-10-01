@@ -21,20 +21,19 @@
     },
     {
       "id": "d123-q2",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 거의 같게 유지되어야 한다고 한 것은?",
       "options": [
-        "대륙의 담수는 주로 땅속 물이 솟아 나와 채워진다",
-        "바닷물이 증발할수록 공기 속 물의 양이 계속 늘어난다",
-        "대륙의 담수가 증발해 해마다 바다로 옮겨 가 줄어든다",
-        "해의 에너지로 증발한 바닷물이 담수가 되어 돌아온다"
+        "공기 속 물의 양",
+        "바닷속 물의 양",
+        "대륙 담수원의 물의 양",
+        "비와 눈으로 내리는 물의 양"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        1,
-        3
+        2
       ],
-      "note": "'controlled by the process of evaporation and distillation of the oceans by the sun's energy', 'falls back in the form of precipitation, rain and snow'가 중심 내용을 보여 줌"
+      "note": "'the amount of water in the air must remain about the same'"
     }
   ]
 }

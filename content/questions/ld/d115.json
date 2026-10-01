@@ -5,19 +5,20 @@
   "questions": [
     {
       "id": "d115-q1",
-      "type": "세부 사실",
-      "prompt": "마야인이 특별한 건물을 지어 한 일로 옳은 것은?",
+      "type": "언급하지 않은 것",
+      "prompt": "마야인이 한 일로 이야기에서 말하지 않은 것은?",
       "options": [
-        "해와 달의 신에게 제물을 바쳤다",
-        "별자리를 살펴 나라의 앞날을 점쳤다",
-        "해와 달, 별과 행성의 움직임을 살펴 연구했다",
-        "죽은 왕을 묻고 그 업적을 돌에 새겨 기렸다"
+        "별과 행성을 살피는 건물을 지었다",
+        "0이라는 숫자를 만들어 셈할 때 썼다",
+        "글을 적는 방법과 달력을 만들었다",
+        "농사에도 솜씨가 뛰어난 사람들이었다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        3
+        3,
+        4
       ],
-      "note": "'The Maya built special buildings where they studied the sun, the moon, the planets, and the stars'가 그 건물에서 해와 달, 행성과 별을 연구했음을 보여 줌"
+      "note": "'studied the sun, the moon, the planets, and the stars', 'a writing system and a calendar', 'skilled farmers'는 나오지만 숫자 0 이야기는 없음"
     },
     {
       "id": "d115-q2",
@@ -40,19 +41,18 @@
     {
       "id": "d115-q3",
       "type": "세부 사실",
-      "prompt": "남서부의 원주민 사회 대부분이 살아간 방법으로 옳은 것은?",
+      "prompt": "이야기에서 미국 남서부 원주민 사회 가운데 농사를 지어 살았다고 말한 사회의 수로 옳은 것은?",
       "options": [
-        "여러 가지 작물을 길러 농사로 살았다",
-        "나바호족처럼 큰 짐승을 사냥하며 살았다",
-        "천을 짜서 곡식과 바꾸는 교역으로 살았다",
-        "양 떼를 몰고 다니는 목축으로 살았다"
+        "절반쯤의 사회",
+        "몇몇 사회",
+        "3분의 1쯤의 사회",
+        "대부분의 사회"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        8,
-        9
+        8
       ],
-      "note": "'Most of the Native American societies in the Southwest lived by farming' · 'They grew many different crops'가 여러 작물을 기르며 농사를 지었음을 보여 줌"
+      "note": "'Most of the Native American societies in the Southwest lived by farming'이 대부분의 사회였음을 보여 줌"
     }
   ]
 }

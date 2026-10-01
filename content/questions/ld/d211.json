@@ -8,34 +8,34 @@
       "type": "중심내용",
       "prompt": "이 강의의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "오늘날 동물원은 전시 말고도 관람 수익으로 의학 연구를 후원한다",
-        "오늘날 동물원은 전시 말고도 사람들을 가르치고 의학 발전에 공헌한다",
-        "오늘날 동물원은 전시 말고도 다친 동물을 치료해 수의학에 이바지한다",
-        "오늘날 동물원은 전시 말고도 멸종 위기 동물을 지키는 연구를 한다"
+        "오늘날 동물원은 전시 말고도 멸종 위기 동물을 보호하고 의학에 공헌한다",
+        "오늘날 동물원은 전시 말고도 다친 야생 동물을 구조하고 의학에 공헌한다",
+        "오늘날 동물원은 전시 말고도 관람 수익을 모아 의학 연구에 공헌한다",
+        "오늘날 동물원은 전시 말고도 교육 프로그램을 열고 의학에 공헌한다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         1,
         2,
         3
       ],
-      "note": "'serves other purposes' · 'educational programs' · 'contributions to medicine' — 전시 말고도 교육과 의학에 이바지함"
+      "note": "'serves other purposes' · 'sponsor educational programs' · 'contributions to medicine' — 전시 말고도 교육 프로그램과 의학 공헌"
     },
     {
       "id": "d211-q2",
-      "type": "세부사실",
-      "prompt": "디트마스 박사가 뱀의 독을 모은 목적으로 옳은 것은?",
+      "type": "세부 사실",
+      "prompt": "동물원의 교육 프로그램이 사람들에게 알려 주려 한다고 한 것은?",
       "options": [
-        "해독제를 만들어 다른 동물원에 팔려고",
-        "의대 학생들의 실습 재료로 쓰려고",
-        "관람객에게 뱀의 독을 직접 보여 주려고",
-        "과학자들이 그 독을 연구할 수 있게 하려고"
+        "바다와 강에 사는 동물들",
+        "세계 여러 곳에 사는 동물들",
+        "우리나라에 사는 토종 동물들",
+        "밤에 활동하는 야행성 동물들"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        4
+        2
       ],
-      "note": "'collected snake venom for scientists to study' — 과학자들이 연구하도록 뱀의 독을 모음"
+      "note": "'acquaint children, as well as adults, with the animals of the world' — 세계의 동물들을 알게 함"
     }
   ]
 }

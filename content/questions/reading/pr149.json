@@ -22,20 +22,19 @@
     },
     {
       "id": "pr149-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "문장 \"But given the destructive results, do these beliefs make sense?\"에서 these beliefs가 가리키는 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 수백만 명의 목숨을 앗아 간 위기가 되었다고 한 것은?",
       "options": [
-        "서로 맞서 다투는 사람들이 굳게 지닌 신념",
-        "위기로 피해를 입은 사람들이 새로 갖게 된 신념",
-        "종교 지도자들이 신도들에게 가르쳐 온 신념",
-        "나라를 이끄는 정치인들이 내세우는 신념"
+        "인종에 대한 편견",
+        "지나친 민족주의",
+        "종교적인 불관용",
+        "자원을 둘러싼 경쟁"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        2,
-        3
+        1
       ],
-      "note": "'Many struggles such as rich versus poor are fought under deeply held beliefs', 'do these beliefs make sense' 참고"
+      "note": "'religious intolerance ... have turned into crises that have taken the lives of millions' 참고"
     }
   ]
 }

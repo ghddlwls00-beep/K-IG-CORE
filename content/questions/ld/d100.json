@@ -5,23 +5,20 @@
   "questions": [
     {
       "id": "d100-q1",
-      "type": "중심 내용",
-      "prompt": "이 글이 어업에 대해 말하는 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "미국의 상업 어부들 덕분에 수천 개의 일자리를 얻는다고 한 사람들로 알맞은 것은?",
       "options": [
-        "오래된 큰 산업으로 세계 사람들이 먹는 고기의 대부분을 댄다",
-        "오래된 큰 산업으로 세계의 수많은 사람이 이 일로 먹고산다",
-        "오래된 큰 산업으로 미국 어부들이 세계 어획량의 큰 몫을 잡는다",
-        "오래된 큰 산업으로 일하는 사람은 줄어도 잡는 양은 늘고 있다"
+        "생선을 포장하고 파는 사람들",
+        "어선을 만들고 고치는 사람들",
+        "그물과 낚시 도구를 만드는 사람들",
+        "항구에서 배를 관리하는 사람들"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        1,
-        2,
         3,
-        4,
-        5
+        4
       ],
-      "note": "'one of the world's oldest industries' · 'over 30 million people in the world who make their living by catching fish' · 'create thousands of other jobs' · 'over 90 billion kilograms of fish a year' — 어업은 오래되고 큰 산업이며 많은 사람에게 일자리가 됨"
+      "note": "'140,000 commercial fishermen' · 'thousands of other jobs for the people who package and sell fish'"
     },
     {
       "id": "d100-q2",

@@ -22,19 +22,19 @@
     },
     {
       "id": "pr197-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "지문에 쓰인 표현 \"neglect of which\"에서 which가 가리키는 것으로 가장 적절한 것은",
+      "type": "세부 사실",
+      "prompt": "이 글에서 수입 못지않게 중요한 다른 조건들을 소홀히 하면 생길 수 있다고 한 것은",
       "options": [
-        "일해서 벌 수 있는 수입의 크기",
-        "일하며 돌봐야 할 건강과 가족",
-        "수입 못지않게 중요한 다른 조건들",
-        "승진이나 급여 인상 같은 보상"
+        "당장 생활이 어려워질 수 있다",
+        "일에 금세 싫증이 날 수 있다",
+        "훗날 좌절을 겪을 수 있다",
+        "훗날 건강을 해칠 수 있다"
       ],
       "answer": 2,
       "evidence": [
         1
       ],
-      "note": "근거 문장의 핵심 표현: \"other equally important considerations, neglect of which\""
+      "note": "근거 문장의 핵심 표현: \"neglect of which may produce frustration in later years\""
     }
   ]
 }

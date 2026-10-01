@@ -5,54 +5,51 @@
   "questions": [
     {
       "id": "d207-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 학교가 마련한 과외 활동의 예로 든 것은?",
       "options": [
-        "대학에서는 과외 활동이 정규 수업보다 더 중요하다",
-        "대학에서는 과외 활동도 정규 수업만큼 중요하다",
-        "대학에서는 과외 활동이 정규 수업의 학점으로 인정된다",
-        "대학에서는 과외 활동을 정규 수업처럼 교수가 지도한다"
+        "방송 · 토론 · 연극",
+        "신문 · 토론 · 연극",
+        "신문 · 음악 · 연극",
+        "방송 · 음악 · 연극"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        2,
-        4,
-        7
+        5
       ],
-      "note": "'not all fun' · 'its serious side' · 'participate in the various extracurricular activities offered by the school' · 'just as important as formal classes' — 과외 활동도 정규 수업만큼 중요"
+      "note": "'Such activities include the newspaper, debating, and drama' — 신문 · 토론 · 연극"
     },
     {
       "id": "d207-q2",
       "type": "세부 사실",
-      "prompt": "이 글에서 많은 훌륭한 언론인들이 처음 경력을 시작한 곳으로 든 것은?",
+      "prompt": "이 글에서 대학의 과외 활동에서 경력을 시작한 예로 든 사람들은?",
       "options": [
-        "대학 방송국",
-        "대학 잡지사",
-        "지역 신문사",
-        "대학 신문사"
+        "가수와 배우",
+        "기자와 배우",
+        "아나운서와 배우",
+        "변호사와 배우"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
         6
       ],
-      "note": "'Many great journalists actually began their career on their college newspaper' — 대학 신문"
+      "note": "'Many great journalists actually began their career on their college newspaper' · 'famous actors played their first role in a college dramatic production' — 기자와 배우"
     },
     {
       "id": "d207-q3",
       "type": "세부 사실",
-      "prompt": "이 글에서 말한 '일주일에 약 15시간'이 가리키는 것은?",
+      "prompt": "이 글에서 보통 대학생이 일주일에 약 15시간을 쓴다고 한 것은?",
       "options": [
-        "보통 대학생이 과외 활동에 쓰는 시간",
-        "보통 대학생이 수업 과제를 하는 시간",
-        "보통 대학생이 강의실에서 보내는 시간",
-        "보통 대학생이 수업 후 복습하는 시간"
+        "과제를 하는 데",
+        "과외 활동을 하는 데",
+        "혼자 공부하는 데",
+        "수업을 듣는 데"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         3
       ],
-      "note": "'The ordinary college student spends about 15 hours a week in class' — 수업 듣는 시간"
+      "note": "'The ordinary college student spends about 15 hours a week in class' — 수업을 듣는 데"
     }
   ]
 }

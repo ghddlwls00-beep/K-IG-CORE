@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "d210-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 동물원을 찾은 사람이 보게 된다고 한 것은?",
       "options": [
-        "동물원은 예부터 이어져 왔으며 오늘날 사람들에게 배움과 즐거움을 준다",
-        "동물원은 예부터 이어져 왔으며 오늘날 멸종 위기 동물을 지킨다",
-        "동물원은 예부터 이어져 왔으며 오늘날 동물 연구의 중심이 되었다",
-        "동물원은 예부터 이어져 왔으며 오늘날 주로 아이들의 놀이터가 되었다"
+        "낯선 동물 · 물고기 · 파충류",
+        "낯선 동물 · 곤충 · 파충류",
+        "낯선 동물 · 새 · 파충류",
+        "낯선 동물 · 양서류 · 파충류"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        1,
-        2,
-        3,
-        4
+        5
       ],
-      "note": "'Throughout recorded history' · 'huge zoos' · 'modern zoos designed to acquaint people with the animals' · 'in addition to being instructive' · 'favorite spots of Sunday afternoon pleasure seekers' — 예부터 이어져 온 동물원 · 배움과 즐거움"
+      "note": "'In viewing the strange animals, birds, and reptiles' — 낯선 동물 · 새 · 파충류"
     },
     {
       "id": "d210-q2",

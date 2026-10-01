@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr199-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은",
+      "type": "세부 사실",
+      "prompt": "이 글에서 노력이 필요하다고 한 일로 옳은 것은",
       "options": [
-        "직감을 따르되 주변 사람의 조언에 비추어 믿을지 판단해야 한다",
-        "직감을 따르되 지난 경험에 비추어 믿을지 판단해야 한다",
-        "직감을 따르되 충분한 자료를 모아 믿을지 판단해야 한다",
-        "직감을 따르되 처음 세운 원칙에 비추어 믿을지 판단해야 한다"
+        "직감을 결정의 길잡이로 쓰는 법을 익히는 일",
+        "마음속 목소리에 귀 기울이는 법을 익히는 일",
+        "남의 조언을 결정에 반영하는 법을 익히는 일",
+        "충동적인 결정을 바로잡는 법을 익히는 일"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        6,
-        7,
-        8
+        3
       ],
-      "note": "근거 문장의 핵심 표현: \"to support, not dictate, your decisions\", \"Use your experience to analyze the situation\", \"whether your instincts can be trusted\""
+      "note": "근거 문장의 핵심 표현: \"Learning how to use your instincts as a guide in decision making requires effort\""
     },
     {
       "id": "pr199-q2",
