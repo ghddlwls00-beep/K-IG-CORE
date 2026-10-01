@@ -5,23 +5,20 @@
   "questions": [
     {
       "id": "d265-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "성탄 전야 무렵 이미 되어 있다고 말한 준비가 아닌 것은?",
       "options": [
-        "성탄 전날 밤과 당일을 설레며 함께 보내는 가족의 모습",
-        "성탄 전날 밤과 당일을 이웃과 함께 보내는 마을의 모습",
-        "성탄 전날 밤까지 장식과 음식 준비에 바쁜 가족의 모습",
-        "성탄 전날 밤과 당일에 선물을 주고받는 친구들의 모습"
+        "트리 장식이 끝나 있다",
+        "부엌에 먹을 것이 가득하다",
+        "벽난로 옆에 양말이 걸려 있다",
+        "선물 포장이 다 끝나 있다"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
         1,
-        2,
-        3,
-        4,
-        5
+        2
       ],
-      "note": "'By the time Christmas Eve arrives' · 'can hardly sleep' · 'go to church together on Christmas' · 'symbols of their love for each other' — 성탄전야와 성탄절을 보내는 가족들의 모습"
+      "note": "'most of the preparations are complete' · 'The tree is decorated, ... hung their stockings by the fireplace, and the kitchen is full of good things to eat'"
     },
     {
       "id": "d265-q2",

@@ -5,25 +5,19 @@
   "questions": [
     {
       "id": "d266-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "원시인의 동굴 벽에서 발견되는 그림은 얼마나 오래된 것이라고 말했는가?",
       "options": [
-        "말로 하기 어려운 것을 글로 남겨 온 사람들의 역사",
-        "원시 미술과 현대 미술의 기법이 서로 다른 점",
-        "말로 못 하는 것을 미술로 표현해 온 오랜 역사",
-        "원시인의 동굴 그림을 오늘날까지 지켜 온 노력"
+        "몇백 년 된 것",
+        "몇천 년 된 것",
+        "10000년도 넘은 것",
+        "100000년도 넘은 것"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9
+        6
       ],
-      "note": "'a desire to express things that cannot be put into words' · 'The visual arts ... help to satisfy this desire' · 'Even primitive man indulged in art' — 말로 못 하는 것을 나타내는 미술은 원시인 때부터 이어짐"
+      "note": "'sketches of animals and birds that are thousands of years old'"
     },
     {
       "id": "d266-q2",
@@ -44,18 +38,18 @@
     {
       "id": "d266-q3",
       "type": "세부 사실",
-      "prompt": "원시 화가의 기술에 대해 말한 것으로 옳은 것은?",
+      "prompt": "사람이 언어를 전하려고 고안해 낸 수단의 예로 든 것은?",
       "options": [
-        "어떤 경우에는 꽤 발달해 있었다",
-        "어떤 무리는 이웃에게 배워 발달했다",
-        "시대가 지나면서 차츰 발달해 갔다",
-        "글자까지 새길 만큼 발달해 있었다"
+        "라디오와 전신",
+        "신문과 전신",
+        "텔레비전과 전신",
+        "전화와 전신"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        7
+        2
       ],
-      "note": "'In some cases the technique of the primitive artist was rather advanced' — 어떤 경우에는 꽤 발달해 있었음"
+      "note": "'devise language and the means of communicating language such as the telephone and telegraph'"
     }
   ]
 }

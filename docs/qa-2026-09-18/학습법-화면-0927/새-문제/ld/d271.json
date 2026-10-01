@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "d271-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이른바 현대 클래식 작곡가들의 음악이 지닌 특징으로 말한 것은?",
       "options": [
-        "음악은 그 시대 사람들의 생각과 분위기를 비춘다",
-        "음악은 시대를 앞서 다음 시대의 모습을 미리 비춘다",
-        "음악은 나라마다 그 나라 사람들의 성격을 비춘다",
-        "음악은 작곡가마다 그 사람의 삶과 감정을 비춘다"
+        "낯선 리듬과 불협화음",
+        "찬송과 예배의 가락",
+        "위엄과 우아함",
+        "새로운 사상과 정열"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        2,
-        3,
-        4
+        5
       ],
-      "note": "'a mirror of the times' · 'Middle Ages' · '18th century' · '19th century' · 'the modern age finds expression in the rhythms of jazz and swing' — 시대마다 음악의 모습이 다름"
+      "note": "'the music of the so-called modern classical composers is characterized by strange rhythms and discords'"
     },
     {
       "id": "d271-q2",

@@ -5,19 +5,21 @@
   "questions": [
     {
       "id": "d275-q1",
-      "type": "세부 사실",
-      "prompt": "영어가 국제 공용어가 되는 데 도움이 된 것으로 언급된 것은?",
+      "type": "이유",
+      "prompt": "말하는 사람이 영어를 사업과 국제 업무에 쓰기 좋게 만든다고 한 것은?",
       "options": [
-        "대영 제국의 확장과 미국의 힘",
-        "영국의 산업 혁명과 미국의 이민 정책",
-        "영국의 문학 전통과 미국의 영화",
-        "영국의 근대 과학과 미국의 대학"
+        "문법이 꽤 간단한 편이라는 점",
+        "영국 제국이 널리 퍼졌다는 점",
+        "미국이 큰 힘을 가졌다는 점",
+        "어휘가 매우 풍부하다는 점"
       ],
       "answer": 0,
       "evidence": [
-        2
+        2,
+        3,
+        4
       ],
-      "note": "영어를 국제 공용어로 만든 것은 'The spread of the British Empire and the power of the United States'"
+      "note": "'English grammar is fairly simple in some ways ... This makes it useful for the transaction of business' (Empire·United States는 common international language가 된 까닭)"
     },
     {
       "id": "d275-q2",

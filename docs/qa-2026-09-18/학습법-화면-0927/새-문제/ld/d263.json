@@ -5,23 +5,19 @@
   "questions": [
     {
       "id": "d263-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "캐럴 가운데 성탄 시기의 즐거운 일을 노래하는 것은 어느 정도라고 말했는가?",
       "options": [
-        "성탄절에 교회에 모여 다 함께 캐럴을 부르는 풍습",
-        "성탄절에 트리 둘레에 모여 가족끼리 캐럴을 부르는 풍습",
-        "성탄절에 이웃집을 돌며 캐럴을 불러 선물을 받는 풍습",
-        "성탄절에 무리를 지어 거리를 누비며 캐럴을 부르는 풍습"
+        "대부분이다",
+        "절반쯤이다",
+        "몇 곡 정도이다",
+        "3분의 2쯤이다"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        1,
-        2,
-        3,
-        4,
-        5
+        3
       ],
-      "note": "'The singing of carols is an ancient Christmas custom' · 'groups of singers go through the streets singing songs' — 무리 지어 거리를 돌며 캐럴을 부르는 풍습을 소개함"
+      "note": "'Most of these songs are religious in origin, but a few of them tell about the festivities'"
     },
     {
       "id": "d263-q2",

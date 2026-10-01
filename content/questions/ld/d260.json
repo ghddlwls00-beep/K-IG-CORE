@@ -5,24 +5,19 @@
   "questions": [
     {
       "id": "d260-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "아이들이 썰매를 타다 다치지 않게 지켜보려고 따라간다고 말한 사람은 누구인가?",
       "options": [
-        "아이들의 겨울 놀이를 돕는 어른들의 여러 방법",
-        "세계 여러 나라 아이들이 즐기는 겨울 놀이의 차이",
-        "아이들이 겨울이 오면 신나게 즐기는 여러 놀이",
-        "아이들이 겨울 놀이를 다치지 않고 즐기는 방법"
+        "아버지들",
+        "어머니들",
+        "삼촌들",
+        "형들"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        1,
-        2,
-        3,
-        4,
-        5,
         6
       ],
-      "note": "'take a great delight in winter' · 'get out the sleds' · 'the best snowman' · 'snowball fights' · 'sledding children' — 아이들이 겨울에 즐기는 여러 놀이를 차례로 소개함"
+      "note": "'their fathers go along to see that the children don't get hurt'"
     },
     {
       "id": "d260-q2",

@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "d264-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "선물 사기, 식단 짜기와 함께 성탄절 준비로 들어 말한 것은?",
       "options": [
-        "성탄절 한참 전부터 어머니들이 잔치 음식 준비로 바쁘다",
-        "성탄절 한참 전부터 사람들이 저마다 여러 준비로 바쁘다",
-        "성탄절 한참 전부터 아이들이 선물 받을 생각에 들뜬다",
-        "성탄절 한참 전부터 가게들이 손님 맞을 준비로 바쁘다"
+        "트리 꾸미기",
+        "카드 보내기",
+        "집 청소하기",
+        "장식 달기"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        2,
-        3
+        2
       ],
-      "note": "'Long before the actual day of Christmas arrives, everyone is busy with preparations for the great feast' · 'a host of other preparations' · 'Even the smallest children' — 성탄절 훨씬 전부터 모두가 준비로 바쁨"
+      "note": "'There are cards to be sent, presents to be bought, menus to be planned'"
     },
     {
       "id": "d264-q2",
@@ -29,7 +27,7 @@
         "어머니와 아버지",
         "할아버지와 할머니",
         "손위 형제자매",
-        "삼촌과 이모"
+        "가까운 이웃 어른들"
       ],
       "answer": 2,
       "evidence": [

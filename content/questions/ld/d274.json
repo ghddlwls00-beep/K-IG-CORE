@@ -5,54 +5,58 @@
   "questions": [
     {
       "id": "d274-q1",
-      "type": "중심 내용",
-      "prompt": "이 강의의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "중세에 대부분 라틴어로 이루어졌다고 언급된 것은?",
       "options": [
-        "영어가 라틴어를 대신해 서유럽 대학의 언어가 된 흐름",
-        "라틴어와 프랑스어를 거쳐 영어가 국제어가 된 흐름",
-        "영어가 라틴어와 프랑스어 낱말로 풍부해진 흐름",
-        "영어가 쉬운 문법으로 라틴어와 프랑스어를 밀어낸 흐름"
+        "교회 예배와 중요한 문서",
+        "법정 재판과 중요한 문서",
+        "대학 수업과 중요한 문서",
+        "왕실 회의와 중요한 문서"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
         1,
-        3,
-        4,
-        5
+        2
       ],
-      "note": "중세에는 'Latin was the common language of learning', 18세기에는 'French had become the language of diplomacy', 오늘날은 'English is commonly used to transact international affairs' · 'a universal language'"
+      "note": "중세에 'Most university classes were conducted in Latin and most important documents were written in that language'"
     },
     {
       "id": "d274-q2",
       "type": "세부 사실",
-      "prompt": "18세기 무렵에 일어난 일로 언급된 것은?",
+      "prompt": "말하는 사람이 오늘날 영어에 대해 말한 것으로 알맞은 것은?",
       "options": [
-        "프랑스어가 대학 수업의 언어가 되었다",
-        "프랑스어가 문서의 언어가 되었다",
-        "프랑스어가 외교의 언어가 되었다",
-        "프랑스어가 무역의 언어가 되었다"
+        "서유럽에서 학문의 공통어로 쓰인다",
+        "국제 업무를 처리하는 데 흔히 쓰인다",
+        "중요한 문서 대부분이 이 말로 쓰인다",
+        "18세기부터 외교의 언어로 쓰인다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        3
+        1,
+        2,
+        3,
+        4
       ],
-      "note": "라틴어는 'fell into disuse', 그리고 'by the 18th century, French had become the language of diplomacy'"
+      "note": "'Today, however, English is commonly used to transact international affairs' (학문·문서는 Latin, 외교는 French)"
     },
     {
       "id": "d274-q3",
-      "type": "목적/태도",
-      "prompt": "영어를 하는 사람에 대한 말하는 사람의 생각으로 가장 적절한 것은?",
+      "type": "순서",
+      "prompt": "말하는 사람이 이 강의의 맨 마지막에 한 말은?",
       "options": [
-        "세계 어디서나 언어 장벽 없이 일할 수 있는 사람으로 본다",
-        "세계 여러 나라의 외교를 맡을 사람으로 본다",
-        "세계 여러 나라 말을 쉽게 익힐 바탕을 갖춘 사람으로 본다",
-        "세계 사람들과 소통할 중요한 도구를 가진 사람으로 본다"
+        "영어는 언어 장벽을 넘는 수단으로 점점 중요해지고 있다",
+        "영어는 오늘날 보편 언어라고 불리고 있다",
+        "라틴어는 점차 쓰이지 않게 되어 버렸다",
+        "영어를 하는 사람은 세계 사람과 소통할 중요한 도구를 가졌다"
       ],
       "answer": 3,
       "evidence": [
+        3,
+        5,
+        6,
         7
       ],
-      "note": "영어를 하는 사람은 'possesses an important tool for communicating with other people throughout the world'"
+      "note": "마지막에 'the man who speaks English possesses an important tool for communicating with other people throughout the world'"
     }
   ]
 }

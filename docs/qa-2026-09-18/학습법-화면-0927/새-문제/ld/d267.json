@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "d267-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "많은 예술가가 유명해지는 때로 말한 것은?",
       "options": [
-        "예술가는 대개 가난했고 그 가난이 뛰어난 작품을 낳는 원인이었다",
-        "예술가는 대개 가난했고 죽은 뒤에야 비로소 이름을 얻는 일이 많았다",
-        "예술가는 대개 가난했으나 예술에 몰두한 끝에 살아서 이름을 얻었다",
-        "예술가는 대개 가난했고 예언자처럼 앞날을 내다보는 재능을 지녔다"
+        "늙어서 병든 뒤에야",
+        "죽어서 땅에 묻힌 뒤에야",
+        "죽음을 앞둔 무렵에야",
+        "고향 땅에 돌아온 뒤에야"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        5,
-        7,
-        8
+        5
       ],
-      "note": "'rather poverty-stricken' · 'do not become famous until after they are dead' · 'recognized by strangers before his own countrymen' — 가난하고 뒤늦게 인정받음"
+      "note": "'Many artists do not become famous until after they are dead and buried' — 죽어 묻힌 뒤에야 유명해짐"
     },
     {
       "id": "d267-q2",

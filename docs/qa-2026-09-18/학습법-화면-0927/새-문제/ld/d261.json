@@ -6,36 +6,36 @@
     {
       "id": "d261-q1",
       "type": "세부 사실",
-      "prompt": "플로리다나 캘리포니아로 가는 사람들과 견주어, 산과 스키 리조트로 가는 사람들의 수에 대해 말한 것은?",
+      "prompt": "겨울이 오면 산과 스키 리조트로 가는 사람은 플로리다나 캘리포니아로 가는 사람과 견주어 얼마나 된다고 말했는가?",
       "options": [
-        "그보다 적으나 해마다 늘고 있다",
-        "그와 같거나 아마 그보다 더 많다",
-        "그보다 많으나 해마다 줄고 있다",
-        "그 절반쯤이거나 그보다 적다"
+        "그보다 조금 적다",
+        "그만큼 많거나 더 많다",
+        "그보다 훨씬 적다",
+        "그 절반쯤이다"
       ],
       "answer": 1,
       "evidence": [
         1,
         2
       ],
-      "note": "'head for sunny Florida or California' · 'just as many, if not more, who head for the mountains and ski resorts' — 그만큼, 어쩌면 그보다 더 많음"
+      "note": "'many people that head for sunny Florida or California' · 'just as many, if not more, who head for the mountains'"
     },
     {
       "id": "d261-q2",
       "type": "세부 사실",
-      "prompt": "선 밸리와 산속 깊은 곳의 다른 리조트에 대해 말한 것으로 옳은 것은?",
+      "prompt": "선 밸리에서 즐길 수 있다고 이름을 들어 말한 겨울 스포츠는?",
       "options": [
-        "선 밸리는 추위가 매섭고 다른 곳은 따뜻한 편이다",
-        "선 밸리는 눈이 적은 편이고 다른 곳은 눈이 많다",
-        "선 밸리는 값이 싼 편이고 다른 곳은 값이 비싸다",
-        "선 밸리는 따뜻한 편이고 다른 곳은 추위가 매섭다"
+        "썰매와 스키",
+        "스노보드와 스키",
+        "스케이트와 스키",
+        "아이스하키와 스키"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        5,
-        6
+        3,
+        4
       ],
-      "note": "'Sun Valley is comparatively warm' · 'other winter resorts tucked away in the mountains ... the bite and tang of crisp winter weather' — 선 밸리는 비교적 따뜻하고 산속 리조트는 매서운 추위를 맛보게 함"
+      "note": "'One such popular winter resort is Sun Valley' · 'There, ice skating, skiing, and a host of other winter entertainments'"
     }
   ]
 }
