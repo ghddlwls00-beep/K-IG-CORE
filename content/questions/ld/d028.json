@@ -37,21 +37,19 @@
     },
     {
       "id": "d028-q3",
-      "type": "중심 내용",
-      "prompt": "이 방송의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "아나운서가 앤절라 에드워즈의 기록에 대해 말한 내용으로 옳은 것은?",
       "options": [
-        "여자 자유형 경기의 우승자와 새로 세운 기록을 알리는 방송",
-        "여러 클럽 팀이 모인 대회의 시작을 알리는 개막 방송",
-        "독감에 걸린 선수 대신 나설 선수를 소개하는 방송",
-        "여자 자유형 경기에 나설 선수들을 소개하는 방송"
+        "지금까지 기록을 4번 깼다",
+        "아직 기록을 깬 적이 없다",
+        "지금까지 기록을 3번 깼다",
+        "지금까지 기록을 1번 깼다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        1,
-        4,
-        5
+        6
       ],
-      "note": "1행 'your sports announcer at the Canadian National Swimming Competition', 4행 'The next event on the program ... Here are the swimmers in this race', 5행 'Angela Edwards ... is in lane 1' 참고"
+      "note": "6행 'She's won three races so far this month, but she hasn't broken any records yet' 참고"
     }
   ]
 }

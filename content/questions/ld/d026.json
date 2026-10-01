@@ -6,18 +6,19 @@
     {
       "id": "d026-q1",
       "type": "세부 사실",
-      "prompt": "킴이 보트의 방향을 돌려야 한다고 말한 까닭은 무엇인가?",
+      "prompt": "보트의 방향을 돌리자고 말한 사람과 실제로 돌린 사람을 바르게 짝지은 것은?",
       "options": [
-        "바람에 파도가 높아져 배 안으로 물이 차올라서",
-        "바람을 거슬러 노를 젓던 카를로스가 지쳐서",
-        "바람에 보트가 해변에서 너무 빨리 멀어져서",
-        "바람이 차가워져 물에 젖은 킴이 몹시 추워서"
+        "킴이 말했고, 카를로스가 돌렸다",
+        "카를로스가 말했고, 킴이 돌렸다",
+        "킴이 말했고, 킴이 직접 돌렸다",
+        "카를로스가 말했고, 직접 돌렸다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        2
+        2,
+        3
       ],
-      "note": "2행 'we have to turn around. The wind is taking us away from the beach too fast' 참고"
+      "note": "2행 '\"Carlos,\" she said, \"we have to turn around.\"', 3행 'Carlos tried to turn the boat around ... he did it' 참고"
     },
     {
       "id": "d026-q2",

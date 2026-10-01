@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "d022-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 방문한 날, 녹음기를 쓰던 학생들이 하던 일로 옳은 것은?",
       "options": [
-        "14세부터 17세까지 나이별로 모둠을 나눠 공부하는 학교",
-        "정규 수업 없이 학생이 원할 때 모둠을 옮겨 가며 배우는 학교",
-        "정규 수업은 오전에 마치고 오후에 모둠 활동을 하는 학교",
-        "쉬는 시간마다 카페테리아에서 정치 토론을 하게 하는 학교"
+        "녹음된 정치 토론을 듣고 있었다",
+        "녹음된 물리 강의를 듣고 있었다",
+        "녹음된 영어 뉴스를 듣고 있었다",
+        "녹음된 자기 목소리를 듣고 있었다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        4,
-        5
+        7
       ],
-      "note": "1행 'There are no formal classes', 2행 'move from one group to another when they want to', 4행 'They work at their own speed', 5행 'Nobody tells them what they should or shouldn't be doing' 참고"
+      "note": "7행 'working with a tape recorder and listening to their own voices' 참고"
     },
     {
       "id": "d022-q2",

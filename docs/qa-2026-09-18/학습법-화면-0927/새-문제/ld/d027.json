@@ -21,36 +21,35 @@
     },
     {
       "id": "d027-q2",
-      "type": "말한 사람의 목적/태도",
-      "prompt": "이 연설의 주된 목적으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "프랭크 루이스와 페르난도 마르코스의 관계로 옳은 것은?",
       "options": [
-        "오늘 밤 특별 손님인 페르난도 마르코스를 소개하는 것",
-        "페르난도 마르코스를 협회의 새 회장으로 소개하는 것",
-        "오늘 밤 모임에서 페르난도 마르코스의 은퇴를 알리는 것",
-        "마드리드로 떠나는 페르난도 마르코스를 배웅하는 것"
-      ],
-      "answer": 0,
-      "evidence": [
-        3,
-        10
-      ],
-      "note": "3행 'We are fortunate to have a special guest tonight. I'd like to introduce Fernando Marcos', 10행 'you may talk to Fernando' 참고"
-    },
-    {
-      "id": "d027-q3",
-      "type": "다음에 할 일",
-      "prompt": "연설 내용에 따르면, 잠시 후 청중이 할 수 있는 일로 옳은 것은?",
-      "options": [
-        "페르난도의 코치 시절 경기 영상을 함께 본다",
-        "페르난도가 쓴 코칭 책에 사인을 받는다",
-        "페르난도와 코치 일에 관해 이야기를 나눈다",
-        "페르난도에게 코칭 수업을 직접 받아 본다"
+        "1978년부터 친구였고, 1975년부터 함께 일했다",
+        "1975년부터 함께 일했고, 1978년부터 이웃이었다",
+        "1975년부터 친구였고, 1978년부터 함께 일했다",
+        "1978년부터 함께 일했고, 1975년부터 이웃이었다"
       ],
       "answer": 2,
       "evidence": [
+        4
+      ],
+      "note": "4행 'we've been good friends since 1975 and we've worked together since 1978' 참고"
+    },
+    {
+      "id": "d027-q3",
+      "type": "세부 사실",
+      "prompt": "연설에 따르면, 잠시 후 청중이 페르난도와 나눌 수 있는 이야기의 주제는 무엇인가?",
+      "options": [
+        "코치 일과 앞으로의 계획",
+        "코치 일과 지난 경기들",
+        "코치 일과 마드리드의 가족",
+        "코치 일과 그 밖의 관심사"
+      ],
+      "answer": 3,
+      "evidence": [
         10
       ],
-      "note": "10행 'In a few minutes, you may talk to Fernando about his coaching and his other interests' 참고"
+      "note": "10행 'you may talk to Fernando about his coaching and his other interests' 참고"
     }
   ]
 }
