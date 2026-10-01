@@ -8,10 +8,10 @@
       "type": "세부 사실",
       "prompt": "라이트 형제가 자동차 엔진을 쓰지 않은 까닭으로 가장 알맞은 것은?",
       "options": [
-        "힘이 모자라서",
-        "값이 비싸서",
-        "구할 곳이 없어서",
-        "너무 무거워서"
+        "비행기를 띄우기엔 힘이 약해서",
+        "공중에서는 쉽게 꺼져 버려서",
+        "프로펠러를 돌리기엔 너무 느려서",
+        "비행기에 싣기엔 너무 무거워서"
       ],
       "answer": 3,
       "evidence": [
@@ -24,28 +24,29 @@
       "type": "세부 사실",
       "prompt": "플라이어호에 올라 비행기로 처음 하늘을 난 사람으로 가장 알맞은 것은?",
       "options": [
-        "윌버",
-        "오빌",
-        "두 형제 모두",
-        "키티호크의 한 주민"
+        "도착한 바로 그날 오른 윌버",
+        "몇 주를 기다린 끝에 오른 오빌",
+        "도착한 바로 그날 오른 오빌",
+        "몇 주를 기다린 끝에 오른 윌버"
       ],
       "answer": 1,
       "evidence": [
+        3,
         4
       ],
-      "note": "'Orville climbed into the Flyer and became the first man to fly in an airplane'이 처음 난 사람이 오빌임을 보여 줌"
+      "note": "'They couldn't fly for several weeks because of bad weather' · 'Orville climbed into the Flyer and became the first man to fly'이 몇 주를 기다린 끝에 오빌이 처음 날았음을 보여 줌"
     },
     {
       "id": "d089-q3",
       "type": "세부 사실",
       "prompt": "라이트 형제가 플라이어호를 만들 때 쓴 기본 아이디어에 대한 설명으로 가장 알맞은 것은?",
       "options": [
-        "유럽에서는 쓰이지 않았다",
-        "곧 잘못된 것이 드러났다",
-        "그 뒤의 모든 비행기에 쓰였다",
-        "박물관에서만 볼 수 있다"
+        "1905년에 새 방식으로 바뀌었다",
+        "그 뒤 모든 비행기에 쓰였다",
+        "다른 나라에는 비밀로 지켜졌다",
+        "워싱턴 박물관에서만 볼 수 있다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         9
       ],
