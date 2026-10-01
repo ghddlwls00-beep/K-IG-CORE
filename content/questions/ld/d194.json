@@ -8,13 +8,18 @@
       "type": "중심내용",
       "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "서커스가 마을에 와서 천막을 세우는 모습",
-        "서커스가 마을을 떠나며 천막을 걷는 모습",
-        "서커스 단원들이 천막 기둥을 고치는 모습",
-        "아이들이 빈터에서 서커스 흉내를 내는 모습"
+        "서커스가 마을에 와서 큰 천막을 세우는 모습",
+        "천막 안에서 조련사와 곡예사가 공연하는 모습",
+        "빈터에 세운 천막에서 아이들이 공연을 보는 모습",
+        "서커스 단원들이 마을에 공연을 알리러 다니는 모습"
       ],
       "answer": 0,
-      "evidence": [1, 2, 3, 4],
+      "evidence": [
+        1,
+        2,
+        3,
+        4
+      ],
       "note": "서커스가 와서 천막을 세움: 'the coming of the circus to town' · 'hoisting the big top' · 'a miniature canvas city'"
     },
     {
@@ -22,13 +27,15 @@
       "type": "세부사실",
       "prompt": "서커스에서 사람들을 도와 일한 동물로 알맞은 것은?",
       "options": [
-        "사자",
-        "원숭이",
-        "코끼리",
-        "호랑이"
+        "말",
+        "낙타",
+        "황소",
+        "코끼리"
       ],
-      "answer": 2,
-      "evidence": [3],
+      "answer": 3,
+      "evidence": [
+        3
+      ],
       "note": "코끼리가 기둥 세우기를 도움: 'the circus elephants help hoist the huge tent poles into place'"
     }
   ]

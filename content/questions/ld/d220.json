@@ -8,13 +8,15 @@
       "type": "중심 내용",
       "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
       "options": [
-        "휴가는 계획 없이 떠나야 더 즐겁다",
-        "휴가 계획은 여행사에 모두 맡기는 것이 좋다",
-        "성공적인 휴가는 꼼꼼한 계획에 달려 있다",
-        "휴가 계획은 여름이 오기 전에 끝내야 한다"
+        "휴가는 쓸 돈에 맞추어 계획해야 성공한다",
+        "휴가는 가족과 함께 계획해야 성공한다",
+        "휴가는 경험 많은 사람에게 맡겨야 성공한다",
+        "휴가는 하나하나 꼼꼼히 계획해야 성공한다"
       ],
-      "answer": 2,
-      "evidence": [7],
+      "answer": 3,
+      "evidence": [
+        7
+      ],
       "note": "A successful vacation depends on careful planning"
     },
     {
@@ -22,13 +24,15 @@
       "type": "세부 사실",
       "prompt": "글에서 분위기가 휴가 계획으로 가득 찬다고 한 때로 알맞은 것은?",
       "options": [
-        "휴가를 다녀온 뒤 몇 주, 몇 달 동안",
-        "휴가가 시작되기 몇 주, 몇 달 전",
-        "휴가를 떠나기 바로 전날 밤",
-        "매년 여름 휴가가 한창일 때"
+        "휴가 시작 몇 주, 몇 달 전부터",
+        "휴가에서 돌아온 뒤 몇 주 동안",
+        "휴가가 한창인 여름철 몇 주 동안",
+        "새해가 시작되는 1월 몇 주 동안"
       ],
-      "answer": 1,
-      "evidence": [4],
+      "answer": 0,
+      "evidence": [
+        4
+      ],
       "note": "for weeks and months before the actual vacation begins, the air is filled with vacation plans"
     },
     {
@@ -36,13 +40,15 @@
       "type": "목적/태도",
       "prompt": "여행 계획 세우기에 대한 글쓴이의 생각으로 가장 적절한 것은?",
       "options": [
-        "여행보다 훨씬 지루하고 힘들다",
-        "책을 읽는 것만으로 충분하다",
-        "노련한 여행자에게는 필요 없다",
-        "거의 여행만큼 즐거울 수 있다"
+        "여행 자체보다 더 즐거울 수 있다",
+        "거의 여행 자체만큼 즐거울 수 있다",
+        "거의 여행 자체만큼 피곤할 수 있다",
+        "여행 자체보다 오래 기억에 남을 수 있다"
       ],
-      "answer": 3,
-      "evidence": [5],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
       "note": "planning for a trip can be almost as much fun as the trip itself"
     }
   ]
