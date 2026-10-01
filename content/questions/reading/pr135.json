@@ -5,37 +5,37 @@
   "questions": [
     {
       "id": "pr135-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 인간의 특성이라고 말한 것은?",
       "options": [
-        "모든 것은 뚜렷한 기준으로 분류할 수 있다",
-        "생명은 다른 것보다 정의하기 쉽다",
-        "인간은 분류하는 일에 관심이 없다",
-        "분명히 분류하기 어려운 경계선상의 것들이 있다"
+        "낯선 것을 두려워해 멀리하려는 것",
+        "보이는 것 너머의 원인을 찾으려는 것",
+        "사물을 정의하고 분류하려는 것",
+        "남과 자신을 견주어 평가하려는 것"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        3,
-        4,
-        6
+        1
       ],
-      "note": "'fuzzy edges' · 'borderline cases' · 'cannot clearly be called either living or non-living' — 분명히 나누기 어려운 경계선상의 것들"
+      "note": "'It is a human trait to try to define and classify the things we find in the world'"
     },
     {
       "id": "pr135-q2",
       "type": "세부 사실",
-      "prompt": "바이러스에 대한 설명으로 옳은 것은?",
+      "prompt": "글에서 경계에 걸친 사례 때문에 특히 혼란스럽다고 한 일은?",
       "options": [
-        "살아 있는 세포 안에서 번식한다",
-        "병 속에서도 스스로 늘어난다",
-        "생명의 특성을 대부분 지닌다",
-        "생명의 특성을 전혀 지니지 않는다"
+        "물질을 정의하는 일",
+        "질병을 정의하는 일",
+        "생명을 정의하는 일",
+        "언어를 정의하는 일"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        7
+        3,
+        4,
+        5
       ],
-      "note": "'when inside a living cell, can reproduce more of itself' — 살아 있는 세포 안에서 번식함"
+      "note": "'confused by fuzzy edges … borderline cases … especially true when we attempt to define life'"
     }
   ]
 }

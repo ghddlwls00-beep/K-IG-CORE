@@ -5,47 +5,47 @@
   "questions": [
     {
       "id": "d200-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 프랭클린의 호기심이 번개가 전기임을 증명하는 일과 함께 이끈 일은?",
       "options": [
-        "문명의 발전에 기여한 것은 호기심이 아닌 노력이다",
-        "인간의 호기심은 문명의 발전을 가로막아 왔다",
-        "문명이 발전할수록 인간의 호기심은 줄어든다",
-        "문명이 발전한 데에는 호기심도 한몫했다"
+        "신문을 펴내는 일",
+        "대학을 세우는 일",
+        "많은 것을 발명하는 일",
+        "도서관을 세우는 일"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        1
+        5
       ],
-      "note": "'Man's curiosity has also contributed to the advancement of civilization' — 인간의 호기심이 문명의 발전에 이바지함"
+      "note": "'His curiosity led him to prove that lightning is electricity and to invent many things' — 많은 것을 발명하게 이끔"
     },
     {
       "id": "d200-q2",
       "type": "세부 사실",
-      "prompt": "벤저민 프랭클린에 대해 글에서 말한 것은?",
+      "prompt": "글에서 벤저민 프랭클린을 소개하며 처음 한 말로 옳은 것은?",
       "options": [
-        "번개에만 호기심이 많았다",
-        "모든 것에 호기심이 많았다",
-        "모든 것에 전혀 관심이 없었다",
-        "네덜란드 과학자에게 렌즈를 배웠다"
+        "모든 것에 호기심을 가진 사람이었다",
+        "하늘을 나는 일에 끌린 사람이었다",
+        "번개에 유난히 끌린 사람이었다",
+        "사람의 몸에 끌린 사람이었다"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
         4
       ],
-      "note": "'Benjamin Franklin was curious about everything' — 프랭클린은 모든 것에 호기심이 많았음"
+      "note": "'Benjamin Franklin was curious about everything' — 모든 것에 호기심을 가진 사람"
     },
     {
       "id": "d200-q3",
       "type": "세부 사실",
       "prompt": "네덜란드 과학자의 발견 덕분에 크게 발전한 분야로 언급된 것은?",
       "options": [
-        "항공학",
-        "전기학",
+        "광학",
         "의학",
-        "천문학"
+        "화학",
+        "전기학"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         6,
         7

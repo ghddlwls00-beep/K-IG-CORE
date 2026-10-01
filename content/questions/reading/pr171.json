@@ -8,12 +8,12 @@
       "type": "세부 사실",
       "prompt": "본문 내용과 일치하는 것은?",
       "options": [
-        "앨리스 폴은 1923년에 의회 의원이 되었다",
-        "앨리스 폴은 남녀평등 헌법 수정안을 작성했다",
-        "앨리스 폴은 남녀평등 헌법 수정안에 반대했다",
-        "남녀평등 헌법 수정안은 1932년에 제출되었다"
+        "앨리스 폴은 남녀평등 헌법 수정안을 직접 썼다",
+        "앨리스 폴은 1923년에 의회 의원으로 뽑혔다",
+        "남녀평등 헌법 수정안은 1932년에 의회에 제출되었다",
+        "앨리스 폴은 1923년에 개혁 운동을 처음 시작했다"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
         1
       ],
@@ -21,19 +21,19 @@
     },
     {
       "id": "pr171-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "본문의 posthumously가 뜻하는 바로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "본문에서 앨리스 폴을 어떤 사람들에 견주어 소개하는가?",
       "options": [
-        "의회에서",
-        "생전에",
-        "사후에",
-        "상당히"
+        "다른 많은 정치가들",
+        "다른 많은 법률가들",
+        "다른 많은 개혁가들",
+        "다른 많은 작가들"
       ],
       "answer": 2,
       "evidence": [
         1
       ],
-      "note": "'received little honor in her lifetime but has gained considerable fame posthumously' — 생전(lifetime)과 대비되는 때"
+      "note": "'Like many other reformers, Alice Paul'"
     }
   ]
 }

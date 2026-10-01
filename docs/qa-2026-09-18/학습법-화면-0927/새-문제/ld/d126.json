@@ -6,47 +6,46 @@
     {
       "id": "d126-q1",
       "type": "세부 사실",
-      "prompt": "대양 연구에 대한 설명으로 옳은 것은?",
+      "prompt": "세계 어업에 대한 설명으로 옳은 것은?",
       "options": [
-        "오래 연구했지만 아직 모르는 것이 많다",
-        "최근에야 연구를 시작해 아는 것이 거의 없다",
-        "최근에야 연구를 시작했지만 거의 다 밝혀냈다",
-        "연구가 끝나 해양학자들이 더 할 일이 없다"
+        "해마다 잡는 물고기의 양이 줄고 있다",
+        "세계 식량의 절반쯤을 차지한다",
+        "세계 식량의 3분의 1쯤을 차지한다",
+        "세계 식량의 작은 몫을 차지한다"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        3
+        7
       ],
-      "note": "'people have been studying the oceans for many years, there is still much that we do not know about them'가 보여 줌"
+      "note": "'The fishing industry, however, produces only a small percentage of the world's food'"
     },
     {
       "id": "d126-q2",
-      "type": "목적/태도",
-      "prompt": "해양학자들이 새로운 방법을 찾는 목적으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 많은 바닷속 식물에 들어 있다고 한 것은?",
       "options": [
-        "바다에서 잡는 물고기를 줄이기 위해",
-        "바다에서 얻는 식량을 늘리기 위해",
-        "대양이 하나로 이어진 까닭을 밝히기 위해",
-        "육지 농장에서 물고기를 기르기 위해"
+        "비타민과 미네랄",
+        "단백질과 미네랄",
+        "식이섬유와 미네랄",
+        "기름 성분과 미네랄"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        4,
-        8
+        9
       ],
-      "note": "'oceanographers are looking for new ways to use the ocean', 'seeking ways to increase the amount of food taken from the ocean'가 목적을 보여 줌"
+      "note": "'Many undersea plants contain vitamins and minerals'"
     },
     {
       "id": "d126-q3",
       "type": "다음에 할 일",
       "prompt": "이 글에서 미래에 가능할 수도 있다고 말한 것은?",
       "options": [
-        "해저 농장에서 물고기를 기르는 일",
-        "물고기를 잡아 미네랄을 뽑아내는 일",
-        "해저 농장에서 바닷속 식물을 기르는 일",
-        "바닷속 식물에서 미네랄을 뽑아내는 일"
+        "해저 농장에서 물고기를 대량으로 기르는 일",
+        "바닷속 식물에서 미네랄을 뽑아 쓰는 일",
+        "어업으로 세계 식량 대부분을 얻는 일",
+        "바다 밑 농장에서 해저 식물을 재배하는 일"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         9,
         10

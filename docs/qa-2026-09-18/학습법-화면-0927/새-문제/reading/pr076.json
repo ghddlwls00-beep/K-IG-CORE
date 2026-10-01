@@ -5,33 +5,31 @@
   "questions": [
     {
       "id": "pr076-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 삶에 불만족한 사람들이 흔히 하는 일로 언급한 것은?",
       "options": [
-        "목표를 높게 세울수록 언제나 더 행복해진다",
-        "얻을 수 있는 것을 바라야 행복하다",
-        "원하는 것을 모두 얻어야 행복할 수 있다",
-        "행복하려면 아예 목표를 세우지 말아야 한다"
+        "남이 가진 것과 자기를 견준다",
+        "이룰 수 없는 목표를 스스로 세운다",
+        "지난 실패를 자꾸 되돌아본다",
+        "가진 것보다 없는 것을 먼저 헤아린다"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        2,
-        5
+        3
       ],
-      "note": "1번 'they want most of what they can get', 2번 'value things that are within their grasp', 5번 'Stay within reality'에 근거함."
+      "note": "'People who find themselves dissatisfied in life often set unreachable goals for themselves'에 근거함."
     },
     {
       "id": "pr076-q2",
       "type": "낱말 뜻/가리키는 것",
       "prompt": "본문의 'rig the game in their favor'가 뜻하는 것으로 가장 적절한 것은?",
       "options": [
-        "이룰 수 없는 높은 목표를 세우는 것",
-        "남과 겨루어 더 많은 것을 얻어 내는 것",
-        "상황을 자기에게 유리하게 만드는 것",
-        "정해진 규칙을 그대로 따르는 것"
+        "남을 속여 상황을 자기에게 유리하게 만드는 것",
+        "남과 힘을 합쳐 상황을 자기에게 유리하게 만드는 것",
+        "운을 믿고 상황이 자기에게 유리해지기를 기다리는 것",
+        "생각을 바꿔 판을 스스로에게 유리하게 짜 나가는 것"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         2
       ],

@@ -6,30 +6,31 @@
     {
       "id": "d158-q1",
       "type": "세부사실",
-      "prompt": "취미에 드는 돈에 대해 말한 것은?",
+      "prompt": "말하는 사람이 취미는 무엇이든 될 수 있다며 든 두 예로 알맞은 것은?",
       "options": [
-        "우표 수집에는 돈이 꽤 많이 든다",
-        "어느 취미에나 돈이 조금씩은 든다",
-        "모형 비행기 만들기에 큰돈이 든다",
-        "돈이 전혀 들지 않는 취미도 있다"
+        "텔레비전 보기에서 운동 경기 하기까지",
+        "영화 보기에서 우표 모으기까지",
+        "우표 모으기에서 모형 비행기 만들기까지",
+        "운동 경기 하기에서 모형 비행기 만들기까지"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        7
+        5,
+        6
       ],
-      "note": "Some hobbies are very expensive, but others don't cost anything at all"
+      "note": "some kind of hobby · anything from collecting stamps to making model airplanes"
     },
     {
       "id": "d158-q2",
       "type": "세부사실",
       "prompt": "수집품(collections)에 대해 말한 것은?",
       "options": [
-        "어떤 수집품은 주인에게만 소중하다",
-        "수집품은 오래될수록 값이 오른다",
-        "팔 수 없는 수집품은 가치가 없다",
-        "우표보다 모형 비행기가 더 비싸다"
+        "오래 모을수록 값이 크게 오른다",
+        "우표 수집품이 가장 비싸게 팔린다",
+        "대개 처음 산 값보다 비싸진다",
+        "주인에게만 소중한 것도 있다"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
         8
       ],
@@ -37,21 +38,19 @@
     },
     {
       "id": "d158-q3",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부사실",
+      "prompt": "말하는 사람이 아주 비싼 것도 있지만 돈이 들지 않는 것도 있다고 한 것은?",
       "options": [
-        "주말에는 운동을 하는 것이 제일 좋다",
-        "대부분의 사람은 주말에도 쉬지 못한다",
-        "사람마다 여가를 보내는 방법이 다르다",
-        "취미는 돈이 많이 들수록 더 가치 있다"
+        "취미",
+        "수집품",
+        "운동",
+        "영화"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        2,
-        3,
-        4
+        7
       ],
-      "note": "Some watch television... Others participate in sports · It depends on individual interests · many different ways to spend our spare time"
+      "note": "Some hobbies are very expensive, but others don't cost anything at all"
     }
   ]
 }

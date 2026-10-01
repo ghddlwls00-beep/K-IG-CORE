@@ -5,39 +5,35 @@
   "questions": [
     {
       "id": "pr019-q1",
-      "type": "main",
-      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 이누이트 주술사가 진정한 지혜에 대해 이야기를 들려준 상대는 누구인가?",
       "options": [
-        "이누이트 주술사는 유럽인들에게 진리를 감추었다",
-        "고통스러운 시기를 거쳐야 살아 있는 기쁨을 맛본다",
-        "애벌레는 나비가 된 뒤에도 계속 외로움을 느낀다",
-        "사람은 변화를 겪지 않아도 언제나 행복할 수 있다"
-      ],
-      "answer": 1,
-      "evidence": [
-        2,
-        3,
-        5
-      ],
-      "note": "2번 'the long transformation into a butterfly', 3번 'we too must go through such a time', 5번 'even if suffering is our only companion ... we will taste the joy of being alive'를 종합하면 알 수 있다."
-    },
-    {
-      "id": "pr019-q2",
-      "type": "vocab",
-      "prompt": "이 글에서 'the great loneliness'가 뜻하는 것으로 가장 알맞은 것은?",
-      "options": [
-        "변화를 겪는 동안 홀로 견디는 고독한 시간",
-        "유럽 방문객들이 이누이트 마을에서 느낀 외로움",
-        "나비가 짝을 찾지 못해 느끼는 외로움",
-        "사람들을 영원히 떠나 외딴곳에서 홀로 살아가는 삶"
+        "유럽 출신의 방문객들",
+        "마을을 찾은 선교사들",
+        "마을에서 사냥하던 청년들",
+        "자신에게 배우던 제자들"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        2,
-        3
+        1
       ],
-      "note": "1번 'out in the great loneliness', 2번 'the loneliness a caterpillar endures ... the long transformation into a butterfly', 3번 'we too must go through such a time'으로 뜻을 알 수 있다."
+      "note": "'An Inuit shaman once told European visitors'에서 확인된다."
+    },
+    {
+      "id": "pr019-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 우리가 머지않아 맛보게 될 것이라고 말한 것은 무엇인가?",
+      "options": [
+        "지혜를 얻은 기쁨",
+        "혼자가 아닌 기쁨",
+        "살아 있는 기쁨",
+        "꿈을 이룬 기쁨"
+      ],
+      "answer": 2,
+      "evidence": [
+        5
+      ],
+      "note": "'soon enough we will taste the joy of being alive'에서 확인된다."
     }
   ]
 }

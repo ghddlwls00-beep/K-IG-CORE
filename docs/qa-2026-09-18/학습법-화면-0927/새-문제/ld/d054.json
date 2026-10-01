@@ -9,11 +9,11 @@
       "prompt": "앨리스가 토끼 굴에 빠져서 발견한 세계로 가장 알맞은 것은?",
       "options": [
         "동화 속 결말이 거꾸로 바뀐 세계",
-        "금과 금속이 거꾸로 바뀐 세계",
-        "과학 법칙이 거꾸로 바뀐 세계",
-        "동양과 서양이 거꾸로 바뀐 세계"
+        "금속과 금이 서로 바뀌는 세계",
+        "동양과 서양이 거꾸로 바뀐 세계",
+        "과학 법칙이 거꾸로 바뀐 세계"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         6
       ],
@@ -21,36 +21,35 @@
     },
     {
       "id": "d054-q2",
-      "type": "세부 사실",
-      "prompt": "오늘날까지도 아메리카 원주민이 '인디언'이라고 불리는 까닭으로 가장 알맞은 것은?",
+      "type": "가리키는 것",
+      "prompt": "말하는 사람이 '동화만큼이나 이상했다'고 한 것으로 가장 알맞은 것은?",
       "options": [
-        "콜럼버스가 자기가 도착한 곳을 잘못 알아서",
-        "콜럼버스가 그곳 사람들을 존경하는 뜻을 담아서",
-        "콜럼버스가 인도에서 사람들을 데려와 살게 해서",
-        "콜럼버스가 그곳 사람들의 말을 잘못 알아들어서"
+        "콜럼버스가 신대륙에 닿은 과정",
+        "앨리스가 토끼 굴에 빠진 일",
+        "현대 화학이 시작된 과정",
+        "원주민이 인디언으로 불리게 된 일"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        3,
-        4
+        7
       ],
-      "note": "3번 “he thought he had arrived in the East Indies” · 4번 “are called Indians, a tribute to the great mistake of Columbus”라고 했다"
+      "note": "7번 “The beginnings of modern chemistry were almost as strange as a fairy tale”라고 했다"
     },
     {
       "id": "d054-q3",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "말하는 사람이 오늘날까지도 그렇다고 한 것으로 가장 알맞은 것은?",
       "options": [
-        "우연한 발견일수록 사람들에게 쉽게 인정받는다",
-        "중요한 발견은 우연히 이루어진 경우가 많다",
-        "큰 발견은 우연이 아니라 오랜 계획에서 나온다",
-        "우연한 실수는 되도록 빨리 바로잡아야 한다"
+        "콜럼버스가 닿은 곳을 동인도라고 부르는 것",
+        "아메리카 원주민을 인디언이라고 부르는 것",
+        "앨리스 이야기를 동화로 여기는 것",
+        "금속을 금으로 바꾸려고 애쓰는 것"
       ],
       "answer": 1,
       "evidence": [
-        1
+        4
       ],
-      "note": "1번 “a lot of important discoveries have been made by accident”라고 했다"
+      "note": "4번 “Even today, the original inhabitants of America are called Indians”라고 했다"
     }
   ]
 }

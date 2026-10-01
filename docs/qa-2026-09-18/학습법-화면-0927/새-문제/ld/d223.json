@@ -5,30 +5,35 @@
   "questions": [
     {
       "id": "d223-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 도서관의 여행 책을 참고하면 볼거리를 두루 담은 일정을 짤 수 있다고 한 곳의 범위로 옳은 것은?",
       "options": [
-        "미리 공부하면 여행 비용을 줄일 수 있다",
-        "미리 공부하고 떠나면 휴가가 더 값지다",
-        "미리 공부할 책은 도서관에서 찾기 어렵다",
-        "미리 공부하는 것은 플로리다 여행에만 필요하다"
+        "플로리다 같은 남쪽 지역",
+        "가 본 적 있는 지역",
+        "미국 안의 큰 도시",
+        "어떤 지역이든"
       ],
-      "answer": 1,
-      "evidence": [5],
-      "note": "This preparatory study will certainly add something worthwhile to a vacation"
+      "answer": 3,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "books about travel ... By consulting these books ... all the points of interest of any given locality"
     },
     {
       "id": "d223-q2",
       "type": "세부 사실",
       "prompt": "세미놀 인디언에 대해 조금 알아야 하는 까닭으로 글에서 말한 것은?",
       "options": [
-        "여행 일정에 모든 명소를 담으려고",
-        "마이애미 비치의 호텔을 고르려고",
-        "세인트오거스틴의 옛 역사를 알려고",
-        "가는 길의 마을을 잘 감상하려고"
+        "가는 길에 보게 될 마을을 제대로 감상하려고",
+        "에버글레이즈의 자연을 제대로 감상하려고",
+        "세인트오거스틴의 옛 역사를 제대로 이해하려고",
+        "그들이 만든 공예품을 제대로 고르려고"
       ],
-      "answer": 3,
-      "evidence": [4],
+      "answer": 0,
+      "evidence": [
+        4
+      ],
       "note": "know a little bit about the Seminole Indians in order to appreciate the villages one will see along the way"
     }
   ]

@@ -5,33 +5,31 @@
   "questions": [
     {
       "id": "pr199-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은",
+      "type": "세부 사실",
+      "prompt": "이 글에서 노력이 필요하다고 한 일로 옳은 것은",
       "options": [
-        "결정은 직감이 이끄는 대로 내리는 것이 좋다",
-        "직감은 누구에게나 늘 옳은 길을 알려 준다",
-        "직감은 틀리기 쉬우니 무시하는 것이 좋다",
-        "경험에 비추어 직감을 결정에 활용해야 한다"
+        "직감을 결정의 길잡이로 쓰는 법을 익히는 일",
+        "마음속 목소리에 귀 기울이는 법을 익히는 일",
+        "남의 조언을 결정에 반영하는 법을 익히는 일",
+        "충동적인 결정을 바로잡는 법을 익히는 일"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        6,
-        7,
-        8
+        3
       ],
-      "note": "근거 문장의 핵심 표현: \"to support, not dictate, your decisions\", \"Use your experience to analyze the situation\", \"whether your instincts can be trusted\""
+      "note": "근거 문장의 핵심 표현: \"Learning how to use your instincts as a guide in decision making requires effort\""
     },
     {
       "id": "pr199-q2",
       "type": "세부 사실",
       "prompt": "이 글에서 직감을 따르는 것에 대해 말한 내용으로 옳은 것은",
       "options": [
-        "결정하는 데 따로 더 필요한 것이 없다",
-        "노력 없이도 누구에게나 좋은 길잡이가 된다",
-        "충동적인 결정을 내리게 할 수 있다",
-        "언제 따를지 따로 판단할 필요가 없다"
+        "직감을 따르면 결정에 필요한 것을 다 갖출 수 있다",
+        "직감을 따르면 애쓰지 않고도 좋은 결정을 내릴 수 있다",
+        "직감을 따르면 결정을 자꾸 미루며 망설이게 될 수 있다",
+        "직감을 따르면 나중에 후회할 충동적 선택을 할 수 있다"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         5
       ],

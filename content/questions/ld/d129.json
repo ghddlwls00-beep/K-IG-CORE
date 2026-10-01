@@ -6,28 +6,28 @@
     {
       "id": "d129-q1",
       "type": "세부 사실",
-      "prompt": "이 노인이 미얀마 곳곳을 여행할 때 탄 동물로 옳은 것은?",
+      "prompt": "글쓴이가 이 노인이 정말 흥미진진한 모험을 겪었다고 한 때는 언제인가?",
       "options": [
-        "낙타",
-        "코끼리",
-        "말",
-        "라마"
+        "낯선 나라의 음식을 먹을 때",
+        "동물을 타고 다닐 때",
+        "배를 타고 큰 바다를 건널 때",
+        "높은 산을 걸어서 넘을 때"
       ],
       "answer": 1,
       "evidence": [
-        3
+        4
       ],
-      "note": "'traveled all over Burma on an elephant'에서 확인"
+      "note": "\"He has had some really exciting adventures while riding animals\""
     },
     {
       "id": "d129-q2",
       "type": "세부 사실",
-      "prompt": "이 노인이 먹어 본 음식에 대해 글쓴이가 한 말로 옳은 것은?",
+      "prompt": "이 노인이 먹어 본 음식에 대한 설명으로 옳은 것은?",
       "options": [
-        "자신도 대부분 먹어 본 것들이다",
-        "모두 일본과 중국에서만 먹어 본 것이다",
-        "라마 고기만은 한 번도 먹어 보지 못했다",
-        "자신은 들어 본 적도 없는 것이 많다"
+        "라마 고기와 천 년 된 달걀은 글쓴이도 먹어 봤다",
+        "천 년 된 달걀은 티베트에서 먹어 본 것이다",
+        "라마 고기는 페루에서 먹은 것이 가장 맛있었다",
+        "라마 고기 말고도 글쓴이가 들어 보지 못한 것이 많다"
       ],
       "answer": 3,
       "evidence": [
@@ -37,20 +37,20 @@
     },
     {
       "id": "d129-q3",
-      "type": "목적/태도",
-      "prompt": "이 노인의 이야기에 대한 글쓴이의 태도로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 이 노인이 낯설고 놀라운 음식을 먹어 본 나라로 든 곳이 아닌 것은?",
       "options": [
-        "때로는 믿기 힘들어도 즐겨 듣는다",
-        "모두 믿지만 듣는 것은 늘 지루해한다",
-        "다 믿기 어려워서 듣지 않으려 한다",
-        "아이들은 좋아하지만 자신은 싫어한다"
+        "독일",
+        "시리아",
+        "버마",
+        "아프가니스탄"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        8,
-        10
+        3,
+        6
       ],
-      "note": "'Sometimes I don't know whether to believe him or not', 'Children love to listen to his stories and so do I'에서 확인"
+      "note": "\"traveled all over Burma on an elephant\" / \"eaten strange and wonderful things in Japan, China, Germany, Syria, Peru, Afghanistan and Tibet\""
     }
   ]
 }

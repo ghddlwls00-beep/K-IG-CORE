@@ -6,34 +6,34 @@
     {
       "id": "d080-q1",
       "type": "세부 사실",
-      "prompt": "필름의 사진이 셔터 앞에 왔을 때 일어나는 일로 옳은 것은?",
+      "prompt": "글에서 셔터(shutter)를 설명한 말로 옳은 것은?",
       "options": [
-        "그 자리에 잠깐 멈춘다",
-        "멈추지 않고 빠르게 지나간다",
-        "곧바로 화면 위로 옮겨 간다",
-        "다음 사진과 한데 겹쳐진다"
+        "렌즈 바로 앞에 달린 작은 문",
+        "필름 통 바로 옆에 달린 작은 문",
+        "강한 불빛 바로 앞에 달린 작은 문",
+        "영사기 출구 쪽에 달린 작은 문"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "'In front of the light, there is a small door that we call a shutter'"
+    },
+    {
+      "id": "d080-q2",
+      "type": "세부 사실",
+      "prompt": "필름의 사진 한 장 한 장에 대해 글에서 말한 것으로 옳은 것은?",
+      "options": [
+        "셔터 앞에 잠깐 멈췄다가 지나간다",
+        "셔터 앞에서 두 번씩 잇달아 비친다",
+        "셔터 앞을 쉬지 않고 지나간다",
+        "셔터 앞에서 먼저 크게 키워진다"
       ],
       "answer": 0,
       "evidence": [
         3
       ],
-      "note": "'Each picture on the film stops in front of the shutter for a moment'가 사진이 잠깐 멈춤을 보여 줌"
-    },
-    {
-      "id": "d080-q2",
-      "type": "세부 사실",
-      "prompt": "화면에 비친 사진이 크게 보이는 까닭으로 옳은 것은?",
-      "options": [
-        "셔터가 사진을 확대하기 때문에",
-        "렌즈가 사진을 확대하기 때문에",
-        "강한 빛이 사진을 확대하기 때문에",
-        "필름에 확대된 사진이 담겨 있어서"
-      ],
-      "answer": 1,
-      "evidence": [
-        5
-      ],
-      "note": "'The lens magnifies the picture and shows it on the screen'이 렌즈가 사진을 확대함을 보여 줌"
+      "note": "'Each picture on the film stops in front of the shutter for a moment'"
     }
   ]
 }

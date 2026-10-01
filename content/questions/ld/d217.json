@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "d217-q1",
-      "type": "중심내용",
-      "prompt": "이 강의의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "많은 사람이 네잎클로버를 행복과 번영의 상징으로 여긴다고 한 나라는?",
       "options": [
-        "행운을 믿는 미신도 사람들 사이에 널리 퍼져 있다",
-        "사람들은 불운의 상징보다 행운의 부적을 더 믿는다",
-        "행운의 부적을 믿는 사람은 미국에만 있다",
-        "대부분의 사람들은 점쟁이의 말을 굳게 믿는다"
+        "미국",
+        "영국",
+        "호주",
+        "독일"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        2,
-        4
+        2
       ],
-      "note": "'believe in the power of good luck charms' · 'considered by many' · 'One popular form of superstitious entertainment' — 행운을 믿는 미신도 널리 퍼져 있음"
+      "note": "'In America, the four-leaf clover ... symbol of happiness and prosperity' — 미국"
     },
     {
       "id": "d217-q2",
-      "type": "목적태도",
-      "prompt": "대부분의 점쟁이가 손님을 대하는 방식으로 옳은 것은?",
+      "type": "세부사실",
+      "prompt": "강의 첫머리에서 행운의 부적을 믿는 사람들과 나란히 말한 사람들은?",
       "options": [
-        "나쁜 일만 골라 말해 겁을 준다",
-        "좋은 일이 생긴다고 말해 기쁘게 한다",
-        "행운의 부적을 팔아 돈을 번다",
-        "지난 일을 알아맞혀 믿게 만든다"
+        "점쟁이의 말을 그대로 믿는 사람들",
+        "미신을 어리석다고 비웃는 사람들",
+        "옛 종교 의식을 지금도 지키는 사람들",
+        "죽음과 불행의 상징을 믿는 사람들"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        6
+        1
       ],
-      "note": "'try to please their customers by telling them about the good things' — 좋은 일을 말해 주어 손님을 기쁘게 함"
+      "note": "'Just as some people still believe in symbols of death and misfortune, so others believe in the power of good luck charms' — 죽음과 불행의 상징을 믿는 사람들"
     }
   ]
 }

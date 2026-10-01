@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "pr126-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
-      "options": [
-        "소음은 크기와 상관없이 언제나 해롭다",
-        "통제할 수 있다고 느끼면 소음도 덜 해롭다",
-        "소음이 해롭다는 사실은 최근에야 알려졌다",
-        "일하는 곳에는 대개 소음이 전혀 없다"
-      ],
-      "answer": 1,
-      "evidence": [
-        3,
-        5
-      ],
-      "note": "근거: 'could predict ... or had the ability to terminate the noise ... the negative effects disappeared' · 'when we feel we are in charge of our noisy environments, we may no longer suffer'"
-    },
-    {
-      "id": "pr126-q2",
       "type": "세부 사실",
-      "prompt": "실험에서 110데시벨의 소음에 노출된 사람들에게 나타난 결과로 옳은 것은?",
+      "prompt": "실험에서 갑작스러운 큰 소음에 노출된 사람들에게서 떨어진 것은?",
       "options": [
-        "문제 해결력이 떨어졌다",
-        "기억하는 능력이 좋아졌다",
-        "문제를 푸는 능력이 좋아졌다",
-        "기억하는 능력이 떨어졌다"
+        "문제를 푸는 능력",
+        "기억을 떠올리는 능력",
+        "말을 알아듣는 능력",
+        "글을 빨리 읽는 능력"
       ],
       "answer": 0,
       "evidence": [
         2
       ],
       "note": "근거: 'experienced a decrease in their ability to solve problems'"
+    },
+    {
+      "id": "pr126-q2",
+      "type": "세부 사실",
+      "prompt": "실험에서 사람들이 노출된 갑작스러운 소음의 크기로 옳은 것은?",
+      "options": [
+        "80데시벨",
+        "95데시벨",
+        "110데시벨",
+        "125데시벨"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "근거: 'people exposed to 110-decibel bursts of noise'"
     }
   ]
 }

@@ -8,12 +8,12 @@
       "type": "세부 사실",
       "prompt": "이 글에서 책이 가르쳐 준다고 한 것은?",
       "options": [
-        "위인들도 우리처럼 고통받았다는 것",
-        "누구나 자신을 잘 안다는 것",
-        "세상은 언제나 우리에게 친절하다는 것",
-        "세상의 불의가 곧 사라진다는 것"
+        "위인들도 우리처럼 평범한 환경에서 출발했다는 것",
+        "위인들도 우리처럼 남의 도움 덕분에 일어섰다는 것",
+        "위인들도 우리처럼 고통받으며 답을 찾아 나섰다는 것",
+        "위인들도 우리처럼 젊은 날의 실수를 뉘우쳤다는 것"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
         5
       ],
@@ -21,19 +21,19 @@
     },
     {
       "id": "pr210-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "'this vast, irresponsive world'에서 irresponsive의 뜻으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 세상의 불공평함과 삶의 고단함 앞에서 우리가 어떻게 된다고 했는가?",
       "options": [
-        "끝없이 넓은",
-        "외로운",
-        "무반응한",
-        "정의롭지 못한"
+        "화가 치민다",
+        "충격을 받는다",
+        "슬픔에 잠긴다",
+        "두려움을 느낀다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        3
+        4
       ],
-      "note": "'We all feel lonely in this vast, irresponsive world'"
+      "note": "'We are shocked by the injustice of the world and the hardships of life'"
     }
   ]
 }

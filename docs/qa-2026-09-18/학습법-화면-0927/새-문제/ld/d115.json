@@ -5,31 +5,32 @@
   "questions": [
     {
       "id": "d115-q1",
-      "type": "세부 사실",
-      "prompt": "마야인이 특별한 건물을 지어 한 일로 옳은 것은?",
+      "type": "언급하지 않은 것",
+      "prompt": "마야인이 한 일로 이야기에서 말하지 않은 것은?",
       "options": [
-        "아이들에게 문자를 가르치는 학교로 썼다",
-        "적을 막으려고 군사를 모아 두었다",
-        "해와 달, 행성과 별을 연구했다",
-        "왕이 머물며 나라를 다스리는 궁전으로 썼다"
+        "별과 행성을 살피는 건물을 지었다",
+        "0이라는 숫자를 만들어 셈할 때 썼다",
+        "글을 적는 방법과 달력을 만들었다",
+        "농사에도 솜씨가 뛰어난 사람들이었다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        3
+        3,
+        4
       ],
-      "note": "'The Maya built special buildings where they studied the sun, the moon, the planets, and the stars'가 그 건물에서 해와 달, 행성과 별을 연구했음을 보여 줌"
+      "note": "'studied the sun, the moon, the planets, and the stars', 'a writing system and a calendar', 'skilled farmers'는 나오지만 숫자 0 이야기는 없음"
     },
     {
       "id": "d115-q2",
       "type": "세부 사실",
       "prompt": "푸에블로족이 절벽에 지은 공동 주택에 대한 설명으로 옳은 것은?",
       "options": [
-        "진흙 벽돌로 지은 여러 층짜리 집이었다",
-        "나무로 지은 한 층짜리 집이었다",
-        "진흙 벽돌로 지은 한 층짜리 집이었다",
-        "나무로 지은 여러 층짜리 집이었다"
+        "돌을 쌓아 올린, 수십 명이 사는 여러 층 집",
+        "진흙 벽돌로 지은, 몇 가족이 함께 사는 낮은 집",
+        "통나무로 지은, 수백 명이 모여 사는 긴 집",
+        "진흙 벽돌로 지은, 수백 명이 사는 여러 층 집"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
         5,
         6,
@@ -40,19 +41,18 @@
     {
       "id": "d115-q3",
       "type": "세부 사실",
-      "prompt": "남서부의 원주민 사회 대부분이 살아간 방법으로 옳은 것은?",
+      "prompt": "이야기에서 미국 남서부 원주민 사회 가운데 농사를 지어 살았다고 말한 사회의 수로 옳은 것은?",
       "options": [
-        "사냥을 하며 이리저리 떠돌았다",
-        "여러 작물을 기르며 농사를 지었다",
-        "천을 짜서 다른 부족에게 팔며 살았다",
-        "큰 도시를 세우고 물건을 사고팔았다"
+        "절반쯤의 사회",
+        "몇몇 사회",
+        "3분의 1쯤의 사회",
+        "대부분의 사회"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        8,
-        9
+        8
       ],
-      "note": "'Most of the Native American societies in the Southwest lived by farming' · 'They grew many different crops'가 여러 작물을 기르며 농사를 지었음을 보여 줌"
+      "note": "'Most of the Native American societies in the Southwest lived by farming'이 대부분의 사회였음을 보여 줌"
     }
   ]
 }

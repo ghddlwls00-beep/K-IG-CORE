@@ -5,32 +5,31 @@
   "questions": [
     {
       "id": "pr235-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "사진 속 피사체가 작을 때 보는 사람이 할 수도 있는 생각으로 이 글에서 말한 것은?",
       "options": [
-        "피사체에 다가가 쓸모없는 것을 빼야 한다",
-        "피사체는 작게 찍을수록 좋은 사진이 된다",
-        "사진 한 장에 되도록 많은 것을 담아야 한다",
-        "보는 사람은 작은 피사체에서 큰 의미를 찾는다"
+        "사진가가 서둘러 찍은 것이라고",
+        "배경을 담으려고 찍은 것이라고",
+        "멀리서 몰래 찍은 사진이라고",
+        "원래 작은 대상을 찍은 것이라고"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        1,
-        8
+        4
       ],
-      "note": "'not physically close enough to their subjects' · 'get closer to them to exclude unwanted objects'"
+      "note": "Viewers may think that a subject is small because it is supposed to be"
     },
     {
       "id": "pr235-q2",
       "type": "세부 사실",
       "prompt": "이 글에서 다른 사진작가들의 작품을 볼 때 눈여겨보라고 한 것은?",
       "options": [
-        "사람을 얼마나 자주 찍는지",
         "화면을 어떻게 채우는지",
-        "보는 사람이 무엇을 느끼는지",
-        "어떤 렌즈를 골라 쓰는지"
+        "피사체를 어디에 두는지",
+        "어떤 각도에서 찍는지",
+        "배경을 어떻게 고르는지"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
         5
       ],

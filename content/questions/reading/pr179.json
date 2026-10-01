@@ -5,37 +5,36 @@
   "questions": [
     {
       "id": "pr179-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
-      "options": [
-        "자원봉사자는 예전부터 지원금을 넉넉히 받았다",
-        "초기 자원봉사자들은 단체를 이루어 일했다",
-        "자원봉사자가 줄어 사회 문제가 더 늘었다",
-        "사회가 변하며 자원봉사의 모습도 크게 바뀌었다"
-      ],
-      "answer": 3,
-      "evidence": [
-        5,
-        7,
-        11
-      ],
-      "note": "'changes in society brought about a transformation of volunteerism', 'organized themselves, and became professional', 'a considerable increase in the number of volunteers' — 사회 변화로 자원봉사의 모습이 바뀜"
-    },
-    {
-      "id": "pr179-q2",
       "type": "세부 사실",
-      "prompt": "이 글에 따르면 일자리를 구하는 젊은이들이 깨달은 것은?",
+      "prompt": "이 글에 따르면 사회 변화로 자원봉사가 크게 바뀐 시기는 언제인가?",
       "options": [
-        "자원봉사 경험이 취업에 가장 좋은 길이다",
-        "고용주는 경험 없는 사람을 더 원한다",
-        "정부 지원금을 받아야만 일자리를 얻을 수 있다",
-        "자원봉사는 돈을 벌기 좋은 방법이다"
+        "최근 10~15년 사이",
+        "최근 3~5년 사이",
+        "최근 30~40년 사이",
+        "최근 50~60년 사이"
       ],
       "answer": 0,
       "evidence": [
-        10
+        5
       ],
-      "note": "'the best way to get hired is to acquire some experience from volunteer work' — 자원봉사 경험이 취업에 가장 좋은 길"
+      "note": "'in the last ten to 15 years, changes in society brought about a transformation of volunteerism' — 최근 10~15년"
+    },
+    {
+      "id": "pr179-q2",
+      "type": "이유",
+      "prompt": "이 글에 따르면 예전 자원봉사자들이 정부나 단체의 지원금을 거의 받지 못한 까닭은?",
+      "options": [
+        "정부의 예산이 넉넉하지 않았기 때문",
+        "봉사자들이 돈 받기를 거절했기 때문",
+        "사회가 그들의 활동에 관심이 적었기 때문",
+        "봉사 단체가 아직 생기지 않았기 때문"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'seldom received funds from the government or private organizations', 'mainly because society paid little attention to their activities' — 사회의 관심이 적었음"
     }
   ]
 }

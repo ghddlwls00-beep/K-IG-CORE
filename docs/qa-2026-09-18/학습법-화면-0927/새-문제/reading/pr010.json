@@ -8,12 +8,12 @@
       "type": "detail",
       "prompt": "이 글에 따르면, 기업이 가장 중요하게 여겨야 할 일로 가장 알맞은 것은?",
       "options": [
-        "회사의 비밀이 계속 보호되도록 확실한 조치를 취하는 일",
-        "이메일을 보내는 사람이 누구인지 확인해 사용자에게 알려 주는 일",
-        "인터넷 사용자 수를 해마다 늘리는 일",
-        "사이트에 오가는 모든 정보를 누구나 볼 수 있게 공개하는 일"
+        "사이트에 오가는 정보가 정확한지 확인하는 일",
+        "직원들의 컴퓨터를 바이러스로부터 지키는 일",
+        "회사의 비밀이 밖으로 새지 않게 지키는 일",
+        "이메일을 보낸 사람이 누구인지 확인하는 일"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
         5
       ],
@@ -21,21 +21,19 @@
     },
     {
       "id": "pr010-q2",
-      "type": "main",
-      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면, 해마다 늘어나고 있는 것은 무엇인가?",
       "options": [
-        "인터넷 이용자 수는 앞으로 점점 줄어들 것으로 보인다",
-        "기업에는 보안보다 이용자 수를 늘리는 일이 더 중요하다",
-        "인터넷 사용이 늘면서 보안 문제가 기업의 중요한 과제가 되었다",
-        "기업들은 이메일 발신자를 확인할 필요가 이제는 없다"
+        "회사 비밀이 새는 일",
+        "사이트가 공격받는 일",
+        "거짓 이메일이 오는 일",
+        "인터넷을 이용하는 일"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        3
+        1
       ],
-      "note": "1번 'on the rise every year, and this creates many challenges', 2번 'One of the biggest challenges in the Internet world is security', 3번 'Businesses ... need to make sure that their sites on the Internet are safe'가 중심 생각을 보여준다"
+      "note": "1번 'The use of the Internet is on the rise every year'"
     }
   ]
 }

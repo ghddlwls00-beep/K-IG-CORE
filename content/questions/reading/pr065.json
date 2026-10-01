@@ -5,33 +5,32 @@
   "questions": [
     {
       "id": "pr065-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 새로 찾아야 할 에너지원이 갖추어야 한다고 말한 조건은?",
       "options": [
-        "에너지는 값이 비싸더라도 깨끗하기만 하면 된다",
-        "온실 효과를 피하려면 청정하고 저렴한 에너지원이 필요하다",
-        "온실 효과를 줄이려면 에너지를 되도록 적게 쓰는 수밖에 없다",
-        "온실 효과는 과학자들이 이미 해결한 문제이다"
+        "깨끗하고 더 안전해야 한다",
+        "깨끗하고 오래 쓸 수 있어야 한다",
+        "깨끗하고 구하기 쉬워야 한다",
+        "깨끗하고 값싸야 한다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         1,
-        2,
-        5
+        2
       ],
-      "note": "1번 'In order to avoid the greenhouse effect, we have to find other sources of energy', 2번 'They have to be clean and less expensive', 5번 'take steps to find clean energy'에 근거함."
+      "note": "1~2번 'other sources of energy ... have to be clean and less expensive'에 근거함."
     },
     {
       "id": "pr065-q2",
       "type": "세부 사실",
       "prompt": "태양 에너지에 대한 설명으로 글의 내용과 일치하는 것은?",
       "options": [
-        "과학자들은 태양 에너지가 유일한 청정 에너지원이라고 본다",
-        "태양 에너지는 차보다 비행기에 더 알맞다",
-        "과학자들은 태양 에너지로는 전기를 만들 수 없다고 본다",
-        "태양 에너지로 만든 전기는 차와 비행기에 쓸 수 있다"
+        "태양 에너지로 만든 전기는 배와 기차를 움직이는 데 쓰인다",
+        "태양 에너지로 만든 전기는 집과 공장의 난방에 주로 쓰인다",
+        "태양 에너지로 만든 전기는 차와 비행기를 움직이는 데 쓰인다",
+        "태양 에너지로 만든 전기는 값이 비싸 아직 널리 쓰이지 않는다"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         3,
         4

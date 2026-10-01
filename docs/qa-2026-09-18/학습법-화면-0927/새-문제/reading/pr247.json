@@ -5,37 +5,36 @@
   "questions": [
     {
       "id": "pr247-q1",
-      "type": "중심 생각",
+      "type": "중심 내용",
       "prompt": "이 글의 요지로 가장 적절한 것은?",
       "options": [
-        "수입품에 매기는 세금은 외국 기업을 돕기 위해 만든 것이다",
+        "수입품에 매기는 일부 세금은 국내 일자리를 지키려는 것이다",
         "수입품에 매기는 일부 세금은 국방에 중요한 산업을 지키려는 것이다",
-        "나라를 지키려면 수입품에 더 기대는 것이 낫다",
-        "국방에 중요한 산업도 외국과 자유롭게 경쟁해야 한다"
+        "수입품에 매기는 일부 세금은 무역 적자를 줄이려는 것이다",
+        "수입품에 매기는 일부 세금은 정부가 거두는 세금을 늘리려는 것이다"
       ],
       "answer": 1,
       "evidence": [
         1,
         2
       ],
-      "note": "'The objective of some taxes on foreign imports is to protect an industry' · 'because of its importance to national defense'가 글의 요지"
+      "note": "'The objective of some taxes on foreign imports is to protect an industry that produces goods vital to a nation's defense'"
     },
     {
       "id": "pr247-q2",
       "type": "세부 사실",
-      "prompt": "다음 중 글의 내용과 일치하는 것은?",
+      "prompt": "글에서 보호가 필요할 수 있는 산업의 예로 든 것은?",
       "options": [
-        "외국과의 경쟁은 국내 산업을 더 튼튼하게 만든다",
-        "석유, 천연가스, 철강 산업은 따로 보호할 필요가 없다",
-        "외국 수입품에는 모두 같은 세금이 매겨진다",
-        "국제적 위기 때 안보에 중요한 물품이 모자랄 수 있다"
+        "자동차·조선·반도체 산업",
+        "농업·어업·임업 산업",
+        "섬유·의류·신발 산업",
+        "석유·천연가스·철강 산업"
       ],
       "answer": 3,
       "evidence": [
-        3,
-        4
+        2
       ],
-      "note": "'Without protection, such industries might be weakened' · 'in an international crisis, the nation might find itself in short supply of products essential to national security'와 일치"
+      "note": "'The domestic oil, natural gas, or steel industry, for example, may require protection'"
     }
   ]
 }

@@ -5,31 +5,35 @@
   "questions": [
     {
       "id": "d224-q1",
-      "type": "목적/태도",
-      "prompt": "백일몽에 대한 글쓴이의 태도로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 일상이 때로 꽤 따분해질 수 있다고 인정할 것이라고 한 사람은?",
       "options": [
-        "무조건 피해야 할 것으로 본다",
-        "지나칠수록 더 좋은 것으로 본다",
-        "지나치지만 않으면 좋은 것으로 본다",
-        "성공한 사람에게만 좋은 것으로 본다"
+        "가장 성공한 사람",
+        "가장 행복한 사람",
+        "가장 부지런한 사람",
+        "가장 부유한 사람"
       ],
-      "answer": 2,
-      "evidence": [5, 6],
-      "note": "His ability to daydream provides him with a pleasant escape … daydream to such an extent that they neglect their duties and responsibilities"
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "Even the happiest man will admit that the everyday world can become rather humdrum"
     },
     {
       "id": "d224-q2",
       "type": "세부 사실",
-      "prompt": "사람이 때때로 상상의 세계로 향하는 까닭으로 말한 것은?",
+      "prompt": "글에서 보통 사람에게 꽤 큰 도전이 된다며 든 예는?",
       "options": [
-        "걱정거리를 잊으려고",
-        "생활비를 더 벌 방법을 찾으려고",
-        "새로운 도전을 찾아 나서려고",
-        "지루한 일상을 받아들이려고"
+        "생계 꾸리기와 건강 지키기",
+        "생계 꾸리기와 친구 사귀기",
+        "생계 꾸리기와 집 장만하기",
+        "생계 꾸리기와 자녀 키우기"
       ],
-      "answer": 0,
-      "evidence": [4],
-      "note": "In an attempt to forget these worries, he sometimes turns to the world of imagination"
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "Earning a living, raising a family … present quite a challenge to the average man"
     }
   ]
 }

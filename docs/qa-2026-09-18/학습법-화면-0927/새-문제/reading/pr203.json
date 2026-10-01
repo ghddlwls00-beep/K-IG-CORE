@@ -5,33 +5,31 @@
   "questions": [
     {
       "id": "pr203-q1",
-      "type": "중심 생각",
-      "prompt": "윗글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 거꾸로 뒤집어 말할 수 없는 예로 든 문장은?",
       "options": [
-        "한 나라 사람은 한 가지 언어만 쓴다",
-        "국적과 언어는 서로 아무 관계가 없다",
-        "영어를 쓰는 사람은 모두 영국인이다",
-        "국적과 언어가 늘 일치하지는 않는다"
+        "독일어를 하면 독일인이다",
+        "스페인어를 하면 스페인인이다",
+        "프랑스어를 하면 프랑스인이다",
+        "포르투갈어를 하면 포르투갈인이다"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        5,
-        7,
-        8
+        7
       ],
-      "note": "인용: there are exceptions / we cannot switch the argument / He may quite well be Swiss"
+      "note": "인용: we cannot switch the argument and say, \"If he speaks German, he is German.\""
     },
     {
       "id": "pr203-q2",
       "type": "세부 사실",
       "prompt": "글에 나온 예에서 사람과 언어를 바르게 짝지은 것은?",
       "options": [
-        "벨기에인 - 스페인어",
         "멕시코인 - 스페인어",
-        "브라질인 - 프랑스어",
-        "스위스인 - 포르투갈어"
+        "브라질인 - 스페인어",
+        "스위스인 - 프랑스어",
+        "캐나다인 - 프랑스어"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
         6
       ],

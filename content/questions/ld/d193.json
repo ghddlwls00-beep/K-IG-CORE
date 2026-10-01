@@ -8,41 +8,49 @@
       "type": "중심내용",
       "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "추적자가 범인을 쫓다가 사막에서 길을 잃은 일",
-        "추적자가 엉뚱한 오두막을 가리켜 범인을 놓친 일",
-        "추적자가 날카로운 눈으로 범인을 찾아낸 일",
-        "추적자가 범인에게 속아 다른 마을로 간 일"
+        "추적자가 오두막에 숨긴 금을 찾아내 경찰에 넘긴 일",
+        "추적자가 혼자 마을 외곽까지 쫓아가 범인을 붙잡은 일",
+        "추적자가 다른 마을에서 같은 발자국을 보고 범인을 찾은 일",
+        "추적자가 빗속에서도 발자국을 놓치지 않고 범인을 쫓은 일"
       ],
       "answer": 2,
-      "evidence": [2, 4, 5],
+      "evidence": [
+        2,
+        4,
+        5
+      ],
       "note": "날카로운 눈으로 숨은 범인을 찾아냄: 'his sharp eyes picked out the same boot prints' · 'simply pointed' · 'the wanted man was hiding inside'"
     },
     {
       "id": "d193-q2",
-      "type": "세부사실",
-      "prompt": "갑자기 쏟아진 폭우 때문에 일어난 일로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "추적자가 다른 마을에서 같은 발자국을 다시 본 것은 처음 본 지 얼마 뒤인가?",
       "options": [
-        "발자국이 더 또렷하게 남았다",
-        "도둑이 비를 피해 달아났다",
-        "추적자가 멀리까지 쫓아갔다",
-        "발자국이 모두 씻겨 나갔다"
+        "몇 주 뒤",
+        "몇 달 뒤",
+        "며칠쯤 뒤",
+        "1년 뒤"
       ],
-      "answer": 3,
-      "evidence": [1],
-      "note": "비가 발자국을 씻어 냄: 'a flash rainstorm broke and washed the tracks away'"
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "'the same boot prints he had seen days before'"
     },
     {
       "id": "d193-q3",
       "type": "다음에할일",
       "prompt": "추적자의 이야기를 들은 경찰이 한 일로 알맞은 것은?",
       "options": [
-        "그의 말을 믿지 않고 돌아가 버렸다",
-        "믿기 어려웠지만 그를 따라나섰다",
-        "마을 외곽에서 그를 기다렸다",
-        "다른 추적자를 새로 불러왔다"
+        "말을 믿기 어려워 다른 추적자를 불렀다",
+        "말을 믿기 어려웠지만 그와 함께 갔다",
+        "말을 믿고 그보다 앞서 범인을 찾아 나섰다",
+        "말을 믿고 마을 외곽에서 길목을 지켰다"
       ],
       "answer": 1,
-      "evidence": [3],
+      "evidence": [
+        3
+      ],
       "note": "믿기 어려웠지만 함께 감: 'could hardly believe his story, but they accompanied him'"
     }
   ]

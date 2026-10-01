@@ -6,35 +6,34 @@
     {
       "id": "pr070-q1",
       "type": "세부 사실",
-      "prompt": "글에 나온 심리학 연구의 두 실험이 실제로 알아본 것은?",
+      "prompt": "실험에서 듣는 이가 말하는 사람의 감정을 판단한 상황으로 글에 나온 것은?",
       "options": [
-        "처음 만난 사람의 외모가 첫인상을 좌우하는 정도",
-        "말이나 표정이 목소리 톤과 잘 맞을 때 감정을 판단하는 방식",
-        "처음 만난 사람의 목소리가 호감을 좌우하는 정도",
-        "말이나 표정이 목소리 톤과 어긋날 때 감정을 판단하는 방식"
+        "말이나 목소리 톤이 표정과 맞지 않을 때",
+        "표정이나 목소리 톤이 말과 맞지 않을 때",
+        "말이나 표정이 목소리 톤과 맞지 않을 때",
+        "말이나 표정이 몸짓과 맞지 않을 때"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         3
       ],
-      "note": "3번 'how listeners judge a speaker's feelings when the words or the facial expression do not match the tone of voice'에 근거함."
+      "note": "3번 'when the words or the facial expression do not match the tone of voice'에 근거함."
     },
     {
       "id": "pr070-q2",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글의 첫 부분에서 이 연구가 흔히 보여 준다고 소개한 내용은?",
       "options": [
-        "첫인상은 거의 외모 하나로 정해진다",
-        "외모, 목소리, 말의 내용이 모두 함께 작용한다",
-        "사람을 볼 때 외모보다 말의 내용이 훨씬 중요하다",
-        "말의 내용은 7%뿐이라 신경 쓸 필요가 없다"
+        "외모가 대화의 55%를 차지한다",
+        "외모가 호감도의 55%를 차지한다",
+        "외모가 설득력의 55%를 차지한다",
+        "외모가 첫인상의 55%를 차지한다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        2,
-        5
+        1
       ],
-      "note": "2번 'The research, however, was not about first impressions', 5번 'it is not safe to conclude that what you say hardly matters', 'all work together'에 근거함."
+      "note": "1번 'often said to show that your appearance makes up 55% of a first impression'에 근거함."
     }
   ]
 }

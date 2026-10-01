@@ -5,31 +5,35 @@
   "questions": [
     {
       "id": "d151-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 미국의 해안선 길이로 말한 것은?",
       "options": [
-        "넓은 평원 덕분에 농사가 잘되어 나라가 발전했다",
-        "호수와 강, 해안선이 수송을 도와 나라가 발전했다",
-        "숲과 사막이 많아 수송이 어려워 발전이 늦었다",
-        "지형이 단조로워 수송 수단이 하나뿐이었다"
+        "1천 마일이 안 된다",
+        "몇천 마일에 이른다",
+        "몇백 마일쯤 된다",
+        "1만 마일이 훨씬 넘는다"
       ],
       "answer": 1,
-      "evidence": [2, 3],
-      "note": "\"The many lakes and rivers, as well as the long coastline\" · \"of great importance to the development\" · \"easy transportation\""
+      "evidence": [
+        2
+      ],
+      "note": "\"a coastline several thousand miles long\""
     },
     {
       "id": "d151-q2",
       "type": "세부 사실",
-      "prompt": "오늘날의 수송에 대해 이 글이 말한 것으로 옳은 것은?",
+      "prompt": "이 글이 오늘날의 물길 운송에 대해 말한 것은?",
       "options": [
-        "물길 수송은 이제 필요 없게 되었다",
-        "배가 기차와 자동차의 일을 대신 맡았다",
-        "비행기 혼자서 배가 하던 일을 맡았다",
-        "기차와 자동차 등이 배의 일을 많이 맡았다"
+        "이제는 거의 쓰이지 않게 되었다",
+        "비행기보다 더 많은 짐을 나른다",
+        "주로 짐을 나를 때 쓰인다",
+        "지금도 여전히 필요하고 중요하다"
       ],
       "answer": 3,
-      "evidence": [4, 5],
-      "note": "\"still necessary and important\" · \"trains, automobiles, trucks, and airplanes are doing much of the work which was formerly done by ships and boats\""
+      "evidence": [
+        4
+      ],
+      "note": "\"Transportation by water is still necessary and important\""
     }
   ]
 }

@@ -8,12 +8,12 @@
       "type": "세부 사실",
       "prompt": "IMF의 한 관리가 어려움을 겪는 경제들이 회복될 것이라고 말한 시기로 알맞은 것은?",
       "options": [
-        "1998년 상반기",
-        "1998년 하반기",
         "1999년 상반기",
-        "1999년 하반기"
+        "2000년 하반기",
+        "1999년 하반기",
+        "2000년 상반기"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         3
       ],
@@ -21,20 +21,20 @@
     },
     {
       "id": "pr095-q2",
-      "type": "한 단계 추론",
-      "prompt": "IMF 관리가 회복 시기를 정확히 말할 수 없다고 한 까닭으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "IMF가 아시아 국가들에 경고한 것으로 알맞은 것은?",
       "options": [
-        "통계 자료가 아직 다 모이지 않았기 때문에",
-        "IMF 안에서 의견이 서로 달랐기 때문에",
-        "각국 정부의 대처에 달려 있기 때문에",
-        "다른 국제기구와 먼저 의논해야 했기 때문에"
+        "외국에서 빌린 돈을 서둘러 갚아야 할 것이다",
+        "수출을 줄이고 내수를 키워야 할 것이다",
+        "은행의 수를 크게 줄여야 할 것이다",
+        "과거의 높은 경제 성장률을 포기해야 할 것이다"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        4,
-        5
+        1,
+        2
       ],
-      "note": "'the IMF could not be exact about the timing of a recovery' · 'depend on how effective governments were in dealing with their economic problems' — 회복 시기가 각국 정부의 대처에 달림"
+      "note": "'economic trouble affecting Asian countries' · 'they would have to give up the high economic growth rates of the past' — 과거의 높은 성장률 포기"
     }
   ]
 }

@@ -8,12 +8,12 @@
       "type": "중심 생각",
       "prompt": "글쓴이가 말하고자 하는 바로 가장 적절한 것은?",
       "options": [
-        "종교적 불관용이 근본적인 문제다",
-        "사회보다 개인의 생각이 먼저 바뀌어야 한다",
-        "깊이 생각하지 않는 것이 근본적인 문제다",
-        "개인보다 사회의 생각이 먼저 바뀌어야 한다"
+        "깊이 생각하지 않는 습관이 가장 근본적인 문제다",
+        "서로를 믿지 못하는 불신이 가장 근본적인 문제다",
+        "부자와 가난한 사람의 격차가 가장 근본적인 문제다",
+        "사람들의 탐욕과 두려움이 가장 근본적인 문제다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
         5,
         6
@@ -22,20 +22,19 @@
     },
     {
       "id": "pr149-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "문장 \"But given the destructive results, do these beliefs make sense?\"에서 these beliefs가 가리키는 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 수백만 명의 목숨을 앗아 간 위기가 되었다고 한 것은?",
       "options": [
-        "수백만 명의 목숨을 앗아 간 위기",
-        "싸움 끝에 남은 파괴적인 결과",
-        "개인과 사회가 마주한 여러 문제",
-        "싸움의 바탕이 된 깊은 신념"
+        "인종에 대한 편견",
+        "지나친 민족주의",
+        "종교적인 불관용",
+        "자원을 둘러싼 경쟁"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        2,
-        3
+        1
       ],
-      "note": "'Many struggles such as rich versus poor are fought under deeply held beliefs', 'do these beliefs make sense' 참고"
+      "note": "'religious intolerance ... have turned into crises that have taken the lives of millions' 참고"
     }
   ]
 }

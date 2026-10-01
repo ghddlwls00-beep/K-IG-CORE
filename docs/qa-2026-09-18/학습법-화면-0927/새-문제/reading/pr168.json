@@ -6,34 +6,36 @@
     {
       "id": "pr168-q1",
       "type": "세부 사실",
-      "prompt": "글에서 스타일링이 관심을 두는 것으로 언급된 것은?",
+      "prompt": "글에서 디자인이 일반적으로 추구하는 것으로 언급된 것은?",
       "options": [
-        "제품의 기능과 문제 해결",
-        "단순화와 본질의 추구",
-        "표면 처리와 외관",
-        "서구 경제의 순환 주기"
+        "단순화와 경제성",
+        "단순화와 본질성",
+        "독창성과 본질성",
+        "독창성과 경제성"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        4
+        5,
+        6
       ],
-      "note": "\"Styling is concerned with surface treatment and appearance\" — 스타일링은 표면 처리와 외관에 관심을 둠"
+      "note": "\"Design ... It generally seeks simplification and essentiality\""
     },
     {
       "id": "pr168-q2",
       "type": "세부 사실",
-      "prompt": "글에서 디자인과 스타일링의 관계로 언급된 것은?",
+      "prompt": "디자인과 스타일링을 맥락 속에서 이해해야 하는 예로 글에 든 것은?",
       "options": [
-        "서로 관련되지만 완전히 다른 분야이다",
-        "사실상 같은 일을 하는 분야이다",
-        "서로 아무 관련이 없는 분야이다",
-        "스타일링이 디자인의 한 부분이다"
+        "20세기 서구 정치의 변화",
+        "19세기 산업 혁명의 기술",
+        "20세기 대중문화의 유행",
+        "20세기 서구 경제의 주기"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        3
+        1,
+        2
       ],
-      "note": "\"design and styling are interrelated\" · \"they are completely distinct fields\" — 서로 연관되지만 완전히 구별되는 분야"
+      "note": "\"cannot be fully understood outside of their ... contexts\" · \"For example, the cycles of Western economies during the 20th century\""
     }
   ]
 }

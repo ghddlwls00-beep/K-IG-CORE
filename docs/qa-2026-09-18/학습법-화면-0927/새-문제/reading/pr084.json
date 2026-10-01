@@ -5,39 +5,36 @@
   "questions": [
     {
       "id": "pr084-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글의 예에서 새 이웃 이야기를 들은 친구가 맨 처음 한 말은 무엇인가?",
       "options": [
-        "친구의 평가는 대개 정확하므로 믿는 것이 좋다",
-        "사람은 시간이 지나면 누구나 성격이 바뀐다",
-        "좋은 첫인상을 주려면 처음에 친절해야 한다",
-        "사람들은 틀린 첫인상이라도 좀처럼 바꾸지 않는다"
+        "그 사람 이름이 낯설다고 했다",
+        "그 사람을 안다고 했다",
+        "그 사람 소문을 들었다고 했다",
+        "그 사람을 본 적 있다고 했다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        1,
-        7,
-        8
+        2,
+        3
       ],
-      "note": "1번 'People tend to stick to their first impressions, even if they are wrong', 7번 'Whether the judgment is accurate or not, once you accept it', 8번 'interpret his behavior in ways that fit your expectation'"
+      "note": "2번 'mention the name of your new neighbor to a friend', 3번 'Oh, I know him'"
     },
     {
       "id": "pr084-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아 친구의 평가를 받아들인 사람이 새 이웃에게 보일 반응으로 가장 적절한 것은?",
+      "type": "이유",
+      "prompt": "글쓴이가 친구의 평가가 틀릴 수도 있다고 보는 까닭으로 든 것은?",
       "options": [
-        "그가 친절하게 굴어도 꾸민 것이라 의심한다",
-        "그의 친절에 고마워하며 더 가깝게 지내려 한다",
-        "친구의 말이 맞는지 이웃에게 묻는다",
-        "친구에게 들은 말을 이웃에게 그대로 전해 준다"
+        "친구가 이웃을 다른 사람과 헷갈렸을 수 있어서",
+        "친구가 이웃을 딱 한 번 마주쳤을 수 있어서",
+        "친구가 이웃을 소문으로 알았을 수 있어서",
+        "친구가 이웃을 공정하지 않게 판단했을 수 있어서"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        4,
-        7,
-        8
+        6
       ],
-      "note": "4번 'He seems nice at first, but it’s all an act', 7번 'it will probably influence the way you respond to the neighbor', 8번 'Even if this neighbor were a saint ... in ways that fit your expectation'"
+      "note": "6번 'perhaps your friend’s judgment is simply unfair'"
     }
   ]
 }

@@ -6,18 +6,18 @@
     {
       "id": "pr107-q1",
       "type": "세부 사실",
-      "prompt": "본문의 'special-interest magazines'에 관한 설명으로 옳은 것은?",
+      "prompt": "본문에서 잡지를 크게 몇 가지 종류로 나누었는가?",
       "options": [
-        "신문과 잡지의 역할을 함께 한다",
-        "여러 분야의 중요한 사건을 보도한다",
-        "세계와 국내의 주요 뉴스를 요약한다",
-        "주로 한 가지 특정한 주제를 다룬다"
+        "2가지",
+        "3가지",
+        "4가지",
+        "5가지"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        6
+        1
       ],
-      "note": "'Special-interest magazines, on the other hand, deal mainly with one particular subject' — 주로 한 가지 주제를 다룸"
+      "note": "'There are basically two types of magazines: news magazines and special-interest magazines' — 2가지"
     },
     {
       "id": "pr107-q2",
@@ -25,11 +25,11 @@
       "prompt": "본문에서 'special-interest magazines'가 보통 발행되는 주기로 가장 적절한 것은?",
       "options": [
         "일주일에 한 번",
-        "한 달에 한 번",
-        "일 년에 한 번",
-        "하루에 한 번"
+        "두 주에 한 번",
+        "두 달에 한 번",
+        "한 달에 한 번"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         6,
         7

@@ -5,37 +5,36 @@
   "questions": [
     {
       "id": "pr024-q1",
-      "type": "detail",
-      "prompt": "이 글에 따르면, 많은 중국 학생들이 한국어에 관심을 갖게 된 까닭으로 언급된 것은?",
+      "type": "이유",
+      "prompt": "이 글에 따르면, 한국 문화에 대한 관심과 함께 한국어에 관심 있는 외국인이 늘어난 까닭으로 언급된 것은?",
       "options": [
-        "한국어 교사가 되어 중국에서 가르치려고",
-        "한국어를 배우는 것이 다른 외국어보다 훨씬 쉬워서",
-        "한국 정부가 유학생에게 장학금을 제공해서",
-        "한국 회사에서 더 나은 기회와 봉급을 얻으려고"
+        "한국 회사의 해외 성공",
+        "한국 정부의 유학 지원",
+        "한국 대학의 학비 인하",
+        "한국 관광의 빠른 성장"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        2
+        1
       ],
-      "note": "2번 'plan to work for Korean firms, which offer better opportunities and pay'에서 확인된다."
+      "note": "'because of the success of Korean firms overseas and growing interest in Korean culture'에서 확인된다."
     },
     {
       "id": "pr024-q2",
-      "type": "main",
-      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "type": "이유",
+      "prompt": "이 글에서 한국어가 국제 사회에서 인기를 얻으리라고 상상한 사람이 적었던 까닭으로 든 것은?",
       "options": [
-        "한국 회사들은 외국인보다 자국민을 우선으로 채용한다",
-        "한국어에 관심 있는 외국인 수가 예상 밖으로 늘었다",
-        "한국어 프로그램은 서울보다 지방에서 더 인기가 많다",
-        "한반도 출신이 아니면 한국어를 배우기 어렵다"
+        "한국어 문법이 다른 언어보다 어렵게 여겨졌기 때문에",
+        "한국어를 가르칠 교사가 해외에 드물었기 때문에",
+        "한글이 외국인의 눈에 낯선 글자로 보였기 때문에",
+        "한국어를 쓰는 사람이 주로 한반도 출신이었기 때문에"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        1,
         4,
         5
       ],
-      "note": "1번 'has increased dramatically', 4번 'long been limited mostly to those from the peninsula', 5번 'few people ever imagined ... become popular'를 종합하면 알 수 있다."
+      "note": "'limited mostly to those from the peninsula', 'It is no wonder few people ever imagined'에서 알 수 있다."
     }
   ]
 }

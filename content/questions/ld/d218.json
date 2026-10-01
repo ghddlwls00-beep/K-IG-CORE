@@ -5,30 +5,34 @@
   "questions": [
     {
       "id": "d218-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 수집가라고 부르며 마지막에 예로 든 사람은?",
       "options": [
-        "사람은 외부 세계와 하나가 되려고 무언가를 모은다",
-        "사람은 외부 세계에서 벗어나려고 무언가를 모은다",
-        "학자는 물건을 모으지 않으므로 수집가가 아니다",
-        "수집벽은 사람의 심리와 아무 관계가 없다"
+        "화가",
+        "상인",
+        "왕",
+        "학자"
       ],
-      "answer": 0,
-      "evidence": [4, 5],
-      "note": "one explanation stems from the very psychological makeup of man … a natural desire to unite himself to the external world"
+      "answer": 3,
+      "evidence": [
+        6
+      ],
+      "note": "Even the scholar is a collector"
     },
     {
       "id": "d218-q2",
       "type": "세부 사실",
-      "prompt": "글에서 수집할 수 있는 모든 물건에 대해 말한 것은?",
+      "prompt": "글에서 모을 수 있는 물건과 그것을 모으는 사람에 대해 말한 것은?",
       "options": [
-        "모으는 사람이 아주 드물다",
-        "한 사람이 전부 모을 수 있다",
-        "모으려는 누군가가 있다",
-        "지식이 많은 사람만 모을 수 있다"
+        "값비싼 물건일수록 모으려는 사람이 많다",
+        "물건마다 모으려는 사람이 있다",
+        "신기한 물건일수록 모으려는 사람이 많다",
+        "오래된 물건일수록 모으려는 사람이 많다"
       ],
-      "answer": 2,
-      "evidence": [3],
+      "answer": 1,
+      "evidence": [
+        3
+      ],
       "note": "for every object that can be collected, there is somebody ready to collect it"
     }
   ]

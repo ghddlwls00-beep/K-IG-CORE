@@ -5,32 +5,31 @@
   "questions": [
     {
       "id": "d021-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "점심시간에 사장이 주디에게 시킨 일로 알맞은 것은?",
       "options": [
-        "입사 첫날부터 일을 잘했지만 월급이 적어 그만두었다",
-        "첫날 점심때 사장과 크게 다투고 그 자리에서 그만두었다",
-        "첫 출근 날 모든 일이 꼬여 다음 날 그만두었다",
-        "한 달쯤 일하다가 콜라가 싫어져서 결국 그만두었다"
+        "기계 옆을 지키며 병 수를 세게 했다",
+        "자기가 먹을 샌드위치를 사 오게 했다",
+        "다른 직원들의 점심을 주문하게 했다",
+        "오후에 할 일을 미리 익혀 두게 했다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        1,
-        12
+        8
       ],
-      "note": "“everything went wrong”, “The next morning, she got to work on time and quit”에서 알 수 있다."
+      "note": "“At lunch, her boss sent her out to buy him a sandwich”라고 했다."
     },
     {
       "id": "d021-q2",
       "type": "세부 사실",
       "prompt": "주디가 첫 출근 날 청량음료 공장에 도착한 시각으로 알맞은 것은?",
       "options": [
-        "8시 30분",
         "8시",
-        "9시 30분",
-        "9시"
+        "8시 30분",
+        "9시",
+        "9시 30분"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         3
       ],
@@ -39,18 +38,18 @@
     {
       "id": "d021-q3",
       "type": "세부 사실",
-      "prompt": "그날 오후가 끝날 무렵 주디의 심정으로 가장 알맞은 것은?",
+      "prompt": "주디의 새 사장의 생김새로 알맞은 것은?",
       "options": [
-        "배고프고 지루하고 피곤했다",
-        "지루했지만 꽤 뿌듯했다",
-        "지루하고 조금 외로웠다",
-        "배부르고 지루하고 편했다"
+        "키가 작고 뚱뚱했다",
+        "키가 크고 말랐다",
+        "키가 작고 말랐다",
+        "키가 크고 뚱뚱했다"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        10
+        4
       ],
-      "note": "“she felt very hungry, bored and tired”라고 했다."
+      "note": "“Her new boss, who is a tall and fat man”이라고 했다."
     }
   ]
 }

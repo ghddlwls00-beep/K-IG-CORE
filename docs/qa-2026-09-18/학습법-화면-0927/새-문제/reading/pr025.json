@@ -5,32 +5,31 @@
   "questions": [
     {
       "id": "pr025-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 우리가 행동하기 시작할 때 때때로 생긴다고 한 것은?",
       "options": [
-        "생각만 하지 말고 행동하면 부정적인 감정이 풀린다",
-        "일은 놀이보다 긴장을 더 많이 풀어 준다",
-        "다른 사람과 감정을 나누면 긴장이 더 심해진다",
-        "새로운 생각은 문제를 피할 때 더 많이 떠오른다"
+        "함께할 사람이 생긴다",
+        "다시 해 볼 용기가 난다",
+        "새로운 생각이 떠오른다",
+        "스스로를 믿게 된다"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        1,
-        6
+        5
       ],
-      "note": "1번 'can be eased if we act instead of just thinking over problems', 6번 'Action relieves tensions and sets us free'가 근거"
+      "note": "'Sometimes, ideas come as we begin to act'"
     },
     {
       "id": "pr025-q2",
       "type": "세부 사실",
       "prompt": "이 글에서 '일'이 하는 역할로 언급된 것은?",
       "options": [
-        "다른 사람과 감정을 나누게 한다",
-        "분노를 풀고 에너지를 쓰게 한다",
-        "몸을 편안히 쉬게 해 준다",
-        "새로운 고민거리를 만들어 낸다"
+        "걱정을 잊고 마음의 여유를 되찾게 한다",
+        "외로움을 덜고 사람들과 더 가까워지게 한다",
+        "슬픔을 견디고 새 희망을 품게 한다",
+        "분노를 털어 내고 남는 힘을 쓰게 한다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         4
       ],

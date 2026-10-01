@@ -6,46 +6,46 @@
     {
       "id": "d116-q1",
       "type": "세부 사실",
-      "prompt": "대평원 인디언의 생활로 옳은 것은?",
+      "prompt": "이야기에서 부족의 여자와 남자가 맡은 일로 말한 것으로 옳은 것은?",
       "options": [
-        "계절마다 강을 따라 옮겨 다녔다",
-        "식량 대부분을 농사를 지어 얻었다",
-        "들소 떼를 피해 이리저리 옮겨 다녔다",
-        "옮기기 쉬운 천막에서 살았다"
+        "여자는 농사를, 남자는 사냥과 고기잡이를 맡았다",
+        "여자는 농사와 고기잡이를, 남자는 사냥을 맡았다",
+        "남자는 농사와 사냥을, 여자는 열매 따기를 맡았다",
+        "남자는 농사를, 여자는 고기잡이와 열매 따기를 맡았다"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        2
+        8
       ],
-      "note": "'The Plains Indians lived in tents that were easily moved'가 옮기기 쉬운 천막에서 살았음을 보여 줌"
+      "note": "'The women used to manage the crops while the men provided additional food by hunting and fishing'이 여자는 농사, 남자는 사냥과 고기잡이를 맡았음을 보여 줌"
     },
     {
       "id": "d116-q2",
-      "type": "세부 사실",
-      "prompt": "미시시피강 동쪽의 원주민 사회에서 여성이 맡은 일로 옳은 것은?",
+      "type": "가리키는 것",
+      "prompt": "유럽 정착민을 가장 먼저 만난 무리에 들었다고 한 부족들로 옳은 것은?",
       "options": [
-        "사냥으로 먹을 것을 보태는 일",
-        "밭에서 농작물을 돌보는 일",
-        "고기를 잡아 먹을 것을 보태는 일",
-        "사냥한 짐승으로 옷을 짓는 일"
+        "들소 떼를 따라 천막을 옮기던 부족들",
+        "멕시코 북쪽 사막에서 살던 부족들",
+        "큰 강에서 고기잡이로 살던 부족들",
+        "영구 마을에서 농사를 짓던 부족들"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         6,
         7,
-        8
+        9
       ],
-      "note": "'living east of the Mississippi River' · 'these societies' · 'The women used to manage the crops'가 여성이 농작물을 돌보았음을 보여 줌"
+      "note": "'Most of these societies had built permanent villages and lived by farming', 'These tribes were among the first to meet the European settlers'가 영구 마을의 농사 부족임을 보여 줌"
     },
     {
       "id": "d116-q3",
       "type": "세부 사실",
       "prompt": "유럽인이 처음 왔을 때 멕시코 북쪽의 원주민 수로 옳은 것은?",
       "options": [
-        "수만 명",
-        "수십만 명",
+        "100만 명 남짓",
+        "수십만 명 정도",
         "수백만 명",
-        "수천만 명"
+        "1,000만 명 남짓"
       ],
       "answer": 2,
       "evidence": [

@@ -5,22 +5,20 @@
   "questions": [
     {
       "id": "d063-q1",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "길을 물어 온 낯선 남자가 판타스틱 파이브에서 맡은 역할로 알맞은 것은?",
       "options": [
-        "낯선 남자에게 리츠 호텔까지 길을 안내받은 이야기",
-        "하이 스트리트에서 낯선 남자에게 지갑을 도둑맞은 이야기",
-        "낯선 남자가 알고 보니 유명 가수였던 이야기",
-        "유명 가수가 되고 싶은 남자에게 길을 알려 준 이야기"
+        "드럼",
+        "노래",
+        "기타",
+        "건반"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         2,
-        8,
-        9,
         10
       ],
-      "note": "“A man stopped me” · “number two in the top 20” · “the piece of paper the stranger had given to me. It was a photo” · “It was the singer in the Fantastic Five”에서 알 수 있음"
+      "note": "“A man stopped me and asked me the way” · “It was the singer in the Fantastic Five”에서 알 수 있음"
     },
     {
       "id": "d063-q2",
@@ -29,8 +27,8 @@
       "options": [
         "리츠 호텔을 찾으려고",
         "새 지갑을 사려고",
-        "친구를 만나려고",
-        "음반 가게를 찾으려고"
+        "공연 표를 사려고",
+        "음반 가게에 가려고"
       ],
       "answer": 3,
       "evidence": [
@@ -43,12 +41,12 @@
       "type": "세부 사실",
       "prompt": "화자가 지갑을 찾다가 발견한 종이에 대한 설명으로 가장 적절한 것은?",
       "options": [
-        "낯선 남자가 건네준 지폐 한 장",
-        "리츠 호텔로 가는 길을 그린 약도",
-        "낯선 남자가 건네준 사진 한 장",
-        "판타스틱 파이브의 공연 표"
+        "판타스틱 파이브 공연 입장권",
+        "낯선 남자가 준 사진 한 장",
+        "길 안내의 답례로 받은 지폐",
+        "리츠 호텔 식사 초대권"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         9
       ],

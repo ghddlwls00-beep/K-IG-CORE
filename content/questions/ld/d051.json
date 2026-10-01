@@ -5,32 +5,31 @@
   "questions": [
     {
       "id": "d051-q1",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "사람들 대부분이 생각하기에 기자가 시간을 가장 많이 쓰는 일로 알맞은 것은?",
       "options": [
-        "신문 기자의 하루는 모험의 연속이다",
-        "신문 기자는 대부분 판에 박힌 생활을 한다",
-        "신문 기자는 대부분 자기 칼럼을 쓰며 지낸다",
-        "신문 기자는 늘 사건을 취재하러 밖을 다닌다"
+        "사건 현장을 바쁘게 쫓아다니는 일",
+        "유명한 사람들을 인터뷰하는 일",
+        "먼 나라를 돌며 취재하는 일",
+        "신문에 실을 칼럼을 쓰는 일"
       ],
       "answer": 1,
       "evidence": [
-        3,
-        4
+        2
       ],
-      "note": "3번 “seems to be filled with adventure” · 4번 “Actually, however, most newspaper reporters lead rather routine lives”라고 했다"
+      "note": "2번 “reporters supposedly spend most of their time interviewing famous people”이라고 했다"
     },
     {
       "id": "d051-q2",
       "type": "세부 사실",
       "prompt": "젊은 기자가 주로 하는 일로 가장 알맞은 것은?",
       "options": [
-        "유명한 사람들을 찾아가 직접 인터뷰하는 일",
-        "다른 신문사의 기사를 확인하고 번역하는 일",
-        "매일 새로운 사건 현장에 나가 취재하는 일",
-        "선배 기자들이 가져온 기사를 다시 쓰는 일"
+        "선배 기자를 따라다니며 취재를 돕는 일",
+        "경험 많은 선배들이 가져온 원고를 고쳐 쓰는 일",
+        "독자들이 보내온 투고를 골라 기사로 쓰는 일",
+        "상사가 정해 준 사건을 취재해 기사를 쓰는 일"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
         5,
         6
@@ -39,20 +38,20 @@
     },
     {
       "id": "d051-q3",
-      "type": "다음에 할 일",
-      "prompt": "젊은 기자가 일을 잘 해내면 앞으로 일어날 일로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "말하는 사람에 따르면 젊은 기자가 취재를 잘 해냈을 때 상사가 할 것 같은 일로 가장 알맞은 것은?",
       "options": [
-        "취재를 나갈 기회가 더 많아진다",
-        "취재를 그만두고 책상 일만 하게 된다",
-        "상사가 되어 다른 기자들의 취재를 이끈다",
-        "다른 신문사에서 취재 기자 자리를 제안받는다"
+        "더 큰 사건의 취재를 맡긴다",
+        "선배 기자의 취재에 함께 보낸다",
+        "밖으로 취재를 더 자주 내보낸다",
+        "먼 지역의 취재를 맡겨 보낸다"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
         7,
         8
       ],
-      "note": "7번 “the boss may send him out to cover a story” · 8번 “the boss will probably send him out more often”이라고 했다"
+      "note": "7번 “send him out to cover a story” · 8번 “If he does a good job, the boss will probably send him out more often”이라고 했다"
     }
   ]
 }

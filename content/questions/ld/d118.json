@@ -6,54 +6,54 @@
     {
       "id": "d118-q1",
       "type": "세부 사실",
-      "prompt": "원주민의 땅에 결국 일어난 일로 옳은 것은?",
+      "prompt": "이야기에서 원주민 부족들의 재산에 대해 말한 것으로 옳은 것은?",
       "options": [
-        "원주민이 비싼 값에 팔아 부자가 되었다",
-        "정착민이 대부분을 사거나 빼앗았다",
-        "정착민과 원주민이 나누어 함께 썼다",
-        "원주민끼리 싸워 대부분을 잃었다"
+        "대부분은 재산을 함께 가졌고, 몇몇은 사유 재산을 따로 두었다",
+        "몇몇은 재산을 함께 가졌고, 대부분은 사유 재산이라는 생각이 없었다",
+        "몇몇은 재산을 함께 가졌고, 대부분은 사유 재산을 따로 두었다",
+        "대부분은 재산을 함께 가졌고, 몇몇은 사유 재산이라는 생각이 없었다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        6,
-        8
+        5
       ],
-      "note": "'How can we sell the land?' · 'The settlers, however, managed to buy or take away most of it'가 정착민이 땅 대부분을 사거나 빼앗았음을 보여 줌"
+      "note": "'Most tribes owned their possessions in common and some did not have the concept of private property'가 대부분은 함께 가졌고 몇몇은 사유 재산 개념이 없었음을 보여 줌"
     },
     {
       "id": "d118-q2",
-      "type": "말한 사람의 목적/태도",
-      "prompt": "땅을 파는 일에 대한 한 원주민 지도자의 생각으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "땅을 어떻게 팔 수 있느냐고 물은 원주민 지도자가 땅과 견주어 든 것으로 옳은 것은?",
       "options": [
-        "땅은 제값을 받고 팔아야 한다",
-        "땅을 파는 방법을 알고 싶어 했다",
-        "땅은 사고팔 수 있는 것이 아니다",
-        "땅은 팔지 말고 남에게 빌려주어야 한다"
+        "공기와 바람, 강물",
+        "하늘과 구름, 강물",
+        "공기와 구름, 바다",
+        "하늘과 바람, 바다"
       ],
       "answer": 2,
       "evidence": [
         6,
         7
       ],
-      "note": "'How can we sell the land?' · 'Why not sell the air, the clouds, or the ocean?'가 땅은 사고팔 수 있는 것이 아니라는 생각을 보여 줌"
+      "note": "'How can we sell the land?', 'Why not sell the air, the clouds, or the ocean?'이 공기와 구름, 바다임을 보여 줌"
     },
     {
       "id": "d118-q3",
-      "type": "세부 사실",
-      "prompt": "아메리카로 들어온 병이 원주민에게 미친 영향으로 옳은 것은?",
+      "type": "순서",
+      "prompt": "이야기에서 유럽 정착민이 점점 더 많이 들어오면서 원주민에게 일어났다고 가장 먼저 말한 일은?",
       "options": [
-        "전에 앓던 병이라 피해가 적었다",
-        "처음 겪는 병이었지만 피해는 적었다",
-        "전에 앓던 병인데도 수백만 명이 죽었다",
-        "처음 겪는 병이라 수백만 명이 죽었다"
+        "사냥하던 들짐승이 사라지기 시작했다",
+        "살던 땅을 떠나야 하게 되었다",
+        "땅 대부분을 팔거나 빼앗겼다",
+        "들어온 병으로 많은 이가 죽었다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        9,
-        10,
+        1,
+        2,
+        8,
         11
       ],
-      "note": "'suffered terribly from the diseases' · 'had never before been exposed to such diseases' · 'millions of Indians died'가 처음 겪는 병이라 수백만 명이 죽었음을 보여 줌"
+      "note": "'the Native Americans were forced to leave the land'가 먼저 나오고 'wild animals ... began to disappear', 'buy or take away most of it', 'millions of Indians died'가 뒤에 나옴"
     }
   ]
 }

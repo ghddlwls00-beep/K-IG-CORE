@@ -5,32 +5,13 @@
   "questions": [
     {
       "id": "d249-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부사실",
+      "prompt": "가장 용감한 사람들도 머리털이 곤두서는 이야기를 읽을 때면 바란다고 한 것은?",
       "options": [
-        "이야기 속 공포는 즐겁지만 지나치면 즐겁지 않다",
-        "사람들은 실제 생활에서도 겁먹는 것을 즐긴다",
-        "무서운 이야기는 밤에 혼자서 읽을 때 가장 즐겁다",
-        "탐정 이야기는 겁 많은 사람들만 즐겨 읽는다"
-      ],
-      "answer": 0,
-      "evidence": [
-        1,
-        2,
-        5,
-        8
-      ],
-      "note": "'People like to be frightened' · 'through … fiction' 이지만 'alone at night' 읽다 보면 'no longer takes any pleasure'"
-    },
-    {
-      "id": "d249-q2",
-      "type": "목적/태도",
-      "prompt": "가장 용감한 사람들도 무서운 이야기를 읽을 때 바란다고 한 것은?",
-      "options": [
-        "방의 불을 모두 켜 두는 것",
-        "방 안에 다른 사람이 있는 것",
-        "낮에 혼자 조용히 읽는 것",
-        "이야기를 소리 내어 읽는 것"
+        "방 안의 불을 환하게 켜 두는 것",
+        "방 안에 다른 누군가가 함께 있는 것",
+        "이야기를 날이 밝을 때 읽는 것",
+        "방문을 단단히 잠가 두는 것"
       ],
       "answer": 1,
       "evidence": [
@@ -39,20 +20,39 @@
       "note": "'even the bravest of men prefer to have someone else in the room with them'"
     },
     {
-      "id": "d249-q3",
-      "type": "다음에 할 일/결과",
-      "prompt": "밤에 혼자 미스터리 이야기를 읽을 때 생긴다고 한 일로 알맞은 것은?",
+      "id": "d249-q2",
+      "type": "세부사실",
+      "prompt": "밤에 혼자 미스터리를 읽을 때 어느 때보다 음산하게 들린다고 한 것은?",
       "options": [
-        "용기가 어느 때보다 커진다",
-        "바람 소리가 어느 때보다 정답게 들린다",
-        "상상력이 한층 더 활발해진다",
-        "이야기의 결말이 어느 때보다 쉽게 보인다"
+        "빗소리",
+        "시계 소리",
+        "문 삐걱대는 소리",
+        "바람 소리"
+      ],
+      "answer": 3,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'reads a mystery story alone at night' · 'the voice of the wind becomes more dismal than ever'"
+    },
+    {
+      "id": "d249-q3",
+      "type": "순서",
+      "prompt": "밤에 혼자 미스터리를 읽는 사람이 그 즐거움을 더는 느끼지 못하게 된다고 한 때로 알맞은 것은?",
+      "options": [
+        "탐정이 마침내 범인의 정체를 밝혀낼 때",
+        "머리털이 곤두서는 무서운 대목에 이를 때",
+        "방 그림자 속에 이상한 형체가 보인다고 상상할 때",
+        "읽던 이야기가 지어낸 것이 아님을 알게 될 때"
       ],
       "answer": 2,
       "evidence": [
-        5
+        5,
+        7,
+        8
       ],
-      "note": "'alone at night, one's imagination is more active than ever'"
+      "note": "'alone at night' · 'imagine that he sees mysterious shapes standing in the shadows of his room' · 'By that time, he no longer takes any pleasure'"
     }
   ]
 }

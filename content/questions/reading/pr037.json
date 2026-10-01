@@ -5,36 +5,36 @@
   "questions": [
     {
       "id": "pr037-q1",
-      "type": "main",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 사람을 잘못 이끄는 것을 막는 가장 좋은 처방으로 든 것은?",
       "options": [
-        "지식이 많을수록 사람은 실수를 덜 하게 된다",
-        "작은 지식은 위험하지만 큰 지식은 오히려 안전하다",
-        "사람을 잘못 이끄는 것은 지식에 대한 오만이다",
-        "무언가를 대충 아는 것이 가장 좋은 처방이다"
+        "자신이 모른다는 사실을 솔직히 인정하는 것",
+        "더 많은 지식을 꾸준히 쌓아 나가는 것",
+        "무언가 하나를 정말로 잘 알게 되는 것",
+        "다른 사람의 의견에 귀를 기울이는 것"
       ],
       "answer": 2,
-      "evidence": [
-        1
-      ],
-      "note": "1번 'the arrogance of knowledge, that misleads men'이 이 글의 요지이다."
-    },
-    {
-      "id": "pr037-q2",
-      "type": "vocab",
-      "prompt": "'The best remedy against this'의 'this'가 가리키는 것으로 가장 적절한 것은?",
-      "options": [
-        "사람들이 가진 지식의 양",
-        "무언가를 정말로 잘 아는 것",
-        "크거나 작은 지식",
-        "지식에 대한 오만"
-      ],
-      "answer": 3,
       "evidence": [
         1,
         2
       ],
-      "note": "2번 'The best remedy against this'의 'this'는 1번의 'the arrogance of knowledge'를 가리킨다."
+      "note": "'the arrogance of knowledge, that misleads men', 'The best remedy against this is not knowledge, but knowing something really well'"
+    },
+    {
+      "id": "pr037-q2",
+      "type": "가리키는 것",
+      "prompt": "'be it great or small'에서 'it'이 가리키는 것은?",
+      "options": [
+        "우쭐함",
+        "지식",
+        "사람",
+        "처방"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "'It is not knowledge, be it great or small, but the arrogance of knowledge'"
     }
   ]
 }

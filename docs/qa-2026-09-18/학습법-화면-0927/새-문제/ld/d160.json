@@ -8,12 +8,12 @@
       "type": "세부사실",
       "prompt": "가장 인기 있는 쉬는 방법으로 말한 것은?",
       "options": [
-        "경기장에서 경기를 구경하는 것",
-        "밖에서 경치를 즐기는 것",
-        "직접 운동에 참여하는 것",
-        "집에서 음악을 듣는 것"
+        "직접 운동 경기에 참여하는 것",
+        "야구나 농구 경기를 구경하는 것",
+        "텔레비전으로 경기를 지켜보는 것",
+        "집에서 쉬며 책을 읽는 것"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
         5,
         6
@@ -25,12 +25,12 @@
       "type": "세부사실",
       "prompt": "'All work and no play makes Jack a dull boy'라는 속담에 대해 말한 것은?",
       "options": [
-        "다른 나라에도 비슷한 속담이 있다",
-        "미국에서 요즘 새로 생긴 말이다",
-        "일을 더 열심히 하라는 뜻이다",
-        "어른들에게만 하는 말이다"
+        "미국에서 최근에 생겨난 말이다",
+        "원래 운동선수들이 쓰던 말이다",
+        "다른 나라에도 비슷한 말이 있다",
+        "미국 학교에서 처음 쓰인 말이다"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
         1,
         2
@@ -39,20 +39,19 @@
     },
     {
       "id": "d160-q3",
-      "type": "중심내용",
-      "prompt": "이 글의 요지로 가장 알맞은 것은?",
+      "type": "세부사실",
+      "prompt": "말하는 사람이 개인 운동의 예로 든 것은?",
       "options": [
-        "쉴 때는 밖에서 지내는 것이 제일 좋다",
-        "미국 사람들은 일보다 놀이를 더 좋아한다",
-        "일을 줄이면 오히려 건강을 해친다",
-        "누구나 건강하고 즐겁게 살려면 쉼이 필요하다"
+        "골프와 수영",
+        "스키와 등산",
+        "하이킹과 낚시",
+        "수영과 등산"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        3,
-        4
+        7
       ],
-      "note": "all of us need recreation · We cannot work all the time if we are going to maintain good health and enjoy life"
+      "note": "individual sports also such as golf and swimming"
     }
   ]
 }

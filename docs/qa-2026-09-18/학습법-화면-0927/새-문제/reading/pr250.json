@@ -5,38 +5,36 @@
   "questions": [
     {
       "id": "pr250-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 회사가 컨설턴트의 조언을 바탕으로 하는 일로 나온 것은?",
       "options": [
-        "회사는 외부의 도움 없이 스스로 전략을 세워야 한다",
-        "외부 컨설턴트의 조언은 회사의 목표 달성을 도울 수 있다",
-        "목표를 이루지 못한 회사는 전략을 바꾸지 않는 것이 좋다",
-        "외부 컨설턴트를 쓰면 회사의 실적이 오히려 나빠진다"
+        "회사의 전략을 다시 세운다",
+        "회사의 목표를 다시 세운다",
+        "회사의 예산을 다시 세운다",
+        "회사의 조직을 다시 짠다"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        1,
-        2,
-        4,
-        5
+        4
       ],
-      "note": "'get an outside consultant', 'on the basis of the consultant’s advice', 'get its intended results' 문장으로 확인."
+      "note": "'the company can re-plan its strategy on the basis of the consultant’s advice' 문장으로 확인."
     },
     {
       "id": "pr250-q2",
       "type": "세부 사실",
-      "prompt": "외부 컨설턴트에 대한 설명으로 글의 내용과 일치하는 것은?",
+      "prompt": "글에서 외부 컨설턴트를 두는 것이 유용할 수 있다고 한 경우는?",
       "options": [
-        "회사를 대신해 새 전략을 직접 세워 준다",
-        "회사 안에서 일하는 직원 가운데서 뽑는다",
-        "회사가 이룰 목표를 새로 정해 준다",
-        "회사의 강점과 약점을 객관적으로 분석한다"
+        "회사가 예산을 너무 많이 쓰고 있을 때",
+        "회사의 직원들이 자꾸 그만둘 때",
+        "회사가 목표를 잘 이루지 못하고 있을 때",
+        "회사의 고객들이 자꾸 항의를 할 때"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        3
+        1,
+        2
       ],
-      "note": "'more objectively analyze the company’s strengths and weaknesses' 문장으로 확인."
+      "note": "'not achieving its goals or objectives effectively', 'In this case ... useful to get an outside consultant' 문장으로 확인."
     }
   ]
 }

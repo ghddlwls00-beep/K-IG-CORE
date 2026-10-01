@@ -8,10 +8,10 @@
       "type": "세부 사실",
       "prompt": "마크 트웨인의 아내에 관해 말한 것으로 옳은 것은?",
       "options": [
-        "그의 사진만 보고 사랑에 빠졌다",
+        "그의 사진을 보고 먼저 사랑에 빠졌다",
         "그의 후기 작품에 큰 영향을 주었다",
-        "그의 강연 여행에 늘 함께 다녔다",
-        "그의 첫 작품을 대신 써 주었다"
+        "그의 강연 여행을 계획하고 함께 다녔다",
+        "그의 전기를 처음으로 써서 남겼다"
       ],
       "answer": 1,
       "evidence": [
@@ -22,35 +22,36 @@
     {
       "id": "d167-q2",
       "type": "세부 사실",
-      "prompt": "마크 트웨인이 여러 곳을 다니며 강연한 일이 가져온 결과로 말한 것은?",
+      "prompt": "'톰 소여'와 '허클베리 핀'이 독자에게 보여 준다고 한 것은?",
       "options": [
-        "그가 강연으로 번 돈으로 신문사를 사게 했다",
-        "그가 강연을 하다가 아내를 처음 만나게 했다",
-        "그를 유명하게 하고 책도 더 팔리게 했다",
-        "그가 다른 나라로 이사하게 했다"
+        "그의 어린 시절 모습",
+        "그가 살던 시대의 모습",
+        "미시시피강 주변의 자연",
+        "서부 개척지 사람들의 삶"
       ],
-      "answer": 2,
-      "evidence": [
-        4
-      ],
-      "note": "'helped make him famous and increase the sale of his books' 참고"
-    },
-    {
-      "id": "d167-q3",
-      "type": "세부 사실",
-      "prompt": "'톰 소여'와 '허클베리 핀'이 독자들에게 보여 준다고 한 것은?",
-      "options": [
-        "그가 사랑한 아내의 모습",
-        "그가 강연한 여러 주제",
-        "그가 세상을 떠나기 전 모습",
-        "그가 살던 시대의 모습"
-      ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
         5,
         6
       ],
-      "note": "'Tom Sawyer and Huckleberry Finn', 'provide his readers with an excellent picture of his era' 참고"
+      "note": "'Tom Sawyer and Huckleberry Finn' · 'provide his readers with an excellent picture of his era' 참고"
+    },
+    {
+      "id": "d167-q3",
+      "type": "세부 사실",
+      "prompt": "'톰 소여'와 '허클베리 핀'의 특징으로 든 것은?",
+      "options": [
+        "유머와 풍자",
+        "모험과 풍자",
+        "슬픔과 풍자",
+        "교훈과 풍자"
+      ],
+      "answer": 0,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'Tom Sawyer and Huckleberry Finn', 'They are marked by humor and satire' 참고"
     }
   ]
 }

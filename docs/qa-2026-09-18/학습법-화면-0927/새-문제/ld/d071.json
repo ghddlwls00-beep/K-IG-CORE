@@ -6,30 +6,30 @@
     {
       "id": "d071-q1",
       "type": "세부 사실",
-      "prompt": "휘트비가 한 일로 옳은 것은?",
+      "prompt": "노란 경고등을 본 사람으로 옳은 것은?",
       "options": [
-        "선로 옆 전화기로 갔다",
-        "경보등을 직접 고쳤다",
-        "두 번째 칸을 살폈다",
-        "밀스 대신 열차를 몰았다"
+        "밀스 혼자",
+        "밀스와 휘트비",
+        "휘트비 혼자",
+        "우체부 한 명"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        7
+        6
       ],
-      "note": "'Whitby went to a telephone beside the track'가 휘트비가 선로 옆 전화기로 간 것을 보여 줌"
+      "note": "'Mills and his helper, David Whitby, saw a yellow warning light'가 밀스와 휘트비가 경고등을 보았음을 보여 줌"
     },
     {
       "id": "d071-q2",
       "type": "세부 사실",
       "prompt": "우편물을 분류하던 우체부 67명이 있던 곳으로 옳은 것은?",
       "options": [
-        "열차 두 번째 칸",
-        "열차 맨 뒤쪽",
-        "맨 앞 조종석 옆",
-        "열차 한가운데 칸"
+        "조종석 바로 뒤의 첫 칸",
+        "한가운데 칸들",
+        "12칸에 고루 나뉜 칸들",
+        "열차의 맨 뒷부분"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         3
       ],
@@ -37,21 +37,19 @@
     },
     {
       "id": "d071-q3",
-      "type": "중심 내용",
-      "prompt": "이 글의 내용을 가장 잘 요약한 것은?",
+      "type": "세부 사실",
+      "prompt": "노란 경고등이 나타난 뒤 열차에 일어난 일로 옳은 것은?",
       "options": [
-        "한 번도 털린 적 없는 열차가 경보등을 지나쳐 달렸다",
-        "여러 번 털린 적 있는 열차가 경보등을 보고 멈췄다",
-        "한 번도 털린 적 없는 열차가 경보등을 보고 멈췄다",
-        "여러 번 털린 적 있는 열차가 경보등을 지나쳐 달렸다"
+        "속도를 줄이다가 멈춰 섰다",
+        "곧바로 그 자리에 섰다",
+        "속도를 늦춘 채 계속 달렸다",
+        "잠시 멈췄다가 다시 달렸다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        5,
-        6,
         7
       ],
-      "note": "'had run more than 100 years without being robbed', 'saw a yellow warning light', 'They slowed the train and then stopped'가 털린 적 없는 열차가 경보등을 보고 멈춘 것을 보여 줌"
+      "note": "'They slowed the train and then stopped'가 속도를 줄인 뒤 멈췄음을 보여 줌"
     }
   ]
 }

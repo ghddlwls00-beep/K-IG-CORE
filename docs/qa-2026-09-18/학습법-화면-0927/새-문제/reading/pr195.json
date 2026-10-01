@@ -5,33 +5,32 @@
   "questions": [
     {
       "id": "pr195-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은",
+      "type": "세부 사실",
+      "prompt": "이 글에서 별의 폭발 시각을 지구의 과학자와 다르게 기록할 것이라고 한 사람은",
       "options": [
-        "지구에 있는 과학자가 잰 시각만 정확하다",
-        "뉴욕과 런던 가운데 한 곳의 시각은 틀리다",
-        "모두에게 똑같은 절대적인 시간은 없다",
-        "속도가 달라도 시각은 모두 똑같이 기록된다"
+        "지구의 다른 나라에서 관측하는 과학자",
+        "그 별 가까이에서 폭발을 지켜본 사람",
+        "지구 둘레를 아주 빠르게 도는 우주인",
+        "우주의 다른 곳을 다른 속도로 지나는 사람"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        4,
-        7,
-        8
+        6,
+        7
       ],
-      "note": "근거 문장의 핵심 표현: \"Both are\", \"record the time differently\", \"no single absolute time for everyone\""
+      "note": "근거 문장의 핵심 표현: \"scientists on the earth would record the time\", \"someone traveling through another part of the universe at a very different speed would record the time differently\""
     },
     {
       "id": "pr195-q2",
       "type": "세부 사실",
-      "prompt": "이 글에서 예로 든 두 도시의 시각으로 옳은 것은",
+      "prompt": "이 글에서 축구 경기의 예로 든 두 도시의 시각으로 옳은 것은",
       "options": [
+        "뉴욕이 오전 6시일 때 런던은 오전 11시이다",
         "뉴욕이 오후 1시일 때 런던은 오후 6시이다",
-        "런던이 오후 1시일 때 뉴욕은 오후 6시이다",
-        "경기는 런던 기준 오후 1시에 시작한다",
-        "경기가 끝날 무렵 런던은 오후 6시가 된다"
+        "뉴욕이 오후 6시일 때 런던은 오후 11시이다",
+        "뉴욕이 오전 8시일 때 런던은 오후 1시이다"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
         1,
         2

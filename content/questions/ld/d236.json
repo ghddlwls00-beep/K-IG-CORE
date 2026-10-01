@@ -8,12 +8,12 @@
       "type": "세부사실",
       "prompt": "오늘날 뉴욕에서 샌프란시스코까지 비행기로 가는 데 걸리는 시간으로 가장 적절한 것은?",
       "options": [
-        "약 3시간",
-        "약 3일",
+        "약 5시간",
         "약 6시간",
-        "약 6일"
+        "약 7시간",
+        "약 8시간"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         1
       ],
@@ -21,19 +21,19 @@
     },
     {
       "id": "d236-q2",
-      "type": "목적태도",
-      "prompt": "이 글에서 개척자 이야기를 꺼낸 까닭으로 가장 적절한 것은?",
+      "type": "세부사실",
+      "prompt": "이 글에서 개척자가 오늘날을 본다면 크게 놀랄 것이라고 한 것은?",
       "options": [
-        "포장마차 여행이 더 멋졌다고 말하려고",
-        "비행기보다 기차가 더 낫다고 말하려고",
-        "개척자라면 요즘 여행을 싫어할 것이라고 말하려고",
-        "오늘날 여행이 얼마나 편해졌는지 말하려고"
+        "현대 미국인들이 여행하는 빠른 속도",
+        "현대 미국인들이 여행하는 편안한 방식",
+        "현대 미국인들이 여행하는 먼 거리",
+        "현대 미국인들이 여행하는 잦은 횟수"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
         3
       ],
-      "note": "'If one of the pioneers could see the ease and comfort with which modern Americans travel, he would be truly astonished' — 오늘날 여행의 쉬움과 편안함을 드러냄"
+      "note": "'If one of the pioneers could see the ease and comfort with which modern Americans travel, he would be truly astonished' — 여행의 편안함에 놀람"
     }
   ]
 }

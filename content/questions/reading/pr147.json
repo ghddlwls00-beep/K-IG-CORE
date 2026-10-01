@@ -5,39 +5,35 @@
   "questions": [
     {
       "id": "pr147-q1",
-      "type": "중심 생각",
-      "prompt": "글의 요지로 가장 적절한 것은?",
+      "type": "이유",
+      "prompt": "글에서 농촌 사람들이 도시로 오게 된 까닭으로 든 것은?",
       "options": [
-        "도시에 집과 일자리를 더 늘려야 한다",
-        "농촌 생활을 매력적으로 바꿔야 한다",
-        "농촌보다 도시를 먼저 발전시켜야 한다",
-        "전통적인 농사 방식을 그대로 지켜야 한다"
+        "농사지을 땅이 점점 부족해져서",
+        "농사짓는 전통적인 삶에 불만을 느껴서",
+        "농산물 값이 해마다 크게 떨어져서",
+        "가뭄이 이어져 농사를 자주 망쳐서"
       ],
       "answer": 1,
       "evidence": [
-        5,
-        6,
-        7,
-        8
+        3
       ],
-      "note": "'The only long-term solution is to make life in the rural areas more attractive', 'providing incentives', 'Facilities ... should be improved', 'doubly important' 참고"
+      "note": "'dissatisfied with the traditional life of farming' 참고"
     },
     {
       "id": "pr147-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "문장 \"This has been mainly caused by the drift of large numbers of people from the rural areas.\"에서 This가 가리키는 것은?",
+      "type": "이유",
+      "prompt": "글에서 농촌 생활을 개선하는 일이 두 배로 중요하다고 한 까닭은?",
       "options": [
-        "인구과밀 도시들이 겪는 주요 문제",
-        "사람들이 떠나온 농촌 지역",
-        "사람들이 바란 더 나은 보수",
-        "농촌을 떠나 도시로 온 사람들"
+        "농촌이 먼저 발전해야 도시도 발전할 수 있어서",
+        "농촌 인구가 해마다 빠르게 줄어들고 있어서",
+        "나라에 필요한 식량을 농촌이 대고 있어서",
+        "농촌의 오랜 전통문화를 지켜 낼 수 있어서"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        2
+        8
       ],
-      "note": "'overcrowded cities face a major problem', 'This has been mainly caused by' 참고"
+      "note": "'doubly important, because the cities themselves cannot be developed without the prior development of the rural areas' 참고"
     }
   ]
 }

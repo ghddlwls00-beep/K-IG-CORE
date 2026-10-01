@@ -8,12 +8,12 @@
       "type": "중심내용",
       "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "악수는 중세의 강도들이 처음 만들어 낸 인사이다",
-        "인사말을 줄여 말하는 것은 예의에 어긋난다",
-        "악수와 인사말에는 호의를 보이려는 마음이 담겨 있다",
-        "오늘날의 인사말은 남의 안부와 상관없는 빈말이다"
+        "악수와 인사말에는 윗사람을 높이려는 마음이 담겨 있다",
+        "악수와 인사말에는 나라마다 서로 다른 뜻이 담겨 있다",
+        "악수와 인사말에는 이제 별다른 뜻이 담겨 있지 않다",
+        "악수와 인사말에는 친근하게 대하려는 마음이 담겨 있다"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         4,
         5,
@@ -24,35 +24,35 @@
     {
       "id": "d247-q2",
       "type": "세부사실",
-      "prompt": "중세에 두 여행자가 만났을 때 손을 내민 까닭으로 알맞은 것은?",
+      "prompt": "중세에 손을 내밀어 무기를 지니지 않았음을 보였다고 한 사람들은?",
       "options": [
-        "무기가 없음을 보이려고",
-        "서로의 건강을 함께 빌어 주려고",
-        "숨어 있는 강도를 함께 쫓으려고",
-        "함께 길을 가자고 청하려고"
+        "서로 마주친 두 기사",
+        "서로 마주친 두 여행자",
+        "서로 마주친 두 병사",
+        "서로 마주친 두 수도사"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
         2,
         3
       ],
-      "note": "'During the Middle Ages' 두 여행자가 'extended their hands to show that they carried no weapons'"
+      "note": "'During the Middle Ages' · 'when two travelers met, they extended their hands to show that they carried no weapons'"
     },
     {
       "id": "d247-q3",
       "type": "세부사실",
-      "prompt": "\"goodbye\"라는 말에 대해 글에서 말한 것은?",
+      "prompt": "글에서 인사말의 예로 든 것은?",
       "options": [
-        "안부를 묻는 말을 줄인 것이다",
-        "건강하게 지내기를 바라는 말을 줄인 것이다",
-        "좋은 하루를 비는 말을 줄인 것이다",
-        "신이 함께하기를 비는 말을 줄인 것이다"
+        "'I hope you have a nice weekend'라는 말",
+        "'It is so nice to see you again'이라는 말",
+        "'I hope you are feeling well'이라는 말",
+        "'I hope we can meet again soon'이라는 말"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        6
+        5
       ],
-      "note": "'goodbye' 는 'a shortened form of God be with ye' 라고 함"
+      "note": "'Such expressions as \"How are you?\" and \"I hope you are feeling well\"'"
     }
   ]
 }

@@ -5,54 +5,53 @@
   "questions": [
     {
       "id": "d050-q1",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 생각으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "브라운 부부가 바자회와 파티에 가는 날 아이들이 스스로 해야 하는 일로 가장 알맞은 것은?",
       "options": [
-        "자선 단체에 가입해서 기금을 모으는 데 최선을 다해야 한다",
-        "다른 사람을 돕기 전에 자기 가정의 책임부터 돌보아야 한다",
-        "아이들도 부모를 도와 집안일을 스스로 해내야 한다",
-        "이웃끼리 서로의 사정을 이해하고 도와야 한다"
+        "동생들을 씻기고 재우는 일",
+        "집 안을 치우고 정리하는 일",
+        "자기들 저녁을 만들어 먹는 일",
+        "빨래를 하고 개어 두는 일"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        1,
-        2
+        6,
+        7
       ],
-      "note": "1번 “charity should begin at home” · 2번 “take care of our responsibilities at home before worrying about the responsibilities of others”라고 했다"
+      "note": "6번 “go to charity bazaars and parties” · 7번 “their children have to make dinner for themselves”라고 했다"
     },
     {
       "id": "d050-q2",
       "type": "세부 사실",
-      "prompt": "브라운 부부의 이웃들이 생각하는 것으로 가장 알맞은 것은?",
+      "prompt": "브라운 부부가 아이들을 두고 늘 하는 말로 가장 알맞은 것은?",
       "options": [
-        "부모가 집에 머물며 아이들을 돌봐야 한다",
-        "아이들이 기꺼이 부모를 도와야 한다",
-        "자선은 집을 떠나 밖에서 실천해야 한다",
-        "이웃들이 나서서 아이들을 도와야 한다"
+        "아이들은 기꺼이 도와야 한다",
+        "아이들은 혼자서도 잘 지낸다",
+        "아이들도 곧 자선을 배울 것이다",
+        "아이들은 부모를 자랑스러워해야 한다"
       ],
       "answer": 0,
       "evidence": [
         8
       ],
-      "note": "8번 “their neighbors believe that the parents should stay home and take care of the children”이라고 했다"
+      "note": "8번 “The Browns always say the children should be glad to help”라고 했다"
     },
     {
       "id": "d050-q3",
-      "type": "말한 사람의 목적/태도",
-      "prompt": "말하는 사람이 브라운 부부 이야기를 꺼낸 까닭으로 가장 알맞은 것은?",
+      "type": "가리키는 것",
+      "prompt": "말하는 사람에 따르면 자선을 하려고 집을 떠날 필요가 없다고 믿는 사람들로 가장 알맞은 것은?",
       "options": [
-        "아이들 때문에 자선 활동을 소홀히 하는 부모의 예를 들려고",
-        "이웃을 소홀히 하면 어떤 일이 생기는지 보여 주려고",
-        "모임에 다니느라 자기 아이들을 소홀히 하는 예를 들려고",
-        "바쁜 부모가 건강을 소홀히 하기 쉽다는 것을 알리려고"
+        "브라운 부부의 아이들",
+        "브라운 부부의 친척들",
+        "브라운 부부의 친구들",
+        "브라운 부부의 이웃들"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        5,
-        6,
-        7
+        8,
+        9
       ],
-      "note": "5번 “some of these people neglect their own children” · 6번 “Mr. and Mrs. Brown, for example” · 7번 “their children have to make dinner for themselves”라고 했다"
+      "note": "8번 “their neighbors believe” · 9번 “They believe that there is no need to leave one's own home in order to practice charity”라고 했다"
     }
   ]
 }

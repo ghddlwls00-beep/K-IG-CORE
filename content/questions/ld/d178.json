@@ -5,47 +5,45 @@
   "questions": [
     {
       "id": "d178-q1",
-      "type": "중심내용",
-      "prompt": "이 글이 '사진 같은 기억력'에 대해 주로 말하는 것은?",
+      "type": "세부 사실",
+      "prompt": "외국어 시를 외워 말한 그 23살 여대생은 어느 나라 대학생이었는가?",
       "options": [
-        "그런 기억력을 누구나 기르는 방법",
-        "그런 기억력이 몇 달 만에 흐려지는 까닭",
-        "그런 기억력을 지닌 사람들과 그 사례",
-        "그런 기억력을 재는 체스판 시험의 규칙"
+        "미국의 대학생",
+        "영국의 대학생",
+        "캐나다의 대학생",
+        "호주의 대학생"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        2,
-        3,
         5
       ],
-      "note": "'people who can ... remember them for the rest of their lives' · 'photographic memories' · 'A 23-year-old American college student' — 그런 사람들과 사례"
+      "note": "'A 23-year-old American college student' — 미국 대학생"
     },
     {
       "id": "d178-q2",
-      "type": "세부사실",
-      "prompt": "그 미국 여대생이 읽고 외운 시에 대해 알맞은 것은?",
+      "type": "순서",
+      "prompt": "두 과학자가 그 여대생을 위해 특별한 시험을 준비한 것은 언제인가?",
       "options": [
-        "대학에서 배운 외국어로 된 시였다",
-        "자기가 직접 지은 영어 시였다",
-        "과학자들이 골라 준 영어 시였다",
-        "배운 적 없는 외국어로 된 시였다"
+        "그녀를 며칠 동안 실험한 뒤",
+        "그녀를 몇 주 동안 실험한 뒤",
+        "그녀를 몇 달 동안 실험한 뒤",
+        "그녀를 몇 년 동안 실험한 뒤"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        5
+        8
       ],
-      "note": "'read poetry in foreign languages she had never studied' — 배운 적 없는 외국어로 된 시"
+      "note": "'After months of experiments with the young woman, two scientists prepared a special test' — 몇 달 동안의 실험 뒤"
     },
     {
       "id": "d178-q3",
       "type": "세부사실",
       "prompt": "두 과학자가 준비한 거대한 체스판 시험에서 그 여대생이 한 일로 알맞은 것은?",
       "options": [
-        "몇 분만 보고도 몇 달 뒤 모든 칸의 위치를 말했다",
-        "몇 달 동안 보고 나서 모든 칸의 위치를 말했다",
-        "몇 분만 보고 며칠 뒤 칸의 절반쯤을 말했다",
-        "몇 시간 동안 살펴보고 며칠 뒤 칸의 절반쯤을 말했다"
+        "몇 분 동안 보고 몇 달 뒤 모든 칸의 위치를 말했다",
+        "몇 시간 동안 보고 몇 달 뒤 모든 칸의 위치를 말했다",
+        "하루 동안 보고 몇 달 뒤 모든 칸의 위치를 말했다",
+        "며칠 동안 보고 몇 달 뒤 모든 칸의 위치를 말했다"
       ],
       "answer": 0,
       "evidence": [

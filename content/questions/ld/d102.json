@@ -5,58 +5,52 @@
   "questions": [
     {
       "id": "d102-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "밖에서 일하는 사람들과 함께 날씨에 관심이 많다고 든 사람들은?",
       "options": [
-        "배와 비행기의 항로를 정하는 방법",
-        "기온과 습도를 재는 기계의 원리",
-        "야외에서 일하는 사람만 날씨를 걱정하는 까닭",
-        "일기 예보의 쓸모와 예보를 만드는 과정"
+        "농부와 어부",
+        "농부와 건축가",
+        "건축가와 선원",
+        "선원과 광부"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        2,
-        3,
-        5,
-        6,
-        8,
-        10,
-        12
+        4
       ],
-      "note": "'help us plan our activities' · 'very important to people who plan the routes' · 'help save many lives' · 'prepare weather reports' · 'obtain information' · 'prepare weather maps' · 'make their predictions' — 일기 예보가 왜 쓸모 있는지와 기상학자가 예보를 만드는 과정을 말함"
+      "note": "'Farmers, builders, and other people who work outdoors are also concerned about the weather' — 농부와 건축가"
     },
     {
       "id": "d102-q2",
       "type": "세부 사실",
-      "prompt": "특수 비행기와 배가 하는 일로 알맞은 것은?",
+      "prompt": "많은 사람이 날마다 일기 예보를 확인한다고 한 곳으로 알맞은 것은?",
       "options": [
-        "날씨 정보를 모은다",
-        "폭풍 경고를 낸다",
-        "기상 위성을 쏘아 올린다",
-        "기상 기록을 보관한다"
+        "라디오·텔레비전·신문",
+        "텔레비전·인터넷·휴대 전화",
+        "라디오·잡지·인터넷",
+        "신문·잡지·휴대 전화"
       ],
       "answer": 0,
       "evidence": [
-        9
+        1
       ],
-      "note": "'Special airplanes and ships also collect information about the weather' — 특수 비행기와 배도 날씨 정보를 모음"
+      "note": "'check the weather reports on radio, television, or newspapers'"
     },
     {
       "id": "d102-q3",
-      "type": "다음에 할 일",
-      "prompt": "기상학자들이 기상 지도를 만든 다음에 하는 일로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "기상학자들이 예보를 만들고 경고를 내는 것 말고도 한다고 한 일은?",
       "options": [
-        "관측소를 새로 설치한다",
-        "날씨 예측을 내놓는다",
-        "배와 비행기의 항로를 정한다",
-        "농부들에게 일을 쉬게 한다"
+        "기상 위성을 쏘아 올린다",
+        "관측 기구를 하늘로 띄운다",
+        "날씨 기록을 남겨 둔다",
+        "관측소 장비를 고쳐 둔다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        10,
-        12
+        6,
+        7
       ],
-      "note": "'use this information to prepare weather maps' · 'study these maps and make their predictions' — 지도를 만든 다음 그것을 연구해 날씨를 예측함"
+      "note": "'They prepare weather reports' · 'give warnings ... and keep records of the weather' — 날씨 기록을 남김"
     }
   ]
 }

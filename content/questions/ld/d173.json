@@ -5,34 +5,31 @@
   "questions": [
     {
       "id": "d173-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 지금 캘리포니아에 있다고 한 고속도로와 자동차의 규모로 옳은 것은?",
       "options": [
-        "할리우드 스타들이 누리던 화려한 삶",
-        "개발을 막아 옛 모습을 지켜 낸 캘리포니아",
-        "다시 금을 캐러 몰려드는 사람들",
-        "예전과 크게 달라진 오늘날의 캘리포니아"
+        "수백 마일의 고속도로와 수백만 대의 자동차",
+        "수천 마일의 고속도로와 수천만 대의 자동차",
+        "수천 마일의 고속도로와 수백만 대의 자동차",
+        "수만 마일의 고속도로와 수십만 대의 자동차"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        1,
-        4,
-        6,
         8
       ],
-      "note": "'had become ... the movie capital of the world' · 'no longer just a movie city' · 'The California scenery has changed too' · 'superhighways ... smog' — 예전과 달라진 캘리포니아"
+      "note": "'thousands of miles of superhighways, millions of cars' — 수천 마일의 고속도로와 수백만 대의 자동차"
     },
     {
       "id": "d173-q2",
       "type": "세부 사실",
       "prompt": "글에 따르면 로스앤젤레스에서 시간을 좌우하는 것으로 옳은 것은?",
       "options": [
-        "텔레비전 회사들",
         "할리우드 영화사들",
         "공장을 가진 사람들",
-        "유명한 영화 스타들"
+        "유명한 영화 스타들",
+        "텔레비전 회사들"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
         5
       ],
@@ -44,11 +41,11 @@
       "prompt": "'heroes and heroines'(남녀 영웅)의 예로 든 배우로 옳은 것은?",
       "options": [
         "캐리 그랜트와 리타 헤이워스",
-        "존 웨인과 수전 헤이워드",
         "캐리 그랜트와 수전 헤이워드",
+        "존 웨인과 수전 헤이워드",
         "존 웨인과 리타 헤이워스"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
         1,
         2

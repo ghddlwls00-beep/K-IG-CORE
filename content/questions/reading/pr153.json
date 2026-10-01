@@ -5,39 +5,35 @@
   "questions": [
     {
       "id": "pr153-q1",
-      "type": "중심 생각",
-      "prompt": "다음 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 교향악단의 소리가 지닐 수 있는 느낌으로 언급되지 않은 것은?",
       "options": [
-        "교향악단은 파트마다 따로 연주할 때 가장 아름답다",
-        "교향악단의 음악은 여러 악기의 조화에서 나온다",
-        "작곡가는 화가보다 작품을 만들기가 더 어렵다",
-        "음악은 큰 건물 안에서 연주할 때 가장 아름답다"
+        "신비로운 느낌",
+        "슬픈 느낌",
+        "편안한 느낌",
+        "즐거운 느낌"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        2,
-        3,
-        4,
-        5,
-        6
+        2
       ],
-      "note": "'working together', 'different instruments', 'not to play section by section', 'sounding together'에서 여러 악기의 조화가 음악을 만든다고 했다"
+      "note": "'joyful or sad, exciting or relaxing'에 신비로움은 들어 있지 않다"
     },
     {
       "id": "pr153-q2",
-      "type": "낱말 뜻",
-      "prompt": "본문에서 'symphony'라는 말이 뜻하는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 교향악단의 아름다운 소리는 무엇의 결과라고 했는가?",
       "options": [
-        "파트별 연주",
-        "다양한 색",
-        "함께 울림",
-        "건물 전체"
+        "연습과 인내",
+        "재능과 노력",
+        "계획과 협력",
+        "열정과 훈련"
       ],
       "answer": 2,
       "evidence": [
-        5
+        2
       ],
-      "note": "'symphony'는 'sounding together', 곧 함께 울림을 뜻한다고 했다"
+      "note": "'the result of planning and working together'라고 했다"
     }
   ]
 }

@@ -8,28 +8,35 @@
       "type": "중심 내용",
       "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
       "options": [
-        "미국은 기후가 좋아 발전에 유리한 나라다",
-        "미국은 기후가 나빠 발전이 늦어진 나라다",
-        "기후는 나라의 발전과 거의 관계가 없다",
-        "미국은 일 년 중 절반만 살기에 알맞은 나라다"
+        "미국은 넓은 땅과 풍부한 자원 덕에 발전에 유리하다",
+        "미국은 두 바다 사이의 위치 덕에 발전에 유리하다",
+        "미국은 대부분 지역의 기후가 좋아 발전에 유리하다",
+        "미국은 강과 호수가 많아 발전에 유리하다"
       ],
-      "answer": 0,
-      "evidence": [1, 2, 3],
+      "answer": 2,
+      "evidence": [
+        1,
+        2,
+        3
+      ],
       "note": "\"very important to its development and progress\" · \"very fortunate in this respect\" · \"a good climate\""
     },
     {
       "id": "d150-q2",
       "type": "세부 사실",
-      "prompt": "매우 덥거나 추운 날씨에 대해 이 글이 말한 것으로 옳은 것은?",
+      "prompt": "이 글에서 미국의 좋은 기후를 보여 주는 것으로 든 것은?",
       "options": [
-        "사람들이 기후에 익숙해지지 못해 크게 고생한다",
-        "익숙해지기 어려워 많은 사람이 다른 곳으로 옮긴다",
-        "남쪽 사람만 익숙해지고 북쪽 사람은 고생한다",
-        "사람들이 기후에 익숙해져 크게 고생하지 않는다"
+        "거의 모든 지역에서 1년 내내 편하게 살 수 있다",
+        "거의 모든 지역에 철마다 비가 알맞게 내린다",
+        "거의 모든 지역에서 1년에 두 번 곡식을 거둔다",
+        "거의 모든 지역에서 사계절이 뚜렷하다"
       ],
-      "answer": 3,
-      "evidence": [5, 6],
-      "note": "\"very hot\" · \"very cold\" · \"become accustomed to the climate and never suffer very much\""
+      "answer": 0,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "\"it has a good climate\" · \"In almost all sections … possible to live comfortably during the whole year\""
     }
   ]
 }

@@ -5,45 +5,51 @@
   "questions": [
     {
       "id": "d192-q1",
-      "type": "세부사실",
-      "prompt": "원주민들이 사막을 떠돌아다닌 까닭으로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "원주민 추적자가 거리에서 찾은 발자국을 두고 한 말로 알맞은 것은?",
       "options": [
-        "가축에게 먹일 풀을 찾으려고",
-        "금을 캐낼 곳을 찾으려고",
-        "새로 정착할 곳을 찾으려고",
-        "먹을 것과 물을 찾으려고"
+        "도둑이 2명인 것 같다",
+        "도둑이 사막으로 달아난 것 같다",
+        "도둑이 아직 마을에 있는 것 같다",
+        "도둑의 발자국인 것 같다"
       ],
       "answer": 3,
-      "evidence": [4],
-      "note": "먹을 것과 물을 찾아 떠돎: 'wandered through the deserts in search of food and water'"
+      "evidence": [
+        11
+      ],
+      "note": "추적자의 말: 'said he thought they were the tracks of the thief'"
     },
     {
       "id": "d192-q2",
       "type": "세부사실",
       "prompt": "금 강도 사건이 일어난 곳으로 알맞은 것은?",
       "options": [
-        "오스트레일리아의 한 대도시",
+        "오스트레일리아의 한 큰 도시",
         "오스트레일리아의 한 작은 마을",
-        "오스트레일리아의 한 금광",
-        "오스트레일리아의 한 경찰서"
+        "오스트레일리아의 한 사막 금광",
+        "오스트레일리아의 한 바닷가 항구"
       ],
       "answer": 1,
-      "evidence": [9],
+      "evidence": [
+        9
+      ],
       "note": "작은 마을의 금 강도: 'A gold robbery in a small Australian town'"
     },
     {
       "id": "d192-q3",
-      "type": "세부사실",
-      "prompt": "원주민들이 살아남기 위해 기대야 했던 능력으로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "원주민들의 전통적인 생활로 이 글에서 말한 것은?",
       "options": [
-        "야생 동물을 추적하는 능력",
-        "농작물을 길러 내는 능력",
-        "독수리를 길들이는 능력",
-        "가죽 부츠를 만드는 능력"
+        "농사도 짓지 않고 가축도 치지 않았다",
+        "농작물은 심지 않고 가축은 몰고 다녔다",
+        "농작물을 조금 심고 가축은 기르지 않았다",
+        "농작물을 심었고 가축도 함께 길렀다"
       ],
       "answer": 0,
-      "evidence": [5],
-      "note": "야생 동물을 쫓는 능력에 기댐: 'depend on their ability to track down wild animals to stay alive'"
+      "evidence": [
+        3
+      ],
+      "note": "'did not plant crops and they did not keep any domesticated animals'"
     }
   ]
 }

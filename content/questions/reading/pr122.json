@@ -6,35 +6,35 @@
     {
       "id": "pr122-q1",
       "type": "세부 사실",
-      "prompt": "1989년에 일어난 일로 가장 적절한 것은?",
+      "prompt": "글에서 커피 협정이 끝난 것과 같은 때에 일어난 일로 제시된 것은?",
       "options": [
-        "콜롬비아가 커피 수출 가격을 크게 낮추었다",
-        "커피 값을 떠받치던 국제 협정이 끝났다",
-        "콜롬비아가 새 수출 작물을 기르기 시작했다",
-        "커피를 사고파는 새 국제 협정이 맺어졌다"
+        "콜롬비아의 커피 수확이 줄어든 것",
+        "다른 나라들의 커피 수출이 늘어난 것",
+        "세계의 커피 소비가 줄어든 것",
+        "콜롬비아 화폐의 가치가 오른 것"
       ],
       "answer": 1,
       "evidence": [
-        2
+        2,
+        3
       ],
-      "note": "근거: 'in 1989 an international agreement that had helped keep coffee prices high came to an end'"
+      "note": "근거: 'an international agreement ... came to an end' / 'At the same time, other countries were exporting more coffee'"
     },
     {
       "id": "pr122-q2",
-      "type": "한 단계 추론",
-      "prompt": "커피 가격이 몇 년 사이 최저로 떨어진 까닭으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 커피 값이 어느 수준까지 떨어졌다고 했는가?",
       "options": [
-        "다른 나라들이 커피 수출을 줄여서",
-        "세계 시장에서 커피가 모자라서",
-        "세계 시장에서 커피가 남아돌아서",
-        "콜롬비아가 커피 수출을 늘려서"
+        "몇 년 사이에 가장 낮은 값",
+        "생산에 드는 비용보다 낮은 수준",
+        "협정이 맺어지기 전의 수준",
+        "10년 전 값의 절반 수준"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        3,
         4
       ],
-      "note": "근거: 'more coffee on the world market than buyers needed' · 'As a result, coffee prices fell to their lowest level in years'"
+      "note": "근거: 'coffee prices fell to their lowest level in years'"
     }
   ]
 }

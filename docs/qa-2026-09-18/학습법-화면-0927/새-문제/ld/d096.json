@@ -6,30 +6,30 @@
     {
       "id": "d096-q1",
       "type": "세부 사실",
-      "prompt": "이 재난으로 숨지거나 다친 사람의 수로 옳은 것은?",
+      "prompt": "목숨을 잃을까 두려워했다고 한 사람들은?",
       "options": [
-        "100명이 숨지고 28명이 다쳤다",
-        "30명이 숨지고 100명 넘게 다쳤다",
-        "숨진 사람 없이 100명이 다쳤다",
-        "28명이 숨지고 100명 넘게 다쳤다"
+        "공장에서 밤 근무를 하던 사람들",
+        "공장에서 가장 가까이 살던 사람들",
+        "공장 아래쪽 강가 마을에 살던 사람들",
+        "연기가 몰려간 쪽 마을에 살던 사람들"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        3
+        8
       ],
-      "note": "'28 people were killed in the disaster and more than 100 were injured' — 28명 사망, 100명 넘게 부상"
+      "note": "'Those who lived closest to the factory were afraid of losing their lives'"
     },
     {
       "id": "d096-q2",
       "type": "세부 사실",
       "prompt": "폭발 뒤 사람들의 반응으로 옳은 것은?",
       "options": [
-        "모두 마을을 떠났고, 불을 끄려는 사람만 남았다",
-        "친구를 도우려는 사람도, 불구경만 하려는 사람도 있었다",
-        "모두 불구경만 했고, 친구를 도우려는 사람은 하나도 없었다",
-        "모두 불을 끄러 갔고, 불구경을 한 사람은 없었다"
+        "불을 끄러 간 사람도, 마을을 떠난 사람도 있었다",
+        "소방차를 부른 사람도, 가족을 찾아 나선 사람도 있었다",
+        "부상자를 돌보는 사람도, 공장을 탓하는 사람도 있었다",
+        "친구를 도우려는 사람도, 불구경만 하려는 사람도 있었다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         9,
         10
@@ -38,21 +38,19 @@
     },
     {
       "id": "d096-q3",
-      "type": "중심 내용",
-      "prompt": "이 강의의 중심 내용으로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "폭발로 입은 피해로 이 강의가 말한 것은?",
       "options": [
-        "공업은 발전도 위험도 가져올 수 있다",
-        "공업의 발전 덕분에 공장 사고가 줄었다",
-        "공업의 발전을 위해 위험은 참아야 한다",
-        "공업의 발전은 오염과는 아무 관계가 없다"
+        "공장은 부서지고 마을 학교의 지붕이 날아갔다",
+        "공장은 부서지고 마을 교회의 지붕이 날아갔다",
+        "공장은 부서지고 이웃 공장의 지붕이 날아갔다",
+        "공장은 부서지고 마을 몇몇 집의 지붕이 날아갔다"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        3
+        4
       ],
-      "note": "'Industry can often bring progress but it can sometimes bring pollution and other dangers' · 'A chemical factory exploded' — 발전과 함께 위험도"
+      "note": "'The factory was destroyed and the roofs of some houses in the town were torn off'"
     }
   ]
 }

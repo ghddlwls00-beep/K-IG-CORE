@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr249-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 두 친구가 앉아 있다고 한 곳은?",
       "options": [
-        "일상의 판단과 추측은 상당 부분 경험에 달려 있다",
-        "다른 정보가 없으면 아무 결론도 내리지 않는다",
-        "남자는 예외 없이 여자보다 키가 크다",
-        "경험은 일상의 판단에 거의 영향을 주지 않는다"
+        "친구의 집 거실",
+        "글쓴이의 방",
+        "글쓴이의 집 거실",
+        "친구의 방"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        6,
-        7,
-        8
+        1
       ],
-      "note": "'men tend to be taller than women', 'draw a conclusion about men and women as a whole', 'depend on your experience' 문장으로 확인."
+      "note": "'two friends of mine are sitting in my room' 문장으로 확인."
     },
     {
       "id": "pr249-q2",
@@ -28,10 +26,10 @@
       "options": [
         "165cm와 185cm",
         "155cm와 175cm",
-        "165cm와 175cm",
-        "155cm와 185cm"
+        "155cm와 185cm",
+        "165cm와 175cm"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         2
       ],

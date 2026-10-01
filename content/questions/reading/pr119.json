@@ -8,10 +8,10 @@
       "type": "세부 사실",
       "prompt": "7~12세 아이들이 자주 두려워한다고 글에 나온 것은?",
       "options": [
-        "다치거나 사고를 당하는 일",
-        "유령처럼 현실에 근거하지 않은 것",
-        "낯선 사람을 보는 일",
-        "불을 끈 채로 잠드는 일"
+        "몸을 다치거나 사고가 나는 일",
+        "시험을 망치거나 꾸중 듣는 일",
+        "친구에게 따돌림을 당하는 일",
+        "유령이나 괴물을 마주치는 일"
       ],
       "answer": 0,
       "evidence": [
@@ -21,23 +21,19 @@
     },
     {
       "id": "pr119-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글에서 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 두려움이 한 종류에만 미치는 예로, 아이가 동물원에서 쓰다듬고 싶어 한다고 한 동물은?",
       "options": [
-        "한번 생긴 두려움은 평생 사라지지 않는다",
-        "두려움은 나이가 들수록 많아진다",
-        "한 동물이 무서우면 모든 동물이 무섭다",
-        "자라면서 겁내는 대상이 바뀌기도 한다"
+        "호랑이",
+        "곰",
+        "사자",
+        "늑대"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        1,
-        2,
-        3,
-        4,
-        5
+        6
       ],
-      "note": "'Babies ... strangers' · 'aged 2 through 6 ... ghosts' · 'aged 7 through 12 ... real situations' · 'As a child grows, fears may disappear' · 'enjoy ghost stories years later' — 자라면서 겁내는 대상이 바뀜"
+      "note": "'some fears may extend only to one kind' · 'the child who wants to pet a lion at the zoo' — 사자"
     }
   ]
 }

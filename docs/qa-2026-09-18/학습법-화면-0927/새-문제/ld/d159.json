@@ -5,53 +5,51 @@
   "questions": [
     {
       "id": "d159-q1",
-      "type": "목적/태도",
-      "prompt": "말하는 사람은 막냇동생의 성냥갑(matchboxes)을 어떻게 생각하는가?",
+      "type": "세부사실",
+      "prompt": "성냥갑을 모으는 사람으로 말한 것은?",
       "options": [
-        "수천 달러의 값어치가 있다",
-        "돈이 될지 의심스럽다",
-        "너무 많이 모아서 걱정스럽다",
-        "희귀해서 값이 많이 나간다"
+        "동전 수집가의 아들",
+        "말하는 사람의 큰형",
+        "말하는 사람의 사촌 동생",
+        "말하는 사람의 막냇동생"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        5
+        4
       ],
-      "note": "I doubt if they are worth any money"
+      "note": "my youngest brother collects matchboxes"
     },
     {
       "id": "d159-q2",
       "type": "세부사실",
-      "prompt": "막냇동생을 가장 기쁘게 하는 일은?",
+      "prompt": "말하는 사람이 아는 남자가 희귀한 50센트짜리 동전을 산 때로 말한 것은?",
       "options": [
-        "성냥갑을 비싸게 파는 것",
-        "성냥갑을 친구와 바꾸는 것",
-        "모은 성냥갑을 세어 보는 것",
-        "새 성냥갑을 찾아내는 것"
+        "작년",
+        "얼마 전",
+        "지난봄",
+        "오래전"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        7
+        2
       ],
-      "note": "Nothing makes him happier than to find a new matchbox for his collection"
+      "note": "A short time ago, he bought a rare 50-cent piece"
     },
     {
       "id": "d159-q3",
-      "type": "중심내용",
-      "prompt": "말하는 사람이 전하려는 생각으로 가장 알맞은 것은?",
+      "type": "세부사실",
+      "prompt": "모은 성냥갑의 개수에 대해 말한 것은?",
       "options": [
-        "취미의 가치는 돈보다 즐거움에 있다",
-        "값비싼 수집품일수록 더 큰 기쁨을 준다",
-        "비싼 것을 모으는 사람은 수집에서 기쁨을 얻지 못한다",
-        "성냥갑도 많이 모으면 동전만큼 값이 나간다"
+        "이제 막 600개를 넘어섰다",
+        "600개를 채우고 그만두었다",
+        "600개에 조금 못 미친다",
+        "600개를 한참 넘어섰다"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        8,
-        9,
-        10
+        5
       ],
-      "note": "That's what a hobby means · simply for the fun of it · The value in dollars is not important, but the pleasure it gives us is"
+      "note": "He has almost 600 of them"
     }
   ]
 }

@@ -6,27 +6,26 @@
     {
       "id": "pr094-q1",
       "type": "세부 사실",
-      "prompt": "소금 양을 달리한 빵 실험의 결과로 가장 적절한 것은?",
+      "prompt": "실험에서 맛의 차이를 알 수 있는지 질문을 받은 사람의 수로 알맞은 것은?",
       "options": [
-        "소금이 많이 든 빵일수록 맛이 더 좋았다",
-        "60명 가운데 대부분이 소금 양을 맞혔다",
-        "사람들은 소금 양의 차이를 잘 구별하지 못했다",
-        "소금을 넣지 않은 빵이 가장 인기가 많았다"
+        "30명",
+        "60명",
+        "20명",
+        "100명"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        5,
-        6
+        4
       ],
-      "note": "'They had to guess which loaf contained the usual amount of salt' · 'only 30% of the guesses were correct, which is not different from what would be expected by chance' — 소금 양 차이를 거의 구별하지 못함"
+      "note": "'Sixty people were asked if they could tell any difference in taste' — 60명"
     },
     {
       "id": "pr094-q2",
       "type": "세부 사실",
       "prompt": "실험에서 준비한 빵에 넣은 소금의 양으로 언급되지 않은 것은?",
       "options": [
-        "보통 양",
         "10% 적은 양",
+        "보통 양",
         "20% 적은 양",
         "30% 적은 양"
       ],

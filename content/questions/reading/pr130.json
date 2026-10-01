@@ -8,10 +8,10 @@
       "type": "중심 생각",
       "prompt": "이 글의 요지로 가장 적절한 것은?",
       "options": [
-        "재미없는 일이 가장 큰 지루함을 준다",
-        "할 일이 없는 날이 가장 즐겁다",
-        "휴일이 길어야 일이 즐겁다",
-        "일은 지루함을 막고 휴일을 더 즐겁게 한다"
+        "일은 생계를 해결해 주고 휴일을 더 즐겁게 한다",
+        "일은 지루함을 막아 주고 자존감을 높여 준다",
+        "일은 생계를 해결해 주고 자존감을 높여 준다",
+        "일은 지루함을 막아 주고 휴일을 더 즐겁게 한다"
       ],
       "answer": 3,
       "evidence": [
@@ -23,18 +23,18 @@
     {
       "id": "pr130-q2",
       "type": "세부 사실",
-      "prompt": "'find more zest in his free time'의 조건으로 글에 나온 것은?",
+      "prompt": "글에서 일하는 사람이 자유 시간에 더 큰 즐거움을 누리기 위한 조건으로 든 것은?",
       "options": [
-        "쉬지 않고 밤낮으로 일하는 것",
-        "활력을 해칠 만큼 일하지 않는 것",
-        "재미있는 일만 골라서 하는 것",
-        "휴일을 되도록 자주 갖는 것"
+        "좋아하는 일을 스스로 고를 것",
+        "힘이 부칠 만큼 일하지 않을 것",
+        "일한 만큼 보수를 넉넉히 받을 것",
+        "휴일을 꼬박꼬박 보장받을 것"
       ],
       "answer": 1,
       "evidence": [
         3
       ],
-      "note": "'Provided a man does not have to work so hard as to impair his vigor' — 활력을 해칠 만큼 고되게 일하지 않는다면"
+      "note": "'Provided a man does not have to work so hard as to impair his vigor … more zest in his free time'"
     }
   ]
 }

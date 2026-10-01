@@ -6,31 +6,31 @@
     {
       "id": "d098-q1",
       "type": "세부 사실",
-      "prompt": "오염된 공기가 물질에 미치는 영향으로 이 강의가 말한 것은?",
+      "prompt": "오염을 천천히 멈추는 방법으로 이 강의가 말한 것은?",
       "options": [
-        "강철과 콘크리트 같은 강한 물질까지 상할 수 있다",
-        "강철과 콘크리트는 오염된 공기에서도 닳지 않는다",
-        "강철과 콘크리트는 깨끗한 공기에서 더 빨리 닳는다",
-        "강철과 콘크리트만 상하고 다른 물질은 괜찮다"
+        "정부가 오염을 많이 내는 공장에 세금을 물린다",
+        "시민들이 자동차 대신 버스와 기차를 탄다",
+        "기술자들이 오염을 덜 내는 공장을 개발한다",
+        "학교가 학생들에게 오염의 위험을 가르친다"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        3,
-        4
+        6,
+        7
       ],
-      "note": "'Most materials wear out more quickly in polluted air' · 'can even damage strong materials like steel and concrete' — 강한 물질까지 상함"
+      "note": "'Pollution can also be stopped slowly' · 'engineers can develop automobiles and factories that produce less pollution'"
     },
     {
       "id": "d098-q2",
       "type": "다음에 할 일",
       "prompt": "오염을 당장 멈추려면 사람들이 해야 할 일로 말한 것은?",
       "options": [
-        "사업체들이 이 문제에 신경 쓰게 설득한다",
-        "편리한 기계 여럿을 그만 쓴다",
-        "식량을 주는 식물을 더 많이 기른다",
-        "오염을 일으키는 사업체에 벌을 준다"
+        "사업체들이 오염 문제에 더 신경 쓰도록 설득한다",
+        "편리한 기계마다 오염을 거르는 장치를 단다",
+        "삶을 편하게 해 주는 기계를 많이 포기한다",
+        "오염을 많이 내는 사업체의 문을 닫게 한다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
         5
       ],
@@ -39,19 +39,18 @@
     {
       "id": "d098-q3",
       "type": "세부 사실",
-      "prompt": "오염을 천천히 멈추는 방법으로 이 강의가 말한 것은?",
+      "prompt": "오염된 공기가 맑고 신선한 공기를 어떻게 바꾼다고 했는지로 옳은 것은?",
       "options": [
-        "과학자와 엔지니어가 오염이 적은 비행기와 배를 만든다",
-        "정부가 오염을 내는 공장 문을 모두 닫게 한다",
-        "과학자와 엔지니어가 오염이 적은 차와 공장을 만든다",
-        "과학자들이 흐려진 공기를 맑게 걸러 낸다"
+        "누렇게 보이고 고약한 냄새가 나게 한다",
+        "뿌옇게 보이고 눈을 따갑게 한다",
+        "누렇게 보이고 눈을 따갑게 한다",
+        "뿌옇게 보이고 고약한 냄새가 나게 한다"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        6,
-        7
+        1
       ],
-      "note": "'Pollution can also be stopped slowly' · 'Scientists and engineers can develop automobiles and factories that produce less pollution' — 오염이 적은 차와 공장"
+      "note": "'It makes clear fresh air look cloudy and smell bad' — 뿌옇게 보이고 냄새가 나쁨"
     }
   ]
 }

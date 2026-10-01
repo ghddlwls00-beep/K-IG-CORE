@@ -5,31 +5,32 @@
   "questions": [
     {
       "id": "pr244-q1",
-      "type": "세부 사실",
-      "prompt": "다음 중 글의 내용과 일치하는 것은?",
+      "type": "순서",
+      "prompt": "글에서 수증기가 올라가며 식어 작은 물방울이 된다는 내용 바로 앞에 나온 것은?",
       "options": [
-        "물방울은 가벼워지면 비나 눈이 되어 내린다",
-        "식물의 잎에서도 수증기가 나온다",
-        "수증기는 높이 올라갈수록 따뜻해진다",
-        "땅에 내린 물은 다시 바다로 돌아가지 않는다"
+        "햇볕에 데워진 물 일부가 수증기로 올라간다",
+        "물방울이 무거워져 비나 눈으로 내린다",
+        "물이 바다로 돌아가 순환이 다시 시작된다",
+        "식물이 잎을 통해 수증기를 내보낸다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        3
+        3,
+        4
       ],
-      "note": "'Plants also release water vapor through their leaves'와 일치"
+      "note": "'Plants also release water vapor through their leaves.' 다음에 'As the vapor rises, it cools and forms tiny water droplets'"
     },
     {
       "id": "pr244-q2",
       "type": "낱말 뜻/가리키는 것",
       "prompt": "글에서 'some of it turns into water vapor'의 'it'이 가리키는 것으로 가장 적절한 것은?",
       "options": [
-        "태양",
-        "공기",
-        "식물",
-        "물"
+        "바다와 호수, 강에 있는 물",
+        "햇볕에 데워진 땅 위의 빗물",
+        "식물이 뿌리로 빨아들인 물",
+        "땅속으로 스며든 지하수"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
         2
       ],

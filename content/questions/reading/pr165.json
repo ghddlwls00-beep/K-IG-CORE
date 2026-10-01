@@ -6,37 +6,34 @@
     {
       "id": "pr165-q1",
       "type": "세부 사실",
-      "prompt": "객관식 시험에 대해 글의 내용과 일치하는 것은?",
+      "prompt": "글에서 두 가지 평가 방식이 흔히 쓰인다고 한 곳은?",
       "options": [
-        "일반 개념을 다루는 능력을 증명하게 한다",
-        "서로 관련된 적은 수의 질문으로 이루어진다",
-        "암기 부담을 줄여 준다",
-        "사실들을 기계적으로 외우게 하기 쉽다"
+        "고등학교 수업",
+        "기업의 입사 시험",
+        "국가 자격 시험",
+        "대학의 강좌"
       ],
       "answer": 3,
       "evidence": [
-        2,
-        3
+        1
       ],
-      "note": "\"The objective test\" · \"It often leads to rote memorization of isolated facts\" — 객관식 시험은 낱낱의 사실을 기계적으로 외우게 하기 쉬움"
+      "note": "\"In college and university courses ... commonly used\" — 대학 강좌에서 흔히 쓰임"
     },
     {
       "id": "pr165-q2",
-      "type": "한 단계 추론",
-      "prompt": "논술형 시험이 객관식 시험보다 나은 점으로 글에서 알 수 있는 것은?",
+      "type": "세부 사실",
+      "prompt": "객관식 시험의 질문들에 대해 글에서 말한 것은?",
       "options": [
-        "사실적 정보가 없어도 답할 수 있다",
-        "추측으로 정답을 맞히기가 어렵다",
-        "질문의 수가 훨씬 더 많다",
-        "짧은 답만 써도 충분하다"
+        "서로 관련 없는 많은 질문으로 이루어진다",
+        "난이도 순서로 놓인 많은 질문으로 이루어진다",
+        "단원별로 묶인 많은 질문으로 이루어진다",
+        "서로 이어지는 많은 질문으로 이루어진다"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        4,
-        5,
-        8
+        2
       ],
-      "note": "\"may be encouraged to guess answers\" · \"The essay exam\" · \"Mere guessing at answers is reduced to a minimum\" — 객관식은 추측을 부추기고 논술형은 추측이 최소로 줄어듦"
+      "note": "\"The objective test usually consists of a large number of unrelated questions\""
     }
   ]
 }

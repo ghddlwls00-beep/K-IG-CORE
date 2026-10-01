@@ -5,37 +5,31 @@
   "questions": [
     {
       "id": "d266-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "원시인의 동굴 벽에서 발견되는 그림은 얼마나 오래된 것이라고 말했는가?",
       "options": [
-        "전화와 전신 같은 통신 수단의 발달 과정",
-        "말로 못 할 것을 표현해 온 미술의 오랜 역사",
-        "원시 화가들이 쓴 물감을 만드는 방법",
-        "원시인이 쓰던 언어와 문자의 모습"
+        "몇백 년 된 것",
+        "몇천 년 된 것",
+        "10000년도 넘은 것",
+        "100000년도 넘은 것"
       ],
       "answer": 1,
       "evidence": [
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9
+        6
       ],
-      "note": "'a desire to express things that cannot be put into words' · 'The visual arts ... help to satisfy this desire' · 'Even primitive man indulged in art' — 말로 못 하는 것을 나타내는 미술은 원시인 때부터 이어짐"
+      "note": "'sketches of animals and birds that are thousands of years old'"
     },
     {
       "id": "d266-q2",
       "type": "세부 사실",
       "prompt": "원시인의 동굴 벽에서 발견된다고 말한 것은?",
       "options": [
-        "동물과 새를 그린 그림",
-        "사람을 새겨 넣은 조각",
-        "글자로 적어 둔 기록",
-        "색을 칠해 만든 지도"
+        "사람과 동물들을 그린 그림",
+        "동물과 새들을 그린 그림",
+        "새와 나무들을 그린 그림",
+        "나무와 사람들을 그린 그림"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
         6
       ],
@@ -44,18 +38,18 @@
     {
       "id": "d266-q3",
       "type": "세부 사실",
-      "prompt": "원시 화가의 기술에 대해 말한 것으로 옳은 것은?",
+      "prompt": "사람이 언어를 전하려고 고안해 낸 수단의 예로 든 것은?",
       "options": [
-        "모든 그림에서 고루 발달해 있었다",
-        "아직 거의 발달하지 못했다",
-        "어떤 경우에는 꽤 발달해 있었다",
-        "현대 화가보다 더 발달해 있었다"
+        "라디오와 전신",
+        "신문과 전신",
+        "텔레비전과 전신",
+        "전화와 전신"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        7
+        2
       ],
-      "note": "'In some cases the technique of the primitive artist was rather advanced' — 어떤 경우에는 꽤 발달해 있었음"
+      "note": "'devise language and the means of communicating language such as the telephone and telegraph'"
     }
   ]
 }

@@ -5,31 +5,32 @@
   "questions": [
     {
       "id": "d166-q1",
-      "type": "세부 사실",
-      "prompt": "말한 사람은 새뮤얼 랭혼 클레멘스를 어떻게 소개했는가?",
+      "type": "가리키는 것",
+      "prompt": "'At that time'이 가리키는 것은?",
       "options": [
-        "미국 문학에서 가장 많은 책을 쓴 작가",
-        "미국 문학에서 처음으로 필명을 쓴 작가",
-        "미국 문학에서 가장 사랑받는 작가",
-        "미국 문학에서 가장 늦게 이름을 알린 작가"
+        "남북 전쟁이 벌어지던 때",
+        "미시시피강가에서 자라던 때",
+        "필명을 처음 쓰기 시작한 때",
+        "'톰 소여'를 쓰던 때"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        1
+        5,
+        6
       ],
-      "note": "'No author in American literature is better known or more loved' 참고"
+      "note": "'It was during the Civil War that Mark Twain's life as a writer started' · 'At that time, he was working as a newspaper man' 참고"
     },
     {
       "id": "d166-q2",
       "type": "세부 사실",
       "prompt": "남북 전쟁 동안 마크 트웨인이 하던 일은?",
       "options": [
-        "미시시피강의 뱃사람",
-        "강의 깊이를 재는 측량사",
-        "학교 선생님",
-        "신문 기자"
+        "네바다와 캘리포니아의 은광 광부",
+        "미시시피강 증기선의 수로 안내인",
+        "네바다와 캘리포니아의 신문 기자",
+        "네바다와 캘리포니아를 도는 강연자"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         5,
         6
@@ -39,18 +40,18 @@
     {
       "id": "d166-q3",
       "type": "세부 사실",
-      "prompt": "마크 트웨인에게 곧바로 성공을 안겨 준 작품은 어떤 글이었는가?",
+      "prompt": "강가의 환경이 영감을 주었다고 한 두 작품은?",
       "options": [
-        "단편 소설",
-        "장편 소설",
-        "여행기",
-        "시집"
+        "'톰 소여'와 '미시시피강의 생활'",
+        "'허클베리 핀'과 '미시시피강의 생활'",
+        "'톰 소여'와 '허클베리 핀'",
+        "'미시시피강의 생활'과 '뛰어오르는 개구리'"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        7
+        3
       ],
-      "note": "'His short story ... was an immediate success' 참고"
+      "note": "'The river environment inspired the two novels ..., Tom Sawyer and Huckleberry Finn' 참고"
     }
   ]
 }

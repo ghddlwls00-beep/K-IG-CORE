@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "pr219-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 엄격한 가정에 대해 말한 것으로 옳은 것은?",
       "options": [
-        "말다툼은 무례한 일이므로 가정에서 막아야 한다",
-        "건강하게 자라는 청소년은 말다툼을 하지 않는다",
-        "말다툼은 엄격한 가정에서만 볼 수 있는 일이다",
-        "말다툼은 청소년이 자라며 꼭 해야 하는 일이다"
+        "자녀의 말다툼이 오히려 더 잦은 편이다",
+        "말다툼을 무례한 일로 여기는 편이다",
+        "자녀가 말다툼을 더 늦게 시작하는 편이다",
+        "말다툼의 수준이 더 빨리 높아지는 편이다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        2,
-        5
+        1
       ],
-      "note": "'a way of life with normally developing youths', 'something that adolescents need to do'가 근거"
+      "note": "'Argument is often considered disrespectful in rigid families'가 근거"
     },
     {
       "id": "pr219-q2",
       "type": "세부 사실",
-      "prompt": "이 글에 따르면 청소년이 자라면서 말다툼에 나타나는 변화로 옳은 것은?",
+      "prompt": "이 글에 따르면 청소년이 무엇에 대해서든 부모와 말다툼을 벌이는 시기로 언급된 것은?",
       "options": [
-        "양과 질이 모두 늘어난다",
-        "양은 줄고 질은 높아진다",
-        "양은 늘고 질은 낮아진다",
-        "양과 질이 모두 줄어든다"
+        "사춘기 직전",
+        "청소년기 중반",
+        "청소년기 초기",
+        "청소년기 후반"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        4
+        3
       ],
-      "note": "'the quantity of argument decreases but the quality increases'가 근거"
+      "note": "'In early adolescence they'll argue with their parents about anything'가 근거"
     }
   ]
 }

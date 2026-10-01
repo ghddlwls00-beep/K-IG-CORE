@@ -5,32 +5,31 @@
   "questions": [
     {
       "id": "d064-q1",
-      "type": "중심 내용",
-      "prompt": "사회적 관습에 대한 이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "식사 예절에 관해 글에서 던진 질문으로 알맞은 것은?",
       "options": [
-        "관습은 오랜 세월이 흘러도 그대로다",
-        "관습은 식사 자리에서만 지키면 된다",
-        "관습은 시대와 나라에 따라 달라진다",
-        "관습은 어느 나라에서나 똑같다"
+        "칼과 포크를 어느 손에 쥐어야 하는지",
+        "먹을 때 두 손을 다 써야 하는지",
+        "먹기 전에 손을 씻고 앉아야 하는지",
+        "빵을 손으로 뜯어 먹어도 되는지"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        1,
-        4
+        5
       ],
-      "note": "'Social customs and ways of behaving change'와 'Customs also differ from country to country'가 관습이 시대와 나라에 따라 달라짐을 보여줌"
+      "note": "'What about table manners? Should you use both hands when you are eating?'가 식사 예절에 관한 질문임"
     },
     {
       "id": "d064-q2",
       "type": "세부 사실",
       "prompt": "몇 년 전만 해도 남자가 담배를 피우면 무례한 행동으로 여겨졌던 장소로 언급된 것은?",
       "options": [
-        "길거리",
         "식당 안",
         "기차 안",
-        "사무실 안"
+        "극장 안",
+        "길거리"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
         2
       ],

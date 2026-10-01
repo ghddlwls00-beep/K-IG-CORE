@@ -5,36 +5,36 @@
   "questions": [
     {
       "id": "pr242-q1",
-      "type": "세부 사실",
-      "prompt": "다음 중 글의 내용과 일치하는 것은?",
+      "type": "순서",
+      "prompt": "글에서 햇빛이 공기 속 작은 기체 분자에 부딪친다는 내용 바로 앞에 나온 것은?",
       "options": [
-        "햇빛은 사실 한 가지 색으로만 되어 있다",
-        "빨간빛은 파란빛보다 파장이 짧다",
-        "햇빛은 공기 속 기체 분자와 부딪치지 않는다",
-        "해 질 녘에는 햇빛이 더 많은 공기를 지나온다"
-      ],
-      "answer": 3,
-      "evidence": [
-        6
-      ],
-      "note": "'At sunset, sunlight passes through much more air before it reaches us'와 일치"
-    },
-    {
-      "id": "pr242-q2",
-      "type": "한 단계 추론",
-      "prompt": "글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
-      "options": [
-        "사방에서 눈에 닿는 파란빛 때문에 하늘이 파랗다",
-        "해 질 녘 하늘이 붉은 것은 빨간빛이 잘 흩어져서이다",
-        "빨간빛은 파장이 길어서 파란빛보다 더 잘 흩어진다",
-        "햇빛은 공기에 들어가기 전부터 파란빛을 띤다"
+        "파란빛이 빨간빛보다 파장이 짧다는 점",
+        "햇빛이 여러 색이 섞인 빛이라는 점",
+        "기체 분자가 파란빛을 흩뜨린다는 점",
+        "파란빛이 사방에서 눈에 닿는다는 점"
       ],
       "answer": 0,
       "evidence": [
-        4,
-        5
+        2,
+        3
       ],
-      "note": "'scatter short blue waves much more strongly' · 'blue light is spread across the whole sky' · 'it reaches our eyes from every direction'에서 하늘이 파랗게 보이는 까닭을 추론"
+      "note": "'blue light has a shorter wavelength than red light' 다음에 'When sunlight enters the air, it hits tiny gas molecules'"
+    },
+    {
+      "id": "pr242-q2",
+      "type": "가리키는 것",
+      "prompt": "글에서 'before it reaches us'의 'it'이 가리키는 것으로 알맞은 것은?",
+      "options": [
+        "파란빛",
+        "햇빛",
+        "빨간빛",
+        "노을빛"
+      ],
+      "answer": 1,
+      "evidence": [
+        6
+      ],
+      "note": "'sunlight passes through much more air before it reaches us'"
     }
   ]
 }

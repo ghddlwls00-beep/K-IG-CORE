@@ -5,37 +5,36 @@
   "questions": [
     {
       "id": "pr227-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "중심 내용",
+      "prompt": "이 글에서 글쓴이가 바로잡으려는 사람들의 생각으로 가장 적절한 것은?",
       "options": [
-        "담요는 얼음이 녹지 않게 하는 데만 쓰인다",
-        "담요는 열이 통과하지 못하게 막아 준다",
-        "공기의 열은 담요를 지나 얼음으로 들어간다",
-        "담요는 몸의 열을 바깥 공기 쪽으로 내보낸다"
+        "담요는 언제나 무언가를 따뜻하게 한다는 생각",
+        "찬 공기가 담요 틈으로 스며든다는 생각",
+        "두꺼운 담요일수록 열을 더 많이 낸다는 생각",
+        "젖은 담요는 열을 막아 주지 못한다는 생각"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
+        3,
         4
       ],
-      "note": "'what a blanket always does is to prevent heat from passing through one side of it to the other' — 담요는 열이 통과하는 것을 막는다"
+      "note": "'Expecting that a blanket will always make something warm' / 'But what a blanket always does is to prevent heat from passing' — 늘 따뜻하게 한다는 기대를 바로잡음"
     },
     {
       "id": "pr227-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글에서 사람들이 놀라는 이유로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 사람들이 담요로 덮어 두는 것을 보고 놀란다고 한 것은 무엇인가?",
       "options": [
-        "담요를 평소에 거의 써 본 적이 없기 때문에",
-        "얼음이 공기보다 따뜻하다고 알고 있기 때문에",
-        "추위를 막는 데 담요가 쓸모없다고 생각하기 때문에",
-        "담요가 늘 무언가를 따뜻하게 한다고 믿기 때문에"
+        "아이스크림",
+        "냉동 고기",
+        "찬 음료",
+        "얼음"
       ],
       "answer": 3,
       "evidence": [
-        1,
-        2,
-        3
+        2
       ],
-      "note": "'accustomed to using blankets to make themselves warm' · 'surprised' · 'Expecting that a blanket will always make something warm' — 늘 따뜻하게 한다고 기대해서 놀란다"
+      "note": "'surprised to see blankets used to keep ice cold' — 얼음을 차갑게 지키는 데 쓰이는 것"
     }
   ]
 }

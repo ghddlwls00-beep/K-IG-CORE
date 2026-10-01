@@ -5,38 +5,37 @@
   "questions": [
     {
       "id": "d004-q1",
-      "type": "중심 내용",
-      "prompt": "말하는 사람이 주로 이야기하는 것으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "말하는 사람이 자기 도시에 새로 생겼다고 말한 것은?",
       "options": [
-        "남미 여러 나라의 산업 비교",
-        "브라질이 안고 있는 여러 문제",
-        "브라질 사람들의 하루 생활",
-        "자기 나라에 대한 소개"
+        "종합 병원",
+        "대학교",
+        "공항",
+        "기차역"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        1,
-        3,
-        6,
-        10
+        9
       ],
-      "note": "'I live in Brazil', 'a lot of industries', 'many large cities', 'a very good school system'처럼 브라질의 여러 모습을 소개함."
+      "note": "'we have a beautiful new airport'에서 알 수 있음."
     },
     {
       "id": "d004-q2",
       "type": "세부 사실",
-      "prompt": "말하는 사람이 사는 도시에 대한 설명으로 옳은 것은?",
+      "prompt": "말하는 사람이 자기 도시에서 좋지 않다고 말한 것은?",
       "options": [
-        "브라질 북동부에 있다",
-        "버스 교통이 아주 편리하다",
-        "병원은 없고 진료소만 있다",
-        "아주 크지도 작지도 않다"
+        "버스 교통",
+        "병원 시설",
+        "학교 제도",
+        "공항 시설"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        7
+        8,
+        9,
+        10
       ],
-      "note": "'It's not a very large city, but it's not a small one either'에서 도시의 크기를 알 수 있음."
+      "note": "'a fine hospital', 'Our bus system is not very good', 'a beautiful new airport', 'a very good school system'에서 알 수 있음."
     },
     {
       "id": "d004-q3",
@@ -44,11 +43,11 @@
       "prompt": "말하는 사람에 대한 설명으로 옳은 것은?",
       "options": [
         "의학을 공부하는 대학생이다",
-        "법학을 공부하는 대학생이다",
-        "고등학교에 다니는 학생이다",
-        "경제학을 전공하는 대학원생이다"
+        "경제학을 공부하는 대학생이다",
+        "농업을 공부하는 대학생이다",
+        "법학을 공부하는 대학생이다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         10
       ],

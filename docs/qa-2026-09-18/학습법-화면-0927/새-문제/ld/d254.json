@@ -5,52 +5,52 @@
   "questions": [
     {
       "id": "d254-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "가리키는 것",
+      "prompt": "지원자 쪽에서 약간의 유머를 보여도 어울린다고 말한 경우는?",
       "options": [
-        "면접에서는 누구에게나 활기를 보여야 한다",
-        "면접관의 성격을 살펴 그에 맞게 처신해야 한다",
-        "면접관은 대개 지원자를 놀리기를 즐긴다",
-        "면접관이 조용하면 지원자가 분위기를 바꿔야 한다"
+        "면접관이 조용하고 진지한 사람일 때",
+        "면접관이 쾌활하고 활기찬 사람일 때",
+        "면접관이 지원자를 놀리기 즐기는 사람일 때",
+        "면접관이 말수가 적고 엄격한 사람일 때"
       ],
-      "answer": 1,
-      "evidence": [
-        1
-      ],
-      "note": "'take into consideration the character of the interviewer and to adjust oneself to him' — 면접관의 성격에 자신을 맞추는 것이 현명함"
-    },
-    {
-      "id": "d254-q2",
-      "type": "말한 사람의 목적/태도",
-      "prompt": "지원자의 유머에 대해 글에서 말한 것으로 가장 적절한 것은?",
-      "options": [
-        "면접관이 쾌활하다면 마음껏 보여도 된다",
-        "원만한 인격을 보이려면 많을수록 좋다",
-        "어떤 경우에도 면접 자리에 어울리지 않는다",
-        "면접관이 놀리기를 즐긴다면 약간은 괜찮다"
-      ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         4,
         6
       ],
-      "note": "'Some interviewers delight in teasing' · 'a little humor on the part of the applicant would not be out of place' — 놀리는 면접관이라면 약간의 유머는 괜찮음"
+      "note": "'Some interviewers delight in teasing' … 'In such cases, a little humor … would not be out of place'"
+    },
+    {
+      "id": "d254-q2",
+      "type": "세부 사실",
+      "prompt": "면접관이 무엇으로서 일정한 특권을 지닌다고 말했는가?",
+      "options": [
+        "회사의 대표로서",
+        "지원자의 선배로서",
+        "질문하는 사람으로서",
+        "고용주로서"
+      ],
+      "answer": 3,
+      "evidence": [
+        8
+      ],
+      "note": "'the interviewer as an employer has certain prerogatives'"
     },
     {
       "id": "d254-q3",
       "type": "세부 사실",
-      "prompt": "면접관에 대해 지원자가 명심해야 한다고 말한 것은?",
+      "prompt": "지원자가 약간의 기백을 보이기를 기대할 것이라고 말한 면접관은?",
       "options": [
-        "고용주로서 일정한 권한이 있다는 것",
-        "지원자와 똑같은 권한만 있다는 것",
-        "면접이 끝나면 권한이 사라진다는 것",
-        "지원자의 태도에 따라 권한이 달라진다는 것"
+        "쾌활하고 활기찬 면접관",
+        "조용하고 진지한 면접관",
+        "지원자를 놀리기 즐기는 면접관",
+        "말수가 적고 엄격한 면접관"
       ],
       "answer": 0,
       "evidence": [
-        8
+        3
       ],
-      "note": "'keep in mind that the interviewer as an employer has certain prerogatives' — 고용주로서 일정한 권한이 있음"
+      "note": "'if he is robust and jovial, he will probably expect the applicant to display a little spirit'"
     }
   ]
 }

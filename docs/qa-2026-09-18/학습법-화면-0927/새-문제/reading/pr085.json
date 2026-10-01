@@ -9,11 +9,11 @@
       "prompt": "코에 있는 점에 대한 설명으로 옳은 것은?",
       "options": [
         "돈복이 있고 일에서 성공한다는 뜻이다",
-        "모든 점 가운데 가장 귀하게 여겨진다",
         "의지가 강하고 믿을 만한 사람이라는 뜻이다",
-        "재능과 건강과 행복을 예고한다"
+        "재능이 많고 건강하게 산다는 뜻이다",
+        "마음이 여리고 남을 잘 돕는다는 뜻이다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         5
       ],
@@ -21,20 +21,19 @@
     },
     {
       "id": "pr085-q2",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "옛 미신에서 가장 바라는 점으로 꼽은 것은 어디에 난 점인가?",
       "options": [
-        "옛 미신에 따르면 점이 성격과 앞날을 알려 준다",
-        "옛 미신에 따르면 점이 많은 사람일수록 운이 나쁘다",
-        "옛 미신에 따르면 손에 난 점은 운이 나쁘다는 뜻이다",
-        "옛 미신에 따르면 점의 색깔로 병을 알아낸다"
+        "코에 난 점",
+        "턱에 난 점",
+        "손에 난 점",
+        "오른쪽 눈썹 위에 난 점"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        4,
-        6
+        8
       ],
-      "note": "4번 'According to ancient superstitions, moles reveal a person’s character', 6번 'Moles are also believed to foretell the future'"
+      "note": "8번 'A mole on the hand, however, is the most desired'"
     }
   ]
 }

@@ -5,32 +5,31 @@
   "questions": [
     {
       "id": "pr142-q1",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 성공적인 팀워크의 열쇠로 든 것은?",
       "options": [
-        "직원의 성과는 혼자 해낸 일의 양으로만 평가된다",
-        "좋은 매너는 팀워크와 별 관계가 없다",
-        "협력하지 못하는 직원은 평가에서 불리하다",
-        "고용주는 자기 일에 자부심이 강한 직원을 꺼린다"
+        "존중, 예의, 사려 깊은 행동",
+        "소통, 신뢰, 책임 있는 행동",
+        "성실, 인내, 정직한 행동",
+        "열정, 창의, 적극적인 행동"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        3,
-        6
+        5
       ],
-      "note": "'employers always consider teamwork when they judge' · 'working well with others is one of the most important job skills' — 협력하지 못하면 평가에서 불리함"
+      "note": "'Respect, good manners, and thoughtful behaviors are keys to successful teamwork'"
     },
     {
       "id": "pr142-q2",
       "type": "낱말 뜻/가리키는 것",
       "prompt": "글에서 'These behaviors'가 가리키는 것으로 가장 적절한 것은?",
       "options": [
-        "사려 깊게 배려하는 행동",
-        "서로 돕고 격려하는 행동",
-        "직원의 성과를 평가하는 행동",
-        "지각하거나 남을 귀찮게 하는 행동"
+        "일을 미루거나 대충 처리하는 행동",
+        "잡담하거나 자리를 자주 비우는 행동",
+        "늦게 오거나 남을 성가시게 하는 행동",
+        "회의에 빠지거나 혼자 일하는 행동"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         1,
         2

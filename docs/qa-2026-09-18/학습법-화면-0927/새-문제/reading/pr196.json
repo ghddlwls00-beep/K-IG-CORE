@@ -8,10 +8,10 @@
       "type": "중심 생각",
       "prompt": "이 글의 요지로 가장 적절한 것은",
       "options": [
-        "지식이 적을 때 오히려 생각을 더 잘한다",
-        "생각을 잘하는 데에는 지식이 큰 도움이 된다",
-        "지식과 생각하는 힘은 서로 관계가 없다",
-        "호기심은 생각을 방해하므로 줄여야 한다"
+        "생각을 잘하는 데에는 다른 사람과의 토론이 큰 도움이 된다",
+        "생각을 잘하는 데에는 풍부한 지식이 큰 도움이 된다",
+        "생각을 잘하는 데에는 충분한 휴식이 큰 도움이 된다",
+        "생각을 잘하는 데에는 꾸준한 글쓰기가 큰 도움이 된다"
       ],
       "answer": 1,
       "evidence": [
@@ -23,20 +23,19 @@
     },
     {
       "id": "pr196-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은",
+      "type": "세부 사실",
+      "prompt": "이 글에서 지식이 적을 때보다 많을 때 더 나은 성과를 낸다고 한 사람은",
       "options": [
-        "생각하는 기술을 익히면 지식은 적어도 된다",
-        "지식이 늘어날수록 생각할 필요는 줄어든다",
-        "지식을 늘려도 호기심은 커지지 않는다",
-        "지식이 많아도 생각하는 기술은 필요하다"
+        "생각하는 기술을 기르고 있는 사람",
+        "호기심을 키워 가고 있는 사람",
+        "이미 많은 지식을 쌓아 둔 사람",
+        "생각이 필요한 곳을 잘 아는 사람"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        2,
         3
       ],
-      "note": "근거 문장의 핵심 표현: \"not necessarily a good thinker\", \"developing good techniques for thinking\", \"a better job with much knowledge\""
+      "note": "근거 문장의 핵심 표현: \"the person who is developing good techniques for thinking will do a better job with much knowledge than he would with little\""
     }
   ]
 }

@@ -5,32 +5,31 @@
   "questions": [
     {
       "id": "pr027-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 거창한 계획에 대해 한 말로 언급된 것은?",
       "options": [
-        "미래의 꿈은 접어 두고 오늘만 생각하며 살아라",
-        "현실적 목표를 세워 한 걸음씩 나아가라",
-        "원대한 계획을 세울수록 꿈을 이루기 쉬워진다",
-        "다른 사람의 조언에 따라 계획을 자주 바꿔라"
+        "남에게 보여 주기는 좋지만 실속이 없다",
+        "꿈을 키워 주지만 이루는 데 오래 걸린다",
+        "처음엔 막막해도 나누어 하면 이룰 수 있다",
+        "재미는 있지만 이룰 수 없다면 도움이 안 된다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        1,
-        5
+        2
       ],
-      "note": "1번 'Don't wish your life away making impossible plans', 5번 'Set yourself realistic goals ... one step at a time'이 근거"
+      "note": "'Grand plans are fun, but not really helpful if you can't achieve them'"
     },
     {
       "id": "pr027-q2",
       "type": "세부 사실",
       "prompt": "이 글에서 불가능한 일을 이루려 애쓸 때 생기는 결과로 언급된 것은?",
       "options": [
-        "목표를 더 빨리 이루게 된다",
-        "다른 사람들이 도와주기 시작한다",
-        "걱정이 사라지고 마음이 편해진다",
-        "새로운 불안이 많이 생겨난다"
+        "주변 사람들과의 관계가 멀어지게 된다",
+        "새 걱정과 불안이 잇따라 생겨난다",
+        "다른 일에 쓸 시간과 힘이 모자라게 된다",
+        "작은 성공에도 만족하지 못하게 된다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
         3,
         4

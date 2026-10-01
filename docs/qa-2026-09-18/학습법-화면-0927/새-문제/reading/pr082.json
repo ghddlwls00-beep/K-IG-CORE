@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "pr082-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "가리키는 것",
+      "prompt": "그 사람이 겪는 일을 그대로 보고 느낄 수 있다고 글쓴이가 말한 대상은 누구인가?",
       "options": [
-        "글쓴이는 십 대 소녀의 마음을 이해하기 어렵다고 말한다",
-        "글쓴이는 어른이 된 지금도 사소한 일에 자주 화낸다",
-        "글쓴이는 십 대 소녀에게 화를 참는 법을 알려 준다",
-        "글쓴이는 십 대 때 감정을 다스리지 못해 힘들었다"
-      ],
-      "answer": 3,
-      "evidence": [
-        2,
-        3,
-        6
-      ],
-      "note": "2번 'feeling very frustrated and confused sometimes in my teens', 3번 'my emotions swinging from one extreme to another', 6번 'absolutely no control over these feelings'"
-    },
-    {
-      "id": "pr082-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "이 글에서 'emotions swinging from one extreme to another'가 뜻하는 바로 가장 적절한 것은?",
-      "options": [
-        "기분이 극과 극을 오가는 것",
-        "한 가지 감정이 오래 이어지는 것",
-        "남의 감정을 그대로 따라 느끼는 것",
-        "감정을 겉으로 드러내지 않는 것"
+        "한 십 대 소녀",
+        "한 십 대 소년",
+        "한 어린 소녀",
+        "한 젊은 여성"
       ],
       "answer": 0,
       "evidence": [
-        3
+        1
       ],
-      "note": "3번 'I can also remember my emotions swinging from one extreme to another'"
+      "note": "1번 'You can see and feel exactly what this teenage girl is going through'"
+    },
+    {
+      "id": "pr082-q2",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 십 대 때 가끔 느꼈다고 기억하는 감정으로 옳은 것은?",
+      "options": [
+        "외롭고 서글픈 기분",
+        "불안하고 초조한 기분",
+        "답답하고 혼란스러운 기분",
+        "부끄럽고 창피한 기분"
+      ],
+      "answer": 2,
+      "evidence": [
+        2
+      ],
+      "note": "2번 'I can remember feeling very frustrated and confused sometimes in my teens'"
     }
   ]
 }

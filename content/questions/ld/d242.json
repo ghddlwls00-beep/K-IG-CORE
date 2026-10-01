@@ -5,31 +5,29 @@
   "questions": [
     {
       "id": "d242-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "순서",
+      "prompt": "글쓴이가 많은 사람이 미식축구를 잘 아는 척하기를 좋아한다고 말하기 바로 앞에 한 말은?",
       "options": [
-        "미식축구는 볼거리가 적어서 경기를 이해하는 사람만 즐긴다",
-        "미식축구의 응원과 군악은 경기 이해를 방해한다",
-        "미식축구는 복잡하지만 많은 사람이 볼거리 때문에 즐긴다",
-        "미식축구는 전투만큼 복잡해서 보러 가는 사람이 적다"
+        "미식축구의 복잡한 내용을 제대로 아는 사람은 드물다",
+        "응원과 색깔과 음악이 어우러져 경기 분위기를 만든다",
+        "미식축구는 전쟁의 전투만큼이나 복잡한 경기이다",
+        "볼거리가 없다면 경기를 보러 가지 않을 사람도 있다"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        2,
-        3,
         5
       ],
-      "note": "'almost as complicated as a battle of war' · 'few people who can really understand the intricacies of this sport, but many enjoy it for its spectacle' · 'If it weren't for the spectacle, some people wouldn't go to football games'"
+      "note": "'If it weren't for the spectacle, some people wouldn't go to football games. Many people, however, like to let on that they understand football.'"
     },
     {
       "id": "d242-q2",
       "type": "말한 사람의 목적/태도",
       "prompt": "글쓴이가 미식축구를 전쟁의 전투에 빗댄 까닭으로 가장 적절한 것은?",
       "options": [
-        "미식축구의 볼거리가 그만큼 화려하다는 것을 보여 주려고",
-        "미식축구가 그만큼 복잡하다는 것을 보여 주려고",
-        "미식축구의 응원이 그만큼 요란하다는 것을 보여 주려고",
-        "밴드의 군악이 그만큼 힘차다는 것을 보여 주려고"
+        "선수들의 몸싸움이 그만큼 거칠고 위험하다는 것을 보여 주려고",
+        "미식축구가 그만큼 복잡하고 어렵다는 것을 보여 주려고",
+        "미식축구의 응원이 그만큼 요란하고 뜨겁다는 것을 보여 주려고",
+        "밴드의 음악이 그만큼 씩씩하고 힘차다는 것을 보여 주려고"
       ],
       "answer": 1,
       "evidence": [

@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "d228-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "해마다 국립공원에 몰려든다고 글쓴이가 말한 미국인의 수는?",
       "options": [
-        "미국의 국립공원은 아름답지만 캠핑 시설이 없다",
-        "미국에는 국립공원보다 더 아름다운 공원이 많다",
-        "미국의 국립공원은 어느 곳보다 아름답고 즐길 거리도 많다",
-        "미국의 국립공원은 아름답지만 미국인보다 외국인이 더 많이 찾는다"
+        "수십만 명",
+        "수백만 명",
+        "수천만 명",
+        "수억 명"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        1,
-        3,
-        4
+        2
       ],
-      "note": "'the national parks are the most beautiful of all' · 'excellent camping facilities' · 'many good fishing spots and fine trails for hiking' — 국립공원은 가장 아름답고 캠핑 · 낚시 · 하이킹을 즐길 수 있다"
+      "note": "'Every year millions of Americans flock to the national parks' — 수백만 명"
     },
     {
       "id": "d228-q2",
       "type": "세부 사실",
-      "prompt": "국립공원에서 1주일 휴가를 보낸 도시 사람에 대한 설명으로 옳은 것은?",
+      "prompt": "글쓴이가 도시 사람이 국립공원에서 보내는 휴가 기간으로 든 것은?",
       "options": [
-        "지치고 피곤한 채 도시 생활로 돌아간다",
-        "편안하고 상쾌해진 채 도시로 돌아간다",
-        "도시 생활이 싫어져 공원에 계속 머문다",
-        "자연의 아름다움에 곧 싫증을 낸다"
+        "3일",
+        "1주일",
+        "2주일",
+        "1개월"
       ],
       "answer": 1,
       "evidence": [
         6
       ],
-      "note": "'A week's vacation in one of the national parks' · 'return relaxed and refreshed' — 1주일 휴가를 보낸 도시 사람은 편안하고 상쾌해져 도시로 돌아간다"
+      "note": "'A week's vacation in one of the national parks' — 1주일"
     }
   ]
 }

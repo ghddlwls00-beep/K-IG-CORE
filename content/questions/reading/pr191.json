@@ -5,35 +5,35 @@
   "questions": [
     {
       "id": "pr191-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
-      "options": [
-        "지휘하는 사람의 명령에는 무조건 따라야 한다",
-        "전쟁터에서는 믿음보다 무기가 중요하다",
-        "믿는 행위가 위대한 성취로 이끄는 힘이다",
-        "믿음은 소리 내어 말하면 힘을 잃는다"
-      ],
-      "answer": 2,
-      "evidence": [
-        2
-      ],
-      "note": "'the act of believing that is the starting force… that leads great men and women to accomplishment' 인용."
-    },
-    {
-      "id": "pr191-q2",
       "type": "세부 사실",
-      "prompt": "이 글에서 지휘하는 사람(someone in command)이 외친 말로 알맞은 것은?",
+      "prompt": "이 글에서 지휘하는 사람이 소리쳐 외치는 말은?",
       "options": [
-        "나는 할 수 있다",
-        "힘내라, 우리는 이길 수 있다",
-        "믿기만 하면 할 수 있다",
-        "물러서라, 적이 너무 강하다"
+        "우리는 이 땅을 지킬 수 있다",
+        "우리는 저들을 이길 수 있다",
+        "우리는 끝까지 버틸 수 있다",
+        "우리는 다시 해낼 수 있다"
       ],
       "answer": 1,
       "evidence": [
         3
       ],
       "note": "'\"Come on, men, we can beat them,\" shouts someone in command' 인용."
+    },
+    {
+      "id": "pr191-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 믿는 행위를 위대한 사람들에게 어떤 힘이라고 설명한 것은?",
+      "options": [
+        "실패에서 다시 일으키는 회복의 힘",
+        "서로를 하나로 묶는 단결의 힘",
+        "두려움을 이기게 하는 용기의 힘",
+        "사람을 성취로 이끄는 출발의 힘"
+      ],
+      "answer": 3,
+      "evidence": [
+        2
+      ],
+      "note": "'the act of believing that is the starting force… that leads great men and women to accomplishment' 인용."
     }
   ]
 }

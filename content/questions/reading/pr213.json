@@ -8,12 +8,12 @@
       "type": "세부 사실",
       "prompt": "수에 대한 설명으로 이 글과 일치하는 것은?",
       "options": [
-        "배달을 시작하고 얼마 안 되어 그만두었다",
-        "몸이 아픈 날에도 신문을 배달했다",
-        "비가 오는 날에는 배달을 쉬었다",
-        "고객들이 배달 시간에 불만을 가졌다"
+        "형의 도움을 받아 신문을 배달했다",
+        "매일 저녁 무렵에 신문을 배달했다",
+        "한 달 동안 동네에 신문을 배달했다",
+        "몸이 아픈 날에도 신문을 배달했다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         6,
         7
@@ -22,22 +22,20 @@
     },
     {
       "id": "pr213-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아, 로버트에 대해 짐작할 수 있는 것은?",
+      "type": "이유",
+      "prompt": "로버트가 자전거 타는 법을 배우고 싶어 한 까닭은?",
       "options": [
-        "친구들의 놀림에 신경 쓰지 않는 사람이다",
-        "혼자 힘으로 자전거를 익힌 사람이다",
-        "넘어지기만 하면 쉽게 포기하는 사람이다",
-        "넘어져도 다시 도전하는 사람이다"
+        "친구들이 못 탄다고 놀려서",
+        "형이 새 자전거를 선물해 주어서",
+        "학교에 자전거를 타고 다니고 싶어서",
+        "신문 배달 일을 해 보고 싶어서"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        12,
-        13,
-        14,
-        15
+        8,
+        9
       ],
-      "note": "'he could not balance himself and fell', 'Robert got up and tried again', 'The same thing happened again and again', 'Robert kept trying and finally learned to ride a bike'"
+      "note": "'Robert's friends made fun of him because he could not ride a bicycle', 'So Robert wanted to learn'"
     }
   ]
 }

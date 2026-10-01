@@ -5,31 +5,31 @@
   "questions": [
     {
       "id": "pr167-q1",
-      "type": "세부 사실",
-      "prompt": "일부 사람들이 언어와 비슷하다고 여기는 행위로 언급된 것은?",
+      "type": "이유",
+      "prompt": "일부 사람들이 언어를 자동적인 행위로 여기게 되는 이유로 글에 언급된 것은?",
       "options": [
-        "하품하기나 기지개 켜기",
-        "숨쉬기나 눈 깜빡이기",
-        "걷기나 뛰기",
-        "먹기나 마시기"
+        "어릴 때 저절로 익혔기 때문에",
+        "생각 없이도 말이 나오기 때문에",
+        "일상 활동의 큰 부분이기 때문에",
+        "누구나 쉽게 쓸 수 있기 때문에"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
         1
       ],
-      "note": "\"a more or less automatic and natural act like breathing or winking\" — 일부 사람들이 언어를 숨쉬기나 눈 깜빡이기처럼 여김"
+      "note": "\"Language is so much a part of our daily activities that some of us may come to look upon it as ... automatic\""
     },
     {
       "id": "pr167-q2",
       "type": "중심 생각",
       "prompt": "글쓴이의 주장으로 가장 적절한 것은?",
       "options": [
-        "언어는 부모에게서 저절로 물려받는다",
-        "언어는 일상에서 저절로 몸에 밴다",
-        "언어는 짧은 훈련으로 금방 익힌다",
-        "언어는 오랜 교육을 거쳐야만 전해진다"
+        "언어는 오랜 교육을 거쳐야 다음 세대에 전해진다",
+        "언어는 부모에게서 그대로 물려받는 타고난 능력이다",
+        "언어는 어릴 때 배울수록 더 쉽게 익혀진다",
+        "언어는 학교보다 가정에서 더 잘 배울 수 있다"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
         2,
         3,

@@ -5,31 +5,31 @@
   "questions": [
     {
       "id": "d270-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "음악에 맞추어 행진한다고 말한 것은?",
       "options": [
-        "음악은 무엇보다 애국심을 일깨우는 데 쓰인다",
-        "음악은 즐거움 말고도 사회에서 중요한 역할을 한다",
-        "음악은 즐기기보다 행사를 치르려고 쓰인다",
-        "음악은 기쁠 때보다 슬플 때 더 많이 쓰인다"
+        "졸업식의 졸업생들",
+        "세계의 군대들",
+        "결혼식의 신랑 신부",
+        "장례식의 행렬"
       ],
       "answer": 1,
       "evidence": [
-        1
+        2
       ],
-      "note": "'In addition to giving enjoyment to thousands of individuals, music plays an important role in society' — 즐거움 말고도 사회에서 중요한 역할"
+      "note": "'The armies of the world march to music' — 세계의 군대가 음악에 맞춰 행진"
     },
     {
       "id": "d270-q2",
       "type": "세부 사실",
       "prompt": "다채로운 민요와 발라드가 있다고 말한 곳은?",
       "options": [
+        "공장과 시장",
         "도시와 마을",
-        "모든 나라",
-        "결혼식장",
-        "대회 개회식장"
+        "시골과 어촌",
+        "교회와 수도원"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
         5
       ],

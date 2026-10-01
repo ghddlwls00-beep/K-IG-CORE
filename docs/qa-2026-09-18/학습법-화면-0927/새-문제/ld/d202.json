@@ -8,12 +8,12 @@
       "type": "중심 내용",
       "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "친절은 남의 삶에만 행복을 주는 덕성이다",
-        "친절은 나와 남을 모두 밝게 하는 덕성이다",
-        "친절은 사람들 사이에 논란이 많은 덕성이다",
-        "친절은 학문보다 덜 중요한 덕성이다"
+        "친절은 다른 덕성들의 바탕이 되는 덕성이다",
+        "친절은 어려운 이웃을 도울 때 가장 빛나는 덕성이다",
+        "친절은 내 삶과 남의 삶을 함께 밝혀 주는 덕성이다",
+        "친절은 누구나 노력하면 기를 수 있는 덕성이다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
         1,
         7,
@@ -24,36 +24,34 @@
     {
       "id": "d202-q2",
       "type": "세부 사실",
-      "prompt": "우리 기억에 가장 생생하게 남은 선생님에 대한 설명으로 옳은 것은?",
+      "prompt": "친절한 사람의 예로 들며 우리 기억에 가장 생생하게 남아 있을 것이라고 한 사람은?",
       "options": [
-        "아주 총명해서 학문도 가장 잘 가르쳤다",
-        "총명하지 않아 친절도 가르치지 못했다",
-        "총명하지만 엄해서 모두가 어려워했다",
-        "아주 총명하진 않았을지 몰라도 친절했다"
+        "우리를 돌봐 준 이웃",
+        "우리를 길러 준 조부모",
+        "우리를 가르친 선생님",
+        "우리와 함께 자란 친구"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        5,
-        6
+        5
       ],
-      "note": "'the one who was kind and gentle', 'may not have been outstandingly brilliant', 'taught us a lesson in kindness' — 친절하고 부드러웠던 선생님은 아주 총명하지는 않았을지 몰라도 친절을 가르쳐 줌"
+      "note": "'Perhaps the teacher who lives most vividly in our memory is the one who was kind and gentle' — 기억에 가장 생생한 선생님은 친절하고 상냥했던 분"
     },
     {
       "id": "d202-q3",
       "type": "세부 사실",
-      "prompt": "글에서 말한 친절한 사람의 모습으로 옳은 것은?",
+      "prompt": "친절이 그 삶을 행복으로 채워 준다고 한 사람들은?",
       "options": [
-        "자신이 불편해도 남을 먼저 편하게 해 준다",
-        "남이 불편해도 자신의 편리함을 먼저 챙긴다",
-        "남의 편안함과 자신의 편리함을 똑같이 여긴다",
-        "친구의 편안함만 챙기고 낯선 이는 외면한다"
+        "친구와 동료",
+        "친구와 이웃",
+        "가족과 동료",
+        "가족과 이웃"
       ],
       "answer": 0,
       "evidence": [
-        2,
-        3
+        8
       ],
-      "note": "'To say a person is kind', 'He puts the comfort of others before his own convenience' — 친절한 사람은 자기 편리함보다 남의 편안함을 앞세움"
+      "note": "'fills the lives of our friends and associates with happiness' — 친절은 친구와 동료의 삶을 행복으로 채움"
     }
   ]
 }

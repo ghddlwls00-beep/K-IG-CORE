@@ -5,37 +5,36 @@
   "questions": [
     {
       "id": "pr173-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "본문에서 성공하지 못하는 그룹의 구성원들이 늘 요구받는 것은 무엇인가?",
       "options": [
-        "모든 그룹은 같은 방식으로 아이디어를 발전시킨다",
-        "구성원의 창의적 사고를 격려하는 그룹이 번성한다",
-        "구성원이 집단과 같은 생각을 할 때 그룹이 번성한다",
-        "리더가 아이디어를 모두 내는 그룹이 번성한다"
+        "리더의 지시를 그대로 따르는 것",
+        "정해진 규칙을 빠짐없이 지키는 것",
+        "그룹이 생각하는 대로 생각하는 것",
+        "다른 구성원과 성과를 겨루는 것"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        2,
         3,
-        6
+        4
       ],
-      "note": "'the groups which encourage individual members to think creatively will prosper' — 창의적 사고를 격려하는 그룹이 번성한다"
+      "note": "'In unsuccessful groups' · 'always expected to think as the group thinks'"
     },
     {
       "id": "pr173-q2",
       "type": "세부 사실",
-      "prompt": "처음에 두 종류의 그룹 구성원들에 관해 본문과 일치하는 것은?",
+      "prompt": "본문에서 처음에는 두 종류의 그룹 사이에 차이가 없다고 한 것은?",
       "options": [
-        "성공하는 그룹 구성원의 능력이 더 뛰어나다",
-        "실패하는 그룹 구성원의 자질이 더 뛰어나다",
-        "구성원들의 능력과 자질에 차이가 없다",
-        "구성원들의 자질은 같지만 능력은 다르다"
+        "그룹 리더의 경험과 성격",
+        "그룹 리더가 받은 교육",
+        "그룹의 규모와 역사",
+        "구성원의 능력과 자질"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         5
       ],
-      "note": "'In the beginning, there are no differences in the abilities and qualities' — 처음에는 능력과 자질의 차이가 없다"
+      "note": "'In the beginning, there are no differences in the abilities and qualities among the members'"
     }
   ]
 }

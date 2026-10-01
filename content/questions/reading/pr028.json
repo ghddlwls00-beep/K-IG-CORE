@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "pr028-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 한번 내뱉은 말을 무엇에 빗대었는가?",
       "options": [
-        "마음을 가라앉히고 이성적으로 말하라",
-        "화가 나면 참지 말고 바로 표현하라",
-        "후회할 말을 했다면 곧바로 취소하면 된다",
-        "상처 주는 말도 진심이라면 해도 괜찮다"
+        "이미 쏘아 버린 화살",
+        "이미 쏘아 버린 총알",
+        "이미 엎질러진 물",
+        "이미 흘러간 강물"
       ],
-      "answer": 0,
-      "evidence": [
-        3,
-        4
-      ],
-      "note": "3번 'Before you say something needlessly hurtful, calm down', 4번 'Speak with reason, not just emotion'이 근거"
-    },
-    {
-      "id": "pr028-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "이 글의 'can't be recalled'에서 recalled가 뜻하는 것으로 가장 적절한 것은?",
-      "options": [
-        "기억해 내다",
-        "큰 소리로 반복하다",
-        "취소하고 되돌리다",
-        "조용히 잊어버리다"
-      ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         2
       ],
-      "note": "2번 'words once spoken, like bullets once fired, can't be recalled'에서 recalled는 '되돌리다'"
+      "note": "'words once spoken, like bullets once fired, can't be recalled'"
+    },
+    {
+      "id": "pr028-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 상처 주는 말을 하기 전에 하라고 한 것은?",
+      "options": [
+        "먼저 마음을 가라앉힌다",
+        "속으로 열까지 세어 본다",
+        "잠시 그 자리를 피한다",
+        "할 말을 종이에 적어 본다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "'Before you say something needlessly hurtful, calm down'"
     }
   ]
 }

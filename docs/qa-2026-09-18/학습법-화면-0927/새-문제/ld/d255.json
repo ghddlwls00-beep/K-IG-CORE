@@ -6,51 +6,51 @@
     {
       "id": "d255-q1",
       "type": "세부 사실",
-      "prompt": "고대인들이 많은 병의 원인으로 여긴 것은 무엇인가?",
+      "prompt": "염소 발 가루와 말린 개구리 눈에 대해 고대 사람들은 어떠했다고 말했는가?",
       "options": [
-        "마법 주문에 걸린 것",
-        "사제에게 벌을 받은 것",
-        "신들을 불쾌하게 한 것",
-        "염소 발 가루를 잘못 먹은 것"
+        "사제들이 쓰도록 맡겼다",
+        "신들에게 바치는 제물로 썼다",
+        "이상하고 터무니없다고 여겼다",
+        "진지하게 받아들였다"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        4
+        3
       ],
-      "note": "'many illnesses were the result of having displeased the gods' — 신들을 불쾌하게 한 결과"
+      "note": "'seem strange and absurd remedies to modern man, but the ancients took them seriously'"
     },
     {
       "id": "d255-q2",
       "type": "세부 사실",
-      "prompt": "고대인들이 염소 발 가루나 말린 개구리 눈을 대하던 태도로 옳은 것은?",
+      "prompt": "고대 사람들이 많은 병의 원인으로 믿었다고 말한 것은?",
       "options": [
-        "이상하고 어리석다고 여겼다",
-        "진지하게 받아들였다",
-        "병을 부르는 것으로 여겨 피했다",
-        "약이 아닌 부적으로 몸에 지녔다"
+        "사제의 가르침을 어긴 것",
+        "신들의 마음을 언짢게 한 것",
+        "부적을 몸에 지니지 않은 것",
+        "이상한 약을 함부로 먹은 것"
       ],
       "answer": 1,
       "evidence": [
-        3
+        4
       ],
-      "note": "'seem strange and absurd remedies to modern man, but the ancients took them seriously' — 이상하게 보는 쪽은 현대인, 고대인은 진지하게 받아들임"
+      "note": "'many illnesses were the result of having displeased the gods'"
     },
     {
       "id": "d255-q3",
-      "type": "세부 사실",
-      "prompt": "사제가 의사 일을 맡던 관습의 오늘날 모습으로 옳은 것은?",
+      "type": "이유",
+      "prompt": "의사 일이 대개 사제 계급의 몫이었던 까닭으로 말한 것은?",
       "options": [
-        "전통 사회에서도 이제는 사라졌다",
-        "전통 사회에서 최근에 다시 생겨났다",
-        "전통 사회보다 도시에 더 많이 남아 있다",
-        "일부 전통 사회에 아직 남아 있다"
+        "사제들이 염소 발 가루 같은 약을 만들었기 때문",
+        "사제들이 부적과 주문을 지니고 다녔기 때문",
+        "병을 고치는 가장 좋은 길이 기도나 제물이었기 때문",
+        "사제 계급의 관습이 오늘날까지 이어졌기 때문"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        6,
-        7
+        5,
+        6
       ],
-      "note": "'reserved to the priest caste' · 'This custom persists even today in some traditional communities' — 일부 전통 사회에 오늘날까지 남아 있음"
+      "note": "'the best cure was a prayer or sacrifice' … 'For this reason, … reserved to the priest caste'"
     }
   ]
 }

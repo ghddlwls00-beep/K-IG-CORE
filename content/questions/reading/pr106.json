@@ -5,37 +5,39 @@
   "questions": [
     {
       "id": "pr106-q1",
-      "type": "세부 사실",
-      "prompt": "회사가 'quantity discount'를 해 주는 까닭으로 가장 적절한 것은?",
+      "type": "순서",
+      "prompt": "본문에서 회사가 값을 낮춰 주는 방법으로 가장 먼저 소개한 것은?",
       "options": [
-        "구매자가 대금을 현금으로 빨리 치러서",
-        "회사의 이익보다 고객의 이익을 먼저 생각해서",
-        "판매·보관·배송·청구 비용이 줄어서",
-        "주문량이 적을수록 비용이 덜 들어서"
+        "대량으로 주문하는 구매자에게 주는 할인",
+        "대량으로 사서 되파는 업체에 주는 할인",
+        "대금을 빨리 치르는 구매자에게 주는 할인",
+        "오랫동안 거래해 온 단골에게 주는 할인"
       ],
-      "answer": 2,
+      "answer": 1,
+      "evidence": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "note": "'One way of doing this is a trade discount' · 'offered to the shops or businesses that buy goods on a large scale and sell them' · 'There is also a quantity discount' · 'Finally, a cash discount' — 처음 소개한 것은 되파는 업체용 할인"
+    },
+    {
+      "id": "pr106-q2",
+      "type": "세부 사실",
+      "prompt": "본문에서 'quantity discount'를 해 주는 까닭으로 든 비용에 해당하는 것은?",
+      "options": [
+        "포장에 드는 비용",
+        "광고에 드는 비용",
+        "생산에 드는 비용",
+        "청구에 드는 비용"
+      ],
+      "answer": 3,
       "evidence": [
         4,
         5
       ],
-      "note": "'a quantity discount, which is offered to buyers who order large quantities of a product' · 'they help cut the costs of selling, storing, shipping, and billing' — 그 구매자 덕분에 비용이 줆"
-    },
-    {
-      "id": "pr106-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "본문에서 말하는 'trade discount'의 뜻으로 가장 적절한 것은?",
-      "options": [
-        "상품을 대량으로 사서 되파는 업체에 주는 할인",
-        "대금을 기한 전에 치르는 구매자에게 주는 할인",
-        "회사와 오래 거래해 온 업체에 주는 할인",
-        "상품을 조금씩 사서 쓰는 구매자에게 주는 할인"
-      ],
-      "answer": 0,
-      "evidence": [
-        2,
-        3
-      ],
-      "note": "'One way of doing this is a trade discount' · 'It is offered to the shops or businesses that buy goods on a large scale and sell them' — 대량으로 사서 되파는 업체에 주는 할인"
+      "note": "'a quantity discount' · 'they help cut the costs of selling, storing, shipping, and billing' — 청구(billing) 비용"
     }
   ]
 }

@@ -5,38 +5,35 @@
   "questions": [
     {
       "id": "pr143-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 시민을 무엇으로부터 보호해야 한다고 했는가?",
       "options": [
-        "개인 정보를 지킬 더 효과적인 방법이 필요하다",
-        "개인 정보는 이미 충분히 잘 보호되고 있다",
-        "컴퓨터 사용을 막아야 사생활을 지킬 수 있다",
-        "시민 스스로 자기 정보를 지키는 수밖에 없다"
+        "개인 정보를 몰래 훔쳐 가는 일",
+        "개인 정보를 잘못 고쳐 쓰는 일",
+        "개인 정보를 실수로 지워 버리는 일",
+        "개인 정보를 마구 모아 쓰는 일"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        3,
-        4
+        2
       ],
-      "note": "'We need more effective ways' · 'We must protect citizens' · 'without control, causing harm to the right to privacy' — 개인 정보를 지킬 더 효과적인 방법이 필요함"
+      "note": "'protect citizens against the compiling of personal data and the unrestricted use' — 개인 정보를 모으고 제한 없이 쓰는 일"
     },
     {
       "id": "pr143-q2",
       "type": "세부 사실",
-      "prompt": "글에서 말한 내용으로 옳은 것은?",
+      "prompt": "글쓴이가 시민이 개인 정보를 지킬 권리를 온전히 누리도록 하기 위해 더 필요하다고 한 것은?",
       "options": [
-        "컴퓨터 때문에 정보를 모으기가 더 어려워졌다",
-        "정보를 쌓고 퍼뜨리는 능력이 커졌다",
-        "개인 정보는 엄격한 통제 속에서 수집되어 왔다",
-        "개인 정보의 무제한 사용은 이미 금지되었다"
+        "더 분명한 법적 기준",
+        "더 효과적인 방법",
+        "더 강한 처벌",
+        "더 많은 사회적 관심"
       ],
       "answer": 1,
       "evidence": [
-        3
+        1
       ],
-      "note": "'The capacity to store and distribute information has increased through the use of computers and other devices' — 컴퓨터 등으로 정보를 쌓고 퍼뜨리는 능력이 커짐"
+      "note": "'We need more effective ways to ensure that every citizen can fully exercise the right' — 더 효과적인 방법이 필요함"
     }
   ]
 }

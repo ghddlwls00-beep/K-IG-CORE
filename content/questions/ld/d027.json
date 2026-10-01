@@ -8,12 +8,12 @@
       "type": "세부 사실",
       "prompt": "프랭크 루이스에 대한 설명으로 옳은 것은?",
       "options": [
-        "마드리드에서 이곳에 왔다",
-        "새로 회장이 되었다",
-        "여러 축구 대회에 나갔다",
-        "오늘 페르난도를 처음 만났다"
+        "마드리드에서 뉴욕으로 왔다",
+        "1978년부터 축구 코치를 해 왔다",
+        "스포츠 기자협회의 새 회장이 되었다",
+        "1975년에 페르난도와 일을 시작했다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
         1
       ],
@@ -21,36 +21,35 @@
     },
     {
       "id": "d027-q2",
-      "type": "말한 사람의 목적/태도",
-      "prompt": "이 연설의 주된 목적으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "프랭크 루이스와 페르난도 마르코스의 관계로 옳은 것은?",
       "options": [
-        "손님이 쓴 새 책을 널리 알리려는 것",
-        "손님에게 올해의 코치상을 주려는 것",
-        "은퇴하는 손님의 앞날을 축하하려는 것",
-        "오늘 밤 모신 특별한 분을 소개하려는 것"
-      ],
-      "answer": 3,
-      "evidence": [
-        3,
-        10
-      ],
-      "note": "3행 'We are fortunate to have a special guest tonight. I'd like to introduce Fernando Marcos', 10행 'you may talk to Fernando' 참고"
-    },
-    {
-      "id": "d027-q3",
-      "type": "다음에 할 일",
-      "prompt": "연설 내용에 따르면, 잠시 후 청중이 할 수 있는 일로 옳은 것은?",
-      "options": [
-        "페르난도가 코치하는 경기를 보러 간다",
-        "페르난도와 함께 저녁을 먹는다",
-        "페르난도와 직접 이야기를 나눈다",
-        "페르난도의 가족에게 인사를 전한다"
+        "1978년부터 친구였고, 1975년부터 함께 일했다",
+        "1975년부터 함께 일했고, 1978년부터 이웃이었다",
+        "1975년부터 친구였고, 1978년부터 함께 일했다",
+        "1978년부터 함께 일했고, 1975년부터 이웃이었다"
       ],
       "answer": 2,
       "evidence": [
+        4
+      ],
+      "note": "4행 'we've been good friends since 1975 and we've worked together since 1978' 참고"
+    },
+    {
+      "id": "d027-q3",
+      "type": "세부 사실",
+      "prompt": "연설에 따르면, 잠시 후 청중이 페르난도와 나눌 수 있는 이야기의 주제는 무엇인가?",
+      "options": [
+        "코치 일과 앞으로의 계획",
+        "코치 일과 지난 경기들",
+        "코치 일과 마드리드의 가족",
+        "코치 일과 그 밖의 관심사"
+      ],
+      "answer": 3,
+      "evidence": [
         10
       ],
-      "note": "10행 'In a few minutes, you may talk to Fernando about his coaching and his other interests' 참고"
+      "note": "10행 'you may talk to Fernando about his coaching and his other interests' 참고"
     }
   ]
 }

@@ -8,12 +8,12 @@
       "type": "세부 사실",
       "prompt": "조지와 앨버트의 실제 관계로 옳은 것은?",
       "options": [
-        "사촌 사이",
-        "육촌 사이",
-        "이복형제 사이",
-        "삼촌과 조카 사이"
+        "육촌 (부모의 사촌의 아들)",
+        "사촌 (부모의 형제의 아들)",
+        "이복형제 (부모 한쪽이 같은 형제)",
+        "오촌 (부모의 사촌 형제)"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
         6,
         7
@@ -23,38 +23,35 @@
     {
       "id": "d035-q2",
       "type": "세부 사실",
-      "prompt": "실제로는 친척이 아니면서 숙모나 삼촌이라고 불리는 사람들에 대한 설명으로 옳은 것은?",
+      "prompt": "헬렌은 조지에게 어떤 사람인가?",
       "options": [
-        "결혼식 때만 잠깐 만나는 이웃이다",
-        "그 가족을 잘 모르는 낯선 사람들이다",
-        "그 가족과 가깝게 지내는 좋은 친구들이다",
-        "신문에서 초대장을 보고 온 사람들이다"
-      ],
-      "answer": 2,
-      "evidence": [
-        10
-      ],
-      "note": "10번 줄 'aren't relatives at all, but good friends of the family'에서 확인."
-    },
-    {
-      "id": "d035-q3",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
-      "options": [
-        "친척들이 서로 자주 만나서 잔치가 반갑지 않다",
-        "헷갈린 아이들이 잔치 내내 울며 지낸다",
-        "다른 마을에 사는 가족은 금혼식 잔치에 오지 않는다",
-        "친척이 많아 헷갈려도 모두 즐거운 시간을 보낸다"
+        "고모",
+        "이모",
+        "친할머니",
+        "외할머니"
       ],
       "answer": 3,
       "evidence": [
-        1,
-        3,
-        4,
-        5,
-        11
+        7,
+        8
       ],
-      "note": "1·3·4·5·11번 줄 'a big party for all the friends and relatives' · 'sons and daughters, nieces and nephews' · 'don't see each other very often' · 'glad to come' · 'very confusing, but everyone has a good time'에서 확인."
+      "note": "'he's Dorothy's son' · 'Her mother is Aunt Helen'에서 확인."
+    },
+    {
+      "id": "d035-q3",
+      "type": "세부 사실",
+      "prompt": "앨버트에게 조지를 소개하는 사람으로 옳은 것은?",
+      "options": [
+        "앨버트의 할머니",
+        "앨버트의 아버지",
+        "앨버트의 어머니",
+        "앨버트의 큰누나"
+      ],
+      "answer": 2,
+      "evidence": [
+        6
+      ],
+      "note": "'Albert, one mother will say, this is your cousin George'에서 확인."
     }
   ]
 }

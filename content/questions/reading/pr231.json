@@ -5,32 +5,32 @@
   "questions": [
     {
       "id": "pr231-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "이유",
+      "prompt": "이 글에 따르면 사람들이 현대 예술에 관심을 잃은 이유로 가장 적절한 것은?",
       "options": [
-        "사람들은 이제 누구도 영웅이나 본보기로 삼지 않는다",
-        "사람들은 여전히 현대 예술가에게서 본보기를 찾는다",
-        "현대 예술은 인간의 성취를 담지 못해 외면받았다",
-        "현대 음악은 현대 미술보다 인기가 많다"
+        "현대 예술가들의 삶이 본받을 만하지 않아서",
+        "현대 예술이 대중의 일상을 그리지 않아서",
+        "현대 예술이 대중 매체에 밀려나서",
+        "현대 예술이 인간의 성취를 담아내지 못해서"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         5,
         6
       ],
-      "note": "'failed to offer people works that reflect human achievements' · 'have lost interest in modern arts' — 인간의 성취를 담지 못해 관심을 잃었다"
+      "note": "'failed to offer people works that reflect human achievements' · 'therefore, have lost interest in modern arts' — 인간의 성취를 담은 작품을 내놓지 못했다"
     },
     {
       "id": "pr231-q2",
       "type": "세부 사실",
       "prompt": "이 글에 따르면 대부분의 사람들이 영웅으로 가장 먼저 꼽을 만한 대상으로 가장 적절한 것은?",
       "options": [
-        "스포츠 스타나 영화배우",
-        "영화 음악 작곡가",
-        "동시대 걸작을 그린 화가",
-        "프로 스포츠 경기의 심판"
+        "현대 작곡가나 화가",
+        "소방관이나 의사",
+        "운동선수나 영화배우",
+        "부모님이나 선생님"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
         1,
         3,

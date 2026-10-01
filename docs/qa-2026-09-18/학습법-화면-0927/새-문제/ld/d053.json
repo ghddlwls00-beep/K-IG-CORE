@@ -8,12 +8,12 @@
       "type": "세부 사실",
       "prompt": "시카고에 사는 남자의 모형 기차 수집에 대한 설명으로 가장 알맞은 것은?",
       "options": [
-        "어른이 된 뒤에야 처음 시작했다",
-        "한꺼번에 많이 사서 모았다",
-        "지금은 기차를 모두 상자에 넣어 두었다",
-        "지금은 기차가 집 안 곳곳을 달린다"
+        "시카고로 이사 온 뒤 시작해 방 하나를 기차로 채웠다",
+        "어릴 때 시작해 지금은 성냥갑까지 함께 모은다",
+        "어린 시절부터 조금씩 늘려 온 집 안에 기차가 달린다",
+        "어릴 때 시작해 이제는 기차를 창고에 모아 둔다"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         2,
         3
@@ -22,38 +22,37 @@
     },
     {
       "id": "d053-q2",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
-      "options": [
-        "비싼 물건을 모은 취미일수록 가치가 크다",
-        "취미의 참된 가치는 돈이 아니라 즐거움에 있다",
-        "취미의 가치는 가족이 인정해 줄 때 비로소 생긴다",
-        "취미의 참된 가치는 돈이 아니라 모은 물건의 수에 있다"
-      ],
-      "answer": 1,
-      "evidence": [
-        6,
-        7,
-        8
-      ],
-      "note": "6번 “the real value of a hobby cannot be measured in money” · 7번 “inexpensive matchboxes has an important value” · 8번 “measured by the pleasure and enjoyment it gives”라고 했다"
-    },
-    {
-      "id": "d053-q3",
       "type": "세부 사실",
-      "prompt": "그 남자의 아내가 평소 남편의 기차 수집을 대하는 태도로 가장 알맞은 것은?",
+      "prompt": "시카고 남자의 아내가 모형 기차를 두고 보이는 태도로 가장 알맞은 것은?",
       "options": [
-        "기차가 성가시다며 늘 불평한다",
-        "남편 몰래 기차를 조금씩 내다 판다",
-        "참을성 있게 남편을 이해해 준다",
-        "기차에는 아무 관심도 두지 않는다"
+        "가끔 성가시다고 불평하지만 대개는 참고 이해해 준다",
+        "가끔 성가시다고 불평하지만 대개는 함께 즐긴다",
+        "자주 성가시다고 불평하지만 가끔은 함께 기차를 고른다",
+        "자주 성가시다고 불평하며 기차를 치우라고 한다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
         4,
         5
       ],
-      "note": "4번 “Once in a while his wife complains” · 5번 “most of the time she is patient and understanding”이라고 했다"
+      "note": "4번 “Once in a while his wife complains that his trains are a nuisance” · 5번 “most of the time she is patient and understanding”이라고 했다"
+    },
+    {
+      "id": "d053-q3",
+      "type": "이유",
+      "prompt": "말하는 사람이 성냥갑 수집을 예로 든 까닭으로 가장 알맞은 것은?",
+      "options": [
+        "값싼 수집품도 오래 모으면 값이 크게 오름을 보이려고",
+        "값싼 수집품이 모형 기차보다 모으기 쉬움을 보이려고",
+        "값싼 수집품도 주인에게는 중요한 값어치가 있음을 보이려고",
+        "값싼 수집품이 비싼 기차보다 가족을 덜 귀찮게 함을 보이려고"
+      ],
+      "answer": 2,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "6번 “the real value of a hobby cannot be measured in money” · 7번 “Even a collection of inexpensive matchboxes has an important value for its owner”라고 했다"
     }
   ]
 }

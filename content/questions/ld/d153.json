@@ -6,44 +6,52 @@
     {
       "id": "d153-q1",
       "type": "세부 사실",
-      "prompt": "이 글에 따르면, 각 주의 공립학교를 운영하는 데 쓰는 돈은 무엇인가?",
+      "prompt": "이 글에서 공립학교를 운영하는 돈에 대해 말한 것으로 옳은 것은?",
       "options": [
-        "나라에서 거두어들이는 세금",
-        "그곳 주민들이 내는 세금",
-        "나라에서 따로 모으는 기부금",
-        "그곳 주민들이 내는 기부금"
+        "대부분의 주에서 나라가 거둔 세금으로 운영된다",
+        "대부분의 주에서 시와 군이 거둔 세금으로 운영된다",
+        "모든 주에서 그 주 시민의 세금으로 운영된다",
+        "몇몇 주에서 학부모가 낸 수업료로 운영된다"
       ],
-      "answer": 1,
-      "evidence": [1],
-      "note": "\"supported by taxes paid by the citizens of the individual state\""
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "\"Public schools in all states are supported by taxes paid by the citizens of the individual state\""
     },
     {
       "id": "d153-q2",
       "type": "세부 사실(숫자)",
       "prompt": "이 글에서 말한, 중학교와 고등학교에서 보내는 기간으로 옳은 것은?",
       "options": [
-        "중학교 4년, 고등학교 3년",
-        "중학교 3년, 고등학교 4년",
-        "중학교 4년, 고등학교 4년",
+        "중학교 2년, 고등학교 4년",
+        "중학교 2년, 고등학교 3년",
+        "중학교 4년, 고등학교 2년",
         "중학교 3년, 고등학교 3년"
       ],
       "answer": 3,
-      "evidence": [4, 5],
+      "evidence": [
+        4,
+        5
+      ],
       "note": "\"junior high school and remain there for three years\" · \"The last three years … are spent in senior high school\""
     },
     {
       "id": "d153-q3",
-      "type": "세부 사실(순서)",
-      "prompt": "많은 고등학교 졸업생이 졸업 뒤에 하는 일로 옳은 것은?",
+      "type": "세부 사실",
+      "prompt": "고등학교 졸업생에 대해 이 글이 말한 것으로 옳은 것은?",
       "options": [
-        "여러 대학 중 한 곳에서 배움을 이어 간다",
-        "곧바로 석사 학위 공부를 시작한다",
-        "4년 동안 돈을 번 뒤 다시 공부한다",
-        "고등학교에 한 해 더 남아 공부한다"
+        "많은 수가 대학에 가고, 일부는 석사 공부까지 한다",
+        "절반쯤이 대학에 가고, 대부분이 석사 공부까지 한다",
+        "대부분이 대학에 가고, 몇몇은 박사 공부까지 이어 간다",
+        "절반쯤이 대학에 가고, 대부분이 박사 공부까지 한다"
       ],
       "answer": 0,
-      "evidence": [6],
-      "note": "\"A great number of high school graduates continue their education in one of the many colleges or universities\""
+      "evidence": [
+        6,
+        8
+      ],
+      "note": "\"A great number of high school graduates continue … colleges\" · \"Some continue studying for a master's degree\""
     }
   ]
 }

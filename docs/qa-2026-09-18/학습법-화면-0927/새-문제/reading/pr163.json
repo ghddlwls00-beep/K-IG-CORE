@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "pr163-q1",
-      "type": "중심 생각",
-      "prompt": "글쓴이가 말하려는 바로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "위대한 사상가의 생각을 받아들이는 방식과 대비되는 예로 글에 나온 것은?",
       "options": [
-        "위대한 책은 최대한 능동적으로 읽어야 한다",
-        "즐거움을 위한 책도 능동적으로 읽어야만 한다",
-        "위대한 책도 편안한 상태에서 읽으면 충분하다",
-        "즐거움을 위한 책은 읽을 가치가 없다"
-      ],
-      "answer": 0,
-      "evidence": [
-        1,
-        2
-      ],
-      "note": "\"read in a state of relaxation\" · \"demands the most active reading of which you are capable\" — 위대한 책은 할 수 있는 가장 능동적인 독서를 요구함"
-    },
-    {
-      "id": "pr163-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "'You have to reach for them'에서 them이 가리키는 것은?",
-      "options": [
-        "즐거움을 위해 읽는 책들",
-        "대중 가수의 노래",
-        "위대한 사상가의 생각",
-        "편안한 상태"
+        "영화배우의 연기를 보는 것",
+        "신문 기사를 훑어보는 것",
+        "인기 가수의 노래를 듣는 것",
+        "친구와 잡담을 나누는 것"
       ],
       "answer": 2,
       "evidence": [
-        3,
-        4
+        3
       ],
-      "note": "\"the ideas of a great thinker\" · \"You have to reach for them\" — them은 바로 앞 문장의 위대한 사상가의 생각"
+      "note": "\"You don't absorb the ideas of a great thinker the way you absorb the crooning of a popular singer\""
+    },
+    {
+      "id": "pr163-q2",
+      "type": "세부 사실",
+      "prompt": "즐거움을 위해 읽는 책을 편안한 상태로 읽는 것에 대해 글에서 말한 것은?",
+      "options": [
+        "그렇게 읽어도 잃는 것이 없다",
+        "그렇게 읽으면 금방 잊게 된다",
+        "그렇게 읽어야 더 오래 남는다",
+        "그렇게 읽으면 생각이 넓어진다"
+      ],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
+      "note": "\"can be read in a state of relaxation, and nothing is lost\" — 편안히 읽어도 잃는 것이 없음"
     }
   ]
 }

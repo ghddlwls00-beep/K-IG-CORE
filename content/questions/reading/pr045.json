@@ -6,35 +6,35 @@
     {
       "id": "pr045-q1",
       "type": "세부 사실",
-      "prompt": "이 글의 내용과 일치하는 것은?",
+      "prompt": "글쓴이가 전화 예절에 대해 한 말로 가장 적절한 것은?",
       "options": [
-        "전화 예절은 다른 곳에서 지키는 예절과는 전혀 다르다",
-        "전화를 오래 쓰는 사람일수록 권리가 더 커진다",
-        "전화는 똑같은 권리를 가진 여러 사람이 함께 쓴다",
-        "전화 예절에서는 상대에 대한 배려보다 말투가 중요하다"
-      ],
-      "answer": 2,
-      "evidence": [
-        6
-      ],
-      "note": "6번 'shared by several people who have an equal right to its use'에 근거함."
-    },
-    {
-      "id": "pr045-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "'its use'의 'its'가 가리키는 것으로 가장 적절한 것은?",
-      "options": [
-        "전화기",
-        "전화 예절",
-        "여러 사람의 권리",
-        "다른 사람에 대한 배려"
+        "다른 곳에서 지키는 예절과 같다",
+        "마주 보고 말할 때보다 더 엄격하다",
+        "통화하는 상대에 따라 서로 다르다",
+        "집에서보다 직장에서 더 까다롭다"
       ],
       "answer": 0,
       "evidence": [
-        5,
-        6
+        2
       ],
-      "note": "6번 'its use'의 its는 5번 'Do not keep the telephone to yourself'의 the telephone을 가리킴."
+      "note": "2번 'Good manners on the telephone ... are the same as good manners elsewhere'에 근거함."
+    },
+    {
+      "id": "pr045-q2",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 전화를 쓸 때 남을 배려하는 일의 바탕으로 든 한 가지는?",
+      "options": [
+        "늦은 밤에는 통화를 삼가는 것",
+        "통화할 때는 목소리를 낮추는 것",
+        "받자마자 먼저 내 이름을 밝히는 것",
+        "전화를 혼자 오래 차지하지 않는 것"
+      ],
+      "answer": 3,
+      "evidence": [
+        4,
+        5
+      ],
+      "note": "4번 'thoughtfulness for others ... is based on one important point', 5번 'Do not keep the telephone to yourself'에 근거함."
     }
   ]
 }

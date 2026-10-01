@@ -5,36 +5,39 @@
   "questions": [
     {
       "id": "pr183-q1",
-      "type": "세부 사실",
-      "prompt": "이 글의 내용과 일치하는 것은?",
+      "type": "중심 내용",
+      "prompt": "글쓴이가 배니스터의 이야기로 보여 주려는 것으로 가장 적절한 것은?",
       "options": [
-        "1954년 이후 달리기 기록은 점점 느려졌다",
-        "요즘 사람들은 예전보다 훨씬 빨리 달린다",
-        "1마일을 4분 안에 뛰는 것은 지금도 불가능하다",
-        "1954년에 처음으로 1마일 경주가 열렸다"
-      ],
-      "answer": 1,
-      "evidence": [
-        1
-      ],
-      "note": "'Today, people run much faster than they did in the past' — 요즘 사람들은 예전보다 훨씬 빨리 달림"
-    },
-    {
-      "id": "pr183-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
-      "options": [
-        "배니스터는 다른 선수들에게 달리기를 가르쳤다",
-        "배니스터 이후로 4분 안에 뛴 선수는 없다",
-        "1마일을 4분 안에 처음 뛴 사람은 배니스터이다",
-        "배니스터는 1954년 이후로 달리지 않았다"
+        "좋은 신발이 달리기 기록을 크게 바꾼다는 것",
+        "꾸준한 훈련이 타고난 재능보다 중요하다는 것",
+        "요즘 사람들이 예전보다 훨씬 빨리 달린다는 것",
+        "육상 경기의 규칙이 예전과 많이 달라졌다는 것"
       ],
       "answer": 2,
       "evidence": [
-        2,
-        3
+        1,
+        3,
+        4
       ],
-      "note": "'Before 1954, no one had ever run a mile in under four minutes', 'In 1954, Roger Bannister ran a mile in under four minutes' — 배니스터가 처음 해냄"
+      "note": "'Today, people run much faster than they did in the past', 'Roger Bannister ran a mile in under four minutes', 'many other runners also' — 요즘 사람들이 더 빨리 달림"
+    },
+    {
+      "id": "pr183-q2",
+      "type": "세부 사실",
+      "prompt": "배니스터의 이야기와 관련해 이 글에 나오지 않은 내용은?",
+      "options": [
+        "1954년 전에는 1마일을 4분 안에 달린 사람이 없었다",
+        "배니스터의 기록은 몇 주 만에 다른 선수에게 깨졌다",
+        "1954년에 배니스터가 1마일을 4분 안에 달렸다",
+        "그 뒤로 다른 많은 선수도 1마일을 4분 안에 달렸다"
+      ],
+      "answer": 1,
+      "evidence": [
+        2,
+        3,
+        4
+      ],
+      "note": "'Before 1954, no one had ever', 'In 1954, Roger Bannister ran', 'many other runners also ran' — 기록이 깨졌다는 말은 없음"
     }
   ]
 }

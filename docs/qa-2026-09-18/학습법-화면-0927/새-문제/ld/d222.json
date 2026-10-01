@@ -6,29 +6,33 @@
     {
       "id": "d222-q1",
       "type": "세부 사실",
-      "prompt": "글쓴이가 자동차 · 기차 · 비행기 · 버스에 대해 말한 것은?",
+      "prompt": "글에서 바다 크루즈가 쉬고 편안한 것 말고도 사람을 데려다 준다고 한 곳은?",
       "options": [
-        "모두 배 여행보다 더 즐겁다",
-        "모두 이국적인 곳으로 데려다준다",
-        "모두 나름대로 장점을 갖고 있다",
-        "모두 배 여행보다 값이 싸다"
+        "흥미롭고 이국적인 곳",
+        "자유롭고 이국적인 곳",
+        "값싸고 이국적인 곳",
+        "안전하고 이국적인 곳"
       ],
-      "answer": 2,
-      "evidence": [2],
-      "note": "The car, the train, the plane, the bus, all have their advantages"
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "an ocean cruise takes one to interesting and exotic places"
     },
     {
       "id": "d222-q2",
       "type": "세부 사실",
-      "prompt": "열대 섬들을 여행하고 집에 돌아온 사람에 대해 말한 것은?",
+      "prompt": "글에서 열대의 섬들을 다녀와 집에 돌아오면 갖게 된다고 한 것은?",
       "options": [
-        "친구들에게서 섬 이야기를 듣는다",
-        "친구들에게 들려줄 이야기가 많아진다",
-        "친구들과 다시 떠날 계획을 세운다",
-        "배 여행이 힘들었다며 후회한다"
+        "친구들에게 나눠 줄 많은 선물",
+        "친구들에게 들려줄 많은 이야기",
+        "친구들에게 보여 줄 많은 사진",
+        "친구들에게 보낼 많은 그림엽서"
       ],
       "answer": 1,
-      "evidence": [5],
+      "evidence": [
+        5
+      ],
       "note": "when one returns home, he will have many interesting tales to tell his friends"
     }
   ]

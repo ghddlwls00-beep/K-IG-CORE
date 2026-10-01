@@ -6,28 +6,29 @@
     {
       "id": "d083-q1",
       "type": "세부 사실",
-      "prompt": "그 당시 감독들이 영화를 찍을 때 카메라를 다룬 방식으로 옳은 것은?",
+      "prompt": "그 당시 감독들이 카메라를 한자리에 둔 덕분에 옮기지 않고도 찍을 수 있었다고 글에서 말한 것은?",
       "options": [
-        "배우에게 아주 가까이 옮겼다",
-        "넓게 보이도록 멀리 옮겼다",
-        "늘 같은 자리에 두고 찍었다",
-        "장면마다 자리를 바꿔 가며 찍었다"
+        "무대 배경",
+        "촬영 소품",
+        "필름 상자",
+        "조명 기구"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        2
+        2,
+        4
       ],
-      "note": "'directors always kept the camera in the same place'가 그 당시 감독들의 방식을 보여 줌"
+      "note": "'kept the camera in the same place' · 'without moving the lights'"
     },
     {
       "id": "d083-q2",
       "type": "목적/태도",
       "prompt": "그리피스가 남들과 다르게 찍기 시작한 까닭으로 옳은 것은?",
       "options": [
-        "조명을 옮기지 않고 찍을 수 있어서",
-        "영화가 더 흥미진진해질 것 같아서",
-        "배우들이 더 편하게 연기할 수 있어서",
-        "촬영 시간이 크게 줄 것 같아서"
+        "촬영에 드는 돈과 시간을 줄일 수 있어서",
+        "카메라를 옮겨 다니면 영화가 더 흥미진진할 것 같아서",
+        "관객들이 같은 화면에 싫증을 낸다고 들어서",
+        "남북 전쟁의 넓은 싸움터를 한눈에 담고 싶어서"
       ],
       "answer": 1,
       "evidence": [
@@ -39,19 +40,19 @@
     {
       "id": "d083-q3",
       "type": "세부 사실",
-      "prompt": "그리피스의 영화 〈국가의 탄생〉(The Birth of a Nation)에 대해 옳은 것은?",
+      "prompt": "그리피스가 카메라를 옮겨 찍은 방식으로 옳은 것은?",
       "options": [
-        "큰 인기를 얻어 그를 유명하게 했다",
-        "그가 맨 처음 감독한 작품이었다",
-        "남북 전쟁 전의 일만 다룬다",
-        "사람들에게 별 인기를 얻지 못했다"
+        "배우들을 따라 옆으로 옮기기도 하고 높이 올려 넓게 담기도 했다",
+        "배우들 뒤로 돌아가기도 하고 낮게 내려 넓게 담기도 했다",
+        "배우들 머리 위에 매달기도 하고 수레에 실어 넓게 담기도 했다",
+        "배우들에게 아주 가까이 대기도 하고 멀리 물려 넓게 담기도 했다"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        8,
-        10
+        6,
+        7
       ],
-      "note": "'most famous movie was The Birth of a Nation'과 'The movie was very popular and it made Griffith famous'가 그 영화에 대해 알려 줌"
+      "note": "'very close to the actors and actresses' — 'far away to give a wide view'"
     }
   ]
 }

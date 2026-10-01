@@ -5,36 +5,36 @@
   "questions": [
     {
       "id": "pr128-q1",
-      "type": "세부 사실",
-      "prompt": "2000년 무렵 전자 상거래 산업이 직면했던 문제로 가장 적절한 것은?",
+      "type": "이유",
+      "prompt": "글에서 필요한 인력 수요가 늘어날 것으로 예상된 까닭은?",
       "options": [
-        "필요한 인력이 모자랐던 것",
-        "일할 사람이 남아돌았던 것",
-        "상품을 사려는 사람이 줄어든 것",
-        "기업들이 전자 상거래를 꺼린 것"
+        "인터넷 이용자가 빠르게 늘어나고 있어서",
+        "숙련된 직원들이 다른 업종으로 떠나고 있어서",
+        "정부가 정보 기술 분야를 크게 지원해서",
+        "여러 산업이 경쟁하듯 전자 상거래로 바뀌어서"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        1
+        3
       ],
-      "note": "근거: 'the e-business industry was faced with a labor shortage'"
+      "note": "근거: 'Industries were competitively changing their businesses into e-businesses, and thus the demand ... was expected to grow'"
     },
     {
       "id": "pr128-q2",
-      "type": "한 단계 추론",
-      "prompt": "글에서 'This gap'에 대해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "조사에서 드러난 인력 공급과 수요의 차이는 언제까지 이어질 것으로 예상되었는가?",
       "options": [
-        "2005년 전에 좁혀질 것으로 보였다",
-        "2005년 뒤에도 끝내 좁혀지지 않았다",
-        "조사 직후 곧바로 사라졌다",
-        "한동안 좁혀지지 않으리라 예상되었다"
+        "2005년 이전까지",
+        "2003년 이전까지",
+        "2008년 이전까지",
+        "2010년 이전까지"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
         4,
         5
       ],
-      "note": "근거: 'a gap between the labor supply and demand' · 'This gap was not expected to close before 2005'"
+      "note": "근거: 'there was a gap between the labor supply and demand' · 'This gap was not expected to close before 2005'"
     }
   ]
 }

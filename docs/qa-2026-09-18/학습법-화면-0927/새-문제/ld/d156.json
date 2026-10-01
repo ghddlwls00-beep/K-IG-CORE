@@ -5,23 +5,19 @@
   "questions": [
     {
       "id": "d156-q1",
-      "type": "중심내용",
-      "prompt": "이 글은 주로 무엇에 관한 내용인가?",
+      "type": "세부사실",
+      "prompt": "말하는 사람이 젠슨 가족을 소개한 말로 알맞은 것은?",
       "options": [
-        "부모 둘이서만 농장을 일군 가족의 이야기",
-        "노르웨이에 농장을 둔 이민 가족의 이야기",
-        "온 가족이 함께 일해 온 한 농가의 이야기",
-        "두 아들이 도시로 떠나 버린 농가의 이야기"
+        "전형적인 미국 농가 가족",
+        "전형적인 노르웨이 가족",
+        "전형적인 이민자 가족",
+        "전형적인 미네소타 가족"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        1,
-        4,
-        6,
-        7,
-        9
+        1
       ],
-      "note": "a typical American farm family · helped their father · helped their mother · the whole family worked very hard · Olaf runs the farm now and his wife and children help him"
+      "note": "The Jensens are a typical American farm family"
     },
     {
       "id": "d156-q2",
@@ -44,10 +40,10 @@
       "type": "세부사실",
       "prompt": "오늘날 젠슨 부부에 대해 말한 것은?",
       "options": [
-        "고향 노르웨이로 돌아가 살고 있다",
-        "농장을 딸들에게 물려주었다",
-        "미네소타의 다른 농장으로 옮겼다",
-        "늙어서 예전만큼 일하지 못한다"
+        "나이 들어 손주들을 돌보며 지낸다",
+        "나이 들어 노르웨이 고향을 자주 찾는다",
+        "나이 들었어도 젖 짜는 일은 계속한다",
+        "나이 들어 예전만큼 힘든 일은 하지 못한다"
       ],
       "answer": 3,
       "evidence": [

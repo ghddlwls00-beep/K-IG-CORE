@@ -6,34 +6,34 @@
     {
       "id": "pr132-q1",
       "type": "세부 사실",
-      "prompt": "언어 순수주의자들이 언어 변화를 막으려는 이유로 언급된 것은?",
+      "prompt": "글에서 언어 순수주의자들이 막고 싶어 한다고 한 것은?",
       "options": [
-        "변화는 언어를 풍요롭게 한다는 믿음",
-        "모든 언어가 똑같이 훌륭하다는 믿음",
-        "변화는 타락을 부른다는 믿음",
-        "언어는 늘 같다는 믿음"
+        "외래어의 유입과 사용",
+        "언어 변화와 방언 분화",
+        "맞춤법의 단순화와 개정",
+        "신조어의 생성과 확산"
+      ],
+      "answer": 1,
+      "evidence": [
+        1
+      ],
+      "note": "'wish to stem change in language or dialect differentiation' — 언어 변화와 방언 분화를 막으려 함"
+    },
+    {
+      "id": "pr132-q2",
+      "type": "세부 사실",
+      "prompt": "글에서 언어 순수주의자들의 잘못된 믿음으로 언급된 것은?",
+      "options": [
+        "언어가 섞이면 사라지게 된다",
+        "언어가 쉬워지면 천해지게 된다",
+        "언어가 바뀌면 타락하게 된다",
+        "언어가 늘어나면 혼란해지게 된다"
       ],
       "answer": 2,
       "evidence": [
         1
       ],
-      "note": "'or that change leads to corruption' — 변화는 타락을 부른다는 믿음"
-    },
-    {
-      "id": "pr132-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글을 쓴 사람의 태도로 가장 적절한 것은?",
-      "options": [
-        "언어 순수주의자들의 믿음이 틀렸다고 본다",
-        "언어 변화를 막아야 한다고 주장한다",
-        "방언이 늘어나는 것을 걱정한다",
-        "어느 쪽 편도 들지 않는다"
-      ],
-      "answer": 0,
-      "evidence": [
-        1
-      ],
-      "note": "'their false belief' — 글쓴이가 그 믿음을 그릇되다(false)고 부름"
+      "note": "'their false belief … that change leads to corruption' — 변화가 타락을 낳는다는 믿음"
     }
   ]
 }

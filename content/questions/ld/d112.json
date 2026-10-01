@@ -9,11 +9,11 @@
       "prompt": "한 노동자가 처음 눈여겨본, 모양이 특이한 것은 무엇인가?",
       "options": [
         "구슬 몇 개",
-        "깨진 그릇 조각",
-        "깨진 그릇과 구슬",
-        "돌 여러 개"
+        "깨진 그릇 조각들",
+        "돌 여러 개",
+        "돌로 만든 도구 몇 점"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         2,
         3
@@ -22,19 +22,19 @@
     },
     {
       "id": "d112-q2",
-      "type": "다음에 할 일",
-      "prompt": "인류학자들이 앞으로 하려는 일로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "노동자가 모양이 특이한 돌을 보았을 때 공사는 어떤 상황이었는가?",
       "options": [
-        "그 지역을 조심스럽게 파며 조사한다",
-        "그 지역을 파지 않고 그대로 덮어 둔다",
-        "파낸 것들을 곧장 대학에 보낸다",
-        "그 지역 대신 근처 땅부터 먼저 파 본다"
+        "불도저가 새 구역을 막 파기 시작하던 참이었다",
+        "불도저가 그 구역을 거의 다 파 갈 무렵이었다",
+        "불도저가 하루 일을 마치고 멈춰 있던 참이었다",
+        "불도저가 파 놓은 흙을 실어 나르던 참이었다"
       ],
       "answer": 0,
       "evidence": [
-        6
+        2
       ],
-      "note": "'The anthropologists plan to dig carefully and examine the contents of the area'가 그 지역을 조심스럽게 파며 조사할 계획임을 보여 줌"
+      "note": "'Bulldozers had just begun to dig in a new area when a worker noticed several rocks'가 불도저가 새 구역을 막 파기 시작했을 때임을 보여 줌"
     }
   ]
 }

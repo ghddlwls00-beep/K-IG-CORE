@@ -5,49 +5,48 @@
   "questions": [
     {
       "id": "d090-q1",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
-      "options": [
-        "초기 아동 교육이 아이들에게 글자와 셈을 가르치는 일",
-        "초기 아동 교육이 아이들을 학교에 대비시키는 일",
-        "초기 아동 교육이 아이들의 시험 성적을 매기는 일",
-        "초기 아동 교육이 부모 대신 아이를 돌보는 일"
-      ],
-      "answer": 1,
-      "evidence": [
-        3,
-        4,
-        7
-      ],
-      "note": "'The first level is early childhood education' · 'Its main purpose is to prepare children for school' · 'They are prepared for the learning experiences in elementary school'이 초기 아동 교육이 아이들을 학교에 대비시킨다는 것을 보여 줌"
-    },
-    {
-      "id": "d090-q2",
       "type": "세부 사실",
-      "prompt": "미국의 모든 주에서 정해 둔 것으로 가장 알맞은 것은?",
+      "prompt": "미국의 학교 출석 의무에 대해 말한 것으로 가장 알맞은 것은?",
       "options": [
-        "학교에 다니는 것이 의무이다",
-        "유치원은 누구나 무료로 다닌다",
-        "고등 교육까지 모두 마쳐야 한다",
-        "지역마다 단계를 따로 정한다"
+        "모든 주의 의무이고, 대부분의 주는 17세나 그 이상까지 다니게 한다",
+        "대부분 주의 의무이고, 모든 주가 17세나 그 이상까지 다니게 한다",
+        "모든 주의 의무이고, 몇몇 주가 17세나 그 이상까지 다니게 한다",
+        "대부분 주의 의무이고, 몇몇 주가 17세나 그 이상까지 다니게 한다"
       ],
       "answer": 0,
       "evidence": [
         2
       ],
-      "note": "'School attendance is required in every state of the United States'가 모든 주에서 학교에 다니는 것이 의무임을 보여 줌"
+      "note": "'School attendance is required in every state' · 'In most states, students must attend school until they are 17 or older'"
+    },
+    {
+      "id": "d090-q2",
+      "type": "세부 사실",
+      "prompt": "초기 아동 교육의 주된 목적으로 말한 것으로 가장 알맞은 것은?",
+      "options": [
+        "아이들이 학교에 다닐 준비를 하게 하는 것",
+        "아이들이 무리와 잘 어울리게 하는 것",
+        "아이들이 생각과 느낌을 드러내게 하는 것",
+        "아이들이 부모와 떨어져 지내게 하는 것"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'The first level is early childhood education' · 'Its main purpose is to prepare children for school'"
     },
     {
       "id": "d090-q3",
       "type": "세부 사실",
       "prompt": "유치원과 취학 전 학교의 어린이들이 생각과 느낌을 표현하는 방법으로 가장 알맞은 것은?",
       "options": [
-        "춤, 연극, 만들기",
-        "블록 쌓기, 퍼즐, 종이접기",
-        "이야기 듣기, 글쓰기, 발표",
-        "그림 그리기, 노래, 놀이"
+        "역할극, 그림책 읽기, 춤",
+        "노래, 율동, 종이접기",
+        "그림 그리기, 노래, 놀이",
+        "블록 쌓기, 만들기, 퍼즐"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         6
       ],

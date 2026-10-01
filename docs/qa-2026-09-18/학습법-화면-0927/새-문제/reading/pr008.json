@@ -5,38 +5,36 @@
   "questions": [
     {
       "id": "pr008-q1",
-      "type": "세부 사실",
-      "prompt": "이 글에 따르면 1900년이 윤년이 아니었던 이유로 가장 적절한 것은?",
+      "type": "가리키는 것",
+      "prompt": "이 글에서 'To fix this'의 'this'가 가리키는 것은?",
       "options": [
-        "그해에는 지구가 태양을 도는 데 걸리는 시간이 달라졌기 때문에",
-        "1900년부터 윤년 제도 자체가 새로 만들어졌기 때문에",
-        "1900은 400으로 나누어떨어지지 않기 때문에",
-        "1900은 4로 나누어떨어지지 않기 때문에"
+        "2월이 다른 달보다 짧은 것",
+        "달마다 날수가 서로 다른 것",
+        "4년마다 더하는 하루가 조금 많은 것",
+        "달력과 계절이 서서히 어긋나는 것"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        6,
-        7
+        2,
+        3
       ],
-      "note": "leap years only if they can be divided by 400 / 1900 was not로 확인"
+      "note": "the calendar and the seasons slowly drift apart. To fix this로 확인"
     },
     {
       "id": "pr008-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 윤년인 해와 윤년이 아닌 해의 예로 차례대로 든 것은?",
       "options": [
-        "지구가 태양을 도는 데 걸리는 시간은 앞으로 점점 길어질 것이다",
-        "2100년은 4로 나누어떨어지지만 윤년이 되지 않을 것이다",
-        "윤년 제도가 없어도 달력과 계절은 항상 정확히 들어맞는다",
-        "앞으로는 4년마다 예외 없이 윤년이 돌아온다"
+        "2000년과 2200년",
+        "1600년과 1900년",
+        "2000년과 1900년",
+        "1600년과 2200년"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        3,
-        6,
         7
       ],
-      "note": "added every four years / years that end in 00 are leap years only if they can be divided by 400 / 1900 was not로 확인"
+      "note": "2000 was a leap year, but 1900 was not로 확인"
     }
   ]
 }

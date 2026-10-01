@@ -5,32 +5,31 @@
   "questions": [
     {
       "id": "d272-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "오늘날 많은 대학에서 하고 있다고 말한 것은?",
       "options": [
-        "대중음악을 얕보던 시각이 인정으로 바뀌고 있다",
-        "대중음악은 예전부터 지식인들에게 높이 평가받았다",
-        "재즈는 가치가 없어 대학에서도 가르치지 않는다",
-        "재즈를 인정하는 사람이 갈수록 줄어들고 있다"
+        "재즈 연주법을 음악 전공 과목으로 가르친다",
+        "재즈와 클래식 음악을 한 무대에 함께 올린다",
+        "재즈 음반을 모아 학생들에게 들려준다",
+        "재즈의 역사를 미국 문화의 하나로 가르친다"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        1,
-        3
+        4
       ],
-      "note": "'most intellectuals scorned popular music' · 'today people are becoming increasingly aware that jazz ... are a valid and worthwhile trend' — 얕보던 시각이 인정으로 바뀜"
+      "note": "'many colleges and universities hold classes in the history of jazz as part of American culture' — 재즈의 역사를 미국 문화로 가르침"
     },
     {
       "id": "d272-q2",
       "type": "세부 사실",
       "prompt": "나이 든 친척에 대해 말한 것으로 옳은 것은?",
       "options": [
-        "바그너의 음악은 얕보고 젊은 세대의 음악은 즐겨 듣는다",
-        "젊은 세대의 음악도 바그너의 음악도 모두 얕본다",
-        "젊은 세대의 음악은 얕보고 바그너의 음악은 즐겨 듣는다",
-        "젊은 세대의 음악도 바그너의 음악도 모두 즐겨 듣는다"
+        "젊은 세대에게 재즈 대신 바그너의 음악을 들어 보라고 권한다",
+        "바그너의 음악도 재즈처럼 시끄러운 소음이라며 얕본다",
+        "재즈는 즐겨 들으면서 바그너의 음악은 낡았다며 얕본다",
+        "젊은 세대가 즐기는 재즈는 얕보면서 바그너의 음악은 즐겨 듣는다"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         6
       ],

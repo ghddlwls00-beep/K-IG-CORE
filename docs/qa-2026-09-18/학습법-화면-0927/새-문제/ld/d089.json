@@ -6,46 +6,47 @@
     {
       "id": "d089-q1",
       "type": "세부 사실",
-      "prompt": "라이트 형제가 자동차 엔진을 쓰지 않은 까닭으로 가장 알맞은 것은?",
+      "prompt": "너무 무거워서 라이트 형제가 비행기에 쓸 수 없었다고 한 것으로 가장 알맞은 것은?",
       "options": [
-        "힘이 모자라서",
-        "값이 비싸서",
-        "구할 곳이 없어서",
-        "너무 무거워서"
+        "증기 기관",
+        "배의 엔진",
+        "오토바이 엔진",
+        "자동차 엔진"
       ],
       "answer": 3,
       "evidence": [
         1
       ],
-      "note": "'Because automobile engines were too heavy, the Wrights had to build a special engine'이 자동차 엔진이 너무 무거워서 엔진을 따로 만들었음을 보여 줌"
+      "note": "'Because automobile engines were too heavy, the Wrights had to build a special engine'"
     },
     {
       "id": "d089-q2",
       "type": "세부 사실",
       "prompt": "플라이어호에 올라 비행기로 처음 하늘을 난 사람으로 가장 알맞은 것은?",
       "options": [
-        "윌버",
-        "오빌",
-        "두 형제 모두",
-        "키티호크의 한 주민"
+        "도착한 바로 그날 오른 윌버",
+        "몇 주를 기다린 끝에 오른 오빌",
+        "도착한 바로 그날 오른 오빌",
+        "몇 주를 기다린 끝에 오른 윌버"
       ],
       "answer": 1,
       "evidence": [
+        3,
         4
       ],
-      "note": "'Orville climbed into the Flyer and became the first man to fly in an airplane'이 처음 난 사람이 오빌임을 보여 줌"
+      "note": "'They couldn't fly for several weeks because of bad weather' · 'Orville climbed into the Flyer and became the first man to fly'이 몇 주를 기다린 끝에 오빌이 처음 날았음을 보여 줌"
     },
     {
       "id": "d089-q3",
       "type": "세부 사실",
       "prompt": "라이트 형제가 플라이어호를 만들 때 쓴 기본 아이디어에 대한 설명으로 가장 알맞은 것은?",
       "options": [
-        "유럽에서는 쓰이지 않았다",
-        "곧 잘못된 것이 드러났다",
-        "그 뒤의 모든 비행기에 쓰였다",
-        "박물관에서만 볼 수 있다"
+        "1905년에 새 방식으로 바뀌었다",
+        "그 뒤 모든 비행기에 쓰였다",
+        "다른 나라에는 비밀로 지켜졌다",
+        "워싱턴 박물관에서만 볼 수 있다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         9
       ],

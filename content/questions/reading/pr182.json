@@ -6,34 +6,34 @@
     {
       "id": "pr182-q1",
       "type": "세부 사실",
-      "prompt": "이 글에 따르면 1900년대 초 오렌지 주스에 관한 설명으로 옳은 것은?",
+      "prompt": "이 글에서 1년 중 몇 달 동안만 오렌지 주스를 마실 수 있었다고 한 때와 곳은?",
       "options": [
-        "많은 지역에서 몇 달 동안만 구할 수 있었다",
-        "미국 어느 지역에서나 1년 내내 마실 수 있었다",
-        "캔에 담긴 주스가 이미 널리 팔렸다",
-        "1년 중 딱 1개월만 마실 수 있었다"
+        "1800년대 말의 미국",
+        "1900년대 초의 영국",
+        "1900년대 초의 미국",
+        "1800년대 말의 영국"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
         1
       ],
-      "note": "'people in many parts of the United States could have orange juice during only a few months of the year' — 많은 지역에서 1년 중 몇 달만 마실 수 있었음"
+      "note": "'In the early 1900s, people in many parts of the United States ... only a few months' — 1900년대 초 미국"
     },
     {
       "id": "pr182-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "글에서 \"it became available regardless of the season\"의 it이 가리키는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면 오렌지 주스를 계절과 상관없이 마실 수 있게 된 방법은?",
       "options": [
-        "캔",
-        "계절",
-        "미국",
-        "오렌지 주스"
+        "얼려서 보관해서",
+        "가루로 만들어서",
+        "유리병에 담아서",
+        "캔에 담아서"
       ],
       "answer": 3,
       "evidence": [
         2
       ],
-      "note": "'orange juice was put up in cans, so that it became available regardless of the season' — it 은 orange juice"
+      "note": "'orange juice was put up in cans, so that it became available regardless of the season' — 캔에 담음"
     }
   ]
 }

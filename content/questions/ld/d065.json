@@ -5,37 +5,37 @@
   "questions": [
     {
       "id": "d065-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "한 손님이 콩을 나이프로 먹기 시작하자 귀족이 한 행동으로 알맞은 것은?",
       "options": [
-        "손님은 주인의 식사 방식을 따라야 한다",
-        "틀린 식사 예절은 바로 고쳐 주어야 한다",
-        "음식은 알맞은 도구로 먹는 것이 중요하다",
-        "손님이 무안하지 않도록 배려하는 것이 중요하다"
+        "침착하게 못 본 척하며 계속 포크로 먹었다",
+        "침착하게 건배를 청해 분위기를 바꾸었다",
+        "침착하게 그 손님 곁에 가서 말을 걸었다",
+        "침착하게 나이프를 들고 똑같이 먹기 시작했다"
       ],
       "answer": 3,
       "evidence": [
-        1,
-        4,
-        5
+        3,
+        4
       ],
-      "note": "'not to do anything that might make other people feel uncomfortable'와 'bad manners to make his guest feel foolish'가 손님 배려가 핵심임을 보여줌"
+      "note": "'one of the guests started to eat his peas with a knife'와 'the nobleman calmly picked up his knife and began eating in the same way'가 근거"
     },
     {
       "id": "d065-q2",
       "type": "세부 사실",
-      "prompt": "귀족이 콩을 나이프로 먹는 손님을 보고 한 행동으로 알맞은 것은?",
+      "prompt": "한 손님이 콩을 나이프로 먹자 다른 손님들이 보인 반응으로 알맞은 것은?",
       "options": [
-        "손님에게 포크 사용법을 알려 주었다",
-        "자기도 똑같은 방식으로 먹었다",
-        "못 본 척하고 포크로 계속 먹었다",
-        "다른 손님들과 함께 웃었다"
+        "재미있어하거나 화를 냈다",
+        "재미있어하거나 얼굴을 찌푸렸다",
+        "재미있어하거나 충격을 받았다",
+        "재미있어하거나 수군거렸다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
+        3,
         4
       ],
-      "note": "'the nobleman calmly picked up his knife and began eating in the same way'가 귀족도 나이프로 먹었음을 보여줌"
+      "note": "'one of the guests started to eat his peas with a knife'와 'The other guests were amused or shocked'가 근거"
     }
   ]
 }

@@ -5,36 +5,37 @@
   "questions": [
     {
       "id": "d170-q1",
-      "type": "목적/태도",
-      "prompt": "사촌이 음식을 미리 주문한 목적으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "사촌이 손님들을 초대한 때와 손님 수로 옳은 것은?",
       "options": [
-        "손님들에게 요리 솜씨를 보이려고",
-        "동네 가게들을 손님들에게 알리려고",
-        "갑자기 온 손님을 대접하려고",
-        "시간과 수고를 덜려고"
+        "저녁 식사, 손님 10명",
+        "점심 식사, 손님 10명",
+        "저녁 식사, 손님 12명",
+        "점심 식사, 손님 12명"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
         1
       ],
-      "note": "'invited 10 guests' · 'To save herself some time and work, she ordered the food in advance' — 시간과 수고를 덜려고 미리 주문함"
+      "note": "'a cousin of mine invited 10 guests for lunch' — 점심, 손님 10명"
     },
     {
       "id": "d170-q2",
-      "type": "세부 사실",
-      "prompt": "모두 도착해 식당으로 들어갔을 때 사촌이 본 것으로 옳은 것은?",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "고양이가 식탁에 앉아 고기를 먹고 있었다",
-        "초대하지 않은 이웃이 케이크를 먹고 있었다",
-        "고양이가 샐러드 접시를 엎어 놓았다",
-        "초대하지 않은 이웃이 와인을 따랐다"
+        "미리 차려 둔 식탁 위에서 사촌의 고양이가 고기를 먹고 있던 일",
+        "미리 차려 둔 식탁 위에서 사촌의 개가 고기를 먹고 있던 일",
+        "미리 차려 둔 식탁 위에서 이웃집 고양이가 고기를 먹고 있던 일",
+        "미리 차려 둔 식탁 위에서 이웃집 개가 고기를 먹고 있던 일"
       ],
       "answer": 0,
       "evidence": [
+        3,
         5,
         6
       ],
-      "note": "'found she had an uninvited guest' · 'Her cat was sitting on the table, happily eating one of the portions of meat' — 초대 안 한 손님은 고양이"
+      "note": "'She set the table and put out all the food' · 'an uninvited guest' · 'Her cat was sitting on the table, happily eating one of the portions of meat' — 사촌의 고양이"
     }
   ]
 }

@@ -5,31 +5,36 @@
   "questions": [
     {
       "id": "d149-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "이유",
+      "prompt": "이 글에서 미국의 말이 영어가 된 까닭으로 든 것은?",
       "options": [
-        "대부분의 미국인은 인디언의 후손이다",
-        "대부분의 미국인은 세계 각지에서 온 사람들의 후손이다",
-        "인디언의 후손은 이제 미국에 거의 남아 있지 않다",
-        "대부분의 미국인은 한 나라에서 온 사람들의 후손이다"
+        "독립하기 전까지 영국이 이 땅을 오랫동안 다스려서",
+        "세계 곳곳에서 온 사람들이 영어를 함께 쓰기로 정해서",
+        "인디언들이 처음 온 영국 사람들에게서 영어를 배워서",
+        "동부 해안에 먼저, 가장 많이 온 이들이 주로 영국 사람이어서"
       ],
-      "answer": 1,
-      "evidence": [1, 4],
-      "note": "\"the first inhabitants\" · \"Most Americans, however, are descendants of people who came from all over the world\""
+      "answer": 3,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "\"Those who came first and in greatest numbers … were mostly from England\" · \"for that reason … the language … is English\""
     },
     {
       "id": "d149-q2",
-      "type": "세부 사실(이유)",
-      "prompt": "미국의 언어가 영어이고 문화가 잉글랜드와 가장 비슷한 까닭으로 옳은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 때때로 그렇게들 말한다고 소개한 것은?",
       "options": [
-        "잉글랜드 사람의 후손이 지금도 수백만 명이어서",
-        "인디언이 잉글랜드 말을 배워 널리 퍼뜨려서",
-        "처음 가장 많이 온 사람들이 잉글랜드 출신이어서",
-        "잉글랜드 출신들이 서부 해안에 먼저 자리 잡아서"
+        "미국인은 누구나 이민자의 후손이라고",
+        "인디언만이 진짜 미국인이라고",
+        "미국 문화는 영국 문화라고",
+        "인디언의 후손은 서부에 모여 산다고"
       ],
-      "answer": 2,
-      "evidence": [5, 6],
-      "note": "\"came first and in greatest numbers\" · \"eastern coast\" · \"mostly from England\" · \"It is for that reason\""
+      "answer": 1,
+      "evidence": [
+        3
+      ],
+      "note": "\"Sometimes it is said that the Indians are the only real Americans\""
     }
   ]
 }

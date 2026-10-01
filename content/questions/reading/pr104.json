@@ -5,38 +5,38 @@
   "questions": [
     {
       "id": "pr104-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "순서",
+      "prompt": "글에서 두 번째로 소개한 방문객 무리는?",
       "options": [
-        "멕시코를 찾는 사람은 대부분 예술가다",
-        "멕시코에는 저마다 다른 이유로 여러 부류가 찾아온다",
-        "예술가들은 멕시코의 밤 문화에 끌려 찾아온다",
-        "멕시코 문화를 좋아하는 사람만 멕시코를 찾는다"
+        "은퇴자들",
+        "예술가들",
+        "휴양객들",
+        "사업가들"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        1,
         2,
         4,
         6
       ],
-      "note": "'Mexico attracts different types of visitors' · 'One group is composed of artists' · 'Another group consists of retirees' · 'The third group is attracted by the resort'로 확인"
+      "note": "'One group is composed of artists' · 'Another group consists of retirees' · 'The third group'으로 확인"
     },
     {
       "id": "pr104-q2",
       "type": "세부 사실",
-      "prompt": "은퇴자들에 대한 설명으로 글의 내용과 일치하는 것은?",
+      "prompt": "은퇴자들이 멕시코에서 좋아한다고 한 것은?",
       "options": [
-        "밤새 놀 수 있는 휴양지를 좋아한다",
-        "글이나 그림의 대상 곁에 있고 싶어 한다",
-        "바쁘게 돌아가는 생활을 좋아한다",
-        "줄어든 수입으로 살아야 한다"
+        "값싼 의료 서비스",
+        "친절한 이웃 사람들",
+        "조용한 시골 마을",
+        "서두르지 않는 생활 방식"
       ],
       "answer": 3,
       "evidence": [
-        4
+        4,
+        5
       ],
-      "note": "'retirees who also need to live on reduced incomes'로 확인"
+      "note": "'retirees' · 'They like the unhurried way of life'로 확인"
     }
   ]
 }

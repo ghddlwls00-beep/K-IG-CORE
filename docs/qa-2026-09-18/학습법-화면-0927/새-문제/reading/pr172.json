@@ -5,33 +5,31 @@
   "questions": [
     {
       "id": "pr172-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "이유",
+      "prompt": "평범한 재능을 가진 사람들이 훌륭한 성과를 거둔 바탕으로 본문에서 든 것은?",
       "options": [
-        "직원 평가에서는 성과보다 충성심이 중요하다",
-        "재능이 평범한 사람은 좋은 성과를 내기 어렵다",
-        "고용주는 충성스러운 사람을 먼저 뽑아야 한다",
-        "직원을 평가하는 최종 기준은 실제 업무 성과이다"
+        "근면함과 일에 대한 깊은 흥미",
+        "근면함과 동료들과의 긴밀한 협력",
+        "근면함과 꾸준한 자기 계발",
+        "근면함과 고용주의 이익에 대한 충성"
       ],
       "answer": 3,
       "evidence": [
-        1,
-        2,
-        3
+        2
       ],
-      "note": "'do not always go hand in hand' · 'the final test of any employee is his performance on the job' — 최종 평가 기준은 업무 성과"
+      "note": "'persons with mediocre talents ... through their industry and their loyalty to the interests of their employers'"
     },
     {
       "id": "pr172-q2",
       "type": "세부 사실",
       "prompt": "잠재력이 뛰어난 사람이 일을 제대로 해내지 못하는 이유로 언급된 것은?",
       "options": [
+        "동료와의 갈등이나 소통 부족",
         "게으름이나 일에 대한 무관심",
-        "고용주에 대한 지나친 충성심",
-        "특정한 일을 할 능력의 부족",
-        "평범한 재능과 낮은 잠재력"
+        "지나친 업무량이나 쌓인 피로",
+        "낮은 보수나 승진 기회의 부족"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
         2
       ],

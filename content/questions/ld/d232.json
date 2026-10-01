@@ -5,32 +5,32 @@
   "questions": [
     {
       "id": "d232-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부사실",
+      "prompt": "이 글에서 고대 그리스의 비극과 희극에서 중요한 역할을 했다고 한 것은?",
       "options": [
-        "연극은 고대 그리스에서 처음 생겨나 세계 여러 나라로 퍼져 나갔다",
-        "연극은 꾸며 낸 세계를 즐기려는 욕구를 풀어 주며 어느 나라에나 있다",
-        "연극은 선진 문명이 지은 정교한 극장에서 처음 시작되었다",
-        "연극은 지어낸 이야기라서 사람들에게 오랫동안 외면받았다"
+        "말과 몸짓",
+        "무대와 조명",
+        "의상과 분장",
+        "음악과 춤"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        1,
-        2
+        6,
+        7
       ],
-      "note": "'drama is one of the best outlets for this desire' · 'Every country of the world has some form of dramatics' — 욕구를 푸는 통로이며 어느 나라에나 있음"
+      "note": "'The ancient Greeks produced tragedies and comedies … Music and dance played an important role in these dramas' — 그리스 비극·희극에서 음악과 춤이 중요한 역할"
     },
     {
       "id": "d232-q2",
       "type": "세부사실",
       "prompt": "이 글에서 고대 세계의 연극에 대해 말한 것으로 가장 적절한 것은?",
       "options": [
-        "음악과 무용은 거의 쓰이지 않았다",
-        "배우들은 가면 없이 맨얼굴로 연기했다",
-        "비극보다 희극이 훨씬 더 사랑받았다",
-        "손꼽히는 사회·문화 행사였다"
+        "손꼽히는 종교·제례 행사였다",
+        "손꼽히는 오락·여흥 행사였다",
+        "손꼽히는 사회·문화 행사였다",
+        "손꼽히는 교육·훈계 행사였다"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         5
       ],
@@ -39,18 +39,18 @@
     {
       "id": "d232-q3",
       "type": "세부사실",
-      "prompt": "이 글에서 작은 전통 사회들이 자신을 표현한다고 한 방식으로 가장 적절한 것은?",
+      "prompt": "이 글에서 선진 문명들이 해 왔다고 한 일로 가장 적절한 것은?",
       "options": [
-        "의식 무용과 무언극",
-        "비극과 희극 공연",
-        "정교한 극장과 아름다운 희곡",
-        "기괴한 가면을 쓴 연기"
+        "정교한 극장을 짓고 극작가들을 길러 냈다",
+        "의식 무용을 다듬어 무언극으로 발전시켰다",
+        "비극과 희극을 처음으로 나누어 공연했다",
+        "배우들이 가면을 쓰는 전통을 만들었다"
       ],
       "answer": 0,
       "evidence": [
-        3
+        4
       ],
-      "note": "'Even small traditional communities express themselves in ritual dances and pantomime' — 작은 전통 사회는 의식 무용과 무언극으로 표현함"
+      "note": "'Advanced civilizations have constructed elaborate theaters and produced dramatists' — 선진 문명은 정교한 극장을 짓고 극작가를 배출함"
     }
   ]
 }

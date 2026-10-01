@@ -5,51 +5,51 @@
   "questions": [
     {
       "id": "d181-q1",
-      "type": "세부사실",
-      "prompt": "이 글에서 말한 세계의 왼손잡이 비율로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "왼손잡이용 물건 가게의 주인에 대해 이 글이 말한 것은?",
       "options": [
-        "약 5명 중 1명",
-        "약 3명 중 1명",
-        "약 100명 중 1명",
-        "약 10명 중 1명"
+        "왼손잡이이다",
+        "양손을 다 쓴다",
+        "왼손잡이 자녀가 있다",
+        "오른손잡이이다"
       ],
       "answer": 3,
       "evidence": [
-        4
+        13
       ],
-      "note": "'Roughly one in ten people in the world is left-handed' — 약 10명 중 1명"
+      "note": "'The owner of Anything Left-Handed, by the way, is right-handed' — 주인은 오른손잡이"
     },
     {
       "id": "d181-q2",
-      "type": "세부사실",
-      "prompt": "오늘날 대부분의 부모에 대해 이 글이 말한 것으로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "왼손잡이용 물건 가게가 물건을 파는 방식으로 이 글이 말한 것은?",
       "options": [
-        "오른손을 쓰라고 더는 강요하지 않는다",
-        "오른손을 쓰라고 여전히 강요한다",
-        "왼손을 쓰라고 오히려 권한다",
-        "양손을 다 쓰도록 가르친다"
-      ],
-      "answer": 0,
-      "evidence": [
-        5
-      ],
-      "note": "'Most parents no longer force a child to use his right hand' — 더는 강요하지 않음"
-    },
-    {
-      "id": "d181-q3",
-      "type": "목적태도",
-      "prompt": "세계의 오른손잡이들에게 생긴 변화로 알맞은 것은?",
-      "options": [
-        "왼손잡이를 예전보다 더 믿지 못하게 되었다",
-        "세상이 왼손잡이에게 불공평했음을 깨달았다",
-        "왼손잡이용 물건을 스스로 쓰기 시작했다",
-        "왼손도 함께 쓰는 연습을 하기 시작했다"
+        "직접 써 보고 고르게 한다",
+        "누구나 살 만한 값에 판다",
+        "1년 안에는 바꿔 준다",
+        "주문하면 집으로 보내 준다"
       ],
       "answer": 1,
       "evidence": [
-        6
+        11
       ],
-      "note": "'have begun to realize how unfair the world has been to its left-handed members' — 불공평했음을 깨닫기 시작함"
+      "note": "'It provides at reasonable prices specially designed, reliable products' — 알맞은 값(누구나 살 만한 값)"
+    },
+    {
+      "id": "d181-q3",
+      "type": "세부 사실",
+      "prompt": "왼손잡이에게 가위가 어떻다고 이 글이 말한 것은?",
+      "options": [
+        "손잡이가 손에 잘 맞지 않는다",
+        "자를 선이 날에 가려 보이지 않는다",
+        "자르려 해도 잘리지 않는다",
+        "오래 쓰면 손가락이 아프다"
+      ],
+      "answer": 2,
+      "evidence": [
+        7
+      ],
+      "note": "'For a left-hander, scissors won't cut' — 가위가 잘리지 않음"
     }
   ]
 }

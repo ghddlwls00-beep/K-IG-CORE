@@ -5,31 +5,35 @@
   "questions": [
     {
       "id": "d221-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 자기 형편을 넘어서는 여행이 결국 되고 만다고 한 것은?",
       "options": [
-        "휴가 비용은 계획할 때 따지지 않아도 된다",
-        "예산이 넉넉할수록 휴가가 더 즐겁다",
-        "휴가는 먼 휴양지에서 보내야 즐겁다",
-        "형편에 맞는 소박한 휴가도 즐거울 수 있다"
+        "큰 빚",
+        "잦은 다툼",
+        "심한 피로",
+        "큰 실망"
       ],
       "answer": 3,
-      "evidence": [2],
-      "note": "A trip that is beyond one's means will only turn out to be a disappointment, whereas a more modest vacation can prove to be a real delight"
+      "evidence": [
+        2
+      ],
+      "note": "A trip that is beyond one's means will only turn out to be a disappointment"
     },
     {
       "id": "d221-q2",
       "type": "세부 사실",
-      "prompt": "미국 국립공원으로 가는 캠핑 여행에 대해 말한 것은?",
+      "prompt": "글에서 가는 길에 캠핑을 하다가 여행 끝에 편안한 휴양지에서 지낸다고 한 기간은?",
       "options": [
-        "돈이 적게 들고 쉬면서 배울 수 있다",
-        "돈은 많이 들지만 쉬면서 배울 수 있다",
-        "돈은 많이 들고 편히 쉬기도 어렵다",
-        "돈이 적게 들지만 배울 것은 별로 없다"
+        "3일쯤",
+        "10일쯤",
+        "1주일쯤",
+        "2주일쯤"
       ],
-      "answer": 0,
-      "evidence": [4],
-      "note": "A camping trip to one of America's national parks is not only inexpensive, but relaxing and informative as well"
+      "answer": 2,
+      "evidence": [
+        5
+      ],
+      "note": "camp along the way and then spend a week or so in a comfortable resort"
     }
   ]
 }

@@ -6,50 +6,50 @@
     {
       "id": "d122-q1",
       "type": "세부 사실",
-      "prompt": "여러 지역의 인구에 대한 설명으로 옳은 것은?",
+      "prompt": "어떤 사람들이 문제를 풀어 주리라 믿는다고 한 것은?",
       "options": [
-        "유럽의 인구는 이민 덕분에 빠르게 늘고 있다",
-        "북미 인구 증가의 상당 부분은 이민 때문이다",
-        "북미의 인구는 해마다 2% 넘게 늘고 있다",
-        "아프리카의 인구는 거의 늘지 않고 있다"
+        "식량 증산과 기술 발전",
+        "인구 억제와 기술 발전",
+        "식량 증산과 이민 제한",
+        "인구 억제와 이민 제한"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        7
+        2
       ],
-      "note": "'North America's population is growing slowly, and much of that growth is the result of immigration'가 북미 인구 증가의 상당 부분이 이민 때문임을 보여 줌"
+      "note": "'increased food production and technological improvements will solve the problem'"
     },
     {
       "id": "d122-q2",
       "type": "목적/태도",
       "prompt": "많은 개발도상국의 인구에 대해 말하는 사람이 보이는 태도로 가장 적절한 것은?",
       "options": [
-        "식량 생산보다 빨리 늘어난 것을 반가워한다",
-        "식량 생산보다 느리게 늘어난 것을 다행으로 여긴다",
-        "식량 생산보다 빨리 늘어난 것을 안타까워한다",
-        "식량 생산보다 느리게 늘어난 것을 걱정한다"
+        "식량이 인구보다 빨리 느는 것에 안도한다",
+        "인구가 해마다 줄어드는 것을 걱정한다",
+        "식량보다 빠른 인구 증가를 안타깝게 여긴다",
+        "인구가 식량보다 빨리 느는 것을 반긴다"
       ],
       "answer": 2,
       "evidence": [
         4
       ],
-      "note": "'Unfortunately, the population in many developing countries has risen faster than food production'가 식량 생산보다 빨리 늘어난 것을 안타까워함을 보여 줌"
+      "note": "'Unfortunately, the population in many developing countries has risen faster than food production'"
     },
     {
       "id": "d122-q3",
-      "type": "다음에 할 일",
-      "prompt": "어떤 사람들이 앞으로 인구 문제를 풀어 줄 것이라고 믿는 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 유럽 인구에 대해 말한 것은?",
       "options": [
-        "식량 증산과 기술 향상",
-        "이민의 자유로운 확대",
-        "새로운 자원의 발견",
-        "인구의 고른 분산"
+        "해마다 2% 넘게 빠르게 늘고 있다",
+        "거의 늘지 않고 제자리에 머물러 있다",
+        "느리게 늘고 그 상당 부분이 이민 덕분이다",
+        "식량 생산보다 더 빠르게 늘어 왔다"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        2
+        6
       ],
-      "note": "'Some believe that increased food production and technological improvements will solve the problem'가 보여 줌"
+      "note": "'Europe's population, however, is hardly growing at all'"
     }
   ]
 }

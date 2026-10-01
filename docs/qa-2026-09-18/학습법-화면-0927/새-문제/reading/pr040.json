@@ -5,38 +5,35 @@
   "questions": [
     {
       "id": "pr040-q1",
-      "type": "vocab",
-      "prompt": "이 글에서 'shadows'가 비유적으로 의미하는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이에 따르면 부모가 처음 우리에게 삶의 방식을 가르치는 방법은?",
       "options": [
-        "부모가 자녀에게 남긴 재산",
-        "부모가 자녀에게 평생 미치는 영향",
-        "자녀가 어린 시절 느끼는 두려움",
-        "부모와 떨어져서 살게 되는 물리적인 거리"
+        "하면 안 되는 일을 짚어 주의를 주며",
+        "옳은 행동을 먼저 몸소 보여 주며",
+        "교훈이 담긴 옛이야기를 들려주며",
+        "잘한 일에 칭찬과 상을 주며"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        1,
-        9
+        2
       ],
-      "note": "1번 'cast long shadows over our lives'와 9번 'carry their being with us all our lives'로 보아 'shadows'는 부모가 평생 미치는 영향을 뜻한다."
+      "note": "'Parents first teach us essential ways of living by cautioning, \"Don't touch\"'"
     },
     {
       "id": "pr040-q2",
-      "type": "inference",
-      "prompt": "이 글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 우리가 평생 지니고 다니는 부모의 흔적으로 언급하지 않은 것은?",
       "options": [
-        "부모와 떨어져 살면 그 그림자에서 완전히 벗어난다",
-        "부모의 그림자는 자녀에게 부정적인 결과만 남긴다",
-        "독립했다고 느껴도 부모의 흔적은 우리 삶에 남아 있다",
-        "성인이 되면 부모에게서 아무것도 배우지 않는다"
+        "목소리의 울림",
+        "피부의 모양과 감촉",
+        "걸음걸이와 몸짓",
+        "손과 마음의 따뜻함"
       ],
       "answer": 2,
       "evidence": [
-        1,
-        7,
-        8
+        9
       ],
-      "note": "1번 'Our parents cast long shadows over our lives', 7번 'we can walk in the sun, free of the shadows', 8번 'still the shadows have not gone'으로 보아 독립했다고 느껴도 부모의 흔적은 우리 삶에 남아 있다."
+      "note": "'in the sounds of our voices, the look and feel of our skin, and the warmth of our hands and our hearts'"
     }
   ]
 }

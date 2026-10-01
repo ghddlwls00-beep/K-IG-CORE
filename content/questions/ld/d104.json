@@ -8,12 +8,12 @@
       "type": "세부 사실",
       "prompt": "개들이 달리는 거리에 대한 설명으로 알맞은 것은?",
       "options": [
-        "하루에 150킬로미터를 넘게 달리면 안 된다",
-        "하루에 150킬로미터 넘게 달리기도 한다",
-        "150킬로미터를 달리면 경주가 끝난다",
-        "150킬로미터를 달릴 때마다 하루 쉰다"
+        "하루에 150킬로미터 넘게 달리는 날도 있다",
+        "하루에 150킬로미터를 넘지 않게 정해져 있다",
+        "150킬로미터를 달릴 때마다 한 번 쉰다",
+        "경주 첫날에 150킬로미터를 달린다"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
         4
       ],
@@ -21,37 +21,35 @@
     },
     {
       "id": "d104-q2",
-      "type": "다음에 할 일",
-      "prompt": "개들이 달리기를 멈추고 쉴 때 운전자가 해야 하는 일로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "경주에서 개들의 하루 일정으로 알맞은 것은?",
       "options": [
-        "개들과 함께 푹 잠을 잔다",
-        "폭풍을 뚫고 약을 실어 나른다",
-        "개들에게 먹이를 주고 돌본다",
-        "다른 운전자의 개를 돌봐 준다"
+        "4시간쯤 달리고 4시간 쉰다",
+        "4시간쯤 달리고 2시간 쉰다",
+        "2시간쯤 달리고 4시간 쉰다",
+        "8시간쯤 달리고 4시간 쉰다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        3,
-        5
+        3
       ],
-      "note": "'run for about four hours and then rest for four hours' · 'must feed and take care of the dogs during the rest period' — 개들이 쉬는 동안 운전자는 개들에게 먹이를 주고 돌봐야 함"
+      "note": "'the dogs run for about four hours and then rest for four hours'"
     },
     {
       "id": "d104-q3",
-      "type": "목적/태도",
-      "prompt": "많은 운전자들이 이 경주를 대하는 태도로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "약을 나른 사람들이 뚫고 지나갔다고 한 것은?",
       "options": [
-        "누구나 쉽게 우승할 수 있다고 믿는다",
-        "우승하지 못하면 부끄럽게 여긴다",
-        "너무 쉬워서 지루하게 여긴다",
-        "끝까지 달리기만 해도 승리라고 생각한다"
+        "깊은 눈더미",
+        "꽁꽁 언 강",
+        "험한 얼음산",
+        "사나운 폭풍"
       ],
       "answer": 3,
       "evidence": [
-        7,
-        8
+        1
       ],
-      "note": "'many drivers don't expect to win' · 'just being able to finish is a victory' — 우승을 바라지 않고 끝까지 달리는 것만으로도 승리로 여김"
+      "note": "'carried the badly needed medicine through bad storms' — 사나운 폭풍을 뚫고 약을 나름"
     }
   ]
 }

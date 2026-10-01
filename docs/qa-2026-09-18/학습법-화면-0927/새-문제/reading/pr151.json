@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "pr151-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 악기를 연주하는 학생이 새 언어의 리듬과 강세를 더 쉽게 듣는다고 말한 사람들은?",
       "options": [
-        "언어는 악기보다 훨씬 쉽게 배울 수 있다",
-        "언어를 배운 사람은 악기를 더 쉽게 배운다",
-        "악기를 배우면 언어 공부에 방해가 된다",
-        "언어 배우기와 악기 배우기는 닮은 점이 있다"
+        "많은 음악가들",
+        "많은 언어학자들",
+        "많은 교사들",
+        "많은 학부모들"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        1,
-        2
+        3
       ],
-      "note": "'striking similarities between learning a language and learning a musical instrument', 'Both require' 참고"
+      "note": "'many teachers say that students who play an instrument often find it easier to hear the rhythm and stress' 참고"
     },
     {
       "id": "pr151-q2",
       "type": "세부 사실",
-      "prompt": "글에서 언어를 배우는 데 필요하다고 한 것은?",
+      "prompt": "글에서 언어 배우기와 악기 배우기에 공통으로 필요하다고 한 것은?",
       "options": [
-        "실수를 조금도 하지 않는 정확함",
-        "악기를 먼저 배워 둔 경험",
-        "다른 사람 앞에서 실수할 용기",
-        "며칠에 한 번 몰아서 하는 연습"
+        "혼자서 끝까지 연습하는 끈기",
+        "남들 앞에서 실수할 수 있는 용기",
+        "틀린 곳을 바로 고치는 꼼꼼함",
+        "처음부터 정확하게 하려는 신중함"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        1,
         2
       ],
-      "note": "'learning a language', 'Both require daily practice, careful listening, and the courage to make mistakes in front of others' 참고"
+      "note": "'Both require ... the courage to make mistakes in front of others' 참고"
     }
   ]
 }

@@ -9,11 +9,11 @@
       "prompt": "앤이 일하는 곳으로 옳은 것은?",
       "options": [
         "전국 잡지사",
+        "번역 출판사",
         "여행사",
-        "국제기구",
-        "대학 연구소"
+        "국제기구"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         3,
         4
@@ -22,38 +22,36 @@
     },
     {
       "id": "d009-q2",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "앤드루스 부부가 최근에 다녀온 여행으로 옳은 것은?",
       "options": [
-        "앤드루스 부부의 여행 사진을 보고 감탄한 이야기",
-        "헨리가 새 카메라를 사기로 결심한 이야기",
-        "헬렌이 세계 일주 여행을 계획하는 이야기",
-        "앤이 통역사 일을 그만두기로 한 이야기"
+        "아프리카 일주 여행",
+        "유럽 일주 여행",
+        "세계 일주 여행",
+        "남미 일주 여행"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        1,
-        2,
-        3,
-        6
+        2
       ],
-      "note": "'a trip around the world', 'we looked at some of them last night', 'Their pictures were beautiful'에서 여행 사진을 보고 감탄한 이야기임을 알 수 있음."
+      "note": "'They recently took a trip around the world'"
     },
     {
       "id": "d009-q3",
-      "type": "목적/태도",
-      "prompt": "어젯밤 일에 대한 헨리의 심정으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "헨리 부부가 앤드루스네 집에 가서 여행 슬라이드를 본 때로 옳은 것은?",
       "options": [
-        "결국 가지 않은 것을 후회했다",
-        "억지로 갔다가 괜히 갔다고 후회했다",
-        "처음부터 가고 싶어서 한껏 들떠 있었다",
-        "가기 싫었지만 가길 잘했다고 생각했다"
+        "그제 저녁",
+        "어제 저녁",
+        "지난 주말 저녁",
+        "지난 금요일 저녁"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        5
+        1,
+        3
       ],
-      "note": "'I didn't want to go', 'I am glad we went'에서 처음엔 가기 싫었지만 다녀온 것을 기뻐함을 알 수 있음."
+      "note": "'went over to the Andrews' house last night', 'we looked at some of them last night'"
     }
   ]
 }

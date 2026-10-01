@@ -5,51 +5,54 @@
   "questions": [
     {
       "id": "d079-q1",
-      "type": "세부 사실",
-      "prompt": "중개인들이 융자(대출)에 대해서도 알아야 하는 까닭으로 옳은 것은?",
+      "type": "순서",
+      "prompt": "글에서 중개인들이 알아야 한다고 말한 것을 나온 차례대로 늘어놓은 것으로 옳은 것은?",
       "options": [
-        "고객이 부동산 살 돈을 빌리게 돕기 때문에",
-        "중개인이 고객에게 직접 돈을 빌려주기 때문에",
-        "고객 대신 세금을 내 주어야 하기 때문에",
-        "자기 사무실을 사려면 돈을 빌려야 해서"
+        "땅에 관한 법 → 대출 → 세금 같은 정보",
+        "대출 → 땅에 관한 법 → 세금 같은 정보",
+        "세금 같은 정보 → 땅에 관한 법 → 대출",
+        "땅에 관한 법 → 세금 같은 정보 → 대출"
       ],
       "answer": 0,
       "evidence": [
-        2
+        1,
+        2,
+        4
       ],
-      "note": "'they often help people borrow money to buy property'가 융자를 알아야 하는 까닭을 보여 줌"
+      "note": "'understand the many laws' → 'also know about loans' → 'know about taxes, utilities, transportation'"
     },
     {
       "id": "d079-q2",
       "type": "세부 사실",
-      "prompt": "부동산 중개인들의 근무 모습으로 옳은 것은?",
+      "prompt": "글에서 중개인들이 사무실 바깥에서 보낸다고 말한 시간으로 옳은 것은?",
       "options": [
-        "사무실 안에서 서류 일만 도맡아 한다",
-        "사무실 없이 언제나 밖에서만 일한다",
-        "사무실에서 일하지만 주로 밖에서 지낸다",
-        "판매자나 구매자를 만날 일이 드물다"
+        "오후 시간의 대부분",
+        "일하는 시간의 절반쯤",
+        "일하는 시간의 대부분",
+        "일하는 시간의 아주 조금"
       ],
       "answer": 2,
       "evidence": [
         5
       ],
-      "note": "'work in offices, they spend most of their time outside'가 중개인들의 근무 모습을 보여 줌"
+      "note": "'they spend most of their time outside'"
     },
     {
       "id": "d079-q3",
       "type": "세부 사실",
-      "prompt": "중개인들이 일하는 시간에 대해 옳은 것은?",
+      "prompt": "글에서 중개인들이 하는 일로 말하지 않은 것은?",
       "options": [
-        "평일 낮에만 정해진 만큼 일한다",
-        "주말과 휴일에는 쉬고 평일에만 일한다",
-        "손님이 부를 때만 잠깐씩 일한다",
-        "주말과 휴일에도 오래 일해야 한다"
+        "파는 사람과 사는 사람을 만난다",
+        "손님과 함께 계약서를 쓴다",
+        "부동산을 보러 직접 찾아간다",
+        "주말과 휴일에도 오래 일한다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
+        6,
         7
       ],
-      "note": "'have to work long hours, even on weekends and holidays'가 일하는 시간을 보여 줌"
+      "note": "'meet with sellers and buyers and go to look at property', 'work long hours, even on weekends and holidays'는 나오지만 계약서 이야기는 없음"
     }
   ]
 }

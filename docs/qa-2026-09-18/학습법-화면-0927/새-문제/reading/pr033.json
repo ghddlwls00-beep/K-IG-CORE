@@ -5,32 +5,31 @@
   "questions": [
     {
       "id": "pr033-q1",
-      "type": "main",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 영화와 같은 것으로 견준 것은?",
       "options": [
-        "그림은 글보다 설명하는 힘이 강하다",
-        "영화는 오래도록 기억에 남는 매체이다",
-        "독서를 대신할 수 있는 것은 없다",
-        "강의는 책보다 지식을 전달하는 데 효과적이다"
+        "꿈속의 장면",
+        "무대 위의 연극",
+        "입으로 하는 말",
+        "책 속의 이야기"
       ],
       "answer": 2,
       "evidence": [
-        1,
-        4
+        3
       ],
-      "note": "1번 'Nothing can take the place of reading'과 4번 'Books abide, as life-long companions'가 독서를 대신할 것은 없다는 요지를 보여 준다."
+      "note": "'Films, like the spoken word, flow by'"
     },
     {
       "id": "pr033-q2",
       "type": "vocab",
       "prompt": "'they hardly enable us'의 'they'가 가리키는 것으로 가장 적절한 것은?",
       "options": [
-        "그림들",
+        "글들",
         "강의들",
         "영화들",
-        "책들"
+        "그림들"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
         2
       ],

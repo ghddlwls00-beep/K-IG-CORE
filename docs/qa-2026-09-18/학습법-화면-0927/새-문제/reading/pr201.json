@@ -5,33 +5,31 @@
   "questions": [
     {
       "id": "pr201-q1",
-      "type": "중심 생각",
-      "prompt": "윗글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 남의 행동에 화가 날 때 문제가 우리 쪽에 있을 가능성이 크다고 본 근거는?",
       "options": [
-        "불화의 원인은 대개 상대방에게 있다",
-        "남에게 내 가치관을 강요해서는 안 된다",
-        "모두가 같은 가치관을 가져야 화목하다",
-        "모두가 내 기대대로 바뀌어야 화목하다"
+        "그 사람이 우리의 기대를 미처 알지 못한다는 점",
+        "그 행동에 반대하지 않는 이들도 있다는 점",
+        "우리도 그런 행동을 한 적이 있다는 점",
+        "그 행동이 일부러 한 것이 아니라는 점"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        3,
-        5
+        4
       ],
-      "note": "인용: impose our values on others / no one is obligated to change / see things as they are"
+      "note": "인용: not everyone objects to their behavior indicates that the problem is probably ours"
     },
     {
       "id": "pr201-q2",
       "type": "세부 사실",
       "prompt": "글에 따르면 우리가 짜증이 나고 화가 나는 경우로 알맞은 것은?",
       "options": [
-        "남이 우리 가치관을 그대로 따를 때",
-        "모든 사람이 남의 행동에 반대할 때",
-        "남이 우리 가치관을 거부할 때",
-        "남이 우리 기대에 맞춰 변할 때"
+        "남이 자기 가치관을 우리에게 강요할 때",
+        "남이 우리 가치관을 뒤에서 흉볼 때",
+        "남이 우리와 가치관이 같은 척할 때",
+        "남이 우리 가치관을 받아들이지 않을 때"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         2
       ],

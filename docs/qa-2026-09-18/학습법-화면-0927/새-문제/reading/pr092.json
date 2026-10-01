@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "pr092-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
-      "options": [
-        "피부병은 피부과 진료를 받아야만 낫는다",
-        "최면 치료는 모든 피부병을 낫게 한다",
-        "마음 상태가 피부 문제에 영향을 줄 수 있다",
-        "대학생은 피부과 진료를 자주 받아야 한다"
-      ],
-      "answer": 2,
-      "evidence": [
-        2,
-        6
-      ],
-      "note": "'stress and fear may actually make a lot of these skin problems worse' · 'the mind may play a bigger part in clear skin than we think' — 마음이 피부에 영향을 줄 수 있음"
-    },
-    {
-      "id": "pr092-q2",
       "type": "세부 사실",
-      "prompt": "한 연구에 따르면 대학생들에게 여드름이 더 잘 나는 때로 언급된 것은?",
+      "prompt": "글에 소개된 한 연구에서 여드름이 더 잘 난다고 한 사람들로 알맞은 것은?",
       "options": [
-        "중요한 면접을 보기 직전",
-        "중요한 시험을 본 직후",
-        "중요한 면접을 본 직후",
-        "중요한 시험을 보기 직전"
+        "십대 청소년",
+        "고등학생",
+        "직장인",
+        "대학생"
       ],
       "answer": 3,
       "evidence": [
         4
       ],
-      "note": "'college students are more likely to break out in pimples just before a big exam' — 중요한 시험 직전"
+      "note": "'college students are more likely to break out in pimples' — 여드름이 더 잘 나는 것은 대학생"
+    },
+    {
+      "id": "pr092-q2",
+      "type": "세부 사실",
+      "prompt": "글에서 최면으로 사마귀를 고칠 때 환자에게 상상하게 한 것은?",
+      "options": [
+        "사마귀가 점점 작아지는 모습",
+        "사마귀가 떨어져 나가는 모습",
+        "사마귀가 녹아 없어지는 모습",
+        "사마귀가 하얗게 변하는 모습"
+      ],
+      "answer": 1,
+      "evidence": [
+        5
+      ],
+      "note": "'by having the patient imagine that the warts are falling off' — 사마귀가 떨어져 나가는 모습을 상상"
     }
   ]
 }

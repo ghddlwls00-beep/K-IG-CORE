@@ -6,34 +6,34 @@
     {
       "id": "pr207-q1",
       "type": "세부 사실",
-      "prompt": "법안이 법률이 되려면 받아야 하는 승인으로 글에 나온 것은?",
+      "prompt": "글에서 언급한 내용으로 알맞은 것은?",
       "options": [
-        "의회 두 원과 대통령의 승인",
-        "의회 한 원과 대통령의 승인",
-        "대통령 한 사람의 승인",
-        "의회 한 원의 승인"
+        "대통령은 의회의 동의를 얻어 대법관을 임명한다",
+        "하원 의원은 2년마다 선거로 새로 뽑는다",
+        "대법원은 헌법에 어긋난 법률을 무효로 할 수 있다",
+        "대통령이 거부한 법안도 법률이 될 수 있다"
       ],
-      "answer": 0,
-      "evidence": [
-        2
-      ],
-      "note": "인용: approved by both houses of Congress and by the president"
-    },
-    {
-      "id": "pr207-q2",
-      "type": "한 단계 추론",
-      "prompt": "글의 내용으로 보아, 대통령이 거부한 법안이 법률이 될 수 있는 경우로 알맞은 것은?",
-      "options": [
-        "두 원에서 각각 5분의 3이 찬성할 때",
-        "두 원에서 각각 4분의 3이 찬성할 때",
-        "한 원만 3분의 2 이상 찬성할 때",
-        "두 원에서 각각 절반이 찬성할 때"
-      ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         3
       ],
-      "note": "인용: overridden by at least a two-thirds majority of each house of Congress"
+      "note": "인용: If the president rejects a bill, it can still become a law"
+    },
+    {
+      "id": "pr207-q2",
+      "type": "세부 사실",
+      "prompt": "글에서 의회가 하는 일이라고 한 것은?",
+      "options": [
+        "세금을 정하는 것",
+        "전쟁을 선포하는 것",
+        "법률을 통과시키는 것",
+        "예산을 짜는 것"
+      ],
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "인용: The job of Congress is to pass laws"
     }
   ]
 }

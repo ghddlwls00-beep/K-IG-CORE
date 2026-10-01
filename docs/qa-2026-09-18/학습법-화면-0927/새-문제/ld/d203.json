@@ -8,10 +8,10 @@
       "type": "중심 내용",
       "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "지나친 덕은 악이 되기 쉬우나 겸손은 예외에 가깝다",
-        "지나친 덕은 악이 되기 쉬우며 친절이 가장 그렇다",
-        "지나친 덕은 악이 되기 쉬우나 친절은 예외에 가깝다",
-        "지나친 덕은 악이 되기 쉬우니 친절도 멀리해야 한다"
+        "덕은 지나치면 악이 되기 쉽지만 지나친 용기는 악이라 하기 어렵다",
+        "덕은 지나치면 악이 되기 쉬우며 지나친 친절도 악이 되기 쉽다",
+        "덕은 지나치면 악이 되기 쉽지만 지나친 친절은 악이라 하기 어렵다",
+        "덕은 지나치면 악이 되기 쉽지만 지나친 정직은 악이라 하기 어렵다"
       ],
       "answer": 2,
       "evidence": [
@@ -19,17 +19,17 @@
         2,
         5
       ],
-      "note": "'Virtue takes the middle course', 'If virtue becomes excessive, it can easily turn into a vice', 'it is difficult to say that excessive kindness becomes a vice' — 덕은 지나치면 악이 되기 쉽지만 지나친 친절은 악이라 하기 어려움"
+      "note": "'Virtue takes the middle course', 'If virtue becomes excessive, it can easily turn into a vice', 'it is difficult to say that excessive kindness becomes a vice' — 지나친 친절은 악이라 하기 어려움"
     },
     {
       "id": "d203-q2",
       "type": "세부 사실",
       "prompt": "이기심에서 나온 것으로 여겨질 수 있다고 한 것은?",
       "options": [
-        "친구나 자녀에 대한 지나친 친절",
+        "부모나 스승에 대한 지나친 친절",
         "친구나 자녀에 대한 지나친 사랑",
-        "부모나 스승에 대한 지나친 사랑",
-        "부모나 스승에 대한 지나친 친절"
+        "친구나 자녀에 대한 지나친 친절",
+        "부모나 스승에 대한 지나친 존경"
       ],
       "answer": 1,
       "evidence": [
@@ -42,10 +42,10 @@
       "type": "세부 사실",
       "prompt": "지나친 친절의 문제로 글에서 든 것은?",
       "options": [
-        "남이 원하는 것을 모두 들어준다",
-        "남이 원하는 것을 나쁜 뜻으로 이용한다",
-        "자신이 원하는 것만 채우려 한다",
-        "남이 바라는 바를 헤아리지 못한다"
+        "남의 칭찬을 바라는 마음에서 비롯된다",
+        "받는 사람이 그 친절에 기대게 만든다",
+        "베푸는 사람이 쉽게 지쳐 버리게 된다",
+        "남이 바라는 바를 미처 헤아리지 못한다"
       ],
       "answer": 3,
       "evidence": [

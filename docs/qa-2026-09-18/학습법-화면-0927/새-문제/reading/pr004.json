@@ -6,19 +6,18 @@
     {
       "id": "pr004-q1",
       "type": "세부 사실",
-      "prompt": "이 글에서 쿰비아에 대한 설명으로 옳은 것은?",
+      "prompt": "이 글에서 쿰비아가 생겨날 때 아프리카 노예들의 북과 섞였다고 한 것은?",
       "options": [
-        "더운 카리브해 지역에서 생겨났고 전통적으로 구애의 춤이었다",
-        "더 추운 지역에서 생겨나 사랑을 표현할 때 쓰였다",
-        "아프리카 노예들이 스페인으로 가져가 처음 만든 춤이다",
-        "오늘날에는 카리브해 지역에서만 인기가 있는 춤이다"
+        "원주민의 노래와 스페인의 기타",
+        "원주민의 춤과 스페인의 피리",
+        "원주민의 피리와 스페인의 노래",
+        "원주민의 기타와 스페인의 춤"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        2,
-        3
+        2
       ],
-      "note": "hot Caribbean region / courtship dance ... popular all over Latin America로 확인"
+      "note": "the drums of African slaves mixed with native flutes and Spanish songs로 확인"
     },
     {
       "id": "pr004-q2",
@@ -27,10 +26,10 @@
       "options": [
         "쿰비아",
         "스페인 노래",
-        "밤부코",
-        "원주민의 피리"
+        "아프리카의 북",
+        "밤부코"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
         4,
         5

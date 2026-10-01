@@ -5,32 +5,29 @@
   "questions": [
     {
       "id": "d210-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 동물원을 찾은 사람이 보게 된다고 한 것은?",
       "options": [
-        "동물원은 고대 로마와 알렉산드리아에서만 인기를 끌었다",
-        "오늘날 대도시의 동물원은 점점 사라지고 있다",
-        "동물원은 예부터 이어져 왔으며 배움과 즐거움을 준다",
-        "오늘날 동물원은 즐거움보다 배움만을 위한 곳이다"
+        "낯선 동물 · 물고기 · 파충류",
+        "낯선 동물 · 곤충 · 파충류",
+        "낯선 동물 · 새 · 파충류",
+        "낯선 동물 · 양서류 · 파충류"
       ],
       "answer": 2,
       "evidence": [
-        1,
-        2,
-        3,
-        4
+        5
       ],
-      "note": "'Throughout recorded history' · 'huge zoos' · 'modern zoos designed to acquaint people with the animals' · 'in addition to being instructive' · 'favorite spots of Sunday afternoon pleasure seekers' — 예부터 이어져 온 동물원 · 배움과 즐거움"
+      "note": "'In viewing the strange animals, birds, and reptiles' — 낯선 동물 · 새 · 파충류"
     },
     {
       "id": "d210-q2",
       "type": "세부 사실",
       "prompt": "이 글에서 여행할 형편이 안 되는 사람들의 동물원 나들이에 대해 말한 것은?",
       "options": [
-        "외국 여행보다 오히려 돈이 더 든다",
-        "여행을 대신할 만큼 즐겁지는 않다",
-        "먼 나라로 여행을 떠나는 계기가 된다",
-        "외국에 다녀오는 것과 거의 같다"
+        "외국 여행을 떠나고 싶은 마음을 키워 준다",
+        "외국 여행보다 더 많은 것을 보게 해 준다",
+        "외국 여행을 미리 준비하는 데 도움이 된다",
+        "외국을 직접 다녀오는 것과 거의 같은 경험이다"
       ],
       "answer": 3,
       "evidence": [

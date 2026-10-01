@@ -5,32 +5,29 @@
   "questions": [
     {
       "id": "pr248-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 몇몇 사람이 야생 식물에 매료된 까닭으로 든 것은?",
       "options": [
-        "소수의 노력 덕분에 야생 식물의 가치를 아는 한국인이 늘었다",
-        "야생 식물의 가치는 예전부터 많은 한국인이 알고 있었다",
-        "야생 식물을 지키려는 노력은 대중에게 외면당했다",
-        "야생 식물은 아름답지만 지킬 만한 가치는 없다"
+        "야생 식물의 아름다움",
+        "야생 식물의 약효",
+        "야생 식물의 희귀함",
+        "야생 식물의 강한 생명력"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        4,
-        5,
-        6
+        2
       ],
-      "note": "'A small number of people have recognized the value' · 'these people have striven to conserve' · 'taught the public to value plant species' · 'Thanks to these efforts, more Koreans now understand the full value'가 글의 요지"
+      "note": "'They are fascinated by the beauty of these plants'"
     },
     {
       "id": "pr248-q2",
       "type": "세부 사실",
       "prompt": "다음 중 글의 내용과 일치하는 것은?",
       "options": [
-        "식물을 지키는 사람들은 그 아름다움에 관심이 없었다",
-        "야생 식물은 지나친 관심 때문에 위기를 맞았다",
+        "일부 야생 식물은 기후 변화 때문에 앞날이 불확실하다",
+        "일부 야생 식물은 지나친 채집 탓에 앞날이 불확실하다",
         "일부 야생 식물은 서식지 파괴로 앞날이 불확실하다",
-        "식물을 지키는 사람들은 지금 세대만을 위해 힘을 쏟았다"
+        "일부 야생 식물은 외래 식물의 침입으로 앞날이 불확실하다"
       ],
       "answer": 2,
       "evidence": [

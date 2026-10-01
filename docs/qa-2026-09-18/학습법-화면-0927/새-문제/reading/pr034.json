@@ -5,35 +5,35 @@
   "questions": [
     {
       "id": "pr034-q1",
-      "type": "main",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "결과",
+      "prompt": "글쓴이에 따르면 상황의 우스운 점을 짚어 상대도 같은 느낌을 갖게 하면 얻게 되는 것은?",
       "options": [
-        "상식은 사업에서 가장 중요한 자산이다",
-        "유머 감각은 사업에서 가장 중요한 자산이다",
-        "웃음은 상대방을 화나게 만들 위험이 있다",
-        "사업에는 지켜야 할 절대적인 규칙이 아주 많다"
+        "유리한 위치",
+        "상대의 신뢰",
+        "더 나은 조건",
+        "오랜 거래처"
       ],
-      "answer": 1,
-      "evidence": [
-        1
-      ],
-      "note": "1번 'the most important asset in business is a sense of humor'가 이 글의 요지이다."
-    },
-    {
-      "id": "pr034-q2",
-      "type": "detail",
-      "prompt": "이 글의 내용과 일치하는 것은?",
-      "options": [
-        "웃음은 긴장을 완화하기보다 오히려 키우는 힘이다",
-        "글쓴이는 유머가 실패하는 경우를 자주 보았다",
-        "유머 감각이 없는 사람은 사업에서 반드시 실패한다",
-        "우스운 점을 짚어 긴장을 풀면 주도권을 잡는다"
-      ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
         3
       ],
-      "note": "3번 'point out what is humorous or absurd', 'ease the tension', 'you will have the upper hand'로 보아 우스운 점을 짚어 긴장을 풀면 주도권을 잡는다."
+      "note": "'getting the other party to share your feeling, you will have the upper hand'"
+    },
+    {
+      "id": "pr034-q2",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 사업에서 가장 중요한 자산을 말하면서 따로 제외해 둔 것은?",
+      "options": [
+        "정직함",
+        "인내심",
+        "인맥",
+        "상식"
+      ],
+      "answer": 3,
+      "evidence": [
+        1
+      ],
+      "note": "'Common sense aside, the most important asset in business is a sense of humor'"
     }
   ]
 }

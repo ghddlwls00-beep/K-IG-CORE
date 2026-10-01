@@ -5,33 +5,31 @@
   "questions": [
     {
       "id": "pr081-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글의 예시에서 친구들과 만나기로 한 요일과 장소로 옳은 것은?",
       "options": [
-        "남이 나를 어떻게 느끼는지를 먼저 헤아려야 한다",
-        "날마다 하는 결정은 그때그때 느낌에 맡기면 된다",
-        "참된 문제 해결은 느낌보다 지식과 관찰에 바탕을 둔다",
-        "길을 고를 때는 언제나 거리만 보고 정해야 한다"
+        "일요일, 쇼핑몰",
+        "토요일, 공원",
+        "토요일, 쇼핑몰",
+        "일요일, 공원"
       ],
       "answer": 2,
       "evidence": [
-        6,
-        7,
-        8
+        10
       ],
-      "note": "6번 'True problem solving, however, goes beyond feelings', 7번 'combine information that you already know with new observations', 8번 'on the basis of your knowledge of the situation'"
+      "note": "10번 'it’s Saturday and you are to meet your friends at the mall at 12:00'"
     },
     {
       "id": "pr081-q2",
       "type": "세부 사실",
       "prompt": "이 글의 예시에 나온 상황으로 옳은 것은?",
       "options": [
-        "일요일 정오에 친구들과 쇼핑몰에서 만나기로 했다",
-        "11시 45분인 것을 알고 서둘러 차에 탔다",
-        "오전 내내 한가하게 지내다 약속을 떠올렸다",
-        "쇼핑몰 위치를 몰라 친구에게 길을 물었다"
+        "11시 45분인 것을 보고 친구들에게 늦는다고 전화했다",
+        "11시 45분인 것을 보고 버스 시간표를 찾아보았다",
+        "11시 45분인 것을 보고 약속을 1시로 미루었다",
+        "11시 45분인 것을 보고 서둘러 준비해 차에 탔다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         11,
         12

@@ -5,31 +5,32 @@
   "questions": [
     {
       "id": "d174-q1",
-      "type": "목적/태도",
-      "prompt": "새 드릴 기계에 대한 존 헨리의 태도로 옳은 것은?",
+      "type": "이유",
+      "prompt": "빅벤드 터널 공사가 시작되자 어려움이 생긴 까닭으로 옳은 것은?",
       "options": [
-        "다른 인부들처럼 기계를 크게 반겼다",
-        "기계가 신기해 구경만 했다",
-        "혼자서만 기계를 반기지 않았다",
-        "기계 다루는 법부터 배웠다"
+        "인부들이 하나둘 공사장을 떠나서",
+        "큰 산의 바위가 너무 단단해서",
+        "공사에 댈 돈이 바닥이 나서",
+        "산의 바위가 자꾸 무너져 내려서"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        7
+        4,
+        5
       ],
-      "note": "'The other men welcomed the machine, but not John Henry' — 존 헨리만 반기지 않음"
+      "note": "'When the Big Bend tunnel was started, trouble began' · 'The hard rock of the huge mountain seemed impossible to get through' — 큰 산의 단단한 바위"
     },
     {
       "id": "d174-q2",
       "type": "세부 사실",
       "prompt": "새 발명품인 드릴 기계를 사들인 쪽으로 옳은 것은?",
       "options": [
+        "철도 사업에 돈을 대던 사람들",
         "철도 공사를 하던 인부들",
-        "철도 공사 구경꾼들",
-        "철도에서 일하던 존 헨리",
-        "철도 사업에 돈을 대던 사람들"
+        "철도 공사를 맡은 기술자들",
+        "철도 근처 마을 사람들"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
         6
       ],
@@ -37,20 +38,19 @@
     },
     {
       "id": "d174-q3",
-      "type": "세부 사실",
-      "prompt": "빅 벤드 터널 공사가 어려움에 부딪힌 까닭으로 옳은 것은?",
+      "type": "이유",
+      "prompt": "먼 곳에서 사람들이 존 헨리를 찾아온 까닭으로 옳은 것은?",
       "options": [
-        "산의 바위가 너무 단단해서",
-        "땅이 너무 물러서 무너져 내려서",
-        "강철 드릴이 모자라서",
-        "구경꾼이 너무 많이 몰려와서"
+        "그가 드릴 기계와 겨루는 모습을 보려고",
+        "그가 혼자서 터널을 뚫어 나가는 모습을 보려고",
+        "그가 무거운 철길을 들어 옮기는 모습을 보려고",
+        "그가 강철 드릴을 바위와 땅에 박는 모습을 보려고"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        4,
-        5
+        3
       ],
-      "note": "'When the Big Bend tunnel was started, trouble began' · 'The hard rock of the huge mountain seemed impossible to get through' — 바위가 너무 단단함"
+      "note": "'came from far and wide to see him drive cold steel drills through the huge rocks and hard earth' — 바위와 땅에 강철 드릴을 박는 모습을 보러 옴"
     }
   ]
 }
