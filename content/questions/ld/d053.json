@@ -22,38 +22,37 @@
     },
     {
       "id": "d053-q2",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
-      "options": [
-        "취미의 값어치는 돈보다 쏟은 세월과 정성으로 재야 한다",
-        "취미의 값어치는 돈보다 그것이 주는 즐거움으로 재야 한다",
-        "1만 달러짜리 기차처럼 취미도 결국 돈으로 값어치가 매겨진다",
-        "취미는 지나치기 쉬우니 가족이 함께 즐길 수 있는 선을 지켜야 한다"
-      ],
-      "answer": 1,
-      "evidence": [
-        6,
-        7,
-        8
-      ],
-      "note": "6번 “the real value of a hobby cannot be measured in money” · 7번 “inexpensive matchboxes has an important value” · 8번 “measured by the pleasure and enjoyment it gives”라고 했다"
-    },
-    {
-      "id": "d053-q3",
       "type": "세부 사실",
-      "prompt": "그 남자의 아내가 평소 남편의 기차 수집을 대하는 태도로 가장 알맞은 것은?",
+      "prompt": "시카고 남자의 아내가 모형 기차를 두고 보이는 태도로 가장 알맞은 것은?",
       "options": [
-        "가끔 귀찮다고 불평하지만 대개는 참고 이해해 준다",
-        "귀찮다는 불평 없이 기차 정리를 직접 거들어 준다",
-        "가끔 귀찮다고 하면서도 이제는 함께 기차를 모으며 즐긴다",
-        "대개는 귀찮다고 불평하지만 가끔은 참고 이해해 준다"
+        "가끔 성가시다고 불평하지만 대개는 참고 이해해 준다",
+        "가끔 성가시다고 불평하지만 대개는 함께 즐긴다",
+        "자주 성가시다고 불평하지만 가끔은 함께 기차를 고른다",
+        "자주 성가시다고 불평하며 기차를 치우라고 한다"
       ],
       "answer": 0,
       "evidence": [
         4,
         5
       ],
-      "note": "4번 “Once in a while his wife complains” · 5번 “most of the time she is patient and understanding”이라고 했다"
+      "note": "4번 “Once in a while his wife complains that his trains are a nuisance” · 5번 “most of the time she is patient and understanding”이라고 했다"
+    },
+    {
+      "id": "d053-q3",
+      "type": "이유",
+      "prompt": "말하는 사람이 성냥갑 수집을 예로 든 까닭으로 가장 알맞은 것은?",
+      "options": [
+        "값싼 수집품도 오래 모으면 값이 크게 오름을 보이려고",
+        "값싼 수집품이 모형 기차보다 모으기 쉬움을 보이려고",
+        "값싼 수집품도 주인에게는 중요한 값어치가 있음을 보이려고",
+        "값싼 수집품이 비싼 기차보다 가족을 덜 귀찮게 함을 보이려고"
+      ],
+      "answer": 2,
+      "evidence": [
+        6,
+        7
+      ],
+      "note": "6번 “the real value of a hobby cannot be measured in money” · 7번 “Even a collection of inexpensive matchboxes has an important value for its owner”라고 했다"
     }
   ]
 }

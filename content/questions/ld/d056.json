@@ -24,36 +24,34 @@
     {
       "id": "d056-q2",
       "type": "세부 사실",
-      "prompt": "토니 사그의 공연에 대한 설명으로 가장 알맞은 것은?",
+      "prompt": "토니 사그가 인형극 솜씨가 아주 좋아져서 한 일로 가장 알맞은 것은?",
       "options": [
-        "어린이 쇼가 전문이라 어른 관객은 드물었다",
-        "어린이 쇼로 시작했지만 어른이 몰리자 어른 연극으로 바꾸었다",
-        "어른 연극이 전문이었지만 어린이들이 더 즐기기도 했다",
-        "어린이 쇼가 전문이었지만 어른들이 더 즐기기도 했다"
+        "자기 소유의 작은 극장을 열었다",
+        "인형극단을 꾸려 나라 곳곳을 돌았다",
+        "인형을 만드는 공방을 차렸다",
+        "큰 극장의 인형극 감독이 되었다"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        4,
-        5
+        3
       ],
-      "note": "4번 “He specialized in children's shows, but he also put on plays for grown-ups” · 5번 “older people sometimes seemed to enjoy the plays more than children”이라고 했다"
+      "note": "3번 “became so good at putting on marionette shows that he opened a small theater of his own”이라고 했다"
     },
     {
       "id": "d056-q3",
-      "type": "말한 사람의 목적/태도",
-      "prompt": "말하는 사람이 토니 사그의 이야기를 소개한 까닭으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "토니 사그의 인형극 관객에 대해 말한 것으로 가장 알맞은 것은?",
       "options": [
-        "한 분야를 전문으로 파고들어야 크게 성공한다는 예를 들려고",
-        "흥미를 느끼는 일을 하는 것이 행복한 삶에 중요하다는 예를 들려고",
-        "일보다 취미를 즐기는 삶이 더 행복하다는 예를 들려고",
-        "남들이 즐길 일을 해야 일에서도 보람을 느낀다는 예를 들려고"
+        "어른들이 아이들을 데리고 여러 번 보러 오곤 했다",
+        "어른들은 오페라 공연을 더 즐겨 보러 오곤 했다",
+        "어른들이 아이들보다 더 즐기는 듯할 때가 있었다",
+        "어른들이 공연 뒤 인형을 직접 만들어 보곤 했다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        1,
-        2
+        5
       ],
-      "note": "1번 “One of the most important things for a happy life is doing work that is interesting” · 2번 “One famous man who engaged in an interesting profession was Tony Sarg”라고 했다"
+      "note": "5번 “older people sometimes seemed to enjoy the plays more than children”이라고 했다"
     }
   ]
 }

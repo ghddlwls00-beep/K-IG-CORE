@@ -6,18 +6,18 @@
     {
       "id": "d052-q1",
       "type": "세부 사실",
-      "prompt": "말하는 사람이 위스콘신 북부를 설명한 말로 가장 알맞은 것은?",
+      "prompt": "말하는 사람에 따르면 정말 푹 쉬었다고 느끼게 되는 때로 가장 알맞은 것은?",
       "options": [
-        "소나무 숲이 끝없이 이어진 땅",
-        "오대호의 긴 호숫가를 낀 땅",
-        "수천 개의 호수가 흩어진 땅",
-        "강과 폭포가 굽이굽이 흐르는 땅"
+        "3일쯤 야영을 하고 난 뒤",
+        "1주일쯤 야영을 하고 난 뒤",
+        "2주일쯤 야영을 하고 난 뒤",
+        "1달쯤 야영을 하고 난 뒤"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        2
+        7
       ],
-      "note": "2번 “northern Wisconsin, a land of thousands of lakes”라고 했다"
+      "note": "7번 “After a week or so of camping, you really feel rested and relaxed”라고 했다"
     },
     {
       "id": "d052-q2",
@@ -38,22 +38,19 @@
     },
     {
       "id": "d052-q3",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "많은 가족이 호숫가에 텐트를 치고 지내며 하는 일로 가장 알맞은 것은?",
       "options": [
-        "위스콘신 북부 호숫가는 붐비지 않아 텐트를 치고 조용히 쉬기 좋다",
-        "텐트 야영은 며칠 정도로 짧게 해야 지치지 않고 즐겁다",
-        "여름휴가는 텐트 야영을 떠나기 전 기다리는 설렘이 더 즐겁다",
-        "위스콘신 북부 호숫가의 텐트 야영은 즐겁고 푹 쉬게 해 준다"
+        "수영과 보트 타기, 그냥 쉬기",
+        "낚시와 보트 타기, 별 보기",
+        "수영과 카누 타기, 별 보기",
+        "낚시와 수영, 그냥 쉬기"
       ],
       "answer": 3,
       "evidence": [
-        2,
-        3,
-        5,
-        7
+        3
       ],
-      "note": "2번 “northern Wisconsin” · 3번 “set up a tent” · 5번 “a lot more fun to live in a tent” · 7번 “you really feel rested and relaxed”라고 했다"
+      "note": "3번 “spend several weeks fishing, swimming, or just relaxing”이라고 했다"
     }
   ]
 }
