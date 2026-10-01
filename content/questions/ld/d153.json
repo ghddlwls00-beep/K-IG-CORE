@@ -8,13 +8,15 @@
       "type": "세부 사실",
       "prompt": "이 글에 따르면, 각 주의 공립학교를 운영하는 데 쓰는 돈은 무엇인가?",
       "options": [
-        "나라에서 거두어들이는 세금",
-        "그곳 주민들이 내는 세금",
-        "나라에서 따로 모으는 기부금",
-        "그곳 주민들이 내는 기부금"
+        "그 주에 사는 시민이 낸 세금",
+        "그 주의 학부모들이 따로 내는 수업료",
+        "그 주에 있는 기업들이 내는 세금",
+        "그 주가 나라에서 나눠 받은 세금"
       ],
-      "answer": 1,
-      "evidence": [1],
+      "answer": 0,
+      "evidence": [
+        1
+      ],
       "note": "\"supported by taxes paid by the citizens of the individual state\""
     },
     {
@@ -22,13 +24,16 @@
       "type": "세부 사실(숫자)",
       "prompt": "이 글에서 말한, 중학교와 고등학교에서 보내는 기간으로 옳은 것은?",
       "options": [
-        "중학교 4년, 고등학교 3년",
-        "중학교 3년, 고등학교 4년",
-        "중학교 4년, 고등학교 4년",
+        "중학교 2년, 고등학교 4년",
+        "중학교 2년, 고등학교 3년",
+        "중학교 4년, 고등학교 2년",
         "중학교 3년, 고등학교 3년"
       ],
       "answer": 3,
-      "evidence": [4, 5],
+      "evidence": [
+        4,
+        5
+      ],
       "note": "\"junior high school and remain there for three years\" · \"The last three years … are spent in senior high school\""
     },
     {
@@ -36,13 +41,15 @@
       "type": "세부 사실(순서)",
       "prompt": "많은 고등학교 졸업생이 졸업 뒤에 하는 일로 옳은 것은?",
       "options": [
-        "여러 대학 중 한 곳에서 배움을 이어 간다",
-        "곧바로 석사 학위 공부를 시작한다",
-        "4년 동안 돈을 번 뒤 다시 공부한다",
-        "고등학교에 한 해 더 남아 공부한다"
+        "1년쯤 일해 학비를 모은 뒤 학사 과정에 들어간다",
+        "주의 직업 학교에서 기술을 익혀 자격증을 딴다",
+        "대학에 진학해 학사 학위를 향해 공부를 계속한다",
+        "군에 들어가 몇 해 복무한 뒤 대학에 진학한다"
       ],
-      "answer": 0,
-      "evidence": [6],
+      "answer": 2,
+      "evidence": [
+        6
+      ],
       "note": "\"A great number of high school graduates continue their education in one of the many colleges or universities\""
     }
   ]
