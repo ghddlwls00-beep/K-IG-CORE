@@ -5,19 +5,20 @@
   "questions": [
     {
       "id": "d223-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 도서관의 여행 책을 참고하면 볼거리를 두루 담은 일정을 짤 수 있다고 한 곳은?",
       "options": [
-        "떠나기 전에 여행사와 상담해 두면 휴가가 더 값지다",
-        "떠나기 전에 숙소를 미리 정해 두면 휴가가 더 값지다",
-        "떠나기 전에 그곳을 공부해 두면 휴가가 더 값지다",
-        "떠나기 전에 다녀온 사람의 말을 들어 두면 휴가가 더 값지다"
+        "이름난 관광지",
+        "가 본 적 있는 지역",
+        "미국 안의 큰 도시",
+        "어떤 지역이든"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        5
+        1,
+        2
       ],
-      "note": "This preparatory study will certainly add something worthwhile to a vacation"
+      "note": "books about travel ... By consulting these books ... all the points of interest of any given locality"
     },
     {
       "id": "d223-q2",

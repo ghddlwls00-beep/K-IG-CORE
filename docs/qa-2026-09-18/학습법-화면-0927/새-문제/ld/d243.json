@@ -40,23 +40,19 @@
     },
     {
       "id": "d243-q3",
-      "type": "말한 사람의 목적/태도",
-      "prompt": "글쓴이가 이 글을 쓴 목적으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 꽤 재미있다고 말한 장면은 무엇인가?",
       "options": [
-        "핼러윈이 생겨난 유래를 소개하려고",
-        "미국 동네의 핼러윈 밤 풍경을 보여 주려고",
-        "핼러윈 밤에 열리는 거리 행진을 소개하려고",
-        "핼러윈을 앞둔 집 꾸미기 풍습을 소개하려고"
+        "분장한 아이들이 현관 앞에 모여 단것을 조르는 모습",
+        "어른들이 아이들처럼 별난 의상을 차려입는 모습",
+        "아이들이 이웃에게 받은 단것을 서로 바꾸는 모습",
+        "마녀와 유령 차림의 아이들이 거리를 행진하는 모습"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        1,
-        2,
-        3,
-        5,
-        6
+        7
       ],
-      "note": "'There is a holiday in the United States' · 'October 31st, or Halloween' · 'dress themselves in outlandish costumes' · 'show their costumes from door to door' · 'goodies given them by their neighbors'"
+      "note": "'quite amusing to watch these young pirates, witches, ghosts ... gather on your front porch to beg for sweets'"
     }
   ]
 }

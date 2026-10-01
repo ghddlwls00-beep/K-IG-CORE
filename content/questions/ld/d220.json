@@ -5,51 +5,51 @@
   "questions": [
     {
       "id": "d220-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 휴가 계획을 세울 때 할 일로 든 것은?",
       "options": [
-        "휴가는 쓸 돈에 맞추어 계획해야 성공한다",
-        "휴가는 가족과 함께 계획해야 성공한다",
-        "휴가는 경험 많은 사람에게 맡겨야 성공한다",
-        "휴가는 하나하나 꼼꼼히 계획해야 성공한다"
+        "예매할 표와 짜야 할 경로",
+        "예약할 숙소와 짜야 할 경로",
+        "읽어야 할 책과 짜야 할 경로",
+        "바꿔야 할 돈과 짜야 할 경로"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        7
+        6
       ],
-      "note": "A successful vacation depends on careful planning"
+      "note": "There are books to be read, routes to be planned"
     },
     {
       "id": "d220-q2",
       "type": "세부 사실",
-      "prompt": "글에서 분위기가 휴가 계획으로 가득 찬다고 한 때로 알맞은 것은?",
+      "prompt": "글에서 여행 계획을 세우는 일에 대해 말한 것은?",
       "options": [
-        "휴가 시작 몇 주, 몇 달 전부터",
-        "휴가에서 돌아온 뒤 몇 주 동안",
-        "휴가가 한창인 여름철 몇 주 동안",
-        "새해가 시작되는 1월 몇 주 동안"
+        "거의 여행만큼 즐겁다",
+        "여행보다 훨씬 더 즐겁다",
+        "여행보다 오히려 더 힘들다",
+        "여행만큼 돈이 많이 든다"
       ],
       "answer": 0,
-      "evidence": [
-        4
-      ],
-      "note": "for weeks and months before the actual vacation begins, the air is filled with vacation plans"
-    },
-    {
-      "id": "d220-q3",
-      "type": "목적/태도",
-      "prompt": "여행 계획 세우기에 대한 글쓴이의 생각으로 가장 적절한 것은?",
-      "options": [
-        "여행 자체보다 더 즐거울 수 있다",
-        "거의 여행 자체만큼 즐거울 수 있다",
-        "거의 여행 자체만큼 피곤할 수 있다",
-        "여행 자체보다 오래 기억에 남을 수 있다"
-      ],
-      "answer": 1,
       "evidence": [
         5
       ],
       "note": "planning for a trip can be almost as much fun as the trip itself"
+    },
+    {
+      "id": "d220-q3",
+      "type": "세부 사실",
+      "prompt": "글에서 실제 휴가가 시작되기 전 휴가 계획 이야기가 가득해진다고 한 때는?",
+      "options": [
+        "하루, 이틀 전부터",
+        "며칠, 몇 주 전부터",
+        "몇 주, 몇 달 전부터",
+        "몇 달, 몇 해 전부터"
+      ],
+      "answer": 2,
+      "evidence": [
+        4
+      ],
+      "note": "for weeks and months before the actual vacation begins, the air is filled with vacation plans"
     }
   ]
 }

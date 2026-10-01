@@ -22,19 +22,19 @@
     },
     {
       "id": "d253-q2",
-      "type": "말한 사람의 목적/태도",
-      "prompt": "은행 책임자의 이야기를 통해 말하려는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "은행 책임자가 지원자들에게 이어서 던진 질문은 무엇인가?",
       "options": [
-        "면접 질문에는 장점을 앞세워 자신 있게 답해야 한다",
-        "면접 질문에는 정직하고 솔직하게 답할 준비를 해야 한다",
-        "면접 질문에는 겸손하게 자신을 낮추어 답해야 한다",
-        "면접 질문에는 질문한 사람의 의도를 헤아려 답해야 한다"
+        "자신의 좌우명이 무엇인지",
+        "자기 발전을 위해 무엇을 하는지",
+        "직원으로서 무엇을 보탤 수 있는지",
+        "자기 성격을 곰곰이 돌아본 적이 있는지"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        1
+        4
       ],
-      "note": "'one should be prepared to answer questions honestly and frankly' — 정직하고 솔직하게 답할 준비가 필요함"
+      "note": "'Then the manager would ask them if they ever reflected on their own character'"
     }
   ]
 }

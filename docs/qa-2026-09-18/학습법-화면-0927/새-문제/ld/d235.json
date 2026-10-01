@@ -5,19 +5,19 @@
   "questions": [
     {
       "id": "d235-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부사실",
+      "prompt": "이 글에서 현대 교통수단으로 몇 시간이면 가는 거리를 예전에는 가는 데 걸렸다고 한 기간으로 가장 적절한 것은?",
       "options": [
-        "개척 시대의 대륙 횡단은 위험했으나 교통 발달의 밑거름이 되었다",
-        "개척 시대의 대륙 횡단은 위험해서 대부분 도중에 발길을 돌렸다",
-        "개척 시대의 대륙 횡단은 오랜 시간이 걸리는 위험한 여정이었다",
-        "개척 시대의 대륙 횡단은 위험했으나 몇 주면 끝나는 여정이었다"
+        "사나흘에서 열흘",
+        "몇 달에서 몇 년",
+        "몇 주에서 몇 달",
+        "열흘에서 한 달"
       ],
       "answer": 2,
       "evidence": [
-        3
+        2
       ],
-      "note": "'In the days of the westward migration, the journey from coast to coast was long and hazardous' — 개척 시대의 해안에서 해안까지의 여행은 길고 위험함"
+      "note": "'cover distances in a few hours that used to take him weeks or even months' — 예전에는 몇 주, 심지어 몇 달 걸리던 거리"
     },
     {
       "id": "d235-q2",

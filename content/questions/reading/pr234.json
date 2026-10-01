@@ -5,19 +5,19 @@
   "questions": [
     {
       "id": "pr234-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면, 냉전 이후의 새 세계에서 나라의 동반자와 적을 정하는 것은?",
       "options": [
-        "강대국 사이의 군사 균형을 지키는 것이 가장 중요한 과제이다",
-        "나라 사이의 경제 협력을 늘리는 것이 가장 중요한 과제이다",
-        "서양 국가의 지도력을 되살리는 것이 가장 중요한 과제이다",
-        "나라 사이의 문화 차이를 이해하는 것이 가장 중요한 과제이다"
+        "종교의 차이점과 유사점",
+        "문화의 차이점과 유사점",
+        "언어의 차이점과 유사점",
+        "민족의 차이점과 유사점"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        7
+        4
       ],
-      "note": "'the most important issue facing these countries is understanding the differences among cultures'"
+      "note": "both differences and similarities in culture determine partners and enemies"
     },
     {
       "id": "pr234-q2",

@@ -5,20 +5,20 @@
   "questions": [
     {
       "id": "d233-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부사실",
+      "prompt": "이 글에서 신비극과 도덕극이 밀접하게 연결되어 있었다고 한 것은?",
       "options": [
-        "중세에는 대성당 안에서 공연하는 새로운 연극이 생겨났다",
-        "중세에는 성경을 그대로 낭독하는 새로운 연극이 생겨났다",
-        "중세에는 시장 상인들이 꾸민 새로운 연극이 생겨났다",
-        "중세에는 종교 축제와 이어진 새로운 연극이 생겨났다"
+        "기독교 세계의 성지 순례",
+        "기독교 세계의 수도원 교육",
+        "기독교 세계의 주일 예배",
+        "기독교 세계의 종교 축제"
       ],
       "answer": 3,
       "evidence": [
         1,
         2
       ],
-      "note": "'The Middle Ages produced a new kind of drama' · 'intimately associated with the religious festivals of the Christian world' — 중세의 새 연극은 종교 축제와 밀접함"
+      "note": "'the mystery and morality plays' · 'intimately associated with the religious festivals of the Christian world' — 종교 축제와 밀접하게 연결됨"
     },
     {
       "id": "d233-q2",
@@ -39,19 +39,19 @@
     },
     {
       "id": "d233-q3",
-      "type": "세부사실",
-      "prompt": "이 글에서 도덕극에 대해 말한 것으로 가장 적절한 것은?",
+      "type": "순서",
+      "prompt": "이 글에서 말한 신비극 공연 장소의 변화로 가장 적절한 것은?",
       "options": [
-        "죽음과 심판 같은 개념을 그림에 담아 보였다",
-        "성경 속 인물을 실제 사람처럼 되살려 보였다",
-        "미덕과 악덕 같은 개념을 사람처럼 등장시켰다",
-        "천국과 지옥 같은 개념을 무대 장치로 꾸며 보였다"
+        "교회 앞 계단 → 마을 시장터",
+        "교회 안 → 마을 시장터",
+        "교회 앞 계단 → 교회 안뜰 → 마을 시장터",
+        "교회 안 → 교회 앞 계단 → 마을 시장터"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        4
+        6
       ],
-      "note": "'In the morality plays, these abstractions were presented as living characters' — 도덕극은 추상적인 것을 살아 있는 인물로 보여 줌"
+      "note": "'at first presented on the front steps of large churches and cathedrals … gradually moved to the town marketplace' — 교회 앞 계단에서 시장터로 옮겨 감"
     }
   ]
 }

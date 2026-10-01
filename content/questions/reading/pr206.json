@@ -21,19 +21,19 @@
     },
     {
       "id": "pr206-q2",
-      "type": "한 단계 추론",
-      "prompt": "글의 내용으로 보아, 19세기 후반 시골에 도서관이나 극장이 드물었던 까닭으로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 많은 인구가 있어야 유지될 수 있었다고 한 것으로 짝지어진 것은?",
       "options": [
-        "시설을 지을 돈이 모자라서",
-        "시설을 뒷받침할 인구가 모자라서",
-        "시설을 운영할 사람이 모자라서",
-        "시설을 이용할 여가가 모자라서"
+        "학교와 병원",
+        "공원과 동물원",
+        "교회와 시장",
+        "도서관과 극장"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         5
       ],
-      "note": "인용: large populations were necessary to support libraries, theaters / first developed as part of the trend toward urbanization"
+      "note": "인용: large populations were necessary to support libraries, theaters"
     }
   ]
 }

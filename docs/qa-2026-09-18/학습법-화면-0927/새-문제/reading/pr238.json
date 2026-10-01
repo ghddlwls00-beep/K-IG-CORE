@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "pr238-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 에너지가 쓰이는 곳의 예로 들지 않은 것은?",
       "options": [
-        "석탄과 석유를 깨끗하게 쓰는 기술을 개발해야 한다",
-        "석탄과 석유 말고 다른 새 에너지원을 개발해야 한다",
-        "석탄과 석유를 아껴 쓰는 방법을 개발해야 한다",
-        "석탄과 석유의 새로운 매장지를 찾아 개발해야 한다"
+        "공장을 돌리는 일",
+        "거리를 밝히는 일",
+        "집을 데우는 일",
+        "음식을 익히는 일"
       ],
       "answer": 1,
       "evidence": [
-        3,
-        4,
-        5
+        2
       ],
-      "note": "'Other sources, therefore, must be developed'"
+      "note": "operating our factories, heating our homes and cooking our food, powering most forms of transportation"
     },
     {
       "id": "pr238-q2",
       "type": "세부 사실",
-      "prompt": "이 글의 내용과 일치하는 것은?",
+      "prompt": "이 글에서 현재 에너지 수요의 대부분을 채운다고 한 것은?",
       "options": [
-        "석탄은 공기를 오염시키고 석유는 점점 부족해진다",
-        "석탄은 점점 부족해지고 석유는 공기를 오염시킨다",
-        "석탄은 점점 부족해지고 석유는 열을 더 많이 낸다",
-        "석탄은 공장에서, 석유는 운송에서 주로 쓰인다"
+        "석탄과 석유",
+        "석유와 천연가스",
+        "석탄과 원자력",
+        "석유와 원자력"
       ],
       "answer": 0,
       "evidence": [
-        4
+        3
       ],
-      "note": "'coal, when burned, tends to pollute the air, and oil is becoming scarcer'"
+      "note": "Presently coal and oil supply the majority of our energy needs"
     }
   ]
 }

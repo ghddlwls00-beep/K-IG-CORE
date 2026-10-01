@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "d230-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "세쿼이아 국립공원이 있는 곳으로 글쓴이가 말한 것은?",
       "options": [
-        "요세미티의 폭포와 세쿼이아의 나무가 생겨난 과정을 설명한다",
-        "요세미티의 폭포와 세쿼이아의 나무가 얼마나 웅장한지 소개한다",
-        "요세미티의 폭포와 세쿼이아의 나무를 지키려는 노력을 설명한다",
-        "요세미티의 폭포와 세쿼이아의 나무에 얽힌 전설을 설명한다"
+        "요세미티에서 멀지 않은 북쪽",
+        "요세미티에서 멀리 떨어진 남쪽",
+        "요세미티에서 멀지 않은 남쪽",
+        "요세미티에서 멀리 떨어진 북쪽"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        2,
-        3,
-        4
+        3
       ],
-      "note": "'famous for its breathtaking waterfalls, some of the highest in North America' · 'named for the huge sequoia trees found there' · 'the largest tree in the world' — 요세미티의 높은 폭포와 세쿼이아의 거대한 나무를 소개한다"
+      "note": "'Not far south of Yosemite is Sequoia National Park' — 요세미티에서 멀지 않은 남쪽"
     },
     {
       "id": "d230-q2",

@@ -5,36 +5,36 @@
   "questions": [
     {
       "id": "pr242-q1",
-      "type": "세부 사실",
-      "prompt": "다음 중 글의 내용과 일치하는 것은?",
+      "type": "순서",
+      "prompt": "글에서 햇빛이 공기 속 작은 기체 분자에 부딪친다는 내용 바로 앞에 나온 것은?",
       "options": [
-        "해 질 녘에는 공기 중 먼지가 많아져 하늘이 붉어진다",
-        "해 질 녘에는 햇빛이 더 많은 공기를 지나온다",
-        "해 질 녘에는 햇빛이 구름에 반사되어 붉게 보인다",
-        "해 질 녘에는 햇빛의 열이 약해져 붉은빛을 띤다"
+        "파란빛이 빨간빛보다 파장이 짧다는 점",
+        "햇빛이 여러 색이 섞인 빛이라는 점",
+        "기체 분자가 파란빛을 흩뜨린다는 점",
+        "파란빛이 사방에서 눈에 닿는다는 점"
+      ],
+      "answer": 0,
+      "evidence": [
+        2,
+        3
+      ],
+      "note": "'blue light has a shorter wavelength than red light' 다음에 'When sunlight enters the air, it hits tiny gas molecules'"
+    },
+    {
+      "id": "pr242-q2",
+      "type": "가리키는 것",
+      "prompt": "글에서 'before it reaches us'의 'it'이 가리키는 것으로 알맞은 것은?",
+      "options": [
+        "파란빛",
+        "햇빛",
+        "빨간빛",
+        "노을빛"
       ],
       "answer": 1,
       "evidence": [
         6
       ],
-      "note": "'At sunset, sunlight passes through much more air before it reaches us'와 일치"
-    },
-    {
-      "id": "pr242-q2",
-      "type": "한 단계 추론",
-      "prompt": "글을 통해 추론할 때, 하늘이 파랗게 보이는 까닭으로 가장 적절한 것은?",
-      "options": [
-        "파란빛이 공기 속 물방울에 흩어져 하늘을 채워서",
-        "파란빛이 긴 파장 덕에 멀리까지 흩어져 퍼져서",
-        "기체 분자가 파란빛을 흡수했다가 다시 내보내서",
-        "하늘 전체로 흩어진 파란빛이 사방에서 눈에 닿아서"
-      ],
-      "answer": 3,
-      "evidence": [
-        4,
-        5
-      ],
-      "note": "'scatter short blue waves much more strongly' · 'blue light is spread across the whole sky' · 'it reaches our eyes from every direction'에서 하늘이 파랗게 보이는 까닭을 추론"
+      "note": "'sunlight passes through much more air before it reaches us'"
     }
   ]
 }

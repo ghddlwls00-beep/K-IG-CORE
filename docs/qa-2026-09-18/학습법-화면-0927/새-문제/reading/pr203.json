@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr203-q1",
-      "type": "중심 생각",
-      "prompt": "윗글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 거꾸로 뒤집어 말할 수 없는 예로 든 문장은?",
       "options": [
-        "언어가 같은 나라끼리는 문화도 서로 비슷하다",
-        "쓰는 언어를 들으면 그 사람의 국적을 알 수 있다",
-        "국적과 쓰는 언어가 서로 다른 경우가 있다",
-        "외국어를 배울 때는 그 나라 문화도 함께 배워야 한다"
+        "독일어를 하면 독일인이다",
+        "스페인어를 하면 스페인인이다",
+        "프랑스어를 하면 프랑스인이다",
+        "포르투갈어를 하면 포르투갈인이다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        5,
-        7,
-        8
+        7
       ],
-      "note": "인용: there are exceptions / we cannot switch the argument / He may quite well be Swiss"
+      "note": "인용: we cannot switch the argument and say, \"If he speaks German, he is German.\""
     },
     {
       "id": "pr203-q2",

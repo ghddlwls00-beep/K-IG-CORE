@@ -5,19 +5,19 @@
   "questions": [
     {
       "id": "pr232-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면 교통사고로 매일 생기는 피해로 가장 적절한 것은?",
       "options": [
-        "자동차가 끼치는 가장 큰 해는 교통사고이다",
-        "자동차 이용의 해로움은 아직 잘 알려져 있지 않다",
-        "자동차 이용의 해로움은 새 기술로 대부분 줄일 수 있다",
-        "자동차 이용은 여러 면에서 비용이 크고 해롭다"
+        "수백 명이 죽고 수천 명이 다친다",
+        "수천 명이 죽고 수만 명이 다친다",
+        "수만 명이 죽고 수십만 명이 다친다",
+        "수천 명이 죽고 수십만 명이 다친다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        7
+        2
       ],
-      "note": "'we know of many ways in which car use is costly and harmful' — 자동차 이용은 여러모로 비용이 들고 해롭다"
+      "note": "'Thousands of people are killed, and tens of thousands injured each day' — 매일 수천 명이 죽고 수만 명이 다친다"
     },
     {
       "id": "pr232-q2",

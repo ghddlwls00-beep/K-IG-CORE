@@ -5,35 +5,35 @@
   "questions": [
     {
       "id": "pr229-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "어떤 이들은 즐거움을 위한 독서가 일의 능률을 높인다고 본다",
-        "어떤 이들은 즐거움을 위한 독서를 시간 낭비로 본다",
-        "어떤 이들은 즐거움을 위한 독서를 휴식으로 본다",
-        "어떤 이들은 즐거움을 위한 독서를 아이들에게나 맞는 일로 본다"
+        "즐거움을 위한 독서는 결국 일에도 큰 도움이 된다",
+        "어떤 이들은 즐거움을 위한 독서를 낭비로 여긴다",
+        "바쁜 사람일수록 짧은 글을 골라 읽어야 한다",
+        "독서의 즐거움은 어린 시절부터 길러 주어야 한다"
       ],
       "answer": 1,
       "evidence": [
         1
       ],
-      "note": "'reading \"for pleasure\" (anything not directly connected to a job or immediately practical) is a waste of time' — 실용적이지 않은 독서는 시간 낭비라고 느낀다"
+      "note": "'Some people feel that reading \"for pleasure\" ... is a waste of time' — 즐거움을 위한 독서를 시간 낭비로 여김"
     },
     {
       "id": "pr229-q2",
       "type": "세부 사실",
-      "prompt": "이 글에서 어떤 사업가들이 독서에 대해 하는 대답으로 가장 적절한 것은?",
+      "prompt": "이 글에서 사업가들이 자신의 독서에 대해 질문을 받으면 흔히 하는 대답은?",
       "options": [
-        "업무 문헌은 챙겨 읽지만 신문 볼 시간은 없다",
-        "업무 문헌은 챙겨 읽고 책은 출장길에 읽는다",
-        "업무 문헌은 줄이고 책을 더 읽으려 한다",
-        "업무 문헌은 챙겨 읽지만 책 읽을 시간은 없다"
+        "전문 분야의 글은 챙겨 읽지만 책 읽을 시간은 없다",
+        "경제 신문의 기사는 챙겨 읽지만 책 읽을 시간은 없다",
+        "경제 잡지는 챙겨 읽지만 책 읽을 시간은 없다",
+        "회사의 업무 보고서는 챙겨 읽지만 책 읽을 시간은 없다"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
         3
       ],
-      "note": "'I keep up with the professional literature, but I don't have time for books' — 업무 문헌은 챙기지만 책 읽을 시간은 없다"
+      "note": "'I keep up with the professional literature, but I don't have time for books' — 전문 분야의 글은 읽지만 책 읽을 시간은 없다"
     }
   ]
 }

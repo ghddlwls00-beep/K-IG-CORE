@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr249-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 두 친구가 앉아 있다고 한 곳은?",
       "options": [
-        "일상에서 정보가 부족할 때 내린 판단은 틀리기 쉬우므로 조심해야 한다",
-        "일상에서 내리는 판단과 추측의 상당 부분은 각자의 경험에 기대고 있다",
-        "일상에서 겉모습으로 사람을 쉽게 판단하는 습관은 고쳐 나가야 한다",
-        "일상에서 남녀의 차이에 대해 갖는 생각은 사회가 만들어 낸 것이다"
+        "친구의 집 거실",
+        "글쓴이의 방",
+        "글쓴이의 집 거실",
+        "친구의 방"
       ],
       "answer": 1,
       "evidence": [
-        6,
-        7,
-        8
+        1
       ],
-      "note": "'men tend to be taller than women', 'draw a conclusion about men and women as a whole', 'depend on your experience' 문장으로 확인."
+      "note": "'two friends of mine are sitting in my room' 문장으로 확인."
     },
     {
       "id": "pr249-q2",

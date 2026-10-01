@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "pr248-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 몇몇 사람이 야생 식물에 매료된 까닭으로 든 것은?",
       "options": [
-        "정부의 보호 정책 덕분에 야생 식물의 가치를 아는 사람이 늘었다",
-        "언론의 꾸준한 보도 덕분에 야생 식물의 가치를 아는 사람이 늘었다",
-        "몇몇 사람의 꾸준한 노력 덕분에 야생 식물의 가치를 아는 사람이 늘었다",
-        "학교의 환경 교육 덕분에 야생 식물의 가치를 아는 사람이 늘었다"
+        "야생 식물의 아름다움",
+        "야생 식물의 약효",
+        "야생 식물의 희귀함",
+        "야생 식물의 강한 생명력"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        1,
-        4,
-        5,
-        6
+        2
       ],
-      "note": "'A small number of people have recognized the value' · 'these people have striven to conserve' · 'taught the public to value plant species' · 'Thanks to these efforts, more Koreans now understand the full value'가 글의 요지"
+      "note": "'They are fascinated by the beauty of these plants'"
     },
     {
       "id": "pr248-q2",

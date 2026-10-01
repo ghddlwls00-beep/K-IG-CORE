@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "d251-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부사실",
+      "prompt": "글에서 인사 관리자라고 불리는 훈련된 전문가를 두고 있다고 한 곳은?",
       "options": [
-        "일자리를 구할 때는 첫인상보다 꾸준한 성실함이 중요하다",
-        "일자리를 구할 때는 겉모습보다 실력을 보여 주어야 한다",
-        "일자리를 구할 때는 첫인상에 신경 써야 한다",
-        "일자리를 구할 때는 면접관의 성격부터 알아 두어야 한다"
+        "대부분의 관공서",
+        "대부분의 큰 병원",
+        "대부분의 대학",
+        "대부분의 큰 회사"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        3,
-        4
+        5
       ],
-      "note": "'First impressions are lasting' · 고용주는 'judge you by your appearance, your bearing … speech' · 'wants to have an interview' · 'size up the applicant'"
+      "note": "'Most large companies have trained specialists called personnel managers'"
     },
     {
       "id": "d251-q2",

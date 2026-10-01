@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "d238-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부사실",
+      "prompt": "이 글에서 비행기가 땅을 떠날 때 초보 승객에 대해 말한 것으로 가장 적절한 것은?",
       "options": [
-        "초보 승객은 걱정했던 것과는 달리 머지않아 비행을 즐기게 된다",
-        "초보 승객은 걱정했던 대로 메스꺼움을 겪은 뒤에 비행을 즐기게 된다",
-        "초보 승객은 몇 번 타 본 뒤에야 비로소 비행을 즐기게 된다",
-        "초보 승객은 옆 승객의 도움으로 두려움을 떨치고 비행을 즐기게 된다"
+        "메스꺼운 느낌에 한동안 고생한다",
+        "귀가 먹먹해져 한동안 고생한다",
+        "몸이 좌석에 눌려 한동안 고생한다",
+        "이륙하는 순간조차 알아채지 못한다"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        1,
-        5
+        2
       ],
-      "note": "'his fears are groundless' · 'he soon finds himself enjoying the plane trip' — 두려움은 근거 없고 곧 비행을 즐김"
+      "note": "'The plane leaves the ground without his being aware of it' — 비행기가 떠나는 것을 알아채지 못함"
     },
     {
       "id": "d238-q2",

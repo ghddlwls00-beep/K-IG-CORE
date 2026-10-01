@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr252-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "노인들이 자신을 실제보다 훨씬 젊게 여긴다고 자주 말하는 사람들은 누구인가?",
       "options": [
-        "노인 마케팅에서는 실제 나이보다 건강 상태가 중요하다",
-        "노인 마케팅에서는 실제 나이보다 소득 수준이 중요하다",
-        "노인 마케팅에서는 실제 나이보다 체감 나이가 중요하다",
-        "노인 마케팅에서는 실제 나이보다 소비 습관이 중요하다"
+        "광고를 만드는 사람들",
+        "시장을 조사하는 사람들",
+        "상점을 운영하는 사람들",
+        "신문에 글을 쓰는 사람들"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        1,
-        4,
-        5
+        1
       ],
-      "note": "'think of themselves as being much younger', 'perceived age may be a more reliable predictor', 'focus on perceived age' 문장으로 확인."
+      "note": "'Market researchers often comment that the elderly think of themselves as being much younger' 문장으로 확인."
     },
     {
       "id": "pr252-q2",

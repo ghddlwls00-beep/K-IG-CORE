@@ -23,21 +23,19 @@
     },
     {
       "id": "d240-q2",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 스포츠와 취미에 대해 한 말로 글의 내용과 일치하는 것은?",
       "options": [
-        "운동은 배우자와 먼저 의논하고 나서 즐겨야 한다",
-        "운동은 가족이 함께할 수 있는 종목으로 골라 즐겨야 한다",
-        "운동은 하루 한 시간 정도로 시간을 정해 두고 즐겨야 한다",
-        "운동은 가정에서 할 일을 다 마친 다음에 즐겨야 한다"
+        "가족과 함께 즐길 수 있는 것을 골라야 한다",
+        "주말과 휴일에 몰아서 즐기는 것이 좋다",
+        "일상생활에서 중요한 역할을 해야 한다",
+        "하루에 정해 둔 시간을 넘기지 말아야 한다"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        4,
-        5,
-        6
+        4
       ],
-      "note": "'we have to be careful not to neglect our responsibilities' · 'Our first duty is to our home and family' · 운동은 'After we have attended to these duties'"
+      "note": "'sports and hobbies should play an important role in our daily life'"
     }
   ]
 }

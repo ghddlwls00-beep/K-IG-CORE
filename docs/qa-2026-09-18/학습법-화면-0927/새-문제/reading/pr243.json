@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr243-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 더 나은 한국어 교육 과정을 마련해야 한다고 한 대상으로 알맞은 것은?",
       "options": [
-        "외국인 노동자를 위한 한국어 교육 과정을 더 잘 갖추어야 한다",
-        "외국인 유학생을 위한 한국어 교육 과정을 더 늘려야 한다",
-        "외국인 노동자에게 한국 문화 교육을 함께 제공해야 한다",
-        "외국인 노동자가 일터에서 한국어를 쓸 기회를 늘려야 한다"
+        "외국인 유학생",
+        "결혼 이민자",
+        "외국인 노동자",
+        "해외 동포 자녀"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        3,
-        4,
         5
       ],
-      "note": "'Only a small number of foreigners' · 'little or no teaching experience' · 'establish better educational programs'가 글의 요지"
+      "note": "'better educational programs for teaching the Korean language to foreign workers'"
     },
     {
       "id": "pr243-q2",

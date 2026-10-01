@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "pr226-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면, 우리가 지금 이미 그 피해를 입고 있는 과학의 해결책은 어떤 것인가?",
       "options": [
-        "과학의 혜택은 대개 일부 부유한 나라에 돌아간다",
-        "과학의 해결책은 때로 더 많은 문제를 낳는다",
-        "과학 기술은 때로 사람 사이를 멀게 한다",
-        "과학의 연구는 대개 돈 있는 기업의 뜻을 따른다"
+        "비용이 지나치게 많이 드는 해결책",
+        "효과가 나타나기까지 오래 걸리는 해결책",
+        "소수의 사람에게 혜택이 쏠리는 해결책",
+        "푼 것보다 많은 문제를 낳는 해결책"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        2,
-        3
+        2
       ],
-      "note": "'science solutions that cause more problems than they solve' · 'does not always have the answer at the precise time' — 과학이 늘 제때 답을 주지는 못한다"
+      "note": "'we are victims of many science solutions that cause more problems than they solve' — 푸는 것보다 더 많은 문제를 낳는 해결책"
     },
     {
       "id": "pr226-q2",

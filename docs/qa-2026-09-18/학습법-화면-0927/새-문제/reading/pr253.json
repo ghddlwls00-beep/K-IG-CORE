@@ -6,37 +6,34 @@
     {
       "id": "pr253-q1",
       "type": "세부 사실",
-      "prompt": "소의 먹이를 갑자기 바꾸면 나타날 수 있는 일로 글에 나온 것은?",
+      "prompt": "글에서 먹이가 갑자기 바뀐 소에게 먼저 생길 수 있다고 한 일은?",
       "options": [
-        "쉽게 병에 걸리고 새 먹이를 거부할 수 있다",
-        "소화가 잘 안 되고 잠을 잘 못 잘 수 있다",
-        "성질이 사나워지고 새끼를 덜 낳을 수 있다",
-        "몸무게가 줄고 우유도 덜 나올 수 있다"
+        "털이 거칠어진다",
+        "배탈이 난다",
+        "먹이를 거부한다",
+        "몸무게가 줄어든다"
       ],
       "answer": 3,
       "evidence": [
-        2,
-        3
+        2
       ],
-      "note": "'may first lose weight', 'may give less milk' 문장으로 확인."
+      "note": "'If the farmer makes a sudden change in a cow's food, the cow may first lose weight' 문장으로 확인."
     },
     {
       "id": "pr253-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글을 통해 추론할 수 있는 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 소가 우유를 덜 낼 수 있다고 한 때는?",
       "options": [
-        "소는 먹이가 바뀌면 우유의 맛도 달라진다",
-        "소는 새 먹이에 적응하는 데 시간이 걸린다",
-        "소는 새 먹이보다 원래 먹이를 더 좋아한다",
-        "소의 먹이를 바꿀 때는 수의사가 도와야 한다"
+        "늘 먹던 먹이를 갑자기 적게 먹었을 때",
+        "늘 먹던 먹이를 한꺼번에 많이 먹었을 때",
+        "새 먹이를 갑자기 많이 먹었을 때",
+        "늘 먹던 먹이를 먹는 시간이 바뀌었을 때"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        2,
-        3,
-        4
+        3
       ],
-      "note": "'a sudden change', 'suddenly eats lots of a new food', 'changes the cow's food slowly so that the cow can adapt' 문장으로 확인."
+      "note": "'the cow that suddenly eats lots of a new food may give less milk' 문장으로 확인."
     }
   ]
 }

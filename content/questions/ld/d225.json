@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "d225-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 시인이 숨은 아름다움을 본다고 한 곳은 무엇인가?",
       "options": [
-        "시인은 남다른 상상력으로 현실에 없는 꿈속 세계를 말로 그려 낸다",
-        "시인은 남다른 상상력으로 다가올 앞날의 모습을 말로 그려 낸다",
-        "시인은 남다른 상상력으로 평범한 장면 속 아름다움을 말로 그려 낸다",
-        "시인은 남다른 상상력으로 옛 전설 속 영웅들의 이야기를 말로 그려 낸다"
+        "가장 평범한 얼굴",
+        "가장 평범한 물건",
+        "가장 평범한 장면",
+        "가장 평범한 색깔"
       ],
       "answer": 2,
       "evidence": [
-        2,
         4
       ],
-      "note": "'gifted with an exceptionally powerful imagination' · 'sees hidden beauty in the most ordinary scene' — 시인은 상상력이 남달라 평범한 장면에 숨은 아름다움을 말로 표현한다"
+      "note": "'He sees hidden beauty in the most ordinary scene' — 가장 평범한 장면에서 숨은 아름다움을 본다"
     },
     {
       "id": "d225-q2",

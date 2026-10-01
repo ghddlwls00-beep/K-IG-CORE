@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "d257-q1",
-      "type": "중심 내용",
-      "prompt": "현대 의사가 옛 시대의 치료사와 가장 크게 다른 점으로 말한 것은?",
+      "type": "세부 사실",
+      "prompt": "현대 의사의 치료 수단으로 말한 것은?",
       "options": [
-        "얼굴 칠이나 춤 대신 상담으로 환자의 마음을 다스린다",
-        "얼굴 칠이나 춤 대신 예방과 생활 습관 관리에 힘쓴다",
-        "얼굴 칠이나 춤 대신 값비싼 기계와 장비에 기댄다",
-        "얼굴 칠이나 춤 대신 과학 지식과 약을 쓴다"
+        "과학 지식과 첨단 장비, 꼼꼼한 검사",
+        "과학 지식과 숙련된 기술, 효과적인 약",
+        "풍부한 경험과 첨단 장비, 따뜻한 상담",
+        "풍부한 경험과 꼼꼼한 검사, 효과적인 약"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        1,
         2
       ],
-      "note": "'a vivid contrast' · 'not face paint and ritual dances but scientific knowledge, skillful technique, and effective medicines' — 의식이 아니라 과학 지식 · 기술 · 약"
+      "note": "'His remedies are ... scientific knowledge, skillful technique, and effective medicines'"
     },
     {
       "id": "d257-q2",
       "type": "세부 사실",
-      "prompt": "대부분의 의사들이 긴 하루 일을 마친 뒤에 하는 일로 말한 것은?",
+      "prompt": "의사들이 긴 하루를 보낸다고 말한 곳은?",
       "options": [
-        "병원에 남아 개인 연구를 이어 간다",
-        "동료 의사들과 모여 새 치료법을 익힌다",
-        "학회에 나가 최신 연구 발표를 듣는다",
-        "집에 돌아가 개인 연구와 공부를 한다"
+        "연구실이나 병원",
+        "진료실이나 대학",
+        "연구실이나 학회",
+        "진료실이나 병원"
       ],
       "answer": 3,
       "evidence": [
         4
       ],
-      "note": "'most doctors return home to devote themselves to private research and study' — 집에 돌아가 개인 연구와 공부에 힘씀"
+      "note": "'After spending a long day in the office or hospital'"
     }
   ]
 }

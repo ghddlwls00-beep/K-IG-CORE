@@ -5,53 +5,51 @@
   "questions": [
     {
       "id": "d227-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "어부들의 과장에 대해 글쓴이가 한 말로 옳은 것은?",
       "options": [
-        "상상력이 풍부한 사람은 일을 부풀리거나 장난을 꾸미기도 한다",
-        "상상력이 풍부한 사람은 말을 부풀리다가 남의 믿음을 잃기도 한다",
-        "상상력이 풍부한 사람은 지어낸 이야기를 글로 써서 남기기도 한다",
-        "상상력이 풍부한 사람은 장난을 치다가 남의 마음을 다치게 하기도 한다"
+        "낚시 솜씨를 뽐내려는 것이다",
+        "듣는 이를 속이는 거짓말이다",
+        "거짓말이라고 부르기는 어렵다",
+        "듣는 사람도 즐겁게 해 준다"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        1,
-        6
+        4
       ],
-      "note": "'People who have a good imagination are sometimes inclined to exaggerate things' · 'turn their imaginative powers to thinking up practical jokes' — 상상력이 풍부한 사람은 과장을 하거나 짓궂은 장난을 꾸미기도 한다"
+      "note": "'we can hardly call the exaggeration of the fisherman a lie' — 거짓말이라고 부르기 어렵다"
     },
     {
       "id": "d227-q2",
       "type": "세부 사실",
-      "prompt": "짓궂은 장난을 당한 사람이 대개 보이는 반응으로 옳은 것은?",
+      "prompt": "짓궂은 장난을 당한 사람이 대개 보이는 반응으로 글쓴이가 말한 것은?",
       "options": [
+        "장난인 줄 모르고 믿어 버린다",
         "똑같은 장난으로 되갚아 준다",
-        "장난친 사람의 재치에 감탄한다",
-        "속은 것이 부끄러워 자리를 피한다",
+        "장난친 사람을 한동안 멀리한다",
         "기분 좋게 웃으며 받아들인다"
       ],
       "answer": 3,
       "evidence": [
         8
       ],
-      "note": "'Usually, however, the victim of such a practical joke takes it in good humor' — 장난을 당한 사람은 대개 기분 좋게 받아들인다"
+      "note": "'the victim of such a practical joke takes it in good humor' — 기분 좋게 받아들인다"
     },
     {
       "id": "d227-q3",
-      "type": "목적/태도",
-      "prompt": "어부들의 과장된 이야기에 대한 글쓴이의 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 짓궂은 장난의 한 형태로 든 것은 무엇인가?",
       "options": [
-        "남을 속이려는 마음에서 나온 것이니 거짓말로 봐야 한다",
-        "놓친 아쉬움에 일부러 부풀린 것이니 거짓말로 봐야 한다",
-        "생각이 저도 모르게 부풀어 오른 것이니 거짓말로 보기 어렵다",
-        "듣는 사람도 다 아는 뻔한 농담이니 거짓말로 보기 어렵다"
+        "이른바 '깜짝 놀래기'",
+        "이른바 '흉내 내기'",
+        "이른바 '거꾸로 말하기'",
+        "이른바 '우스개 거짓말'"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        4,
-        5
+        7
       ],
-      "note": "'we can hardly call the exaggeration of the fisherman a lie' · 'He has simply let his imagination run away with him' — 어부의 과장은 상상력에 끌려간 것일 뿐 거짓말이라 부르기 어렵다"
+      "note": "'One form of an imaginative practical joke is the so-called humorous lie' — 우스개 거짓말"
     }
   ]
 }

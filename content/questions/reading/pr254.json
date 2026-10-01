@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "pr254-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 아이들의 머리를 채우는 것의 예로 든 것은?",
       "options": [
-        "교육은 지식 주입보다 아이의 자기표현을 중시해야 한다",
-        "교육은 아이의 흥미보다 기초 학력을 중시해야 한다",
-        "교육은 시험 성적보다 협동하는 태도를 중시해야 한다",
-        "교육은 학교 수업보다 가정의 역할을 중시해야 한다"
+        "수백 개의 기하 문제와 세계 모든 강의 이름",
+        "수백 개의 영어 단어와 세계 모든 나라의 수도",
+        "수백 개의 역사 연도와 세계 모든 산의 이름",
+        "수백 개의 계산 문제와 세계 모든 도시의 이름"
       ],
       "answer": 0,
       "evidence": [
-        3,
-        4
+        3
       ],
-      "note": "'fill the developing minds of our children', 'frustrate their opportunities for self-expression' 문장으로 확인."
+      "note": "'fill the developing minds of our children with hundreds of geometry problems or the names of all the rivers in the world' 문장으로 확인."
     },
     {
       "id": "pr254-q2",

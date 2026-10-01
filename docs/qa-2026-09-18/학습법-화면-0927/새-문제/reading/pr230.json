@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "pr230-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면 어떤 뱃노래가 선원들이 드러내도록 도와준 감정은?",
       "options": [
-        "뱃노래는 선장의 명령을 알아듣기 쉽게 해 주었다",
-        "뱃노래는 다른 배와 신호를 주고받기 쉽게 해 주었다",
-        "뱃노래는 배 위의 힘든 나날을 견디기 쉽게 해 주었다",
-        "뱃노래는 낯선 항구 사람들과 어울리기 쉽게 해 주었다"
+        "두려움과 불안",
+        "슬픔과 후회",
+        "그리움과 외로움",
+        "설렘과 기대"
       ],
       "answer": 2,
       "evidence": [
-        1,
-        9
+        7
       ],
-      "note": "'had a hard life' · 'the sea shanties made their stay aboard less difficult' — 힘든 선상 생활을 덜 힘들게 했다"
+      "note": "'Others helped them express their feelings of longing and loneliness' — 그리움과 외로움을 드러내게 했다"
     },
     {
       "id": "pr230-q2",

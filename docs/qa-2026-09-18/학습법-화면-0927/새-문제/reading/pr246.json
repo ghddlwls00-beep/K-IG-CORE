@@ -21,20 +21,19 @@
     },
     {
       "id": "pr246-q2",
-      "type": "한 단계 추론",
-      "prompt": "글을 통해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 시먼스가 본 수컷 기린의 목은 무게가 얼마나 된다고 했는가?",
       "options": [
-        "목을 높이 들어 크게 보이는 수컷이 짝을 얻는 데 유리했을 것이다",
-        "목이 가늘고 유연한 수컷이 짝을 얻는 데 유리했을 것이다",
-        "목이 길고 굵은 수컷이 짝을 얻는 데 유리했을 것이다",
-        "높은 잎을 먹어 몸집이 큰 수컷이 짝을 얻는 데 유리했을 것이다"
+        "100파운드가 넘었다",
+        "400파운드가 넘었다",
+        "200파운드가 넘었다",
+        "300파운드가 넘었다"
       ],
       "answer": 2,
       "evidence": [
-        4,
-        5
+        4
       ],
-      "note": "'battling for mates' · 'males with the longest, thickest necks usually won'에서 짝을 얻기에 유리했음을 추론"
+      "note": "'their powerful necks, which ... weighed more than 200 pounds'"
     }
   ]
 }

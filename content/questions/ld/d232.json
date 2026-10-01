@@ -5,20 +5,20 @@
   "questions": [
     {
       "id": "d232-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부사실",
+      "prompt": "이 글에서 고대 그리스의 비극과 희극에서 중요한 역할을 했다고 한 것은?",
       "options": [
-        "꾸며 낸 세계를 즐기려는 욕구는 연극보다 의식 무용에서 더 잘 드러난다",
-        "꾸며 낸 세계를 즐기려는 욕구는 연극에서 잘 드러나며 연극은 어느 나라에나 있다",
-        "꾸며 낸 세계를 즐기려는 욕구는 선진 문명에 이르러서야 연극으로 드러났다",
-        "꾸며 낸 세계를 즐기려는 욕구는 고대 그리스의 비극과 희극에서 처음 연극으로 드러났다"
+        "말과 몸짓",
+        "무대와 조명",
+        "의상과 분장",
+        "음악과 춤"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        1,
-        2
+        6,
+        7
       ],
-      "note": "'drama is one of the best outlets for this desire' · 'Every country of the world has some form of dramatics' — 욕구를 푸는 통로이며 어느 나라에나 있음"
+      "note": "'The ancient Greeks produced tragedies and comedies … Music and dance played an important role in these dramas' — 그리스 비극·희극에서 음악과 춤이 중요한 역할"
     },
     {
       "id": "d232-q2",
@@ -39,18 +39,18 @@
     {
       "id": "d232-q3",
       "type": "세부사실",
-      "prompt": "이 글에서 작은 전통 사회들이 자신을 표현한다고 한 방식으로 가장 적절한 것은?",
+      "prompt": "이 글에서 선진 문명들이 해 왔다고 한 일로 가장 적절한 것은?",
       "options": [
-        "의식 무용과 무언극",
-        "의식 무용과 가면극",
-        "가면극과 무언극",
-        "노래와 가면극"
+        "정교한 극장을 짓고 극작가들을 길러 냈다",
+        "의식 무용을 다듬어 무언극으로 발전시켰다",
+        "비극과 희극을 처음으로 나누어 공연했다",
+        "배우들이 가면을 쓰는 전통을 만들었다"
       ],
       "answer": 0,
       "evidence": [
-        3
+        4
       ],
-      "note": "'Even small traditional communities express themselves in ritual dances and pantomime' — 작은 전통 사회는 의식 무용과 무언극으로 표현함"
+      "note": "'Advanced civilizations have constructed elaborate theaters and produced dramatists' — 선진 문명은 정교한 극장을 짓고 극작가를 배출함"
     }
   ]
 }

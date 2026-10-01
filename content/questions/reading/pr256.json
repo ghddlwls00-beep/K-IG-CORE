@@ -22,19 +22,19 @@
     },
     {
       "id": "pr256-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글을 통해 추론할 수 있는 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 우리의 삶을 크게 바꾸었다고 한 것끼리 묶인 것은?",
       "options": [
-        "새로운 치료법 덕분에 입원 기간이 짧아진 환자가 있다",
-        "새로운 치료법 덕분에 목숨을 건진 중환자가 있다",
-        "새로운 치료법 덕분에 부작용이 줄어든 환자가 있다",
-        "새로운 치료법 덕분에 병원비 부담이 준 환자가 있다"
+        "전화, 비행기, 컴퓨터",
+        "텔레비전, 자동차, 컴퓨터",
+        "텔레비전, 비행기, 인터넷",
+        "전화, 자동차, 인터넷"
       ],
       "answer": 1,
       "evidence": [
-        4
+        3
       ],
-      "note": "'offered hope and even life itself to severely ill people' 문장으로 확인."
+      "note": "'Television, cars, and computers have changed our lives profoundly' 문장으로 확인."
     }
   ]
 }

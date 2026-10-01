@@ -5,19 +5,20 @@
   "questions": [
     {
       "id": "pr244-q1",
-      "type": "세부 사실",
-      "prompt": "다음 중 글의 내용과 일치하는 것은?",
+      "type": "순서",
+      "prompt": "글에서 수증기가 올라가며 식어 작은 물방울이 된다는 내용 바로 앞에 나온 것은?",
       "options": [
-        "물이 수증기로 바뀌는 것은 주로 바람이 불기 때문이다",
-        "빗물은 땅에 닿으면 대부분 곧바로 다시 증발한다",
-        "물방울은 구름 속에서 얼음이 되어 비나 눈으로 내린다",
-        "식물은 잎을 통해서도 수증기를 공기 중으로 내보낸다"
+        "햇볕에 데워진 물 일부가 수증기로 올라간다",
+        "물방울이 무거워져 비나 눈으로 내린다",
+        "물이 바다로 돌아가 순환이 다시 시작된다",
+        "식물이 잎을 통해 수증기를 내보낸다"
       ],
       "answer": 3,
       "evidence": [
-        3
+        3,
+        4
       ],
-      "note": "'Plants also release water vapor through their leaves'와 일치"
+      "note": "'Plants also release water vapor through their leaves.' 다음에 'As the vapor rises, it cools and forms tiny water droplets'"
     },
     {
       "id": "pr244-q2",

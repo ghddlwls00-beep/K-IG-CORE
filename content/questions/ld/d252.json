@@ -5,38 +5,35 @@
   "questions": [
     {
       "id": "d252-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부사실",
+      "prompt": "일자리를 구할 때 내보일 수 있는 가장 값진 자산이라고 한 것은?",
       "options": [
-        "면접에서는 기본 예절과 잘 다듬어진 인품이 중요하다",
-        "면접에서는 편안한 태도와 솔직한 대답이 중요하다",
-        "면접에서는 예절보다 기술과 재능이 더 중요하다",
-        "면접에서는 회사에 대한 넓은 지식과 자신감이 중요하다"
+        "특정한 기술",
+        "잘 다듬어진 인품",
+        "타고난 재능",
+        "몸에 밴 예절"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        1,
-        2,
-        3,
         6
       ],
-      "note": "'begins the moment one raps on … door' · 'already made a bad impression' · 'common courtesy are never more important' · 'the most valuable asset … is a well-developed personality'"
+      "note": "'the most valuable asset that one can display when applying for a job is a well-developed personality'"
     },
     {
       "id": "d252-q2",
-      "type": "목적/태도",
-      "prompt": "노련한 면접관이 면접에서 하려고 애쓰는 것은?",
+      "type": "세부사실",
+      "prompt": "면접이 시작된다고 한 때로 알맞은 것은?",
       "options": [
-        "지원자의 예절을 하나하나 엄하게 따져 보는 것",
-        "지원자에게 갖춘 재능을 마음껏 뽐내게 하는 것",
-        "지원자의 실력을 어려운 질문으로 시험해 보는 것",
-        "지원자가 마음을 편히 가질 수 있게 해 주는 것"
+        "인사 담당자의 방에 들어서는 순간",
+        "인사 담당자 앞에서 자신을 소개하는 순간",
+        "인사 담당자의 방문을 두드리는 순간",
+        "인사 담당자와 처음 마주치는 순간"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        4
+        1
       ],
-      "note": "'The skillful interviewer, however, will try to put the applicant at ease'"
+      "note": "'The interview begins the moment one raps on the personnel manager's office door'"
     }
   ]
 }

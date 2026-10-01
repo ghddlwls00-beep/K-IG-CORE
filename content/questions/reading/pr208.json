@@ -21,20 +21,19 @@
     },
     {
       "id": "pr208-q2",
-      "type": "한 단계 추론",
-      "prompt": "글쓴이가 공장 문을 강제로 닫게 하지 않는 까닭으로 짐작할 수 있는 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 이 문제를 알고 있었던 기간으로 글에 나온 것은?",
       "options": [
-        "많은 사람이 일자리를 잃게 되기 때문에",
-        "공장을 닫게 할 법적 권한이 없기 때문에",
-        "공장들이 곧 다른 지역으로 옮겨 가기 때문에",
-        "강의 오염이 아직 심하지 않기 때문에"
+        "몇 년 전부터",
+        "지난달부터",
+        "지난주부터",
+        "올봄부터"
       ],
       "answer": 0,
       "evidence": [
-        3,
-        4
+        1
       ],
-      "note": "인용: employ a lot of workers / many people would lose their jobs"
+      "note": "인용: We've known about this problem for several years"
     }
   ]
 }

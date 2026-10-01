@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "d224-q1",
-      "type": "목적/태도",
-      "prompt": "백일몽에 대한 글쓴이의 태도로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 일상이 때로 꽤 따분해질 수 있다고 인정할 것이라고 한 사람은?",
       "options": [
-        "새로운 힘을 북돋아 주지만 지나치면 현실과 상상을 헷갈리게 만든다고 본다",
-        "즐거운 도피처가 되어 주지만 지나치면 현실과 상상을 헷갈리게 만든다고 본다",
-        "새로운 힘을 북돋아 주지만 지나치면 할 일을 소홀히 하게 만든다고 본다",
-        "즐거운 도피처가 되어 주지만 지나치면 할 일을 소홀히 하게 만든다고 본다"
+        "가장 성공한 사람",
+        "가장 행복한 사람",
+        "가장 부지런한 사람",
+        "가장 부유한 사람"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        5,
-        6
+        1
       ],
-      "note": "His ability to daydream provides him with a pleasant escape … daydream to such an extent that they neglect their duties and responsibilities"
+      "note": "Even the happiest man will admit that the everyday world can become rather humdrum"
     },
     {
       "id": "d224-q2",
       "type": "세부 사실",
-      "prompt": "사람이 때때로 상상의 세계로 향하는 까닭으로 말한 것은?",
+      "prompt": "글에서 보통 사람에게 꽤 큰 도전이 된다며 든 예는?",
       "options": [
-        "걱정거리를 풀 방법을 찾아보려고",
-        "걱정거리를 잠시라도 잊어 보려고",
-        "걱정거리가 생긴 까닭을 따져 보려고",
-        "걱정거리에 미리 대비해 보려고"
+        "생계 꾸리기와 건강 지키기",
+        "생계 꾸리기와 친구 사귀기",
+        "생계 꾸리기와 집 장만하기",
+        "생계 꾸리기와 자녀 키우기"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        4
+        2
       ],
-      "note": "In an attempt to forget these worries, he sometimes turns to the world of imagination"
+      "note": "Earning a living, raising a family … present quite a challenge to the average man"
     }
   ]
 }

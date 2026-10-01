@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr201-q1",
-      "type": "중심 생각",
-      "prompt": "윗글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 남의 행동에 화가 날 때 문제가 우리 쪽에 있을 가능성이 크다고 본 근거는?",
       "options": [
-        "관계의 불화는 내 가치관을 남에게 숨기는 데서 생긴다",
-        "관계의 불화는 남의 가치관을 내가 따라 하는 데서 생긴다",
-        "관계의 불화는 내 가치관을 남에게 강요하는 데서 생긴다",
-        "관계의 불화는 서로의 가치관을 묻지 않는 데서 생긴다"
+        "그 사람이 우리의 기대를 미처 알지 못한다는 점",
+        "그 행동에 반대하지 않는 이들도 있다는 점",
+        "우리도 그런 행동을 한 적이 있다는 점",
+        "그 행동이 일부러 한 것이 아니라는 점"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        1,
-        3,
-        5
+        4
       ],
-      "note": "인용: impose our values on others / no one is obligated to change / see things as they are"
+      "note": "인용: not everyone objects to their behavior indicates that the problem is probably ours"
     },
     {
       "id": "pr201-q2",

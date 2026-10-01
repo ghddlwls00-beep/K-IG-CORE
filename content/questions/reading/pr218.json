@@ -5,23 +5,20 @@
   "questions": [
     {
       "id": "pr218-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "순서",
+      "prompt": "이 글에서 글쓴이가 재판 중계의 이점으로 가장 먼저 든 것은?",
       "options": [
-        "재판을 TV로 중계해 사법부에 대한 국민의 신뢰를 높여야 한다",
-        "재판을 TV로 중계해 공정한 재판이 이루어질 가능성을 높여야 한다",
-        "재판을 TV로 중계해 배심원과 판사의 책임감을 높여야 한다",
-        "재판을 TV로 중계해 범죄를 미리 막는 효과를 높여야 한다"
+        "사건을 빠짐없이 정확하게 보도한다",
+        "많은 사람들이 사건을 알게 된다",
+        "중요한 증인이 사건을 알게 된다",
+        "대중에게 법원의 절차를 알려 준다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         2,
-        3,
-        4,
-        5,
-        6
+        3
       ],
-      "note": "'there are some benefits', 'necessary to televise trials to increase the chance of a fair trial'가 근거"
+      "note": "'there are some benefits', 'It will serve to educate the public about the court process'가 근거"
     },
     {
       "id": "pr218-q2",
