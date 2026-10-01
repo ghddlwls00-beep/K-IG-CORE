@@ -6,37 +6,34 @@
     {
       "id": "pr116-q1",
       "type": "세부 사실",
-      "prompt": "강의나 공연 중에 중요한 전화를 꼭 받아야 할 때 하라고 한 것은?",
+      "prompt": "글에서 중요한 전화를 받기에 알맞지 않은 자리의 예로 든 것은?",
       "options": [
-        "진동으로 바꾸고 방을 나간 뒤에 받는다",
-        "전원을 끄고 끝난 뒤에 다시 건다",
-        "무음으로 해 두고 문자로 먼저 답한다",
-        "벨소리를 줄여 두고 작게 받는다"
+        "회의와 면접",
+        "예배와 장례식",
+        "수업과 시험",
+        "강의와 공연"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
         5
       ],
-      "note": "'set the phone to vibrate mode and answer the phone only after leaving the room' — 진동으로 해 두고 나가서 받음"
+      "note": "'in an inappropriate setting, such as during lectures and concerts' — 강의와 공연"
     },
     {
       "id": "pr116-q2",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 버스나 기차 안에서 되도록 피하라고 한 것은?",
       "options": [
-        "공공장소에서 휴대전화를 쓸 때 통화 내용으로 개인 정보를 드러내지 않아야 한다",
-        "공공장소에서 휴대전화를 쓸 때 목소리와 벨소리로 남을 방해하지 않아야 한다",
-        "공공장소에서 휴대전화를 쓸 때 다른 사람의 모습을 허락 없이 찍지 않아야 한다",
-        "공공장소에서 휴대전화를 쓸 때 화면을 보며 걷다가 사고를 내지 않아야 한다"
+        "스피커를 켠 통화",
+        "길게 이어지는 통화",
+        "영상을 켠 통화",
+        "이어폰을 낀 통화"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        2,
-        3,
-        5
+        1
       ],
-      "note": "'avoid extended phone conversations' · 'can annoy others' · 'avoid disturbing others' · 'answer the phone only after leaving the room' — 남을 배려해 휴대전화를 씀"
+      "note": "'riding on buses, trains' · 'try to avoid extended phone conversations' — 길게 이어지는 통화"
     }
   ]
 }

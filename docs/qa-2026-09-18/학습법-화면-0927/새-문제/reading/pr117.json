@@ -22,19 +22,19 @@
     },
     {
       "id": "pr117-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "글에서 'add the finishing touch'가 뜻하는 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 처음에 어떤 책장을 계획하라고 했는가?",
       "options": [
-        "마지막으로 손잡이를 달아 마무리하다",
-        "마지막으로 손으로 흠을 살펴 마무리하다",
-        "마지막으로 이름을 새겨 마무리하다",
-        "마지막 손질을 더하여 작품을 완성하다"
+        "자기 서재에 맞는 책장",
+        "가족이 함께 쓸 수 있는 책장",
+        "남은 목재로 만들 수 있는 책장",
+        "옮기기 쉬운 가벼운 책장"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        6
+        2
       ],
-      "note": "'add the finishing touch by painting the woodwork' — 페인트를 칠해 마지막 손질을 함"
+      "note": "'Make a plan for a bookcase that suits your own library' — 자기 서재에 맞는 책장"
     }
   ]
 }

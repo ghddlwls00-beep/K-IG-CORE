@@ -6,36 +6,36 @@
     {
       "id": "pr114-q1",
       "type": "세부 사실",
-      "prompt": "'they often work better than governments'라고 한 까닭으로 든 것은?",
+      "prompt": "글에서 민간 단체들이 활동한다고 한 분야의 범위로 나온 것은?",
       "options": [
-        "보수 없이 일하는 자원봉사자를 쓸 수 있어서",
-        "사회 각계각층의 사람을 두루 쓸 수 있어서",
-        "정부에서 일해 본 사람을 쓸 수 있어서",
-        "해외 여러 나라의 사람을 쓸 수 있어서"
-      ],
-      "answer": 1,
-      "evidence": [
-        6,
-        7
-      ],
-      "note": "'they often work better than governments' · 'able to use people from all walks of life' — 각계각층의 사람을 쓸 수 있어서"
-    },
-    {
-      "id": "pr114-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "'They are active in various areas from law to medicine.'에서 They가 가리키는 것은?",
-      "options": [
-        "기업이 세운 자선 재단들",
-        "여러 나라가 모인 국제기구들",
-        "시민들이 꾸려 가는 민간 단체들",
-        "법률가와 의사들"
+        "교육에서 환경까지",
+        "경제에서 문화까지",
+        "법률에서 의학까지",
+        "복지에서 국방까지"
       ],
       "answer": 2,
       "evidence": [
         3,
         4
       ],
-      "note": "'These so-called non-governmental organizations deliver social services' · 'They are active in various areas' — They는 시민들이 모인 비정부 조직들"
+      "note": "'non-governmental organizations' · 'active in various areas from law to medicine' — 법률에서 의학까지"
+    },
+    {
+      "id": "pr114-q2",
+      "type": "세부 사실",
+      "prompt": "글에서 민간 단체들이 하는 일을 지켜보고 영향을 준다고 한 대상은?",
+      "options": [
+        "자기 나라 정부와 다른 나라 정부",
+        "자기 나라 정부와 국제기구",
+        "자기 나라 정부와 큰 기업",
+        "자기 나라 정부와 지방 의회"
+      ],
+      "answer": 0,
+      "evidence": [
+        3,
+        5
+      ],
+      "note": "'non-governmental organizations' · 'watch and influence what governments do at home or abroad' — 국내외 정부"
     }
   ]
 }

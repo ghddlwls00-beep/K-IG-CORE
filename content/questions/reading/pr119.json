@@ -21,23 +21,19 @@
     },
     {
       "id": "pr119-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글에서 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 두려움이 한 종류에만 미치는 예로, 아이가 동물원에서 쓰다듬고 싶어 한다고 한 동물은?",
       "options": [
-        "어릴 때 생긴 두려움은 자란 뒤에도 남아 있기 쉽다",
-        "사자를 겁내지 않는 아이는 개도 겁내지 않기 쉽다",
-        "낯가림이 심했던 아기는 커서도 겁이 많기 쉽다",
-        "아이가 자라면서 무서워하는 대상은 바뀌기 쉽다"
+        "호랑이",
+        "곰",
+        "사자",
+        "늑대"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        1,
-        2,
-        3,
-        4,
-        5
+        6
       ],
-      "note": "'Babies ... strangers' · 'aged 2 through 6 ... ghosts' · 'aged 7 through 12 ... real situations' · 'As a child grows, fears may disappear' · 'enjoy ghost stories years later' — 자라면서 겁내는 대상이 바뀜"
+      "note": "'some fears may extend only to one kind' · 'the child who wants to pet a lion at the zoo' — 사자"
     }
   ]
 }
