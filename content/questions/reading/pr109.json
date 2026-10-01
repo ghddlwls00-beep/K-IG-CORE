@@ -5,38 +5,36 @@
   "questions": [
     {
       "id": "pr109-q1",
-      "type": "세부 사실",
-      "prompt": "본문에 따르면 도시에서 직업이 있어도 많은 것을 살 여유가 없는 까닭으로 가장 적절한 것은?",
+      "type": "순서",
+      "prompt": "본문에서 도시 생활의 단점으로 가장 마지막에 든 것은?",
       "options": [
-        "고향 가족에게 돈을 보내야 해서",
-        "빌린 돈을 갚느라 여유가 없어서",
-        "앞날을 위해 저축해야 해서",
-        "살아가는 데 드는 비용이 커서"
+        "일자리를 구하기가 무척 어렵다",
+        "대중교통이 붐비고 지저분하다",
+        "사람이 많아도 외로울 수 있다",
+        "공기가 탁하고 소음이 심하다"
+      ],
+      "answer": 2,
+      "evidence": [
+        3,
+        4
+      ],
+      "note": "'What is more, public transportation is sometimes crowded and dirty' · 'Last of all, despite all the crowds, it is still possible to feel very lonely' — 마지막은 외로움"
+    },
+    {
+      "id": "pr109-q2",
+      "type": "순서",
+      "prompt": "본문에서 도시 생활의 단점으로 가장 먼저 든 것은?",
+      "options": [
+        "대중교통이 붐비고 지저분하다",
+        "사람이 많아도 외로울 수 있다",
+        "범죄가 많아 밤길이 위험하다",
+        "벌이가 적으면 생활비가 벅차다"
       ],
       "answer": 3,
       "evidence": [
         2
       ],
-      "note": "'you will not be able to afford many things because living in a city is often very expensive' — 도시 생활에 돈이 많이 듦"
-    },
-    {
-      "id": "pr109-q2",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
-      "options": [
-        "도시 생활의 장단점은 사람마다 다르게 느낀다",
-        "도시 생활의 장점은 그 단점을 덮을 만큼 크다",
-        "도시 생활에는 장점마다 그에 따른 단점이 있다",
-        "도시 생활의 단점은 미리 대비하면 줄일 수 있다"
-      ],
-      "answer": 2,
-      "evidence": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "note": "'For every plus, however, there is a minus' · 'very expensive' · 'crowded and dirty' · 'feel very lonely' — 장점마다 단점이 따름"
+      "note": "'For one thing ... unless it is very well-paid, you will not be able to afford many things because living in a city is often very expensive' — 첫째는 비싼 생활비"
     }
   ]
 }

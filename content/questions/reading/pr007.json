@@ -24,20 +24,19 @@
     },
     {
       "id": "pr007-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "이 글에서 'That meaning'이 가리키는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 글쓴이가 이 문제 전체를 아주 간단히 나타낸 방법은 무엇인가?",
       "options": [
-        "곡의 가사와 제목에 담긴 의미",
-        "연주자의 손끝에 담긴 의미",
-        "음표 뒤에 담긴 의미",
-        "듣는 사람의 기억에 담긴 의미"
+        "두 곡을 견주어 보여서",
+        "한 가지 물음을 던져서",
+        "한 가지 예를 들어서",
+        "한 음악가의 말을 빌려서"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        1,
-        2
+        3
       ],
-      "note": "a certain meaning behind the notes / That meaning constitutes what the piece is saying로 확인"
+      "note": "This whole problem can be stated quite simply by asking로 확인"
     }
   ]
 }

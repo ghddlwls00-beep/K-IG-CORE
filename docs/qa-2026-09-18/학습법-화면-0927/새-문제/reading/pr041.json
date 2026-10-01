@@ -5,38 +5,36 @@
   "questions": [
     {
       "id": "pr041-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 집단에 어울리는 법을 배우는 일을 무엇에 빗대었는가?",
       "options": [
-        "집단에 어울리려다 하는 실수는 부끄러워할 필요가 없다",
-        "집단에 어울리려다 하는 실수는 스스로 바로잡아야 한다",
-        "집단에 어울리려다 하는 실수는 친구가 너그럽게 봐 줘야 한다",
-        "집단에 어울리려다 하는 실수는 어른의 조언으로 줄일 수 있다"
+        "피아노나 기타 같은 악기를 배우는 일",
+        "야구나 농구 같은 경기를 배우는 일",
+        "영어나 중국어 같은 외국어를 배우는 일",
+        "그림이나 조각 같은 미술을 배우는 일"
       ],
-      "answer": 0,
-      "evidence": [
-        1,
-        2,
-        5
-      ],
-      "note": "1번 'trial and error', 2번 'need not feel ashamed of making mistakes', 5번 'hardly expect to learn without making a good many mistakes'에 근거함."
-    },
-    {
-      "id": "pr041-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "'It is somewhat like learning to play a game'에서 'It'이 가리키는 것으로 가장 적절한 것은?",
-      "options": [
-        "시행착오를 거쳐 성취를 이루는 것",
-        "실수를 부끄러워하지 않는 것",
-        "남의 실수를 너그럽게 이해하는 것",
-        "집단에 어울리는 법을 배우는 것"
-      ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
         3,
         4
       ],
-      "note": "4번 'It is somewhat like learning to play a game'의 It은 3번 'learn to fit into a group'을 가리킴."
+      "note": "3번 'learn to fit into a group', 4번 'like learning to play a game like baseball or basketball'에 근거함."
+    },
+    {
+      "id": "pr041-q2",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 어떤 성취에든 필요하다고 한 것은?",
+      "options": [
+        "타고난 재능",
+        "꾸준한 연습",
+        "거듭된 시행착오",
+        "주변의 격려"
+      ],
+      "answer": 2,
+      "evidence": [
+        1
+      ],
+      "note": "1번 'every achievement requires trial and error'에 근거함."
     }
   ]
 }

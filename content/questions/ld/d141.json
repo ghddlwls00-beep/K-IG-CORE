@@ -39,19 +39,19 @@
     },
     {
       "id": "d141-q3",
-      "type": "목적/태도",
-      "prompt": "그가 그날 곧장 집으로 간 목적으로 알맞은 것은?",
+      "type": "이유",
+      "prompt": "그가 고용 기관에서 소개받은 일자리들을 택하지 않은 이유로 알맞은 것은?",
       "options": [
-        "아내와 오후 내내 함께 쉬며 지내려고",
-        "아내에게 합격 소식을 직접 전하려고",
-        "아내가 열어 준 축하 자리에 가려고",
-        "아내와 월요일 첫 출근 준비를 하려고"
+        "보수가 생각보다 낮아서",
+        "마음에 드는 일이 없어서",
+        "집에서 너무 멀어서",
+        "근무 시간이 너무 길어서"
       ],
       "answer": 1,
       "evidence": [
-        11
+        3
       ],
-      "note": "'I went right home to tell my wife the good news' — 아내에게 좋은 소식을 전하려고 집에 감"
+      "note": "'given information about several positions, but I wasn't interested in any of these jobs' — 관심 가는 일이 없었음"
     }
   ]
 }

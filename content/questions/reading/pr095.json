@@ -21,20 +21,20 @@
     },
     {
       "id": "pr095-q2",
-      "type": "한 단계 추론",
-      "prompt": "IMF 관리가 회복 시기를 정확히 말할 수 없다고 한 까닭으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "IMF가 아시아 국가들에 경고한 것으로 알맞은 것은?",
       "options": [
-        "각국이 IMF의 권고를 얼마나 잘 따르는지에 달렸기 때문에",
-        "각국 정부가 문제에 얼마나 잘 대처하는지에 달렸기 때문에",
-        "각국 기업이 빚을 얼마나 빨리 갚는지에 달렸기 때문에",
-        "세계 경제가 얼마나 빨리 살아나는지에 달렸기 때문에"
+        "외국에서 빌린 돈을 서둘러 갚아야 할 것이다",
+        "수출을 줄이고 내수를 키워야 할 것이다",
+        "은행의 수를 크게 줄여야 할 것이다",
+        "과거의 높은 경제 성장률을 포기해야 할 것이다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        4,
-        5
+        1,
+        2
       ],
-      "note": "'the IMF could not be exact about the timing of a recovery' · 'depend on how effective governments were in dealing with their economic problems' — 회복 시기가 각국 정부의 대처에 달림"
+      "note": "'economic trouble affecting Asian countries' · 'they would have to give up the high economic growth rates of the past' — 과거의 높은 성장률 포기"
     }
   ]
 }

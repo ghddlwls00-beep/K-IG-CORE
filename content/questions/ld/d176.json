@@ -37,19 +37,19 @@
     },
     {
       "id": "d176-q3",
-      "type": "다음할일",
-      "prompt": "어느 더운 여름날 러드가 하기로 한 일로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 러드의 건망증이 아주 심했다며 든 예로 알맞은 것은?",
       "options": [
-        "자녀들을 데리고 바다낚시를 하러 가기",
-        "자녀들을 데리고 친척 집에 묵으러 가기",
-        "자녀들을 데리고 바닷가에 놀러 가기",
-        "자녀들을 데리고 섬으로 배를 타러 가기"
+        "자기가 쓴 책의 제목을 잊곤 했다",
+        "자기 집으로 가는 길을 잊곤 했다",
+        "말하다가 무슨 이야기 중이었는지 잊곤 했다",
+        "자녀들의 이름을 서로 헷갈리곤 했다"
       ],
       "answer": 2,
       "evidence": [
-        6
+        1
       ],
-      "note": "'decided to take his children to the beach' — 자녀들을 해변에 데려가기로 함"
+      "note": "'sometimes forgot what he was talking about in the middle of a sentence' — 말하는 도중에 무슨 이야기였는지 잊음"
     }
   ]
 }

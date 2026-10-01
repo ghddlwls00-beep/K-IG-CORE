@@ -8,10 +8,10 @@
       "type": "세부 사실",
       "prompt": "조지와 앨버트의 실제 관계로 옳은 것은?",
       "options": [
-        "육촌",
-        "고종사촌",
-        "이복형제",
-        "외삼촌과 조카"
+        "육촌 (부모의 사촌의 아들)",
+        "사촌 (부모의 형제의 아들)",
+        "이복형제 (부모 한쪽이 같은 형제)",
+        "오촌 (부모의 사촌 형제)"
       ],
       "answer": 0,
       "evidence": [
@@ -23,38 +23,35 @@
     {
       "id": "d035-q2",
       "type": "세부 사실",
-      "prompt": "실제로는 친척이 아니면서 숙모나 삼촌이라고 불리는 사람들에 대한 설명으로 옳은 것은?",
+      "prompt": "헬렌은 조지에게 어떤 사람인가?",
       "options": [
-        "아이들을 어릴 때부터 돌봐 준 이웃들이다",
-        "부부의 결혼을 이어 준 중매인 집안 사람들이다",
-        "부부와 오래 함께 일한 직장 동료들이다",
-        "그 가족과 가깝게 지내 온 좋은 친구들이다"
+        "고모",
+        "이모",
+        "친할머니",
+        "외할머니"
       ],
       "answer": 3,
       "evidence": [
-        10
+        7,
+        8
       ],
-      "note": "10번 줄 'aren't relatives at all, but good friends of the family'에서 확인."
+      "note": "'he's Dorothy's son' · 'Her mother is Aunt Helen'에서 확인."
     },
     {
       "id": "d035-q3",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "앨버트에게 조지를 소개하는 사람으로 옳은 것은?",
       "options": [
-        "금혼식은 친척이 많아 헷갈려도 아이들보다 어른들이 더 반기는 잔치이다",
-        "금혼식은 친척 관계가 헷갈리긴 해도 다들 즐겁게 보내는 잔치이다",
-        "금혼식은 친척보다 오랜 친구들이 더 많이 모여 북적이는 잔치이다",
-        "금혼식은 헷갈림을 줄이려고 50년 된 가족사를 함께 돌아보는 잔치이다"
+        "앨버트의 할머니",
+        "앨버트의 아버지",
+        "앨버트의 어머니",
+        "앨버트의 큰누나"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        1,
-        3,
-        4,
-        5,
-        11
+        6
       ],
-      "note": "1·3·4·5·11번 줄 'a big party for all the friends and relatives' · 'sons and daughters, nieces and nephews' · 'don't see each other very often' · 'glad to come' · 'very confusing, but everyone has a good time'에서 확인."
+      "note": "'Albert, one mother will say, this is your cousin George'에서 확인."
     }
   ]
 }

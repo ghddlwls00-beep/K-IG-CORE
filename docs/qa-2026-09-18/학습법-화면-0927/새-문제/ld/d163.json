@@ -10,7 +10,7 @@
       "options": [
         "독자 취향이 다양해지면서 신문이 여러 면으로 나뉘었다",
         "잡지는 관심사별로 나뉘어 신문보다 골라 읽기 쉽다",
-        "신문은 소식을, 잡지는 취미와 관심사를 나눠 맡는다",
+        "잡지가 늘어나면서 신문을 읽는 사람이 줄어들었다",
         "신문과 잡지는 갈래가 많아 저마다 취향대로 고를 수 있다"
       ],
       "answer": 3,
@@ -26,18 +26,18 @@
     {
       "id": "d163-q2",
       "type": "세부 사실",
-      "prompt": "신문이 평소보다 두꺼워진다고 한 날은?",
+      "prompt": "특별한 관심사를 다루는 잡지의 예로 든 것을 바르게 짝지은 것은?",
       "options": [
-        "큰 사건이 터진 다음 날",
-        "토요일과 일요일",
-        "일요일",
-        "선거나 명절 같은 특별한 날"
+        "사진과 스포츠",
+        "미술과 만화",
+        "음악과 경제",
+        "문학과 오락"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        1
+        5
       ],
-      "note": "'especially on Sundays when the edition is larger than usual' 참고"
+      "note": "'magazines for such special interests as photography, sports, art, and music' 참고"
     },
     {
       "id": "d163-q3",

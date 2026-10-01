@@ -5,39 +5,35 @@
   "questions": [
     {
       "id": "pr087-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글의 예에서 한 소년이 자신이 못생겼다고 믿는 까닭은 무엇인가?",
       "options": [
-        "십 대는 어른들이 자기를 이해하지 못한다고 여기며 지낸다",
-        "십 대는 친구 관계가 무엇보다 중요하다고 여기며 지낸다",
-        "십 대는 자신이 이미 어른이 되었다고 여기며 지낸다",
-        "십 대는 남들이 자신을 지켜보고 있다고 여기며 지낸다"
+        "자신의 코",
+        "자신의 키",
+        "자신의 여드름",
+        "자신의 머리 모양"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        1,
-        2,
-        3
+        4
       ],
-      "note": "1번 'Teens surround themselves with imaginary audiences', 2번 'others are as interested in them as they are in themselves', 3번 'Believing that everyone is watching them, teenagers are extremely self-conscious'"
+      "note": "4번 'he is unattractive because of his nose'"
     },
     {
       "id": "pr087-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아 친구들과 크게 떠들며 웃던 십 대 소녀들이 차츰 달라지는 까닭으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "친구들과 이야기할 때 일부 십 대 소녀들이 보이는 모습으로 옳은 것은?",
       "options": [
-        "남들이 자신을 시끄럽다고 흉본다는 것을 알게 되어서",
-        "남들이 자신에게 그다지 관심이 없다는 것을 알게 되어서",
-        "남들이 조용한 사람을 더 좋아한다는 것을 알게 되어서",
-        "남들이 자신을 철없다고 여긴다는 것을 알게 되어서"
+        "말없이 고개를 끄덕이며 듣는다",
+        "남의 흉을 소곤소곤 주고받는다",
+        "크게 떠들고 소리 내어 웃는다",
+        "휴대 전화를 계속 들여다본다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        6,
-        7,
-        8
+        6
       ],
-      "note": "6번 'some teenage girls are too expressive, talking and laughing loudly', 7번 'They gradually realize ... that others are not really interested in them', 8번 'behavior changes when they realize others are too busy with their own lives to be watching them'"
+      "note": "6번 'some teenage girls are too expressive, talking and laughing loudly'"
     }
   ]
 }

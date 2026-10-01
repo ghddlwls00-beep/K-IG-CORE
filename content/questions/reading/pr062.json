@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr062-q1",
-      "type": "main",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 필자가 멋진 사실이라고 부른 것은 무엇인가?",
       "options": [
-        "잘못을 깊이 뉘우치며 스스로를 벌하면 새로 시작할 수 있다",
-        "잘못을 솔직히 인정하고 보상하면 새로 시작할 수 있다",
-        "잘못을 교훈으로 삼아 계획을 다시 세우면 새로 시작할 수 있다",
-        "잘못을 저지른 곳을 떠나 환경을 바꾸면 새로 시작할 수 있다"
+        "누구나 실수에서 배울 수 있다는 것",
+        "실수 덕분에 더 강해질 수 있다는 것",
+        "잘못은 결국 용서받을 수 있다는 것",
+        "언제든 새로 시작할 수 있다는 것"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        2,
-        5,
-        6
+        2
       ],
-      "note": "2번 'we can always have a new beginning', 5번 'accept his errors frankly ... make compensation', 6번 'an untroubled mind'"
+      "note": "'The glorious fact is that we can always have a new beginning'"
     },
     {
       "id": "pr062-q2",

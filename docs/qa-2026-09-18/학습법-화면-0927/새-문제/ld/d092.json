@@ -6,53 +6,52 @@
     {
       "id": "d092-q1",
       "type": "세부 사실",
-      "prompt": "기술 전문학교(technical institute)에 대한 설명으로 옳은 것은?",
+      "prompt": "대학의 전문 학교가 훈련을 제공한다고 이 강의가 든 분야는 몇 가지인가?",
       "options": [
-        "공학, 전자공학 등을 4년 과정으로 가르쳐 이학사 학위를 준다",
-        "경영, 법학 같은 전문 직업 훈련을 2년 과정으로 맡는다",
-        "전자공학, 공학, 경영 등을 2년 과정으로 가르친다",
-        "교육, 공학 등을 가르치는 대학 안의 전문 학교다"
+        "3가지",
+        "4가지",
+        "5가지",
+        "6가지"
       ],
       "answer": 2,
       "evidence": [
-        2
+        8,
+        9
       ],
-      "note": "'Technical institutes offer two-year programs in electronics, engineering, business' — 2년 과정, 그 분야들"
+      "note": "'professional schools' · 'training in business, education, engineering, law, and medicine' — 5가지"
     },
     {
       "id": "d092-q2",
       "type": "세부 사실",
-      "prompt": "준학위(associate degree)를 받는 때로 옳은 것은?",
+      "prompt": "과정 가운데 일부는 직업 과정이고 일부는 학술 과정이라고 한 곳은?",
       "options": [
-        "기술 전문학교에서 2년 과정을 마쳤을 때",
-        "4년제 대학에서 처음 2년을 마쳤을 때",
-        "주니어 대학을 거쳐 4년제 대학까지 마쳤을 때",
-        "주니어 대학에서 2년 과정을 마쳤을 때"
-      ],
-      "answer": 3,
-      "evidence": [
-        4
-      ],
-      "note": "'After two years at a junior college, students receive an associate degree' — 주니어 대학 2년 뒤"
-    },
-    {
-      "id": "d092-q3",
-      "type": "중심 내용",
-      "prompt": "이 강의가 주로 설명하는 것은?",
-      "options": [
-        "고등 교육 기관의 종류와 기관별로 두는 과정",
-        "2년제 과정과 4년제 과정이 주는 학위의 차이",
-        "직업 과정과 학술 과정이 이어지는 서로 다른 진로",
-        "전문 직업 훈련이 고등 교육에서 맡는 구실"
+        "주니어 대학",
+        "기술 전문학교",
+        "종합 대학교",
+        "대학의 전문 학교"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        2,
         3,
-        7
+        4
       ],
-      "note": "'many kinds of institutions of higher education' · 'Technical institutes' · 'Community or junior colleges' · 'Colleges and universities' — 여러 기관"
+      "note": "'Community or junior colleges also offer two-year programs' · 'Some of these programs are vocational; others are academic' — 주니어 대학의 과정"
+    },
+    {
+      "id": "d092-q3",
+      "type": "세부 사실",
+      "prompt": "고등학교에서 곧바로 4년제 대학이나 종합 대학교로 간다고 한 학생은?",
+      "options": [
+        "대부분의 학생",
+        "많은 학생",
+        "절반쯤 되는 학생",
+        "몇몇 학생"
+      ],
+      "answer": 1,
+      "evidence": [
+        6
+      ],
+      "note": "'Many students go directly from high schools to a four-year college or university'"
     }
   ]
 }

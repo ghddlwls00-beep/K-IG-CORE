@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "d019-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "베른의 이야기에서 승객들이 식량으로 우주선 안에 둔 것으로 알맞은 것은?",
       "options": [
-        "1865년 베른의 공상과학 속 달 여행은 당시 과학자들이 곧 가능하다고 보아 화제가 되었다",
-        "1865년 베른의 공상과학은 미국인 2명과 프랑스인 1명이 함께한 실제 비행을 바탕으로 했다",
-        "1865년 베른이 쓴 달 여행 공상과학은 당시엔 불가능한 꿈이었으나 100년 뒤 현실이 되었다",
-        "1865년 베른의 공상과학은 97시간 만에 달에 가는 정확한 계산으로 훗날 비행의 기준이 되었다"
+        "닭",
+        "감자",
+        "말린 고기",
+        "통조림"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        2,
-        3,
-        10
+        4
       ],
-      "note": "“dreamed about wonderful machines and fantastic journeys”, “a journey to the moon”, “impossible dreams, but 100 years later, men were walking on the moon”에서 알 수 있다."
+      "note": "“kept chickens in the ship for food”라고 했다."
     },
     {
       "id": "d019-q2",
@@ -40,18 +38,18 @@
     {
       "id": "d019-q3",
       "type": "세부 사실",
-      "prompt": "베른의 이야기 속 우주선에 일어난 일로 알맞은 것은?",
+      "prompt": "베른의 이야기에서 달에 도착한 우주선이 한 일로 알맞은 것은?",
       "options": [
-        "달에 내려앉았는데 우주복이 없어 밖으로 나가지는 못했다",
-        "착륙하지 않고 달 주위를 빙 돈 뒤 그대로 귀환했다",
-        "달 둘레를 몇 바퀴 돌다 연료가 바닥나 달 뒤편에 내려앉았다",
-        "달에 닿기 직전 길을 잃고 한참을 헤매다 지구로 돌아왔다"
+        "달에 내려 하룻밤을 묵고 돌아왔다",
+        "달 둘레를 돌다가 끝내 돌아오지 못했다",
+        "달 둘레만 돌고 지구로 돌아왔다",
+        "달에 내려 걸어 다닌 뒤 돌아왔다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
         7
       ],
-      "note": "“They never landed on the moon”, “only went around it and then came back”라고 했다."
+      "note": "“They never landed on the moon”, “only went around it and then came back”이라고 했다."
     }
   ]
 }

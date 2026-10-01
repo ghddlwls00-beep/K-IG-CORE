@@ -5,22 +5,20 @@
   "questions": [
     {
       "id": "d063-q1",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "길을 물어 온 낯선 남자가 판타스틱 파이브에서 맡은 역할로 알맞은 것은?",
       "options": [
-        "길을 물어 온 낯선 남자가 알고 보니 판타스틱 파이브의 가수였던 이야기",
-        "낯선 남자에게 판타스틱 파이브의 새 음반을 선물받은 이야기",
-        "판타스틱 파이브 가수와 리츠 호텔까지 함께 걸으며 친해진 이야기",
-        "음반 가게에서 판타스틱 파이브 가수를 알아보고 사인을 받은 이야기"
+        "드럼",
+        "노래",
+        "기타",
+        "건반"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
         2,
-        8,
-        9,
         10
       ],
-      "note": "“A man stopped me” · “number two in the top 20” · “the piece of paper the stranger had given to me. It was a photo” · “It was the singer in the Fantastic Five”에서 알 수 있음"
+      "note": "“A man stopped me and asked me the way” · “It was the singer in the Fantastic Five”에서 알 수 있음"
     },
     {
       "id": "d063-q2",

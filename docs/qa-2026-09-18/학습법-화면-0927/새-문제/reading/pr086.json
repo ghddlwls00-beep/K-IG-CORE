@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr086-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 가장 좋아하는 오페라들을 들은 횟수로 옳은 것은?",
       "options": [
-        "같은 오페라라도 여러 번 들으면 처음의 감동이 점점 옅어진다",
-        "같은 오페라라도 줄거리를 미리 알고 들어야 더 깊이 즐길 수 있다",
-        "같은 오페라라도 다시 들을 때마다 새로 얻게 되는 것이 있다",
-        "같은 오페라라도 공연장에서 직접 보아야 참맛을 알 수 있다"
+        "적어도 5번",
+        "적어도 10번",
+        "적어도 30번",
+        "적어도 20번"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        1,
-        4,
-        5
+        3
       ],
-      "note": "1번 'there is so much room for growth', 4번 'With each rehearing, you refine what you know', 5번 'the more you will be challenged by the ideas of new singers'"
+      "note": "3번 'I have heard at least twenty performances of my favorite operas'"
     },
     {
       "id": "pr086-q2",

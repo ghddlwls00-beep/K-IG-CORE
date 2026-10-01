@@ -24,19 +24,19 @@
     {
       "id": "d150-q2",
       "type": "세부 사실",
-      "prompt": "매우 덥거나 추운 날씨에 대해 이 글이 말한 것으로 옳은 것은?",
+      "prompt": "이 글에서 미국의 좋은 기후를 보여 주는 것으로 든 것은?",
       "options": [
-        "그곳 사람들은 그런 날씨를 오히려 즐기며 지낸다",
-        "아주 덥거나 추운 철엔 살기 좋은 곳으로 옮겨 지낸다",
-        "사는 사람들이 기후에 익숙해져 별로 고생하지 않는다",
-        "그곳 사람들은 날씨에 맞게 지은 집 덕분에 고생하지 않는다"
+        "거의 모든 지역에서 1년 내내 편하게 살 수 있다",
+        "거의 모든 지역에 철마다 비가 알맞게 내린다",
+        "거의 모든 지역에서 1년에 두 번 곡식을 거둔다",
+        "거의 모든 지역에서 사계절이 뚜렷하다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        5,
-        6
+        3,
+        4
       ],
-      "note": "\"very hot\" · \"very cold\" · \"become accustomed to the climate and never suffer very much\""
+      "note": "\"it has a good climate\" · \"In almost all sections … possible to live comfortably during the whole year\""
     }
   ]
 }

@@ -5,19 +5,19 @@
   "questions": [
     {
       "id": "d076-q1",
-      "type": "세부 사실",
-      "prompt": "드래그 레이싱에 쓰는 차의 생김새로 옳은 것은?",
+      "type": "가리키는 것",
+      "prompt": "글에서 말한 65,000달러가 가리키는 것으로 옳은 것은?",
       "options": [
-        "앞바퀴는 자전거 바퀴 같고 뒷바퀴는 크고 두껍다",
-        "앞바퀴는 크고 두껍고 뒷바퀴는 자전거 바퀴 같다",
-        "앞바퀴도 뒷바퀴도 크고 두꺼운 경주용 타이어다",
-        "앞뒤 바퀴가 다 자전거 바퀴처럼 크고 가늘다"
+        "뛰어난 선수가 한 해에 버는 돈",
+        "프로 경주 한 번의 우승 상금",
+        "경주용 차 한 대를 사는 값",
+        "큰 대회 하루 입장료 수입"
       ],
       "answer": 0,
       "evidence": [
-        2
+        6
       ],
-      "note": "'In the front is something that looks like a bicycle wheel. Huge fat tires are at the back'이 앞은 자전거 바퀴 같고 뒤는 크고 두꺼운 바퀴임을 보여 줌"
+      "note": "'A good drag racer can earn as much as $65,000 a year'이 65,000달러가 뛰어난 선수의 한 해 수입임을 보여 줌"
     },
     {
       "id": "d076-q2",

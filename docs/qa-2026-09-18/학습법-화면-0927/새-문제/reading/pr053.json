@@ -5,21 +5,20 @@
   "questions": [
     {
       "id": "pr053-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 미래를 내다보는 사람들이 우리에게 해 준다고 한 일은 무엇인가?",
       "options": [
-        "미래 예측은 세상이 나아갈 길을 찾는 데 꼭 필요하다",
-        "미래 예측은 과학 지식이 쌓일수록 점점 정확해진다",
-        "미래 예측은 자주 빗나가므로 아예 하지 않는 편이 낫다",
-        "미래 예측은 개인의 상상보다 자료 분석에 기대야 한다"
+        "지금 할 일을 미리 정해 준다",
+        "가능한 미래를 몇 가지로 좁혀 준다",
+        "지난 실수를 몇 가지로 정리해 준다",
+        "가능한 미래를 더 많이 열어 준다"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        5,
         6,
-        9
+        7
       ],
-      "note": "5번 without looking through the windshield, 6번 desperately need people who can foretell the future, 9번 priceless information이 근거"
+      "note": "'people who can foretell the future … help us narrow the infinity of possible futures down to one or, at least, a few'"
     },
     {
       "id": "pr053-q2",

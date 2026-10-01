@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "pr030-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 마음을 담은 편지를 쓰라고 권한 횟수는?",
       "options": [
-        "감사의 편지를 꾸준히 쓰면 글 솜씨가 몰라보게 늘어난다",
-        "감사의 편지를 꾸준히 쓰면 서로의 오해를 차분히 풀 수 있다",
-        "감사의 편지를 꾸준히 쓰면 나와 받는 사람이 함께 행복해진다",
-        "감사의 편지를 꾸준히 쓰면 멀어진 사람과 다시 가까워진다"
+        "하루에 한 번",
+        "한 달에 한 번",
+        "일 년에 한 번",
+        "일주일에 한 번"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        9
+        1
       ],
-      "note": "1번 'write a heartfelt letter', 2번 'does many things for you', 9번 'the person receiving it will be touched and grateful'이 근거"
+      "note": "'Once a week, write a heartfelt letter'"
     },
     {
       "id": "pr030-q2",
       "type": "세부 사실",
-      "prompt": "이 글에서 쪽지를 쓰는 행동이 주는 효과로 언급된 것은?",
+      "prompt": "이 글에서 편지를 받은 사람이 하게 될 수도 있다고 한 일은?",
       "options": [
-        "내 마음을 솔직하게 표현하는 힘을 길러 준다",
-        "내 삶의 잘되고 있는 부분에 눈을 돌리게 해 준다",
-        "내 삶의 아쉬웠던 일을 너그럽게 받아들이게 해 준다",
-        "내가 이루고 싶은 앞날의 목표를 또렷하게 해 준다"
+        "곧바로 답장을 써서 보낸다",
+        "편지를 소중히 간직해 둔다",
+        "다른 사람에게 같은 일을 한다",
+        "고마운 마음을 전화로 전한다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        9
+        10
       ],
-      "note": "9번 'the act of writing a note like this focus your attention on what's right in your life'가 근거"
+      "note": "'the person receiving your letter may decide to do the same thing to someone else'"
     }
   ]
 }

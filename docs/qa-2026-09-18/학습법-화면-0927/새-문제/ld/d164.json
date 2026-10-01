@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "d164-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "라디오와 텔레비전이 우리를 즐겁게 해 주는 것으로 든 것은?",
       "options": [
-        "라디오와 텔레비전은 오락을 위해 생활 깊이 자리 잡았다",
-        "마르코니의 라디오가 텔레비전 발명의 바탕이 되었다",
-        "라디오와 텔레비전은 생활과 세계에 큰 영향을 끼쳐 왔다",
-        "미국 가정에서는 텔레비전이 라디오를 거의 대신하게 되었다"
+        "노래와 퀴즈와 스포츠",
+        "음악과 춤과 스포츠",
+        "음악과 퀴즈와 연기",
+        "노래와 춤과 연기"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        4
+        2
       ],
-      "note": "'an essential part of our daily life', 'as much influence on the world as any other communications device' 참고"
+      "note": "'entertaining us with singing, dancing, and acting' 참고"
     },
     {
       "id": "d164-q2",
-      "type": "태도",
-      "prompt": "말한 사람이 마르코니에 대해 짐작한 것으로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "세계가 관심을 갖는 사건이 일어난 뒤 라디오로 온 세계에 알려지기까지 걸린다고 한 시간은 무엇인가?",
       "options": [
-        "자기 발명이 세상에 끼칠 영향을 몰랐을 것이다",
-        "자기 발명이 세상을 크게 바꿀 줄 믿었을 것이다",
-        "라디오가 전쟁에 쓰일까 걱정했을 것이다",
-        "라디오로 큰돈을 벌 생각이었을 것이다"
+        "몇 초",
+        "몇 분",
+        "1시간쯤",
+        "반나절쯤"
       ],
       "answer": 0,
       "evidence": [
-        3
+        5
       ],
-      "note": "'probably didn't realize what effects his great invention would have on the world' 참고"
+      "note": "'Events of universal interest can be reported to the entire globe a few seconds after they happen' 참고"
     }
   ]
 }

@@ -23,19 +23,19 @@
     },
     {
       "id": "pr088-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "이 글에서 'race through the store'가 뜻하는 바로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "가게들이 바쁜 손님이 매장을 빨리 지나가도록 돕기 위해 한 일로 옳은 것은?",
       "options": [
-        "다른 손님과 앞다투어 먼저 물건을 차지하는 것",
-        "매장 안을 뛰어다니며 이리저리 구경하는 것",
-        "매장 안을 빠르게 지나며 필요한 것을 사는 것",
-        "여러 매장을 차례로 바쁘게 돌아다니는 것"
+        "계산대를 늘려 줄을 짧게 했다",
+        "매장 곳곳에 배치도를 걸어 두었다",
+        "진열대를 낮추어 물건을 찾기 쉽게 했다",
+        "입구마다 안내 직원을 더 두었다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         4
       ],
-      "note": "4번 'to help busy shoppers race through the store'"
+      "note": "4번 'to help busy shoppers race through the store, companies now display floor plans in many different places'"
     }
   ]
 }

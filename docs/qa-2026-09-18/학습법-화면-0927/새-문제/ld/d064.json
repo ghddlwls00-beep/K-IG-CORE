@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "d064-q1",
-      "type": "중심 내용",
-      "prompt": "사회적 관습에 대한 이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "식사 예절에 관해 글에서 던진 질문으로 알맞은 것은?",
       "options": [
-        "예의의 핵심은 남을 불편하게 하는 행동을 피하는 데 있다",
-        "관습과 행동 방식은 시대와 나라에 따라 달라진다",
-        "식사와 흡연 같은 일상 예절이 사람의 교양을 보여 준다",
-        "예절은 나라마다 달라 보여도 그 바탕은 서로 같다"
+        "칼과 포크를 어느 손에 쥐어야 하는지",
+        "먹을 때 두 손을 다 써야 하는지",
+        "먹기 전에 손을 씻고 앉아야 하는지",
+        "빵을 손으로 뜯어 먹어도 되는지"
       ],
       "answer": 1,
       "evidence": [
-        1,
-        4
+        5
       ],
-      "note": "'Social customs and ways of behaving change'와 'Customs also differ from country to country'가 관습이 시대와 나라에 따라 달라짐을 보여줌"
+      "note": "'What about table manners? Should you use both hands when you are eating?'가 식사 예절에 관한 질문임"
     },
     {
       "id": "d064-q2",

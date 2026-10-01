@@ -22,19 +22,19 @@
     },
     {
       "id": "pr057-q2",
-      "type": "detail",
-      "prompt": "이 글에서 여행 보험이 보장해야 할 것으로 언급된 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 여행 보험이 보장해야 할 것으로 함께 언급된 두 가지는 무엇인가?",
       "options": [
-        "여행 중 맡긴 수하물을 잃어버려 생긴 손해",
-        "여행 중 병이나 사고로 치료를 받은 비용",
-        "여행 중 남의 물건을 망가뜨려 문 배상금",
-        "여행 중 항공편이 늦어져 더 낸 숙박비"
+        "수하물 분실과 여행 취소",
+        "여행 경비 분실과 항공편 지연",
+        "수하물 분실과 항공편 지연",
+        "여행 경비 분실과 여행 취소"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
         2
       ],
-      "note": "2번 'coverage for medical expenses arising from illness or accident'"
+      "note": "'loss of vacation money, and cancellation of the holiday'"
     }
   ]
 }

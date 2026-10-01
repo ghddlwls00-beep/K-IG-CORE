@@ -37,22 +37,20 @@
     },
     {
       "id": "d031-q3",
-      "type": "말한 사람의 목적/태도",
-      "prompt": "아이린 왓슨이 편집자에게 이 편지를 쓴 목적으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "캐시 오스틴이 아이린 왓슨에게 탐험 이야기를 들려준 때로 옳은 것은?",
       "options": [
-        "새크라멘토에서 캐시 오스틴을 인터뷰할 날짜를 잡아 달라고",
-        "에베레스트에 오른 여성 7명 기사의 잘못을 바로잡으려고",
-        "캐시 오스틴의 에베레스트 탐험담을 기사로 쓰자고 제안하려고",
-        "캐시 오스틴의 탐험 기사를 다음 호로 미루자고 부탁하려고"
+        "잡지 인터뷰를 하던 중에",
+        "함께 저녁을 먹던 중에",
+        "사진 전시회를 보던 중에",
+        "등반 강연을 마친 뒤에"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        1,
         2,
-        4,
-        5
+        4
       ],
-      "note": "1·2·4·5번 줄 'a writer for a magazine' · 'letter she wrote to the magazine's editor' · 'I met Kathy Austin' · 'It's really interesting' · 'I think we can use her story'에서 확인."
+      "note": "'I met Kathy Austin' · 'We were having dinner when she told me about the expedition'에서 확인."
     }
   ]
 }

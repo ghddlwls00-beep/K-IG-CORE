@@ -21,20 +21,19 @@
     },
     {
       "id": "pr043-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "마이클 더피가 말한 복원의 목표는 화가의 의도를 존중하면서 동시에 무엇을 하는 것인가?",
       "options": [
-        "복원 전문가는 충분히 훈련받아도 화가의 의도를 확신하기 어렵다",
-        "복원 전문가는 충분히 훈련받아도 옛 물감을 똑같이 만들기 어렵다",
-        "복원 전문가는 충분히 훈련받아도 관람객 취향을 맞추기 어렵다",
-        "복원 전문가는 충분히 훈련받아도 그림의 손상을 막기 어렵다"
+        "처음 그렸을 때의 색깔을 되살리는 것",
+        "오랫동안 상하지 않게 지키는 것",
+        "보기에 하나로 어우러지게 하는 것",
+        "관람객이 이해하기 쉬운 작품으로 만드는 것"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        1,
-        5
+        6
       ],
-      "note": "1번 'highly trained', 'would have to be the original painter to know exactly', 5번 'extremely difficult to determine'에 근거함."
+      "note": "6번 'respect the artist’s intent, but at the same time to make it a visually coherent work of art'에 근거함."
     }
   ]
 }

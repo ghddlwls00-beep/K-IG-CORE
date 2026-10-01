@@ -25,20 +25,20 @@
     },
     {
       "id": "d148-q2",
-      "type": "세부 사실(장소)",
-      "prompt": "미국이 처음 나라가 되었을 때 차지한 땅의 위치로 옳은 것은?",
+      "type": "순서",
+      "prompt": "이 글에서 이웃 나라를 말한 바로 다음에 나오는 내용은 무엇인가?",
       "options": [
-        "13개 주가 동부와 북쪽 캐나다 쪽에 나뉘어 있었다",
-        "13개 주가 동부 해안과 남쪽 멕시코 쪽에 걸쳐 있었다",
-        "처음 주들은 빠짐없이 대륙의 동쪽 지역에 있었다",
-        "13개 주 가운데 몇 주는 대륙 중부에 있었다"
+        "미국 땅이 얼마나 넓은지",
+        "1964년에 인구가 몇이었는지",
+        "독립 때 주가 몇 개였는지",
+        "별 하나가 무엇을 뜻하는지"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        4,
-        6
+        1,
+        2
       ],
-      "note": "\"first became a nation\" · \"All these states were in the eastern part of the continent\""
+      "note": "\"Its neighbors are Canada … and Mexico\" → \"Although the United States is a big country, it is not the largest\""
     },
     {
       "id": "d148-q3",

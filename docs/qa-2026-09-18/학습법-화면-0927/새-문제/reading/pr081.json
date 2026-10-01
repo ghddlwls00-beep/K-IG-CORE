@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr081-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글의 예시에서 친구들과 만나기로 한 요일과 장소로 옳은 것은?",
       "options": [
-        "문제를 잘 풀려면 내 기분과 남들이 나를 보는 마음을 함께 따져야 한다",
-        "문제를 잘 풀려면 이미 아는 것과 새로 살핀 것을 함께 따져야 한다",
-        "문제를 잘 풀려면 내 경험과 주변 사람의 조언을 함께 따져야 한다",
-        "문제를 잘 풀려면 들일 시간과 드는 비용을 함께 따져야 한다"
+        "일요일, 쇼핑몰",
+        "토요일, 공원",
+        "토요일, 쇼핑몰",
+        "일요일, 공원"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        6,
-        7,
-        8
+        10
       ],
-      "note": "6번 'True problem solving, however, goes beyond feelings', 7번 'combine information that you already know with new observations', 8번 'on the basis of your knowledge of the situation'"
+      "note": "10번 'it’s Saturday and you are to meet your friends at the mall at 12:00'"
     },
     {
       "id": "pr081-q2",

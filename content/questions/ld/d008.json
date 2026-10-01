@@ -8,18 +8,18 @@
       "type": "중심 내용",
       "prompt": "낸시가 이 편지에서 페기에게 전하려는 주된 내용으로 가장 알맞은 것은?",
       "options": [
-        "새 농장 소식을 전하며 이사하는 날 와서 일손을 도와 달라고 청함",
-        "새 농장을 사게 된 소식을 알리며 며칠 묵으러 오라고 청함",
-        "방 4개짜리 농장 집이 넓으니 아예 와서 함께 살자고 권함",
-        "새 농장에서 키울 가축을 알리며 아이들 말 문제를 의논하자고 함"
+        "새 농장을 이번 주에 사게 됐다며 와서 며칠 묵어 가라고 청한다",
+        "새 농장으로 지난달 이사했다며 집들이에 와 달라고 청한다",
+        "새 농장을 내년에 사려 한다며 함께 둘러봐 달라고 청한다",
+        "새 농장 일손이 모자란다며 와서 일을 거들어 달라고 청한다"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
         1,
         2,
         3
       ],
-      "note": "'we are going to have a farm', 'we want you to come and see it', 'stay with us'에서 농장을 갖게 된 소식을 전하며 페기를 초대함을 알 수 있음."
+      "note": "'We are buying it this week', 'we want you to come and see it', 'stay with us for a few days'"
     },
     {
       "id": "d008-q2",

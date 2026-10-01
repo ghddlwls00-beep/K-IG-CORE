@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr046-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이에 따르면 우리가 촉각을 얻는 때는 언제인가?",
       "options": [
-        "촉각은 사람마다 예민한 정도가 크게 다른 감각이다",
-        "촉각은 우리가 살아가는 데 꼭 필요한 감각이다",
-        "촉각은 시각을 대신할 수 있을 만큼 정확한 감각이다",
-        "촉각은 친구와 마음을 나누는 데 꼭 필요한 감각이다"
+        "태어나기 전",
+        "태어나는 순간",
+        "태어난 첫 주",
+        "태어난 첫 달"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        1,
-        2,
-        5
+        1
       ],
-      "note": "1번 'the first sense we develop', 2번 'We could not live without it', 5번 'never turns off its awareness'에 근거함."
+      "note": "1번 'we acquire it before birth'에 근거함."
     },
     {
       "id": "pr046-q2",

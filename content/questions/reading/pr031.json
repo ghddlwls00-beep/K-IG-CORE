@@ -22,19 +22,19 @@
     },
     {
       "id": "pr031-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "이 글에서 'equipment'가 뜻하는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 양심을 장비에 빗댈 때 그 장비를 쓰는 곳으로 든 것은?",
       "options": [
-        "옳고 그름을 가리는 마음의 힘",
-        "어려움을 이겨 내는 굳센 의지",
-        "남보다 앞서려는 강한 경쟁심",
-        "타고난 재능과 뛰어난 지혜"
+        "인생이라는 먼 여행길",
+        "인생이라는 싸움터",
+        "인생이라는 거친 바다",
+        "인생이라는 높은 산"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
         1
       ],
-      "note": "1번 'The best equipment ... for the battle of life is conscience'에서 equipment는 양심 같은 정신적 자질"
+      "note": "'The best equipment the young can have for the battle of life is conscience'"
     }
   ]
 }

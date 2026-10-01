@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "pr020-q1",
-      "type": "detail",
-      "prompt": "이 글에 따르면, 사람들이 어떤 식물을 기르는 까닭으로 언급된 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면, 지구의 동물이 살아가도록 받쳐 주는 세계를 이루는 세 가지는 무엇인가?",
       "options": [
-        "그 식물의 꽃과 생김새가 아름답기 때문에",
-        "그 식물에서 당장 쓸모를 발견했기 때문에",
-        "그 식물이 사라질 위기에 놓여 있기 때문에",
-        "그 식물을 조상 때부터 길러 왔기 때문에"
-      ],
-      "answer": 1,
-      "evidence": [
-        4
-      ],
-      "note": "4번 'If we see any immediate utility in a plant we foster it'에서 확인된다."
-    },
-    {
-      "id": "pr020-q2",
-      "type": "main",
-      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
-      "options": [
-        "식물은 생명에 필수적이지만 사람들은 쓸모 있는 식물마저 잘 돌보지 않는다",
-        "식물은 생명에 필수적이지만 사람들은 쓸모보다 생김새로 식물을 고른다",
-        "식물은 생명에 필수적이지만 사람들은 식물을 너무 많이 길러 땅을 해친다",
-        "식물은 생명에 필수적이지만 사람들은 쓸모를 따져 식물을 가려 대한다"
+        "공기와 햇빛과 식물",
+        "물과 빛과 식물",
+        "흙과 햇빛과 식물",
+        "물과 흙과 식물"
       ],
       "answer": 3,
       "evidence": [
-        1,
-        2,
+        1
+      ],
+      "note": "'Water, soil, and the earth's green mantle of plants make up the world'에서 확인된다."
+    },
+    {
+      "id": "pr020-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 식물을 대하는 우리의 태도를 어떻다고 말했는가?",
+      "options": [
+        "유난히 편협하다",
+        "몹시 탐욕스럽다",
+        "너무 감상적이다",
+        "매우 관대하다"
+      ],
+      "answer": 0,
+      "evidence": [
         3
       ],
-      "note": "1번 'supports the animal life', 2번 'could not exist without the plants', 3번 'a singularly narrow one'을 종합하면 알 수 있다."
+      "note": "'Our attitude toward plants is a singularly narrow one'에서 확인된다."
     }
   ]
 }

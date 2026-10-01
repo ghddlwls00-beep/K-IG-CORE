@@ -23,20 +23,19 @@
     },
     {
       "id": "pr032-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글의 내용으로 보아 가장 알맞게 추론한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 나라마다 다르다고 언급된 것은?",
       "options": [
-        "접시에 음식을 남기면 미국에서는 무례해 보일 수 있다",
-        "국수를 소리 내어 먹으면 일본에서는 무례해 보일 수 있다",
-        "식사 중에 대화를 나누면 일본에서는 무례해 보일 수 있다",
-        "국수를 소리 내어 먹으면 서양에서는 무례해 보일 수 있다"
+        "식사할 때 쓰는 도구",
+        "즐겨 먹는 음식의 종류",
+        "음식을 내오는 순서",
+        "하루에 먹는 끼니 수"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        2,
-        3
+        4
       ],
-      "note": "2번 'slurping noodles noisily', 3번 'no noise should be made while eating'을 연결한 추론"
+      "note": "'Eating utensils, too, differ from country to country'"
     }
   ]
 }

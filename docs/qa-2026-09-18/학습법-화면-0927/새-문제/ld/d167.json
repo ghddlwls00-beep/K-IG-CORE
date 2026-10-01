@@ -22,35 +22,36 @@
     {
       "id": "d167-q2",
       "type": "세부 사실",
-      "prompt": "마크 트웨인이 여러 곳을 다니며 강연한 일이 가져온 결과로 말한 것은?",
+      "prompt": "'톰 소여'와 '허클베리 핀'이 독자에게 보여 준다고 한 것은?",
       "options": [
-        "그를 유명하게 하고 책도 더 팔리게 했다",
-        "강연료로 큰 빚을 갚게 했다",
-        "강연에서 다룬 주제가 새 책이 되게 했다",
-        "강연을 들으러 온 올리비아 랭던을 만나게 했다"
+        "그의 어린 시절 모습",
+        "그가 살던 시대의 모습",
+        "미시시피강 주변의 자연",
+        "서부 개척지 사람들의 삶"
       ],
-      "answer": 0,
-      "evidence": [
-        4
-      ],
-      "note": "'helped make him famous and increase the sale of his books' 참고"
-    },
-    {
-      "id": "d167-q3",
-      "type": "세부 사실",
-      "prompt": "'톰 소여'와 '허클베리 핀'이 독자들에게 보여 준다고 한 것은?",
-      "options": [
-        "그가 어린 시절에 겪은 일들",
-        "미국 사회가 나아갈 앞날의 모습",
-        "사람들의 변하지 않는 본성",
-        "그가 살던 시대의 생생한 모습"
-      ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
         5,
         6
       ],
-      "note": "'Tom Sawyer and Huckleberry Finn', 'provide his readers with an excellent picture of his era' 참고"
+      "note": "'Tom Sawyer and Huckleberry Finn' · 'provide his readers with an excellent picture of his era' 참고"
+    },
+    {
+      "id": "d167-q3",
+      "type": "세부 사실",
+      "prompt": "'톰 소여'와 '허클베리 핀'의 특징으로 든 것은?",
+      "options": [
+        "유머와 풍자",
+        "모험과 풍자",
+        "슬픔과 풍자",
+        "교훈과 풍자"
+      ],
+      "answer": 0,
+      "evidence": [
+        5,
+        6
+      ],
+      "note": "'Tom Sawyer and Huckleberry Finn', 'They are marked by humor and satire' 참고"
     }
   ]
 }

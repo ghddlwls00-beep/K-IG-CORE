@@ -5,38 +5,35 @@
   "questions": [
     {
       "id": "d147-q1",
-      "type": "중심내용",
-      "prompt": "이 편지의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "짐의 부모가 자주 이야기 나눈다고 한 것은?",
       "options": [
-        "아버지가 대학에 처음 간 아들에게 공부를 잘하라고 격려한다",
-        "아버지가 첫 학기를 마친 아들에게 언제 집에 오는지 묻는다",
-        "아버지가 아들이 보낸 생일 선물에 고마움을 전한다",
-        "아버지가 집을 떠나 첫 생일을 맞는 아들을 축하한다"
+        "짐이 대학에서 잘 지내는지",
+        "짐이 언제쯤 집에 올지",
+        "짐이 무엇을 전공할지",
+        "짐이 얼마나 빨리 자랐는지"
       ],
       "answer": 3,
       "evidence": [
-        1,
-        6,
-        7,
-        11
+        3
       ],
-      "note": "'the first time you have been away from home on your birthday' · 'wish you a happy birthday' · 'a gift for your birthday' · 'Love, Dad' — 아버지가 집 떠나 첫 생일을 맞는 아들을 축하함"
+      "note": "'We often talk about how quickly you have grown up' — 짐이 얼마나 빨리 컸는지 이야기함"
     },
     {
       "id": "d147-q2",
-      "type": "세부사실",
-      "prompt": "아버지가 편지와 함께 보낸 것은?",
+      "type": "세부 사실",
+      "prompt": "아버지가 보고 싶다고 한 사진으로 알맞은 것은?",
       "options": [
-        "생일 선물로 주는 도서 상품권",
-        "동생들이 쓴 생일 카드",
-        "집에서 찍은 가족사진",
-        "생일 선물로 쓸 돈"
+        "짐과 친구들의 사진",
+        "짐과 대학의 사진",
+        "짐과 기숙사 방의 사진",
+        "짐과 교수님들의 사진"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        7
+        10
       ],
-      "note": "'I am enclosing some money as a gift for your birthday' — 생일 선물로 돈을 넣어 보냄"
+      "note": "'We would enjoy seeing some photographs of you and the university' — 짐과 대학의 사진"
     },
     {
       "id": "d147-q3",

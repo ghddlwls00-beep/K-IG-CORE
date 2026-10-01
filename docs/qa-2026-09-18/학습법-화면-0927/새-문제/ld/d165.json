@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "d165-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "시카고의 한 가족이 텔레비전으로 볼 수 있다고 든 예는?",
       "options": [
-        "텔레비전은 컬러 방송이 나오면서 생활을 바꾸기 시작했다",
-        "텔레비전은 계속 발전하며 사람들의 생활에 큰 영향을 주었다",
-        "텔레비전은 라디오를 밀어내고 가장 중요한 통신 수단이 되었다",
-        "텔레비전은 세계 곳곳의 행사를 생중계하려고 발전해 왔다"
+        "일본의 자동차 경주",
+        "이탈리아의 스키 대회",
+        "일본의 퍼레이드",
+        "노르웨이의 퍼레이드"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        1,
-        2
+        6
       ],
-      "note": "'TV has had a tremendous effect on the daily life of people everywhere', 'Improvements of all kinds are constantly being made' 참고"
+      "note": "'an auto race in Italy, a ski tournament in Norway, or a parade in Japan' 참고"
     },
     {
       "id": "d165-q2",
       "type": "세부 사실",
-      "prompt": "텔스타가 가능하게 해 주었다고 한 것은?",
+      "prompt": "요즘 많은 프로그램이 어떻게 방송된다고 했는가?",
       "options": [
-        "온 세상이 예전보다 한층 가까워지는 것",
-        "세계 곳곳의 행사를 녹화해 다음 날 보는 것",
-        "세계 곳곳의 방송을 컬러로 바꾸는 것",
-        "우주 비행사가 지구와 연락하는 것"
+        "고화질로 방송된다",
+        "입체 음향과 함께 방송된다",
+        "큰 화면으로 방송된다",
+        "컬러 화면으로 방송된다"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        4,
-        5
+        3
       ],
-      "note": "'Telstar, a communications satellite', 'makes it possible for the entire world to be closer than ever before' 참고"
+      "note": "'Many programs are now televised in color' 참고"
     }
   ]
 }

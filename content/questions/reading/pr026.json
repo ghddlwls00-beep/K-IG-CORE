@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "pr026-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "이유",
+      "prompt": "이 글에서 대다수 사람들에게 새로운 생각과 의견이 나쁘게 보이는 까닭으로 든 것은?",
       "options": [
-        "사회 발전을 위해 새 의견을 꺼리는 태도를 고쳐야 한다",
-        "사회 발전을 위해 교육으로 두뇌를 꾸준히 훈련해야 한다",
-        "사회 발전을 위해 새 생각을 낸 사람을 먼저 보호해야 한다",
-        "사회 발전을 위해 낡은 제도를 하루빨리 바꿔야 한다"
+        "나중에 틀린 것으로 드러날 때가 많아서",
+        "마음에 들지 않고 불쾌하게 느껴져서",
+        "낯선 사람들이 밖에서 들여온 것이어서",
+        "이해하기 어려운 말로 되어 있어서"
       ],
-      "answer": 0,
-      "evidence": [
-        3,
-        5,
-        6
-      ],
-      "note": "3번 'hostile to anything which would upset the established order', 5번 'new ideas ... seem evil', 6번 'this attitude should be altered'가 근거"
-    },
-    {
-      "id": "pr026-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "이 글의 'just because they are disagreeable'에서 they가 가리키는 것으로 가장 적절한 것은?",
-      "options": [
-        "기존 믿음을 의심하는 새로운 생각과 의견",
-        "기존 믿음을 의심하는 소수의 사람들",
-        "새 생각을 꺼리는 대다수의 보통 사람들",
-        "생각을 다시 정리해야 하는 고된 과정"
-      ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
         5
       ],
-      "note": "5번 'new ideas and opinions which cast doubt ... seem evil just because they are disagreeable'에서 they는 new ideas and opinions"
+      "note": "'new ideas and opinions ... seem evil just because they are disagreeable'"
+    },
+    {
+      "id": "pr026-q2",
+      "type": "이유",
+      "prompt": "이 글에서 사람들의 이러한 태도가 바뀌어야 하는 까닭으로 든 것은?",
+      "options": [
+        "사회가 발전하도록 하기 위해서",
+        "개인이 더 행복해지도록 하기 위해서",
+        "과학이 앞서 나가도록 하기 위해서",
+        "세대가 서로 이해하도록 하기 위해서"
+      ],
+      "answer": 0,
+      "evidence": [
+        6
+      ],
+      "note": "'this attitude should be altered for the progress of society'"
     }
   ]
 }

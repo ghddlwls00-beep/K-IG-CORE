@@ -6,18 +6,19 @@
     {
       "id": "pr110-q1",
       "type": "세부 사실",
-      "prompt": "본문에서 'osteoporosis'에 대해 말한 것으로 옳은 것은?",
+      "prompt": "본문에서 규칙적인 운동이 뼈에 주는 효과로 든 것은?",
       "options": [
-        "뼈 속 칼슘이 한꺼번에 빠져나가는 병이다",
-        "뼈의 양이 서서히 줄어드는 병이다",
-        "뼈와 뼈 사이의 연골이 닳아 가는 병이다",
-        "뼈가 서서히 한쪽으로 휘어지는 병이다"
+        "뼈에 붙은 근육을 키워 준다",
+        "뼈의 양이 늘도록 도와준다",
+        "뼈의 칼슘 흡수를 높여 준다",
+        "관절의 움직임을 부드럽게 해 준다"
       ],
       "answer": 1,
       "evidence": [
-        2
+        3,
+        4
       ],
-      "note": "'exercise can help prevent osteoporosis, a disease of gradual bone loss that becomes more common as people age' — 뼈가 서서히 줄어드는 병"
+      "note": "'Bone loss can be slowed by regular exercise' · 'It actually helps increase bone mass' — 뼈의 양을 늘림"
     },
     {
       "id": "pr110-q2",

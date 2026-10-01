@@ -21,36 +21,37 @@
     },
     {
       "id": "d177-q2",
-      "type": "세부사실",
-      "prompt": "역에 우연히 있던 친구가 러드에게 해 주겠다고 한 것은?",
+      "type": "세부 사실",
+      "prompt": "아내가 러드를 다시 집 밖에서 보게 된 것은 그를 다시 보낸 지 얼마 뒤인가?",
       "options": [
-        "표를 사러 간 사이에 짐을 지켜 주기",
-        "그가 집에 다녀오는 동안 아이들을 돌봐 주기",
-        "아이들을 데리고 먼저 기차를 타고 가 있기",
-        "그와 아이들을 자기 차로 데려다주기"
+        "5분 뒤",
+        "10분 뒤",
+        "20분 뒤",
+        "30분 뒤"
       ],
       "answer": 1,
+      "evidence": [
+        7,
+        8
+      ],
+      "note": "'she sent her husband off again. Ten minutes later, she was astonished to see him outside the house again' — 10분 뒤"
+    },
+    {
+      "id": "d177-q3",
+      "type": "세부 사실",
+      "prompt": "러드가 집에 다녀오는 동안 아이들을 돌봐 준 사람은?",
+      "options": [
+        "역까지 함께 따라 나온 러드의 아내",
+        "역에서 일하던 친절한 역무원",
+        "같은 기차를 기다리던 이웃집 부부",
+        "역에 와 있던 러드의 친구"
+      ],
+      "answer": 3,
       "evidence": [
         3,
         4
       ],
-      "note": "'offered to take care of the children while Rudd went back home' — 집에 다녀오는 동안 아이들을 돌봄"
-    },
-    {
-      "id": "d177-q3",
-      "type": "목적태도",
-      "prompt": "러드가 가려는 마을의 이름을 비밀로 한 까닭으로 알맞은 것은?",
-      "options": [
-        "자녀들에게 여행을 더 흥미롭게 해 주려고",
-        "자녀들의 생일 선물로 깜짝 여행을 꾸미려고",
-        "자녀들이 다른 곳에 가자고 조르지 않게 하려고",
-        "자녀들이 학교 친구들에게 자랑하지 않게 하려고"
-      ],
-      "answer": 0,
-      "evidence": [
-        1
-      ],
-      "note": "'To make the trip more interesting for his young children' — 자녀들에게 여행을 더 흥미롭게"
+      "note": "'a friend of his happened to be in the station. He offered to take care of the children' — 역에 있던 친구"
     }
   ]
 }

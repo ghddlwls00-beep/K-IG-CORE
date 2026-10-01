@@ -5,39 +5,38 @@
   "questions": [
     {
       "id": "d033-q1",
-      "type": "세부 사실",
-      "prompt": "뉴올리언스를 찾는 관광객에 대해 옳은 것은?",
+      "type": "순서",
+      "prompt": "글쓴이가 뉴올리언스에 대해 맨 마지막에 한 말로 옳은 것은?",
       "options": [
-        "대부분 라틴 아메리카에서 배를 타고 온다",
-        "해마다 수십만 명이 미시시피강 유람선을 탄다",
-        "해마다 수백만 명이 뉴올리언스를 찾는다",
-        "관광 수입이 해운 수입보다 커지고 있다"
-      ],
-      "answer": 2,
-      "evidence": [
-        8
-      ],
-      "note": "8번 줄 'Each year, millions of tourists visit New Orleans'에서 확인."
-    },
-    {
-      "id": "d033-q2",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
-      "options": [
-        "뉴올리언스는 바다 바로 앞이라 라틴 아메리카 관광객이 몰리는 남부 휴양 도시이다",
-        "뉴올리언스는 미국 남부에서 기른 바나나와 커피를 라틴 아메리카에 배로 파는 항구이다",
-        "뉴올리언스는 라틴 아메리카 이민자들이 미시시피강 가에 세운 남부의 무역 도시이다",
-        "뉴올리언스는 미시시피강 가의 위치 덕분에 라틴 아메리카와 무역이 활발한 항구 도시이다"
+        "미국에서 가장 바쁜 항구 중 하나이다",
+        "많은 사람이 가장 흥미로운 도시로 여긴다",
+        "바나나와 커피가 배에 실려 들어온다",
+        "해마다 수백만 명의 관광객이 찾아온다"
       ],
       "answer": 3,
       "evidence": [
         1,
-        2,
-        3,
-        4,
-        5
+        5,
+        7,
+        8
       ],
-      "note": "1~5번 줄 'one of the busiest seaports' · 'along the Mississippi River' · 'a great shipping center' · 'a great deal of trade with Latin America' · 'come by ship to New Orleans'에서 확인."
+      "note": "'one of the busiest seaports' … 'Each year, millions of tourists visit New Orleans'에서 확인."
+    },
+    {
+      "id": "d033-q2",
+      "type": "세부 사실",
+      "prompt": "뉴올리언스와 라틴 아메리카에 대해 말한 것으로 옳은 것은?",
+      "options": [
+        "라틴 아메리카와 아주 많은 무역을 하고 있다",
+        "라틴 아메리카와의 무역이 해마다 늘고 있다",
+        "라틴 아메리카와 날마다 배가 오가고 있다",
+        "라틴 아메리카와 100년 넘게 무역해 왔다"
+      ],
+      "answer": 0,
+      "evidence": [
+        4
+      ],
+      "note": "'New Orleans does a great deal of trade with Latin America'에서 확인."
     },
     {
       "id": "d033-q3",

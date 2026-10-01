@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr060-q1",
-      "type": "main",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 마음의 평화를 얻으려면 결심이 어떠해야 한다고 했는가?",
       "options": [
-        "남에게 상처를 주었다면 먼저 스스로를 너그럽게 감싸야 마음의 평화를 얻는다",
-        "남에게 상처를 주었다면 같은 잘못을 되풀이하지 않아야 마음의 평화를 얻는다",
-        "남에게 상처를 주었다면 다른 사람에게 털어놓아야 마음의 평화를 얻는다",
-        "남에게 상처를 주었다면 진심으로 용서를 빌어야 마음의 평화를 얻는다"
+        "확고하고 조용하며 겸손해야 한다",
+        "확고하고 분명하며 진실해야 한다",
+        "분명하고 겸손하며 꾸준해야 한다",
+        "진실하고 조용하며 꾸준해야 한다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        2,
-        3,
         7
       ],
-      "note": "2번 'ask for forgiveness in all sincerity', 3번 'You must apologize', 7번 'find peace of mind'"
+      "note": "'If your determination is firm, clear, and sincere ... find peace of mind'"
     },
     {
       "id": "pr060-q2",

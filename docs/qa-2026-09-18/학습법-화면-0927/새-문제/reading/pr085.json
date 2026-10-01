@@ -21,20 +21,19 @@
     },
     {
       "id": "pr085-q2",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "옛 미신에서 가장 바라는 점으로 꼽은 것은 어디에 난 점인가?",
       "options": [
-        "옛 미신에서는 점이 그 사람의 집안 내력과 조상을 알려 준다고 보았다",
-        "옛 미신에서는 점이 그 사람의 지난 일과 숨긴 비밀을 알려 준다고 보았다",
-        "옛 미신에서는 점의 색과 크기가 그 사람의 운을 알려 준다고 보았다",
-        "옛 미신에서는 점이 그 사람의 됨됨이와 앞날을 알려 준다고 보았다"
+        "코에 난 점",
+        "턱에 난 점",
+        "손에 난 점",
+        "오른쪽 눈썹 위에 난 점"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        4,
-        6
+        8
       ],
-      "note": "4번 'According to ancient superstitions, moles reveal a person’s character', 6번 'Moles are also believed to foretell the future'"
+      "note": "8번 'A mole on the hand, however, is the most desired'"
     }
   ]
 }

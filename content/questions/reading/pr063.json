@@ -5,39 +5,35 @@
   "questions": [
     {
       "id": "pr063-q1",
-      "type": "main",
-      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 글의 질을 높이는 데 그것만으로는 부족하다고 한 것은?",
       "options": [
-        "글을 고치려면 비판보다 칭찬을 더 많이 해 주어야 한다",
-        "글을 고치려면 비판과 함께 그 까닭을 밝혀 주어야 한다",
-        "글을 고치려면 맞춤법과 문법부터 바로잡아 주어야 한다",
-        "글을 고치려면 잘 쓴 글을 많이 읽고 따라 써야 한다"
-      ],
-      "answer": 1,
-      "evidence": [
-        1,
-        2,
-        3
-      ],
-      "note": "1번 'do more than merely criticize it', 2번 'explain why we criticize it', 3번 'when we know why it is poor'"
-    },
-    {
-      "id": "pr063-q2",
-      "type": "inference",
-      "prompt": "이 글로 보아 추론할 수 있는 것은?",
-      "options": [
-        "글이 왜 부족한지 알 때 그 글을 가장 잘 고칠 수 있다",
-        "글을 쓴 사람이 직접 손볼 때 그 글을 가장 잘 고칠 수 있다",
-        "여러 사람의 의견을 모을 때 그 글을 가장 잘 고칠 수 있다",
-        "시간을 두고 다시 읽을 때 그 글을 가장 잘 고칠 수 있다"
+        "글을 비판하는 것",
+        "글을 칭찬하는 것",
+        "글을 고쳐 써 보는 것",
+        "글을 소리 내어 읽는 것"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        2,
+        1
+      ],
+      "note": "'we must do more than merely criticize it'"
+    },
+    {
+      "id": "pr063-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 부족한 글을 가장 효과적으로 고칠 수 있는 때로 나온 것은?",
+      "options": [
+        "어디가 부족한지 알 때",
+        "왜 부족한지 알 때",
+        "누가 고쳐야 하는지 알 때",
+        "언제까지 고쳐야 하는지 알 때"
+      ],
+      "answer": 1,
+      "evidence": [
         3
       ],
-      "note": "1번 'more than merely criticize it', 2번 'explain why', 3번 'most effectively remedied when we know why it is poor'"
+      "note": "'most effectively remedied when we know why it is poor'"
     }
   ]
 }

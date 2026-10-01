@@ -5,23 +5,20 @@
   "questions": [
     {
       "id": "d018-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "내기를 할 때 두 사람이 한 일로 알맞은 것은?",
       "options": [
-        "카메라 24대로 찍은 사진을 본 친구가 말 네 다리가 동시에 뜬다며 내기를 걸었다",
-        "자기 말이 경주에서 이길지 친구와 내기하고 결승선에 카메라 24대를 줄지어 세웠다",
-        "말 네 다리가 동시에 뜨는지 내기에 진 친구가 카메라 24대로 경주를 찍어 주었다",
-        "말 네 다리가 동시에 뜨는지 내기하고 다음 날 경기장에 카메라 24대를 세워 확인했다"
+        "백만장자가 내기를 하자고 했고 친구가 판돈을 정했다",
+        "친구가 내기를 하자고 했고 백만장자가 판돈을 정했다",
+        "백만장자가 내기를 하자고 하며 판돈도 직접 정했다",
+        "친구가 내기를 하자고 하며 판돈도 직접 정했다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        5,
         6,
-        9,
-        10,
-        11
+        7
       ],
-      "note": "“a horse lifted all its legs at the same time”, “I will make a bet with you”, “24 cameras in a row”, “He tied a string to each camera”, “the camera took a picture”에서 알 수 있다."
+      "note": "친구가 “I will make a bet with you”라고 했고, 백만장자가 “It will cost you $500”라고 답했다."
     },
     {
       "id": "d018-q2",

@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "pr096-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "스탠퍼드 대학교의 실험실 연구에서 식물을 만진 횟수로 알맞은 것은?",
       "options": [
-        "식물은 바람이나 비 같은 환경의 압력에 반응해 자라는 모습을 바꾼다",
-        "식물은 곤충이나 동물 같은 천적의 공격에 반응해 자라는 모습을 바꾼다",
-        "식물은 햇빛이나 온도 같은 계절의 변화에 반응해 자라는 모습을 바꾼다",
-        "식물은 흙이나 물 속 양분의 변화에 반응해 자라는 모습을 바꾼다"
+        "하루에 2번",
+        "하루에 3번",
+        "하루에 1번",
+        "하루에 4번"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        2,
         3
       ],
-      "note": "'Plants are known to react to environmental pressures' · 'Coastal trees ... become shorter and stronger' · 'the same changes in plant growth patterns' — 식물은 환경의 압력에 반응해 자라는 모습이 바뀜"
+      "note": "'by touching plants twice a day' — 하루에 2번"
     },
     {
       "id": "pr096-q2",
-      "type": "세부 사실",
-      "prompt": "스탠퍼드 대학교의 실험실 연구에서 식물에게 한 일로 언급된 것은?",
+      "type": "이유",
+      "prompt": "연구자들이 실험에서 나타난 식물의 성장 변화의 원인으로 밝힌 것은?",
       "options": [
-        "하루에 2번 식물에 빛을 비추었다",
-        "하루에 2번 식물을 만졌다",
-        "하루에 2번 식물에 비료를 주었다",
-        "하루에 2번 식물에 벌레를 올렸다"
+        "호르몬이 더 많이 나와서",
+        "유전자가 활성화되어서",
+        "세포벽이 두꺼워져서",
+        "수분이 더 많이 빠져서"
       ],
       "answer": 1,
       "evidence": [
-        3
+        4
       ],
-      "note": "'In a laboratory study conducted at Stanford University ... by touching plants twice a day' — 하루에 2번 식물을 만짐"
+      "note": "'these growth changes resulted from gene activation' — 원인은 유전자 활성화"
     }
   ]
 }

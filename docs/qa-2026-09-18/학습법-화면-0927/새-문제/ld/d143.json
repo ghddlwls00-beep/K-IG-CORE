@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "d143-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "가리키는 것",
+      "prompt": "존슨 박사가 진찰한 환자는 그에게 누구인가?",
       "options": [
-        "수혈 한 번이면 곧 일어나 다닐 거라는 말에 안심했다",
-        "가벼운 수술이면 충분하다는 박사의 말에 안심했다",
-        "심각한 심장마비는 아니라는 박사의 말에 안심했다",
-        "70세치고 혈압이 아주 좋다는 박사의 말에 안심했다"
+        "삼촌",
+        "아버지",
+        "할아버지",
+        "장인"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        7,
-        10,
         11
       ],
-      "note": "'this wasn't a serious heart attack' · 'there was nothing to worry about' · 'I felt much better' — 심각하지 않다는 말에 안심함"
+      "note": "'I was certain that my uncle would be up and around again' — 환자는 삼촌"
     },
     {
       "id": "d143-q2",

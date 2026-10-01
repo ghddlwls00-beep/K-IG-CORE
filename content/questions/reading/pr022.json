@@ -23,19 +23,19 @@
     },
     {
       "id": "pr022-q2",
-      "type": "detail",
-      "prompt": "이 글에 따르면, 글쓴이가 대단한 일이 아니라고 말한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 글쓴이가 대단한 일이 아니라고 말한 것은 무엇인가?",
       "options": [
-        "자기 핏줄인 가족을 사랑하는 것",
-        "오래 사귄 친구를 아끼는 것",
-        "은혜를 입은 사람에게 보답하는 것",
-        "자기를 칭찬해 준 사람을 좋아하는 것"
+        "자기 친구를 사랑하는 것",
+        "자기 나라를 사랑하는 것",
+        "자기 핏줄을 사랑하는 것",
+        "자기 이웃을 사랑하는 것"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
         3
       ],
-      "note": "3번 'To love one's own flesh and blood is no achievement'에서 확인된다."
+      "note": "'To love one's own flesh and blood is no achievement'에서 확인된다."
     }
   ]
 }

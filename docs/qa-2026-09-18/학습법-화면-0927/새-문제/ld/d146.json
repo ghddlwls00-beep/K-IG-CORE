@@ -5,53 +5,52 @@
   "questions": [
     {
       "id": "d146-q1",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "순서",
+      "prompt": "특별 배달 편지가 그에게 온 때로 알맞은 것은?",
       "options": [
-        "아침 편지 5통엔 실망했지만 나중에 특별 배달로 온 소포에 기뻐했다",
-        "아침엔 실망했지만 워싱턴 대학에서 온 특별 배달 편지에 기뻐했다",
-        "아침에 기다리던 소포가 없어 실망했지만 엽서 두 장에 힘을 얻었다",
-        "아침 우편물엔 실망했지만 나중에 온 특별 배달 편지에 기뻐했다"
+        "아침 우편과 함께 왔다",
+        "아침 우편보다 먼저 왔다",
+        "아침 우편보다 나중에 왔다",
+        "다음 날 아침에 왔다"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        4,
-        6,
-        7
+        5,
+        6
       ],
-      "note": "'I was quite disappointed this morning' · 'Later in the day, the mailman delivered a special delivery letter' · 'I was very happy to receive it' — 아침엔 실망, 나중에 온 편지로 기뻐함"
+      "note": "'The postman delivered the mail' · 'Later in the day, the mailman delivered a special delivery letter' — 그날 늦게 따로 옴"
     },
     {
       "id": "d146-q2",
-      "type": "세부사실",
-      "prompt": "그가 공부로 바쁜 중에도 매주 하는 일로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "그가 편지를 쓰는 횟수로 알맞은 것은?",
       "options": [
-        "집에 소포를 하나씩 부친다",
-        "여러 통의 편지를 쓴다",
-        "가족에게 엽서를 두 장씩 보낸다",
-        "우체국에 들러 우편물을 찾는다"
+        "날마다 한 통씩",
+        "매주 여러 통씩",
+        "한 달에 두세 통씩",
+        "주말마다 한 통씩"
       ],
       "answer": 1,
       "evidence": [
         2
       ],
-      "note": "'I always find time to write several letters every week' — 매주 편지를 몇 통씩 씀"
+      "note": "'I always find time to write several letters every week' — 매주 여러 통"
     },
     {
       "id": "d146-q3",
-      "type": "세부사실",
-      "prompt": "오늘 아침 우편물에 대해 그가 한 말로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "특별 배달 편지를 받고 기뻤던 까닭에 대해 그가 한 말로 알맞은 것은?",
       "options": [
-        "편지 5통 속에 기다리던 편지는 없었다",
-        "편지 5통 중 하나가 특별 배달이었다",
-        "편지 5통과 함께 오기로 한 소포가 빠졌다",
-        "편지 5통이 같은 친구에게서 왔다"
+        "읽어 보면 알게 될 거라고 했다",
+        "합격 소식이 와서 그렇다고 했다",
+        "친구의 답장이라서 그렇다고 했다",
+        "장학금을 받게 될 거라고 했다"
       ],
       "answer": 0,
       "evidence": [
-        5
+        7
       ],
-      "note": "'I didn't get the letter I was waiting for' — 기다리던 편지만 오지 않음"
+      "note": "'I think you will understand why when I let you read the letter' — 편지를 읽으면 알게 됨"
     }
   ]
 }

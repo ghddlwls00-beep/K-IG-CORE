@@ -5,22 +5,20 @@
   "questions": [
     {
       "id": "d154-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "가리키는 것",
+      "prompt": "이 글에서 '둥근 구멍에 박힌 네모난 말뚝'이 뜻하는 것은?",
       "options": [
-        "맞지 않는 일이라도 오래 하면 차츰 몸에 맞게 된다",
-        "자기에게 안 맞는 일을 하면 불행하니 진로 선택이 중요하다",
-        "맞는 진로를 찾으려면 여러 일을 직접 해 봐야 한다",
-        "맞지 않는 일을 하면 그만두고 꿈꾸던 일로 옮겨야 한다"
+        "남들과 잘 어울리지 못하는 사람",
+        "자기 생각을 쉽게 굽히지 못하는 사람",
+        "맡은 일보다 능력이 훨씬 뛰어난 사람",
+        "하는 일에 맞지 않는 사람"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        5,
-        6,
-        7,
-        8
+        1,
+        2
       ],
-      "note": "\"not doing the kind of work they should be doing\" · \"certainly they are not happy\" · \"Choosing the right career is very important\" · \"spend a great part of our lives at our jobs\""
+      "note": "\"a square peg in a round hole\" · \"not suited for the job he is doing\""
     },
     {
       "id": "d154-q2",
@@ -40,19 +38,19 @@
     },
     {
       "id": "d154-q3",
-      "type": "말한 사람의 목적/태도",
-      "prompt": "세상에 'square pegs'가 많다는 것에 대한 글쓴이의 태도로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 '우리 대부분'에 대해 말한 것은?",
       "options": [
-        "자기 길을 찾지 않은 탓이라며 나무란다",
-        "누구나 겪는 일이라며 대수롭지 않게 본다",
-        "세상이 바뀌면 곧 줄어들 거라며 낙관한다",
-        "그렇게 된 것을 딱하고 안타깝게 여긴다"
+        "고른 직업을 끝까지 지켜 간다",
+        "하고 싶은 일과 하는 일이 서로 다르다",
+        "삶의 많은 부분을 일터에서 보낸다",
+        "일보다 취미에서 기쁨을 얻는다"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        4
+        8
       ],
-      "note": "\"Unfortunately, many people in the world are square pegs\""
+      "note": "\"Most of us spend a great part of our lives at our jobs\""
     }
   ]
 }

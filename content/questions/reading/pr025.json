@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "pr025-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 우리가 행동하기 시작할 때 때때로 생긴다고 한 것은?",
       "options": [
-        "문제의 원인을 끝까지 따져 보면 분노와 절망이 누그러진다",
-        "감정을 글로 적어 하나씩 정리하면 분노와 절망이 누그러진다",
-        "고민에 매달리기보다 직접 움직이면 분노와 절망이 누그러진다",
-        "시간이 흐르기를 차분히 기다리면 분노와 절망이 누그러진다"
+        "함께할 사람이 생긴다",
+        "다시 해 볼 용기가 난다",
+        "새로운 생각이 떠오른다",
+        "스스로를 믿게 된다"
       ],
       "answer": 2,
       "evidence": [
-        1,
-        6
+        5
       ],
-      "note": "1번 'can be eased if we act instead of just thinking over problems', 6번 'Action relieves tensions and sets us free'가 근거"
+      "note": "'Sometimes, ideas come as we begin to act'"
     },
     {
       "id": "pr025-q2",

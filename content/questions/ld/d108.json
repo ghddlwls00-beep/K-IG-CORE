@@ -5,53 +5,51 @@
   "questions": [
     {
       "id": "d108-q1",
-      "type": "중심 내용",
-      "prompt": "이 강의의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "화자가 프랭클린의 격언 대부분이 다룬 내용이라고 말한 것은?",
       "options": [
-        "날씨와 천체 정보가 정확해 연감이 크게 성공했다",
-        "격언대로 아끼고 일찍 일어나 부자가 되었다",
-        "격언들이 인기를 얻어 격언집으로 따로 나왔다",
-        "연감에 실은 격언들 덕분에 연감이 크게 성공했다"
+        "돈을 버는 일과 열심히 일하는 일",
+        "돈을 아끼는 일과 일찍 일어나는 일",
+        "돈을 아끼는 일과 열심히 일하는 일",
+        "돈을 버는 일과 일찍 일어나는 일"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        1,
-        4,
-        8
+        5
       ],
-      "note": "'Poor Richard's Almanac, became very popular', 'In each edition of his almanac, Franklin included a few proverbs', 'Franklin's proverbs helped make Poor Richard's Almanac one of the most successful publications'가 격언 덕분에 연감이 크게 성공했음을 보여 줌"
+      "note": "'Most of Franklin's proverbs were about saving money and working hard'가 격언 대부분의 내용을 보여 줌"
     },
     {
       "id": "d108-q2",
       "type": "세부 사실",
-      "prompt": "프랭클린이 연감을 펴낸 시기와 횟수로 옳은 것은?",
+      "prompt": "프랭클린이 연감을 펴낼 때마다 격언을 어떻게 실었다고 했는가?",
       "options": [
-        "1733년부터 1758년까지 해마다 한 번씩 펴냈다",
-        "1733년부터 1758년까지 격년으로 펴냈다",
-        "1733년에 처음 내고 1758년부터 해마다 펴냈다",
-        "1733년부터 1758년까지 철마다 펴냈다"
+        "판마다 한 개씩 실었다",
+        "판마다 몇 개씩 실었다",
+        "판마다 수십 개씩 실었다",
+        "몇 해에 한 번 실었다"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        3
+        4
       ],
-      "note": "'Franklin published an almanac every year from 1733 to 1758'이 1733년부터 1758년까지 해마다 펴냈음을 보여 줌"
+      "note": "'In each edition of his almanac, Franklin included a few proverbs'가 판마다 격언을 몇 개씩 넣었음을 보여 줌"
     },
     {
       "id": "d108-q3",
       "type": "세부 사실",
-      "prompt": "프랭클린의 격언 대부분이 다룬 것으로 옳은 것은?",
+      "prompt": "화자가 강의 끝에 프랭클린의 격언에 대해 덧붙인 말로 옳은 것은?",
       "options": [
-        "한 푼도 빚지지 않고 제때 갚는 것",
-        "한 푼이라도 아끼고 부지런히 일하는 것",
-        "일찍 자고 일어나 건강을 지키는 것",
-        "한 푼이라도 이웃과 나누는 것"
+        "오늘날에는 잘 안 쓰인다",
+        "오늘날 학교에서 가르친다",
+        "오늘날 외국에서도 읽힌다",
+        "오늘날에도 많은 것이 쓰인다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        5
+        9
       ],
-      "note": "'Most of Franklin's proverbs were about saving money and working hard'가 격언 대부분이 돈을 아끼고 열심히 일하는 것을 다뤘음을 보여 줌"
+      "note": "'Many of his proverbs are still said today'가 그의 격언 여럿이 지금도 쓰임을 보여 줌"
     }
   ]
 }

@@ -6,19 +6,18 @@
     {
       "id": "d157-q1",
       "type": "세부사실",
-      "prompt": "농장 일이 예전보다 덜 힘들어진 까닭은?",
+      "prompt": "칼이 지금 직장에서 맡고 있는 일은 무엇인가?",
       "options": [
-        "시그리드 부부가 가까이 살며 일손을 보태서",
-        "올라프가 사람을 고용해 일을 나눠 맡겨서",
-        "올라프가 주립 대학에서 새 농법을 배워 와서",
-        "올라프가 손으로 하던 많은 일을 기계에 맡겨서"
+        "회계 담당자",
+        "영업 담당자",
+        "관리 책임자",
+        "기술 담당자"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        1,
-        2
+        4
       ],
-      "note": "The task is not as difficult as it once was · machines which do many of the things formerly done by hand"
+      "note": "Carl ... has a good job as manager of a factory which makes dairy products"
     },
     {
       "id": "d157-q2",
@@ -38,22 +37,19 @@
     },
     {
       "id": "d157-q3",
-      "type": "중심내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부사실",
+      "prompt": "해마다 많은 젊은이들이 농장을 떠나 얻는다고 한 일자리는 무엇인가?",
       "options": [
-        "도시 생활에 끌려도 젊은이들은 결국 농장으로 돌아온다",
-        "농업은 여전히 중요하나 젊은이들은 도시에 끌려 떠난다",
-        "농장 생활은 편해졌으나 농업은 이제 중요한 직업이 아니다",
-        "젠슨 가족처럼 자녀들이 농장을 떠나는 일은 드문 경우다"
+        "대도시 안팎의 상점 일자리",
+        "대도시 안팎의 공장 일자리",
+        "대도시 안팎의 학교 일자리",
+        "대도시 안팎의 사무실 일자리"
       ],
       "answer": 1,
       "evidence": [
-        7,
-        8,
-        9,
         10
       ],
-      "note": "not unusual · farming is still a necessary and very important occupation · city life attracts young people · many of them leave the farms"
+      "note": "Every year many of them leave the farms and take jobs in the many factories which are located in or near large cities"
     }
   ]
 }

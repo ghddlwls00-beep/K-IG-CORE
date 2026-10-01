@@ -6,34 +6,34 @@
     {
       "id": "d072-q1",
       "type": "세부 사실",
-      "prompt": "휘트비에 대한 내용으로 옳은 것은?",
+      "prompt": "휘트비를 쓰러뜨린 사람은 몇 명인가?",
       "options": [
-        "경고를 외치자마자 한 남자에게 붙잡혔다",
-        "경고하기도 전에 두 남자에게 맞아 쓰러졌다",
-        "기어 오던 남자를 쓰러뜨리고 경고를 보냈다",
-        "쓰러진 밀스 대신 열차를 다리까지 몰았다"
+        "2명",
+        "1명",
+        "3명",
+        "4명"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
         2
       ],
-      "note": "'Before Whitby could give a warning, he was knocked down by two men'이 휘트비가 경고하기도 전에 맞아 쓰러졌음을 보여 줌"
+      "note": "'he was knocked down by two men'가 휘트비를 쓰러뜨린 사람이 2명임을 보여 줌"
     },
     {
       "id": "d072-q2",
       "type": "세부 사실",
-      "prompt": "강도들이 열차의 마지막 10칸에 한 일로 옳은 것은?",
+      "prompt": "한 남자가 몰래 기어가던 곳으로 옳은 것은?",
       "options": [
-        "우체부들이 탄 채로 열차 앞칸에서 떼어 놓았다",
-        "우체부들이 탄 채로 다리까지 끌고 갔다",
-        "우체부들을 내리게 하고 돈 가방을 옮겨 실었다",
-        "우체부들이 못 나오게 문을 밖에서 잠갔다"
+        "기관차와 첫 번째 칸 사이",
+        "첫 번째 칸과 두 번째 칸 사이",
+        "두 번째 칸과 세 번째 칸 사이",
+        "세 번째 칸과 네 번째 칸 사이"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        4
+        1
       ],
-      "note": "'The last 10 coaches with all the mailmen had been disconnected by the robbers'가 강도들이 마지막 10칸을 떼어 냈음을 보여 줌"
+      "note": "'a man creeping between the second and third coaches'가 남자가 두 번째 칸과 세 번째 칸 사이에 있었음을 보여 줌"
     },
     {
       "id": "d072-q3",

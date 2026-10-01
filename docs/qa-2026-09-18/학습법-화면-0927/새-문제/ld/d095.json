@@ -39,19 +39,19 @@
     },
     {
       "id": "d095-q3",
-      "type": "말한 사람의 태도",
-      "prompt": "여행 끝에 팻이 한 말로 옳은 것은?",
+      "type": "세부 사실",
+      "prompt": "하루에 한 끼만 먹으면 돈이 버틸 것이라고 팻이 생각한 기간은?",
       "options": [
-        "빈털터리였지만 나파 밸리에는 다시 가고 싶다고 했다",
-        "배는 고팠지만 일등석 호텔의 하룻밤이 가장 좋았다고 했다",
-        "몸은 지치고 빈털터리였지만 그래도 즐거웠다고 했다",
-        "빈털터리였지만 다음 대회에서 상을 타 또 오겠다고 했다"
+        "3일",
+        "4일",
+        "5일",
+        "7일"
       ],
       "answer": 2,
       "evidence": [
-        11
+        9
       ],
-      "note": "'she was tired, broke, and hungry, but she told me that she enjoyed herself anyway' — 그래도 즐거웠다고 함"
+      "note": "'she would have enough for five days as long as she ate only one meal a day' — 5일"
     }
   ]
 }

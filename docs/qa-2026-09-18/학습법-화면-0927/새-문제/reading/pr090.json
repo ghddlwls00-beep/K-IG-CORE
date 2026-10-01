@@ -5,20 +5,20 @@
   "questions": [
     {
       "id": "pr090-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 가족에 더한 사람들 가운데 사촌과 함께 언급된 것은?",
       "options": [
-        "사회는 부모가 자녀에게 영향을 주며 넓어지는 관계망이다",
-        "사회는 가까운 사람끼리 더 큰 영향을 주고받는 관계망이다",
-        "사회는 몇몇 사람이 나머지에게 영향을 주는 관계망이다",
-        "사회는 저마다 남에게 영향을 주고 또 받는 관계망이다"
+        "이웃과 친구들",
+        "고모와 삼촌",
+        "할머니와 고모",
+        "삼촌과 할머니"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        8,
-        9
+        5,
+        6
       ],
-      "note": "'A society is a network of relationships among individuals' · 'Each will influence the others, and each will be influenced by the others' — 사회는 서로 영향을 주고받는 관계망"
+      "note": "'Add a cousin, a neighbor, and friends' — 사촌과 함께 더한 것은 이웃과 친구들 (고모·삼촌은 'Add another child, a grandparent, an aunt, and an uncle')"
     },
     {
       "id": "pr090-q2",

@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "pr048-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 예로 든 두 친구의 사이가 서먹했던 기간은?",
       "options": [
-        "친구가 인사를 받지 않으면 곧바로 이유를 물어봐야 한다",
-        "친구에게 인사할 때는 눈에 잘 띄게 다가가야 한다",
-        "친구에게 무시당했다고 믿기 전에 사정을 따져 봐야 한다",
-        "친구와 오해가 생기면 다른 친구에게 도움을 청해야 한다"
+        "몇 주 동안",
+        "몇 년 동안",
+        "몇 달 동안",
+        "며칠 동안"
       ],
       "answer": 2,
       "evidence": [
-        1,
-        5
+        6
       ],
-      "note": "1번 'considered to be rude unintentionally', 5번 'take into consideration absent-mindedness or poor eyesight before believing that a friend is actually disregarding you'에 근거함."
+      "note": "6번 'One friendship I know of was tense for months'에 근거함."
     },
     {
       "id": "pr048-q2",
-      "type": "한 단계 추론",
-      "prompt": "'One friendship I know of'에 나오는 두 사람에 대해 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "중심 내용",
+      "prompt": "이 글의 중심 내용으로 가장 적절한 것은?",
       "options": [
-        "그 친구는 생각에 잠겨 있느라 그 여성을 보지 못했다",
-        "그 친구는 그 여성이 보이지 않아 인사하지 못한 것이었다",
-        "그 친구는 그 여성에게 서운한 일이 있어 일부러 피했다",
-        "그 여성은 친구가 안경을 안 쓴 것을 알고 넘어갔다"
+        "친구에게 무시당했다고 믿기 전에 바쁜 일이 있었거나 서둘렀는지 생각해 봐야 한다",
+        "친구에게 무시당했다고 믿기 전에 딴생각에 빠졌거나 눈이 나빴는지 생각해 봐야 한다",
+        "친구에게 무시당했다고 믿기 전에 내가 서운하게 했거나 오해를 샀는지 생각해 봐야 한다",
+        "친구에게 무시당했다고 믿기 전에 주변이 시끄러웠거나 붐볐는지 생각해 봐야 한다"
       ],
       "answer": 1,
       "evidence": [
-        6
+        5
       ],
-      "note": "6번 'a friend who simply was not wearing her glasses and couldn’t see beyond her nose'에 근거함."
+      "note": "5번 'take into consideration absent-mindedness or poor eyesight before believing that a friend is actually disregarding you'에 근거함."
     }
   ]
 }

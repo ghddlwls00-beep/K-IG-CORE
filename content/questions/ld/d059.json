@@ -5,21 +5,20 @@
   "questions": [
     {
       "id": "d059-q1",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "기자가 그 물체를 묘사하던 중에 갑자기 일어난 일로 알맞은 것은?",
       "options": [
-        "연극이라는 안내를 듣고도 청취자들이 실제 상황으로 믿은 이야기",
-        "연극의 첫 속보를 들은 청취자들이 곧바로 다른 방송국으로 옮겨 간 이야기",
-        "첫 부분을 놓친 청취자들이 연극을 실제 상황으로 믿은 이야기",
-        "연극을 실제 상황으로 믿은 청취자들이 경찰에 신고한 이야기"
+        "물체의 문이 열렸다",
+        "물체에서 불길이 솟았다",
+        "물체가 큰 소리로 터졌다",
+        "물체가 하늘로 떠올랐다"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        1,
-        6,
-        7
+        8,
+        9
       ],
-      "note": "“a play called The War of the Worlds” · “they did not know that it was just a play” · “really happening”에서 알 수 있음"
+      "note": "“a reporter described the strange object” · “Suddenly a door opened”에서 알 수 있음"
     },
     {
       "id": "d059-q2",

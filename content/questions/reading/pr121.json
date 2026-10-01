@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "pr121-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글에서 상처가 낫는 동안 평소보다 더 많이 잠을 잔다고 한 것은?",
       "options": [
-        "쉬는 동안 아낀 에너지가 회복에 쓰여 몸이 더 빨리 낫는다",
-        "쉬는 동안 체온이 올라가 병균이 줄어 몸이 더 빨리 낫는다",
-        "쉬는 동안 피가 상처 쪽으로 몰려 몸이 더 빨리 낫는다",
-        "쉬는 동안 몸속 노폐물이 빠져나가 몸이 더 빨리 낫는다"
+        "다친 동물들",
+        "수술한 환자들",
+        "다친 운동선수들",
+        "다친 어린아이들"
       ],
       "answer": 0,
       "evidence": [
-        1,
-        2
+        3
       ],
-      "note": "근거: 'by resting our bodies, we keep ourselves in good physical condition' · 'Any damage can be cured more quickly if energy is not being used up'"
+      "note": "근거: 'Injured animals certainly spend more time asleep than usual while their wounds are healing'"
     },
     {
       "id": "pr121-q2",
       "type": "세부 사실",
-      "prompt": "다친 동물에 대한 설명으로 옳은 것은?",
+      "prompt": "글에서 몸을 쉬게 하면 좋은 몸 상태를 지킬 수 있다고 믿는 사람들로 제시된 것은?",
       "options": [
-        "상처가 다 나은 뒤에 평소보다 오래 잔다",
-        "상처가 낫는 동안 평소보다 적게 먹는다",
-        "상처가 낫는 동안 평소보다 오래 굴에 숨어 지낸다",
-        "상처가 아물 때까지 잠자는 시간이 늘어난다"
+        "대부분의 의사들",
+        "대부분의 운동 코치들",
+        "대부분의 심리학자들",
+        "대부분의 과학자들"
       ],
       "answer": 3,
       "evidence": [
-        3
+        1
       ],
-      "note": "근거: 'spend more time asleep than usual while their wounds are healing'"
+      "note": "근거: 'Most scientists believe that by resting our bodies, we keep ourselves in good physical condition'"
     }
   ]
 }

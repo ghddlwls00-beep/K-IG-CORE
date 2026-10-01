@@ -22,20 +22,19 @@
     },
     {
       "id": "d013-q2",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "말하는 사람이 존 조던을 소개하며 한 말로 옳은 것은?",
       "options": [
-        "똑똑하고 성격도 좋지만 몸 쓰는 일은 서툰 친구 이야기",
-        "어려운 일은 해내지만 쉬운 일 몇 가지는 못하는 친구 이야기",
-        "기계는 척척 다루지만 사람 사귀는 일에는 서툰 친구 이야기",
-        "재주가 많지만 못하는 일을 남에게 감추려 하는 친구 이야기"
+        "성격이 좋고 아주 똑똑하다",
+        "성격이 좋고 아주 부지런하다",
+        "성격이 좋고 아주 다정하다",
+        "성격이 좋고 아주 용감하다"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        2,
-        3
+        1
       ],
-      "note": "'He's very capable', 'he can't do some of the very simple things in life'에서 중심 내용을 알 수 있음."
+      "note": "'He's a fine fellow and he is very intelligent'"
     }
   ]
 }

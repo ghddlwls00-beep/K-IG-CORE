@@ -23,19 +23,19 @@
     },
     {
       "id": "pr015-q2",
-      "type": "detail",
-      "prompt": "이 글에 따르면, 아이를 돌보는 사람이 꼭 지켜야 하는 것으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 시기심과 걱정을 견주어 말한 내용으로 알맞은 것은?",
       "options": [
-        "아이들이 서로 겨루며 실력을 키우게 하는 것",
-        "아이들 앞에서 어른의 감정을 차분히 다스리는 것",
-        "아이들을 누구에게나 똑같이 공정하게 대하는 것",
-        "아이들마다 다른 재능을 찾아 키워 주는 것"
+        "시기심이 걱정보다 더 큰 불행의 원인이다",
+        "걱정이 시기심보다 더 큰 불행의 원인이다",
+        "걱정이 쌓이면 시기심으로 바뀌게 된다",
+        "시기심이 쌓이면 걱정으로 바뀌게 된다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        5
+        1
       ],
-      "note": "5번 'Distributive justice, absolute, rigid and unvarying, must be observed by anyone who has children to deal with'에 정답이 나온다"
+      "note": "1번 'Next to worry, probably one of the most potent causes of unhappiness is envy'"
     }
   ]
 }

@@ -22,19 +22,18 @@
     {
       "id": "d161-q2",
       "type": "세부사실",
-      "prompt": "중요한 야구 경기나 권투 시합의 표를 구하기가 거의 불가능한 까닭은?",
+      "prompt": "표를 구하기가 거의 불가능하다고 한 경기로 말한 것은?",
       "options": [
-        "예매가 열리자마자 단체 관람객이 사 가서",
-        "중요한 경기일수록 표 값이 크게 올라서",
-        "누구나 경기장에 직접 가서 보고 싶어 해서",
-        "경기장 좌석 대부분을 초청석으로 돌려서"
+        "중요한 축구 경기나 레슬링 시합",
+        "중요한 농구 경기나 하키 시합",
+        "중요한 테니스 경기나 경마 대회",
+        "중요한 야구 경기나 권투 시합"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        3,
-        4
+        3
       ],
-      "note": "it is almost impossible to get tickets · Everybody wants to attend"
+      "note": "When there is an important baseball game or boxing match, it is almost impossible to get tickets"
     },
     {
       "id": "d161-q3",

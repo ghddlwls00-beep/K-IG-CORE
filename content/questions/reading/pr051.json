@@ -23,20 +23,19 @@
     },
     {
       "id": "pr051-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "'It depends chiefly on two words'에서 It이 가리키는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 부자가 되는 길이 분명하다는 것을 빗대어 말할 때 쓴 것은?",
       "options": [
-        "시장으로 가는 길",
-        "부자가 되는 길",
-        "부자가 되려는 바람",
-        "장사로 버는 이익"
+        "우체국으로 가는 길",
+        "학교로 가는 길",
+        "기차역으로 가는 길",
+        "시장으로 가는 길"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        1,
-        2
+        1
       ],
-      "note": "1번 The way to wealth, 2번 It depends chiefly on two words가 근거"
+      "note": "'as plain as the way to market'"
     }
   ]
 }

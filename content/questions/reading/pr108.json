@@ -21,20 +21,20 @@
     },
     {
       "id": "pr108-q2",
-      "type": "한 단계 추론",
-      "prompt": "본문의 내용으로 보아 물질문화와 비물질문화에 대해 알 수 있는 것은?",
+      "type": "세부 사실",
+      "prompt": "본문에서 물질문화의 예로 든 것은?",
       "options": [
-        "둘 다 배워서 익히는 것이다",
-        "둘 다 사람이 만들어 낸 것이다",
-        "둘 다 시대에 따라 바뀌는 것이다",
-        "둘 다 세대를 거쳐 물려받는 것이다"
+        "도구, 그릇, 가구",
+        "책, 옷, 건물",
+        "그림, 조각, 악기",
+        "기계, 전화, 자동차"
       ],
       "answer": 1,
       "evidence": [
         2,
-        5
+        3
       ],
-      "note": "'all the physical objects that people make' · 'nonmaterial culture consists of human creations that are not physical' — 두 문화 모두 사람이 만든 것"
+      "note": "'The first is the material culture' · 'Books, clothing, and buildings are some examples' — 책, 옷, 건물"
     }
   ]
 }

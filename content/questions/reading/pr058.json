@@ -24,20 +24,19 @@
     },
     {
       "id": "pr058-q2",
-      "type": "vocab",
-      "prompt": "이 글에서 'worthwhile'의 뜻으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 미국 교육이 크게 영향을 받았다고 한 것은 무엇인가?",
       "options": [
-        "가치가 있는",
-        "값이 비싼",
-        "시간이 드는",
-        "오래 남는"
+        "존 듀이가 세운 학교",
+        "존 듀이가 한 강의",
+        "존 듀이가 쓴 글들",
+        "존 듀이가 연 연수"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        3,
-        4
+        2
       ],
-      "note": "3번 'the only worthwhile knowledge was knowledge that can be used in real life', 4번 'pointless ... useless facts'"
+      "note": "'American education has been greatly influenced by the writings of ... John Dewey'"
     }
   ]
 }

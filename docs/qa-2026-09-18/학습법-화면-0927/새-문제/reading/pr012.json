@@ -5,38 +5,35 @@
   "questions": [
     {
       "id": "pr012-q1",
-      "type": "detail",
-      "prompt": "이 글에 따르면, 벌이 곧게 달리는 길이가 다른 벌들에게 알려 주는 것은 무엇인가?",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면, 꿀벌이 곧게 달리는 길이가 다른 벌들에게 알려 주는 것은 무엇인가?",
       "options": [
-        "꽃밭이 얼마나 넓게 펼쳐져 있는지",
-        "꽃밭에 꿀이 얼마나 많이 들어 있는지",
-        "꽃밭에 꽃이 얼마나 오래 피어 있을지",
-        "꽃밭이 벌집에서 얼마나 멀리 있는지"
+        "꽃밭까지의 거리",
+        "꽃밭에 있는 꿀의 양",
+        "꽃밭에 핀 꽃의 수",
+        "꽃밭이 차지한 넓이"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
         5
       ],
-      "note": "5번 'The length of the run tells the other bees how far away the flowers are'에 정답이 그대로 나온다"
+      "note": "5번 'The length of the run tells the other bees how far away the flowers are'"
     },
     {
       "id": "pr012-q2",
-      "type": "inference",
-      "prompt": "이 글로 미루어 볼 때, 꿀벌이 8자 춤을 추는 목적으로 가장 알맞은 것은?",
+      "type": "순서",
+      "prompt": "이 글에서 꿀벌이 몸을 흔들며 곧게 달린 다음에 하는 동작은 무엇인가?",
       "options": [
-        "찾아낸 꽃밭의 꽃 종류를 다른 벌들에게 알려 주려는 것",
-        "찾아낸 꽃밭의 꿀의 양을 다른 벌들에게 알려 주려는 것",
-        "찾아낸 꽃밭의 넓이를 다른 벌들에게 알려 주려는 것",
-        "찾아낸 꽃밭의 위치를 다른 벌들에게 알려 주려는 것"
+        "반대쪽으로 곧게 달려 나간다",
+        "제자리에서 몸을 낮추고 멈춘다",
+        "다른 벌에게 다가가 꿀을 건넨다",
+        "원을 그리며 돌아와 다시 달린다"
       ],
       "answer": 3,
       "evidence": [
-        1,
-        2,
-        4,
-        5
+        3
       ],
-      "note": "1번 'shares the news with other bees', 2번 'a special movement called the waggle dance', 4번 'shows the direction of the flowers', 5번 'how far away the flowers are'를 종합하면 춤의 목적을 알 수 있다"
+      "note": "3번 'runs forward in a straight line while shaking its body, then circles back and repeats the run'"
     }
   ]
 }

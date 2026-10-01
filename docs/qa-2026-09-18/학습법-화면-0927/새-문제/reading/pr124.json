@@ -22,19 +22,19 @@
     },
     {
       "id": "pr124-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 미루어 볼 때, 나무가 거의 없는 건물 구역에 대해 짐작할 수 있는 것은?",
+      "type": "세부 사실",
+      "prompt": "글의 연구에서 환경 과학자들이 고른 공공 주택 단지는 몇 곳인가?",
       "options": [
-        "맑은 공기가 적어 주민들이 숨 쉬는 병을 자주 앓을 것이다",
-        "볼거리가 적어 집값이 이웃 동네보다 낮게 매겨질 것이다",
-        "놀 곳이 적어 아이들이 먼 공원까지 놀러 다닐 것이다",
-        "모일 곳이 적어 주민들 사이의 유대가 약할 것이다"
+        "3곳",
+        "4곳",
+        "5곳",
+        "2곳"
       ],
       "answer": 3,
       "evidence": [
-        5
+        2
       ],
-      "note": "근거: 'Greenery creates a natural gathering space for neighbors and, ultimately, stronger bonds in the community'"
+      "note": "근거: 'Environmental scientists chose two Chicago public housing projects'"
     }
   ]
 }

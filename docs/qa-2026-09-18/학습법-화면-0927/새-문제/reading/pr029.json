@@ -22,20 +22,19 @@
     },
     {
       "id": "pr029-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글의 내용으로 보아 가장 알맞게 추론한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 사람들이 자기 말을 잘 들어 준다고 느낄 때 어떻게 된다고 했는가?",
       "options": [
-        "상대방은 내가 자기 생각이 옳다고 인정해 줄 때 편안해한다",
-        "상대방은 내가 자기 말을 귀담아들어 줄 때 편안해한다",
-        "상대방은 대화의 흐름을 자기가 이끌어 갈 때 편안해한다",
-        "상대방은 내가 먼저 속마음을 털어놓아 줄 때 편안해한다"
+        "더 많은 속이야기를 털어놓는다",
+        "자기도 똑같이 기다려 준다",
+        "곁에서 훨씬 더 편안해한다",
+        "더 자주 만나고 싶어 한다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        4,
         6
       ],
-      "note": "4번 'allow the other person to finish speaking', 6번 'feel much more relaxed ... when they feel heard'를 연결한 추론"
+      "note": "'will feel much more relaxed around you when they feel heard and listened to'"
     }
   ]
 }

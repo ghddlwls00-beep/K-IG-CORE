@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "d168-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "템피의 학생들이 빅 서프에 모여 서핑하는 때로 말한 것은?",
       "options": [
-        "덱스터가 템피 학생들에게 서핑을 가르친 사연",
-        "애리조나의 템피에서 서핑을 할 수 있게 된 사연",
-        "캘리포니아 서핑객들이 템피의 빅 서프로 몰린 사연",
-        "템피 학생들이 300마일 떨어진 바다로 서핑 가는 사연"
+        "주말 아침마다",
+        "여름 방학 동안",
+        "학교가 끝난 오후",
+        "해가 진 저녁"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        1,
-        2,
-        3,
-        4
+        1
       ],
-      "note": "'meet at a place called Big Surf for an afternoon of surfing', 'Tempe is in the middle of the desert', 'How did surfing in the desert become possible?', 'It all started' 참고"
+      "note": "'When school is over for the day, ... meet at a place called Big Surf for an afternoon of surfing' 참고"
     },
     {
       "id": "d168-q2",
@@ -28,8 +25,8 @@
       "prompt": "몇 년 전 덱스터가 캘리포니아에 간 까닭은?",
       "options": [
         "휴가를 보내려고",
-        "서핑 대회를 보려고",
-        "서핑 보드를 사려고",
+        "서핑을 배우려고",
+        "보드를 사려고",
         "큰 파도를 연구하려고"
       ],
       "answer": 0,

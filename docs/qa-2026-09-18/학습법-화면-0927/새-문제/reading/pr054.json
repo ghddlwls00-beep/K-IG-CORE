@@ -6,18 +6,18 @@
     {
       "id": "pr054-q1",
       "type": "세부 사실",
-      "prompt": "이 글에서 소개하는 마케팅 방법을 활용하면 얻을 수 있는 효과로 언급된 것은?",
+      "prompt": "이 글에서 세미나 참가자들에게 소개하겠다고 한 것은 무엇인가?",
       "options": [
-        "재고는 줄이면서 판매량은 늘릴 수 있다",
-        "지출은 줄이면서 수익은 늘릴 수 있다",
-        "인력은 줄이면서 처리량은 늘릴 수 있다",
-        "가격은 낮추면서 품질은 높일 수 있다"
+        "업계에서 손꼽히는 마케팅 전문가들",
+        "업계에서 가장 많이 팔린 분석 교재",
+        "업계에서 처음 나온 고객 관리 앱",
+        "업계에서 하나뿐인 통합 소프트웨어"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        3
+        2
       ],
-      "note": "3번 increase profits while decreasing expenses가 근거"
+      "note": "'we will … introduce you to the only end-to-end software solution'"
     },
     {
       "id": "pr054-q2",

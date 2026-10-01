@@ -24,19 +24,19 @@
     },
     {
       "id": "d038-q2",
-      "type": "다음에 할 일",
-      "prompt": "의사가 이어서 할 일로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "의사가 알프레드를 보러 가야 한다고 말한 곳은 어디인가?",
       "options": [
-        "모턴 씨 댁으로 건너가 알프레드를 진찰한다",
-        "바비가 나을 때까지 곁에 있다가 모턴 씨 댁에 간다",
-        "모턴 씨 댁에 전화해 알프레드의 상태를 묻는다",
-        "알프레드를 이 집으로 불러 바비와 함께 진찰한다"
+        "길 건너편에 있는 모턴 씨 댁",
+        "바로 옆에 있는 모턴 씨 댁",
+        "길 모퉁이에 있는 모턴 씨 댁",
+        "두 블록 떨어진 모턴 씨 댁"
       ],
       "answer": 0,
       "evidence": [
         6
       ],
-      "note": "6번 'go across the street to see the Mortons' boy, Alfred'가 근거"
+      "note": "'I must go across the street to see the Mortons' boy, Alfred'가 근거"
     },
     {
       "id": "d038-q3",

@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "pr027-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 거창한 계획에 대해 한 말로 언급된 것은?",
       "options": [
-        "남들이 기대하는 목표를 세우고 꾸준히 이뤄 가라",
-        "실현 가능한 목표를 세우고 한 단계씩 이뤄 가라",
-        "되도록 높은 목표를 세우고 끝까지 밀고 나가라",
-        "평생의 큰 목표부터 세우고 거꾸로 계획해 가라"
+        "남에게 보여 주기는 좋지만 실속이 없다",
+        "꿈을 키워 주지만 이루는 데 오래 걸린다",
+        "처음엔 막막해도 나누어 하면 이룰 수 있다",
+        "재미는 있지만 이룰 수 없다면 도움이 안 된다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        1,
-        5
+        2
       ],
-      "note": "1번 'Don't wish your life away making impossible plans', 5번 'Set yourself realistic goals ... one step at a time'이 근거"
+      "note": "'Grand plans are fun, but not really helpful if you can't achieve them'"
     },
     {
       "id": "pr027-q2",

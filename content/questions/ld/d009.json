@@ -22,38 +22,36 @@
     },
     {
       "id": "d009-q2",
-      "type": "중심 내용",
-      "prompt": "이 이야기의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "앤드루스 부부가 최근에 다녀온 여행으로 옳은 것은?",
       "options": [
-        "어젯밤 앤드루스네에 가서 두 사람의 여행 슬라이드를 구경한 일",
-        "어젯밤 앤드루스 부부가 헨리네 집에 와서 세계 일주 사진을 보여 준 일",
-        "어젯밤 앤드루스네에서 잡지에 실을 아프리카 사진을 함께 고른 일",
-        "어젯밤 앤드루스네에서 아프리카 여행 이야기를 밤늦도록 들은 일"
+        "아프리카 일주 여행",
+        "유럽 일주 여행",
+        "세계 일주 여행",
+        "남미 일주 여행"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        1,
-        2,
-        3,
-        6
+        2
       ],
-      "note": "'a trip around the world', 'we looked at some of them last night', 'Their pictures were beautiful'에서 여행 사진을 보고 감탄한 이야기임을 알 수 있음."
+      "note": "'They recently took a trip around the world'"
     },
     {
       "id": "d009-q3",
-      "type": "목적/태도",
-      "prompt": "어젯밤 일에 대한 헨리의 심정으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "헨리 부부가 앤드루스네 집에 가서 여행 슬라이드를 본 때로 옳은 것은?",
       "options": [
-        "가기 싫었지만 다녀오고 나니 가길 잘했다고 여겼다",
-        "꼭 가고 싶었는데 막상 가 보니 실망스러웠다",
-        "가서 즐거웠지만 늦게까지 있느라 다음 날이 걱정됐다",
-        "아내 때문에 마지못해 갔고 다녀와서도 시큰둥했다"
+        "그제 저녁",
+        "어제 저녁",
+        "지난 주말 저녁",
+        "지난 금요일 저녁"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        5
+        1,
+        3
       ],
-      "note": "'I didn't want to go', 'I am glad we went'에서 처음엔 가기 싫었지만 다녀온 것을 기뻐함을 알 수 있음."
+      "note": "'went over to the Andrews' house last night', 'we looked at some of them last night'"
     }
   ]
 }

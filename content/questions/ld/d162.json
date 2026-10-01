@@ -11,7 +11,7 @@
         "윌 로저스의 말처럼 신문 기사에는 과장이 섞여 있다",
         "신문은 세상일을 알려 주는 중요한 정보원이다",
         "바쁜 독자가 늘면서 신문이 머리기사 위주로 바뀌었다",
-        "윌 로저스는 신문에서 얻은 지식으로 유머를 썼다"
+        "윌 로저스는 신문에서 유머 소재를 얻었다"
       ],
       "answer": 1,
       "evidence": [
@@ -39,18 +39,18 @@
     {
       "id": "d162-q3",
       "type": "세부 사실",
-      "prompt": "큰 도시의 신문은 얼마나 자주 나온다고 했는가?",
+      "prompt": "작은 마을의 신문은 얼마나 자주 나온다고 했는가?",
       "options": [
-        "하루에도 여러 판",
-        "신문마다 하루에 한 판",
-        "일주일에 여러 판",
-        "일주일에 한 판"
+        "매주 1판 정도",
+        "이틀에 1판 정도",
+        "하루에 1판 정도",
+        "매일 2판 정도"
       ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
-        8
+        9
       ],
-      "note": "'In the big cities, there are many types of papers with several different editions every day' 참고"
+      "note": "'In small towns, there are fewer newspapers and perhaps only one edition each day' 참고"
     }
   ]
 }

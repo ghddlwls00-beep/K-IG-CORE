@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "pr059-q1",
-      "type": "detail",
-      "prompt": "각막이 흐려져 앞을 보지 못하는 사람이 다시 볼 수 있는 방법으로 이 글에 나온 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 일부 사람이 앞을 보지 못하게 되는 원인으로 언급된 눈의 부분은 무엇인가?",
       "options": [
-        "세상을 떠난 기증자에게서 각막을 받는 것",
-        "살아 있는 기증자에게서 각막 하나를 받는 것",
-        "다른 사람의 각막 세포를 길러 만든 각막을 받는 것",
-        "동물의 각막을 사람 눈에 맞게 바꾸어 받는 것"
+        "수정체",
+        "각막",
+        "망막",
+        "시신경"
       ],
-      "answer": 0,
+      "answer": 1,
       "evidence": [
-        3,
-        4
+        1
       ],
-      "note": "3번 'can be made to see again ... if they are able to get clear corneas', 4번 'get healthy corneas from donors'"
+      "note": "'a part of the eye called the cornea doesn't let in enough light'"
     },
     {
       "id": "pr059-q2",
-      "type": "inference",
-      "prompt": "이 글로 보아 추론할 수 있는 것은?",
+      "type": "이유",
+      "prompt": "이 글에서 그 눈의 부분 때문에 앞을 보지 못하게 되는 까닭으로 나온 것은?",
       "options": [
-        "각막이 흐려진 사람도 레이저 수술을 받으면 다시 볼 수 있다",
-        "각막이 흐려진 사람도 눈 속 신경을 치료하면 다시 볼 수 있다",
-        "각막이 흐려진 사람도 안약을 꾸준히 넣으면 다시 볼 수 있다",
-        "각막이 흐려진 사람도 기증받은 각막이 있으면 다시 볼 수 있다"
+        "빛을 충분히 들여보내지 못해서",
+        "초점을 제대로 맞추지 못해서",
+        "본 것을 뇌에 전하지 못해서",
+        "들어온 빛을 느끼지 못해서"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        3,
-        4
+        1
       ],
-      "note": "3번 'if they are able to get clear corneas', 4번 'must get healthy corneas from donors'"
+      "note": "'the cornea doesn't let in enough light'"
     }
   ]
 }

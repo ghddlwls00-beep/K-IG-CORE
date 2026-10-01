@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "pr055-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 교사, 학생, 부모가 서로 존중하는 공동체에서 학생들이 느낀다고 한 것은?",
       "options": [
-        "성공적인 학교는 교사들 사이의 긴밀한 협력에서 나온다",
-        "성공적인 학교는 학생들 사이의 건강한 경쟁에서 나온다",
-        "성공적인 학교는 교사와 학생 사이의 엄격한 규율에서 나온다",
-        "성공적인 학교는 구성원들 사이의 깊은 신뢰에서 나온다"
+        "가치를 인정받는다고 느낀다",
+        "마음이 안전하다고 느낀다",
+        "든든한 지원을 받는다고 느낀다",
+        "학교에서 자유롭다고 느낀다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        1,
         4
       ],
-      "note": "1번 relationships among the people ... school community, 4번 community built on trust and openness가 근거"
+      "note": "'teachers, students, and parents show respect for each other, students feel secure'"
     },
     {
       "id": "pr055-q2",

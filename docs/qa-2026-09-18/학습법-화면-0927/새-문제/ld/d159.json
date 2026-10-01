@@ -5,53 +5,51 @@
   "questions": [
     {
       "id": "d159-q1",
-      "type": "목적/태도",
-      "prompt": "말하는 사람은 막냇동생의 성냥갑(matchboxes)을 어떻게 생각하는가?",
+      "type": "세부사실",
+      "prompt": "성냥갑을 모으는 사람으로 말한 것은?",
       "options": [
-        "600개면 동전 못지않게 값질 것이다",
-        "600개 모으느라 돈이 꽤 들었겠다",
-        "600개라도 그게 돈이 될지는 의심스럽다",
-        "600개나 되니 이제 멈췄으면 한다"
+        "동전 수집가의 아들",
+        "말하는 사람의 큰형",
+        "말하는 사람의 사촌 동생",
+        "말하는 사람의 막냇동생"
+      ],
+      "answer": 3,
+      "evidence": [
+        4
+      ],
+      "note": "my youngest brother collects matchboxes"
+    },
+    {
+      "id": "d159-q2",
+      "type": "세부사실",
+      "prompt": "말하는 사람이 아는 남자가 희귀한 50센트짜리 동전을 산 때로 말한 것은?",
+      "options": [
+        "작년",
+        "얼마 전",
+        "지난봄",
+        "오래전"
+      ],
+      "answer": 1,
+      "evidence": [
+        2
+      ],
+      "note": "A short time ago, he bought a rare 50-cent piece"
+    },
+    {
+      "id": "d159-q3",
+      "type": "세부사실",
+      "prompt": "모은 성냥갑의 개수에 대해 말한 것은?",
+      "options": [
+        "이제 막 600개를 넘어섰다",
+        "600개를 채우고 그만두었다",
+        "600개에 조금 못 미친다",
+        "600개를 한참 넘어섰다"
       ],
       "answer": 2,
       "evidence": [
         5
       ],
-      "note": "I doubt if they are worth any money"
-    },
-    {
-      "id": "d159-q2",
-      "type": "세부사실",
-      "prompt": "막냇동생을 가장 기쁘게 하는 일은?",
-      "options": [
-        "모은 성냥갑이 600개를 넘는 것",
-        "새 성냥갑을 찾아 더하는 것",
-        "성냥갑을 좋은 값에 사들이는 것",
-        "성냥갑을 형에게 자랑하는 것"
-      ],
-      "answer": 1,
-      "evidence": [
-        7
-      ],
-      "note": "Nothing makes him happier than to find a new matchbox for his collection"
-    },
-    {
-      "id": "d159-q3",
-      "type": "중심내용",
-      "prompt": "말하는 사람이 전하려는 생각으로 가장 알맞은 것은?",
-      "options": [
-        "취미의 가치는 값보다 그것이 주는 즐거움에 있다",
-        "취미의 가치는 값보다 들인 시간과 정성에 있다",
-        "취미의 가치는 값보다 함께하는 사람들에 있다",
-        "취미의 가치는 값보다 얼마나 드문 것인가에 있다"
-      ],
-      "answer": 0,
-      "evidence": [
-        8,
-        9,
-        10
-      ],
-      "note": "That's what a hobby means · simply for the fun of it · The value in dollars is not important, but the pleasure it gives us is"
+      "note": "He has almost 600 of them"
     }
   ]
 }

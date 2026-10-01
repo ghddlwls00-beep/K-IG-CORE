@@ -5,22 +5,19 @@
   "questions": [
     {
       "id": "d020-q1",
-      "type": "중심 내용",
-      "prompt": "이 글의 중심 내용으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "과들루프에 머무는 동안 이 사람이 날마다 점심때 한 일로 알맞은 것은?",
       "options": [
-        "과들루프 바닷가 호텔에 일주일 머물며 하루 15달러에 실컷 먹고 볕을 쬐었다",
-        "카리브해 섬들을 돌며 하루 15달러짜리 숙소에서 선탠하며 한 달을 보냈다",
-        "유럽 대신 간 과들루프는 하루 15달러였는데 비가 잦아 선탠을 거의 못 했다",
-        "과들루프 호텔은 하루 15달러로 쌌으나 음식이 입에 안 맞아 살이 빠졌다"
+        "방으로 음식을 시켜 혼자 먹었다",
+        "해변으로 도시락을 싸 들고 나갔다",
+        "시내 식당을 찾아다니며 먹었다",
+        "친구들을 만나 함께 점심을 먹었다"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        4,
-        5
+        8
       ],
-      "note": "“I have been to Guadeloupe”, “The weather is wonderful there”, “I spent a week in a hotel on the coast”, “The hotel food tasted delicious”에서 알 수 있다."
+      "note": "“I met friends for lunch every day”라고 했다."
     },
     {
       "id": "d020-q2",
@@ -40,19 +37,20 @@
     },
     {
       "id": "d020-q3",
-      "type": "다음에 할 일",
-      "prompt": "이 사람이 올해 하려고 하는 일로 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "올해 다시 가려고 이 사람이 이미 해 둔 일로 알맞은 것은?",
       "options": [
-        "8월 첫 주에 과들루프 대신 유럽에 처음 가 보려 한다",
-        "8월 첫 주에 카리브해의 다른 섬을 찾아가 보려 한다",
-        "8월 첫 주에 과들루프에서 사귄 친구들을 집에 부르려 한다",
-        "8월 첫 주에 전에 다녀온 과들루프를 다시 찾아가려 한다"
+        "편지를 보내 방을 부탁했다",
+        "전화를 걸어 방을 부탁했다",
+        "전보를 쳐서 방을 부탁했다",
+        "여행사에 들러 방을 부탁했다"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        12
+        12,
+        13
       ],
-      "note": "“I have already decided to go to Guadeloupe again this year”라고 했다."
+      "note": "“I have already decided to go to Guadeloupe again”, “I sent a letter asking for a room”이라고 했다."
     }
   ]
 }

@@ -39,20 +39,19 @@
     },
     {
       "id": "d160-q3",
-      "type": "중심내용",
-      "prompt": "이 글의 요지로 가장 알맞은 것은?",
+      "type": "세부사실",
+      "prompt": "말하는 사람이 개인 운동의 예로 든 것은?",
       "options": [
-        "일을 잘하려면 놀이도 일처럼 꾸준히 해야 한다",
-        "건강하게 즐기며 살려면 누구나 때때로 쉬어야 한다",
-        "여가에는 실내보다 야외 활동이 몸에 더 좋다",
-        "어릴 때 많이 놀아야 커서 일도 잘하게 된다"
+        "골프와 수영",
+        "스키와 등산",
+        "하이킹과 낚시",
+        "수영과 등산"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        3,
-        4
+        7
       ],
-      "note": "all of us need recreation · We cannot work all the time if we are going to maintain good health and enjoy life"
+      "note": "individual sports also such as golf and swimming"
     }
   ]
 }

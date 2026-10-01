@@ -6,18 +6,18 @@
     {
       "id": "pr107-q1",
       "type": "세부 사실",
-      "prompt": "본문의 'special-interest magazines'에 관한 설명으로 옳은 것은?",
+      "prompt": "본문에서 잡지를 크게 몇 가지 종류로 나누었는가?",
       "options": [
-        "주로 한 가지 주제를 중심으로 다룬다",
-        "주로 특정한 나이대의 독자를 겨냥해 만든다",
-        "주로 그 분야의 전문가들이 글을 써서 만든다",
-        "주로 신문과 잡지의 성격을 함께 지닌다"
+        "2가지",
+        "3가지",
+        "4가지",
+        "5가지"
       ],
       "answer": 0,
       "evidence": [
-        6
+        1
       ],
-      "note": "'Special-interest magazines, on the other hand, deal mainly with one particular subject' — 주로 한 가지 주제를 다룸"
+      "note": "'There are basically two types of magazines: news magazines and special-interest magazines' — 2가지"
     },
     {
       "id": "pr107-q2",

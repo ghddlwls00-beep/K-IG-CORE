@@ -5,38 +5,36 @@
   "questions": [
     {
       "id": "pr008-q1",
-      "type": "세부 사실",
-      "prompt": "이 글에 따르면 1900년이 윤년이 아니었던 까닭으로 가장 적절한 것은?",
+      "type": "가리키는 것",
+      "prompt": "이 글에서 'To fix this'의 'this'가 가리키는 것은?",
       "options": [
-        "00으로 끝나는 해는 윤년에서 빠지기 때문에",
-        "1900년은 400으로 나누어떨어지지 않기 때문에",
-        "1900년은 4로 나누어떨어지지 않기 때문에",
-        "그 무렵에는 윤년을 두는 제도가 아직 없었기 때문에"
-      ],
-      "answer": 1,
-      "evidence": [
-        6,
-        7
-      ],
-      "note": "leap years only if they can be divided by 400 / 1900 was not로 확인"
-    },
-    {
-      "id": "pr008-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아 추론할 수 있는 것으로 가장 적절한 것은?",
-      "options": [
-        "2400년은 4로 나누어떨어지지만 윤년이 되지 않을 것이다",
-        "2040년은 4로 나누어떨어지지만 윤년이 되지 않을 것이다",
-        "2200년은 00으로 끝나지만 윤년이 될 것이다",
-        "2100년은 4로 나누어떨어지지만 윤년이 되지 않을 것이다"
+        "2월이 다른 달보다 짧은 것",
+        "달마다 날수가 서로 다른 것",
+        "4년마다 더하는 하루가 조금 많은 것",
+        "달력과 계절이 서서히 어긋나는 것"
       ],
       "answer": 3,
       "evidence": [
-        3,
-        6,
+        2,
+        3
+      ],
+      "note": "the calendar and the seasons slowly drift apart. To fix this로 확인"
+    },
+    {
+      "id": "pr008-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 윤년인 해와 윤년이 아닌 해의 예로 차례대로 든 것은?",
+      "options": [
+        "2000년과 2200년",
+        "1600년과 1900년",
+        "2000년과 1900년",
+        "1600년과 2200년"
+      ],
+      "answer": 2,
+      "evidence": [
         7
       ],
-      "note": "added every four years / years that end in 00 are leap years only if they can be divided by 400 / 1900 was not로 확인"
+      "note": "2000 was a leap year, but 1900 was not로 확인"
     }
   ]
 }

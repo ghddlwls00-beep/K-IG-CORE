@@ -21,20 +21,19 @@
     },
     {
       "id": "pr023-q2",
-      "type": "vocab",
-      "prompt": "이 글에서 'well-earned retirement'가 뜻하는 것으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면, 은퇴하는 직원이 능력을 인정받아 승진한 해는 언제인가?",
       "options": [
-        "많은 돈을 모아 두어 일찍 누리게 된 은퇴",
-        "회사와 오래 협상한 끝에 얻어 낸 은퇴",
-        "오랜 세월 회사에 이바지한 끝에 얻은 은퇴",
-        "회사의 큰 위기를 막아 낸 공으로 얻은 은퇴"
+        "1988년",
+        "1992년",
+        "1995년",
+        "1999년"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        4,
-        5
+        3
       ],
-      "note": "4번 'without your contributions over the years'와 5번 'well-earned retirement'로 뜻을 알 수 있다."
+      "note": "'promoted to executive secretary in 1992'에서 확인된다."
     }
   ]
 }

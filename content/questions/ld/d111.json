@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "d111-q1",
-      "type": "목적/태도",
-      "prompt": "화자가 강의 끝에 농담을 들려준 까닭으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "화자가 들려준 농담에서, 여권 사진과 정말 닮은 사람에 대해 한 말은?",
       "options": [
-        "여행 전에는 푹 쉬어 두라고 가볍게 권하려고",
-        "사진이 얼굴과 꼭 닮아야 함을 재미있게 일러 주려고",
-        "말로 적던 옛 여권보다 사진 여권이 낫다고 말하려고",
-        "여권 사진이 흔히 잘 안 나옴을 웃으며 말하려고"
+        "여행하기엔 몸이 너무 아프다",
+        "틀림없이 휴가를 떠나야 할 때다",
+        "사진을 다시 찍지 않아도 된다",
+        "여권을 새로 만들어야 할 때다"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        9,
         10
       ],
-      "note": "'Sometimes those photos aren't very good. In fact, there is a joke about passport photos', 'you certainly need a vacation'이 잘 안 나오는 여권 사진을 농담으로 웃어넘긴 것임을 보여 줌"
+      "note": "'If you really look like the picture on your passport, you certainly need a vacation'이 농담의 내용임을 보여 줌"
     },
     {
       "id": "d111-q2",

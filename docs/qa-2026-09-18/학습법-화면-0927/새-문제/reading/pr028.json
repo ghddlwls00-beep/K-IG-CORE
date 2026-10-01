@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "pr028-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 한번 내뱉은 말을 무엇에 빗대었는가?",
       "options": [
-        "감정이 앞설 때는 참지 말고 솔직하게 털어놓아라",
-        "중요한 말은 먼저 글로 적어 본 뒤에 꺼내라",
-        "말실수를 했다면 바로 사과해서 바로잡아라",
-        "말하기 전에 마음을 가라앉히고 감정보다 이성을 따르라"
+        "이미 쏘아 버린 화살",
+        "이미 쏘아 버린 총알",
+        "이미 엎질러진 물",
+        "이미 흘러간 강물"
       ],
-      "answer": 3,
-      "evidence": [
-        3,
-        4
-      ],
-      "note": "3번 'Before you say something needlessly hurtful, calm down', 4번 'Speak with reason, not just emotion'이 근거"
-    },
-    {
-      "id": "pr028-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "이 글의 'can't be recalled'에서 recalled가 뜻하는 것으로 가장 적절한 것은?",
-      "options": [
-        "머릿속에 다시 떠올리다",
-        "남에게 그대로 옮겨 전하다",
-        "도로 거두어들이다",
-        "큰 소리로 다시 외치다"
-      ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         2
       ],
-      "note": "2번 'words once spoken, like bullets once fired, can't be recalled'에서 recalled는 '되돌리다'"
+      "note": "'words once spoken, like bullets once fired, can't be recalled'"
+    },
+    {
+      "id": "pr028-q2",
+      "type": "세부 사실",
+      "prompt": "이 글에서 상처 주는 말을 하기 전에 하라고 한 것은?",
+      "options": [
+        "먼저 마음을 가라앉힌다",
+        "속으로 열까지 세어 본다",
+        "잠시 그 자리를 피한다",
+        "할 말을 종이에 적어 본다"
+      ],
+      "answer": 0,
+      "evidence": [
+        3
+      ],
+      "note": "'Before you say something needlessly hurtful, calm down'"
     }
   ]
 }

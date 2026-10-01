@@ -6,19 +6,19 @@
     {
       "id": "d098-q1",
       "type": "세부 사실",
-      "prompt": "오염된 공기가 물질에 미치는 영향으로 이 강의가 말한 것은?",
+      "prompt": "오염을 천천히 멈추는 방법으로 이 강의가 말한 것은?",
       "options": [
-        "강철은 녹슬게 하고 콘크리트는 오히려 더 굳힌다",
-        "강철, 콘크리트처럼 단단한 물질까지 상하게 할 수 있다",
-        "강철, 콘크리트는 상해도 나무와 돌은 잘 견딘다",
-        "강철, 콘크리트를 닳게 해 건물 수명을 절반으로 줄인다"
+        "정부가 오염을 많이 내는 공장에 세금을 물린다",
+        "시민들이 자동차 대신 버스와 기차를 탄다",
+        "기술자들이 오염을 덜 내는 공장을 개발한다",
+        "학교가 학생들에게 오염의 위험을 가르친다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        3,
-        4
+        6,
+        7
       ],
-      "note": "'Most materials wear out more quickly in polluted air' · 'can even damage strong materials like steel and concrete' — 강한 물질까지 상함"
+      "note": "'Pollution can also be stopped slowly' · 'engineers can develop automobiles and factories that produce less pollution'"
     },
     {
       "id": "d098-q2",
@@ -39,19 +39,18 @@
     {
       "id": "d098-q3",
       "type": "세부 사실",
-      "prompt": "오염을 천천히 멈추는 방법으로 이 강의가 말한 것은?",
+      "prompt": "오염된 공기가 맑고 신선한 공기를 어떻게 바꾼다고 했는지로 옳은 것은?",
       "options": [
-        "사람들이 차 대신 대중교통을 타는 습관을 들인다",
-        "과학자와 엔지니어가 오염이 적은 차와 공장을 만든다",
-        "과학자들이 오염에 강한 식량 작물을 개발한다",
-        "정부가 오염을 많이 내는 사업체에 세금을 물린다"
+        "누렇게 보이고 고약한 냄새가 나게 한다",
+        "뿌옇게 보이고 눈을 따갑게 한다",
+        "누렇게 보이고 눈을 따갑게 한다",
+        "뿌옇게 보이고 고약한 냄새가 나게 한다"
       ],
-      "answer": 1,
+      "answer": 3,
       "evidence": [
-        6,
-        7
+        1
       ],
-      "note": "'Pollution can also be stopped slowly' · 'Scientists and engineers can develop automobiles and factories that produce less pollution' — 오염이 적은 차와 공장"
+      "note": "'It makes clear fresh air look cloudy and smell bad' — 뿌옇게 보이고 냄새가 나쁨"
     }
   ]
 }

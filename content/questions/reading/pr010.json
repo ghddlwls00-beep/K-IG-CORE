@@ -21,21 +21,19 @@
     },
     {
       "id": "pr010-q2",
-      "type": "main",
-      "prompt": "이 글의 중심 생각으로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에 따르면, 해마다 늘어나고 있는 것은 무엇인가?",
       "options": [
-        "인터넷 이용이 늘면서 기업은 사이트를 안전하게 지키는 일이 중요해졌다",
-        "인터넷 이용이 늘면서 기업은 고객과 자주 소통하는 일이 중요해졌다",
-        "인터넷 이용이 늘면서 기업은 사이트를 빠르게 만드는 일이 중요해졌다",
-        "인터넷 이용이 늘면서 기업은 온라인 광고에 힘쓰는 일이 중요해졌다"
+        "회사 비밀이 새는 일",
+        "사이트가 공격받는 일",
+        "거짓 이메일이 오는 일",
+        "인터넷을 이용하는 일"
       ],
-      "answer": 0,
+      "answer": 3,
       "evidence": [
-        1,
-        2,
-        3
+        1
       ],
-      "note": "1번 'on the rise every year, and this creates many challenges', 2번 'One of the biggest challenges in the Internet world is security', 3번 'Businesses ... need to make sure that their sites on the Internet are safe'가 중심 생각을 보여준다"
+      "note": "1번 'The use of the Internet is on the rise every year'"
     }
   ]
 }

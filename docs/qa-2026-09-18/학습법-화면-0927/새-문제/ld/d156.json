@@ -5,23 +5,19 @@
   "questions": [
     {
       "id": "d156-q1",
-      "type": "중심내용",
-      "prompt": "이 글은 주로 무엇에 관한 내용인가?",
+      "type": "세부사실",
+      "prompt": "말하는 사람이 젠슨 가족을 소개한 말로 알맞은 것은?",
       "options": [
-        "미네소타 낙농장을 두 아들이 나눠 물려받은 이야기",
-        "노르웨이를 떠나 미네소타에서 밀농사를 시작한 이야기",
-        "가족이 일을 나눠 맡아 낙농장을 꾸려 온 이야기",
-        "미네소타 낙농장을 딸 잉가 부부가 이어받은 이야기"
+        "전형적인 미국 농가 가족",
+        "전형적인 노르웨이 가족",
+        "전형적인 이민자 가족",
+        "전형적인 미네소타 가족"
       ],
-      "answer": 2,
+      "answer": 0,
       "evidence": [
-        1,
-        4,
-        6,
-        7,
-        9
+        1
       ],
-      "note": "a typical American farm family · helped their father · helped their mother · the whole family worked very hard · Olaf runs the farm now and his wife and children help him"
+      "note": "The Jensens are a typical American farm family"
     },
     {
       "id": "d156-q2",

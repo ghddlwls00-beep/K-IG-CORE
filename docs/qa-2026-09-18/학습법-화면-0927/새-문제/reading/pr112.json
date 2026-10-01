@@ -21,20 +21,21 @@
     },
     {
       "id": "pr112-q2",
-      "type": "한 단계 추론",
-      "prompt": "글쓴이가 이 글을 쓴 목적으로 가장 적절한 것은?",
+      "type": "순서",
+      "prompt": "본문에서 글쓴이가 두 번째로 제안한 것은?",
       "options": [
-        "요즘 취업이 어려운 까닭을 설명하려고",
-        "일자리 걱정에 낙심한 사람을 격려하려고",
-        "취업 준비생에게 면접 요령을 알려 주려고",
-        "회사를 그만두려는 사람을 말리려고"
+        "지금 다니는 회사에서 다른 종류의 일을 찾는다",
+        "퇴근 뒤에 좋아하는 일을 하며 마음을 푼다",
+        "다른 지역에서 일할 만한 회사를 알아본다",
+        "일자리 상담 기관을 찾아가 도움을 받는다"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        1,
-        2
+        3,
+        5,
+        6
       ],
-      "note": "'there aren't many jobs available right now' · 'But don't be discouraged because there are some things you can try' — 낙심하지 말라는 격려"
+      "note": "'Have you considered taking night classes' · 'Another possibility is looking for a different type of job in your present company' · 'Finally, ... be sure to relax' — 두 번째는 지금 회사에서 다른 일 찾기"
     }
   ]
 }
