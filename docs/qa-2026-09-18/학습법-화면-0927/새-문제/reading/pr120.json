@@ -6,30 +6,30 @@
     {
       "id": "pr120-q1",
       "type": "세부 사실",
-      "prompt": "최초의 추시계를 만든 사람은?",
+      "prompt": "최초의 추시계를 만든 사람으로 글에 나온 것은?",
       "options": [
-        "갈릴레오",
-        "파스칼",
-        "하위헌스",
-        "해리슨"
+        "이탈리아의 천문학자",
+        "네덜란드의 천문학자",
+        "영국의 천문학자",
+        "프랑스의 천문학자"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
         4
       ],
-      "note": "'Christiaan Huygens constructed the first pendulum clock' — 하위헌스"
+      "note": "'Dutch astronomer Christiaan Huygens constructed the first pendulum clock' — 네덜란드의 천문학자 하위헌스"
     },
     {
       "id": "pr120-q2",
       "type": "세부 사실",
-      "prompt": "1761년에 완성된 시계에 대한 설명으로 옳은 것은?",
+      "prompt": "글에서 가장 나중에 완성되었다고 한 시계에 대한 설명으로 옳은 것은?",
       "options": [
-        "탑 위에 세운 큰 시계였다",
-        "바다에서도 잘 작동했다",
-        "하루에 15분까지 틀렸다",
-        "과학자들이 물리학 실험에 썼다"
+        "과학자들의 물리학 실험에 처음 쓰였다",
+        "가게 문을 여닫는 시각을 정하는 데 쓰였다",
+        "넓은 바다 위 배에서도 제대로 작동했다",
+        "탑 위에 걸려 마을에 시각을 알렸다"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
         6
       ],

@@ -8,10 +8,10 @@
       "type": "중심 생각",
       "prompt": "이 글의 요지로 가장 적절한 것은?",
       "options": [
-        "공간은 시간보다 더 일반적이다",
-        "시간은 공간보다 더 일반적이다",
-        "시간과 공간은 똑같이 일반적이다",
-        "시간과 공간은 서로 비교할 수 없다"
+        "시간은 공간보다 더 객관적인 개념이다",
+        "시간은 공간보다 더 일반적인 개념이다",
+        "시간은 공간보다 더 재기 쉬운 개념이다",
+        "시간은 공간보다 더 단순한 개념이다"
       ],
       "answer": 1,
       "evidence": [
@@ -22,14 +22,14 @@
     {
       "id": "pr131-q2",
       "type": "낱말 뜻/가리키는 것",
-      "prompt": "'it applies to the inner world of impressions, emotions, and ideas'에서 it이 가리키는 것은?",
+      "prompt": "'because it applies to'에서 it이 가리키는 것은?",
       "options": [
+        "시간",
         "공간",
-        "인상",
-        "질서",
-        "시간"
+        "내면 세계",
+        "공간의 질서"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
         1
       ],
