@@ -40,17 +40,17 @@
       "type": "다음 할 일",
       "prompt": "그린 박사가 아침을 먹은 뒤 이어서 하는 일로 옳은 것은?",
       "options": [
-        "6시 45분에 차를 몰고 집을 나선다",
-        "7시 15분에 올니에서 버스를 탄다",
-        "7시 15분에 걸어서 치과로 향한다",
-        "7시 15분에 차를 몰고 집을 나선다"
+        "차를 몰고 워싱턴에 있는 치과로 출근한다",
+        "차를 몰고 올니의 치과로 출근한다",
+        "역 주차장에 차를 두고 전철로 출근한다",
+        "매디슨가에 있는 치과까지 걸어서 간다"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
         6,
         7
       ],
-      "note": "'He eats breakfast at 6:45 and leaves for work at 7:15', 'He drives to work'에서 아침을 먹은 뒤 이어서 하는 일을 알 수 있음."
+      "note": "'leaves for work at 7:15', 'He drives to work', 'his dental office is in Washington'에서 알 수 있음."
     }
   ]
 }
