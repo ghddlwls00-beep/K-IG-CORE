@@ -5,20 +5,19 @@
   "questions": [
     {
       "id": "pr033-q1",
-      "type": "main",
-      "prompt": "이 글의 중심 생각으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 영화와 같은 것으로 견준 것은?",
       "options": [
-        "책은 영화보다 장면을 더 생생하게 떠올리게 해 준다",
-        "책은 다른 무엇도 대신할 수 없는 깨우침을 준다",
-        "책은 강의보다 지식을 더 빠르고 쉽게 전해 준다",
-        "책은 어릴 때 읽어야 평생 기억에 남는 깨우침을 준다"
+        "꿈속의 장면",
+        "무대 위의 연극",
+        "입으로 하는 말",
+        "책 속의 이야기"
       ],
-      "answer": 1,
+      "answer": 2,
       "evidence": [
-        1,
-        4
+        3
       ],
-      "note": "1번 'Nothing can take the place of reading'과 4번 'Books abide, as life-long companions'가 독서를 대신할 것은 없다는 요지를 보여 준다."
+      "note": "'Films, like the spoken word, flow by'"
     },
     {
       "id": "pr033-q2",

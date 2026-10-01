@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "d048-q1",
-      "type": "중심 내용",
-      "prompt": "말하는 사람이 주로 이야기하는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "말하는 사람이 직접 만들기의 좋은 점으로 들지 않은 것은?",
       "options": [
-        "책장을 조립한 뒤 페인트나 니스로 마무리하는 순서",
-        "DIY 애호가가 늘며 미국 가구점들이 줄어드는 흐름",
-        "속담을 따르는 DIY 애호가들이 원목 가공을 즐기는 이유",
-        "속담대로 직접 만들어 쓰는 사람이 늘어난 요즘 흐름"
+        "돈이 절약된다",
+        "재미가 있다",
+        "개성이 드러난다",
+        "만족감을 준다"
       ],
-      "answer": 3,
-      "evidence": [
-        2,
-        4,
-        5
-      ],
-      "note": "'Today, many people seem to take this saying to heart', 'prefer to make things themselves', 'have become do-it-yourself fans' 표현에서 알 수 있다."
-    },
-    {
-      "id": "d048-q2",
-      "type": "목적/태도",
-      "prompt": "말하는 사람의 태도로 가장 적절한 것은?",
-      "options": [
-        "해 보면 생각보다 쉽고 비용도 덜 들어 재미있다며 권한다",
-        "처음엔 서툴러도 만족감이 크고 돈도 아낀다며 권한다",
-        "비용은 좀 들어도 쉽고 재미있으며 보람차다며 권한다",
-        "쉽고 경제적인 데다 가족끼리 함께하기 좋다며 권한다"
-      ],
-      "answer": 0,
+      "answer": 2,
       "evidence": [
         7
       ],
-      "note": "'you will be surprised how easy it is', 'a lot of satisfaction', 'Besides being economical' 표현에서 알 수 있다."
+      "note": "'a lot of satisfaction', 'Besides being economical, it's fun too' 표현에서 알 수 있다."
+    },
+    {
+      "id": "d048-q2",
+      "type": "세부 사실",
+      "prompt": "직접 만들어 본 적이 없는 사람이 해 보면 놀라게 될 것이라고 말한 것은?",
+      "options": [
+        "완성한 가구가 얼마나 튼튼한지",
+        "작업이 얼마나 빨리 끝나는지",
+        "파는 부품이 얼마나 다양한지",
+        "조립 과정이 얼마나 쉬운지"
+      ],
+      "answer": 3,
+      "evidence": [
+        7
+      ],
+      "note": "'If you have never tried to do it yourself, you will be surprised how easy it is' 표현에서 알 수 있다."
     },
     {
       "id": "d048-q3",

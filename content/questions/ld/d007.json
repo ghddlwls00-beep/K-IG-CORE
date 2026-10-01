@@ -6,18 +6,18 @@
     {
       "id": "d007-q1",
       "type": "세부 사실",
-      "prompt": "존의 아버지가 태어난 나라로 옳은 것은?",
+      "prompt": "존의 부모가 결혼했을 때의 나이로 옳은 것은?",
       "options": [
-        "독일",
-        "폴란드",
-        "스위스",
-        "프랑스"
+        "어머니 21살, 아버지 19살",
+        "어머니 19살, 아버지 22살",
+        "어머니 19살, 아버지 21살",
+        "어머니 22살, 아버지 21살"
       ],
       "answer": 2,
       "evidence": [
-        5
+        6
       ],
-      "note": "'John's father was born in Bern, Switzerland'에서 태어난 곳을 알 수 있음."
+      "note": "'His mother was 19 years old and his father was 21'에서 알 수 있음."
     },
     {
       "id": "d007-q2",
@@ -37,19 +37,19 @@
     },
     {
       "id": "d007-q3",
-      "type": "다음 할 일",
-      "prompt": "존이 앞으로 하고자 하는 일로 옳은 것은?",
+      "type": "세부 사실",
+      "prompt": "존이 태어난 날짜로 옳은 것은?",
       "options": [
-        "아버지 고향 베른에서 의학을 공부하려 한다",
-        "독일어 실력으로 의학 서적을 번역하려 한다",
-        "의학보다 외국어 쪽 일에 뜻을 두고 있다",
-        "의학 분야에 들어가 일하기를 바라고 있다"
+        "5월 9일",
+        "9월 9일",
+        "11월 12일",
+        "6월 4일"
       ],
       "answer": 3,
       "evidence": [
-        10
+        7
       ],
-      "note": "'John hopes to enter the field of medicine'에서 알 수 있음."
+      "note": "'John was born in Philadelphia on June 4, 1954'에서 알 수 있음."
     }
   ]
 }

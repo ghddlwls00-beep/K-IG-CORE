@@ -6,18 +6,18 @@
     {
       "id": "d002-q1",
       "type": "세부 사실",
-      "prompt": "밥 왓슨에 대한 설명으로 옳은 것은?",
+      "prompt": "로드 왓슨과 밥 왓슨이 태어난 곳으로 옳은 것은?",
       "options": [
-        "1941년 매디슨에서 태어나 지금도 그곳에 산다",
-        "1937년 매디슨에서 태어나 지금도 그곳에 산다",
-        "1941년 매디슨에서 태어나 지금은 덴버에 산다",
-        "1941년 덴버에서 태어나 지금은 매디슨에 산다"
+        "로드는 덴버, 밥은 매디슨",
+        "로드는 매디슨, 밥은 덴버",
+        "로드는 덴버, 밥도 덴버",
+        "로드는 매디슨, 밥도 매디슨"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
         4
       ],
-      "note": "'Both Bob and I were born in Denver, but Bob lives in Madison, Wisconsin now', 'Bob was born in 1941'에서 알 수 있음."
+      "note": "'Both Bob and I were born in Denver'에서 알 수 있음."
     },
     {
       "id": "d002-q2",
@@ -37,20 +37,19 @@
     },
     {
       "id": "d002-q3",
-      "type": "목적/태도",
-      "prompt": "로드 왓슨의 일에 대한 태도로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "로드 왓슨이 일하는 곳으로 옳은 것은?",
       "options": [
-        "일은 즐거운데 사무실이 좁아 불편해한다",
-        "공무원 일보다 경제 연구를 더 즐긴다",
-        "시내 사무실에서 하는 일을 무척 즐기고 있다",
-        "일은 지루해도 안정적인 공무원이라 만족한다"
+        "집 근처의 작은 연구소",
+        "덴버 외곽의 주 청사",
+        "교외의 대학 연구실",
+        "시내의 큰 사무실 건물"
       ],
-      "answer": 2,
+      "answer": 3,
       "evidence": [
-        7,
-        8
+        7
       ],
-      "note": "'I have a nice office', 'I enjoy my work very much'에서 태도를 알 수 있음."
+      "note": "'I work downtown in a large office building'에서 알 수 있음."
     }
   ]
 }

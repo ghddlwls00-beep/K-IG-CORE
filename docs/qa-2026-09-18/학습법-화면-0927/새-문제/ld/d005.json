@@ -41,19 +41,19 @@
     },
     {
       "id": "d005-q3",
-      "type": "목적/태도",
-      "prompt": "톰과 프레드의 학교와 공부에 대한 태도로 가장 알맞은 것은?",
+      "type": "세부 사실",
+      "prompt": "말하는 사람이 톰과 프레드 둘 다 잘한다고 말한 것은?",
       "options": [
-        "학교는 별로여도 공부 자체는 좋아한다",
-        "공부는 싫어도 학교 운동부 활동은 좋아한다",
-        "학교도 공부도 그다지 즐기지 않는 편이다",
-        "공부는 좋은데 아침 일찍 등교하는 건 싫다"
+        "농구",
+        "테니스",
+        "야구",
+        "낚시"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        8
+        5
       ],
-      "note": "'they don't like school very much and they don't like to study'에서 태도를 알 수 있음."
+      "note": "'They play basketball and baseball and they both play good tennis'에서 알 수 있음."
     }
   ]
 }

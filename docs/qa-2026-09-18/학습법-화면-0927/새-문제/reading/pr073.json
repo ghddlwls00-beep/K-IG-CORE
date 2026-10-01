@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr073-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글의 첫머리에서 흔히들 중요하다고 말한다고 소개한 것은?",
       "options": [
-        "주변 사람들에게 충분히 인정받아야 남의 시선을 두려워하지 않는다",
-        "스스로 바른 사람이라고 믿어야 남의 시선을 두려워하지 않는다",
-        "꾸준히 노력해 실력을 쌓아야 남의 시선을 두려워하지 않는다",
-        "자기 약점을 솔직히 드러내야 남의 시선을 두려워하지 않는다"
+        "실패에서 얻는 교훈",
+        "신념에서 나오는 용기",
+        "남을 배려하는 마음",
+        "고난을 견뎌 내는 인내"
       ],
       "answer": 1,
       "evidence": [
-        2,
-        3,
-        4
+        1
       ],
-      "note": "2번 'the sincere conviction that you are a person of sound character', 3번 'never have to worry about what others think of you', 4번 'without fear of what others think'에 근거함."
+      "note": "'what matters is the courage of one's convictions'에 근거함."
     },
     {
       "id": "pr073-q2",

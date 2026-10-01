@@ -5,37 +5,35 @@
   "questions": [
     {
       "id": "pr035-q1",
-      "type": "main",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 과학과 기술이 크게 달라져 온 출발점으로 든 시기는?",
       "options": [
-        "오늘날 일자리 경쟁에서는 여러 분야를 두루 아는 사람이 이긴다",
-        "오늘날 일자리 경쟁에서는 학위보다 실무 경험이 많은 사람이 이긴다",
-        "오늘날 일자리 경쟁에서는 컴퓨터를 잘 다루는 사람이 이긴다",
-        "오늘날 일자리 경쟁에서는 최고의 전문성을 갖춘 사람이 이긴다"
-      ],
-      "answer": 3,
-      "evidence": [
-        4,
-        7
-      ],
-      "note": "4번 'much more to know in every field'와 7번 'The one best qualified, the expert, wins'가 분야마다 전문가가 이긴다는 요지를 보여 준다."
-    },
-    {
-      "id": "pr035-q2",
-      "type": "vocab",
-      "prompt": "'It has become more complex'의 'It'이 가리키는 것으로 가장 적절한 것은?",
-      "options": [
-        "과학 기술",
-        "세상",
-        "기업",
-        "경쟁"
+        "18세기 후반",
+        "19세기 후반",
+        "20세기 초반",
+        "20세기 중반"
       ],
       "answer": 1,
       "evidence": [
-        2,
-        3
+        1
       ],
-      "note": "2번 'The world has changed, too' 바로 뒤의 3번 'It has become more complex'에서 'It'은 'The world'를 받는다."
+      "note": "'changed a great deal since the latter part of the nineteenth century'"
+    },
+    {
+      "id": "pr035-q2",
+      "type": "이유",
+      "prompt": "이 글에서 일자리 경쟁이 예전보다 훨씬 치열해진 이유로 든 것은?",
+      "options": [
+        "대학 졸업자의 수가 빠르게 늘어서",
+        "컴퓨터가 많은 일을 대신하게 되어서",
+        "기업들이 채용 인원을 크게 줄여서",
+        "일하려는 노인의 수가 빠르게 늘어서"
+      ],
+      "answer": 0,
+      "evidence": [
+        6
+      ],
+      "note": "'a rapid increase in the number of college graduates has made the competition for jobs much greater'"
     }
   ]
 }

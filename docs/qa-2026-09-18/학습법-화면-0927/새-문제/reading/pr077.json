@@ -5,19 +5,19 @@
   "questions": [
     {
       "id": "pr077-q1",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "본문의 'this increase'가 가리키는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 정치적 논란을 불러일으켰다고 한 문제는 무엇인가?",
       "options": [
-        "지구의 평균 기온이 점점 오르는 것",
-        "화석 연료의 사용량이 늘어나는 것",
-        "대기 중에 온실가스가 쌓여 가는 것",
-        "대기 중에 미세먼지가 쌓여 가는 것"
+        "기후가 얼마나 빨리 변할 것인가",
+        "온난화의 책임을 어느 나라가 질 것인가",
+        "기후 변화에 어떤 대책을 세울 것인가",
+        "온난화가 인간 때문에 일어나는가"
       ],
       "answer": 2,
       "evidence": [
-        1
+        5
       ],
-      "note": "1번 'an increased accumulation of so-called greenhouse gases in the atmosphere ... that this increase may bring about'에 근거함."
+      "note": "'fueled a political controversy about what measures should be taken to address the problem of climate change'에 근거함."
     },
     {
       "id": "pr077-q2",

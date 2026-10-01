@@ -23,19 +23,19 @@
     },
     {
       "id": "d043-q2",
-      "type": "다음에 할 일",
-      "prompt": "조지와 피트가 다음 토요일에 함께 하기로 한 일로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "조지가 시카고에서 일자리를 얻은 곳으로 옳은 것은?",
       "options": [
-        "시내에서 다시 만나 점심을 먹는다",
-        "피트의 집들이 저녁 파티에 간다",
-        "모교 축구 경기를 같이 보러 간다",
-        "둘이서 저녁 식사를 함께한다"
+        "남자 고등학교",
+        "시립 도서관",
+        "시청 민원실",
+        "시내 신문사"
       ],
-      "answer": 3,
+      "answer": 0,
       "evidence": [
-        6
+        2
       ],
-      "note": "'They are going to have dinner together next Saturday' 표현에서 알 수 있다."
+      "note": "'He got a good job at a boys high school there' 표현에서 알 수 있다."
     }
   ]
 }

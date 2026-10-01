@@ -5,36 +5,36 @@
   "questions": [
     {
       "id": "pr037-q1",
-      "type": "main",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "글쓴이가 사람을 잘못 이끄는 것을 막는 가장 좋은 처방으로 든 것은?",
       "options": [
-        "사람을 잘못 이끄는 것은 지식의 부족이다",
-        "사람을 잘못 이끄는 것은 지식에 대한 자만이다",
-        "사람을 잘못 이끄는 것은 지식에 대한 지나친 의심이다",
-        "사람을 잘못 이끄는 것은 남의 지식에 대한 맹신이다"
+        "자신이 모른다는 사실을 솔직히 인정하는 것",
+        "더 많은 지식을 꾸준히 쌓아 나가는 것",
+        "무언가 하나를 정말로 잘 알게 되는 것",
+        "다른 사람의 의견에 귀를 기울이는 것"
+      ],
+      "answer": 2,
+      "evidence": [
+        1,
+        2
+      ],
+      "note": "'the arrogance of knowledge, that misleads men', 'The best remedy against this is not knowledge, but knowing something really well'"
+    },
+    {
+      "id": "pr037-q2",
+      "type": "가리키는 것",
+      "prompt": "'be it great or small'에서 'it'이 가리키는 것은?",
+      "options": [
+        "우쭐함",
+        "지식",
+        "사람",
+        "처방"
       ],
       "answer": 1,
       "evidence": [
         1
       ],
-      "note": "1번 'the arrogance of knowledge, that misleads men'이 이 글의 요지이다."
-    },
-    {
-      "id": "pr037-q2",
-      "type": "vocab",
-      "prompt": "'The best remedy against this'의 'this'가 가리키는 것으로 가장 적절한 것은?",
-      "options": [
-        "지식이 부족한 상태",
-        "지식을 지나치게 의심하는 태도",
-        "남의 지식을 맹신하는 태도",
-        "지식을 두고 자만하는 태도"
-      ],
-      "answer": 3,
-      "evidence": [
-        1,
-        2
-      ],
-      "note": "2번 'The best remedy against this'의 'this'는 1번의 'the arrogance of knowledge'를 가리킨다."
+      "note": "'It is not knowledge, be it great or small, but the arrogance of knowledge'"
     }
   ]
 }

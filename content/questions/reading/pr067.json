@@ -22,20 +22,19 @@
     },
     {
       "id": "pr067-q2",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "여우가 한 말 'That's nothing'이 뜻하는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "침팬지의 말에 따르면 달에 간 로켓이 그곳에 머문 기간은?",
       "options": [
-        "나에게 고마워할 필요까지는 없다",
-        "별일 아니니 너무 걱정하지 마라",
-        "그 일은 그리 대단하지 않다",
-        "방금 한 말은 사실과 다르다"
+        "1주일",
+        "1개월",
+        "6개월",
+        "1년"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        1,
-        2
+        1
       ],
-      "note": "1번 'We sent a rocket to the moon', 2번 'That's nothing', 'We already sent our spaceship to Mars'에 근거함."
+      "note": "1번 'It stayed there for a whole month'에 근거함."
     }
   ]
 }

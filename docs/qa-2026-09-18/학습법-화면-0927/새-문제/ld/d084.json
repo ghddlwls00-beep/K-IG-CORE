@@ -22,19 +22,18 @@
     {
       "id": "d084-q2",
       "type": "세부 사실",
-      "prompt": "컴퓨터가 다른 나라로 보내질 때 실리는 곳으로 옳은 것은?",
+      "prompt": "글에서 컴퓨터를 아주 조심스럽게 다룬다고 말한 때로 옳은 것은?",
       "options": [
-        "항구 터미널에서 여객선의 수하물 칸에",
-        "국제 버스 터미널에서 장거리 버스의 수하물 칸에",
-        "공항 터미널을 거쳐 비행기 화물칸에",
-        "화물 터미널에서 국제 화물 열차 칸에"
+        "공항 터미널에서 비행기에 실을 때",
+        "포장을 마치고 무게를 잴 때",
+        "다른 나라에 닿아 짐을 내릴 때",
+        "공항 터미널로 실어 보낼 때"
       ],
       "answer": 2,
       "evidence": [
-        3,
-        4
+        5
       ],
-      "note": "'delivered to the airport terminal'과 'taken to an airplane and loaded into the baggage compartment'가 비행기 화물칸임을 보여 줌"
+      "note": "'When the computers arrive in another country, they are unloaded very carefully'"
     },
     {
       "id": "d084-q3",

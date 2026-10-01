@@ -5,21 +5,19 @@
   "questions": [
     {
       "id": "pr076-q1",
-      "type": "중심 생각",
-      "prompt": "이 글의 요지로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 삶에 불만족한 사람들이 흔히 하는 일로 언급한 것은?",
       "options": [
-        "결과보다 노력하는 과정을 즐겨야 행복하다",
-        "남과 비교하지 않고 묵묵히 자기 길을 가야 행복하다",
-        "손에 닿는 것을 바라고 소중히 여겨야 행복하다",
-        "남을 위해 베푸는 기쁨을 알아야 행복하다"
+        "남이 가진 것과 자기를 견준다",
+        "이룰 수 없는 목표를 스스로 세운다",
+        "지난 실패를 자꾸 되돌아본다",
+        "가진 것보다 없는 것을 먼저 헤아린다"
       ],
-      "answer": 2,
+      "answer": 1,
       "evidence": [
-        1,
-        2,
-        5
+        3
       ],
-      "note": "1번 'they want most of what they can get', 2번 'value things that are within their grasp', 5번 'Stay within reality'에 근거함."
+      "note": "'People who find themselves dissatisfied in life often set unreachable goals for themselves'에 근거함."
     },
     {
       "id": "pr076-q2",

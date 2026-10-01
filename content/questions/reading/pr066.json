@@ -21,21 +21,19 @@
     },
     {
       "id": "pr066-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글로 보아 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "문어가 몸을 숨긴 채 가까이 오기를 기다리는 먹이로 글에 나온 것은?",
       "options": [
-        "문어의 변장 능력은 짝을 찾아 신호를 보낼 때 주로 쓰인다",
-        "문어의 변장 능력은 무리 속에서 서로를 알아볼 때 쓰인다",
-        "문어의 변장 능력은 상대에게 들킨 뒤 달아날 때 주로 쓰인다",
-        "문어의 변장 능력은 적을 피할 때와 먹이를 기다릴 때 함께 쓰인다"
+        "새우와 게",
+        "게와 물고기",
+        "게와 조개",
+        "새우와 물고기"
       ],
-      "answer": 3,
+      "answer": 1,
       "evidence": [
-        2,
-        3,
         4
       ],
-      "note": "2번 'change its color', 3번 'change the texture of its skin', 4번 'In this way, an octopus can hide from enemies such as sharks and wait for crabs and fish to come close'에 근거함."
+      "note": "4번 'wait for crabs and fish to come close'에 근거함."
     }
   ]
 }

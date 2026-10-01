@@ -6,18 +6,18 @@
     {
       "id": "pr072-q1",
       "type": "세부 사실",
-      "prompt": "에드워드 심슨이 회사가 가르쳐 줄 수 있다고 말한 것은?",
+      "prompt": "에드워드 심슨의 직업으로 글에 나온 것은?",
       "options": [
-        "일을 대하는 긍정적인 태도",
-        "성공에 필요한 지식",
-        "자신을 드러내는 방식",
-        "일에 대한 뜨거운 열의"
+        "영업 사원",
+        "인사 담당자",
+        "회사 대표",
+        "직업 상담사"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        3
+        2
       ],
-      "note": "3번 'A company may be able to teach you what you need to know to succeed, but it cannot teach attitude'에 근거함."
+      "note": "2번 'says Edward Simpson, a sales representative'에 근거함."
     },
     {
       "id": "pr072-q2",

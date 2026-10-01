@@ -5,36 +5,35 @@
   "questions": [
     {
       "id": "pr074-q1",
-      "type": "낱말 뜻/가리키는 것",
-      "prompt": "본문의 'make amends'가 뜻하는 것으로 가장 적절한 것은?",
+      "type": "조건",
+      "prompt": "이 글에서 큰 실수가 사람을 더 낫게 만드는 데 붙인 조건은 무엇인가?",
       "options": [
-        "저지른 잘못을 솔직하게 털어놓는 것",
-        "저지른 잘못을 남에게 용서받는 것",
-        "저지른 잘못을 다시 저지르지 않는 것",
-        "저지른 잘못을 바로잡아 보상하는 것"
+        "잘못을 곧바로 알아차릴 줄 알 때",
+        "같은 잘못을 되풀이하지 않을 때",
+        "잘못을 바로잡을 줄 알 때",
+        "남의 잘못을 너그러이 볼 줄 알 때"
       ],
-      "answer": 3,
+      "answer": 2,
       "evidence": [
-        2,
         3
       ],
-      "note": "2번 'a prime opportunity for self-improvement', 3번 'helping you become a better person—if you know how to make amends'에 근거함."
+      "note": "'the bigger the blunder ... if you know how to make amends'에 근거함."
     },
     {
       "id": "pr074-q2",
-      "type": "한 단계 추론",
-      "prompt": "이 글에서 추론할 수 있는 것으로 가장 적절한 것은?",
+      "type": "세부 사실",
+      "prompt": "이 글에서 인용한 말의 출처로 소개된 것은 무엇인가?",
       "options": [
-        "작은 실수는 사람을 더 낫게 만들어 주지 못한다",
-        "큰 실수를 했다고 저절로 더 나은 사람이 되지는 못한다",
-        "셰익스피어는 결점 있는 사람을 좋게 보지 않았다",
-        "잘못을 바로잡아도 남의 신뢰는 쉽게 돌아오지 않는다"
+        "셰익스피어의 『자에는 자로』",
+        "셰익스피어의 『로미오와 줄리엣』",
+        "셰익스피어의 『베니스의 상인』",
+        "셰익스피어의 『맥베스』"
       ],
-      "answer": 1,
+      "answer": 0,
       "evidence": [
-        3
+        1
       ],
-      "note": "3번 'the bigger the blunder, the better its chance of helping you become a better person—if you know how to make amends'에 근거함."
+      "note": "'wrote Shakespeare in Measure for Measure'에 근거함."
     }
   ]
 }
