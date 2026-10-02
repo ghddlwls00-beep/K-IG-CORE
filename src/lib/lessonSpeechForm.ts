@@ -93,6 +93,14 @@ export const KOREAN_WORD_SOUNDS: Record<string, [string, string[]]> = {
   Hanguk: ["한국", ["ˈhɑnˌɡuk"]],
   Jung: ["정", ["ˈdʒʌŋ"]],
   Jinna: ["진나", ["ˈdʒinˌnɑ"]],
+  // ADULT's own words (2026-10-02) — the same rules: lenis ㄱ ㄷ ㅂ ㅈ at a word's start as g d b dʒ, ㅓ as ʌ, one stress
+  // mark per syllable; the tense ㅉ of 찜질방 as tʃ; 학원 is said [하궈ㄴ] and keeps the English plural. In the owner's
+  // listening samples (docs/adult/README.md).
+  Hong: ["홍", ["ˈhoʊŋ"]],
+  Minguk: ["민국", ["ˈminˌɡuk"]],
+  jjimjilbang: ["찜질방", ["ˈtʃimˌdʒilˌbɑŋ"]],
+  Gwangju: ["광주", ["ˈɡwɑŋˌdʒu"]],
+  hagwons: ["학원", ["ˈhɑˌɡwʌnz"]],
 };
 
 /** Which romanized Korean words each page says in Korean — per page, so an American "Kim" elsewhere stays English. */
@@ -159,6 +167,30 @@ const KOREAN_WORD_PAGES: Record<string, string[]> = {
   "passoff-grammar/pg12-3": ["Jeju"],
   "passoff-grammar/pg13-1": ["Yi Sun-sin"],
   "passoff-grammar/pg16-3": ["Jung"],
+  // ADULT (2026-10-02) — every lesson whose English holds such a word. a7-1 … a10-5 are STUDENT s17-1 … s20-5's sentences,
+  // so they say them as STUDENT does and get STUDENT's clips.
+  "adult/a1-2": ["Hong Gil Dong", "Hong", "Seoul", "Busan", "Hanguk"],
+  "adult/a3-2": ["Daehan", "Minguk"],
+  "adult/a3-3": ["Daehan"],
+  "adult/a3-4": ["Daehan"],
+  "adult/a6-1": ["jjimjilbang"],
+  "adult/a6-2": ["jjimjilbang"],
+  "adult/a7-1": ["Gojoseon", "Hwanung", "Ungnyeo", "Hwanin", "Dangun"],
+  "adult/a7-2": ["Gojoseon", "Goguryeo", "Baekje", "Silla"],
+  "adult/a7-3": ["Goryeo", "Joseon", "Silla"],
+  "adult/a8-1": ["Seollal", "Chuseok"],
+  "adult/a8-2": ["Seollal"],
+  "adult/a8-3": ["songpyeon", "Chuseok"],
+  "adult/a9-2": ["hanbok"],
+  "adult/a9-3": ["bulgogi", "Bulgogi", "kimchi"],
+  "adult/a9-4": ["Sejong", "Hangul"],
+  "adult/a10-2": ["Songnisan", "Bulguksa"],
+  "adult/a10-3": ["Gyeonggi", "Yongin", "Suwon", "Seoul"],
+  "adult/a10-4": ["Gyeongju", "Silla"],
+  "adult/a10-5": ["Halla", "Jeju"],
+  "adult/a11-1": ["Gwangju", "Seoul"],
+  "adult/a12-2": ["hagwons"],
+  "adult/a12-3": ["Seoul"],
 };
 
 /** The written word with its IPA tag — one tag per written word of a phrase ("Yi ⟨ˈi⟩ Sun-sin ⟨ˈsunˌʃin⟩"). */

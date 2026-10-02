@@ -90,6 +90,10 @@ export default function AdminLicensePage() {
   const [openPassoffKey, setOpenPassoffKey] = useState<string | null>(null);
   const [passoffProgressByKey, setPassoffProgressByKey] = useState<Record<string, AdminPassoffProgress>>({});
   const [passoffLoadingKey, setPassoffLoadingKey] = useState<string | null>(null);
+  // ADULT (2026-10-02) — STUDENT's progress tools for ADULT's own record (/api/admin/adult-progress)
+  const [openAdultKey, setOpenAdultKey] = useState<string | null>(null);
+  const [adultProgressByKey, setAdultProgressByKey] = useState<Record<string, AdminStudentProgress>>({});
+  const [adultLoadingKey, setAdultLoadingKey] = useState<string | null>(null);
 
   // Check server-side admin session on mount
   useEffect(() => {
@@ -422,6 +426,42 @@ export default function AdminLicensePage() {
       return;
     }
     await requestStudentProgress(key, "setChapter", { chapter });
+  }
+
+  // ADULT progress — exactly STUDENT's above (look, open chapters by hand, reset), on ADULT's own record
+  async function requestAdultProgress(key: string, action = "get", extra: Record<string, unknown> = {}) {
+    setAdultLoadingKey(key);
+    try {
+      const response = await fetch("/api/admin/adult-progress", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ key, action, ...extra }),
+      });
+      const data = await response.json();
+      if (!response.ok || !data.success) throw new Error(data.error || "진도 처리 실패");
+      setAdultProgressByKey((previous) => ({ ...previous, [key]: data.progress }));
+      setOpenAdultKey(key);
+    } catch (error) {
+      alert(error instanceof Error ? error.message : "ADULT 진도를 처리하지 못했습니다.");
+    } finally {
+      setAdultLoadingKey(null);
+    }
+  }
+
+  async function handleAdultProgressReset(key: string) {
+    if (!confirm("이 이용권의 ADULT 진도를 모두 초기화할까요? 이 작업은 되돌릴 수 없습니다.")) return;
+    if (!confirm("마지막 확인입니다. 완료 기록과 챕터 해금 상태를 초기화합니다.")) return;
+    await requestAdultProgress(key, "reset");
+  }
+
+  async function handleSetAdultChapter(key: string, currentChapter: number, chapter: number) {
+    if (chapter === currentChapter) return;
+    const lowering = chapter < currentChapter ? `\n\n주의: 챕터 ${chapter + 1}~${currentChapter} 이 다시 잠깁니다.` : "";
+    if (!confirm(`이용권 [${key}]의 ADULT 해금을 챕터 ${currentChapter} → 챕터 ${chapter} 로 바꿀까요?${lowering}`)) {
+      setAdultProgressByKey((previous) => ({ ...previous }));
+      return;
+    }
+    await requestAdultProgress(key, "setChapter", { chapter });
   }
 
   // PASS-OFF GRAMMAR progress — look, open topics by hand and reset, the way STUDENT's is above (its own route and state)
@@ -969,6 +1009,16 @@ export default function AdminLicensePage() {
 
                           <button
                             type="button"
+                            onClick={() => openAdultKey === item.key
+                              ? setOpenAdultKey(null)
+                              : void requestAdultProgress(item.key)}
+                            className="rounded-lg border border-blue-500/20 bg-blue-500/5 px-2.5 py-1 text-[11.5px] font-semibold text-blue-700 hover:bg-blue-500/15 cursor-pointer transition-colors"
+                          >
+                            {adultLoadingKey === item.key ? "불러오는 중..." : "ADULT 진도"}
+                          </button>
+
+                          <button
+                            type="button"
                             onClick={() => openPassoffKey === item.key
                               ? setOpenPassoffKey(null)
                               : void requestPassoffProgress(item.key)}
@@ -1074,6 +1124,49 @@ export default function AdminLicensePage() {
                               <button
                                 type="button"
                                 onClick={() => void handleStudentProgressReset(item.key)}
+                                className="rounded-lg border border-red-300 bg-white px-2.5 py-1 font-semibold text-red-600 hover:bg-red-50"
+                              >
+                                진도 초기화
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {openAdultKey === item.key && adultProgressByKey[item.key] && (
+                        <div className="rounded-2xl border border-blue-200 bg-blue-50/60 p-4 text-[12px] text-blue-950">
+                          <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="flex flex-wrap gap-x-4 gap-y-1">
+                              <strong>ADULT 챕터 {adultProgressByKey[item.key].unlockedThrough}까지 해금</strong>
+                              <span>
+                                완료 강의 {adultProgressByKey[item.key].completedLessons}
+                                {adultProgressByKey[item.key].chapters?.length
+                                  ? `/${adultProgressByKey[item.key].chapters!.reduce((sum, chapter) => sum + chapter.lessonIds.length, 0)}`
+                                  : ""}
+                              </span>
+                              <span>마지막 학습 {adultProgressByKey[item.key].lastLessonId || "기록 없음"}</span>
+                              <span>저장 {new Date(adultProgressByKey[item.key].updatedAt).toLocaleString("ko-KR")}</span>
+                            </div>
+                            <div className="flex flex-wrap items-center gap-2">
+                              <label className="flex items-center gap-1.5">
+                                <span>수동 해금</span>
+                                <select
+                                  value={adultProgressByKey[item.key].unlockedThrough}
+                                  onChange={(event) => void handleSetAdultChapter(
+                                    item.key,
+                                    adultProgressByKey[item.key].unlockedThrough,
+                                    Number(event.target.value),
+                                  )}
+                                  className="rounded-lg border border-blue-200 bg-white px-2 py-1 font-semibold"
+                                >
+                                  {Array.from({ length: 12 }, (_, chapterIndex) => (
+                                    <option key={chapterIndex + 1} value={chapterIndex + 1}>챕터 {chapterIndex + 1}</option>
+                                  ))}
+                                </select>
+                              </label>
+                              <button
+                                type="button"
+                                onClick={() => void handleAdultProgressReset(item.key)}
                                 className="rounded-lg border border-red-300 bg-white px-2.5 py-1 font-semibold text-red-600 hover:bg-red-50"
                               >
                                 진도 초기화

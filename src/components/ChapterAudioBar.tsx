@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { memo, useCallback, useEffect, useRef, useState } from "react";
 import {
@@ -31,8 +31,8 @@ interface ChapterAudioPayload {
 
 type AudioSpeed = 0.85 | 1 | 1.2;
 
-// In-memory module cache for fetched chapter audio payloads
-const chapterCache = new Map<number, ChapterAudioPayload>();
+// In-memory module cache for fetched chapter audio payloads — "<course>:<chapter>" (ADULT's chapter 1 is not STUDENT's)
+const chapterCache = new Map<string, ChapterAudioPayload>();
 
 // Module-level singleton to coordinate which chapter is actively playing
 let globalActiveChapter: number | null = null;
@@ -48,6 +48,8 @@ export interface ChapterAudioBarProps {
   chapterUnlocked: boolean;
   previewOnly: boolean;
   totalLessons: number;
+  /** STUDENT, or ADULT (2026-10-02 — taught as STUDENT, its own chapters and endpoint) */
+  course?: "student" | "adult";
 }
 
 export const ChapterAudioBar = memo(function ChapterAudioBar({
@@ -55,6 +57,7 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
   chapterUnlocked,
   previewOnly,
   totalLessons,
+  course = "student",
 }: ChapterAudioBarProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "playing" | "paused">("idle");
   const [speed, setSpeed] = useState<AudioSpeed>(1);
@@ -107,7 +110,7 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
       // Korean word written in romanization in Hangul (lessonSpeechForm — 소유자 결정 2026-09-25). This
       // bar used to pass the written sentence, so "He/She …" asked for a different clip than the lesson.
       playSentenceQueue(
-        payload.items.map((it) => lessonSpeechForm(`student/${it.lessonId}`, firstSlashAlternative(it.text))),
+        payload.items.map((it) => lessonSpeechForm(`${course}/${it.lessonId}`, firstSlashAlternative(it.text))),
         {
           lang: "en",
           gender: "female",
@@ -140,7 +143,7 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
         }
       );
     },
-    []
+    [course]
   );
 
   const handleTogglePlay = useCallback(async () => {
@@ -164,7 +167,8 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
     setGlobalActiveChapter(chapterNumber);
     setError(null);
 
-    const cached = chapterCache.get(chapterNumber);
+    const cacheKey = `${course}:${chapterNumber}`;
+    const cached = chapterCache.get(cacheKey);
     if (cached) {
       setStatus("playing");
       startPlayback(cached, speed, 0);
@@ -173,7 +177,7 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
 
     setStatus("loading");
     try {
-      const response = await fetch(`/api/student/chapter-audio?chapter=${chapterNumber}`, {
+      const response = await fetch(`/api/${course}/chapter-audio?chapter=${chapterNumber}`, {
         cache: "no-store",
         credentials: "same-origin",
       });
@@ -189,7 +193,7 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
         );
       }
 
-      chapterCache.set(chapterNumber, data);
+      chapterCache.set(cacheKey, data);
       setStatus("playing");
       startPlayback(data, speed, 0);
     } catch (err) {
@@ -198,7 +202,7 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
       setError(err instanceof Error ? err.message : "챕터 음성을 불러오지 못했습니다.");
       setGlobalActiveChapter(null);
     }
-  }, [chapterNumber, chapterUnlocked, speed, startPlayback, status]);
+  }, [chapterNumber, chapterUnlocked, course, speed, startPlayback, status]);
 
   const handleStop = useCallback(() => {
     stopSpeech();

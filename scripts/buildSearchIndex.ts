@@ -7,6 +7,8 @@ const courses = [
   // lessons were absent from public/search-index.json and the in-app search
   // could not find a single one of them.
   { slug: "student", title: "STUDENT" },
+  // ADULT (2026-10-02): titles only, as STUDENT
+  { slug: "adult", title: "ADULT" },
   // PASS-OFF GRAMMAR (2026-09-27): titles only, like every course here — never an example or an explanation
   { slug: "passoff-grammar", title: "PASS-OFF GRAMMAR" },
   { slug: "phonics", title: "VOCA" },
@@ -60,6 +62,7 @@ for (const { slug, title: courseTitle } of courses) {
       pres.subtitle,
       pres.badge || "",
       slug === "student" ? "회화 스피킹 대화 표현 conversation speaking student" : "",
+      slug === "adult" ? "성인 어른 회화 스피킹 대화 표현 conversation speaking adult" : "",
       slug === "passoff-grammar" ? "문법 규칙 영작 패스오프 pass-off grammar" : "",
       slug === "phonics" ? "중등 고등 단어 어휘 단어장 보카 voca matrix" : "",
       slug === "grammar1" ? "문법 영작 기초문법 문장구조 grammar1" : "",

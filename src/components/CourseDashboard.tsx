@@ -122,7 +122,7 @@ const LessonRow = memo(function LessonRow({
         scroll={true}
         className="flex min-h-[52px] min-w-0 flex-1 items-center gap-3 py-2 pl-4 pr-2 transition-colors hover:bg-sunken"
       >
-        {courseSlug === "student" ? (
+        {courseSlug === "student" || courseSlug === "adult" ? (
           <span className="w-9 shrink-0 text-caption tabular-nums text-ink-soft">{pres.code.replace(/^Ch\s*/, "")}</span>
         ) : null}
         {length ? (
@@ -187,8 +187,12 @@ export function CourseDashboard({
   /** PASS-OFF GRAMMAR: the items its free review can draw (ids only) — the '오늘 복습' line counts no other without a licence */
   passoffFreeReviewKeys?: readonly string[];
 }) {
-  const { completed, bookmarks, recentByCourse, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus } = useProgress();
-  const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, studentProgress } = useLicense();
+  const { completed, bookmarks, recentByCourse, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus: studentSync, adultSyncStatus } = useProgress();
+  const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, studentProgress: studentRecord, adultProgress } = useLicense();
+  // ADULT (2026-10-02) opens chapter by chapter exactly as STUDENT — the same list, from its own record
+  const isChapterCourse = courseSlug === "student" || courseSlug === "adult";
+  const studentProgress = courseSlug === "adult" ? adultProgress : studentRecord;
+  const studentSyncStatus = courseSlug === "adult" ? adultSyncStatus : studentSync;
   // STUDENT passes open STUDENT and PASS-OFF GRAMMAR; the all-pass opens every course (license.ts planOpensCourse)
   const hasCourseAccess = hasActiveLicense && planOpensCourse(licenseInfo?.plan, courseSlug);
   const [filter, setFilter] = useState<"all" | "bookmarked" | "incomplete">("all");
@@ -196,7 +200,7 @@ export function CourseDashboard({
   const previousUnlockedRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (courseSlug !== "student" || !studentProgress || licenseInfo?.plan === "LIFE") return;
+    if (!isChapterCourse || !studentProgress || licenseInfo?.plan === "LIFE") return;
     const previous = previousUnlockedRef.current;
     previousUnlockedRef.current = studentProgress.unlockedThrough;
     if (previous !== null && studentProgress.unlockedThrough > previous) {
@@ -204,7 +208,7 @@ export function CourseDashboard({
       const timer = window.setTimeout(() => setUnlockNotice(null), 5000);
       return () => window.clearTimeout(timer);
     }
-  }, [courseSlug, licenseInfo?.plan, studentProgress]);
+  }, [isChapterCourse, licenseInfo?.plan, studentProgress]);
 
   // PASS-OFF GRAMMAR opens topic by topic, as STUDENT opens chapters (설계 §5) — from the server's answer
   // (PassoffProgressProvider; until it comes, the one kept on this device). With a licence this list counts what the
@@ -409,7 +413,7 @@ export function CourseDashboard({
             <div className="h-1.5 w-full overflow-hidden rounded-full bg-sunken" aria-hidden>
               <div className="h-full rounded-full bg-ink transition-[width] duration-500" style={{ width: `${Math.min(100, Math.max(0, progressPercent))}%` }} />
             </div>
-            {courseSlug === "student" && (
+            {isChapterCourse && (
               <p className="text-caption text-ink-soft" aria-live="polite">
                 {studentSyncStatus === "saved" && "서버에 저장됨"}
                 {studentSyncStatus === "syncing" && "진도를 서버에 저장하는 중…"}
@@ -492,7 +496,7 @@ export function CourseDashboard({
             // a filter shows its matches without making the learner open each section
             const isOpen = filter !== "all" || (openSections[section.label] ?? false);
             const completedInSection = section.lessons.filter((l) => isDoneHere(l.id)).length;
-            const studentChapter = courseSlug === "student"
+            const studentChapter = isChapterCourse
               ? studentProgress?.chapters.find((item) => item.chapter === chapterNumber)
               : undefined;
             // PASS-OFF GRAMMAR: this section's topic (by its lessons' ids) and the one before it
@@ -503,7 +507,7 @@ export function CourseDashboard({
             const passoffState = passoffTopic !== null
               ? passoffProgress?.topics.find((item) => item.topic === passoffTopic)
               : undefined;
-            const chapterUnlocked = (courseSlug !== "student" && !isPassoff)
+            const chapterUnlocked = (!isChapterCourse && !isPassoff)
               || (!hasCourseAccess
                 ? sectionIndex === 0
                 : section.lessons.some((lesson, lessonIdx) =>
@@ -528,7 +532,7 @@ export function CourseDashboard({
                       : passoffState && !passoffProgress?.everyTopicOpen
                         ? `진행 ${chapterPercent}% · 강의 ${passoffState.requiredCount}개와 마지막 강의${passoffProgress?.mapRefillRequired ? ", 구성도 다시 채우기를" : "를"} 마치면 다음 대주제`
                         : `진행 ${chapterPercent}%`;
-            const studentNote = courseSlug !== "student"
+            const studentNote = !isChapterCourse
               ? null
               : !hasCourseAccess
                 ? sectionIndex === 0 ? "1·2강 무료" : "이용권 등록 후 열립니다"
@@ -562,7 +566,7 @@ export function CourseDashboard({
                     {passoffNote ? <span className="mt-0.5 text-caption text-ink-soft">{passoffNote}</span> : null}
                   </span>
                   <span className="flex shrink-0 items-center gap-1.5 text-caption tabular-nums text-ink-soft">
-                    {(courseSlug === "student" || (isPassoff && !passoffChecking)) && !chapterUnlocked ? (
+                    {(isChapterCourse || (isPassoff && !passoffChecking)) && !chapterUnlocked ? (
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label="잠김">
                         <rect x="5" y="11" width="14" height="9" rx="2" />
                         <path d="M8 11V8a4 4 0 0 1 8 0v3" />
@@ -574,12 +578,13 @@ export function CourseDashboard({
 
                 {isOpen && (
                   <div className="border-t border-line">
-                    {courseSlug === "student" && chapterUnlocked && (
+                    {isChapterCourse && chapterUnlocked && (
                       <ChapterAudioBar
                         chapterNumber={chapterNumber}
                         chapterUnlocked={chapterUnlocked}
                         previewOnly={!hasCourseAccess && sectionIndex === 0}
                         totalLessons={section.lessons.length}
+                        course={courseSlug === "adult" ? "adult" : "student"}
                       />
                     )}
                     <ul className="divide-y divide-line">
@@ -590,7 +595,7 @@ export function CourseDashboard({
                         const isStarred = isBookmarked(courseSlug, lesson.id);
                         const isFree = isFreePreviewLesson(courseSlug, lesson.id, sectionIndex, lessonIdx);
                         const isUnlocked = checkUnlocked(courseSlug, lesson.id, sectionIndex, lessonIdx);
-                        const sequentialLock = (courseSlug === "student" || isPassoff) && hasCourseAccess && !isUnlocked;
+                        const sequentialLock = (isChapterCourse || isPassoff) && hasCourseAccess && !isUnlocked;
                         return (
                           <LessonRow
                             key={lesson.id}

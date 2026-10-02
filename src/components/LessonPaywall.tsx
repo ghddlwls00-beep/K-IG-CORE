@@ -108,7 +108,7 @@ export function LessonPaywall({
 
       {lockReason === "progress" ? (
         <Link
-          href="/student"
+          href={`/${courseSlug}`}
           className="flex min-h-12 items-center justify-center whitespace-nowrap rounded-control bg-ink px-6 text-label font-semibold text-surface transition-opacity hover:opacity-90"
         >
           지금 장으로 돌아가기

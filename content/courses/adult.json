@@ -1,0 +1,784 @@
+{
+  "course": "adult",
+  "tab": "adult",
+  "lessonCount": 55,
+  "groups": [
+    {
+      "title": "Chapter 1. 자기소개 (Self-Introduction)",
+      "lessons": [
+        "a1-1",
+        "a1-2",
+        "a1-3",
+        "a1-4",
+        "a1-5",
+        "a1-6"
+      ]
+    },
+    {
+      "title": "Chapter 2. 가족 소개 (Family Introduction)",
+      "lessons": [
+        "a2-1",
+        "a2-2",
+        "a2-3",
+        "a2-4",
+        "a2-5",
+        "a2-6"
+      ]
+    },
+    {
+      "title": "Chapter 3. 친구 소개 (Friend Introduction)",
+      "lessons": [
+        "a3-1",
+        "a3-2",
+        "a3-3",
+        "a3-4",
+        "a3-5"
+      ]
+    },
+    {
+      "title": "Chapter 4. 친척 소개 (Relative Introduction)",
+      "lessons": [
+        "a4-1",
+        "a4-2",
+        "a4-3",
+        "a4-4",
+        "a4-5",
+        "a4-6"
+      ]
+    },
+    {
+      "title": "Chapter 5. 나의 하루 (My Day)",
+      "lessons": [
+        "a5-1",
+        "a5-2",
+        "a5-3",
+        "a5-4",
+        "a5-5"
+      ]
+    },
+    {
+      "title": "Chapter 6. 나의 주말 (My Weekend)",
+      "lessons": [
+        "a6-1",
+        "a6-2",
+        "a6-3",
+        "a6-4",
+        "a6-5"
+      ]
+    },
+    {
+      "title": "Chapter 7. 역사 (History)",
+      "lessons": [
+        "a7-1",
+        "a7-2",
+        "a7-3",
+        "a7-4"
+      ]
+    },
+    {
+      "title": "Chapter 8. 전통 명절 (Traditional Holidays)",
+      "lessons": [
+        "a8-1",
+        "a8-2",
+        "a8-3"
+      ]
+    },
+    {
+      "title": "Chapter 9. 문화 (Culture)",
+      "lessons": [
+        "a9-1",
+        "a9-2",
+        "a9-3",
+        "a9-4"
+      ]
+    },
+    {
+      "title": "Chapter 10. 유명한 장소 (Famous Places)",
+      "lessons": [
+        "a10-1",
+        "a10-2",
+        "a10-3",
+        "a10-4",
+        "a10-5"
+      ]
+    },
+    {
+      "title": "Chapter 11. 한국의 민주주의 (Democracy in Korea)",
+      "lessons": [
+        "a11-1",
+        "a11-2",
+        "a11-3"
+      ]
+    },
+    {
+      "title": "Chapter 12. 한국의 교육 (Education in Korea)",
+      "lessons": [
+        "a12-1",
+        "a12-2",
+        "a12-3"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "a1-1",
+      "title": "Greeting (인사)",
+      "label": "Chapter 1. Self-Introduction (자기소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 1,
+      "part": 1,
+      "order": 1,
+      "hasAudio": false,
+      "menuLabel": "1-1. Greeting"
+    },
+    {
+      "id": "a1-2",
+      "title": "Name ~ Age (이름~나이)",
+      "label": "Chapter 1. Self-Introduction (자기소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 1,
+      "part": 2,
+      "order": 2,
+      "hasAudio": false,
+      "menuLabel": "1-2. Name ~ Age"
+    },
+    {
+      "id": "a1-3",
+      "title": "Personality (성격)",
+      "label": "Chapter 1. Self-Introduction (자기소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 1,
+      "part": 3,
+      "order": 3,
+      "hasAudio": false,
+      "menuLabel": "1-3. Personality"
+    },
+    {
+      "id": "a1-4",
+      "title": "Hobby (취미)",
+      "label": "Chapter 1. Self-Introduction (자기소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 1,
+      "part": 4,
+      "order": 4,
+      "hasAudio": false,
+      "menuLabel": "1-4. Hobby"
+    },
+    {
+      "id": "a1-5",
+      "title": "Subject (과목)",
+      "label": "Chapter 1. Self-Introduction (자기소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 1,
+      "part": 5,
+      "order": 5,
+      "hasAudio": false,
+      "menuLabel": "1-5. Subject"
+    },
+    {
+      "id": "a1-6",
+      "title": "Helping Hand (봉사활동)",
+      "label": "Chapter 1. Self-Introduction (자기소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 1,
+      "part": 6,
+      "order": 6,
+      "hasAudio": false,
+      "menuLabel": "1-6. Helping Hand"
+    },
+    {
+      "id": "a2-1",
+      "title": "Greeting (인사)",
+      "label": "Chapter 2. Family Introduction (가족 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 2,
+      "part": 1,
+      "order": 7,
+      "hasAudio": false,
+      "menuLabel": "2-1. Greeting"
+    },
+    {
+      "id": "a2-2",
+      "title": "Family Members (가족 구성원)",
+      "label": "Chapter 2. Family Introduction (가족 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 2,
+      "part": 2,
+      "order": 8,
+      "hasAudio": false,
+      "menuLabel": "2-2. Family Members"
+    },
+    {
+      "id": "a2-3",
+      "title": "Our Careers (나의 직업 / 배우자의 직업)",
+      "label": "Chapter 2. Family Introduction (가족 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 2,
+      "part": 3,
+      "order": 9,
+      "hasAudio": false,
+      "menuLabel": "2-3. Our Careers"
+    },
+    {
+      "id": "a2-4",
+      "title": "Home Life (가정생활)",
+      "label": "Chapter 2. Family Introduction (가족 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 2,
+      "part": 4,
+      "order": 10,
+      "hasAudio": false,
+      "menuLabel": "2-4. Home Life"
+    },
+    {
+      "id": "a2-5",
+      "title": "Our Children's Personalities (자녀의 성격)",
+      "label": "Chapter 2. Family Introduction (가족 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 2,
+      "part": 5,
+      "order": 11,
+      "hasAudio": false,
+      "menuLabel": "2-5. Our Children's Personalities"
+    },
+    {
+      "id": "a2-6",
+      "title": "The Importance of Family (가족의 소중함)",
+      "label": "Chapter 2. Family Introduction (가족 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 2,
+      "part": 6,
+      "order": 12,
+      "hasAudio": false,
+      "menuLabel": "2-6. The Importance of Family"
+    },
+    {
+      "id": "a3-1",
+      "title": "Greeting (인사)",
+      "label": "Chapter 3. Friend Introduction (친구 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 3,
+      "part": 1,
+      "order": 13,
+      "hasAudio": false,
+      "menuLabel": "3-1. Greeting"
+    },
+    {
+      "id": "a3-2",
+      "title": "My Friends (나의 친구들)",
+      "label": "Chapter 3. Friend Introduction (친구 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 3,
+      "part": 2,
+      "order": 14,
+      "hasAudio": false,
+      "menuLabel": "3-2. My Friends"
+    },
+    {
+      "id": "a3-3",
+      "title": "My Best Friend (나의 가장 친한 친구)",
+      "label": "Chapter 3. Friend Introduction (친구 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 3,
+      "part": 3,
+      "order": 15,
+      "hasAudio": false,
+      "menuLabel": "3-3. My Best Friend"
+    },
+    {
+      "id": "a3-4",
+      "title": "My Friend's Talents (내 친구의 재능)",
+      "label": "Chapter 3. Friend Introduction (친구 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 3,
+      "part": 4,
+      "order": 16,
+      "hasAudio": false,
+      "menuLabel": "3-4. My Friend's Talents"
+    },
+    {
+      "id": "a3-5",
+      "title": "Benefits of Good Friends (좋은 친구를 가지면 좋은 점)",
+      "label": "Chapter 3. Friend Introduction (친구 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 3,
+      "part": 5,
+      "order": 17,
+      "hasAudio": false,
+      "menuLabel": "3-5. Benefits of Good Friends"
+    },
+    {
+      "id": "a4-1",
+      "title": "Greeting (인사)",
+      "label": "Chapter 4. Relative Introduction (친척 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 4,
+      "part": 1,
+      "order": 18,
+      "hasAudio": false,
+      "menuLabel": "4-1. Greeting"
+    },
+    {
+      "id": "a4-2",
+      "title": "Father's Siblings (아버지 형제)",
+      "label": "Chapter 4. Relative Introduction (친척 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 4,
+      "part": 2,
+      "order": 19,
+      "hasAudio": false,
+      "menuLabel": "4-2. Father's Siblings"
+    },
+    {
+      "id": "a4-3",
+      "title": "Mother's Siblings (어머니 형제)",
+      "label": "Chapter 4. Relative Introduction (친척 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 4,
+      "part": 3,
+      "order": 20,
+      "hasAudio": false,
+      "menuLabel": "4-3. Mother's Siblings"
+    },
+    {
+      "id": "a4-4",
+      "title": "My Grandparents (나의 조부모)",
+      "label": "Chapter 4. Relative Introduction (친척 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 4,
+      "part": 4,
+      "order": 21,
+      "hasAudio": false,
+      "menuLabel": "4-4. My Grandparents"
+    },
+    {
+      "id": "a4-5",
+      "title": "A Close Relative (친한 친척)",
+      "label": "Chapter 4. Relative Introduction (친척 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 4,
+      "part": 5,
+      "order": 22,
+      "hasAudio": false,
+      "menuLabel": "4-5. A Close Relative"
+    },
+    {
+      "id": "a4-6",
+      "title": "My Uncle's Talent (작은아버지의 재능)",
+      "label": "Chapter 4. Relative Introduction (친척 소개)",
+      "series": "a",
+      "variant": "main",
+      "unit": 4,
+      "part": 6,
+      "order": 23,
+      "hasAudio": false,
+      "menuLabel": "4-6. My Uncle's Talent"
+    },
+    {
+      "id": "a5-1",
+      "title": "Getting Out of Bed (기상)",
+      "label": "Chapter 5. My Day (나의 하루)",
+      "series": "a",
+      "variant": "main",
+      "unit": 5,
+      "part": 1,
+      "order": 24,
+      "hasAudio": false,
+      "menuLabel": "5-1. Getting Out of Bed"
+    },
+    {
+      "id": "a5-2",
+      "title": "Morning at Work (오전 업무)",
+      "label": "Chapter 5. My Day (나의 하루)",
+      "series": "a",
+      "variant": "main",
+      "unit": 5,
+      "part": 2,
+      "order": 25,
+      "hasAudio": false,
+      "menuLabel": "5-2. Morning at Work"
+    },
+    {
+      "id": "a5-3",
+      "title": "Lunch Break (점심시간)",
+      "label": "Chapter 5. My Day (나의 하루)",
+      "series": "a",
+      "variant": "main",
+      "unit": 5,
+      "part": 3,
+      "order": 26,
+      "hasAudio": false,
+      "menuLabel": "5-3. Lunch Break"
+    },
+    {
+      "id": "a5-4",
+      "title": "Afternoon Work (오후 업무)",
+      "label": "Chapter 5. My Day (나의 하루)",
+      "series": "a",
+      "variant": "main",
+      "unit": 5,
+      "part": 4,
+      "order": 27,
+      "hasAudio": false,
+      "menuLabel": "5-4. Afternoon Work"
+    },
+    {
+      "id": "a5-5",
+      "title": "Evening at Home (저녁 시간)",
+      "label": "Chapter 5. My Day (나의 하루)",
+      "series": "a",
+      "variant": "main",
+      "unit": 5,
+      "part": 5,
+      "order": 28,
+      "hasAudio": false,
+      "menuLabel": "5-5. Evening at Home"
+    },
+    {
+      "id": "a6-1",
+      "title": "Saturday — Men's Version (토요일 · 남성용)",
+      "label": "Chapter 6. My Weekend (나의 주말)",
+      "series": "a",
+      "variant": "main",
+      "unit": 6,
+      "part": 1,
+      "order": 29,
+      "hasAudio": false,
+      "menuLabel": "6-1. Saturday — Men's Version"
+    },
+    {
+      "id": "a6-2",
+      "title": "Saturday — Women's Version (토요일 · 여성용)",
+      "label": "Chapter 6. My Weekend (나의 주말)",
+      "series": "a",
+      "variant": "main",
+      "unit": 6,
+      "part": 2,
+      "order": 30,
+      "hasAudio": false,
+      "menuLabel": "6-2. Saturday — Women's Version"
+    },
+    {
+      "id": "a6-3",
+      "title": "Hobby Circle & Shopping (동호회와 장보기)",
+      "label": "Chapter 6. My Weekend (나의 주말)",
+      "series": "a",
+      "variant": "main",
+      "unit": 6,
+      "part": 3,
+      "order": 31,
+      "hasAudio": false,
+      "menuLabel": "6-3. Hobby Circle & Shopping"
+    },
+    {
+      "id": "a6-4",
+      "title": "Sunday & Religion (일요일과 종교)",
+      "label": "Chapter 6. My Weekend (나의 주말)",
+      "series": "a",
+      "variant": "main",
+      "unit": 6,
+      "part": 4,
+      "order": 32,
+      "hasAudio": false,
+      "menuLabel": "6-4. Sunday & Religion"
+    },
+    {
+      "id": "a6-5",
+      "title": "Sunday Afternoon (일요일 오후)",
+      "label": "Chapter 6. My Weekend (나의 주말)",
+      "series": "a",
+      "variant": "main",
+      "unit": 6,
+      "part": 5,
+      "order": 33,
+      "hasAudio": false,
+      "menuLabel": "6-5. Sunday Afternoon"
+    },
+    {
+      "id": "a7-1",
+      "title": "How Korea Was Founded (한국의 건국)",
+      "label": "Chapter 7. History (역사)",
+      "series": "a",
+      "variant": "main",
+      "unit": 7,
+      "part": 1,
+      "order": 34,
+      "hasAudio": false,
+      "menuLabel": "7-1. How Korea Was Founded"
+    },
+    {
+      "id": "a7-2",
+      "title": "The Kingdoms Are Divided (삼국의 분열과 통일)",
+      "label": "Chapter 7. History (역사)",
+      "series": "a",
+      "variant": "main",
+      "unit": 7,
+      "part": 2,
+      "order": 35,
+      "hasAudio": false,
+      "menuLabel": "7-2. The Kingdoms Are Divided"
+    },
+    {
+      "id": "a7-3",
+      "title": "Independence & the Korean War (독립과 한국전쟁)",
+      "label": "Chapter 7. History (역사)",
+      "series": "a",
+      "variant": "main",
+      "unit": 7,
+      "part": 3,
+      "order": 36,
+      "hasAudio": false,
+      "menuLabel": "7-3. Independence & the Korean War"
+    },
+    {
+      "id": "a7-4",
+      "title": "Development of Korea (한국의 발전)",
+      "label": "Chapter 7. History (역사)",
+      "series": "a",
+      "variant": "main",
+      "unit": 7,
+      "part": 4,
+      "order": 37,
+      "hasAudio": false,
+      "menuLabel": "7-4. Development of Korea"
+    },
+    {
+      "id": "a8-1",
+      "title": "Introduction to Korean Holidays (한국의 명절 소개)",
+      "label": "Chapter 8. Traditional Holidays (전통 명절)",
+      "series": "a",
+      "variant": "main",
+      "unit": 8,
+      "part": 1,
+      "order": 38,
+      "hasAudio": false,
+      "menuLabel": "8-1. Introduction to Korean Holidays"
+    },
+    {
+      "id": "a8-2",
+      "title": "Lunar New Year's Day (설날)",
+      "label": "Chapter 8. Traditional Holidays (전통 명절)",
+      "series": "a",
+      "variant": "main",
+      "unit": 8,
+      "part": 2,
+      "order": 39,
+      "hasAudio": false,
+      "menuLabel": "8-2. Lunar New Year's Day"
+    },
+    {
+      "id": "a8-3",
+      "title": "Chuseok (추석)",
+      "label": "Chapter 8. Traditional Holidays (전통 명절)",
+      "series": "a",
+      "variant": "main",
+      "unit": 8,
+      "part": 3,
+      "order": 40,
+      "hasAudio": false,
+      "menuLabel": "8-3. Chuseok"
+    },
+    {
+      "id": "a9-1",
+      "title": "Korean Culture Is Unique (한국 문화의 독특함)",
+      "label": "Chapter 9. Culture (문화)",
+      "series": "a",
+      "variant": "main",
+      "unit": 9,
+      "part": 1,
+      "order": 41,
+      "hasAudio": false,
+      "menuLabel": "9-1. Korean Culture Is Unique"
+    },
+    {
+      "id": "a9-2",
+      "title": "Clothes (의복)",
+      "label": "Chapter 9. Culture (문화)",
+      "series": "a",
+      "variant": "main",
+      "unit": 9,
+      "part": 2,
+      "order": 42,
+      "hasAudio": false,
+      "menuLabel": "9-2. Clothes"
+    },
+    {
+      "id": "a9-3",
+      "title": "Food (음식)",
+      "label": "Chapter 9. Culture (문화)",
+      "series": "a",
+      "variant": "main",
+      "unit": 9,
+      "part": 3,
+      "order": 43,
+      "hasAudio": false,
+      "menuLabel": "9-3. Food"
+    },
+    {
+      "id": "a9-4",
+      "title": "Language (언어)",
+      "label": "Chapter 9. Culture (문화)",
+      "series": "a",
+      "variant": "main",
+      "unit": 9,
+      "part": 4,
+      "order": 44,
+      "hasAudio": false,
+      "menuLabel": "9-4. Language"
+    },
+    {
+      "id": "a10-1",
+      "title": "Location (위치)",
+      "label": "Chapter 10. Famous Places (유명한 장소)",
+      "series": "a",
+      "variant": "main",
+      "unit": 10,
+      "part": 1,
+      "order": 45,
+      "hasAudio": false,
+      "menuLabel": "10-1. Location"
+    },
+    {
+      "id": "a10-2",
+      "title": "Several Famous Places (여러 유명한 장소들)",
+      "label": "Chapter 10. Famous Places (유명한 장소)",
+      "series": "a",
+      "variant": "main",
+      "unit": 10,
+      "part": 2,
+      "order": 46,
+      "hasAudio": false,
+      "menuLabel": "10-2. Several Famous Places"
+    },
+    {
+      "id": "a10-3",
+      "title": "Korean Folk Village (한국 민속촌)",
+      "label": "Chapter 10. Famous Places (유명한 장소)",
+      "series": "a",
+      "variant": "main",
+      "unit": 10,
+      "part": 3,
+      "order": 47,
+      "hasAudio": false,
+      "menuLabel": "10-3. Korean Folk Village"
+    },
+    {
+      "id": "a10-4",
+      "title": "Gyeongju (경주)",
+      "label": "Chapter 10. Famous Places (유명한 장소)",
+      "series": "a",
+      "variant": "main",
+      "unit": 10,
+      "part": 4,
+      "order": 48,
+      "hasAudio": false,
+      "menuLabel": "10-4. Gyeongju"
+    },
+    {
+      "id": "a10-5",
+      "title": "Jeju Island and Mt. Halla (제주도와 한라산)",
+      "label": "Chapter 10. Famous Places (유명한 장소)",
+      "series": "a",
+      "variant": "main",
+      "unit": 10,
+      "part": 5,
+      "order": 49,
+      "hasAudio": false,
+      "menuLabel": "10-5. Jeju Island and Mt. Halla"
+    },
+    {
+      "id": "a11-1",
+      "title": "Korean Politics during the Seventies and Eighties (1970~80년대 한국 정치)",
+      "label": "Chapter 11. Democracy in Korea (한국의 민주주의)",
+      "series": "a",
+      "variant": "main",
+      "unit": 11,
+      "part": 1,
+      "order": 50,
+      "hasAudio": false,
+      "menuLabel": "11-1. Korean Politics during the Seventies and Eighties"
+    },
+    {
+      "id": "a11-2",
+      "title": "The Progression of Democracy in Korea (한국 민주주의의 발전)",
+      "label": "Chapter 11. Democracy in Korea (한국의 민주주의)",
+      "series": "a",
+      "variant": "main",
+      "unit": 11,
+      "part": 2,
+      "order": 51,
+      "hasAudio": false,
+      "menuLabel": "11-2. The Progression of Democracy in Korea"
+    },
+    {
+      "id": "a11-3",
+      "title": "The Responsibility of Korean Citizens (한국 시민의 책임)",
+      "label": "Chapter 11. Democracy in Korea (한국의 민주주의)",
+      "series": "a",
+      "variant": "main",
+      "unit": 11,
+      "part": 3,
+      "order": 52,
+      "hasAudio": false,
+      "menuLabel": "11-3. The Responsibility of Korean Citizens"
+    },
+    {
+      "id": "a12-1",
+      "title": "The History of Education in Korea (한국 교육의 역사)",
+      "label": "Chapter 12. Education in Korea (한국의 교육)",
+      "series": "a",
+      "variant": "main",
+      "unit": 12,
+      "part": 1,
+      "order": 53,
+      "hasAudio": false,
+      "menuLabel": "12-1. The History of Education in Korea"
+    },
+    {
+      "id": "a12-2",
+      "title": "Education in Korea Today (오늘날의 한국 교육)",
+      "label": "Chapter 12. Education in Korea (한국의 교육)",
+      "series": "a",
+      "variant": "main",
+      "unit": 12,
+      "part": 2,
+      "order": 54,
+      "hasAudio": false,
+      "menuLabel": "12-2. Education in Korea Today"
+    },
+    {
+      "id": "a12-3",
+      "title": "The Problems of Korea's Educational Policies (한국 교육 정책의 문제점)",
+      "label": "Chapter 12. Education in Korea (한국의 교육)",
+      "series": "a",
+      "variant": "main",
+      "unit": 12,
+      "part": 3,
+      "order": 55,
+      "hasAudio": false,
+      "menuLabel": "12-3. The Problems of Korea's Educational Policies"
+    }
+  ]
+}

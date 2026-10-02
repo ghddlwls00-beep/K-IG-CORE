@@ -46,12 +46,14 @@ export function LessonEndBar({
   prev: Neighbour;
   next: Neighbour;
 }) {
-  const { isCompleted, toggleComplete, flushStudentUpdates } = useProgress();
+  const { isCompleted, toggleComplete, flushStudentUpdates, flushAdultUpdates } = useProgress();
+  // ADULT (2026-10-02) completes inside its view's Step 3 and waits for the save before '다음 강의', as STUDENT
+  const isChapterCourse = course === "student" || course === "adult";
   const router = useRouter();
   const [saving, setSaving] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
   const completed = isCompleted(course, lessonId);
-  const showComplete = course !== "student";
+  const showComplete = !isChapterCourse;
   const named = (n: NonNullable<Neighbour>) => (n.code ? `${n.code} · ${n.title}` : n.title);
   const gate = useSyncExternalStore(subscribeLessonGate, () => getLessonGate(course, lessonId), () => null);
   const blocked = showComplete && !completed && gate !== null && !gate.ready;
@@ -62,13 +64,13 @@ export function LessonEndBar({
   const reasonId = useId();
 
   async function goNext(event: MouseEvent<HTMLAnchorElement>) {
-    if (course !== "student" || !next) return;
+    if (!isChapterCourse || !next) return;
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     if (saving) return;
     setSaving(true);
     setNotice(null);
-    const result = await flushStudentUpdates();
+    const result = await (course === "adult" ? flushAdultUpdates() : flushStudentUpdates());
     if (result.status === "offline" || result.status === "error") {
       setNotice(
         result.status === "offline"

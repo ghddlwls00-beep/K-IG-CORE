@@ -41,7 +41,7 @@ interface StoredLicense {
  * the section pages or any non-lesson route.
  */
 const SERVER_GATED_LESSON_PATH =
-  /^\/(ld|reading|phonics|grammar1|grammar2|cnn|student|passoff-grammar)\/[^/]+$/;
+  /^\/(ld|reading|phonics|grammar1|grammar2|cnn|adult|student|passoff-grammar)\/[^/]+$/;
 
 interface LicenseContextType {
   hasActiveLicense: boolean;
@@ -62,6 +62,13 @@ interface LicenseContextType {
   studentProgressLoading: boolean;
   refreshStudentProgress: () => Promise<StudentProgressSnapshot | null>;
   applyStudentProgress: (progress: StudentProgressSnapshot) => void;
+  /**
+   * ADULT's chapter lock (2026-10-02) — STUDENT's, from ADULT's own record (/api/progress/adult): the same snapshot shape,
+   * asked for when a licence becomes active, written back by ProgressProvider's ADULT queue.
+   */
+  adultProgress: StudentProgressSnapshot | null;
+  refreshAdultProgress: () => Promise<StudentProgressSnapshot | null>;
+  applyAdultProgress: (progress: StudentProgressSnapshot) => void;
   /**
    * PASS-OFF GRAMMAR's topic lock as the server last answered — null without a licence or before the first answer.
    * PassoffProgressProvider reads and writes it (the server decides; isUnlocked only shows it).
@@ -120,6 +127,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   const [studentProgress, setStudentProgress] = useState<StudentProgressSnapshot | null>(null);
   const [studentProgressLoading, setStudentProgressLoading] = useState(false);
   const [passoffSnapshot, setPassoffSnapshot] = useState<PassoffProgressSnapshot | null>(null);
+  const [adultProgress, setAdultProgress] = useState<StudentProgressSnapshot | null>(null);
 
   useEffect(() => {
     const updateClock = () => setClock(Date.now());
@@ -304,6 +312,24 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     else setStudentProgress(null);
   }, [hasActiveLicense, refreshStudentProgress]);
 
+  // ADULT — as STUDENT above, from its own record. A plan that does not open ADULT gets 403 and keeps null.
+  const refreshAdultProgress = useCallback(async (): Promise<StudentProgressSnapshot | null> => {
+    try {
+      const response = await fetch("/api/progress/adult", { cache: "no-store" });
+      const data = await response.json();
+      if (!response.ok || !data.success) return null;
+      setAdultProgress(data.progress);
+      return data.progress as StudentProgressSnapshot;
+    } catch {
+      return null;
+    }
+  }, []);
+
+  useEffect(() => {
+    if (hasActiveLicense) void refreshAdultProgress();
+    else setAdultProgress(null);
+  }, [hasActiveLicense, refreshAdultProgress]);
+
   const licenseInfo: LicenseInfo | null = stored
     ? {
         maskedKey: stored.maskedKey ?? "",
@@ -339,6 +365,14 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       if (stored.plan === "LIFE") return true;
       const match = lessonId.match(/^s(\d+)-/);
       return Boolean(match && Number(match[1]) <= (studentProgress?.unlockedThrough || 1));
+    }
+
+    // ADULT opens chapter by chapter exactly as STUDENT — as its own record last answered; chapter 1 until it has. LIFE: all.
+    if (courseSlug === "adult") {
+      if (!planOpensCourse(stored.plan, courseSlug)) return false;
+      if (stored.plan === "LIFE") return true;
+      const match = lessonId.match(/^a(\d+)-/);
+      return Boolean(match && Number(match[1]) <= (adultProgress?.unlockedThrough || 1));
     }
 
     // PASS-OFF GRAMMAR opens topic by topic (설계 §5) — as the server last answered; TOPIC 1 until it has. LIFE: all.
@@ -483,6 +517,9 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         studentProgressLoading,
         refreshStudentProgress,
         applyStudentProgress: setStudentProgress,
+        adultProgress,
+        refreshAdultProgress,
+        applyAdultProgress: setAdultProgress,
         passoffProgress,
         applyPassoffProgress: setPassoffSnapshot,
       }}

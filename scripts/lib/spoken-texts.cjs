@@ -23,7 +23,7 @@
  *            (CNN 밖에서는 늘 합성 음성 모드 — shouldUseUnifiedSpeech). 대개 위 목록 안의 영어지만 추측하지 않고 **그 함수를 그대로 돌려** 더한다
  *            (그렇게 해서 찾은 것: gh1-084 가 한국어 문제 31개를 영어로 여겨 읽던 BUG-026 — 고침). 보이는 조건은 page.tsx 대로
  *            (STUDENT 는 녹음이 하나일 때만).
- * 한국어를 소리 내는 것은 STUDENT 뿐이다.
+ * 한국어를 소리 내는 것은 STUDENT 뿐이다 — 그리고 STUDENT 화면을 같이 쓰는 ADULT(2026-10-02).
  * 주소가 있는 6개 과정만(src/lib/generated/validRoutes.json) — CNN(원래 방송 음성) · 폐지된 옛 과정은 소리를 부르는 화면이 없다.
  * 부르는 쪽은 그 과정 안에서도 **주소가 있는 쪽만** 돌린다(validRoutes.lessons[과정]) — ld/LD_001 처럼 폴더에 있어도 열리지 않는
  * 파일은 소리 낼 곳이 없다(7-2 재점검: 생성기가 그 파일의 한국어 3줄을 세고 있었다). 짝은 어느 파일에서든 빌려 온다.
@@ -45,7 +45,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const SPOKEN_COURSES = ["student", "phonics", "grammar1", "grammar2", "ld", "reading", "passoff-grammar"];
+const SPOKEN_COURSES = ["student", "adult", "phonics", "grammar1", "grammar2", "ld", "reading", "passoff-grammar"];
 const isKo = (s) => /[가-힣]/.test(String(s || ""));
 /** GrammarLearningView · page.tsx cleanText 와 같은 것 — 앞 번호 "1. " 와 " / " */
 const cleanText = (s) => String(s || "").replace(/^\s*\d+[.)]\s*/, "").replace(/\s*\/\s*/g, " ").trim();
@@ -90,7 +90,7 @@ function pairIdOf(course, id, index) {
 // lessonSpeechForm — 쪽마다 정한 소리 꼴(src/lib/lessonSpeechForm.ts): 로마자 한국어 낱말은 한글로(소유자 결정 2026-09-25) · d169 대분수
 const FNS = ["vocaSpeechForm", "getCollocation", "generateLiaisonPoints", "extractSentencesForAudio", "firstSlashAlternative", "vocaWordSpeech", "readingWordSpeech", "lessonSpeechForm"];
 /** page.tsx 와 같은 선택 — 이 과정의 항목을 어떻게 말하나(위 플레이어에 넘김) */
-const speechFormFor = (course, fns) => (course === "student" ? fns.firstSlashAlternative : course === "phonics" ? fns.vocaWordSpeech : undefined);
+const speechFormFor = (course, fns) => (course === "student" || course === "adult" ? fns.firstSlashAlternative : course === "phonics" ? fns.vocaWordSpeech : undefined);
 function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictionary = {}, fns }) {
   if (!fns || FNS.some((k) => typeof fns[k] !== "function")) {
     throw new Error(`spokenTexts: fns(${FNS.join(" · ")})를 src 에서 불러 넘겨야 함`);
@@ -103,13 +103,14 @@ function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictiona
   // 위 '전체 듣기' — page.tsx 와 같은 입력으로 그 함수를 그대로(page.tsx 도 그 결과에 lessonSpeechForm)
   const audio = (lesson && Array.isArray(lesson.audio) ? lesson.audio : []).filter((a, i, all) => all.findIndex((x) => x.src === a.src) === i);
   // (PASS-OFF GRAMMAR 는 위 플레이어가 없다 — page.tsx)
-  if (course !== "passoff-grammar" && (course !== "student" || audio.length === 1)) {
+  if (course !== "passoff-grammar" && ((course !== "student" && course !== "adult") || audio.length === 1)) {
     const base = (s) => String(s).replace(/-1$/, "");
     const script = course === "ld" ? (ldScripts[base(id)] || (pair && pair.id ? ldScripts[base(pair.id)] : null) || null) : null;
     const reading = (lesson && lesson.readingSentences) || (pair && pair.readingSentences) || null;
     for (const t of fns.extractSentencesForAudio(blocksOf(lesson), pair ? blocksOf(pair) : null, Boolean(lesson && lesson.variant === "script"), course, script, reading, speechFormFor(course, fns)) || []) add(en(t));
   }
-  if (course === "student") {
+  // ADULT (2026-10-02) is spoken exactly as STUDENT — StudentLearningView is its view too: English and the Korean line
+  if (course === "student" || course === "adult") {
     for (const it of itemsOf(lesson)) if (it && typeof it.text === "string") add(en(fns.firstSlashAlternative(it.text)));
     for (const b of blocksOf(lesson)) if (b && b.type === "paragraph" && b.lang === "ko") add(b.text);
   } else if (course === "grammar1" || course === "grammar2") {

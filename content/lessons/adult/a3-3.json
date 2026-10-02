@@ -1,0 +1,55 @@
+{
+  "id": "a3-3",
+  "course": "adult",
+  "series": "a",
+  "variant": "main",
+  "pairId": null,
+  "title": "My Best Friend (나의 가장 친한 친구)",
+  "label": "Chapter 3. Friend Introduction (친구 소개)",
+  "menuLabel": "3-3. My Best Friend",
+  "unit": 3,
+  "part": 3,
+  "order": 15,
+  "audio": [],
+  "video": [],
+  "blocks": [
+    {
+      "type": "instruction",
+      "text": "Chapter 3. Friend Introduction (친구 소개) - My Best Friend (나의 가장 친한 친구)"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "1",
+          "text": "My best friend is Daehan, who now runs a small company and leads his team with an outstanding, genuinely collaborative style."
+        },
+        {
+          "n": "2",
+          "text": "Whenever I need help, he treats my problem as if it were his own, which is why I trust him more than almost anyone."
+        },
+        {
+          "n": "3",
+          "text": "Since we live close to each other, we've been meeting often to play sports, and we remain supportive of each other's long-term visions."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "제 가장 친한 친구는 대한이인데, 지금은 작은 회사를 운영하며 탁월하고 진정으로 협력적인 방식으로 팀을 이끌고 있습니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "제가 도움이 필요할 때마다 그는 제 문제를 자기 일처럼 여기는데, 그래서 저는 그를 누구보다도 신뢰합니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "우리는 가까이 살기 때문에 자주 만나 함께 운동을 해 오고 있으며, 서로의 장기적인 비전을 든든히 응원하고 있습니다.",
+      "lang": "ko"
+    }
+  ],
+  "legacyPath": "docs/adult/ppt-본문.json#3과.pptx",
+  "legacyEncoding": "utf-8"
+}

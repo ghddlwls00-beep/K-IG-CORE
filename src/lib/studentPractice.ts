@@ -24,6 +24,16 @@ export const STUDENT_LEARNING_PROFILE: CourseProfile = {
   elementKinds: [],
 };
 
+/**
+ * ADULT (2026-10-02) — taught by the same view and rules as STUDENT; its own name for the learning engine, so ADULT's
+ * sentences are reviewed as ADULT's (kig-learning:adult), never mixed into STUDENT's.
+ */
+export const ADULT_LEARNING_PROFILE: CourseProfile = {
+  course: "adult",
+  secondsPerKind: { sentence: 20 },
+  elementKinds: [],
+};
+
 /** The microphone score that counts a sentence as spoken (STUDENT's pass mark). */
 export const STUDENT_MIC_PASS = 70;
 

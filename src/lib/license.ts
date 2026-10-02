@@ -83,10 +83,10 @@ export function isStudentOnlyPlan(plan?: string | null): boolean {
 
 /**
  * The courses a STUDENT pass ("STU…" plans) opens. PASS-OFF GRAMMAR joined STUDENT on the
- * owner's decision (D3, 2026-09-27 — docs/pass-off-grammar/설계.md §6). Every other course
- * needs an all-pass.
+ * owner's decision (D3, 2026-09-27 — docs/pass-off-grammar/설계.md §6), ADULT on the owner's
+ * answer of 2026-10-02 ("STUDENT 이용권도 열기"). Every other course needs an all-pass.
  */
-export const STUDENT_PASS_COURSES: readonly string[] = ["student", "passoff-grammar"];
+export const STUDENT_PASS_COURSES: readonly string[] = ["student", "passoff-grammar", "adult"];
 
 /**
  * The same courses by their menu names, for the copy that tells a learner or the admin what a STUDENT
@@ -94,7 +94,7 @@ export const STUDENT_PASS_COURSES: readonly string[] = ["student", "passoff-gram
  * transpile it alone), so the names are written out here, and docs/pass-off-grammar/검사/plan-access.cjs
  * fails when they stop matching courses.ts's titles of STUDENT_PASS_COURSES.
  */
-export const STUDENT_PASS_SCOPE = "STUDENT · PASS-OFF GRAMMAR";
+export const STUDENT_PASS_SCOPE = "STUDENT · PASS-OFF GRAMMAR · ADULT";
 
 /**
  * THE ONE ANSWER TO "DOES THIS PLAN OPEN THIS COURSE?" The lesson gate
@@ -149,6 +149,7 @@ export function getPlanLabel(plan: LicensePlan | string): string {
  */
 export const FREE_PREVIEW_LESSON_IDS: Record<string, readonly string[]> = {
   student: ["s1-1", "s1-2"],
+  adult: ["a1-1", "a1-2"],
   // D4 — the first two lessons, as every course. The paid STUDENT sentences of pg01-1 are not in
   // its file: a licence adds them on the server (src/lib/passoffContent.ts).
   "passoff-grammar": ["pg01-1", "pg01-2"],

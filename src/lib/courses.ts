@@ -47,6 +47,20 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
       "일상 회화로 마스터하는 실전 듣기와 정독 훈련.",
     series: [{ slug: "s", title: "Conversation Lessons", prefix: "s" }],
   },
+  // ADULT (2026-10-02, docs/adult/README.md) — made from the owner's Pass-Off English adult PPTs, taught exactly as STUDENT
+  // (사장님 "학습법은 student랑 완전히 똑같이"). Lessons are "a<chapter>-<part>", numbered like STUDENT's unit-part. Not the
+  // legacy "adults" folder (content/lessons/adults), which is no course of this site.
+  {
+    slug: "adult",
+    tab: "adult",
+    legacyFolder: "adult",
+    numbering: "unit-part",
+    title: "ADULT",
+    titleEn: "Adult",
+    kind: "audio-drill",
+    description: "성인 실전 회화. 자기소개부터 한국의 역사·문화·사회까지, 어른의 말로 듣고 받아쓰고 따라 말합니다.",
+    series: [{ slug: "a", title: "Conversation Lessons", prefix: "a" }],
+  },
   // PASS-OFF GRAMMAR (2026-09-27, docs/pass-off-grammar/설계.md) — made from the Pass-Off English
   // Grammar textbooks, not from the legacy archive, so there is no legacy folder to point at.
   // Lessons are "pg<topic>-<link>" (pg02-1 = TOPIC 2, first link), numbered like STUDENT's unit-part.

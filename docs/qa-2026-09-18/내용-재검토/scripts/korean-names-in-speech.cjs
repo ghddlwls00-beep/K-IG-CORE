@@ -124,6 +124,8 @@ const KO = {
   // PASS-OFF GRAMMAR 2·3권(2026-09-28): Hanguk Elementary School(pg11-1) · Mr. Jung(pg11-3 · pg16-3) · Jinna(pg09-1 — 교재에 한국어가
   // 없는 문장이라 '진나'는 내용 세션의 읽기, 샘플에서 진나/지나 확인)
   hanguk: "한국", jung: "정", jinna: "진나",
+  // ADULT(2026-10-02): 3과 친구 '대한 · 민국' · 6과 찜질방 · 11과 광주 민주화 운동 · 12과 학원(복수 hagwons) — lessonSpeechForm.ts 에 기호와 행
+  minguk: "민국", jjimjilbang: "찜질방", gwangju: "광주", hagwons: "학원",
 };
 // 한국어 이름인데 이 글에서는 한국어가 아닌 사람 · 영어 낱말인 것(과정 · 까닭) — 낱말 판정보다 먼저 본다
 const NOT_IN = [
@@ -149,7 +151,9 @@ const NOT = new Set(("korea korean koreans korea's korea’s i'm i’m we're we�
   // PASS-OFF GRAMMAR 2·3권(2026-09-28, 이끄는 세션): 영어 이름 · 낱말 — Rachael is prettier than Leah(pg09-2) · Tim helped me(pg10-1) ·
   // If I visit LA again(pg11-1, 로스앤젤레스) · Kira needs to take(pg13-1) · Alice and Jo(pg18-1) · Jake runs faster(pg18-4) ·
   // Robin, as you know(pg20-2) · barking · Singapore · you'd
-  "rachael tim la kira jo jake robin barking singapore you'd").split(/\s+/));
+  "rachael tim la kira jo jake robin barking singapore you'd " +
+  // ADULT(2026-10-02): 영어 낱말 — Heated partisan conflicts(a11-2)
+  "heated").split(/\s+/));
 // 한국어 이름 판정에서 뺀 낱말 가운데 성씨처럼 쓰일 수 있는 영어 낱말(문장 가운데 대문자면 따로 봄)
 const SURNAME_LIKE = /(?<=\S\s+)(Park|Oh|Moon|Song|Son|Lee|Choi|Jung|Kang|Cho|Yoon|Jang|Lim|Shin|Kwon|Hwang|Ahn|Yoo|Jeon|Ko|Bae|Baek|Nam|Min|Ryu|Jin)(?![A-Za-z])/;
 const unjudged = candidates.filter((k) => !(k in KO) && !NOT.has(k) && !english.has(k));

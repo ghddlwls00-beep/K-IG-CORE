@@ -31,7 +31,7 @@ import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"]; // as the probe
+const COURSES = ["student", "adult", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"]; // as the probe
 const MIN = 20;
 
 /** Transpile a TS module that has no runtime imports (license.ts) — as buildFreeSpeechKeys.mjs does. */

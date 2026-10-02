@@ -84,6 +84,9 @@ export function getLesson(course: string, id: string): Lesson | null {
     case "student":
       courseDir = path.join(CONTENT_DIR, "lessons", "student");
       break;
+    case "adult":
+      courseDir = path.join(CONTENT_DIR, "lessons", "adult");
+      break;
     case "passoff-grammar":
       courseDir = path.join(CONTENT_DIR, "lessons", "passoff-grammar");
       break;

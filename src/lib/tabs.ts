@@ -30,6 +30,15 @@ export const TABS: Tab[] = [
     courses: ["student"],
     blurb: "Real Conversations. Pure Listening & Reading.",
   },
+  // ADULT — a new section (2026-10-02), right after STUDENT (사장님 "student 다음에 adult 섹션"). No legacy image or page.
+  {
+    slug: "adult",
+    label: "ADULT",
+    legacyImage: "",
+    legacyIndex: "",
+    courses: ["adult"],
+    blurb: "Grown-up Conversations. Listen, Write, Speak.",
+  },
   // PASS-OFF GRAMMAR — a new section (2026-09-27), so it has no legacy image or page. It sits
   // right after STUDENT (STAGE 02). To take it off the menu, remove this entry — see
   // docs/pass-off-grammar/작업기록.md "되돌리기".

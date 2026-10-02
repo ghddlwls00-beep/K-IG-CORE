@@ -38,7 +38,8 @@ import type { VoiceGender } from "@/lib/speech";
 export function generateStaticParams() {
   // STUDENT and PASS-OFF GRAMMAR have routes of their own (src/app/student · src/app/passoff-grammar) that gate
   // the chapter / topic order first and then render this page
-  return getAllLessonParams().filter((item) => item.course !== "student" && item.course !== "passoff-grammar");
+  // (ADULT too — src/app/adult, 2026-10-02)
+  return getAllLessonParams().filter((item) => item.course !== "student" && item.course !== "adult" && item.course !== "passoff-grammar");
 }
 
 /**
@@ -60,7 +61,7 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 /** BUG-023 — courses whose view the page renders itself (see the lesson body below). */
-const DIRECT_VIEW_COURSES = new Set(["ld", "reading", "grammar1", "grammar2", "phonics", "student", "passoff-grammar"]);
+const DIRECT_VIEW_COURSES = new Set(["ld", "reading", "grammar1", "grammar2", "phonics", "student", "adult", "passoff-grammar"]);
 
 /**
  * The banner that represents each course in a share card. Mirrors the map on
@@ -77,6 +78,7 @@ const COURSE_OG_IMAGE: Record<string, string> = {
   reading: "/images/og/reading.jpg",
   cnn: "/images/og/cnn.jpg",
   student: "/images/og/students.jpg",
+  adult: "/images/og/men.jpg",
   // GRAMMAR I's banner until PASS-OFF GRAMMAR has its own (docs/pass-off-grammar/작업기록.md)
   "passoff-grammar": "/images/og/passoff-grammar.jpg",
   chinese: "/images/og/chinese.jpg",
@@ -283,7 +285,7 @@ export default async function LessonPage({
     topLevelAudio = englishAudio ? [englishAudio] : [];
   } else if (course === "middle" && topLevelAudio.length > 1) {
     topLevelAudio = [topLevelAudio[0]];
-  } else if (["man", "woman", "student", "chinese"].includes(course) && topLevelAudio.length > 1) {
+  } else if (["man", "woman", "student", "adult", "chinese"].includes(course) && topLevelAudio.length > 1) {
     topLevelAudio = [];
   }
 
@@ -297,13 +299,14 @@ export default async function LessonPage({
     lesson.readingSentences ?? pairLesson?.readingSentences,
     // how this course's items are spoken — STUDENT "He/She …" in its first form (BUG-028) ·
     // a VOCA heteronym in its card meaning under its own clip name (7-6)
-    course === "student" ? firstSlashAlternative : course === "phonics" ? vocaWordSpeech : undefined,
+    course === "student" || course === "adult" ? firstSlashAlternative : course === "phonics" ? vocaWordSpeech : undefined,
   // said as the course view says it where the written form would be read wrongly (lessonSpeechForm): a Korean word written in
   // romanization in Korean (소유자 결정 2026-09-25) · LISTENING d169 "1 1/2" as "1 and a half"
   ).map((text) => lessonSpeechForm(`${course}/${lesson.id}`, text));
 
   const isGrammar = course === "grammar1" || course === "grammar2";
-  const isStudent = course === "student";
+  // ADULT is taught exactly as STUDENT (2026-10-02): the same chapter line, neighbour names and view
+  const isStudent = course === "student" || course === "adult";
   /**
    * 2026-09-27 STUDENT 학습법 · 화면 고침 (STU-U17 · STU-U10): a STUDENT neighbour is named by its chapter code and its
    * own title — 'Ch 12-1 · School Vacations (방학맞이)'. The presentation title's 'Part 1 ·' is the code's second half,
@@ -327,7 +330,7 @@ export default async function LessonPage({
             label={a.label && topLevelAudio.length > 1 ? a.label : undefined}
           />
         ))
-      : fallbackSentences.length > 0 && !["man", "woman", "student", "chinese", "passoff-grammar"].includes(course)
+      : fallbackSentences.length > 0 && !["man", "woman", "student", "adult", "chinese", "passoff-grammar"].includes(course)
         ? [
             <AudioPlayer
               key="fallback"
@@ -521,7 +524,7 @@ export default async function LessonPage({
               blocks={lesson.blocks}
               lessonKey={`${course}/${lesson.id}`}
               audioTracks={audio}
-              firstWordKeepsCase={studentFirstWordKeepsCase(lesson.blocks)}
+              firstWordKeepsCase={studentFirstWordKeepsCase(lesson.blocks, course)}
               next={next && nextPresentation ? { id: next.id, ...neighbour(next.id, nextPresentation), code: nextPresentation.code } : null}
             />
           )}

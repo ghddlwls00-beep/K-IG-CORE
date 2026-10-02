@@ -103,7 +103,7 @@ export function extractSentencesForAudio(
     .filter((b) => b.type === "sentences")
     .flatMap((b) => (b as { type: "sentences"; items?: { text: string }[] }).items || []);
   if (sentItems.length > 0) {
-    const spoken = course === "student" && speechForm ? speechForm : (t: string) => t;
+    const spoken = (course === "student" || course === "adult") && speechForm ? speechForm : (t: string) => t;
     return sentItems.map((it) => cleanText(spoken(it.text))).filter(Boolean);
   }
 

@@ -68,6 +68,7 @@ import {
 } from "@/lib/studentDictation";
 import { blanksOf, fixedRunsOf, micTargets, readMyInfo, segmentsOf, writeMyInfo, type Blank } from "@/lib/studentBlanks";
 import {
+  ADULT_LEARNING_PROFILE,
   STUDENT_LEARNING_PROFILE,
   STUDENT_MIC_PASS,
   canCompleteLesson,
@@ -176,10 +177,16 @@ function headerHeight(): number {
 
 export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: keepFromServer, next = null }: StudentLearningViewProps) {
   const lessonId = lessonKey.split("/").pop() || lessonKey;
+  // ADULT (2026-10-02) is taught by this same view — the course only picks whose record, chapters and review it is
+  const course: "student" | "adult" = lessonKey.startsWith("adult/") ? "adult" : "student";
+  const learningProfile = course === "adult" ? ADULT_LEARNING_PROFILE : STUDENT_LEARNING_PROFILE;
   const router = useRouter();
-  const { isCompleted, toggleComplete, flushStudentUpdates, studentSyncStatus } = useProgress();
-  const { hasActiveLicense, licenseInfo, studentProgress } = useLicense();
-  const lessonCompleted = isCompleted("student", lessonId);
+  const { isCompleted, toggleComplete, flushStudentUpdates, studentSyncStatus, flushAdultUpdates, adultSyncStatus } = useProgress();
+  const { hasActiveLicense, licenseInfo, studentProgress: studentRecord, adultProgress } = useLicense();
+  const studentProgress = course === "adult" ? adultProgress : studentRecord;
+  const chapterSyncStatus = course === "adult" ? adultSyncStatus : studentSyncStatus;
+  const flushChapterUpdates = course === "adult" ? flushAdultUpdates : flushStudentUpdates;
+  const lessonCompleted = isCompleted(course, lessonId);
 
   // ------------------------------------------------------------------------------------------------------------
   // The lesson: English sentences and the Korean line of each
@@ -551,7 +558,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
   const recordSentence = useCallback(
     (idx: number, correct: boolean, help: "none" | "hint", mode: "tap" | "voice", firstTry: boolean) => {
       try {
-        recordAttempt(STUDENT_LEARNING_PROFILE, `${lessonId}#${idx + 1}`, {
+        recordAttempt(learningProfile, `${lessonId}#${idx + 1}`, {
           lessonId,
           kind: "sentence",
           correct,
@@ -564,7 +571,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
         // storage unavailable: the lesson works, only the review forgets
       }
     },
-    [lessonId],
+    [learningProfile, lessonId],
   );
 
   // ------------------------------------------------------------------------------------------------------------
@@ -695,10 +702,10 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
   const practisedHere = solvedCount + spokenCount + countOf(practice.hinted) > 0;
   const complete = () => {
     if (lessonCompleted || !canComplete) return;
-    toggleComplete("student", lessonId);
+    toggleComplete(course, lessonId);
     try {
       markLessonDone(
-        STUDENT_LEARNING_PROFILE,
+        learningProfile,
         lessonId,
         sentenceItems.map((_, i) => ({ key: `${lessonId}#${i + 1}`, kind: "sentence" })),
       );
@@ -707,16 +714,16 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
     }
   };
   const undoComplete = () => {
-    if (lessonCompleted) toggleComplete("student", lessonId);
+    if (lessonCompleted) toggleComplete(course, lessonId);
   };
 
-  const chapterOf = (id: string) => Number(id.match(/^s(\d+)-/)?.[1] ?? 0);
+  const chapterOf = (id: string) => Number(id.match(/^[sa](\d+)-/)?.[1] ?? 0);
   const thisChapter = chapterOf(lessonId);
   const nextChapter = next ? chapterOf(next.id) : 0;
   const periodPass = hasActiveLicense && licenseInfo?.plan !== "LIFE";
   const lockedByChapter = (unlockedThrough: number | null | undefined) =>
     Boolean(next && periodPass && typeof unlockedThrough === "number" && nextChapter > thisChapter && nextChapter > unlockedThrough);
-  const nextLocked = lockedByChapter(studentProgress?.unlockedThrough) && studentSyncStatus !== "syncing" && studentSyncStatus !== "pending";
+  const nextLocked = lockedByChapter(studentProgress?.unlockedThrough) && chapterSyncStatus !== "syncing" && chapterSyncStatus !== "pending";
 
   async function goNext(event: MouseEvent<HTMLAnchorElement>) {
     if (!next) return;
@@ -725,7 +732,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
     if (navSaving) return;
     setNavSaving(true);
     setNavNotice(null);
-    const result = await flushStudentUpdates();
+    const result = await flushChapterUpdates();
     if (result.status === "offline" || result.status === "error") {
       setNavNotice(
         result.status === "offline"
@@ -1323,7 +1330,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
   return (
     <div className="flex flex-col gap-3" data-student-view data-step={stepNumber}>
       <StepTabs
-        label="STUDENT 3단계 학습"
+        label={course === "adult" ? "ADULT 3단계 학습" : "STUDENT 3단계 학습"}
         stepStart
         current={stepNumber}
         onSelect={(n) => switchMode(STEPS[n - 1]?.mode ?? "listen")}

@@ -1,0 +1,55 @@
+{
+  "id": "a1-1",
+  "course": "adult",
+  "series": "a",
+  "variant": "main",
+  "pairId": null,
+  "title": "Greeting (인사)",
+  "label": "Chapter 1. Self-Introduction (자기소개)",
+  "menuLabel": "1-1. Greeting",
+  "unit": 1,
+  "part": 1,
+  "order": 1,
+  "audio": [],
+  "video": [],
+  "blocks": [
+    {
+      "type": "instruction",
+      "text": "Chapter 1. Self-Introduction (자기소개) - Greeting (인사)"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "1",
+          "text": "Nice to meet you."
+        },
+        {
+          "n": "2",
+          "text": "It's a pleasure to be with you today."
+        },
+        {
+          "n": "3",
+          "text": "First of all, thank you for giving me a chance to introduce myself."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "만나서 반갑습니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "오늘 여러분과 함께하게 되어 기쁩니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "우선 제 소개를 할 기회를 주셔서 감사합니다.",
+      "lang": "ko"
+    }
+  ],
+  "legacyPath": "docs/adult/ppt-본문.json#1과.pptx",
+  "legacyEncoding": "utf-8"
+}

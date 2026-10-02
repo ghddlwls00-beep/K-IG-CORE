@@ -21,16 +21,39 @@
 import { expandSlashAlternatives } from "@/lib/listeningUtils";
 import { tokensOf, type FixedRun } from "@/lib/studentDictation";
 
-/** Brackets that are not blanks: lesson id → 0-based sentence indexes. */
-const NOT_BLANK: Record<string, number[]> = { "s20-5": [5] };
+/** Brackets that are not blanks: lesson id → 0-based sentence indexes. ADULT a10-5 #6 is STUDENT s20-5 #6. */
+const NOT_BLANK: Record<string, number[]> = { "s20-5": [5], "a10-5": [5] };
 
-/** Blanks written without brackets: the free lesson s1-2's sample name and city (lesson id → sentence index → blanks). */
+/**
+ * Blanks written without brackets: the free lesson s1-2's sample name and city (lesson id → sentence index → blanks).
+ * ADULT a1-2 (2026-10-02 — the PPT's 홍길동 · 서울 · 부산 … written in romanization as s1-2 and made '내 정보' blanks, 사장님
+ * "STUDENT 1-2 처럼"): the name, the cities, the school, the year and the age. A word written twice in a sentence ("Hong",
+ * "Busan") takes the next place not already a blank.
+ */
 const EXTRA_BLANKS: Record<string, Record<number, { text: string; label: string }[]>> = {
   "s1-2": {
     0: [
       { text: "Hong Gil Dong", label: "내 이름" },
       { text: "Seoul", label: "사는 곳" },
     ],
+  },
+  "a1-2": {
+    0: [
+      { text: "Hong Gil Dong", label: "내 이름" },
+      { text: "Hong", label: "내 성" },
+    ],
+    1: [
+      { text: "Seoul", label: "태어난 곳" },
+      { text: "Busan", label: "사는 곳" },
+    ],
+    2: [{ text: "Busan", label: "아파트 이름" }],
+    3: [
+      { text: "Busan Women's High School", label: "졸업한 고등학교" },
+      { text: "1980", label: "졸업한 해" },
+      { text: "Busan", label: "고등학교가 있는 곳" },
+    ],
+    5: [{ text: "Hanguk", label: "대학교 이름" }],
+    6: [{ text: "40", label: "나이" }],
   },
 };
 
@@ -60,8 +83,10 @@ export function blanksOf(lessonId: string, sentenceIndex: number, text: string):
     }
   }
   for (const extra of EXTRA_BLANKS[lessonId]?.[sentenceIndex] ?? []) {
-    const at = text.indexOf(extra.text);
-    if (at >= 0 && !found.some((b) => at < b.end && b.start < at + extra.text.length)) {
+    const overlaps = (at: number) => found.some((b) => at < b.end && b.start < at + extra.text.length);
+    let at = text.indexOf(extra.text);
+    while (at >= 0 && overlaps(at)) at = text.indexOf(extra.text, at + 1);
+    if (at >= 0) {
       found.push({ start: at, end: at + extra.text.length, text: extra.text, label: extra.label });
     }
   }

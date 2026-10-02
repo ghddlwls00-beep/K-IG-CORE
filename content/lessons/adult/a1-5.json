@@ -1,0 +1,64 @@
+{
+  "id": "a1-5",
+  "course": "adult",
+  "series": "a",
+  "variant": "main",
+  "pairId": null,
+  "title": "Subject (과목)",
+  "label": "Chapter 1. Self-Introduction (자기소개)",
+  "menuLabel": "1-5. Subject",
+  "unit": 1,
+  "part": 5,
+  "order": 5,
+  "audio": [],
+  "video": [],
+  "blocks": [
+    {
+      "type": "instruction",
+      "text": "Chapter 1. Self-Introduction (자기소개) - Subject (과목)"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "1",
+          "text": "I study many different subjects, but my favorite subject is English."
+        },
+        {
+          "n": "2",
+          "text": "I study English every day."
+        },
+        {
+          "n": "3",
+          "text": "I have been studying English for (2) months so far."
+        },
+        {
+          "n": "4",
+          "text": "I like studying English because it is fun and exciting to learn."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "저는 여러 과목을 공부하지만, 가장 좋아하는 과목은 영어입니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "저는 매일 영어를 공부합니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "저는 지금까지 (2)개월 동안 영어를 공부해 오고 있습니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "배우는 것이 재미있고 신나기 때문에 저는 영어 공부를 좋아합니다.",
+      "lang": "ko"
+    }
+  ],
+  "legacyPath": "docs/adult/ppt-본문.json#1과.pptx",
+  "legacyEncoding": "utf-8"
+}

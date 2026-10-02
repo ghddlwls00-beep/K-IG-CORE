@@ -291,6 +291,20 @@ export function formatLessonPresentation(
     };
   }
 
+  // 9-1. ADULT (2026-10-02) — "a7-2", presented exactly as STUDENT's lessons
+  if (courseSlug === "adult") {
+    const parts = id.replace(/^a/, "").split("-");
+    const chapter = parts[0] || "1";
+    const part = parts[1] || "1";
+    const lessonTitle = lesson.title || rawLabel || `Part ${part}`;
+    return {
+      title: `Part ${part} · ${lessonTitle}`,
+      subtitle: lesson.label || `Chapter ${chapter} · 성인 실전 회화`,
+      badge: "🎙️ 실전 회화",
+      code: `Ch ${chapter}-${part}`,
+    };
+  }
+
   // 9-2. PASS-OFF GRAMMAR — "pg02-1" is TOPIC 2's first link on the textbook's structure map.
   // The title is the link's own words (D1), the topic goes underneath as STUDENT's chapter does.
   if (courseSlug === "passoff-grammar") {

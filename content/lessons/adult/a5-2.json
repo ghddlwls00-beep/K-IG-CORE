@@ -1,0 +1,55 @@
+{
+  "id": "a5-2",
+  "course": "adult",
+  "series": "a",
+  "variant": "main",
+  "pairId": null,
+  "title": "Morning at Work (오전 업무)",
+  "label": "Chapter 5. My Day (나의 하루)",
+  "menuLabel": "5-2. Morning at Work",
+  "unit": 5,
+  "part": 2,
+  "order": 25,
+  "audio": [],
+  "video": [],
+  "blocks": [
+    {
+      "type": "instruction",
+      "text": "Chapter 5. My Day (나의 하루) - Morning at Work (오전 업무)"
+    },
+    {
+      "type": "sentences",
+      "items": [
+        {
+          "n": "1",
+          "text": "My workday begins with a meeting among my team members, who share their opinions openly and set goals aimed at improving how efficiently we work."
+        },
+        {
+          "n": "2",
+          "text": "These sessions aren't just about reviewing past performance, but about building the kind of collaborative habits that keep a team moving in one direction."
+        },
+        {
+          "n": "3",
+          "text": "Once the meeting wraps up, I turn to the tasks I've set for the day, which I've been trying to tackle in order of priority."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "제 하루 업무는 팀원들과의 회의로 시작되는데, 팀원들은 서로 의견을 솔직하게 나누고 업무 효율을 높이기 위한 목표를 세웁니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "이 회의는 단순히 지난 성과를 되짚는 자리가 아니라, 팀이 한 방향으로 나아가게 하는 협력적인 습관을 쌓아가는 자리입니다.",
+      "lang": "ko"
+    },
+    {
+      "type": "paragraph",
+      "text": "회의가 끝나면 저는 그날 해야 할 일에 착수하는데, 그 일들을 우선순위에 따라 처리하려고 꾸준히 노력해오고 있습니다.",
+      "lang": "ko"
+    }
+  ],
+  "legacyPath": "docs/adult/ppt-본문.json#5과.pptx",
+  "legacyEncoding": "utf-8"
+}
