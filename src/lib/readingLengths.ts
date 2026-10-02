@@ -205,7 +205,7 @@ export const READING_LENGTHS: Readonly<Record<string, readonly [number, number]>
   pr199: [117, 8],
   pr200: [93, 4],
   pr201: [104, 5],
-  pr202: [110, 6],
+  pr202: [108, 6],
   pr203: [98, 9],
   pr204: [48, 3],
   pr205: [101, 5],

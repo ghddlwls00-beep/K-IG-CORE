@@ -90,6 +90,7 @@ function loadTsAlone(rel) {
   return mod.exports;
 }
 const GRADER = loadTsAlone(path.join("src", "lib", "passoffGrading.ts"));
+const SPEECH_FORM = loadTsAlone(path.join("src", "lib", "lessonSpeechForm.ts"));
 for (const name of ["missingTargets", "spokenNumbersAsWords", "normalizeForComparison"]) {
   if (typeof GRADER[name] !== "function") throw new Error(`${name} 를 passoffGrading.ts 에서 못 찾음 — 목표형 검사가 아무것도 안 봄`);
 }
@@ -232,7 +233,9 @@ function studentLesson(id) {
     const en = [];
     const ko = [];
     for (const b of j.blocks || []) {
-      if (b.type === "sentences") for (const it of b.items || []) en.push(String(it.text ?? ""));
+      // (2026-10-02) STUDENT writes its Korean words in Hangul ("named him 단군") and says them in romanization — compare
+      // the romanized form, which is what PASS-OFF's item keeps (with "Dangun(단군)" drawn) and what both clips speak
+      if (b.type === "sentences") for (const it of b.items || []) en.push(SPEECH_FORM.romanizedForm(`student/${id}`, String(it.text ?? "")));
       if (b.type === "paragraph" && b.lang === "ko") ko.push(String(b.text ?? ""));
     }
     v = { en, ko: ko.length === en.length ? ko : null };

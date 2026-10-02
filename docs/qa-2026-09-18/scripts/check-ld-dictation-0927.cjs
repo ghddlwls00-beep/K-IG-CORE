@@ -336,10 +336,19 @@ const stuLessons = stuIndex.lessons.map((l) => {
 });
 const capitals = ST.studentCapitalsFrom(stuLessons.flatMap((l) => l.texts));
 let identity = 0;
+let hangulSentences = 0;
 let seed = 1;
 for (const { id, texts } of stuLessons) {
   const keep = SD.firstWordKeepsCase(texts, capitals);
   texts.forEach((text, i) => {
+    // 2026-10-02 (사장님 "신라 블록이 없는데"): a sentence that writes a Korean word in Hangul ("The 신라 Kingdom …") is MEANT to
+    // differ — Hangul became a word's letter, so the word is a tile and part of the answer (the base function dropped it).
+    // check-student-dictation.cjs --course student|adult proves every letter is now in a tile; LISTENING below must stay identical.
+    if (/[가-힣]/.test(text)) {
+      hangulSentences++;
+      seed += 2;
+      return;
+    }
     const pool = SD.distractorPool(texts, keep, i, seeded(seed));
     same(`student ${id} #${i + 1} (lesson pool)`, text, pool, seed++);
     same(`student ${id} #${i + 1} (no pool)`, text, [], seed++);
@@ -378,7 +387,7 @@ console.log(`B 블록 ${bstat.lines}줄 · 같은 방해 짝이 3줄 넘는 강�
 console.log(`  대문자 블록 ${bstat.capitalTiles}(I 꼴 · 이름 · TV 꼴만) · 첫 블록 대문자 단서 줄 ${bstat.capitalFirstClue}(고치기 전 1,045)${bstat.clueLines ? ` — 이름이 흔한 낱말과 같은 꼴: ${bstat.clueLines.join(", ")}` : ""}`);
 console.log(`C 소리 카드 ${cstat.oldCards} → ${cstat.newCards}(뺀 카드 ${cstat.removed} · 늘어난 카드 ${cstat.added}) · 카드 0장인 줄 ${cstat.zeroOld} → ${cstat.zeroNew}`);
 console.log(`  LISTENING 소리 낼 글 ${spokenOld.size} → ${spokenNew.size} · 새로 생긴 글 ${addedTexts.length} · 빠진 글 ${removedTexts.length}`);
-console.log(`D generateWordBank 기본값: STUDENT ${identity}문장 × (화면 풀 · 빈 풀) + LISTENING ${stat.lines}줄(옛 풀) — 바탕 ${BASE} 의 함수와 비교`);
+console.log(`D generateWordBank 기본값: STUDENT ${identity}문장 × (화면 풀 · 빈 풀) + LISTENING ${stat.lines}줄(옛 풀) — 바탕 ${BASE} 의 함수와 비교 · 한글 낱말 문장 ${hangulSentences}(뜻한 변화 — check-student-dictation.cjs 가 봄)`);
 if (WRITE_REMOVED && !BREAK) {
   const out = path.resolve(REPO, WRITE_REMOVED);
   fs.writeFileSync(out, JSON.stringify({

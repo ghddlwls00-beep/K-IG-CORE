@@ -31,6 +31,16 @@
 | GRAMMAR II · PASS-OFF GRAMMAR | 영어 표기 + 한글 덧붙임 — `Busan(부산)` · `Chuseok(추석)` (사장님 선택: 학습자가 영어를 직접 쓰는 과정이라 철자는 그대로) | 그대로 — `src/lib/koreanGloss.ts` 는 그리는 글에만 |
 | LISTENING · VOCA · GRAMMAR I | 해당 없음 — LISTENING 의 Kim 은 미국 사람 | — |
 
+**한글로 바꾼 뒤 생긴 문제와 고침 (2026-10-02 밤, 사장님 "신라 블록이 없는데 … 이런 문제 있는곳 전체적으로 찾아서 수정해라")**
+- 받아쓰기: 낱말 자르기 규칙 두 곳(`studentDictation.ts` TOKEN · `listeningUtils.ts` DICTATION_TOKEN)이 영어 글자만 낱말로 셈 →
+  한글 낱말이 조각에서도 정답에서도 빠짐(STUDENT 39문장 · ADULT 45문장, 예: 'The 신라 Kingdom …' 이 'The Kingdom …' 11조각).
+  한글을 낱말 글자로 넣음. LISTENING 2,217줄은 그대로(한글 없음 — check-ld-dictation-0927 의 바탕 대조 PASS).
+  check-student-dictation.cjs 에 `--course adult` 와 '빠진 글자 0' 을 더함(깨기 `--break=hangul` 이 STUDENT 39 · ADULT 45 를 잡음).
+- READING pr069: 'Heungdeok Temple' 을 통째로 '흥덕사' 로 바꿔 낱말 카드 'temple' 이 지문에서 사라짐 → '흥덕 Temple' 로.
+  READING 목록의 낱말 수(readingLengths.ts)도 다시 셈.
+- 검사 도구가 한글 문장을 로마자로 비교하도록: PASS-OFF 무료 강의 유출 검사(checkPassoffFreeLeak.mjs — 안 고치면 유출을 놓침) ·
+  PASS-OFF check-lessons(STUDENT 와 같은 문장) · STUDENT 원본 대조(check-student-original.mjs — 설명 없음 0 · 낡은 예외 0).
+
 새 음성 0 (dry-run pending 0). 검사: `node docs/adult/korean-words-on-screen.cjs`(모든 글 칸 · 깨기 `--break`),
 `node scripts/korean-words-hangul.mjs --check`, `node scripts/build-adult-content.mjs --check`.
 
