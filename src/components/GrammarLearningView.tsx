@@ -34,7 +34,7 @@ import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from 
 import type { Block, SentenceItem } from "@/lib/types";
 import { isInAppBrowser, isKakaoTalk, speakText, stopSpeech } from "@/lib/speech";
 import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
-import { withKoreanGloss } from "@/lib/koreanGloss";
+import { koreanOnScreen, romanForGrading } from "@/lib/koreanGloss";
 import {
   diffAgainstReferences,
   gradeAgainstReferences,
@@ -330,12 +330,13 @@ const isNumber = (v: unknown): v is number => typeof v === "number" && Number.is
 const referencesOf = (item: GrammarItem) => [item.englishText, ...item.alternatives];
 
 /** The Step 4 sheet graded at one moment. The score formula is the one the exam always used (GRM-L13: unchanged). */
-function gradeExam(items: GrammarItem[], answers: Record<number, string>, at: string | null): ExamResult {
+/** `asWritten` (2026-10-02): a Korean word the learner wrote in Hangul read as the lesson spells it (romanForGrading) */
+function gradeExam(items: GrammarItem[], answers: Record<number, string>, at: string | null, asWritten: (s: string) => string = (s) => s): ExamResult {
   let exact = 0;
   let partial = 0;
   const perItem: Record<number, AnswerGrade> = {};
   for (const item of items) {
-    const grade = gradeAgainstReferences(answers[item.id] || "", referencesOf(item));
+    const grade = gradeAgainstReferences(asWritten(answers[item.id] || ""), referencesOf(item));
     perItem[item.id] = grade;
     if (grade === "exact") exact++;
     else if (grade === "partial") partial++;
@@ -550,7 +551,8 @@ function AnswerBox({
 }
 
 /** The learner's words with the marks of GRM-L02: missing (green, inserted) · wrong (red → fix) · extra (struck) · moved. */
-function DiffLine({ tokens }: { tokens: DiffToken[] }) {
+/** `show`: how a word is drawn (koreanOnScreen — a Korean word in Hangul); the diff itself is the grader's */
+function DiffLine({ tokens, show = (s) => s }: { tokens: DiffToken[]; show?: (text: string) => string }) {
   return (
     <>
       {tokens.map((token, index) => {
@@ -631,7 +633,9 @@ export function GrammarLearningView({
    * 2026-10-02 (사장님 "영어 표기 + 한글 덧붙임"): a Korean word in the English is DRAWN with its Hangul — "Busan(부산)". Only
    * what is drawn: grading, the blanks' answers, the microphone and the sound keep the English text (src/lib/koreanGloss.ts).
    */
-  const gloss = (text: string) => withKoreanGloss(lessonKey, text);
+  const gloss = (text: string) => koreanOnScreen(lessonKey, text);
+  /** the learner's typed answer as graded — a Korean word written in Hangul counts as the lesson's spelling */
+  const asWritten = (text: string) => romanForGrading(lessonKey, text);
   /**
    * GRAMMAR I 07강 (gh1-020 questions / gh1-021 answers) carries the textbook's "문법 확인
    * 문제" — eight Korean questions on be-verb sentences — next to its composition sentences.
@@ -1097,7 +1101,7 @@ export function GrammarLearningView({
     }
     if (!open) {
       const spoken = isFromMic(id);
-      const grade = spoken ? gradeSpokenAnswer(value, referencesOf(item)) : gradeAgainstReferences(value, referencesOf(item));
+      const grade = spoken ? gradeSpokenAnswer(value, referencesOf(item)) : gradeAgainstReferences(asWritten(value), referencesOf(item));
       noteAttempt(id, { correct: grade === "exact", help: hints[id] ? "hint" : "none", mode: spoken ? "voice" : "typed", answer: value });
       if (grade !== "exact" || hints[id]) setSelfGrades((prev) => ({ ...prev, [id]: false }));
       else if (!spoken) setSelfGrades((prev) => ({ ...prev, [id]: true }));
@@ -1345,7 +1349,7 @@ export function GrammarLearningView({
       setExamNotice(true);
       return;
     }
-    const result = gradeExam(items, examAnswers, formatSavedAt());
+    const result = gradeExam(items, examAnswers, formatSavedAt(), asWritten);
     // every written answer of the sheet, for the engine (an empty line is not an attempt)
     for (const it of items) {
       const written = (examAnswers[it.id] || "").trim();
@@ -1663,7 +1667,7 @@ export function GrammarLearningView({
     const spoken = !!heard && heard.transcript === value;
     const refs = referencesOf(item);
     const diff: AnswerDiff | null =
-      revealed && value.trim() ? (spoken ? diffSpokenAnswer(value, refs) : diffAgainstReferences(value, refs)) : null;
+      revealed && value.trim() ? (spoken ? diffSpokenAnswer(value, refs) : diffAgainstReferences(asWritten(value), refs)) : null;
     const badge = grade === true ? "done" : grade === false ? "review" : hinted ? "hint" : null;
 
     return (
@@ -1827,7 +1831,7 @@ export function GrammarLearningView({
         {diff && verdict !== "exact" ? (
           <p data-diff className={`mt-1 text-ink ${fs.english}`}>
             <span className="sr-only">내 답: </span>
-            <DiffLine tokens={diff.tokens} />
+            <DiffLine tokens={diff.tokens} show={gloss} />
           </p>
         ) : null}
         <div className="mt-2 flex items-start gap-2">
@@ -2076,7 +2080,7 @@ export function GrammarLearningView({
     const value = examAnswers[id] || "";
     const graded = examResult !== null;
     const res: AnswerGrade | null = examResult ? examResult.perItem[id] ?? "incorrect" : null;
-    const diff = graded && res !== "exact" && value.trim() ? diffAgainstReferences(value, referencesOf(item)) : null;
+    const diff = graded && res !== "exact" && value.trim() ? diffAgainstReferences(asWritten(value), referencesOf(item)) : null;
     const alts = item.alternatives.slice(0, 3);
     return (
       <li
@@ -2134,7 +2138,7 @@ export function GrammarLearningView({
               {diff ? (
                 <p data-diff className={`text-ink ${fs.english}`}>
                   <span className="sr-only">내 답: </span>
-                  <DiffLine tokens={diff.tokens} />
+                  <DiffLine tokens={diff.tokens} show={gloss} />
                 </p>
               ) : null}
               <div className="flex items-start gap-2">

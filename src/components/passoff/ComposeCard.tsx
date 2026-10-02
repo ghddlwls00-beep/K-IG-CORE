@@ -9,7 +9,7 @@ import { notePassoffAttempt, strongerHelp, type PassoffAnswerMode, type PassoffA
 import { MyAnswerReport } from "../learning/MyAnswerReport";
 import { VoiceSpeakingTester } from "../VoiceSpeakingTester";
 import { LESSON_REPORT_NOTE, useLessonReport } from "./lessonReport";
-import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, glossFor, tone, usePassoffLearner, type FontSize, type Speaker } from "./ui";
+import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, glossFor, gradedFor, tone, usePassoffLearner, type FontSize, type Speaker, type Gloss } from "./ui";
 
 export interface ComposeOutcome {
   /** right at the first try of this presentation (no help can come before a first try) */
@@ -115,10 +115,11 @@ export function ComposeCard({
   const note = onAttempt ?? ((attempt: PassoffAttempt) => notePassoffAttempt(attempt, learner));
   const lessonReport = useLessonReport();
   const gloss = glossFor(lessonId);
+  const asWritten = gradedFor(lessonId);
   // graded as it was in the check (the same grader, the same answer): a wrong answer opens the card on the ladder
   const [start] = useState<ProduceResult | null>(() => {
     if (!missed) return null;
-    const res = gradeProduce(missed.answer, item, { spoken: missed.spoken });
+    const res = gradeProduce(asWritten(missed.answer), item, { spoken: missed.spoken });
     return res.verdict === "wrong" ? res : null;
   });
   const [reportedHere, setReportedHere] = useState(false);
@@ -168,7 +169,7 @@ export function ComposeCard({
     const answer = text.trim();
     if (!answer) return;
     const mode = heard !== null && answer === heard.trim() ? "voice" : "typed";
-    const res = gradeProduce(answer, item, { spoken: mode === "voice" });
+    const res = gradeProduce(asWritten(answer), item, { spoken: mode === "voice" });
     if (res.verdict === "empty") return;
     if (res.verdict === "hangul") {
       setHangul(true);
@@ -309,7 +310,7 @@ export function ComposeCard({
       {phase === "answer" && rung >= 1 && rung < 3 && result ? (
         <div className="flex flex-col gap-2 border-t border-line pt-3">
           <Verdict ok={false}>틀린 자리를 표시했어요. 고쳐서 다시 확인하세요.</Verdict>
-          <DiffLine tokens={result.diff} reveal={false} font={font} />
+          <DiffLine tokens={result.diff} reveal={false} font={font} show={gloss} />
           <p className="text-caption text-ink-faint">빈 네모 = 빠진 낱말 · 물결 = 틀린 낱말 · 가운데 줄 = 필요 없는 낱말 · 점선 = 자리가 바뀐 낱말</p>
           {result.pattern ? <p className={`${FONT[font].text} text-ink`}>{gloss(result.pattern.hint)}</p> : null}
           {/* the grader's own hint: a possessive typed without its apostrophe ("my brothers") — names the slip, not the answer */}
@@ -380,7 +381,7 @@ export function ComposeCard({
 
       {phase === "right" ? (
         <div className="flex flex-col gap-2 border-t border-line pt-3">
-          <Verdict ok>{typo && typo.typed ? `맞았어요. 철자만 확인하세요: ${typo.typed} → ${typo.expected}` : "맞았어요."}</Verdict>
+          <Verdict ok>{typo && typo.typed ? `맞았어요. 철자만 확인하세요: ${gloss(typo.typed)} → ${gloss(typo.expected)}` : "맞았어요."}</Verdict>
           {issues && (issues.capital || issues.punctuation) ? (
             <p className="text-label text-ink-soft">
               서술형 기준으로는 {[issues.capital ? "대문자" : "", issues.punctuation ? "끝 문장부호" : ""].filter(Boolean).join(" · ")}를 확인하세요.
@@ -409,7 +410,7 @@ export function ComposeCard({
           {result && result.diff.length ? (
             <>
               <p className="text-label text-ink-soft">내 답</p>
-              <DiffLine tokens={result.diff} reveal font={font} />
+              <DiffLine tokens={result.diff} reveal font={font} show={gloss} />
             </>
           ) : null}
           {lastWrong ? <MyAnswerReport reported={isReported} note={reportNote ?? LESSON_REPORT_NOTE} onReport={sendReport} /> : null}
@@ -432,7 +433,8 @@ export function ComposeCard({
  * The learner's words, marked where they differ from the closest answer — the place only (reveal off: a missing
  * word is an empty box, a wrong word is not corrected), or the fix too once the answer is shown.
  */
-function DiffLine({ tokens, reveal, font }: { tokens: DiffToken[]; reveal: boolean; font: FontSize }) {
+/** `show`: a word as the lesson draws it (glossFor — a Korean word in Hangul); the marking itself is the grader's */
+function DiffLine({ tokens, reveal, font, show }: { tokens: DiffToken[]; reveal: boolean; font: FontSize; show: Gloss }) {
   return (
     <p lang="en" className={`${FONT[font].text} flex flex-wrap items-center gap-x-1.5 gap-y-1 text-ink`}>
       {tokens.map((t, i) => {
@@ -440,7 +442,7 @@ function DiffLine({ tokens, reveal, font }: { tokens: DiffToken[]; reveal: boole
           return reveal ? (
             <span key={i} className={`rounded border-2 border-dashed px-1 ${tone.successBorder} ${tone.success}`}>
               <span className="sr-only">(빠진 낱말) </span>
-              {t.text}
+              {show(t.text)}
             </span>
           ) : (
             <span key={i} className="inline-block h-6 w-8 rounded border-2 border-dashed border-ink-soft align-middle">
@@ -451,16 +453,16 @@ function DiffLine({ tokens, reveal, font }: { tokens: DiffToken[]; reveal: boole
         if (t.kind === "wrong") {
           return (
             <span key={i}>
-              <span className={tone.dangerWavy}>{t.text}</span>
+              <span className={tone.dangerWavy}>{show(t.text)}</span>
               <span className="sr-only"> (틀림)</span>
-              {reveal && t.expected ? <span className={`ml-1 ${tone.success}`}>→ {t.expected}</span> : null}
+              {reveal && t.expected ? <span className={`ml-1 ${tone.success}`}>→ {show(t.expected)}</span> : null}
             </span>
           );
         }
         if (t.kind === "extra") {
           return (
             <span key={i} className="text-ink-faint line-through">
-              {t.text}
+              {show(t.text)}
               <span className="sr-only"> (필요 없음)</span>
             </span>
           );
@@ -468,12 +470,12 @@ function DiffLine({ tokens, reveal, font }: { tokens: DiffToken[]; reveal: boole
         if (t.kind === "moved") {
           return (
             <span key={i} className="underline decoration-dotted decoration-2 underline-offset-4">
-              {t.text}
+              {show(t.text)}
               <span className="sr-only"> (자리 바뀜)</span>
             </span>
           );
         }
-        return <span key={i}>{t.text}</span>;
+        return <span key={i}>{show(t.text)}</span>;
       })}
     </p>
   );

@@ -5,19 +5,22 @@
  *
  * 소리 내는 글만이 아니라 강의 파일의 **모든 글 칸**(제목 · 문장 · 정답 · 다른 정답 · 해설 · 표 · 문제)과 과정 목록을 본다.
  *   STUDENT · READING · ADULT  — 한국어 낱말은 한글로만 적혀야 한다(로마자가 남으면 실패). 소리는 lessonSpeechForm 이 되돌림.
- *   GRAMMAR II · PASS-OFF GRAMMAR — 학습자가 영어를 쓰는 과정이라 영어 표기를 두고 화면이 한글을 덧붙인다(src/lib/koreanGloss.ts).
- *                                  낱말이 든 글마다 withKoreanGloss 가 실제로 한글을 붙이는지 본다(표에 없는 쪽 · 철자면 실패).
+ *   GRAMMAR II · PASS-OFF GRAMMAR — 강의 파일은 영어 표기(채점 · 소리 그대로), 화면은 한글만(src/lib/koreanGloss.ts koreanOnScreen —
+ *                                  사장님 "한국어 로마식표기를 다 한국어로 바꿔"). 그린 글에 로마자 낱말이 남으면 실패(표에 없는 쪽 · 철자).
  *   GRAMMAR I · VOCA · LISTENING — 한국어 낱말이 없어야 한다. LISTENING 의 Kim 은 미국 사람(d011 · d012 · d025 · d026)이라 뺀다.
  * 낱말 목록: korean-names-in-speech.cjs 의 KO 판정 + 아래 VARIANTS(다른 철자) + 한국어 음절 꼴(그 도구와 같은 체)인데 영어 판정이
  * 없는 새 낱말(멈춤 — 판정해서 넣을 것).
  *
  *   node docs/adult/korean-words-on-screen.cjs          # 0 이면 exit 0
  *   node docs/adult/korean-words-on-screen.cjs --break  # STUDENT s20-4 첫 문장에 'Gyeongju' 를 몰래 되돌려 실패하는지(깨기)
+ *   node docs/adult/korean-words-on-screen.cjs --break=grammar  # GRAMMAR II gh2-033 을 한글로 바꾸지 않고 그렸을 때 실패하는지
  */
 const fs = require("fs");
 const path = require("path");
 const ROOT = path.resolve(__dirname, "..", "..");
 const BREAK = process.argv.includes("--break");
+/** --break=grammar: GRAMMAR II gh2-033 drawn without koreanOnScreen ("Busan" left in Latin letters) — must fail */
+const BREAK_GRAMMAR = process.argv.includes("--break=grammar");
 const rj = (f) => JSON.parse(fs.readFileSync(f, "utf8").replace(/^﻿/, ""));
 const ts = require(path.join(ROOT, "node_modules", "typescript"));
 const loadTs = (rel) => {
@@ -26,7 +29,7 @@ const loadTs = (rel) => {
   new Function("module", "exports", "require", js)(m, m.exports, require);
   return m.exports;
 };
-const { withKoreanGloss, KOREAN_GLOSS_PAGES } = loadTs("src/lib/koreanGloss.ts");
+const { koreanOnScreen } = loadTs("src/lib/koreanGloss.ts");
 
 const judged = fs.readFileSync(path.join(ROOT, "docs/qa-2026-09-18/내용-재검토/scripts/korean-names-in-speech.cjs"), "utf8");
 const KO = eval("(" + judged.match(/const KO = (\{[\s\S]*?\n\});/)[1] + ")");
@@ -77,14 +80,9 @@ function look(course, page, where, text) {
     if (KNOWN.has(k) && /^[A-Za-z]/.test(w) && !(k === "lee" && course !== "passoff-grammar") && !(k === "dae" && course !== "passoff-grammar") && !(k === "mina" && course !== "passoff-grammar")) {
       if (HANGUL_ONLY.includes(course) || NONE.includes(course)) fails.push(`${page} ${where}: '${w}' — ${text.slice(0, 120)}`);
       else if (GLOSSED.includes(course)) {
-        // the page's table must know this spelling (as a word or inside a phrase), and the drawn text must carry its Hangul —
-        // once per text (withKoreanGloss glosses the first spelling of a word, "Chu-seok(추석) 을 Chuseok 으로")
-        const glossed = withKoreanGloss(page, text);
-        const rows = (KOREAN_GLOSS_PAGES[page] || []).filter(([written]) => new RegExp(`(^|[^A-Za-z])${w}([^A-Za-z]|$)`).test(written));
-        // the text itself already says it in Hangul right after the word — "how to get to Seoul(서울 가는 방법을)"
-        if (new RegExp(`${w}\\([^)]*[가-힣]`).test(text)) continue;
-        if (!rows.length) fails.push(`${page} ${where}: '${w}' — no Hangul for this spelling on this page — ${text.slice(0, 120)}`);
-        else if (!rows.some(([, hangul]) => glossed.includes(`(${hangul})`))) fails.push(`${page} ${where}: '${w}' gets no Hangul — ${text.slice(0, 120)}`);
+        // drawn through koreanOnScreen — the word must not be left in Latin letters on screen (a spelling the page's table lacks is)
+        const shown = BREAK_GRAMMAR && page === "grammar2/gh2-033" ? text : koreanOnScreen(page, text);
+        if (new RegExp(`(^|[^A-Za-z])${w}([^A-Za-z]|$)`).test(shown)) fails.push(`${page} ${where}: '${w}' still in Latin letters on screen — ${shown.slice(0, 120)}`);
       }
     } else if (!KNOWN.has(k) && !NOT.has(k) && !ENGLISH.has(k) && !english.has(k) && k.length >= 3 && wholeKo.test(k.replace(/[-'’]/g, "")) && koShape.test(k)) {
       if (!unjudged.has(k)) unjudged.set(k, `${page} ${where}: ${text.slice(0, 100)}`);
@@ -119,4 +117,4 @@ if (fails.length) {
   console.error(`화면에 남은 로마자 한국어 낱말 ${fails.length}:\n${fails.slice(0, 60).map((x) => "  " + x).join("\n")}`);
 }
 if (unjudged.size || fails.length) process.exit(1);
-console.log(`글 칸 ${checked} — STUDENT · READING · ADULT 는 한글만 · GRAMMAR II · PASS-OFF 는 모두 한글 덧붙임 · 다른 과정 0 — PASS`);
+console.log(`글 칸 ${checked} — STUDENT · READING · ADULT 는 한글만 · GRAMMAR II · PASS-OFF 도 화면은 한글만 · 다른 과정 0 — PASS`);

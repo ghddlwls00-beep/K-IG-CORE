@@ -1,16 +1,17 @@
 /**
- * The Hangul beside a Korean word written in English — GRAMMAR II and PASS-OFF GRAMMAR (2026-10-02).
+ * Korean words inside the English, drawn in Hangul — GRAMMAR II and PASS-OFF GRAMMAR (2026-10-02).
  *
  * The owner asked for Korean words inside English to be written in Hangul ("이런 것들 표기는 한국어로 다 변경하자"). In these two
- * courses the learner WRITES the English, and English writes them in romanization ("I went to Busan"; PASS-OFF 6-1 teaches that
- * a proper noun such as Chuseok starts with a capital), so the owner chose "영어 표기 + 한글 덧붙임": the spelling, the grading
- * and the sound stay; the screen shows the word once with its Hangul after it — "Busan(부산)". Only the text drawn changes: what
- * is graded, matched or spoken is never passed through here. (STUDENT · READING · ADULT, where nothing is written by the
- * learner, show the Hangul alone — src/lib/lessonSpeechForm.ts KOREAN_DISPLAY_PAGES.)
+ * courses the learner WRITES the English, so at first the screen kept the spelling and added the Hangul ("Busan(부산)" — "영어
+ * 표기 + 한글 덧붙임"); the owner then asked for Hangul alone here too ("한국어 로마식표기를 다 한국어로 바꿔" — "한글로만
+ * 바꾸기"). The lesson files keep the spelling, so the sound, the accepted answers and the microphone stay exactly as they
+ * were: only what is DRAWN passes through koreanOnScreen, and a learner who copies the screen ("I live in 서울.") is graded
+ * through romanForGrading as if they had written "Seoul". (STUDENT · READING · ADULT write the Hangul in the lesson files
+ * themselves — src/lib/lessonSpeechForm.ts KOREAN_DISPLAY_PAGES.)
  *
- * Per page, so a "Kim" that is an American (LISTENING) never gets one. Every spelling a page shows is listed (Busan · Pusan,
- * Yi Sun-sin · Lee Soon-shin …). A phrase is glossed as a whole ("Han River(한강)"). In one piece of text a word gets its Hangul
- * the first time only. Keep this file free of imports — scripts transpile it alone.
+ * Per page, so a "Kim" that is an American (LISTENING) is never touched. Every spelling a page shows is listed (Busan · Pusan,
+ * Yi Sun-sin · Lee Soon-shin …), the first spelling of each Hangul being the one its answers use. A phrase is replaced as a
+ * whole ("Han River" → 한강). Keep this file free of imports — scripts transpile it alone.
  */
 
 type Gloss = [written: string, hangul: string];
@@ -79,20 +80,34 @@ export const KOREAN_GLOSS_PAGES: Record<string, Gloss[]> = {
 const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 /**
- * `text` as drawn on `lessonKey`: each Korean word with its Hangul after it, the first time in this text — "He went to
- * Busan(부산) on business." Whole words only (no letter or digit on either side), longest spelling first, exact case; a word
- * already followed by "(" keeps what follows. No look-behind (older iOS Safari cannot parse one).
+ * `text` as drawn on `lessonKey`: every Korean word in Hangul — "He went to 부산 on business." (2026-10-02 사장님 "한국어
+ * 로마식표기를 다 한국어로 바꿔" — the earlier "Busan(부산)" is replaced). Whole words only (no letter or digit on either side),
+ * longest spelling first ("Yi Sun-sin" before "Yi", "Jeju Island" before "Jeju"), exact case. A word the text already follows
+ * with its own Hangul in brackets ("Songnisan(속리산)") becomes that Hangul once. No look-behind (older iOS Safari cannot
+ * parse one).
  */
-export function withKoreanGloss(lessonKey: string, text: string): string {
+export function koreanOnScreen(lessonKey: string, text: string): string {
   const glosses = KOREAN_GLOSS_PAGES[lessonKey];
   if (!glosses || !text) return text;
   const hangulOf = new Map(glosses);
   const alternatives = [...hangulOf.keys()].sort((a, b) => b.length - a.length).map(escapeRegExp).join("|");
-  const done = new Set<string>();
-  return text.replace(new RegExp(`(^|[^A-Za-z0-9])(${alternatives})(?![A-Za-z0-9(])`, "g"), (match, before: string, written: string) => {
+  return text.replace(new RegExp(`(^|[^A-Za-z0-9])(${alternatives})(\\([가-힣]+\\))?(?![A-Za-z0-9])`, "g"), (match, before: string, written: string, bracket: string | undefined) => {
     const hangul = hangulOf.get(written);
-    if (!hangul || done.has(hangul)) return match;
-    done.add(hangul);
-    return `${before}${written}(${hangul})`;
+    if (!hangul) return match;
+    return `${before}${hangul}${bracket && bracket !== `(${hangul})` ? bracket : ""}`;
   });
+}
+
+/**
+ * The learner's answer as the grader reads it: a Korean word the learner wrote in Hangul — copying the screen, "I live in 서울."
+ * — is put back into the spelling the lesson's answers use ("Seoul" — the first spelling of that Hangul in the page's table),
+ * so writing it either way is graded alike. English stays as typed. Whole Hangul words only, longest first ("이순신" before "이").
+ */
+export function romanForGrading(lessonKey: string, text: string): string {
+  const glosses = KOREAN_GLOSS_PAGES[lessonKey];
+  if (!glosses || !text || !/[가-힣]/.test(text)) return text;
+  const writtenOf = new Map<string, string>();
+  for (const [written, hangul] of glosses) if (!writtenOf.has(hangul)) writtenOf.set(hangul, written);
+  const alternatives = [...writtenOf.keys()].sort((a, b) => b.length - a.length).map(escapeRegExp).join("|");
+  return text.replace(new RegExp(`(^|[^A-Za-z0-9가-힣])(${alternatives})(?![A-Za-z0-9가-힣])`, "g"), (_m, before: string, hangul: string) => `${before}${writtenOf.get(hangul)}`);
 }

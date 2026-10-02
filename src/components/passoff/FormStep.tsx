@@ -8,7 +8,7 @@ import { optionOrder, type FormItemState } from "@/lib/passoffLesson";
 import { IconCheck } from "../icons";
 import { MyAnswerReport } from "../learning/MyAnswerReport";
 import { LESSON_REPORT_NOTE, useLessonReport } from "./lessonReport";
-import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, glossFor, tone, usePassoffLearner, type FontSize } from "./ui";
+import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, glossFor, gradedFor, tone, usePassoffLearner, type FontSize } from "./ui";
 
 /**
  * ③ 형태 찾기 4~6문제 (설계 §3) — one item at a time: tap the words (and give each its label), pick an option, or
@@ -252,7 +252,7 @@ export function FormItemCard({
 
   function checkShort() {
     if (item.kind !== "short" || settled || composing.current) return;
-    const verdict = gradeShort(item, text);
+    const verdict = gradeShort(item, gradedFor(lessonId)(text));
     if (verdict === "empty") return;
     if (verdict === "hangul") {
       setHangul(true);
