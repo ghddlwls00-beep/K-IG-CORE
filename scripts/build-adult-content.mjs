@@ -52,9 +52,11 @@ const TITLE_FIX = {
   "How Korea was Founded (한국의 건국)": "How Korea Was Founded (한국의 건국)",
   "The Kingdoms are Divided (삼국의 분열과 통일)": "The Kingdoms Are Divided (삼국의 분열과 통일)",
   "Independence / Civil War (독립과 한국전쟁)": "Independence & the Korean War (독립과 한국전쟁)",
-  "Chu-seok (추석)": "Chuseok (추석)",
+  // a title that is only a Korean name is written in Hangul alone (사장님 "표기는 한국어로")
+  "Chu-seok (추석)": "추석",
   "Korean Culture is Unique (한국 문화의 독특함)": "Korean Culture Is Unique (한국 문화의 독특함)",
-  "Gyeong-Ju (경주)": "Gyeongju (경주)",
+  "Gyeong-Ju (경주)": "경주",
+  "Jeju Island and Mt. Halla (제주도와 한라산)": "제주도와 한라산",
 };
 
 /**
