@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
-import { withKoreanGloss } from "@/lib/koreanGloss";
+import { koreanOnScreen, romanForGrading } from "@/lib/koreanGloss";
 import { learnerOf } from "@/lib/learning/sync";
 import { PASSOFF_COURSE } from "@/lib/passoffLearning";
 import type { PassoffStudentRef } from "@/lib/passoffTypes";
@@ -57,8 +57,8 @@ export function spokenOf(item: { en: string; speakAs?: string | null }): string 
 export type Gloss = (text: string) => string;
 
 /**
- * How lesson `lessonId` ("pg06-1") DRAWS its text — a Korean word written in English with its Hangul after it, the first
- * time in each piece of text: "Chuseok(추석)" (사장님 2026-10-02 "영어 표기 + 한글 덧붙임" — src/lib/koreanGloss.ts). The same
+ * How lesson `lessonId` ("pg06-1") DRAWS its text — a Korean word written in English shown in Hangul: "Chuseok" → "추석"
+ * (사장님 2026-10-02 "한국어 로마식표기를 다 한국어로 바꿔" — src/lib/koreanGloss.ts koreanOnScreen; first "Chuseok(추석)"). The same
  * text unchanged on every lesson not in that table. For the screen only: what is graded, matched (accept · errorPatterns ·
  * a focus phrase · the first letters' clue), spoken (spokenOf · lessonSpeechForm), heard (VoiceSpeakingTester's target),
  * recorded or used as a key always takes the lesson's own text. Every card is given its item's own lesson, so the review
@@ -66,7 +66,16 @@ export type Gloss = (text: string) => string;
  */
 export function glossFor(lessonId: string): Gloss {
   const key = `${PASSOFF_COURSE}/${lessonId}`;
-  return (text) => withKoreanGloss(key, text);
+  return (text) => koreanOnScreen(key, text);
+}
+
+/**
+ * How lesson `lessonId` READS the learner's typed answer: a Korean word written in Hangul — copied from the screen — as the
+ * lesson's own spelling ("서울" → "Seoul", src/lib/koreanGloss.ts romanForGrading), so both ways are graded alike.
+ */
+export function gradedFor(lessonId: string): Gloss {
+  const key = `${PASSOFF_COURSE}/${lessonId}`;
+  return (text) => romanForGrading(key, text);
 }
 
 /** Text sizes the learner picks (기본 · 크게 · 특대 — GRAMMAR's three: text-body 16 · text-title-s 18 · text-title 22). */
