@@ -74,7 +74,7 @@ const { vocaSpeechForm, vocaWordSpeech, readingWordSpeech } = loadTsModule("src/
 const { getCollocation } = loadTsModule("src/lib/vocaUtils.ts");
 const { generateLiaisonPoints, firstSlashAlternative } = loadTsModule("src/lib/listeningUtils.ts");
 const { extractSentencesForAudio } = loadTsModule("src/lib/lessonAudioText.ts");
-const { lessonSpeechForm } = loadTsModule("src/lib/lessonSpeechForm.ts");
+const { lessonSpeechForm, romanizedForm } = loadTsModule("src/lib/lessonSpeechForm.ts");
 const { attachPaidItems } = loadTsModule("src/lib/passoffSupplement.ts");
 const fns = { vocaSpeechForm, getCollocation, generateLiaisonPoints, extractSentencesForAudio, firstSlashAlternative, vocaWordSpeech, readingWordSpeech, lessonSpeechForm };
 for (const [name, fn] of Object.entries({ ...fns, normalizeUnifiedSpeechText, unifiedSpeechKey, isFreePreviewLesson, attachPaidItems })) {
@@ -147,6 +147,13 @@ for (const id of routes?.lessons?.student || []) {
   for (const b of lesson.blocks || []) {
     if (b.type === "sentences") for (const it of b.items || []) {
       if (typeof it?.text !== "string") continue;
+      // (2026-10-02) STUDENT writes Korean words in Hangul ("named him 단군"); PASS-OFF keeps the romanization ("Dangun") —
+      // look for the paid sentence in that form too, or a copy of it in a free PASS-OFF lesson would slip past
+      const romanized = romanizedForm(`student/${id}`, it.text);
+      if (romanized !== it.text) {
+        addPaid(`student/${id}`, firstSlashAlternative(romanized));
+        addPaidKey(`student/${id}`, firstSlashAlternative(romanized));
+      }
       addPaid(`student/${id}`, it.text);
       addPaid(`student/${id}`, firstSlashAlternative(it.text));
       addPaidKey(`student/${id}`, it.text);

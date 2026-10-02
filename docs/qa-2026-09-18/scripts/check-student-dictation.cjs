@@ -10,9 +10,13 @@
  *   4. 거꾸로 놓은 앞부분은 'wrong' · 틀린 타일 뒤 힌트는 그 타일부터 되돌리고 맞는 낱말을 넣음 · 힌트만으로 채우면 '힌트로 완성'.
  *   5. 방해 낱말은 같은 강의 다른 문장의 낱말뿐(고정 목록에서 온 것 0).
  *   6. 첫 타일의 대문자: 남는 낱말 목록(I · I'm · 문장 중간 대문자 낱말 · 한국어 낱말 · Buddhists).
- *   7. 내 정보 칸(STU-L03): 20문장 · 14강(s1-2 #1 의 Hong Gil Dong · Seoul 포함, s20-5 #6 제외), 칸 자리가 모든 꼴에서 같음.
+ *   7. 내 정보 칸(STU-L03): 20문장 · 14강(s1-2 #1 의 홍길동 · 서울 포함, s20-5 #6 제외), 칸 자리가 모든 꼴에서 같음.
+ *   8. (2026-10-02) 빠진 글자 0: 문장의 모든 글자(영어 · 한글 · 숫자)가 낱말 조각이나 고정 칸에 들어감 — 한글로 적은 한국어 낱말
+ *      ('The 신라 Kingdom …')이 조각에서도 정답에서도 빠졌던 일(사장님 2026-10-02 "신라 블록이 없는데").
+ *   ADULT(--course adult)는 STUDENT 와 같은 화면 · 규칙이라 같은 검사를 그대로 받는다(내 정보 칸 수만 다름 — a1-2 10칸).
  *
- *   node docs/qa-2026-09-18/scripts/check-student-dictation.cjs [--list] [--break=judge|blank|fixedlist|pool]
+ *   node docs/qa-2026-09-18/scripts/check-student-dictation.cjs [--course student|adult] [--list] [--break=judge|blank|fixedlist|pool|hangul]
+ *   --break=hangul    : 한글이 든 조각을 빼고 셈(고치기 전 낱말 규칙) — 빠진 글자가 잡혀 FAIL
  *   --break=judge     : 마지막 부분에서 낱말 하나를 빼고 판정 — 모든 꼴이 FAIL(exit 1) 이 나야 검사가 살아 있는 것
  *   --break=blank     : s20-5 #6 도 빈칸으로 셈 — 21문장 · 15강이 되어 FAIL
  *   --break=fixedlist : 화면의 타일 대신 generateWordBank(문장, []) 그대로를 셈 — 고정 목록 방해 낱말이 잡혀 FAIL
@@ -30,6 +34,9 @@ const T = loadTs(path.join(REPO, "src/lib/studentCourseText.ts"));
 
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice(8);
 const LIST = process.argv.includes("--list");
+const COURSE = (process.argv[process.argv.indexOf("--course") + 1] || "") === "adult" && process.argv.includes("--course") ? "adult" : "student";
+/** what tokens leave of a text — must hold no letter (8) */
+const LETTER = /[A-Za-z0-9가-힣]/;
 const DEFAULT_DISTRACTORS = new Set(["was", "the", "with", "in", "at", "for", "on", "is", "he", "she", "we", "are", "very"]);
 
 // a fixed random, so the numbers are the same on every run
@@ -38,14 +45,14 @@ function seeded(seed) {
   return () => ((s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296);
 }
 
-const index = JSON.parse(fs.readFileSync(path.join(REPO, "content/courses/student.json"), "utf8"));
+const index = JSON.parse(fs.readFileSync(path.join(REPO, `content/courses/${COURSE}.json`), "utf8"));
 const lessons = index.lessons.map((l) => l.id).map((id) => {
-  const L = JSON.parse(fs.readFileSync(path.join(REPO, "content/lessons/student", `${id}.json`), "utf8"));
+  const L = JSON.parse(fs.readFileSync(path.join(REPO, `content/lessons/${COURSE}`, `${id}.json`), "utf8"));
   const block = (L.blocks || []).find((b) => b.type === "sentences");
   return { id, texts: ((block && block.items) || []).map((it) => it.text) };
 });
 const allTexts = lessons.flatMap((l) => l.texts);
-const capitals = T.studentCapitalsFrom(allTexts);
+const capitals = T.studentCapitalsFrom(allTexts, COURSE === "adult" ? T.ADULT_EXTRA_CAPITALS : T.STUDENT_EXTRA_CAPITALS);
 
 const fails = [];
 const fail = (msg) => fails.push(msg);
@@ -63,6 +70,10 @@ for (const { id, texts } of lessons) {
     forms.forEach((f, j) => {
       const toks = D.tokensOf(f).map((t) => t.word);
       if (toks.join("\u0001") !== (accepted[j] || []).join("\u0001")) fail(`${where}: tokens differ from generateWordBank in form ${j + 1}`);
+      // 8 · every letter of the form is in a token (a Hangul word is a word — 2026-10-02)
+      let rest = f;
+      for (const t of D.tokensOf(f)) if (!(BREAK === "hangul" && /[가-힣]/.test(t.word))) rest = rest.replace(t.word, " ");
+      if (LETTER.test(rest)) fail(`${where}: letters left out of the tiles in form ${j + 1} — "${rest.replace(/\s+/g, " ").trim()}"`);
     });
     // 7 · blanks
     let blanks = B.blanksOf(id, i, text);
@@ -164,12 +175,15 @@ for (const { id, texts } of lessons) {
 }
 
 const blankLessons = new Set(stat.blanks.map((b) => b.lesson));
-if (stat.sentences !== 414) fail(`sentences ${stat.sentences} (expected 414)`);
-if (stat.blanks.length !== 20 || blankLessons.size !== 14) fail(`blank sentences ${stat.blanks.length} in ${blankLessons.size} lessons (expected 20 in 14)`);
+const wantSentences = COURSE === "adult" ? 228 : 414;
+if (stat.sentences !== wantSentences) fail(`sentences ${stat.sentences} (expected ${wantSentences})`);
+// STUDENT 20 sentences in 14 lessons; ADULT 7 in 2 — a1-2's six sentences of 내 정보 (10 blanks) and a1-5 "(2) months"
+const [wantBlanks, wantLessons] = COURSE === "adult" ? [7, 2] : [20, 14];
+if (stat.blanks.length !== wantBlanks || blankLessons.size !== wantLessons) fail(`blank sentences ${stat.blanks.length} in ${blankLessons.size} lessons (expected ${wantBlanks} in ${wantLessons})`);
 if (stat.fixedListDistractors) fail(`${stat.fixedListDistractors} distractor tile(s) from the fixed list`);
 
 const fmt = (m) => [...m.entries()].sort((a, b) => b[1] - a[1]).map(([w, c]) => `${w}${c > 1 ? `×${c}` : ""}`).join(", ");
-console.log(`STUDENT 문장 ${stat.sentences} · 정답 꼴 ${stat.forms} · 강의 ${lessons.length}${BREAK ? ` · BREAK=${BREAK}` : ""}`);
+console.log(`${COURSE.toUpperCase()} 문장 ${stat.sentences} · 정답 꼴 ${stat.forms} · 강의 ${lessons.length}${BREAK ? ` · BREAK=${BREAK}` : ""}`);
 console.log(`16낱말 이상 ${stat.long} · 두 번에 나눔 ${stat.split} · 통째로 둠 ${stat.longWhole.length}${stat.longWhole.length ? ` (${stat.longWhole.join(", ")})` : ""}`);
 console.log(`한 번에 보이는 타일 최대: 나눈 문장의 한 부분 ${stat.maxTilesSplit} · 통째 문장 ${stat.maxTilesWhole} · 16개 넘는 부분 ${stat.over16}`);
 console.log(`방해 낱말: 고정 목록에서 온 것 ${stat.fixedListDistractors} · 방해 낱말 없는 문장 ${stat.noDistractor}`);

@@ -25,6 +25,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { compareLesson, sentencesOf, koParasOf, key, koKey } from "./lib/student-original.mjs";
+import { createRequire } from "node:module";
 
 const REPO = path.resolve(import.meta.dirname, "../../..");
 const ARCH = process.env.KIG_ARCHIVE || "C:/Users/ghddl/Desktop/랩자료모음/최종 Lab/최신Lab/본사 Lab v1.01";
@@ -36,7 +37,15 @@ if (!fs.existsSync(path.join(ARCH, "Student"))) { console.log(`원본 아카이�
 const L = path.join(REPO, "content/lessons/student");
 const ids = fs.readdirSync(L).filter((f) => /^s\d+-\d+\.json$/.test(f)).map((f) => f.replace(".json", ""))
   .sort((a, b) => { const p = (s) => s.match(/\d+/g).map(Number); const [a1, a2] = p(a), [b1, b2] = p(b); return a1 - b1 || a2 - b2; });
-const data = Object.fromEntries(ids.map((id) => { const d = JSON.parse(fs.readFileSync(path.join(L, `${id}.json`), "utf8")); return [id, { en: sentencesOf(d), ko: koParasOf(d) }]; }));
+// (2026-10-02) STUDENT writes its Korean words in Hangul inside the English ("… is 경주.") and says them in romanization
+// (src/lib/lessonSpeechForm.ts romanizedForm) — the archive and the recorded fixes are in romanization, so compare that form
+const requireCjs = createRequire(import.meta.url);
+const ts = requireCjs(path.join(REPO, "node_modules", "typescript"));
+const speechSrc = fs.readFileSync(path.join(REPO, "src/lib/lessonSpeechForm.ts"), "utf8");
+const speechMod = { exports: {} };
+new Function("module", "exports", ts.transpileModule(speechSrc, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 } }).outputText)(speechMod, speechMod.exports);
+const { romanizedForm } = speechMod.exports;
+const data = Object.fromEntries(ids.map((id) => { const d = JSON.parse(fs.readFileSync(path.join(L, `${id}.json`), "utf8")); return [id, { en: sentencesOf(d).map((t) => romanizedForm(`student/${id}`, t)), ko: koParasOf(d) }]; }));
 
 const breaks = {
   swap: () => { const t = data["s1-4"]; data["s1-4"] = data["s1-6"]; data["s1-6"] = t; },
