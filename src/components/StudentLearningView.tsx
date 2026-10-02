@@ -168,7 +168,6 @@ const segmentButton = (on: boolean) =>
 /** a word as a tile: the bank, the answer box and the answer box's measuring copy share it (a fixed blank adds its own weight) */
 const chipBase = "inline-flex min-h-11 min-w-11 items-center justify-center rounded-control border px-3 text-body";
 const tileBase = `${chipBase} font-semibold`;
-const blankChip = "rounded-control bg-sunken px-1.5 text-ink underline decoration-dotted decoration-ink-faint underline-offset-4";
 
 function headerHeight(): number {
   if (typeof window === "undefined") return 56;
@@ -752,14 +751,18 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
   // Pieces
   // ------------------------------------------------------------------------------------------------------------
 
-  /** The written sentence, its blanks as chips — with the learner's own words in Step 3 when there are some. */
+  /**
+   * The written sentence — with the learner's own words in Step 3 when there are some. A blank is drawn as plain text like the
+   * rest of the sentence (2026-10-02 사장님 "진한 상자 다 없애 그냥 한글만 나둬 다른 한글과 똑같이"); data-blank stays for the
+   * audit helpers.
+   */
   const sentenceText = (idx: number, personal: boolean): ReactNode => {
     const text = sentenceItems[idx]?.text ?? "";
     const list = blanks[idx] ?? [];
     if (!list.length) return text;
     return segmentsOf(text, list).map((seg, k) =>
       "blank" in seg ? (
-        <span key={k} data-blank className={blankChip}>
+        <span key={k} data-blank>
           {personal && myInfo[seg.blank.key]?.trim() ? myInfo[seg.blank.key].trim() : seg.blank.text}
         </span>
       ) : (
