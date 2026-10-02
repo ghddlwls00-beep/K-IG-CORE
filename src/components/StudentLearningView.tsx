@@ -49,7 +49,7 @@ import {
   unlockMobileAudio,
 } from "@/lib/speech";
 import { firstSlashAlternative } from "@/lib/listeningUtils";
-import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
+import { lessonSpeechForm, romanizedForm } from "@/lib/lessonSpeechForm";
 import { isSpeechRecognitionSupported } from "@/lib/speechRecognition";
 import { markLessonDone, recordAttempt } from "@/lib/learning/record";
 import {
@@ -1117,7 +1117,10 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
     const said = practice.completed[idx] === true;
     const micOpen = openMic[idx] === true;
     const enHidden = hideEn && !shownEn[idx];
-    const targets = micTargets(item.text, blanks[idx] ?? [], myInfo);
+    // ADULT writes Korean words in Hangul (2026-10-02); the microphone hears them as their romanization — never inside a [[slot]]
+    const targets = micTargets(item.text, blanks[idx] ?? [], myInfo).map((t) =>
+      t.split(/(\[\[[^\]]*\]\])/).map((part) => (part.startsWith("[[") ? part : romanizedForm(lessonKey, part))).join(""),
+    );
     const rowButton = "inline-flex min-h-11 min-w-0 items-center justify-center gap-1 rounded-control border px-1 text-label font-semibold transition-colors cursor-pointer";
     return (
       <li

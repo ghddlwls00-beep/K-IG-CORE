@@ -26,9 +26,9 @@ const NOT_BLANK: Record<string, number[]> = { "s20-5": [5], "a10-5": [5] };
 
 /**
  * Blanks written without brackets: the free lesson s1-2's sample name and city (lesson id → sentence index → blanks).
- * ADULT a1-2 (2026-10-02 — the PPT's 홍길동 · 서울 · 부산 … written in romanization as s1-2 and made '내 정보' blanks, 사장님
- * "STUDENT 1-2 처럼"): the name, the cities, the school, the year and the age. A word written twice in a sentence ("Hong",
- * "Busan") takes the next place not already a blank.
+ * ADULT a1-2 (2026-10-02 — the PPT's 홍길동 · 서울 · 부산 … made '내 정보' blanks, 사장님 "STUDENT 1-2 처럼"; written in Hangul,
+ * 사장님 "표기는 한국어로"): the name, the cities, the school, the year and the age. A word written twice in a sentence ("홍",
+ * "부산") takes the next place not already a blank.
  */
 const EXTRA_BLANKS: Record<string, Record<number, { text: string; label: string }[]>> = {
   "s1-2": {
@@ -39,20 +39,20 @@ const EXTRA_BLANKS: Record<string, Record<number, { text: string; label: string 
   },
   "a1-2": {
     0: [
-      { text: "Hong Gil Dong", label: "내 이름" },
-      { text: "Hong", label: "내 성" },
+      { text: "홍길동", label: "내 이름" },
+      { text: "홍", label: "내 성" },
     ],
     1: [
-      { text: "Seoul", label: "태어난 곳" },
-      { text: "Busan", label: "사는 곳" },
+      { text: "서울", label: "태어난 곳" },
+      { text: "부산", label: "사는 곳" },
     ],
-    2: [{ text: "Busan", label: "아파트 이름" }],
+    2: [{ text: "부산", label: "아파트 이름" }],
     3: [
-      { text: "Busan Women's High School", label: "졸업한 고등학교" },
+      { text: "부산 Women's High School", label: "졸업한 고등학교" },
       { text: "1980", label: "졸업한 해" },
-      { text: "Busan", label: "고등학교가 있는 곳" },
+      { text: "부산", label: "고등학교가 있는 곳" },
     ],
-    5: [{ text: "Hanguk", label: "대학교 이름" }],
+    5: [{ text: "한국", label: "대학교 이름" }],
     6: [{ text: "40", label: "나이" }],
   },
 };

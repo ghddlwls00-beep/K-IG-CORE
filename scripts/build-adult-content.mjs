@@ -10,8 +10,9 @@
  * One lesson per ▎ sub-unit of a PPT, exactly as STUDENT is one lesson per sub-unit of a chapter. Owner decisions (2026-10-02):
  *   · 6과 남성용 / 여성용 differ only in the Saturday sub-unit (3 sentences), so 6-1 is the men's Saturday, 6-2 the women's, and
  *     the three shared sub-units follow ("토요일만 두 강의로").
- *   · 1과: the Hangul names inside English sentences are written in romanization as in STUDENT s1-2 (Hong Gil Dong · Seoul · Busan
- *     · Hanguk) and are '내 정보' blanks (src/lib/studentBlanks.ts). The Korean lines keep the Hangul.
+ *   · 1과: the names inside English sentences are '내 정보' blanks as in STUDENT s1-2 (src/lib/studentBlanks.ts).
+ *   · Every Korean word inside the English is WRITTEN in Hangul (경주 · 불고기 · 제주도 …) and SAID as the romanization the clips
+ *     were made from ("표기는 한국어로 다 변경하자 … 음성은 만든거 사용" — src/lib/lessonSpeechForm.ts KOREAN_DISPLAY_PAGES).
  *   · 7~10과 are the old text of STUDENT 17~20장. They take STUDENT's audited sentences (facts, English and Revised Romanization —
  *     content/lessons/student/s17-1 … s20-5) one for one; the Korean line is the PPT's where the meaning did not change and is
  *     rewritten where it did ("STUDENT 처럼 고치기"). The PPT's sentence count and sub-units stay: 9과 Food keeps "I like them both."
@@ -19,6 +20,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { createRequire } from "node:module";
 
 const ROOT = process.cwd();
 const SRC = path.join(ROOT, "docs", "adult", "ppt-본문.json");
@@ -55,14 +57,60 @@ const TITLE_FIX = {
   "Gyeong-Ju (경주)": "Gyeongju (경주)",
 };
 
-/** 1과 — romanized as STUDENT s1-2 (the '내 정보' blanks are src/lib/studentBlanks.ts EXTRA_BLANKS "a1-2"). */
+/**
+ * 1과 — the sentences in romanization (STUDENT s1-2's way), which is what speech says; the screen then writes the Korean
+ * words in Hangul again (KOREAN_DISPLAY_PAGES below). The '내 정보' blanks are src/lib/studentBlanks.ts EXTRA_BLANKS "a1-2".
+ * #6 "I live at 부산 apartment" → "I live in … Apartments" (an apartment complex's name — 사장님 2026-10-02 "너 추천대로 가자").
+ */
 const CH1_EN = {
   4: "My name is Hong Gil Dong, but you can call me Mrs. Hong.",
   5: "I was born in Seoul, but now I live in Busan.",
-  6: "I live at Busan apartment with my husband and 2 children.",
+  6: "I live in Busan Apartments with my husband and 2 children.",
   7: "I graduated from Busan Women's High School in 1980 in Busan.",
   9: "I studied English at Hanguk University.",
 };
+
+/**
+ * Other English the owner approved changing (2026-10-02 "너 추천대로 가자"), PPT file → sentence number → [English, Korean].
+ * 2과 #14: the family has one son and one daughter, so "Our eldest son" (the oldest of three or more) becomes "Our son".
+ */
+const EN_FIX = {
+  "2과.pptx": {
+    14: [
+      "Our son, who has always been thoughtful and considerate, has wanted to give back since childhood and now works as a social worker at a community center.",
+      "늘 사려 깊고 남을 배려해 온 아들은 어릴 때부터 사회에 봉사하고 싶어 했고, 지금은 커뮤니티 센터에서 사회복지사로 일하고 있습니다.",
+    ],
+  },
+};
+
+/**
+ * The Korean words of the English are WRITTEN in Hangul (사장님 2026-10-02 "표기는 한국어로 다 변경하자", "음성은 만든거
+ * 사용") — page → [Hangul, romanization], the table speech reads back (src/lib/lessonSpeechForm.ts KOREAN_DISPLAY_PAGES,
+ * loaded from there so there is one table). Every sentence is checked: romanizedForm(the Hangul sentence) must give the
+ * romanized sentence again exactly, or the clips made for it would not be the ones played.
+ */
+function loadSpeechForm() {
+  const require = createRequire(import.meta.url);
+  const ts = require(path.join(ROOT, "node_modules", "typescript"));
+  const source = fs.readFileSync(path.join(ROOT, "src", "lib", "lessonSpeechForm.ts"), "utf8");
+  const js = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 } }).outputText;
+  const m = { exports: {} };
+  new Function("module", "exports", "require", js)(m, m.exports, require);
+  return m.exports;
+}
+const { KOREAN_DISPLAY_PAGES, romanizedForm } = loadSpeechForm();
+
+function hangulForm(page, text) {
+  const pairs = KOREAN_DISPLAY_PAGES[page];
+  if (!pairs) return text;
+  const byRoman = new Map(pairs.map(([hangul, roman]) => [roman.toLowerCase(), hangul]));
+  const alternatives = pairs
+    .map(([, roman]) => roman)
+    .sort((a, b) => b.length - a.length)
+    .map((r) => `[${r[0].toUpperCase()}${r[0].toLowerCase()}]${r.slice(1).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`)
+    .join("|");
+  return text.replace(new RegExp(`(^|[^A-Za-z0-9])(${alternatives})(?![A-Za-z0-9])`, "g"), (_m, before, roman) => `${before}${byRoman.get(roman.toLowerCase())}`);
+}
 
 /**
  * 7~10과 — the Korean line where STUDENT's fix changed what the English says (sentence number in the PPT → Korean). Every other
@@ -134,6 +182,10 @@ CHAPTERS.forEach((chapter, ci) => {
     });
   }
   if (unit === 1) for (const s of sections.flatMap((x) => x.sentences)) if (CH1_EN[s.n]) s.en = CH1_EN[s.n];
+  for (const s of sections.flatMap((x) => x.sentences)) {
+    const fix = EN_FIX[chapter.file]?.[s.n];
+    if (fix) [s.en, s.ko] = fix;
+  }
 
   if (chapter.women) {
     const women = ppt[chapter.women].sections[0];
@@ -153,6 +205,11 @@ CHAPTERS.forEach((chapter, ci) => {
     for (const s of section.sentences) {
       if (/[가-힣]/.test(s.en)) throw new Error(`${id}: Hangul left in the English "${s.en}"`);
       if (!s.ko || !/[가-힣]/.test(s.ko)) throw new Error(`${id}: no Korean line for "${s.en}"`);
+      // the screen's form: the Korean words in Hangul — and the way back speech takes must give this sentence exactly
+      const page = `adult/${id}`;
+      const written = hangulForm(page, s.en);
+      if (romanizedForm(page, written) !== s.en) throw new Error(`${id}: "${written}" reads back as "${romanizedForm(page, written)}", not "${s.en}"`);
+      s.en = written;
     }
     order += 1;
     const enTitle = title.replace(/\s*\([^()]*\)\s*$/, "");

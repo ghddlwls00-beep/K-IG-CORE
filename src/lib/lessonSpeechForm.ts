@@ -212,13 +212,68 @@ export const LESSON_SPEECH_WORDS: Record<string, [string, string][]> = {
 const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 /**
+ * ADULT — Korean words WRITTEN in Hangul inside the English (사장님 2026-10-02 "발음 좋네 … 한국말 표기를 영어로 옮긴거라
+ * 뭔가 이상한데 음성은 만든거 사용하고 이런 것들 표기는 한국어로 다 변경하자"). The screen shows "Another attractive
+ * destination is 경주."; speech first puts back the romanization it was made from ("… is Gyeongju.") and then tags it as
+ * above, so the string spoken — and the clip's name — is exactly the one the clips were made for. page → [as written,
+ * romanization as said]. A word that starts the sentence is said with a capital ("Bulgogi is …" · "… is bulgogi.").
+ * scripts/build-adult-content.mjs writes the lessons from this table and checks that this way back gives the old
+ * sentence again, letter for letter.
+ */
+export const KOREAN_DISPLAY_PAGES: Record<string, [string, string][]> = {
+  "adult/a1-2": [["홍길동", "Hong Gil Dong"], ["홍", "Hong"], ["서울", "Seoul"], ["부산", "Busan"], ["한국", "Hanguk"]],
+  "adult/a3-2": [["대한", "Daehan"], ["민국", "Minguk"]],
+  "adult/a3-3": [["대한", "Daehan"]],
+  "adult/a3-4": [["대한", "Daehan"]],
+  "adult/a6-1": [["찜질방", "jjimjilbang"]],
+  "adult/a6-2": [["찜질방", "jjimjilbang"]],
+  "adult/a7-1": [["고조선", "Gojoseon"], ["환웅", "Hwanung"], ["웅녀", "Ungnyeo"], ["환인", "Hwanin"], ["단군", "Dangun"]],
+  "adult/a7-2": [["고조선", "Gojoseon"], ["고구려", "Goguryeo"], ["백제", "Baekje"], ["신라", "Silla"]],
+  "adult/a7-3": [["고려", "Goryeo"], ["조선", "Joseon"], ["신라", "Silla"]],
+  "adult/a8-1": [["설날", "Seollal"], ["추석", "Chuseok"]],
+  "adult/a8-2": [["설날", "Seollal"]],
+  "adult/a8-3": [["송편", "songpyeon"], ["추석", "Chuseok"]],
+  "adult/a9-2": [["한복", "hanbok"]],
+  "adult/a9-3": [["불고기", "bulgogi"], ["김치", "kimchi"]],
+  "adult/a9-4": [["세종", "Sejong"], ["한글", "Hangul"]],
+  "adult/a10-2": [["속리산", "Songnisan"], ["불국사", "Bulguksa Temple"]],
+  "adult/a10-3": [["경기도", "Gyeonggi Province"], ["용인", "Yongin"], ["수원", "Suwon"], ["서울", "Seoul"]],
+  "adult/a10-4": [["경주", "Gyeongju"], ["신라", "Silla"]],
+  "adult/a10-5": [["제주도", "Jeju Island"], ["한라산", "Mt. Halla"], ["제주", "Jeju"]],
+  "adult/a11-1": [["광주", "Gwangju"], ["서울", "Seoul"]],
+  "adult/a12-2": [["학원", "hagwons"]],
+  "adult/a12-3": [["서울", "Seoul"]],
+};
+
+/**
+ * The sentence with its Hangul words put back into the romanization they were written in (KOREAN_DISPLAY_PAGES) — what
+ * speech says and what the microphone listens for. Whole words (no letter, digit or Hangul on either side), longest first.
+ * Pages not in the table come back unchanged.
+ */
+export function romanizedForm(lessonKey: string, text: string): string {
+  const pairs = KOREAN_DISPLAY_PAGES[lessonKey];
+  if (!pairs || !text) return text;
+  const roman = new Map(pairs);
+  const alternatives = [...roman.keys()].sort((a, b) => b.length - a.length).map(escapeRegExp).join("|");
+  return text.replace(
+    new RegExp(`(^|[^A-Za-z0-9가-힣])(${alternatives})(?![A-Za-z0-9가-힣])`, "g"),
+    (_m, before: string, written: string, offset: number) => {
+      const said = roman.get(written) ?? written;
+      return `${before}${offset === 0 && before === "" ? said.charAt(0).toUpperCase() + said.slice(1) : said}`;
+    },
+  );
+}
+
+/**
  * The string to speak for `text` on the page `lessonKey` ("<course>/<lesson id>", as the views
  * receive it). Whole words only (no letter or digit on either side), longest first ("Yi Sun-sin"
  * before "Yi"), exact case — in ONE pass, because the spoken form keeps the written word: a second
  * pass would tag "Yi" again inside "Yi ⟨ˈi⟩ Sun-sin ⟨…⟩". No look-behind in the pattern: older iOS
- * Safari throws on it.
+ * Safari throws on it. A Hangul word written inside the English (ADULT) is first put back into its
+ * romanization (romanizedForm).
  */
-export function lessonSpeechForm(lessonKey: string, text: string): string {
+export function lessonSpeechForm(lessonKey: string, writtenText: string): string {
+  const text = romanizedForm(lessonKey, writtenText);
   const words = LESSON_SPEECH_WORDS[lessonKey];
   if (!words || !text) return text;
   const spoken = new Map(words);

@@ -18,8 +18,10 @@
 | 6과 남성용 / 여성용 | 다른 곳은 토요일 소단원의 세 문장뿐 → 6-1 토요일(남성용) · 6-2 토요일(여성용) · 6-3~6-5 공통 |
 | 어떤 이용권으로 여나 | STUDENT 이용권도 연다 (`license.ts` STUDENT_PASS_COURSES · 이름 "STUDENT · PASS-OFF GRAMMAR · ADULT") |
 | 7~10과 (STUDENT 17~20장의 옛 글) | STUDENT 처럼 고친다 — 영어는 STUDENT 가 감사 때 고친 문장 그대로, 한글은 뜻이 바뀐 줄만 고쳐 씀. 문장 수 · 소단원은 PPT 대로 |
-| 1과 영어 문장 속 한글(홍길동 · 서울 · 부산 · 한국 University) | STUDENT 1-2 처럼 로마자(Hong Gil Dong · Seoul · Busan · Hanguk) + '내 정보' 빈칸 10개 (`studentBlanks.ts` a1-2) |
+| 1과 영어 문장 속 한글(홍길동 · 서울 · 부산 · 한국 University) | '내 정보' 빈칸 10개 (`studentBlanks.ts` a1-2). 처음엔 로마자로 바꿨다가 아래 '표기는 한국어로' 결정으로 다시 한글 |
 | 메뉴 사진 | 남성 어른 사진(`TAB_IMAGES.men`) |
+| 영어 속 한국어 낱말의 표기 (샘플을 들으신 뒤) | 발음은 좋다 · 표기는 한국어로 — 화면에는 한글(경주 · 서울 · 불고기 · 제주도 · 한라산 …), 소리는 만든 음성 그대로 (`lessonSpeechForm.ts` KOREAN_DISPLAY_PAGES: 소리 낼 때만 로마자로 되돌림 → 클립 이름 같음. 226문장 소리 그대로 확인) |
+| PPT 문장 두 곳 | 추천대로 — 1-2 `I live in 부산 Apartments` · 2-5 `Our son`(한글 '아들은') — 새 음성 3 |
 
 ## 학습법 — STUDENT 와 같은 것
 
@@ -37,7 +39,7 @@
 
 ## 음성
 
-- 새 클립 354개(31,786자) 생성 — 나머지 96개는 STUDENT 와 같은 문장이라 이미 있는 클립을 씀. `--dry-run` pending 0.
+- 새 클립 354개(31,786자) + 고친 두 문장 3개 생성 — 나머지 96개는 STUDENT 와 같은 문장이라 이미 있는 클립을 씀. `--dry-run` pending 0.
 - **R2 에는 아직 안 올림.** 파일은 이 작업 폴더와 원래 저장소의 `public/audio/azure-ava/v1/` 에 있음.
   배포 순서(AGENTS.md): `node scripts/upload-azure-ava-r2.mjs` → 그 뒤 푸시.
 
@@ -48,7 +50,3 @@
   없는 주소 404, 장 듣기 API(무료 1장만 · 2장 401), 처음 화면 STAGE 02 ADULT. STUDENT 쪽 같은 확인 그대로.
 - **못 한 것**: 이용권으로 장이 차례로 열리는지 브라우저 확인(이 작업 폴더에 이용권 비밀값이 없음). 규칙 코드는 STUDENT 것을 옮긴 것.
 
-## PPT 글에서 본 것 (고치지 않음 — 사장님 판단)
-
-- 1-2 #3 "I live at Busan apartment with my husband and 2 children." — 아파트 단지 이름이면 보통 "I live in Busan Apartments".
-- 2-5 #2 "Our eldest son" — 2과 가족은 아들 하나 · 딸 하나라 eldest(셋 이상 중 맏이)가 어색함. "Our son" 이면 자연스러움.
