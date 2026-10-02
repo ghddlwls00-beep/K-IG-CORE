@@ -551,8 +551,25 @@ function AnswerBox({
 }
 
 /** The learner's words with the marks of GRM-L02: missing (green, inserted) · wrong (red → fix) · extra (struck) · moved. */
+/**
+ * Consecutive tokens of the same kind joined into one (a "wrong" token keeps its own expected word, so it stays alone). Drawn with
+ * the same single spaces between them, so the line reads exactly as before — only a word that is part of a name can now be drawn
+ * as that name (koreanOnScreen).
+ */
+function mergeSameKind(tokens: DiffToken[]): DiffToken[] {
+  const out: DiffToken[] = [];
+  for (const token of tokens) {
+    const last = out[out.length - 1];
+    if (last && last.kind === token.kind && token.kind !== "wrong") last.text = `${last.text} ${token.text}`;
+    else out.push({ ...token });
+  }
+  return out;
+}
+
 /** `show`: how a word is drawn (koreanOnScreen — a Korean word in Hangul); the diff itself is the grader's */
-function DiffLine({ tokens, show = (s) => s }: { tokens: DiffToken[]; show?: (text: string) => string }) {
+function DiffLine({ tokens: raw, show = (s) => s }: { tokens: DiffToken[]; show?: (text: string) => string }) {
+  // neighbours of the same kind drawn as one piece, so a name the diff cut into words is drawn whole ("Han River" → 한강)
+  const tokens = mergeSameKind(raw);
   return (
     <>
       {tokens.map((token, index) => {
@@ -636,6 +653,16 @@ export function GrammarLearningView({
   const gloss = (text: string) => koreanOnScreen(lessonKey, text);
   /** the learner's typed answer as graded — a Korean word written in Hangul counts as the lesson's spelling */
   const asWritten = (text: string) => romanForGrading(lessonKey, text);
+  /**
+   * A cloze sentence's text between two blanks, drawn as ONE piece from the first part of the run (null for the parts after it) —
+   * so a name cut into words ("Han" · " " · "River") is drawn whole: "한강" (koreanOnScreen works on whole names).
+   */
+  const clozeRun = (parts: { text: string; isBlank: boolean }[], index: number): string | null => {
+    if (index > 0 && !parts[index - 1].isBlank) return null;
+    let text = "";
+    for (let i = index; i < parts.length && !parts[i].isBlank; i++) text += parts[i].text;
+    return text ? gloss(text) : null;
+  };
   /**
    * GRAMMAR I 07강 (gh1-020 questions / gh1-021 answers) carries the textbook's "문법 확인
    * 문제" — eight Korean questions on be-verb sentences — next to its composition sentences.
@@ -1711,7 +1738,7 @@ export function GrammarLearningView({
                     &nbsp;
                   </span>
                 ) : (
-                  <Fragment key={index}>{gloss(part.text)}</Fragment>
+                  <Fragment key={index}>{clozeRun(item.clozeParts, index)}</Fragment>
                 ),
               )}
             </p>
@@ -1918,7 +1945,10 @@ export function GrammarLearningView({
             <>
               <p data-cloze className={`mt-1 leading-[2.75] text-ink ${fs.english}`}>
                 {item.clozeParts.map((part, index) => {
-                  if (!part.isBlank) return part.text ? <Fragment key={index}>{gloss(part.text)}</Fragment> : null;
+                  if (!part.isBlank) {
+                    const run = clozeRun(item.clozeParts, index);
+                    return run ? <Fragment key={index}>{run}</Fragment> : null;
+                  }
                   const k = order.get(index) ?? 0;
                   const value = blankValue(id, index);
                   if (revealed) {

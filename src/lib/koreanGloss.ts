@@ -20,9 +20,11 @@ const SEOUL: Gloss = ["Seoul", "서울"];
 const BUSAN: Gloss[] = [["Busan", "부산"], ["Pusan", "부산"]];
 const KIM: Gloss = ["Kim", "김"];
 const GYEONGSANG: Gloss[] = [["Gyeongsang-do", "경상도"], ["Gyeongsangdo", "경상도"], ["Kyungsangdo", "경상도"], ["Gyeongsang", "경상"]];
-const HAN_RIVER: Gloss[] = [["Han River", "한강"], ["Hangang River", "한강"]];
-const HONG: Gloss[] = [["Hong Gil Dong", "홍길동"], ["Hong Gil-dong", "홍길동"]];
-const DAEHAN: Gloss[] = [["Daehan", "대한"], ["Dae-han", "대한"], ["Dae Han", "대한"]];
+// with the name alone, in case a cloze blank falls on "River" and leaves "Han" by itself
+const HAN_RIVER: Gloss[] = [["Han River", "한강"], ["Hangang River", "한강"], ["Hangang", "한강"], ["Han", "한"]];
+// with the parts alone, for a word tile or a marked word cut from the sentence one word at a time
+const HONG: Gloss[] = [["Hong Gil Dong", "홍길동"], ["Hong Gil-dong", "홍길동"], ["Hong", "홍"], ["Gil-dong", "길동"], ["Gil", "길"], ["Dong", "동"]];
+const DAEHAN: Gloss[] = [["Daehan", "대한"], ["Dae-han", "대한"], ["Dae Han", "대한"], ["Dae", "대"], ["Han", "한"]];
 const HANGUK: Gloss[] = [["Hanguk", "한국"], ["Hankuk", "한국"]];
 const JUNG: Gloss[] = [["Jung", "정"], ["Jeong", "정"]];
 const YI_SUN_SIN: Gloss[] = [
@@ -31,6 +33,8 @@ const YI_SUN_SIN: Gloss[] = [
   // pg13-1's accepted answers also have the family name last ("General Soon-shin Lee") and the family name alone
   // ("Admiral Yi" — the longer spellings above win where the given name follows)
   ["Soon-shin Lee", "이순신"], ["Yi", "이"],
+  // the name's parts alone — a word tile or a marked word is cut from the sentence one word at a time ("Yi" · "Sun-sin")
+  ["Sun-sin", "순신"], ["Sun-shin", "순신"], ["Soon-shin", "순신"], ["Soon-sin", "순신"], ["Sunsin", "순신"], ["Lee", "이"],
 ];
 const CHUSEOK: Gloss[] = [["Chuseok", "추석"], ["Chu-seok", "추석"], ["Chu-Seok", "추석"]];
 const SEOLLAL: Gloss[] = [["Seollal", "설날"], ["Seol-lal", "설날"], ["Seol-Lal", "설날"]];
