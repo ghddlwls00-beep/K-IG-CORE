@@ -7,7 +7,7 @@ import { frameParts, ruleQuestionKey, type ComposeItemState } from "@/lib/passof
 import { ComposeRun } from "./ComposeStep";
 import type { ComposeReport } from "./ComposeCard";
 import { RuleCheck } from "./RuleStep";
-import { FONT, SecondaryButton, Verdict, tone, type FontSize, type Speaker } from "./ui";
+import { FONT, SecondaryButton, Verdict, glossFor, tone, type FontSize, type Speaker } from "./ui";
 
 /**
  * ⑤ 마무리 (설계 §3): two sentences the lesson has not shown (graded as in ④) → the rule check once more → my own
@@ -74,6 +74,8 @@ export function WrapUpStep({
   const parts = frame ? frameParts(frame.template) : [];
   const blanks = Math.max(0, parts.length - 1);
   const otherStepsLeft = stepsLeft.filter((s) => s !== 4);
+  // the frame's words as drawn (the lesson's Hangul glosses — glossFor); the learner's blanks are their own
+  const gloss = glossFor(lessonId);
 
   return (
     <div className="flex flex-col gap-6">
@@ -112,6 +114,7 @@ export function WrapUpStep({
           </h3>
           <RuleCheck
             check={check}
+            lessonId={lessonId}
             orderKey={ruleQuestionKey(lessonId, "check")}
             points={rule?.points ?? []}
             done={checkDone}
@@ -132,7 +135,7 @@ export function WrapUpStep({
           <p lang="en" className={`${FONT[font].text} flex flex-wrap items-center gap-x-1.5 gap-y-2 text-ink`}>
             {parts.map((part, i) => (
               <span key={i} className="contents">
-                {part ? <span>{part}</span> : null}
+                {part ? <span>{gloss(part)}</span> : null}
                 {i < blanks ? (
                   <input
                     type="text"

@@ -31,10 +31,11 @@ const NOT_BLANK: Record<string, number[]> = { "s20-5": [5], "a10-5": [5] };
  * "부산") takes the next place not already a blank.
  */
 const EXTRA_BLANKS: Record<string, Record<number, { text: string; label: string }[]>> = {
+  // written in Hangul since 2026-10-02 (사장님 "표기는 한국어로" — src/lib/lessonSpeechForm.ts KOREAN_DISPLAY_PAGES)
   "s1-2": {
     0: [
-      { text: "Hong Gil Dong", label: "내 이름" },
-      { text: "Seoul", label: "사는 곳" },
+      { text: "홍길동", label: "내 이름" },
+      { text: "서울", label: "사는 곳" },
     ],
   },
   "a1-2": {

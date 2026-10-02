@@ -64,6 +64,8 @@ import { FONT_LABEL, segmentButton, spokenOf, usePassoffLearner, type FontSize, 
  *   - the end of the lesson is the common LessonEndBar. This view registers a completion gate (src/lib/lessonGate.ts):
  *     '이 강의 학습 완료' stays off, with PASSOFF_GATE_REASON under it, until the five steps are done; `undo: false` because
  *     the server takes completions only (설계 §5), so the bar then shows '학습 완료함' without '취소';
+ *   - (2026-10-02 사장님 "영어 표기 + 한글 덧붙임") each step draws a Korean word written in English with its Hangul after
+ *     it — "Chuseok(추석)" — through glossFor(lessonId) (passoff/ui.tsx); the sound below and every grade keep the lesson's text;
  *   - the line icons of src/components/icons.tsx and the type · radius · colour tokens; text size and sentence speed sit
  *     beside the step's title, in GRAMMAR's words and segments ('글자 크기' 기본 · 크게 · 특대 · '문장 속도' 1.0× · 0.85×).
  * The textbook's own subheading of the lesson is the line under the page's title (page.tsx), as STUDENT's chapter is.
@@ -473,6 +475,7 @@ export function PassoffLearningView({
       <section hidden={step !== 0} aria-labelledby="passoff-step-1" className="flex flex-col gap-3">
         {heading(0)}
         <AnchorsStep
+          lessonId={lessonId}
           anchors={content.anchors}
           revealed={work.revealed}
           onReveal={(id) =>

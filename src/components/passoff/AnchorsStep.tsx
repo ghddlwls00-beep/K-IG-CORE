@@ -5,7 +5,7 @@ import type { PassoffAnchor } from "@/lib/passoffTypes";
 import { VoiceSpeakingTester } from "../VoiceSpeakingTester";
 import { useLicense } from "../LicenseProvider";
 import { IconLock } from "../icons";
-import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Chip, type FontSize, type Speaker } from "./ui";
+import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Chip, glossFor, type FontSize, type Speaker } from "./ui";
 
 /**
  * ① 예문 떠올리기 (설계 §3): the Korean → 먼저 말해 보기 (the microphone, optional — what it heard is shown, never
@@ -16,8 +16,12 @@ import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, SpeakButton,
  * hidden is the one to recall, and its button wakes two seconds after it becomes that one — a single timer for
  * the page opened them all at once. Opening one moves the focus to its English, where the button was. Only that
  * sentence has the (filled) button; the ones after it say they wait their turn (디자인 규칙: one main action).
+ *
+ * The English is drawn with the lesson's Hangul glosses (glossFor — "Hong Gil Dong(홍길동)"); the microphone's target and
+ * the sound keep the lesson's own sentence.
  */
 export function AnchorsStep({
+  lessonId,
   anchors,
   revealed,
   onReveal,
@@ -26,6 +30,8 @@ export function AnchorsStep({
   lockedExtraCount,
   onNext,
 }: {
+  /** the lesson's id — how its text is drawn (glossFor) */
+  lessonId: string;
   anchors: PassoffAnchor[];
   revealed: readonly string[];
   onReveal: (id: string) => void;
@@ -38,6 +44,7 @@ export function AnchorsStep({
   const [openedId, setOpenedId] = useState<string | null>(null);
   const englishRefs = useRef<Record<string, HTMLParagraphElement | null>>({});
   const { openModal } = useLicense();
+  const gloss = glossFor(lessonId);
   const shownSet = new Set(revealed);
   const currentId = anchors.find((anchor) => !shownSet.has(anchor.id))?.id ?? null;
   const allShown = currentId === null;
@@ -77,7 +84,7 @@ export function AnchorsStep({
                 <div className="flex min-w-0 flex-1 flex-col gap-3">
                   {anchor.promptEn ? (
                     <p lang="en" className={`${FONT[font].text} text-ink-soft`}>
-                      {anchor.promptEn}
+                      {gloss(anchor.promptEn)}
                     </p>
                   ) : null}
                   <p className={`${FONT[font].text} text-ink`}>{anchor.ko}</p>
@@ -97,7 +104,7 @@ export function AnchorsStep({
                           }}
                           className={`${FONT[font].text} font-semibold text-ink`}
                         >
-                          <Marked text={anchor.en} phrases={anchor.focus} className={FOCUS_CLASS} />
+                          <Marked text={anchor.en} phrases={anchor.focus} className={FOCUS_CLASS} gloss={gloss} />
                         </p>
                         <SpeakButton speaking={speaker.speakingId === anchor.id} onClick={() => speaker.toggle(anchor.id, anchor)} />
                       </div>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { optionOrder, ruleQuestionKey } from "@/lib/passoffLesson";
 import type { PassoffAnchor, PassoffRuleBlock } from "@/lib/passoffTypes";
 import { IconCheck, IconX } from "../icons";
-import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, Verdict, tone, type FontSize } from "./ui";
+import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, Verdict, glossFor, tone, type FontSize } from "./ui";
 
 /**
  * ② 문법 설명 1~3분 (설계 §3): a discovery question on the sentences of ① (recorded, never graded — the answer and
@@ -17,6 +17,9 @@ import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, Verdict, ton
  *
  * Both questions show their options in the lesson's own stable order (passoffLesson.ts optionOrder, keyed by
  * ruleQuestionKey — 작업기록 할 일 5); the choice kept and checked is the option's own index (`data-option`).
+ *
+ * Every line of the step is drawn with the lesson's Hangul glosses (glossFor — "songpyeon(송편)"); the options are still
+ * chosen and checked by their index.
  */
 export function RuleStep({
   rule,
@@ -46,6 +49,7 @@ export function RuleStep({
   onNext: () => void;
 }) {
   const [missedPoint, setMissedPoint] = useState<number | null>(null);
+  const gloss = glossFor(lessonId);
   if (!rule) return <p className="text-body text-ink-soft">이 강의에는 문법 설명 카드가 없습니다.</p>;
   const d = rule.discovery;
   const cardOpen = !d || discovery !== null;
@@ -65,7 +69,7 @@ export function RuleStep({
               {shownAnchors.map((a) =>
                 opened.has(a.id) ? (
                   <li key={a.id} lang="en" className={`${FONT[font].text} text-ink`}>
-                    <Marked text={a.en} phrases={a.focus} className={FOCUS_CLASS} />
+                    <Marked text={a.en} phrases={a.focus} className={FOCUS_CLASS} gloss={gloss} />
                   </li>
                 ) : (
                   <li key={a.id} className={`${FONT[font].text} text-ink-soft`}>
@@ -81,7 +85,7 @@ export function RuleStep({
               <SecondaryButton onClick={onGoAnchors}>1단계로</SecondaryButton>
             </div>
           ) : null}
-          <p className={`${FONT[font].text} text-ink`}>{d.question}</p>
+          <p className={`${FONT[font].text} text-ink`}>{gloss(d.question)}</p>
           <div className="flex flex-wrap gap-2" role="group" aria-label="고르기">
             {optionOrder(ruleQuestionKey(lessonId, "discovery"), d.options.length).map((i) => {
               const option = d.options[i];
@@ -100,15 +104,15 @@ export function RuleStep({
                   } disabled:cursor-default`}
                 >
                   {isAnswer ? <span className={tone.success}><IconCheck size={16} /></span> : null}
-                  {option}
+                  {gloss(option)}
                 </button>
               );
             })}
           </div>
           {discovery !== null ? (
             <p className="text-body leading-relaxed text-ink">
-              {discovery === d.answer ? "잘 찾았어요. " : `정답은 '${d.options[d.answer]}'예요. `}
-              {d.why}
+              {discovery === d.answer ? "잘 찾았어요. " : `정답은 '${gloss(d.options[d.answer])}'예요. `}
+              {d.why ? gloss(d.why) : null}
             </p>
           ) : null}
         </section>
@@ -116,7 +120,7 @@ export function RuleStep({
 
       {cardOpen ? (
         <>
-          <RuleCard rule={rule} font={font} highlight={missedPoint} />
+          <RuleCard rule={rule} lessonId={lessonId} font={font} highlight={missedPoint} />
           {rule.check ? (
             <section aria-labelledby="passoff-rule-check" className="flex flex-col gap-3">
               <h3 id="passoff-rule-check" className="text-body font-semibold text-ink">
@@ -124,6 +128,7 @@ export function RuleStep({
               </h3>
               <RuleCheck
                 check={rule.check}
+                lessonId={lessonId}
                 orderKey={ruleQuestionKey(lessonId, "check")}
                 points={rule.points}
                 done={checkDone}
@@ -146,11 +151,23 @@ export function RuleStep({
 }
 
 /** The explanation card — no box inside the box: lines and space only (디자인 규칙 §1-3). */
-export function RuleCard({ rule, font, highlight }: { rule: PassoffRuleBlock; font: FontSize; highlight: number | null }) {
+export function RuleCard({
+  rule,
+  lessonId,
+  font,
+  highlight,
+}: {
+  rule: PassoffRuleBlock;
+  /** the lesson's id — how its text is drawn (glossFor) */
+  lessonId: string;
+  font: FontSize;
+  highlight: number | null;
+}) {
+  const gloss = glossFor(lessonId);
   return (
     <section aria-labelledby="passoff-rule-title" className="flex flex-col gap-4 rounded-card border border-line bg-raised p-4">
       <h3 id="passoff-rule-title" className="text-title-s font-bold text-ink">
-        {rule.title}
+        {gloss(rule.title)}
       </h3>
       <ul className="flex flex-col gap-2">
         {rule.points.map((point, i) => (
@@ -162,7 +179,7 @@ export function RuleCard({ rule, font, highlight }: { rule: PassoffRuleBlock; fo
             <span aria-hidden className="text-ink-faint">
               ·
             </span>
-            <span>{point}</span>
+            <span>{gloss(point)}</span>
           </li>
         ))}
       </ul>
@@ -174,7 +191,7 @@ export function RuleCard({ rule, font, highlight }: { rule: PassoffRuleBlock; fo
               <tr>
                 {rule.table.columns.map((c, i) => (
                   <th key={i} scope="col" className="border-b border-line-strong px-2 py-2 font-semibold text-ink">
-                    {c}
+                    {gloss(c)}
                   </th>
                 ))}
               </tr>
@@ -184,7 +201,7 @@ export function RuleCard({ rule, font, highlight }: { rule: PassoffRuleBlock; fo
                 <tr key={r}>
                   {row.map((cell, c) => (
                     <td key={c} className="border-b border-line px-2 py-2 text-ink">
-                      {cell}
+                      {gloss(cell)}
                     </td>
                   ))}
                 </tr>
@@ -197,7 +214,7 @@ export function RuleCard({ rule, font, highlight }: { rule: PassoffRuleBlock; fo
       {rule.koDiff ? (
         <div className="flex flex-col gap-1 border-t border-line pt-3">
           <h4 className="text-label font-semibold text-ink-soft">한국어와 다른 점</h4>
-          <p className={`${FONT[font].text} text-ink`}>{rule.koDiff}</p>
+          <p className={`${FONT[font].text} text-ink`}>{gloss(rule.koDiff)}</p>
         </div>
       ) : null}
 
@@ -212,16 +229,16 @@ export function RuleCard({ rule, font, highlight }: { rule: PassoffRuleBlock; fo
                     <IconX size={16} />
                   </span>
                   <span className="sr-only">틀린 문장: </span>
-                  <span className="line-through decoration-1">{m.wrong}</span>
+                  <span className="line-through decoration-1">{gloss(m.wrong)}</span>
                 </p>
                 <p lang="en" className={`${FONT[font].text} flex items-start gap-2 font-semibold text-ink`}>
                   <span className={`mt-1 ${tone.success}`}>
                     <IconCheck size={16} />
                   </span>
                   <span className="sr-only">맞는 문장: </span>
-                  <span>{m.right}</span>
+                  <span>{gloss(m.right)}</span>
                 </p>
-                {m.why ? <p className="pl-6 text-label text-ink-soft">{m.why}</p> : null}
+                {m.why ? <p className="pl-6 text-label text-ink-soft">{gloss(m.why)}</p> : null}
               </li>
             ))}
           </ul>
@@ -235,7 +252,7 @@ export function RuleCard({ rule, font, highlight }: { rule: PassoffRuleBlock; fo
             {rule.worked.map((w, i) => (
               <li key={i} className={`${FONT[font].text} flex gap-2 text-ink ${i === rule.worked!.length - 1 ? "font-semibold" : ""}`}>
                 <span className="w-5 shrink-0 text-right text-label tabular-nums text-ink-faint">{i + 1}</span>
-                <span>{w}</span>
+                <span>{gloss(w)}</span>
               </li>
             ))}
           </ol>
@@ -258,6 +275,7 @@ export function RuleCard({ rule, font, highlight }: { rule: PassoffRuleBlock; fo
  */
 export function RuleCheck({
   check,
+  lessonId,
   orderKey,
   points,
   done,
@@ -267,6 +285,8 @@ export function RuleCheck({
   showPointInline,
 }: {
   check: NonNullable<PassoffRuleBlock["check"]>;
+  /** the lesson's id — how its text is drawn (glossFor) */
+  lessonId: string;
   /** the key of the options' order (passoffLesson.ts optionOrder) */
   orderKey: string;
   points: string[];
@@ -281,6 +301,7 @@ export function RuleCheck({
   const [picked, setPicked] = useState<number | null>(done ? check.answer : null);
   const right = done || picked === check.answer;
   const point = typeof check.pointIndex === "number" ? points[check.pointIndex] : undefined;
+  const gloss = glossFor(lessonId);
 
   function choose(i: number) {
     if (right) return;
@@ -298,7 +319,7 @@ export function RuleCheck({
 
   return (
     <div className="flex flex-col gap-3">
-      <p className={`${FONT[font].text} text-ink`}>{check.question}</p>
+      <p className={`${FONT[font].text} text-ink`}>{gloss(check.question)}</p>
       <div className="flex flex-wrap gap-2" role="group" aria-label="고르기">
         {optionOrder(orderKey, check.options.length).map((i) => {
           const option = check.options[i];
@@ -316,19 +337,19 @@ export function RuleCheck({
               }`}
             >
               {isRight ? <span className={tone.success}><IconCheck size={16} /></span> : null}
-              {option}
+              {gloss(option)}
             </button>
           );
         })}
       </div>
       {right ? (
-        <Verdict ok>맞았어요. {check.why}</Verdict>
+        <Verdict ok>맞았어요. {check.why ? gloss(check.why) : null}</Verdict>
       ) : wrong.length ? (
         <div className="flex flex-col gap-1">
           <Verdict ok={false}>다시 골라 보세요.</Verdict>
           {point ? (
             showPointInline ? (
-              <p className="text-body leading-relaxed text-ink">문법 설명: {point}</p>
+              <p className="text-body leading-relaxed text-ink">문법 설명: {gloss(point)}</p>
             ) : (
               <p className="text-label text-ink-soft">위 문법 설명 카드에 표시한 줄을 다시 읽어 보세요.</p>
             )

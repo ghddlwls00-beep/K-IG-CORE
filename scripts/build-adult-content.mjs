@@ -154,10 +154,12 @@ function studentEnglish(ch) {
     const file = path.join(ROOT, "content", "lessons", "student", `s${ch}-${part}.json`);
     if (!fs.existsSync(file)) break;
     const lesson = JSON.parse(fs.readFileSync(file, "utf8"));
-    for (const item of lesson.blocks.find((b) => b.type === "sentences").items) {
+    for (const raw of lesson.blocks.find((b) => b.type === "sentences").items) {
+      // STUDENT writes its Korean words in Hangul too (scripts/korean-words-hangul.mjs) — take the romanization it is said in
+      const text = romanizedForm(`student/s${ch}-${part}`, raw.text);
       // s19-3 #4 holds two of the PPT's sentences
-      if (item.text.endsWith(" I like them both.")) out.push(item.text.slice(0, -" I like them both.".length), "I like them both.");
-      else out.push(item.text);
+      if (text.endsWith(" I like them both.")) out.push(text.slice(0, -" I like them both.".length), "I like them both.");
+      else out.push(text);
     }
   }
   return out;

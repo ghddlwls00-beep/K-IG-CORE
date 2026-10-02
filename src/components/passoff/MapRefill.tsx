@@ -18,7 +18,7 @@ import { topicWithParticle, type PassoffProgressSnapshot } from "@/lib/passoffUn
 import { usePassoffProgress, type MapRefillResult } from "../PassoffProgressProvider";
 import { Progress } from "../learning/ReviewSession";
 import { IconCheck, IconX } from "../icons";
-import { PrimaryButton, SecondaryButton, tone, usePassoffLearner } from "./ui";
+import { PrimaryButton, SecondaryButton, glossFor, tone, usePassoffLearner } from "./ui";
 
 /**
  * "구성도 다시 채우기" (src/lib/passoffMap.ts — 단계 2-나 E2): ① the topic's lesson chips into the empty boxes 1…n, in the
@@ -41,6 +41,9 @@ import { PrimaryButton, SecondaryButton, tone, usePassoffLearner } from "./ui";
  * so the new stage's heading takes the focus (tabIndex -1 — the place stage's is for screen readers only, its progress line
  * already says '강의 놓기') and the stage starts at the top, as the review's items and screens do (ReviewSession). Not when
  * the page opens.
+ *
+ * A rule line and a sentence are drawn as their own lesson draws them (glossFor(lessonId) — "Have you been to Seoul(서울)?");
+ * what is picked and graded is the lesson's id and the sentence's id, never the text.
  */
 type Stage = { at: "place" } | { at: "pick"; box: number } | { at: "result" };
 type Save =
@@ -235,7 +238,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
                   rules[box] === option.lessonId ? "border-line-strong bg-sunken font-semibold text-ink" : "border-line text-ink hover:bg-sunken"
                 }`}
               >
-                {option.text}
+                {glossFor(option.lessonId)(option.text)}
               </button>
             ))}
           </div>
@@ -256,7 +259,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
                   sentences[box] === option.id ? "border-line-strong bg-sunken font-semibold text-ink" : "border-line text-ink hover:bg-sunken"
                 }`}
               >
-                {option.en}
+                {glossFor(option.lessonId)(option.en)}
               </button>
             ))}
           </div>
@@ -307,12 +310,12 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
                   {!r.lessonOk ? <p className="text-label text-ink-soft">놓은 강의: {placedLesson ? placedLesson.title : "없음"}</p> : null}
                   {!r.ruleOk && placedLesson ? (
                     <p className="text-label text-ink">
-                      {about}문법 설명: {placedLesson.ruleTitle}
+                      {about}문법 설명: {glossFor(placedLesson.id)(placedLesson.ruleTitle)}
                     </p>
                   ) : null}
                   {!r.sentenceOk && placedLesson ? (
                     <p className="text-label text-ink">
-                      {about}대표 문장: <span lang="en">{placedLesson.sentence.en}</span>
+                      {about}대표 문장: <span lang="en">{glossFor(placedLesson.id)(placedLesson.sentence.en)}</span>
                     </p>
                   ) : null}
                 </div>

@@ -8,7 +8,7 @@ import { optionOrder, type FormItemState } from "@/lib/passoffLesson";
 import { IconCheck } from "../icons";
 import { MyAnswerReport } from "../learning/MyAnswerReport";
 import { LESSON_REPORT_NOTE, useLessonReport } from "./lessonReport";
-import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, tone, usePassoffLearner, type FontSize } from "./ui";
+import { FONT, Marked, PrimaryButton, SecondaryButton, Verdict, glossFor, tone, usePassoffLearner, type FontSize } from "./ui";
 
 /**
  * ③ 형태 찾기 4~6문제 (설계 §3) — one item at a time: tap the words (and give each its label), pick an option, or
@@ -101,6 +101,9 @@ type Phase = "answer" | "retry" | "right" | "shown";
  * 단계 2-나 E2 — "내 답도 맞아요" (§8-6) under a wrong result ('한 번 더' · the answer shown): the words tapped (with their
  * labels), the option picked or the word typed (on a card opened on the check's `missed` answer, that answer until another
  * is checked). In the lesson it is kept for judging (useLessonReport); on the review screen `onReport` hands it to the frame.
+ *
+ * Its text is drawn with the lesson's Hangul glosses (glossFor(lessonId) — a word button "Songnisan" reads
+ * "Songnisan(속리산)"); the words are picked and graded by their index, and the answer recorded is the lesson's own words.
  */
 export function FormItemCard({
   item,
@@ -142,6 +145,7 @@ export function FormItemCard({
 }) {
   const learner = usePassoffLearner();
   const lessonReport = useLessonReport();
+  const gloss = glossFor(lessonId);
   const again = missed !== undefined;
   const [reportedHere, setReportedHere] = useState(false);
   /** the last answer graded wrong, as the learner gave it — what "내 답도 맞아요" sends (the check's, on a card opened on it) */
@@ -263,7 +267,7 @@ export function FormItemCard({
 
   return (
     <section className="flex flex-col gap-4 rounded-card border border-line bg-raised p-4">
-      <h3 className="text-body font-semibold text-ink">{item.instruction}</h3>
+      <h3 className="text-body font-semibold text-ink">{gloss(item.instruction)}</h3>
 
       {item.kind === "select" ? (
         <div className="flex flex-col gap-3">
@@ -294,7 +298,7 @@ export function FormItemCard({
                         : "border-line text-ink hover:bg-sunken"
                   }`}
                 >
-                  <span>{token}</span>
+                  <span>{gloss(token)}</span>
                   {label ? <span className="text-caption font-normal text-ink-soft">{label}</span> : null}
                   {phase === "shown" && optionalSet.has(i) ? <span className="text-caption font-normal text-ink-faint">골라도 됨</span> : null}
                 </button>
@@ -305,7 +309,7 @@ export function FormItemCard({
             <div className="flex flex-col gap-2">
               <p className="text-label text-ink-soft">
                 <span lang="en" className="font-semibold text-ink">
-                  {item.tokens[labelFor]}
+                  {gloss(item.tokens[labelFor])}
                 </span>{" "}
                 은(는)?
               </p>
@@ -346,7 +350,7 @@ export function FormItemCard({
         <div className="flex flex-col gap-3">
           {item.sentence ? (
             <p lang="en" className={`${FONT[font].text} text-ink`}>
-              <Marked text={item.sentence} phrases={item.underline} className="underline decoration-2 underline-offset-4" />
+              <Marked text={item.sentence} phrases={item.underline} className="underline decoration-2 underline-offset-4" gloss={gloss} />
             </p>
           ) : null}
           <div className="flex flex-wrap gap-2" role="group" aria-label="보기">
@@ -366,7 +370,7 @@ export function FormItemCard({
                   }`}
                 >
                   {isAnswer ? <span className={tone.success}><IconCheck size={16} /></span> : null}
-                  {option}
+                  {gloss(option)}
                 </button>
               );
             })}
@@ -378,7 +382,7 @@ export function FormItemCard({
         <div className="flex flex-col gap-3">
           {item.sentence ? (
             <p lang="en" className={`${FONT[font].text} text-ink`}>
-              {item.sentence}
+              {gloss(item.sentence)}
             </p>
           ) : null}
           <input
@@ -435,13 +439,13 @@ export function FormItemCard({
           <Verdict ok={false}>정답을 확인하세요.</Verdict>
           {item.kind === "short" ? (
             <p lang="en" className={`${FONT[font].text} font-semibold text-ink`}>
-              {item.answer.join(" / ")}
+              {item.answer.map(gloss).join(" / ")}
             </p>
           ) : null}
           {lastWrong !== null ? <MyAnswerReport reported={isReported} note={reportNote ?? LESSON_REPORT_NOTE} onReport={sendReport} /> : null}
         </div>
       ) : null}
-      {settled && item.why ? <p className={`${FONT[font].text} text-ink`}>{item.why}</p> : null}
+      {settled && item.why ? <p className={`${FONT[font].text} text-ink`}>{gloss(item.why)}</p> : null}
       {settled ? (
         <div className="flex flex-wrap items-center justify-end gap-2">
           {phase === "shown" || firstRight === false ? (

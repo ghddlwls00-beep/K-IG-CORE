@@ -9,7 +9,7 @@ import { notePassoffAttempt, strongerHelp, type PassoffAnswerMode, type PassoffA
 import { MyAnswerReport } from "../learning/MyAnswerReport";
 import { VoiceSpeakingTester } from "../VoiceSpeakingTester";
 import { LESSON_REPORT_NOTE, useLessonReport } from "./lessonReport";
-import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, tone, usePassoffLearner, type FontSize, type Speaker } from "./ui";
+import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, glossFor, tone, usePassoffLearner, type FontSize, type Speaker } from "./ui";
 
 export interface ComposeOutcome {
   /** right at the first try of this presentation (no help can come before a first try) */
@@ -54,6 +54,11 @@ const HELP_AT: PassoffHelp[] = ["none", "none", "hint", "tiles", "reveal"];
  * answer that was graded wrong (on a card opened on the check's `missed` answer, that answer until another is checked). In
  * the lesson it is kept for judging (useLessonReport — nothing else moves); on the review screen `onReport` hands it to the
  * frame, which records it in place of the day's wrong answer when it can.
+ *
+ * The lesson's text on the card — the English prompt, the model answer, the rule, an error pattern's hint and the word tiles'
+ * labels — is drawn with its Hangul glosses (glossFor(lessonId) — "Seoul(서울)"). The grader, the microphone's target, the
+ * first letters' clue, the tiles' words as checked and the sound keep the lesson's own sentence, and the learner's own words
+ * (the marked answer, a spelling to check) are shown as they were written.
  */
 export function ComposeCard({
   item,
@@ -109,6 +114,7 @@ export function ComposeCard({
   const learner = usePassoffLearner();
   const note = onAttempt ?? ((attempt: PassoffAttempt) => notePassoffAttempt(attempt, learner));
   const lessonReport = useLessonReport();
+  const gloss = glossFor(lessonId);
   // graded as it was in the check (the same grader, the same answer): a wrong answer opens the card on the ladder
   const [start] = useState<ProduceResult | null>(() => {
     if (!missed) return null;
@@ -228,14 +234,14 @@ export function ComposeCard({
       {item.challenge || item.condition || item.clauseLabel || presentation > 0 ? (
         <div className="flex flex-wrap items-center gap-2">
           {item.challenge ? <Chip strong>도전</Chip> : null}
-          {item.condition ? <Chip>{item.condition}</Chip> : null}
+          {item.condition ? <Chip>{gloss(item.condition)}</Chip> : null}
           {item.clauseLabel ? <Chip>{item.clauseLabel}</Chip> : null}
           {presentation > 0 ? <span className="text-caption text-ink-faint">다시 풀기</span> : null}
         </div>
       ) : null}
       {item.promptEn ? (
         <p lang="en" className={`${FONT[font].text} text-ink-soft`}>
-          {item.promptEn}
+          {gloss(item.promptEn)}
         </p>
       ) : null}
       <p className={`${FONT[font].text} font-semibold text-ink`}>{item.ko}</p>
@@ -305,7 +311,7 @@ export function ComposeCard({
           <Verdict ok={false}>틀린 자리를 표시했어요. 고쳐서 다시 확인하세요.</Verdict>
           <DiffLine tokens={result.diff} reveal={false} font={font} />
           <p className="text-caption text-ink-faint">빈 네모 = 빠진 낱말 · 물결 = 틀린 낱말 · 가운데 줄 = 필요 없는 낱말 · 점선 = 자리가 바뀐 낱말</p>
-          {result.pattern ? <p className={`${FONT[font].text} text-ink`}>{result.pattern.hint}</p> : null}
+          {result.pattern ? <p className={`${FONT[font].text} text-ink`}>{gloss(result.pattern.hint)}</p> : null}
           {/* the grader's own hint: a possessive typed without its apostrophe ("my brothers") — names the slip, not the answer */}
           {result.possessive ? <p className={`${FONT[font].text} text-ink`}>{result.possessive.hint}</p> : null}
           {result.negationFlip ? <p className="text-body text-ink">뜻이 반대가 됐어요. not · no · never 가 있어야 하는지 보세요.</p> : null}
@@ -313,7 +319,7 @@ export function ComposeCard({
           {rung >= 2 ? (
             <div className="flex flex-col gap-1 border-t border-line pt-2">
               <p className="text-label font-semibold text-ink-soft">단서</p>
-              {ruleTitle ? <p className="text-body text-ink">문법 설명: {ruleTitle}</p> : null}
+              {ruleTitle ? <p className="text-body text-ink">문법 설명: {gloss(ruleTitle)}</p> : null}
               {result.missingTargets.length ? <p className="text-body text-ink">이 문장에 꼭 써야 하는 문법 낱말이 빠졌어요.</p> : null}
               <p className="text-label text-ink-soft">낱말의 첫 글자</p>
               <p lang="en" className={`font-mono ${FONT[font].text} text-ink`}>
@@ -339,7 +345,7 @@ export function ComposeCard({
                 }}
                 className={`min-h-11 min-w-11 rounded-control border border-line-strong bg-sunken px-3 ${FONT[font].text} text-ink`}
               >
-                {t.word}
+                {gloss(t.word)}
               </button>
             ))}
           </div>
@@ -357,7 +363,7 @@ export function ComposeCard({
                   }}
                   className={`min-h-11 min-w-11 rounded-control border border-line px-3 ${FONT[font].text} text-ink transition-colors hover:bg-sunken disabled:opacity-30`}
                 >
-                  {t.word}
+                  {gloss(t.word)}
                 </button>
               );
             })}
@@ -382,7 +388,7 @@ export function ComposeCard({
           ) : null}
           <div className="flex items-start justify-between gap-3">
             <p lang="en" className={`${FONT[font].text} font-semibold text-ink`}>
-              {item.en}
+              {gloss(item.en)}
             </p>
             <SpeakButton speaking={speaker.speakingId === item.id} onClick={() => speaker.toggle(item.id, item)} />
           </div>
@@ -396,7 +402,7 @@ export function ComposeCard({
           <p className="text-label font-semibold text-ink-soft">정답</p>
           <div className="flex items-start justify-between gap-3">
             <p lang="en" className={`${FONT[font].text} font-semibold text-ink`}>
-              {item.en}
+              {gloss(item.en)}
             </p>
             <SpeakButton speaking={speaker.speakingId === item.id} onClick={() => speaker.toggle(item.id, item)} />
           </div>
@@ -407,7 +413,7 @@ export function ComposeCard({
             </>
           ) : null}
           {lastWrong ? <MyAnswerReport reported={isReported} note={reportNote ?? LESSON_REPORT_NOTE} onReport={sendReport} /> : null}
-          {ruleTitle ? <p className="text-body text-ink">문법 설명: {ruleTitle}</p> : null}
+          {ruleTitle ? <p className="text-body text-ink">문법 설명: {gloss(ruleTitle)}</p> : null}
           <StudentTag studentRef={item.studentRef} />
           {comeback ? <p className="text-label text-ink-soft">{comeback}</p> : null}
         </div>

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { withKoreanGloss } from "@/lib/koreanGloss";
 import { learnerOf } from "@/lib/learning/sync";
 import { PASSOFF_COURSE } from "@/lib/passoffLearning";
 import type { PassoffStudentRef } from "@/lib/passoffTypes";
@@ -50,6 +51,22 @@ export interface Speaker {
  */
 export function spokenOf(item: { en: string; speakAs?: string | null }): string {
   return typeof item.speakAs === "string" && item.speakAs.trim() ? item.speakAs : item.en;
+}
+
+/** A lesson's text as the screen draws it (see glossFor). */
+export type Gloss = (text: string) => string;
+
+/**
+ * How lesson `lessonId` ("pg06-1") DRAWS its text — a Korean word written in English with its Hangul after it, the first
+ * time in each piece of text: "Chuseok(추석)" (사장님 2026-10-02 "영어 표기 + 한글 덧붙임" — src/lib/koreanGloss.ts). The same
+ * text unchanged on every lesson not in that table. For the screen only: what is graded, matched (accept · errorPatterns ·
+ * a focus phrase · the first letters' clue), spoken (spokenOf · lessonSpeechForm), heard (VoiceSpeakingTester's target),
+ * recorded or used as a key always takes the lesson's own text. Every card is given its item's own lesson, so the review
+ * and the map, which mix lessons, gloss each item as its lesson does.
+ */
+export function glossFor(lessonId: string): Gloss {
+  const key = `${PASSOFF_COURSE}/${lessonId}`;
+  return (text) => withKoreanGloss(key, text);
 }
 
 /** Text sizes the learner picks (기본 · 크게 · 특대 — GRAMMAR's three: text-body 16 · text-title-s 18 · text-title 22). */
@@ -121,9 +138,24 @@ const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /**
  * The text with each phrase marked — whole words only, case aside, longest first. No look-behind in the
  * pattern (older iOS Safari throws on it; lessonSpeechForm.ts does the same).
+ *
+ * `gloss` (glossFor — the lesson's drawn form): the text is drawn glossed, and each phrase is looked for both as written and
+ * glossed — "Chuseok" marks "Chuseok(추석)" Hangul and all, and a phrase with more words after a Korean word still matches.
  */
-export function Marked({ text, phrases, className }: { text: string; phrases?: readonly string[] | null; className: string }) {
-  const list = [...new Set((phrases ?? []).map((p) => p.trim()).filter(Boolean))].sort((a, b) => b.length - a.length);
+export function Marked({
+  text: source,
+  phrases,
+  className,
+  gloss,
+}: {
+  text: string;
+  phrases?: readonly string[] | null;
+  className: string;
+  gloss?: Gloss;
+}) {
+  const text = gloss ? gloss(source) : source;
+  const written = (phrases ?? []).map((p) => p.trim()).filter(Boolean);
+  const list = [...new Set(gloss ? [...written, ...written.map(gloss)] : written)].sort((a, b) => b.length - a.length);
   if (!list.length) return <>{text}</>;
   const re = new RegExp(`(^|[^A-Za-z0-9'’])(${list.map(escapeRegExp).join("|")})(?![A-Za-z0-9'’])`, "gi");
   const parts: ReactNode[] = [];

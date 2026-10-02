@@ -73,7 +73,7 @@ import {
 import type { Block, ReadingSentence, ReadingVocabularyItem } from "@/lib/types";
 import { getServerSpeechSnapshot, getSpeechSnapshot, speakText, stopSpeech, subscribeSpeech, unlockMobileAudio } from "@/lib/speech";
 import { readingWordSpeech } from "@/lib/vocaSpeech";
-import { LESSON_SPEECH_WORDS, lessonSpeechForm } from "@/lib/lessonSpeechForm";
+import { LESSON_SPEECH_WORDS, lessonSpeechForm, romanizedForm } from "@/lib/lessonSpeechForm";
 import { SHOW_GENERATED_QUIZ } from "@/lib/quizFlags";
 import { markLessonDone, recordAttempt } from "@/lib/learning/record";
 import { clearLessonGate, setLessonGate } from "@/lib/lessonGate";
@@ -1412,7 +1412,8 @@ export function ReadingLearningView({
 
   /** the romanized Korean words of this page (lessonSpeechForm) — any word the learner says there counts (RD-L13 ④) */
   const readAloudTargets = useMemo(() => {
-    const target = sentencePairs[0]?.en ?? "";
+    // a Korean word written in Hangul (2026-10-02 — KOREAN_DISPLAY_PAGES) is listened for as its romanization
+    const target = romanizedForm(lessonKey, sentencePairs[0]?.en ?? "");
     const korean = (LESSON_SPEECH_WORDS[lessonKey] || []).filter(([, spoken]) => spoken.includes("⟨")).map(([written]) => written);
     let slotted = target;
     for (const written of korean.sort((a, b) => b.length - a.length)) {
@@ -1609,7 +1610,7 @@ export function ReadingLearningView({
             <p lang="en" className="rounded-card border border-line bg-raised px-4 py-3 font-serif text-body text-ink">
               {sentencePairs[0].en}
             </p>
-            <VoiceSpeakingTester targetText={sentencePairs[0].en} targetTexts={readAloudTargets} onStart={stopAll} buttonLabel="소리 내어 읽기" />
+            <VoiceSpeakingTester targetText={romanizedForm(lessonKey, sentencePairs[0].en)} targetTexts={readAloudTargets} onStart={stopAll} buttonLabel="소리 내어 읽기" />
           </div>
         ) : null}
 

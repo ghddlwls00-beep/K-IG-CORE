@@ -21,7 +21,7 @@ import { NOTES_REPORT_NOTE, WrongNotes } from "../learning/WrongNotes";
 import { IconTextSize } from "../icons";
 import { ComposeCard } from "./ComposeCard";
 import { FormItemCard } from "./FormStep";
-import { FONT_LABEL, segmentButton, spokenOf, type FontSize, type Speaker } from "./ui";
+import { FONT_LABEL, glossFor, segmentButton, spokenOf, type FontSize, type Speaker } from "./ui";
 
 /**
  * PASS-OFF GRAMMAR's side of today's review (공통-학습-엔진.md §8-3) — the engine's ReviewSession with this course's
@@ -200,16 +200,19 @@ export function PassoffReview({
     );
   }
 
+  // the results' and the wrong-answer list's lines: a form item's words as its lesson draws them (glossFor — the cards take
+  // the item's lesson too, so a review mixing lessons glosses each item as its own lesson does)
   function resultLine(data: PassoffReviewItem) {
     if (isSentence(data)) return <p className="text-body text-ink">{data.item.ko}</p>;
     const item = data.item as PassoffFormItem;
     const line = formLine(item);
+    const gloss = glossFor(data.lessonId);
     return (
       <>
-        <p className="text-body text-ink">{item.instruction}</p>
+        <p className="text-body text-ink">{gloss(item.instruction)}</p>
         {line ? (
           <p lang="en" className="text-label text-ink-soft">
-            {line}
+            {gloss(line)}
           </p>
         ) : null}
       </>

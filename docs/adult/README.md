@@ -23,6 +23,17 @@
 | 영어 속 한국어 낱말의 표기 (샘플을 들으신 뒤) | 발음은 좋다 · 표기는 한국어로 — 화면에는 한글(경주 · 서울 · 불고기 · 제주도 · 한라산 …), 소리는 만든 음성 그대로 (`lessonSpeechForm.ts` KOREAN_DISPLAY_PAGES: 소리 낼 때만 로마자로 되돌림 → 클립 이름 같음. 226문장 소리 그대로 확인) |
 | PPT 문장 두 곳 | 추천대로 — 1-2 `I live in 부산 Apartments` · 2-5 `Our son`(한글 '아들은') — 새 음성 3 |
 
+## 사이트 전체: 영어 속 한국어 낱말 (2026-10-02 "어 있는거 싹다 꼼꼼히 찾아서 다 작업해")
+
+| 과정 | 화면 | 소리 · 채점 |
+|---|---|---|
+| ADULT · STUDENT · READING | 한글만 — 경주 · 불고기 · 제주도 · 한라산 · Admiral 이순신 · 직지 · 한성순보 …, STUDENT 제목 8개도(예: `Traditional Food (전통 음식 (불고기))`) | 그대로 — 소리 낼 때 `romanizedForm` 이 로마자로 되돌림(클립 이름 같음, 마이크도 로마자로 들음). STUDENT · READING 은 `node scripts/korean-words-hangul.mjs` 가 고침(27파일 95칸) |
+| GRAMMAR II · PASS-OFF GRAMMAR | 영어 표기 + 한글 덧붙임 — `Busan(부산)` · `Chuseok(추석)` (사장님 선택: 학습자가 영어를 직접 쓰는 과정이라 철자는 그대로) | 그대로 — `src/lib/koreanGloss.ts` 는 그리는 글에만 |
+| LISTENING · VOCA · GRAMMAR I | 해당 없음 — LISTENING 의 Kim 은 미국 사람 | — |
+
+새 음성 0 (dry-run pending 0). 검사: `node docs/adult/korean-words-on-screen.cjs`(모든 글 칸 · 깨기 `--break`),
+`node scripts/korean-words-hangul.mjs --check`, `node scripts/build-adult-content.mjs --check`.
+
 ## 학습법 — STUDENT 와 같은 것
 
 - 강의 화면: `StudentLearningView` 그대로(1 블라인드 리스닝 · 2 탭 딕테이션 · 3 섀도잉 & 낭독, 완료 = 받아쓰기 80% + 말하기 80%).

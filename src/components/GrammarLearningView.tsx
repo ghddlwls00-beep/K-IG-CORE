@@ -34,6 +34,7 @@ import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from 
 import type { Block, SentenceItem } from "@/lib/types";
 import { isInAppBrowser, isKakaoTalk, speakText, stopSpeech } from "@/lib/speech";
 import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
+import { withKoreanGloss } from "@/lib/koreanGloss";
 import {
   diffAgainstReferences,
   gradeAgainstReferences,
@@ -626,6 +627,11 @@ export function GrammarLearningView({
   lessonKey,
   isScript,
 }: GrammarLearningViewProps) {
+  /**
+   * 2026-10-02 (사장님 "영어 표기 + 한글 덧붙임"): a Korean word in the English is DRAWN with its Hangul — "Busan(부산)". Only
+   * what is drawn: grading, the blanks' answers, the microphone and the sound keep the English text (src/lib/koreanGloss.ts).
+   */
+  const gloss = (text: string) => withKoreanGloss(lessonKey, text);
   /**
    * GRAMMAR I 07강 (gh1-020 questions / gh1-021 answers) carries the textbook's "문법 확인
    * 문제" — eight Korean questions on be-verb sentences — next to its composition sentences.
@@ -1701,7 +1707,7 @@ export function GrammarLearningView({
                     &nbsp;
                   </span>
                 ) : (
-                  <Fragment key={index}>{part.text}</Fragment>
+                  <Fragment key={index}>{gloss(part.text)}</Fragment>
                 ),
               )}
             </p>
@@ -1828,19 +1834,19 @@ export function GrammarLearningView({
           <div className="min-w-0 flex-1">
             <span className="block text-caption text-ink-soft">모범 답안</span>
             <p data-model className={`font-semibold text-ink ${fs.english}`}>
-              {item.englishText}
+              {gloss(item.englishText)}
             </p>
           </div>
           {playButton(item)}
         </div>
         {closest ? (
           <p data-closest className="mt-1 text-label text-ink">
-            내 답과 가장 가까운 정답: {closest}
+            내 답과 가장 가까운 정답: {gloss(closest)}
           </p>
         ) : null}
         {shown.length > 0 ? (
           <p data-alts className="mt-1 text-label text-ink-soft">
-            다른 정답: {shown.join(" / ")}
+            다른 정답: {shown.map(gloss).join(" / ")}
             {others.length > shown.length ? ` 외 ${others.length - shown.length}개` : ""}
           </p>
         ) : null}
@@ -1897,7 +1903,7 @@ export function GrammarLearningView({
           {blanks.length === 0 ? (
             <>
               <p data-cloze className={`mt-1 text-ink ${fs.english}`}>
-                {item.englishText}
+                {gloss(item.englishText)}
               </p>
               <div className="mt-1 flex items-center gap-2">
                 <span className="text-caption text-ink-faint">빈칸이 없는 문장이에요 — 읽고 들어 보세요.</span>
@@ -1908,7 +1914,7 @@ export function GrammarLearningView({
             <>
               <p data-cloze className={`mt-1 leading-[2.75] text-ink ${fs.english}`}>
                 {item.clozeParts.map((part, index) => {
-                  if (!part.isBlank) return part.text ? <Fragment key={index}>{part.text}</Fragment> : null;
+                  if (!part.isBlank) return part.text ? <Fragment key={index}>{gloss(part.text)}</Fragment> : null;
                   const k = order.get(index) ?? 0;
                   const value = blankValue(id, index);
                   if (revealed) {
@@ -2030,7 +2036,7 @@ export function GrammarLearningView({
         </span>
         <div className="min-w-0 flex-1">
           <p data-en className={`font-semibold text-ink ${fs.english}`}>
-            {item.englishText}
+            {gloss(item.englishText)}
           </p>
           <p data-ko className={`mt-0.5 text-ink-soft ${fs.korean}`}>
             {item.koreanText}
@@ -2133,13 +2139,13 @@ export function GrammarLearningView({
               ) : null}
               <div className="flex items-start gap-2">
                 <p className="min-w-0 flex-1 text-label text-ink-soft">
-                  모범 답안: <span data-model className={`font-semibold text-ink ${fs.english}`}>{item.englishText}</span>
+                  모범 답안: <span data-model className={`font-semibold text-ink ${fs.english}`}>{gloss(item.englishText)}</span>
                 </p>
                 {playButton(item)}
               </div>
               {alts.length > 0 ? (
                 <p data-alts className="text-label text-ink-soft">
-                  또는: {alts.join(" / ")}
+                  또는: {alts.map(gloss).join(" / ")}
                   {item.alternatives.length > alts.length ? ` 외 ${item.alternatives.length - alts.length}개` : ""}
                 </p>
               ) : null}

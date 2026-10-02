@@ -90,6 +90,12 @@ node scripts/generate-azure-ava.mjs --dry-run   # pending 이 0 이어야 합니
 확인하고, 고친 뒤 `node docs/qa-2026-09-18/scripts/check-completeness.cjs` 의
 missing-clip 이 **늘지 않았는지** 보세요.
 
+**영어 문장 속 한국어 낱말은 화면에 한글로 적습니다** (2026-10-02 사장님 "표기는 한국어로 다 변경하자"). STUDENT · READING ·
+ADULT 는 강의 파일에 한글(`… is 경주.`)을 적고, 소리 낼 때 `lessonSpeechForm.ts` 의 `KOREAN_DISPLAY_PAGES` 가 원래 로마자로
+되돌려 같은 클립을 씁니다 — 표에 없는 한글을 영어 문장에 넣으면 소리 글이 바뀌어 클립이 없어집니다. GRAMMAR II · PASS-OFF 는
+학습자가 영어를 쓰는 과정이라 철자를 두고 화면만 `Busan(부산)` 으로 덧붙입니다(`src/lib/koreanGloss.ts`).
+글을 고친 뒤 `node docs/adult/korean-words-on-screen.cjs` 가 PASS 여야 합니다.
+
 **클립을 만들어도 그것만으로는 운영에 반영되지 않습니다.** `public/audio` 는
 `.gitignore` 에 들어 있어서(`.gitignore:57`) 생성된 mp3 는 커밋되지 않습니다.
 R2 에 따로 올려야 합니다.
