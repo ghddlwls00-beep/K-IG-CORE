@@ -40,6 +40,34 @@
               "en": "how much I get done before noon.",
               "ko": "오전 중에 제가 해내는 일의 양을."
             }
+          ],
+          "words": [
+            {
+              "word": "remarkably",
+              "say": "remarkably",
+              "meaning": "놀라울 만큼, 현저히",
+              "pos": "부사",
+              "start": 75,
+              "end": 85,
+              "choices": [
+                "efficiently",
+                "get done",
+                "make a point of"
+              ]
+            },
+            {
+              "word": "get (something) done",
+              "say": "get something done",
+              "meaning": "(일을) 해내다, 끝내다",
+              "pos": "구",
+              "start": 105,
+              "end": 113,
+              "choices": [
+                "make a point of",
+                "aimed at",
+                "efficiently"
+              ]
+            }
           ]
         },
         {
@@ -83,6 +111,34 @@
             {
               "en": "or simply bread and salad.",
               "ko": "간단한 빵과 샐러드든."
+            }
+          ],
+          "words": [
+            {
+              "word": "rushed",
+              "say": "rushed",
+              "meaning": "시간에 쫓기는, 허둥지둥한",
+              "pos": "형용사",
+              "start": 28,
+              "end": 34,
+              "choices": [
+                "dedicated",
+                "collaborative",
+                "close-knit"
+              ]
+            },
+            {
+              "word": "make a point of -ing",
+              "say": "make a point of",
+              "meaning": "반드시 ~하려고 하다, ~을 꼭 챙기다",
+              "pos": "표현",
+              "start": 38,
+              "end": 53,
+              "choices": [
+                "aimed at",
+                "in order of priority",
+                "bursts of intense effort"
+              ]
             }
           ]
         }

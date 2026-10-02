@@ -8,8 +8,9 @@
  * phone one row: the numbers, plus the current step's name (and its count); from `sm` every name. Every button's text
  * still reads "Step N · <name>" — LessonStepNavigation, the audit drivers and capture-mobile-0927 find the tabs by
  * /Step\s*\d/ in it — and carries data-step-tab="N". `badge` is a short count such as "2/5", shown after the name.
- * `fit` (ADULT's four long names, 2026-10-02): every name only from `md`, and each tab as wide as its words, not equal —
- * at equal widths 'Step 4 · 섀도잉 & 낭독 0/7' broke onto two lines.
+ * `compact` (ADULT's five steps, 2026-10-02): the phone's row at every width — the numbers, plus the current step's name and
+ * count. Five names with counts need more than the lesson column's 720px (four already broke 'Step 4 · 섀도잉 & 낭독 0/7' onto
+ * two lines).
  */
 export interface StepTab {
   n: number;
@@ -23,7 +24,7 @@ export function StepTabs({
   onSelect,
   label,
   stepStart = false,
-  fit = false,
+  compact = false,
 }: {
   steps: readonly StepTab[];
   current: number;
@@ -32,13 +33,11 @@ export function StepTabs({
   label: string;
   /** mark the tabs as where a step begins, so '다음 Step' brings them under the header (LessonStepNavigation) */
   stepStart?: boolean;
-  /** tabs as wide as their words, every name from `md` (see above) */
-  fit?: boolean;
+  /** the phone's row at every width (see above) */
+  compact?: boolean;
 }) {
   // whole class names, so Tailwind finds them
-  const wide = fit
-    ? { tab: "md:flex-auto", step: "sr-only md:not-sr-only md:whitespace-nowrap", rest: "hidden md:inline" }
-    : { tab: "sm:flex-1", step: "sr-only sm:not-sr-only", rest: "hidden sm:inline" };
+  const wide = compact ? { tab: "", step: "sr-only", rest: "hidden" } : { tab: "sm:flex-1", step: "sr-only sm:not-sr-only", rest: "hidden sm:inline" };
   return (
     <nav aria-label={label} className="rounded-control bg-sunken p-1" data-step-start={stepStart ? "" : undefined}>
       <div className="flex gap-1">

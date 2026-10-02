@@ -36,6 +36,34 @@
               "en": "the day's most demanding tasks are waiting for me.",
               "ko": "하루 중 가장 부담이 큰 일들이 저를 기다리고 있습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "stretch",
+              "say": "stretch",
+              "meaning": "(연속된) 한동안의 시간·구간",
+              "pos": "명사",
+              "start": 22,
+              "end": 29,
+              "choices": [
+                "work ethic",
+                "a real sense of purpose",
+                "ritual"
+              ]
+            },
+            {
+              "word": "demanding",
+              "say": "demanding",
+              "meaning": "부담이 큰, 힘든, 까다로운",
+              "pos": "형용사",
+              "start": 91,
+              "end": 100,
+              "choices": [
+                "dedicated",
+                "rushed",
+                "collaborative"
+              ]
+            }
           ]
         },
         {
@@ -58,6 +86,60 @@
               "en": "than bursts of intense effort.",
               "ko": "잠깐 몰아치는 노력보다."
             }
+          ],
+          "words": [
+            {
+              "word": "fatigue",
+              "say": "fatigue",
+              "meaning": "피로, 피곤",
+              "pos": "명사(셀 수 없음)",
+              "start": 7,
+              "end": 14,
+              "choices": [
+                "work ethic",
+                "bursts of intense effort",
+                "a real sense of purpose"
+              ]
+            },
+            {
+              "word": "without warning",
+              "say": "without warning",
+              "meaning": "예고 없이, 갑자기",
+              "pos": "표현",
+              "start": 33,
+              "end": 48,
+              "choices": [
+                "bursts of intense effort",
+                "make a point of",
+                "aimed at"
+              ]
+            },
+            {
+              "word": "work ethic",
+              "say": "work ethic",
+              "meaning": "직업윤리, 근면한 태도",
+              "pos": "명사",
+              "start": 83,
+              "end": 93,
+              "choices": [
+                "a real sense of purpose",
+                "ritual",
+                "stretch"
+              ]
+            },
+            {
+              "word": "bursts of intense effort",
+              "say": "bursts of intense effort",
+              "meaning": "잠깐 몰아치는 강도 높은 노력",
+              "pos": "표현",
+              "start": 112,
+              "end": 136,
+              "choices": [
+                "make a point of",
+                "aimed at",
+                "in order of priority"
+              ]
+            }
           ]
         },
         {
@@ -75,6 +157,21 @@
             {
               "en": "and I usually wrap things up and head home around six.",
               "ko": "저는 보통 여섯 시쯤 일을 마무리하고 퇴근합니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "a sense of purpose",
+              "say": "a sense of purpose",
+              "meaning": "목적의식, 보람",
+              "pos": "명사",
+              "start": 51,
+              "end": 74,
+              "choices": [
+                "ritual",
+                "stretch",
+                "work ethic"
+              ]
             }
           ]
         }

@@ -32,6 +32,34 @@
               "en": "about how the nation of Korea was founded.",
               "ko": "한국이라는 나라가 어떻게 세워졌는지에 관한."
             }
+          ],
+          "words": [
+            {
+              "word": "nation",
+              "say": "nation",
+              "meaning": "나라, 국가",
+              "pos": "명사",
+              "start": 32,
+              "end": 38,
+              "choices": [
+                "founder",
+                "Peninsula",
+                "century"
+              ]
+            },
+            {
+              "word": "found",
+              "say": "found",
+              "meaning": "(나라를) 세우다, 건국하다",
+              "pos": "동사",
+              "start": 52,
+              "end": 59,
+              "choices": [
+                "divided",
+                "ruled",
+                "liberated"
+              ]
+            }
           ]
         },
         {
@@ -67,6 +95,21 @@
             {
               "en": "sent his son, 환웅, to Earth.",
               "ko": "아들 환웅을 땅으로 내려보냈습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "once upon a time",
+              "say": "once upon a time",
+              "meaning": "옛날 옛적에",
+              "pos": "구",
+              "start": 0,
+              "end": 16,
+              "choices": [
+                "founder",
+                "ancient",
+                "Peninsula"
+              ]
             }
           ]
         },
@@ -110,6 +153,21 @@
               "en": "He became the founder of Korea.",
               "ko": "그는 한국을 세운 시조가 되었습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "founder",
+              "say": "founder",
+              "meaning": "창시자, 시조",
+              "pos": "명사",
+              "start": 14,
+              "end": 21,
+              "choices": [
+                "Peninsula",
+                "century",
+                "Golden Age"
+              ]
+            }
           ]
         },
         {
@@ -123,6 +181,21 @@
             {
               "en": "was 고조선.",
               "ko": "고조선이었습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "ancient",
+              "say": "ancient",
+              "meaning": "고대의, 옛날의",
+              "pos": "형용사",
+              "start": 14,
+              "end": 21,
+              "choices": [
+                "powerful",
+                "proud of",
+                "Peninsula"
+              ]
             }
           ]
         }

@@ -40,6 +40,34 @@
               "en": "through every season of life?",
               "ko": "인생의 모든 계절을 함께하며?"
             }
+          ],
+          "words": [
+            {
+              "word": "stop to think",
+              "say": "stop to think",
+              "meaning": "잠시 멈춰 생각해 보다",
+              "pos": "표현",
+              "start": 14,
+              "end": 30,
+              "choices": [
+                "every season of life",
+                "by nature",
+                "as if"
+              ]
+            },
+            {
+              "word": "every season of life",
+              "say": "every season of life",
+              "meaning": "인생의 모든 시기",
+              "pos": "표현",
+              "start": 111,
+              "end": 131,
+              "choices": [
+                "by nature",
+                "as if",
+                "keep those talents to himself"
+              ]
+            }
           ]
         },
         {
@@ -62,6 +90,34 @@
               "en": "remain truly close today.",
               "ko": "지금까지 정말 가깝게 지내고 있습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "look back",
+              "say": "look back",
+              "meaning": "돌이켜 보다",
+              "pos": "구동사",
+              "start": 0,
+              "end": 12,
+              "choices": [
+                "excelled at",
+                "staying active",
+                "reflective"
+              ]
+            },
+            {
+              "word": "circle of friends",
+              "say": "circle of friends",
+              "meaning": "교우 관계, 친구 무리",
+              "pos": "연어",
+              "start": 42,
+              "end": 59,
+              "choices": [
+                "long-term visions",
+                "staying active",
+                "a constant source of strength"
+              ]
+            }
           ]
         },
         {
@@ -83,6 +139,21 @@
             {
               "en": "for decades.",
               "ko": "수십 년 동안."
+            }
+          ],
+          "words": [
+            {
+              "word": "decade",
+              "say": "decade",
+              "meaning": "10년",
+              "pos": "명사",
+              "start": 124,
+              "end": 131,
+              "choices": [
+                "humility",
+                "possess",
+                "long-term visions"
+              ]
             }
           ]
         }

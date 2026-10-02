@@ -54,6 +54,21 @@
               "en": "from 1910 to 1945.",
               "ko": "1910년부터 1945년까지."
             }
+          ],
+          "words": [
+            {
+              "word": "rule",
+              "say": "rule",
+              "meaning": "지배하다, 통치하다",
+              "pos": "동사",
+              "start": 17,
+              "end": 22,
+              "choices": [
+                "liberated",
+                "invaded",
+                "developed"
+              ]
+            }
           ]
         },
         {
@@ -82,6 +97,21 @@
               "en": "Korea was liberated from Japan.",
               "ko": "한국은 일본으로부터 해방되었습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "liberate",
+              "say": "liberate",
+              "meaning": "해방시키다",
+              "pos": "동사",
+              "start": 19,
+              "end": 28,
+              "choices": [
+                "invaded",
+                "developed",
+                "hosted"
+              ]
+            }
           ]
         },
         {
@@ -95,6 +125,21 @@
             {
               "en": "when armies from the North invaded the South.",
               "ko": "북쪽 군대가 남쪽을 침략하면서."
+            }
+          ],
+          "words": [
+            {
+              "word": "invade",
+              "say": "invade",
+              "meaning": "침략하다",
+              "pos": "동사",
+              "start": 60,
+              "end": 67,
+              "choices": [
+                "developed",
+                "hosted",
+                "accomplished"
+              ]
             }
           ]
         },

@@ -36,6 +36,47 @@
               "en": "고구려, 백제, and 신라.",
               "ko": "고구려, 백제, 신라로."
             }
+          ],
+          "words": [
+            {
+              "word": "peninsula",
+              "say": "peninsula",
+              "meaning": "반도",
+              "pos": "명사",
+              "start": 27,
+              "end": 36,
+              "choices": [
+                "century",
+                "Golden Age",
+                "nation"
+              ]
+            },
+            {
+              "word": "divide",
+              "say": "divide",
+              "meaning": "나누다",
+              "pos": "동사",
+              "start": 41,
+              "end": 48,
+              "choices": [
+                "ruled",
+                "liberated",
+                "invaded"
+              ]
+            },
+            {
+              "word": "kingdom",
+              "say": "kingdom",
+              "meaning": "왕국",
+              "pos": "명사",
+              "start": 60,
+              "end": 68,
+              "choices": [
+                "century",
+                "Golden Age",
+                "nation"
+              ]
+            }
           ]
         },
         {
@@ -68,6 +109,34 @@
               "en": "during the 8th century.",
               "ko": "8세기에."
             }
+          ],
+          "words": [
+            {
+              "word": "powerful",
+              "say": "powerful",
+              "meaning": "강력한, 강성한",
+              "pos": "형용사",
+              "start": 19,
+              "end": 27,
+              "choices": [
+                "proud of",
+                "ancient",
+                "century"
+              ]
+            },
+            {
+              "word": "century",
+              "say": "century",
+              "meaning": "세기",
+              "pos": "명사",
+              "start": 43,
+              "end": 50,
+              "choices": [
+                "Golden Age",
+                "nation",
+                "founder"
+              ]
+            }
           ]
         },
         {
@@ -81,6 +150,21 @@
             {
               "en": "the Golden Age of Korean history.",
               "ko": "한국 역사의 황금기라고."
+            }
+          ],
+          "words": [
+            {
+              "word": "golden age",
+              "say": "golden age",
+              "meaning": "황금기, 전성기",
+              "pos": "명사",
+              "start": 18,
+              "end": 28,
+              "choices": [
+                "nation",
+                "founder",
+                "Peninsula"
+              ]
             }
           ]
         }

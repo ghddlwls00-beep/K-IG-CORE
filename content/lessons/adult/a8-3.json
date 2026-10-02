@@ -36,6 +36,21 @@
               "en": "as the Korean Thanksgiving.",
               "ko": "한국의 추수감사절이라고."
             }
+          ],
+          "words": [
+            {
+              "word": "Thanksgiving",
+              "say": "Thanksgiving",
+              "meaning": "추수감사절",
+              "pos": "명사",
+              "start": 90,
+              "end": 102,
+              "choices": [
+                "offering",
+                "tombs",
+                "relatives"
+              ]
+            }
           ]
         },
         {
@@ -53,6 +68,34 @@
             {
               "en": "and make an offering of food to their ancestors.",
               "ko": "조상님께 음식을 올립니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "tomb",
+              "say": "tomb",
+              "meaning": "무덤, 산소",
+              "pos": "명사",
+              "start": 40,
+              "end": 45,
+              "choices": [
+                "relatives",
+                "ancestors",
+                "elders"
+              ]
+            },
+            {
+              "word": "offering",
+              "say": "offering",
+              "meaning": "제물, (신께) 바치는 것",
+              "pos": "명사",
+              "start": 58,
+              "end": 66,
+              "choices": [
+                "Thanksgiving",
+                "relatives",
+                "rice cake"
+              ]
             }
           ]
         },
@@ -75,6 +118,47 @@
             {
               "en": "which is a traditional Korean rice cake.",
               "ko": "송편은 한국의 전통 떡입니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "in addition",
+              "say": "in addition",
+              "meaning": "게다가, 또한",
+              "pos": "구",
+              "start": 0,
+              "end": 11,
+              "choices": [
+                "in honor of",
+                "showing respect",
+                "rice cake"
+              ]
+            },
+            {
+              "word": "relative",
+              "say": "relative",
+              "meaning": "친척",
+              "pos": "명사",
+              "start": 47,
+              "end": 56,
+              "choices": [
+                "ancestors",
+                "elders",
+                "blessings"
+              ]
+            },
+            {
+              "word": "rice cake",
+              "say": "rice cake",
+              "meaning": "떡",
+              "pos": "명사",
+              "start": 100,
+              "end": 109,
+              "choices": [
+                "custom",
+                "memorial ceremony",
+                "gesture"
+              ]
             }
           ]
         },

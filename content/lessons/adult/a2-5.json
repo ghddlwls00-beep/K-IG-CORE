@@ -40,6 +40,34 @@
               "en": "as a parent.",
               "ko": "부모로서."
             }
+          ],
+          "words": [
+            {
+              "word": "handle one's own affairs",
+              "say": "handle one's own affairs",
+              "meaning": "자기 일을 알아서 처리하다",
+              "pos": "표현",
+              "start": 40,
+              "end": 64,
+              "choices": [
+                "had a gift for",
+                "live in harmony with",
+                "meet expectations"
+              ]
+            },
+            {
+              "word": "peace of mind",
+              "say": "peace of mind",
+              "meaning": "안심, 마음의 평화",
+              "pos": "명사",
+              "start": 104,
+              "end": 117,
+              "choices": [
+                "refuge",
+                "gratitude",
+                "spouse"
+              ]
+            }
           ]
         },
         {
@@ -57,6 +85,21 @@
             {
               "en": "and now works as a social worker at a community center.",
               "ko": "지금은 커뮤니티 센터에서 사회복지사로 일하고 있습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "considerate",
+              "say": "considerate",
+              "meaning": "배려심 있는, 사려 깊은",
+              "pos": "형용사",
+              "start": 44,
+              "end": 55,
+              "choices": [
+                "fortunate",
+                "set to",
+                "cherished"
+              ]
             }
           ]
         },
@@ -79,6 +122,34 @@
             {
               "en": "that both of them keep contributing to society.",
               "ko": "두 아이 모두 계속 사회에 공헌하며 살아가는 것입니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "have a gift for",
+              "say": "have a gift for",
+              "meaning": "~에 타고난 재능이 있다",
+              "pos": "표현",
+              "start": 17,
+              "end": 31,
+              "choices": [
+                "live in harmony with",
+                "handle their own affairs",
+                "contributing to"
+              ]
+            },
+            {
+              "word": "contributing to (contribute to)",
+              "say": "contributing to",
+              "meaning": "~에 기여하다, 이바지하다",
+              "pos": "동사",
+              "start": 149,
+              "end": 164,
+              "choices": [
+                "capture",
+                "retire",
+                "live in harmony with"
+              ]
             }
           ]
         }

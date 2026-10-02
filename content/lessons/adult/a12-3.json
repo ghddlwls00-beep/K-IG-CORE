@@ -40,6 +40,34 @@
               "en": "despite repeated attempts at reform.",
               "ko": "거듭된 개혁 시도에도 불구하고."
             }
+          ],
+          "words": [
+            {
+              "word": "fundamental",
+              "say": "fundamental",
+              "meaning": "근본적인",
+              "pos": "형용사",
+              "start": 47,
+              "end": 58,
+              "choices": [
+                "fierce",
+                "lower-income",
+                "decent"
+              ]
+            },
+            {
+              "word": "deepen",
+              "say": "deepen",
+              "meaning": "깊어지다, 심화되다",
+              "pos": "동사",
+              "start": 93,
+              "end": 102,
+              "choices": [
+                "climbing",
+                "eased",
+                "unfold"
+              ]
+            }
           ]
         },
         {
@@ -61,6 +89,34 @@
             {
               "en": "even as the student population has shrunk.",
               "ko": "학생 수가 줄어드는 가운데에도."
+            }
+          ],
+          "words": [
+            {
+              "word": "fierce",
+              "say": "fierce",
+              "meaning": "치열한, 격렬한",
+              "pos": "형용사",
+              "start": 17,
+              "end": 23,
+              "choices": [
+                "lower-income",
+                "decent",
+                "fundamental"
+              ]
+            },
+            {
+              "word": "ease",
+              "say": "ease",
+              "meaning": "누그러지다, 완화되다",
+              "pos": "동사",
+              "start": 102,
+              "end": 107,
+              "choices": [
+                "revised",
+                "administered",
+                "unfold"
+              ]
             }
           ]
         },
@@ -87,6 +143,47 @@
             {
               "en": "a handful of prestigious schools in 서울.",
               "ko": "서울의 몇몇 명문 대학으로."
+            }
+          ],
+          "words": [
+            {
+              "word": "birth rate",
+              "say": "birth rate",
+              "meaning": "출산율",
+              "pos": "명사",
+              "start": 22,
+              "end": 32,
+              "choices": [
+                "liberation",
+                "work ethic",
+                "poverty"
+              ]
+            },
+            {
+              "word": "crowd into",
+              "say": "crowd into",
+              "meaning": "~로 몰려들다",
+              "pos": "구동사",
+              "start": 159,
+              "end": 169,
+              "choices": [
+                "give up on",
+                "keep up with",
+                "collaboratively"
+              ]
+            },
+            {
+              "word": "prestigious",
+              "say": "prestigious",
+              "meaning": "명문의, 권위 있는",
+              "pos": "형용사",
+              "start": 183,
+              "end": 194,
+              "choices": [
+                "pressing",
+                "lower-income",
+                "decent"
+              ]
             }
           ]
         },
@@ -128,6 +225,21 @@
               "en": "on the size of a family's income.",
               "ko": "가정의 소득 수준에 따라."
             }
+          ],
+          "words": [
+            {
+              "word": "give up on",
+              "say": "give up on",
+              "meaning": "~을 포기하다",
+              "pos": "구동사",
+              "start": 36,
+              "end": 46,
+              "choices": [
+                "keep up with",
+                "crowd into",
+                "collaboratively"
+              ]
+            }
           ]
         },
         {
@@ -153,6 +265,34 @@
             {
               "en": "by mentoring students in need.",
               "ko": "도움이 필요한 학생들을 멘토링하며."
+            }
+          ],
+          "words": [
+            {
+              "word": "collaboratively",
+              "say": "collaboratively",
+              "meaning": "협력하여",
+              "pos": "부사",
+              "start": 16,
+              "end": 31,
+              "choices": [
+                "unfold",
+                "liberation",
+                "from scratch"
+              ]
+            },
+            {
+              "word": "in need",
+              "say": "in need",
+              "meaning": "도움이 필요한",
+              "pos": "구",
+              "start": 195,
+              "end": 202,
+              "choices": [
+                "from scratch",
+                "revised",
+                "administered"
+              ]
             }
           ]
         }

@@ -32,6 +32,21 @@
               "en": "individually.",
               "ko": "개인적으로."
             }
+          ],
+          "words": [
+            {
+              "word": "individually",
+              "say": "individually",
+              "meaning": "개인적으로, 개별적으로",
+              "pos": "부사",
+              "start": 29,
+              "end": 41,
+              "choices": [
+                "pretty",
+                "especially",
+                "makes me happy"
+              ]
+            }
           ]
         },
         {
@@ -46,6 +61,21 @@
               "en": "it makes me happy.",
               "ko": "저는 행복해집니다."
             }
+          ],
+          "words": [
+            {
+              "word": "make (someone) happy",
+              "say": "make someone happy",
+              "meaning": "~를 행복하게 하다",
+              "pos": "표현",
+              "start": 23,
+              "end": 37,
+              "choices": [
+                "travel by car",
+                "volunteer",
+                "orphanage"
+              ]
+            }
           ]
         },
         {
@@ -59,6 +89,34 @@
             {
               "en": "and help the children there.",
               "ko": "그곳 아이들을 돕는 것을 좋아합니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "volunteer",
+              "say": "volunteer",
+              "meaning": "자원봉사하다",
+              "pos": "동사",
+              "start": 10,
+              "end": 19,
+              "choices": [
+                "introduce",
+                "include",
+                "enjoyed"
+              ]
+            },
+            {
+              "word": "orphanage",
+              "say": "orphanage",
+              "meaning": "보육원",
+              "pos": "명사",
+              "start": 27,
+              "end": 36,
+              "choices": [
+                "pleasure",
+                "chance",
+                "hiking"
+              ]
             }
           ]
         },

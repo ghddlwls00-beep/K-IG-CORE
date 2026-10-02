@@ -32,6 +32,21 @@
               "en": "is 경주.",
               "ko": "경주입니다."
             }
+          ],
+          "words": [
+            {
+              "word": "destination",
+              "say": "destination",
+              "meaning": "목적지, 여행지",
+              "pos": "명사",
+              "start": 19,
+              "end": 30,
+              "choices": [
+                "capital",
+                "Dynasty",
+                "natural wonder"
+              ]
+            }
           ]
         },
         {
@@ -45,6 +60,21 @@
             {
               "en": "of the 신라 Kingdom.",
               "ko": "신라 왕국의."
+            }
+          ],
+          "words": [
+            {
+              "word": "capital",
+              "say": "capital",
+              "meaning": "수도",
+              "pos": "명사",
+              "start": 14,
+              "end": 21,
+              "choices": [
+                "Dynasty",
+                "natural wonder",
+                "vacation"
+              ]
             }
           ]
         },
@@ -74,6 +104,21 @@
               "en": "as a museum without walls.",
               "ko": "'지붕 없는 박물관'으로."
             }
+          ],
+          "words": [
+            {
+              "word": "regard (A) as (B)",
+              "say": "regard something as something",
+              "meaning": "A를 B로 여기다",
+              "pos": "동사",
+              "start": 12,
+              "end": 24,
+              "choices": [
+                "contains",
+                "witness",
+                "surrounded"
+              ]
+            }
           ]
         },
         {
@@ -91,6 +136,47 @@
             {
               "en": "of the 신라 Dynasty.",
               "ko": "신라 왕조의."
+            }
+          ],
+          "words": [
+            {
+              "word": "contain",
+              "say": "contain",
+              "meaning": "포함하다, 담고 있다",
+              "pos": "동사",
+              "start": 39,
+              "end": 47,
+              "choices": [
+                "witness",
+                "regard 경주 as",
+                "surrounded"
+              ]
+            },
+            {
+              "word": "remains",
+              "say": "remains",
+              "meaning": "유적, 유물",
+              "pos": "명사",
+              "start": 64,
+              "end": 71,
+              "choices": [
+                "spots",
+                "Dynasty",
+                "natural wonder"
+              ]
+            },
+            {
+              "word": "dynasty",
+              "say": "dynasty",
+              "meaning": "왕조",
+              "pos": "명사",
+              "start": 82,
+              "end": 89,
+              "choices": [
+                "natural wonder",
+                "vacation",
+                "peninsula"
+              ]
             }
           ]
         }

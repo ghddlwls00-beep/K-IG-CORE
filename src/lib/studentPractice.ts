@@ -10,6 +10,8 @@
  *   heard   Step 1: the sentence was heard to the end once — its '보기' is open (D17)
  *   mic     the best microphone score of the sentence (Step 3)
  *   chunked ADULT 끊어 읽기 (2026-10-02): every chunk's meaning in the sentence was opened — the tab's count, not completion
+ *   wordMarks  ADULT 단어 (2026-10-02): '알아요' / '몰라요' per word (key = the word's place in the lesson, 0-based)
+ *   wordRight  ADULT 단어: the word's blank was answered right once — the tab's count, not completion
  *   v       2
  *
  * Completion (D18 나): 80% of the sentences (rounded up) solved in Step 2 AND 80% spoken in Step 3 (microphone ≥ 70 or
@@ -46,9 +48,20 @@ export interface StudentPractice {
   heard: Record<number, boolean>;
   mic: Record<number, number>;
   chunked: Record<number, boolean>;
+  wordMarks: Record<number, WordMark>;
+  wordRight: Record<number, boolean>;
 }
 
-export const emptyPractice = (): StudentPractice => ({ solved: {}, completed: {}, hinted: {}, hints: {}, heard: {}, mic: {}, chunked: {} });
+export type WordMark = "known" | "unknown";
+
+function markMap(value: unknown): Record<number, WordMark> {
+  if (!value || typeof value !== "object") return {};
+  const out: Record<number, WordMark> = {};
+  for (const [k, v] of Object.entries(value as Record<string, unknown>)) if (v === "known" || v === "unknown") out[Number(k)] = v;
+  return out;
+}
+
+export const emptyPractice = (): StudentPractice => ({ solved: {}, completed: {}, hinted: {}, hints: {}, heard: {}, mic: {}, chunked: {}, wordMarks: {}, wordRight: {} });
 
 export const practiceStorageKey = (lessonKey: string) => `kig:student:practice:${lessonKey}`;
 
@@ -81,6 +94,8 @@ export function parsePractice(raw: string | null): StudentPractice {
       heard: boolMap(d.heard),
       mic: numberMap(d.mic),
       chunked: boolMap(d.chunked),
+      wordMarks: markMap(d.wordMarks),
+      wordRight: boolMap(d.wordRight),
     };
   } catch {
     return emptyPractice();
@@ -88,7 +103,7 @@ export function parsePractice(raw: string | null): StudentPractice {
 }
 
 export function serializePractice(p: StudentPractice): string {
-  return JSON.stringify({ v: 2, solved: p.solved, completed: p.completed, hinted: p.hinted, hints: p.hints, heard: p.heard, mic: p.mic, chunked: p.chunked });
+  return JSON.stringify({ v: 2, solved: p.solved, completed: p.completed, hinted: p.hinted, hints: p.hints, heard: p.heard, mic: p.mic, chunked: p.chunked, wordMarks: p.wordMarks, wordRight: p.wordRight });
 }
 
 export const countTrue = (map: Record<number, boolean>) => Object.values(map).filter(Boolean).length;

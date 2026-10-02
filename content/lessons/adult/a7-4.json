@@ -36,6 +36,34 @@
               "en": "especially during the 1970s.",
               "ko": "특히 1970년대에 그러했습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "develop",
+              "say": "develop",
+              "meaning": "발전하다",
+              "pos": "동사",
+              "start": 50,
+              "end": 59,
+              "choices": [
+                "hosted",
+                "accomplished",
+                "founded"
+              ]
+            },
+            {
+              "word": "especially",
+              "say": "especially",
+              "meaning": "특히",
+              "pos": "부사",
+              "start": 74,
+              "end": 84,
+              "choices": [
+                "proud of",
+                "nation",
+                "once upon a time"
+              ]
+            }
           ]
         },
         {
@@ -72,6 +100,21 @@
               "en": "the World Cup was held in Korea, too.",
               "ko": "월드컵도 한국에서 열렸습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "host",
+              "say": "host",
+              "meaning": "개최하다",
+              "pos": "동사",
+              "start": 15,
+              "end": 21,
+              "choices": [
+                "accomplished",
+                "founded",
+                "divided"
+              ]
+            }
           ]
         },
         {
@@ -89,6 +132,34 @@
             {
               "en": "during its long history.",
               "ko": "오랜 역사 동안."
+            }
+          ],
+          "words": [
+            {
+              "word": "proud of",
+              "say": "proud of",
+              "meaning": "~을 자랑스러워하는",
+              "pos": "형용사",
+              "start": 10,
+              "end": 18,
+              "choices": [
+                "ancient",
+                "powerful",
+                "nation"
+              ]
+            },
+            {
+              "word": "accomplish",
+              "say": "accomplish",
+              "meaning": "이루다, 성취하다",
+              "pos": "동사",
+              "start": 46,
+              "end": 58,
+              "choices": [
+                "founded",
+                "divided",
+                "ruled"
+              ]
             }
           ]
         }

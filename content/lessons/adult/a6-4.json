@@ -36,6 +36,34 @@
               "en": "alongside one another.",
               "ko": "서로 나란히."
             }
+          ],
+          "words": [
+            {
+              "word": "diversity",
+              "say": "diversity",
+              "meaning": "다양성",
+              "pos": "명사",
+              "start": 30,
+              "end": 39,
+              "choices": [
+                "sermon",
+                "congregation",
+                "obligation"
+              ]
+            },
+            {
+              "word": "coexist",
+              "say": "coexist",
+              "meaning": "공존하다",
+              "pos": "동사",
+              "start": 81,
+              "end": 90,
+              "choices": [
+                "outnumbered",
+                "dedicated so much of their lives to",
+                "home-cooked"
+              ]
+            }
           ]
         },
         {
@@ -57,6 +85,47 @@
             {
               "en": "and listen attentively to the sermon.",
               "ko": "설교에 귀 기울입니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "hymn",
+              "say": "hymn",
+              "meaning": "찬송가",
+              "pos": "명사",
+              "start": 72,
+              "end": 77,
+              "choices": [
+                "census",
+                "special occasions",
+                "milestones"
+              ]
+            },
+            {
+              "word": "attentively",
+              "say": "attentively",
+              "meaning": "주의 깊게, 귀 기울여",
+              "pos": "부사",
+              "start": 98,
+              "end": 109,
+              "choices": [
+                "occasionally",
+                "sermon",
+                "congregation"
+              ]
+            },
+            {
+              "word": "sermon",
+              "say": "sermon",
+              "meaning": "설교",
+              "pos": "명사",
+              "start": 117,
+              "end": 123,
+              "choices": [
+                "congregation",
+                "obligation",
+                "work ethic"
+              ]
             }
           ]
         },
@@ -80,6 +149,34 @@
               "en": "have made our congregation feel like a close-knit extended family.",
               "ko": "우리 교회는 끈끈한 대가족처럼 느껴지게 되었습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "congregation",
+              "say": "congregation",
+              "meaning": "(교회의) 신도, 교인",
+              "pos": "명사",
+              "start": 128,
+              "end": 140,
+              "choices": [
+                "obligation",
+                "work ethic",
+                "hobby circle"
+              ]
+            },
+            {
+              "word": "close-knit",
+              "say": "close-knit",
+              "meaning": "끈끈한, 유대가 긴밀한",
+              "pos": "형용사",
+              "start": 153,
+              "end": 163,
+              "choices": [
+                "supportive",
+                "collaborative",
+                "home-cooked"
+              ]
+            }
           ]
         },
         {
@@ -101,6 +198,34 @@
             {
               "en": "for the first time.",
               "ko": "처음으로."
+            }
+          ],
+          "words": [
+            {
+              "word": "census",
+              "say": "census",
+              "meaning": "인구 조사",
+              "pos": "명사",
+              "start": 75,
+              "end": 81,
+              "choices": [
+                "special occasions",
+                "milestones",
+                "materials"
+              ]
+            },
+            {
+              "word": "outnumber",
+              "say": "outnumber",
+              "meaning": "수가 ~보다 많다",
+              "pos": "동사",
+              "start": 105,
+              "end": 116,
+              "choices": [
+                "coexisted",
+                "dedicated so much of their lives to",
+                "home-cooked"
+              ]
             }
           ]
         },
@@ -124,6 +249,21 @@
               "en": "a few times a year.",
               "ko": "일 년에 몇 번 정도입니다."
             }
+          ],
+          "words": [
+            {
+              "word": "special occasion",
+              "say": "special occasion",
+              "meaning": "특별한 날, 행사",
+              "pos": "명사",
+              "start": 61,
+              "end": 78,
+              "choices": [
+                "milestones",
+                "materials",
+                "hymns"
+              ]
+            }
           ]
         },
         {
@@ -145,6 +285,21 @@
             {
               "en": "in a wide variety of ways.",
               "ko": "아주 다양한 방식으로."
+            }
+          ],
+          "words": [
+            {
+              "word": "a wide variety of",
+              "say": "a wide variety of",
+              "meaning": "아주 다양한",
+              "pos": "표현",
+              "start": 103,
+              "end": 120,
+              "choices": [
+                "at the expense of",
+                "every other",
+                "go out for"
+              ]
             }
           ]
         },

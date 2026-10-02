@@ -40,6 +40,47 @@
               "en": "for the materials our group needs.",
               "ko": "우리 모임에 필요한 재료를 사러."
             }
+          ],
+          "words": [
+            {
+              "word": "hobby circle",
+              "say": "hobby circle",
+              "meaning": "동호회",
+              "pos": "명사",
+              "start": 28,
+              "end": 40,
+              "choices": [
+                "network",
+                "chore",
+                "a say in"
+              ]
+            },
+            {
+              "word": "occasionally",
+              "say": "occasionally",
+              "meaning": "가끔, 이따금",
+              "pos": "부사",
+              "start": 72,
+              "end": 84,
+              "choices": [
+                "attentively",
+                "every other",
+                "supportive"
+              ]
+            },
+            {
+              "word": "material",
+              "say": "material",
+              "meaning": "재료, 자재",
+              "pos": "명사",
+              "start": 111,
+              "end": 120,
+              "choices": [
+                "hymns",
+                "census",
+                "special occasions"
+              ]
+            }
           ]
         },
         {
@@ -62,6 +103,34 @@
               "en": "and sharing what they have learned.",
               "ko": "각자 배운 것을 나눕니다."
             }
+          ],
+          "words": [
+            {
+              "word": "every other",
+              "say": "every other",
+              "meaning": "하나 걸러, 격~",
+              "pos": "표현",
+              "start": 17,
+              "end": 28,
+              "choices": [
+                "a wide variety of",
+                "at the expense of",
+                "supportive"
+              ]
+            },
+            {
+              "word": "take turns",
+              "say": "take turns",
+              "meaning": "돌아가며 하다",
+              "pos": "구",
+              "start": 83,
+              "end": 93,
+              "choices": [
+                "hymns",
+                "census",
+                "special occasions"
+              ]
+            }
           ]
         },
         {
@@ -79,6 +148,34 @@
             {
               "en": "who have become a remarkably supportive network.",
               "ko": "이 친구들은 놀라울 만큼 든든한 버팀목이 되었습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "supportive",
+              "say": "supportive",
+              "meaning": "힘이 되는, 든든한",
+              "pos": "형용사",
+              "start": 125,
+              "end": 135,
+              "choices": [
+                "collaborative",
+                "close-knit",
+                "home-cooked"
+              ]
+            },
+            {
+              "word": "network",
+              "say": "network",
+              "meaning": "인맥, 관계망",
+              "pos": "명사",
+              "start": 136,
+              "end": 143,
+              "choices": [
+                "chore",
+                "a say in",
+                "diversity"
+              ]
             }
           ]
         },
@@ -102,6 +199,21 @@
               "en": "we will need for the coming week.",
               "ko": "다음 한 주 동안 필요할."
             }
+          ],
+          "words": [
+            {
+              "word": "stock up on",
+              "say": "stock up on",
+              "meaning": "~을 넉넉히 사 두다",
+              "pos": "구동사",
+              "start": 72,
+              "end": 83,
+              "choices": [
+                "go out for",
+                "catching up",
+                "give back"
+              ]
+            }
           ]
         },
         {
@@ -123,6 +235,47 @@
             {
               "en": "in which everyone has a say in the menu.",
               "ko": "모두가 메뉴에 의견을 낼 수 있는."
+            }
+          ],
+          "words": [
+            {
+              "word": "chore",
+              "say": "chore",
+              "meaning": "(집안)일, 잡일",
+              "pos": "명사",
+              "start": 56,
+              "end": 61,
+              "choices": [
+                "a say in",
+                "diversity",
+                "sermon"
+              ]
+            },
+            {
+              "word": "collaborative",
+              "say": "collaborative",
+              "meaning": "협력적인, 함께하는",
+              "pos": "형용사",
+              "start": 69,
+              "end": 82,
+              "choices": [
+                "close-knit",
+                "supportive",
+                "home-cooked"
+              ]
+            },
+            {
+              "word": "a say in",
+              "say": "a say in",
+              "meaning": "~에 대한 발언권",
+              "pos": "명사",
+              "start": 121,
+              "end": 129,
+              "choices": [
+                "diversity",
+                "sermon",
+                "congregation"
+              ]
             }
           ]
         }

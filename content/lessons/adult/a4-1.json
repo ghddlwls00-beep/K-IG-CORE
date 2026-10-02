@@ -40,6 +40,34 @@
               "en": "during holidays.",
               "ko": "명절에도."
             }
+          ],
+          "words": [
+            {
+              "word": "extended family",
+              "say": "extended family",
+              "meaning": "친척을 포함한 대가족",
+              "pos": "명사",
+              "start": 36,
+              "end": 53,
+              "choices": [
+                "households",
+                "siblings",
+                "commitment"
+              ]
+            },
+            {
+              "word": "household",
+              "say": "household",
+              "meaning": "가정, 가구",
+              "pos": "명사",
+              "start": 60,
+              "end": 70,
+              "choices": [
+                "siblings",
+                "extended families",
+                "commitment"
+              ]
+            }
           ]
         },
         {
@@ -57,6 +85,21 @@
             {
               "en": "my own relatives in English today.",
               "ko": "오늘은 저의 친척들을 영어로."
+            }
+          ],
+          "words": [
+            {
+              "word": "lately",
+              "say": "lately",
+              "meaning": "최근에, 요즘",
+              "pos": "부사",
+              "start": 46,
+              "end": 52,
+              "choices": [
+                "precisely",
+                "eldest",
+                "line up"
+              ]
             }
           ]
         },

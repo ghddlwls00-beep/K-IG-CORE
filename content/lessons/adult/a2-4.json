@@ -54,6 +54,21 @@
               "en": "which has become our most cherished family ritual.",
               "ko": "그것은 우리 가족의 가장 소중한 의식이 되었습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "cherished",
+              "say": "cherished",
+              "meaning": "소중한, 아끼는",
+              "pos": "형용사",
+              "start": 127,
+              "end": 136,
+              "choices": [
+                "considerate",
+                "fortunate",
+                "set to"
+              ]
+            }
           ]
         },
         {
@@ -75,6 +90,34 @@
             {
               "en": "reflects that perfectly.",
               "ko": "그것을 잘 보여줍니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "mutual respect",
+              "say": "mutual respect",
+              "meaning": "서로에 대한 존중",
+              "pos": "연어",
+              "start": 54,
+              "end": 68,
+              "choices": [
+                "set an example",
+                "meet expectations",
+                "peace of mind"
+              ]
+            },
+            {
+              "word": "household chores",
+              "say": "household chores",
+              "meaning": "집안일",
+              "pos": "명사",
+              "start": 111,
+              "end": 127,
+              "choices": [
+                "peace of mind",
+                "refuge",
+                "gratitude"
+              ]
             }
           ]
         }

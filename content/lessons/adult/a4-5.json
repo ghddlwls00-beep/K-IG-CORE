@@ -58,6 +58,34 @@
               "en": "and are always supportive of what I pursue.",
               "ko": "제가 하려는 일을 언제나 든든히 응원해 주신다는 점입니다."
             }
+          ],
+          "words": [
+            {
+              "word": "judge",
+              "say": "judge",
+              "meaning": "(남을) 판단하다, 재단하다",
+              "pos": "동사",
+              "start": 86,
+              "end": 91,
+              "choices": [
+                "pursue",
+                "renew",
+                "awakening"
+              ]
+            },
+            {
+              "word": "pursue",
+              "say": "pursue",
+              "meaning": "추구하다, 좇다",
+              "pos": "동사",
+              "start": 131,
+              "end": 137,
+              "choices": [
+                "renew",
+                "judge",
+                "awakening"
+              ]
+            }
           ]
         },
         {

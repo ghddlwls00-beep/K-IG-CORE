@@ -40,6 +40,34 @@
               "en": "or staying active together.",
               "ko": "함께 활동을 하든."
             }
+          ],
+          "words": [
+            {
+              "word": "outgoing",
+              "say": "outgoing",
+              "meaning": "외향적인, 사교적인",
+              "pos": "형용사",
+              "start": 16,
+              "end": 24,
+              "choices": [
+                "outstanding",
+                "introverted",
+                "reflective"
+              ]
+            },
+            {
+              "word": "stay active",
+              "say": "stay active",
+              "meaning": "활동적으로 지내다",
+              "pos": "연어",
+              "start": 120,
+              "end": 134,
+              "choices": [
+                "a constant source of strength",
+                "long-term visions",
+                "circle of friends"
+              ]
+            }
           ]
         },
         {
@@ -62,6 +90,47 @@
               "en": "while 민국 is more introverted and reflective by nature.",
               "ko": "민국이는 좀 더 내성적이고 사색적인 성향입니다."
             }
+          ],
+          "words": [
+            {
+              "word": "introverted",
+              "say": "introverted",
+              "meaning": "내향적인",
+              "pos": "형용사",
+              "start": 89,
+              "end": 100,
+              "choices": [
+                "reflective",
+                "outstanding",
+                "gifted at"
+              ]
+            },
+            {
+              "word": "reflective",
+              "say": "reflective",
+              "meaning": "사색적인, 생각이 깊은",
+              "pos": "형용사",
+              "start": 105,
+              "end": 115,
+              "choices": [
+                "gifted at",
+                "outstanding",
+                "outgoing"
+              ]
+            },
+            {
+              "word": "by nature",
+              "say": "by nature",
+              "meaning": "천성적으로, 본래",
+              "pos": "표현",
+              "start": 116,
+              "end": 125,
+              "choices": [
+                "as if",
+                "keep those talents to himself",
+                "by force"
+              ]
+            }
           ]
         },
         {
@@ -83,6 +152,34 @@
             {
               "en": "but genuine curiosity.",
               "ko": "진정한 호기심까지."
+            }
+          ],
+          "words": [
+            {
+              "word": "possess",
+              "say": "possess",
+              "meaning": "지니다, 소유하다",
+              "pos": "동사",
+              "start": 48,
+              "end": 55,
+              "choices": [
+                "lack",
+                "earned",
+                "long-term visions"
+              ]
+            },
+            {
+              "word": "humility",
+              "say": "humility",
+              "meaning": "겸손",
+              "pos": "명사",
+              "start": 110,
+              "end": 118,
+              "choices": [
+                "decades",
+                "as if",
+                "excelled at"
+              ]
             }
           ]
         }

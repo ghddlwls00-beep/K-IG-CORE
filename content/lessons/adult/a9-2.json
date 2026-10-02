@@ -36,6 +36,21 @@
               "en": "traditional Korean clothing.",
               "ko": "한국의 전통 의복에 대해."
             }
+          ],
+          "words": [
+            {
+              "word": "explain",
+              "say": "explain",
+              "meaning": "설명하다",
+              "pos": "동사",
+              "start": 23,
+              "end": 30,
+              "choices": [
+                "include",
+                "created",
+                "Western-style"
+              ]
+            }
           ]
         },
         {
@@ -49,6 +64,34 @@
             {
               "en": "Korean people wear Western-style clothes.",
               "ko": "한국 사람들은 서양식 옷을 입습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "ordinary occasion",
+              "say": "ordinary occasion",
+              "meaning": "평상시, 평범한 때",
+              "pos": "명사",
+              "start": 3,
+              "end": 21,
+              "choices": [
+                "costumes",
+                "side dishes",
+                "Chinese characters"
+              ]
+            },
+            {
+              "word": "Western style",
+              "say": "Western style",
+              "meaning": "서양식",
+              "pos": "형용사",
+              "start": 42,
+              "end": 55,
+              "choices": [
+                "popular",
+                "different from",
+                "unique"
+              ]
             }
           ]
         },
@@ -67,6 +110,34 @@
             {
               "en": "by wearing traditional costumes called 한복.",
               "ko": "한복이라 불리는 전통 의상을 입고."
+            }
+          ],
+          "words": [
+            {
+              "word": "however",
+              "say": "however",
+              "meaning": "하지만, 그러나",
+              "pos": "부사",
+              "start": 0,
+              "end": 7,
+              "choices": [
+                "finally",
+                "instead",
+                "include"
+              ]
+            },
+            {
+              "word": "costume",
+              "say": "costume",
+              "meaning": "의상, 복장",
+              "pos": "명사",
+              "start": 87,
+              "end": 95,
+              "choices": [
+                "side dishes",
+                "Chinese characters",
+                "scholars"
+              ]
             }
           ]
         }

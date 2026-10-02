@@ -40,6 +40,47 @@
               "en": "the East Sea, the West Sea, and the South Sea.",
               "ko": "동해, 서해, 그리고 남해입니다."
             }
+          ],
+          "words": [
+            {
+              "word": "peninsula",
+              "say": "peninsula",
+              "meaning": "반도",
+              "pos": "명사",
+              "start": 23,
+              "end": 32,
+              "choices": [
+                "landscape",
+                "National Park",
+                "attraction"
+              ]
+            },
+            {
+              "word": "located",
+              "say": "located",
+              "meaning": "위치한",
+              "pos": "형용사",
+              "start": 33,
+              "end": 40,
+              "choices": [
+                "geographical",
+                "filled with",
+                "attractive"
+              ]
+            },
+            {
+              "word": "surround",
+              "say": "surround",
+              "meaning": "둘러싸다",
+              "pos": "동사",
+              "start": 72,
+              "end": 82,
+              "choices": [
+                "witness",
+                "observe",
+                "regard 경주 as"
+              ]
+            }
           ]
         },
         {
@@ -53,6 +94,47 @@
             {
               "en": "and filled with many wonderful places to visit.",
               "ko": "가 볼 만한 멋진 곳들로 가득합니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "geographical",
+              "say": "geographical",
+              "meaning": "지리적인",
+              "pos": "형용사",
+              "start": 4,
+              "end": 16,
+              "choices": [
+                "filled with",
+                "attractive",
+                "man-made"
+              ]
+            },
+            {
+              "word": "landscape",
+              "say": "landscape",
+              "meaning": "풍경, 경관",
+              "pos": "명사",
+              "start": 17,
+              "end": 26,
+              "choices": [
+                "National Park",
+                "attraction",
+                "destination"
+              ]
+            },
+            {
+              "word": "filled with",
+              "say": "filled with",
+              "meaning": "~로 가득 찬",
+              "pos": "형용사",
+              "start": 44,
+              "end": 55,
+              "choices": [
+                "attractive",
+                "man-made",
+                "foreign"
+              ]
             }
           ]
         }

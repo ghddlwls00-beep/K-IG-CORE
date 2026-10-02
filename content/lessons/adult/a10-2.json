@@ -36,6 +36,34 @@
               "en": "and sometimes man-made.",
               "ko": "그리고 때로는 사람이 만든 곳도 있습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "attractive",
+              "say": "attractive",
+              "meaning": "매력적인",
+              "pos": "형용사",
+              "start": 21,
+              "end": 31,
+              "choices": [
+                "man-made",
+                "foreign",
+                "geographical"
+              ]
+            },
+            {
+              "word": "man-made",
+              "say": "man-made",
+              "meaning": "사람이 만든, 인공의",
+              "pos": "형용사",
+              "start": 92,
+              "end": 100,
+              "choices": [
+                "foreign",
+                "geographical",
+                "filled with"
+              ]
+            }
           ]
         },
         {
@@ -53,6 +81,21 @@
             {
               "en": "and the Independence Hall of Korea.",
               "ko": "그리고 독립기념관이 있습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "national park",
+              "say": "national park",
+              "meaning": "국립공원",
+              "pos": "명사",
+              "start": 29,
+              "end": 42,
+              "choices": [
+                "attraction",
+                "destination",
+                "capital"
+              ]
             }
           ]
         }

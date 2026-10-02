@@ -36,6 +36,34 @@
               "en": "reflecting widening gaps between social classes.",
               "ko": "이는 계층 간 격차가 벌어지고 있음을 보여 줍니다."
             }
+          ],
+          "words": [
+            {
+              "word": "climb",
+              "say": "climb",
+              "meaning": "(수치가) 오르다",
+              "pos": "동사",
+              "start": 53,
+              "end": 61,
+              "choices": [
+                "deepening",
+                "surfaces",
+                "afford"
+              ]
+            },
+            {
+              "word": "social class",
+              "say": "social class",
+              "meaning": "사회 계층",
+              "pos": "명사",
+              "start": 121,
+              "end": 135,
+              "choices": [
+                "transformations",
+                "reforms",
+                "tutoring"
+              ]
+            }
           ]
         },
         {
@@ -57,6 +85,34 @@
             {
               "en": "news headlines, and political debates alike.",
               "ko": "뉴스 헤드라인, 정치 토론 어디에서나 등장하는 문제입니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "pressing",
+              "say": "pressing",
+              "meaning": "절박한, 시급한",
+              "pos": "형용사",
+              "start": 52,
+              "end": 60,
+              "choices": [
+                "lower-income",
+                "decent",
+                "fundamental"
+              ]
+            },
+            {
+              "word": "surface",
+              "say": "surface",
+              "meaning": "드러나다, 표면화되다",
+              "pos": "동사",
+              "start": 84,
+              "end": 92,
+              "choices": [
+                "afford",
+                "narrow",
+                "deepening"
+              ]
             }
           ]
         },
@@ -102,6 +158,47 @@
               "en": "to provide even a decent education for their children.",
               "ko": "자녀에게 기본적인 교육이라도 제공하려고."
             }
+          ],
+          "words": [
+            {
+              "word": "afford",
+              "say": "afford",
+              "meaning": "(~할) 여유가 있다",
+              "pos": "동사",
+              "start": 23,
+              "end": 29,
+              "choices": [
+                "narrow",
+                "unfold",
+                "deepening"
+              ]
+            },
+            {
+              "word": "lower-income",
+              "say": "lower-income",
+              "meaning": "저소득의",
+              "pos": "형용사",
+              "start": 81,
+              "end": 93,
+              "choices": [
+                "decent",
+                "fundamental",
+                "fierce"
+              ]
+            },
+            {
+              "word": "decent",
+              "say": "decent",
+              "meaning": "괜찮은, 적절한",
+              "pos": "형용사",
+              "start": 138,
+              "end": 144,
+              "choices": [
+                "fundamental",
+                "fierce",
+                "lower-income"
+              ]
+            }
           ]
         },
         {
@@ -128,6 +225,34 @@
               "en": "who cannot afford private lessons.",
               "ko": "사교육을 받을 형편이 안 되는."
             }
+          ],
+          "words": [
+            {
+              "word": "narrow",
+              "say": "narrow",
+              "meaning": "좁히다",
+              "pos": "동사",
+              "start": 3,
+              "end": 9,
+              "choices": [
+                "unfold",
+                "afford",
+                "deepening"
+              ]
+            },
+            {
+              "word": "tutoring",
+              "say": "tutoring",
+              "meaning": "개인 지도",
+              "pos": "명사",
+              "start": 146,
+              "end": 154,
+              "choices": [
+                "birth rate",
+                "transformations",
+                "liberation"
+              ]
+            }
           ]
         },
         {
@@ -145,6 +270,21 @@
             {
               "en": "before they become truly effective and fair for everyone.",
               "ko": "모두에게 진정으로 효과적이고 공정해지기까지는."
+            }
+          ],
+          "words": [
+            {
+              "word": "have a long way to go",
+              "say": "have a long way to go",
+              "meaning": "갈 길이 멀다",
+              "pos": "표현",
+              "start": 89,
+              "end": 110,
+              "choices": [
+                "fundamental",
+                "fierce",
+                "birth rate"
+              ]
             }
           ]
         }

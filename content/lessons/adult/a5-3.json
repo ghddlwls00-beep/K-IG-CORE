@@ -36,6 +36,21 @@
               "en": "even on the busiest afternoons.",
               "ko": "아무리 바쁜 오후라 해도."
             }
+          ],
+          "words": [
+            {
+              "word": "look forward to + N/-ing",
+              "say": "look forward to",
+              "meaning": "~을 고대하다, 기다리다",
+              "pos": "구동사",
+              "start": 66,
+              "end": 81,
+              "choices": [
+                "giving back",
+                "wraps up",
+                "close-knit"
+              ]
+            }
           ]
         },
         {
@@ -54,6 +69,21 @@
               "en": "which is how a workplace slowly becomes a close-knit one.",
               "ko": "직장은 그렇게 조금씩 끈끈한 곳이 되어 갑니다."
             }
+          ],
+          "words": [
+            {
+              "word": "close-knit",
+              "say": "close-knit",
+              "meaning": "끈끈한, 유대가 긴밀한",
+              "pos": "형용사",
+              "start": 122,
+              "end": 132,
+              "choices": [
+                "supportive",
+                "collaborative",
+                "demanding"
+              ]
+            }
           ]
         },
         {
@@ -71,6 +101,34 @@
             {
               "en": "a small ritual that has kept our team remarkably supportive.",
               "ko": "이 작은 습관이 팀을 놀라울 만큼 서로 지지하게 만들어 주었습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "ritual",
+              "say": "ritual",
+              "meaning": "(반복되는) 의식, 습관적 절차",
+              "pos": "명사",
+              "start": 84,
+              "end": 90,
+              "choices": [
+                "stretch",
+                "work ethic",
+                "a real sense of purpose"
+              ]
+            },
+            {
+              "word": "supportive",
+              "say": "supportive",
+              "meaning": "힘이 되어 주는, 서로 지지하는",
+              "pos": "형용사",
+              "start": 125,
+              "end": 135,
+              "choices": [
+                "collaborative",
+                "close-knit",
+                "demanding"
+              ]
             }
           ]
         }

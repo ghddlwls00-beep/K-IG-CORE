@@ -40,6 +40,21 @@
               "en": "for quite a while.",
               "ko": "꽤 오래전부터."
             }
+          ],
+          "words": [
+            {
+              "word": "look forward to + N/-ing",
+              "say": "look forward to",
+              "meaning": "~을 고대하다, 기다리다",
+              "pos": "구동사",
+              "start": 101,
+              "end": 119,
+              "choices": [
+                "gratitude",
+                "out loud",
+                "capture"
+              ]
+            }
           ]
         },
         {
@@ -62,6 +77,34 @@
               "en": "that we rarely say out loud?",
               "ko": "좀처럼 입 밖으로 꺼내지 않는?"
             }
+          ],
+          "words": [
+            {
+              "word": "gratitude",
+              "say": "gratitude",
+              "meaning": "감사, 고마운 마음",
+              "pos": "명사",
+              "start": 78,
+              "end": 87,
+              "choices": [
+                "spouse",
+                "milestone",
+                "transition"
+              ]
+            },
+            {
+              "word": "out loud",
+              "say": "out loud",
+              "meaning": "소리 내어, 입 밖으로",
+              "pos": "부사",
+              "start": 124,
+              "end": 132,
+              "choices": [
+                "capture",
+                "fortunate",
+                "spouse"
+              ]
+            }
           ]
         },
         {
@@ -79,6 +122,21 @@
             {
               "en": "of the people who have shaped who I am.",
               "ko": "지금의 저를 만들어 준 사람들이 어떤 분들인지."
+            }
+          ],
+          "words": [
+            {
+              "word": "capture",
+              "say": "capture",
+              "meaning": "(말·글로) 담아내다",
+              "pos": "동사",
+              "start": 29,
+              "end": 36,
+              "choices": [
+                "retire",
+                "contributing to",
+                "fortunate"
+              ]
             }
           ]
         }

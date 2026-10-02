@@ -3,11 +3,14 @@
 /**
  * STUDENT — one view for all 82 lessons: Step 1 블라인드 리스닝 · Step 2 탭 딕테이션 · Step 3 섀도잉 & 낭독 (the owner's
  * step names and order; every tab still reads "Step N").
- * ADULT (2026-10-02, 사장님 "어덜트 섹션에서 청크 학습법 하나 만들자 적절한 순서로 들어가게") has a fourth step second — 끊어 읽기:
- * a lesson whose sentences carry `chunks` reads 1 블라인드 리스닝 · 2 끊어 읽기 · 3 탭 딕테이션 · 4 섀도잉 & 낭독. One sentence at a
- * time: each chunk is heard by itself (tap) or all in turn with a pause ('끊어 듣기'), its meaning waits behind a grey box, and with
- * every meaning open the whole Korean line shows. The tab counts the sentences whose meanings were all opened (practice.chunked);
- * completion is unchanged. STUDENT has no chunks, so it keeps its three steps.
+ * ADULT (2026-10-02) has five: 1 블라인드 리스닝 · 2 단어 · 3 끊어 읽기 · 4 탭 딕테이션 · 5 섀도잉 & 낭독 (the tabs in the phone's
+ * row at every width — StepTabs compact). STUDENT keeps its three (사장님 "스튜던트에는 청크 넣지마").
+ *   단어      (사장님 "어덜트 섹션에서 단어 학습법 만들자 적절한 순서로 들어가게") the PPT's key words on cards and blanks, READING's
+ *            핵심 어휘 way — src/components/AdultWordsStep.tsx; the tab counts the words answered right (practice.wordRight).
+ *   끊어 읽기 (사장님 "어덜트 섹션에서 청크 학습법 하나 만들자 …") one sentence at a time: each chunk is heard by itself (tap) or all
+ *            in turn with a pause ('끊어 듣기'), its meaning waits behind a grey box, and with every meaning open the whole Korean
+ *            line shows. The tab counts the sentences whose meanings were all opened (practice.chunked).
+ * Completion is unchanged for both courses.
  *
  * 2026-09-27 학습법 · 화면 고침 (사장님 "검토 결과대로 … 끝까지"; docs/qa-2026-09-18/학습법-화면-0927/student-verified.md ·
  * 계획.md D01–D04). The sentences, the translations and every sound are unchanged: what is handed to playSentenceQueue is
@@ -86,6 +89,7 @@ import {
 } from "@/lib/studentPractice";
 import { VoiceSpeakingTester } from "@/components/VoiceSpeakingTester";
 import { StepTabs } from "@/components/StepTabs";
+import { AdultWordsStep } from "@/components/AdultWordsStep";
 import {
   IconBackspace,
   IconCheck,
@@ -125,16 +129,20 @@ interface StudentLearningViewProps {
   next?: StudentNextLesson | null;
 }
 
-type StudyMode = "listen" | "chunk" | "dictation" | "shadowing";
+type StudyMode = "listen" | "words" | "chunk" | "dictation" | "shadowing";
 const STEP_NAMES: Record<StudyMode, string> = {
   listen: "블라인드 리스닝",
+  words: "단어",
   chunk: "끊어 읽기",
   dictation: "탭 딕테이션",
   shadowing: "섀도잉 & 낭독",
 };
-/** STUDENT's three steps; a lesson whose sentences carry chunks (ADULT) has 끊어 읽기 second — after the first listening, before dictation */
-const THREE_STEPS: StudyMode[] = ["listen", "dictation", "shadowing"];
-const FOUR_STEPS: StudyMode[] = ["listen", "chunk", "dictation", "shadowing"];
+/**
+ * STUDENT's three steps. ADULT has two more after the first listening: 단어 (the words, READING's way — after the first
+ * listening, as READING's 핵심 어휘 comes after 처음 읽기) and 끊어 읽기 (the sentences in chunks), then dictation and shadowing.
+ */
+const STUDENT_STEPS: StudyMode[] = ["listen", "dictation", "shadowing"];
+const ADULT_STEPS: StudyMode[] = ["listen", "words", "chunk", "dictation", "shadowing"];
 
 type ScriptFilter = "hidden" | "en_only" | "ko_only" | "all";
 /** docs/qa-2026-09-18/scripts/lib/containers.cjs reads the filter by data-filter, not by these words. */
@@ -213,8 +221,9 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
   );
   const total = sentenceItems.length;
   const numberOf = (idx: number) => sentenceItems[idx]?.n || String(idx + 1);
-  const hasChunks = total > 0 && sentenceItems.every((s) => (s.chunks?.length ?? 0) > 0);
-  const steps = useMemo(() => (hasChunks ? FOUR_STEPS : THREE_STEPS).map((mode, i) => ({ mode, n: i + 1, name: STEP_NAMES[mode] })), [hasChunks]);
+  // every ADULT lesson has the same steps (a lesson without key words — 6-1 · 6-2 — says so in 단어)
+  const steps = useMemo(() => (course === "adult" ? ADULT_STEPS : STUDENT_STEPS).map((mode, i) => ({ mode, n: i + 1, name: STEP_NAMES[mode] })), [course]);
+  const wordCount = useMemo(() => sentenceItems.reduce((n, s) => n + (s.words?.length ?? 0), 0), [sentenceItems]);
   const stepOf = (mode: StudyMode) => steps.find((s) => s.mode === mode)?.n ?? 1;
 
   const keepCase = useMemo(
@@ -1528,13 +1537,14 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
   const stepNumber = stepOf(studyMode);
   const hasSentences = total > 0;
   const chunkedCount = countOf(practice.chunked);
+  const wordsRight = Object.entries(practice.wordRight).filter(([k, v]) => v && Number(k) < wordCount).length;
 
   return (
     <div className="flex flex-col gap-3" data-student-view data-step={stepNumber}>
       <StepTabs
         label={`${course === "adult" ? "ADULT" : "STUDENT"} ${steps.length}단계 학습`}
         stepStart
-        fit={steps.length > 3}
+        compact={steps.length > 3}
         current={stepNumber}
         onSelect={(n) => switchMode(steps[n - 1]?.mode ?? "listen")}
         steps={steps.map((s) => ({
@@ -1542,7 +1552,11 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
           name: s.name,
           badge: !hasSentences
             ? undefined
-            : s.mode === "chunk"
+            : s.mode === "words"
+              ? wordCount > 0
+                ? `${wordsRight}/${wordCount}`
+                : undefined
+              : s.mode === "chunk"
               ? `${chunkedCount}/${total}`
               : s.mode === "dictation"
                 ? `${solvedCount}/${total}`
@@ -1618,7 +1632,23 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
         </section>
       ) : null}
 
-      {/* ===================== 끊어 읽기 (ADULT — Step 2) ===================== */}
+      {/* ===================== 단어 (ADULT — Step 2) ===================== */}
+      {studyMode === "words" ? (
+        <section data-step-panel={stepOf("words")} aria-label="단어" className="flex flex-col gap-3">
+          <AdultWordsStep
+            items={sentenceItems}
+            koParas={koParas}
+            speed={speed}
+            practice={practice}
+            setPractice={setPractice}
+            stopOthers={stopAll}
+            toggleSentence={(idx) => toggleSentence(idx, "en")}
+            sentencePlaying={(idx) => isTargetPlaying(idx, "en", false)}
+          />
+        </section>
+      ) : null}
+
+      {/* ===================== 끊어 읽기 (ADULT — Step 3) ===================== */}
       {studyMode === "chunk" ? (
         <section data-step-panel={stepOf("chunk")} aria-label="끊어 읽기" className="flex flex-col gap-3">
           <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
@@ -1655,7 +1685,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
         </section>
       ) : null}
 
-      {/* ===================== 탭 딕테이션 (Step 2 · ADULT Step 3) ===================== */}
+      {/* ===================== 탭 딕테이션 (Step 2 · ADULT Step 4) ===================== */}
       {studyMode === "dictation" ? (
         <section data-step-panel={stepOf("dictation")} aria-label="탭 딕테이션" className="flex flex-col gap-3">
           <p className="text-label text-ink-soft">문장을 듣고, 들리는 순서대로 낱말을 누르세요.</p>
@@ -1690,7 +1720,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
         </section>
       ) : null}
 
-      {/* ===================== 섀도잉 & 낭독 (Step 3 · ADULT Step 4) ===================== */}
+      {/* ===================== 섀도잉 & 낭독 (Step 3 · ADULT Step 5) ===================== */}
       {studyMode === "shadowing" ? (
         <section data-step-panel={stepOf("shadowing")} aria-label="섀도잉 & 낭독" className="flex flex-col gap-3">
           <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">

@@ -36,6 +36,34 @@
               "en": "watching movies, and participating in sports.",
               "ko": "영화 감상, 그리고 운동하기입니다."
             }
+          ],
+          "words": [
+            {
+              "word": "include",
+              "say": "include",
+              "meaning": "포함하다",
+              "pos": "동사",
+              "start": 11,
+              "end": 18,
+              "choices": [
+                "volunteer",
+                "introduce",
+                "enjoyed"
+              ]
+            },
+            {
+              "word": "hiking",
+              "say": "hiking",
+              "meaning": "등산",
+              "pos": "명사",
+              "start": 54,
+              "end": 60,
+              "choices": [
+                "subjects",
+                "orphanage",
+                "pleasure"
+              ]
+            }
           ]
         },
         {
@@ -49,6 +77,34 @@
             {
               "en": "but I especially like watching movies.",
               "ko": "특히 영화 보는 것을 좋아합니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "travel by car",
+              "say": "travel by car",
+              "meaning": "자동차로 여행하다",
+              "pos": "표현",
+              "start": 10,
+              "end": 23,
+              "choices": [
+                "makes me happy",
+                "especially",
+                "as well"
+              ]
+            },
+            {
+              "word": "especially",
+              "say": "especially",
+              "meaning": "특히",
+              "pos": "부사",
+              "start": 31,
+              "end": 41,
+              "choices": [
+                "individually",
+                "pretty",
+                "as well"
+              ]
             }
           ]
         },
@@ -67,6 +123,21 @@
             {
               "en": "at the coffee shop as well.",
               "ko": "커피숍에서."
+            }
+          ],
+          "words": [
+            {
+              "word": "as well",
+              "say": "as well",
+              "meaning": "또한, ~도",
+              "pos": "구",
+              "start": 64,
+              "end": 71,
+              "choices": [
+                "so far",
+                "first of all",
+                "be around"
+              ]
             }
           ]
         }

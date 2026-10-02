@@ -40,6 +40,60 @@
               "en": "with both gratitude and anticipation.",
               "ko": "감사함과 설렘을 함께 안고."
             }
+          ],
+          "words": [
+            {
+              "word": "set to",
+              "say": "set to",
+              "meaning": "~할 예정인",
+              "pos": "형용사",
+              "start": 48,
+              "end": 54,
+              "choices": [
+                "considerate",
+                "fortunate",
+                "cherished"
+              ]
+            },
+            {
+              "word": "retire",
+              "say": "retire",
+              "meaning": "은퇴하다",
+              "pos": "동사",
+              "start": 55,
+              "end": 61,
+              "choices": [
+                "contributing to",
+                "capture",
+                "transition"
+              ]
+            },
+            {
+              "word": "transition",
+              "say": "transition",
+              "meaning": "전환, 변화의 시기",
+              "pos": "명사",
+              "start": 75,
+              "end": 85,
+              "choices": [
+                "anticipation",
+                "retirement age",
+                "peace of mind"
+              ]
+            },
+            {
+              "word": "anticipation",
+              "say": "anticipation",
+              "meaning": "기대, 설렘",
+              "pos": "명사",
+              "start": 126,
+              "end": 138,
+              "choices": [
+                "retirement age",
+                "peace of mind",
+                "refuge"
+              ]
+            }
           ]
         },
         {
@@ -62,6 +116,34 @@
               "en": "but to set an example for my children.",
               "ko": "자녀들에게 본보기가 되기 위해서였습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "meet expectations",
+              "say": "meet expectations",
+              "meaning": "기대에 부응하다",
+              "pos": "연어",
+              "start": 78,
+              "end": 95,
+              "choices": [
+                "set an example",
+                "mutual respect",
+                "household chores"
+              ]
+            },
+            {
+              "word": "set an example",
+              "say": "set an example",
+              "meaning": "본보기가 되다",
+              "pos": "연어",
+              "start": 104,
+              "end": 118,
+              "choices": [
+                "mutual respect",
+                "meet expectations",
+                "retirement age"
+              ]
+            }
           ]
         },
         {
@@ -83,6 +165,21 @@
             {
               "en": "in our home.",
               "ko": "우리 집에서."
+            }
+          ],
+          "words": [
+            {
+              "word": "retirement age",
+              "say": "retirement age",
+              "meaning": "정년, 은퇴 연령",
+              "pos": "명사",
+              "start": 62,
+              "end": 76,
+              "choices": [
+                "peace of mind",
+                "refuge",
+                "gratitude"
+              ]
             }
           ]
         }

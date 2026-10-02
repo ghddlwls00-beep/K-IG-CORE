@@ -36,6 +36,34 @@
               "en": "all of us remarkably close-knit.",
               "ko": "우리 모두는 놀라울 만큼 끈끈한 사이입니다."
             }
+          ],
+          "words": [
+            {
+              "word": "fortunate",
+              "say": "fortunate",
+              "meaning": "운이 좋은, 복 받은",
+              "pos": "형용사",
+              "start": 4,
+              "end": 13,
+              "choices": [
+                "set to",
+                "considerate",
+                "cherished"
+              ]
+            },
+            {
+              "word": "spouse",
+              "say": "spouse",
+              "meaning": "배우자",
+              "pos": "명사",
+              "start": 53,
+              "end": 59,
+              "choices": [
+                "milestone",
+                "transition",
+                "anticipation"
+              ]
+            }
           ]
         },
         {
@@ -57,6 +85,21 @@
             {
               "en": "for all of us.",
               "ko": "우리 모두에게."
+            }
+          ],
+          "words": [
+            {
+              "word": "milestone",
+              "say": "milestone",
+              "meaning": "중요한 이정표(사건)",
+              "pos": "명사",
+              "start": 102,
+              "end": 111,
+              "choices": [
+                "transition",
+                "anticipation",
+                "retirement age"
+              ]
             }
           ]
         },

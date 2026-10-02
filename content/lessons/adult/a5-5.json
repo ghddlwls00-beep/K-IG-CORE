@@ -58,6 +58,21 @@
               "en": "with dedicated effort every evening.",
               "ko": "매일 저녁 정성껏."
             }
+          ],
+          "words": [
+            {
+              "word": "dedicated",
+              "say": "dedicated",
+              "meaning": "헌신적인, 정성을 쏟는",
+              "pos": "형용사",
+              "start": 109,
+              "end": 118,
+              "choices": [
+                "rushed",
+                "collaborative",
+                "close-knit"
+              ]
+            }
           ]
         },
         {
@@ -79,6 +94,21 @@
             {
               "en": "or giving back at a community center.",
               "ko": "때로는 동네 커뮤니티 센터에서 봉사하며 지냅니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "give back",
+              "say": "give back",
+              "meaning": "(사회에) 환원하다, 봉사하다",
+              "pos": "구동사",
+              "start": 135,
+              "end": 146,
+              "choices": [
+                "wraps up",
+                "look forward to",
+                "remarkably"
+              ]
             }
           ]
         }

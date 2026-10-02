@@ -40,6 +40,60 @@
               "en": "the press, and political assembly.",
               "ko": "언론, 정치 집회의 자유를 엄격히 제한하던 정권이었습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "authoritarian",
+              "say": "authoritarian",
+              "meaning": "권위주의적인",
+              "pos": "형용사",
+              "start": 52,
+              "end": 65,
+              "choices": [
+                "nationwide",
+                "reluctant",
+                "partisan"
+              ]
+            },
+            {
+              "word": "restrict",
+              "say": "restrict",
+              "meaning": "제한하다",
+              "pos": "동사",
+              "start": 91,
+              "end": 101,
+              "choices": [
+                "imprisoned",
+                "tortured",
+                "showcase"
+              ]
+            },
+            {
+              "word": "freedom of speech",
+              "say": "freedom of speech",
+              "meaning": "표현의 자유",
+              "pos": "명사",
+              "start": 102,
+              "end": 119,
+              "choices": [
+                "political assembly",
+                "repression",
+                "voter turnout"
+              ]
+            },
+            {
+              "word": "political assembly",
+              "say": "political assembly",
+              "meaning": "정치 집회",
+              "pos": "명사",
+              "start": 136,
+              "end": 154,
+              "choices": [
+                "repression",
+                "voter turnout",
+                "fate"
+              ]
+            }
           ]
         },
         {
@@ -61,6 +115,47 @@
             {
               "en": "for speaking out.",
               "ko": "목소리를 냈다는 이유로."
+            }
+          ],
+          "words": [
+            {
+              "word": "imprison",
+              "say": "imprison",
+              "meaning": "투옥하다",
+              "pos": "동사",
+              "start": 100,
+              "end": 110,
+              "choices": [
+                "tortured",
+                "restricted",
+                "showcase"
+              ]
+            },
+            {
+              "word": "torture",
+              "say": "torture",
+              "meaning": "고문하다",
+              "pos": "동사",
+              "start": 120,
+              "end": 128,
+              "choices": [
+                "restricted",
+                "imprisoned",
+                "showcase"
+              ]
+            },
+            {
+              "word": "speak out",
+              "say": "speak out",
+              "meaning": "공개적으로 목소리를 내다",
+              "pos": "구동사",
+              "start": 133,
+              "end": 145,
+              "choices": [
+                "strive for",
+                "holding them to",
+                "repression"
+              ]
             }
           ]
         },
@@ -84,6 +179,21 @@
               "en": "in modern Korean history.",
               "ko": "한국 현대사에서."
             }
+          ],
+          "words": [
+            {
+              "word": "uprising",
+              "say": "uprising",
+              "meaning": "봉기, 민중 항쟁",
+              "pos": "명사",
+              "start": 7,
+              "end": 15,
+              "choices": [
+                "repression",
+                "direct presidential elections",
+                "political scientists"
+              ]
+            }
           ]
         },
         {
@@ -101,6 +211,47 @@
             {
               "en": "for a democracy that would truly belong to the people.",
               "ko": "진정으로 국민의 것이 될 민주주의를 위해."
+            }
+          ],
+          "words": [
+            {
+              "word": "repression",
+              "say": "repression",
+              "meaning": "탄압, 억압",
+              "pos": "명사",
+              "start": 28,
+              "end": 38,
+              "choices": [
+                "voter turnout",
+                "fate",
+                "freedom of speech"
+              ]
+            },
+            {
+              "word": "dedicated",
+              "say": "dedicated",
+              "meaning": "헌신적인",
+              "pos": "형용사",
+              "start": 61,
+              "end": 70,
+              "choices": [
+                "nationwide",
+                "reluctant",
+                "partisan"
+              ]
+            },
+            {
+              "word": "strive for",
+              "say": "strive for",
+              "meaning": "~을 위해 분투하다",
+              "pos": "구동사",
+              "start": 93,
+              "end": 103,
+              "choices": [
+                "holding them to",
+                "speaking out",
+                "nationwide"
+              ]
             }
           ]
         },
@@ -120,6 +271,34 @@
               "en": "which finally forced the government to accept direct presidential elections.",
               "ko": "이는 마침내 정부가 대통령 직선제를 받아들이도록 만들었습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "nationwide",
+              "say": "nationwide",
+              "meaning": "전국적인",
+              "pos": "형용사",
+              "start": 60,
+              "end": 70,
+              "choices": [
+                "reluctant",
+                "partisan",
+                "accountable"
+              ]
+            },
+            {
+              "word": "direct presidential election",
+              "say": "direct presidential election",
+              "meaning": "대통령 직선제",
+              "pos": "명사",
+              "start": 127,
+              "end": 156,
+              "choices": [
+                "political scientists",
+                "principles",
+                "slogans"
+              ]
+            }
           ]
         },
         {
@@ -138,6 +317,21 @@
               "en": "while the eyes of the world were on Korea.",
               "ko": "전 세계의 이목이 한국에 쏠려 있는 동안."
             }
+          ],
+          "words": [
+            {
+              "word": "reluctant",
+              "say": "reluctant",
+              "meaning": "꺼리는, 마지못한",
+              "pos": "형용사",
+              "start": 75,
+              "end": 84,
+              "choices": [
+                "partisan",
+                "accountable",
+                "upright"
+              ]
+            }
           ]
         },
         {
@@ -155,6 +349,21 @@
             {
               "en": "toward a more open and democratic society.",
               "ko": "더 개방적이고 민주적인 사회로."
+            }
+          ],
+          "words": [
+            {
+              "word": "showcase",
+              "say": "showcase",
+              "meaning": "(널리) 보여 주다",
+              "pos": "동사",
+              "start": 23,
+              "end": 31,
+              "choices": [
+                "dominate",
+                "function",
+                "represent"
+              ]
             }
           ]
         }

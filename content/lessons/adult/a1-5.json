@@ -32,6 +32,34 @@
               "en": "but my favorite subject is English.",
               "ko": "가장 좋아하는 과목은 영어입니다."
             }
+          ],
+          "words": [
+            {
+              "word": "subject",
+              "say": "subject",
+              "meaning": "과목",
+              "pos": "명사",
+              "start": 23,
+              "end": 31,
+              "choices": [
+                "orphanage",
+                "pleasure",
+                "chance"
+              ]
+            },
+            {
+              "word": "favorite",
+              "say": "favorite",
+              "meaning": "가장 좋아하는",
+              "pos": "형용사",
+              "start": 40,
+              "end": 48,
+              "choices": [
+                "shy",
+                "exciting",
+                "outgoing"
+              ]
+            }
           ]
         },
         {
@@ -56,6 +84,34 @@
               "en": "for 2 months so far.",
               "ko": "지금까지 2개월 동안."
             }
+          ],
+          "words": [
+            {
+              "word": "have been -ing",
+              "say": "have been",
+              "meaning": "(지금까지) ~해 오고 있다",
+              "pos": "문법",
+              "start": 2,
+              "end": 11,
+              "choices": [
+                "so far",
+                "individually",
+                "makes me happy"
+              ]
+            },
+            {
+              "word": "so far",
+              "say": "so far",
+              "meaning": "지금까지",
+              "pos": "구",
+              "start": 42,
+              "end": 48,
+              "choices": [
+                "first of all",
+                "be around",
+                "as well"
+              ]
+            }
           ]
         },
         {
@@ -69,6 +125,21 @@
             {
               "en": "because it is fun and exciting to learn.",
               "ko": "배우는 것이 재미있고 신나기 때문입니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "exciting",
+              "say": "exciting",
+              "meaning": "신나는, 흥미진진한",
+              "pos": "형용사",
+              "start": 46,
+              "end": 54,
+              "choices": [
+                "outgoing",
+                "shy",
+                "favorite"
+              ]
             }
           ]
         }

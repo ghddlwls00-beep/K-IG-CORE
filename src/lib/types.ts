@@ -149,6 +149,12 @@ export interface SentenceItem {
    * exactly; each Korean chunk is that chunk's meaning (scripts/build-adult-content.mjs, from the PPT's chunk slides).
    */
   chunks?: { en: string; ko: string }[];
+  /**
+   * ADULT 단어 (2026-10-02): the PPT's key words this sentence uses, in reading order — `text.slice(start, end)` is the word as
+   * the sentence writes it ('wraps up'); `say` is what the card's speaker says; `choices` the blank's three wrong answers
+   * (words of the same chapter). scripts/build-adult-content.mjs.
+   */
+  words?: { word: string; say: string; meaning: string; pos: string; start: number; end: number; choices: string[] }[];
 }
 
 export interface ReadingSentence {

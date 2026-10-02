@@ -36,6 +36,34 @@
               "en": "and my grandfather remains surprisingly healthy.",
               "ko": "외할아버지는 지금도 놀랍도록 건강하십니다."
             }
+          ],
+          "words": [
+            {
+              "word": "paternal",
+              "say": "paternal",
+              "meaning": "아버지 쪽의, 친가의",
+              "pos": "형용사",
+              "start": 3,
+              "end": 11,
+              "choices": [
+                "maternal",
+                "unavoidable",
+                "eldest"
+              ]
+            },
+            {
+              "word": "maternal",
+              "say": "maternal",
+              "meaning": "어머니 쪽의, 외가의",
+              "pos": "형용사",
+              "start": 54,
+              "end": 62,
+              "choices": [
+                "unavoidable",
+                "eldest",
+                "occasional"
+              ]
+            }
           ]
         },
         {
@@ -58,6 +86,34 @@
               "en": "with our whole family by her side.",
               "ko": "온 가족이 곁을 지키는 가운데."
             }
+          ],
+          "words": [
+            {
+              "word": "be diagnosed with",
+              "say": "be diagnosed with",
+              "meaning": "~ 진단을 받다",
+              "pos": "표현",
+              "start": 20,
+              "end": 38,
+              "choices": [
+                "in a broad sense",
+                "make sure to",
+                "in their later years"
+              ]
+            },
+            {
+              "word": "undergo surgery",
+              "say": "undergo surgery",
+              "meaning": "수술을 받다",
+              "pos": "연어",
+              "start": 62,
+              "end": 79,
+              "choices": [
+                "unavoidable",
+                "precisely",
+                "judge"
+              ]
+            }
           ]
         },
         {
@@ -79,6 +135,34 @@
             {
               "en": "precisely when our bodies begin to weaken.",
               "ko": "몸이 약해지기 시작할 때야말로."
+            }
+          ],
+          "words": [
+            {
+              "word": "unavoidable",
+              "say": "unavoidable",
+              "meaning": "피할 수 없는",
+              "pos": "형용사",
+              "start": 32,
+              "end": 43,
+              "choices": [
+                "eldest",
+                "occasional",
+                "paternal"
+              ]
+            },
+            {
+              "word": "precisely",
+              "say": "precisely",
+              "meaning": "바로, 정확히",
+              "pos": "부사",
+              "start": 100,
+              "end": 109,
+              "choices": [
+                "lately",
+                "judge",
+                "pursue"
+              ]
             }
           ]
         }

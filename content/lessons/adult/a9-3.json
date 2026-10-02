@@ -54,6 +54,47 @@
               "en": "and one or more kinds of 김치.",
               "ko": "그리고 한 가지 이상의 김치가."
             }
+          ],
+          "words": [
+            {
+              "word": "include",
+              "say": "include",
+              "meaning": "포함하다",
+              "pos": "동사",
+              "start": 33,
+              "end": 40,
+              "choices": [
+                "explain",
+                "created",
+                "boiled rice"
+              ]
+            },
+            {
+              "word": "boiled rice",
+              "say": "boiled rice",
+              "meaning": "밥",
+              "pos": "명사",
+              "start": 41,
+              "end": 52,
+              "choices": [
+                "alphabet",
+                "nobility",
+                "writing system"
+              ]
+            },
+            {
+              "word": "side dish",
+              "say": "side dish",
+              "meaning": "반찬",
+              "pos": "명사",
+              "start": 92,
+              "end": 103,
+              "choices": [
+                "Chinese characters",
+                "scholars",
+                "aspects"
+              ]
+            }
           ]
         },
         {
@@ -77,6 +118,34 @@
             {
               "en": "while the most popular vegetable dish is 김치.",
               "ko": "가장 인기 있는 채소 요리는 김치입니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "popular",
+              "say": "popular",
+              "meaning": "인기 있는",
+              "pos": "형용사",
+              "start": 16,
+              "end": 23,
+              "choices": [
+                "different from",
+                "unique",
+                "Western-style"
+              ]
+            },
+            {
+              "word": "while",
+              "say": "while",
+              "meaning": "반면에",
+              "pos": "접속사",
+              "start": 42,
+              "end": 47,
+              "choices": [
+                "finally",
+                "alphabet",
+                "instead"
+              ]
             }
           ]
         },

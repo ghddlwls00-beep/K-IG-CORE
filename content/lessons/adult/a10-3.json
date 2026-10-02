@@ -62,6 +62,47 @@
               "en": "and observe how Koreans lived in the past.",
               "ko": "옛날 한국인들이 어떻게 살았는지 살펴볼 수 있습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "witness",
+              "say": "witness",
+              "meaning": "목격하다, 보다",
+              "pos": "동사",
+              "start": 30,
+              "end": 37,
+              "choices": [
+                "regard 경주 as",
+                "contains",
+                "observe"
+              ]
+            },
+            {
+              "word": "a variety of",
+              "say": "a variety of",
+              "meaning": "다양한",
+              "pos": "구",
+              "start": 76,
+              "end": 88,
+              "choices": [
+                "observe",
+                "attraction",
+                "foreign"
+              ]
+            },
+            {
+              "word": "observe",
+              "say": "observe",
+              "meaning": "관찰하다, 살펴보다",
+              "pos": "동사",
+              "start": 112,
+              "end": 119,
+              "choices": [
+                "regard 경주 as",
+                "contains",
+                "surrounded"
+              ]
+            }
           ]
         },
         {
@@ -75,6 +116,34 @@
             {
               "en": "for many foreign visitors.",
               "ko": "많은 외국인 방문객들에게."
+            }
+          ],
+          "words": [
+            {
+              "word": "attraction",
+              "say": "attraction",
+              "meaning": "명소, 볼거리",
+              "pos": "명사",
+              "start": 21,
+              "end": 31,
+              "choices": [
+                "destination",
+                "capital",
+                "Dynasty"
+              ]
+            },
+            {
+              "word": "foreign",
+              "say": "foreign",
+              "meaning": "외국의",
+              "pos": "형용사",
+              "start": 41,
+              "end": 48,
+              "choices": [
+                "geographical",
+                "filled with",
+                "attractive"
+              ]
             }
           ]
         }

@@ -62,6 +62,34 @@
               "en": "as a key sign of a maturing democracy.",
               "ko": "민주주의가 성숙해 가는 핵심 징표로."
             }
+          ],
+          "words": [
+            {
+              "word": "change hands",
+              "say": "change hands",
+              "meaning": "(권력이) 넘어가다",
+              "pos": "표현",
+              "start": 22,
+              "end": 35,
+              "choices": [
+                "make a point of",
+                "political scientists",
+                "principles"
+              ]
+            },
+            {
+              "word": "political scientist",
+              "say": "political scientist",
+              "meaning": "정치학자",
+              "pos": "명사",
+              "start": 91,
+              "end": 111,
+              "choices": [
+                "principles",
+                "slogans",
+                "first-time voters"
+              ]
+            }
           ]
         },
         {
@@ -83,6 +111,21 @@
             {
               "en": "of democratic principles.",
               "ko": "민주주의 원칙에 대한."
+            }
+          ],
+          "words": [
+            {
+              "word": "principle",
+              "say": "principle",
+              "meaning": "원칙",
+              "pos": "명사",
+              "start": 121,
+              "end": 131,
+              "choices": [
+                "slogans",
+                "first-time voters",
+                "direct presidential elections"
+              ]
             }
           ]
         },
@@ -106,6 +149,47 @@
               "en": "of politics altogether.",
               "ko": "정치 자체에."
             }
+          ],
+          "words": [
+            {
+              "word": "partisan",
+              "say": "partisan",
+              "meaning": "당파적인, 정당 간의",
+              "pos": "형용사",
+              "start": 7,
+              "end": 15,
+              "choices": [
+                "accountable",
+                "upright",
+                "authoritarian"
+              ]
+            },
+            {
+              "word": "dominate",
+              "say": "dominate",
+              "meaning": "장악하다, 지배하다",
+              "pos": "동사",
+              "start": 32,
+              "end": 40,
+              "choices": [
+                "function",
+                "represent",
+                "showcase"
+              ]
+            },
+            {
+              "word": "grow tired of",
+              "say": "grow tired of",
+              "meaning": "~에 지치다, 싫증 나다",
+              "pos": "구",
+              "start": 103,
+              "end": 119,
+              "choices": [
+                "function",
+                "accountable",
+                "make a point of"
+              ]
+            }
           ]
         },
         {
@@ -127,6 +211,21 @@
             {
               "en": "with open, respectful conversations at home and in our community.",
               "ko": "가정과 지역 사회에서 나누는 열린 대화, 서로 존중하는 대화에서부터."
+            }
+          ],
+          "words": [
+            {
+              "word": "function",
+              "say": "function",
+              "meaning": "작동하다, 기능하다",
+              "pos": "동사",
+              "start": 67,
+              "end": 75,
+              "choices": [
+                "represent",
+                "showcase",
+                "dominate"
+              ]
             }
           ]
         }

@@ -32,6 +32,21 @@
               "en": "is different from other cultures.",
               "ko": "다른 문화들과 다릅니다."
             }
+          ],
+          "words": [
+            {
+              "word": "different from",
+              "say": "different from",
+              "meaning": "~와 다른",
+              "pos": "형용사",
+              "start": 22,
+              "end": 36,
+              "choices": [
+                "unique",
+                "Western-style",
+                "popular"
+              ]
+            }
           ]
         },
         {
@@ -41,6 +56,34 @@
             {
               "en": "It has many unique aspects.",
               "ko": "한국 문화에는 독특한 면이 많습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "unique",
+              "say": "unique",
+              "meaning": "독특한, 고유한",
+              "pos": "형용사",
+              "start": 12,
+              "end": 18,
+              "choices": [
+                "Western-style",
+                "popular",
+                "different from"
+              ]
+            },
+            {
+              "word": "aspect",
+              "say": "aspect",
+              "meaning": "면, 측면",
+              "pos": "명사",
+              "start": 19,
+              "end": 26,
+              "choices": [
+                "ordinary occasions",
+                "costumes",
+                "side dishes"
+              ]
             }
           ]
         },
@@ -55,6 +98,21 @@
             {
               "en": "are not like those of any other country.",
               "ko": "다른 어떤 나라와도 다릅니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "housing",
+              "say": "housing",
+              "meaning": "주거, 집",
+              "pos": "명사",
+              "start": 13,
+              "end": 20,
+              "choices": [
+                "ordinary occasions",
+                "costumes",
+                "boiled rice"
+              ]
             }
           ]
         }

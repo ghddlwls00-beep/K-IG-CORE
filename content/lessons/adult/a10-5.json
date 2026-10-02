@@ -32,6 +32,21 @@
               "en": "is an island called 제주.",
               "ko": "제주라는 섬일 것입니다."
             }
+          ],
+          "words": [
+            {
+              "word": "natural wonder",
+              "say": "natural wonder",
+              "meaning": "자연 경관, 자연의 경이",
+              "pos": "명사",
+              "start": 24,
+              "end": 38,
+              "choices": [
+                "vacation",
+                "peninsula",
+                "landscape"
+              ]
+            }
           ]
         },
         {
@@ -46,6 +61,21 @@
               "en": "to go for vacation.",
               "ko": "휴가를 보내러 가기에."
             }
+          ],
+          "words": [
+            {
+              "word": "vacation",
+              "say": "vacation",
+              "meaning": "휴가",
+              "pos": "명사",
+              "start": 35,
+              "end": 43,
+              "choices": [
+                "peninsula",
+                "landscape",
+                "National Park"
+              ]
+            }
           ]
         },
         {
@@ -59,6 +89,21 @@
             {
               "en": "and many beautiful spots to visit.",
               "ko": "가 볼 만한 아름다운 곳도 많습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "spot",
+              "say": "spot",
+              "meaning": "장소, 지점",
+              "pos": "명사",
+              "start": 60,
+              "end": 65,
+              "choices": [
+                "remains",
+                "peninsula",
+                "landscape"
+              ]
             }
           ]
         },

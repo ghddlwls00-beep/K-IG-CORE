@@ -36,6 +36,21 @@
               "en": "to elect leaders who are honest and accountable.",
               "ko": "정직하고 책임감 있는 지도자를 뽑는 것은."
             }
+          ],
+          "words": [
+            {
+              "word": "accountable",
+              "say": "accountable",
+              "meaning": "책임을 지는",
+              "pos": "형용사",
+              "start": 115,
+              "end": 126,
+              "choices": [
+                "upright",
+                "authoritarian",
+                "nationwide"
+              ]
+            }
           ]
         },
         {
@@ -57,6 +72,34 @@
             {
               "en": "or the opinions of those around me.",
               "ko": "주변 사람들의 의견에 기대기보다는."
+            }
+          ],
+          "words": [
+            {
+              "word": "make a point of",
+              "say": "make a point of",
+              "meaning": "반드시 ~하다",
+              "pos": "표현",
+              "start": 24,
+              "end": 39,
+              "choices": [
+                "changed hands",
+                "represent",
+                "holding them to"
+              ]
+            },
+            {
+              "word": "slogan",
+              "say": "slogan",
+              "meaning": "구호, 슬로건",
+              "pos": "명사",
+              "start": 115,
+              "end": 122,
+              "choices": [
+                "first-time voters",
+                "direct presidential elections",
+                "political scientists"
+              ]
             }
           ]
         },
@@ -80,6 +123,34 @@
               "en": "while holding them to their promises.",
               "ko": "동시에 그들이 공약을 지키도록 요구하면서."
             }
+          ],
+          "words": [
+            {
+              "word": "represent",
+              "say": "represent",
+              "meaning": "대변하다, 대표하다",
+              "pos": "동사",
+              "start": 52,
+              "end": 61,
+              "choices": [
+                "showcase",
+                "dominate",
+                "function"
+              ]
+            },
+            {
+              "word": "hold (someone) to",
+              "say": "hold someone to",
+              "meaning": "~에게 (약속을) 지키게 하다",
+              "pos": "구동사",
+              "start": 117,
+              "end": 132,
+              "choices": [
+                "speaking out",
+                "strive for",
+                "voter turnout"
+              ]
+            }
           ]
         },
         {
@@ -101,6 +172,34 @@
             {
               "en": "which shows how seriously Koreans take this right.",
               "ko": "이는 한국인들이 이 권리를 얼마나 진지하게 여기는지 보여 줍니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "voter turnout",
+              "say": "voter turnout",
+              "meaning": "투표율",
+              "pos": "명사",
+              "start": 0,
+              "end": 13,
+              "choices": [
+                "fate",
+                "freedom of speech",
+                "political assembly"
+              ]
+            },
+            {
+              "word": "exceed",
+              "say": "exceed",
+              "meaning": "넘다, 초과하다",
+              "pos": "동사",
+              "start": 83,
+              "end": 92,
+              "choices": [
+                "restricted",
+                "imprisoned",
+                "tortured"
+              ]
             }
           ]
         },
@@ -127,6 +226,47 @@
             {
               "en": "by encouraging first-time voters at my local community center.",
               "ko": "동네 커뮤니티 센터에서 처음 투표하는 유권자들을 격려하며."
+            }
+          ],
+          "words": [
+            {
+              "word": "upright",
+              "say": "upright",
+              "meaning": "올바른, 청렴한",
+              "pos": "형용사",
+              "start": 12,
+              "end": 19,
+              "choices": [
+                "authoritarian",
+                "nationwide",
+                "reluctant"
+              ]
+            },
+            {
+              "word": "fate",
+              "say": "fate",
+              "meaning": "운명",
+              "pos": "명사",
+              "start": 117,
+              "end": 121,
+              "choices": [
+                "freedom of speech",
+                "political assembly",
+                "repression"
+              ]
+            },
+            {
+              "word": "first-time voter",
+              "say": "first-time voter",
+              "meaning": "처음 투표하는 유권자",
+              "pos": "명사",
+              "start": 190,
+              "end": 207,
+              "choices": [
+                "direct presidential elections",
+                "political scientists",
+                "principles"
+              ]
             }
           ]
         }

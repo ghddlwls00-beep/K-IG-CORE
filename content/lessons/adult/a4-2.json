@@ -40,6 +40,21 @@
               "en": "on his side.",
               "ko": "친가 쪽으로."
             }
+          ],
+          "words": [
+            {
+              "word": "eldest",
+              "say": "eldest",
+              "meaning": "맏이인, 가장 나이 많은",
+              "pos": "형용사",
+              "start": 17,
+              "end": 23,
+              "choices": [
+                "occasional",
+                "paternal",
+                "maternal"
+              ]
+            }
           ]
         },
         {
@@ -62,6 +77,47 @@
               "en": "which I never take for granted.",
               "ko": "저는 이것을 결코 당연하게 여기지 않습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "sibling",
+              "say": "sibling",
+              "meaning": "형제자매",
+              "pos": "명사",
+              "start": 24,
+              "end": 32,
+              "choices": [
+                "extended families",
+                "households",
+                "commitment"
+              ]
+            },
+            {
+              "word": "in one's later years",
+              "say": "in one's later years",
+              "meaning": "노년에 접어든",
+              "pos": "표현",
+              "start": 46,
+              "end": 66,
+              "choices": [
+                "take for granted",
+                "make sure to",
+                "was diagnosed with"
+              ]
+            },
+            {
+              "word": "take (something) for granted",
+              "say": "take something for granted",
+              "meaning": "당연하게 여기다",
+              "pos": "표현",
+              "start": 118,
+              "end": 134,
+              "choices": [
+                "make sure to",
+                "was diagnosed with",
+                "in a broad sense"
+              ]
+            }
           ]
         },
         {
@@ -79,6 +135,34 @@
             {
               "en": "a promise I've kept for decades.",
               "ko": "이 약속을 수십 년째 지켜 오고 있습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "line up",
+              "say": "line up",
+              "meaning": "(일정이) 맞다",
+              "pos": "구동사",
+              "start": 33,
+              "end": 40,
+              "choices": [
+                "make sure to",
+                "occasional",
+                "commitment"
+              ]
+            },
+            {
+              "word": "make sure to",
+              "say": "make sure to",
+              "meaning": "반드시 ~하도록 하다",
+              "pos": "표현",
+              "start": 44,
+              "end": 56,
+              "choices": [
+                "was diagnosed with",
+                "in a broad sense",
+                "in their later years"
+              ]
             }
           ]
         }

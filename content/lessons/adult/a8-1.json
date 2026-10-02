@@ -42,6 +42,34 @@
               "en": "when families can get together and celebrate.",
               "ko": "가족들이 함께 모여 축하할 수 있는."
             }
+          ],
+          "words": [
+            {
+              "word": "get together",
+              "say": "get together",
+              "meaning": "모이다",
+              "pos": "구동사",
+              "start": 46,
+              "end": 58,
+              "choices": [
+                "dresses in",
+                "celebrate",
+                "traditional"
+              ]
+            },
+            {
+              "word": "celebrate",
+              "say": "celebrate",
+              "meaning": "기념하다, 축하하다",
+              "pos": "동사",
+              "start": 63,
+              "end": 72,
+              "choices": [
+                "perform",
+                "bow",
+                "traditional"
+              ]
+            }
           ]
         },
         {
@@ -69,6 +97,21 @@
             {
               "en": "the two largest traditional holidays in Korea.",
               "ko": "한국의 가장 큰 두 전통 명절에 대해."
+            }
+          ],
+          "words": [
+            {
+              "word": "traditional",
+              "say": "traditional",
+              "meaning": "전통의, 전통적인",
+              "pos": "형용사",
+              "start": 47,
+              "end": 58,
+              "choices": [
+                "ritual",
+                "upcoming",
+                "custom"
+              ]
             }
           ]
         }

@@ -40,6 +40,21 @@
               "en": "or simply sit and talk for hours.",
               "ko": "그냥 앉아서 몇 시간이고 이야기를 나눕니다."
             }
+          ],
+          "words": [
+            {
+              "word": "go out for",
+              "say": "go out for",
+              "meaning": "~하러 나가다",
+              "pos": "구동사",
+              "start": 101,
+              "end": 111,
+              "choices": [
+                "catching up",
+                "give back",
+                "light up"
+              ]
+            }
           ]
         },
         {
@@ -57,6 +72,21 @@
             {
               "en": "house moves, and several family milestones.",
               "ko": "이사, 여러 가족 대소사를 함께 겪어 왔습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "milestone",
+              "say": "milestone",
+              "meaning": "중요한 일, 대소사",
+              "pos": "명사",
+              "start": 132,
+              "end": 142,
+              "choices": [
+                "materials",
+                "hymns",
+                "census"
+              ]
             }
           ]
         },
@@ -80,6 +110,34 @@
               "en": "catching up over a home-cooked meal.",
               "ko": "집밥을 먹으며 그간의 소식을 나눕니다."
             }
+          ],
+          "words": [
+            {
+              "word": "catch up",
+              "say": "catch up",
+              "meaning": "(소식을) 나누다",
+              "pos": "구동사",
+              "start": 104,
+              "end": 115,
+              "choices": [
+                "give back",
+                "light up",
+                "stock up on"
+              ]
+            },
+            {
+              "word": "home-cooked",
+              "say": "home-cooked",
+              "meaning": "집에서 만든",
+              "pos": "형용사",
+              "start": 123,
+              "end": 134,
+              "choices": [
+                "supportive",
+                "collaborative",
+                "close-knit"
+              ]
+            }
           ]
         },
         {
@@ -102,6 +160,47 @@
               "en": "to the parents who dedicated so much of their lives to us.",
               "ko": "인생의 많은 부분을 우리에게 바쳐 주신 부모님께."
             }
+          ],
+          "words": [
+            {
+              "word": "obligation",
+              "say": "obligation",
+              "meaning": "의무",
+              "pos": "명사",
+              "start": 45,
+              "end": 55,
+              "choices": [
+                "work ethic",
+                "hobby circle",
+                "network"
+              ]
+            },
+            {
+              "word": "give back",
+              "say": "give back",
+              "meaning": "(받은 것을) 돌려주다",
+              "pos": "구동사",
+              "start": 111,
+              "end": 120,
+              "choices": [
+                "light up",
+                "stock up on",
+                "go out for"
+              ]
+            },
+            {
+              "word": "dedicate (A) to (B)",
+              "say": "dedicate something to something",
+              "meaning": "A를 B에 바치다",
+              "pos": "동사",
+              "start": 140,
+              "end": 175,
+              "choices": [
+                "coexisted",
+                "outnumbered",
+                "light up"
+              ]
+            }
           ]
         },
         {
@@ -123,6 +222,47 @@
             {
               "en": "should never come at the expense of family.",
               "ko": "결코 가족을 희생시키는 대가가 되어서는 안 된다는 것을."
+            }
+          ],
+          "words": [
+            {
+              "word": "light up",
+              "say": "light up",
+              "meaning": "(얼굴이) 환해지다",
+              "pos": "구동사",
+              "start": 28,
+              "end": 36,
+              "choices": [
+                "stock up on",
+                "go out for",
+                "catching up"
+              ]
+            },
+            {
+              "word": "work ethic",
+              "say": "work ethic",
+              "meaning": "직업윤리, 성실함",
+              "pos": "명사",
+              "start": 79,
+              "end": 89,
+              "choices": [
+                "hobby circle",
+                "network",
+                "chore"
+              ]
+            },
+            {
+              "word": "at the expense of",
+              "say": "at the expense of",
+              "meaning": "~을 희생하여",
+              "pos": "표현",
+              "start": 126,
+              "end": 143,
+              "choices": [
+                "every other",
+                "a wide variety of",
+                "hobby circle"
+              ]
             }
           ]
         }

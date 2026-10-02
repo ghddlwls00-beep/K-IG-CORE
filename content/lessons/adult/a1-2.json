@@ -74,6 +74,21 @@
               "en": "in 1980 in 부산.",
               "ko": "1980년에 부산에서."
             }
+          ],
+          "words": [
+            {
+              "word": "graduate from",
+              "say": "graduate from",
+              "meaning": "~을 졸업하다",
+              "pos": "구동사",
+              "start": 2,
+              "end": 16,
+              "choices": [
+                "shy",
+                "be around",
+                "pretty"
+              ]
+            }
           ]
         },
         {
@@ -87,6 +102,21 @@
             {
               "en": "I enjoyed studying English every day.",
               "ko": "저는 매일 영어 공부를 즐겨 했습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "enjoy -ing",
+              "say": "enjoy",
+              "meaning": "~하는 것을 즐기다",
+              "pos": "동사",
+              "start": 29,
+              "end": 36,
+              "choices": [
+                "include",
+                "volunteer",
+                "introduce"
+              ]
             }
           ]
         },

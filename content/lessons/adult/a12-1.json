@@ -40,6 +40,34 @@
               "en": "to unfold in other countries.",
               "ko": "다른 나라였다면 자리 잡기까지."
             }
+          ],
+          "words": [
+            {
+              "word": "transformation",
+              "say": "transformation",
+              "meaning": "변화, 변혁",
+              "pos": "명사",
+              "start": 83,
+              "end": 98,
+              "choices": [
+                "reforms",
+                "social classes",
+                "liberation"
+              ]
+            },
+            {
+              "word": "unfold",
+              "say": "unfold",
+              "meaning": "(일이) 전개되다, 펼쳐지다",
+              "pos": "동사",
+              "start": 146,
+              "end": 152,
+              "choices": [
+                "afford",
+                "narrow",
+                "revised"
+              ]
+            }
           ]
         },
         {
@@ -62,6 +90,60 @@
               "en": "that education was the surest path out of poverty.",
               "ko": "교육이야말로 가난에서 벗어나는 가장 확실한 길이라는."
             }
+          ],
+          "words": [
+            {
+              "word": "liberation",
+              "say": "liberation",
+              "meaning": "해방, 광복",
+              "pos": "명사",
+              "start": 23,
+              "end": 33,
+              "choices": [
+                "work ethic",
+                "poverty",
+                "consistency"
+              ]
+            },
+            {
+              "word": "from scratch",
+              "say": "from scratch",
+              "meaning": "맨바닥에서, 처음부터",
+              "pos": "구",
+              "start": 81,
+              "end": 93,
+              "choices": [
+                "in need",
+                "work ethic",
+                "poverty"
+              ]
+            },
+            {
+              "word": "work ethic",
+              "say": "work ethic",
+              "meaning": "직업윤리, 성실함",
+              "pos": "명사",
+              "start": 116,
+              "end": 126,
+              "choices": [
+                "poverty",
+                "consistency",
+                "experimentation"
+              ]
+            },
+            {
+              "word": "poverty",
+              "say": "poverty",
+              "meaning": "가난, 빈곤",
+              "pos": "명사",
+              "start": 189,
+              "end": 196,
+              "choices": [
+                "consistency",
+                "experimentation",
+                "birth rate"
+              ]
+            }
           ]
         },
         {
@@ -83,6 +165,34 @@
             {
               "en": "to keep up with the latest rules.",
               "ko": "최신 규정을 따라가느라."
+            }
+          ],
+          "words": [
+            {
+              "word": "revise",
+              "say": "revise",
+              "meaning": "개정하다, 수정하다",
+              "pos": "동사",
+              "start": 54,
+              "end": 61,
+              "choices": [
+                "administered",
+                "eased",
+                "climbing"
+              ]
+            },
+            {
+              "word": "keep up with",
+              "say": "keep up with",
+              "meaning": "~을 따라가다",
+              "pos": "구동사",
+              "start": 127,
+              "end": 139,
+              "choices": [
+                "crowd into",
+                "give up on",
+                "consistency"
+              ]
             }
           ]
         },
@@ -110,6 +220,21 @@
               "en": "almost every few years since.",
               "ko": "그 이후 거의 몇 년마다."
             }
+          ],
+          "words": [
+            {
+              "word": "administer",
+              "say": "administer",
+              "meaning": "(시험을) 시행하다",
+              "pos": "동사",
+              "start": 43,
+              "end": 55,
+              "choices": [
+                "eased",
+                "revised",
+                "climbing"
+              ]
+            }
           ]
         },
         {
@@ -131,6 +256,47 @@
             {
               "en": "than constant experimentation.",
               "ko": "끊임없는 실험보다."
+            }
+          ],
+          "words": [
+            {
+              "word": "reform",
+              "say": "reform",
+              "meaning": "개혁",
+              "pos": "명사",
+              "start": 18,
+              "end": 25,
+              "choices": [
+                "social classes",
+                "transformations",
+                "consistency"
+              ]
+            },
+            {
+              "word": "consistency",
+              "say": "consistency",
+              "meaning": "일관성",
+              "pos": "명사",
+              "start": 97,
+              "end": 108,
+              "choices": [
+                "experimentation",
+                "birth rate",
+                "liberation"
+              ]
+            },
+            {
+              "word": "experimentation",
+              "say": "experimentation",
+              "meaning": "실험, 시도",
+              "pos": "명사",
+              "start": 161,
+              "end": 176,
+              "choices": [
+                "birth rate",
+                "liberation",
+                "work ethic"
+              ]
             }
           ]
         },

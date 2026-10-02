@@ -32,6 +32,21 @@
               "en": "the Korean language is not like any other world language.",
               "ko": "한국어는 세계의 다른 어떤 언어와도 다릅니다."
             }
+          ],
+          "words": [
+            {
+              "word": "finally",
+              "say": "finally",
+              "meaning": "마지막으로",
+              "pos": "부사",
+              "start": 0,
+              "end": 7,
+              "choices": [
+                "instead",
+                "however",
+                "alphabet"
+              ]
+            }
           ]
         },
         {
@@ -46,6 +61,21 @@
               "en": "Korea didn't have its own alphabet.",
               "ko": "한국에는 고유한 문자가 없었습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "alphabet",
+              "say": "alphabet",
+              "meaning": "문자, 알파벳",
+              "pos": "명사",
+              "start": 67,
+              "end": 75,
+              "choices": [
+                "nobility",
+                "writing system",
+                "boiled rice"
+              ]
+            }
           ]
         },
         {
@@ -59,6 +89,34 @@
             {
               "en": "Chinese characters were used for writing.",
               "ko": "글을 쓰기 위해 한자를 사용했습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "instead",
+              "say": "instead",
+              "meaning": "대신에",
+              "pos": "부사",
+              "start": 0,
+              "end": 7,
+              "choices": [
+                "however",
+                "finally",
+                "nobility"
+              ]
+            },
+            {
+              "word": "Chinese character",
+              "say": "Chinese character",
+              "meaning": "한자",
+              "pos": "명사",
+              "start": 9,
+              "end": 27,
+              "choices": [
+                "scholars",
+                "aspects",
+                "ordinary occasions"
+              ]
             }
           ]
         },
@@ -84,6 +142,34 @@
               "en": "were the scholars or the nobility.",
               "ko": "학자나 양반뿐이었습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "scholar",
+              "say": "scholar",
+              "meaning": "학자",
+              "pos": "명사",
+              "start": 40,
+              "end": 48,
+              "choices": [
+                "aspects",
+                "ordinary occasions",
+                "costumes"
+              ]
+            },
+            {
+              "word": "nobility",
+              "say": "nobility",
+              "meaning": "귀족, 양반",
+              "pos": "명사",
+              "start": 56,
+              "end": 64,
+              "choices": [
+                "writing system",
+                "boiled rice",
+                "alphabet"
+              ]
+            }
           ]
         },
         {
@@ -102,6 +188,21 @@
               "en": "and it was proclaimed in 1446.",
               "ko": "이 문자는 1446년에 반포되었습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "create",
+              "say": "create",
+              "meaning": "만들다, 창조하다",
+              "pos": "동사",
+              "start": 26,
+              "end": 33,
+              "choices": [
+                "explain",
+                "include",
+                "writing system"
+              ]
+            }
           ]
         },
         {
@@ -115,6 +216,21 @@
             {
               "en": "is known as 한글.",
               "ko": "한글이라고 알려져 있습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "writing system",
+              "say": "writing system",
+              "meaning": "문자 체계",
+              "pos": "명사",
+              "start": 5,
+              "end": 19,
+              "choices": [
+                "boiled rice",
+                "alphabet",
+                "nobility"
+              ]
             }
           ]
         }

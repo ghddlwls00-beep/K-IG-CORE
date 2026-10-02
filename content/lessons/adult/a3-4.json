@@ -40,6 +40,34 @@
               "en": "playing musical instruments, and singing.",
               "ko": "악기 연주와 노래도 잘합니다."
             }
+          ],
+          "words": [
+            {
+              "word": "excel at",
+              "say": "excel at",
+              "meaning": "~에 뛰어나다",
+              "pos": "구동사",
+              "start": 7,
+              "end": 18,
+              "choices": [
+                "looking back",
+                "gifted at",
+                "keep those talents to himself"
+              ]
+            },
+            {
+              "word": "gifted at",
+              "say": "gifted at",
+              "meaning": "~에 재능이 있는",
+              "pos": "형용사",
+              "start": 71,
+              "end": 80,
+              "choices": [
+                "reflective",
+                "outgoing",
+                "introverted"
+              ]
+            }
           ]
         },
         {
@@ -62,6 +90,34 @@
               "en": "for years.",
               "ko": "수년째."
             }
+          ],
+          "words": [
+            {
+              "word": "keep (something) to (oneself)",
+              "say": "keep something to oneself",
+              "meaning": "~을 혼자만 간직하다",
+              "pos": "표현",
+              "start": 25,
+              "end": 54,
+              "choices": [
+                "by force",
+                "the surest way to",
+                "stopped to think"
+              ]
+            },
+            {
+              "word": "generously",
+              "say": "generously",
+              "meaning": "아낌없이, 너그럽게",
+              "pos": "부사",
+              "start": 79,
+              "end": 89,
+              "choices": [
+                "lack",
+                "a constant source of strength",
+                "by force"
+              ]
+            }
           ]
         },
         {
@@ -83,6 +139,21 @@
             {
               "en": "inspires me daily.",
               "ko": "매일 저에게 영감을 줍니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "lack",
+              "say": "lack",
+              "meaning": "~이 부족하다, 없다",
+              "pos": "동사",
+              "start": 40,
+              "end": 44,
+              "choices": [
+                "earned",
+                "possess",
+                "a constant source of strength"
+              ]
             }
           ]
         }

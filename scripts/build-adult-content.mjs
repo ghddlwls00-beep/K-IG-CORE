@@ -2,7 +2,8 @@
 /**
  * ADULT — the lessons, made from the owner's PPTs (2026-10-02, 사장님 "student 다음에 adult 섹션 … 학습법은 student랑 완전히 똑같이
  * … 각 ppt의 본문만"). Reads docs/adult/ppt-본문.json (the PPTs' English and 한글 번역 slides, paired by number — the 핵심 어휘 and
- * 청크 끊어읽기 slides are not used here — the chunks come from docs/adult/ppt-청크.json, CHUNK_FIX below) and writes content/lessons/adult/a<chapter>-<part>.json + content/courses/adult.json.
+ * 청크 끊어읽기 slides are not used here — the chunks come from docs/adult/ppt-청크.json (CHUNK_FIX below), the words from
+ * docs/adult/ppt-어휘.json (placeWords below)) and writes content/lessons/adult/a<chapter>-<part>.json + content/courses/adult.json.
  *
  *   node scripts/build-adult-content.mjs          # write
  *   node scripts/build-adult-content.mjs --check  # exit 1 if the files on disk differ from what this would write
@@ -280,6 +281,118 @@ function chunksOf(file, page, s, meaningChanged) {
   return moved;
 }
 
+/**
+ * 단어 (2026-10-02, 사장님 "어덜트 섹션에서 단어 학습법 만들자 적절한 순서로 들어가게") — the PPT's 핵심 어휘·표현 slides
+ * (docs/adult/ppt-어휘.json, docs/adult/extract-words.ps1), each word put on the sentence of its chapter that uses it: the PPT's
+ * example phrase first, then the word's own forms ('unite' → 'united', '(A)' · '(someone)' · "one's" any words between). The place
+ * to underline is where the word's forms are in that sentence (else the example phrase). 6과's two PPTs have the same 32 words
+ * (all for the shared parts), so the men's list serves the chapter. A word the sentences no longer have — 7~10과 took STUDENT's
+ * audited English — is left out and listed in WORDS_GONE, which must match exactly (a new loss stops the build).
+ */
+const pptWords = JSON.parse(fs.readFileSync(path.join(ROOT, "docs", "adult", "ppt-어휘.json"), "utf8")).files;
+const WORDS_GONE = {
+  "7과.pptx": ["unite", "gain power over", "civil war", "as a result", "rapidly"],
+  "8과.pptx": ["also known as"],
+  "9과.pptx": ["in order to", "royal"],
+  "10과.pptx": ["ancient times"],
+};
+const POS_KO = {
+  "n.": "명사", "n. (불가산)": "명사(셀 수 없음)", "v.": "동사", "adj.": "형용사", "adv.": "부사", "conj.": "접속사",
+  "phr.": "구", "phr. v.": "구동사", "expr.": "표현", "collocation": "연어", "idiom": "관용구", "grammar": "문법",
+};
+/** '(A)' · '(someone)' inside brackets, and someone · something · oneself · one's on their own, stand for any words */
+const PLACEHOLDER = /^(a|b|someone|something|oneself|one's)$/i;
+const PLACEHOLDER_WORD = /^(someone|something|oneself|one's)$/i;
+/** the irregular forms of the verbs the words start with */
+const FORMS = {
+  be: "be|is|am|are|was|were|been|being", have: "have|has|had|having", make: "make|makes|made|making", take: "take|takes|took|taken|taking",
+  give: "give|gives|gave|given|giving", get: "get|gets|got|gotten|getting", go: "go|goes|went|gone|going", keep: "keep|keeps|kept|keeping",
+  hold: "hold|holds|held|holding", catch: "catch|catches|caught|catching", grow: "grow|grows|grew|grown|growing", meet: "meet|meets|met|meeting",
+  set: "set|sets|setting", light: "light|lights|lit|lighting", find: "find|finds|found|finding", stop: "stop|stops|stopped|stopping",
+};
+const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const foldQuotes = (s) => s.replace(/[’‘]/g, "'");
+
+/**
+ * the word's forms as a pattern: each word by its stem (or FORMS), a placeholder, a comma or '…' lets up to 30 letters between
+ * ('out of sight, out of mind' — "out of sight means out of mind"), and a word placeholder at the end takes the next word
+ * ('keep (something) to (oneself)' — "keep those talents to himself"; '(B)' at the end does not)
+ */
+function wordPattern(word) {
+  const parts = word
+    .replace(/\(([^)]*)\)/g, (_m, inner) => (PLACEHOLDER_WORD.test(inner.trim()) ? " ＊ " : PLACEHOLDER.test(inner.trim()) ? " … " : " "))
+    .replace(/\+\s*\S+/g, " ")
+    .replace(/(^|\s)-ing\b/g, " ")
+    .replace(/,/g, " … ")
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((p) => (PLACEHOLDER_WORD.test(p) ? "＊" : p));
+  let src = "";
+  let gap = false;
+  let wordGap = false; // the last gap stands for a word (someone · oneself), not '(B)'
+  for (const p of parts) {
+    if (p === "…" || p === "＊") { gap = true; wordGap = p === "＊"; continue; }
+    const t = p.toLowerCase().replace(/[^a-z'-]/g, "");
+    if (!t) continue;
+    const stem = t.length > 3 && t.endsWith("e") ? t.slice(0, -1) : t.length > 4 && t.endsWith("y") ? t.slice(0, -1) : t;
+    if (src) src += gap ? "[^.;]{1,30}?" : "[\\s-]+";
+    src += FORMS[t] ? `(?:${FORMS[t]})\\b` : `${escapeRe(stem)}[a-z'’]*`;
+    gap = false;
+  }
+  if (src && gap && wordGap) src += "\\s+[a-z'’]+";
+  return src ? new RegExp(`\\b${src}`, "i") : null;
+}
+
+/**
+ * how the card's word is SAID: a placeholder word stays ('keep something to oneself'), '(A)' is 'something', '(contribute to)' ·
+ * '+ N/-ing' · '-ing' go.
+ * A word said two ways is said as the card means it (the VOCA way — `<word> ⟨<IPA>⟩`, the generator's SSML): 8과 'bow' 절하다.
+ */
+const SAY_AS = { bow: "bow ⟨baʊ⟩" };
+function wordSpeech(word) {
+  if (SAY_AS[word]) return SAY_AS[word];
+  return word
+    // '(A)' is said 'something' — 'regard A as B' could be read 'regard uh as bee'
+    .replace(/\(([^)]*)\)/g, (_m, inner) => (/^(someone|something|oneself)$/i.test(inner.trim()) ? inner.trim() : /^[AB]$/.test(inner.trim()) ? "something" : " "))
+    .replace(/\+\s*\S+/g, " ")
+    .replace(/(^|\s)-ing\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** file → the chapter's words placed: { lessonId, sentence index, word, meaning, pos } (the span is found on the written text later) */
+function placeWords(file, chapterLessons) {
+  const sentences = chapterLessons.flatMap((l) => l.sentences.map((s, i) => ({ id: l.id, i, en: s.en })));
+  const placed = [];
+  const gone = [];
+  for (const w of pptWords[file]) {
+    const pattern = wordPattern(w.word);
+    const phrases = w.usage
+      .split(/…|\.\.\.|\//)
+      .map((x) => foldQuotes(x).replace(/[?.!,;]+$/, "").trim())
+      .filter((x) => x.length > 2 && !/[가-힣]/.test(x));
+    const byPhrase = phrases.length ? sentences.find((s) => phrases.every((p) => foldQuotes(s.en).toLowerCase().includes(p.toLowerCase()))) : null;
+    const hit = byPhrase ?? sentences.find((s) => pattern && pattern.test(foldQuotes(s.en)));
+    if (!hit) { gone.push(w.word); continue; }
+    placed.push({ id: hit.id, i: hit.i, word: w.word, meaning: w.meaning, pos: POS_KO[w.pos] ?? w.pos, pattern, phrases });
+  }
+  const expect = WORDS_GONE[file] ?? [];
+  if (JSON.stringify(gone) !== JSON.stringify(expect)) throw new Error(`${file}: words not in the sentences ${JSON.stringify(gone)}, WORDS_GONE says ${JSON.stringify(expect)}`);
+  return placed;
+}
+
+/** where to underline the word in the written sentence: its forms, else the example phrase */
+function wordSpan(text, w) {
+  const folded = foldQuotes(text);
+  const m = w.pattern ? folded.match(w.pattern) : null;
+  if (m) return [m.index, m.index + m[0].length];
+  for (const p of w.phrases) {
+    const at = folded.toLowerCase().indexOf(p.toLowerCase());
+    if (at >= 0) return [at, at + p.length];
+  }
+  return null;
+}
+
 const lessons = [];
 const groups = [];
 let order = 0;
@@ -316,6 +429,9 @@ CHAPTERS.forEach((chapter, ci) => {
     ];
   }
 
+  // 단어: the chapter's words onto its sentences (6과 — the men's list, the same as the women's)
+  const placed = placeWords(chapter.file, sections.map((section, si) => ({ id: `a${unit}-${si + 1}`, sentences: section.sentences })));
+
   const ids = [];
   sections.forEach((section, si) => {
     const part = si + 1;
@@ -334,6 +450,17 @@ CHAPTERS.forEach((chapter, ci) => {
       s.chunks = s.chunks.map(([en, ko]) => ({ en: hangulForm(page, en), ko }));
       if (s.chunks.map((c) => c.en).join(" ") !== written) throw new Error(`${id} #${s.n}: chunks "${s.chunks.map((c) => c.en).join(" | ")}" are not "${written}"`);
     }
+    // 단어: each with where it is in the written sentence, in reading order
+    section.sentences.forEach((s, i) => {
+      const here = placed.filter((w) => w.id === id && w.i === i).map((w) => {
+        const span = wordSpan(s.en, w);
+        if (!span) throw new Error(`${id} #${i + 1}: "${w.word}" placed here but not found in "${s.en}"`);
+        if (DIAG) console.log(`${id} #${i + 1} ${w.word} ⇒ [${s.en.slice(span[0], span[1])}]`);
+        return { word: w.word, say: wordSpeech(w.word), meaning: w.meaning, pos: w.pos, start: span[0], end: span[1] };
+      });
+      here.sort((a, b) => a.start - b.start);
+      s.words = here;
+    });
     order += 1;
     const enTitle = title.replace(/\s*\([^()]*\)\s*$/, "");
     const lesson = {
@@ -352,7 +479,7 @@ CHAPTERS.forEach((chapter, ci) => {
       video: [],
       blocks: [
         { type: "instruction", text: `${label} - ${title}` },
-        { type: "sentences", items: section.sentences.map((s, k) => ({ n: String(k + 1), text: s.en, chunks: s.chunks })) },
+        { type: "sentences", items: section.sentences.map((s, k) => ({ n: String(k + 1), text: s.en, chunks: s.chunks, ...(s.words.length ? { words: s.words } : {}) })) },
         ...section.sentences.map((s) => ({ type: "paragraph", text: s.ko, lang: "ko" })),
       ],
       legacyPath: `docs/adult/ppt-본문.json#${chapter.file}`,
@@ -361,6 +488,34 @@ CHAPTERS.forEach((chapter, ci) => {
     lessons.push(lesson);
     ids.push(id);
   });
+  // 단어 — the blank's three wrong choices: the words of the same chapter as the sentences write them, the same part of speech
+  // first, never the answer's own letters; picked in a fixed order so a rebuild gives the same choices
+  const chapterWords = lessons
+    .filter((l) => l.unit === unit)
+    .flatMap((l) =>
+      l.blocks.find((b) => b.type === "sentences").items.flatMap((it) =>
+        (it.words ?? []).map((w) => {
+          const written = it.text.slice(w.start, w.end);
+          // a word that begins its sentence loses that capital as a choice elsewhere ('However' → 'however'); the view
+          // capitalises every choice of a blank that begins its sentence
+          return { w, form: w.start === 0 ? written.charAt(0).toLowerCase() + written.slice(1) : written };
+        }),
+      ),
+    );
+  // (and the same ending — '-ed' · '-ing' · '-s' — so the form does not give the answer away)
+  const ending = (s) => (s.match(/(ed|ing|s)$/i)?.[1] ?? "").toLowerCase();
+  chapterWords.forEach(({ w, form }, k) => {
+    const score = (o) => 2 * Number(o.w.pos === w.pos) + Number(ending(o.form) === ending(form));
+    const others = chapterWords
+      .map((o, j) => ({ ...o, j }))
+      .filter((o) => o.form.toLowerCase() !== form.toLowerCase())
+      .sort((a, b) => score(b) - score(a) || ((a.j - k + chapterWords.length) % chapterWords.length) - ((b.j - k + chapterWords.length) % chapterWords.length));
+    const picked = [];
+    for (const o of others) if (picked.length < 3 && !picked.some((p) => p.toLowerCase() === o.form.toLowerCase())) picked.push(o.form);
+    if (picked.length < 3) throw new Error(`a${unit}: "${w.word}" has only ${picked.length} wrong choices`);
+    w.choices = picked;
+  });
+
   // as STUDENT's index: the course list names a chapter Korean first, and the group has no `label`
   groups.push({ title: `Chapter ${unit}. ${chapter.ko} (${chapter.en})`, lessons: ids });
 });
