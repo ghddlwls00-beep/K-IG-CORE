@@ -59,11 +59,13 @@
   고르면 정답 · 문장 · 한국어 줄 · '문장 듣기'; '다른 빈칸으로 다시 풀기'. 탭 수 = 빈칸에서 맞힌 낱말(`practice.wordRight`, 이 기기). **완료 규칙 그대로**.
 - 낱말: PPT 의 '핵심 어휘·표현' 슬라이드 — [`ppt-어휘.json`](ppt-어휘.json)(뽑기 `powershell -File docs/adult/extract-words.ps1`, 344개).
   `build-adult-content.mjs` 가 낱말마다 그 과에서 쓰인 문장을 찾아(PPT 의 쓰임 구절 → 낱말의 꼴 'unite'→'united' · '(A)' 자리) 문장의
-  `words` 에 붙임: 303개. 6과 남성용 · 여성용은 같은 32개(공통 소단원 것)라 하나만 씀. **빠진 9개** — 7~10과가 STUDENT 감사 문장으로
+  `words` 에 붙임: 303개(+ 아래 토요일 15 = 318). 6과 남성용 · 여성용은 같은 32개(공통 소단원 것)라 하나만 씀. **빠진 9개** — 7~10과가 STUDENT 감사 문장으로
   바뀌어 이제 본문에 없는 낱말: civil war · unite · gain power over · as a result · rapidly · also known as · in order to · royal ·
   ancient times(`WORDS_GONE` — 새로 빠지면 빌드가 멈춤, 깨기로 확인).
-- **낱말 없는 강의 2개**: 6-1 · 6-2(토요일) — PPT 에 그 소단원 낱말이 없음. 화면은 "이 강의에는 핵심 어휘가 없어요"(READING 과 같음).
-- 소리: 낱말 새 클립 164개(나머지는 VOCA 등에 이미 있음) · R2 올림. 'bow'(절하다)는 /baʊ/ 로(`bow ⟨baʊ⟩` — VOCA 방식),
+- **6-1 · 6-2(토요일)**: PPT 에 그 소단원 낱말이 없어 문장에서 골라 넣음(사장님 "둘다 오케이") — operate · slip away · sleep in ·
+  unwind · relieve · talk through · balanced, 6-2 는 run errands 더해 8개(`EXTRA_WORDS` — 그 강의 문장에 없으면 빌드가 멈춤).
+  그래서 55강의 모두 낱말이 있음(318개). 낱말 없는 강의의 안내문은 코드에만 대비용으로 있음 — READING 도 512쪽 모두 14개라 실제로 안 나옴.
+- 소리: 낱말 새 클립 170개(토요일 6 포함)(나머지는 VOCA 등에 이미 있음) · R2 올림. 'bow'(절하다)는 /baʊ/ 로(`bow ⟨baʊ⟩` — VOCA 방식),
   '(A)' 자리는 'something' 으로 읽음('regard something as something'). 무료 a1-1 · a1-2 낱말 6개는 무료 소리 목록에.
 
 ## 끊어 읽기 — Step 3 (2026-10-02, 사장님 "어덜트 섹션에서 청크 학습법 하나 만들자 적절한 순서로 들어가게")

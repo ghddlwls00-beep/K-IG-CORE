@@ -36,6 +36,21 @@
               "en": "than we ever had before.",
               "ko": "예전 그 어느 때보다."
             }
+          ],
+          "words": [
+            {
+              "word": "operate",
+              "say": "operate",
+              "meaning": "운영하다, 영업하다",
+              "pos": "동사",
+              "start": 35,
+              "end": 44,
+              "choices": [
+                "unwind",
+                "relieve",
+                "coexisted"
+              ]
+            }
           ]
         },
         {
@@ -53,6 +68,21 @@
             {
               "en": "whether it is a skill, a language, or a craft.",
               "ko": "그것이 기술이든, 언어든, 공예든 말이죠."
+            }
+          ],
+          "words": [
+            {
+              "word": "slip away",
+              "say": "slip away",
+              "meaning": "(시간·기회가) 어느새 지나가 버리다",
+              "pos": "구동사",
+              "start": 38,
+              "end": 47,
+              "choices": [
+                "sleep in",
+                "talk through",
+                "stock up on"
+              ]
             }
           ]
         },
@@ -76,6 +106,21 @@
               "en": "has become a small luxury I look forward to all week.",
               "ko": "한 주 내내 기다리는 작은 호사가 되었습니다."
             }
+          ],
+          "words": [
+            {
+              "word": "sleep in",
+              "say": "sleep in",
+              "meaning": "늦잠을 자다",
+              "pos": "구동사",
+              "start": 54,
+              "end": 62,
+              "choices": [
+                "talk through",
+                "stock up on",
+                "go out for"
+              ]
+            }
           ]
         },
         {
@@ -98,6 +143,34 @@
               "en": "to unwind and relieve the week's stress.",
               "ko": "긴장을 풀고 한 주의 스트레스를 날려 버리기 위해."
             }
+          ],
+          "words": [
+            {
+              "word": "unwind",
+              "say": "unwind",
+              "meaning": "긴장을 풀고 쉬다",
+              "pos": "동사",
+              "start": 132,
+              "end": 138,
+              "choices": [
+                "relieve",
+                "dedicated so much of their lives to",
+                "coexisted"
+              ]
+            },
+            {
+              "word": "relieve",
+              "say": "relieve",
+              "meaning": "(스트레스·고통을) 덜다, 풀다",
+              "pos": "동사",
+              "start": 143,
+              "end": 150,
+              "choices": [
+                "dedicated so much of their lives to",
+                "unwind",
+                "coexisted"
+              ]
+            }
           ]
         },
         {
@@ -115,6 +188,21 @@
             {
               "en": "conversations that have quietly strengthened our marriage.",
               "ko": "이런 대화가 조용히 우리 부부 사이를 단단하게 해 주었습니다."
+            }
+          ],
+          "words": [
+            {
+              "word": "talk through",
+              "say": "talk through",
+              "meaning": "~을 차근차근 의논하다",
+              "pos": "구동사",
+              "start": 56,
+              "end": 68,
+              "choices": [
+                "stock up on",
+                "go out for",
+                "catching up"
+              ]
             }
           ]
         },
@@ -137,6 +225,34 @@
             {
               "en": "leaves me far better prepared for Monday.",
               "ko": "월요일을 훨씬 잘 준비할 수 있게 해 준다는 것을."
+            }
+          ],
+          "words": [
+            {
+              "word": "run errands",
+              "say": "run errands",
+              "meaning": "볼일을 보다, 이런저런 일을 처리하다",
+              "pos": "연어",
+              "start": 30,
+              "end": 41,
+              "choices": [
+                "materials",
+                "take turns",
+                "hymns"
+              ]
+            },
+            {
+              "word": "balanced",
+              "say": "balanced",
+              "meaning": "균형 잡힌",
+              "pos": "형용사",
+              "start": 96,
+              "end": 104,
+              "choices": [
+                "home-cooked",
+                "supportive",
+                "collaborative"
+              ]
             }
           ]
         }

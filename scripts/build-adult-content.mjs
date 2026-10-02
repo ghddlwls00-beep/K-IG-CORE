@@ -378,8 +378,38 @@ function placeWords(file, chapterLessons) {
   }
   const expect = WORDS_GONE[file] ?? [];
   if (JSON.stringify(gone) !== JSON.stringify(expect)) throw new Error(`${file}: words not in the sentences ${JSON.stringify(gone)}, WORDS_GONE says ${JSON.stringify(expect)}`);
+  // words the PPT has none for (EXTRA_WORDS) — on their own lesson only, and they must be there
+  for (const l of chapterLessons) {
+    for (const w of EXTRA_WORDS[l.id] ?? []) {
+      const pattern = wordPattern(w.word);
+      const phrases = [foldQuotes(w.usage)];
+      const k = l.sentences.findIndex((s) => foldQuotes(s.en).toLowerCase().includes(phrases[0].toLowerCase()));
+      if (k < 0) throw new Error(`${l.id}: EXTRA_WORDS "${w.word}" — "${w.usage}" is not in its sentences`);
+      placed.push({ id: l.id, i: k, word: w.word, meaning: w.meaning, pos: POS_KO[w.pos] ?? w.pos, pattern, phrases });
+    }
+  }
   return placed;
 }
+
+/**
+ * 6-1 · 6-2 (토요일) — the PPT's 핵심 어휘 has no word for this sub-unit (both 6과 PPTs list the shared parts' words only), so
+ * these are chosen from its sentences (사장님 2026-10-02 "둘다 오케이" — to "6-1, 6-2 에 단어를 넣을까요? … 그 문장에서 제가 골라").
+ * usage = the words as the sentence has them; the meaning in the PPT's style.
+ */
+const SATURDAY_WORDS = [
+  { word: "operate", pos: "v.", meaning: "운영하다, 영업하다", usage: "stopped operating on Saturdays" },
+  { word: "slip away", pos: "phr. v.", meaning: "(시간·기회가) 어느새 지나가 버리다", usage: "slip away" },
+  { word: "sleep in", pos: "phr. v.", meaning: "늦잠을 자다", usage: "sleep in" },
+  { word: "unwind", pos: "v.", meaning: "긴장을 풀고 쉬다", usage: "to unwind" },
+  { word: "relieve", pos: "v.", meaning: "(스트레스·고통을) 덜다, 풀다", usage: "relieve the week's stress" },
+  { word: "talk through", pos: "phr. v.", meaning: "~을 차근차근 의논하다", usage: "talk through plans" },
+  { word: "balanced", pos: "adj.", meaning: "균형 잡힌", usage: "a balanced weekend" },
+];
+const EXTRA_WORDS = {
+  "a6-1": SATURDAY_WORDS,
+  // the women's Saturday also runs errands
+  "a6-2": [...SATURDAY_WORDS.slice(0, 6), { word: "run errands", pos: "collocation", meaning: "볼일을 보다, 이런저런 일을 처리하다", usage: "run errands" }, SATURDAY_WORDS[6]],
+};
 
 /** where to underline the word in the written sentence: its forms, else the example phrase */
 function wordSpan(text, w) {
