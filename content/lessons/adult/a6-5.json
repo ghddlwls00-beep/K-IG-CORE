@@ -22,23 +22,109 @@
       "items": [
         {
           "n": "1",
-          "text": "On some Sunday afternoons, my friends and I take turns visiting one another's homes, where we either go out for a meal together or simply sit and talk for hours."
+          "text": "On some Sunday afternoons, my friends and I take turns visiting one another's homes, where we either go out for a meal together or simply sit and talk for hours.",
+          "chunks": [
+            {
+              "en": "On some Sunday afternoons,",
+              "ko": "어떤 일요일 오후에는,"
+            },
+            {
+              "en": "my friends and I take turns visiting one another's homes,",
+              "ko": "친구들과 저는 돌아가며 서로의 집을 방문하는데,"
+            },
+            {
+              "en": "where we either go out for a meal together",
+              "ko": "함께 나가서 식사를 하거나"
+            },
+            {
+              "en": "or simply sit and talk for hours.",
+              "ko": "그냥 앉아서 몇 시간이고 이야기를 나눕니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "These visits have been taking place for nearly a decade, and they have seen us through job changes, house moves, and several family milestones."
+          "text": "These visits have been taking place for nearly a decade, and they have seen us through job changes, house moves, and several family milestones.",
+          "chunks": [
+            {
+              "en": "These visits have been taking place for nearly a decade,",
+              "ko": "이런 만남은 거의 10년째 이어져 오고 있는데,"
+            },
+            {
+              "en": "and they have seen us through job changes,",
+              "ko": "덕분에 우리는 이직과"
+            },
+            {
+              "en": "house moves, and several family milestones.",
+              "ko": "이사, 여러 가족 대소사를 함께 겪어 왔습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "When we are not with friends, we usually spend the afternoon at either my parents' home or my in-laws', catching up over a home-cooked meal."
+          "text": "When we are not with friends, we usually spend the afternoon at either my parents' home or my in-laws', catching up over a home-cooked meal.",
+          "chunks": [
+            {
+              "en": "When we are not with friends,",
+              "ko": "친구들과 만나지 않는 날에는,"
+            },
+            {
+              "en": "we usually spend the afternoon",
+              "ko": "보통 오후를 보내는데"
+            },
+            {
+              "en": "at either my parents' home or my in-laws',",
+              "ko": "우리 부모님 댁이나 배우자의 부모님 댁에서,"
+            },
+            {
+              "en": "catching up over a home-cooked meal.",
+              "ko": "집밥을 먹으며 그간의 소식을 나눕니다."
+            }
+          ]
         },
         {
           "n": "4",
-          "text": "Although these visits sometimes feel like an obligation after a long week, I have come to see them as a way to give back to the parents who dedicated so much of their lives to us."
+          "text": "Although these visits sometimes feel like an obligation after a long week, I have come to see them as a way to give back to the parents who dedicated so much of their lives to us.",
+          "chunks": [
+            {
+              "en": "Although these visits sometimes feel like an obligation",
+              "ko": "이런 방문이 가끔은 의무처럼 느껴지기도 하지만"
+            },
+            {
+              "en": "after a long week,",
+              "ko": "고된 한 주를 보낸 뒤에는,"
+            },
+            {
+              "en": "I have come to see them as a way to give back",
+              "ko": "저는 이것을 보답하는 방법으로 여기게 되었습니다"
+            },
+            {
+              "en": "to the parents who dedicated so much of their lives to us.",
+              "ko": "인생의 많은 부분을 우리에게 바쳐 주신 부모님께."
+            }
+          ]
         },
         {
           "n": "5",
-          "text": "Watching our parents' faces light up when we arrive reminds me that the strong work ethic I bring to my job should never come at the expense of family."
+          "text": "Watching our parents' faces light up when we arrive reminds me that the strong work ethic I bring to my job should never come at the expense of family.",
+          "chunks": [
+            {
+              "en": "Watching our parents' faces light up when we arrive",
+              "ko": "우리가 도착할 때 부모님의 얼굴이 환해지는 것을 보면"
+            },
+            {
+              "en": "reminds me",
+              "ko": "다시금 깨닫게 됩니다"
+            },
+            {
+              "en": "that the strong work ethic I bring to my job",
+              "ko": "제가 일에 쏟는 성실함이"
+            },
+            {
+              "en": "should never come at the expense of family.",
+              "ko": "결코 가족을 희생시키는 대가가 되어서는 안 된다는 것을."
+            }
+          ]
         }
       ]
     },

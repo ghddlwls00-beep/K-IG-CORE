@@ -22,23 +22,77 @@
       "items": [
         {
           "n": "1",
-          "text": "Another attractive destination is 경주."
+          "text": "Another attractive destination is 경주.",
+          "chunks": [
+            {
+              "en": "Another attractive destination",
+              "ko": "또 다른 매력적인 여행지는"
+            },
+            {
+              "en": "is 경주.",
+              "ko": "경주입니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "경주 is the old capital of the 신라 Kingdom."
+          "text": "경주 is the old capital of the 신라 Kingdom.",
+          "chunks": [
+            {
+              "en": "경주 is the old capital",
+              "ko": "경주는 옛 수도입니다"
+            },
+            {
+              "en": "of the 신라 Kingdom.",
+              "ko": "신라 왕국의."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "The 신라 Kingdom was at its most powerful during the 8th century."
+          "text": "The 신라 Kingdom was at its most powerful during the 8th century.",
+          "chunks": [
+            {
+              "en": "The 신라 Kingdom was at its most powerful",
+              "ko": "신라 왕국은 가장 강성했습니다"
+            },
+            {
+              "en": "during the 8th century.",
+              "ko": "8세기에."
+            }
+          ]
         },
         {
           "n": "4",
-          "text": "Many people regard 경주 as a museum without walls."
+          "text": "Many people regard 경주 as a museum without walls.",
+          "chunks": [
+            {
+              "en": "Many people regard 경주",
+              "ko": "많은 사람들은 경주를 여깁니다"
+            },
+            {
+              "en": "as a museum without walls.",
+              "ko": "'지붕 없는 박물관'으로."
+            }
+          ]
         },
         {
           "n": "5",
-          "text": "Koreans refer to it as this because it contains many of the old remains of the 신라 Dynasty."
+          "text": "Koreans refer to it as this because it contains many of the old remains of the 신라 Dynasty.",
+          "chunks": [
+            {
+              "en": "Koreans refer to it as this",
+              "ko": "한국인들이 경주를 이렇게 부르는 이유는"
+            },
+            {
+              "en": "because it contains many of the old remains",
+              "ko": "옛 유적이 많이 남아 있기 때문입니다"
+            },
+            {
+              "en": "of the 신라 Dynasty.",
+              "ko": "신라 왕조의."
+            }
+          ]
         }
       ]
     },

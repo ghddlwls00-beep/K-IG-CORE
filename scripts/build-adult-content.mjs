@@ -2,10 +2,11 @@
 /**
  * ADULT — the lessons, made from the owner's PPTs (2026-10-02, 사장님 "student 다음에 adult 섹션 … 학습법은 student랑 완전히 똑같이
  * … 각 ppt의 본문만"). Reads docs/adult/ppt-본문.json (the PPTs' English and 한글 번역 slides, paired by number — the 핵심 어휘 and
- * 청크 끊어읽기 slides are not used) and writes content/lessons/adult/a<chapter>-<part>.json + content/courses/adult.json.
+ * 청크 끊어읽기 slides are not used here — the chunks come from docs/adult/ppt-청크.json, CHUNK_FIX below) and writes content/lessons/adult/a<chapter>-<part>.json + content/courses/adult.json.
  *
  *   node scripts/build-adult-content.mjs          # write
  *   node scripts/build-adult-content.mjs --check  # exit 1 if the files on disk differ from what this would write
+ *   … --chunks                                    # also print each sentence whose PPT chunk breaks were moved onto new words
  *
  * One lesson per ▎ sub-unit of a PPT, exactly as STUDENT is one lesson per sub-unit of a chapter. Owner decisions (2026-10-02):
  *   · 6과 남성용 / 여성용 differ only in the Saturday sub-unit (3 sentences), so 6-1 is the men's Saturday, 6-2 the women's, and
@@ -29,6 +30,8 @@ const INDEX_FILE = path.join(ROOT, "content", "courses", "adult.json");
 const CHECK = process.argv.includes("--check");
 
 const ppt = JSON.parse(fs.readFileSync(SRC, "utf8")).files;
+const pptChunks = JSON.parse(fs.readFileSync(path.join(ROOT, "docs", "adult", "ppt-청크.json"), "utf8")).files;
+const DIAG = process.argv.includes("--chunks");
 
 /** Chapter order, title (English · Korean) and the PPT file(s) it comes from. */
 const CHAPTERS = [
@@ -170,6 +173,113 @@ function studentEnglish(ch) {
   return out;
 }
 
+/**
+ * 끊어 읽기 (2026-10-02, 사장님 "어덜트 섹션에서 청크 학습법 하나 만들자 적절한 순서로 들어가게") — each sentence's chunks, from the
+ * PPT's 청크 단위 끊어읽기 slides (docs/adult/ppt-청크.json, docs/adult/extract-chunks.ps1): [English, Korean] in order, the English
+ * making up the sentence exactly. Where the sentence was changed after the PPT (1과 · 2과 #14 · 7~10과 above):
+ *   · the English only (spelling, a word or two, the Korean line unchanged) — the PPT's breaks are carried over to the new words
+ *     (alignChunks) and the Korean chunks stay;
+ *   · the meaning (KO_FIX, a Korean chunk that no longer fits) — written here, file → sentence number → chunks.
+ */
+const CHUNK_FIX = {
+  "1과.pptx": {
+    21: [["I have been studying English", "저는 영어를 공부해 오고 있습니다"], ["for 2 months so far.", "지금까지 2개월 동안."]],
+  },
+  "2과.pptx": {
+    14: [
+      ["Our son, who has always been thoughtful and considerate,", "늘 사려 깊고 남을 배려해 온 아들은,"],
+      ["has wanted to give back since childhood", "어릴 때부터 사회에 봉사하고 싶어 했고"],
+      ["and now works as a social worker at a community center.", "지금은 커뮤니티 센터에서 사회복지사로 일하고 있습니다."],
+    ],
+  },
+  "7과.pptx": {
+    2: [["According to legend,", "전설에 따르면,"], ["our country’s history started", "우리나라의 역사는 시작되었습니다"], ["more than 4,000 years ago.", "4,000여 년 전에."]],
+    9: [["Later,", "훗날,"], ["Silla conquered the other two kingdoms", "신라가 다른 두 왕국을 정복하고"], ["and unified most of the peninsula.", "한반도의 대부분을 통일했습니다."]],
+    10: [["Silla was at its most powerful", "신라는 가장 강성했습니다"], ["during the 8th century.", "8세기에."]],
+    12: [["After Silla,", "신라 이후에는,"], ["the Goryeo and Joseon dynasties ruled Korea", "고려와 조선 왕조가 한국을 다스렸습니다"], ["for about 1,000 years.", "약 1,000년 동안."]],
+    13: [["Later,", "그 뒤,"], ["Korea was ruled by Japan", "한국은 일본의 지배를 받았습니다"], ["from 1910 to 1945.", "1910년부터 1945년까지."]],
+    16: [["The Korean War broke out in 1950", "1950년에 한국전쟁이 일어났습니다"], ["when armies from the North invaded the South.", "북쪽 군대가 남쪽을 침략하면서."]],
+    17: [["After the war ended in 1953,", "1953년 전쟁이 끝난 뒤에도,"], ["the Korean Peninsula remained divided", "한반도는 나뉜 채 남았습니다"], ["into North and South Korea.", "북한과 남한으로."]],
+    18: [["Since the end of the war in 1953,", "1953년 전쟁이 끝난 이후,"], ["the country has developed very quickly,", "나라는 매우 빠르게 발전해 왔는데,"], ["especially during the 1970s.", "특히 1970년대에 그러했습니다."]],
+    19: [["From then until now,", "그때부터 지금까지,"], ["the country has continued to grow.", "나라는 계속 성장해 왔습니다."]],
+  },
+  "8과.pptx": {
+    1: [["My country has many holidays.", "우리나라에는 공휴일이 많습니다."]],
+    2: [["Holidays are a special time", "공휴일은 특별한 시간입니다"], ["when families can get together and celebrate.", "가족들이 함께 모여 축하할 수 있는."]],
+    3: [["We celebrate Seollal, Liberation Day, Children’s Day,", "우리는 설날, 광복절, 어린이날,"], ["Buddha’s Birthday, Chuseok, and many more.", "부처님 오신 날, 추석 등 많은 날을 기념합니다."]],
+    5: [["The first big holiday is Seollal,", "첫 번째 큰 명절은 설날로,"], ["Lunar New Year’s Day.", "음력 새해 첫날입니다."]],
+  },
+  "9과.pptx": {
+    17: [["However, in 1443,", "그러나 1443년,"], ["King Sejong created a unique Korean alphabet,", "세종대왕이 한국 고유의 문자를 만들었고,"], ["and it was proclaimed in 1446.", "이 문자는 1446년에 반포되었습니다."]],
+    18: [["This writing system", "이 문자 체계는"], ["is known as Hangul.", "한글이라고 알려져 있습니다."]],
+  },
+  "10과.pptx": {
+    5: [
+      ["One very interesting place to visit", "가 볼 만한 아주 흥미로운 곳 하나는"],
+      ["is the Korean Folk Village,", "한국민속촌인데,"],
+      ["located in Yongin, near Suwon, in Gyeonggi Province,", "경기도 용인(수원 근처)에 있으며,"],
+      ["not far from the capital, Seoul.", "수도 서울에서 멀지 않습니다."],
+    ],
+    9: [["Gyeongju is the old capital", "경주는 옛 수도입니다"], ["of the Silla Kingdom.", "신라 왕국의."]],
+    18: [["Mt. Halla is the highest mountain in South Korea;", "한라산은 남한에서 가장 높은 산으로,"], ["it’s almost 2,000 meters high", "높이가 거의 2,000미터에 이르며"], ["(about 6,400 feet).", "(약 6,400피트)."]],
+  },
+};
+
+/** a word compared without case, punctuation or the apostrophe's shape */
+const wordKey = (w) => w.toLowerCase().replace(/[’']/g, "'").replace(/[^a-z0-9'가-힣]/g, "");
+
+/**
+ * The PPT's chunk breaks moved onto a changed sentence: the words are matched (longest common run of words), and a break goes where
+ * its neighbours went. A break between two words that were both replaced cannot be placed so — null, and the sentence needs CHUNK_FIX.
+ */
+function alignChunks(chunks, sentence) {
+  const old = chunks.flatMap(([en], c) => en.split(/\s+/).filter(Boolean).map((w) => ({ w, c })));
+  const neu = sentence.split(/\s+/).filter(Boolean);
+  const a = old.map((x) => wordKey(x.w)), b = neu.map(wordKey);
+  const L = Array.from({ length: a.length + 1 }, () => new Array(b.length + 1).fill(0));
+  for (let i = a.length - 1; i >= 0; i--) for (let j = b.length - 1; j >= 0; j--) L[i][j] = a[i] === b[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const pairs = [];
+  for (let i = 0, j = 0; i < a.length && j < b.length; ) {
+    if (a[i] === b[j]) { pairs.push([i, j]); i++; j++; } else if (L[i + 1][j] >= L[i][j + 1]) i++; else j++;
+  }
+  const cuts = [];
+  for (let k = 1; k < old.length; k++) {
+    if (old[k].c === old[k - 1].c) continue; // a break sits before old word k
+    const before = [...pairs].reverse().find(([i]) => i < k) ?? [-1, -1];
+    const after = pairs.find(([i]) => i >= k) ?? [old.length, neu.length];
+    let cut;
+    if (after[1] === before[1] + 1) cut = after[1]; // the new words around it are neighbours
+    else if (after[0] === k) cut = after[1]; // the old words before the break were replaced: the new ones go before it
+    else if (before[0] === k - 1) cut = before[1] + 1; // the old words after it were replaced: the new ones go after it
+    else return null;
+    cuts.push(cut);
+  }
+  if (cuts.some((c, i) => c <= (cuts[i - 1] ?? 0) || c >= neu.length)) return null;
+  const bounds = [0, ...cuts, neu.length];
+  return chunks.map(([, ko], c) => [neu.slice(bounds[c], bounds[c + 1]).join(" "), ko]);
+}
+
+/** this sentence's chunks, [English (as s.en — romanized), Korean] */
+function chunksOf(file, page, s, meaningChanged) {
+  const fixed = CHUNK_FIX[file]?.[s.n];
+  const ppt = pptChunks[file]?.[String(s.n)];
+  if (!ppt) throw new Error(`${file} #${s.n}: no chunk slide`);
+  // the PPT writes 1과's Korean names in Hangul; the sentence here is in the romanization speech uses
+  const pptRoman = ppt.map(([en, ko]) => [romanizedForm(page, en), ko]);
+  const same = pptRoman.map(([en]) => en).join(" ") === s.en;
+  if (fixed) {
+    if (same && !meaningChanged) throw new Error(`${file} #${s.n}: CHUNK_FIX for a sentence the PPT's chunks already fit`);
+    if (fixed.map(([en]) => en).join(" ") !== s.en) throw new Error(`${file} #${s.n}: CHUNK_FIX "${fixed.map(([en]) => en).join(" | ")}" is not "${s.en}"`);
+    return fixed;
+  }
+  if (meaningChanged) throw new Error(`${file} #${s.n}: the Korean line was rewritten (KO_FIX) — write its chunks in CHUNK_FIX`);
+  if (same) return pptRoman;
+  const moved = alignChunks(pptRoman, s.en);
+  if (!moved) throw new Error(`${file} #${s.n}: the PPT's chunk breaks cannot be carried to "${s.en}" — write its chunks in CHUNK_FIX`);
+  if (DIAG) console.log(`${page} #${s.n}: ${moved.map(([en]) => en).join(" | ")}`);
+  return moved;
+}
+
 const lessons = [];
 const groups = [];
 let order = 0;
@@ -201,7 +311,7 @@ CHAPTERS.forEach((chapter, ci) => {
     if (women.header !== sections[0].header) throw new Error("6과: the women's first sub-unit is not Saturday");
     sections = [
       { ...sections[0], title: "Saturday — Men's Version (토요일 · 남성용)" },
-      { header: women.header, title: "Saturday — Women's Version (토요일 · 여성용)", sentences: women.sentences.map((x) => ({ ...x })) },
+      { header: women.header, title: "Saturday — Women's Version (토요일 · 여성용)", file: chapter.women, sentences: women.sentences.map((x) => ({ ...x })) },
       ...sections.slice(1),
     ];
   }
@@ -212,6 +322,7 @@ CHAPTERS.forEach((chapter, ci) => {
     const id = `a${unit}-${part}`;
     const title = section.title ?? TITLE_FIX[section.header] ?? section.header;
     for (const s of section.sentences) {
+      s.chunks = chunksOf(section.file ?? chapter.file, `adult/${id}`, s, Boolean(KO_FIX[chapter.file]?.[s.n]));
       if (/[가-힣]/.test(s.en)) throw new Error(`${id}: Hangul left in the English "${s.en}"`);
       if (!s.ko || !/[가-힣]/.test(s.ko)) throw new Error(`${id}: no Korean line for "${s.en}"`);
       // the screen's form: the Korean words in Hangul — and the way back speech takes must give this sentence exactly
@@ -219,6 +330,9 @@ CHAPTERS.forEach((chapter, ci) => {
       const written = hangulForm(page, s.en);
       if (romanizedForm(page, written) !== s.en) throw new Error(`${id}: "${written}" reads back as "${romanizedForm(page, written)}", not "${s.en}"`);
       s.en = written;
+      // the chunks are written as the sentence is (Hangul) and must still make it up exactly
+      s.chunks = s.chunks.map(([en, ko]) => ({ en: hangulForm(page, en), ko }));
+      if (s.chunks.map((c) => c.en).join(" ") !== written) throw new Error(`${id} #${s.n}: chunks "${s.chunks.map((c) => c.en).join(" | ")}" are not "${written}"`);
     }
     order += 1;
     const enTitle = title.replace(/\s*\([^()]*\)\s*$/, "");
@@ -238,7 +352,7 @@ CHAPTERS.forEach((chapter, ci) => {
       video: [],
       blocks: [
         { type: "instruction", text: `${label} - ${title}` },
-        { type: "sentences", items: section.sentences.map((s, k) => ({ n: String(k + 1), text: s.en })) },
+        { type: "sentences", items: section.sentences.map((s, k) => ({ n: String(k + 1), text: s.en, chunks: s.chunks })) },
         ...section.sentences.map((s) => ({ type: "paragraph", text: s.ko, lang: "ko" })),
       ],
       legacyPath: `docs/adult/ppt-본문.json#${chapter.file}`,

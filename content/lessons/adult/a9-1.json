@@ -22,15 +22,41 @@
       "items": [
         {
           "n": "1",
-          "text": "The Korean culture is different from other cultures."
+          "text": "The Korean culture is different from other cultures.",
+          "chunks": [
+            {
+              "en": "The Korean culture",
+              "ko": "한국 문화는"
+            },
+            {
+              "en": "is different from other cultures.",
+              "ko": "다른 문화들과 다릅니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "It has many unique aspects."
+          "text": "It has many unique aspects.",
+          "chunks": [
+            {
+              "en": "It has many unique aspects.",
+              "ko": "한국 문화에는 독특한 면이 많습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Our clothes, housing, names, and language are not like those of any other country."
+          "text": "Our clothes, housing, names, and language are not like those of any other country.",
+          "chunks": [
+            {
+              "en": "Our clothes, housing, names, and language",
+              "ko": "우리의 옷, 주거, 이름, 그리고 언어는"
+            },
+            {
+              "en": "are not like those of any other country.",
+              "ko": "다른 어떤 나라와도 다릅니다."
+            }
+          ]
         }
       ]
     },

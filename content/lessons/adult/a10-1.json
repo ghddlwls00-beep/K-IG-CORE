@@ -22,11 +22,39 @@
       "items": [
         {
           "n": "1",
-          "text": "The land of Korea is a peninsula located between China and Japan and is surrounded by three seas: the East Sea, the West Sea, and the South Sea."
+          "text": "The land of Korea is a peninsula located between China and Japan and is surrounded by three seas: the East Sea, the West Sea, and the South Sea.",
+          "chunks": [
+            {
+              "en": "The land of Korea is a peninsula",
+              "ko": "한국 땅은 반도로"
+            },
+            {
+              "en": "located between China and Japan",
+              "ko": "중국과 일본 사이에 위치해 있으며"
+            },
+            {
+              "en": "and is surrounded by three seas:",
+              "ko": "세 바다에 둘러싸여 있습니다:"
+            },
+            {
+              "en": "the East Sea, the West Sea, and the South Sea.",
+              "ko": "동해, 서해, 그리고 남해입니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Its geographical landscape is beautiful and filled with many wonderful places to visit."
+          "text": "Its geographical landscape is beautiful and filled with many wonderful places to visit.",
+          "chunks": [
+            {
+              "en": "Its geographical landscape is beautiful",
+              "ko": "한국의 지형과 풍경은 아름다우며"
+            },
+            {
+              "en": "and filled with many wonderful places to visit.",
+              "ko": "가 볼 만한 멋진 곳들로 가득합니다."
+            }
+          ]
         }
       ]
     },

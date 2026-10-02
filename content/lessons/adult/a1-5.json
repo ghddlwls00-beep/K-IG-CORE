@@ -22,19 +22,55 @@
       "items": [
         {
           "n": "1",
-          "text": "I study many different subjects, but my favorite subject is English."
+          "text": "I study many different subjects, but my favorite subject is English.",
+          "chunks": [
+            {
+              "en": "I study many different subjects,",
+              "ko": "저는 여러 과목을 공부하지만,"
+            },
+            {
+              "en": "but my favorite subject is English.",
+              "ko": "가장 좋아하는 과목은 영어입니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "I study English every day."
+          "text": "I study English every day.",
+          "chunks": [
+            {
+              "en": "I study English every day.",
+              "ko": "저는 매일 영어를 공부합니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "I have been studying English for 2 months so far."
+          "text": "I have been studying English for 2 months so far.",
+          "chunks": [
+            {
+              "en": "I have been studying English",
+              "ko": "저는 영어를 공부해 오고 있습니다"
+            },
+            {
+              "en": "for 2 months so far.",
+              "ko": "지금까지 2개월 동안."
+            }
+          ]
         },
         {
           "n": "4",
-          "text": "I like studying English because it is fun and exciting to learn."
+          "text": "I like studying English because it is fun and exciting to learn.",
+          "chunks": [
+            {
+              "en": "I like studying English",
+              "ko": "저는 영어 공부를 좋아합니다"
+            },
+            {
+              "en": "because it is fun and exciting to learn.",
+              "ko": "배우는 것이 재미있고 신나기 때문입니다."
+            }
+          ]
         }
       ]
     },

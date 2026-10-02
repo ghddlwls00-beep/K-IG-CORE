@@ -9,6 +9,7 @@
  *   hints   the hints used in the sentence's last finished Step 2 attempt
  *   heard   Step 1: the sentence was heard to the end once — its '보기' is open (D17)
  *   mic     the best microphone score of the sentence (Step 3)
+ *   chunked ADULT 끊어 읽기 (2026-10-02): every chunk's meaning in the sentence was opened — the tab's count, not completion
  *   v       2
  *
  * Completion (D18 나): 80% of the sentences (rounded up) solved in Step 2 AND 80% spoken in Step 3 (microphone ≥ 70 or
@@ -44,9 +45,10 @@ export interface StudentPractice {
   hints: Record<number, number>;
   heard: Record<number, boolean>;
   mic: Record<number, number>;
+  chunked: Record<number, boolean>;
 }
 
-export const emptyPractice = (): StudentPractice => ({ solved: {}, completed: {}, hinted: {}, hints: {}, heard: {}, mic: {} });
+export const emptyPractice = (): StudentPractice => ({ solved: {}, completed: {}, hinted: {}, hints: {}, heard: {}, mic: {}, chunked: {} });
 
 export const practiceStorageKey = (lessonKey: string) => `kig:student:practice:${lessonKey}`;
 
@@ -78,6 +80,7 @@ export function parsePractice(raw: string | null): StudentPractice {
       hints: numberMap(d.hints),
       heard: boolMap(d.heard),
       mic: numberMap(d.mic),
+      chunked: boolMap(d.chunked),
     };
   } catch {
     return emptyPractice();
@@ -85,7 +88,7 @@ export function parsePractice(raw: string | null): StudentPractice {
 }
 
 export function serializePractice(p: StudentPractice): string {
-  return JSON.stringify({ v: 2, solved: p.solved, completed: p.completed, hinted: p.hinted, hints: p.hints, heard: p.heard, mic: p.mic });
+  return JSON.stringify({ v: 2, solved: p.solved, completed: p.completed, hinted: p.hinted, hints: p.hints, heard: p.heard, mic: p.mic, chunked: p.chunked });
 }
 
 export const countTrue = (map: Record<number, boolean>) => Object.values(map).filter(Boolean).length;

@@ -22,15 +22,53 @@
       "items": [
         {
           "n": "1",
-          "text": "My hobbies include reading books, listening to music, hiking, watching movies, and participating in sports."
+          "text": "My hobbies include reading books, listening to music, hiking, watching movies, and participating in sports.",
+          "chunks": [
+            {
+              "en": "My hobbies include",
+              "ko": "제 취미는"
+            },
+            {
+              "en": "reading books, listening to music, hiking,",
+              "ko": "독서, 음악 감상, 등산,"
+            },
+            {
+              "en": "watching movies, and participating in sports.",
+              "ko": "영화 감상, 그리고 운동하기입니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "I like to travel by car, but I especially like watching movies."
+          "text": "I like to travel by car, but I especially like watching movies.",
+          "chunks": [
+            {
+              "en": "I like to travel by car,",
+              "ko": "저는 자동차 여행을 좋아하지만,"
+            },
+            {
+              "en": "but I especially like watching movies.",
+              "ko": "특히 영화 보는 것을 좋아합니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "I like to drink tea and talk with my friends at the coffee shop as well."
+          "text": "I like to drink tea and talk with my friends at the coffee shop as well.",
+          "chunks": [
+            {
+              "en": "I like to drink tea",
+              "ko": "저는 차를 마시며"
+            },
+            {
+              "en": "and talk with my friends",
+              "ko": "친구들과 이야기하는 것도 좋아합니다"
+            },
+            {
+              "en": "at the coffee shop as well.",
+              "ko": "커피숍에서."
+            }
+          ]
         }
       ]
     },

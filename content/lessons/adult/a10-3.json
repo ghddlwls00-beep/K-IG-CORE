@@ -22,15 +22,61 @@
       "items": [
         {
           "n": "1",
-          "text": "One very interesting place to visit is the Korean Folk Village, located in 용인, near 수원, in 경기도, not far from the capital, 서울."
+          "text": "One very interesting place to visit is the Korean Folk Village, located in 용인, near 수원, in 경기도, not far from the capital, 서울.",
+          "chunks": [
+            {
+              "en": "One very interesting place to visit",
+              "ko": "가 볼 만한 아주 흥미로운 곳 하나는"
+            },
+            {
+              "en": "is the Korean Folk Village,",
+              "ko": "한국민속촌인데,"
+            },
+            {
+              "en": "located in 용인, near 수원, in 경기도,",
+              "ko": "경기도 용인(수원 근처)에 있으며,"
+            },
+            {
+              "en": "not far from the capital, 서울.",
+              "ko": "수도 서울에서 멀지 않습니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "When you visit there, you can witness a traditional wedding ceremony, taste a variety of traditional foods, and observe how Koreans lived in the past."
+          "text": "When you visit there, you can witness a traditional wedding ceremony, taste a variety of traditional foods, and observe how Koreans lived in the past.",
+          "chunks": [
+            {
+              "en": "When you visit there,",
+              "ko": "그곳을 방문하면,"
+            },
+            {
+              "en": "you can witness a traditional wedding ceremony,",
+              "ko": "전통 혼례식을 볼 수 있고,"
+            },
+            {
+              "en": "taste a variety of traditional foods,",
+              "ko": "다양한 전통 음식을 맛볼 수 있으며,"
+            },
+            {
+              "en": "and observe how Koreans lived in the past.",
+              "ko": "옛날 한국인들이 어떻게 살았는지 살펴볼 수 있습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "It is a very popular attraction for many foreign visitors."
+          "text": "It is a very popular attraction for many foreign visitors.",
+          "chunks": [
+            {
+              "en": "It is a very popular attraction",
+              "ko": "그곳은 매우 인기 있는 명소입니다"
+            },
+            {
+              "en": "for many foreign visitors.",
+              "ko": "많은 외국인 방문객들에게."
+            }
+          ]
         }
       ]
     },

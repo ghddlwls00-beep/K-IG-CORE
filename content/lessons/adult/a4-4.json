@@ -22,15 +22,65 @@
       "items": [
         {
           "n": "1",
-          "text": "My paternal grandparents passed away long ago, but my maternal grandparents are still with us, and my grandfather remains surprisingly healthy."
+          "text": "My paternal grandparents passed away long ago, but my maternal grandparents are still with us, and my grandfather remains surprisingly healthy.",
+          "chunks": [
+            {
+              "en": "My paternal grandparents passed away long ago,",
+              "ko": "친할아버지와 친할머니는 오래전에 돌아가셨지만,"
+            },
+            {
+              "en": "but my maternal grandparents are still with us,",
+              "ko": "외할아버지와 외할머니는 아직 살아 계시며,"
+            },
+            {
+              "en": "and my grandfather remains surprisingly healthy.",
+              "ko": "외할아버지는 지금도 놀랍도록 건강하십니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "My grandmother, who was diagnosed with cancer a year ago, has undergone surgery and has been recovering steadily with our whole family by her side."
+          "text": "My grandmother, who was diagnosed with cancer a year ago, has undergone surgery and has been recovering steadily with our whole family by her side.",
+          "chunks": [
+            {
+              "en": "My grandmother, who was diagnosed with cancer a year ago,",
+              "ko": "1년 전 암 진단을 받으신 외할머니는,"
+            },
+            {
+              "en": "has undergone surgery",
+              "ko": "수술을 받으셨고"
+            },
+            {
+              "en": "and has been recovering steadily",
+              "ko": "꾸준히 회복하고 계십니다"
+            },
+            {
+              "en": "with our whole family by her side.",
+              "ko": "온 가족이 곁을 지키는 가운데."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Although illness and aging seem unavoidable as we grow older, I've learned that family matters most precisely when our bodies begin to weaken."
+          "text": "Although illness and aging seem unavoidable as we grow older, I've learned that family matters most precisely when our bodies begin to weaken.",
+          "chunks": [
+            {
+              "en": "Although illness and aging seem unavoidable",
+              "ko": "병과 노화는 피할 수 없는 것 같지만"
+            },
+            {
+              "en": "as we grow older,",
+              "ko": "나이가 들면서,"
+            },
+            {
+              "en": "I've learned that family matters most",
+              "ko": "저는 가족이 가장 소중하다는 것을 배웠습니다"
+            },
+            {
+              "en": "precisely when our bodies begin to weaken.",
+              "ko": "몸이 약해지기 시작할 때야말로."
+            }
+          ]
         }
       ]
     },

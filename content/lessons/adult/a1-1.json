@@ -22,15 +22,45 @@
       "items": [
         {
           "n": "1",
-          "text": "Nice to meet you."
+          "text": "Nice to meet you.",
+          "chunks": [
+            {
+              "en": "Nice to meet you.",
+              "ko": "만나서 반갑습니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "It's a pleasure to be with you today."
+          "text": "It's a pleasure to be with you today.",
+          "chunks": [
+            {
+              "en": "It's a pleasure",
+              "ko": "기쁩니다"
+            },
+            {
+              "en": "to be with you today.",
+              "ko": "오늘 여러분과 함께하게 되어."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "First of all, thank you for giving me a chance to introduce myself."
+          "text": "First of all, thank you for giving me a chance to introduce myself.",
+          "chunks": [
+            {
+              "en": "First of all,",
+              "ko": "우선,"
+            },
+            {
+              "en": "thank you for giving me a chance",
+              "ko": "기회를 주셔서 감사합니다"
+            },
+            {
+              "en": "to introduce myself.",
+              "ko": "제 소개를 할."
+            }
+          ]
         }
       ]
     },

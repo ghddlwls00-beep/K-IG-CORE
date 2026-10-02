@@ -22,15 +22,65 @@
       "items": [
         {
           "n": "1",
-          "text": "My father is the eldest of three sons and three daughters, so I've grown up with a remarkably large circle of relatives on his side."
+          "text": "My father is the eldest of three sons and three daughters, so I've grown up with a remarkably large circle of relatives on his side.",
+          "chunks": [
+            {
+              "en": "My father is the eldest of three sons and three daughters,",
+              "ko": "저의 아버지는 3남 3녀 중 장남이셔서,"
+            },
+            {
+              "en": "so I've grown up",
+              "ko": "저는 자라 왔습니다"
+            },
+            {
+              "en": "with a remarkably large circle of relatives",
+              "ko": "놀라울 만큼 많은 친척들 사이에서"
+            },
+            {
+              "en": "on his side.",
+              "ko": "친가 쪽으로."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "All five of his younger siblings, who are now in their later years, are still alive and in good health, which I never take for granted."
+          "text": "All five of his younger siblings, who are now in their later years, are still alive and in good health, which I never take for granted.",
+          "chunks": [
+            {
+              "en": "All five of his younger siblings,",
+              "ko": "아버지의 다섯 동생분들은,"
+            },
+            {
+              "en": "who are now in their later years,",
+              "ko": "이제 연세가 드셨지만,"
+            },
+            {
+              "en": "are still alive and in good health,",
+              "ko": "모두 여전히 건강하게 살아 계시는데,"
+            },
+            {
+              "en": "which I never take for granted.",
+              "ko": "저는 이것을 결코 당연하게 여기지 않습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Even though our schedules rarely line up, I make sure to see my relatives at least once a year, a promise I've kept for decades."
+          "text": "Even though our schedules rarely line up, I make sure to see my relatives at least once a year, a promise I've kept for decades.",
+          "chunks": [
+            {
+              "en": "Even though our schedules rarely line up,",
+              "ko": "서로 일정이 잘 맞지 않지만,"
+            },
+            {
+              "en": "I make sure to see my relatives at least once a year,",
+              "ko": "저는 적어도 1년에 한 번은 꼭 친척들을 만나며,"
+            },
+            {
+              "en": "a promise I've kept for decades.",
+              "ko": "이 약속을 수십 년째 지켜 오고 있습니다."
+            }
+          ]
         }
       ]
     },

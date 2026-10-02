@@ -22,15 +22,69 @@
       "items": [
         {
           "n": "1",
-          "text": "Have you ever stopped to think about how many true friends you have, the ones who have stayed with you through every season of life?"
+          "text": "Have you ever stopped to think about how many true friends you have, the ones who have stayed with you through every season of life?",
+          "chunks": [
+            {
+              "en": "Have you ever stopped to think",
+              "ko": "잠시 생각해 본 적이 있나요"
+            },
+            {
+              "en": "about how many true friends you have,",
+              "ko": "진정한 친구가 몇 명이나 되는지,"
+            },
+            {
+              "en": "the ones who have stayed with you",
+              "ko": "여러분 곁을 지켜 온 친구들 말이에요"
+            },
+            {
+              "en": "through every season of life?",
+              "ko": "인생의 모든 계절을 함께하며?"
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Looking back, I realize I once had a wide circle of friends, though only four or five of them remain truly close today."
+          "text": "Looking back, I realize I once had a wide circle of friends, though only four or five of them remain truly close today.",
+          "chunks": [
+            {
+              "en": "Looking back,",
+              "ko": "돌이켜보면,"
+            },
+            {
+              "en": "I realize I once had a wide circle of friends,",
+              "ko": "한때 저에게는 폭넓은 친구들이 있었지만,"
+            },
+            {
+              "en": "though only four or five of them",
+              "ko": "그중 네다섯 명만이"
+            },
+            {
+              "en": "remain truly close today.",
+              "ko": "지금까지 정말 가깝게 지내고 있습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Today I'd like to introduce two of those friends, who have been shaping my life in quiet but remarkably meaningful ways for decades."
+          "text": "Today I'd like to introduce two of those friends, who have been shaping my life in quiet but remarkably meaningful ways for decades.",
+          "chunks": [
+            {
+              "en": "Today I'd like to introduce two of those friends,",
+              "ko": "오늘은 그 친구들 중 두 명을 소개하고 싶습니다,"
+            },
+            {
+              "en": "who have been shaping my life",
+              "ko": "제 삶을 만들어 온"
+            },
+            {
+              "en": "in quiet but remarkably meaningful ways",
+              "ko": "조용하지만 놀라울 만큼 의미 있는 방식으로"
+            },
+            {
+              "en": "for decades.",
+              "ko": "수십 년 동안."
+            }
+          ]
         }
       ]
     },

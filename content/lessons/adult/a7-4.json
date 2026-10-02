@@ -22,19 +22,75 @@
       "items": [
         {
           "n": "1",
-          "text": "Since the end of the war in 1953, the country has developed very quickly, especially during the 1970s."
+          "text": "Since the end of the war in 1953, the country has developed very quickly, especially during the 1970s.",
+          "chunks": [
+            {
+              "en": "Since the end of the war in 1953,",
+              "ko": "1953년 전쟁이 끝난 이후,"
+            },
+            {
+              "en": "the country has developed very quickly,",
+              "ko": "나라는 매우 빠르게 발전해 왔는데,"
+            },
+            {
+              "en": "especially during the 1970s.",
+              "ko": "특히 1970년대에 그러했습니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "From then until now, the country has continued to grow."
+          "text": "From then until now, the country has continued to grow.",
+          "chunks": [
+            {
+              "en": "From then until now,",
+              "ko": "그때부터 지금까지,"
+            },
+            {
+              "en": "the country has continued to grow.",
+              "ko": "나라는 계속 성장해 왔습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "In 1988, Korea hosted the Summer Olympic Games and in 2002, the World Cup was held in Korea, too."
+          "text": "In 1988, Korea hosted the Summer Olympic Games and in 2002, the World Cup was held in Korea, too.",
+          "chunks": [
+            {
+              "en": "In 1988,",
+              "ko": "1988년에,"
+            },
+            {
+              "en": "Korea hosted the Summer Olympic Games",
+              "ko": "한국은 하계 올림픽을 개최했고,"
+            },
+            {
+              "en": "and in 2002,",
+              "ko": "2002년에는"
+            },
+            {
+              "en": "the World Cup was held in Korea, too.",
+              "ko": "월드컵도 한국에서 열렸습니다."
+            }
+          ]
         },
         {
           "n": "4",
-          "text": "I am very proud of my country and what it has accomplished during its long history."
+          "text": "I am very proud of my country and what it has accomplished during its long history.",
+          "chunks": [
+            {
+              "en": "I am very proud of my country",
+              "ko": "저는 우리나라가 매우 자랑스럽고"
+            },
+            {
+              "en": "and what it has accomplished",
+              "ko": "우리나라가 이루어 낸 것들도 자랑스럽습니다"
+            },
+            {
+              "en": "during its long history.",
+              "ko": "오랜 역사 동안."
+            }
+          ]
         }
       ]
     },

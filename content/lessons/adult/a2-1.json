@@ -22,15 +22,65 @@
       "items": [
         {
           "n": "1",
-          "text": "It's a genuine honor to have the chance to introduce my family in English today, something I've been looking forward to for quite a while."
+          "text": "It's a genuine honor to have the chance to introduce my family in English today, something I've been looking forward to for quite a while.",
+          "chunks": [
+            {
+              "en": "It's a genuine honor",
+              "ko": "진심으로 영광입니다"
+            },
+            {
+              "en": "to have the chance to introduce my family in English today,",
+              "ko": "오늘 영어로 제 가족을 소개할 기회를 갖게 되어,"
+            },
+            {
+              "en": "something I've been looking forward to",
+              "ko": "제가 기다려 온 일이기도 합니다"
+            },
+            {
+              "en": "for quite a while.",
+              "ko": "꽤 오래전부터."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Whenever we think about our families, don't most of us carry quiet stories of gratitude and deep emotion that we rarely say out loud?"
+          "text": "Whenever we think about our families, don't most of us carry quiet stories of gratitude and deep emotion that we rarely say out loud?",
+          "chunks": [
+            {
+              "en": "Whenever we think about our families,",
+              "ko": "가족을 떠올릴 때면,"
+            },
+            {
+              "en": "don't most of us carry quiet stories",
+              "ko": "우리 대부분은 조용한 이야기를 품고 있지 않나요"
+            },
+            {
+              "en": "of gratitude and deep emotion",
+              "ko": "감사와 깊은 감동의"
+            },
+            {
+              "en": "that we rarely say out loud?",
+              "ko": "좀처럼 입 밖으로 꺼내지 않는?"
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Although no introduction can capture everything, I hope this one gives you a sense of the people who have shaped who I am."
+          "text": "Although no introduction can capture everything, I hope this one gives you a sense of the people who have shaped who I am.",
+          "chunks": [
+            {
+              "en": "Although no introduction can capture everything,",
+              "ko": "어떤 소개도 모든 것을 담아낼 수는 없지만,"
+            },
+            {
+              "en": "I hope this one gives you a sense",
+              "ko": "오늘의 소개로 느끼실 수 있기를 바랍니다"
+            },
+            {
+              "en": "of the people who have shaped who I am.",
+              "ko": "지금의 저를 만들어 준 사람들이 어떤 분들인지."
+            }
+          ]
         }
       ]
     },

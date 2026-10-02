@@ -22,15 +22,61 @@
       "items": [
         {
           "n": "1",
-          "text": "I start the afternoon stretch of work at one o'clock, which is usually when the day's most demanding tasks are waiting for me."
+          "text": "I start the afternoon stretch of work at one o'clock, which is usually when the day's most demanding tasks are waiting for me.",
+          "chunks": [
+            {
+              "en": "I start the afternoon stretch of work at one o'clock,",
+              "ko": "저는 오후 업무를 한 시에 시작하는데,"
+            },
+            {
+              "en": "which is usually when",
+              "ko": "보통 그 시간에"
+            },
+            {
+              "en": "the day's most demanding tasks are waiting for me.",
+              "ko": "하루 중 가장 부담이 큰 일들이 저를 기다리고 있습니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Though fatigue sometimes hits me without warning, I've been learning that a steady work ethic matters more than bursts of intense effort."
+          "text": "Though fatigue sometimes hits me without warning, I've been learning that a steady work ethic matters more than bursts of intense effort.",
+          "chunks": [
+            {
+              "en": "Though fatigue sometimes hits me without warning,",
+              "ko": "예고 없이 피로가 몰려올 때도 있지만,"
+            },
+            {
+              "en": "I've been learning",
+              "ko": "저는 배워오고 있습니다"
+            },
+            {
+              "en": "that a steady work ethic matters more",
+              "ko": "꾸준한 직업윤리가 더 중요하다는 것을"
+            },
+            {
+              "en": "than bursts of intense effort.",
+              "ko": "잠깐 몰아치는 노력보다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "The work brings not just deadlines and stress, but a real sense of purpose, and I usually wrap things up and head home around six."
+          "text": "The work brings not just deadlines and stress, but a real sense of purpose, and I usually wrap things up and head home around six.",
+          "chunks": [
+            {
+              "en": "The work brings not just deadlines and stress,",
+              "ko": "이 일에는 마감과 스트레스만 있는 것이 아니라,"
+            },
+            {
+              "en": "but a real sense of purpose,",
+              "ko": "분명한 보람도 있으며,"
+            },
+            {
+              "en": "and I usually wrap things up and head home around six.",
+              "ko": "저는 보통 여섯 시쯤 일을 마무리하고 퇴근합니다."
+            }
+          ]
         }
       ]
     },

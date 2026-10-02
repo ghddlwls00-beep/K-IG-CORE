@@ -22,23 +22,85 @@
       "items": [
         {
           "n": "1",
-          "text": "추석 is the biggest national holiday of the year, and it is often referred to as the Korean Thanksgiving."
+          "text": "추석 is the biggest national holiday of the year, and it is often referred to as the Korean Thanksgiving.",
+          "chunks": [
+            {
+              "en": "추석 is the biggest national holiday of the year,",
+              "ko": "추석은 한 해 중 가장 큰 명절이며,"
+            },
+            {
+              "en": "and it is often referred to",
+              "ko": "흔히 불립니다"
+            },
+            {
+              "en": "as the Korean Thanksgiving.",
+              "ko": "한국의 추수감사절이라고."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "During 추석, people visit their ancestral tombs and make an offering of food to their ancestors."
+          "text": "During 추석, people visit their ancestral tombs and make an offering of food to their ancestors.",
+          "chunks": [
+            {
+              "en": "During 추석,",
+              "ko": "추석에는,"
+            },
+            {
+              "en": "people visit their ancestral tombs",
+              "ko": "사람들이 조상의 산소를 찾아가"
+            },
+            {
+              "en": "and make an offering of food to their ancestors.",
+              "ko": "조상님께 음식을 올립니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "In addition, most people play games with their relatives and make 송편, which is a traditional Korean rice cake."
+          "text": "In addition, most people play games with their relatives and make 송편, which is a traditional Korean rice cake.",
+          "chunks": [
+            {
+              "en": "In addition,",
+              "ko": "또한,"
+            },
+            {
+              "en": "most people play games with their relatives",
+              "ko": "대부분의 사람들은 친척들과 놀이를 하고"
+            },
+            {
+              "en": "and make 송편,",
+              "ko": "송편을 빚는데,"
+            },
+            {
+              "en": "which is a traditional Korean rice cake.",
+              "ko": "송편은 한국의 전통 떡입니다."
+            }
+          ]
         },
         {
           "n": "4",
-          "text": "I like our country's traditional holidays."
+          "text": "I like our country's traditional holidays.",
+          "chunks": [
+            {
+              "en": "I like our country's traditional holidays.",
+              "ko": "저는 우리나라의 전통 명절을 좋아합니다."
+            }
+          ]
         },
         {
           "n": "5",
-          "text": "On these days I learn how important family is!"
+          "text": "On these days I learn how important family is!",
+          "chunks": [
+            {
+              "en": "On these days",
+              "ko": "이런 날이면,"
+            },
+            {
+              "en": "I learn how important family is!",
+              "ko": "가족이 얼마나 소중한지 깨닫게 됩니다!"
+            }
+          ]
         }
       ]
     },

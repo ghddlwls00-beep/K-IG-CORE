@@ -22,15 +22,69 @@
       "items": [
         {
           "n": "1",
-          "text": "I've been working for twenty years now, and I'm set to retire next year, a transition I'm approaching with both gratitude and anticipation."
+          "text": "I've been working for twenty years now, and I'm set to retire next year, a transition I'm approaching with both gratitude and anticipation.",
+          "chunks": [
+            {
+              "en": "I've been working for twenty years now,",
+              "ko": "저는 20년째 직장생활을 해오고 있으며,"
+            },
+            {
+              "en": "and I'm set to retire next year,",
+              "ko": "내년에 은퇴할 예정인데,"
+            },
+            {
+              "en": "a transition I'm approaching",
+              "ko": "이 전환기를 맞이하고 있습니다"
+            },
+            {
+              "en": "with both gratitude and anticipation.",
+              "ko": "감사함과 설렘을 함께 안고."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Throughout my career, I've tried to maintain a steady work ethic, not just to meet expectations, but to set an example for my children."
+          "text": "Throughout my career, I've tried to maintain a steady work ethic, not just to meet expectations, but to set an example for my children.",
+          "chunks": [
+            {
+              "en": "Throughout my career,",
+              "ko": "직장생활 내내,"
+            },
+            {
+              "en": "I've tried to maintain a steady work ethic,",
+              "ko": "저는 한결같은 직업윤리를 지키려고 노력해왔는데,"
+            },
+            {
+              "en": "not just to meet expectations,",
+              "ko": "단지 기대에 부응하기 위해서가 아니라,"
+            },
+            {
+              "en": "but to set an example for my children.",
+              "ko": "자녀들에게 본보기가 되기 위해서였습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "My spouse, who spent many years as a psychotherapist, reached retirement age two years ago and remains the most supportive listener in our home."
+          "text": "My spouse, who spent many years as a psychotherapist, reached retirement age two years ago and remains the most supportive listener in our home.",
+          "chunks": [
+            {
+              "en": "My spouse, who spent many years as a psychotherapist,",
+              "ko": "오랜 세월 심리치료사로 일해 온 배우자는,"
+            },
+            {
+              "en": "reached retirement age two years ago",
+              "ko": "2년 전 정년을 맞았으며"
+            },
+            {
+              "en": "and remains the most supportive listener",
+              "ko": "지금도 가장 든든하게 이야기를 들어주는 사람입니다"
+            },
+            {
+              "en": "in our home.",
+              "ko": "우리 집에서."
+            }
+          ]
         }
       ]
     },

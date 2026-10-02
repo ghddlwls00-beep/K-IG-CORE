@@ -22,15 +22,69 @@
       "items": [
         {
           "n": "1",
-          "text": "My mother is the youngest of two sons and a daughter, and her eldest brother, who never married, has been living alone for many years."
+          "text": "My mother is the youngest of two sons and a daughter, and her eldest brother, who never married, has been living alone for many years.",
+          "chunks": [
+            {
+              "en": "My mother is the youngest of two sons and a daughter,",
+              "ko": "어머니는 2남 1녀 중 막내이신데,"
+            },
+            {
+              "en": "and her eldest brother, who never married,",
+              "ko": "결혼하지 않은 어머니의 큰오빠는,"
+            },
+            {
+              "en": "has been living alone",
+              "ko": "혼자 살고 계십니다"
+            },
+            {
+              "en": "for many years.",
+              "ko": "여러 해째."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Once a month, she prepares his favorite dishes and visits his home, a dedicated habit that shows not just her kindness, but her quiet strength."
+          "text": "Once a month, she prepares his favorite dishes and visits his home, a dedicated habit that shows not just her kindness, but her quiet strength.",
+          "chunks": [
+            {
+              "en": "Once a month,",
+              "ko": "한 달에 한 번,"
+            },
+            {
+              "en": "she prepares his favorite dishes and visits his home,",
+              "ko": "어머니는 큰외삼촌이 좋아하시는 음식을 준비해 댁을 찾아가시는데,"
+            },
+            {
+              "en": "a dedicated habit that shows not just her kindness,",
+              "ko": "이 헌신적인 습관은 어머니의 따뜻함뿐 아니라,"
+            },
+            {
+              "en": "but her quiet strength.",
+              "ko": "조용한 강인함까지 보여 줍니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Watching her example, I've come to understand that caring for family isn't an occasional duty but a collaborative commitment we renew every day."
+          "text": "Watching her example, I've come to understand that caring for family isn't an occasional duty but a collaborative commitment we renew every day.",
+          "chunks": [
+            {
+              "en": "Watching her example,",
+              "ko": "어머니의 모범을 보며,"
+            },
+            {
+              "en": "I've come to understand",
+              "ko": "저는 깨닫게 되었습니다"
+            },
+            {
+              "en": "that caring for family isn't an occasional duty",
+              "ko": "가족을 돌보는 일이 가끔 하는 의무가 아니라"
+            },
+            {
+              "en": "but a collaborative commitment we renew every day.",
+              "ko": "매일 새롭게 다지는 협력적인 약속이라는 것을."
+            }
+          ]
         }
       ]
     },

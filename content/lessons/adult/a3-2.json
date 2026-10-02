@@ -22,15 +22,69 @@
       "items": [
         {
           "n": "1",
-          "text": "I'm a naturally outgoing person, so I've always enjoyed spending time with people, whether we're talking over coffee or staying active together."
+          "text": "I'm a naturally outgoing person, so I've always enjoyed spending time with people, whether we're talking over coffee or staying active together.",
+          "chunks": [
+            {
+              "en": "I'm a naturally outgoing person,",
+              "ko": "저는 타고난 외향적인 사람이라서,"
+            },
+            {
+              "en": "so I've always enjoyed spending time with people,",
+              "ko": "늘 사람들과 어울리는 것을 즐겨 왔습니다,"
+            },
+            {
+              "en": "whether we're talking over coffee",
+              "ko": "커피를 마시며 이야기를 나누든"
+            },
+            {
+              "en": "or staying active together.",
+              "ko": "함께 활동을 하든."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "My friend 대한, who shares my outgoing personality, is easy to be around, while 민국 is more introverted and reflective by nature."
+          "text": "My friend 대한, who shares my outgoing personality, is easy to be around, while 민국 is more introverted and reflective by nature.",
+          "chunks": [
+            {
+              "en": "My friend 대한,",
+              "ko": "제 친구 대한이는,"
+            },
+            {
+              "en": "who shares my outgoing personality,",
+              "ko": "저처럼 외향적인 성격이라,"
+            },
+            {
+              "en": "is easy to be around,",
+              "ko": "함께 있기 편하고,"
+            },
+            {
+              "en": "while 민국 is more introverted and reflective by nature.",
+              "ko": "민국이는 좀 더 내성적이고 사색적인 성향입니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Both of them have qualities and talents I don't possess, and our close-knit friendship has taught me not just humility, but genuine curiosity."
+          "text": "Both of them have qualities and talents I don't possess, and our close-knit friendship has taught me not just humility, but genuine curiosity.",
+          "chunks": [
+            {
+              "en": "Both of them have qualities and talents I don't possess,",
+              "ko": "두 친구 모두 제가 갖지 못한 성품과 재능을 지니고 있으며,"
+            },
+            {
+              "en": "and our close-knit friendship has taught me",
+              "ko": "우리의 끈끈한 우정은 저에게 가르쳐 주었습니다"
+            },
+            {
+              "en": "not just humility,",
+              "ko": "겸손함뿐 아니라,"
+            },
+            {
+              "en": "but genuine curiosity.",
+              "ko": "진정한 호기심까지."
+            }
+          ]
         }
       ]
     },

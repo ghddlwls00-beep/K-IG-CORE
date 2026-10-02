@@ -22,19 +22,67 @@
       "items": [
         {
           "n": "1",
-          "text": "After 고조선 fell, the Korean Peninsula was divided into three kingdoms: 고구려, 백제, and 신라."
+          "text": "After 고조선 fell, the Korean Peninsula was divided into three kingdoms: 고구려, 백제, and 신라.",
+          "chunks": [
+            {
+              "en": "After 고조선 fell,",
+              "ko": "고조선이 멸망한 뒤,"
+            },
+            {
+              "en": "the Korean Peninsula was divided into three kingdoms:",
+              "ko": "한반도는 세 왕국으로 나뉘었습니다:"
+            },
+            {
+              "en": "고구려, 백제, and 신라.",
+              "ko": "고구려, 백제, 신라로."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Later, 신라 conquered the other two kingdoms and unified most of the peninsula."
+          "text": "Later, 신라 conquered the other two kingdoms and unified most of the peninsula.",
+          "chunks": [
+            {
+              "en": "Later,",
+              "ko": "훗날,"
+            },
+            {
+              "en": "신라 conquered the other two kingdoms",
+              "ko": "신라가 다른 두 왕국을 정복하고"
+            },
+            {
+              "en": "and unified most of the peninsula.",
+              "ko": "한반도의 대부분을 통일했습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "신라 was at its most powerful during the 8th century."
+          "text": "신라 was at its most powerful during the 8th century.",
+          "chunks": [
+            {
+              "en": "신라 was at its most powerful",
+              "ko": "신라는 가장 강성했습니다"
+            },
+            {
+              "en": "during the 8th century.",
+              "ko": "8세기에."
+            }
+          ]
         },
         {
           "n": "4",
-          "text": "It was called the Golden Age of Korean history."
+          "text": "It was called the Golden Age of Korean history.",
+          "chunks": [
+            {
+              "en": "It was called",
+              "ko": "그 시기는 불렸습니다"
+            },
+            {
+              "en": "the Golden Age of Korean history.",
+              "ko": "한국 역사의 황금기라고."
+            }
+          ]
         }
       ]
     },

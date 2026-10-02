@@ -22,15 +22,65 @@
       "items": [
         {
           "n": "1",
-          "text": "I usually get home around seven, though some evenings I stay out for dinner with the coworkers I've worked beside all day."
+          "text": "I usually get home around seven, though some evenings I stay out for dinner with the coworkers I've worked beside all day.",
+          "chunks": [
+            {
+              "en": "I usually get home around seven,",
+              "ko": "저는 보통 일곱 시쯤 집에 도착하지만,"
+            },
+            {
+              "en": "though some evenings I stay out for dinner",
+              "ko": "어떤 날은 저녁을 먹고 들어가기도 합니다"
+            },
+            {
+              "en": "with the coworkers I've worked beside all day.",
+              "ko": "하루 종일 함께 일한 동료들과."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Sitting down to a meal with my family is what I value most, which is why I've been protecting that hour with dedicated effort every evening."
+          "text": "Sitting down to a meal with my family is what I value most, which is why I've been protecting that hour with dedicated effort every evening.",
+          "chunks": [
+            {
+              "en": "Sitting down to a meal with my family",
+              "ko": "가족과 마주 앉아 식사하는 시간은"
+            },
+            {
+              "en": "is what I value most,",
+              "ko": "제가 가장 소중히 여기는 것이며,"
+            },
+            {
+              "en": "which is why I've been protecting that hour",
+              "ko": "그래서 저는 그 시간을 지켜오고 있습니다"
+            },
+            {
+              "en": "with dedicated effort every evening.",
+              "ko": "매일 저녁 정성껏."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Since people rarely talk face to face these days, I keep my phone away at dinner and spend my evenings reading, studying languages, or giving back at a community center."
+          "text": "Since people rarely talk face to face these days, I keep my phone away at dinner and spend my evenings reading, studying languages, or giving back at a community center.",
+          "chunks": [
+            {
+              "en": "Since people rarely talk face to face these days,",
+              "ko": "요즘은 사람들이 좀처럼 얼굴을 마주하고 이야기하지 않기에,"
+            },
+            {
+              "en": "I keep my phone away at dinner",
+              "ko": "저는 식사 중에는 휴대폰을 멀리하고"
+            },
+            {
+              "en": "and spend my evenings reading, studying languages,",
+              "ko": "저녁 시간에는 책을 읽거나 외국어를 공부하고,"
+            },
+            {
+              "en": "or giving back at a community center.",
+              "ko": "때로는 동네 커뮤니티 센터에서 봉사하며 지냅니다."
+            }
+          ]
         }
       ]
     },

@@ -22,19 +22,59 @@
       "items": [
         {
           "n": "1",
-          "text": "I like to help other people, individually."
+          "text": "I like to help other people, individually.",
+          "chunks": [
+            {
+              "en": "I like to help other people,",
+              "ko": "저는 다른 사람들을 돕는 것을 좋아합니다,"
+            },
+            {
+              "en": "individually.",
+              "ko": "개인적으로."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "When I help others, it makes me happy."
+          "text": "When I help others, it makes me happy.",
+          "chunks": [
+            {
+              "en": "When I help others,",
+              "ko": "다른 사람들을 도울 때,"
+            },
+            {
+              "en": "it makes me happy.",
+              "ko": "저는 행복해집니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "I like to volunteer at the orphanage and help the children there."
+          "text": "I like to volunteer at the orphanage and help the children there.",
+          "chunks": [
+            {
+              "en": "I like to volunteer at the orphanage",
+              "ko": "저는 보육원에서 봉사하는 것을 좋아하고"
+            },
+            {
+              "en": "and help the children there.",
+              "ko": "그곳 아이들을 돕는 것을 좋아합니다."
+            }
+          ]
         },
         {
           "n": "4",
-          "text": "Volunteering at the orphanage is an exciting time for me."
+          "text": "Volunteering at the orphanage is an exciting time for me.",
+          "chunks": [
+            {
+              "en": "Volunteering at the orphanage",
+              "ko": "보육원에서 봉사하는 것은"
+            },
+            {
+              "en": "is an exciting time for me.",
+              "ko": "제게 신나는 시간입니다."
+            }
+          ]
         }
       ]
     },

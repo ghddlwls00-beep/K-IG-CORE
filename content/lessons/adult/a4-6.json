@@ -22,15 +22,73 @@
       "items": [
         {
           "n": "1",
-          "text": "My uncle, whose steady work ethic I've always admired, is a true magician of words who can turn even my smallest talent into a world of possibility simply through the way he speaks."
+          "text": "My uncle, whose steady work ethic I've always admired, is a true magician of words who can turn even my smallest talent into a world of possibility simply through the way he speaks.",
+          "chunks": [
+            {
+              "en": "My uncle,",
+              "ko": "작은아버지는,"
+            },
+            {
+              "en": "whose steady work ethic I've always admired,",
+              "ko": "제가 늘 존경해 온 한결같은 직업윤리를 지니신 분으로,"
+            },
+            {
+              "en": "is a true magician of words",
+              "ko": "진정한 언어의 마술사이신데"
+            },
+            {
+              "en": "who can turn even my smallest talent into a world of possibility",
+              "ko": "저의 가장 작은 재능조차 가능성의 세계로 바꿔 놓으십니다"
+            },
+            {
+              "en": "simply through the way he speaks.",
+              "ko": "말하는 방식 하나만으로."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Through him, I've learned that words can be a gift, capable of awakening potential that has been quietly sleeping within us."
+          "text": "Through him, I've learned that words can be a gift, capable of awakening potential that has been quietly sleeping within us.",
+          "chunks": [
+            {
+              "en": "Through him,",
+              "ko": "작은아버지를 통해,"
+            },
+            {
+              "en": "I've learned that words can be a gift,",
+              "ko": "저는 말이 선물이 될 수 있다는 것을 배웠습니다,"
+            },
+            {
+              "en": "capable of awakening potential",
+              "ko": "잠재력을 깨울 수 있는"
+            },
+            {
+              "en": "that has been quietly sleeping within us.",
+              "ko": "우리 안에 조용히 잠들어 있던."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Although the old saying warns that out of sight means out of mind, I believe we're all neighbors in a broad sense, and I hope to give back at a local community center."
+          "text": "Although the old saying warns that out of sight means out of mind, I believe we're all neighbors in a broad sense, and I hope to give back at a local community center.",
+          "chunks": [
+            {
+              "en": "Although the old saying warns",
+              "ko": "옛말은 말하지만"
+            },
+            {
+              "en": "that out of sight means out of mind,",
+              "ko": "눈에서 멀어지면 마음에서도 멀어진다고,"
+            },
+            {
+              "en": "I believe we're all neighbors in a broad sense,",
+              "ko": "저는 넓은 의미에서 우리 모두가 이웃이라고 믿으며,"
+            },
+            {
+              "en": "and I hope to give back at a local community center.",
+              "ko": "동네 커뮤니티 센터에서 받은 것을 돌려주며 살고 싶습니다."
+            }
+          ]
         }
       ]
     },

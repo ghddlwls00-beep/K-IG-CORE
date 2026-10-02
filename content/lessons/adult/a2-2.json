@@ -22,15 +22,65 @@
       "items": [
         {
           "n": "1",
-          "text": "I'm fortunate to have a wonderful family of four: my spouse, our son, our daughter, and myself, all of us remarkably close-knit."
+          "text": "I'm fortunate to have a wonderful family of four: my spouse, our son, our daughter, and myself, all of us remarkably close-knit.",
+          "chunks": [
+            {
+              "en": "I'm fortunate to have a wonderful family of four:",
+              "ko": "저는 운 좋게도 네 식구의 멋진 가족이 있습니다:"
+            },
+            {
+              "en": "my spouse, our son, our daughter, and myself,",
+              "ko": "배우자, 아들, 딸, 그리고 저,"
+            },
+            {
+              "en": "all of us remarkably close-knit.",
+              "ko": "우리 모두는 놀라울 만큼 끈끈한 사이입니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Our son, who got married not long ago, has started building a home of his own, which has been a proud milestone for all of us."
+          "text": "Our son, who got married not long ago, has started building a home of his own, which has been a proud milestone for all of us.",
+          "chunks": [
+            {
+              "en": "Our son, who got married not long ago,",
+              "ko": "얼마 전 결혼한 아들은,"
+            },
+            {
+              "en": "has started building a home of his own,",
+              "ko": "자신만의 가정을 꾸리기 시작했는데,"
+            },
+            {
+              "en": "which has been a proud milestone",
+              "ko": "이는 자랑스러운 이정표가 되었습니다"
+            },
+            {
+              "en": "for all of us.",
+              "ko": "우리 모두에게."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Our daughter is still a student, and even though she's busy with her studies, she never misses a chance to spend time with the family."
+          "text": "Our daughter is still a student, and even though she's busy with her studies, she never misses a chance to spend time with the family.",
+          "chunks": [
+            {
+              "en": "Our daughter is still a student,",
+              "ko": "딸은 아직 학생인데,"
+            },
+            {
+              "en": "and even though she's busy with her studies,",
+              "ko": "공부로 바쁜 와중에도,"
+            },
+            {
+              "en": "she never misses a chance",
+              "ko": "기회는 절대 놓치지 않습니다"
+            },
+            {
+              "en": "to spend time with the family.",
+              "ko": "가족과 함께할."
+            }
+          ]
         }
       ]
     },

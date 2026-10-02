@@ -22,15 +22,69 @@
       "items": [
         {
           "n": "1",
-          "text": "I've been waking up at six every morning for years now, a routine that has remarkably changed how much I get done before noon."
+          "text": "I've been waking up at six every morning for years now, a routine that has remarkably changed how much I get done before noon.",
+          "chunks": [
+            {
+              "en": "I've been waking up at six",
+              "ko": "저는 여섯 시에 일어나고 있는데"
+            },
+            {
+              "en": "every morning for years now,",
+              "ko": "몇 년째 매일 아침,"
+            },
+            {
+              "en": "a routine that has remarkably changed",
+              "ko": "이 습관은 놀라울 만큼 바꿔 놓았습니다"
+            },
+            {
+              "en": "how much I get done before noon.",
+              "ko": "오전 중에 제가 해내는 일의 양을."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "As soon as I get out of bed, I exercise, sometimes hiking a nearby trail, sometimes jogging, and sometimes playing an early round of golf."
+          "text": "As soon as I get out of bed, I exercise, sometimes hiking a nearby trail, sometimes jogging, and sometimes playing an early round of golf.",
+          "chunks": [
+            {
+              "en": "As soon as I get out of bed,",
+              "ko": "잠자리에서 일어나자마자,"
+            },
+            {
+              "en": "I exercise,",
+              "ko": "저는 운동을 합니다,"
+            },
+            {
+              "en": "sometimes hiking a nearby trail, sometimes jogging,",
+              "ko": "근처 산길을 오르기도 하고, 조깅을 하기도 하며,"
+            },
+            {
+              "en": "and sometimes playing an early round of golf.",
+              "ko": "이른 시간에 골프를 치기도 합니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Although breakfast is often rushed, I make a point of eating properly, whether that's a traditional Korean meal or simply bread and salad."
+          "text": "Although breakfast is often rushed, I make a point of eating properly, whether that's a traditional Korean meal or simply bread and salad.",
+          "chunks": [
+            {
+              "en": "Although breakfast is often rushed,",
+              "ko": "아침 식사는 늘 시간에 쫓기지만,"
+            },
+            {
+              "en": "I make a point of eating properly,",
+              "ko": "저는 제대로 챙겨 먹으려고 합니다,"
+            },
+            {
+              "en": "whether that's a traditional Korean meal",
+              "ko": "전통적인 한식이든"
+            },
+            {
+              "en": "or simply bread and salad.",
+              "ko": "간단한 빵과 샐러드든."
+            }
+          ]
         }
       ]
     },

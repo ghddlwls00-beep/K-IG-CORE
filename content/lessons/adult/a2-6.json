@@ -22,15 +22,65 @@
       "items": [
         {
           "n": "1",
-          "text": "Even though we now live in an era of small families, I believe the home is where people first learn to live in harmony with others."
+          "text": "Even though we now live in an era of small families, I believe the home is where people first learn to live in harmony with others.",
+          "chunks": [
+            {
+              "en": "Even though we now live in an era of small families,",
+              "ko": "지금은 소가족 시대이지만,"
+            },
+            {
+              "en": "I believe the home is where people first learn",
+              "ko": "저는 가정이야말로 사람이 처음 배우는 곳이라고 믿습니다"
+            },
+            {
+              "en": "to live in harmony with others.",
+              "ko": "다른 이들과 조화롭게 어울려 사는 법을."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "It's where we practice collaborative habits like helping one another, putting others first, and recovering from failure, long before we ever enter society."
+          "text": "It's where we practice collaborative habits like helping one another, putting others first, and recovering from failure, long before we ever enter society.",
+          "chunks": [
+            {
+              "en": "It's where we practice collaborative habits",
+              "ko": "가정은 협력적인 습관을 연습하는 곳입니다"
+            },
+            {
+              "en": "like helping one another, putting others first,",
+              "ko": "서로 돕고, 남을 먼저 생각하고,"
+            },
+            {
+              "en": "and recovering from failure,",
+              "ko": "실패를 딛고 일어서는 것 같은,"
+            },
+            {
+              "en": "long before we ever enter society.",
+              "ko": "사회에 나가기 훨씬 전부터."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Home is also a supportive refuge when life gets difficult, and with that thought, I'll conclude my introduction; thank you so much for listening."
+          "text": "Home is also a supportive refuge when life gets difficult, and with that thought, I'll conclude my introduction; thank you so much for listening.",
+          "chunks": [
+            {
+              "en": "Home is also a supportive refuge",
+              "ko": "또한 가정은 든든한 안식처입니다"
+            },
+            {
+              "en": "when life gets difficult,",
+              "ko": "삶이 힘들 때,"
+            },
+            {
+              "en": "and with that thought, I'll conclude my introduction;",
+              "ko": "이 말씀을 끝으로 제 소개를 마치겠습니다;"
+            },
+            {
+              "en": "thank you so much for listening.",
+              "ko": "경청해 주셔서 정말 감사합니다."
+            }
+          ]
         }
       ]
     },

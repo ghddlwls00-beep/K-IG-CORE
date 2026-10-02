@@ -22,15 +22,53 @@
       "items": [
         {
           "n": "1",
-          "text": "First, I would like to explain about traditional Korean clothing."
+          "text": "First, I would like to explain about traditional Korean clothing.",
+          "chunks": [
+            {
+              "en": "First,",
+              "ko": "먼저,"
+            },
+            {
+              "en": "I would like to explain about",
+              "ko": "설명드리고 싶습니다"
+            },
+            {
+              "en": "traditional Korean clothing.",
+              "ko": "한국의 전통 의복에 대해."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "On ordinary occasions, Korean people wear Western-style clothes."
+          "text": "On ordinary occasions, Korean people wear Western-style clothes.",
+          "chunks": [
+            {
+              "en": "On ordinary occasions,",
+              "ko": "평상시에는,"
+            },
+            {
+              "en": "Korean people wear Western-style clothes.",
+              "ko": "한국 사람들은 서양식 옷을 입습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "However, on traditional holidays, families celebrate these days by wearing traditional costumes called 한복."
+          "text": "However, on traditional holidays, families celebrate these days by wearing traditional costumes called 한복.",
+          "chunks": [
+            {
+              "en": "However, on traditional holidays,",
+              "ko": "하지만 전통 명절에는,"
+            },
+            {
+              "en": "families celebrate these days",
+              "ko": "가족들이 이날을 기념합니다"
+            },
+            {
+              "en": "by wearing traditional costumes called 한복.",
+              "ko": "한복이라 불리는 전통 의상을 입고."
+            }
+          ]
         }
       ]
     },

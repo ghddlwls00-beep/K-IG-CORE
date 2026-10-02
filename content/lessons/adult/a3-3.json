@@ -22,15 +22,69 @@
       "items": [
         {
           "n": "1",
-          "text": "My best friend is 대한, who now runs a small company and leads his team with an outstanding, genuinely collaborative style."
+          "text": "My best friend is 대한, who now runs a small company and leads his team with an outstanding, genuinely collaborative style.",
+          "chunks": [
+            {
+              "en": "My best friend is 대한,",
+              "ko": "제 가장 친한 친구는 대한이인데,"
+            },
+            {
+              "en": "who now runs a small company",
+              "ko": "지금은 작은 회사를 운영하며"
+            },
+            {
+              "en": "and leads his team",
+              "ko": "팀을 이끌고 있습니다"
+            },
+            {
+              "en": "with an outstanding, genuinely collaborative style.",
+              "ko": "탁월하고 진정으로 협력적인 방식으로."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Whenever I need help, he treats my problem as if it were his own, which is why I trust him more than almost anyone."
+          "text": "Whenever I need help, he treats my problem as if it were his own, which is why I trust him more than almost anyone.",
+          "chunks": [
+            {
+              "en": "Whenever I need help,",
+              "ko": "제가 도움이 필요할 때마다,"
+            },
+            {
+              "en": "he treats my problem as if it were his own,",
+              "ko": "그는 제 문제를 자기 일처럼 여기는데,"
+            },
+            {
+              "en": "which is why I trust him",
+              "ko": "그래서 저는 그를 신뢰합니다"
+            },
+            {
+              "en": "more than almost anyone.",
+              "ko": "누구보다도."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Since we live close to each other, we've been meeting often to play sports, and we remain supportive of each other's long-term visions."
+          "text": "Since we live close to each other, we've been meeting often to play sports, and we remain supportive of each other's long-term visions.",
+          "chunks": [
+            {
+              "en": "Since we live close to each other,",
+              "ko": "우리는 가까이 살기 때문에,"
+            },
+            {
+              "en": "we've been meeting often to play sports,",
+              "ko": "자주 만나 함께 운동을 해 오고 있으며,"
+            },
+            {
+              "en": "and we remain supportive",
+              "ko": "든든히 응원하고 있습니다"
+            },
+            {
+              "en": "of each other's long-term visions.",
+              "ko": "서로의 장기적인 비전을."
+            }
+          ]
         }
       ]
     },

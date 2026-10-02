@@ -22,31 +22,109 @@
       "items": [
         {
           "n": "1",
-          "text": "This is the story about how the nation of Korea was founded."
+          "text": "This is the story about how the nation of Korea was founded.",
+          "chunks": [
+            {
+              "en": "This is the story",
+              "ko": "이것은 이야기입니다"
+            },
+            {
+              "en": "about how the nation of Korea was founded.",
+              "ko": "한국이라는 나라가 어떻게 세워졌는지에 관한."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "According to legend, our country’s history started more than 4,000 years ago."
+          "text": "According to legend, our country’s history started more than 4,000 years ago.",
+          "chunks": [
+            {
+              "en": "According to legend,",
+              "ko": "전설에 따르면,"
+            },
+            {
+              "en": "our country’s history started",
+              "ko": "우리나라의 역사는 시작되었습니다"
+            },
+            {
+              "en": "more than 4,000 years ago.",
+              "ko": "4,000여 년 전에."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Once upon a time the King of Heaven, 환인, sent his son, 환웅, to Earth."
+          "text": "Once upon a time the King of Heaven, 환인, sent his son, 환웅, to Earth.",
+          "chunks": [
+            {
+              "en": "Once upon a time",
+              "ko": "옛날 옛적에"
+            },
+            {
+              "en": "the King of Heaven, 환인,",
+              "ko": "하늘의 왕 환인이"
+            },
+            {
+              "en": "sent his son, 환웅, to Earth.",
+              "ko": "아들 환웅을 땅으로 내려보냈습니다."
+            }
+          ]
         },
         {
           "n": "4",
-          "text": "While living on Earth, he married 웅녀, who had changed from a bear into a woman."
+          "text": "While living on Earth, he married 웅녀, who had changed from a bear into a woman.",
+          "chunks": [
+            {
+              "en": "While living on Earth,",
+              "ko": "땅에서 사는 동안,"
+            },
+            {
+              "en": "he married 웅녀,",
+              "ko": "그는 웅녀와 결혼했는데,"
+            },
+            {
+              "en": "who had changed from a bear into a woman.",
+              "ko": "웅녀는 곰에서 여자로 변한 존재였습니다."
+            }
+          ]
         },
         {
           "n": "5",
-          "text": "She gave birth to a son and named him 단군."
+          "text": "She gave birth to a son and named him 단군.",
+          "chunks": [
+            {
+              "en": "She gave birth to a son",
+              "ko": "그녀는 아들을 낳아"
+            },
+            {
+              "en": "and named him 단군.",
+              "ko": "이름을 단군이라 지었습니다."
+            }
+          ]
         },
         {
           "n": "6",
-          "text": "He became the founder of Korea."
+          "text": "He became the founder of Korea.",
+          "chunks": [
+            {
+              "en": "He became the founder of Korea.",
+              "ko": "그는 한국을 세운 시조가 되었습니다."
+            }
+          ]
         },
         {
           "n": "7",
-          "text": "The country’s ancient name was 고조선."
+          "text": "The country’s ancient name was 고조선.",
+          "chunks": [
+            {
+              "en": "The country’s ancient name",
+              "ko": "그 나라의 옛 이름은"
+            },
+            {
+              "en": "was 고조선.",
+              "ko": "고조선이었습니다."
+            }
+          ]
         }
       ]
     },

@@ -22,15 +22,69 @@
       "items": [
         {
           "n": "1",
-          "text": "대한 has excelled at his studies since his school days, and he's equally gifted at sports, playing musical instruments, and singing."
+          "text": "대한 has excelled at his studies since his school days, and he's equally gifted at sports, playing musical instruments, and singing.",
+          "chunks": [
+            {
+              "en": "대한 has excelled at his studies",
+              "ko": "대한이는 공부를 뛰어나게 잘했고"
+            },
+            {
+              "en": "since his school days,",
+              "ko": "학창 시절부터,"
+            },
+            {
+              "en": "and he's equally gifted at sports,",
+              "ko": "운동에도 똑같이 재능이 있으며,"
+            },
+            {
+              "en": "playing musical instruments, and singing.",
+              "ko": "악기 연주와 노래도 잘합니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Although he could easily keep those talents to himself, he's been sharing them generously at a local community center for years."
+          "text": "Although he could easily keep those talents to himself, he's been sharing them generously at a local community center for years.",
+          "chunks": [
+            {
+              "en": "Although he could easily keep those talents to himself,",
+              "ko": "그 재능을 혼자만 간직할 수도 있었지만,"
+            },
+            {
+              "en": "he's been sharing them generously",
+              "ko": "그는 아낌없이 나누어 오고 있습니다"
+            },
+            {
+              "en": "at a local community center",
+              "ko": "동네 커뮤니티 센터에서"
+            },
+            {
+              "en": "for years.",
+              "ko": "수년째."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Because he has so many strengths that I lack, he's a friend who constantly helps me grow, and his dedicated work ethic inspires me daily."
+          "text": "Because he has so many strengths that I lack, he's a friend who constantly helps me grow, and his dedicated work ethic inspires me daily.",
+          "chunks": [
+            {
+              "en": "Because he has so many strengths that I lack,",
+              "ko": "그는 제가 갖지 못한 장점을 많이 가지고 있어서,"
+            },
+            {
+              "en": "he's a friend who constantly helps me grow,",
+              "ko": "늘 저를 성장하게 도와주는 친구이며,"
+            },
+            {
+              "en": "and his dedicated work ethic",
+              "ko": "그의 헌신적인 직업윤리는"
+            },
+            {
+              "en": "inspires me daily.",
+              "ko": "매일 저에게 영감을 줍니다."
+            }
+          ]
         }
       ]
     },

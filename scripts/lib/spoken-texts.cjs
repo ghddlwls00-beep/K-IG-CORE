@@ -112,6 +112,8 @@ function spokenTexts({ course, id, lesson, pair = null, ldScripts = {}, dictiona
   // ADULT (2026-10-02) is spoken exactly as STUDENT — StudentLearningView is its view too: English and the Korean line
   if (course === "student" || course === "adult") {
     for (const it of itemsOf(lesson)) if (it && typeof it.text === "string") add(en(fns.firstSlashAlternative(it.text)));
+    // ADULT 끊어 읽기 (2026-10-02): each chunk is spoken by itself, the way the view says a sentence (StudentLearningView playChunks → spokenEn)
+    for (const it of itemsOf(lesson)) for (const c of (it && Array.isArray(it.chunks) ? it.chunks : [])) if (c && typeof c.en === "string") add(en(fns.firstSlashAlternative(c.en)));
     for (const b of blocksOf(lesson)) if (b && b.type === "paragraph" && b.lang === "ko") add(b.text);
   } else if (course === "grammar1" || course === "grammar2") {
     for (const d of [lesson, pair]) for (const it of itemsOf(d)) if (it && it.text && !isKo(it.text)) add(en(cleanText(it.text)));

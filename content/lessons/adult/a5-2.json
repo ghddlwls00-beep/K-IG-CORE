@@ -22,15 +22,65 @@
       "items": [
         {
           "n": "1",
-          "text": "My workday begins with a meeting among my team members, who share their opinions openly and set goals aimed at improving how efficiently we work."
+          "text": "My workday begins with a meeting among my team members, who share their opinions openly and set goals aimed at improving how efficiently we work.",
+          "chunks": [
+            {
+              "en": "My workday begins with a meeting among my team members,",
+              "ko": "제 하루 업무는 팀원들과의 회의로 시작되는데,"
+            },
+            {
+              "en": "who share their opinions openly",
+              "ko": "팀원들은 서로 의견을 솔직하게 나누고"
+            },
+            {
+              "en": "and set goals aimed at improving",
+              "ko": "목표를 세웁니다"
+            },
+            {
+              "en": "how efficiently we work.",
+              "ko": "업무 효율을 높이기 위한."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "These sessions aren't just about reviewing past performance, but about building the kind of collaborative habits that keep a team moving in one direction."
+          "text": "These sessions aren't just about reviewing past performance, but about building the kind of collaborative habits that keep a team moving in one direction.",
+          "chunks": [
+            {
+              "en": "These sessions aren't just about reviewing past performance,",
+              "ko": "이 회의는 단순히 지난 성과를 되짚는 자리가 아니라,"
+            },
+            {
+              "en": "but about building the kind of collaborative habits",
+              "ko": "협력적인 습관을 쌓아가는 자리입니다"
+            },
+            {
+              "en": "that keep a team moving in one direction.",
+              "ko": "팀이 한 방향으로 나아가게 하는."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Once the meeting wraps up, I turn to the tasks I've set for the day, which I've been trying to tackle in order of priority."
+          "text": "Once the meeting wraps up, I turn to the tasks I've set for the day, which I've been trying to tackle in order of priority.",
+          "chunks": [
+            {
+              "en": "Once the meeting wraps up,",
+              "ko": "회의가 끝나면,"
+            },
+            {
+              "en": "I turn to the tasks I've set for the day,",
+              "ko": "저는 그날 해야 할 일에 착수하는데,"
+            },
+            {
+              "en": "which I've been trying to tackle",
+              "ko": "그 일들을 처리하려고 꾸준히 노력해오고 있습니다"
+            },
+            {
+              "en": "in order of priority.",
+              "ko": "우선순위에 따라."
+            }
+          ]
         }
       ]
     },

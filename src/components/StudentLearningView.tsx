@@ -3,6 +3,11 @@
 /**
  * STUDENT — one view for all 82 lessons: Step 1 블라인드 리스닝 · Step 2 탭 딕테이션 · Step 3 섀도잉 & 낭독 (the owner's
  * step names and order; every tab still reads "Step N").
+ * ADULT (2026-10-02, 사장님 "어덜트 섹션에서 청크 학습법 하나 만들자 적절한 순서로 들어가게") has a fourth step second — 끊어 읽기:
+ * a lesson whose sentences carry `chunks` reads 1 블라인드 리스닝 · 2 끊어 읽기 · 3 탭 딕테이션 · 4 섀도잉 & 낭독. One sentence at a
+ * time: each chunk is heard by itself (tap) or all in turn with a pause ('끊어 듣기'), its meaning waits behind a grey box, and with
+ * every meaning open the whole Korean line shows. The tab counts the sentences whose meanings were all opened (practice.chunked);
+ * completion is unchanged. STUDENT has no chunks, so it keeps its three steps.
  *
  * 2026-09-27 학습법 · 화면 고침 (사장님 "검토 결과대로 … 끝까지"; docs/qa-2026-09-18/학습법-화면-0927/student-verified.md ·
  * 계획.md D01–D04). The sentences, the translations and every sound are unchanged: what is handed to playSentenceQueue is
@@ -120,12 +125,16 @@ interface StudentLearningViewProps {
   next?: StudentNextLesson | null;
 }
 
-type StudyMode = "listen" | "dictation" | "shadowing";
-const STEPS: { mode: StudyMode; n: number; name: string }[] = [
-  { mode: "listen", n: 1, name: "블라인드 리스닝" },
-  { mode: "dictation", n: 2, name: "탭 딕테이션" },
-  { mode: "shadowing", n: 3, name: "섀도잉 & 낭독" },
-];
+type StudyMode = "listen" | "chunk" | "dictation" | "shadowing";
+const STEP_NAMES: Record<StudyMode, string> = {
+  listen: "블라인드 리스닝",
+  chunk: "끊어 읽기",
+  dictation: "탭 딕테이션",
+  shadowing: "섀도잉 & 낭독",
+};
+/** STUDENT's three steps; a lesson whose sentences carry chunks (ADULT) has 끊어 읽기 second — after the first listening, before dictation */
+const THREE_STEPS: StudyMode[] = ["listen", "dictation", "shadowing"];
+const FOUR_STEPS: StudyMode[] = ["listen", "chunk", "dictation", "shadowing"];
 
 type ScriptFilter = "hidden" | "en_only" | "ko_only" | "all";
 /** docs/qa-2026-09-18/scripts/lib/containers.cjs reads the filter by data-filter, not by these words. */
@@ -204,6 +213,9 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
   );
   const total = sentenceItems.length;
   const numberOf = (idx: number) => sentenceItems[idx]?.n || String(idx + 1);
+  const hasChunks = total > 0 && sentenceItems.every((s) => (s.chunks?.length ?? 0) > 0);
+  const steps = useMemo(() => (hasChunks ? FOUR_STEPS : THREE_STEPS).map((mode, i) => ({ mode, n: i + 1, name: STEP_NAMES[mode] })), [hasChunks]);
+  const stepOf = (mode: StudyMode) => steps.find((s) => s.mode === mode)?.n ?? 1;
 
   const keepCase = useMemo(
     () => (keepFromServer && keepFromServer.length === texts.length ? keepFromServer : firstWordKeepsCase(texts, midSentenceCapitals(texts))),
@@ -250,6 +262,12 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [hintCount, setHintCount] = useState(0);
   const [koShown, setKoShown] = useState<Record<number, boolean>>({});
+
+  // 끊어 읽기 (ADULT) — one sentence at a time: which chunks' meanings are open, and which chunk is sounding
+  const [chunkIdx, setChunkIdx] = useState(0);
+  const [chunkOpen, setChunkOpen] = useState<Record<number, boolean>>({});
+  const [chunkPlay, setChunkPlay] = useState<{ idx: number; at: number; all: boolean } | null>(null);
+  const chunkOpenRef = useRef<Record<number, boolean>>({});
 
   // Step 3
   const [openMic, setOpenMic] = useState<Record<number, boolean>>({});
@@ -328,6 +346,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
     setFullMode(false);
     setTarget(null);
     setFullIdx(0);
+    setChunkPlay(null);
   }, []);
 
   useEffect(() => {
@@ -454,6 +473,28 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
     playFull(0, speed);
   }, [fullMode, stopAll, playFull, speed]);
 
+  /**
+   * 끊어 읽기: one chunk of sentence `idx`, or (all) the chunks from `from` to the end with a pause between them. A chunk is
+   * spoken as a sentence is (spokenEn) — scripts/lib/spoken-texts.cjs makes the same clips.
+   */
+  const playChunks = useCallback(
+    (idx: number, from: number, all: boolean, rate: PlaySpeed) => {
+      const list = sentenceItems[idx]?.chunks ?? [];
+      const texts = (all ? list.slice(from) : list.slice(from, from + 1)).map((c) => spokenEn(c.en)).filter(Boolean);
+      if (texts.length === 0) return;
+      setChunkPlay({ idx, at: from, all });
+      playSentenceQueue(texts, {
+        lang: "en",
+        rate,
+        gap: all ? 700 : 250,
+        onProgress: (i) => setChunkPlay({ idx, at: from + i, all }),
+        onEnd: () => setChunkPlay(null),
+        onError: () => setChunkPlay(null),
+      });
+    },
+    [sentenceItems, spokenEn],
+  );
+
   /** A new speed restarts what is playing at that speed (the same sentence, the same place in the lesson). */
   const changeSpeed = useCallback(
     (s: PlaySpeed) => {
@@ -463,12 +504,17 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
         window.setTimeout(() => playFull(at, s), 0);
         return;
       }
+      if (chunkPlay) {
+        const c = chunkPlay;
+        window.setTimeout(() => playChunks(c.idx, c.at, c.all, s), 0);
+        return;
+      }
       if (target) {
         const t = target;
         window.setTimeout(() => playSingle(t.idx, t.kind, t.loop, s), 0);
       }
     },
-    [fullMode, fullIdx, target, playFull, playSingle],
+    [fullMode, fullIdx, chunkPlay, target, playFull, playChunks, playSingle],
   );
 
   // STU-U24: the engine stopped from outside (screen off, another tab, the microphone starting) — nothing is playing,
@@ -500,7 +546,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
 
   // While the whole lesson plays, keep its sentence on screen (below the sticky header and player).
   useEffect(() => {
-    if (!fullMode || studyMode === "dictation") return;
+    if (!fullMode || studyMode === "dictation" || studyMode === "chunk") return;
     if (Date.now() - lastUserScrollRef.current < 2000) return;
     const el = itemRefs.current[fullIdx];
     if (!el) return;
@@ -668,6 +714,57 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
     }
     return dictationIdx + 1 < total ? dictationIdx + 1 : null;
   })();
+
+  // ------------------------------------------------------------------------------------------------------------
+  // 끊어 읽기 (ADULT, 2026-10-02 — 사장님 "어덜트 섹션에서 청크 학습법 하나 만들자 적절한 순서로 들어가게")
+  // ------------------------------------------------------------------------------------------------------------
+  const chunkList = sentenceItems[chunkIdx]?.chunks ?? [];
+  const chunkSounding = (k: number, all: boolean) =>
+    chunkPlay !== null && chunkPlay.idx === chunkIdx && chunkPlay.at === k && (all ? chunkPlay.all : true) && speech.speaking;
+  const runPlaying = chunkPlay !== null && chunkPlay.idx === chunkIdx && chunkPlay.all && speech.speaking;
+
+  /** Open a sentence — its meanings closed; from a number button or '다음 문장' its chunks play one by one (as Step 2 plays) */
+  const openChunkSentence = (i: number, play: boolean) => {
+    stopAll();
+    setChunkIdx(i);
+    chunkOpenRef.current = {};
+    setChunkOpen({});
+    if (play) {
+      unlockMobileAudio();
+      playChunks(i, 0, true, speed);
+    }
+  };
+  const toggleChunk = (k: number) => {
+    if (chunkSounding(k, false) && !chunkPlay?.all) {
+      stopAll();
+      return;
+    }
+    unlockMobileAudio();
+    stopAll();
+    playChunks(chunkIdx, k, false, speed);
+  };
+  const toggleChunkRun = () => {
+    if (runPlaying) {
+      stopAll();
+      return;
+    }
+    unlockMobileAudio();
+    stopAll();
+    playChunks(chunkIdx, 0, true, speed);
+  };
+  /** the meanings shown — kept in a ref too, so two quick taps never lose one (each reads what the last one set) */
+  const setMeanings = (open: Record<number, boolean>) => {
+    chunkOpenRef.current = open;
+    setChunkOpen(open);
+    // every meaning of the sentence open: it counts as read in chunks (the tab's count)
+    if (chunkList.length > 0 && chunkList.every((_, k) => open[k])) {
+      const idx = chunkIdx;
+      setPractice((p) => (p.chunked[idx] ? p : { ...p, chunked: { ...p.chunked, [idx]: true } }));
+    }
+  };
+  const openChunk = (k: number) => setMeanings({ ...chunkOpenRef.current, [k]: true });
+  const allChunksOpen = chunkList.length > 0 && chunkList.every((_, k) => chunkOpen[k]);
+  const toggleAllMeanings = () => setMeanings(allChunksOpen ? {} : Object.fromEntries(chunkList.map((_, k) => [k, true])));
 
   // ------------------------------------------------------------------------------------------------------------
   // Step 3
@@ -1112,6 +1209,103 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
     );
   }
 
+  // --- 끊어 읽기 ----------------------------------------------------------------------------------------------------
+  function renderChunks() {
+    const idx = chunkIdx;
+    const ko = koParas[idx] || "";
+    const sentencePlaying = isTargetPlaying(idx, "en", false);
+    const last = idx + 1 >= total;
+    return (
+      <div data-chunk-sentence={idx} className="flex flex-col gap-3">
+        <ol className="list-none divide-y divide-line rounded-card border border-line bg-raised">
+          {chunkList.map((c, k) => {
+            const sounding = chunkSounding(k, false);
+            return (
+              <li
+                key={k}
+                data-chunk={k}
+                className={"px-4 py-2.5 transition-colors " + (sounding ? "bg-primary-soft shadow-[inset_3px_0_0_var(--primary)]" : "")}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleChunk(k)}
+                  aria-label={`${k + 1}번째 덩어리 ${sounding && !chunkPlay?.all ? "정지" : "듣기"}`}
+                  className="flex min-h-11 w-full items-center gap-2 rounded-control text-left transition-colors cursor-pointer hover:text-primary"
+                >
+                  <span aria-hidden className={"shrink-0 " + (sounding ? "text-primary" : "text-ink-faint")}>
+                    <IconSpeaker />
+                  </span>
+                  <span data-en className="min-w-0 flex-1 text-body font-semibold text-ink">
+                    {c.en}
+                  </span>
+                </button>
+                <div className="pl-7">
+                  {chunkOpen[k] ? (
+                    <p data-ko className="pb-1 text-label text-ink-soft">
+                      {c.ko}
+                    </p>
+                  ) : (
+                    <button
+                      type="button"
+                      data-reveal="open"
+                      aria-expanded={false}
+                      onClick={() => openChunk(k)}
+                      className="flex min-h-11 w-full items-center justify-center rounded-control border border-dashed border-ink-faint/40 bg-sunken px-3 text-label font-medium text-ink-soft transition-colors cursor-pointer hover:text-ink"
+                    >
+                      뜻 보기
+                    </button>
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+
+        {allChunksOpen && ko ? (
+          <div data-chunk-whole className="rounded-card bg-sunken px-4 py-3">
+            <p className="text-caption font-semibold text-ink-soft">문장 전체 해석</p>
+            <p className="mt-1 text-label text-ink">{ko}</p>
+          </div>
+        ) : null}
+
+        <div
+          data-action-bar
+          className="sticky bottom-0 z-10 -mx-4 border-t border-line bg-surface/95 px-4 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur sm:mx-0 sm:rounded-card sm:border"
+        >
+          <div className="flex items-center gap-2">
+            <button type="button" data-action="chunk-run" onClick={toggleChunkRun} aria-pressed={runPlaying} className={`${outlineButton} shrink-0`}>
+              {runPlaying ? <IconStop /> : <IconPlay />}
+              <span>{runPlaying ? "정지" : "끊어 듣기"}</span>
+            </button>
+            <button
+              type="button"
+              data-action="sentence"
+              onClick={() => {
+                setChunkPlay(null);
+                toggleSentence(idx, "en");
+              }}
+              className={`${outlineButton} shrink-0`}
+            >
+              {sentencePlaying ? <IconStop /> : <IconPlay />}
+              <span>{sentencePlaying ? "정지" : "문장 듣기"}</span>
+            </button>
+            {last ? (
+              <button type="button" data-action="to-dictation" onClick={() => switchMode("dictation")} className={`${filledButton} min-w-0 flex-1`}>
+                <span>탭 딕테이션으로</span>
+                <IconChevronRight />
+              </button>
+            ) : (
+              <button type="button" data-action="next" onClick={() => openChunkSentence(idx + 1, true)} className={`${filledButton} min-w-0 flex-1`}>
+                <span>다음 문장</span>
+                <IconChevronRight />
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // --- Step 3 row ----------------------------------------------------------------------------------------------
   function renderShadowItem(item: SentenceItem, idx: number) {
     const playing = isTargetPlaying(idx, "en", false);
@@ -1331,20 +1525,30 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
   // ------------------------------------------------------------------------------------------------------------
   // Render
   // ------------------------------------------------------------------------------------------------------------
-  const stepNumber = STEPS.find((s) => s.mode === studyMode)?.n ?? 1;
+  const stepNumber = stepOf(studyMode);
   const hasSentences = total > 0;
+  const chunkedCount = countOf(practice.chunked);
 
   return (
     <div className="flex flex-col gap-3" data-student-view data-step={stepNumber}>
       <StepTabs
-        label={course === "adult" ? "ADULT 3단계 학습" : "STUDENT 3단계 학습"}
+        label={`${course === "adult" ? "ADULT" : "STUDENT"} ${steps.length}단계 학습`}
         stepStart
+        fit={steps.length > 3}
         current={stepNumber}
-        onSelect={(n) => switchMode(STEPS[n - 1]?.mode ?? "listen")}
-        steps={STEPS.map((s) => ({
+        onSelect={(n) => switchMode(steps[n - 1]?.mode ?? "listen")}
+        steps={steps.map((s) => ({
           n: s.n,
           name: s.name,
-          badge: !hasSentences ? undefined : s.mode === "dictation" ? `${solvedCount}/${total}` : s.mode === "shadowing" ? `${spokenCount}/${total}` : undefined,
+          badge: !hasSentences
+            ? undefined
+            : s.mode === "chunk"
+              ? `${chunkedCount}/${total}`
+              : s.mode === "dictation"
+                ? `${solvedCount}/${total}`
+                : s.mode === "shadowing"
+                  ? `${spokenCount}/${total}`
+                  : undefined,
         }))}
       />
 
@@ -1414,9 +1618,46 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
         </section>
       ) : null}
 
-      {/* ===================== Step 2 · 탭 딕테이션 ===================== */}
+      {/* ===================== 끊어 읽기 (ADULT — Step 2) ===================== */}
+      {studyMode === "chunk" ? (
+        <section data-step-panel={stepOf("chunk")} aria-label="끊어 읽기" className="flex flex-col gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+            <p className="text-label text-ink-soft">덩어리마다 듣고 뜻을 먼저 떠올린 뒤, 회색 칸을 눌러 확인하세요.</p>
+            <button type="button" data-action="all-meanings" aria-pressed={allChunksOpen} onClick={toggleAllMeanings} className={`${quietButton} shrink-0`}>
+              {allChunksOpen ? "뜻 가리기" : "뜻 모두 보기"}
+            </button>
+          </div>
+          <div role="group" aria-label="문장 고르기" className="flex flex-wrap gap-1">
+            {sentenceItems.map((_, i) => {
+              const read = practice.chunked[i] === true;
+              const current = i === chunkIdx;
+              return (
+                <button
+                  key={i}
+                  type="button"
+                  data-pill={i}
+                  data-state={read ? "solved" : "todo"}
+                  aria-current={current ? "true" : undefined}
+                  aria-label={`${i + 1}번 문장${read ? " · 끊어 읽음" : ""}`}
+                  onClick={() => openChunkSentence(i, true)}
+                  className={
+                    "flex h-11 min-w-11 shrink-0 items-center justify-center gap-0.5 rounded-control border px-2 text-label tabular-nums transition-colors cursor-pointer " +
+                    (current ? "border-line-strong/40 bg-raised font-semibold text-ink shadow-2xs" : "border-transparent font-medium text-ink-soft hover:bg-sunken")
+                  }
+                >
+                  <span>{i + 1}</span>
+                  {read ? <IconCheck size={12} className="text-success" /> : null}
+                </button>
+              );
+            })}
+          </div>
+          {renderChunks()}
+        </section>
+      ) : null}
+
+      {/* ===================== 탭 딕테이션 (Step 2 · ADULT Step 3) ===================== */}
       {studyMode === "dictation" ? (
-        <section data-step-panel="2" aria-label="탭 딕테이션" className="flex flex-col gap-3">
+        <section data-step-panel={stepOf("dictation")} aria-label="탭 딕테이션" className="flex flex-col gap-3">
           <p className="text-label text-ink-soft">문장을 듣고, 들리는 순서대로 낱말을 누르세요.</p>
           {hasSentences ? (
             // one row of numbers (a lesson of 8+ sentences — 9 of 82 — wraps once on a phone, so none hides off screen)
@@ -1449,9 +1690,9 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
         </section>
       ) : null}
 
-      {/* ===================== Step 3 · 섀도잉 & 낭독 ===================== */}
+      {/* ===================== 섀도잉 & 낭독 (Step 3 · ADULT Step 4) ===================== */}
       {studyMode === "shadowing" ? (
-        <section data-step-panel="3" aria-label="섀도잉 & 낭독" className="flex flex-col gap-3">
+        <section data-step-panel={stepOf("shadowing")} aria-label="섀도잉 & 낭독" className="flex flex-col gap-3">
           <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
             <p className="text-label text-ink-soft">듣고 바로 따라 말해 보세요.</p>
             {hasSentences ? (

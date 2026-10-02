@@ -22,15 +22,57 @@
       "items": [
         {
           "n": "1",
-          "text": "Lunch with my colleagues has become one of the parts of the day I look forward to most, even on the busiest afternoons."
+          "text": "Lunch with my colleagues has become one of the parts of the day I look forward to most, even on the busiest afternoons.",
+          "chunks": [
+            {
+              "en": "Lunch with my colleagues has become",
+              "ko": "동료들과 함께하는 점심시간은 되었습니다"
+            },
+            {
+              "en": "one of the parts of the day I look forward to most,",
+              "ko": "제가 하루 중 가장 기다리는 시간 중 하나가,"
+            },
+            {
+              "en": "even on the busiest afternoons.",
+              "ko": "아무리 바쁜 오후라 해도."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Sharing a meal gives us room for conversations that rarely happen at our desks, which is how a workplace slowly becomes a close-knit one."
+          "text": "Sharing a meal gives us room for conversations that rarely happen at our desks, which is how a workplace slowly becomes a close-knit one.",
+          "chunks": [
+            {
+              "en": "Sharing a meal gives us room for conversations",
+              "ko": "함께 식사를 하면 대화를 나눌 여유가 생기는데"
+            },
+            {
+              "en": "that rarely happen at our desks,",
+              "ko": "자리에서는 좀처럼 나누기 어려운,"
+            },
+            {
+              "en": "which is how a workplace slowly becomes a close-knit one.",
+              "ko": "직장은 그렇게 조금씩 끈끈한 곳이 되어 갑니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Although we each pay for our own lunch, we always finish with tea together, a small ritual that has kept our team remarkably supportive."
+          "text": "Although we each pay for our own lunch, we always finish with tea together, a small ritual that has kept our team remarkably supportive.",
+          "chunks": [
+            {
+              "en": "Although we each pay for our own lunch,",
+              "ko": "점심값은 각자 계산하지만,"
+            },
+            {
+              "en": "we always finish with tea together,",
+              "ko": "우리는 늘 차를 한 잔 하며 마무리하는데,"
+            },
+            {
+              "en": "a small ritual that has kept our team remarkably supportive.",
+              "ko": "이 작은 습관이 팀을 놀라울 만큼 서로 지지하게 만들어 주었습니다."
+            }
+          ]
         }
       ]
     },

@@ -144,6 +144,11 @@ export interface SentenceItem {
    * bracketed alternatives here). Graded as full marks alongside `text`.
    */
   alternatives?: string[];
+  /**
+   * ADULT 끊어 읽기 (2026-10-02): the sentence in chunks, in order — the English chunks joined by one space are `text`
+   * exactly; each Korean chunk is that chunk's meaning (scripts/build-adult-content.mjs, from the PPT's chunk slides).
+   */
+  chunks?: { en: string; ko: string }[];
 }
 
 export interface ReadingSentence {

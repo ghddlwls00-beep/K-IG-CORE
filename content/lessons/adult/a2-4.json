@@ -22,15 +22,61 @@
       "items": [
         {
           "n": "1",
-          "text": "My family loves talking with one another, whether we're shopping together on weekends or sharing a meal at a restaurant once a week."
+          "text": "My family loves talking with one another, whether we're shopping together on weekends or sharing a meal at a restaurant once a week.",
+          "chunks": [
+            {
+              "en": "My family loves talking with one another,",
+              "ko": "우리 가족은 서로 이야기 나누는 것을 무척 좋아합니다,"
+            },
+            {
+              "en": "whether we're shopping together on weekends",
+              "ko": "주말에 함께 쇼핑을 하든"
+            },
+            {
+              "en": "or sharing a meal at a restaurant once a week.",
+              "ko": "일주일에 한 번 외식을 하든."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Although we each have our own busy schedules, we've been dedicated to protecting that weekly dinner, which has become our most cherished family ritual."
+          "text": "Although we each have our own busy schedules, we've been dedicated to protecting that weekly dinner, which has become our most cherished family ritual.",
+          "chunks": [
+            {
+              "en": "Although we each have our own busy schedules,",
+              "ko": "저마다 바쁜 일정이 있지만,"
+            },
+            {
+              "en": "we've been dedicated to protecting that weekly dinner,",
+              "ko": "우리는 그 주간 저녁 식사를 지키는 데 정성을 다해왔고,"
+            },
+            {
+              "en": "which has become our most cherished family ritual.",
+              "ko": "그것은 우리 가족의 가장 소중한 의식이 되었습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "What holds us together isn't just affection, but deep mutual respect, and my spouse's willingness to share the household chores reflects that perfectly."
+          "text": "What holds us together isn't just affection, but deep mutual respect, and my spouse's willingness to share the household chores reflects that perfectly.",
+          "chunks": [
+            {
+              "en": "What holds us together isn't just affection,",
+              "ko": "우리를 하나로 묶어 주는 것은 단지 애정만이 아니라,"
+            },
+            {
+              "en": "but deep mutual respect,",
+              "ko": "서로에 대한 깊은 존중이며,"
+            },
+            {
+              "en": "and my spouse's willingness to share the household chores",
+              "ko": "집안일을 기꺼이 함께 나누는 배우자의 모습이"
+            },
+            {
+              "en": "reflects that perfectly.",
+              "ko": "그것을 잘 보여줍니다."
+            }
+          ]
         }
       ]
     },

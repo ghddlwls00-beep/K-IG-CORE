@@ -22,23 +22,73 @@
       "items": [
         {
           "n": "1",
-          "text": "Another unique aspect of Korean culture is its food."
+          "text": "Another unique aspect of Korean culture is its food.",
+          "chunks": [
+            {
+              "en": "Another unique aspect of Korean culture",
+              "ko": "한국 문화의 또 다른 독특한 면은"
+            },
+            {
+              "en": "is its food.",
+              "ko": "바로 음식입니다."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Traditional Korean meals usually include boiled rice, soup, fish or meat, several vegetable side dishes, and one or more kinds of 김치."
+          "text": "Traditional Korean meals usually include boiled rice, soup, fish or meat, several vegetable side dishes, and one or more kinds of 김치.",
+          "chunks": [
+            {
+              "en": "Traditional Korean meals usually include",
+              "ko": "전통 한국 식사에는 보통 나옵니다"
+            },
+            {
+              "en": "boiled rice, soup, fish or meat,",
+              "ko": "밥, 국, 생선이나 고기,"
+            },
+            {
+              "en": "several vegetable side dishes,",
+              "ko": "몇 가지 채소 반찬,"
+            },
+            {
+              "en": "and one or more kinds of 김치.",
+              "ko": "그리고 한 가지 이상의 김치가."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "My favorite food is 불고기."
+          "text": "My favorite food is 불고기.",
+          "chunks": [
+            {
+              "en": "My favorite food is 불고기.",
+              "ko": "제가 가장 좋아하는 음식은 불고기입니다."
+            }
+          ]
         },
         {
           "n": "4",
-          "text": "불고기 is the most popular Korean meat dish, while the most popular vegetable dish is 김치."
+          "text": "불고기 is the most popular Korean meat dish, while the most popular vegetable dish is 김치.",
+          "chunks": [
+            {
+              "en": "불고기 is the most popular Korean meat dish,",
+              "ko": "불고기는 한국에서 가장 인기 있는 고기 요리이고,"
+            },
+            {
+              "en": "while the most popular vegetable dish is 김치.",
+              "ko": "가장 인기 있는 채소 요리는 김치입니다."
+            }
+          ]
         },
         {
           "n": "5",
-          "text": "I like them both."
+          "text": "I like them both.",
+          "chunks": [
+            {
+              "en": "I like them both.",
+              "ko": "저는 둘 다 좋아합니다."
+            }
+          ]
         }
       ]
     },

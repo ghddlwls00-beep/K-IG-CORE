@@ -22,15 +22,65 @@
       "items": [
         {
           "n": "1",
-          "text": "Both of my children are independent and handle their own affairs well, a quality that has given me real peace of mind as a parent."
+          "text": "Both of my children are independent and handle their own affairs well, a quality that has given me real peace of mind as a parent.",
+          "chunks": [
+            {
+              "en": "Both of my children are independent",
+              "ko": "두 자녀 모두 독립심이 강하고"
+            },
+            {
+              "en": "and handle their own affairs well,",
+              "ko": "자기 일을 알아서 잘 해내는데,"
+            },
+            {
+              "en": "a quality that has given me real peace of mind",
+              "ko": "이 점은 저에게 큰 마음의 평안을 주었습니다"
+            },
+            {
+              "en": "as a parent.",
+              "ko": "부모로서."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "Our son, who has always been thoughtful and considerate, has wanted to give back since childhood and now works as a social worker at a community center."
+          "text": "Our son, who has always been thoughtful and considerate, has wanted to give back since childhood and now works as a social worker at a community center.",
+          "chunks": [
+            {
+              "en": "Our son, who has always been thoughtful and considerate,",
+              "ko": "늘 사려 깊고 남을 배려해 온 아들은,"
+            },
+            {
+              "en": "has wanted to give back since childhood",
+              "ko": "어릴 때부터 사회에 봉사하고 싶어 했고"
+            },
+            {
+              "en": "and now works as a social worker at a community center.",
+              "ko": "지금은 커뮤니티 센터에서 사회복지사로 일하고 있습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "Our daughter has had a gift for languages since childhood and hopes to serve the international community, and my only wish is that both of them keep contributing to society."
+          "text": "Our daughter has had a gift for languages since childhood and hopes to serve the international community, and my only wish is that both of them keep contributing to society.",
+          "chunks": [
+            {
+              "en": "Our daughter has had a gift for languages since childhood",
+              "ko": "딸은 어릴 때부터 외국어에 남다른 재능이 있었고"
+            },
+            {
+              "en": "and hopes to serve the international community,",
+              "ko": "국제사회를 위해 일하기를 꿈꾸는데,"
+            },
+            {
+              "en": "and my only wish is",
+              "ko": "저의 유일한 바람은"
+            },
+            {
+              "en": "that both of them keep contributing to society.",
+              "ko": "두 아이 모두 계속 사회에 공헌하며 살아가는 것입니다."
+            }
+          ]
         }
       ]
     },

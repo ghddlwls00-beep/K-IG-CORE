@@ -22,23 +22,65 @@
       "items": [
         {
           "n": "1",
-          "text": "I am a very outgoing person, but I am also a little shy around new people."
+          "text": "I am a very outgoing person, but I am also a little shy around new people.",
+          "chunks": [
+            {
+              "en": "I am a very outgoing person,",
+              "ko": "저는 아주 외향적인 사람이지만,"
+            },
+            {
+              "en": "but I am also a little shy",
+              "ko": "조금 수줍음을 타기도 합니다"
+            },
+            {
+              "en": "around new people.",
+              "ko": "처음 보는 사람들 앞에서는."
+            }
+          ]
         },
         {
           "n": "2",
-          "text": "I have a lot of friends."
+          "text": "I have a lot of friends.",
+          "chunks": [
+            {
+              "en": "I have a lot of friends.",
+              "ko": "저는 친구가 많습니다."
+            }
+          ]
         },
         {
           "n": "3",
-          "text": "I love to be around my friends, and they like to be around me."
+          "text": "I love to be around my friends, and they like to be around me.",
+          "chunks": [
+            {
+              "en": "I love to be around my friends,",
+              "ko": "저는 친구들과 함께 있는 것을 좋아하고,"
+            },
+            {
+              "en": "and they like to be around me.",
+              "ko": "친구들도 저와 함께 있는 것을 좋아합니다."
+            }
+          ]
         },
         {
           "n": "4",
-          "text": "I am a pretty happy person."
+          "text": "I am a pretty happy person.",
+          "chunks": [
+            {
+              "en": "I am a pretty happy person.",
+              "ko": "저는 꽤 행복한 사람입니다."
+            }
+          ]
         },
         {
           "n": "5",
-          "text": "Most people like me."
+          "text": "Most people like me.",
+          "chunks": [
+            {
+              "en": "Most people like me.",
+              "ko": "대부분의 사람들이 저를 좋아합니다."
+            }
+          ]
         }
       ]
     },

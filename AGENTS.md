@@ -155,7 +155,7 @@ node scripts/buildValidRoutes.mjs
 | LISTENING | `ld` | `content/lessons/ld/` · `content/ld_english_scripts.json` |
 | READING | `reading` | `content/lessons/reading/` |
 | STUDENT | `student` | `content/lessons/student/` — 괄호는 **빈칸**입니다 |
-| ADULT | `adult` | `content/lessons/adult/` — 2026-10-02 새 과정, STUDENT 와 같은 학습법 · 진도는 따로. [`docs/adult/README.md`](docs/adult/README.md) |
+| ADULT | `adult` | `content/lessons/adult/` — 2026-10-02 새 과정, STUDENT 와 같은 학습법에 Step 2 '끊어 읽기'를 더한 4단계(문장의 `chunks` — STUDENT 는 3단계 그대로) · 진도는 따로. [`docs/adult/README.md`](docs/adult/README.md) |
 
 **CNN · GVA 는 폐지되었습니다.** 데이터는 남아 있지만 작업 대상이 아닙니다.
 
