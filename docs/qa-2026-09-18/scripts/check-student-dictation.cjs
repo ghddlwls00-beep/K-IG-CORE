@@ -56,7 +56,7 @@ const capitals = T.studentCapitalsFrom(allTexts, COURSE === "adult" ? T.ADULT_EX
 
 const fails = [];
 const fail = (msg) => fails.push(msg);
-const stat = { sentences: 0, forms: 0, long: 0, split: 0, longWhole: [], maxTilesSplit: 0, maxTilesWhole: 0, maxTilesAll: 0, over16: 0, fixedListDistractors: 0, noDistractor: 0, blanks: [], keptFirst: new Map(), lowered: new Map(), hintProbes: 0, wrongProbes: 0 };
+const stat = { placed: [], sentences: 0, forms: 0, long: 0, split: 0, longWhole: [], maxTilesSplit: 0, maxTilesWhole: 0, maxTilesAll: 0, over16: 0, fixedListDistractors: 0, noDistractor: 0, blanks: [], keptFirst: new Map(), lowered: new Map(), hintProbes: 0, wrongProbes: 0 };
 
 for (const { id, texts } of lessons) {
   const keep = D.firstWordKeepsCase(texts, capitals);
@@ -78,9 +78,12 @@ for (const { id, texts } of lessons) {
     // 7 · blanks
     let blanks = B.blanksOf(id, i, text);
     if (BREAK === "blank" && id === "s20-5" && i === 5) blanks = [{ key: `${id}#6:0`, start: text.indexOf("("), end: text.indexOf(")") + 1, text: text.slice(text.indexOf("("), text.indexOf(")") + 1), label: "x" }];
-    const runs = B.fixedRunsOf(text, blanks);
+    // the tile drill places only "(…)" placeholders — a word the sentence says (홍길동 · 서울) is a tile (2026-10-02, as the view)
+    const runs = B.fixedRunsOf(text, B.dictationBlanks(blanks));
     if (blanks.length) {
       stat.blanks.push({ where, lesson: id, blanks: blanks.map((b) => b.text) });
+      const placed = B.dictationBlanks(blanks);
+      if (placed.length) stat.placed.push(`${where}: ${placed.map((b) => b.text).join(" · ")}`);
       if (!runs) fail(`${where}: blank positions differ between the slash forms`);
     }
     // 2 · build
@@ -176,6 +179,10 @@ for (const { id, texts } of lessons) {
 
 const blankLessons = new Set(stat.blanks.map((b) => b.lesson));
 const wantSentences = COURSE === "adult" ? 228 : 414;
+// 2026-10-02 (사장님 "원래 낱말로 되살리기" · "이렇게 오류 있는거 다 찾아서 변경해"): only placeholders the textbook never filled are
+// placed by the app — STUDENT s6-2 #3 (age) · s9-1 #3 (dog's name); ADULT none. Every other word of every sentence is a tile.
+const wantPlaced = COURSE === "adult" ? 0 : 2;
+if (stat.placed.length !== wantPlaced) fail(`placeholders placed by the app: ${stat.placed.length} (expected ${wantPlaced}) — ${stat.placed.join(" / ")}`);
 if (stat.sentences !== wantSentences) fail(`sentences ${stat.sentences} (expected ${wantSentences})`);
 // STUDENT 20 sentences in 14 lessons; ADULT 7 in 2 — a1-2's six sentences of 내 정보 (10 blanks) and a1-5 "(2) months"
 const [wantBlanks, wantLessons] = COURSE === "adult" ? [7, 2] : [20, 14];
@@ -190,6 +197,7 @@ console.log(`방해 낱말: 고정 목록에서 온 것 ${stat.fixedListDistract
 console.log(`첫 타일 대문자로 남음: ${fmt(stat.keptFirst)}`);
 if (LIST) console.log(`첫 타일 소문자로: ${fmt(stat.lowered)}`);
 console.log(`내 정보 칸: ${stat.blanks.length}문장 · ${blankLessons.size}강`);
+console.log(`받아쓰기에서 앱이 채우는 칸(괄호 자리표시) ${stat.placed.length}문장: ${stat.placed.join(" / ") || "없음"}`);
 for (const b of stat.blanks) console.log(`   ${b.where}: ${b.blanks.join(" · ")}`);
 console.log(`거꾸로 놓은 앞부분 오답 확인 ${stat.wrongProbes} · 틀린 첫 타일 뒤 힌트 확인 ${stat.hintProbes}`);
 console.log(fails.length ? `\nFAIL ${fails.length}` : "\nPASS — 모든 문장 · 모든 꼴이 부분 조립으로 판정기를 통과");

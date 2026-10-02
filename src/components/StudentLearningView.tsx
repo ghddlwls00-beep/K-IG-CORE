@@ -66,7 +66,7 @@ import {
   type DictTile,
   type Dictation,
 } from "@/lib/studentDictation";
-import { blanksOf, fixedRunsOf, micTargets, readMyInfo, segmentsOf, writeMyInfo, type Blank } from "@/lib/studentBlanks";
+import { blanksOf, dictationBlanks, fixedRunsOf, micTargets, readMyInfo, segmentsOf, writeMyInfo, type Blank } from "@/lib/studentBlanks";
 import {
   ADULT_LEARNING_PROFILE,
   STUDENT_LEARNING_PROFILE,
@@ -218,7 +218,8 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
       texts.map((text, i) =>
         buildDictation(text, {
           pool: distractorPool(texts, keepCase, i),
-          fixed: fixedRunsOf(text, blanks[i]) ?? [],
+          // a word the sentence really says (홍길동 · 서울) is a tile here; only a "(…)" placeholder is placed by the app (dictationBlanks)
+          fixed: fixedRunsOf(text, dictationBlanks(blanks[i])) ?? [],
           keepFirstCase: keepCase[i],
           allowSplit: true,
         }),

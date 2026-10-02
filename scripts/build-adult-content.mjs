@@ -77,6 +77,11 @@ const CH1_EN = {
  * 2과 #14: the family has one son and one daughter, so "Our eldest son" (the oldest of three or more) becomes "Our son".
  */
 const EN_FIX = {
+  // #21: the PPT's "(2)" is a fill-in; the number itself, so it is a tile like every word (사장님 2026-10-02 "이렇게 오류 있는거 다
+  // 찾아서 변경해" — a "(…)" is placed by the app, never assembled). It stays a '내 정보' blank in Step 3 (studentBlanks a1-5).
+  "1과.pptx": {
+    21: ["I have been studying English for 2 months so far.", "저는 지금까지 2개월 동안 영어를 공부해 오고 있습니다."],
+  },
   "2과.pptx": {
     14: [
       "Our son, who has always been thoughtful and considerate, has wanted to give back since childhood and now works as a social worker at a community center.",

@@ -101,11 +101,22 @@ export const KOREAN_WORD_SOUNDS: Record<string, [string, string[]]> = {
   jjimjilbang: ["찜질방", ["ˈtʃimˌdʒilˌbɑŋ"]],
   Gwangju: ["광주", ["ˈɡwɑŋˌdʒu"]],
   hagwons: ["학원", ["ˈhɑˌɡwʌnz"]],
+  // STUDENT's sample words back (2026-10-02 — scripts/restore-sample-words.mjs): 길동 as in Hong Gil Dong · 태권도 with the
+  // aspirated ㅌ as an English t
+  Gildong: ["길동", ["ˈɡilˌdoʊŋ"]],
+  Taekwondo: ["태권도", ["ˈtɛˌkwʌnˌdoʊ"]],
 };
 
 /** Which romanized Korean words each page says in Korean — per page, so an American "Kim" elsewhere stays English. */
 const KOREAN_WORD_PAGES: Record<string, string[]> = {
-  "student/s1-2": ["Hong Gil Dong", "Seoul"],
+  "student/s1-2": ["Hong Gil Dong", "Seoul", "Hanguk"],
+  // the sample words restored 2026-10-02 (scripts/restore-sample-words.mjs)
+  "student/s2-5": ["Hanguk"],
+  "student/s3-2": ["Daehan", "Minguk"],
+  "student/s4-5": ["Gildong"],
+  "student/s6-1": ["Taekwondo"],
+  "student/s6-2": ["Hong"],
+  "student/s6-3": ["Gangwon"],
   "student/s8-3": ["bulgogi"],
   "student/s12-3": ["Gangwon"],
   "student/s13-2": ["Yi Sun-sin", "Yi"],
@@ -245,7 +256,13 @@ export const KOREAN_DISPLAY_PAGES: Record<string, [string, string][]> = {
   "adult/a12-3": [["서울", "Seoul"]],
   // STUDENT · READING (2026-10-02, 사장님 "어 있는거 싹다 꼼꼼히 찾아서 다 작업해") — the same way as ADULT; STUDENT 17~20장 are
   // ADULT 7~10과's sentences, written alike. scripts/korean-words-hangul.mjs writes the lessons from these rows.
-  "student/s1-2": [["홍길동", "Hong Gil Dong"], ["서울", "Seoul"]],
+  "student/s1-2": [["홍길동", "Hong Gil Dong"], ["서울", "Seoul"], ["한국", "Hanguk"]],
+  "student/s2-5": [["한국", "Hanguk"]],
+  "student/s3-2": [["대한", "Daehan"], ["민국", "Minguk"]],
+  "student/s4-5": [["길동", "Gildong"]],
+  "student/s6-1": [["태권도", "Taekwondo"]],
+  "student/s6-2": [["홍", "Hong"]],
+  "student/s6-3": [["강원도", "Gangwon Province"]],
   "student/s8-3": [["불고기", "bulgogi"]],
   "student/s12-3": [["강원도", "Gangwon Province"]],
   "student/s13-2": [["Admiral 이순신", "Admiral Yi Sun-sin"], ["Admiral 이", "Admiral Yi"]],

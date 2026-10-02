@@ -1,56 +1,11 @@
 [
  {
   "lesson": "s1-2",
-  "kind": "고침",
-  "text": "I live in (apartment name) Apartments.",
-  "original": "I live at (apartment name).",
-  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-29 Hangul inside English; placeholders for the learner's own details"
- },
- {
-  "lesson": "s1-2",
-  "kind": "고침",
-  "text": "I am a 4th grade student at (school name) Elementary School.",
-  "original": "I am a (1st 2nd,3rd) grade student at (name of school) Elementary School.",
-  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-29 Hangul inside English; placeholders for the learner's own details"
- },
- {
-  "lesson": "s1-2",
-  "kind": "고침",
-  "text": "I am (10) years old.",
-  "original": "I am (age) years old.",
-  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-29 Hangul inside English; placeholders for the learner's own details"
- },
- {
-  "lesson": "s1-2",
   "kind": "한국어",
   "text": "나의 이름은 홍길동이고, 나는 서울에 삽니다.",
   "original": "나의 이름은 홍길동입니다 그리고 나는 서울에 삽니다.",
   "en": "My name is Hong Gil Dong, and I live in Seoul.",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1622 s1-2 #1 — 두 절을 문장부호 없이 이음'"
- },
- {
-  "lesson": "s1-2",
-  "kind": "한국어",
-  "text": "나는 (아파트 이름) 아파트에 삽니다.",
-  "original": "나는 한국아파트에 삽니다.",
-  "en": "I live in (apartment name) Apartments.",
-  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
- },
- {
-  "lesson": "s1-2",
-  "kind": "한국어",
-  "text": "나는 (학교 이름) 초등학교 4학년입니다.",
-  "original": "나는 한국 초등학교 4학년입니다",
-  "en": "I am a 4th grade student at (school name) Elementary School.",
-  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
- },
- {
-  "lesson": "s1-2",
-  "kind": "한국어",
-  "text": "나는 (10)살입니다.",
-  "original": "나는 11살 입니다.",
-  "en": "I am (10) years old.",
-  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
  },
  {
   "lesson": "s1-3",
@@ -154,14 +109,6 @@
   "original": "나는 좋은 가족이 있습니다.",
   "en": "I have a nice family.",
   "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s2-2 한국어 #1'"
- },
- {
-  "lesson": "s2-2",
-  "kind": "한국어",
-  "text": "저의 가족은 (4)명입니다. 저의 아버지, 어머니, 여동생 그리고 저입니다.",
-  "original": "나의 가족은 (4) 명 입니다: 저의 아버지, 어머니, 여동생, 그리고 저 자신입니다.",
-  "en": "There are (4) people in my family: my father, my mother, my sister, and myself.",
-  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-a.json '6-1629 s2-2 #2 — (4)명입니다 · 영어 쌍점을 옮긴 두 번 끝남'"
  },
  {
   "lesson": "s2-3",
@@ -282,14 +229,6 @@
   "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s2-4 한국어 #9'"
  },
  {
-  "lesson": "s2-5",
-  "kind": "한국어",
-  "text": "나의 여동생은 (학교 이름) 초등학교에 다닙니다.",
-  "original": "나의 여동생은 (한국)초등학교에 다닙니다.",
-  "en": "My sister attends (School Name) Elementary School.",
-  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-b.json '6-1635 s2-5 #1 — 학습자 빈칸 자리표시를 과정 꼴 (학교 이름) 으로'"
- },
- {
   "lesson": "s2-6",
   "kind": "한국어",
   "text": "사실 그녀는 개를 한 마리 키웁니다.",
@@ -328,22 +267,6 @@
   "original": "그는/그녀는 나의 가장 좋은 친구 중 한명 입니다.",
   "en": "He/She is one of my best friends.",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-b.json '6-1641 s3-1 #3 — best friend = 가장 친한 친구(다음 과 s3-2 처럼)'"
- },
- {
-  "lesson": "s3-2",
-  "kind": "한국어",
-  "text": "그들의 이름은 (이름들)입니다.",
-  "original": "그들의 이름은 대한, 민국 입니다.",
-  "en": "Their names are (names).",
-  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
- },
- {
-  "lesson": "s3-2",
-  "kind": "한국어",
-  "text": "나의 가장 친한 친구는 (이름)이고 나는 그를/그녀를 3년 동안 알아 왔습니다.",
-  "original": "저의 가장 친한 친구는 대한 이고 나는 그를/그녀를 3년 동안 알아왔습니다.",
-  "en": "My best friend is (name), and I have known him/her for 3 years.",
-  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1658 같은 종류 — s3-2 #5'"
  },
  {
   "lesson": "s3-2",
@@ -462,22 +385,6 @@
  {
   "lesson": "s4-3",
   "kind": "한국어",
-  "text": "나의 아버지는 (두) 명의 남자형제와 (두) 명의 여자형제가 있으십니다.",
-  "original": "나의 아버지는 두 명의 남자형제와 두 명의 여자형제가 있습니다.",
-  "en": "First of all, my father has (two) brothers and (two) sisters.",
-  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1683 (1) 같은 종류 — s4-3 #1 아버지 … 있습니다'"
- },
- {
-  "lesson": "s4-3",
-  "kind": "한국어",
-  "text": "나의 어머니 또한 (두) 명의 남자형제와 (두) 명의 여자형제가 있으십니다.",
-  "original": "나의 어머니 또한 두 명의 남자형제와 두 명의 여자형제가 있습니다.",
-  "en": "My mother also has (two) brothers and (two) sisters.",
-  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-i.json '6-1683 (1) 같은 종류 — s4-3 #2 어머니 또한 … 있습니다'"
- },
- {
-  "lesson": "s4-3",
-  "kind": "한국어",
   "text": "나의 아버지는 둘째 아들이십니다.",
   "original": "나의 아버지는 둘째 아들 입니다.",
   "en": "My father is the second son.",
@@ -502,13 +409,6 @@
  {
   "lesson": "s4-4",
   "kind": "고침",
-  "text": "She has (two) older brothers and (two) older sisters.",
-  "original": "She has two older brothers and two sisters.",
-  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1652 s4-4 #2 영어 — 앞 과에서 학습자가 바꾼 수와 어긋나지 않게 빈칸'"
- },
- {
-  "lesson": "s4-4",
-  "kind": "고침",
   "text": "Because my grandfather passed away several years ago, my grandmother lives with my mother’s eldest brother.",
   "original": "Because grandfather passed away several years ago, my grandmother lives with my mother’s eldest brother.",
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-17 … S-28"
@@ -520,14 +420,6 @@
   "original": "나의 어머니는 그녀의 가족가운데 제일 막내입니다.",
   "en": "My mother is the youngest child in her family.",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1682 같은 종류 — s4-4 #1 (가족 가운데 띄어쓰기도)'"
- },
- {
-  "lesson": "s4-4",
-  "kind": "한국어",
-  "text": "그분은 오빠가 (2)명 있고, 언니가 (2)명 있으십니다.",
-  "original": "그녀는 오빠가2명 있고, 여동생이2명 있습니다.",
-  "en": "She has (two) older brothers and (two) older sisters.",
-  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1682 같은 종류 — s4-4 #2'"
  },
  {
   "lesson": "s4-4",
@@ -544,14 +436,6 @@
   "original": "할머니께서 몇 년 전에 돌아가셨기 때문에 나의 할머니는 나의 어머니의 가장 큰 오빠와 살고 있습니다.",
   "en": "Because my grandfather passed away several years ago, my grandmother lives with my mother’s eldest brother.",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1654 s4-4 #4 — 어머니의 가장 큰 오빠 = 큰외삼촌 · 외할머니 높임'"
- },
- {
-  "lesson": "s4-5",
-  "kind": "한국어",
-  "text": "내가 가장 좋아하는 친척은 나의 큰아버지 (삼촌 이름)입니다.",
-  "original": "나의 가장 좋아하는 친척은 나의 가장 나이 많은 삼촌 길동입니다.",
-  "en": "My favorite relative is my oldest uncle, (uncle’s name).",
-  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-c.json '6-1653 s4-5 #1 — 같은 사람을 s4-3 은 큰아버지 · 여기는 큰삼촌 → 큰아버지 · '나의 가장 좋아하는' → 내가 가장 좋아하는'"
  },
  {
   "lesson": "s4-5",
@@ -688,22 +572,6 @@
   "why": "아직 커밋 전(작업 트리) · 계획 stage7-student-ko.json '7-4 f G13 — s5-4 한국어 #4'"
  },
  {
-  "lesson": "s6-1",
-  "kind": "한국어",
-  "text": "나는 영어 클럽에 가고 나의 남동생/여동생은 (클럽 이름) 클럽에 갑니다.",
-  "original": "나는 영어 클럽에 가고 나의 남동생/여동생은 태권도클럽에 갑니다.",
-  "en": "I attend the English Club, and my brother/sister is in the (Club’s Name) Club.",
-  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-d.json '6-1668 s6-1 #6 — 영어는 빈칸(Club's Name)인데 한국어가 태권도로 채움'"
- },
- {
-  "lesson": "s6-2",
-  "kind": "한국어",
-  "text": "나의 선생님 성함은 (성) 선생님이십니다.",
-  "original": "나의 선생님 성함은 홍선생님 이십니다.",
-  "en": "My teacher’s name is Mr./Ms. (Surname).",
-  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
- },
- {
   "lesson": "s6-2",
   "kind": "짝",
   "text": "He/She is about (age) years old.",
@@ -736,13 +604,6 @@
  {
   "lesson": "s6-3",
   "kind": "고침",
-  "text": "My teacher is from (Name).",
-  "original": "My teacher is from (Name) province.",
-  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-factual-student-a.json '6-1670 s6-3 #1 — 서울·광역시 출신이면 province 가 틀림. 한국어 '(지역)' 과 맞춤'"
- },
- {
-  "lesson": "s6-3",
-  "kind": "고침",
   "text": "Sometimes, he/she speaks with a regional accent!",
   "original": "Sometimes, He/She speaks with a funny accent!",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-d.json '6-1671 s6-3 #2 영어 — 선생님의 지방 말씨를 'funny' 로(놀림으로 들림)'"
@@ -767,14 +628,6 @@
   "text": "I think he/she likes the color black because he/she always wears a black suit.",
   "original": "I think he/she likes the color blue (green, red, black, purple, etc.) because he/she always wears a (red tie, black suit, purple dress).",
   "why": "커밋 f35e8be (09-23) fix: 4·5단계 — 교육 내용 심각·높음 88건과 등록부 버그, 소유자 결정 반영 · 계획 student-criterion9-0923.json '49 (기준 9) s6-3 EN6'"
- },
- {
-  "lesson": "s6-3",
-  "kind": "한국어",
-  "text": "나의 선생님은 (지역) 출신이십니다.",
-  "original": "나의 선생님은 강원도 출신이십니다.",
-  "en": "My teacher is from (Name).",
-  "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS-"
  },
  {
   "lesson": "s6-3",
@@ -1009,14 +862,6 @@
  {
   "lesson": "s8-3",
   "kind": "한국어",
-  "text": "내가 가장 좋아하는 음식은 (불고기)입니다.",
-  "original": "저의 가장 좋아하는 음식은 (불고기) 입니다.",
-  "en": "My favorite food is (bulgogi).",
-  "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-e.json '6-1686 (2) s8-3 #4 — 저의 → 이 과의 다른 문단처럼 '나' · '나의 가장 좋아하는' → 내가 가장 좋아하는(6-1653 과 같음)'"
- },
- {
-  "lesson": "s8-3",
-  "kind": "한국어",
   "text": "우리는 저녁 식사 시간에 항상 좋은 대화를 나눕니다.",
   "original": "우리는 저녁 식사 시간에 항상 많은 대화를 나눕니다.",
   "en": "We always have great conversations at dinnertime.",
@@ -1083,14 +928,6 @@
   "original": "우리가 먹을 때, 나의 아버지께서는 그의 하루에 관해 말씀하시고 우리는 우리의 경험들을 나눕니다.",
   "en": "When we eat, my father usually talks about his day, and we share our experiences.",
   "why": "커밋 86d9ac9 (09-23) content: 6단계 교정 — 감사 목록 1,759칸 전부 결론 (소유자 배포 결정 2026-09-23) · 계획 stage6-student-f.json '6-1683 (2) 같은 종류 — s9-3 #3 '아버지께서는 그의 하루' (어머니께서는 … 그녀는 과 같은 겹침)'"
- },
- {
-  "lesson": "s9-3",
-  "kind": "한국어",
-  "text": "내가 가장 좋아하는 TV 쇼들은 (TV 쇼 이름)과 (TV 쇼 이름)입니다.",
-  "original": "내가 가장 좋아하는 TV쇼들은 미러클과 판타스틱 입니다.",
-  "en": "My favorite TV shows are (TV show name) and (TV show name).",
-  "why": "커밋 950417d (09-23) content: STUDENT 원본 되살리기 — 20과를 원본 교재대로 (소유자 결정 2026-09-23)"
  },
  {
   "lesson": "s9-3",
@@ -1572,14 +1409,6 @@
   "text": "Her ability to interpret so well had a great effect on me.",
   "original": "Her ability to interpret so well had a great affect on me.",
   "why": "커밋 f3f6cb6 (09-17) fix(student): correct every STUDENT finding S-01..S-33 (ISS- · 9/17 감사 S-12 dates; S-19 effect"
- },
- {
-  "lesson": "s16-1",
-  "kind": "한국어",
-  "text": "나는 빌 게이츠, (이름), (이름)과 같은 많은 성공한 사람들에 대해 TV에서 보았고 책에서 읽었습니다.",
-  "original": "나는 빌 게이츠, 아인슈타인, 과 같은 많은 성공한 사람들에 대해서 T.V에서 보아왔고, 읽어왔습니다.",
-  "en": "I have seen on TV and read about many successful people such as Bill Gates, (name) and (name).",
-  "why": "커밋 603ce71 (09-07) fix(student): reorder all 81 lessons into chronological narr · 한국어 판단(7단계 j): 지금 글을 둠: 원본은 '아인슈타인, 과 같은'(떠도는 쉼표) · 'T.V' · 영어의 (name) 자리표와 다름 — 영어와 같게 (이름) 자리표"
  },
  {
   "lesson": "s16-1",
@@ -2229,5 +2058,161 @@
   "text": "He/She is very kind, and I like him/her a lot.",
   "original": "He/She is very kind, and I like her/him a lot.",
   "why": "관문 15 결정 B student/F:student/s6-3:T05(① 낮음) — 'He/She is very kind, and I like her/him a lot.' 를 고침"
+ },
+ {
+  "lesson": "s1-2",
+  "kind": "바꿈",
+  "text": "I live in Hanguk Apartments.",
+  "original": "I live at (apartment name).",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s1-2",
+  "kind": "고침",
+  "text": "I am a 4th grade student at Hanguk Elementary School.",
+  "original": "I am a (1st 2nd,3rd) grade student at (name of school) Elementary School.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s2-2",
+  "kind": "한국어",
+  "text": "저의 가족은 4명입니다. 저의 아버지, 어머니, 여동생 그리고 저입니다.",
+  "original": "나의 가족은 (4) 명 입니다: 저의 아버지, 어머니, 여동생, 그리고 저 자신입니다.",
+  "en": "There are 4 people in my family: my father, my mother, my sister, and myself.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s2-5",
+  "kind": "고침",
+  "text": "My sister attends Hanguk Elementary School.",
+  "original": "My sister attends (School Name) Elementary School.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s3-2",
+  "kind": "고침",
+  "text": "Their names are Daehan and Minguk.",
+  "original": "Their names are (names).",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s3-2",
+  "kind": "고침",
+  "text": "My best friend is Daehan, and I have known him/her for 3 years.",
+  "original": "My best friend is (name), and I have known him/her for 3 years.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s3-2",
+  "kind": "한국어",
+  "text": "그들의 이름은 대한과 민국입니다.",
+  "original": "그들의 이름은 대한, 민국 입니다.",
+  "en": "Their names are Daehan and Minguk.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s3-2",
+  "kind": "한국어",
+  "text": "나의 가장 친한 친구는 대한이고 나는 그를/그녀를 3년 동안 알아 왔습니다.",
+  "original": "저의 가장 친한 친구는 대한 이고 나는 그를/그녀를 3년 동안 알아왔습니다.",
+  "en": "My best friend is Daehan, and I have known him/her for 3 years.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s4-3",
+  "kind": "한국어",
+  "text": "나의 아버지는 두 명의 남자형제와 두 명의 여자형제가 있으십니다.",
+  "original": "나의 아버지는 두 명의 남자형제와 두 명의 여자형제가 있습니다.",
+  "en": "First of all, my father has two brothers and two sisters.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s4-3",
+  "kind": "한국어",
+  "text": "나의 어머니 또한 두 명의 남자형제와 두 명의 여자형제가 있으십니다.",
+  "original": "나의 어머니 또한 두 명의 남자형제와 두 명의 여자형제가 있습니다.",
+  "en": "My mother also has two brothers and two sisters.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s4-4",
+  "kind": "고침",
+  "text": "She has two older brothers and two older sisters.",
+  "original": "She has two older brothers and two sisters.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s4-4",
+  "kind": "한국어",
+  "text": "그분은 오빠가 2명 있고, 언니가 2명 있으십니다.",
+  "original": "그녀는 오빠가2명 있고, 여동생이2명 있습니다.",
+  "en": "She has two older brothers and two older sisters.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s4-5",
+  "kind": "고침",
+  "text": "My favorite relative is my oldest uncle, Gildong.",
+  "original": "My favorite relative is my oldest uncle, (uncle’s name).",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s4-5",
+  "kind": "한국어",
+  "text": "내가 가장 좋아하는 친척은 나의 큰아버지 길동입니다.",
+  "original": "나의 가장 좋아하는 친척은 나의 가장 나이 많은 삼촌 길동입니다.",
+  "en": "My favorite relative is my oldest uncle, Gildong.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s6-1",
+  "kind": "고침",
+  "text": "I attend the English Club, and my brother/sister is in the Taekwondo Club.",
+  "original": "I attend the English Club, and my brother/sister is in the (Club’s Name) Club.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s6-2",
+  "kind": "고침",
+  "text": "My teacher’s name is Mr./Ms. Hong.",
+  "original": "My teacher’s name is Mr./Ms (Surname).",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s6-3",
+  "kind": "고침",
+  "text": "My teacher is from Gangwon Province.",
+  "original": "My teacher is from (Name) province.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s8-3",
+  "kind": "한국어",
+  "text": "내가 가장 좋아하는 음식은 불고기입니다.",
+  "original": "저의 가장 좋아하는 음식은 (불고기) 입니다.",
+  "en": "My favorite food is bulgogi.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s9-3",
+  "kind": "고침",
+  "text": "My favorite TV shows are Miracle and Fantastic.",
+  "original": "My favorite T.V. shows are (T.V. show name) and (T.V. show name).",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s16-1",
+  "kind": "고침",
+  "text": "I have seen on TV and read about many successful people such as Bill Gates and Einstein.",
+  "original": "I have seen on TV and read about many successful people such as Bill Gates, (name) and (name).",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
+ },
+ {
+  "lesson": "s16-1",
+  "kind": "한국어",
+  "text": "나는 빌 게이츠, 아인슈타인과 같은 많은 성공한 사람들에 대해 TV에서 보았고 책에서 읽었습니다.",
+  "original": "나는 빌 게이츠, 아인슈타인, 과 같은 많은 성공한 사람들에 대해서 T.V에서 보아왔고, 읽어왔습니다.",
+  "en": "I have seen on TV and read about many successful people such as Bill Gates and Einstein.",
+  "why": "사장님 2026-10-02 '원래 낱말로 되살리기' · '이렇게 오류 있는거 다 찾아서 변경해' — 9/17 · 6단계가 빈칸 표시로 바꾼 교재의 예시 낱말을 되살림(scripts/restore-sample-words.mjs)"
  }
 ]

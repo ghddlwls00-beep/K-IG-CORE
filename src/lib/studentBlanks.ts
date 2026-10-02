@@ -37,7 +37,49 @@ const EXTRA_BLANKS: Record<string, Record<number, { text: string; label: string 
       { text: "홍길동", label: "내 이름" },
       { text: "서울", label: "사는 곳" },
     ],
+    // the textbook's sample words, back in place of "(…)" (2026-10-02 — scripts/restore-sample-words.mjs): still '내 정보' here
+    1: [{ text: "한국", label: "아파트 이름" }],
+    2: [{ text: "한국", label: "학교 이름" }],
+    3: [{ text: "11", label: "나이" }],
   },
+  "s2-2": { 1: [{ text: "4", label: "가족 수" }] },
+  "s2-5": { 0: [{ text: "한국", label: "동생 학교 이름" }] },
+  "s3-2": {
+    2: [
+      { text: "대한", label: "친구 이름" },
+      { text: "민국", label: "친구 이름" },
+    ],
+    4: [{ text: "대한", label: "가장 친한 친구" }],
+  },
+  "s4-3": {
+    0: [
+      { text: "two", label: "아버지의 남자형제 수" },
+      { text: "two", label: "아버지의 여자형제 수" },
+    ],
+    1: [
+      { text: "two", label: "어머니의 남자형제 수" },
+      { text: "two", label: "어머니의 여자형제 수" },
+    ],
+  },
+  "s4-4": {
+    1: [
+      { text: "two", label: "오빠 수" },
+      { text: "two", label: "언니 수" },
+    ],
+  },
+  "s4-5": { 0: [{ text: "길동", label: "큰아버지 이름" }] },
+  "s6-1": { 5: [{ text: "태권도", label: "동생의 클럽" }] },
+  "s6-2": { 1: [{ text: "홍", label: "선생님 성" }] },
+  "s6-3": { 0: [{ text: "강원도", label: "선생님 출신 지역" }] },
+  "s8-3": { 3: [{ text: "불고기", label: "좋아하는 음식" }] },
+  "s9-3": {
+    4: [
+      { text: "Miracle", label: "TV 쇼 이름" },
+      { text: "Fantastic", label: "TV 쇼 이름" },
+    ],
+  },
+  "s16-1": { 0: [{ text: "Einstein", label: "성공한 사람" }] },
+  "a1-5": { 2: [{ text: "2", label: "공부한 기간(개월)" }] },
   "a1-2": {
     0: [
       { text: "홍길동", label: "내 이름" },
@@ -68,6 +110,16 @@ export interface Blank {
   text: string;
   /** the words inside: "school name" — or a Korean name for a blank without brackets */
   label: string;
+  /**
+   * A real word the sentence says ("홍길동" · "서울" · "1980" — EXTRA_BLANKS), not a "(…)" placeholder. It is a '내 정보' blank in
+   * Step 3 only: in the Step 2 tiles it is a word to assemble like any other (사장님 2026-10-02 "저 한글들도 블록에 들어가야지").
+   */
+  written?: boolean;
+}
+
+/** The blanks the Step 2 tile drill places by itself: the "(…)" placeholders only — never a word the sentence really says. */
+export function dictationBlanks(blanks: readonly Blank[]): Blank[] {
+  return blanks.filter((b) => !b.written);
 }
 
 const BRACKET = /\(([^()]*)\)/g;
@@ -88,7 +140,7 @@ export function blanksOf(lessonId: string, sentenceIndex: number, text: string):
     let at = text.indexOf(extra.text);
     while (at >= 0 && overlaps(at)) at = text.indexOf(extra.text, at + 1);
     if (at >= 0) {
-      found.push({ start: at, end: at + extra.text.length, text: extra.text, label: extra.label });
+      found.push({ start: at, end: at + extra.text.length, text: extra.text, label: extra.label, written: true });
     }
   }
   return found
