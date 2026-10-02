@@ -51,8 +51,10 @@
 ## 음성
 
 - 새 클립 354개(31,786자) + 고친 두 문장 3개 생성 — 나머지 96개는 STUDENT 와 같은 문장이라 이미 있는 클립을 씀. `--dry-run` pending 0.
-- **R2 에는 아직 안 올림.** 파일은 이 작업 폴더와 원래 저장소의 `public/audio/azure-ava/v1/` 에 있음.
-  배포 순서(AGENTS.md): `node scripts/upload-azure-ava-r2.mjs` → 그 뒤 푸시.
+- **배포됨 (2026-10-02, 사장님 "이거 너가해")**: R2 에 357개 먼저 올림(실패 0 · 버킷 53,680 → 54,037, 덮어쓰기 0) → `main` 푸시
+  `91d9096b..bc43fb1a`. 운영 확인: /adult 목록 55강의 · 12장, /adult/a1-2 한글 표기 · 고친 3번 문장 새 음성 재생(206),
+  /adult/a2-1 잠금 화면 · 본문 없음, /student/s1-2 '홍길동 · 서울', /student/s20-4 제목 '경주', /passoff-grammar/pg01-1
+  'Hong Gil Dong(홍길동) … Seoul(서울)', 처음 화면 ADULT.
 
 ## 확인한 것 (같은 AI 가 만들고 확인함 — 독립 검수 아님)
 
