@@ -329,8 +329,8 @@ export function generateLiaisonPoints(sentence: string): LiaisonCard[] {
  * same reason: the comma split it into "2" and "000", and nobody hears "000"
  * (6-1755 — 3 STUDENT sentences and 21 LISTENING rows).
  */
-// (2026-10-02) Hangul is a word's letter too — STUDENT · ADULT write Korean words in Hangul inside the English ("The 신라
-// Kingdom …"); without it the word fell out of the tiles and the answer. No LISTENING English holds Hangul.
+// 가-힣 (2026-10-02): a Korean word written in Hangul inside an English sentence (STUDENT · ADULT — "The 신라 Kingdom …") is a word
+// to assemble like any other; a sentence without Hangul tokenises exactly as before. Same class as studentDictation TOKEN.
 const DICTATION_TOKEN = /\d{1,2}:\d{2}|\d{1,3}(?:,\d{3})+|[AaPp]\.[Mm]\.|[a-zA-Z0-9'’\-가-힣]+/g;
 
 function dictationWords(sentence: string): string[] {
