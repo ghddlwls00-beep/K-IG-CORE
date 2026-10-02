@@ -26,7 +26,9 @@ import { KOREAN_WORD_SOUNDS } from "@/lib/lessonSpeechForm";
  * these tokens with generateWordBank's own words and a sentence whose tokens differ is simply not split (and
  * docs/qa-2026-09-18/scripts/check-student-dictation.cjs fails loudly).
  */
-const TOKEN = /\d{1,2}:\d{2}|\d{1,3}(?:,\d{3})+|[AaPp]\.[Mm]\.|[a-zA-Z0-9'’\-]+/g;
+// 가-힣: a Korean word written in Hangul inside the English (2026-10-02 — "The 신라 Kingdom …") is a tile of its own; without it
+// the word vanished from the tiles and from the answer alike (사장님이 운영에서 찾음 — 'Kingdom 으로 시작해야 하는데 신라 블록이 없는데')
+const TOKEN = /\d{1,2}:\d{2}|\d{1,3}(?:,\d{3})+|[AaPp]\.[Mm]\.|[a-zA-Z0-9'’\-가-힣]+/g;
 
 export interface Token {
   word: string;
