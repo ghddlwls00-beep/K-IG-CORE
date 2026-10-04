@@ -22,10 +22,14 @@ const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.inde
 const PHASE = arg("--phase", null);
 const PORT = arg("--port", "9701");
 const CLONE = arg("--clone", "proof-a");
+// 회귀 점검 1002 단계 0 보충 (2026-10-04): --viewports <list> 를 drive-generic 에 그대로 넘김 — 깨기는 실제 스윕과 같은 화면으로
+// (명령서의 3화면 desktop · mobile · small 중 small 증명: --viewports small). 없으면 전과 같이 넘기지 않음(드라이버 기본 desktop,tablet,mobile).
+const VIEWPORTS = arg("--viewports", null);
 if (!PHASE) throw new Error("--phase is required");
+if (VIEWPORTS !== null && !/^(desktop|tablet|mobile|small)(,(desktop|tablet|mobile|small))*$/.test(VIEWPORTS)) throw new Error(`--viewports: ${VIEWPORTS}`);
 if (!/^http:\/\/localhost:/.test(process.env.BASE || "")) throw new Error("BASE must point at the local dev server");
 
-const flagged = new Set(["--phase", "--port", "--clone"]);
+const flagged = new Set(["--phase", "--port", "--clone", "--viewports"]);
 const targets = process.argv.slice(2).filter((a, i, all) => !a.startsWith("--") && !flagged.has(all[i - 1]));
 const OUT = path.join(__dirname, "../out");
 const DEST = path.join(OUT, "proof", PHASE);
@@ -44,6 +48,7 @@ for (const t of targets) {
     path.join(__dirname, "drive-generic.cjs"),
     "--course", course, "--ids", id,
     "--suffix", `-proof-${PHASE}`, "--port", PORT, "--clone", CLONE, mode,
+    ...(VIEWPORTS ? ["--viewports", VIEWPORTS] : []),
   ], { encoding: "utf8", env: process.env, maxBuffer: 64 * 1024 * 1024 });
   const tail = String(r.stdout || "").trim().split(/\r?\n/).slice(-3).join(" | ");
   console.log(`[${PHASE}] ${course} ${id} · ${Math.round((Date.now() - started) / 1000)}s · exit ${r.status} · ${tail}`);
