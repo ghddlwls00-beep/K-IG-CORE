@@ -36,7 +36,11 @@ const passoffSupplement = (() => {
 })();
 const validRoutes = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
 const ldScripts = JSON.parse(fs.readFileSync(path.join(REPO, "content/ld_english_scripts.json"), "utf8"));
-const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
+// 회귀 점검 1002 단계 0 (2026-10-04): ADULT(2026-10-02 새 과정 · 55강의) 더함 — 이 목록을 도는 도구(audio-inventory · check-integrity ·
+// check-data-* · build-coverage · progress …)가 ADULT 를 세지 않았다. ADULT 의 화면은 STUDENT 와 같은 StudentLearningView(5단계).
+const COURSES = ["student", "adult", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
+/** STUDENT 화면(StudentLearningView)으로 가르치는 과정 — 받아쓰기 조립 · 완료 · 장 잠금이 같은 규칙 */
+const STUDENT_VIEW = new Set(["student", "adult"]);
 
 const lessonPath = (course, id) => path.join(REPO, "content/lessons", course, `${id}.json`);
 const hasLesson = (course, id) => fs.existsSync(lessonPath(course, id));
@@ -195,6 +199,32 @@ function gridWords(d) {
 }
 
 /**
+ * ADULT lesson data for the Step 2 · 3 routines (회귀 점검 1002) — the same fields the view reads:
+ *   words[k]   AdultWordsStep lessonWords order k (reading order): the card's word · pos · meaning, its sentence and the blank's
+ *              answer (the sentence's own letters text.slice(start, end), the choice the app counts right)
+ *   chunks[i]  sentence i's chunks [{en, ko}] · ko[i] its Korean line · steps the five step names in order
+ */
+const ADULT_STEP_NAMES = ["블라인드 리스닝", "단어", "끊어 읽기", "탭 딕테이션", "섀도잉 & 낭독"];
+/** the clip a control asks for: the browser keys a text through vocaSpeechForm (speech.ts cleanText) and unifiedSpeechPath */
+const clipPathOf = (t) => unified.unifiedSpeechPath(clean(vocaSpeech && typeof vocaSpeech.vocaSpeechForm === "function" ? vocaSpeech.vocaSpeechForm(String(t)) : t));
+function adultData(d, id) {
+  const block = (d.blocks || []).find((b) => b.type === "sentences");
+  const items = ((block && block.items) || []).filter((it) => it && typeof it.text === "string");
+  const ko = (d.blocks || []).filter((b) => b.type === "paragraph" && b.lang === "ko" && typeof b.text === "string").map((b) => b.text.trim());
+  // what StudentLearningView speaks for an English line (spokenEn): the first slash form, its Hangul words romanized (lessonSpeechForm)
+  const spokenEn = (t) => {
+    const first = listening && typeof listening.firstSlashAlternative === "function" ? listening.firstSlashAlternative(t) : t;
+    return lessonSpeechMod && typeof lessonSpeechMod.lessonSpeechForm === "function" ? lessonSpeechMod.lessonSpeechForm(`adult/${id}`, first) : first;
+  };
+  const words = [];
+  items.forEach((it, sentence) => {
+    for (const w of Array.isArray(it.words) ? it.words : []) words.push({ order: words.length, sentence, word: w.word, pos: w.pos, meaning: w.meaning, say: w.say, sayPath: clipPathOf(w.say), answer: it.text.slice(w.start, w.end), masked: it.text.slice(0, w.start) + " " + it.text.slice(w.end) });
+  });
+  const chunks = items.map((it) => (Array.isArray(it.chunks) ? it.chunks : []).map((c) => ({ en: c.en, ko: c.ko, path: clipPathOf(spokenEn(c.en)) })));
+  return { steps: ADULT_STEP_NAMES, words, chunks, ko, sentences: items.map((it) => it.text), sentencePaths: items.map((it) => clipPathOf(spokenEn(it.text))) };
+}
+
+/**
  * expected(course, id) →
  *   texts     : strings the learner must be able to see somewhere on the page
  *   answers   : ordered correct answers for graded inputs (empty when not applicable)
@@ -310,13 +340,40 @@ function expected(course, id) {
     // never as itself — and the collocation card's ONE speaker button's PRESET `phrase`, never the
     // example sentence (BUG-001's other 9 of 387). Both come from scripts/lib/spoken-texts.cjs below.)
     for (const w of gridWords(d)) texts.push({ kind: "word", text: w });
-  } else if (course === "student") {
-    // STUDENT: English sentences live in `sentences` blocks, their Korean in `paragraph` blocks
+  } else if (STUDENT_VIEW.has(course)) {
+    // STUDENT · ADULT: English sentences live in `sentences` blocks, their Korean in `paragraph` blocks.
+    // 회귀 점검 1002 (2026-10-04): a sentence is English by its BLOCK, not by "has no Hangul" — since 2026-10-02 a Korean word
+    // inside the English is written in Hangul ('My name is 홍길동, and I live in 서울.' — STUDENT 48 · ADULT 45 sentences). The old
+    // isKo() test took those for Korean lines: they left `answers`, and the tile words below (same filter) slid one place for every
+    // later sentence of the lesson, so the driver assembled sentence k+1's words on sentence k. No sentences block holds a pure
+    // Korean line (STUDENT 414 · ADULT 228 items, 0 without a 3-letter Latin run).
     for (const it of itemsOf(d)) {
-      texts.push({ kind: isKo(it.text) ? "ko" : "en", text: it.text });
-      if (!isKo(it.text)) answers.push({ n: it.n, text: it.text, alternatives: it.alternatives });
+      const korean = isKo(it.text) && !/[A-Za-z]{3,}/.test(it.text);
+      texts.push({ kind: korean ? "ko" : "en", text: it.text });
+      if (!korean) answers.push({ n: it.n, text: it.text, alternatives: it.alternatives });
     }
     for (const b of d.blocks || []) if (b.type === "paragraph" && typeof b.text === "string") texts.push({ kind: "ko", text: clean(b.text) });
+    if (course === "adult") {
+      /**
+       * ADULT Step 2 '단어' and Step 3 '끊어 읽기' (2026-10-02) — what the view draws, from the same fields it reads:
+       *   word-card   AdultWordsStep renderCard: the word ([data-word-text]), its part of speech (the line under it), the meaning
+       *               ([data-meaning], after '뜻 보기') and the sentence that uses it ([data-context] — items[w.sentence].text). One
+       *               text per card, the four joined by ' | ' — lib/containers.cjs adult-words reads a card the same way, so a
+       *               meaning on the wrong card is a miss, not a pass.
+       *   chunk       StudentLearningView renderChunks: each chunk's English ([data-en]) and, once '뜻 보기' is pressed, its Korean
+       *               ([data-ko]) — 'en | ko'.
+       *   chunk-whole '문장 전체 해석' ([data-chunk-whole]) — the sentence's Korean line, shown once every meaning is open.
+       */
+      const block = (d.blocks || []).find((b) => b.type === "sentences");
+      const raw = ((block && block.items) || []).filter((it) => it && typeof it.text === "string");
+      const ko = (d.blocks || []).filter((b) => b.type === "paragraph" && b.lang === "ko" && typeof b.text === "string").map((b) => b.text.trim());
+      raw.forEach((it, i) => {
+        for (const w of Array.isArray(it.words) ? it.words : []) texts.push({ kind: "word-card", text: [w.word, w.pos, w.meaning, it.text].map(clean).join(" | ") });
+        const chunks = Array.isArray(it.chunks) ? it.chunks : [];
+        for (const c of chunks) texts.push({ kind: "chunk", text: `${clean(c.en)} | ${clean(c.ko)}` });
+        if (chunks.length && ko[i]) texts.push({ kind: "chunk-whole", text: clean(ko[i]) });
+      });
+    }
   }
   /**
    * Every text this page may speak — 7단계 7-2: the ONE definition the clip generator and the free-clip
@@ -341,20 +398,25 @@ function expected(course, id) {
    * accepts, which is why every STUDENT lesson came back unassembled.
    */
   const tileWordsAll = (() => {
-    if (!(course === "ld" || course === "student") || !listening || typeof listening.generateWordBank !== "function") return null;
+    if (!(course === "ld" || STUDENT_VIEW.has(course)) || !listening || typeof listening.generateWordBank !== "function") return null;
     // STUDENT: exactly what StudentLearningView hands generateWordBank — the FIRST "sentences" block's items, raw.
     // 7단계 7-1 b: itemsOf() cleans the text (a slash becomes a space), so "He/She is a very talented artist, too."
     // reached the app's function as "He She is …" and the audit assembled BOTH pronouns; the app — one of the pair
     // is right, both is wrong (CNT-01, 9/16) — said 일치하지 않습니다, and s3-3 · s3-4 came back FAIL.
+    // 회귀 점검 1002 (2026-10-04): the view numbers its sentences by their place in that block ([data-dictation] data-index), so
+    // this list keeps every place — a sentence with a Hangul word ('The 신라 Kingdom …', a tile since 2026-10-02 — listeningUtils
+    // DICTATION_TOKEN 가-힣) is no longer dropped (the !isKo filter did), and an empty word list keeps its slot.
     const studentBlock = (d.blocks || []).find((b) => b.type === "sentences");
     const sentences = course === "ld"
       ? answers.map((a) => a.text)
-      : ((studentBlock && studentBlock.items) || []).map((it) => it && it.text).filter((t) => typeof t === "string" && t.trim() && !isKo(t));
+      : ((studentBlock && studentBlock.items) || []).map((it) => (it && typeof it.text === "string" ? it.text : ""));
     const out = [];
     for (const s of sentences) {
-      try { const w = listening.generateWordBank(String(s), []).correctWords; if (w && w.length) out.push(w); } catch {}
+      let w = [];
+      try { w = (String(s).trim() && listening.generateWordBank(String(s), []).correctWords) || []; } catch {}
+      if (course === "ld") { if (w.length) out.push(w); } else out.push(w);
     }
-    return out.length ? out : null;
+    return out.some((w) => w.length) ? out : null;
   })();
   // Earlier controls on the page can move the drill to its next sentence, so the driver is given
   // EVERY sentence's tile list and picks whichever one the bank on screen actually holds. Using
@@ -362,8 +424,10 @@ function expected(course, id) {
   const tileWords = tileWordsAll ? tileWordsAll[0] : null;
 
   return {
-    // LISTENING/STUDENT dictation is answered by tapping word tiles
-    tileAnswers: course === "ld" || course === "student",
+    // LISTENING/STUDENT/ADULT dictation is answered by tapping word tiles
+    tileAnswers: course === "ld" || STUDENT_VIEW.has(course),
+    // ADULT Step 2 · 3 (회귀 점검 1002): the driver's 단어 · 끊어 읽기 routines read these (drive-generic adultWords · adultChunks)
+    adult: course === "adult" ? adultData(d, id) : null,
     tileWords,
     tileWordsAll,
     texts: texts.filter((t) => t.text && t.text.length >= 2)
@@ -383,4 +447,4 @@ function expected(course, id) {
   };
 }
 
-module.exports = { COURSES, pages, neighbours, lesson, hasLesson, courseIndex, expected, itemsOf, gridWords, ldScripts, clean, isKo, unified, pairOf, hintChunks, hintsForSentence };
+module.exports = { COURSES, STUDENT_VIEW, ADULT_STEP_NAMES, adultData, pages, neighbours, lesson, hasLesson, courseIndex, expected, itemsOf, gridWords, ldScripts, clean, isKo, unified, pairOf, hintChunks, hintsForSentence };

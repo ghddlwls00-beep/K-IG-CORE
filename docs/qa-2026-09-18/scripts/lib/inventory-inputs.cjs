@@ -15,16 +15,22 @@ const walk = (rel) => {
   if (fs.statSync(abs).isFile()) return [rel];
   return fs.readdirSync(abs).flatMap((f) => walk(path.join(rel, f)));
 };
+// 회귀 점검 1002 (2026-10-04): '소리 내는 글' 의 한 정의(scripts/lib/spoken-texts.cjs — 7-2 뒤로 expectations.cjs 가 이것을 씀)와
+// 그것이 부르는 src 함수(lessonSpeechForm · lessonAudioText · listeningUtils), PASS-OFF 무료 체험이 떼어 둔 유료 문항(content/private ·
+// passoffSupplement)이 빠져 있었다 — ADULT 의 덩어리 · 낱말을 spoken-texts.cjs 에 더해도(10/2) 목록이 낡았다고 알아채지 못했다.
 const INPUTS = [
-  "content/lessons", "content/courses", "content/ld_english_scripts.json", "content/voca_dictionary.json",
+  "content/lessons", "content/courses", "content/ld_english_scripts.json", "content/voca_dictionary.json", "content/private",
   "src/lib/readingSentences.json", "src/lib/readingVocabulary.json", "src/lib/generated/freeSpeechKeys.json",
   "src/lib/generated/validRoutes.json", "src/lib/license.ts", "src/lib/unifiedSpeech.ts", "src/lib/vocaSpeech.ts",
+  "src/lib/lessonSpeechForm.ts", "src/lib/lessonAudioText.ts", "src/lib/listeningUtils.ts", "src/lib/passoffSupplement.ts",
+  "scripts/lib/spoken-texts.cjs",
   "docs/qa-2026-09-18/scripts/lib/expectations.cjs", "docs/qa-2026-09-18/scripts/audio-inventory.cjs",
 ];
-function inputsFingerprint() {
+/** overrides: { "<repo 상대 경로>": "<메모리 안 내용>" } — 깨기 시험(audio-check --break=stale-spoken)용, 파일은 그대로 */
+function inputsFingerprint(overrides = {}) {
   const files = INPUTS.flatMap(walk).map((f) => f.replace(/\\/g, "/")).filter((f) => /\.(json|ts|cjs)$/.test(f)).sort();
   const h = crypto.createHash("sha256");
-  for (const f of files) { h.update(f); h.update("\0"); h.update(fs.readFileSync(path.join(REPO, f))); h.update("\0"); }
+  for (const f of files) { h.update(f); h.update("\0"); h.update(f in overrides ? Buffer.from(overrides[f]) : fs.readFileSync(path.join(REPO, f))); h.update("\0"); }
   return { fingerprint: h.digest("hex").slice(0, 24), files: files.length };
 }
 module.exports = { inputsFingerprint, INPUTS };

@@ -217,6 +217,35 @@ function completionWouldUnlock(id, lessons) {
   return done.size >= chapter.requiredCount && done.has(last);
 }
 
+/**
+ * 회귀 점검 1002 (2026-10-04) — ADULT (2026-10-02) keeps STUDENT's chapter rule with its own record (src/lib/adultProgress.ts:
+ * 12 chapters from content/courses/adult.json groups, 80% (rounded up) + the chapter's last lesson; ADULT_CHAPTER_COUNT · LESSON_ID).
+ * chaptersOf(course) / completionWouldUnlockIn(course, id, lessons) are the same arithmetic for either course — drive-generic asks it
+ * before it presses an ADULT lesson's completion on production (a raised unlockedThrough stays: Math.max in adultProgress.ts).
+ * The STUDENT exports above are unchanged.
+ */
+const CHAPTER_RULES = {
+  student: { max: 20, lesson: /^s\d+-\d+$/ },
+  adult: { max: 12, lesson: /^a\d+-\d+$/ },
+};
+function chaptersOf(course) {
+  const rule = CHAPTER_RULES[course];
+  if (!rule) throw new Error(`chaptersOf: ${course} 는 장 규칙이 없음 (student · adult)`);
+  const index = course === "student" ? INDEX : JSON.parse(fs.readFileSync(path.join(REPO, "content/courses", `${course}.json`), "utf8"));
+  return (index.groups || []).slice(0, rule.max).map((g, i) => {
+    const lessonIds = (g.lessons || []).filter((x) => rule.lesson.test(x));
+    return { chapter: i + 1, title: g.title || g.label || `Chapter ${i + 1}`, lessonIds, requiredCount: Math.max(1, Math.ceil(lessonIds.length * 0.8)) };
+  });
+}
+function completionWouldUnlockIn(course, id, lessons) {
+  const chapter = chaptersOf(course).find((c) => c.lessonIds.includes(id));
+  if (!chapter) return false;
+  const done = new Set(chapter.lessonIds.filter((x) => lessons && lessons[x] && lessons[x].completed));
+  done.add(id);
+  const last = chapter.lessonIds[chapter.lessonIds.length - 1];
+  return done.size >= chapter.requiredCount && done.has(last);
+}
+
 /** Every English sentence in the course, for the "text of another lesson" check. */
 function foreignTextIndex() {
   const byText = new Map();
@@ -243,6 +272,8 @@ module.exports = {
   lessonFile,
   expectedFor,
   completionWouldUnlock,
+  chaptersOf,
+  completionWouldUnlockIn,
   foreignTextIndex,
   norm,
   lower,

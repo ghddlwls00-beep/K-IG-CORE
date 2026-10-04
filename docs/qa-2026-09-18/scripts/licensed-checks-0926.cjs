@@ -21,13 +21,16 @@ const mainText = `((document.querySelector('main') || document.body).innerText |
 const PAYWALLED = `${H.PAYWALL_RE}.test(${mainText})`;
 const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getComputedStyle(b); return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.display !== 'none'; }`;
 (async () => {
-  const browser = await H.startBrowser(BREAK ? `lic0926-break-${BREAK}` : "lic0926", Number(arg("--port", 9579)), { fresh: true });
+  // --clone <이름>: 감사 프로필 사본 이름(회귀 점검 1002 — 'rc1002-<일꾼>-…' 로 쓰게)
+  const clone = arg("--clone", BREAK ? `lic0926-break-${BREAK}` : "lic0926");
+  const browser = await H.startBrowser(clone, Number(arg("--port", 9579)), { fresh: true });
   try {
     const tab = await H.openTab(browser);
     // STUDENT 진도 서버 쓰기 막기(사장님 이용권 기록 보호)
     const orig = tab.onMessage.bind(tab);
     tab.onMessage = (msg) => { if (msg.method === "Fetch.requestPaused") { const p = msg.params; if (!/^(GET|HEAD|OPTIONS)$/.test(p.request.method)) tab.send("Fetch.failRequest", { requestId: p.requestId, errorReason: "BlockedByClient" }).catch(() => {}); else tab.send("Fetch.continueRequest", { requestId: p.requestId }).catch(() => {}); return; } return orig(msg); };
-    await tab.send("Fetch.enable", { patterns: [{ urlPattern: "*/api/progress/student*", requestStage: "Request" }] });
+    // 회귀 점검 1002: ADULT · PASS-OFF GRAMMAR 진도 쓰기도 같이 막음(ADULT 는 STUDENT 와 같은 장 잠금 진도)
+    await tab.send("Fetch.enable", { patterns: ["student", "adult", "passoff-grammar"].map((c) => ({ urlPattern: `*/api/progress/${c}*`, requestStage: "Request" })) });
     await H.setViewport(tab, "desktop");
 
     if (ONLY.has("L")) {
@@ -38,6 +41,13 @@ const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getCompute
       const t = await tab.eval(mainText).catch(() => "");
       const seqLock = /순차 학습 잠금/.test(t);
       rec("L:student-last-chapter:/student/s20-1", "INFO", seqLock ? "마지막 장이 '순차 학습 잠금' — 장이 차례로 열리는 이용권(이 이용권으로 순서 열림을 볼 수 있음)" : H.PAYWALL_RE.test(t) ? "잠김 화면(이용권 종류가 STUDENT 를 안 덮음)" : "마지막 장이 바로 열림 — 모든 장이 열리는 이용권(평생 — BUG-030). 장이 차례로 열리는지는 이 이용권으로 볼 수 없음");
+      // 회귀 점검 1002 — ADULT 마지막 장(STUDENT 와 같은 장 잠금 규칙 — src/lib/adultProgress.ts) · PASS-OFF 마지막 강의
+      for (const url of ["/adult/a12-3", "/passoff-grammar/pg20-2"]) {
+        await H.load(tab, url, { marker: null });
+        const tt = await tab.eval(mainText).catch(() => "");
+        const lock = /순차 학습 잠금/.test(tt);
+        rec(`L:last-chapter:${url}`, "INFO", lock ? "마지막 장이 '순차 학습 잠금' — 장이 차례로 열리는 이용권" : H.PAYWALL_RE.test(tt) ? "잠김 화면(이용권이 이 과정을 안 덮음)" : "바로 열림 — 모든 장이 열리는 이용권(평생). 순서 잠금은 이 이용권으로 볼 수 없음");
+      }
     }
 
     if (ONLY.has("Q")) {
@@ -61,5 +71,6 @@ const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getCompute
   } finally {
     browser.proc.kill();
     console.log(`\n끝 · PASS ${counts.PASS} · FAIL ${counts.FAIL} · BLOCKED ${counts.BLOCKED} · INFO ${counts.INFO} → ${OUT}`);
+    if (counts.FAIL || counts.BLOCKED) process.exitCode = 1; // 회귀 점검 1002: 전에는 FAIL 이 있어도 0
   }
 })().catch((e) => { console.error(e); process.exitCode = 2; });

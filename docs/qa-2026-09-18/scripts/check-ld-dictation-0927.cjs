@@ -320,11 +320,15 @@ function seeded(seed) {
   return () => ((s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296);
 }
 const realRandom = Math.random;
+// 2026-10-04 (회귀 점검 단계 0): '--break=identity' 가 seed 7 만 깼는데, 한글 낱말 문장을 건너뛰며(아래) seed 7 이 그 문장 몫이 되어
+// 깨기가 아무것도 깨지 않고 PASS 였다 — 실제로 비교하는 첫 문장을 깬다.
+let identityBroken = false;
 function same(label, sentence, pool, seed) {
   Math.random = seeded(seed);
   const a = OLD.generateWordBank(sentence, pool);
   Math.random = seeded(seed);
-  const b = BREAK === "identity" && seed === 7 ? U.generateWordBank(sentence, pool, { distractors: [] }) : U.generateWordBank(sentence, pool);
+  const breakHere = BREAK === "identity" && pool.length > 0 && !identityBroken && (identityBroken = true);
+  const b = breakHere ? U.generateWordBank(sentence, pool, { distractors: [] }) : U.generateWordBank(sentence, pool);
   Math.random = realRandom;
   if (JSON.stringify(a) !== JSON.stringify(b)) fail(`generateWordBank changed: ${label}`);
 }

@@ -14,6 +14,9 @@
  *      뺐다(로그인한 사람만 쓰는 서버 검색으로 따로 만든다).
  *   3. 이름으로 찾는 검색("reading", "고등", "1강" …)의 결과가 고치기 전과 **똑같다**
  *      — 기준선은 커밋된 색인에서 일부러 뺀 CNN 만 걷어낸 것 + 예전 규칙.
+ *
+ * 회귀 점검 1002 단계 0 (2026-10-04): 2번의 유출 규칙(scripts/paidLeakCheck.mjs)은 이미 ADULT 를 본다(COURSES 에 adult). 3번 이름 검색에
+ *   'adult' · 'a12-3' 을 더함. 깨기 --break=adult : 지금 색인 사본(메모리)에 유료 ADULT 문장 하나를 항목으로 심음 → 2번 FAIL · exit 1.
  */
 const fs = require("fs");
 const path = require("path");
@@ -26,9 +29,20 @@ const PRE_FIX_REV = "00c5df0"; // 8114912(CNN 을 뺀 커밋) 바로 전 — 대
 const indexArg = process.argv.indexOf("--index");
 // 기준선(검사 3)은 '커밋된 색인' 그대로 — 뜻이 '지금 커밋된 내용에 예전 검색 규칙' 이라 옛 판이 아니다(대조군과 다름)
 const headText = execSync("git show HEAD:public/search-index.json", { cwd: REPO, encoding: "utf8", maxBuffer: 64 << 20 });
-const text = HEAD
+let text = HEAD
   ? execSync(`git show ${PRE_FIX_REV}:public/search-index.json`, { cwd: REPO, encoding: "utf8", maxBuffer: 64 << 20 })
   : fs.readFileSync(indexArg > 0 ? path.resolve(process.argv[indexArg + 1]) : path.join(REPO, "public/search-index.json"), "utf8");
+const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
+if (BREAK && BREAK !== "adult") { console.error(`모르는 --break=${BREAK} (adult)`); process.exit(2); }
+if (BREAK === "adult") {
+  // 유료 ADULT a2-1 의 첫 문장을 항목 하나로(메모리) — 이름 검색(3번)은 건드리지 않게 맨 뒤에
+  const d = JSON.parse(fs.readFileSync(path.join(REPO, "content/lessons/adult/a2-1.json"), "utf8"));
+  const sent = ((d.blocks || []).find((b) => b.type === "sentences") || { items: [] }).items[0].text;
+  const arr = JSON.parse(text);
+  arr.push({ id: "zz-break", course: "adult", title: "깨기 시험", searchText: sent.toLowerCase(), href: "/adult/a2-1" });
+  text = JSON.stringify(arr);
+  console.log(`[일부러 깸] 색인 사본에 유료 ADULT a2-1 문장 하나: ${JSON.stringify(sent.slice(0, 60))}`);
+}
 const index = JSON.parse(text);
 
 /** 예전 SearchDialog 규칙 그대로 (FUN-09 숫자 경계 포함) — 기준선에 쓴다. */
@@ -58,8 +72,9 @@ const baseline = JSON.parse(headText).filter((x) => x.course !== "cnn");
   const leak = findPaidLeaks(text);
   if (leak.rows) fails.push(`유료 본문 ${leak.rows}줄 · ${leak.lessons}강 ${JSON.stringify(leak.byCourse)} (예: ${leak.hits.slice(0, 2).map((h) => `${h.course}/${h.id} ${h.text.slice(0, 40)}`).join(" · ")})`);
   // 3
-  const NAV = ["reading", "listening", "grammar", "student", "voca", "고등", "중등 단어", "1강", "mv1", "hv", "s19-3", "수능 듣기", "패턴", "독해", "d150", "pr001", "gh1-006", "hospital"];
-  const navDiff = NAV.filter((q) => JSON.stringify(search(index, q).map((x) => x.id)) !== JSON.stringify(oldSearch(baseline, q).map((x) => x.id)));
+  const NAV = ["reading", "listening", "grammar", "student", "voca", "고등", "중등 단어", "1강", "mv1", "hv", "s19-3", "수능 듣기", "패턴", "독해", "d150", "pr001", "gh1-006", "hospital", "adult", "a12-3"];
+  const navIndex = index.filter((x) => x.id !== "zz-break"); // 깨기 항목은 2번만 보게
+  const navDiff = NAV.filter((q) => JSON.stringify(search(navIndex, q).map((x) => x.id)) !== JSON.stringify(oldSearch(baseline, q).map((x) => x.id)));
   if (navDiff.length) fails.push(`이름 검색 결과가 고치기 전과 다름: ${navDiff.join(", ")}`);
 
   console.log(`색인 ${HEAD ? `(고치기 전 ${PRE_FIX_REV} — 대조군)` : indexArg > 0 ? `(${path.basename(process.argv[indexArg + 1])})` : "(지금)"} · 항목 ${index.length} · 칸 ${[...new Set(index.flatMap((x) => Object.keys(x)))].join(",")}`);

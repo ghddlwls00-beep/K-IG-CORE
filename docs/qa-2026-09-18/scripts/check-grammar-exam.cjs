@@ -19,6 +19,12 @@
  *   만점 아닌 답 · 막힌 강의가 있으면 exit 1(이 모드에서만 — 옛 모드의 exit 는 그대로 0).
  * --break(--all-alts 와 같이): 메모리에서만, 처음 도는 강의에서 다른 정답이 둘 이상인 첫 문항의 [1] 을 틀린 영어로 바꿈 → 둘째 채점에서 잡혀
  *   exit 1 이어야 한다([0] 만 보던 옛 모드는 이것을 못 잡는다).
+ *
+ * --hangul(2026-10-04 회귀 점검 단계 0 — 커밋 11a46e38 'GRAMMAR II · PASS-OFF 도 화면은 한글만'): 한국어 낱말이 든 문항(src/lib/koreanGloss.ts
+ *   KOREAN_GLOSS_PAGES — GRAMMAR II 16쪽 · 22문항)만 있는 강의만 돈다. 영어 철자 꼴('He went to Busan on business.' — 모범 답안 · 다른 정답, 위의
+ *   채점 그대로)과 화면대로 한글로 쓴 꼴('He went to 부산 on business.' — koreanOnScreen 으로 만든 모범 · 다른 정답 전부)을 둘 다 넣어 ✓ 정답이어야 함.
+ *   만점 아닌 답 · 막힌 강의가 있으면 exit 1. --all-alts 와 같이 쓰면 영어 철자 쪽 다른 정답도 전부.
+ * --break=hangul(--hangul 과 같이): 메모리에서만, 첫 강의의 첫 한글 꼴의 한국어 낱말을 표에 없는 '가나다' 로 바꿈 → 그 문항이 정답이 아니어서 exit 1.
  */
 const fs = require("fs");
 const path = require("path");
@@ -36,8 +42,14 @@ const CLONE = arg("--clone", "grammar-exam");
 const ALL_ALTS = process.argv.includes("--all-alts");
 const BREAK = ALL_ALTS && process.argv.includes("--break");
 const BROKEN_ALT = "Nothing on this sheet is the answer.";
+const HANGUL = process.argv.includes("--hangul");
+const BREAK_HANGUL = HANGUL && process.argv.includes("--break=hangul");
+// the screen's own table (koreanGloss.ts has no imports — loaded alone, as the other tools load it)
+const KG = HANGUL ? require("../../qa-2026-09-15/scripts/tsload.cjs").loadTs(path.join(H.REPO, "src/lib/koreanGloss.ts")) : null;
+/** every accepted answer of a question (model, then alternatives) as the screen draws it, where that differs — what a learner copying the screen types */
+const hangulFormsOf = (key, a) => [a.text, ...(a.alternatives || [])].map((t) => KG.koreanOnScreen(key, t)).filter((h, i) => h !== [a.text, ...(a.alternatives || [])][i]);
 const OUT = path.join(__dirname, "../out");
-const TAG = arg("--tag", BREAK ? "break" : null); // 결과 파일 이름을 따로(시험 돌리기가 관문 결과 grammar-exam.json 을 덮지 않게)
+const TAG = arg("--tag", BREAK ? "break" : BREAK_HANGUL ? "hangul-break" : HANGUL ? "hangul" : null); // 결과 파일 이름을 따로(시험 돌리기가 관문 결과 grammar-exam.json 을 덮지 않게)
 const DEST = path.join(OUT, TAG ? `grammar-exam-${TAG}.json` : "grammar-exam.json");
 
 // React tracks its own value on the DOM node, so assigning .value is ignored. Go through the
@@ -114,6 +126,7 @@ const READ = `(() => {
   const results = [];
   const problems = [];
   let lessons = 0, altTried = 0, broken = null;
+  let hangulTotal = 0, hangulRead = 0, brokenHangul = null, koreanQuestions = 0;
   const tested = new Map(); // 잰 쪽 주소 → { answersKey, status }
 
   for (const course of COURSES) {
@@ -121,6 +134,7 @@ const READ = `(() => {
       if (ONLY && !ONLY.has(p.id)) continue;
       const exp = E.expected(course, p.id);
       if (!exp.answers.length) continue;
+      if (HANGUL && !exp.answers.some((a) => hangulFormsOf(`${course}/${p.id}`, a).length)) continue;
       if (LIMIT && lessons >= LIMIT) break;
       lessons++;
       if (BREAK && !broken) {
@@ -192,10 +206,50 @@ const READ = `(() => {
       }
       altTried += altRead;
 
+      // --hangul: the same questions written as the screen draws them ("He went to 부산 on business.") — every accepted answer's
+      // Hangul form, round k = the k-th such form of each question. The page grades it through romanForGrading (lessonKey = the
+      // page the browser ended on). Expected ✓ 정답 for every one.
+      let hNotExact = [], hCount = 0, hRead = 0, hBlocked = 0;
+      if (HANGUL) {
+        const key = `${course}/${finalPath.split("/").pop()}`;
+        const forms = exp.answers.map((a) => ({ a, hs: hangulFormsOf(key, a) })).filter((x) => x.hs.length);
+        koreanQuestions += forms.length;
+        if (BREAK_HANGUL && !brokenHangul && forms[0]) {
+          const was = forms[0].hs[0];
+          forms[0].hs = [was.replace(/[가-힣]+/, "가나다"), ...forms[0].hs.slice(1)];
+          brokenHangul = { course, id: p.id, n: String(forms[0].a.n), was, now: forms[0].hs[0] };
+          console.log(`(깨기) ${course}/${p.id} ${forms[0].a.n}번 한글 꼴 "${was}" → "${forms[0].hs[0]}"`);
+        }
+        const hRounds = Math.max(0, ...forms.map((x) => x.hs.length));
+        for (let k = 0; k < hRounds; k++) {
+          const hPairs = forms.filter((x) => x.hs.length > k).map((x) => [String(x.a.n), x.hs[k]]);
+          hCount += hPairs.length;
+          const again = await H.click(tab, NEW_SHEET, { settle: 500 });
+          if (!again.ok) { hBlocked++; continue; }
+          const fill3 = await tab.eval(FILL(hPairs)).catch(() => ({ filled: 0 }));
+          if (!fill3.filled) { hBlocked++; continue; }
+          const submit3 = await H.click(tab, SUBMIT, { settle: 900 });
+          if (!submit3.ok) { hBlocked++; continue; }
+          const rows3 = (await tab.eval(READ).catch(() => [])) || [];
+          const want = new Map(hPairs.map(([n, v]) => [String(n), v]));
+          const seen = rows3.filter((r) => want.has(String(r.n)) && r.verdict && String(r.typed).trim() === String(want.get(String(r.n))).trim());
+          hRead += seen.length;
+          const bad = seen.filter((r) => !/✓ 정답/.test(r.verdict));
+          hNotExact.push(...bad);
+          for (const r of bad) {
+            const a = exp.answers.find((x) => String(x.n) === String(r.n));
+            problems.push({ kind: "hangul", course, id: p.id, n: r.n, round: k, verdict: r.verdict, modelAnswer: a ? a.text : "(?)", typed: r.typed, alternatives: a ? a.alternatives : [] });
+          }
+        }
+        hangulTotal += hCount;
+        hangulRead += hRead;
+      }
+
       results.push({
         course, id: p.id,
-        status: !graded.length || (ALL_ALTS && (roundsBlocked || altRead < altCount)) ? "BLOCKED" : notExact.length || altNotExact.length ? "FAIL" : "PASS",
-        note: `${fill.filled}/${pairs.length} 칸 입력 · 채점 ${graded.length}문항 · 모범답안인데 정답 아님 ${notExact.length} · 대체답안 ${altCount}개(${ALL_ALTS ? `전부 · 채점 ${rounds}번` : "문항마다 [0]"}) 중 읽음 ${altRead} · 정답 아님 ${altNotExact.length}${roundsBlocked ? ` · 막힌 채점 ${roundsBlocked}` : ""}`,
+        status: !graded.length || (ALL_ALTS && (roundsBlocked || altRead < altCount)) || (HANGUL && (hBlocked || hRead < hCount)) ? "BLOCKED" : notExact.length || altNotExact.length || hNotExact.length ? "FAIL" : "PASS",
+        note: `${fill.filled}/${pairs.length} 칸 입력 · 채점 ${graded.length}문항 · 모범답안인데 정답 아님 ${notExact.length} · 대체답안 ${altCount}개(${ALL_ALTS ? `전부 · 채점 ${rounds}번` : "문항마다 [0]"}) 중 읽음 ${altRead} · 정답 아님 ${altNotExact.length}${roundsBlocked ? ` · 막힌 채점 ${roundsBlocked}` : ""}${HANGUL ? ` · 한글 꼴 ${hCount}개 중 읽음 ${hRead} · 정답 아님 ${hNotExact.length}${hBlocked ? ` · 막힌 채점 ${hBlocked}` : ""}` : ""}`,
+        hangulForms: HANGUL ? hCount : undefined, hangulRead: HANGUL ? hRead : undefined,
         missingInputs: fill.missing,
         alternatives: altCount, alternativesRead: altRead,
       });
@@ -211,12 +265,13 @@ const READ = `(() => {
 
   const counts = results.reduce((a, r) => ((a[r.status] = (a[r.status] || 0) + 1), a), {});
   const altTotal = results.reduce((a, r) => a + (r.alternatives || 0), 0);
-  fs.writeFileSync(DEST, JSON.stringify({ at: new Date().toISOString(), base: H.BASE || process.env.BASE || "https://k-ig-core.vercel.app", allAlts: ALL_ALTS, broken, lessons: results.length, counts, alternatives: altTotal, alternativesRead: altTried, problems, results }, null, 1));
+  fs.writeFileSync(DEST, JSON.stringify({ at: new Date().toISOString(), base: H.BASE || process.env.BASE || "https://k-ig-core.vercel.app", allAlts: ALL_ALTS, broken, hangul: HANGUL ? { koreanQuestions, forms: hangulTotal, read: hangulRead, broken: brokenHangul } : undefined, lessons: results.length, counts, alternatives: altTotal, alternativesRead: altTried, problems, results }, null, 1));
   console.log(`\n강의 ${results.length}개 — ${JSON.stringify(counts)}`);
   console.log(`모범 · 대체 답안인데 정답 처리되지 않은 문항: ${problems.length}건 (강의 ${new Set(problems.map((p) => p.id)).size}개) · 모범 ${problems.filter((p) => p.kind === "model-answer").length} · 대체 ${problems.filter((p) => p.kind === "alternative").length}`);
   console.log(`대체 답안 ${altTotal}개(${ALL_ALTS ? "전부" : "문항마다 [0]"}) 중 채점을 읽은 것 ${altTried}${BREAK ? ` · 깨기 ${broken ? `${broken.course}/${broken.id} ${broken.n}번 [1]` : "넣을 문항 없음"}` : ""}`);
+  if (HANGUL) console.log(`한국어 낱말 문항 ${koreanQuestions} · 한글 꼴 ${hangulTotal}개 중 채점을 읽은 것 ${hangulRead} · 정답 아님 ${problems.filter((p) => p.kind === "hangul").length}${BREAK_HANGUL ? ` · 깨기 ${brokenHangul ? `${brokenHangul.course}/${brokenHangul.id} ${brokenHangul.n}번 "${brokenHangul.now}"` : "넣을 문항 없음"}` : ""}`);
   for (const p of problems.slice(0, 10)) console.log(`   ${p.course}/${p.id} ${p.n}번 "${String(p.typed || p.modelAnswer).slice(0, 70)}" → ${p.verdict}`);
   console.log(`\n→ ${DEST}`);
   browser.proc.kill();
-  if (ALL_ALTS) process.exit(problems.length || counts.BLOCKED || (BREAK && !broken) ? 1 : 0);
+  if (ALL_ALTS || HANGUL) process.exit(problems.length || counts.BLOCKED || (BREAK && !broken) || (BREAK_HANGUL && !brokenHangul) ? 1 : 0);
 })().catch((e) => { console.error(e); process.exit(1); });

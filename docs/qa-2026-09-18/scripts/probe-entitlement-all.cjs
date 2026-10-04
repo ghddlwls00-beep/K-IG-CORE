@@ -12,15 +12,33 @@
  * "Own text" = up to three distinctive strings from the data file. Strings that
  * also appear on the home page (site chrome) are dropped and recorded.
  *
- * Output: out/entitlement-all.json + printed summary.
+ * Output: out/entitlement-all.json + printed summary · exit 1 when any route fails (회귀 점검 1002 — 전에는 FAIL 을 찍고도 exit 0).
+ *
+ * 회귀 점검 1002 단계 0 (2026-10-04): ADULT(2026-10-02 · 55강의)가 과정 목록에 없어 a2-1~a12-3 을 한 번도 열어 보지 않았다.
+ *   과정 목록은 이제 validRoutes.json 의 과정 전부(폐지 CNN 만 뺌) — 새 과정이 생기면 저절로 들어오고, 아래 KNOWN 에 없는 과정이면
+ *   멈춘다(바늘을 뽑는 법을 모르는 과정을 '바늘 0' 으로 통과시키지 않게). ADULT 의 바늘: 문장 · 한국어 줄(paragraph ko) · 덩어리 · 낱말 뜻.
+ *   ADULT 잠김 표시는 'STUDENT PASS · ALL-PASS'(src/app/adult/[lesson]/page.tsx → LessonPaywall studentPassCourse).
+ *   깨기(운영 상태는 안 바꿈 — 이 도구의 판정만 일부러 틀리게):
+ *     --break=adult-free   유료 ADULT a2-1 을 무료 목록 사본(메모리)에 넣음 → 운영은 잠김 화면 → 그 주소 FAIL · exit 1
+ *     --break=adult-leak   유료 ADULT a2-1 의 받은 HTML · RSC 사본(메모리)에 그 강의 바늘 하나를 심음 → 유출로 FAIL · exit 1
+ *                          (심을 바늘이 없으면 exit 2 — 아무것도 증명 못 함)
  */
 const fs = require("fs");
 const path = require("path");
 const REPO = path.resolve(__dirname, "../../..");
 const BASE = process.env.BASE || "https://k-ig-core.vercel.app";
 const OUT = path.join(__dirname, "../out");
-const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
+const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
+if (BREAK && !["adult-free", "adult-leak"].includes(BREAK)) { console.error(`모르는 --break=${BREAK} (adult-free · adult-leak)`); process.exit(2); }
 const routes = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8")).lessons;
+// 회귀 점검 1002: validRoutes 의 과정 전부(CNN 폐지) — 바늘 뽑는 법을 아는 과정만(KNOWN), 모르는 과정이 생기면 멈춤
+const KNOWN = ["student", "adult", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
+const RETIRED = new Set(["cnn"]);
+const COURSES = Object.keys(routes).filter((c) => !RETIRED.has(c));
+{
+  const unknown = COURSES.filter((c) => !KNOWN.includes(c));
+  if (unknown.length) { console.error(`!!! validRoutes 에 이 도구가 모르는 과정: ${unknown.join(", ")} — 바늘 뽑는 법을 넣고 다시 · exit 2`); process.exit(2); }
+}
 const licenseTs = fs.readFileSync(path.join(REPO, "src/lib/license.ts"), "utf8");
 const freeBlock = licenseTs.slice(licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS"), licenseTs.indexOf("};", licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS")));
 const FREE = {};
@@ -39,6 +57,8 @@ for (const line of freeBlock.split("\n")) {
     if (/\]/.test(line)) cur = null;
   }
 }
+if (!FREE.adult || !FREE.adult.size) { console.error("!!! license.ts FREE_PREVIEW_LESSON_IDS 에서 adult 무료 강의를 못 읽음 · exit 2"); process.exit(2); }
+if (BREAK === "adult-free") { FREE.adult.add("a2-1"); console.log("[일부러 깸] 유료 ADULT a2-1 을 무료 목록 사본에 넣음 — 운영은 잠김 화면이므로 a2-1 이 FAIL 이어야 함"); }
 const isFree = (course, id) => {
   const set = FREE[course];
   if (!set) return false;
@@ -66,6 +86,7 @@ function needles(course, id) {
   const file = path.join(REPO, "content/lessons", course, `${id}.json`);
   if (!fs.existsSync(file)) return [];
   const d = JSON.parse(fs.readFileSync(file, "utf8"));
+  if (course === "adult") return adultNeedles(d);
   let c = [];
   if (course === "ld") c.push(...(scripts[id.replace(/-1$/, "")] || []).map((r) => r.en));
   collectStrings(d.blocks || d, c);
@@ -76,6 +97,23 @@ function needles(course, id) {
     .filter((t) => !/^\[\s*[^\]]{1,20}\s*\]$/.test(t))
     .filter((t) => t.length >= 14 || (course === "phonics" && t.length >= 9));
   return [...new Set(c)].sort((a, b) => b.length - a.length).slice(0, 3).map((t) => t.slice(0, 32));
+}
+
+/**
+ * ADULT (회귀 점검 1002): 네 종류에서 하나씩 — 가장 긴 영어 문장 · 가장 긴 한국어 줄(paragraph ko) · 가장 긴 한국어 덩어리 ·
+ * 가장 긴 낱말 뜻. 전처럼 '가장 긴 셋' 이면 셋 다 영어 문장이라 한국어 줄 · 덩어리 · 뜻이 새는 것을 못 본다.
+ * (덩어리 · 뜻은 짧아 잠김 화면의 글과 우연히 겹칠 수 있어 8 · 6글자 이상만.)
+ */
+function adultNeedles(d) {
+  const items = (d.blocks || []).filter((b) => b && b.type === "sentences").flatMap((b) => b.items || []);
+  const longest = (arr, min) => arr.filter((t) => typeof t === "string" && t.trim().length >= min).map((t) => t.trim()).sort((a, b) => b.length - a.length)[0] || null;
+  const picks = [
+    longest(items.map((it) => it.text), 14),
+    longest((d.blocks || []).filter((b) => b && b.type === "paragraph" && b.lang === "ko").map((b) => b.text), 10),
+    longest(items.flatMap((it) => (it.chunks || []).map((c) => c && c.ko)), 8),
+    longest(items.flatMap((it) => (it.words || []).map((w) => w && w.meaning)), 6),
+  ].filter(Boolean);
+  return [...new Set(picks)].map((t) => t.slice(0, 32));
 }
 
 // PASS-OFF GRAMMAR (2026-09-27): a free preview's paid STUDENT items live in
@@ -137,6 +175,14 @@ async function get(url, headers) {
       const url = `${BASE}/${course}/${id}`;
       const html = await get(url, {});
       const rsc = await get(url, { RSC: "1" });
+      if (BREAK === "adult-leak" && course === "adult" && id === "a2-1") {
+        if (!ns.length) { console.log("!!! --break=adult-leak: a2-1 에 심을 바늘이 없음 — 아무것도 증명 못 함 · exit 2"); process.exit(2); }
+        // 한국어 줄 바늘(있으면) — 영어 문장만 보는 옛 바늘로는 못 잡는 것
+        const plant = ns.find((n) => /[가-힣]/.test(n)) || ns[0];
+        html.text += `<div>${esc(plant)}</div>`;
+        rsc.text += JSON.stringify(plant);
+        console.log(`[일부러 깸] a2-1 의 받은 HTML · RSC 사본에 그 강의 바늘을 심음: ${JSON.stringify(plant)}`);
+      }
       // HTML: paid → paywall marker in server HTML and no lesson text; free → no paywall and lesson text.
       // RSC: the paywall is a client component, so its marker text is not in the flight payload;
       //      paid → no lesson text; free → recorded only (lesson text may arrive as client props).
@@ -159,7 +205,8 @@ async function get(url, headers) {
   await Promise.all(Array.from({ length: 6 }, worker));
   results.sort((a, b) => (a.course + a.id).localeCompare(b.course + b.id));
   fs.mkdirSync(OUT, { recursive: true });
-  fs.writeFileSync(path.join(OUT, "entitlement-all.json"), JSON.stringify({ at: new Date().toISOString(), base: BASE, results }, null, 1));
+  // 깨기 결과는 진짜 결과 파일을 덮지 않는다
+  fs.writeFileSync(path.join(OUT, BREAK ? `entitlement-all-break-${BREAK}.json` : "entitlement-all.json"), JSON.stringify({ at: new Date().toISOString(), base: BASE, ...(BREAK ? { break: BREAK } : {}), results }, null, 1));
   const by = {};
   for (const r of results) {
     const key = `${r.course} ${r.free ? "free" : "paid"}`;
@@ -175,4 +222,15 @@ async function get(url, headers) {
   const fails = results.filter((r) => !r.pass);
   console.log(`${results.length} routes: ${results.length - fails.length} PASS, ${fails.length} FAIL`);
   for (const f of fails.slice(0, 60)) console.log(JSON.stringify({ course: f.course, id: f.id, free: f.free, html: { ...f.html }, rsc: { ...f.rsc }, needles: f.needles }));
+  // 명령서 ① · ② 의 숫자(과정마다): 유료 — 잠김(HTML 잠김 표시 + 바늘 0, RSC 바늘 0) / 열림 · 무료 — 열림 / 전체
+  const per = {};
+  for (const r of results) {
+    const p = (per[r.course] ||= { routes: 0, paid: 0, paidLocked: 0, paidOpenOrLeak: 0, free: 0, freeOpen: 0, noNeedle: 0 });
+    p.routes++;
+    if (!r.needles.length) p.noNeedle++;
+    if (r.free) { p.free++; if (r.pass) p.freeOpen++; } else { p.paid++; if (r.pass) p.paidLocked++; else p.paidOpenOrLeak++; }
+  }
+  for (const [c, p] of Object.entries(per)) console.log(`  ${c.padEnd(16)} 주소 ${p.routes} · 유료 잠김 ${p.paidLocked}/${p.paid} (열림 · 유출 ${p.paidOpenOrLeak}) · 무료 열림 ${p.freeOpen}/${p.free} · 바늘 없는 주소 ${p.noNeedle}`);
+  console.log(`과정 ${Object.keys(per).length}개(${Object.keys(per).join(" · ")})${BREAK ? ` [일부러 깸: ${BREAK}]` : ""} → exit ${fails.length ? 1 : 0}`);
+  process.exitCode = fails.length ? 1 : 0;
 })();

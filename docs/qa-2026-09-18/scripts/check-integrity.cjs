@@ -31,7 +31,9 @@ for (const f of fs.readdirSync(FEAT).filter((x) => x.endsWith(".jsonl"))) {
   console.log(`  ${f.padEnd(16)} lines ${String(lines.length).padStart(5)} · usable ${String(ok).padStart(5)} · error-records ${String(errRec).padStart(4)} · UNPARSEABLE ${broken}`);
 }
 console.log("\n== coverage per course (unique page×viewport with a usable record)");
-for (const c of E.COURSES) {
+// 회귀 점검 1002: E.COURSES(ADULT 없음) 대신 validRoutes 의 과정 전부(CNN 폐지) — ADULT 스윕 기록이 세어지게
+const ROUTED = Object.keys(JSON.parse(fs.readFileSync(path.join(E.REPO || path.resolve(__dirname, "../../.."), "src/lib/generated/validRoutes.json"), "utf8")).lessons).filter((c) => c !== "cnn");
+for (const c of ROUTED) {
   const expected = E.pages(c).length * 3;
   const done = (perCourse[c] || new Set()).size;
   console.log(`  ${c.padEnd(10)} ${String(done).padStart(5)} / ${expected}  ${done === expected ? "완료" : ""}`);
@@ -52,3 +54,4 @@ for (const f of ["inventory.json", "entitlement-all.json", "bundle-leak-all.json
   }
 }
 console.log(`\n손상된 파일/줄: ${bad}`);
+process.exitCode = bad ? 1 : 0; // 회귀 점검 1002: 손상이 있으면 exit 1(전에는 0)

@@ -17,6 +17,13 @@
  * missing-clip (7단계 7-1 g): 클립은 이 컴퓨터의 public/audio 에 **또는 R2 버킷**에 있으면 있는 것 — public/audio 는 git 에 없어
  * 컴퓨터마다 다르다(6단계 끝 missing-clip 8 은 실제로 R2 에 있는 클립 2개였다). R2 목록은 lib/r2-keys.cjs 로 읽기만 하고
  * (.env.local 을 스스로 읽음), 자격이 없으면 "로컬만 봄" 을 크게 찍는다.
+ *
+ * 회귀 점검 1002 단계 0 (2026-10-04): 과정 목록이 expectations.cjs 의 COURSES(ADULT 없음)라 ADULT 55강의는 클립도 내용도 안 봤다.
+ *   이제 validRoutes 의 과정 전부(CNN 폐지) — 과정별 '필요한 부분' 규칙이 없는 과정이 생기면 멈춘다. ADULT 규칙(5단계에 필요한 것):
+ *   문장 · 문장마다 한국어 줄(paragraph ko — 수가 같음) · 덩어리(영어+한국어, 영어 덩어리를 이으면 문장과 같음) · 낱말(표현 · 말하는 꼴 ·
+ *   뜻 · 품사 · 밑줄 자리 · 빈칸 보기 3). missing-clip 이 있으면 exit 1(명령서 ④ — 전에는 숫자만).
+ *   node check-completeness.cjs --break=adult-missing-clip  깨기: 없는 클립 이름을 첫 유료 ADULT 강의(a2-1)에 넣음 → adult missing-clip 1 · exit 1
+ *   node check-completeness.cjs --break=adult-chunk         깨기: a2-1 첫 문장의 한국어 덩어리 하나를 메모리에서 비움 → adult chunk-missing-ko 1 · exit 1
  */
 const fs = require("fs");
 const path = require("path");
@@ -29,6 +36,16 @@ const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.inde
 const ONLY = arg("--course", null);
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
 const FAKE_CLIP = "/audio/azure-ava/v1/b-0000000000000000.mp3";
+// 회귀 점검 1002: validRoutes 의 과정 전부(CNN 폐지)
+const RULED = ["student", "adult", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
+const COURSES = Object.keys(JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8")).lessons).filter((c) => c !== "cnn");
+{
+  const unruled = COURSES.filter((c) => !RULED.includes(c));
+  if (unruled.length) { console.error(`!!! 이 검사에 '필요한 부분' 규칙이 없는 과정: ${unruled.join(", ")} — 규칙을 넣고 다시 · exit 2`); process.exit(2); }
+}
+// 이 도구가 지적하면 exit 1 인 종류(명령서 ④ 와 ADULT 의 학습에 꼭 필요한 것). 그 밖의 종류는 전처럼 숫자만(옛 과정의 알려진 것들).
+const FATAL = new Set(["missing-clip", "missing-file"]);
+const FATAL_COURSE = new Set(["adult"]);
 
 const CLIP_DIR = path.join(REPO, "public/audio/azure-ava/v1");
 const onDisk = new Set(fs.readdirSync(CLIP_DIR).filter((f) => f.endsWith(".mp3")));
@@ -41,7 +58,7 @@ const clipExists = (p) => {
 (async () => {
 inBucket = await r2ClipKeys();
 console.log(inBucket ? `음성 클립: 이 컴퓨터 ${onDisk.size}개 + R2 ${inBucket.size}개와 함께 봄` : LOCAL_ONLY_WARNING);
-if (BREAK && BREAK !== "missing-clip") throw new Error(`모르는 --break=${BREAK}`);
+if (BREAK && !["missing-clip", "adult-missing-clip", "adult-chunk"].includes(BREAK)) throw new Error(`모르는 --break=${BREAK}`);
 let injected = false;
 
 const gaps = [];
@@ -52,7 +69,7 @@ const add = (course, kind, detail, where) => {
   k.push({ where, detail });
 };
 
-for (const course of E.COURSES) {
+for (const course of COURSES) {
   if (ONLY && course !== ONLY) continue;
   const ids = E.pages(course).map((p) => p.id);
   const index = E.courseIndex(course);
@@ -79,6 +96,12 @@ for (const course of E.COURSES) {
     const where = `${course}/${id}`;
     if (!E.hasLesson(course, id)) { add(course, "missing-file", "강의 데이터 파일이 없음", where); continue; }
     const d = E.lesson(course, id);
+    if (BREAK === "adult-chunk" && course === "adult" && id === "a2-1") {
+      const c0 = ((((d.blocks || []).find((b) => b.type === "sentences") || {}).items || [])[0] || {}).chunks;
+      if (!c0 || !c0[0]) { console.log("!!! --break=adult-chunk: a2-1 첫 문장에 덩어리가 없음 — 아무것도 증명 못 함 · exit 2"); process.exit(2); }
+      c0[0].ko = "";
+      console.log("[일부러 깸] adult/a2-1 첫 문장 첫 덩어리의 한국어를 메모리에서 비움");
+    }
     const x = E.expected(course, id);
 
     if (!String(d.title || "").trim()) add(course, "missing-title", "제목 없음", where);
@@ -123,6 +146,33 @@ for (const course of E.COURSES) {
       if (!words.length) add(course, "no-words", "단어표가 비어 있음", where);
     } else if (course === "student") {
       if (!E.itemsOf(d).length) add(course, "no-items", "문장이 하나도 없음", where);
+    } else if (course === "adult") {
+      // 회귀 점검 1002 — ADULT 5단계(docs/adult/README.md)가 쓰는 것: 문장 · 한국어 줄 · 덩어리 · 낱말
+      // 날것의 문항(E.itemsOf 는 n · text 만 남긴다 — 덩어리 · 낱말이 빠짐)
+      const items = (d.blocks || []).filter((b) => b.type === "sentences").flatMap((b) => b.items || []).filter((it) => it && typeof it.text === "string");
+      const koLines = (d.blocks || []).filter((b) => b.type === "paragraph" && b.lang === "ko");
+      if (!items.length) add(course, "no-items", "문장이 하나도 없음", where);
+      if (items.length !== koLines.length) add(course, "ko-line-count", `문장 ${items.length} ↔ 한국어 줄 ${koLines.length}`, where);
+      for (const l of koLines) if (!String(l.text || "").trim()) add(course, "empty-ko-line", "빈 한국어 줄", where);
+      let words = 0;
+      const norm = (s) => String(s || "").replace(/\s+/g, " ").trim();
+      for (const it of items) {
+        if (!String(it.text || "").trim()) { add(course, "empty-item", `${it.n}번 문장이 비어 있음`, where); continue; }
+        const chunks = it.chunks || [];
+        if (!chunks.length) add(course, "no-chunks", `${it.n}번 문장에 덩어리(끊어 읽기)가 없음`, where);
+        for (const c of chunks) {
+          if (!String((c && c.en) || "").trim()) add(course, "chunk-missing-en", `${it.n}번 덩어리 영어 없음`, where);
+          if (!String((c && c.ko) || "").trim()) add(course, "chunk-missing-ko", `${it.n}번 덩어리 "${String(c && c.en).slice(0, 30)}" 한국어 없음`, where);
+        }
+        if (chunks.length && norm(chunks.map((c) => c && c.en).join(" ")) !== norm(it.text)) add(course, "chunks-not-sentence", `${it.n}번 영어 덩어리를 이어도 문장과 다름`, where);
+        for (const w of it.words || []) {
+          words++;
+          for (const k of ["word", "say", "meaning", "pos"]) if (!String((w && w[k]) || "").trim()) add(course, `word-missing-${k}`, `${it.n}번 낱말 "${w && w.word}" 의 ${k} 없음`, where);
+          if (!(Number.isInteger(w.start) && Number.isInteger(w.end) && w.end > w.start && w.end <= String(it.text).length)) add(course, "word-bad-span", `${it.n}번 낱말 "${w.word}" 밑줄 자리(start · end)가 문장 밖`, where);
+          if (!Array.isArray(w.choices) || w.choices.length !== 3 || w.choices.some((x) => !String(x || "").trim())) add(course, "word-choices", `${it.n}번 낱말 "${w.word}" 빈칸 보기가 3개가 아님`, where);
+        }
+      }
+      if (!words) add(course, "no-words", "낱말(단어 단계)이 하나도 없음", where);
     } else if (course === "passoff-grammar") {
       // docs/pass-off-grammar/데이터-형식.md — what the five steps need to work at all. A free preview's
       // held-back paid items (content/private/passoff-grammar/<id>.paid.json) are checked with it.
@@ -165,6 +215,7 @@ for (const course of E.COURSES) {
     // 4. every speaker button needs a clip file; a missing file is a button that cannot speak
     const clipPaths = [...(x.clipPaths || [])];
     if (BREAK === "missing-clip" && !injected) { clipPaths.push(FAKE_CLIP); injected = true; }
+    if (BREAK === "adult-missing-clip" && !injected && course === "adult" && id === "a2-1") { clipPaths.push(FAKE_CLIP); injected = true; }
     for (const p of clipPaths) if (!clipExists(p)) add(course, "missing-clip", `음성 파일 없음: ${p}`, where);
     for (const src of x.legacyAudio || []) {
       const f = path.join(REPO, "public", String(src).replace(/^\//, ""));
@@ -181,7 +232,9 @@ for (const [course, kinds] of Object.entries(report)) {
   totals[course] = {};
   for (const [kind, list] of Object.entries(kinds)) { totals[course][kind] = list.length; grand += list.length; }
 }
-fs.writeFileSync(path.join(OUT, "completeness.json"), JSON.stringify({ at: new Date().toISOString(), totals, report }, null, 1));
+// 깨기 결과는 진짜 결과 파일을 덮지 않는다(회귀 점검 1002)
+const OUT_FILE = path.join(OUT, BREAK ? `completeness-break-${BREAK}.json` : "completeness.json");
+fs.writeFileSync(OUT_FILE, JSON.stringify({ at: new Date().toISOString(), totals, report }, null, 1));
 
 console.log(`누락 점검 — 과정 ${Object.keys(report).length}개, 지적 ${grand}건\n`);
 for (const [course, kinds] of Object.entries(totals)) {
@@ -192,6 +245,11 @@ for (const [course, kinds] of Object.entries(totals)) {
   }
 }
 const missingClips = Object.values(report).reduce((n, k) => n + (k["missing-clip"] || []).length, 0);
-console.log(`\nmissing-clip ${missingClips}${inBucket ? " (이 컴퓨터 + R2)" : " (이 컴퓨터만 — R2 를 못 봄)"}${BREAK ? ` [일부러 깸: ${FAKE_CLIP} 를 넣음]` : ""}`);
-console.log(`→ ${path.join(OUT, "completeness.json")}`);
+console.log(`\nmissing-clip ${missingClips}${inBucket ? " (이 컴퓨터 + R2)" : " (이 컴퓨터만 — R2 를 못 봄)"}${/missing-clip$/.test(BREAK) ? ` [일부러 깸: ${FAKE_CLIP} 를 넣음]` : ""}`);
+console.log(`→ ${OUT_FILE}`);
+// 회귀 점검 1002: 과정마다 본 강의 수 · 클립 수(ADULT 가 세어지는지) · exit 1 은 missing-clip · missing-file · ADULT 의 지적
+const fatal = [];
+for (const [course, kinds] of Object.entries(report)) for (const [kind, list] of Object.entries(kinds)) if (FATAL.has(kind) || FATAL_COURSE.has(course)) fatal.push(`${course} ${kind} ${list.length}`);
+console.log(`과정 ${COURSES.filter((c) => !ONLY || c === ONLY).length}개(${COURSES.filter((c) => !ONLY || c === ONLY).join(" · ")})${BREAK ? ` [일부러 깸: ${BREAK}]` : ""} · exit 1 인 지적: ${fatal.length ? fatal.join(" · ") : "없음"} → exit ${fatal.length ? 1 : 0}`);
+process.exitCode = fatal.length ? 1 : 0;
 })().catch((e) => { console.error(e); process.exit(1); });

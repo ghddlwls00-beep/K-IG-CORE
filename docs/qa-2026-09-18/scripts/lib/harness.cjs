@@ -26,9 +26,12 @@ const BASE = process.env.BASE || "https://k-ig-core.vercel.app";
 const OUT = path.join(__dirname, "../../out");
 const unified = loadTs(path.join(REPO, "src/lib/unifiedSpeech.ts"));
 
+// 회귀 점검 1002 단계 0 (2026-10-04): ADULT(2026-10-02 새 과정) — 강의 머리의 '← ADULT 목록' (src/app/[course]/[lesson]/page.tsx
+// `${courseInfo.title} 목록`, courses.ts title "ADULT"). 없으면 load() 가 표지 없이 '그렸음' 으로 쳐서 빈 화면도 지나갔다.
 const MARKERS = {
   phonics: "VOCA 목록",
   student: "STUDENT 목록",
+  adult: "ADULT 목록",
   "passoff-grammar": "PASS-OFF GRAMMAR 목록",
   reading: "READING 목록",
   ld: "LISTENING 목록",
@@ -229,6 +232,9 @@ const VIEWPORTS = {
   desktop: { width: 1366, height: 900, deviceScaleFactor: 1, mobile: false, touch: false },
   tablet: { width: 768, height: 1024, deviceScaleFactor: 2, mobile: true, touch: true },
   mobile: { width: 390, height: 844, deviceScaleFactor: 2, mobile: true, touch: true },
+  // 회귀 점검 1002 (2026-10-04): '작은 휴대폰' — capture-mobile-0927.cjs 의 small(갤럭시 S 계열)과 같은 크기. 명령서의 3화면
+  // '휴대폰 · 작은 휴대폰 · 데스크톱' 용(--viewports desktop,mobile,small). 기본 화면 목록(desktop,tablet,mobile)은 그대로.
+  small: { width: 360, height: 780, deviceScaleFactor: 2, mobile: true, touch: true },
 };
 async function setViewport(tab, kind) {
   const v = VIEWPORTS[kind];

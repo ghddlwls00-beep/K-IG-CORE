@@ -26,6 +26,10 @@
  *     --list                  확인한 글을 한 줄씩(기본은 '없음' 만)
  *     --break=student-ko      깨기 시험: STUDENT s1-1 한국어 해석 한 줄을 메모리에서만 바꿈 → '클립 없음' 이 1 늘어야 한다
  *     --break=reading-ko      깨기 시험: READING pr001-1 한국어 한 문장을 메모리에서만 바꿈 → 확인할 글이 늘지 않아야 한다(소리 안 냄)
+ *     --break=adult-ko        (회귀 점검 1002) ADULT a2-1 한국어 줄 한 줄을 메모리에서만 바꿈 → '클립 없음' 이 1 늘어야 한다(ADULT 도 한국어를 소리 냄)
+ *     --break=adult-chunk     ADULT a2-1 첫 덩어리 영어를 메모리에서만 바꿈 → 덩어리 클립 '클립 없음' 1(문장은 그대로)
+ *     --break=adult-word      ADULT a2-1 첫 낱말의 말하는 꼴(say)을 메모리에서만 바꿈 → '클립 없음' 1
+ *   (ADULT 는 SPOKEN_COURSES(spoken-texts.cjs)에 이미 있어 이 도구는 10/2 부터 ADULT 를 봤다 — 1002 단계 0 은 깨기로 그것을 증명)
  * 하나라도 없으면 exit 1. 파일은 아무것도 쓰지 않는다.
  */
 const fs = require("fs");
@@ -52,7 +56,8 @@ const fns = {
 
 const LIST = process.argv.includes("--list");
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
-if (BREAK && !["student-ko", "reading-ko"].includes(BREAK)) { console.error(`--break=${BREAK} 는 없다 (student-ko · reading-ko)`); process.exit(2); }
+const BREAKS = ["student-ko", "reading-ko", "adult-ko", "adult-chunk", "adult-word"];
+if (BREAK && !BREAKS.includes(BREAK)) { console.error(`--break=${BREAK} 는 없다 (${BREAKS.join(" · ")})`); process.exit(2); }
 
 // ── 커밋된 판(HEAD)과 지금 판
 // HEAD 가 맞는 곳(7-1 n): 이 도구의 뜻이 '아직 커밋하지 않은 변경' 이라 git HEAD 를 쓴다 — 고치기 전 판을 흉내 내는 대조군이 아님.
@@ -101,6 +106,15 @@ if (BREAK === "student-ko") {
   const d = parse(readNowText(rel));
   const s = (d.readingSentences || []).find((x) => x && x.korean);
   s.korean = `${s.korean} (깨기 시험 한 줄)`;
+  NOW_OVERRIDE.set(rel, d);
+} else if (BREAK.startsWith("adult-")) {
+  // 회귀 점검 1002 — 유료 ADULT a2-1 (메모리에서만)
+  const rel = "content/lessons/adult/a2-1.json";
+  const d = parse(readNowText(rel));
+  const item = ((d.blocks || []).find((x) => x && x.type === "sentences") || { items: [] }).items[0];
+  if (BREAK === "adult-ko") { const b = (d.blocks || []).find((x) => x && x.type === "paragraph" && x.lang === "ko"); b.text = `${b.text} (깨기 시험 한 줄)`; }
+  if (BREAK === "adult-chunk") item.chunks[0].en = `${item.chunks[0].en} indeed`;
+  if (BREAK === "adult-word") item.words[0].say = `${item.words[0].say} together`;
   NOW_OVERRIDE.set(rel, d);
 }
 const readNow = (rel) => (NOW_OVERRIDE.has(rel) ? NOW_OVERRIDE.get(rel) : parse(readNowText(rel)));

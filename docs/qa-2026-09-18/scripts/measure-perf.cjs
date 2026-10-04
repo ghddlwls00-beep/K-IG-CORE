@@ -32,8 +32,13 @@ const RUNS = Number(arg("--runs", 3));
 const LICENSED = process.argv.includes("--licensed");
 const ONLY = arg("--only", null);
 
-const FREE = ["/", "/student", "/phonics", "/grammar1", "/grammar2", "/ld", "/reading", "/student/s1-1", "/phonics/mv1-01", "/grammar1/gh1-006", "/grammar2/gh2-007", "/ld/d001", "/reading/pr001"]; // CNN excluded (retired)
-const PAID = ["/student/s10-1", "/phonics/hv-48", "/grammar1/gh1-058", "/grammar2/gh2-030", "/ld/d150", "/reading/pr100", "/student/s20-5", "/ld/d276", "/reading/pr256"];
+// 회귀 점검 1002: ADULT · PASS-OFF GRAMMAR 쪽은 --with-new-courses 일 때만 더한다 — 기본 쪽 목록은 9/24 · 9/26 값과 견줄 수 있게 그대로
+// (쪽이 늘면 중앙값이 달라져 사장님 판단('이대로')의 숫자와 비교가 안 됨). 결과 파일 이름에도 붙음(아래 --tag 와 같이 쓰면 덮지 않음).
+const WITH_NEW = process.argv.includes("--with-new-courses");
+const FREE = ["/", "/student", "/phonics", "/grammar1", "/grammar2", "/ld", "/reading", "/student/s1-1", "/phonics/mv1-01", "/grammar1/gh1-006", "/grammar2/gh2-007", "/ld/d001", "/reading/pr001", // CNN excluded (retired)
+  ...(WITH_NEW ? ["/adult", "/passoff-grammar", "/adult/a1-1", "/passoff-grammar/pg01-1"] : [])];
+const PAID = ["/student/s10-1", "/phonics/hv-48", "/grammar1/gh1-058", "/grammar2/gh2-030", "/ld/d150", "/reading/pr100", "/student/s20-5", "/ld/d276", "/reading/pr256",
+  ...(WITH_NEW ? ["/adult/a6-2", "/adult/a12-3", "/passoff-grammar/pg10-1", "/passoff-grammar/pg20-2"] : [])];
 const CONDITIONS = {
   desktop: { viewport: "desktop", net: null, cpu: 1 },
   "4g-phone": { viewport: "mobile", net: { latency: 170, downloadThroughput: (9000 * 1024) / 8, uploadThroughput: (1500 * 1024) / 8 }, cpu: 4 },
@@ -113,7 +118,7 @@ async function measure(browser, url, cond) {
     browser.proc.kill();
   }
   const TAG = arg("--tag", "");
-  const outFile = path.join(__dirname, `../out/perf${LICENSED ? "-licensed" : "-anon"}${ONLY ? `-${ONLY}` : ""}${TAG ? `-${TAG}` : ""}.json`);
+  const outFile = path.join(__dirname, `../out/perf${LICENSED ? "-licensed" : "-anon"}${ONLY ? `-${ONLY}` : ""}${WITH_NEW ? "-8courses" : ""}${TAG ? `-${TAG}` : ""}.json`);
   fs.writeFileSync(outFile, JSON.stringify({ at: new Date().toISOString(), base: BASE, licensed: LICENSED, results: out }, null, 1));
 })();
 

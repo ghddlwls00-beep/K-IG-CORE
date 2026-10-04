@@ -52,6 +52,14 @@
  *   심는 깨기(index · js · question · list-scope)가 심을 것을 못 찾으면 exit 2 로 멈춤 — 통과(0)도 잡힘(1)도 아님. 2026-09-28: 문제 파일
  *   (content/questions)이 아직 없는 트리에서 --break=question 은 null 을 심고도 exit 1 이었음(다른 곳의 진짜 걸림 때문).
  *   2026-09-28: LISTENING · READING 의 바늘에 그 강의 새 문제(content/questions/<과정>/<본 id>.json)의 물음 · 보기(12글자 이상)도 들어감.
+ *
+ * 회귀 점검 1002 단계 0 (2026-10-04): ADULT(2026-10-02 · 55강의)가 과정 목록에 없어 그 강의 주소 · 목록 쪽을 받지도, 그 유료 글을
+ *   바늘로 찾지도 않았다. 과정 목록은 이제 validRoutes.json 의 과정 전부(폐지 CNN 만 뺌, 모르는 과정이면 멈춤).
+ *   ADULT 바늘: 문장 · 한국어 줄(paragraph ko — 12글자부터) · 덩어리(영어+한국어 한 쌍 'en…ko…', 한국어 덩어리 10글자부터) ·
+ *   낱말(말하는 꼴+뜻 'say…meaning…', 뜻 10글자부터). 덩어리 · 뜻은 짧아서 20글자 기준이면 거의 다 빠졌다.
+ *   node probe-bundle-leak-all.cjs --break=adult-ko       유료 ADULT 한국어 줄 하나를 /search-index.json 사본에 → adult inJson ≥1 · exit 1
+ *   node probe-bundle-leak-all.cjs --break=adult-chunk    유료 ADULT 한국어 덩어리 하나를(20글자 미만 — 옛 기준이면 못 봄) 같은 사본에 → exit 1
+ *   node probe-bundle-leak-all.cjs --break=adult-meaning  유료 ADULT 낱말 뜻 하나를(20글자 미만) JS 사본에 → adult inJs ≥1 · exit 1
  */
 const fs = require("fs");
 const path = require("path");
@@ -69,8 +77,14 @@ function baseArg() {
 }
 const BASE = (baseArg() || process.env.BASE || "https://k-ig-core.vercel.app").replace(/\/+$/, "");
 const OUT = path.join(__dirname, "../out");
-const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
 const vr = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
+// 회귀 점검 1002: validRoutes 의 과정 전부(CNN 폐지) — 바늘 뽑는 법을 아는 과정만, 모르는 과정이 생기면 멈춤
+const KNOWN_COURSES = ["student", "adult", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
+const COURSES = Object.keys(vr.lessons).filter((c) => c !== "cnn");
+{
+  const unknown = COURSES.filter((c) => !KNOWN_COURSES.includes(c));
+  if (unknown.length) { console.error(`!!! validRoutes 에 이 도구가 모르는 과정: ${unknown.join(", ")} — 바늘 뽑는 법을 넣고 다시 · exit 2`); process.exit(2); }
+}
 const licenseTs = fs.readFileSync(path.join(REPO, "src/lib/license.ts"), "utf8");
 const freeBlock = licenseTs.slice(licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS"), licenseTs.indexOf("};", licenseTs.indexOf("FREE_PREVIEW_LESSON_IDS")));
 const FREE = {};
@@ -115,6 +129,24 @@ function lessonNeedles(course, id) {
   const needles = out.filter((s) => typeof s === "string").map((s) => ({ kind: "text", raw: s, f: flat(s), meta: meta.has(flat(s)) })).filter((n) => n.f.length >= 20);
   if (course === "reading") for (const v of d.readingVocabulary || []) needles.push({ kind: "vocab-record", raw: v.word, f: "word" + flat(v.word) + "lemma" + flat(v.lemma) });
   for (const b of d.blocks || []) if (b.type === "wordgrid") for (const row of b.rows || []) { const f = flat(row.join(" ")); if (f.length >= 20) needles.push({ kind: "grid-row", raw: row.join(" "), f }); }
+  // 회귀 점검 1002 — ADULT 의 짧은 유료 글(헤더): 한국어 줄 12글자부터 · 덩어리 쌍 · 한국어 덩어리 10글자부터 · 낱말 쌍 · 뜻 10글자부터
+  if (course === "adult") {
+    const seen = new Set(needles.map((n) => n.f));
+    const push = (kind, raw, f, min) => { if (f.length >= min && !seen.has(f)) { seen.add(f); needles.push({ kind, raw, f, meta: false }); } };
+    for (const b of d.blocks || []) if (b.type === "paragraph" && b.lang === "ko") push("ko-line", b.text, flat(b.text), 12);
+    for (const b of d.blocks || []) if (b.type === "sentences") for (const it of b.items || []) {
+      for (const c of it.chunks || []) {
+        if (!c) continue;
+        push("chunk-pair", `${c.en} / ${c.ko}`, "en" + flat(c.en) + "ko" + flat(c.ko), 20);
+        push("chunk-ko", c.ko, flat(c.ko), 10);
+      }
+      for (const w of it.words || []) {
+        if (!w) continue;
+        push("word-pair", `${w.say} = ${w.meaning}`, "say" + flat(w.say) + "meaning" + flat(w.meaning), 20);
+        push("word-meaning", w.meaning, flat(w.meaning), 10);
+      }
+    }
+  }
   // 2026-09-28 새 문제: the lesson's comprehension questions (content/questions/<course>/<main id>.json) — prompts and options of
   // 12+ letters (Korean is dense: 12 letters is already a specific phrase)
   const qFile = path.join(REPO, "content/questions", course, `${id.replace(/-\d+$/, "")}.json`);
@@ -350,6 +382,22 @@ async function crawl() {
     }
     if (!planted) nothingToPlant("어느 공개 제목에도 없는 유료 PASS-OFF 문장이");
     console.log(`[일부러 깸] /search-index.json 사본에 어느 공개 제목에도 없는 유료 PASS-OFF 문장 하나: ${JSON.stringify(planted)}`);
+  } else if (BREAK === "adult-ko" || BREAK === "adult-chunk" || BREAK === "adult-meaning") {
+    // 회귀 점검 1002: 유료 ADULT 의 한 종류 바늘 하나 — 지금 어디에도 없는 것(무료 · 홈 · 목록 제목 · JSON · JS 에 없음)을 사본에 심는다.
+    // chunk · meaning 은 일부러 20글자 미만(옛 기준이면 바늘이 아니라 못 잡았을 것)을 고른다.
+    const kind = { "adult-ko": "ko-line", "adult-chunk": "chunk-ko", "adult-meaning": "word-meaning" }[BREAK];
+    const short = BREAK !== "adult-ko";
+    const idx = jsonBodies.find((j) => j.url === "/search-index.json");
+    outer: for (const id of vr.lessons.adult || []) {
+      if (isFree("adult", id)) continue;
+      for (const n of lessonNeedles("adult", id)) if (n.kind === kind && (!short || n.f.length < 20) && !freeFlat.has(n.f) && !homeFlat.includes(n.f) && !titleHolding(n.f) && !jsonBodies.some((j) => j.flat.includes(n.f)) && !js.includes(n.f)) {
+        planted = { course: "adult", id, kind, text: n.raw.slice(0, 80) };
+        if (BREAK === "adult-meaning") js += "\n" + n.f; else idx.flat += n.f;
+        break outer;
+      }
+    }
+    if (!planted) nothingToPlant(`유료 ADULT ${kind} 바늘이`);
+    console.log(`[일부러 깸] ${BREAK === "adult-meaning" ? "JS" : "/search-index.json"} 사본에 유료 ADULT ${kind} 하나: ${JSON.stringify(planted)}`);
   } else if (BREAK) throw new Error(`모르는 --break=${BREAK}`);
 
   const result = { at: new Date().toISOString(), base: BASE, pages, chunks: chunkList.length, jsKB: Math.round(jsBytes / 1024), badChunks, json: jsonBodies.map((j) => ({ url: j.url, status: j.status, kb: Math.round(j.bytes / 1024) })), courses: {} };
@@ -404,5 +452,7 @@ async function crawl() {
   for (const [c, x] of Object.entries(result.courses)) for (const e of x.appCodeExamples) console.log(`  (앱 코드) ${c}/${e.id} "${e.text}" ← ${e.code}`);
   for (const [c, x] of Object.entries(result.courses)) for (const e of x.listTitleExamples) console.log(`  (목록 제목) ${c}/${e.id} "${e.text}" ⊂ ${e.title}`);
   if (result.badChunks.length) console.log(`!!! 받지 못한 청크 ${result.badChunks.length} — 이 판정은 그 청크를 못 본 것 · exit 1`);
+  // 회귀 점검 1002: 과정마다 본 유료 강의 · 바늘 수 — ADULT 가 세어졌는지 숫자로
+  console.log(`과정 ${COURSES.length}개: ${Object.entries(result.courses).map(([c, x]) => `${c} 유료 ${x.paidLessons}강의 · 바늘 ${x.needles} · 유출 ${x.inJs + x.inJson}`).join(" | ")}`);
   process.exit(leaks || result.badChunks.length ? 1 : 0);
 })();

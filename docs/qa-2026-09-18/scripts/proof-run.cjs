@@ -48,7 +48,8 @@ for (const t of targets) {
   const tail = String(r.stdout || "").trim().split(/\r?\n/).slice(-3).join(" | ");
   console.log(`[${PHASE}] ${course} ${id} · ${Math.round((Date.now() - started) / 1000)}s · exit ${r.status} · ${tail}`);
   if (r.status !== 0) console.log(String(r.stderr || "").slice(-800));
-  for (const vp of ["desktop", "tablet", "mobile"]) {
+  // 회귀 점검 1002: 'small' (작은 휴대폰) too, when a run was given it through the environment's default — copied if present
+  for (const vp of ["desktop", "tablet", "mobile", "small"]) {
     const src = path.join(OUT, "rendered", course, `${id}.${vp}.json`);
     if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DEST, `${course}-${id}.${vp}.json`));
   }

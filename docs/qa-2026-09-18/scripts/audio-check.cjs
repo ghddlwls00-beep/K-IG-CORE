@@ -23,6 +23,16 @@
  * 더는 안 쓰는 옛 클립 6을 '무료인데 막힘', 무료 · 유료가 함께 쓰는 클립을 '유료가 새어 나감' 으로). 그래서 목록에 적힌 재료 지문
  * (lib/inventory-inputs.cjs)을 다시 계산해 다르면 멈춘다(exit 1) — --refresh 면 다시 만든다. 또 '지어낸 번호' 탐침이
  * /audio/student/s1-1-9.mp3 였는데 그것은 무료 강의 s1-1 의 진짜 9번 파일이라 늘 FAIL 1 이었다 → 있을 수 없는 -99 로.
+ *
+ * 회귀 점검 1002 단계 0 (2026-10-04):
+ *   - --anon 의 기대: 전에는 '무료 소리 목록(freeSpeechKeys.json)에 있으면 열려야' 였다 — 목록이 틀리면(무료 강의 클립이 빠짐 · 유료 클립이
+ *     들어감) 운영도 목록대로 답하므로 둘 다 PASS 였다. 이제 '무료 강의가 쓰는 클립이면 열려야, 아니면 403' (학습자가 겪는 것).
+ *   - 과정마다 숫자(무료 열림 / 유료 막힘) — 목록의 courses(audio-inventory 가 적음)로. ADULT 가 세어지는지 보임.
+ *   - 강의 폴더가 없는 두 과정(ADULT · PASS-OFF — 소리는 모두 azure-ava 클립)의 지어낸 폴더 주소도 403 이어야.
+ *   - --licensed: 빠진 · 막힌 클립이 있으면 exit 1(전에는 숫자만) · --clone <이름>(감사 프로필 사본 이름, 기본 'audio').
+ *   - 깨기: --break=stale-spoken  scripts/lib/spoken-texts.cjs 를 메모리에서만 바꾼 지문으로 견줌 → '목록이 지금 내용과 다름' · exit 1
+ *     (spoken-texts.cjs 가 재료 지문에 없을 때는 ADULT 덩어리 · 낱말을 더해도 낡은 목록으로 검사했다)
+ *     --inventory <사본> 으로 '유료 ADULT 클립 하나를 무료 강의 것으로 적은 목록' 을 주면 운영의 403 이 FAIL 로 잡혀야 한다.
  */
 const fs = require("fs");
 const path = require("path");
@@ -53,8 +63,15 @@ const DEFAULT_INV = path.join(OUT, "audio-inventory.json");
 const INV_FILE = path.resolve(arg("--inventory", DEFAULT_INV)); // 다른 목록 파일(깨기 시험용)
 const INV_NAME = ((r) => (!r || r.startsWith("..") || path.isAbsolute(r) ? INV_FILE : r))(path.relative(process.cwd(), INV_FILE)); // 안내에는 실제로 읽은 파일 이름을(3차 점검 i)
 let inv = JSON.parse(fs.readFileSync(INV_FILE, "utf8"));
+const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
+if (BREAK && BREAK !== "stale-spoken") { console.error(`모르는 --break=${BREAK} (stale-spoken)`); process.exit(2); }
+const CLONE = arg("--clone", "audio");
 {
-  const now = inputsFingerprint();
+  // 깨기: '소리 내는 글' 의 정의 파일이 바뀐 것처럼(메모리에서만) — 목록이 낡았다고 멈춰야 한다
+  const SPOKEN_REL = "scripts/lib/spoken-texts.cjs";
+  const overrides = BREAK === "stale-spoken" ? { [SPOKEN_REL]: fs.readFileSync(path.join(H.REPO, SPOKEN_REL), "utf8") + "\n// 깨기 시험: 소리 내는 글의 정의가 바뀜\n" } : {};
+  if (BREAK) console.log(`[일부러 깸] ${SPOKEN_REL} 를 메모리에서만 바꾼 지문으로 견줌`);
+  const now = inputsFingerprint(overrides);
   if (!inv.inputs || inv.inputs.fingerprint !== now.fingerprint) {
     const why = inv.inputs ? `재료 지문이 다름(목록 ${inv.inputs.fingerprint} · 지금 ${now.fingerprint})` : "목록에 재료 지문이 없음(7-1 i 전에 만든 목록)";
     if (!process.argv.includes("--refresh")) {
@@ -67,7 +84,8 @@ let inv = JSON.parse(fs.readFileSync(INV_FILE, "utf8"));
       process.exit(1);
     }
     console.log(`기준 목록이 지금 내용과 다름(${why}) — --refresh: 다시 만듦`);
-    execFileSync(process.execPath, [path.join(__dirname, "audio-inventory.cjs")], { stdio: "ignore" });
+    // (회귀 점검 1002: audio-inventory 는 무료/유료 갈림이 어긋나면 exit 1 — 그래도 목록은 쓰므로 여기서는 멈추지 않고 검사한다)
+    try { execFileSync(process.execPath, [path.join(__dirname, "audio-inventory.cjs")], { stdio: "ignore" }); } catch (e) { if (e.status !== 1) throw e; console.log("(audio-inventory: 무료/유료 갈림 어긋남 exit 1 — 목록은 새로 씀, 검사 계속)"); }
     inv = JSON.parse(fs.readFileSync(INV_FILE, "utf8"));
   }
   console.log(`기준 목록 ${INV_NAME}(${inv.at}) · 재료 ${inv.inputs.files}파일 · 지문 ${inv.inputs.fingerprint} (지금 내용과 같음)`);
@@ -91,8 +109,9 @@ async function anon() {
       await r.arrayBuffer().catch(() => {});
       const type = r.headers.get("content-type") || "";
       const open = r.status === 200 || r.status === 206;
-      const shouldOpen = c.inFreeKeyList;
-      rows.push({ path: c.path, free: c.freeLesson, inFreeKeyList: c.inFreeKeyList, status: r.status, type, pass: shouldOpen ? open && /audio/.test(type) : r.status === 403, note: shouldOpen && !open ? "free-lesson clip is NOT served anonymously" : !shouldOpen && open ? "paid clip served anonymously" : "" });
+      // 회귀 점검 1002: 기대는 '무료 강의가 쓰는가'(학습자가 겪는 것) — 무료 소리 목록이 틀린 것도 여기서 잡힌다(헤더)
+      const shouldOpen = Boolean(c.freeLesson);
+      rows.push({ path: c.path, free: c.freeLesson, inFreeKeyList: c.inFreeKeyList, courses: c.courses || [], status: r.status, type, pass: shouldOpen ? open && /audio/.test(type) : r.status === 403, note: shouldOpen && !open ? "free-lesson clip is NOT served anonymously" : !shouldOpen && open ? "paid clip served anonymously" : "" });
     }
   };
   await Promise.all(Array.from({ length: CONC }, worker));
@@ -103,6 +122,8 @@ async function anon() {
   for (const p of ["/audio/adults/am01.mp3", "/audio/man/m01.mp3", "/audio/woman/w01.mp3", "/audio/basics/b01.mp3", "/audio/chinese/c01.mp3", "/audio/middle/mid01.mp3"]) extra.push({ url: p, expect: "403", why: "retired course folder" });
   // 지어낸 번호는 있을 수 없는 -99 — '-9' 는 s1-1 의 진짜 9번 파일이라 늘 열렸다(7-1 i)
   for (const p of ["/audio/student/s1-1-99.mp3", "/audio/ld/d001-99.mp3", "/audio/reading/pr001-99.mp3"]) extra.push({ url: p, expect: "403-or-404", why: "free id with an invented suffix (mediaAccess suffix stripping)" });
+  // 회귀 점검 1002: 강의 폴더가 없는 과정(허용 폴더 밖 — mediaAccess 'unclaimed')의 지어낸 주소
+  for (const p of ["/audio/adult/a1-1.mp3", "/audio/adult/a2-1.mp3", "/audio/passoff-grammar/pg01-1.mp3", "/audio/passoff-grammar/pg02-1.mp3"]) extra.push({ url: p, expect: "403-or-404", why: "course with no media folder (ADULT · PASS-OFF speak azure-ava clips only)" });
   const extraRows = [];
   let j = 0;
   const worker2 = async () => {
@@ -121,25 +142,36 @@ async function anon() {
 
   const fails = rows.filter((r) => !r.pass);
   const extraFails = extraRows.filter((r) => !r.pass);
+  // 과정마다(그 과정이 쓰는 클립 — 여러 과정이 같이 쓰는 클립은 각 과정에 셈)
+  const byCourse = {};
+  for (const r of rows) for (const c of r.courses || ["(과정 모름 — 옛 목록)"]) {
+    const b = (byCourse[c] ||= { freeOpen: 0, freeTotal: 0, paidBlocked: 0, paidTotal: 0 });
+    if (r.free) { b.freeTotal++; if (r.pass) b.freeOpen++; } else { b.paidTotal++; if (r.pass) b.paidBlocked++; }
+  }
   const out = {
     at: new Date().toISOString(), base: H.BASE, clips: rows.length,
     summary: {
-      freeListedOpen: rows.filter((r) => r.inFreeKeyList && r.pass).length,
+      freeLessonOpen: rows.filter((r) => r.free && r.pass).length,
+      freeLessonTotal: rows.filter((r) => r.free).length,
+      paidBlocked: rows.filter((r) => !r.free && r.pass).length,
+      paidTotal: rows.filter((r) => !r.free).length,
+      freeListedOpen: rows.filter((r) => r.inFreeKeyList && (r.status === 200 || r.status === 206)).length,
       freeListedTotal: rows.filter((r) => r.inFreeKeyList).length,
-      paidBlocked: rows.filter((r) => !r.inFreeKeyList && r.pass).length,
-      paidTotal: rows.filter((r) => !r.inFreeKeyList).length,
       failures: fails.length,
     },
+    byCourse,
     failures: fails.slice(0, 100),
     legacyAndFolders: { checked: extraRows.length, failures: extraFails.slice(0, 60) },
   };
-  // --extra-only 는 클립을 안 보므로 전체 결과 파일을 덮지 않는다 · 로컬 주소 결과도 따로
-  fs.writeFileSync(path.join(OUT, ANON_OUT), JSON.stringify(out, null, 1));
+  // --extra-only 는 클립을 안 보므로 전체 결과 파일을 덮지 않는다 · 로컬 주소 결과도 따로 · 다른 목록(--inventory 깨기 사본)의 결과도 따로(회귀 점검 1002)
+  const anonOut = INV_FILE !== path.resolve(DEFAULT_INV) ? `audio-check-anon-${path.basename(INV_FILE, ".json")}.json` : ANON_OUT;
+  fs.writeFileSync(path.join(OUT, anonOut), JSON.stringify(out, null, 1));
   console.log(JSON.stringify(out.summary, null, 1), "\nlegacy/folder failures:", extraFails.length);
+  for (const [c, b] of Object.entries(byCourse)) console.log(`  ${c.padEnd(16)} 무료 강의 클립 열림 ${b.freeOpen}/${b.freeTotal} · 유료 클립 막힘(403) ${b.paidBlocked}/${b.paidTotal}`);
   for (const f of fails.slice(0, 15)) console.log("  FAIL", JSON.stringify(f));
   for (const f of extraFails.slice(0, 15)) console.log("  FAIL", JSON.stringify(f));
   // 실패가 있으면 exit 1 — 전에는 실패를 찍고도 exit 0 이었다(7-2 에서 로컬 실행 15,053 실패가 exit 0 으로 끝나 알게 됨)
-  console.log(`${ANON_OUT} · 실패 ${fails.length + extraFails.length} → exit ${fails.length || extraFails.length ? 1 : 0}`);
+  console.log(`${anonOut} · 실패 ${fails.length + extraFails.length} → exit ${fails.length || extraFails.length ? 1 : 0}`);
   process.exitCode = fails.length || extraFails.length ? 1 : 0;
 }
 
@@ -169,8 +201,14 @@ const MEASURE = `async (urls) => {
   const out = [];
   for (const url of urls) {
     try {
-      const r = await fetch(url, { credentials: 'include', cache: 'no-store' });
-      if (!(r.status === 200 || r.status === 206)) { out.push({ url, status: r.status }); continue; }
+      // 회귀 점검 1002: 5xx · 429 는 두 번까지 다시(묶음을 함께 돌릴 때 운영이 가끔 502 — 그 한 번을 '빠진 클립' 으로 세지 않게). 404 · 403 은 그대로
+      let r = null, tries = 0;
+      for (;;) {
+        r = await fetch(url, { credentials: 'include', cache: 'no-store' });
+        if ((r.status >= 500 || r.status === 429) && tries < 2) { tries++; await new Promise((ok) => setTimeout(ok, 1500 * tries)); continue; }
+        break;
+      }
+      if (!(r.status === 200 || r.status === 206)) { out.push({ url, status: r.status, tries }); continue; }
       const buf = await r.arrayBuffer();
       const hash = await crypto.subtle.digest('SHA-256', buf);
       const hex = [...new Uint8Array(hash)].map((x) => x.toString(16).padStart(2, '0')).join('').slice(0, 32);
@@ -182,36 +220,55 @@ const MEASURE = `async (urls) => {
 }`;
 
 async function licensed() {
-  const browser = await H.startBrowser("audio", PORT);
+  const browser = await H.startBrowser(CLONE, PORT);
   const rows = [];
   try {
     const tab = await H.openTab(browser);
     await H.load(tab, "/", { marker: null });
     const batches = [];
-    for (let i = 0; i < clips.length; i += 25) batches.push(clips.slice(i, i + 25));
+    // 묶음 10개(전에는 25) — 묶음을 함께 돌리면 한 묶음이 Runtime.evaluate 의 60초 제한에 걸릴 수 있어서
+    for (let i = 0; i < clips.length; i += 10) batches.push(clips.slice(i, i + 10));
     let done = 0;
+    let lastReport = 0;
     const started = Date.now();
     const online = async () => { try { const r = await fetch(H.BASE + "/robots.txt", { signal: AbortSignal.timeout(10000) }); return r.ok; } catch { return false; } };
-    for (const batch of batches) {
-      // never record clips as missing because the machine went offline — wait and redo the batch
-      let res;
+    const byPath = new Map(clips.map((c) => [c.path, c]));
+    // 회귀 점검 1002: --concurrency 가 --licensed 에서 쓰이지 않아 25개 묶음을 하나씩, 묶음 안도 하나씩 받았다(운영에서 약 1.1 클립/초 —
+    // 17,292 클립이면 4시간 넘음). 같은 쪽 안에서 묶음 CONC 개를 함께 돌린다(각 묶음은 전처럼 하나씩 받음 · 판정은 그대로).
+    let bi = 0;
+    const worker = async () => {
       for (;;) {
-        while (!(await online())) { console.log("offline — waiting"); await H.sleep(60000); }
-        res = await tab.eval(`(${MEASURE})(${JSON.stringify(batch.map((c) => c.path))})`).catch((e) => [{ error: String(e.message).slice(0, 120) }]);
-        if ((res || []).every((r) => r.status === -1 || r.error) && !(await online())) continue;
-        break;
+        const k = bi++;
+        if (k >= batches.length) return;
+        const batch = batches[k];
+        // never record clips as missing because the machine went offline — wait and redo the batch
+        let res;
+        for (let attempt = 0; ; attempt++) {
+          while (!(await online())) { console.log("offline — waiting"); await H.sleep(60000); }
+          res = await tab.eval(`(${MEASURE})(${JSON.stringify(batch.map((c) => c.path))})`).catch((e) => [{ error: String(e.message).slice(0, 120) }]);
+          if ((res || []).every((r) => r.status === -1 || r.error) && !(await online())) continue;
+          // 묶음 전체가 평가 오류(제한 시간 등)면 두 번까지 다시 — 그래도 안 되면 클립마다 오류로 적는다(전에는 url 없는 한 줄만 남아 그 묶음 클립이 결과에서 빠졌다)
+          if (Array.isArray(res) && res.length === 1 && res[0].error && !res[0].url) {
+            if (attempt < 2) continue;
+            res = batch.map((c) => ({ url: c.path, status: -1, error: res[0].error }));
+          }
+          break;
+        }
+        for (const r of res || []) {
+          const c = byPath.get(r.url);
+          rows.push({ ...r, texts: c ? c.texts.slice(0, 2) : [], chars: c ? (c.texts[0] || "").length : 0, lessons: c ? c.lessons.slice(0, 2) : [], courses: c ? c.courses || [] : [] });
+        }
+        done += batch.length;
+        if (done - lastReport >= 500) {
+          lastReport = done;
+          const rate = (Date.now() - started) / done;
+          console.log(`${done}/${clips.length} · eta ${Math.round(((clips.length - done) * rate) / 60000)} min · ${(rate / 1000).toFixed(3)} s/클립`);
+          fs.writeFileSync(path.join(OUT, "audio-check-licensed.partial.json"), JSON.stringify({ rows }, null, 1));
+        }
       }
-      for (const r of res || []) {
-        const c = clips.find((x) => x.path === r.url);
-        rows.push({ ...r, texts: c ? c.texts.slice(0, 2) : [], chars: c ? (c.texts[0] || "").length : 0, lessons: c ? c.lessons.slice(0, 2) : [] });
-      }
-      done += batch.length;
-      if (done % 500 < 25) {
-        const rate = (Date.now() - started) / done;
-        console.log(`${done}/${clips.length} · eta ${Math.round(((clips.length - done) * rate) / 60000)} min`);
-        fs.writeFileSync(path.join(OUT, "audio-check-licensed.partial.json"), JSON.stringify({ rows }, null, 1));
-      }
-    }
+    };
+    await Promise.all(Array.from({ length: Math.max(1, CONC) }, worker));
+    console.log(`받은 클립 ${done}/${clips.length} · ${Math.round((Date.now() - started) / 1000)} s (묶음 동시 ${CONC})`);
     await tab.close();
   } finally {
     browser.proc.kill();
@@ -241,8 +298,22 @@ async function licensed() {
     sharedAudio: sharedAudio.slice(0, 30).map((g) => g.map((x) => ({ url: x.url, text: (x.texts[0] || "").slice(0, 50) }))),
     rows,
   };
-  fs.writeFileSync(path.join(OUT, "audio-check-licensed.json"), JSON.stringify(out, null, 1));
+  // 회귀 점검 1002: 과정마다 받은 / 빠지거나 막힌 클립 · 다른 목록(--inventory)의 결과는 따로 · 빠지거나 막힌 · 소리 아닌 · 빈 · 못 읽는 클립이 있으면 exit 1
+  const byCourse = {};
+  for (const r of rows) for (const c of r.courses && r.courses.length ? r.courses : ["(과정 모름)"]) {
+    const b = (byCourse[c] ||= { clips: 0, served: 0, missingOrBlocked: 0 });
+    b.clips++;
+    if (r.status === 200 || r.status === 206) b.served++; else b.missingOrBlocked++;
+  }
+  out.byCourse = byCourse;
+  const licOut = INV_FILE !== path.resolve(DEFAULT_INV) ? `audio-check-licensed-${path.basename(INV_FILE, ".json")}.json` : "audio-check-licensed.json";
+  fs.writeFileSync(path.join(OUT, licOut), JSON.stringify(out, null, 1));
   console.log(JSON.stringify(out.summary, null, 1));
+  for (const [c, b] of Object.entries(byCourse)) console.log(`  ${c.padEnd(16)} 클립 ${b.clips} · 받음 ${b.served} · 빠짐/막힘 ${b.missingOrBlocked}`);
+  for (const f of out.failures.slice(0, 15)) console.log("  FAIL", JSON.stringify({ url: f.url, status: f.status, lessons: f.lessons, text: (f.texts || [])[0] }));
+  const bad = out.summary.missingOrBlocked + out.summary.notAudio + out.summary.empty + out.summary.unparsable;
+  console.log(`${licOut} · 빠짐/막힘 ${out.summary.missingOrBlocked} · 소리 아님 ${out.summary.notAudio} · 빈 것 ${out.summary.empty} · 못 읽음 ${out.summary.unparsable} → exit ${bad ? 1 : 0}`);
+  process.exitCode = bad ? 1 : 0;
 }
 
 (MODE === "anon" ? anon() : licensed()).catch((e) => { console.error(e); process.exit(1); });

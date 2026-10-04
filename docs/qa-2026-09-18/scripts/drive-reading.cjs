@@ -42,6 +42,16 @@
  * playing sound control where the second press belongs, so the sound is never stopped, 'untimed' (2026-09-28) times one
  * reading in Step 4 right after Step 1's '다 읽었어요' and before the checks that it stored nothing and left the completion
  * shut — each must record FAILs (and exit 1).
+ * 회귀 점검 1002 (2026-10-04) added two: 'text' changes one expected text (the passage's last sentence) so the "on screen /
+ * missing" content check must report it missing, and 'answer' picks a wrong option where the comprehension check expects the
+ * right one, so "the right option is graded right" must FAIL.
+ *
+ * 회귀 점검 1002 (2026-10-04) — the comprehension questions are ANSWERED now (they were only listed): every question's four
+ * options in the file's order; on desktop question 1 is answered wrong and the rest right (verdict · '맞았어요.' / '정답은 ②번이에요.'
+ * · 'n문제 중 m개 맞힘'), then '다시 풀기' and every question right; on a phone every question right by tap. The learning engine
+ * gets an attempt per pick (item = question id, kind 'question'). The record carries `driverRev` (DRIVER_REV) and `base`; --clone
+ * and --port name the profile copy and the debugging port (the 회귀 점검 runs use 'rc1002-reading-…' on 9760~9769); the
+ * '작은 휴대폰' (lib/harness.cjs VIEWPORTS.small, 360 px) runs as a touch screen like 'mobile'.
  *
  * READ-ONLY toward the product: it never edits the repository, never deploys and never calls a licence or admin API. The
  * only data it changes is localStorage inside its own profile CLONE (per-lesson READING keys, bookmark / completion keys and
@@ -59,11 +69,13 @@
  *   --ids a,b,c            explicit route ids (pr001, pr001-1, ...)
  *   --course-range a..b    inclusive id range in course order (ids or numbers)
  *   --limit N              first N pages of the selection
- *   --viewports list       desktop,tablet,mobile (default all three)
+ *   --viewports list       desktop,tablet,mobile,small (default desktop,tablet,mobile; 회귀 점검: desktop,mobile,small)
  *   --suffix S             output file docs/qa-2026-09-18/out/features/reading<S>.jsonl
  *   --shard i/n            1-based shard i of n (clone "drv-rd-<i>", port 9470+i)
+ *   --clone NAME           profile copy name (default "drv-rd" / "drv-rd-<i>") — %TEMP%\kig-audit-0918-<NAME>
+ *   --port N               debugging port (default 9470 / 9470+i)
  *   --resume / --no-resume finished page x viewport records are skipped (default on)
- *   --break gate|cloze|hover|stop|untimed   deliberate break (see above)
+ *   --break gate|cloze|hover|stop|untimed|text|answer   deliberate break (see above)
  *   --dry                  print the page list and exit
  * Exit 1 when any check FAILed (2026-09-27; it used to exit 0 unless the driver itself crashed).
  *
@@ -122,6 +134,8 @@ function parseArgs(argv) {
     else if (k === "--viewports") a.viewports = v().split(",").map((s) => s.trim()).filter(Boolean);
     else if (k === "--suffix") a.suffix = v();
     else if (k === "--shard") a.shard = v();
+    else if (k === "--clone") a.clone = v();
+    else if (k === "--port") a.port = Number(v());
     else if (k === "--resume") a.resume = true;
     else if (k === "--no-resume") a.resume = false;
     else if (k === "--break") a.brk = v();
@@ -129,10 +143,14 @@ function parseArgs(argv) {
     else throw new Error(`unknown option ${k}`);
   }
   for (const vp of a.viewports) if (!H.VIEWPORTS[vp]) throw new Error(`unknown viewport ${vp}`);
-  if (a.brk && !["gate", "cloze", "hover", "stop", "untimed"].includes(a.brk)) throw new Error(`--break must be gate, cloze, hover, stop or untimed`);
+  if (a.brk && !BREAKS.includes(a.brk)) throw new Error(`--break must be one of ${BREAKS.join(", ")}`);
+  if (a.port !== undefined && !(Number.isInteger(a.port) && a.port > 1024 && a.port < 65536)) throw new Error("--port must be a port number");
   return a;
 }
+const BREAKS = ["gate", "cloze", "hover", "stop", "untimed", "text", "answer"];
 let BREAK = "";
+// 회귀 점검 1002: which driver wrote a record (build-coverage reads `driverRev`); bump it when a check changes meaning
+const DRIVER_REV = "rd-0928-q1004";
 
 /** Every in-scope READING route, in the course index order. */
 function allRoutes() {
@@ -252,6 +270,8 @@ function newRecord(id, viewport, url) {
     url,
     viewport,
     at: new Date().toISOString(),
+    base: H.BASE,
+    driverRev: DRIVER_REV,
     load: null,
     steps: [],
     checks: [],
@@ -562,6 +582,8 @@ const wordsKey = (D) => readingLearning.wordsStorageKey(D.mainId);
 const notesKey = (D) => `kig:reading:notes:${D.pageKey}`;
 const legacyKey = (D) => readingLearning.legacyWpmStorageKey(D.pageKey);
 const progKey = (id) => `reading:${id}`;
+// 2026-09-28 새 문제 (src/lib/lessonQuestions.ts questionsStorageKey) — the picks of the passage's comprehension questions
+const questionsKey = (D) => `kig-questions:${COURSE}/${D.mainId}`;
 
 async function lsGet(tab, k) {
   return jsEval(tab, `(() => { try { return localStorage.getItem(${J(k)}); } catch (e) { return null; } })()`, null);
@@ -583,7 +605,7 @@ async function resetLessonState(tab, D) {
     tab,
     `(() => { try {
       let changed = false;
-      for (const k of ${J([speedKey(D), wordsKey(D), notesKey(D), legacyKey(D), "kig-learning:reading"])}) if (localStorage.getItem(k) !== null) { localStorage.removeItem(k); changed = true; }
+      for (const k of ${J([speedKey(D), wordsKey(D), notesKey(D), legacyKey(D), questionsKey(D), "kig-learning:reading"])}) if (localStorage.getItem(k) !== null) { localStorage.removeItem(k); changed = true; }
       for (const m of ['kig:progress:completed', 'kig:progress:bookmarks']) {
         const raw = localStorage.getItem(m); if (!raw) continue;
         const o = JSON.parse(raw); if (o && ${J(progKey(D.id))} in o) { delete o[${J(progKey(D.id))}]; localStorage.setItem(m, JSON.stringify(o)); changed = true; }
@@ -746,6 +768,10 @@ async function timedRun(rec, tab, D, { waitMs, label, touch = false }) {
   const pos = await jsEval(tab, `(() => { const s = document.querySelector(${J(`${passageSel} [data-sentence-id] [data-en]`)}); if (!s) return null; const maxScroll = document.documentElement.scrollHeight - innerHeight; return { top: Math.round(s.getBoundingClientRect().top), atBottom: scrollY >= maxScroll - 2 }; })()`, null);
   const top = pos ? pos.top : null;
   ck(rec, "wpm", label, "the passage's first line comes up under the header", "y ≤ 120", String(top), top !== null && top <= 120 ? "PASS" : pos && pos.atBottom ? "NA" : "FAIL", pos && pos.atBottom && top > 120 ? "the page is scrolled to its end — too short to bring the passage higher" : "계획 G01 확인 '시작 뒤 첫 줄 y ≤ 120'");
+  // 회귀 점검 1002: an NA here is build-coverage's 'absent' kind (asNa ⓐ) — it counts only when the same record holds a PASS of
+  // the same feature ('wpm' — the timed run's other checks); a bare NA would be read there as 'NA 인데 대신 본 기록 없음' (BLOCKED)
+  const g01 = rec.checks[rec.checks.length - 1];
+  if (g01.status === "NA") Object.assign(g01, { absent: true, absentEvidence: `scrollY at its end (document.scrollHeight - innerHeight) with the first line at y=${top} — the page cannot scroll the passage higher` });
   // the timed passage is the whole lesson passage, sentence by sentence (the learner reads what the WPM is counted over)
   const shownEn = (await jsEval(tab, `[...document.querySelectorAll(${J(`${passageSel} [data-sentence-id] [data-en]`)})].map((e) => (e.innerText || '').replace(/\\s+/g, ' ').trim())`, [])) || [];
   const wantEn = D.sentences.map((s) => norm(s.en));
@@ -887,6 +913,7 @@ async function step4Checks(rec, tab, D, captured, { touch = false } = {}) {
   boolCk(rec, "wpm", "too-fast", "the reason is shown", true, await exists(tab, `document.querySelector(${J(`${SEL.step4} [data-too-fast]`)})`));
   boolCk(rec, "complete", "gate", "still disabled after a too-fast run", true, !!(((await jsEval(tab, completeState, null)) || {}).disabled));
   if (touch) {
+    await questionChecks(rec, tab, D, { touch: true });
     captured.step4 = await stepText(tab, "step4");
     return null;
   }
@@ -910,8 +937,94 @@ async function step4Checks(rec, tab, D, captured, { touch = false } = {}) {
   // the gate opens
   await sleep(300);
   boolCk(rec, "complete", "gate", "enabled after one timed reading in Step 4", false, !!(((await jsEval(tab, completeState, null)) || {}).disabled));
+  await questionChecks(rec, tab, D);
   captured.step4 = await stepText(tab, "step4");
   return run;
+}
+
+// ---------------------------------------------------------------------------
+// checks — the comprehension questions (Step 4, under the timed reading — 2026-09-28 새 문제; answered since 회귀 점검 1002)
+// ---------------------------------------------------------------------------
+
+const QSEL = `${SEL.step4} [data-comprehension="questions"] [data-lesson-questions]`;
+const MARKS = ["①", "②", "③", "④"];
+async function questionState(tab) {
+  return jsEval(
+    tab,
+    `(() => { const s = document.querySelector(${J(QSEL)}); if (!s) return null;
+      const head = s.querySelector(':scope > div p.tabular-nums');
+      return { answered: Number(s.getAttribute('data-answered')), right: Number(s.getAttribute('data-right')), head: head ? head.innerText.trim() : '',
+        again: !!s.querySelector('[data-action="questions-again"]'),
+        qs: [...s.querySelectorAll('[data-question]')].map((li) => ({ id: li.getAttribute('data-question'), verdict: li.getAttribute('data-verdict'),
+          options: [...li.querySelectorAll('[data-option]')].map((b) => ((b.querySelector('span.min-w-0') || b).innerText || '').replace(/\\s+/g, ' ').trim()),
+          locked: [...li.querySelectorAll('[data-option]')].every((b) => b.disabled),
+          result: ((li.querySelector('[data-question-result] > p') || {}).innerText || '').trim() })) }; })()`,
+    null,
+  );
+}
+const optionBtn = (qid, oi) => `document.querySelector(${J(`${QSEL} [data-question="${qid}"] [data-option="${oi}"]`)})`;
+
+/**
+ * Answer every question of the passage and read how the screen grades it. `plan[i]` = "right" (press the file's answer) or
+ * "wrong" (press another option). --break answer presses a wrong option where the plan says "right" — those checks must FAIL.
+ */
+async function answerQuestions(rec, tab, D, { plan, label, touch }) {
+  const Q = D.questions;
+  for (let i = 0; i < Q.length; i++) {
+    const q = Q[i];
+    const wantRight = plan[i] === "right";
+    const pick = wantRight && BREAK !== "answer" ? q.answer : (q.answer + 1) % q.options.length;
+    const r = await press(tab, optionBtn(q.id, pick), { touch, settle: 250 });
+    if (!r.ok) ck(rec, "questions", `${label}#${i + 1}`, `press option ${MARKS[pick]}`, "pressed", `press failed: ${r.reason || ""}`, "FAIL");
+  }
+  const st = await questionState(tab);
+  for (let i = 0; i < Q.length; i++) {
+    const q = Q[i];
+    const wantRight = plan[i] === "right";
+    const got = st && st.qs.find((x) => x.id === q.id);
+    ck(rec, "questions", `${label}#${i + 1}`, wantRight ? "the right option is graded right" : "a wrong option is graded wrong", wantRight ? "right · 맞았어요." : `wrong · 정답은 ${MARKS[q.answer]}번이에요.`,
+      got ? `${got.verdict} · ${got.result}` : "question not on screen",
+      got && got.verdict === (wantRight ? "right" : "wrong") && norm(got.result) === (wantRight ? "맞았어요." : `정답은 ${MARKS[q.answer]}번이에요.`) ? "PASS" : "FAIL",
+      BREAK === "answer" && wantRight ? "깨기 answer: a wrong option was pressed — must FAIL" : undefined);
+    boolCk(rec, "questions", `${label}#${i + 1}`, "the options lock once answered", true, !!(got && got.locked));
+  }
+  const right = plan.filter((p) => p === "right").length;
+  eqCk(rec, "questions", label, "the count line", `${Q.length}문제 중 ${right}개 맞힘`, st ? st.head : null, BREAK === "answer" ? "깨기 answer — must FAIL" : undefined);
+  return st;
+}
+
+async function questionChecks(rec, tab, D, { touch = false } = {}) {
+  if (!(D.questions && D.questions.length)) return;
+  const Q = D.questions;
+  const tag = touch ? " (tap)" : "";
+  const ready = await H.waitFor(tab, `Boolean(document.querySelector(${J(QSEL)}))`, 4000);
+  if (!ready) {
+    ck(rec, "questions", "", "the questions are on screen after the timed reading", "[data-lesson-questions]", "none", "FAIL");
+    return;
+  }
+  const st0 = await questionState(tab);
+  eqCk(rec, "questions", "", `nothing answered at the start${tag}`, `0 / ${Q.length}`, st0 ? `${st0.answered} / ${st0.qs.length}` : null);
+  for (let i = 0; i < Q.length; i++) {
+    const got = st0 && st0.qs[i];
+    eqCk(rec, "questions", `q${i + 1}`, "the four options, in the file's order", Q[i].options.join(" | "), got ? got.options.join(" | ") : null);
+  }
+  const log0 = ((await lsJson(tab, "kig-learning:reading")) || { log: [] }).log.length;
+  if (!touch) {
+    // question 1 wrong, the rest right — then '다시 풀기' clears the picks
+    await answerQuestions(rec, tab, D, { plan: Q.map((_, i) => (i === 0 ? "wrong" : "right")), label: "mixed", touch });
+    const again = `document.querySelector(${J(`${QSEL} [data-action="questions-again"]`)})`;
+    const r = await press(tab, again, { settle: 300 });
+    const st1 = await questionState(tab);
+    ck(rec, "questions", "again", "'다시 풀기' clears every pick", `0 / ${Q.length}`, st1 ? `${st1.answered} / ${st1.qs.length}${r.ok ? "" : " (press failed)"}` : "none", st1 && st1.answered === 0 && st1.qs.every((x) => !x.verdict) ? "PASS" : "FAIL");
+  }
+  await answerQuestions(rec, tab, D, { plan: Q.map(() => "right"), label: `all right${tag}`, touch });
+  // the engine hears every pick: item = the question id, correct = the pick was the answer (kind 'question', tap, lesson)
+  const log = ((await lsJson(tab, "kig-learning:reading")) || { log: [] }).log.slice(log0);
+  const last = Q.map((q) => [...log].reverse().find((e) => e.item === q.id));
+  ck(rec, "engine", "questions", "every pick is an attempt (the last one per question: correct)", `${Q.length} × correct`, last.map((e) => (e ? `${e.correct}/${e.kind || "?"}` : "none")).join(","),
+    last.every((e) => e && e.correct === true && e.mode === "tap" && e.where === "lesson") ? "PASS" : "FAIL");
+  const stored = await lsJson(tab, questionsKey(D));
+  ck(rec, "questions", "", "the picks are saved", `${Q.length} picks`, stored ? J(stored.picks || {}).slice(0, 120) : "nothing", stored && Q.every((q) => stored.picks && stored.picks[q.id] !== undefined) ? "PASS" : "FAIL", questionsKey(D));
 }
 
 /** G04: the whole-lesson player tints the sentence it reads (Step 1 after '다 읽었어요', Step 3 원문 대조). */
@@ -1174,6 +1287,16 @@ function contentCompare(rec, D, captured) {
     if (i !== 1) push("step2", `meaning ${v.word}`, v.korean);
   }
   if (D.sentences[0]) push("readAloud", "reading-aloud sentence", D.sentences[0].en);
+  // 깨기 text (회귀 점검 1002): one expected text made wrong — the passage's last sentence (Step 1) with its last word changed —
+  // so the on-screen check must report it missing (content FAIL) on a page that shows the right text
+  if (BREAK === "text") {
+    const lastEn = expect.filter((e) => e.step === "step1").pop();
+    if (lastEn) {
+      lastEn.text = lastEn.text.replace(/([A-Za-z]+)([^A-Za-z]*)$/, "QAbreak$2");
+      lastEn.label += " (깨기 text: last word changed)";
+      rec.breakNote = `깨기 text: expected '${cut(lastEn.text, 80)}' — must be missing`;
+    }
+  }
 
   const missing = [];
   let found = 0;
@@ -1449,8 +1572,8 @@ async function main() {
   BREAK = args.brk;
   const pages = selectPages(args);
   const shardIdx = args.shard ? Number(args.shard.split("/")[0]) : null;
-  const clone = shardIdx ? `drv-rd-${shardIdx}` : "drv-rd";
-  const port = shardIdx ? 9470 + shardIdx : 9470;
+  const clone = args.clone || (shardIdx ? `drv-rd-${shardIdx}` : "drv-rd");
+  const port = args.port || (shardIdx ? 9470 + shardIdx : 9470);
   const outFile = path.join(OUT, "features", `${COURSE}${args.suffix}${BREAK ? `-break-${BREAK}` : ""}.jsonl`);
 
   if (args.dry) {

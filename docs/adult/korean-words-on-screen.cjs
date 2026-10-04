@@ -14,6 +14,8 @@
  *   node docs/adult/korean-words-on-screen.cjs          # 0 이면 exit 0
  *   node docs/adult/korean-words-on-screen.cjs --break  # STUDENT s20-4 첫 문장에 'Gyeongju' 를 몰래 되돌려 실패하는지(깨기)
  *   node docs/adult/korean-words-on-screen.cjs --break=grammar  # GRAMMAR II gh2-033 을 한글로 바꾸지 않고 그렸을 때 실패하는지
+ *   node docs/adult/korean-words-on-screen.cjs --break=adult    # ADULT a1-2 #2 의 '서울' 을 'Seoul' 로 되돌렸을 때 실패하는지
+ *   node docs/adult/korean-words-on-screen.cjs --break=passoff  # PASS-OFF pg06-1 을 한글로 바꾸지 않고 그렸을 때 실패하는지
  */
 const fs = require("fs");
 const path = require("path");
@@ -21,6 +23,10 @@ const ROOT = path.resolve(__dirname, "..", "..");
 const BREAK = process.argv.includes("--break");
 /** --break=grammar: GRAMMAR II gh2-033 drawn without koreanOnScreen ("Busan" left in Latin letters) — must fail */
 const BREAK_GRAMMAR = process.argv.includes("--break=grammar");
+// 2026-10-04 회귀 점검 단계 0: ADULT · PASS-OFF 쪽 깨기 — --break=adult (a1-2 #2 '서울' 을 'Seoul' 로 되돌림) ·
+// --break=passoff (pg06-1 을 koreanOnScreen 없이 그림 — 'Chuseok' 이 로마자로 남음). 둘 다 FAIL 이어야 검사가 살아 있음.
+const BREAK_ADULT = process.argv.includes("--break=adult");
+const BREAK_PASSOFF = process.argv.includes("--break=passoff");
 const rj = (f) => JSON.parse(fs.readFileSync(f, "utf8").replace(/^﻿/, ""));
 const ts = require(path.join(ROOT, "node_modules", "typescript"));
 const loadTs = (rel) => {
@@ -81,7 +87,7 @@ function look(course, page, where, text) {
       if (HANGUL_ONLY.includes(course) || NONE.includes(course)) fails.push(`${page} ${where}: '${w}' — ${text.slice(0, 120)}`);
       else if (GLOSSED.includes(course)) {
         // drawn through koreanOnScreen — the word must not be left in Latin letters on screen (a spelling the page's table lacks is)
-        const shown = BREAK_GRAMMAR && page === "grammar2/gh2-033" ? text : koreanOnScreen(page, text);
+        const shown = (BREAK_GRAMMAR && page === "grammar2/gh2-033") || (BREAK_PASSOFF && page === "passoff-grammar/pg06-1") ? text : koreanOnScreen(page, text);
         if (new RegExp(`(^|[^A-Za-z])${w}([^A-Za-z]|$)`).test(shown)) fails.push(`${page} ${where}: '${w}' still in Latin letters on screen — ${shown.slice(0, 120)}`);
       }
     } else if (!KNOWN.has(k) && !NOT.has(k) && !ENGLISH.has(k) && !english.has(k) && k.length >= 3 && wholeKo.test(k.replace(/[-'’]/g, "")) && koShape.test(k)) {
@@ -98,6 +104,7 @@ for (const course of [...HANGUL_ONLY, ...GLOSSED, ...NONE]) {
     if (!routed.has(id)) continue;
     const lesson = rj(path.join(dir, f));
     if (BREAK && course === "student" && id === "s20-4") lesson.blocks.find((b) => b.type === "sentences").items[0].text = "Another attractive destination is Gyeongju.";
+    if (BREAK_ADULT && course === "adult" && id === "a1-2") { const it = lesson.blocks.find((b) => b.type === "sentences").items[1]; it.text = it.text.replace("서울", "Seoul"); }
     for (const [where, text] of strings(lesson, "", [])) look(course, `${course}/${id}`, where, text);
   }
   for (const [where, text] of strings(rj(path.join(ROOT, "content/courses", `${course}.json`)), "", [])) look(course, `index:${course}`, where, text);

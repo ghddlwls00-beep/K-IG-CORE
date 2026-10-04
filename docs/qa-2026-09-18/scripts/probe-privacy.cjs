@@ -29,7 +29,8 @@ const record = (area, what, status, note) => {
   console.log(`${status.padEnd(8)} ${area.padEnd(12)} ${what.padEnd(42)} ${String(note).slice(0, 90)}`);
 };
 
-const PAGES = ["/", "/student", "/phonics", "/grammar1", "/ld", "/reading", "/student/s1-1"];
+// 회귀 점검 1002: ADULT · PASS-OFF GRAMMAR 의 목록 · 무료 강의 쪽도(법정표시 · 외부 스크립트를 그 쪽에서도 봄)
+const PAGES = ["/", "/student", "/adult", "/passoff-grammar", "/phonics", "/grammar1", "/grammar2", "/ld", "/reading", "/student/s1-1", "/adult/a1-1", "/passoff-grammar/pg01-1"];
 
 (async () => {
   // ---------------------------------------------------------------- 1. HTML 으로 볼 수 있는 것

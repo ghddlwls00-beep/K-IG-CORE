@@ -23,6 +23,34 @@ const TESTS = require("./proof-tests.json");
  */
 const GLOBAL_PREFIX = process.argv.includes("--prefix") ? process.argv[process.argv.indexOf("--prefix") + 1] : "";
 const PHASES = ["base", "broken", "fixed", "after"];
+/**
+ * 회귀 점검 1002 (2026-10-04): a test may be judged by a CHECK of the record instead of the content count — `check: {feature, item}`
+ * (item a regex on the check's item), for what is not text on a screen (ADULT 받아쓰기 한글 조각 · 완료). Caught = that check is there
+ * and not PASS; clean = it is there and PASS (absent is neither — the step did not run). `viewports` narrows the screens a test is read
+ * on (the desktop-only routines). Every other test reads as before (content.missing, three screens).
+ */
+const ALL_VPS = ["desktop", "tablet", "mobile", "small"];
+const vpsOf = (t) => t.viewports || ["desktop", "tablet", "mobile"];
+const checkState = (rec, t) => {
+  const hits = ((rec && rec.checks) || []).filter((c) => c.feature === t.check.feature && new RegExp(t.check.item).test(String(c.item || "")));
+  return !hits.length ? "absent" : hits.some((c) => c.status !== "PASS") ? "fail" : "pass";
+};
+const checkCell = (rec, t) => { const s = checkState(rec, t); const c = ((rec && rec.checks) || []).find((x) => x.feature === t.check.feature && new RegExp(t.check.item).test(String(x.item || ""))); return s === "absent" ? "검사 없음" : `${c.status}${s === "fail" ? "✗" : ""}`; };
+/**
+ * 회귀 점검 1002 (proof, 2026-10-04): which 'missing' line is the removed text. A missing line is '<kind>: <text>' ('en: …',
+ * 'word: successful', 'word-card: introduce | 동사 | …', '2:rule-kodiff: …'). It used to match when the text's first 40 characters
+ * appeared ANYWHERE in the line — so in a batch that breaks every site at once, the READING vocabulary-word test ('successful')
+ * read as caught from the passage line 'en: Their communication will be more successful …' alone (shown: a copy of the rc-fixed
+ * records without the 'word: successful' line → old rule '실패 잡음 확인', this rule '못 잡음'). Now the line's text must START
+ * with it. --loose-match: the old rule (to show the difference).
+ */
+const LOOSE = process.argv.includes("--loose-match");
+const isMissingLine = (m, x) => {
+  const needle = String(x).slice(0, 40);
+  if (LOOSE) return String(m).includes(needle);
+  const body = String(m).replace(/^[^\s:]+(?::[^\s:]+)*: /, "");
+  return body.startsWith(needle) || String(m).startsWith(needle);
+};
 const PHASE_KO = { base: "깨뜨리기 전", broken: "깨뜨린 뒤", fixed: "검사 수정 후(앱은 깨진 채)", after: "되돌린 뒤", s1: "1번 문장 깨뜨린 뒤(새 검사)" };
 
 function latest(course, phase, id) {
@@ -40,7 +68,7 @@ function latest(course, phase, id) {
 function whereFound(course, id, phase, text) {
   const out = [];
   const needle = norm(text).slice(0, 60);
-  for (const vp of ["desktop", "tablet", "mobile"]) {
+  for (const vp of ALL_VPS) {
     const f = path.join(OUT, "proof", phase, `${course}-${id}.${vp}.json`);
     if (!fs.existsSync(f)) continue;
     const steps = JSON.parse(fs.readFileSync(f, "utf8"));
@@ -58,13 +86,16 @@ function whereFound(course, id, phase, text) {
  *             it reports nothing of it missing on every screen size.
  */
 if (process.argv.includes("--md")) {
-  const VPS = ["desktop", "tablet", "mobile"];
-  const SHORT = { desktop: "데", tablet: "태", mobile: "모" };
-  const gone = (rec, t) => ((rec && rec.content && rec.content.missing) || []).some((m) => t.texts.some((x) => String(m).includes(String(x).slice(0, 40))));
-  const cell = (byVp, t) => VPS.filter((v) => byVp[v]).map((v) => `${SHORT[v]} ${byVp[v].content.found}/${byVp[v].content.expected}${gone(byVp[v], t) ? "✗" : ""}`).join(" · ") || "—";
+  let VPS = ["desktop", "tablet", "mobile"];
+  const SHORT = { desktop: "데", tablet: "태", mobile: "모", small: "작" };
+  // a check test (회귀 점검 1002): 'gone' = the check is there and not PASS
+  const gone = (rec, t) => (t.check ? checkState(rec, t) === "fail" : ((rec && rec.content && rec.content.missing) || []).some((m) => t.texts.some((x) => isMissingLine(m, x))));
+  const intact = (rec, t) => (t.check ? checkState(rec, t) === "pass" : !gone(rec, t));
+  const cell = (byVp, t) => VPS.filter((v) => byVp[v]).map((v) => (t.check ? `${SHORT[v]} ${checkCell(byVp[v], t)}` : `${SHORT[v]} ${byVp[v].content.found}/${byVp[v].content.expected}${gone(byVp[v], t) ? "✗" : ""}`)).join(" · ") || "—";
   console.log("| 시험 | 쓴 강의 | 깨뜨린 지점 | 깨뜨리기 전 | 깨뜨린 뒤 (옛 검사) | 검사 수정 후 · 앱은 깨진 채 | 되돌린 뒤 | 옛 검사 | 새 검사 |");
   console.log("|---|---|---|---|---|---|---|---|---|");
   for (const t of TESTS) {
+    VPS = vpsOf(t);
     // A later batch of tests runs under its own phase names ("r2-base" …) so it never
     // overwrites the records an earlier table was computed from.
     const P = (ph) => (GLOBAL_PREFIX ? `${GLOBAL_PREFIX}${ph}` : `${t.phasePrefix || ""}${ph}`);
@@ -88,20 +119,23 @@ if (process.argv.includes("--md")) {
       oldVerdict = !Object.keys(broken).length ? "—"
         : fooled.length === 0 && blind.length === 0 ? "진짜"
         : fooled.length === 0 ? `진짜는 ${VPS.filter((v) => !blind.includes(v)).map((v) => SHORT[v]).join("·") || "없음"}${note}`
-        : fooled.length === VPS.length ? `**가짜** (3개 화면 모두)${note}`
+        : fooled.length === VPS.length ? `**가짜** (${VPS.length}개 화면 모두)${note}`
         : `**가짜** (${fooled.map((v) => SHORT[v]).join("·")})${note}`;
     }
     // A phase with fewer than three screen sizes recorded is still running: no verdict from it.
     const complete = (byVp) => VPS.every((v) => byVp[v]);
     const afterFor = override ? latest(t.course, P("after"), t.id) : after;
     const caught = complete(fixed) ? VPS.every((v) => gone(fixed[v], t)) : null;
-    const clean = complete(afterFor) ? VPS.every((v) => !gone(afterFor[v], t)) : null;
+    const clean = complete(afterFor) ? VPS.every((v) => intact(afterFor[v], t)) : null;
     const newVerdict = caught === null ? "(진행 중)"
       : !caught ? "**못 잡음**"
       : clean === null ? "실패 잡음 · 되돌린 뒤 (진행 중)"
       : clean ? "실패 잡음 확인" : "잡음 · **되돌린 뒤에도 없다고 함**";
     const afterCell = override ? "(LISTENING 대본 되돌린 뒤 칸과 같음)" : cell(after, t);
-    console.log(`| ${t.name} | \`${t.course}/${t.id}\` | ${t.site} | ${cell(base, t)} | ${override ? "(같은 실행에서 재계산)" : cell(broken, t)} | ${cell(fixed, t)} | ${afterCell} | ${oldVerdict} | ${newVerdict} |`);
+    // 회귀 점검 1002 (proof): a site that quotes a container line ('word | pos | meaning | sentence') split the markdown row into
+    // extra cells, so the ADULT 2 · 3단계 rows read their verdict from the wrong column — escape the pipes
+    const esc = (s) => String(s).replace(/\|/g, "\\|");
+    console.log(`| ${esc(t.name)} | \`${t.course}/${t.id}\` | ${esc(t.site)} | ${cell(base, t)} | ${override ? "(같은 실행에서 재계산)" : cell(broken, t)} | ${cell(fixed, t)} | ${afterCell} | ${oldVerdict} | ${newVerdict} |`);
   }
   process.exit(0);
 }
@@ -109,6 +143,17 @@ if (process.argv.includes("--md")) {
 for (const t of TESTS) {
   console.log(`\n${"=".repeat(90)}\n${t.name} — ${t.course}/${t.id}`);
   console.log(`깨뜨린 지점: ${t.site}`);
+  if (t.break) console.log(`바꿀 것    : ${t.break}`);
+  if (t.check) {
+    // 회귀 점검 1002: a check test — the check's status per phase and screen
+    console.log(`판정 검사  : ${t.check.feature} · /${t.check.item}/ (${vpsOf(t).join(" · ")})`);
+    for (const phase of PHASES) {
+      const byVp = latest(t.course, `${t.phasePrefix || ""}${phase}`, t.id);
+      if (!Object.keys(byVp).length) continue;
+      console.log(`  ${PHASE_KO[phase].padEnd(24)} ${vpsOf(t).filter((vp) => byVp[vp]).map((vp) => `${vp} ${checkCell(byVp[vp], t)}`).join("  |  ")}`);
+    }
+    continue;
+  }
   console.log(`없앤 글자  : ${t.texts.map((x) => JSON.stringify(x)).join(" · ")}`);
   // A test with its own phase (the LISTENING sentence-1 run) is compared with the shared baseline only.
   const pre = t.phasePrefix || "";
@@ -117,7 +162,7 @@ for (const t of TESTS) {
     if (!Object.keys(byVp).length) continue;
     const cells = ["desktop", "tablet", "mobile"].filter((vp) => byVp[vp]).map((vp) => {
       const c = byVp[vp].content || {};
-      const gone = (c.missing || []).filter((m) => t.texts.some((x) => String(m).includes(String(x).slice(0, 40))));
+      const gone = (c.missing || []).filter((m) => t.texts.some((x) => isMissingLine(m, x)));
       return `${vp} ${c.found}/${c.expected}${gone.length ? ` ✗[${gone.map((g) => g.slice(0, 50)).join("; ")}]` : ""}`;
     });
     console.log(`  ${PHASE_KO[phase].padEnd(24)} ${cells.join("  |  ")}`);

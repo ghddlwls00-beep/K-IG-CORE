@@ -6,6 +6,7 @@
  *
  *   $env:BASE = "http://localhost:3210"; $env:KIG_PROFILE_SOURCE = "<빈 폴더>"; node check-lesson-questions-0928.cjs [--break verdict|evidence|hide|engine|persist|lock]
  *   --break: 기대값 하나를 일부러 뒤집어 FAIL 이 나는지 본다(exit 1 이 나야 맞음).
+ *   [--clone <사본 이름>] [--port <디버깅 포트>] (2026-10-04 — 동시에 도는 일꾼마다 따로. 기본 questions0928 · 9607)
  *
  *   A  잠긴 강의(d003 · pr003)를 로그아웃으로 받은 HTML: 잠금 화면 표시 있음 · 그 강의 문제 글(물음 · 보기) 0
  *   L1 d001 1단계: '들은 내용 확인' — 파일의 물음 그대로 · 차례대로 · 보기 4개씩 · 플레이어 아래
@@ -93,7 +94,9 @@ async function open(tab, url, marker) {
     check(`A ${course}/${id} 잠긴 강의 HTML`, qs.length > 0 && H.PAYWALL_RE.test(html) && found.length === 0, `HTTP ${res.status} · 문제 ${qs.length} · 잠금 표시 ${H.PAYWALL_RE.test(html)} · 문제 글 ${found.length}/${needles.length}${found.length ? ` (예: ${found[0]})` : ""}`);
   }
 
-  const browser = await H.startBrowser("questions0928", 9607);
+  // 2026-10-04 회귀 점검 단계 0: 여러 일꾼이 동시에 돌 때 각자의 사본 · 포트(기본은 전과 같음)
+  const argOf = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
+  const browser = await H.startBrowser(argOf("--clone", "questions0928"), Number(argOf("--port", 9607)));
   const tab = await H.openTab(browser);
   await H.setViewport(tab, "mobile");
   try {

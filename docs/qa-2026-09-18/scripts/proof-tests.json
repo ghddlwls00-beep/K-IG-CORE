@@ -3,7 +3,8 @@
   "name": "VOCA",
   "course": "phonics",
   "id": "mv1-01",
-  "site": "PhonicsLearningView.tsx:766 STEP 1 낱말표 — 마지막 줄의 마지막 낱말 카드",
+  "site": "PhonicsLearningView.tsx:871-873 renderWord (Step 1 [data-step-panel=\"1\"] 983 · rows.map 1021) — 마지막 줄의 마지막 낱말 카드 [data-word-text]",
+  "break": "PhonicsLearningView.tsx:872 `{w}` → `{order === words.length ? \"\" : w}` (회귀 점검 1002 · 7bfd5d7b 에서 줄 확인)",
   "texts": [
    "about"
   ]
@@ -12,7 +13,8 @@
   "name": "GRAMMAR I · 영어 기대값 (gh1-007 → gh1-006 으로 넘어감, 짝=gh1-006)",
   "course": "grammar1",
   "id": "gh1-007",
-  "site": "GrammarLearningView.tsx:1131 Step 3 구문 각인 — 마지막 문항의 영어 줄 (영어 문장이 버튼 없이 보이는 유일한 곳. Step 1 에는 정답 보기를 눌러야만 나옴)",
+  "site": "GrammarLearningView.tsx:2072-2074 renderShadowing (Step 3 구문 각인 [data-step-panel=\"3\"] 2311 · 2318) — 마지막 문항의 영어 줄 [data-en] (영어 문장이 버튼 없이 보이는 유일한 곳)",
+  "break": "GrammarLearningView.tsx:2073 `{gloss(item.englishText)}` → `{item.id === items[items.length - 1].id ? \"\" : gloss(item.englishText)}`",
   "texts": [
    "It is warm."
   ]
@@ -21,7 +23,8 @@
   "name": "GRAMMAR I · 한국어 기대값 (gh1-006, 짝=gh1-007)",
   "course": "grammar1",
   "id": "gh1-006",
-  "site": "GrammarLearningView.tsx:734 STEP 1 문항 카드 — 마지막 문항 카드",
+  "site": "GrammarLearningView.tsx:1707-1709 renderComposition (Step 1 영작 훈련 [data-step-panel=\"1\"] 2263 · 2276) — 마지막 문항 카드의 한국어 [data-ko]",
+  "break": "GrammarLearningView.tsx:1708 `{item.koreanText}` → `{item.id === items[items.length - 1].id ? \"\" : item.koreanText}`",
   "texts": [
    "따뜻해."
   ]
@@ -30,7 +33,8 @@
   "name": "GRAMMAR II · 영어 기대값 (gh2-007, 짝=gh2-007-1)",
   "course": "grammar2",
   "id": "gh2-007",
-  "site": "GrammarLearningView.tsx:1131 Step 3 구문 각인 — 마지막 문항의 영어 줄 (영어 문장이 버튼 없이 보이는 유일한 곳. Step 1 에는 정답 보기를 눌러야만 나옴)",
+  "site": "GrammarLearningView.tsx:2072-2074 renderShadowing (Step 3 구문 각인) — 마지막 문항의 영어 줄 [data-en]",
+  "break": "GrammarLearningView.tsx:2073 — GRAMMAR I 영어와 같은 바꿈(한 번 바꾸면 두 시험이 같이 씀)",
   "texts": [
    "Young as I am, I know it."
   ]
@@ -39,26 +43,29 @@
   "name": "GRAMMAR II · 한국어 기대값 (gh2-007-1, 짝=gh2-007)",
   "course": "grammar2",
   "id": "gh2-007-1",
-  "site": "GrammarLearningView.tsx:734 STEP 1 문항 카드 — 마지막 문항 카드",
+  "site": "GrammarLearningView.tsx:1707-1709 renderComposition (Step 1) — 마지막 문항 카드의 한국어 [data-ko]",
+  "break": "GrammarLearningView.tsx:1708 — GRAMMAR I 한국어와 같은 바꿈. 글은 10-04 데이터대로(9/23 의 '…그것을 안다.' 에 '(형용사 + as + 주어 + 동사)' 가 붙음)",
   "texts": [
-   "나는 젊지만(어리지만) 그것을 안다."
+   "나는 젊지만(어리지만) 그것을 안다. (형용사 + as + 주어 + 동사)"
   ]
  },
  {
   "name": "STUDENT",
   "course": "student",
   "id": "s1-1",
-  "site": "StudentLearningView.tsx:651 STEP 1 문장 카드 — 마지막 문장 카드",
+  "site": "StudentLearningView.tsx:946-948 (영어 [data-en]) · 979-981 (한국어 [data-ko]) renderListenItem 901 (Step 1 블라인드 리스닝 [data-step-panel=\"1\"] 1618) — 마지막 문장 카드",
+  "break": "StudentLearningView.tsx:947 `{sentenceText(idx, false)}` → `{idx === total - 1 && course === \"student\" ? \"\" : sentenceText(idx, false)}` · 980 `{ko}` → `{idx === total - 1 && course === \"student\" ? \"\" : ko}` (course 조건 — 같은 줄을 쓰는 ADULT 시험과 따로 깨려고). 한국어는 10-04 데이터대로('내 자신을' → '나 자신을')",
   "texts": [
    "First of all, thank you for giving me a chance to introduce myself.",
-   "무엇보다도 내 자신을 소개할 수 있는 기회를 주셔서 감사합니다."
+   "무엇보다도 나 자신을 소개할 수 있는 기회를 주셔서 감사합니다."
   ]
  },
  {
   "name": "READING",
   "course": "reading",
   "id": "pr001",
-  "site": "ReadingLearningView.tsx:683 STEP 1 지문 — 마지막 문장",
+  "site": "ReadingLearningView.tsx:959-961 (Step 1 처음 읽기 [data-step-panel=\"1\"] 1032 — 재지 않는 지문 [data-sentence-id] [data-en]; 920-930 은 Step 4 재는 지문) — 마지막 문장",
+  "break": "ReadingLearningView.tsx:960 `{pair.en}` → `{i === sentencePairs.length - 1 ? \"\" : pair.en}`",
   "texts": [
    "Their communication will be more successful if parents respect their other-sex child's different way of speaking."
   ]
@@ -67,7 +74,8 @@
   "name": "LISTENING 대본",
   "course": "ld",
   "id": "d001-1",
-  "site": "LdLearningView.tsx:1342 1:1 대역 스크립트 — 마지막 문장의 한국어 줄",
+  "site": "LdLearningView.tsx:1735-1737 (Step 5 다시 듣기 · 대본 확인 [data-step-panel=\"5\"] 1654 — [data-line] [data-ko]) — 마지막 문장의 한국어 줄",
+  "break": "LdLearningView.tsx:1736 `{item.ko}` → `{idx === sentences.length - 1 ? \"\" : item.ko}`",
   "texts": [
    "그것은 크지 않지만 매우 좋습니다. 우리는 또 한 어린 아들이 있습니다. 그의 이름은 톰입니다."
   ]
@@ -77,9 +85,10 @@
   "course": "ld",
   "id": "d001-1",
   "phaseOverride": "s1",
-  "site": "LdLearningView.tsx:1342 1:1 대역 스크립트 — 1번 문장의 한국어 줄 (STEP 2~4 가 기본으로 보여주는 문장)",
+  "site": "LdLearningView.tsx:1735-1737 (Step 5) — 1번 문장의 한국어 줄 (STEP 2~4 가 기본으로 보여주는 문장)",
+  "break": "LdLearningView.tsx:1736 `{item.ko}` → `{idx === 0 ? \"\" : item.ko}`. 글은 10-04 데이터대로('바바라' → '바버라')",
   "texts": [
-   "나는 왓슨 부인입니다. 나의 이름은 바바라입니다. 나는 간호사이고 병원에서 일합니다."
+   "나는 왓슨 부인입니다. 나의 이름은 바버라입니다. 나는 간호사이고 병원에서 일합니다."
   ]
  },
  {
@@ -87,7 +96,8 @@
   "course": "reading",
   "id": "pr001",
   "phasePrefix": "r2-",
-  "site": "ReadingLearningView.tsx:800 STEP 2 핵심 어휘 — 마지막 카드의 낱말",
+  "site": "ReadingLearningView.tsx:1118-1120 (Step 2 핵심 어휘 [data-step-panel=\"2\"] 1368 — li[data-vocab] [data-word-text]; 접힌 카드는 1102) — 마지막 카드의 낱말",
+  "break": "ReadingLearningView.tsx:1119 `{kw.word}` → 마지막 카드만 \"\" (그 카드의 order 가 마지막일 때)",
   "texts": [
    "successful"
   ]
@@ -97,7 +107,8 @@
   "course": "reading",
   "id": "pr001",
   "phasePrefix": "r2-",
-  "site": "ReadingLearningView.tsx:825 STEP 2 핵심 어휘 — 마지막 카드의 뜻 (전체 뜻 보기 뒤)",
+  "site": "ReadingLearningView.tsx:1153-1155 (Step 2 핵심 어휘 — [data-meaning], 뜻 모두 보기 뒤) — 마지막 카드의 뜻",
+  "break": "ReadingLearningView.tsx:1154 `{kw.meaning}` → 마지막 카드만 \"\"",
   "texts": [
    "성공적인"
   ]
@@ -107,9 +118,110 @@
   "course": "reading",
   "id": "pr001-1",
   "phasePrefix": "r2-",
-  "site": "ReadingLearningView.tsx:1193 STEP 4 원문 대조 — 한글 완역의 마지막 문장",
+  "site": "ReadingLearningView.tsx:1514-1516 (Step 3 원문 대조 [data-step-panel=\"3\"] 1573 · [data-rows] 1599 — [data-ko]; 2026-09-28 에 Step 4 → 3) — 한글 완역의 마지막 문장",
+  "break": "ReadingLearningView.tsx:1515 `{pair.ko}` → `{i === sentencePairs.length - 1 ? \"\" : pair.ko}` (이 줄의 i 는 renderRow 의 문장 번호 — 1486 근처)",
   "texts": [
    "부모가 성별이 다른 자녀의 다른 말하기 방식을 존중한다면 그들의 대화는 더 성공적일 것이다."
+  ]
+ },
+ {
+  "name": "ADULT 1단계 · 문장 (회귀 점검 1002 추가)",
+  "course": "adult",
+  "id": "a1-1",
+  "phasePrefix": "a-",
+  "site": "StudentLearningView.tsx:946-948 renderListenItem (ADULT Step 1 블라인드 리스닝 [data-step-panel=\"1\"] 1618 — [data-en]) — 마지막 문장 카드의 영어 (lib/containers student-cards)",
+  "break": "StudentLearningView.tsx:947 `{sentenceText(idx, false)}` → `{idx === total - 1 && course === \"adult\" ? \"\" : sentenceText(idx, false)}`",
+  "texts": [
+   "First of all, thank you for giving me a chance to introduce myself."
+  ]
+ },
+ {
+  "name": "ADULT 2단계 · 단어 뜻 (회귀 점검 1002 추가)",
+  "course": "adult",
+  "id": "a1-1",
+  "phasePrefix": "a-",
+  "site": "AdultWordsStep.tsx:179-181 renderCard ([data-step-panel=\"2\"] li[data-vocab] [data-meaning], 뜻 보기 뒤) — 마지막 카드 'introduce' 의 뜻 (lib/containers adult-words: 'word | pos | meaning | sentence' 한 줄)",
+  "break": "AdultWordsStep.tsx:180 `{w.meaning}` → `{w.order === words.length - 1 ? \"\" : w.meaning}`",
+  "texts": [
+   "introduce | 동사 | 소개하다 | First of all, thank you for giving me a chance to introduce myself."
+  ]
+ },
+ {
+  "name": "ADULT 3단계 · 덩어리 한국어 (회귀 점검 1002 추가)",
+  "course": "adult",
+  "id": "a1-1",
+  "phasePrefix": "a-",
+  "site": "StudentLearningView.tsx:1253-1255 renderChunks 1222 (ADULT Step 3 끊어 읽기 [data-step-panel=\"3\"] 1653 — li[data-chunk] [data-ko], 뜻 보기 뒤) — 마지막 문장의 마지막 덩어리 (lib/containers adult-chunks: 'en | ko')",
+  "break": "StudentLearningView.tsx:1254 `{c.ko}` → `{idx === total - 1 && k === chunkList.length - 1 ? \"\" : c.ko}`",
+  "texts": [
+   "to introduce myself. | 제 소개를 할."
+  ]
+ },
+ {
+  "name": "ADULT 4단계 · 받아쓰기 한글 조각 (회귀 점검 1002 추가 — 화면 글이 아니라 조립 결과로 판정)",
+  "course": "adult",
+  "id": "a1-2",
+  "phasePrefix": "a-",
+  "viewports": ["desktop"],
+  "check": { "feature": "tile dictation", "item": "한글 조각" },
+  "site": "src/lib/studentDictation.ts:31 TOKEN · src/lib/listeningUtils.ts:334 DICTATION_TOKEN (가-힣 — 2026-10-02 '신라 블록이 없는데'의 고침) — ADULT Step 4 탭 딕테이션의 한글 낱말 조각('홍길동' · '홍' · '서울' · '부산'). 드라이버는 데스크톱에서 한글 조각 문장을 따로 조립(drive-generic solveStudentTiles '· 한글 조각')",
+  "break": "깨뜨린 사본에서만 두 줄의 `가-힣` 을 지움(10/2 전 상태) → 앱의 낱말에서 한글이 빠짐. 드라이버 · 기대 글은 이 작업 트리의 고친 코드(tsload REPO)라 '홍길동' 조각을 찾다 못 놓음 → 그 check 가 PASS 가 아님(BLOCKED n/m tiles placed). 되돌리면 PASS",
+  "texts": []
+ },
+ {
+  "name": "ADULT 5단계 · 완료 (회귀 점검 1002 추가 — 완료 시험 결과로 판정)",
+  "course": "adult",
+  "id": "a1-1",
+  "phasePrefix": "a-",
+  "viewports": ["desktop"],
+  "check": { "feature": "completion", "item": "Step 5" },
+  "site": "StudentLearningView.tsx:1525 renderCompletion 1478 (ADULT Step 5 섀도잉 & 낭독 [data-step-panel=\"5\"] 1725 — '이 강의 학습 완료' aria-label 학습 완료 체크). 드라이버: 80% 연습(practiseStudent 4 · 5단계) → 누름 → 새로고침 → 되돌림, kig:adult:pending:v1 을 기다림",
+  "break": "StudentLearningView.tsx:1525 `onClick={complete}` → `onClick={course === \"adult\" ? () => {} : complete}` → 눌러도 완료가 안 됨 → completion FAIL. 로컬 개발 서버는 이용권이 없어 /api/progress/adult 저장은 안 일어날 수 있음 — 그 경우 note 의 '+0' 은 판정에 안 씀(운영 기록에서만 봄)",
+  "texts": []
+ },
+ {
+  "name": "PASS-OFF T1 · 한글로 쓴 답이 정답 (회귀 점검 1002 추가 — drive-passoff.cjs, 휴대폰 화면만: 데스크톱은 레슨 철자로 씀)",
+  "course": "passoff-grammar",
+  "id": "pg01-1",
+  "phasePrefix": "p-",
+  "viewports": ["mobile", "small"],
+  "check": { "feature": "grading", "item": "\\(한글 꼴\\)$" },
+  "site": "src/components/passoff/ui.tsx:78 (romanForGrading 연결 — 화면대로 '서울' 을 쳐도 Seoul 로 되돌려 채점) — ④ 영작 pg01-1:p13 'I live in 서울.'",
+  "break": "ui.tsx:78 `return (text) => romanForGrading(key, text);` → `return (text) => text;` (10/2 밤 전 — 한글로 쓴 답이 '한글이 섞여 있어요' 로 거절). 드라이버: BASE=http://localhost:<port> node drive-passoff.cjs --ids pg01-1,pg01-2 --licence no --no-audio --suffix -proof-<phase> (계획: 회귀점검-1002/단계0/passoff-proof-plan.json)",
+  "texts": []
+ },
+ {
+  "name": "PASS-OFF T2 · 화면은 한글만('Seoul(서울)' 꼴 되살림) (회귀 점검 1002 추가)",
+  "course": "passoff-grammar",
+  "id": "pg01-1",
+  "phasePrefix": "p-",
+  "viewports": ["desktop", "mobile", "small"],
+  "check": { "feature": "korean words", "item": "로마자" },
+  "site": "src/lib/koreanGloss.ts:101 koreanOnScreen (passoff/ui.tsx:69 gloss — 1 예문 · 4 영작 문장) — pg01-1 'My name is 홍길동, and I live in 서울.'",
+  "break": "koreanGloss.ts:101 `${before}${hangul}…` → `${before}${written}(${hangul})` (10/2 낮 판). STUDENT · ADULT · READING · GRAMMAR II 도 같은 함수라 drive-generic 시험과 같은 때에 깨지 않음",
+  "texts": []
+ },
+ {
+  "name": "PASS-OFF T3 · 형태 찾기 보기 채점 (회귀 점검 1002 추가)",
+  "course": "passoff-grammar",
+  "id": "pg01-2",
+  "phasePrefix": "p-",
+  "viewports": ["desktop", "mobile", "small"],
+  "check": { "feature": "grading", "item": "^③ .*choice$" },
+  "site": "src/lib/passoffGrading.ts:1378 gradeChoice (passoff/FormStep.tsx:248) — ③ 찾기의 보기 문항 pg01-2 s3 · s4 · s6",
+  "break": "passoffGrading.ts:1378 `index === item.answer` → `index !== item.answer` → 정답 보기가 '한 번 더 해 보세요'",
+  "texts": []
+ },
+ {
+  "name": "PASS-OFF T4 · 문법 설명 카드 글 (회귀 점검 1002 추가)",
+  "course": "passoff-grammar",
+  "id": "pg01-2",
+  "phasePrefix": "p-",
+  "viewports": ["desktop", "mobile", "small"],
+  "site": "src/components/passoff/RuleStep.tsx:217 ({gloss(rule.koDiff)} — ② 문법 설명의 한국어와 다른 점) — pg01-2 rule-kodiff",
+  "break": "RuleStep.tsx:217 `{gloss(rule.koDiff)}` → `{null}`",
+  "texts": [
+   "한국어는 '너 · 당신 · 너희 · 여러분'처럼 상대와 사람 수에 따라 말이 바뀌지만, 영어는 모두 you 하나예요. 선생님이나 어른에게도 you 를 써요."
   ]
  }
 ]

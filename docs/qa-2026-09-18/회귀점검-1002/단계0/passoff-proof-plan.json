@@ -1,0 +1,63 @@
+{
+  "what": "PASS-OFF GRAMMAR 스윕 드라이버(docs/qa-2026-09-18/scripts/drive-passoff.cjs)의 판정 깨기 — 앱을 깨뜨린 사본에서 그 판정이 FAIL(exit 1)을 내고, 되돌린 사본에서 PASS(exit 0)인지. 회귀 점검 1002 단계 0 · passoff-sweep 가 씀(2026-10-04). 같은 AI 계열이 만들고 점검함 — 독립 검수 아님.",
+  "who": "다음 proof 일꾼(한 번에 모아서). passoff-sweep 는 깨뜨린 앱을 만들지 않았다(내용 · src 는 이 작업 트리에서 못 바꿈).",
+  "setup": {
+    "copy": "이 작업 트리(nostalgic-blackburn-048c73, HEAD 7bfd5d7b)에서 따로 사본 작업 트리를 만든다 — 예: git worktree add --detach <COPY> HEAD. node_modules 는 본 저장소 것을 이어 쓴다(New-Item -ItemType Junction <COPY>\\node_modules -Target C:\\Users\\ghddl\\.gemini\\antigravity\\scratch\\K-IG-CORE\\node_modules). .env.local 은 넣지 않는다(이용권 · R2 값 없이 — 무료 레슨만 봄).",
+    "build": "<COPY> 에서: npx next build ; npx next start -p 3741 -H 127.0.0.1  (시험마다 깨뜨림 → build → start → 드라이버 → 서버 끔 → 되돌림 → build → start → 드라이버)",
+    "driverFrom": "드라이버는 반드시 '깨지 않은' 이 작업 트리에서 돌린다 — 기대(lib/passoff-expect.cjs)가 이 저장소의 src 를 tsload 로 읽기 때문(사본에서 돌리면 깨진 코드가 기대도 바꿈). 환경 변수 KIG_REPO 도 두지 말 것.",
+    "flags": "BASE=http://127.0.0.1:3741 · --licence no(로컬엔 이용권 없음 — 무료 판 기대: 유료 STUDENT 문항 없이 '이용권이 있으면 N문장 더' 안내) · --no-audio(로컬엔 R2 값이 없어 클립이 오류 — 소리는 운영 스윕이 봄) · 포트 9722~9729(passoff 몫) · 브라우저 하나씩",
+    "baselineFirst": "깨기 전에 같은 명령을 안 깬 사본 빌드에 한 번 돌려 exit 0 인지 먼저 본다. 로컬에서만 생기는 4xx(예: 이용권 세션 확인 401)가 http 칸을 FAIL 로 만들면 그 주소만 --allow-4xx '<정규식>' 로 빼고 그 사실을 적는다(5xx 는 뺄 수 없음)."
+  },
+  "tests": [
+    {
+      "name": "T1 한글로 쓴 답이 정답(romanForGrading)",
+      "file": "src/components/passoff/ui.tsx",
+      "line": 78,
+      "from": "  return (text) => romanForGrading(key, text);",
+      "to": "  return (text) => text;",
+      "why": "화면대로 '서울' 을 쳐도 Seoul 로 되돌려 채점하는 연결을 끊음 — 10/2 밤 이전 판(한글로 쓴 답이 '한글이 섞여 있어요' 로 거절)과 같은 동작",
+      "command": "$env:BASE='http://127.0.0.1:3741'; node docs/qa-2026-09-18/scripts/drive-passoff.cjs --ids pg01-1 --viewports mobile --licence no --no-audio --suffix -proof-t1-broken --port 9722",
+      "expectBroken": "exit 1 · 'FAIL grading | ④ pg01-1:p13 (한글 꼴)' (note: 정답 'I live in 서울.' → hangul) — 이어서 '(한글 꼴이 안 된 뒤 영어 철자)' PASS 로 레슨은 끝까지 감. 무료 판 pg01-1 의 한글 꼴 문항은 p13 하나(I live in 서울.)",
+      "expectRestored": "exit 0 · '④ pg01-1:p13 (한글 꼴)' PASS · 끝: PASS 1"
+    },
+    {
+      "name": "T2 'Busan(부산)' 꼴이 다시 화면에(한글만 → 영어+한글)",
+      "file": "src/lib/koreanGloss.ts",
+      "line": 101,
+      "from": "    return `${before}${hangul}${bracket && bracket !== `(${hangul})` ? bracket : \"\"}`;",
+      "to": "    return `${before}${written}(${hangul})`;",
+      "why": "koreanOnScreen 이 10/2 낮 판처럼 'Seoul(서울)' · 'Hong Gil Dong(홍길동)' 을 그리게 함 — 회귀 점검 ⑨ 의 표기 판정",
+      "command": "$env:BASE='http://127.0.0.1:3741'; node docs/qa-2026-09-18/scripts/drive-passoff.cjs --ids pg01-1 --viewports desktop --licence no --no-audio --suffix -proof-t2-broken --port 9723",
+      "expectBroken": "exit 1 · 'FAIL korean words | 로마자 한국어 낱말 · 'Busan(부산)' 꼴' (spelling(한글): Seoul(서울) …) · 'FAIL content | 화면 글 기대 대비' 없음 ≥ 1(anchor-en 'My name is 홍길동, and I live in 서울.' 등). 채점 칸은 그대로 PASS 여도 됨(채점은 레슨 철자)",
+      "expectRestored": "exit 0 · korean words PASS(표기 표 7개) · content 없음 0"
+    },
+    {
+      "name": "T3 형태 찾기 보기 채점(gradeChoice)",
+      "file": "src/lib/passoffGrading.ts",
+      "line": 1378,
+      "from": "  return Number.isInteger(index) && index === item.answer;",
+      "to": "  return Number.isInteger(index) && index !== item.answer;",
+      "why": "③ 보기 문항의 정답을 오답으로(다른 보기를 정답으로) — 드라이버의 '정답을 넣어 정답으로 채점되는지' 판정",
+      "command": "$env:BASE='http://127.0.0.1:3741'; node docs/qa-2026-09-18/scripts/drive-passoff.cjs --ids pg01-2 --viewports desktop --licence no --no-audio --suffix -proof-t3-broken --port 9724",
+      "expectBroken": "exit 1 · 'FAIL grading | ③ pg01-2:s3 choice' · 's4 choice' · 's6 choice' (→ wrong: '한 번 더 해 보세요') — 드라이버는 다른 보기로 넘어가 끝까지 감. ② 규칙 확인은 RuleCheck 의 i === check.answer 라 그대로 PASS",
+      "expectRestored": "exit 0 · ③ 6/6 정답"
+    }
+  ],
+  "optional": [
+    {
+      "name": "T4 규칙 카드 글 하나가 빠짐(화면 글 대조)",
+      "file": "src/components/passoff/RuleStep.tsx",
+      "line": 217,
+      "from": "          <p className={`${FONT[font].text} text-ink`}>{gloss(rule.koDiff)}</p>",
+      "to": "          <p className={`${FONT[font].text} text-ink`}>{null}</p>",
+      "command": "$env:BASE='http://127.0.0.1:3741'; node docs/qa-2026-09-18/scripts/drive-passoff.cjs --ids pg01-2 --viewports desktop --licence no --no-audio --suffix -proof-t4-broken --port 9725",
+      "expectBroken": "exit 1 · 'FAIL content' 없음 1 (2:rule-kodiff)",
+      "expectRestored": "exit 0"
+    }
+  ],
+  "alreadyProven": {
+    "expectationSide": "기대 글 쪽 깨기는 passoff-sweep 가 운영 기록으로 이미 돌림(브라우저 없이 같은 판정 함수 judgeContent): node drive-passoff.cjs --rejudge ../out/features/passoff-grammar-rc1002-s0.jsonl [--break=expect-text | gloss-off | roman-inject] — 결과는 단계0/passoff-sweep.md",
+    "productionBehaviour": "같은 드라이버의 운영 판(이용권 사본) 결과 · 데스크톱 첫 ④ 문장의 '틀린 답 → 틀림' · ② 규칙 확인 '틀린 보기 → 다시 골라 보세요' 는 매 데스크톱 방문의 기록에 있음(판정이 틀림을 말할 수 있다는 작은 증거 — 앱을 깨뜨린 증명은 아님)"
+  },
+  "rules": "내용 · src 는 사본에서만. 커밋 · 푸시 · R2 · 배포 없음. 이용권 코드 · PIN 타이핑 0. Edge 하나씩 · 다 쓰면 끔. 사본 서버의 data/*.json(로컬 대체 저장소)에 기록이 생기면 사본과 함께 지움."
+}

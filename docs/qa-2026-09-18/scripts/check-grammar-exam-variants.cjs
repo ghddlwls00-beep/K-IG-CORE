@@ -9,7 +9,7 @@
  * 2026-09-24 7단계 배포 재점검에서 운영 gh1-006 4/4 기대대로(점검 세션). 이용권 프로필 사본 · 그 강의의 시험 답안 localStorage 만 바뀜
  * (logDataChange 로 남김 — 강의 화면의 ↺ 전체 초기화 로 지워짐).
  *
- *   node check-grammar-exam-variants.cjs [--course grammar1] [--ids gh1-006,gh1-010] [--port 9703] [--clone exam-variants] [--mode prefix]
+ *   node check-grammar-exam-variants.cjs [--course grammar1] [--ids gh1-006,gh1-010] [--port 9703] [--clone exam-variants] [--mode prefix] [--break]
  * exit 0 = 모두 기대대로.
  *
  * --mode prefix(최종 관문 2026-09-25 — 관문 15 채점 흠 ② '뜻이 반대면 0점' 고침이 운영에서 되는가): 강의마다 모범 답안의 낱말 하나를
@@ -43,6 +43,10 @@ const neg2 = (a) => { const w = words(a); return [w[0], `${w[1]}n't`, ...w.slice
 const extraA = (a) => { const w = words(a); return [w[0], w[1], "a", ...w.slice(2)].join(" ") + end(a); };
 const MODE = arg("--mode", "be");
 const CLONE = arg("--clone", "exam-variants");
+// --break(2026-10-04 회귀 점검 단계 0): 첫 강의에서 '✕ 오답' 을 기대하는 첫 문항에 바꾼 답 대신 모범 답안 그대로를 넣음 — 화면은 ✓ 정답을 주므로
+// 그 줄이 ✗ 가 되고 exit 1 이어야 이 도구가 화면의 판정을 실제로 읽고 기대와 견준다는 증명(채점기가 뜻 반대를 100점 주는 회귀와 같은 모양).
+const BREAK = process.argv.includes("--break");
+let brokeOne = false;
 // 형용사 · 동사의 진짜 반대말 짝만(접두어 규칙은 grammarGrading OPPOSITE_PREFIXES — dis · non · im · in · il · ir · un)
 const PAIRS = { happy: "unhappy", expensive: "inexpensive", healthy: "unhealthy", interesting: "uninteresting", comfortable: "uncomfortable", possible: "impossible", honest: "dishonest", polite: "impolite", kind: "unkind", safe: "unsafe", like: "dislike", lucky: "unlucky", necessary: "unnecessary", usual: "unusual", friendly: "unfriendly", important: "unimportant", correct: "incorrect", legal: "illegal", regular: "irregular", agree: "disagree" };
 function prefixPlan(exp) {
@@ -109,6 +113,10 @@ function scopePlan(exp) {
           { a: a3, typed: extraA(a3), want: /부분/, label: "작은 낱말 하나 더" },
           { a: a4, typed: a4.text, want: /✓\s*정답/, label: "모범 답안" },
         ];
+      }
+      if (BREAK && !brokeOne) {
+        const p0 = plan.find((p) => /오답/.test(String(p.want)));
+        if (p0) { console.log(`(깨기) ${id} Q${p0.a.n} ${p0.label}: "${p0.typed}" 대신 모범 답안 "${p0.a.text}" 을 넣음 — ✕ 오답 기대가 ✗ 로 잡혀야 함`); p0.typed = p0.a.text; p0.label += " (깨기)"; brokeOne = true; }
       }
       const loaded = await H.load(tab, `/${COURSE}/${id}`, { marker: H.MARKERS[COURSE] });
       if (!loaded.rendered) { console.log(`✗ ${id} 페이지가 뜨지 않음`); bad++; continue; }

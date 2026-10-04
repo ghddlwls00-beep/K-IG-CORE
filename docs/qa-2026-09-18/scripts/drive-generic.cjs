@@ -24,6 +24,9 @@
  *
  * Output: out/features/<course><suffix>.jsonl, out/rendered/<course>/<id>.<viewport>.json
  *
+ * 회귀 점검 1002 (2026-10-04): --course adult (ADULT 5단계 — 아래 ADULT_KNOWN · adultWords · adultChunks) · --viewports 에 small
+ * (작은 휴대폰 360px). 명령서의 3화면 '휴대폰 · 작은 휴대폰 · 데스크톱' = --viewports desktop,mobile,small.
+ *
  * 이미 한 방문(7단계 7-1 l — 전에는 같은 과정의 다른 기록 파일에 있는 방문을 모두 "이미 함" 으로 쳐서, 새 --suffix · --ids 로
  * 몇 강만 다시 보려 해도 "0 … visits to do (246 already done)" 를 찍고 한 강도 안 본 채 exit 0 이었다 — 2026-09-23 실제로 그렇게 됨):
  *   기본       이 기록 파일(<course><suffix>.jsonl)이 비어 있어야 하고, 다른 파일의 방문은 세지 않는다 — 부른 강의를 모두 본다.
@@ -79,7 +82,15 @@ const JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}.jsonl`);
 // 2026-09-27 LISTENING 학습법 · 화면 고침: '-l0927' — the LISTENING dictation is read by the view's data-* marks (빈칸 · 블록 · 쓰기,
 // [data-feedback]) — solveLdTiles · typedDictation · walkDictation · HINT_CHIPS below — and a LISTENING lesson completes after one
 // checked line (계획 D02 나), so the completion test checks one first when the button is disabled (lib/ld-page.cjs CHECK_ONE_LINE).
-const DRIVER_REV = "7-1m-g15-s0927-v0927-l0927";
+// 회귀 점검 1002 단계 0 (2026-10-04): '-a1002' — ADULT (2026-10-02 새 과정): its five steps (ADULT_KNOWN — a step the driver does not
+// know is BLOCKED), Step 2 단어 (adultWords) · Step 3 끊어 읽기 (adultChunks) and their readers (lib/containers adult-words ·
+// adult-chunks), no sound on a step change, the completion test at Step 5 waiting on 'kig:adult:pending:v1' (/api/progress/adult).
+// STUDENT · ADULT: a Hangul word is a tile (clickStudentTile key 가-힣) and the tile words keep every sentence's place
+// (lib/expectations.cjs — the sentences with a Hangul word were dropped and the rest slid one place: STUDENT 24 lessons); on the
+// desktop a sentence with a Hangul tile is assembled too ('· 한글 조각'). ADULT completion is pressed only when it cannot open a
+// chapter for good (lib/student-data.cjs completionWouldUnlockIn on the record GET /api/progress/adult reads).
+// '--viewports … small' — the 360px phone. Other courses: unchanged.
+const DRIVER_REV = "7-1m-g15-s0927-v0927-l0927-a1002";
 const RENDERED = path.join(OUT, "rendered", COURSE);
 
 // Controls that leave the page or touch money/licence/admin — never pressed by the driver.
@@ -510,8 +521,10 @@ const STU = {
   feedback: `(() => { const f = document.querySelector('main [data-feedback]'); return f ? { kind: f.getAttribute('data-feedback'), text: (f.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 90) } : null; })()`,
   box: `[...document.querySelectorAll('main [data-assembly] > div:not([aria-hidden]) button')].map((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim())`,
 };
+// 회귀 점검 1002 (2026-10-04): a Korean word written in Hangul is a tile since 2026-10-02 ('신라' · '홍길동' — studentDictation TOKEN 가-힣);
+// the old key kept only [\w'’-], so every Hangul tile read '' and the first Hangul tile in the bank stood for all of them.
 const clickStudentTile = (tab, word) => H.click(tab, `(() => {
-  const norm = (s) => s.replace(/[^\\w'\\u2019-]/g, '').toLowerCase();
+  const norm = (s) => s.replace(/[^\\w'\\u2019\\uac00-\\ud7a3-]/g, '').toLowerCase();
   const want = norm(${JSON.stringify(String(word || ""))});
   return [...document.querySelectorAll('main [data-word-bank] button')].find((b) => !b.disabled && norm(b.innerText || '') === want) || null;
 })()`, { settle: 180 });
@@ -538,25 +551,40 @@ async function assembleStudent(tab, words, { reversed = false } = {}) {
   return { placed, needed, verdicts, last };
 }
 
-async function solveStudentTiles(tab, exp, checks, stepLabel) {
+async function solveStudentTiles(tab, exp, checks, stepLabel, depth = "full") {
   const info = await tab.eval(STU.info).catch(() => null);
   if (!info) return;
-  await H.click(tab, STU.action("reset"), { settle: 400 }); // this sentence from its first part
-  const words = (exp.tileWordsAll || [])[info.index];
-  const target = String(((exp.answers || [])[info.index] || {}).text || "");
-  if (!words || !words.length) { checks.push({ feature: "tile dictation", item: `${stepLabel} · (문장 못 고름)`, status: "BLOCKED", note: `문장 ${info.index + 1} 의 낱말이 기대값(tileWordsAll)에 없음` }); return; }
-  await H.waitFor(tab, `document.querySelectorAll('main [data-word-bank] button').length > 0`, 5000);
-  const good = await assembleStudent(tab, words);
+  const one = async (index) => {
+    await H.click(tab, STU.action("reset"), { settle: 400 }); // this sentence from its first part
+    const words = (exp.tileWordsAll || [])[index];
+    const tag = (words || []).some((x) => /[가-힣]/.test(x)) ? " · 한글 조각" : "";
+    const target = String(((exp.answers || [])[index] || {}).text || "");
+    if (!words || !words.length) { checks.push({ feature: "tile dictation", item: `${stepLabel} · (문장 못 고름)${tag}`, status: "BLOCKED", note: `문장 ${index + 1} 의 낱말이 기대값(tileWordsAll)에 없음` }); return; }
+    await H.waitFor(tab, `document.querySelectorAll('main [data-word-bank] button').length > 0`, 5000);
+    const good = await assembleStudent(tab, words);
+    await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+    await H.click(tab, STU.action("reset"), { settle: 400 });
+    const bad = await assembleStudent(tab, words, { reversed: true });
+    const accepted = !!good.last && good.last.kind === "correct";
+    const refused = !!bad.last && bad.last.kind === "wrong";
+    checks.push({
+      feature: "tile dictation", item: `${stepLabel} · "${target.slice(0, 40)}"${tag}`,
+      status: good.placed !== good.needed || !good.last || !bad.last ? "BLOCKED" : accepted && refused ? "PASS" : "FAIL",
+      note: `${good.placed}/${good.needed} tiles placed in ${good.verdicts.length} part(s) · correct→${good.verdicts.join(" > ")} "${good.last ? good.last.text : "no feedback"}" · reversed part 1→${bad.last ? `${bad.last.kind} "${bad.last.text}"` : "no feedback"}${tag ? ` · tiles ${words.join(" ")}`.slice(0, 160) : ""}`,
+    });
+  };
+  await one(info.index);
+  // 회귀 점검 1002 (2026-10-04): a sentence with a Hangul word ('The 신라 Kingdom …' — a tile since 2026-10-02) — on the full depth
+  // (desktop) that sentence is assembled too, from the data, when the sentence on screen has none: its tiles must be in the bank,
+  // in the answer and the right order accepted (STUDENT 48 · ADULT 45 sentences)
+  if (depth !== "full") return;
+  const hangul = (exp.tileWordsAll || []).findIndex((w) => (w || []).some((x) => /[가-힣]/.test(x)));
+  if (hangul < 0 || hangul === info.index) return;
+  const opened = await H.click(tab, `document.querySelector('main [data-pill="${hangul}"]')`, { settle: 500 });
   await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
-  await H.click(tab, STU.action("reset"), { settle: 400 });
-  const bad = await assembleStudent(tab, words, { reversed: true });
-  const accepted = !!good.last && good.last.kind === "correct";
-  const refused = !!bad.last && bad.last.kind === "wrong";
-  checks.push({
-    feature: "tile dictation", item: `${stepLabel} · "${target.slice(0, 40)}"`,
-    status: good.placed !== good.needed || !good.last || !bad.last ? "BLOCKED" : accepted && refused ? "PASS" : "FAIL",
-    note: `${good.placed}/${good.needed} tiles placed in ${good.verdicts.length} part(s) · correct→${good.verdicts.join(" > ")} "${good.last ? good.last.text : "no feedback"}" · reversed part 1→${bad.last ? `${bad.last.kind} "${bad.last.text}"` : "no feedback"}`,
-  });
+  const now = await tab.eval(STU.info).catch(() => null);
+  if (!opened.ok || !now || now.index !== hangul) { checks.push({ feature: "tile dictation", item: `${stepLabel} · (한글 조각 문장 못 엶)`, status: "BLOCKED", note: `문장 ${hangul + 1} 번호 단추 ${opened.ok ? "눌렀으나 그 문장이 아님" : `못 누름: ${opened.reason}`}` }); return; }
+  await one(hangul);
 }
 
 /**
@@ -564,20 +592,160 @@ async function solveStudentTiles(tab, exp, checks, stepLabel) {
  * words) and 80% spoken (microphone ≥ 70 or '읽었어요'). Practise like a learner — every sentence of Step 2 assembled from
  * the data, every '읽었어요' of Step 3 pressed — and say what was practised.
  */
-async function practiseStudent(tab, exp) {
+// 회귀 점검 1002: which tab holds the dictation and the shadowing — STUDENT 2 · 3, ADULT 4 · 5 (1 블라인드 리스닝 · 2 단어 · 3 끊어 읽기 ·
+// 4 탭 딕테이션 · 5 섀도잉 & 낭독, StudentLearningView ADULT_STEPS)
+const STUDENT_TABS = { student: { dictation: 2, shadowing: 3 }, adult: { dictation: 4, shadowing: 5 } };
+const isStudentView = (course) => Object.prototype.hasOwnProperty.call(STUDENT_TABS, course);
+
+async function practiseStudent(tab, exp, course = "student") {
   const all = exp.tileWordsAll || [];
+  const T = STUDENT_TABS[course] || STUDENT_TABS.student;
   let solved = 0;
-  await H.click(tab, `document.querySelector('main [data-step-tab="2"]')`, { settle: 800 });
+  await H.click(tab, `document.querySelector('main [data-step-tab="${T.dictation}"]')`, { settle: 800 });
   for (let i = 0; i < all.length; i++) {
     await H.click(tab, `document.querySelector('main [data-pill="${i}"]')`, { settle: 400 });
     const r = await assembleStudent(tab, all[i]);
     if (r.last && r.last.kind === "correct") solved++;
   }
   await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
-  await H.click(tab, `document.querySelector('main [data-step-tab="3"]')`, { settle: 800 });
+  await H.click(tab, `document.querySelector('main [data-step-tab="${T.shadowing}"]')`, { settle: 800 });
   for (let k = 0; k < 40; k++) if (!(await H.click(tab, `document.querySelector('main [data-action="said"][aria-pressed="false"]')`, { settle: 150 })).ok) break;
   const said = await tab.eval(`document.querySelectorAll('main [data-action="said"][aria-pressed="true"]').length`).catch(() => 0);
   return `practised: dictation ${solved}/${all.length} · spoken ${said}/${all.length}`;
+}
+
+/**
+ * 회귀 점검 1002 단계 0 (2026-10-04) — ADULT (2026-10-02 · docs/adult/README.md '5단계'): StudentLearningView with five steps,
+ *   1 블라인드 리스닝 · 2 단어 (src/components/AdultWordsStep.tsx) · 3 끊어 읽기 (renderChunks) · 4 탭 딕테이션 · 5 섀도잉 & 낭독.
+ * Steps 1 · 4 · 5 are STUDENT's 1 · 2 · 3 and go through the same routines (student-cards · solveStudentTiles · the completion test).
+ * Steps 2 · 3 have their own routines below. A step the driver does not know — a sixth tab, a renamed one, a panel that is not where
+ * its number says — is written BLOCKED for that visit (never a silent PASS): ADULT_KNOWN names the steps and the routine each needs.
+ * Every check is read from the view's data-* marks; the right answers come from the lesson data (lib/expectations.cjs adultData).
+ */
+const ADULT_PANEL = `(() => { const p = document.querySelector('main [data-student-view] [data-step-panel]'); return p ? { n: p.getAttribute('data-step-panel'), name: (p.getAttribute('aria-label') || '').trim() } : null; })()`;
+const ADULT_KNOWN = { "블라인드 리스닝": "listen", "단어": "words", "끊어 읽기": "chunk", "탭 딕테이션": "dictation", "섀도잉 & 낭독": "shadowing" };
+// 깨기 (회귀 점검 1002): --break=forget-chunk — the driver as if it did not know '끊어 읽기' (a step added after the driver was written):
+// that tab must come out BLOCKED (모르는 단계) and the lesson BLOCKED in build-coverage, never a quiet PASS
+if (process.argv.includes("--break=forget-chunk")) delete ADULT_KNOWN["끊어 읽기"];
+const tx = (s) => String(s || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
+const tabText = (n) => `(() => { const b = document.querySelector('main [data-step-tab="${n}"]'); return b ? (b.innerText || '').replace(/\\s+/g, ' ').trim() : null; })()`;
+
+/** Step 2 '단어': the cards (count · '뜻 보기' → the meaning of THAT card · 몰라요 · 알아요 folds), the word's speaker, five blanks. */
+async function adultWords(tab, exp, rec, stepLabel) {
+  const A = exp.adult;
+  const P = `main [data-step-panel="2"]`;
+  const checks = rec.checks;
+  const push = (item, status, note) => checks.push({ feature: "adult words", item: `${stepLabel} · ${item}`, status, note });
+  const has = await H.waitFor(tab, `document.querySelectorAll('${P} li[data-vocab]').length > 0`, 4000);
+  if (!A.words.length) { push("카드", has ? "FAIL" : "PASS", has ? "데이터에 낱말이 없는데 카드가 있음" : "낱말 없는 강의 — 안내문"); return true; }
+  if (!has) { push("카드", "BLOCKED", "단어 단계에 카드(li[data-vocab])가 없음 — 화면이 바뀌었으면 이 드라이버를 고쳐야 함"); return false; }
+  const count = await tab.eval(`document.querySelectorAll('${P} li[data-vocab]').length`).catch(() => 0);
+  push("카드 수", count === A.words.length ? "PASS" : "FAIL", `카드 ${count} · 데이터 ${A.words.length}`);
+  const card = (o) => `document.querySelector('${P} li[data-vocab="${o}"]')`;
+  const read = (o) => tab.eval(`(() => { const li = ${card(o)}; if (!li) return null; const t = (el) => el ? (el.innerText || '').replace(/\\s+/g, ' ').trim() : null; const w = li.querySelector('[data-word-text]'); return { word: t(w), pos: t(w && w.nextElementSibling), meaning: t(li.querySelector('[data-meaning]')), mark: li.getAttribute('data-mark'), folded: !!li.querySelector('[data-action="unfold"]'), pressed: [...li.querySelectorAll('[aria-pressed="true"]')].map((b) => b.getAttribute('data-action')) }; })()`).catch(() => null);
+  // '뜻 보기' on card 0 → its own meaning; then 몰라요
+  const w0 = A.words[0];
+  const before = await read(0);
+  await H.click(tab, `${card(0)} && ${card(0)}.querySelector('[data-action="reveal"]')`, { settle: 300 });
+  const shown = await read(0);
+  await H.click(tab, `${card(0)} && ${card(0)}.querySelector('[data-action="unknown"]')`, { settle: 250 });
+  const unknown = await read(0);
+  push("뜻 보기 · 몰라요", before && !before.meaning && shown && tx(shown.meaning) === tx(w0.meaning) && tx(shown.word) === tx(w0.word) && tx(shown.pos) === tx(w0.pos) && unknown && unknown.mark === "unknown" ? "PASS" : "FAIL",
+    `카드 1 '${w0.word}' — 누르기 전 뜻 ${before && before.meaning ? "보임(가려져 있어야)" : "가림"} · 누른 뒤 '${shown ? shown.meaning : "?"}' (데이터 '${w0.meaning}') · 품사 '${shown ? shown.pos : "?"}' · 몰라요 → data-mark ${unknown ? unknown.mark : "?"}`);
+  // 알아요 on card 1 folds it
+  if (A.words.length > 1) {
+    await H.click(tab, `${card(1)} && ${card(1)}.querySelector('[data-action="reveal"]')`, { settle: 300 });
+    await H.click(tab, `${card(1)} && ${card(1)}.querySelector('[data-action="known"]')`, { settle: 300 });
+    const known = await read(1);
+    const summary = await tab.eval(`(() => { const s = document.querySelector('${P} [data-vocab-summary]'); return s ? s.innerText.replace(/\\s+/g, ' ').trim() : null; })()`).catch(() => null);
+    push("알아요 · 접힘 · 요약", known && known.mark === "known" && known.folded && /알아요 1 · 몰라요 1/.test(summary || "") ? "PASS" : "FAIL", `카드 2 → data-mark ${known ? known.mark : "?"} · 접힘 ${known ? known.folded : "?"} · 요약 '${summary}'`);
+  }
+  // the word's speaker says THIS word (its `say` clip)
+  const n0 = rec.audio.length;
+  await pressAudio(tab, `${card(0)} && ${card(0)}.querySelector('[data-action="word-audio"]')`, `${stepLabel} · 낱말 소리 '${w0.word}'`, exp, rec.audio);
+  const a0 = rec.audio[n0];
+  if (a0) push("낱말 소리 = 그 낱말", a0.status === "PASS" && (a0.clips || []).some((c) => c.path === w0.sayPath) ? "PASS" : a0.status === "RETEST" ? "BLOCKED" : "FAIL", `요청 ${(a0.clips || []).map((c) => c.path).join(", ") || "없음"} · 기대 ${w0.sayPath} · ${a0.status}${a0.note ? ` ${a0.note}` : ""}`);
+  // the blanks: the set starts with the word marked 몰라요 (card 0); answer each from the data — the second one wrong on purpose
+  const cloze = `(() => { const c = document.querySelector('${P} [data-cloze]'); if (!c) return null; const t = (el) => el ? (el.textContent || '').replace(/\\u00a0/g, ' ').replace(/\\s+/g, ' ').trim() : null; const f = c.querySelector('[data-cloze-feedback]'); return { order: +c.getAttribute('data-order'), masked: t(c.querySelector('[data-masked]')), options: [...c.querySelectorAll('[data-option]')].map((b) => t(b)), feedback: f ? f.getAttribute('data-cloze-feedback') : null, ko: t(c.querySelector('[data-cloze-ko]')), filled: t(c.querySelector('[data-filled]')) }; })()`;
+  await H.waitFor(tab, `Boolean(document.querySelector('${P} [data-cloze]'))`, 3000);
+  const setSize = Math.min(5, A.words.length);
+  const rows = [];
+  let firstOrder = null, listened = false;
+  for (let q = 0; q < setSize; q++) {
+    const c = await tab.eval(cloze).catch(() => null);
+    if (!c) break;
+    if (q === 0) firstOrder = c.order;
+    const w = A.words[c.order];
+    if (!w) { rows.push({ q, why: `data-order ${c.order} 가 데이터에 없음` }); break; }
+    const wantWrong = q === 1;
+    const pick = wantWrong ? c.options.find((o) => o !== tx(w.answer)) : c.options.find((o) => o === tx(w.answer));
+    const at = c.options.indexOf(pick);
+    if (at < 0) { rows.push({ q, order: c.order, why: `보기에 ${wantWrong ? "틀린 것" : `정답 '${w.answer}'`} 없음 (${c.options.join(" / ")})` }); break; }
+    await H.click(tab, `document.querySelector('${P} [data-cloze] [data-option="${at}"]')`, { settle: 300 });
+    const after = await tab.eval(cloze).catch(() => null);
+    rows.push({ q, order: c.order, wantWrong, got: after && after.feedback, maskedOk: tx(c.masked) === tx(w.masked), koOk: !A.ko[w.sentence] || tx(after && after.ko) === tx(A.ko[w.sentence]), filledOk: tx(after && after.filled) === tx(A.sentences[w.sentence]), options: c.options.length });
+    if (!listened && after && after.feedback) {
+      listened = true;
+      await pressAudio(tab, `document.querySelector('${P} [data-cloze] [data-action="cloze-listen"]')`, `${stepLabel} · 빈칸 문장 듣기`, exp, rec.audio);
+    }
+    await H.click(tab, `document.querySelector('${P} [data-cloze] [data-action="cloze-next"]')`, { settle: 300 });
+  }
+  const result = await tab.eval(`(() => { const r = document.querySelector('${P} [data-cloze-result]'); return r ? r.innerText.replace(/\\s+/g, ' ').trim() : null; })()`).catch(() => null);
+  const right = rows.filter((r) => r.got && !r.wantWrong).length;
+  const rowsOk = rows.length === setSize && rows.every((r) => !r.why && r.got === (r.wantWrong ? "wrong" : "correct") && r.maskedOk && r.koOk && r.filledOk && r.options === 4);
+  const resultOk = result && new RegExp(`${right} / ${setSize} 맞힘`).test(result);
+  const tabNow = await tab.eval(tabText(2)).catch(() => null);
+  const tabOk = new RegExp(`\\b${right}/${A.words.length}\\b`).test(tabNow || "");
+  await H.click(tab, `document.querySelector('${P} [data-action="cloze-again"]')`, { settle: 400 });
+  const again = await tab.eval(cloze).catch(() => null);
+  push("빈칸 채우기", rows.some((r) => r.why) || rows.length < setSize ? "BLOCKED" : rowsOk && resultOk && firstOrder === 0 && again && !again.feedback && tabOk ? "PASS" : "FAIL",
+    `${rows.length}/${setSize} 문제 · 첫 문제 ${firstOrder === 0 ? "몰라요 낱말" : `data-order ${firstOrder}(몰라요 낱말 0 이어야)`} · ${rows.map((r) => r.why ? `#${r.q + 1} ${r.why}` : `#${r.q + 1} ${r.wantWrong ? "틀린 보기" : "정답"}→${r.got}${r.maskedOk ? "" : " 빈칸문장≠"}${r.koOk ? "" : " 한국어≠"}${r.filledOk ? "" : " 채운문장≠"}${r.options === 4 ? "" : ` 보기${r.options}`}`).join(" · ")} · 결과 '${result}' · 탭 '${tabNow}' · 다시 풀기 → ${again ? `새 문제(data-order ${again.order})` : "없음"}`);
+  return true;
+}
+
+/** Step 3 '끊어 읽기': sentence 1 — meanings hidden first, a chunk's own sound, its own meaning, every meaning → 문장 전체 해석, 끊어 듣기 · 문장 듣기. */
+async function adultChunks(tab, exp, rec, stepLabel) {
+  const A = exp.adult;
+  const P = `main [data-step-panel="3"]`;
+  const push = (item, status, note) => rec.checks.push({ feature: "adult chunks", item: `${stepLabel} · ${item}`, status, note });
+  if (!(await H.waitFor(tab, `Boolean(document.querySelector('${P} [data-chunk-sentence]'))`, 4000))) { push("문장", "BLOCKED", "끊어 읽기 단계에 [data-chunk-sentence] 가 없음 — 화면이 바뀌었으면 이 드라이버를 고쳐야 함"); return false; }
+  // the reader (lib/containers adult-chunks) went through every sentence and opened every meaning; back to sentence 1, meanings shut
+  await H.click(tab, `document.querySelector('${P} [data-pill="0"]')`, { settle: 300 });
+  await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+  if (await tab.eval(`(() => { const b = document.querySelector('${P} [data-action="all-meanings"]'); return !!b && b.getAttribute('aria-pressed') === 'true'; })()`).catch(() => false)) await H.click(tab, `document.querySelector('${P} [data-action="all-meanings"]')`, { settle: 250 });
+  const state = `(() => { const s = document.querySelector('${P} [data-chunk-sentence]'); if (!s) return null; const t = (el) => el ? (el.innerText || '').replace(/\\s+/g, ' ').trim() : null; return { idx: +s.getAttribute('data-chunk-sentence'), chunks: [...s.querySelectorAll('li[data-chunk]')].map((li) => ({ en: t(li.querySelector('[data-en]')), ko: t(li.querySelector('[data-ko]')), closed: !!li.querySelector('[data-reveal="open"]') })), whole: (() => { const w = s.querySelector('[data-chunk-whole]'); return w ? t(w.lastElementChild) : null; })() }; })()`;
+  const s0 = await tab.eval(state).catch(() => null);
+  const want = A.chunks[0] || [];
+  if (!s0 || s0.idx !== 0) { push("문장 1", "BLOCKED", `1번 문장으로 못 돌아감 (${s0 ? `data-chunk-sentence ${s0.idx}` : "없음"})`); return false; }
+  push("덩어리 · 뜻 가림", s0.chunks.length === want.length && s0.chunks.every((c, k) => tx(c.en) === tx(want[k].en) && c.closed && !c.ko) && !s0.whole ? "PASS" : "FAIL",
+    `덩어리 ${s0.chunks.length} · 데이터 ${want.length} · 영어 ${s0.chunks.every((c, k) => want[k] && tx(c.en) === tx(want[k].en)) ? "같음" : "다름"} · 뜻 가림 ${s0.chunks.filter((c) => c.closed && !c.ko).length}/${s0.chunks.length} · 전체 해석 ${s0.whole ? "보임(가려져 있어야)" : "가림"}`);
+  // chunk 1's own sound
+  const n0 = rec.audio.length;
+  await pressAudio(tab, `document.querySelector('${P} [data-chunk-sentence] li[data-chunk="0"] button')`, `${stepLabel} · 덩어리 소리 1`, exp, rec.audio);
+  const a0 = rec.audio[n0];
+  if (a0 && want[0]) push("덩어리 소리 = 그 덩어리", a0.status === "PASS" && (a0.clips || []).some((c) => c.path === want[0].path) ? "PASS" : a0.status === "RETEST" ? "BLOCKED" : "FAIL", `요청 ${(a0.clips || []).map((c) => c.path).join(", ") || "없음"} · 기대 ${want[0].path} · ${a0.status}${a0.note ? ` ${a0.note}` : ""}`);
+  // chunk 1's own meaning, then every meaning → the whole line, and the tab's count
+  await H.click(tab, `document.querySelector('${P} [data-chunk-sentence] li[data-chunk="0"] [data-reveal="open"]')`, { settle: 250 });
+  const s1 = await tab.eval(state).catch(() => null);
+  const firstOk = s1 && s1.chunks[0] && tx(s1.chunks[0].ko) === tx(want[0] && want[0].ko) && s1.chunks.slice(1).every((c) => c.closed);
+  const tabBefore = await tab.eval(tabText(3)).catch(() => null);
+  if (want.length > 1) await H.click(tab, `document.querySelector('${P} [data-action="all-meanings"]')`, { settle: 300 });
+  const s2 = await tab.eval(state).catch(() => null);
+  const tabAfter = await tab.eval(tabText(3)).catch(() => null);
+  const allOk = s2 && s2.chunks.length === want.length && s2.chunks.every((c, k) => tx(c.ko) === tx(want[k].ko));
+  const wholeOk = !A.ko[0] || (s2 && tx(s2.whole) === tx(A.ko[0]));
+  push("뜻 보기 · 문장 전체 해석", firstOk && allOk && wholeOk && /\b[1-9]\d*\//.test(tabAfter || "") ? "PASS" : "FAIL",
+    `덩어리 1 뜻 '${s1 && s1.chunks[0] ? s1.chunks[0].ko : "?"}' (데이터 '${want[0] ? want[0].ko : ""}')${firstOk ? "" : " ≠ 또는 다른 덩어리도 열림"} · 모두 열기 → 뜻 ${allOk ? "모두 같음" : "다름"} · 전체 해석 '${s2 ? s2.whole : "?"}'${wholeOk ? "" : ` ≠ '${A.ko[0]}'`} · 탭 '${tabBefore}' → '${tabAfter}'`);
+  // 끊어 듣기 (the chunks in turn) · 문장 듣기 (the sentence)
+  const n1 = rec.audio.length;
+  await pressAudio(tab, `document.querySelector('${P} [data-action="chunk-run"]')`, `${stepLabel} · 끊어 듣기`, exp, rec.audio);
+  const a1 = rec.audio[n1];
+  if (a1 && want[0]) push("끊어 듣기 = 첫 덩어리부터", a1.status === "PASS" && (a1.clips || []).some((c) => c.path === want[0].path) ? "PASS" : a1.status === "RETEST" ? "BLOCKED" : "FAIL", `요청 ${(a1.clips || []).map((c) => c.path).join(", ") || "없음"} · 기대 ${want[0].path} 부터 · ${a1.status}`);
+  const n2 = rec.audio.length;
+  await pressAudio(tab, `document.querySelector('${P} [data-action="sentence"]')`, `${stepLabel} · 문장 듣기`, exp, rec.audio);
+  const a2 = rec.audio[n2];
+  if (a2) push("문장 듣기 = 그 문장", a2.status === "PASS" && (a2.clips || []).some((c) => c.path === A.sentencePaths[0]) ? "PASS" : a2.status === "RETEST" ? "BLOCKED" : "FAIL", `요청 ${(a2.clips || []).map((c) => c.path).join(", ") || "없음"} · 기대 ${A.sentencePaths[0]} · ${a2.status}`);
+  return true;
 }
 
 /**
@@ -588,11 +756,11 @@ async function practiseStudent(tab, exp) {
  * LISTENING / STUDENT dictation: the answer is built by tapping word tiles. Build the
  * sentence from the DATA, press the check button, then wreck the order and press it again.
  */
-async function solveTiles(tab, exp, checks, stepLabel) {
+async function solveTiles(tab, exp, checks, stepLabel, depth = "full") {
   // 2026-09-27: the reworked views have their own routines (above) — LISTENING (its view also marks [data-dictation]) first,
   // then STUDENT; the text-based routine below is kept for an old build
   if (await tab.eval(LDD.view).catch(() => false)) return solveLdTiles(tab, exp, checks, stepLabel);
-  if (await tab.eval(`Boolean(document.querySelector('main [data-dictation]'))`).catch(() => false)) return solveStudentTiles(tab, exp, checks, stepLabel);
+  if (await tab.eval(`Boolean(document.querySelector('main [data-dictation]'))`).catch(() => false)) return solveStudentTiles(tab, exp, checks, stepLabel, depth);
   const target = (exp.answers[0] || {}).text;
   if (!target && !exp.tileWordsAll) return;
   // 7단계 7-1 b: is this the dictation step at all? The bank carries its own label (STUDENT "단어 보관함",
@@ -782,6 +950,9 @@ async function walkDictation(tab, exp, texts, rec, stepLabel, depth) {
   if (depth === "light") return 0;
   // 일부러 깨기(7-1 e): 문장 넘기기를 끈 판 — 넘기는 깊이에서 상자를 못 읽었으니 힌트 칩은 여전히 '없음' 으로 세야 한다
   if (process.argv.includes("--break=no-walk")) return 0;
+  // 회귀 점검 1002: ADULT 끊어 읽기 also has a '다음 문장' button — it is not a dictation walk (its sentences are read by
+  // lib/containers adult-chunks and checked by adultChunks), so it is not walked here
+  if (await tab.eval(`Boolean(document.querySelector('main [data-chunk-sentence]'))`).catch(() => false)) return 0;
   const sentences = (exp.answers || []).length;
   if (!sentences) return 0;
   const button = (label) =>
@@ -877,7 +1048,7 @@ async function visitStepControls(tab, exp, rec, stepLabel, depth = "full") {
   // 7단계 7-1 m: the tiles also on the phone (medium depth). Tap-to-assemble is the phone's way of answering (generateWordBank:
   // "for mobile tap-to-assemble dictation"), and the phone record's typed-input line is NA coveredBy 'tile dictation' — which
   // build-coverage counts as covered only when the same record holds that check. Until now only the desktop pass assembled.
-  if (exp.tileAnswers && depth !== "light") await solveTiles(tab, exp, rec.checks, stepLabel);
+  if (exp.tileAnswers && depth !== "light") await solveTiles(tab, exp, rec.checks, stepLabel, depth);
   // every other control: click once, look for errors and dead buttons
   for (let k = 0; k < maxOther; k++) {
     const left = await tab.eval(COUNT_CONTROLS("other")).catch(() => 0);
@@ -927,10 +1098,15 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     if (snap0.notFound) rec.problems.push("404 screen");
     if (snap0.placeholder) rec.problems.push("'준비 중' placeholder");
   }
-  const depth = viewport === "desktop" ? "full" : viewport === "mobile" ? (exp.variant === "script" ? "light" : "medium") : "light";
+  // 회귀 점검 1002: 'small' (작은 휴대폰 360px, harness VIEWPORTS) is driven as the phone is
+  const depth = viewport === "desktop" ? "full" : viewport === "mobile" || viewport === "small" ? (exp.variant === "script" ? "light" : "medium") : "light";
   rec.depth = depth;
   const steps = (await tab.eval(STEP_BUTTONS).catch(() => [])) || [];
   rec.steps = steps;
+  // 회귀 점검 1002: ADULT — the driver knows five steps (ADULT_KNOWN); a different number of tabs is a screen it cannot read → BLOCKED
+  const adult = page.course === "adult" && exp.adult;
+  const adultDone = {};
+  if (adult && steps.length !== exp.adult.steps.length) rec.checks.push({ feature: "adult step", item: `tabs ${steps.length}`, status: "BLOCKED", note: `ADULT 단계 탭 ${steps.length}개 (${steps.join(" / ")}) — 드라이버는 5단계(${exp.adult.steps.join(" · ")})만 앎: 모르는 단계는 보지 못함` });
   let alive = await visitStepControls(tab, exp, rec, "(initial)", depth);
   for (const label of steps) {
     if (!alive) { await H.load(tab, page.url, { marker: H.MARKERS[page.course], expectPath: red.finalPath }); alive = true; }
@@ -938,8 +1114,23 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     // ('Step 3 · 섀도잉 & 낭독 0/5' → '1/5'), so a tab with data-step-tab is found by its number; any other by its captured label.
     const stepNo = (String(label).match(/^\s*step\s*(\d+)/i) || [])[1];
     const byNumber = stepNo ? `document.querySelector('main [data-step-tab="${stepNo}"]') || ` : "";
+    // ADULT: moving between steps must not start a sound (owner rule — '단계를 옮길 때는 소리 없음'): the log is emptied before the tab
+    // press and read after it, before anything on the step is pressed
+    if (adult) { await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {}); await tab.eval("window.__kigAudio && (window.__kigAudio.length = 0)").catch(() => {}); }
     const clicked = await H.click(tab, `${byNumber}[...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(label)})`, { settle: 800 });
     if (!clicked.ok) { rec.checks.push({ feature: "step", item: label, status: "FAIL", note: `step button not clickable: ${clicked.reason}` }); continue; }
+    let adultMode = null;
+    if (adult) {
+      const plays = ((await H.audioLog(tab)) || []).filter((e) => e.ev === "play()" || (e.ev === "tts.speak" && (e.text || "").trim()));
+      rec.checks.push({ feature: "adult step", item: `${label} · 옮길 때 소리 없음`, status: plays.length ? "FAIL" : "PASS", note: plays.length ? `탭을 누르자 소리: ${String(plays[0].src || plays[0].text).slice(-80)}` : "" });
+      const panel = await tab.eval(ADULT_PANEL).catch(() => null);
+      adultMode = panel ? ADULT_KNOWN[panel.name] || null : null;
+      const at = panel ? exp.adult.steps.indexOf(panel.name) + 1 : 0;
+      if (!adultMode || String(at) !== String(panel.n) || String(at) !== String(stepNo)) {
+        rec.checks.push({ feature: "adult step", item: `${label} · 단계 알아봄`, status: "BLOCKED", note: `모르는 단계 — 탭 ${stepNo} · 화면 ${panel ? `data-step-panel ${panel.n} '${panel.name}'` : "없음"} (드라이버가 아는 것: ${Object.keys(ADULT_KNOWN).join(" · ")}) — 이 칸은 보지 못함` });
+        adultMode = null;
+      } else adultDone[adultMode] = "opened";
+    }
     const snap = await tab.eval(H.SNAPSHOT).catch(() => null);
     if (snap) {
       texts.push({ step: label, text: snap.text });
@@ -956,10 +1147,19 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       rec.containers = rec.containers || {};
       rec.containers[c.id] = [...new Set([...(rec.containers[c.id] || []), ...(Array.isArray(got) ? got : [])])];
     }
+    // ADULT Step 2 · 3 (회귀 점검 1002): their own routines, after the reader and before the every-control pass (which presses
+    // 뜻 보기 · 알아요 · the blanks' options in its own order). Not at the layout-only depth (tablet), as every routine here.
+    if (adult && depth !== "light") {
+      if (adultMode === "words") adultDone.words = (await adultWords(tab, exp, rec, label)) ? "checked" : "blocked";
+      if (adultMode === "chunk") adultDone.chunk = (await adultChunks(tab, exp, rec, label)) ? "checked" : "blocked";
+      await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+    }
     // AFTER the snapshot above, so sentence 1 is recorded before the drill moves on.
     await walkDictation(tab, exp, texts, rec, label, depth);
     alive = await visitStepControls(tab, exp, rec, label, depth);
   }
+  // ADULT: every one of the five steps was opened and recognised — a step never reached is BLOCKED, not a quiet pass
+  if (adult) for (const [name, mode] of Object.entries(ADULT_KNOWN)) if (!adultDone[mode]) rec.checks.push({ feature: "adult step", item: `${name} · 열림`, status: "BLOCKED", note: `'${name}' 단계를 열지 못함(탭 ${steps.join(" / ")}) — 이 칸은 보지 못함` });
 
   if (viewport === "desktop" && persist) {
     // Persistence tests must survive a reload, so stop wiping storage between reloads
@@ -987,11 +1187,14 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     // 2026-09-27, D18) after 80% of the sentences are dictated and 80% spoken; once completed it shows '✓ 완료한 강의' and a small
     // '완료 취소' (aria-label 학습 완료 취소, STU-U26). This test used to look only at the first screen and wrote 'no completion
     // control' NA for every STUDENT lesson — the completion that drives the progress rate and the next chapter's unlock was never pressed.
-    const step3 = page.course === "student" ? (rec.steps || []).find((s) => /Step\s*3/i.test(s)) : null;
+    // 회귀 점검 1002: ADULT completes the same way at the end of ITS LAST step (Step 5 · 섀도잉 & 낭독) — STUDENT_TABS.shadowing
+    const studentView = isStudentView(page.course);
+    const lastTab = studentView ? STUDENT_TABS[page.course].shadowing : 3;
+    const step3 = studentView ? (rec.steps || []).find((s) => new RegExp(`Step\\s*${lastTab}(?!\\d)`, "i").test(s)) : null;
     // 2026-09-27: the STUDENT tab carries a count ('Step 3 · 섀도잉 & 낭독 2/5') that changes while the test practises — it is
     // found by data-step-tab (StepTabs), and by its captured label only on a page without that mark
-    const openStep3 = async () => { if (step3) await H.click(tab, `document.querySelector('main [data-step-tab="3"]') || [...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(step3)})`, { settle: 800 }); };
-    const cm = page.course === "student"
+    const openStep3 = async () => { if (step3) await H.click(tab, `document.querySelector('main [data-step-tab="${lastTab}"]') || [...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(step3)})`, { settle: 800 }); };
+    const cm = studentView
       ? `[...document.querySelectorAll('main button')].find((b) => /^학습 완료 (체크|취소)$/.test(b.getAttribute('aria-label') || ''))`
       : `[...document.querySelectorAll('main button')].find((b) => /학습 완료|완료 체크/.test((b.getAttribute('aria-label') || '') + (b.innerText || '')))`;
     const cmState = `(() => { const b = ${cm}; return b ? ((b.getAttribute('aria-label') || '') + '|' + (b.innerText || '') + (b.disabled ? '|disabled' : '')).replace(/\\s+/g, ' ').trim() : null; })()`;
@@ -999,17 +1202,31 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     // 'kig:student:pending:v1' and posts it 650 ms later), and the server's answer can take it back. The state
     // used to be read 700 ms after the press — before that answer — and the reload then cut the save off. Wait
     // for the queue to empty (the server answered) before reading or reloading; other courses save locally.
-    const serverSaved = async () => page.course !== "student" || H.waitFor(tab, `(() => { try { const v = localStorage.getItem('kig:student:pending:v1'); return !v || v === '[]'; } catch (e) { return true; } })()`, 10000);
+    // 회귀 점검 1002: ADULT has its own queue 'kig:adult:pending:v1' → /api/progress/adult (ProgressProvider ADULT_PENDING_KEY)
+    const pendingKey = page.course === "adult" ? "kig:adult:pending:v1" : "kig:student:pending:v1";
+    const serverSaved = async () => !studentView || (page.course === "adult" && adultServer === false) || H.waitFor(tab, `(() => { try { const v = localStorage.getItem(${JSON.stringify(pendingKey)}); return !v || v === '[]'; } catch (e) { return true; } })()`, 10000);
+    // which progress API the saves went to (ADULT must post to its own — never STUDENT's record)
+    const progressPosts = () => tab.eval(`(() => { const e = performance.getEntriesByType('resource').map((x) => x.name); return { adult: e.filter((n) => /\\/api\\/progress\\/adult/.test(n)).length, student: e.filter((n) => /\\/api\\/progress\\/student/.test(n)).length }; })()`).catch(() => null);
     await openStep3();
     // 2026-09-27 (VOCA · LISTENING · D02 나): the completion button's gate is registered by the view after it read its record — read after that
     if (page.course === "phonics" && (await H.waitFor(tab, V.VIEW_READY, 8000))) await H.sleep(300);
     if (page.course === "ld" && (await H.waitFor(tab, LDP.VIEW_READY, 8000))) await H.sleep(300);
     let c0 = await tab.eval(cmState).catch(() => null);
     let practiceNote = "";
-    if (page.course === "student" && c0 && /\|disabled$/.test(c0)) {
+    // 회귀 점검 1002 (2026-10-04, 운영 STUDENT s1-1 에서 실제로 일어남): a lesson that is ALREADY completed on the licence's record
+    // ('학습 완료 취소') was un-completed by the toggle, and after the reload the button was disabled (the view keeps a completed
+    // lesson completable only on the screen it was seen on — STU-U26 — and nothing had been practised), so the untoggle could not put
+    // it back: the test FAILed and LEFT THE LESSON UN-COMPLETED on the server. Practise first (as for a disabled button), so the
+    // completion can be pressed again after the reload and the record ends as it began.
+    if (studentView && c0 && /취소/.test(c0)) {
+      practiceNote = `${await practiseStudent(tab, exp, page.course)} (already completed — practised first so it can be completed again after the reload)`;
+      await openStep3();
+      c0 = await tab.eval(cmState).catch(() => null);
+    }
+    if (studentView && c0 && /\|disabled$/.test(c0)) {
       // 2026-09-27 D18: one practised sentence (FUN-02) no longer completes a lesson — 80% dictated and 80% spoken do.
       // Practise that much like a learner (practiseStudent), then read the button again; the note says what was practised.
-      practiceNote = await practiseStudent(tab, exp);
+      practiceNote = await practiseStudent(tab, exp, page.course);
       await openStep3();
       c0 = await tab.eval(cmState).catch(() => null);
     }
@@ -1039,9 +1256,29 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       await H.sleep(200);
       c0 = await tab.eval(cmState).catch(() => null);
     }
-    if (c0 && !/\|disabled$/.test(c0)) {
+    // 회귀 점검 1002: ADULT — press completion only when it cannot open a chapter for good (adultProgress keeps unlockedThrough with
+    // Math.max): the licence's ADULT record is read (GET /api/progress/adult — read only) and judged by lib/student-data.cjs
+    // adultServer: true = the licence's ADULT record was read (the save must reach /api/progress/adult) · false = no licence session
+    // (401 · 403 — a local dev server, a free lesson): nothing is saved on a server, the completion stays on this device
+    let unlockRisk = null, adultServer = null;
+    if (page.course === "adult" && c0 && !/\|disabled$/.test(c0)) {
+      const res = await tab.eval(`fetch('/api/progress/adult', { credentials: 'same-origin', cache: 'no-store' }).then(async (r) => ({ status: r.status, body: r.ok ? await r.json() : null })).catch(() => null)`).catch(() => null);
+      const lessons = res && res.body && res.body.progress && res.body.progress.lessons;
+      if (res && (res.status === 401 || res.status === 403)) adultServer = false;
+      else if (!lessons) unlockRisk = `ADULT 기록을 못 읽음(GET /api/progress/adult ${res ? res.status : "오류"}) — 장이 열릴지 몰라 누르지 않음`;
+      else {
+        adultServer = true;
+        if (!/취소/.test(c0) && require("./lib/student-data.cjs").completionWouldUnlockIn("adult", page.id, lessons)) unlockRisk = "완료를 누르면 그 장이 끝나 다음 장이 열림(되돌릴 수 없음 — unlockedThrough 는 Math.max) — 누르지 않음";
+      }
+    }
+    if (unlockRisk) rec.checks.push({ feature: "completion", item: `Step ${lastTab} · control`, status: "BLOCKED", note: `${unlockRisk}${practiceNote ? ` · ${practiceNote}` : ""}` });
+    else if (c0 && !/\|disabled$/.test(c0)) {
+      // (the resource-timing buffer holds 250 entries and a lesson's clips fill it — emptied first so the save is counted)
+      await tab.eval("performance.clearResourceTimings(); performance.setResourceTimingBufferSize(2000)").catch(() => {});
+      const posts0 = await progressPosts();
       await H.click(tab, cm, { settle: 700 });
       const saved1 = await serverSaved();
+      const posts1 = await progressPosts();
       const c1 = await tab.eval(cmState).catch(() => null);
       await H.load(tab, page.url, { marker: H.MARKERS[page.course], expectPath: red.finalPath });
       await openStep3();
@@ -1051,11 +1288,14 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       await H.click(tab, cm, { settle: 700 });
       const saved3 = await serverSaved();
       const c3 = await tab.eval(cmState).catch(() => null);
-      const saveNote = page.course === "student" ? ` · server answered ${saved1 && saved3 ? "both" : `${saved1 ? "" : "not "}after toggle, ${saved3 ? "" : "not "}after untoggle`}` : "";
-      rec.checks.push({ feature: "completion", item: step3 ? "Step 3 · toggle→reload→untoggle" : "toggle→reload→untoggle", status: c1 !== c0 && c2 === c1 && c3 === c0 ? "PASS" : "FAIL", note: `${c0} → ${c1} → reload ${c2} → untoggle ${c3}${saveNote}${practiceNote ? ` · ${practiceNote}` : ""}` });
-      if (page.course === "student") H.logDataChange({ course: page.course, id: page.id, action: "completion toggled on and off via the lesson UI (Step 3)", detail: `${c0} → ${c1} → ${c3}` });
-    } else if (c0) rec.checks.push({ feature: "completion", item: step3 ? "Step 3 · control" : "control", status: "FAIL", note: `completion control stays disabled after practising${practiceNote ? ` (${practiceNote})` : " a sentence"}: ${c0}` });
-    else rec.checks.push({ feature: "completion", item: "control", status: "BLOCKED", note: step3 ? "Step 3 completion control not found" : "completion control not found" });
+      const saveNote = studentView ? ` · server answered ${saved1 && saved3 ? "both" : `${saved1 ? "" : "not "}after toggle, ${saved3 ? "" : "not "}after untoggle`}` : "";
+      // ADULT: the toggle must have posted to /api/progress/adult and not to STUDENT's record (counts of this page load, before the reload)
+      const adultSave = page.course !== "adult" || adultServer === false || (saved1 && saved3 && posts0 && posts1 && posts1.adult > posts0.adult && posts1.student === posts0.student);
+      const postNote = page.course === "adult" ? (adultServer === false ? " · 이용권 세션 없음(401/403) — 이 기기에만 저장, 서버 저장은 안 봄" : ` · /api/progress/adult +${posts0 && posts1 ? posts1.adult - posts0.adult : "?"} · /api/progress/student +${posts0 && posts1 ? posts1.student - posts0.student : "?"}`) : "";
+      rec.checks.push({ feature: "completion", item: step3 ? `Step ${lastTab} · toggle→reload→untoggle` : "toggle→reload→untoggle", status: c1 !== c0 && c2 === c1 && c3 === c0 && adultSave ? "PASS" : "FAIL", note: `${c0} → ${c1} → reload ${c2} → untoggle ${c3}${saveNote}${postNote}${practiceNote ? ` · ${practiceNote}` : ""}` });
+      if (studentView) H.logDataChange({ course: page.course, id: page.id, action: `completion toggled on and off via the lesson UI (Step ${lastTab})`, detail: `${c0} → ${c1} → ${c3}` });
+    } else if (c0) rec.checks.push({ feature: "completion", item: step3 ? `Step ${lastTab} · control` : "control", status: "FAIL", note: `completion control stays disabled after practising${practiceNote ? ` (${practiceNote})` : " a sentence"}: ${c0}` });
+    else rec.checks.push({ feature: "completion", item: "control", status: "BLOCKED", note: step3 ? `Step ${lastTab} completion control not found` : "completion control not found" });
 
     await tab.eval(`(() => { sessionStorage.removeItem('kig:audit:keep'); try { const keep = new Set(${JSON.stringify(["kig:license:v1", "kig:device:id:v1", "kig:device:name:v1", "kig:theme", "kig:lang"])}); for (const k of Object.keys(localStorage)) if (!keep.has(k)) localStorage.removeItem(k); } catch (e) {} })()`).catch(() => {});
   }

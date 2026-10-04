@@ -25,6 +25,15 @@
  *   node check-unreached-data.cjs --rev 034e91b   그 커밋의 데이터(코드는 지금 화면) — 깨기: STUDENT chunkDrills 가 나와야 함
  *   node check-unreached-data.cjs --rev 8325e10   BUG-013 전 LISTENING 대본 사본이 나와야 함
  *   node check-unreached-data.cjs --list          과정마다 읽는 블록 종류 · 칸 이름까지 보임
+ *
+ * 회귀 점검 1002 단계 0 (2026-10-04): ADULT(2026-10-02)가 과정 목록에 없어 그 강의 파일의 덩어리(chunks) · 낱말(words) 칸을 본 적이 없다.
+ *   - 과정 목록은 validRoutes.json 의 과정 전부(CNN 폐지 · 주소 없는 과정은 원래대로 뺌).
+ *   - 화면 부품: LessonBody 에 분기가 없는 과정(ADULT)은 강의 쪽(src/app/[course]/[lesson]/page.tsx)이 실제로 그리는 부품 —
+ *     DIRECT_VIEW_COURSES 이고 'course === …' 분기에 없으면 마지막 else(StudentLearningView)다. 그 자리를 구문 트리에서 읽는다
+ *     (STUDENT 는 두 길이 같은 부품이어야 함 — 다르면 멈춤).
+ *   - 문항 안 배열의 안 칸까지(sentences.items.words 안 칸 · …chunks 안 칸) — 전에는 한 겹만 봐서 낱말의 choices 같은 칸을 못 봤다.
+ *   node check-unreached-data.cjs --break=adult-field   깨기: 첫 유료 ADULT 강의 첫 문장의 첫 낱말에 화면이 안 읽는 칸 하나를 메모리에서만
+ *                                                       더함 → '새로 찾음' 1 · exit 1 (안 칸을 한 겹 더 보지 않으면 못 잡음)
  */
 const fs = require("fs");
 const path = require("path");
@@ -37,7 +46,10 @@ const REV = opt("--rev");
 const LIST = argv.includes("--list");
 const KNOWN_FILE = process.env.KIG_UNREACHED_KNOWN || path.join(REPO, "docs/qa-2026-09-18/unreached-data-known.json");
 const VR = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
-const COURSES = ["student", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"].filter((c) => (VR.lessons[c] || []).length);
+// 회귀 점검 1002: validRoutes 의 과정 전부(CNN 폐지) — 전에는 손으로 적은 목록이라 ADULT 가 빠졌다
+const COURSES = Object.keys(VR.lessons).filter((c) => c !== "cnn" && (VR.lessons[c] || []).length);
+const BREAK = (argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
+if (BREAK && BREAK !== "adult-field") { console.error(`모르는 --break=${BREAK} (adult-field)`); process.exit(2); }
 const META = new Set(["id", "course", "series", "variant", "pairId", "title", "label", "menuLabel", "unit", "part", "order", "legacyPath", "legacyEncoding", "audio", "video"]);
 
 // ── 코드 ──────────────────────────────────────────────────────────────────────────────
@@ -144,6 +156,57 @@ const PAGE_REL = "src/app/[course]/[lesson]/page.tsx";
 const AUDIO_TEXT_REL = "src/lib/lessonAudioText.ts";
 // 7단계 7-3(BUG-023): page.tsx 가 쓰이는 과정의 화면을 직접 그린다 — LessonBody 처럼 넘기기만 하는 속성이므로 뺀다(화면이 읽는 칸은 화면 쪽에서 셈)
 const PASS_THROUGH_TAGS = new Set(["LessonBody", "LessonSpeechGuard", "LdLearningView", "ReadingLearningView", "GrammarLearningView", "PhonicsLearningView", "StudentLearningView", "PassoffLearningView"]);
+/**
+ * 회귀 점검 1002 — 강의 쪽(page.tsx)이 과정마다 직접 그리는 화면 부품: { course: { view, file, props } }.
+ * DIRECT_VIEW_COURSES 의 과정 중 `course === "…"` 삼항 분기에 있는 것은 그 부품, 없는 것은 마지막 else 의 부품(StudentLearningView).
+ */
+function pageViewMap() {
+  const sf = parse(PAGE_REL);
+  const imports = {};
+  let direct = null;
+  let chain = null;
+  const visit = (n) => {
+    if (ts.isImportDeclaration(n) && n.importClause && n.importClause.namedBindings && ts.isNamedImports(n.importClause.namedBindings)) {
+      for (const el of n.importClause.namedBindings.elements) imports[el.name.text] = resolveImport(PAGE_REL, n.moduleSpecifier.text);
+    }
+    if (ts.isImportDeclaration(n) && n.importClause && n.importClause.name) imports[n.importClause.name.text] = resolveImport(PAGE_REL, n.moduleSpecifier.text);
+    if (ts.isVariableDeclaration(n) && ts.isIdentifier(n.name) && n.name.text === "DIRECT_VIEW_COURSES" && n.initializer && ts.isNewExpression(n.initializer)) {
+      const arr = (n.initializer.arguments || [])[0];
+      if (arr && ts.isArrayLiteralExpression(arr)) direct = arr.elements.filter(ts.isStringLiteralLike).map((e) => e.text);
+    }
+    // <LessonSpeechGuard>{ course === "ld" ? <…/> : … : <StudentLearningView/> }</LessonSpeechGuard>
+    if (!chain && ts.isJsxElement(n) && n.openingElement.tagName.getText(sf) === "LessonSpeechGuard") {
+      for (const ch of n.children) if (ts.isJsxExpression(ch) && ch.expression && ts.isConditionalExpression(ch.expression)) chain = ch.expression;
+    }
+    ts.forEachChild(n, visit);
+  };
+  visit(sf);
+  if (!direct || !chain) throw new Error("page.tsx 에서 DIRECT_VIEW_COURSES 나 LessonSpeechGuard 안 삼항 분기를 못 찾음 — 이 검사를 다시 보라");
+  const jsxOf = (node) => { let el = null; const f = (m) => { if (el) return; if (ts.isJsxSelfClosingElement(m) || ts.isJsxOpeningElement(m)) el = m; else ts.forEachChild(m, f); }; f(node); return el; };
+  const entry = (node) => {
+    const el = jsxOf(node);
+    if (!el) return null;
+    const view = el.tagName.getText(sf);
+    return { view, file: imports[view] || null, props: el.attributes.properties.filter(ts.isJsxAttribute).map((a) => a.name.getText(sf)), from: "page.tsx" };
+  };
+  const map = {};
+  let cur = chain;
+  let fallback = null;
+  while (cur) {
+    if (ts.isParenthesizedExpression(cur)) { cur = cur.expression; continue; }
+    if (ts.isConditionalExpression(cur)) {
+      const e = entry(cur.whenTrue);
+      for (const c of coursesIn(cur.condition)) if (e && !map[c]) map[c] = e;
+      cur = cur.whenFalse;
+      continue;
+    }
+    fallback = entry(cur);
+    break;
+  }
+  if (!fallback) throw new Error("page.tsx 삼항 분기의 마지막 else 부품을 못 찾음 — 이 검사를 다시 보라");
+  for (const c of direct) if (!map[c]) map[c] = fallback;
+  return map;
+}
 /** page.tsx LessonPage 본문이 읽는 칸 이름(LessonBody · 과정 화면에 넘기기만 하는 속성은 뺌) — 블록 종류는 아래 실제 실행으로 */
 function pageReads() {
   const sf = parse(PAGE_REL);
@@ -220,12 +283,19 @@ for (const re of PAIR_ANCHORS) if (!re.test(read("src/lib/content.ts"))) {
 }
 
 const LB = lessonBodyMap();
+const PV = pageViewMap();
+// 두 길이 같은 과정에서 같은 부품을 가리키는지(STUDENT) — 다르면 page.tsx 쪽 읽기를 믿을 수 없다
+if (LB.student && PV.student && LB.student.file !== PV.student.file) {
+  console.log(`!!! STUDENT 의 화면 부품이 LessonBody(${LB.student.file})와 page.tsx(${PV.student.file})에서 다름 — pageViewMap 을 다시 보라 · exit 1`);
+  process.exit(1);
+}
 const PAGE = pageReads();
 const extract = loadExtractor();
 const codeFor = {};
 for (const c of COURSES) {
-  const m = LB[c];
-  if (!m || !m.file) throw new Error(`${c}: LessonBody 에서 화면 부품을 못 찾음 — 이 검사를 다시 보라`);
+  // LessonBody 분기가 있으면 전과 같이 그것, 없으면(ADULT) 강의 쪽이 실제로 그리는 부품
+  const m = LB[c] || PV[c];
+  if (!m || !m.file) throw new Error(`${c}: LessonBody 에서도 page.tsx 에서도 화면 부품을 못 찾음 — 이 검사를 다시 보라`);
   const files = reachable(m.file);
   const acc = { names: new Set(PAGE.names), types: new Set() };
   for (const f of files) collect(parse(f), acc);
@@ -249,6 +319,14 @@ let pagesRun = 0;
 for (const c of COURSES) {
   lessonsOf[c] = {};
   for (const f of listLessons(c)) lessonsOf[c][f.replace(/\.json$/, "")] = loadJson(`content/lessons/${c}/${f}`);
+  if (BREAK === "adult-field" && c === "adult") {
+    // 깨기: 첫 유료 ADULT 강의(a2-1) 첫 문장의 첫 낱말에 화면이 읽지 않는 칸 하나 — 메모리에서만
+    const d = lessonsOf.adult["a2-1"];
+    const w = d && ((d.blocks || []).find((b) => b.type === "sentences") || { items: [] }).items[0];
+    if (!w || !Array.isArray(w.words) || !w.words[0]) { console.log("!!! --break=adult-field: a2-1 첫 문장에 낱말이 없음 — 아무것도 증명 못 함 · exit 2"); process.exit(2); }
+    w.words[0].breakTestUnreadField = "깨기 시험";
+    console.log("[일부러 깸] adult/a2-1 첫 문장 첫 낱말에 breakTestUnreadField 칸을 메모리에서만 더함");
+  }
   const index = loadJson(`content/courses/${c}.json`).lessons || [];
   for (const id of VR.lessons[c] || []) {
     const d = lessonsOf[c][id];
@@ -257,7 +335,10 @@ for (const c of COURSES) {
     const pair = pid ? lessonsOf[c][pid] : null;
     // 위 플레이어가 뜨는 쪽만: STUDENT 는 녹음이 하나일 때만(page.tsx topLevelAudio · 둘 이상이면 [] 이고 fallback 줄도 안 보임)
     const audio = (d.audio || []).filter((a, i, all) => all.findIndex((x) => x.src === a.src) === i);
-    if (c === "student" && audio.length !== 1) continue;
+    // (ADULT 도 같음 — page.tsx topLevelAudio 의 ["man", "woman", "student", "adult", "chinese"] · fallback 줄의 같은 목록. 회귀 점검 1002)
+    if ((c === "student" || c === "adult") && audio.length !== 1) continue;
+    // PASS-OFF GRAMMAR 는 위 플레이어가 아예 없다(page.tsx fallback 줄의 목록 · spoken-texts.cjs)
+    if (c === "passoff-grammar") continue;
     const script = (ldScripts[id.replace(/-1$/, "")] || (pid ? ldScripts[pid.replace(/-1$/, "")] : null)) || null;
     const out = new Set(extract(d.blocks, pair ? pair.blocks : null, d.variant === "script", c, c === "ld" ? script : null, d.readingSentences ?? (pair ? pair.readingSentences : null)));
     pagesRun++;
@@ -306,7 +387,12 @@ for (const c of COURSES) {
       for (const k of Object.keys(b)) {
         if (k === "type") continue;
         if (!code.names.has(k)) add(c, `${b.type} 블록 안 칸`, k, id);
-        else if (Array.isArray(b[k])) for (const inner of keysOf(b[k])) if (!code.names.has(inner)) add(c, `${b.type}.${k} 안 칸`, inner, id);
+        else if (Array.isArray(b[k])) for (const inner of keysOf(b[k])) {
+          if (!code.names.has(inner)) { add(c, `${b.type}.${k} 안 칸`, inner, id); continue; }
+          // 회귀 점검 1002: 한 겹 더 — 문항 안 배열(ADULT words · chunks)의 칸
+          const nested = b[k].flatMap((o) => (o && typeof o === "object" && Array.isArray(o[inner]) ? o[inner] : []));
+          for (const deep of keysOf(nested)) if (!code.names.has(deep)) add(c, `${b.type}.${k}.${inner} 안 칸`, deep, id);
+        }
       }
     }
   }

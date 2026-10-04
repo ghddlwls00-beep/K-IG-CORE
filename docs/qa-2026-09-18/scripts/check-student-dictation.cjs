@@ -18,7 +18,7 @@
  *   node docs/qa-2026-09-18/scripts/check-student-dictation.cjs [--course student|adult] [--list] [--break=judge|blank|fixedlist|pool|hangul]
  *   --break=hangul    : 한글이 든 조각을 빼고 셈(고치기 전 낱말 규칙) — 빠진 글자가 잡혀 FAIL
  *   --break=judge     : 마지막 부분에서 낱말 하나를 빼고 판정 — 모든 꼴이 FAIL(exit 1) 이 나야 검사가 살아 있는 것
- *   --break=blank     : s20-5 #6 도 빈칸으로 셈 — 21문장 · 15강이 되어 FAIL
+ *   --break=blank     : s20-5 #6 도 빈칸으로 셈 — 21문장 · 15강이 되어 FAIL (ADULT: a1-2 #7 '내 정보' 칸을 빼고 셈 — 6문장이 되어 FAIL)
  *   --break=fixedlist : 화면의 타일 대신 generateWordBank(문장, []) 그대로를 셈 — 고정 목록 방해 낱말이 잡혀 FAIL
  *   --break=pool      : 방해 낱말 풀을 비움 — 고정 목록 낱말은 여전히 0(걸러짐) · 방해 낱말 없는 문장만 늘어남(보고만 · PASS)
  */
@@ -78,6 +78,8 @@ for (const { id, texts } of lessons) {
     // 7 · blanks
     let blanks = B.blanksOf(id, i, text);
     if (BREAK === "blank" && id === "s20-5" && i === 5) blanks = [{ key: `${id}#6:0`, start: text.indexOf("("), end: text.indexOf(")") + 1, text: text.slice(text.indexOf("("), text.indexOf(")") + 1), label: "x" }];
+    // ADULT (2026-10-04 회귀 점검 단계 0): a1-2 #7 '내 정보' 칸을 빼고 셈 — 6문장 · 2강이 되어 FAIL
+    if (BREAK === "blank" && id === "a1-2" && i === 6) blanks = [];
     // the tile drill places only "(…)" placeholders — a word the sentence says (홍길동 · 서울) is a tile (2026-10-02, as the view)
     const runs = B.fixedRunsOf(text, B.dictationBlanks(blanks));
     if (blanks.length) {
