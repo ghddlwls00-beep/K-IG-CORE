@@ -29,7 +29,7 @@
 | 과정 | 화면 | 소리 · 채점 |
 |---|---|---|
 | ADULT · STUDENT · READING | 한글만 — 경주 · 불고기 · 제주도 · 한라산 · Admiral 이순신 · 직지 · 한성순보 …, STUDENT 제목 8개도(예: `Traditional Food (전통 음식 (불고기))`) | 그대로 — 소리 낼 때 `romanizedForm` 이 로마자로 되돌림(클립 이름 같음, 마이크도 로마자로 들음). STUDENT · READING 은 `node scripts/korean-words-hangul.mjs` 가 고침(27파일 95칸) |
-| GRAMMAR II · PASS-OFF GRAMMAR | 영어 표기 + 한글 덧붙임 — `Busan(부산)` · `Chuseok(추석)` (사장님 선택: 학습자가 영어를 직접 쓰는 과정이라 철자는 그대로) | 그대로 — `src/lib/koreanGloss.ts` 는 그리는 글에만 |
+| GRAMMAR II · PASS-OFF GRAMMAR | 한글만 — `부산` · `추석` (처음엔 `Busan(부산)` 덧붙임이었다가 같은 날 사장님 "한국어 로마식표기를 다 한국어로 바꿔" → "한글로만 바꾸기", 커밋 11a46e38) | 강의 파일 · 소리 · 정답 목록 · 마이크는 영어 철자 그대로 — 화면만 `koreanOnScreen`, 학생이 화면대로 한글로 쓴 답은 `romanForGrading` 으로 영어 철자처럼 채점(`src/lib/koreanGloss.ts`) |
 | LISTENING · VOCA · GRAMMAR I | 해당 없음 — LISTENING 의 Kim 은 미국 사람 | — |
 
 **한글로 바꾼 뒤 생긴 문제와 고침 (2026-10-02 밤, 사장님 "신라 블록이 없는데 … 이런 문제 있는곳 전체적으로 찾아서 수정해라")**
