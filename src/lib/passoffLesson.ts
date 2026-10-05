@@ -66,9 +66,19 @@ export function requeue(queue: readonly string[], id: string, gap: number = REQU
   return [...rest.slice(0, at), id, ...rest.slice(at)];
 }
 
-/** The clue of ladder step ②: each word's first letter, the rest as blanks ("S__ i_ t____ t____."). */
-export function firstLetters(text: string): string {
-  return wordsOf(text)
+/**
+ * The clue of ladder step ②: each word's first letter, the rest as blanks ("S__ i_ t____ t____.").
+ *
+ * 회귀 점검 1002 P5 (사장님 2026-10-05): `show` is how the lesson draws its text (ui.tsx glossFor — a Korean word written in
+ * English shown in Hangul, the whole name at once: "Yi Sun-sin" → "이순신"). With it, the sentence is first drawn so, and a
+ * Korean word stays as the screen shows it, in Hangul ("Admiral Yi Sun-sin." → "A______ 이순신." — not the romanized
+ * initials "A______ Y_ S__-___."); only the English words get their first letter and blanks (only Latin letters and
+ * digits are blanked, so Hangul is never; English letters joined to a Korean word — "추석's" — stay blanks). Without `show`
+ * (or on a page with no Korean word) the clue is as it was.
+ */
+export function firstLetters(text: string, show?: (text: string) => string): string {
+  const drawn = show ? show(text) : text;
+  return wordsOf(drawn)
     .map((token) => {
       const core = bare(token);
       if (!core) return token;

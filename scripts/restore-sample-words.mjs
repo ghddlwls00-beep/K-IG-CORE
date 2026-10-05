@@ -10,7 +10,11 @@
  * original Korean line had (docs/qa-2026-09-18/student-original-exceptions.json "original"); Korean words are written in Hangul
  * inside the English as everywhere since 2026-10-02 (src/lib/lessonSpeechForm.ts KOREAN_DISPLAY_PAGES). The words are '내 정보'
  * blanks in Step 3 (src/lib/studentBlanks.ts EXTRA_BLANKS — the learner can still say their own), and tiles in Step 2.
- * Left as placeholders: s6-2 #3 "(age)" and s9-1 #3 "(dog’s name)" — the original had no sample word there either.
+ * Left as a placeholder: s9-1 #3 "(dog’s name)" only — the original had no sample word there either (English "(dog’s name)",
+ * Korean "○○라는 이름의 개" — both as now, so no exception for that sentence).
+ * s6-2 #3 "(age)" was left too on 10/02 with the reason "the original had no sample word there", which was wrong: only the
+ * English said "(age)" — the Korean line said "약 30세" (student-original-exceptions.json s6-2). Put back as "30" on 2026-10-05
+ * (회귀 점검 1002 F73, 사장님 '30으로 되살림').
  *
  *   node scripts/restore-sample-words.mjs          # write (only a sentence that still reads `from`)
  *   node scripts/restore-sample-words.mjs --check  # exit 1 unless every sentence reads `to`
@@ -54,6 +58,9 @@ export const RESTORE = {
   },
   "student/s6-2": {
     2: { en: ["My teacher’s name is Mr./Ms. (Surname).", "My teacher’s name is Mr./Ms. 홍."], ko: ["나의 선생님 성함은 (성) 선생님이십니다.", "나의 선생님 성함은 홍 선생님이십니다."] },
+    // 2026-10-05 (회귀 점검 1002 F73 · 사장님 '30으로 되살림'): the original Korean line said "그는/그녀는 약 30세 입니다." — the
+    // English kept "(age)", so the 10/02 pass left it; "그분은" stays (7단계 G14, 2026-09-23)
+    3: { en: ["He/She is about (age) years old.", "He/She is about 30 years old."], ko: ["그분은 약 (나이)세이십니다.", "그분은 약 30세이십니다."] },
   },
   "student/s6-3": {
     1: { en: ["My teacher is from (Name).", "My teacher is from 강원도."], ko: ["나의 선생님은 (지역) 출신이십니다.", "나의 선생님은 강원도 출신이십니다."] },

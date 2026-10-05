@@ -188,7 +188,7 @@ export function CourseDashboard({
   /** PASS-OFF GRAMMAR: the items its free review can draw (ids only) — the '오늘 복습' line counts no other without a licence */
   passoffFreeReviewKeys?: readonly string[];
 }) {
-  const { completed, bookmarks, recentByCourse, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus: studentSync, adultSyncStatus } = useProgress();
+  const { bookmarks, recentByCourse, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus: studentSync, adultSyncStatus } = useProgress();
   const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, studentProgress: studentRecord, adultProgress } = useLicense();
   // ADULT (2026-10-02) opens chapter by chapter exactly as STUDENT — the same list, from its own record
   const isChapterCourse = courseSlug === "student" || courseSlug === "adult";
@@ -253,6 +253,11 @@ export function CourseDashboard({
    * `sections` is built from exactly that listed set (checked: all six courses
    * list every id they count — student 82, phonics 195, grammar1 53,
    * grammar2 44, ld 276, reading 256), so it is the right thing to count.
+   *
+   * 회귀 점검 1002 P4 (사장님 2026-10-05): a listed LISTENING · READING lesson counts as done when either its own page or its
+   * script page was completed (isDoneHere → ProgressProvider.isCompleted — src/lib/lessonPair.ts), so '이 강의 학습 완료'
+   * pressed on the script page moves this count and the lesson's row. Still one count per LISTED lesson — the pair is
+   * never counted twice. Every other course counts its own keys, as before.
    */
   const listedIds = useMemo(
     () => new Set(sections.flatMap((section) => section.lessons.map((lesson) => lesson.id))),
@@ -260,9 +265,9 @@ export function CourseDashboard({
   );
   const completedCount = useMemo(() => {
     let count = 0;
-    for (const id of listedIds) if (passoffDone ? passoffDone.has(id) : completed[`${prefix}${id}`]) count++;
+    for (const id of listedIds) if (isDoneHere(id)) count++;
     return count;
-  }, [completed, listedIds, passoffDone, prefix]);
+  }, [isDoneHere, listedIds]);
 
   // Same rule as the progress count: the chip says "북마크 (N)" and clicking it
   // filters THIS list, so counting an unlisted script page would promise rows

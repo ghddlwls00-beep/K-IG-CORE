@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
+import { pairCompleted, pairedLessonId } from "@/lib/lessonPair";
 import { useLicense, type StudentProgressSnapshot } from "./LicenseProvider";
 
 /**
@@ -382,9 +383,11 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       });
   }, [applyStudentProgress, hasActiveLicense, licenseInfo?.licenseId, studentProgress]);
 
+  // 회귀 점검 1002 P4: a LISTENING · READING lesson and its script page ("d006" · "d006-1") are one lesson's completion —
+  // either page's counts for both (src/lib/lessonPair.ts; every other course: the page's own key, as before)
   const isCompleted = useCallback(
     (course: string, lessonId: string) => {
-      return Boolean(completed[`${course}:${lessonId}`]);
+      return pairCompleted(completed, course, lessonId);
     },
     [completed]
   );
@@ -393,13 +396,17 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
    * 2026-09-27: the new value is decided here, from the state this press saw, so the saved record, the server queue and
    * the LESSON_COMPLETE_EVENT all carry the same value (the event is how the learning engine hears a learner finish a
    * lesson; only this function sends it).
+   * 회귀 점검 1002 P4: for a LISTENING · READING pair the value is the pair's (isCompleted) — a completion keeps the pressed
+   * page's key, an undo removes both pages' keys, so the lesson is not left done by the other page.
    */
   const toggleComplete = useCallback((course: string, lessonId: string) => {
     const key = `${course}:${lessonId}`;
-    const willBe = !completed[key];
+    const willBe = !pairCompleted(completed, course, lessonId);
+    const other = pairedLessonId(course, lessonId);
     setCompleted((prev) => {
       const next = { ...prev, [key]: willBe };
       if (!next[key]) delete next[key];
+      if (!willBe && other !== null) delete next[`${course}:${other}`];
       try {
         window.localStorage.setItem(COMPLETED_KEY, JSON.stringify(next));
       } catch {

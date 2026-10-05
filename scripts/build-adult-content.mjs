@@ -262,7 +262,10 @@ const CHUNK_FIX = {
   "8과.pptx": {
     1: [["My country has many holidays.", "우리나라에는 공휴일이 많습니다."]],
     2: [["Holidays are a special time", "공휴일은 특별한 시간입니다"], ["when families can get together and celebrate.", "가족들이 함께 모여 축하할 수 있는."]],
-    3: [["We celebrate Seollal, Liberation Day, Children’s Day,", "우리는 설날, 광복절, 어린이날,"], ["Buddha’s Birthday, Chuseok, and many more.", "부처님 오신 날, 추석 등 많은 날을 기념합니다."]],
+    // J16 (사장님 2026-10-05 21:3x): celebrate's meaning in its own chunk, and the list not cut in the middle (README '끊어 읽기'
+    // 규칙 1 · 2) — was "We celebrate Seollal, Liberation Day, Children’s Day," = '우리는 설날, 광복절, 어린이날,' |
+    // "Buddha’s Birthday, Chuseok, and many more." = '부처님 오신 날, 추석 등 많은 날을 기념합니다.' (the English is STUDENT s18-1's, unchanged)
+    3: [["We celebrate", "우리는 기념합니다"], ["Seollal, Liberation Day, Children’s Day, Buddha’s Birthday, Chuseok, and many more.", "설날, 광복절, 어린이날, 부처님 오신 날, 추석 등 많은 날을."]],
     5: [["The first big holiday is Seollal,", "첫 번째 큰 명절은 설날로,"], ["Lunar New Year’s Day.", "음력 새해 첫날입니다."]],
   },
   "9과.pptx": {
@@ -290,6 +293,9 @@ const CHUNK_FIX = {
  * A sentence fixed by EN_FIX / KO_FIX / CHUNK_FIX is fixed there, not here, and an entry that no longer fits stops the build.
  */
 const KO_LINE_FIX = {
+  // J01 (사장님 2026-10-05 판단 답 — individually 를 살림): 'help other people, individually' is helping them one person at a
+  // time, not '개인적으로' (personally) — the word card's meaning changes with it (WORD_FIX below)
+  "1과.pptx": { 23: ["저는 개인적으로 다른 사람들을 돕는 것을", "저는 다른 사람들을 한 사람 한 사람 개별적으로 돕는 것을"] },
   // F20: 'more than almost anyone' — not '누구보다도' (stronger than the English)
   "3과.pptx": { 8: ["누구보다도 신뢰합니다", "그 누구 못지않게 신뢰합니다"] },
   // F21: often is '자주', not '늘' · F65: 한잔하다 is one word
@@ -309,6 +315,10 @@ const CHUNK_KO_FIX = {
       1: ["and talk with my friends", "그리고 친구들과 이야기하는 것도"],
       2: ["at the coffee shop as well.", "커피숍에서 역시."],
     },
+    // J01 (with the Korean line above)
+    23: { 1: ["individually.", "한 사람 한 사람 개별적으로."] },
+    // J16 (사장님 2026-10-05 21:3x — README '끊어 읽기' 규칙 2): include's meaning was in the last chunk's '…입니다'
+    16: { 0: ["My hobbies include", "제 취미에는 이런 것들이 있습니다"], 2: ["watching movies, and participating in sports.", "영화 감상, 그리고 운동하기."] },
   },
   "3과.pptx": {
     // F56: 'I realize' was in no chunk
@@ -340,8 +350,31 @@ const CHUNK_KO_FIX = {
     // F62: 'give up' had gone into the chunk before
     17: { 0: ["Having grown up watching classmates", "친구들을 지켜보며 자라 온 저로서는,"], 1: ["give up on their goals for financial reasons,", "그 친구들이 경제적인 이유로 꿈을 포기하는 모습을,"] },
   },
+  // J16 (사장님 2026-10-05 21:3x — README '끊어 읽기' 규칙 2): include's meaning was in the last chunk's '…있습니다'. The English is
+  // STUDENT s20-2's (its breaks carried from the PPT's, alignChunks) — unchanged; the Korean line '그런 곳으로는 …' stays.
+  "10과.pptx": {
+    4: { 0: ["Such places include", "그런 곳으로는 이런 곳들이 있습니다"], 2: ["and the Independence Hall of Korea.", "그리고 독립기념관."] },
+  },
 };
 const koFixUsed = new Set();
+
+/**
+ * The PPT's chunk breaks moved on a sentence whose English stays the PPT's (회귀 점검 1002 J15, 사장님 2026-10-05 판단 답 — a chunk is
+ * a unit of meaning: a list is not cut in the middle). File → sentence number → the chunks, [English, Korean]; the English must
+ * make up the sentence exactly and the breaks must differ from the PPT's, and the sentence takes no CHUNK_FIX or CHUNK_KO_FIX —
+ * its Korean chunks are written here. Each English chunk is spoken, so a moved break is new chunk clips.
+ */
+const CHUNK_BREAK_FIX = {
+  // J15: 'see us through job changes, house moves, and several family milestones' — the list was cut after its first item
+  "6과(남성용).pptx": {
+    20: [
+      ["These visits have been taking place for nearly a decade,", "이런 만남은 거의 10년째 이어져 오고 있는데,"],
+      ["and they have seen us through", "덕분에 우리는 함께 겪어 왔습니다"],
+      ["job changes, house moves, and several family milestones.", "이직과 이사, 여러 가족 대소사를."],
+    ],
+  },
+};
+const chunkBreakUsed = new Set();
 
 /** a word compared without case, punctuation or the apostrophe's shape */
 const wordKey = (w) => w.toLowerCase().replace(/[’']/g, "'").replace(/[^a-z0-9'가-힣]/g, "");
@@ -385,6 +418,14 @@ function chunksOf(file, page, s, meaningChanged) {
   // the PPT writes 1과's Korean names in Hangul; the sentence here is in the romanization speech uses
   const pptRoman = ppt.map(([en, ko]) => [romanizedForm(page, en), ko]);
   const same = pptRoman.map(([en]) => en).join(" ") === s.en;
+  const rebreak = CHUNK_BREAK_FIX[file]?.[s.n];
+  if (rebreak) {
+    if (fixed || meaningChanged || !same) throw new Error(`${file} #${s.n}: CHUNK_BREAK_FIX is for a sentence whose English and chunks are the PPT's — write it in CHUNK_FIX`);
+    if (rebreak.map(([en]) => en).join(" ") !== s.en) throw new Error(`${file} #${s.n}: CHUNK_BREAK_FIX "${rebreak.map(([en]) => en).join(" | ")}" is not "${s.en}"`);
+    if (JSON.stringify(rebreak.map(([en]) => en)) === JSON.stringify(pptRoman.map(([en]) => en))) throw new Error(`${file} #${s.n}: CHUNK_BREAK_FIX has the PPT's own breaks`);
+    chunkBreakUsed.add(`${file} ${s.n}`);
+    return rebreak;
+  }
   if (fixed) {
     if (same && !meaningChanged) throw new Error(`${file} #${s.n}: CHUNK_FIX for a sentence the PPT's chunks already fit`);
     if (fixed.map(([en]) => en).join(" ") !== s.en) throw new Error(`${file} #${s.n}: CHUNK_FIX "${fixed.map(([en]) => en).join(" | ")}" is not "${s.en}"`);
@@ -485,6 +526,8 @@ function wordSpeech(word) {
  *   sentence writes 'Western-style clothes'.
  */
 const WORD_FIX = {
+  // J01 (사장님 2026-10-05): 'help other people, individually' — one person at a time, not '개인적으로' (the part of speech stays)
+  "1과.pptx": { individually: { meaning: "한 사람 한 사람 개별적으로" } },
   "2과.pptx": { "contributing to (contribute to)": { word: "contribute to" } },
   "8과.pptx": { ritual: { meaning: "의식의, 의례의" }, offering: { meaning: "제물, (조상·신께) 바치는 것" } },
   "9과.pptx": { "Western style": { word: "Western-style" } },
@@ -543,6 +586,12 @@ const EXTRA_WORDS = {
   "a6-1": SATURDAY_WORDS,
   // the women's Saturday also runs errands
   "a6-2": [...SATURDAY_WORDS.slice(0, 6), { word: "run errands", pos: "collocation", meaning: "볼일을 보다, 이런저런 일을 처리하다", usage: "run errands" }, SATURDAY_WORDS[6]],
+  // 회귀 점검 1002 J12 (사장님 2026-10-05 판단 답 — 카드 3 더함): the PPT's words for these places are gone with the PPT's own
+  // English (7~10과 took STUDENT's — WORDS_GONE), so the sentences' own words take the place; the sentences stay as they are.
+  // usage = the words as the sentence has them (the card underlines the word's forms there, else this)
+  "a7-2": [{ word: "unify", pos: "v.", meaning: "통일하다, 하나로 합치다", usage: "unified most of the peninsula" }], // was 'unite'
+  "a7-3": [{ word: "break out", pos: "phr. v.", meaning: "(전쟁 등이) 일어나다, 발발하다", usage: "broke out" }], // was 'civil war … broke out'
+  "a8-3": [{ word: "be referred to as", pos: "expr.", meaning: "~라고 불리다", usage: "referred to as" }], // was 'also known as'
 };
 
 /**
@@ -565,14 +614,27 @@ const CHOICE_FIX = {
     "close-knit": ["demanding", "ritual", "tackle"], // F05 — 'becomes a supportive / collaborative one'
     supportive: ["demanding", "stretch", "efficiently"], // F06 — 'kept our team remarkably close-knit / collaborative'
   },
+  // 회귀 점검 1002 새 빈칸 의심 3 (사장님 2026-10-05 판단 답 — '같은 방식으로 막기'): a5-2 · a5-4 · a6-3 collaborative
+  "a5-2": { collaborative: ["rushed", "efficiently", "tackle"] }, // 'building the kind of supportive habits'
+  "a5-4": { demanding: ["close-knit", "efficiently", "fatigue"] }, // "the day's most collaborative / rushed tasks"
   "a5-5": { dedicated: ["rushed", "close-knit", "remarkably"] }, // F32 — 'with collaborative effort'
-  "a6-3": { supportive: ["home-cooked", "attentively", "every other"] }, // F07 — 'a close-knit / collaborative network'
+  "a6-3": {
+    supportive: ["home-cooked", "attentively", "every other"], // F07 — 'a close-knit / collaborative network'
+    collaborative: ["home-cooked", "attentively", "occasionally"], // 새 의심 — 'into a supportive / close-knit family activity'
+  },
   "a6-4": { "close-knit": ["home-cooked", "occasionally", "every other"] }, // F08 — 'a supportive extended family'
   // F09 — 'a balanced meal'; not 'collaborative' either (a meal cooked together)
   "a6-5": { "home-cooked": ["supportive", "close-knit", "attentively"] },
   "a7-1": { found: ["hosted", "accomplished", "century"] }, // F35 — 'was divided / ruled / liberated'
-  "a7-2": { peninsula: ["century", "Golden Age", "founder"] }, // F36 — 'the Korean nation was divided'
+  "a7-2": {
+    peninsula: ["century", "Golden Age", "founder"], // F36 — 'the Korean nation was divided'
+    // J12's new card 'unified' joined the chapter's words: the choices this blank had before (audited), not 'was unified into three'
+    divide: ["ruled", "liberated", "invaded"],
+    unify: ["hosted", "accomplished", "century"], // J12's new card — '… and ruled / invaded / developed most of the peninsula'
+  },
   "a7-3": { rule: ["liberated", "hosted", "accomplished"] }, // F37 — 'was invaded by Japan'
+  // J12's new card 'unified' joined the chapter's words: the choices this blank had before (audited)
+  "a7-4": { accomplish: ["founded", "divided", "ruled"] },
   "a8-1": { traditional: ["ritual", "custom", "privilege"] }, // F38 — 'the two largest upcoming holidays'
   "a8-2": {
     perform: ["bow", "ritual", "upcoming"], // F39 — 'we celebrate a ritual ceremony'
@@ -694,6 +756,7 @@ CHAPTERS.forEach((chapter, ci) => {
       if ((lineFix || chunkFix) && (s.enFixed || KO_FIX[file]?.[s.n] || CHUNK_FIX[file]?.[s.n])) {
         throw new Error(`${id} #${s.n}: a Korean fix for a sentence EN_FIX / KO_FIX / CHUNK_FIX already writes — fix it there`);
       }
+      if (chunkFix && CHUNK_BREAK_FIX[file]?.[s.n]) throw new Error(`${id} #${s.n}: CHUNK_KO_FIX for a sentence CHUNK_BREAK_FIX writes — fix it there`);
       if (lineFix) {
         const [from, to] = lineFix;
         if (s.ko.split(from).length !== 2) throw new Error(`${id} #${s.n}: KO_LINE_FIX "${from}" is not once in "${s.ko}"`);
@@ -804,6 +867,7 @@ CHAPTERS.forEach((chapter, ci) => {
 const unused = [
   ...Object.entries(KO_LINE_FIX).flatMap(([f, byN]) => Object.keys(byN).map((n) => `line ${f} ${n}`)).filter((k) => !koFixUsed.has(k)).map((k) => `KO_LINE_FIX ${k}`),
   ...Object.entries(CHUNK_KO_FIX).flatMap(([f, byN]) => Object.keys(byN).map((n) => `chunks ${f} ${n}`)).filter((k) => !koFixUsed.has(k)).map((k) => `CHUNK_KO_FIX ${k}`),
+  ...Object.entries(CHUNK_BREAK_FIX).flatMap(([f, byN]) => Object.keys(byN).map((n) => `${f} ${n}`)).filter((k) => !chunkBreakUsed.has(k)).map((k) => `CHUNK_BREAK_FIX ${k}`),
   ...Object.entries(WORD_FIX).flatMap(([f, byW]) => Object.keys(byW).map((w) => `${f} ${w}`)).filter((k) => !wordFixUsed.has(k)).map((k) => `WORD_FIX ${k}`),
   ...Object.entries(CHOICE_FIX).flatMap(([id, byW]) => Object.keys(byW).map((w) => `${id} ${w}`)).filter((k) => !choiceFixUsed.has(k)).map((k) => `CHOICE_FIX ${k}`),
   ...Object.keys(TITLE_FIX).filter((h) => !lessons.some((l) => l.title === TITLE_FIX[h])).map((h) => `TITLE_FIX ${h}`),

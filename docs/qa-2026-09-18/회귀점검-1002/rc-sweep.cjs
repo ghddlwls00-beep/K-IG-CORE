@@ -25,7 +25,12 @@ const { spawn } = require("child_process");
 const REPO = path.resolve(__dirname, "../../..");
 const SCRIPTS = path.join(REPO, "docs/qa-2026-09-18/scripts");
 const OUT = path.join(REPO, "docs/qa-2026-09-18/out");
-const DIR = path.join(OUT, "rc1002");
+// 고친 배포 뒤 두 번째 스윕(2026-10-05): RC_TAG=rc2 → 상태 폴더 out/rc1002-rc2 · 기록 이름 <과정>-rc2-… (첫 스윕 기록과 안 섞임)
+const TAG = process.env.RC_TAG || "rc";
+const DIR = path.join(OUT, TAG === "rc" ? "rc1002" : `rc1002-${TAG}`);
+// RC_COURSES=adult,student,… (계획에 넣을 과정 — 없으면 전부) · RC_SAMPLE=ld:10,reading:10 (그 과정은 N 강마다 하나)
+const ONLY_COURSES = process.env.RC_COURSES ? new Set(process.env.RC_COURSES.split(",")) : null;
+const SAMPLE = Object.fromEntries((process.env.RC_SAMPLE || "").split(",").filter(Boolean).map((s) => s.split(":")).map(([c, n]) => [c, Number(n)]));
 const FEAT = path.join(OUT, "features");
 fs.mkdirSync(DIR, { recursive: true });
 fs.mkdirSync(FEAT, { recursive: true });
@@ -52,15 +57,29 @@ const TARGET_MIN = Number(process.env.RC_TARGET_MIN || 75);
 // 한 이용권의 서버 진도를 두 브라우저가 같이 쓰지 않게: STUDENT · ADULT 데스크톱(완료 저장 시험)은 나누지 않음
 const NO_SPLIT = new Set(["student|desktop", "adult|desktop"]);
 const DRIVER = { reading: "drive-reading.cjs", "passoff-grammar": "drive-passoff.cjs" };
+// 한 프로세스가 3화면을 다 도는 드라이버(조각 = 강의 묶음)
+const MULTI_VP = new Set(["reading", "passoff-grammar"]);
 
 function plan() {
   const shards = [];
-  for (const [course, ids] of Object.entries(routes)) {
+  for (const [course, allIds] of Object.entries(routes)) {
     if (course === "cnn" || course === "gva") continue; // 폐지
-    if (course === "reading") {
+    if (ONLY_COURSES && !ONLY_COURSES.has(course)) continue;
+    const ids = SAMPLE[course] ? allIds.filter((_, i) => i % SAMPLE[course] === 0) : allIds;
+    if (course === "reading" && TAG === "rc") {
       const perPage = VPS.reduce((s, v) => s + PACE.reading[v], 0);
       const n = Math.max(1, Math.round((ids.length * perPage) / 60 / TARGET_MIN));
       for (let i = 1; i <= n; i++) shards.push({ key: `reading|all|${i}of${n}`, course, viewport: "all", i, n, ids: null, estMin: (ids.length / n) * perPage / 60 });
+      continue;
+    }
+    if (MULTI_VP.has(course)) {
+      const perPage = VPS.reduce((s, v) => s + PACE[course][v], 0);
+      const n = Math.max(1, Math.round((ids.length * perPage) / 60 / TARGET_MIN));
+      const size = Math.ceil(ids.length / n);
+      for (let i = 1; i <= n; i++) {
+        const part = ids.slice((i - 1) * size, i * size);
+        if (part.length) shards.push({ key: `${course}|all|${i}of${n}`, course, viewport: "all", i, n, ids: part, estMin: (part.length * perPage) / 60 });
+      }
       continue;
     }
     for (const vp of VPS) {
@@ -86,6 +105,13 @@ function doneIds(sh, st) {
 
 function argsFor(sh, st, slot) {
   const tries = (st.tries[sh.key] || 0);
+  if (MULTI_VP.has(sh.course) && sh.ids) {
+    const sfx = `-${TAG}-${sh.i}of${sh.n}`;
+    st.files[sh.key] = [`${sh.course}${sfx}.jsonl`];
+    const a = [path.join(SCRIPTS, DRIVER[sh.course]), "--ids", sh.ids.join(","), "--viewports", VPS.join(","), "--suffix", sfx, "--clone", `${TAG}-slot${slot}`, "--port", String(9800 + slot)];
+    if (sh.course === "passoff-grammar" && tries) a.push("--resume");
+    return a;
+  }
   if (sh.course === "reading") {
     const file = `reading-rc-${sh.i}of${sh.n}.jsonl`;
     st.files[sh.key] = [file];
@@ -94,10 +120,10 @@ function argsFor(sh, st, slot) {
   const done = doneIds(sh, st);
   const left = sh.ids.filter((id) => !done.has(id));
   if (!left.length) return null;
-  const suffix = `-rc-${sh.viewport}-${sh.i}of${sh.n}${tries ? `-r${tries}` : ""}`;
+  const suffix = `-${TAG}-${sh.viewport}-${sh.i}of${sh.n}${tries ? `-r${tries}` : ""}`;
   (st.files[sh.key] ||= []).push(`${sh.course}${suffix}.jsonl`);
   const drv = DRIVER[sh.course] || "drive-generic.cjs";
-  return [path.join(SCRIPTS, drv), "--course", sh.course, "--ids", left.join(","), "--viewports", sh.viewport, "--suffix", suffix, "--port", String(9800 + slot), "--clone", `rc-slot${slot}`];
+  return [path.join(SCRIPTS, drv), "--course", sh.course, "--ids", left.join(","), "--viewports", sh.viewport, "--suffix", suffix, "--port", String(9800 + slot), "--clone", `${TAG}-slot${slot}`];
 }
 
 // drive-generic 조각: 부른 강의가 모두 그 조각 파일들에 있으면 끝.
@@ -147,7 +173,7 @@ async function run() {
           running.delete(next.key);
           st.exit[next.key] = code;
           st.tries[next.key] = (st.tries[next.key] || 0) + 1;
-          const ok = next.course === "reading" ? code === 0 : complete(next, st);
+          const ok = MULTI_VP.has(next.course) ? code === 0 : complete(next, st);
           if (ok) { st.done[next.key] = true; st.timing[next.key].end = new Date().toISOString(); }
           save();
           log(`exit ${next.key} code ${code} → ${ok ? "DONE" : "will retry"}`);

@@ -57,8 +57,9 @@ const HELP_AT: PassoffHelp[] = ["none", "none", "hint", "tiles", "reveal"];
  *
  * The lesson's text on the card — the English prompt, the model answer, the rule, an error pattern's hint and the word tiles'
  * labels — is drawn with its Hangul glosses (glossFor(lessonId) — "Seoul(서울)"). The grader, the microphone's target, the
- * first letters' clue, the tiles' words as checked and the sound keep the lesson's own sentence, and the learner's own words
- * (the marked answer, a spelling to check) are shown as they were written.
+ * tiles' words as checked and the sound keep the lesson's own sentence, and the learner's own words (the marked answer, a
+ * spelling to check) are shown as they were written. The first letters' clue keeps a Korean word as the screen draws it,
+ * in Hangul, and gives the English words' first letters only (회귀 점검 1002 P5 — "A______ 이순신.").
  */
 export function ComposeCard({
   item,
@@ -332,8 +333,19 @@ export function ComposeCard({
               {ruleTitle ? <p className="text-body text-ink">문법 설명: {gloss(ruleTitle)}</p> : null}
               {result.missingTargets.length ? <p className="text-body text-ink">이 문장에 꼭 써야 하는 문법 낱말이 빠졌어요.</p> : null}
               <p className="text-label text-ink-soft">낱말의 첫 글자</p>
-              <p lang="en" className={`font-mono ${FONT[font].text} text-ink`}>
-                {firstLetters(item.en)}
+              {/* a Korean word as the screen draws it, in Hangul — only the English words as first letters (회귀 점검 1002 P5) */}
+              <p lang="en" className={`font-mono ${FONT[font].text} text-ink`} data-passoff-first-letters>
+                {firstLetters(item.en, gloss)
+                  .split(/([가-힣]+)/)
+                  .map((part, i) =>
+                    i % 2 ? (
+                      <span key={i} lang="ko">
+                        {part}
+                      </span>
+                    ) : (
+                      part
+                    ),
+                  )}
               </p>
             </div>
           ) : null}

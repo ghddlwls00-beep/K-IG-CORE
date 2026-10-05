@@ -66,6 +66,12 @@ const KNOWN_FITS = {
   "a12-1|revise": ["administered", "eased"], // F54
   "a12-1|reform": ["transformations"], // F55
   "a12-2|pressing": ["fundamental"], // F17
+  // 두 번째 고침(fix2-adult, 2026-10-05 사장님 판단 답): 새 빈칸 의심 3 · J12 새 카드
+  "a5-2|collaborative": ["supportive", "close-knit"], // 'building the kind of ___ habits'
+  "a6-3|collaborative": ["supportive", "close-knit"], // 'into a ___ family activity'
+  "a5-4|demanding": ["collaborative", "rushed", "dedicated"], // "the day's most ___ tasks"
+  "a7-2|unify": ["ruled", "invaded", "developed", "liberated"], // '… conquered the other two kingdoms and ___ most of the peninsula'
+  "a7-2|divide": ["unified"], // 'was ___ into three kingdoms' — 새 카드 꼴이 보기로 들어오지 않게(감사 때 보기 그대로)
 };
 
 const lessons = fs

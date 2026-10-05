@@ -183,6 +183,13 @@ export interface ReviewSummary {
   passed: number;
   /** items tomorrow's review brings (within the day's amount) */
   tomorrow: number;
+  /**
+   * 회귀 점검 1002 P1 (사장님 2026-10-05 — 하루 분량 규칙은 그대로): items today's review can still bring — today's plan as
+   * the course list counts it ('오늘 복습 · 약 N분' — planDay of today over the same record), so the end screen and the list
+   * say the same. A plan is made each time the review opens (engine.ts planDay — its amount is per opening), so after one
+   * plan is done the next lessons' checks can still be today's.
+   */
+  moreToday: number;
 }
 
 /** The end screen's numbers, from the record as it is now. */
@@ -197,6 +204,7 @@ export function reviewSummary(
     answeredToday: states.filter((s) => s.reviewDay === today).length,
     passed: states.filter((s) => s.stage === "passed" && counted(s.kind)).length,
     tomorrow: planDay(record, addDays(today, 1), profile).items.length,
+    moreToday: planDay(record, today, profile).items.length,
   };
 }
 

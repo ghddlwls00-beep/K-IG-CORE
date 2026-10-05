@@ -25,7 +25,8 @@ import { MyAnswerReport } from "./MyAnswerReport";
  *   - every answer goes to the engine's record function (where "review", into this learner's record) — the engine
  *     decides what it counts (the day's first answer on a due item). With a licence the answers go up when a check's
  *     results are left, every few answers, at the end, and when the page is hidden or left;
- *   - the end: today's answered items · passed sentences · how many come tomorrow · the wrong-answer list (`notesHref`).
+ *   - the end: today's answered items · passed sentences · how many today's review can still bring (when any — the course
+ *     list's plan, 회귀 점검 1002 P1) · how many come tomorrow · the wrong-answer list (`notesHref`).
  * The frame follows docs/디자인-규칙.md §6 (the page's header and title are the page's): one progress line instead of
  * step tabs → the item → a bar at the bottom back to the course list. A new item or screen takes the focus when the
  * learner moved there (a screen reader hears where it is; the button pressed has gone).
@@ -352,20 +353,23 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
     [learner, profile.course, put],
   );
 
-  /** The end: the held answers are recorded and go up once more, then the numbers — tomorrow's by the server's count with a licence. */
+  /**
+   * The end: the held answers are recorded and go up once more, then the numbers — tomorrow's and what today's review can
+   * still bring (회귀 점검 1002 P1) by the server's count with a licence: its plan of today, the one the course list shows.
+   */
   const finish = useCallback(
-    async (known?: number) => {
+    async (known?: { tomorrow: number; moreToday: number }) => {
       commit();
       setStep({ at: "done" });
-      let tomorrow = known;
-      if (learner && (pending.current || tomorrow === undefined)) {
+      let server = known;
+      if (learner && (pending.current || server === undefined)) {
         const synced = await sync();
-        if (synced && synced.ok) tomorrow = synced.answer.tomorrow;
+        if (synced && synced.ok) server = { tomorrow: synced.answer.tomorrow, moreToday: synced.answer.plan.items.length };
       }
       const record = readRecord();
       const counted = course.sentenceKinds ? (kind: string) => course.sentenceKinds!.includes(kind) : undefined;
       const numbers = reviewSummary(record, learningDay(Date.now()), profile, counted);
-      setSummary(tomorrow === undefined ? numbers : { ...numbers, tomorrow });
+      setSummary(server === undefined ? numbers : { ...numbers, ...server });
       setWrongCount(wrongList(record).reduce((sum, lesson) => sum + lesson.items.length, 0));
     },
     [commit, course.sentenceKinds, learner, profile, readRecord, sync],
@@ -377,14 +381,15 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
     let plan: Plan;
     let items: Record<string, T>;
     let record: CourseRecord;
-    let tomorrow: number | undefined;
+    let server: { tomorrow: number; moreToday: number } | undefined;
     if (learner) {
       const result = await syncLearnerRecord<T>(profile.course, learner);
       if (!result.ok) {
         setStep({ at: "error", status: result.status });
         return;
       }
-      ({ plan, items, record, tomorrow } = result.answer);
+      ({ plan, items, record } = result.answer);
+      server = { tomorrow: result.answer.tomorrow, moreToday: plan.items.length };
     } else {
       record = readRecord();
       plan = planDay(record, today, profile);
@@ -403,7 +408,7 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
     setComeback(plan.comeback);
     setStudied(Object.keys(record.items).length > 0);
     if (list.length) setStep({ at: "items", segment: 0, index: 0 });
-    else void finish(tomorrow);
+    else void finish(server);
   }, [deviceItems, finish, learner, orderItems, profile, readRecord]);
   const started = useRef(false);
   useEffect(() => {
@@ -719,6 +724,15 @@ export function ReviewSession<T>({ course, source }: { course: ReviewCourse<T>; 
               ) : null}
               <dt className="text-ink-soft">{course.passedLabel ?? "통과한 문항"}</dt>
               <dd className="font-semibold tabular-nums text-ink">{summary.passed}개</dd>
+              {/* 회귀 점검 1002 P1: what the course list still offers as today's review (the same plan — its count) */}
+              {summary.moreToday > 0 ? (
+                <>
+                  <dt className="text-ink-soft">오늘 더 할 수 있는 문항</dt>
+                  <dd className="font-semibold tabular-nums text-ink" data-review-more-today={summary.moreToday}>
+                    {summary.moreToday}개
+                  </dd>
+                </>
+              ) : null}
               <dt className="text-ink-soft">내일 올 문항</dt>
               <dd className="font-semibold tabular-nums text-ink">{summary.tomorrow}개</dd>
             </dl>

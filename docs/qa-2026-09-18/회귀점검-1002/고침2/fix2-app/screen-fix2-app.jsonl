@@ -1,0 +1,32 @@
+{"viewport":"desktop","what":"P1 첫 복습 열기 — '복습 10개부터'(사흘 넘게 쉼)","verdict":"PASS","saw":{"list":"오늘 복습 · 약 4분오랜만이에요. 복습 10개부터 해요.","progress":10}}
+{"viewport":"desktop","what":"P1 끝 화면 '오늘 더 할 수 있는 문항' 줄","verdict":"PASS","saw":{"heading":"오늘 복습을 마쳤어요","rows":{"오늘 푼 문항":"10개","통과한 문장":"0개","오늘 더 할 수 있는 문항":"3개","내일 올 문항":"13개"},"more":"3"}}
+{"viewport":"desktop","what":"P5 다시 풀기 첫 글자 도움 pg01-1:p13 — 한국어 낱말은 한글","verdict":"PASS","saw":{"text":"I l___ i_ 서울.","ko":["서울"]}}
+{"viewport":"desktop","what":"P1 목록도 '오늘 복습'(남은 것 있음)","verdict":"PASS","saw":{"kind":"due","text":"오늘 복습 · 약 1분"}}
+{"viewport":"desktop","what":"P1 다시 열면 복습 수 = 끝 화면 N(3)","verdict":"PASS","saw":{"progress":3}}
+{"viewport":"desktop","what":"P1 두 번째 끝 화면 — 남은 것 0 이면 줄 없음 · 내일 줄은 그대로","verdict":"PASS","saw":{"heading":"오늘 복습을 마쳤어요","rows":{"오늘 푼 문항":"13개","통과한 문장":"0개","내일 올 문항":"13개"},"more":null}}
+{"viewport":"desktop","what":"P1 목록 '오늘 복습 없음'","verdict":"PASS","saw":"none"}
+{"viewport":"desktop","what":"P4 ld 옛 기록 'd001-1' 만 완료 → 목록 1 · 본 강의 줄 완료","verdict":"PASS","saw":{"zero":0,"legacy":1,"row":{"text":"001회 · 실전 듣기 평가완료","done":true}}}
+{"viewport":"desktop","what":"P4 ld/d001 본 쪽 끝 단추 '학습 완료함'","verdict":"PASS","saw":{"pressed":"true","label":"학습 완료 취소","disabled":false}}
+{"viewport":"desktop","what":"P4 본 쪽에서 취소 → 두 쪽 기록 모두 지움 · 목록 0","verdict":"PASS","saw":{"stored":"{}","afterUndo":0}}
+{"viewport":"desktop","what":"P4 d001-1 에서 '이 강의 학습 완료' → 목록 진행률 1 · 본 강의 줄 완료","verdict":"PASS","saw":{"pressedOnScript":true,"gate":{"pressed":"true","label":"학습 완료 취소","disabled":false},"count":1,"row":{"text":"001회 · 실전 듣기 평가완료","done":true}}}
+{"viewport":"desktop","what":"P4 reading 옛 기록 'pr001-1' 만 완료 → 목록 1 · 본 강의 줄 완료","verdict":"PASS","saw":{"zero":0,"legacy":1,"row":{"text":"001회 · 원문 독해 & 리스닝76단어 · 5문장완료","done":true}}}
+{"viewport":"desktop","what":"P4 reading/pr001 본 쪽 끝 단추 '학습 완료함'","verdict":"PASS","saw":{"pressed":"true","label":"학습 완료 취소","disabled":false}}
+{"viewport":"desktop","what":"P4 본 쪽에서 취소 → 두 쪽 기록 모두 지움 · 목록 0","verdict":"PASS","saw":{"stored":"{}","afterUndo":0}}
+{"viewport":"desktop","what":"P4 pr001-1 에서 '이 강의 학습 완료' → 목록 진행률 1 · 본 강의 줄 완료","verdict":"PASS","saw":{"pressedOnScript":true,"gate":{"pressed":"true","label":"학습 완료 취소","disabled":false},"count":1,"row":{"text":"001회 · 원문 독해 & 리스닝76단어 · 5문장완료","done":true}}}
+{"viewport":"desktop","what":"예외 · 콘솔 오류 · 4xx/5xx","verdict":"PASS","saw":{"exceptions":[],"console":[],"bad":[]}}
+{"viewport":"mobile","what":"P1 첫 복습 열기 — '복습 10개부터'(사흘 넘게 쉼)","verdict":"PASS","saw":{"list":"오늘 복습 · 약 4분오랜만이에요. 복습 10개부터 해요.","progress":10}}
+{"viewport":"mobile","what":"P1 끝 화면 '오늘 더 할 수 있는 문항' 줄","verdict":"PASS","saw":{"heading":"오늘 복습을 마쳤어요","rows":{"오늘 푼 문항":"10개","통과한 문장":"0개","오늘 더 할 수 있는 문항":"3개","내일 올 문항":"13개"},"more":"3"}}
+{"viewport":"mobile","what":"P5 다시 풀기 첫 글자 도움 pg01-1:p13 — 한국어 낱말은 한글","verdict":"PASS","saw":{"text":"I l___ i_ 서울.","ko":["서울"]}}
+{"viewport":"mobile","what":"P1 목록도 '오늘 복습'(남은 것 있음)","verdict":"PASS","saw":{"kind":"due","text":"오늘 복습 · 약 1분"}}
+{"viewport":"mobile","what":"P1 다시 열면 복습 수 = 끝 화면 N(3)","verdict":"PASS","saw":{"progress":3}}
+{"viewport":"mobile","what":"P1 두 번째 끝 화면 — 남은 것 0 이면 줄 없음 · 내일 줄은 그대로","verdict":"PASS","saw":{"heading":"오늘 복습을 마쳤어요","rows":{"오늘 푼 문항":"13개","통과한 문장":"0개","내일 올 문항":"13개"},"more":null}}
+{"viewport":"mobile","what":"P1 목록 '오늘 복습 없음'","verdict":"PASS","saw":"none"}
+{"viewport":"mobile","what":"P4 ld 옛 기록 'd001-1' 만 완료 → 목록 1 · 본 강의 줄 완료","verdict":"PASS","saw":{"zero":0,"legacy":1,"row":{"text":"001회 · 실전 듣기 평가완료","done":true}}}
+{"viewport":"mobile","what":"P4 ld/d001 본 쪽 끝 단추 '학습 완료함'","verdict":"PASS","saw":{"pressed":"true","label":"학습 완료 취소","disabled":false}}
+{"viewport":"mobile","what":"P4 본 쪽에서 취소 → 두 쪽 기록 모두 지움 · 목록 0","verdict":"PASS","saw":{"stored":"{}","afterUndo":0}}
+{"viewport":"mobile","what":"P4 d001-1 에서 '이 강의 학습 완료' → 목록 진행률 1 · 본 강의 줄 완료","verdict":"PASS","saw":{"pressedOnScript":true,"gate":{"pressed":"true","label":"학습 완료 취소","disabled":false},"count":1,"row":{"text":"001회 · 실전 듣기 평가완료","done":true}}}
+{"viewport":"mobile","what":"P4 reading 옛 기록 'pr001-1' 만 완료 → 목록 1 · 본 강의 줄 완료","verdict":"PASS","saw":{"zero":0,"legacy":1,"row":{"text":"001회 · 원문 독해 & 리스닝76단어 · 5문장완료","done":true}}}
+{"viewport":"mobile","what":"P4 reading/pr001 본 쪽 끝 단추 '학습 완료함'","verdict":"PASS","saw":{"pressed":"true","label":"학습 완료 취소","disabled":false}}
+{"viewport":"mobile","what":"P4 본 쪽에서 취소 → 두 쪽 기록 모두 지움 · 목록 0","verdict":"PASS","saw":{"stored":"{}","afterUndo":0}}
+{"viewport":"mobile","what":"P4 pr001-1 에서 '이 강의 학습 완료' → 목록 진행률 1 · 본 강의 줄 완료","verdict":"PASS","saw":{"pressedOnScript":true,"gate":{"pressed":"true","label":"학습 완료 취소","disabled":false},"count":1,"row":{"text":"001회 · 원문 독해 & 리스닝76단어 · 5문장완료","done":true}}}
+{"viewport":"mobile","what":"예외 · 콘솔 오류 · 4xx/5xx","verdict":"PASS","saw":{"exceptions":[],"console":[],"bad":[]}}

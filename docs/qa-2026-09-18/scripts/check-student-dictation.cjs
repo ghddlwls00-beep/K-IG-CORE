@@ -15,7 +15,8 @@
  *      ('The 신라 Kingdom …')이 조각에서도 정답에서도 빠졌던 일(사장님 2026-10-02 "신라 블록이 없는데").
  *   ADULT(--course adult)는 STUDENT 와 같은 화면 · 규칙이라 같은 검사를 그대로 받는다(내 정보 칸 수만 다름 — a1-2 10칸).
  *
- *   node docs/qa-2026-09-18/scripts/check-student-dictation.cjs [--course student|adult] [--list] [--break=judge|blank|fixedlist|pool|hangul]
+ *   node docs/qa-2026-09-18/scripts/check-student-dictation.cjs [--course student|adult] [--list] [--break=judge|blank|fixedlist|pool|hangul|placed]
+ *   --break=placed    : s6-2 #3 의 되살린 '30' 을 앱이 채우는 칸으로 셈(10/05 전 '(age)' 판) — 2칸이 되어 FAIL(STUDENT 만)
  *   --break=hangul    : 한글이 든 조각을 빼고 셈(고치기 전 낱말 규칙) — 빠진 글자가 잡혀 FAIL
  *   --break=judge     : 마지막 부분에서 낱말 하나를 빼고 판정 — 모든 꼴이 FAIL(exit 1) 이 나야 검사가 살아 있는 것
  *   --break=blank     : s20-5 #6 도 빈칸으로 셈 — 21문장 · 15강이 되어 FAIL (ADULT: a1-2 #7 '내 정보' 칸을 빼고 셈 — 6문장이 되어 FAIL)
@@ -84,7 +85,8 @@ for (const { id, texts } of lessons) {
     const runs = B.fixedRunsOf(text, B.dictationBlanks(blanks));
     if (blanks.length) {
       stat.blanks.push({ where, lesson: id, blanks: blanks.map((b) => b.text) });
-      const placed = B.dictationBlanks(blanks);
+      // --break=placed: count a restored sample word (s6-2 #3 "30") as a placeholder again — 2 placed, so FAIL
+      const placed = BREAK === "placed" && id === "s6-2" && i === 2 ? blanks : B.dictationBlanks(blanks);
       if (placed.length) stat.placed.push(`${where}: ${placed.map((b) => b.text).join(" · ")}`);
       if (!runs) fail(`${where}: blank positions differ between the slash forms`);
     }
@@ -182,8 +184,9 @@ for (const { id, texts } of lessons) {
 const blankLessons = new Set(stat.blanks.map((b) => b.lesson));
 const wantSentences = COURSE === "adult" ? 228 : 414;
 // 2026-10-02 (사장님 "원래 낱말로 되살리기" · "이렇게 오류 있는거 다 찾아서 변경해"): only placeholders the textbook never filled are
-// placed by the app — STUDENT s6-2 #3 (age) · s9-1 #3 (dog's name); ADULT none. Every other word of every sentence is a tile.
-const wantPlaced = COURSE === "adult" ? 0 : 2;
+// placed by the app — STUDENT s9-1 #3 (dog's name) only (s6-2 #3 "(age)" → "30" on 2026-10-05, 회귀 점검 1002 F73 · 사장님
+// '30으로 되살림'); ADULT none. Every other word of every sentence is a tile.
+const wantPlaced = COURSE === "adult" ? 0 : 1;
 if (stat.placed.length !== wantPlaced) fail(`placeholders placed by the app: ${stat.placed.length} (expected ${wantPlaced}) — ${stat.placed.join(" / ")}`);
 if (stat.sentences !== wantSentences) fail(`sentences ${stat.sentences} (expected ${wantSentences})`);
 // STUDENT 20 sentences in 14 lessons; ADULT 7 in 2 — a1-2's six sentences of 내 정보 (10 blanks) and a1-5 "(2) months"

@@ -59,8 +59,8 @@ export type Gloss = (text: string) => string;
 /**
  * How lesson `lessonId` ("pg06-1") DRAWS its text — a Korean word written in English shown in Hangul: "Chuseok" → "추석"
  * (사장님 2026-10-02 "한국어 로마식표기를 다 한국어로 바꿔" — src/lib/koreanGloss.ts koreanOnScreen; first "Chuseok(추석)"). The same
- * text unchanged on every lesson not in that table. For the screen only: what is graded, matched (accept · errorPatterns ·
- * a focus phrase · the first letters' clue), spoken (spokenOf · lessonSpeechForm), heard (VoiceSpeakingTester's target),
+ * text unchanged on every lesson not in that table. For the screen only (the first letters' clue is drawn through it too —
+ * 회귀 점검 1002 P5): what is graded, matched (accept · errorPatterns · a focus phrase), spoken (spokenOf · lessonSpeechForm), heard (VoiceSpeakingTester's target),
  * recorded or used as a key always takes the lesson's own text. Every card is given its item's own lesson, so the review
  * and the map, which mix lessons, gloss each item as its lesson does.
  */

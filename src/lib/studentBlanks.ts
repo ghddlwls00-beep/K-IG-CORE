@@ -5,14 +5,16 @@
  * (AGENTS.md: the brackets in content/lessons/student are blanks, never alternative answers). The blanks are found in the
  * sentence text at run time — this file holds no lesson text, only lesson ids and sentence indexes and the sample words
  * to look for. Since 2026-10-02 (scripts/restore-sample-words.mjs — 사장님 "원래 낱말로 되살리기") a blank is one of two kinds:
- *   · a "(…)" placeholder — a bracket without a slash. Only two are left in STUDENT: s6-2 #3 "(age)" and s9-1 #3
- *     "(dog’s name)". These are the only blanks the app places by itself in the Step 2 tiles (dictationBlanks;
- *     docs/qa-2026-09-18/scripts/check-student-dictation.cjs expects exactly these two). "(sir/ma’am)" (s1-1 #1) is two
- *     ways to say it, not a blank (listeningUtils), and s20-5 #6 "(about 6,400 feet)" is a note, not a blank (NOT_BLANK);
+ *   · a "(…)" placeholder — a bracket without a slash. Only one is left in STUDENT: s9-1 #3 "(dog’s name)" (the
+ *     original had no sample word there either). It is the only blank the app places by itself in the Step 2 tiles
+ *     (dictationBlanks; docs/qa-2026-09-18/scripts/check-student-dictation.cjs expects exactly this one). s6-2 #3 "(age)"
+ *     was the second until 2026-10-05, when its "30" came back (회귀 점검 1002 F73 — the original Korean line said
+ *     "약 30세"). "(sir/ma’am)" (s1-1 #1) is two ways to say it, not a blank (listeningUtils), and s20-5 #6
+ *     "(about 6,400 feet)" is a note, not a blank (NOT_BLANK);
  *   · a real sample word the sentence says — "My name is 홍길동, and I live in 서울." (s1-2 #1), "한국", "11", "two",
- *     "태권도" … (EXTRA_BLANKS, `written`). The learner assembles it like any other word in the Step 2 tiles and may
+ *     "태권도", "30" … (EXTRA_BLANKS, `written`). The learner assembles it like any other word in the Step 2 tiles and may
  *     replace it with their own in Step 3 (사장님 2026-10-02 "저 한글들도 블록에 들어가야지").
- * In STUDENT that is 20 sentences in 14 lessons (2 placeholders + 24 sample words = 26 blanks); ADULT uses the same
+ * In STUDENT that is 20 sentences in 14 lessons (1 placeholder + 25 sample words = 26 blanks); ADULT uses the same
  * view with EXTRA_BLANKS only (a1-2 · a1-5 — 7 sentences, no placeholder). What the learner types is kept on this device
  * only (localStorage 'kig:student:me:v1') and used ONLY for the text shown in Step 3 and for the microphone check: every
  * sound still plays the model sentence, which is the only one with a clip (STU-L03 CHECK ②).
@@ -72,7 +74,11 @@ const EXTRA_BLANKS: Record<string, Record<number, { text: string; label: string 
   },
   "s4-5": { 0: [{ text: "길동", label: "큰아버지 이름" }] },
   "s6-1": { 5: [{ text: "태권도", label: "동생의 클럽" }] },
-  "s6-2": { 1: [{ text: "홍", label: "선생님 성" }] },
+  // #3 "30" since 2026-10-05 (회귀 점검 1002 F73 · 사장님 '30으로 되살림' — the original Korean line's "약 30세"); before, "(age)"
+  "s6-2": {
+    1: [{ text: "홍", label: "선생님 성" }],
+    2: [{ text: "30", label: "선생님 나이" }],
+  },
   "s6-3": { 0: [{ text: "강원도", label: "선생님 출신 지역" }] },
   "s8-3": { 3: [{ text: "불고기", label: "좋아하는 음식" }] },
   "s9-3": {
