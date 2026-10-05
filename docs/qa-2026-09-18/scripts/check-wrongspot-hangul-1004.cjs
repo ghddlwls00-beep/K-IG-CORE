@@ -60,7 +60,8 @@ if (COURSE_ARG && !["grammar2", "passoff-grammar"].includes(COURSE_ARG)) { conso
 const COURSES = COURSE_ARG ? [COURSE_ARG] : ["grammar2", "passoff-grammar"];
 const ONLY = arg("--ids", null) ? new Set(arg("--ids", "").split(",").map((s) => s.trim()).filter(Boolean)) : null;
 const PORT = Number(arg("--port", 9875));
-if (PORT < 9875 || PORT > 9879) { console.error("--port 는 9875~9879(이 일꾼 몫)"); process.exit(2); }
+// 9930~9939: 운영 재확인 옆 세션 몫(2026-10-05 — 주 세션 스윕 9801~9804 와 겹치지 않게)
+if (!((PORT >= 9875 && PORT <= 9879) || (PORT >= 9930 && PORT <= 9939))) { console.error("--port 는 9875~9879(이 일꾼 몫) 또는 9930~9939(재확인 옆 세션)"); process.exit(2); }
 const CLONE = arg("--clone", "rc1002-wrongspot-hangul");
 const TAG = arg("--tag", BREAK ? `break-${BREAK}` : null);
 const OUT = path.join(__dirname, "../out");
