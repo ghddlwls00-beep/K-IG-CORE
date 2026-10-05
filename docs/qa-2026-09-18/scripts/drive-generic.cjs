@@ -98,14 +98,20 @@ const JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}.jsonl`);
 // the play controls · a covered target is not pressed) · T3 (GRAMMAR Step 2 · 4 NA name their tool — coveredBy) · T6 (a sound line of a
 // visit whose connection dropped is RETEST, not FAIL — OFFLINE_ERR) · T7 (a VOCA row left playing is stopped before the next press) ·
 // T13 (--course passoff-grammar refused).
-const DRIVER_REV = "7-1m-g15-s0927-v0927-l0927-a1002-f1005";
+// 회귀 점검 1002 T2 (2026-10-06): '-p1006' — a sound control is told by lib/play-control.cjs: 'play' only as a word (not the letters
+// inside 'playground') and never a button in the word bank · answer box, an answer option or a script line toggle (the dictation
+// tile 'play' · 'players' · 'playground', '… put on plays', '… 알아듣기 …' were pressed as speakers → RETEST). Each sound row
+// pressed through NEXT_CONTROL carries ctx (where the control sits). --break=play-regex: the old rule.
+const DRIVER_REV = "7-1m-g15-s0927-v0927-l0927-a1002-f1005-p1006";
 // T6: the machine's connection, not a server answer (4xx/5xx are badResponses, never these)
 const OFFLINE_ERR = /ERR_INTERNET_DISCONNECTED|ERR_NETWORK_CHANGED|ERR_NETWORK_IO_SUSPENDED|ERR_NAME_NOT_RESOLVED|ERR_ADDRESS_UNREACHABLE/;
 const RENDERED = path.join(OUT, "rendered", COURSE);
 
 // Controls that leave the page or touch money/licence/admin — never pressed by the driver.
 const SKIP_CLICK = /목록|이전 강의|다음 강의|홈으로|구매|이용권|등록|로그인|로그아웃|관리자|Chrome|Safari|외부|새 창|공유|다운로드|결제/;
-const PLAY_RE = /🔊|▶|재생|듣기|발음|낭독|play|전체 듣기|한 문장/i;
+const PC = require("./lib/play-control.cjs");
+const BREAK_PLAY = process.argv.includes("--break=play-regex");
+const { PLAY_RE, NOT_PLAY_CTX } = PC.rule(BREAK_PLAY);
 const STOP_RE = /정지|일시정지|멈춤|중지|pause|stop|⏹|⏸/i;
 const CHECK_RE = /확인|채점|제출|정답 확인|submit/i;
 const BOOKMARK_RE = /북마크/;
@@ -154,17 +160,19 @@ const NEXT_CONTROL = (kind) => `(() => {
   const main = document.querySelector('main') || document.body;
   const label = (el) => ((el.innerText || el.value || '').replace(/\\s+/g, ' ').trim() + ' ' + (el.getAttribute('aria-label') || '')).trim();
   const play = ${PLAY_RE}, stop = ${STOP_RE}, skip = ${SKIP_CLICK}, bookmark = ${BOOKMARK_RE}, complete = ${COMPLETE_RE};
+  const notPlay = ${NOT_PLAY_CTX}, ctxOf = ${PC.CTX_OF};
   const all = [...main.querySelectorAll('button, [role=button], a[href^="#"], input[type=checkbox], input[type=radio], select')].filter(vis);
   const eligible = all.filter((el) => {
     if (el.__kigClicked || el.disabled) return false;
     const t = label(el);
     if (skip.test(t) || bookmark.test(t) || complete.test(t)) return false;
     if (/step\\s*\\d|\\d\\s*단계|단계\\s*\\d/i.test(t)) return false;
-    const isPlay = play.test(t) && !stop.test(t);
+    const isPlay = play.test(t) && !stop.test(t) && !notPlay(el);
     return ${JSON.stringify(kind)} === 'play' ? isPlay : !isPlay;
   });
   const el = eligible[0];
   if (!el) return null;
+  window.__kigLastCtx = ctxOf(el);
   el.__kigClicked = true;
   el.setAttribute('data-kig-picked', '1');
   // label BEFORE the click changes it, plus which occurrence of that label it is (#n), so a
@@ -181,12 +189,13 @@ const COUNT_CONTROLS = (kind) => `(() => {
   const main = document.querySelector('main') || document.body;
   const label = (el) => ((el.innerText || el.value || '').replace(/\\s+/g, ' ').trim() + ' ' + (el.getAttribute('aria-label') || '')).trim();
   const play = ${PLAY_RE}, stop = ${STOP_RE}, skip = ${SKIP_CLICK}, bookmark = ${BOOKMARK_RE}, complete = ${COMPLETE_RE};
+  const notPlay = ${NOT_PLAY_CTX};
   return [...main.querySelectorAll('button, [role=button], a[href^="#"], input[type=checkbox], input[type=radio], select')].filter(vis).filter((el) => {
     if (el.__kigClicked || el.disabled) return false;
     const t = label(el);
     if (skip.test(t) || bookmark.test(t) || complete.test(t)) return false;
     if (/step\\s*\\d|\\d\\s*단계|단계\\s*\\d/i.test(t)) return false;
-    const isPlay = play.test(t) && !stop.test(t);
+    const isPlay = play.test(t) && !stop.test(t) && !notPlay(el);
     return ${JSON.stringify(kind)} === 'play' ? isPlay : !isPlay;
   }).length;
 })()`;
@@ -245,12 +254,12 @@ async function openPlayFolds(tab) {
       const folded = ${FOLDED};
       const main = document.querySelector('main') || document.body;
       const lab = (el) => ((el.innerText || el.value || '').replace(/\\s+/g, ' ').trim() + ' ' + (el.getAttribute('aria-label') || '')).trim();
-      const play = ${PLAY_RE}, stop = ${STOP_RE}, skip = ${SKIP_CLICK};
+      const play = ${PLAY_RE}, stop = ${STOP_RE}, skip = ${SKIP_CLICK}, notPlay = ${NOT_PLAY_CTX};
       for (const d of main.querySelectorAll('details:not([open])')) {
         if (d.hasAttribute('data-kig-fold-tried')) continue;
         const s = d.querySelector(':scope > summary');
         if (!s || folded(s)) continue;
-        const has = [...d.querySelectorAll('button, [role=button]')].some((b) => !s.contains(b) && !b.__kigClicked && !b.disabled && play.test(lab(b)) && !stop.test(lab(b)) && !skip.test(lab(b)));
+        const has = [...d.querySelectorAll('button, [role=button]')].some((b) => !s.contains(b) && !b.__kigClicked && !b.disabled && play.test(lab(b)) && !stop.test(lab(b)) && !skip.test(lab(b)) && !notPlay(b));
         if (!has) continue;
         d.setAttribute('data-kig-fold-tried', '1');
         s.setAttribute('data-kig-fold-summary', '1');
@@ -276,13 +285,16 @@ async function closeOpenedFolds(tab) {
 }
 
 async function pressAudio(tab, expr, stepLabel, exp, out) {
-  await tab.eval("window.__kigAudio && (window.__kigAudio.length = 0)").catch(() => {});
+  await tab.eval("window.__kigAudio && (window.__kigAudio.length = 0); window.__kigLastCtx = null").catch(() => {});
   let c = await H.click(tab, expr, { refuseCovered: REFUSE_COVERED });
   const picked = await tab.eval(PICKED_LABEL).catch(() => null);
   const label = `${stepLabel} ▶ ${picked || c.text || "?"}`.slice(0, 90);
+  // T2: where the control sits (word-bank · option · action=… · title=…), set by NEXT_CONTROL; null for a walk's own speaker
+  const ctx = await tab.eval("window.__kigLastCtx == null ? null : String(window.__kigLastCtx)").catch(() => null);
+  const at = ctx != null ? { ctx } : {};
   // T1: a covered target is not pressed — RETEST (recheck-audio presses it alone, opening its fold first), never a clip of whatever lay on top
-  if (!c.ok && c.covered) { out.push({ control: label, status: "RETEST", covered: true, coveredBy: c.coveredBy || null, note: `not pressed: ${c.reason}` }); return; }
-  if (!c.ok) { out.push({ control: label, status: "FAIL", note: `could not click: ${c.reason}` }); return; }
+  if (!c.ok && c.covered) { out.push({ control: label, ...at, status: "RETEST", covered: true, coveredBy: c.coveredBy || null, note: `not pressed: ${c.reason}` }); return; }
+  if (!c.ok) { out.push({ control: label, ...at, status: "FAIL", note: `could not click: ${c.reason}` }); return; }
   // The page-level player starts its queue only after the silent mobile-unlock primer, which
   // can take several seconds on production; waiting 2 s reported it as silent when it was not.
   // Only events of a clip requested AFTER this click count: the previous clip's late
@@ -341,6 +353,7 @@ async function pressAudio(tab, expr, stepLabel, exp, out) {
   else { status = "RETEST"; note = !paths.length && !tts.length ? "no audio request within 10 s" : aborted.length ? "clip aborted before playing" : "no playing event"; }
   out.push({
     control: label,
+    ...at,
     status,
     clips: paths.map((p) => ({ path: p, ...clips[p], expected: exp.clipPaths.has(p) })),
     ttsFallback: tts.slice(0, 2),

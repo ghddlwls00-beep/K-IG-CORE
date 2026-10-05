@@ -1,0 +1,679 @@
+{
+ "generatedAt": "2026-10-05T13:10:49.721Z",
+ "note": "rc2(고침 1차 배포 54345a4b 뒤 두 번째 전 쪽 스윕 · 운영 2026-10-05 15:17~21:28 KST) 37파일 2,367칸의 남은 FAIL · BLOCKED · 화면 글 없음 · 4xx/5xx 한 줄씩. 4xx/5xx 는 0. NOT TESTED 는 LISTENING · READING 표본 밖 쪽(10강마다 1 표본이라 안 돈 것)이라 줄에 안 넣음. refLines = 강의 판정에 안 셈(요청 실패 · 연결 실패로 따로). audioRetest = 소리 RETEST 28줄(FAIL 아님 — 다시 누를 것).",
+ "counts": {
+  "fails": 17,
+  "byCourseKind": {
+   "ADULT|화면 글 없음": {
+    "lines": 5,
+    "lessons": 4
+   },
+   "ADULT|FAIL": {
+    "lines": 8,
+    "lessons": 3
+   },
+   "ADULT|BLOCKED": {
+    "lines": 4,
+    "lessons": 3
+   }
+  },
+  "failLessons": [
+   "ADULT a8-3",
+   "ADULT a7-2",
+   "ADULT a7-3"
+  ],
+  "refLines": 7,
+  "audioRetest": 28
+ },
+ "lines": [
+  {
+   "course": "ADULT",
+   "lesson": "a8-3",
+   "screen": "mobile",
+   "file": "adult-rc2-mobile-1of1.jsonl",
+   "at": "2026-10-05T11:50:16.438Z",
+   "kind": "화면 글 없음",
+   "item": "content 기대 35 / 있음 34 / 없음 1",
+   "note": "[\"word-card: be referred to as | 표현 | ~라고 불리다 | 추석 is the biggest nationa\"]",
+   "record": {
+    "expected": 35,
+    "found": 34,
+    "missing": [
+     "word-card: be referred to as | 표현 | ~라고 불리다 | 추석 is the biggest nationa"
+    ]
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a8-3",
+   "screen": "mobile",
+   "file": "adult-rc2-mobile-1of1.jsonl",
+   "at": "2026-10-05T11:50:16.438Z",
+   "kind": "FAIL",
+   "item": "adult words · Step 2 · 카드 수",
+   "note": "카드 6 · 데이터 7",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 카드 수",
+    "status": "FAIL",
+    "note": "카드 6 · 데이터 7"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a8-3",
+   "screen": "mobile",
+   "file": "adult-rc2-mobile-1of1.jsonl",
+   "at": "2026-10-05T11:50:16.438Z",
+   "kind": "FAIL",
+   "item": "adult words · Step 2 · 뜻 보기 · 몰라요",
+   "note": "카드 1 'be referred to as' — 누르기 전 뜻 가림 · 누른 뒤 '추수감사절' (데이터 '~라고 불리다') · 품사 '명사' · 몰라요 → data-mark unknown",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 뜻 보기 · 몰라요",
+    "status": "FAIL",
+    "note": "카드 1 'be referred to as' — 누르기 전 뜻 가림 · 누른 뒤 '추수감사절' (데이터 '~라고 불리다') · 품사 '명사' · 몰라요 → data-mark unknown"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a8-3",
+   "screen": "mobile",
+   "file": "adult-rc2-mobile-1of1.jsonl",
+   "at": "2026-10-05T11:50:16.438Z",
+   "kind": "FAIL",
+   "item": "adult words · Step 2 · 낱말 소리 = 그 낱말",
+   "note": "요청 /audio/azure-ava/v1/c-f91c432a12614d71.mp3 · 기대 /audio/azure-ava/v1/h-a39467aa5ffa884b.mp3 · PASS",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 낱말 소리 = 그 낱말",
+    "status": "FAIL",
+    "note": "요청 /audio/azure-ava/v1/c-f91c432a12614d71.mp3 · 기대 /audio/azure-ava/v1/h-a39467aa5ffa884b.mp3 · PASS"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a8-3",
+   "screen": "mobile",
+   "file": "adult-rc2-mobile-1of1.jsonl",
+   "at": "2026-10-05T11:50:16.438Z",
+   "kind": "BLOCKED",
+   "item": "adult words · Step 2 · 빈칸 채우기",
+   "note": "1/5 문제 · 첫 문제 몰라요 낱말 · #1 보기에 정답 'referred to as' 없음 (Thanksgiving / offering / tombs / relatives) · 결과 'null' · 탭 'Step",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 빈칸 채우기",
+    "status": "BLOCKED",
+    "note": "1/5 문제 · 첫 문제 몰라요 낱말 · #1 보기에 정답 'referred to as' 없음 (Thanksgiving / offering / tombs / relatives) · 결과 'null' · 탭 'Step 2 · 단어 0/6' · 다시 풀기 → 새 문제(data-order 0)"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a6-5",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:52:26.255Z",
+   "kind": "화면 글 없음",
+   "item": "content 기대 44 / 있음 42 / 없음 2",
+   "note": "[\"chunk: and they have seen us through | 덕분에 우리는 함께 겪어 왔습니다\",\"chunk: job changes, house moves, and several family milestones. | 이\"]",
+   "record": {
+    "expected": 44,
+    "found": 42,
+    "missing": [
+     "chunk: and they have seen us through | 덕분에 우리는 함께 겪어 왔습니다",
+     "chunk: job changes, house moves, and several family milestones. | 이"
+    ]
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a7-2",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:53:38.777Z",
+   "kind": "화면 글 없음",
+   "item": "content 기대 29 / 있음 28 / 없음 1",
+   "note": "[\"word-card: unify | 동사 | 통일하다, 하나로 합치다 | Later, 신라 conquered the other t\"]",
+   "record": {
+    "expected": 29,
+    "found": 28,
+    "missing": [
+     "word-card: unify | 동사 | 통일하다, 하나로 합치다 | Later, 신라 conquered the other t"
+    ]
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a7-2",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:53:38.777Z",
+   "kind": "FAIL",
+   "item": "adult words · Step 2 · 카드 수",
+   "note": "카드 6 · 데이터 7",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 카드 수",
+    "status": "FAIL",
+    "note": "카드 6 · 데이터 7"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a7-2",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:53:38.777Z",
+   "kind": "BLOCKED",
+   "item": "adult words · Step 2 · 빈칸 채우기",
+   "note": "4/5 문제 · 첫 문제 몰라요 낱말 · #1 정답→correct · #2 틀린 보기→wrong · #3 정답→correct · #4 보기에 정답 'unified' 없음 (century / powerful / pro",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 빈칸 채우기",
+    "status": "BLOCKED",
+    "note": "4/5 문제 · 첫 문제 몰라요 낱말 · #1 정답→correct · #2 틀린 보기→wrong · #3 정답→correct · #4 보기에 정답 'unified' 없음 (century / powerful / proud of / ancient) · 결과 'null' · 탭 'Step 2 · 단어 2/6' · 다시 풀기 → 새 문제(data-order 3)"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a7-3",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:54:09.988Z",
+   "kind": "화면 글 없음",
+   "item": "content 기대 37 / 있음 36 / 없음 1",
+   "note": "[\"word-card: break out | 구동사 | (전쟁 등이) 일어나다, 발발하다 | The Korean War broke \"]",
+   "record": {
+    "expected": 37,
+    "found": 36,
+    "missing": [
+     "word-card: break out | 구동사 | (전쟁 등이) 일어나다, 발발하다 | The Korean War broke "
+    ]
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a7-3",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:54:09.988Z",
+   "kind": "FAIL",
+   "item": "adult words · Step 2 · 카드 수",
+   "note": "카드 3 · 데이터 4",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 카드 수",
+    "status": "FAIL",
+    "note": "카드 3 · 데이터 4"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a7-3",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:54:09.988Z",
+   "kind": "BLOCKED",
+   "item": "adult words · Step 2 · 빈칸 채우기",
+   "note": "3/4 문제 · 첫 문제 몰라요 낱말 · #1 정답→correct · #2 틀린 보기→wrong · #3 보기에 정답 'broke out' 없음 (hosted / accomplished / invaded / deve",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 빈칸 채우기",
+    "status": "BLOCKED",
+    "note": "3/4 문제 · 첫 문제 몰라요 낱말 · #1 정답→correct · #2 틀린 보기→wrong · #3 보기에 정답 'broke out' 없음 (hosted / accomplished / invaded / developed) · 결과 'null' · 탭 'Step 2 · 단어 1/3' · 다시 풀기 → 새 문제(data-order 2)"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a8-3",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:56:15.160Z",
+   "kind": "화면 글 없음",
+   "item": "content 기대 35 / 있음 34 / 없음 1",
+   "note": "[\"word-card: be referred to as | 표현 | ~라고 불리다 | 추석 is the biggest nationa\"]",
+   "record": {
+    "expected": 35,
+    "found": 34,
+    "missing": [
+     "word-card: be referred to as | 표현 | ~라고 불리다 | 추석 is the biggest nationa"
+    ]
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a8-3",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:56:15.160Z",
+   "kind": "FAIL",
+   "item": "adult words · Step 2 · 카드 수",
+   "note": "카드 6 · 데이터 7",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 카드 수",
+    "status": "FAIL",
+    "note": "카드 6 · 데이터 7"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a8-3",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:56:15.160Z",
+   "kind": "FAIL",
+   "item": "adult words · Step 2 · 뜻 보기 · 몰라요",
+   "note": "카드 1 'be referred to as' — 누르기 전 뜻 가림 · 누른 뒤 '추수감사절' (데이터 '~라고 불리다') · 품사 '명사' · 몰라요 → data-mark unknown",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 뜻 보기 · 몰라요",
+    "status": "FAIL",
+    "note": "카드 1 'be referred to as' — 누르기 전 뜻 가림 · 누른 뒤 '추수감사절' (데이터 '~라고 불리다') · 품사 '명사' · 몰라요 → data-mark unknown"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a8-3",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:56:15.160Z",
+   "kind": "FAIL",
+   "item": "adult words · Step 2 · 낱말 소리 = 그 낱말",
+   "note": "요청 /audio/azure-ava/v1/c-f91c432a12614d71.mp3 · 기대 /audio/azure-ava/v1/h-a39467aa5ffa884b.mp3 · PASS",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 낱말 소리 = 그 낱말",
+    "status": "FAIL",
+    "note": "요청 /audio/azure-ava/v1/c-f91c432a12614d71.mp3 · 기대 /audio/azure-ava/v1/h-a39467aa5ffa884b.mp3 · PASS"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  },
+  {
+   "course": "ADULT",
+   "lesson": "a8-3",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:56:15.160Z",
+   "kind": "BLOCKED",
+   "item": "adult words · Step 2 · 빈칸 채우기",
+   "note": "1/5 문제 · 첫 문제 몰라요 낱말 · #1 보기에 정답 'referred to as' 없음 (Thanksgiving / offering / tombs / relatives) · 결과 'null' · 탭 'Step",
+   "record": {
+    "feature": "adult words",
+    "item": "Step 2 · 빈칸 채우기",
+    "status": "BLOCKED",
+    "note": "1/5 문제 · 첫 문제 몰라요 낱말 · #1 보기에 정답 'referred to as' 없음 (Thanksgiving / offering / tombs / relatives) · 결과 'null' · 탭 'Step 2 · 단어 0/6' · 다시 풀기 → 새 문제(data-order 0)"
+   },
+   "cause": "원인 추정(강한 정황): 기대(데이터)가 운영보다 앞섬 — 작업 트리의 그때 커밋 안 된 content/lessons/adult/<강의>.json(이후 8cc38a87 로 커밋 · 22:10 KST) 이 이 방문 직전(20:50 KST)에 바뀜(낱말 1개 추가 · 줄 나눔 바뀜). 데스크톱 기록(15:17~17:06)은 바뀌기 전이라 PASS. 운영 화면 쪽 문제로 단정 못 함 — 운영 코드 · 내용이 이 파일과 같아진 뒤 다시 돌려야 함"
+  }
+ ],
+ "refLines": [
+  {
+   "course": "GRAMMAR I",
+   "lesson": "gh1-073",
+   "screen": "mobile",
+   "file": "grammar1-rc2-mobile-1of1.jsonl",
+   "at": "2026-10-05T12:09:14.907Z",
+   "kind": "요청 실패(네트워크)",
+   "item": "events.failed",
+   "note": "\"net::ERR_INTERNET_DISCONNECTED\""
+  },
+  {
+   "course": "GRAMMAR I",
+   "lesson": "gh1-068",
+   "screen": "small",
+   "file": "grammar1-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:09:08.196Z",
+   "kind": "요청 실패(네트워크)",
+   "item": "events.failed",
+   "note": "\"net::ERR_ADDRESS_UNREACHABLE\""
+  },
+  {
+   "course": "GRAMMAR I",
+   "lesson": "gh1-068",
+   "screen": "small",
+   "file": "grammar1-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:09:08.196Z",
+   "kind": "연결 실패로 따로(소리)",
+   "item": "audio · Step 2 ▶ 문장 듣기 #0",
+   "note": "연결 실패(net::ERR_ADDRESS_UNREACHABLE) — clip error 4 | net::ERR_ADDRESS_UNREACHABLE"
+  },
+  {
+   "course": "LISTENING",
+   "lesson": "d091",
+   "screen": "small",
+   "file": "ld-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:09:10.664Z",
+   "kind": "요청 실패(네트워크)",
+   "item": "events.failed",
+   "note": "\"net::ERR_INTERNET_DISCONNECTED\""
+  },
+  {
+   "course": "LISTENING",
+   "lesson": "d091",
+   "screen": "small",
+   "file": "ld-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:09:10.664Z",
+   "kind": "요청 실패(네트워크)",
+   "item": "events.failed",
+   "note": "\"net::ERR_INTERNET_DISCONNECTED\""
+  },
+  {
+   "course": "LISTENING",
+   "lesson": "d091",
+   "screen": "small",
+   "file": "ld-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:09:10.664Z",
+   "kind": "연결 실패로 따로(소리)",
+   "item": "audio · Step 2 · 문장 2 ▶ 듣기",
+   "note": "연결 실패(net::ERR_INTERNET_DISCONNECTED) — clip error 4 | net::ERR_INTERNET_DISCONNECTED"
+  },
+  {
+   "course": "LISTENING",
+   "lesson": "d091",
+   "screen": "small",
+   "file": "ld-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:09:10.664Z",
+   "kind": "연결 실패로 따로(소리)",
+   "item": "audio · Step 2 · 문장 3 ▶ 듣기",
+   "note": "연결 실패(net::ERR_INTERNET_DISCONNECTED) — clip error 4 | net::ERR_INTERNET_DISCONNECTED"
+  }
+ ],
+ "audioRetest": [
+  {
+   "course": "adult",
+   "lesson": "a3-3",
+   "screen": "desktop",
+   "file": "adult-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T07:07:49.737Z",
+   "item": "Step 4 ▶ play",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "adult",
+   "lesson": "a3-3",
+   "screen": "desktop",
+   "file": "adult-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T07:07:49.737Z",
+   "item": "Step 4 ▶ play",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  },
+  {
+   "course": "adult",
+   "lesson": "a8-3",
+   "screen": "small",
+   "file": "adult-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:56:15.160Z",
+   "item": "Step 4 ▶ play",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  },
+  {
+   "course": "grammar1",
+   "lesson": "gh1-068",
+   "screen": "small",
+   "file": "grammar1-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:09:08.196Z",
+   "item": "Step 2 ▶ 문장 듣기 #0",
+   "note": "연결 실패(net::ERR_ADDRESS_UNREACHABLE) — clip error 4",
+   "connectionFailure": true
+  },
+  {
+   "course": "ld",
+   "lesson": "d056",
+   "screen": "desktop",
+   "file": "ld-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T06:33:32.460Z",
+   "item": "Step 5 · 다시 듣기 ▶ He specialized in children's shows, but he also put on plays",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "ld",
+   "lesson": "d056",
+   "screen": "desktop",
+   "file": "ld-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T06:33:32.460Z",
+   "item": "Step 5 · 다시 듣기 ▶ As a matter of fact, older people sometimes seemed to enjoy ",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "ld",
+   "lesson": "d106",
+   "screen": "desktop",
+   "file": "ld-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T06:46:54.686Z",
+   "item": "Step 5 · 다시 듣기 ▶ You can't teach an old dog new tricks. While the cat's away,",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "ld",
+   "lesson": "d161",
+   "screen": "desktop",
+   "file": "ld-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T07:01:51.932Z",
+   "item": "Step 5 · 다시 듣기 ▶ Chess, card playing, and dancing are forms of indoor recreat",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "ld",
+   "lesson": "d161",
+   "screen": "desktop",
+   "file": "ld-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T07:01:51.932Z",
+   "item": "Step 5 · 다시 듣기 ▶ It doesn't matter whether we play a fast game of ping pong, ",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "ld",
+   "lesson": "d226",
+   "screen": "desktop",
+   "file": "ld-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T07:18:46.166Z",
+   "item": "Step 1 · 블라인드 ▶ ① 마더 구스 동요는 아이들이 즐기면서 영어 발음과 리듬을 익히기에 좋다",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "ld",
+   "lesson": "d246",
+   "screen": "desktop",
+   "file": "ld-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T07:24:02.130Z",
+   "item": "Step 1 · 블라인드 ▶ ① 자기 편 기사의 말조차 알아듣기 어려웠다",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "ld",
+   "lesson": "d106",
+   "screen": "mobile",
+   "file": "ld-rc2-mobile-1of1.jsonl",
+   "at": "2026-10-05T12:07:46.764Z",
+   "item": "Step 2 ▶ play",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "ld",
+   "lesson": "d091",
+   "screen": "small",
+   "file": "ld-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:09:10.664Z",
+   "item": "Step 2 · 문장 2 ▶ 듣기",
+   "note": "연결 실패(net::ERR_INTERNET_DISCONNECTED) — clip error 4",
+   "connectionFailure": true
+  },
+  {
+   "course": "ld",
+   "lesson": "d091",
+   "screen": "small",
+   "file": "ld-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:09:10.664Z",
+   "item": "Step 2 · 문장 3 ▶ 듣기",
+   "note": "연결 실패(net::ERR_INTERNET_DISCONNECTED) — clip error 4",
+   "connectionFailure": true
+  },
+  {
+   "course": "ld",
+   "lesson": "d106",
+   "screen": "small",
+   "file": "ld-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:10:41.839Z",
+   "item": "Step 2 ▶ play",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "ld",
+   "lesson": "d226",
+   "screen": "small",
+   "file": "ld-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:22:34.232Z",
+   "item": "Step 1 · 블라인드 ▶ ① 마더 구스 동요는 아이들이 즐기면서 영어 발음과 리듬을 익히기에 좋다",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  },
+  {
+   "course": "ld",
+   "lesson": "d246",
+   "screen": "small",
+   "file": "ld-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T12:24:42.660Z",
+   "item": "Step 1 · 블라인드 ▶ ① 자기 편 기사의 말조차 알아듣기 어려웠다",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  },
+  {
+   "course": "student",
+   "lesson": "s1-4",
+   "screen": "desktop",
+   "file": "student-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T06:21:00.245Z",
+   "item": "Step 2 · 탭 딕테이션 0/3 ▶ play",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "student",
+   "lesson": "s1-4",
+   "screen": "desktop",
+   "file": "student-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T06:21:00.245Z",
+   "item": "Step 2 · 탭 딕테이션 0/3 ▶ play",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  },
+  {
+   "course": "student",
+   "lesson": "s15-3",
+   "screen": "desktop",
+   "file": "student-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T06:46:22.740Z",
+   "item": "Step 2 · 탭 딕테이션 0/4 ▶ players",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "student",
+   "lesson": "s15-3",
+   "screen": "desktop",
+   "file": "student-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T06:46:22.740Z",
+   "item": "Step 2 · 탭 딕테이션 0/4 ▶ players",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  },
+  {
+   "course": "student",
+   "lesson": "s7-1",
+   "screen": "desktop",
+   "file": "student-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T07:33:44.549Z",
+   "item": "Step 2 · 탭 딕테이션 0/5 ▶ play",
+   "note": "no playing event",
+   "connectionFailure": false
+  },
+  {
+   "course": "student",
+   "lesson": "s7-1",
+   "screen": "desktop",
+   "file": "student-rc2-desktop-1of1.jsonl",
+   "at": "2026-10-05T07:33:44.549Z",
+   "item": "Step 2 · 탭 딕테이션 0/5 ▶ play",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  },
+  {
+   "course": "student",
+   "lesson": "s15-3",
+   "screen": "mobile",
+   "file": "student-rc2-mobile-1of1.jsonl",
+   "at": "2026-10-05T10:58:41.544Z",
+   "item": "Step 2 ▶ players",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  },
+  {
+   "course": "student",
+   "lesson": "s8-1",
+   "screen": "mobile",
+   "file": "student-rc2-mobile-1of1.jsonl",
+   "at": "2026-10-05T11:11:59.335Z",
+   "item": "Step 2 ▶ play",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  },
+  {
+   "course": "student",
+   "lesson": "s8-2",
+   "screen": "mobile",
+   "file": "student-rc2-mobile-1of1.jsonl",
+   "at": "2026-10-05T11:12:28.165Z",
+   "item": "Step 2 ▶ play",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  },
+  {
+   "course": "student",
+   "lesson": "s9-1",
+   "screen": "mobile",
+   "file": "student-rc2-mobile-1of1.jsonl",
+   "at": "2026-10-05T11:13:29.143Z",
+   "item": "Step 2 ▶ playground",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  },
+  {
+   "course": "student",
+   "lesson": "s8-2",
+   "screen": "small",
+   "file": "student-rc2-small-1of1.jsonl",
+   "at": "2026-10-05T11:24:35.290Z",
+   "item": "Step 2 ▶ play",
+   "note": "no audio request within 10 s",
+   "connectionFailure": false
+  }
+ ]
+}
