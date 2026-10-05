@@ -75,6 +75,14 @@ const RECENT_KEY = "kig:progress:recent";
 /** { [course]: RecentLesson } — RECENT_KEY keeps only the one lesson opened last, in any course */
 const RECENT_BY_COURSE_KEY = "kig:progress:recent:v2";
 const PENDING_KEY = "kig:student:pending:v1";
+/**
+ * 2026-10-05 (회귀 점검 1002 A2): the STUDENT lessons the server's record had as done when it was last applied on this device
+ * (JSON list of lesson ids). The studentProgress effect writes the server's completions into COMPLETED_KEY; without this list,
+ * the next page load read those copies back as the device's own old completions and sent them as `legacyCompletedLessonIds` —
+ * a lesson the learner had un-completed on another device came back as done. A completion in this list is the server's, never
+ * an old one to carry over.
+ */
+const STUDENT_SERVER_COPY_KEY = "kig:student:server-completed:v1";
 /** ADULT's queue — the same records as STUDENT's, in a key of its own */
 const ADULT_PENDING_KEY = "kig:adult:pending:v1";
 
@@ -238,9 +246,19 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       if (savedCompleted) {
         const parsed = JSON.parse(savedCompleted) as Record<string, boolean>;
         setCompleted(parsed);
+        // old completions = this device's own, not the copies of the server's record (STUDENT_SERVER_COPY_KEY — A2)
+        let serverCopy: string[] = [];
+        try {
+          const raw = JSON.parse(window.localStorage.getItem(STUDENT_SERVER_COPY_KEY) || "[]");
+          if (Array.isArray(raw)) serverCopy = raw.filter((id): id is string => typeof id === "string");
+        } catch {
+          // a broken list counts as none
+        }
+        const fromServer = new Set(serverCopy);
         legacyStudentIdsRef.current = Object.keys(parsed)
           .filter((key) => key.startsWith("student:") && parsed[key])
-          .map((key) => key.substring("student:".length));
+          .map((key) => key.substring("student:".length))
+          .filter((lessonId) => !fromServer.has(lessonId));
       }
 
       const savedBookmarks = window.localStorage.getItem(BOOKMARKS_KEY);
@@ -274,11 +292,15 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       for (const key of Object.keys(next)) {
         if (key.startsWith("student:")) delete next[key];
       }
+      const fromServer: string[] = [];
       for (const [lessonId, state] of Object.entries(studentProgress.lessons)) {
-        if (state.completed) next[`student:${lessonId}`] = true;
+        if (!state.completed) continue;
+        next[`student:${lessonId}`] = true;
+        fromServer.push(lessonId);
       }
       try {
         window.localStorage.setItem(COMPLETED_KEY, JSON.stringify(next));
+        window.localStorage.setItem(STUDENT_SERVER_COPY_KEY, JSON.stringify(fromServer));
       } catch {
         // ignore
       }

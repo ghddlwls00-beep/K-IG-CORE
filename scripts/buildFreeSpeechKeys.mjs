@@ -172,11 +172,16 @@ if (CHECK) {
   let stale = false;
   for (const [file, json, what] of outputs) {
     const current = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
-    if (current !== json) {
+    // 회귀 점검 1002 T14 (2026-10-05): a Windows checkout (core.autocrlf) holds the same file with CRLF line ends — the keys are
+    // the same, so only the line ends are evened out before comparing (--break=crlf-strict: the old exact compare ·
+    // --break=one-key: the built text with one key changed — a real difference must still say 'stale')
+    const want = process.argv.includes("--break=one-key") ? json.replace(/"([0-9a-z]+)-/, '"$1x-') : json;
+    const sameText = process.argv.includes("--break=crlf-strict") ? current === want : current.replace(/\r\n/g, "\n") === want;
+    if (!sameText) {
       console.error(`${path.relative(ROOT, file)} is stale — run: node scripts/buildFreeSpeechKeys.mjs`);
       stale = true;
     } else {
-      console.log(`${path.relative(ROOT, file)} is current (${what})`);
+      console.log(`${path.relative(ROOT, file)} is current (${what})${current !== json ? " — CRLF line ends only" : ""}`);
     }
   }
   if (stale) process.exit(1);

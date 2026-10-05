@@ -367,11 +367,13 @@ export function PassoffLearningView({
   }, [finish]);
 
   // a lesson this device already marked complete, its five steps done again ('처음부터 다시 하기'): the bar says '학습 완료함'
-  // and has nothing to press, so the completion goes once more by itself — the way back for one the server lost
+  // and has nothing to press, so the completion goes once more by itself — the way back for one the server lost. The same
+  // for a lesson the server counts but this device never finished (finished on another device — the bar says '학습 완료함'
+  // from the server's record too since 회귀 점검 1002 A4): its five steps done here go into this device's record as well
   useEffect(() => {
     if (!restored || !acted.current || !allDone || work.lessonDone) return;
-    if (isCompleted(PASSOFF_COURSE, lessonId)) finish();
-  }, [restored, allDone, work.lessonDone, finish, isCompleted, lessonId]);
+    if (isCompleted(PASSOFF_COURSE, lessonId) || countedIds?.has(lessonId)) finish();
+  }, [restored, allDone, work.lessonDone, finish, isCompleted, countedIds, lessonId]);
 
   // '이 강의 학습 완료' pressed in the end bar (open once the steps are done — see the gate below): the lesson is finished
   useEffect(() => {

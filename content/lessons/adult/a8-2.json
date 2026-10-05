@@ -132,19 +132,19 @@
               "end": 22,
               "choices": [
                 "bow",
-                "celebrate",
-                "ritual"
+                "ritual",
+                "upcoming"
               ]
             },
             {
               "word": "ritual",
               "say": "ritual",
-              "meaning": "의식, 의례",
+              "meaning": "의식의, 의례의",
               "pos": "형용사",
               "start": 25,
               "end": 31,
               "choices": [
-                "traditional",
+                "privilege",
                 "upcoming",
                 "in honor of"
               ]
@@ -170,9 +170,9 @@
               "start": 57,
               "end": 66,
               "choices": [
-                "elders",
                 "blessings",
-                "tombs"
+                "tombs",
+                "rice cake"
               ]
             }
           ]
@@ -221,8 +221,8 @@
               "end": 62,
               "choices": [
                 "blessings",
-                "tombs",
-                "relatives"
+                "gesture",
+                "rice cake"
               ]
             },
             {
@@ -293,8 +293,8 @@
               "end": 61,
               "choices": [
                 "rice cake",
-                "custom",
-                "memorial ceremony"
+                "memorial ceremony",
+                "Thanksgiving"
               ]
             },
             {

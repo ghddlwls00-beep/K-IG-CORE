@@ -32,6 +32,15 @@
  *     — --break=count-break-records 가 옛 동작
  *   ⑨ '학습 단위 · 확인함' 은 이 표가 센 기록(강의마다 데스크톱 가장 늦은 기록의 content)에서 — 과정별(PASS-OFF 포함)로 적음.
  *     전에는 다른 묶음(out/features-summary.json)에서 읽어 없으면 '?' — --break=units-from-summary 가 옛 동작
+ *
+ * 회귀 점검 1002 고침 (fix-tools, 2026-10-05 — 결과.md 2장 도구 쪽 틀림):
+ *   ⑩ T3 GRAMMAR 2단계(빈칸) · 4단계(종합 평가) NA 는 '다른 도구가 봄' — coveredBy check-grammar-cloze · check-grammar-exam(옛 기록은 note 로
+ *     알아봄). 그 도구의 결과 파일(--cloze-from 기본 out/grammar-cloze.json · --exam-from 기본 out/grammar-exam.json)에 **그 강의가 PASS** 로
+ *     있을 때만 덮임 · 그 강의가 FAIL 이면 강의 FAIL · 파일에 없으면 BLOCKED(사유와 함께). --break=no-external-cover: 옛 동작(BLOCKED 236).
+ *   ⑪ T6 점검 기계 인터넷이 끊긴 방문(events.failed 의 ERR_INTERNET_DISCONNECTED 등)의 소리 FAIL(클립 오류 · 브라우저 음성)은 강의 FAIL 이 아니라
+ *     '연결 실패로 따로' 셈(표 아래 한 줄 — recheck-audio 로 다시 누를 것). 다른 글의 클립은 그대로 FAIL. --break=offline-as-fail: 옛 동작.
+ *   ⑫ T5 READING 'WPM = words ÷ the timed minutes' FAIL 은 고치기 전 drive-reading(driverRev 에 -w1005 없음) 기록에서 다시 판정 — 기록된 ms(1ms
+ *     반올림)의 ±0.5ms 안에서 나올 수 있는 WPM 이면 '해결된 도구 탓'(lib/wpm-window.cjs). 그 밖은 FAIL 그대로. --break=wpm-exact: 옛 동작.
  */
 const fs = require("fs");
 const path = require("path");
@@ -46,7 +55,8 @@ if (!SINCE && !FILES) {
 }
 if (SINCE && Number.isNaN(Date.parse(SINCE))) { console.error(`build-coverage: --since 시각을 읽을 수 없음: ${SINCE}`); process.exit(1); }
 // fixes-0d (회귀 점검 1002 단계 0 마무리, 2026-10-04): device-only-blocks · count-break-records · units-from-summary 가 고치기 전 동작
-if (BREAK && !["ignore-blocked", "merge-all", "old-dictation-rule", "grammar-any-note", "no-adult", "no-passoff", "device-only-blocks", "count-break-records", "units-from-summary"].includes(BREAK)) { console.error(`build-coverage: 모르는 --break=${BREAK}`); process.exit(2); }
+// 회귀 점검 1002 고침 (2026-10-05): no-external-cover · offline-as-fail · wpm-exact are the rules before T3 · T6 · T5 (see ⑩ ⑪ ⑫)
+if (BREAK && !["ignore-blocked", "merge-all", "old-dictation-rule", "grammar-any-note", "no-adult", "no-passoff", "device-only-blocks", "count-break-records", "units-from-summary", "no-external-cover", "offline-as-fail", "wpm-exact"].includes(BREAK)) { console.error(`build-coverage: 모르는 --break=${BREAK}`); process.exit(2); }
 const DATA = path.join(__dirname, "../out");                       // the other audit results the item table reads
 const OUT = path.resolve(argOf("--out-dir", DATA));                // where coverage.json / .md are written
 const FEAT = path.resolve(argOf("--features-dir", path.join(DATA, "features")));
@@ -171,6 +181,9 @@ const LEGACY_TILE_NA = /^tile-based answering — checked by grade-offline\.cjs 
 const asNa = (check, rec) => {
   if (check.status === "NA") {
     const note = String(check.note || "");
+    // ⑩ another tool's run covers it (its result file — not this record)
+    const tool = BREAK === "no-external-cover" ? null : GRAMMAR_NA_TOOL(check);
+    if (tool) return { kind: "external", tool, legacy: !check.coveredBy };
     if (check.coveredBy) return { kind: "covered", coveredBy: check.coveredBy };
     if (check.absent && check.absentEvidence) return { kind: "absent", feature: check.feature };
     if (check.sampledBy || /exercised on the sampled lessons/.test(note)) return { kind: "sampled" };
@@ -181,7 +194,69 @@ const asNa = (check, rec) => {
   if (!rec.driverRev && check.status === "BLOCKED" && check.feature === "graded input" && LEGACY_TILE_NA.test(String(check.note || ""))) return { kind: "covered", coveredBy: "tile dictation", legacy: true };
   return null;
 };
-const isReloadTest = (c) => c.status === "PASS" && ((c.feature === "bookmark" && /reload/.test(String(c.item || ""))) || (c.feature === "completion" && /reload/.test(String(c.item || ""))));
+/**
+ * ⑩ T3 — the checks that are another TOOL's run, not a line of the same record. Each reads that tool's own result file and answers
+ * for one lesson: 'pass' · 'fail' (the tool found a problem on this lesson — a product FAIL) · null (no usable result → BLOCKED).
+ * A file made by a deliberate break, by the before-fix copy (--old) or against another address is not used.
+ */
+const GRAMMAR_NA_TOOL = (check) => {
+  if (check.feature !== "graded input" || check.status !== "NA") return null;
+  if (check.coveredBy) return EXTERNAL_COVERS[check.coveredBy] ? check.coveredBy : null;
+  const note = String(check.note || "");
+  // drive-generic before -f1005 wrote the tool's name in the note only: 'GRAMMAR Step 2 does not grade … — Step 2 (one word per
+  // blank) is checked by check-grammar-cloze.cjs, Step 4 (all rows on '제출') by check-grammar-exam.cjs; this tool checks Step 1'
+  if (!/^GRAMMAR Step \d+ does not grade a typed sentence per row/.test(note)) return null;
+  const step = (String(check.item || "").match(/^step (\d+)$/) || [])[1];
+  return step === "2" ? "check-grammar-cloze" : step === "4" ? "check-grammar-exam" : null;
+};
+const readEvidence = (p) => { try { return JSON.parse(fs.readFileSync(path.resolve(p), "utf8")); } catch { return null; } };
+const CLOZE_FROM = argOf("--cloze-from", path.join(DATA, "grammar-cloze.json"));
+const EXAM_FROM = argOf("--exam-from", path.join(DATA, "grammar-exam.json"));
+const EXTERNAL_COVERS = {
+  "check-grammar-cloze": (() => {
+    const j = readEvidence(CLOZE_FROM);
+    const usable = j && j.tool === "check-grammar-cloze" && j.old === false && Array.isArray(j.lessons);
+    const lessons = new Set(usable ? j.lessons : []), bad = new Set(usable ? j.problemLessons || [] : []);
+    return {
+      file: CLOZE_FROM, at: j ? j.at : null, usable: Boolean(usable), why: !j ? "결과 파일 없음" : !usable ? "쓸 수 없는 결과(--old 실행이거나 옛 꼴)" : `exit ${j.exit} · 문장 ${j.sentences} · 강의 ${lessons.size}${j.rev ? ` · ${j.rev}${j.dirty ? "+고친 파일" : ""}` : ""}`,
+      judge: (course, id) => (!usable ? null : bad.has(`${course}/${id}`) ? "fail" : lessons.has(`${course}/${id}`) ? "pass" : null),
+    };
+  })(),
+  "check-grammar-exam": (() => {
+    const j = readEvidence(EXAM_FROM);
+    const usable = j && Array.isArray(j.results) && !j.broken && j.allAlts !== undefined;
+    const by = new Map(usable ? j.results.map((r) => [`${r.course}/${r.id}`, r]) : []);
+    return {
+      file: EXAM_FROM, at: j ? j.at : null, base: j ? j.base : null, usable: Boolean(usable), why: !j ? "결과 파일 없음" : !usable ? "쓸 수 없는 결과(깨기 실행이거나 옛 꼴)" : `${j.lessons}쪽 · ${JSON.stringify(j.counts)}`,
+      judge: (course, id, rec) => {
+        if (!usable || (rec && rec.base && j.base && rec.base !== j.base)) return null;
+        const r = by.get(`${course}/${id}`);
+        return !r ? null : r.status === "PASS" ? "pass" : r.status === "FAIL" ? "fail" : null;
+      },
+    };
+  })(),
+};
+const externalUse = {};   // tool → { covered, fail, missing }
+/** ⑪ T6 — the audit machine's connection, not a server answer (drive-generic OFFLINE_ERR — the same list) */
+const OFFLINE_ERR = /ERR_INTERNET_DISCONNECTED|ERR_NETWORK_CHANGED|ERR_NETWORK_IO_SUSPENDED|ERR_NAME_NOT_RESOLVED|ERR_ADDRESS_UNREACHABLE/;
+const offlineOf = (rec) => ((rec.events && rec.events.failed) || []).map((f) => String(typeof f === "string" ? f : (f && (f.errorText || f.error)) || "")).find((f) => OFFLINE_ERR.test(f)) || null;
+const LOAD_FAILURE = /^clip error|^browser TTS fallback|^연결 실패/;
+const offlineAudio = { lines: 0, lessons: new Set(), errors: new Set() };
+/** ⑫ T5 — READING's WPM line, written before drive-reading -w1005, judged again from the record (words: Step 4 meta · ms: the stored run) */
+const WPM = require("./lib/wpm-window.cjs");
+let readingWpm = null;
+const WPM_ACTION = "WPM = words ÷ the timed minutes";
+function wpmRejudge(rec, check) {
+  if (BREAK === "wpm-exact" || rec.course !== "reading" || check.feature !== "wpm" || check.action !== WPM_ACTION || /-w1005/.test(String(rec.driverRev || ""))) return null;
+  if (!readingWpm) { const { loadTs, REPO } = require("../../qa-2026-09-15/scripts/tsload.cjs"); readingWpm = loadTs(path.join(REPO, "src/lib/readingLearning.ts")).wordsPerMinute; }
+  const meta = (rec.checks || []).find((c) => c.feature === "step4" && /^Step 4 meta/.test(String(c.action || "")));
+  const run = (rec.checks || []).find((c) => c.feature === "wpm" && c.item === check.item && /the run is stored/.test(String(c.action || "")));
+  const words = Number((String(meta && meta.expected || "").match(/^(\d+)단어/) || [])[1]);
+  const m = String(run && run.actual || "").match(/^(\d+) WPM · (\d+(?:\.\d+)?) ms$/);
+  if (!words || !m || Number(check.actual) !== Number(m[1])) return null;
+  return WPM.within(readingWpm, words, Number(m[2]), Number(m[1])) ? { why: "READING WPM 을 반올림된 시간(1ms)으로 다시 셈 — ±0.5ms 안에서 나오는 값이라 맞음 (T5 · lib/wpm-window)" } : null;
+}
+const isReloadTest = (c) => c.status === "PASS" &&((c.feature === "bookmark" && /reload/.test(String(c.item || ""))) || (c.feature === "completion" && /reload/.test(String(c.item || ""))));
 
 /**
  * The same for audio. LISTENING's STEP 3 "연음 & 소리 클리닉" speaks the preset phrases of
@@ -272,6 +347,18 @@ for (const r of BREAK === "merge-all" ? everyVisit : latestVisit.values()) {
         continue;
       }
       if (na.kind === "sampled") { s.sampled++; (e.sampledNa ||= []).push({ viewport: r.viewport, feature: c.feature, item: clip(c.item, 60) }); continue; }
+      if (na.kind === "external") {
+        // ⑩ the tool's own result for THIS lesson: pass → covered · fail → the lesson FAILs · nothing → BLOCKED with the reason
+        const X = EXTERNAL_COVERS[na.tool];
+        const verdict = X.judge(course, id, r);
+        const u = (externalUse[na.tool] ||= { covered: 0, fail: 0, missing: 0, legacyNote: 0 });
+        if (na.legacy) u.legacyNote++;
+        if (verdict === "pass") { u.covered++; s.covered++; continue; }
+        if (verdict === "fail") { u.fail++; e.fails++; e.failWhy.push({ viewport: r.viewport, feature: c.feature, item: clip(c.item, 60), note: `${na.tool} 가 이 강의에서 문제를 찾음 (${path.basename(X.file)})` }); continue; }
+        u.missing++; s.uncovered++;
+        e.blockedWhy.push({ viewport: r.viewport, feature: c.feature, item: clip(c.item, 60), note: `NA(다른 도구 ${na.tool}) 인데 그 도구 결과에 이 강의 PASS 가 없음 (${X.usable ? "이 강의 없음" : X.why})` });
+        continue;
+      }
       // ⑤ covered only when the SAME record holds the covering check as PASS
       const covered = na.coveredBy && checks.some((x) => x !== c && x.feature === na.coveredBy && x.status === "PASS");
       s[covered ? "covered" : "uncovered"]++;
@@ -282,6 +369,9 @@ for (const r of BREAK === "merge-all" ? everyVisit : latestVisit.values()) {
     if (c.status === "FAIL") {
       const a = isArtifact(course, c, r);
       if (a) { (a.resolved ? e.artifacts : e.mustRedo).add(a.why); continue; }
+      // ⑫ T5: READING's WPM line from before the fix, judged again from the record itself
+      const wr = wpmRejudge(r, c);
+      if (wr) { e.artifacts.add(wr.why); (r.__wpmResolved ||= new Set()).add(`wpm${c.item ? `[${c.item}]` : ""} ${c.action}:`); continue; }
       e.fails++;
       e.failWhy.push({ viewport: r.viewport, feature: c.feature, item: clip(c.item, 60), note: clip(c.note, 120) });
     } else if (c.status === "BLOCKED") {
@@ -294,14 +384,21 @@ for (const r of BREAK === "merge-all" ? everyVisit : latestVisit.values()) {
       else if (BREAK !== "ignore-blocked") e.blockedWhy.push({ viewport: r.viewport, feature: c.feature, item: clip(c.item, 60), note: clip(c.note, 120) });
     }
   }
+  const offline = BREAK === "offline-as-fail" ? null : offlineOf(r);
   for (const a of r.audio || []) {
+    // ⑪ T6: a load failure on a visit whose connection dropped — counted apart (new records write it RETEST · offline already)
+    if (offline && (a.status === "FAIL" || a.offline) && LOAD_FAILURE.test(String(a.note || ""))) { offlineAudio.lines++; offlineAudio.lessons.add(`${COURSE_LABEL[course]} ${id} ${r.viewport}`); offlineAudio.errors.add(offline); continue; }
     if (a.status !== "FAIL") continue;
     const art = isAudioArtifact(course, a);
     if (art) { (art.resolved ? e.artifacts : e.mustRedo).add(art.why); continue; }
     e.fails++;
     e.failWhy.push({ viewport: r.viewport, feature: "audio", item: clip(a.control, 60), note: clip(a.note, 120) });
   }
-  for (const p of r.problems || []) { e.fails++; e.failWhy.push({ viewport: r.viewport, feature: "problem", item: "", note: clip(JSON.stringify(p), 160) }); }
+  for (const p of r.problems || []) {
+    // ⑫ the problem line drive-reading wrote for a FAIL that ⑫ settled above
+    if (r.__wpmResolved && [...r.__wpmResolved].some((pre) => String(p).startsWith(pre))) continue;
+    e.fails++; e.failWhy.push({ viewport: r.viewport, feature: "problem", item: "", note: clip(JSON.stringify(p), 160) });
+  }
 }
 
 const rows = [];
@@ -407,7 +504,8 @@ const items = [
 
 const selection = { since: SINCE, files: fileFilter ? [...fileFilter] : null, break: BREAK || null, ...counted };
 const deviceOnlyOut = Object.fromEntries(Object.entries(deviceOnly).map(([why, d]) => [why, { records: d.records, lessons: d.lessons.size, viewports: [...d.viewports].sort(), courses: [...d.courses] }]));
-const out = { at: new Date().toISOString(), selection, naStats, lessons: { rows, totals, blockedReasons, detail: lessonDetail }, deviceOnly: deviceOnlyOut, unitsByCourse, items };
+const externalOut = Object.fromEntries(Object.entries(EXTERNAL_COVERS).map(([t, X]) => [t, { file: X.file, at: X.at, usable: X.usable, why: X.why, use: externalUse[t] || null }]));
+const out = { at: new Date().toISOString(), selection, naStats, lessons: { rows, totals, blockedReasons, detail: lessonDetail }, deviceOnly: deviceOnlyOut, external: externalOut, offlineAudio: { lines: offlineAudio.lines, lessons: [...offlineAudio.lessons], errors: [...offlineAudio.errors] }, unitsByCourse, items };
 fs.mkdirSync(OUT, { recursive: true });
 fs.writeFileSync(path.join(OUT, "coverage.json"), JSON.stringify(out, null, 1));
 
@@ -425,6 +523,9 @@ md.push(`| **합계** | **${COURSE_TABLE.reduce((a, c) => a + c.baselineMain, 0)
 if (NOT_COUNTED.length) md.push(`\n**이 표가 아직 세지 않는 과정**: ${NOT_COUNTED.join(" · ")} — 그 과정의 기록 ${counted.notCounted}건은 셈에서 뺌(build-coverage COURSE_TABLE 에 한 줄 더하면 셈)`);
 // fixes-0d: 표 아래 한 줄씩 — 실기기 몫(강의 BLOCKED 로 안 셈) · 깨기 기록(셈에서 뺌)
 md.push(`\n**실기기 몫(강의 판정에 안 셈)**: ${Object.keys(deviceOnlyOut).length ? Object.entries(deviceOnlyOut).map(([why, d]) => `${why} — 기록 ${d.records}(강의 ${d.lessons} · 화면 ${d.viewports.join("·")})`).join(" / ") : "0"}${BREAK === "device-only-blocks" ? " (깨기 device-only-blocks: 옛 동작 — 강의 BLOCKED 로 셈)" : ""}`);
+// ⑩ ⑪: which other tool's result covered which NA · the sound lines of visits whose connection dropped
+md.push(`**다른 도구가 본 NA(⑩ — 그 도구 결과 파일로)**: ${BREAK === "no-external-cover" ? "깨기 no-external-cover — 옛 동작: 쓰지 않음" : Object.keys(externalUse).length ? Object.entries(externalUse).map(([t, u]) => `${t} — 덮임 ${u.covered} · 그 도구가 FAIL ${u.fail} · 결과에 없음 ${u.missing}${u.legacyNote ? ` (옛 기록 note 로 알아봄 ${u.legacyNote})` : ""} · ${path.basename(EXTERNAL_COVERS[t].file)} ${EXTERNAL_COVERS[t].at || "?"} · ${EXTERNAL_COVERS[t].why}`).join(" / ") : "0"}`);
+md.push(`**연결 실패로 따로(⑪ — 강의 판정에 안 셈 · recheck-audio 로 다시 누를 것)**: ${BREAK === "offline-as-fail" ? "깨기 offline-as-fail — 옛 동작: FAIL 로 셈" : offlineAudio.lines ? `소리 줄 ${offlineAudio.lines} — ${[...offlineAudio.lessons].join(" · ")} (${[...offlineAudio.errors].join(" · ")})` : "0"}`);
 md.push(`**깨기 기록(셈에서 뺌)**: ${BREAK === "count-break-records" ? "깨기 count-break-records — 옛 동작: 셈에 넣음" : `${counted.breakRecords}건${counted.breakFiles.length ? ` (${counted.breakFiles.join(", ")})` : ""} · 로컬(localhost) 기록 ${counted.localRecords || 0}건`}`);
 md.push("");
 if (Object.keys(blockedReasons).length) {

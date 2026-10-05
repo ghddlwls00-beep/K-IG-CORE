@@ -3,13 +3,13 @@
 import { useRef, useState } from "react";
 import type { PassoffProduceItem } from "@/lib/passoffTypes";
 import { gradeProduce, hasHangul, isCorrect, writingIssues, type DiffToken, type ProduceResult } from "@/lib/passoffGrading";
-import { contrastPool, firstLetters, wordTiles } from "@/lib/passoffLesson";
+import { contrastPool, firstLetters, joinNameTokens, wordTiles } from "@/lib/passoffLesson";
 import { generateWordBank, verifyAnyWordSequence, type WordTile } from "@/lib/listeningUtils";
 import { notePassoffAttempt, strongerHelp, type PassoffAnswerMode, type PassoffAttempt, type PassoffHelp } from "@/lib/passoffLearning";
 import { MyAnswerReport } from "../learning/MyAnswerReport";
 import { VoiceSpeakingTester } from "../VoiceSpeakingTester";
 import { LESSON_REPORT_NOTE, useLessonReport } from "./lessonReport";
-import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, glossFor, gradedFor, tone, usePassoffLearner, type FontSize, type Speaker, type Gloss } from "./ui";
+import { Chip, FONT, PrimaryButton, SecondaryButton, SpeakButton, StudentTag, Verdict, glossFor, gradedFor, namesFor, tone, usePassoffLearner, type FontSize, type Speaker, type Gloss } from "./ui";
 
 export interface ComposeOutcome {
   /** right at the first try of this presentation (no help can come before a first try) */
@@ -116,6 +116,11 @@ export function ComposeCard({
   const lessonReport = useLessonReport();
   const gloss = glossFor(lessonId);
   const asWritten = gradedFor(lessonId);
+  // "영어 자판으로 바꿔 주세요" only for Hangul the grader will not read: a Korean word of the page copied from the screen
+  // ("He is 대한.") is read as the lesson spells it and graded right, so it is no reason to warn (회귀 점검 1002 A5)
+  const hangulLeft = (value: string) => hasHangul(asWritten(value));
+  // the page's Korean names of more than one English word — the marked answer draws each as one word (회귀 점검 1002 A7)
+  const names = namesFor(lessonId);
   // graded as it was in the check (the same grader, the same answer): a wrong answer opens the card on the ladder
   const [start] = useState<ProduceResult | null>(() => {
     if (!missed) return null;
@@ -262,13 +267,17 @@ export function ComposeCard({
             enterKeyHint="done"
             onChange={(e) => {
               setText(e.target.value);
-              setHangul(hasHangul(e.target.value));
+              // a word still being typed (ㄷ → 대 → 대하 → 대한) does not turn the warning on yet — it would flash on and off;
+              // it comes at the end of the composition. Turning it off needs no wait.
+              const left = hangulLeft(e.target.value);
+              if (!composing.current || !left) setHangul(left);
             }}
             onCompositionStart={() => {
               composing.current = true;
             }}
-            onCompositionEnd={() => {
+            onCompositionEnd={(e) => {
               composing.current = false;
+              setHangul(hangulLeft(e.currentTarget.value));
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
@@ -294,7 +303,7 @@ export function ComposeCard({
               onSuccess={(transcript) => {
                 setText(transcript);
                 setHeard(transcript);
-                setHangul(hasHangul(transcript));
+                setHangul(hangulLeft(transcript));
               }}
             />
             <div className="flex flex-wrap gap-2">
@@ -310,7 +319,7 @@ export function ComposeCard({
       {phase === "answer" && rung >= 1 && rung < 3 && result ? (
         <div className="flex flex-col gap-2 border-t border-line pt-3">
           <Verdict ok={false}>틀린 자리를 표시했어요. 고쳐서 다시 확인하세요.</Verdict>
-          <DiffLine tokens={result.diff} reveal={false} font={font} show={gloss} />
+          <DiffLine tokens={joinNameTokens(result.diff, names, item.en)} reveal={false} font={font} show={gloss} />
           <p className="text-caption text-ink-faint">빈 네모 = 빠진 낱말 · 물결 = 틀린 낱말 · 가운데 줄 = 필요 없는 낱말 · 점선 = 자리가 바뀐 낱말</p>
           {result.pattern ? <p className={`${FONT[font].text} text-ink`}>{gloss(result.pattern.hint)}</p> : null}
           {/* the grader's own hint: a possessive typed without its apostrophe ("my brothers") — names the slip, not the answer */}
@@ -410,7 +419,7 @@ export function ComposeCard({
           {result && result.diff.length ? (
             <>
               <p className="text-label text-ink-soft">내 답</p>
-              <DiffLine tokens={result.diff} reveal font={font} show={gloss} />
+              <DiffLine tokens={joinNameTokens(result.diff, names, item.en)} reveal font={font} show={gloss} />
             </>
           ) : null}
           {lastWrong ? <MyAnswerReport reported={isReported} note={reportNote ?? LESSON_REPORT_NOTE} onReport={sendReport} /> : null}

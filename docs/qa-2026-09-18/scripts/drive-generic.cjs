@@ -67,6 +67,10 @@ const MAX_PLAY = Number(arg("--max-play", 60));
 /** 문장별 훑기에서 재생 버튼을 누를 범위: all(전 문장) · first(1번 문장만) · none */
 const WALK_AUDIO = arg("--walk-audio", "all");
 if (!COURSE) throw new Error("--course is required");
+// 회귀 점검 1002 T13 (2026-10-05): PASS-OFF GRAMMAR has no branch here (expectations.cjs gives it 0 texts · 0 answers), so a run
+// 'passed' every page on nothing (기대 0/0). Its driver is drive-passoff.cjs — refuse instead of a false pass.
+if (COURSE === "passoff-grammar") { console.error("drive-generic: --course passoff-grammar 는 이 도구가 보지 못함(기대 0/0 — 거짓 통과). drive-passoff.cjs 로 돌리세요. exit 2"); process.exit(2); }
+if (!require("./lib/expectations.cjs").COURSES.includes(COURSE)) { console.error(`drive-generic: 모르는 과정 --course ${COURSE} (아는 것: ${require("./lib/expectations.cjs").COURSES.join(" · ")}) · exit 2`); process.exit(2); }
 
 // 7단계: --out-root <dir> 로 기록 · 화면 스냅숏을 다른 곳에(로컬 빌드를 돌린 기록이 운영 기록 옆에 섞이지 않게). 기본은 그대로 out/.
 const OUT = path.resolve(arg("--out-root", path.join(__dirname, "../out")));
@@ -90,7 +94,13 @@ const JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}.jsonl`);
 // desktop a sentence with a Hangul tile is assembled too ('· 한글 조각'). ADULT completion is pressed only when it cannot open a
 // chapter for good (lib/student-data.cjs completionWouldUnlockIn on the record GET /api/progress/adult reads).
 // '--viewports … small' — the 360px phone. Other courses: unchanged.
-const DRIVER_REV = "7-1m-g15-s0927-v0927-l0927-a1002";
+// 회귀 점검 1002 고침 (2026-10-05): '-f1005' — T1 (a control in a closed <details> is not visible · its fold is opened by its summary for
+// the play controls · a covered target is not pressed) · T3 (GRAMMAR Step 2 · 4 NA name their tool — coveredBy) · T6 (a sound line of a
+// visit whose connection dropped is RETEST, not FAIL — OFFLINE_ERR) · T7 (a VOCA row left playing is stopped before the next press) ·
+// T13 (--course passoff-grammar refused).
+const DRIVER_REV = "7-1m-g15-s0927-v0927-l0927-a1002-f1005";
+// T6: the machine's connection, not a server answer (4xx/5xx are badResponses, never these)
+const OFFLINE_ERR = /ERR_INTERNET_DISCONNECTED|ERR_NETWORK_CHANGED|ERR_NETWORK_IO_SUSPENDED|ERR_NAME_NOT_RESOLVED|ERR_ADDRESS_UNREACHABLE/;
 const RENDERED = path.join(OUT, "rendered", COURSE);
 
 // Controls that leave the page or touch money/licence/admin — never pressed by the driver.
@@ -101,7 +111,22 @@ const CHECK_RE = /확인|채점|제출|정답 확인|submit/i;
 const BOOKMARK_RE = /북마크/;
 const COMPLETE_RE = /학습 완료|완료 체크|완료됨/;
 
-const VIS = `(el) => !!(el.offsetParent || el.getClientRects().length) && getComputedStyle(el).visibility !== 'hidden'`;
+/**
+ * 회귀 점검 1002 T1 (2026-10-05 — 단계1/triage-voca-grammar ①): a control inside a CLOSED <details> (not its <summary>) is not on
+ * screen — GRAMMAR's folded '정답 문장 전체 듣기' player · '⋯ 더보기' (전체 정답 · 글자 크기 · 속도 · 기록 지우기), VOCA's '어원 · 쓰임
+ * 보기' phrase buttons — but Chrome still gives it a box and innerText '', so VIS counted it and the click landed on whatever lay on
+ * top: the end bar's '이전 강의' (desktop) or the header '메뉴 열기' (360px) → 'control navigated away' (GRAMMAR FAIL 46강), a
+ * neighbouring word card's clip written under the phrase button's name (VOCA), '재생' RETEST 526. Now it is not visible; the play
+ * controls inside a fold are pressed the way a learner reaches them — the fold's <summary> first (openPlayFolds) — and the fold is
+ * closed again afterwards. Every generic press also refuses a covered target (lib/harness click refuseCovered).
+ * --break=fold-visible: the old VIS (and presses a covered target) — proves the fix is what removes the false FAILs.
+ */
+const BREAK_FOLD = process.argv.includes("--break=fold-visible");
+const FOLDED = `(el) => { for (let d = el.closest('details:not([open])'); d; d = d.parentElement ? d.parentElement.closest('details:not([open])') : null) { const s = d.querySelector(':scope > summary'); if (!(s && s.contains(el))) return true; } return false; }`;
+const VIS = BREAK_FOLD
+  ? `(el) => !!(el.offsetParent || el.getClientRects().length) && getComputedStyle(el).visibility !== 'hidden'`
+  : `(el) => !!(el.offsetParent || el.getClientRects().length) && getComputedStyle(el).visibility !== 'hidden' && !(${FOLDED})(el)`;
+const REFUSE_COVERED = !BREAK_FOLD;
 const listControls = (filter) => `(() => {
   const vis = ${VIS};
   const main = document.querySelector('main') || document.body;
@@ -209,11 +234,54 @@ async function resolveRedirect(url) {
   return { finalPath: url, chain: [], status: -2 };
 }
 
+/**
+ * T1: the closed folds (<details>) in <main> that hold a play control not pressed yet — opened one by one by a trusted press on their
+ * <summary> (the way a learner opens '정답 문장 전체 듣기' · '어원 · 쓰임 보기'), marked data-kig-opened so closeOpenedFolds shuts them again.
+ */
+async function openPlayFolds(tab) {
+  const opened = [];
+  for (let guard = 0; guard < 12; guard++) {
+    const label = await tab.eval(`(() => {
+      const folded = ${FOLDED};
+      const main = document.querySelector('main') || document.body;
+      const lab = (el) => ((el.innerText || el.value || '').replace(/\\s+/g, ' ').trim() + ' ' + (el.getAttribute('aria-label') || '')).trim();
+      const play = ${PLAY_RE}, stop = ${STOP_RE}, skip = ${SKIP_CLICK};
+      for (const d of main.querySelectorAll('details:not([open])')) {
+        if (d.hasAttribute('data-kig-fold-tried')) continue;
+        const s = d.querySelector(':scope > summary');
+        if (!s || folded(s)) continue;
+        const has = [...d.querySelectorAll('button, [role=button]')].some((b) => !s.contains(b) && !b.__kigClicked && !b.disabled && play.test(lab(b)) && !stop.test(lab(b)) && !skip.test(lab(b)));
+        if (!has) continue;
+        d.setAttribute('data-kig-fold-tried', '1');
+        s.setAttribute('data-kig-fold-summary', '1');
+        return (s.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 40) || '(fold)';
+      }
+      return null;
+    })()`).catch(() => null);
+    if (!label) break;
+    const summary = `document.querySelector('main [data-kig-fold-summary="1"]')`;
+    const c = await H.click(tab, summary, { settle: 450, refuseCovered: true });
+    const isOpen = await tab.eval(`(() => { const s = ${summary}; const d = s && s.parentElement; if (s) s.removeAttribute('data-kig-fold-summary'); if (d && d.open) { d.setAttribute('data-kig-opened', '1'); return true; } return false; })()`).catch(() => false);
+    if (c.ok && isOpen) opened.push(label);
+  }
+  return opened;
+}
+async function closeOpenedFolds(tab) {
+  for (let guard = 0; guard < 12; guard++) {
+    const has = await tab.eval(`(() => { const d = document.querySelector('main details[data-kig-opened="1"][open]'); if (!d) return false; d.removeAttribute('data-kig-opened'); d.querySelector(':scope > summary').setAttribute('data-kig-fold-close', '1'); return true; })()`).catch(() => false);
+    if (!has) break;
+    await H.click(tab, `document.querySelector('main [data-kig-fold-close="1"]')`, { settle: 250, refuseCovered: true });
+    await tab.eval(`(() => { const s = document.querySelector('main [data-kig-fold-close="1"]'); if (s) { s.removeAttribute('data-kig-fold-close'); if (s.parentElement && s.parentElement.open) s.parentElement.open = false; } })()`).catch(() => {});
+  }
+}
+
 async function pressAudio(tab, expr, stepLabel, exp, out) {
   await tab.eval("window.__kigAudio && (window.__kigAudio.length = 0)").catch(() => {});
-  let c = await H.click(tab, expr);
+  let c = await H.click(tab, expr, { refuseCovered: REFUSE_COVERED });
   const picked = await tab.eval(PICKED_LABEL).catch(() => null);
   const label = `${stepLabel} ▶ ${picked || c.text || "?"}`.slice(0, 90);
+  // T1: a covered target is not pressed — RETEST (recheck-audio presses it alone, opening its fold first), never a clip of whatever lay on top
+  if (!c.ok && c.covered) { out.push({ control: label, status: "RETEST", covered: true, coveredBy: c.coveredBy || null, note: `not pressed: ${c.reason}` }); return; }
   if (!c.ok) { out.push({ control: label, status: "FAIL", note: `could not click: ${c.reason}` }); return; }
   // The page-level player starts its queue only after the silent mobile-unlock primer, which
   // can take several seconds on production; waiting 2 s reported it as silent when it was not.
@@ -244,6 +312,17 @@ async function pressAudio(tab, expr, stepLabel, exp, out) {
     }
   }
   await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+  // 회귀 점검 1002 T7 (2026-10-05 — triage-voca-grammar ⑧): VOCA's 'N–M번 이어 듣기' keeps its row going after __kigStop pauses the
+  // clip (the view still holds word 1 as the word playing), so the NEXT press — that row's first word card — was the view's designed
+  // 'same word again = stop' (PhonicsLearningView playWord toggle): no request, RETEST 1,940. Stop the row the way a learner does, with
+  // its own button (now '… 정지', aria-pressed true), before anything else is pressed. --break=no-row-stop: the old order.
+  if (!process.argv.includes("--break=no-row-stop")) {
+    const rowOn = `document.querySelector('main [data-action="play-row"][aria-pressed="true"]')`;
+    if (await tab.eval(`Boolean(${rowOn})`).catch(() => false)) {
+      await H.click(tab, rowOn, { settle: 250, refuseCovered: true }).catch(() => null);
+      await tab.eval("window.__kigStop && window.__kigStop()").catch(() => {});
+    }
+  }
   const clips = H.summariseAudio(log);
   const tts = clips.__tts ? clips.__tts.filter((t) => t && t.trim()) : [];
   delete clips.__tts;
@@ -431,7 +510,11 @@ async function gradedInputs(tab, exp, checks, maxFields = 12, course = null) {
     // sentences there was the rest of the FAIL 44/4. Said as NA, with the tool that checks them.
     const gStep = await tab.eval(`(() => { const v = document.querySelector('main [data-grammar-view]'); return v ? v.getAttribute('data-step') : null; })()`).catch(() => null);
     if (gStep !== "1") {
-      checks.push({ feature: "graded input", item: `step ${gStep}`, status: "NA", note: `GRAMMAR Step ${gStep} does not grade a typed sentence per row — Step 2 (one word per blank) is checked by check-grammar-cloze.cjs, Step 4 (all rows on '제출') by check-grammar-exam.cjs; this tool checks Step 1` });
+      // 회귀 점검 1002 T3 (2026-10-05): the NA names the tool that checks this step (coveredBy) — build-coverage counts it covered only
+      // when that tool's own result says so for THIS lesson (out/grammar-cloze.json · out/grammar-exam.json — EXTERNAL_COVERS there);
+      // without the name it was BLOCKED 'NA 인데 대신 본 기록 없음' (GRAMMAR 236강). A step with no such tool keeps no name (BLOCKED).
+      const coveredBy = gStep === "2" ? "check-grammar-cloze" : gStep === "4" ? "check-grammar-exam" : null;
+      checks.push({ feature: "graded input", item: `step ${gStep}`, status: "NA", ...(coveredBy ? { coveredBy } : {}), note:`GRAMMAR Step ${gStep} does not grade a typed sentence per row — Step 2 (one word per blank) is checked by check-grammar-cloze.cjs, Step 4 (all rows on '제출') by check-grammar-exam.cjs; this tool checks Step 1` });
       return;
     }
     if (checks.some((c) => c.feature === "graded input" && /the row's own \[data-verdict\]/.test(String(c.note)))) return; // Step 1 rows were checked on this visit
@@ -1039,10 +1122,25 @@ async function visitStepControls(tab, exp, rec, stepLabel, depth = "full") {
   const script = exp.variant === "script";
   const maxPlay = depth === "medium" ? 1 : script ? 6 : MAX_PLAY;
   const maxOther = depth === "medium" ? 3 : script ? 10 : 60;
+  let pressed = 0;
   for (let k = 0; k < maxPlay; k++) {
     const left = await tab.eval(COUNT_CONTROLS("play")).catch(() => 0);
     if (!left) break;
     await pressAudio(tab, NEXT_CONTROL("play"), stepLabel, exp, rec.audio);
+    pressed++;
+  }
+  // T1: the play controls inside a closed fold — open it by its <summary> like a learner, press them, close it again (so the
+  // every-other-control pass below never presses what a learner has not opened: '기록 지우기' · '글자 크기' …)
+  if (!BREAK_FOLD && pressed < maxPlay) {
+    const opened = await openPlayFolds(tab);
+    if (opened.length) {
+      for (let k = pressed; k < maxPlay; k++) {
+        const left = await tab.eval(COUNT_CONTROLS("play")).catch(() => 0);
+        if (!left) break;
+        await pressAudio(tab, NEXT_CONTROL("play"), stepLabel, exp, rec.audio);
+      }
+      await closeOpenedFolds(tab);
+    }
   }
   await gradedInputs(tab, exp, rec.checks, depth === "medium" ? 1 : 12, rec.course);
   // 7단계 7-1 m: the tiles also on the phone (medium depth). Tap-to-assemble is the phone's way of answering (generateWordBank:
@@ -1055,11 +1153,16 @@ async function visitStepControls(tab, exp, rec, stepLabel, depth = "full") {
     if (!left) break;
     tab.resetEvents();
     const before = await tab.eval(`(() => { const m = document.querySelector('main'); return (m ? m.innerText : '').length; })()`).catch(() => 0);
-    const c = await H.click(tab, NEXT_CONTROL("other"), { settle: 250 });
+    const c = await H.click(tab, NEXT_CONTROL("other"), { settle: 250, refuseCovered: REFUSE_COVERED });
     const label = (await tab.eval(PICKED_LABEL).catch(() => null)) || c.text || "?";
     const after = await tab.eval(`(() => { const m = document.querySelector('main'); return { len: (m ? m.innerText : '').length, href: location.pathname }; })()`).catch(() => ({ len: 0, href: "" }));
     const ev = H.events(tab);
     const problem = ev.exceptions.length || ev.console.length || ev.badResponses.length;
+    // T1: covered → not pressed (the press would have landed on the control on top). Said, not passed and not failed.
+    if (!c.ok && c.covered && !problem) {
+      rec.checks.push({ feature: "control", item: `${stepLabel} · ${String(label).slice(0, 40)}`, status: "BLOCKED", covered: true, note: `not pressed: ${c.reason}` });
+      continue;
+    }
     if (problem || !c.ok) {
       rec.checks.push({ feature: "control", item: `${stepLabel} · ${String(label).slice(0, 40)}`, status: "FAIL", note: !c.ok ? `not clickable: ${c.reason}` : `${ev.exceptions[0] || ev.console[0] || (ev.badResponses[0] && `HTTP ${ev.badResponses[0].status} ${ev.badResponses[0].url}`)}`.slice(0, 200) });
     } else {
@@ -1318,6 +1421,18 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
   const { missing, notSeen, via, seenChips } = contentCheck({ course: page.course, exp, texts, rec });
   rec.content = { expected: exp.texts.length, found: exp.texts.length - missing.length - notSeen.length, missing: missing.slice(0, 25).map((m) => `${m.kind}: ${m.text.slice(0, 60)}`), missingCount: missing.length, notSeenAtDepth: notSeen.length, notSeenKinds: [...new Set(notSeen.map((m) => m.kind))], chipsFromBox: seenChips ? seenChips.size : null, viaContainer: via.container, viaPageText: via.pageText, containersRead: rec.containers ? Object.fromEntries(Object.entries(rec.containers).map(([k, v]) => [k, v.length])) : null };
   rec.events = H.events(tab);
+  /**
+   * 회귀 점검 1002 T6 (2026-10-05 — triage-ld-reading 1): the audit machine's own connection dropped for a moment (d172 · d134-1 ·
+   * d185-1, 10-04 11:30~12:05Z — net::ERR_INTERNET_DISCONNECTED, 4xx/5xx 0) and the clips asked for then failed to load ('clip error 4'
+   * → the app's browser voice). That is not the product: a sound line of a visit with such a failure is RETEST 'connection' (recheck-audio
+   * presses it again alone), not FAIL. Only a load failure (media error · browser voice) — a clip of another text stays FAIL.
+   * build-coverage reads older records the same way (OFFLINE_ERR). --break=offline-as-fail: the old way.
+   */
+  const offlineErr = (rec.events.failed || []).map((f) => String(typeof f === "string" ? f : (f && (f.errorText || f.error)) || "")).find((f) => OFFLINE_ERR.test(f));
+  if (offlineErr && !process.argv.includes("--break=offline-as-fail")) {
+    rec.offline = { error: offlineErr, failedRequests: (rec.events.failed || []).length };
+    for (const a of rec.audio) if (a.status === "FAIL" && /^clip error|^browser TTS fallback/.test(String(a.note || ""))) { a.status = "RETEST"; a.offline = true; a.note = `연결 실패(${offlineErr}) — ${a.note}`; }
+  }
   fs.mkdirSync(RENDERED, { recursive: true });
   fs.writeFileSync(path.join(RENDERED, `${page.id}.${viewport}.json`), JSON.stringify(texts, null, 1));
   return rec;

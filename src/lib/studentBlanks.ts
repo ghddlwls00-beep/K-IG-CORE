@@ -1,22 +1,25 @@
 /**
  * STUDENT personal blanks — '내 정보' (2026-09-27 학습법 · 화면 고침, student-verified.md STU-L03 · 계획.md D14 나).
  *
- * This course is a first-person talk, and a bracket in it is a blank for the learner's own information:
- * "I am a 4th grade student at (school name) Elementary School." (AGENTS.md: the brackets in content/lessons/student
- * are blanks, never alternative answers.) The blanks are found in the sentence text at run time — this file holds no
- * lesson text, only lesson ids and sentence indexes, plus the free lesson s1-2's sample name and city:
- *   · a blank is a bracket without a slash — "(sir/ma’am)" is two ways to say it, not a blank (listeningUtils);
- *   · s20-5 #6 "(about 6,400 feet)" is a note, not a blank (NOT_BLANK);
- *   · s1-2 #1 "My name is Hong Gil Dong, and I live in Seoul." — the Korean sample name and city are blanks too
- *     (STU-L03 CHECK ①; EXTRA_BLANKS).
- * That is 20 sentences in 14 lessons. What the learner types is kept on this device only
- * (localStorage 'kig:student:me:v1') and used ONLY for the text shown in Step 3 and for the microphone check: every
+ * This course is a first-person talk, and the learner can put their own information in place of the sample details
+ * (AGENTS.md: the brackets in content/lessons/student are blanks, never alternative answers). The blanks are found in the
+ * sentence text at run time — this file holds no lesson text, only lesson ids and sentence indexes and the sample words
+ * to look for. Since 2026-10-02 (scripts/restore-sample-words.mjs — 사장님 "원래 낱말로 되살리기") a blank is one of two kinds:
+ *   · a "(…)" placeholder — a bracket without a slash. Only two are left in STUDENT: s6-2 #3 "(age)" and s9-1 #3
+ *     "(dog’s name)". These are the only blanks the app places by itself in the Step 2 tiles (dictationBlanks;
+ *     docs/qa-2026-09-18/scripts/check-student-dictation.cjs expects exactly these two). "(sir/ma’am)" (s1-1 #1) is two
+ *     ways to say it, not a blank (listeningUtils), and s20-5 #6 "(about 6,400 feet)" is a note, not a blank (NOT_BLANK);
+ *   · a real sample word the sentence says — "My name is 홍길동, and I live in 서울." (s1-2 #1), "한국", "11", "two",
+ *     "태권도" … (EXTRA_BLANKS, `written`). The learner assembles it like any other word in the Step 2 tiles and may
+ *     replace it with their own in Step 3 (사장님 2026-10-02 "저 한글들도 블록에 들어가야지").
+ * In STUDENT that is 20 sentences in 14 lessons (2 placeholders + 24 sample words = 26 blanks); ADULT uses the same
+ * view with EXTRA_BLANKS only (a1-2 · a1-5 — 7 sentences, no placeholder). What the learner types is kept on this device
+ * only (localStorage 'kig:student:me:v1') and used ONLY for the text shown in Step 3 and for the microphone check: every
  * sound still plays the model sentence, which is the only one with a clip (STU-L03 CHECK ②).
  *
- * One field per blank of a lesson. The same bracket word means different things in different lessons — "(name)" is a
- * best friend in s3-2, a country in s6-3 and famous people in s16-1; "(school name)" is my school in s1-2 and my
- * sister's in s2-5; s4-3 has "(two) brothers and (two) sisters" — so a value is kept per lesson and blank, never
- * shared across lessons by its label.
+ * One field per blank of a lesson. The same sample word means different things in different lessons — "한국" is an
+ * apartment and a school in s1-2 and my sister's school in s2-5; s4-3 has "two brothers and two sisters" on each side
+ * of the family — so a value is kept per lesson and blank, never shared across lessons by its label.
  */
 import { expandSlashAlternatives } from "@/lib/listeningUtils";
 import { tokensOf, type FixedRun } from "@/lib/studentDictation";

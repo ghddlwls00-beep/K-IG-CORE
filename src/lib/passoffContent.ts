@@ -8,6 +8,7 @@ import { LICENSE_SESSION_COOKIE_NAME, verifyLicenseSessionToken } from "./licens
 import { attachPaidItems, type PaidSupplement } from "./passoffSupplement";
 import { viewBlocks } from "./passoffView";
 import { attachWordForms } from "./passoffWordForms";
+import { attachPartnerForms, lessonPartnerWords } from "./passoffPartnerForms";
 
 /**
  * PASS-OFF GRAMMAR — what a lesson page may hand its view (설계 §7).
@@ -52,21 +53,29 @@ function sentenceCount(supplement: PaidSupplement): number {
 
 // ONLY WHAT THE VIEW DRAWS goes into the page — the five steps' blocks without the source table and the
 // record-only fields (src/lib/passoffView.ts viewBlocks, which the grading check also runs) — and, on each ④ · ⑤ item,
-// the few word forms its grading needs (src/lib/passoffWordForms.ts attachWordForms: the irregular-verb table stays here).
+// the few word forms its grading needs (src/lib/passoffWordForms.ts attachWordForms: the irregular-verb table stays here)
+// and its word tiles' grammar partners that are real words (src/lib/passoffPartnerForms.ts — 회귀 점검 1002 A3: the word
+// list stays here too). The partners are judged against the whole lesson's English, paid sentences included, so a free
+// page and a licensed one give a free sentence the same tiles.
+
+function served(lesson: Lesson, supplement: PaidSupplement | null, blocks: readonly Block[]): Block[] {
+  const words = lessonPartnerWords([lesson.blocks, supplement?.items ?? []]);
+  return attachPartnerForms(attachWordForms(viewBlocks(blocks)), words);
+}
 
 export async function passoffLessonBlocks(
   course: string,
   lesson: Lesson,
 ): Promise<{ blocks: Block[]; lockedExtraCount: number }> {
   const supplement = readSupplement(lesson.id);
-  if (!supplement || supplement.items.length === 0) return { blocks: attachWordForms(viewBlocks(lesson.blocks)), lockedExtraCount: 0 };
+  if (!supplement || supplement.items.length === 0) return { blocks: served(lesson, supplement, lesson.blocks), lockedExtraCount: 0 };
   const session = await verifyLicenseSessionToken(
     (await cookies()).get(LICENSE_SESSION_COOKIE_NAME)?.value,
   );
   if (session && planOpensCourse(session.payload.plan, course)) {
-    return { blocks: attachWordForms(viewBlocks(attachPaidItems(lesson.blocks, supplement.items))), lockedExtraCount: 0 };
+    return { blocks: served(lesson, supplement, attachPaidItems(lesson.blocks, supplement.items)), lockedExtraCount: 0 };
   }
-  return { blocks: attachWordForms(viewBlocks(lesson.blocks)), lockedExtraCount: sentenceCount(supplement) };
+  return { blocks: served(lesson, supplement, lesson.blocks), lockedExtraCount: sentenceCount(supplement) };
 }
 
 /**
@@ -75,6 +84,7 @@ export async function passoffLessonBlocks(
  * page asks without them. The word forms are attached to what is handed out, as on the lesson page.
  */
 export function passoffReviewBlocks(lesson: Lesson, { withPaid }: { withPaid: boolean }): Block[] {
-  const supplement = withPaid ? readSupplement(lesson.id) : null;
-  return attachWordForms(viewBlocks(supplement && supplement.items.length ? attachPaidItems(lesson.blocks, supplement.items) : lesson.blocks));
+  const supplement = readSupplement(lesson.id);
+  const attach = withPaid && supplement && supplement.items.length;
+  return served(lesson, supplement, attach ? attachPaidItems(lesson.blocks, supplement.items) : lesson.blocks);
 }

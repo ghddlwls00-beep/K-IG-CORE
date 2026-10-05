@@ -47,9 +47,9 @@ const H = require("./lib/harness.cjs");
 const E = require("./lib/expectations.cjs");
 
 const argv = process.argv.slice(2);
-const VALUE_ARGS = ["--from", "--suffix", "--status", "--course", "--ids", "--controls", "--limit", "--port", "--clone"];
-const FLAG_ARGS = ["--redo", "--dry-run", "--count", "--desktop-only"];
-const USAGE = "쓰임새: node recheck-audio.cjs --from <파일,…> --suffix -x [--status RETEST,FAIL|PASS|any] [--course …] [--ids …] [--controls <정규식>] [--limit N] [--port 9890] [--clone <사본>] [--redo] [--dry-run] [--count]";
+const VALUE_ARGS = ["--from", "--suffix", "--status", "--course", "--ids", "--controls", "--limit", "--port", "--clone", "--rejudge"];
+const FLAG_ARGS = ["--redo", "--dry-run", "--count", "--desktop-only", "--break-t8"];
+const USAGE = "쓰임새: node recheck-audio.cjs --from <파일,…> --suffix -x [--status RETEST,FAIL|PASS|any] [--course …] [--ids …] [--controls <정규식>] [--limit N] [--port 9890] [--clone <사본>] [--redo] [--dry-run] [--count] [--rejudge <recheck-audio 결과.jsonl>] [--break-t8]";
 const usageExit = (why) => { console.error(`recheck-audio: ${why}\n${USAGE}`); process.exit(2); };
 for (let i = 0; i < argv.length; i++) {
   const a = argv[i];
@@ -65,7 +65,7 @@ if (!FROM) usageExit("--from 이 필요합니다 — 없이 돌면 out/features 
 const COUNT_ONLY = has("--count");
 const DRY = has("--dry-run");
 const SUFFIX = arg("--suffix", "");
-if (!SUFFIX && !COUNT_ONLY && !DRY) usageExit("--suffix 가 필요합니다 — 이 실행의 결과 파일(recheck-audio<suffix>.jsonl)이 옛 재검사와 섞이지 않게");
+if (!SUFFIX && !COUNT_ONLY && !DRY && !has("--rejudge")) usageExit("--suffix 가 필요합니다 — 이 실행의 결과 파일(recheck-audio<suffix>.jsonl)이 옛 재검사와 섞이지 않게");
 const ONLY = arg("--course", null) ? new Set(arg("--course").split(",")) : null;
 const IDS = arg("--ids", null) ? new Set(arg("--ids").split(",")) : null;
 const CONTROLS = arg("--controls", null) ? new RegExp(arg("--controls")) : null;
@@ -75,6 +75,27 @@ const LIMIT = Number(arg("--limit", 0)) || 0;
 const PORT = Number(arg("--port", 9890));
 const CLONE = arg("--clone", `recheck${SUFFIX}`);
 const DESKTOP_ONLY = has("--desktop-only");
+/**
+ * 회귀 점검 1002 T8 (fix-tools, 2026-10-05 — 단계1/triage-voca-grammar ⑦ ⑧ ⑨ · triage-ld-reading 2 3; the run stopped at 1,051/2,291):
+ *   ① a page that redirects (GRAMMAR I odd ids — 307 to the even partner, the same screen) is opened at the page it ends on: the target
+ *      takes the sweep record's finalPath (and a target file's url is resolved before loading), H.load gets expectPath — it waited 46 s
+ *      per target for the requested address and wrote BLOCKED 'page did not load' (97). Targets that land on the same page · step ·
+ *      control are ONE target (requestedUrls keeps every address).
+ *   ② VOCA word cards are found by their word ([data-word-play] · [data-word-text]) when the label the sweep saw is gone — the card's
+ *      name changes with '뜻 가리기' ('<낱말> 듣기 · 뜻 보기' ↔ '<낱말> <뜻> 듣기') — BLOCKED 'control not found' 355.
+ *   ③ the clip expected of a generic control is the one its own NAME speaks when that name is a text of the lesson (the phrase '…
+ *      듣기', the word of a card) — the sweep's heard clip is used only when the name says nothing, and never from a press the sweep
+ *      made on a covered target (its click landed on a neighbouring card: FAIL 12 'asked for … — this control's clip is …').
+ *   ④ a question's answer option ('① …') is not a play control (FAIL 4).
+ *   ⑤ a LISTENING step shows the line it is on: a control of another line is reached with '다음 문장' (after '그래도 보기' where the
+ *      line is hidden until dictated) — BLOCKED 'control not found' 3 (d172 Step 3).
+ *   ⑥ --from wildcards skip proof-run records ('-proof-' — the app copy on localhost) as they skip '-break-' (they were read, then
+ *      dropped one by one as another address).
+ *   --rejudge <file>: no browser — the lines of an earlier run of this tool judged again by ①~④ (what can be settled from the record);
+ *      what needs pressing again is said so. --break-t8: the rules before ①~⑥ (for the proof).
+ */
+const BREAK_T8 = has("--break-t8");
+const REJUDGE = arg("--rejudge", null);
 const OUT = path.join(__dirname, "../out");
 const FEAT = path.join(OUT, "features");
 
@@ -109,9 +130,13 @@ const NOT_PLAYBACK = [
   { re: /\b\d(\.\d+)?x\b|\d(\.\d+)?×|표준 속도|배속/, unless: SPEED_PLAY, why: "재생 속도 전환 버튼 — 재생 중이 아니면 새 요청이 없는 것이 정상" },
 ];
 const PLAY_LABEL = /🔊|🔉|🔈|▶️|▶|재생|듣기|발음|청취|speak|play control/i;
+// 회귀 점검 1002 T8 (2026-10-05 — triage-ld-reading 3): a question's answer option ('① 마더 구스 동요는 … 발음과 리듬을 …' — LessonQuestions
+// [data-question] [data-option], LISTENING · READING 새 문제) is not a play control; '발음 · 듣기' inside its words made it one (FAIL 4)
+const ANSWER_OPTION = /^[①②③④⑤]\s/;
 const skipped = [];
 function worthRechecking(control, note, kind = "generic") {
   const label = String(control).split(" ▶ ").slice(1).join(" ▶ ") || String(control);
+  if (kind === "generic" && ANSWER_OPTION.test(label.trim()) && !BREAK_T8) { skipped.push({ control, why: "문제의 답 보기(①~⑤) — 소리를 내지 않는 것이 정상 (T8)" }); return false; }
   for (const n of NOT_PLAYBACK) {
     if (n.re.test(label) && !(n.unless && n.unless.test(label.trim()))) { skipped.push({ control, why: n.why }); return false; }
   }
@@ -130,13 +155,17 @@ function worthRechecking(control, note, kind = "generic") {
 }
 
 // ---------------------------------------------------------------- 어느 기록을 읽나 (--from)
+let proofSkipped = 0;   // T8 ⑥
 function resolveFrom(spec) {
   const out = [];
   for (const raw of spec.split(",").map((s) => s.trim()).filter(Boolean)) {
     if (raw.includes("*")) {
       const dir = path.dirname(raw) === "." ? FEAT : path.resolve(path.dirname(raw));
       const re = new RegExp(`^${path.basename(raw).replace(/[.+^${}()|[\]\\]/g, "\\$&").replace(/\*/g, ".*")}$`);
-      const hits = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => re.test(f)).sort() : [];
+      // T8 ⑥: a wildcard never takes proof-run records ('-proof-' — the deliberately broken app copy on localhost); name one to read it
+      const all = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => re.test(f)).sort() : [];
+      const hits = BREAK_T8 ? all : all.filter((f) => !/-proof-/.test(f));
+      proofSkipped += all.length - hits.length;
       if (!hits.length) console.log(`(--from 의 ${raw} 에 맞는 파일 없음 — 건너뜀)`);
       out.push(...hits.map((f) => path.join(dir, f)));
     } else {
@@ -188,13 +217,43 @@ const kindOf = (course, step) => {
   }
   return { kind: "generic" };
 };
+let mergedTargets = 0;   // T8 ①
 const addTarget = (t) => {
   const key = `${t.url}|${t.step}|${t.label}`;
-  if (!targets.has(key)) targets.set(key, { ...t, viewports: new Set() });
+  if (!targets.has(key)) targets.set(key, { ...t, viewports: new Set(), requestedUrls: new Set() });
   const x = targets.get(key);
+  if (t.requestedUrl && !x.requestedUrls.has(t.requestedUrl) && x.requestedUrls.size) mergedTargets++;
+  if (t.requestedUrl) x.requestedUrls.add(t.requestedUrl);
   for (const v of t.viewportsIn || []) x.viewports.add(v);
   if (!x.want && t.want) { x.want = t.want; x.wantSource = t.wantSource; }
 };
+/**
+ * T8 ③: the clip a generic control's own NAME speaks — the name without its ' 듣기' / '재생' tail and ' #n', when that is one of the texts
+ * this lesson speaks (expectations clipTexts); a VOCA card's name '<낱말> <뜻> 듣기' is tried by its leading words when the rest is Korean.
+ */
+const clipTextCache = new Map();
+const normT = (s) => String(s || "").replace(/[’‘]/g, "'").replace(/\s+/g, " ").trim().toLowerCase().replace(/[.!?]+$/, "");
+function labelWant(course, id, label) {
+  if (BREAK_T8 || course === "passoff-grammar") return null;
+  let m = clipTextCache.get(`${course}|${id}`);
+  if (!m) {
+    m = new Map();
+    try { for (const t of E.expected(course, id).clipTexts) if (!m.has(normT(t))) m.set(normT(t), E.unified.unifiedSpeechPath(t)); } catch {}
+    clipTextCache.set(`${course}|${id}`, m);
+  }
+  const base = String(label || "").replace(/\s#\d+$/, "").replace(/^(🔊|🔉|🔈|▶️|▶)\s*/u, "").replace(/\s*(듣기|재생)(\s*·.*)?$/, "").trim();
+  if (!base) return null;
+  if (m.has(normT(base))) return m.get(normT(base));
+  // a VOCA card: the label is its text + its aria-label ('ancestor 조상 ancestor 조상 듣기' · 'ancestor 뜻 보기 ancestor 듣기 · 뜻 보기') —
+  // the word is the leading run of words up to the first Korean one
+  const words = base.split(" ");
+  const k = words.findIndex((w) => /[가-힣]/.test(w));
+  if (k >= 1 && !words.slice(0, k).some((w) => /[가-힣]/.test(w))) {
+    const head = words.slice(0, k).join(" ");
+    if (m.has(normT(head))) return m.get(normT(head));
+  }
+  return null;
+}
 for (const r of latest.values()) {
   const T = (tally[r.course] ||= { records: 0, presses: 0, PASS: 0, FAIL: 0, RETEST: 0, other: 0, reading: false });
   T.records++;
@@ -215,10 +274,17 @@ for (const r of latest.values()) {
     const [step, ...rest] = String(a.control).split(" ▶ ");
     if (!worthRechecking(a.control, a.note, kindOf(r.course, step).kind)) continue;
     const label = rest.join(" ▶ ");
+    // T8 ①: the page the sweep actually drove (drive-generic's finalPath — a GRAMMAR I odd id ends on its even partner)
+    const openUrl = !BREAK_T8 && r.finalPath && String(r.finalPath).startsWith("/") ? r.finalPath : r.url;
+    const openId = String(openUrl).split("/").pop();
+    const k = kindOf(r.course, step);
     // (나) the clip the sweep EXPECTED for this button and heard (drive-passoff: that sentence's clip; drive-generic: one of the lesson's)
-    const heard = (a.clips || []).find((c) => c.expected && (c.playing > 0 || c.resolved > 0)) || (a.clips || []).find((c) => c.expected);
-    addTarget({ course: r.course, id: r.id, url: r.url, step, label, sweepStatus: a.status, sweepNote: a.note || "", viewportsIn: [r.viewport], licensed: r.licensed !== false,
-      want: heard ? heard.path : null, wantSource: heard ? `기록: 스윕이 이 버튼에서 기대한 클립(${r.file})` : null, ...kindOf(r.course, step) });
+    // T8 ③: not from a covered press (drive-generic -f1005 writes `covered`); a generic control's own name first
+    const heard = BREAK_T8 || !a.covered ? (a.clips || []).find((c) => c.expected && (c.playing > 0 || c.resolved > 0)) || (a.clips || []).find((c) => c.expected) : null;
+    const byName = k.kind === "generic" ? labelWant(r.course, openId, label) : null;
+    addTarget({ course: r.course, id: openId, url: openUrl, requestedUrl: r.url, step, label, sweepStatus: a.status, sweepNote: a.note || "", viewportsIn: [r.viewport], licensed: r.licensed !== false,
+      want: byName || (heard ? heard.path : null),
+      wantSource: byName ? `데이터: 단추 이름의 글(T8 ③)${heard && heard.path !== byName ? ` — 스윕이 적은 클립 ${heard.path} 와 다름` : ""}` : heard ? `기록: 스윕이 이 버튼에서 기대한 클립(${r.file})` : null, ...k });
   }
 }
 for (const r of targetLines) {
@@ -233,7 +299,8 @@ for (const r of targetLines) {
 
 const why = {};
 for (const s of skipped) why[s.why] = (why[s.why] || 0) + 1;
-console.log(`읽은 기록: 파일 ${sel.files} · 강의×화면 ${latest.size}(같은 강의×화면의 앞 기록 ${sel.superseded} 뺌) · 대상 줄 ${sel.targetLines} · 뺀 것: 깨기 파일 ${sel.breakFiles} · 깨기 기록 ${sel.breakRecords} · 다른 주소(base≠${H.BASE}) ${sel.otherBase} · -pages ${sel.pagesFiles}`);
+console.log(`읽은 기록: 파일 ${sel.files} · 강의×화면 ${latest.size}(같은 강의×화면의 앞 기록 ${sel.superseded} 뺌) · 대상 줄 ${sel.targetLines} · 뺀 것: 깨기 파일 ${sel.breakFiles} · 깨기 기록 ${sel.breakRecords} · 다른 주소(base≠${H.BASE}) ${sel.otherBase} · -pages ${sel.pagesFiles} · 증명 기록(-proof-) 파일 ${proofSkipped}`);
+if (mergedTargets) console.log(`넘어가는 주소(307)를 넘어간 쪽으로 열어 같은 쪽 · 단계 · 단추와 합친 대상 ${mergedTargets} (T8 ①)`);
 console.log("과정별 음성 버튼 누름 (강의×화면마다 가장 늦은 기록):");
 for (const [c, T] of Object.entries(tally)) console.log(`   ${c.padEnd(16)} 기록 ${String(T.records).padStart(4)} · 누름 ${String(T.presses).padStart(6)} · PASS ${T.PASS} · FAIL ${T.FAIL} · RETEST ${T.RETEST}${T.other ? ` · 그 밖 ${T.other}` : ""}${T.reading ? " (drive-reading: 상태 칸 없음 — 재생 · 기대 클립 · 오류 · TTS 로 셈, 다시 누르기 대상 아님)" : ""}`);
 console.log(`재검사에서 제외(재생 버튼 아님 — 버튼 이름으로만 판단) ${skipped.length}건`);
@@ -254,6 +321,45 @@ const byCourse = {};
 for (const t of list) byCourse[`${t.course} ${t.sweepStatus}`] = (byCourse[`${t.course} ${t.sweepStatus}`] || 0) + 1;
 console.log(`다시 볼 대상 ${before} (상태 ${STATUS_ARG}${CONTROLS ? ` · 버튼 ${CONTROLS}` : ""}${IDS ? ` · 강의 ${[...IDS].join(",")}` : ""}${ONLY ? ` · 과정 ${[...ONLY].join(",")}` : ""}) · 이 실행의 결과 파일에서 이미 함 ${alreadyDone} · 이번에 ${list.length}${LIMIT ? `(--limit ${LIMIT})` : ""} — ${JSON.stringify(byCourse)}`);
 if (!COUNT_ONLY && !DRY) fs.writeFileSync(path.join(OUT, `recheck-audio${SUFFIX}-skipped.json`), JSON.stringify({ at: new Date().toISOString(), from: files.map((f) => path.basename(f)), total: skipped.length, why, samples: skipped.slice(0, 40) }, null, 1));
+if (REJUDGE) {
+  // T8 --rejudge: an earlier run's lines judged again by today's targets (①~④) — no browser. A line whose control is no longer a target
+  // is '뺌'; a press that played is judged against today's expected clip; a BLOCKED of a redirected address is settled by its partner's
+  // line in the same file; anything else that needs pressing again is said so (not PASS).
+  const file = fs.existsSync(path.resolve(REJUDGE)) ? path.resolve(REJUDGE) : path.join(OUT, REJUDGE);
+  if (!fs.existsSync(file)) usageExit(`--rejudge 의 ${REJUDGE} 가 없음`);
+  const old = fs.readFileSync(file, "utf8").split(/\r?\n/).filter((l) => l.trim()).map((l) => JSON.parse(l));
+  const byRequested = new Map();
+  for (const t of targets.values()) for (const u of new Set([t.url, ...(t.requestedUrls || [])])) byRequested.set(`${u}|${t.step}|${t.label}`, t);
+  const lineAt = new Map(old.map((r) => [`${r.url}|${r.step}|${r.label}`, r]));
+  const skippedWhy = new Map(skipped.map((s) => [s.control, s.why]));
+  const tallyR = { old: {}, now: {} };
+  const why = {};
+  const bump = (o, k) => { o[k] = (o[k] || 0) + 1; };
+  for (const r of old) {
+    bump(tallyR.old, `${r.course} ${r.status}`);
+    const t = byRequested.get(`${r.url}|${r.step}|${r.label}`);
+    let now, reason;
+    if (!t) { now = "뺌"; reason = skippedWhy.get(`${r.step} ▶ ${r.label}`) || "오늘 규칙으로는 다시 볼 대상이 아님"; }
+    else if (r.status === "BLOCKED") {
+      const partner = t.url !== r.url ? lineAt.get(`${t.url}|${r.step}|${r.label}`) : null;
+      if (partner && partner.status === "PASS") { now = "PASS"; reason = `넘어간 쪽(${t.url})의 같은 단추가 PASS — 한 대상으로 합침(T8 ①)`; }
+      else { now = "다시 돌려야 함"; reason = `브라우저로 다시 눌러야 판정(옛 사유: ${String(r.note).slice(0, 40)})`; }
+    } else {
+      const played = (r.clips || []).filter((c) => c.playing > 0).map((c) => c.path);
+      const errored = (r.clips || []).some((c) => c.error > 0 || c.rejected > 0);
+      if (errored || !played.length || (r.tts || []).length) { now = r.status; reason = "기록 그대로(소리 오류 · 요청 없음 · 브라우저 음성)"; }
+      else if (t.want) { now = played.includes(t.want) ? "PASS" : "FAIL"; reason = `오늘 기대 클립 ${t.want} (${t.wantSource})`; }
+      else { now = r.status; reason = "기대 클립 없음 — 기록 그대로"; }
+    }
+    bump(tallyR.now, `${r.course} ${now}`);
+    bump(why, `${r.course} ${r.status} → ${now} · ${reason.replace(/\/audio\/[^ )]+/g, "<클립>").replace(/\(\/[a-z0-9/-]+\)/g, "").replace(/\([a-z0-9-]+\.jsonl\)/, "").slice(0, 90)}`);
+  }
+  console.log(`\n--rejudge ${path.basename(file)} (${old.length}줄):`);
+  console.log(`  그때: ${JSON.stringify(tallyR.old)}`);
+  console.log(`  오늘 규칙: ${JSON.stringify(tallyR.now)}`);
+  for (const [k, v] of Object.entries(why).sort((a, b) => b[1] - a[1])) console.log(`   ${String(v).padStart(5)} ${k}`);
+  process.exit(0);
+}
 if (COUNT_ONLY) process.exit(0);
 if (DRY) { for (const t of list.slice(0, 40)) console.log(`   ${t.course} ${t.id} [${[...t.viewports].join(",")}] ${t.kind} · ${t.step} ▶ ${String(t.label).slice(0, 40)} · 스윕 ${t.sweepStatus} · want ${t.want || "(데이터/강의 클립)"}`); process.exit(0); }
 if (!list.length) { console.log("다시 볼 것 없음 · exit 0"); process.exit(0); }
@@ -316,9 +422,43 @@ const genericControl = (labelWithNth) => {
     const same = all.filter((b) => label(b).slice(0, 60) === ${JSON.stringify(want)});
     const prefix = all.filter((b) => ${JSON.stringify(want)}.length >= 20 && label(b).slice(0, 60).startsWith(${JSON.stringify(want)}));
     const loose = all.filter((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(want)});
-    return same[${nth}] || same[0] || prefix[${nth}] || prefix[0] || loose[${nth}] || loose[0] || null;
+    // T8 ②: a VOCA word card by its word — its name changes with '뜻 가리기' (the longest word the label starts with)
+    const cards = ${BREAK_T8 ? "[]" : `[...main.querySelectorAll('[data-word-play]')].filter(vis).map((b) => ({ b, w: ((b.querySelector('[data-word-text]') || {}).innerText || '').replace(/\\s+/g, ' ').trim() })).filter((x) => x.w && (${JSON.stringify(want)} + ' ').startsWith(x.w + ' ')).sort((a, b) => b.w.length - a.w.length)`};
+    const card = cards.length ? cards.filter((x) => x.w === cards[0].w).map((x) => x.b) : [];
+    return same[${nth}] || same[0] || prefix[${nth}] || prefix[0] || loose[${nth}] || loose[0] || card[${nth}] || card[0] || null;
   })()`;
 };
+/** T8 ⑤: on a LISTENING step, walk the lines ('그래도 보기' first where the line is hidden) until the control is on screen */
+async function ldWalkTo(tab, expr) {
+  const found = async () => Boolean(await tab.eval(`Boolean(${expr})`).catch(() => false));
+  if (BREAK_T8 || (await found()) || !(await tab.eval(`Boolean(document.querySelector('main [data-ld-view]'))`).catch(() => false))) return { walked: 0 };
+  const vis = `(b) => !!b && !b.disabled && !!(b.offsetParent || b.getClientRects().length)`;
+  const btn = (action) => `[...document.querySelectorAll('main [data-ld-view] [data-action="${action}"]')].find(${vis}) || null`;
+  for (let k = 0; k < 60 && (await tab.eval(`Boolean(${btn("prev-line")})`).catch(() => false)); k++) await H.click(tab, btn("prev-line"), { settle: 150 });
+  for (let k = 0; k < 80; k++) {
+    if (await tab.eval(`Boolean(${btn("peek")})`).catch(() => false)) await H.click(tab, btn("peek"), { settle: 300 });
+    if (await found()) return { walked: k, ok: true };
+    if (!(await tab.eval(`Boolean(${btn("next-line")})`).catch(() => false))) break;
+    await H.click(tab, btn("next-line"), { settle: 250 });
+  }
+  return { walked: -1, ok: await found() };
+}
+/** T8 ①: where an address ends (307 · 308 followed) — the page to wait for */
+const finalCache = new Map();
+async function finalPathOf(url) {
+  if (BREAK_T8) return null;
+  if (finalCache.has(url)) return finalCache.get(url);
+  let cur = H.BASE + url, out = null;
+  for (let hop = 0; hop < 5; hop++) {
+    const r = await fetch(cur, { redirect: "manual" }).catch(() => null);
+    if (!r) break;
+    if (r.status >= 300 && r.status < 400 && r.headers.get("location")) { cur = new URL(r.headers.get("location"), cur).href; continue; }
+    out = new URL(cur).pathname;
+    break;
+  }
+  finalCache.set(url, out);
+  return out;
+}
 /** returns { ok, expr, note, want? } — the press target, after reaching its place */
 async function reach(tab, t) {
   const tabN = (n) => H.click(tab, `document.querySelector('main [data-step-tab="${n}"]')`, { settle: 800 });
@@ -413,6 +553,7 @@ async function reach(tab, t) {
   }
   const s = await openGenericStep(tab, t);
   if (!s.ok) return { ok: false, note: `단계 '${t.step}' 를 못 엶 (${s.reason})` };
+  if (t.course === "ld") await ldWalkTo(tab, genericControl(t.label));
   return { ok: true, expr: genericControl(t.label) };
 }
 
@@ -467,9 +608,11 @@ async function pressAndJudge(tab, expr, want, lessonSet) {
       // 스윕이 그 버튼을 본 크기로(7-1 f) — 휴대폰에서만 본 버튼은 단계 이름이 다르다
       const vp = DESKTOP_ONLY || t.viewports.has("desktop") ? "desktop" : t.viewports.has("mobile") ? "mobile" : t.viewports.has("small") ? "small" : [...t.viewports][0] || "desktop";
       if (vp !== current) { await H.setViewport(tab, vp); current = vp; }
-      const loaded = await H.load(tab, t.url, { marker: H.MARKERS[t.course] });
+      // T8 ①: wait for the page the address ends on (a GRAMMAR I odd id is a 307 to its even partner)
+      const fin = await finalPathOf(t.url);
+      const loaded = await H.load(tab, t.url, { marker: H.MARKERS[t.course], expectPath: fin && fin !== t.url ? fin : null });
       let rec;
-      const base = { course: t.course, id: t.id, url: t.url, step: t.step, label: t.label, kind: t.kind, sweepViewports: [...t.viewports], openedAt: vp, sweepStatus: t.sweepStatus, sweepNote: t.sweepNote, at: new Date().toISOString(), base: H.BASE };
+      const base = { course: t.course, id: t.id, url: t.url, ...(t.requestedUrls && t.requestedUrls.size && [...t.requestedUrls].some((u) => u !== t.url) ? { requestedUrls: [...t.requestedUrls] } : {}), ...(fin && fin !== t.url ? { finalPath: fin } : {}), step: t.step, label: t.label, kind: t.kind, sweepViewports: [...t.viewports], openedAt: vp, sweepStatus: t.sweepStatus, sweepNote: t.sweepNote, at: new Date().toISOString(), base: H.BASE };
       if (!loaded.navigated || !loaded.rendered) rec = { ...base, clicked: false, status: "BLOCKED", note: `page did not load (${loaded.href})` };
       else {
         const r = await reach(tab, t);

@@ -15,6 +15,7 @@ import { useLicense } from "./LicenseProvider";
 import { isFreePreviewLesson, planOpensCourse } from "@/lib/license";
 import type { LessonPresentation } from "@/lib/curriculumPresentation";
 import { READING_LENGTHS } from "@/lib/readingLengths";
+import { shownPercent } from "@/lib/shownPercent";
 import { passoffLessonsDone, passoffTopicOf, topicWithParticle } from "@/lib/passoffUnlock";
 import { ChapterAudioBar } from "./ChapterAudioBar";
 import { usePassoffProgress, usePassoffUnlockNotice } from "./PassoffProgressProvider";
@@ -272,7 +273,7 @@ export function CourseDashboard({
     return count;
   }, [bookmarks, listedIds, prefix]);
 
-  const progressPercent = totalLessons > 0 ? Math.round((completedCount / totalLessons) * 100) : 0;
+  const progressPercent = shownPercent(completedCount, totalLessons);
 
   // '이어서 학습': the last lesson opened in this course (a script page counts as its listed lesson)
   const allLessons = useMemo(() => sections.flatMap((s) => s.lessons), [sections]);
@@ -514,7 +515,7 @@ export function CourseDashboard({
                     checkUnlocked(courseSlug, lesson.id, sectionIndex, lessonIdx),
                   ));
             const chapterComplete = Boolean(studentChapter?.complete) || Boolean(passoffState?.complete);
-            const chapterPercent = studentChapter?.percent ?? passoffState?.percent ?? Math.round((completedInSection / Math.max(1, section.lessons.length)) * 100);
+            const chapterPercent = studentChapter?.percent ?? passoffState?.percent ?? shownPercent(completedInSection, section.lessons.length);
             const isLife = licenseInfo?.plan === "LIFE";
             /** PASS-OFF GRAMMAR's lock words (its topic line and each locked row): 'TOPIC 2를 마치면 열림' — the particle as the number is read */
             const passoffLock = `${topicWithParticle(passoffPreviousTopic ?? sectionIndex, "을/를")} 마치면 열림`;

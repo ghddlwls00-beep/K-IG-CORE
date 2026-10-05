@@ -54,13 +54,17 @@ const CHAPTERS = [
 const TITLE_FIX = {
   "Helping hand (봉사활동)": "Helping Hand (봉사활동)",
   "How Korea was Founded (한국의 건국)": "How Korea Was Founded (한국의 건국)",
-  "The Kingdoms are Divided (삼국의 분열과 통일)": "The Kingdoms Are Divided (삼국의 분열과 통일)",
+  // 회귀 점검 1002 F26 (2026-10-05, 사장님 "틀린 강의 제목 · 화면 문구는 고쳐도 됨"): the lesson is the three kingdoms and 신라's
+  // unification — nothing in it is "divided", and 삼국의 '분열' is not what happened (was "The Kingdoms Are Divided (삼국의 분열과 통일)")
+  "The Kingdoms are Divided (삼국의 분열과 통일)": "The Three Kingdoms and Unification (삼국 시대와 통일)",
   "Independence / Civil War (독립과 한국전쟁)": "Independence & the Korean War (독립과 한국전쟁)",
   // a title that is only a Korean name is written in Hangul alone (사장님 "표기는 한국어로")
   "Chu-seok (추석)": "추석",
   "Korean Culture is Unique (한국 문화의 독특함)": "Korean Culture Is Unique (한국 문화의 독특함)",
   "Gyeong-Ju (경주)": "경주",
   "Jeju Island and Mt. Halla (제주도와 한라산)": "제주도와 한라산",
+  // 회귀 점검 1002 F66: the lesson's Korean line and chunks write the name 한국민속촌 as one word
+  "Korean Folk Village (한국 민속촌)": "Korean Folk Village (한국민속촌)",
 };
 
 /**
@@ -79,6 +83,11 @@ const CH1_EN = {
 /**
  * Other English the owner approved changing (2026-10-02 "너 추천대로 가자"), PPT file → sentence number → [English, Korean].
  * 2과 #14: the family has one son and one daughter, so "Our eldest son" (the oldest of three or more) becomes "Our son".
+ * Korean null: the PPT's Korean line stays (only the English was wrong).
+ * 회귀 점검 1002 (2026-10-05, 사장님 "틀림이 분명한 것은 고친다" — docs/qa-2026-09-18/회귀점검-1002/단계5-글읽기.md 4장):
+ *   2과 #2 (F18) stories are shared, not said · 2과 #4 (F19) close-knit is said of a group, not of each person ·
+ *   4과 #9 (F24) "watching her example" · "collaborative commitment" · 5과 #6 (F25) a daily routine in the present ·
+ *   12과 #4 (F30) "almost every few years" — every few years is already rough.
  */
 const EN_FIX = {
   // #21: the PPT's "(2)" is a fill-in; the number itself, so it is a tile like every word (사장님 2026-10-02 "이렇게 오류 있는거 다
@@ -90,6 +99,26 @@ const EN_FIX = {
     14: [
       "Our son, who has always been thoughtful and considerate, has wanted to give back since childhood and now works as a social worker at a community center.",
       "늘 사려 깊고 남을 배려해 온 아들은 어릴 때부터 사회에 봉사하고 싶어 했고, 지금은 커뮤니티 센터에서 사회복지사로 일하고 있습니다.",
+    ],
+    2: ["Whenever we think about our families, don't most of us carry quiet stories of gratitude and deep emotion that we rarely share out loud?", null],
+    4: ["I'm fortunate to have a wonderful family of four: my spouse, our son, our daughter, and myself, all of us remarkably close.", null],
+  },
+  "4과.pptx": {
+    9: [
+      "Watching her, I've come to understand that caring for family isn't an occasional duty but a shared commitment we renew every day.",
+      "어머니를 지켜보며, 저는 가족을 돌보는 일이 가끔 하는 의무가 아니라 매일 함께 새롭게 다지는 약속이라는 것을 깨닫게 되었습니다.",
+    ],
+  },
+  "5과.pptx": {
+    6: [
+      "Once the meeting wraps up, I turn to the tasks I've set for the day, which I try to tackle in order of priority.",
+      "회의가 끝나면 저는 그날 해야 할 일에 착수하는데, 그 일들을 우선순위에 따라 처리하려고 노력합니다.",
+    ],
+  },
+  "12과.pptx": {
+    4: [
+      "The College Scholastic Ability Test, first administered in 1993, replaced the previous national exam, yet even this system has been adjusted every few years since.",
+      "1993년에 처음 시행된 대학수학능력시험은 이전의 학력고사를 대체했지만, 이 제도조차 그 이후 몇 년마다 조정되어 왔습니다.",
     ],
   },
 };
@@ -193,6 +222,32 @@ const CHUNK_FIX = {
       ["and now works as a social worker at a community center.", "지금은 커뮤니티 센터에서 사회복지사로 일하고 있습니다."],
     ],
   },
+  // 회귀 점검 1002 — the EN_FIX sentences above whose Korean changed with them (F24 · F25 · F30)
+  "4과.pptx": {
+    9: [
+      ["Watching her,", "어머니를 지켜보며,"],
+      ["I've come to understand", "저는 깨닫게 되었습니다"],
+      ["that caring for family isn't an occasional duty", "가족을 돌보는 일이 가끔 하는 의무가 아니라"],
+      ["but a shared commitment we renew every day.", "매일 함께 새롭게 다지는 약속이라는 것을."],
+    ],
+  },
+  "5과.pptx": {
+    6: [
+      ["Once the meeting wraps up,", "회의가 끝나면,"],
+      ["I turn to the tasks I've set for the day,", "저는 그날 해야 할 일에 착수하는데,"],
+      ["which I try to tackle", "그 일들을 처리하려고 노력합니다"],
+      ["in order of priority.", "우선순위에 따라."],
+    ],
+  },
+  "12과.pptx": {
+    4: [
+      ["The College Scholastic Ability Test,", "대학수학능력시험은"],
+      ["first administered in 1993,", "1993년에 처음 시행되어,"],
+      ["replaced the previous national exam,", "이전의 학력고사를 대체했지만,"],
+      ["yet even this system has been adjusted", "이 제도조차 조정되어 왔습니다"],
+      ["every few years since.", "그 이후 몇 년마다."],
+    ],
+  },
   "7과.pptx": {
     2: [["According to legend,", "전설에 따르면,"], ["our country’s history started", "우리나라의 역사는 시작되었습니다"], ["more than 4,000 years ago.", "4,000여 년 전에."]],
     9: [["Later,", "훗날,"], ["Silla conquered the other two kingdoms", "신라가 다른 두 왕국을 정복하고"], ["and unified most of the peninsula.", "한반도의 대부분을 통일했습니다."]],
@@ -225,6 +280,68 @@ const CHUNK_FIX = {
     18: [["Mt. Halla is the highest mountain in South Korea;", "한라산은 남한에서 가장 높은 산으로,"], ["it’s almost 2,000 meters high", "높이가 거의 2,000미터에 이르며"], ["(about 6,400 feet).", "(약 6,400피트)."]],
   },
 };
+
+/**
+ * Korean fixes on sentences whose English stays the PPT's (회귀 점검 1002, 2026-10-05 — 단계5-글읽기.md 4장). CHUNK_FIX can not hold
+ * these: it is for sentences whose English changed (a CHUNK_FIX on the PPT's own English stops the build), and the English chunks
+ * here stay the PPT's breaks.
+ *   KO_LINE_FIX  file → sentence number → [the words in the Korean line, what they become] — each must be in the line exactly once.
+ *   CHUNK_KO_FIX file → sentence number → { chunk index: [that chunk's English, its new Korean] } — the English must be the chunk's.
+ * A sentence fixed by EN_FIX / KO_FIX / CHUNK_FIX is fixed there, not here, and an entry that no longer fits stops the build.
+ */
+const KO_LINE_FIX = {
+  // F20: 'more than almost anyone' — not '누구보다도' (stronger than the English)
+  "3과.pptx": { 8: ["누구보다도 신뢰합니다", "그 누구 못지않게 신뢰합니다"] },
+  // F21: often is '자주', not '늘' · F65: 한잔하다 is one word
+  "5과.pptx": { 3: ["늘 시간에 쫓기지만", "자주 시간에 쫓기지만"], 9: ["차를 한 잔 하며", "차를 한잔하며"] },
+  // F22: run errands is '볼일을 보다' — the lesson's word card — not '장보기'
+  "6과(여성용).pptx": { 6: ["저는 운동과 장보기, 영어 연습을 할 시간도", "저는 운동하고 볼일을 보고 영어를 연습할 시간도"] },
+  // F23: 'come at the expense of family' — '대가가 되다' was tangled
+  "6과(남성용).pptx": { 23: ["가족을 희생시키는 대가가 되어서는", "가족을 희생하면서까지 이어져서는"] },
+  // F68: 'has not eased' — '전혀' is not in the English (nor in the sentence's chunk)
+  "12과.pptx": { 14: ["전혀 누그러지지 않았습니다", "누그러지지 않았습니다"] },
+};
+const CHUNK_KO_FIX = {
+  // F57: the meanings had slid one chunk along (like → chunk 2, as well → chunk 2's '도')
+  "1과.pptx": {
+    18: {
+      0: ["I like to drink tea", "저는 차 마시는 것을 좋아합니다"],
+      1: ["and talk with my friends", "그리고 친구들과 이야기하는 것도"],
+      2: ["at the coffee shop as well.", "커피숍에서 역시."],
+    },
+  },
+  "3과.pptx": {
+    // F56: 'I realize' was in no chunk
+    2: { 1: ["I realize I once had a wide circle of friends,", "한때 저에게 폭넓은 친구들이 있었다는 것을 깨닫게 되는데,"] },
+    // F20 (with the Korean line above)
+    8: { 3: ["more than almost anyone.", "그 누구 못지않게."] },
+  },
+  "5과.pptx": {
+    // F21 · F65 (with the Korean lines above)
+    3: { 0: ["Although breakfast is often rushed,", "아침 식사는 자주 시간에 쫓기지만,"] },
+    9: { 1: ["we always finish with tea together,", "우리는 늘 차를 한잔하며 마무리하는데,"] },
+    // F58: 'aimed at improving' had gone into the next chunk's Korean
+    4: { 2: ["and set goals aimed at improving", "높이기 위한 목표를 세웁니다"], 3: ["how efficiently we work.", "우리가 일하는 효율을."] },
+  },
+  // F22 · F23 (with the Korean lines above)
+  "6과(여성용).pptx": { 6: { 0: ["I also make time to exercise, run errands, and practice my English,", "저는 운동하고 볼일을 보고 영어를 연습할 시간도 따로 마련하는데,"] } },
+  "6과(남성용).pptx": { 23: { 3: ["should never come at the expense of family.", "결코 가족을 희생하면서까지 이어져서는 안 된다는 것을."] } },
+  "11과.pptx": {
+    // F59: 'tightly restricted' had gone into the next chunk, which added '정권이었습니다'
+    1: { 2: ["that tightly restricted freedom of speech,", "그 정권은 표현의 자유를 엄격히 제한했고,"], 3: ["the press, and political assembly.", "언론과 정치 집회의 자유도 마찬가지였습니다."] },
+    // F60: 'rather than' and 'or' had swapped meanings
+    14: { 2: ["rather than relying on slogans", "구호에 기대기보다는,"], 3: ["or the opinions of those around me.", "또는 주변 사람들의 의견에 기대기보다는."] },
+  },
+  "12과.pptx": {
+    // F72: no comma after a finished '…점입니다'
+    6: { 2: ["but must reach every level of the education system,", "교육 제도의 모든 단계에 미쳐야 한다는 점입니다"] },
+    // F61: 'one that surfaces in' had gone into the next chunk
+    8: { 2: ["one that surfaces in daily conversations,", "그 문제는 일상의 대화에 등장하고,"], 3: ["news headlines, and political debates alike.", "뉴스 헤드라인과 정치 토론에도 똑같이 등장합니다."] },
+    // F62: 'give up' had gone into the chunk before
+    17: { 0: ["Having grown up watching classmates", "친구들을 지켜보며 자라 온 저로서는,"], 1: ["give up on their goals for financial reasons,", "그 친구들이 경제적인 이유로 꿈을 포기하는 모습을,"] },
+  },
+};
+const koFixUsed = new Set();
 
 /** a word compared without case, punctuation or the apostrophe's shape */
 const wordKey = (w) => w.toLowerCase().replace(/[’']/g, "'").replace(/[^a-z0-9'가-힣]/g, "");
@@ -360,12 +477,29 @@ function wordSpeech(word) {
     .trim();
 }
 
+/**
+ * A PPT word card's word or meaning fixed (회귀 점검 1002, 2026-10-05), file → the PPT's word → { word?, meaning? }; an entry whose
+ * word the PPT no longer has stops the build. The word is also what the card says (wordSpeech) — a changed word is a new clip.
+ *   2과 'contributing to (contribute to)' (F69) — every other card is the base form · 8과 ritual (F34) — an adjective, so the
+ *   meaning is the adjective's · 8과 offering (F70) — the sentence offers food to ancestors · 9과 'Western style' (F71) — the
+ *   sentence writes 'Western-style clothes'.
+ */
+const WORD_FIX = {
+  "2과.pptx": { "contributing to (contribute to)": { word: "contribute to" } },
+  "8과.pptx": { ritual: { meaning: "의식의, 의례의" }, offering: { meaning: "제물, (조상·신께) 바치는 것" } },
+  "9과.pptx": { "Western style": { word: "Western-style" } },
+};
+const wordFixUsed = new Set();
+
 /** file → the chapter's words placed: { lessonId, sentence index, word, meaning, pos } (the span is found on the written text later) */
 function placeWords(file, chapterLessons) {
   const sentences = chapterLessons.flatMap((l) => l.sentences.map((s, i) => ({ id: l.id, i, en: s.en })));
   const placed = [];
   const gone = [];
-  for (const w of pptWords[file]) {
+  for (const ppt of pptWords[file]) {
+    const fix = WORD_FIX[file]?.[ppt.word];
+    if (fix) wordFixUsed.add(`${file} ${ppt.word}`);
+    const w = { ...ppt, ...fix };
     const pattern = wordPattern(w.word);
     const phrases = w.usage
       .split(/…|\.\.\.|\//)
@@ -373,7 +507,7 @@ function placeWords(file, chapterLessons) {
       .filter((x) => x.length > 2 && !/[가-힣]/.test(x));
     const byPhrase = phrases.length ? sentences.find((s) => phrases.every((p) => foldQuotes(s.en).toLowerCase().includes(p.toLowerCase()))) : null;
     const hit = byPhrase ?? sentences.find((s) => pattern && pattern.test(foldQuotes(s.en)));
-    if (!hit) { gone.push(w.word); continue; }
+    if (!hit) { gone.push(ppt.word); continue; }
     placed.push({ id: hit.id, i: hit.i, word: w.word, meaning: w.meaning, pos: POS_KO[w.pos] ?? w.pos, pattern, phrases });
   }
   const expect = WORDS_GONE[file] ?? [];
@@ -411,6 +545,75 @@ const EXTRA_WORDS = {
   "a6-2": [...SATURDAY_WORDS.slice(0, 6), { word: "run errands", pos: "collocation", meaning: "볼일을 보다, 이런저런 일을 처리하다", usage: "run errands" }, SATURDAY_WORDS[6]],
 };
 
+/**
+ * 단어 빈칸 — the blanks where a wrong choice the rule below picks also fits the sentence, so a learner who picks it is marked
+ * wrong for a right answer (회귀 점검 1002, 2026-10-05 — 단계5-글읽기.md 4장 F02~F17 · F31~F33 · F35~F55; 사장님 "틀림이 분명한 것은
+ * 고친다", J11's way: the rule stays, the bad blanks get their own choices). Lesson → the card's word → its three wrong choices,
+ * each a word of the same chapter as its sentences write it (as the rule picks), checked by hand not to fit that blank (grammar
+ * or meaning — the fixing session's notes: docs/qa-2026-09-18/회귀점검-1002/고침/fix-adult-content.md). The build stops on a
+ * choice that is the answer or the answer's own word, a choice not in the chapter, or an entry the lesson no longer has.
+ */
+const CHOICE_FIX = {
+  "a1-1": { pleasure: ["orphanage", "hiking", "subjects"] }, // F33 — 'It's a chance to be with you' fits
+  "a2-3": { anticipation: ["retirement age", "refuge", "milestone"] }, // F02 — 'gratitude and peace of mind'
+  "a3-3": { outstanding: ["gifted at", "possess", "decades"] }, // F03 — 'an outgoing / introverted … style'
+  "a4-3": {
+    occasional: ["paternal", "maternal", "eldest"], // F04 — 'isn't an unavoidable duty'
+    renew: ["judge", "awakening", "lately"], // F31 — 'a commitment we pursue'
+  },
+  "a5-3": {
+    "close-knit": ["demanding", "ritual", "tackle"], // F05 — 'becomes a supportive / collaborative one'
+    supportive: ["demanding", "stretch", "efficiently"], // F06 — 'kept our team remarkably close-knit / collaborative'
+  },
+  "a5-5": { dedicated: ["rushed", "close-knit", "remarkably"] }, // F32 — 'with collaborative effort'
+  "a6-3": { supportive: ["home-cooked", "attentively", "every other"] }, // F07 — 'a close-knit / collaborative network'
+  "a6-4": { "close-knit": ["home-cooked", "occasionally", "every other"] }, // F08 — 'a supportive extended family'
+  // F09 — 'a balanced meal'; not 'collaborative' either (a meal cooked together)
+  "a6-5": { "home-cooked": ["supportive", "close-knit", "attentively"] },
+  "a7-1": { found: ["hosted", "accomplished", "century"] }, // F35 — 'was divided / ruled / liberated'
+  "a7-2": { peninsula: ["century", "Golden Age", "founder"] }, // F36 — 'the Korean nation was divided'
+  "a7-3": { rule: ["liberated", "hosted", "accomplished"] }, // F37 — 'was invaded by Japan'
+  "a8-1": { traditional: ["ritual", "custom", "privilege"] }, // F38 — 'the two largest upcoming holidays'
+  "a8-2": {
+    perform: ["bow", "ritual", "upcoming"], // F39 — 'we celebrate a ritual ceremony'
+    ritual: ["privilege", "upcoming", "in honor of"], // F10 — 'a traditional ceremony'
+    ancestor: ["blessings", "tombs", "rice cake"], // F40 — 'in honor of our elders'
+    elder: ["blessings", "gesture", "rice cake"], // F41 — 'bow to their relatives'
+    privilege: ["rice cake", "memorial ceremony", "Thanksgiving"], // F42 — 'a special honor and custom'
+  },
+  "a8-3": {
+    relative: ["ancestors", "blessings", "tombs"], // F43 — 'play games with their elders'
+    "rice cake": ["memorial ceremony", "gesture", "privilege"], // F44 — 'a traditional Korean custom'
+  },
+  "a9-1": { aspect: ["ordinary occasions", "boiled rice", "nobility"] }, // F45 — 'many unique costumes / side dishes'
+  "a9-2": { however: ["include", "alphabet", "popular"] }, // F46 — 'Instead / Finally, on traditional holidays'
+  "a9-4": {
+    finally: ["instead", "alphabet", "popular"], // F47 — 'However, the Korean language …'
+    alphabet: ["boiled rice", "aspects", "however"], // F11 — 'its own writing system'
+    instead: ["nobility", "popular", "include"], // F48 — 'However, Chinese characters …'
+    "writing system": ["boiled rice", "nobility", "housing"], // F12 — 'This alphabet is known as 한글'
+  },
+  "a10-3": {
+    witness: ["regard 경주 as", "contains", "surrounded"], // F13 — 'you can observe a … ceremony'
+    attraction: ["Dynasty", "peninsula", "remains"], // F14 — 'a very popular destination'
+  },
+  "a10-4": { "regard (A) as (B)": ["contains", "filled with", "geographical"] }, // F49 — 'Many people witness a museum'
+  "a10-5": { spot: ["peninsula", "landscape", "vacation"] }, // F50 — 'many beautiful remains'
+  "a11-1": { showcase: ["dominate", "function", "imprisoned"] }, // F51 — 'did the Games represent …'
+  "a11-2": { "political scientist": ["principles", "slogans", "repression"] }, // F52 — 'many first-time voters regard'
+  "a11-3": {
+    accountable: ["authoritarian", "nationwide", "reluctant"], // F15 — 'honest and upright'
+    slogan: ["first-time voters", "direct presidential elections", "repression"], // F53 — 'relying on political scientists'
+  },
+  "a12-1": {
+    transformation: ["social classes", "liberation", "tutoring"], // F16 — 'remarkably rapid reforms'
+    revise: ["climbing", "unfold", "narrow"], // F54 — 'has been administered / eased'
+    reform: ["social classes", "consistency", "poverty"], // F55 — 'frequent transformations'
+  },
+  "a12-2": { pressing: ["lower-income", "decent", "prestigious"] }, // F17 — 'a fundamental social issue'
+};
+const choiceFixUsed = new Set();
+
 /** where to underline the word in the written sentence: its forms, else the example phrase */
 function wordSpan(text, w) {
   const folded = foldQuotes(text);
@@ -446,7 +649,12 @@ CHAPTERS.forEach((chapter, ci) => {
   if (unit === 1) for (const s of sections.flatMap((x) => x.sentences)) if (CH1_EN[s.n]) s.en = CH1_EN[s.n];
   for (const s of sections.flatMap((x) => x.sentences)) {
     const fix = EN_FIX[chapter.file]?.[s.n];
-    if (fix) [s.en, s.ko] = fix;
+    if (fix) {
+      if (fix[0] === s.en) throw new Error(`${chapter.file} #${s.n}: EN_FIX gives the sentence it already has`);
+      s.en = fix[0];
+      if (fix[1] !== null) s.ko = fix[1];
+      s.enFixed = true;
+    }
   }
 
   if (chapter.women) {
@@ -479,6 +687,28 @@ CHAPTERS.forEach((chapter, ci) => {
       // the chunks are written as the sentence is (Hangul) and must still make it up exactly
       s.chunks = s.chunks.map(([en, ko]) => ({ en: hangulForm(page, en), ko }));
       if (s.chunks.map((c) => c.en).join(" ") !== written) throw new Error(`${id} #${s.n}: chunks "${s.chunks.map((c) => c.en).join(" | ")}" are not "${written}"`);
+      // 회귀 점검 1002: the Korean of a sentence whose English is the PPT's (KO_LINE_FIX · CHUNK_KO_FIX above)
+      const file = section.file ?? chapter.file;
+      const lineFix = KO_LINE_FIX[file]?.[s.n];
+      const chunkFix = CHUNK_KO_FIX[file]?.[s.n];
+      if ((lineFix || chunkFix) && (s.enFixed || KO_FIX[file]?.[s.n] || CHUNK_FIX[file]?.[s.n])) {
+        throw new Error(`${id} #${s.n}: a Korean fix for a sentence EN_FIX / KO_FIX / CHUNK_FIX already writes — fix it there`);
+      }
+      if (lineFix) {
+        const [from, to] = lineFix;
+        if (s.ko.split(from).length !== 2) throw new Error(`${id} #${s.n}: KO_LINE_FIX "${from}" is not once in "${s.ko}"`);
+        s.ko = s.ko.replace(from, to);
+        koFixUsed.add(`line ${file} ${s.n}`);
+      }
+      if (chunkFix) {
+        for (const [k, [en, ko]] of Object.entries(chunkFix)) {
+          const chunk = s.chunks[Number(k)];
+          if (!chunk || chunk.en !== en) throw new Error(`${id} #${s.n}: CHUNK_KO_FIX chunk ${k} is "${chunk?.en}", not "${en}"`);
+          if (chunk.ko === ko) throw new Error(`${id} #${s.n}: CHUNK_KO_FIX chunk ${k} gives the Korean it already has`);
+          chunk.ko = ko;
+        }
+        koFixUsed.add(`chunks ${file} ${s.n}`);
+      }
     }
     // 단어: each with where it is in the written sentence, in reading order
     section.sentences.forEach((s, i) => {
@@ -545,10 +775,40 @@ CHAPTERS.forEach((chapter, ci) => {
     if (picked.length < 3) throw new Error(`a${unit}: "${w.word}" has only ${picked.length} wrong choices`);
     w.choices = picked;
   });
+  // the blanks where the rule's choices also fit the sentence (CHOICE_FIX below)
+  const forms = new Set(chapterWords.map(({ form }) => form));
+  for (const l of lessons.filter((x) => x.unit === unit)) {
+    for (const [word, choices] of Object.entries(CHOICE_FIX[l.id] ?? {})) {
+      const hits = l.blocks.find((b) => b.type === "sentences").items.flatMap((it) => (it.words ?? []).filter((w) => w.word === word));
+      if (hits.length !== 1) throw new Error(`${l.id}: CHOICE_FIX "${word}" — ${hits.length} cards with that word in the lesson`);
+      const w = hits[0];
+      const answer = chapterWords.find((c) => c.w === w).form;
+      if (choices.length !== 3 || new Set(choices.map((c) => c.toLowerCase())).size !== 3) throw new Error(`${l.id}: CHOICE_FIX "${word}" needs 3 different choices`);
+      for (const c of choices) {
+        if (c.toLowerCase() === answer.toLowerCase()) throw new Error(`${l.id}: CHOICE_FIX "${word}" gives the answer "${c}" as a wrong choice`);
+        if (!forms.has(c)) throw new Error(`${l.id}: CHOICE_FIX "${word}" — "${c}" is not a word of chapter ${unit} as its sentences write it`);
+        const sameWord = chapterWords.filter((o) => o.form === c).some((o) => o.w.word.toLowerCase() === w.word.toLowerCase());
+        if (sameWord) throw new Error(`${l.id}: CHOICE_FIX "${word}" — "${c}" is the answer's own word`);
+      }
+      if (JSON.stringify(choices) === JSON.stringify(w.choices)) throw new Error(`${l.id}: CHOICE_FIX "${word}" gives the rule's own choices`);
+      w.choices = [...choices];
+      choiceFixUsed.add(`${l.id} ${word}`);
+    }
+  }
 
   // as STUDENT's index: the course list names a chapter Korean first, and the group has no `label`
   groups.push({ title: `Chapter ${unit}. ${chapter.ko} (${chapter.en})`, lessons: ids });
 });
+
+// a fix that matched nothing (the PPT, the sentence or the lesson moved under it) stops the build instead of quietly doing nothing
+const unused = [
+  ...Object.entries(KO_LINE_FIX).flatMap(([f, byN]) => Object.keys(byN).map((n) => `line ${f} ${n}`)).filter((k) => !koFixUsed.has(k)).map((k) => `KO_LINE_FIX ${k}`),
+  ...Object.entries(CHUNK_KO_FIX).flatMap(([f, byN]) => Object.keys(byN).map((n) => `chunks ${f} ${n}`)).filter((k) => !koFixUsed.has(k)).map((k) => `CHUNK_KO_FIX ${k}`),
+  ...Object.entries(WORD_FIX).flatMap(([f, byW]) => Object.keys(byW).map((w) => `${f} ${w}`)).filter((k) => !wordFixUsed.has(k)).map((k) => `WORD_FIX ${k}`),
+  ...Object.entries(CHOICE_FIX).flatMap(([id, byW]) => Object.keys(byW).map((w) => `${id} ${w}`)).filter((k) => !choiceFixUsed.has(k)).map((k) => `CHOICE_FIX ${k}`),
+  ...Object.keys(TITLE_FIX).filter((h) => !lessons.some((l) => l.title === TITLE_FIX[h])).map((h) => `TITLE_FIX ${h}`),
+];
+if (unused.length) throw new Error(`fixes that matched nothing: ${unused.join(" · ")}`);
 
 const index = {
   course: "adult",

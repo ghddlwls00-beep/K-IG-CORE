@@ -1,0 +1,55 @@
+{
+ "base": "http://localhost:3322",
+ "at": "2026-10-05T04:39:07.406Z",
+ "label": "before",
+ "rows": [
+  {
+   "name": "한글 꼴 'I live in 서울.' 붙여 넣기",
+   "expectWarn": false,
+   "warned": true,
+   "status": "FAIL"
+  },
+  {
+   "name": "표에 없는 한글 'I live in 가나다.'",
+   "expectWarn": true,
+   "warned": true,
+   "status": "PASS"
+  },
+  {
+   "name": "영어만 'I live in Seoul.'",
+   "expectWarn": false,
+   "warned": false,
+   "status": "PASS"
+  },
+  {
+   "name": "조합 중 'ㅅ'",
+   "expectWarn": false,
+   "warned": true,
+   "status": "FAIL"
+  },
+  {
+   "name": "조합 중 '서우'",
+   "expectWarn": false,
+   "warned": true,
+   "status": "FAIL"
+  },
+  {
+   "name": "조합 끝 '서울'",
+   "expectWarn": false,
+   "warned": true,
+   "status": "FAIL"
+  },
+  {
+   "name": "조합 끝 '가나'(표에 없음)",
+   "expectWarn": true,
+   "warned": true,
+   "status": "PASS"
+  },
+  {
+   "name": "한글 꼴로 확인 → 채점됨 · 경고 없음",
+   "warn": false,
+   "graded": true,
+   "status": "PASS"
+  }
+ ]
+}

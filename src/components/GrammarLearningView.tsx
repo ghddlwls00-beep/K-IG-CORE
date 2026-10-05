@@ -41,8 +41,8 @@ import {
   gradeAnswer,
   type AnswerDiff,
   type AnswerGrade,
-  type DiffToken,
 } from "@/lib/grammarGrading";
+import { DiffLine } from "./GrammarDiffLine";
 import { diffSpokenAnswer, gradeSpokenAnswer } from "@/lib/spokenAnswer";
 import { isSpeechRecognitionSupported, listenToSpeech, type VoiceRecognizerHandle } from "@/lib/speechRecognition";
 import { markLessonDone, readCourseRecord, recordAttempt } from "@/lib/learning/record";
@@ -550,83 +550,7 @@ function AnswerBox({
   );
 }
 
-/** The learner's words with the marks of GRM-L02: missing (green, inserted) · wrong (red → fix) · extra (struck) · moved. */
-/**
- * Consecutive tokens of the same kind joined into one (a "wrong" token keeps its own expected word, so it stays alone). Drawn with
- * the same single spaces between them, so the line reads exactly as before — only a word that is part of a name can now be drawn
- * as that name (koreanOnScreen).
- */
-function mergeSameKind(tokens: DiffToken[]): DiffToken[] {
-  const out: DiffToken[] = [];
-  for (const token of tokens) {
-    const last = out[out.length - 1];
-    if (last && last.kind === token.kind && token.kind !== "wrong") last.text = `${last.text} ${token.text}`;
-    else out.push({ ...token });
-  }
-  return out;
-}
-
-/** `show`: how a word is drawn (koreanOnScreen — a Korean word in Hangul); the diff itself is the grader's */
-function DiffLine({ tokens: raw, show = (s) => s }: { tokens: DiffToken[]; show?: (text: string) => string }) {
-  // neighbours of the same kind drawn as one piece, so a name the diff cut into words is drawn whole ("Han River" → 한강)
-  const tokens = mergeSameKind(raw);
-  return (
-    <>
-      {tokens.map((token, index) => {
-        const gap = index > 0 ? " " : "";
-        if (token.kind === "same") return <Fragment key={index}>{gap}{token.text}</Fragment>;
-        if (token.kind === "missing") {
-          return (
-            <Fragment key={index}>
-              {gap}
-              <ins className="font-semibold text-success underline decoration-2 underline-offset-4">
-                <span className="sr-only">빠진 낱말 </span>
-                {token.text}
-              </ins>
-            </Fragment>
-          );
-        }
-        if (token.kind === "extra") {
-          return (
-            <Fragment key={index}>
-              {gap}
-              <del className="text-ink-faint">
-                <span className="sr-only">뺄 낱말 </span>
-                {token.text}
-              </del>
-            </Fragment>
-          );
-        }
-        if (token.kind === "moved") {
-          return (
-            <Fragment key={index}>
-              {gap}
-              <span className="underline decoration-dotted decoration-2 underline-offset-4">{token.text}</span>
-              <span className="ml-0.5 text-caption text-ink-soft">(순서)</span>
-            </Fragment>
-          );
-        }
-        return (
-          <Fragment key={index}>
-            {gap}
-            <span className="font-semibold text-danger underline decoration-wavy underline-offset-4">
-              <span className="sr-only">고칠 낱말 </span>
-              {token.text}
-            </span>
-            {token.expected ? (
-              <>
-                {" "}
-                <ins className="font-semibold text-success no-underline">
-                  <span className="sr-only">맞는 꼴 </span>→ {token.expected}
-                </ins>
-              </>
-            ) : null}
-          </Fragment>
-        );
-      })}
-    </>
-  );
-}
+// DiffLine (the learner's answer with the marks of GRM-L02) is in ./GrammarDiffLine — every word drawn through koreanOnScreen.
 
 function focusInto(el: HTMLElement | null | undefined, select = false) {
   if (!el) return;

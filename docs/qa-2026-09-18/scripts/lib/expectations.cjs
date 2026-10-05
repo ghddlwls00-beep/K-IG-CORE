@@ -23,6 +23,10 @@ const vocaUtils = (() => {
 const lessonSpeechMod = (() => {
   try { return loadTs(path.join(REPO, "src/lib/lessonSpeechForm.ts")); } catch { return null; }
 })();
+// 회귀 점검 1002 T4: how GRAMMAR II · PASS-OFF draw a Korean word inside the English (Hangul) — the app's own function
+const koreanGloss = (() => {
+  try { return loadTs(path.join(REPO, "src/lib/koreanGloss.ts")); } catch { return null; }
+})();
 const vocaDictionary = (() => {
   try { return JSON.parse(fs.readFileSync(path.join(REPO, "content/voca_dictionary.json"), "utf8")); } catch { return null; }
 })();
@@ -250,7 +254,15 @@ function expected(course, id) {
   if (course === "grammar1" || course === "grammar2") {
     const mine = itemsOf(d);
     const theirs = pair ? itemsOf(pair) : [];
-    for (const it of mine) texts.push({ kind: "item", text: it.text });
+    // 회귀 점검 1002 T4 (2026-10-05): the screen draws a Korean word inside the English in Hangul ('He went to 부산 on business.' —
+    // 2026-10-02 사장님 '한글로만', src/lib/koreanGloss.ts koreanOnScreen, per page); the lesson file keeps the spelling (answers ·
+    // sound · grading stay romanized). The expected TEXT is what is drawn — it was the file's spelling, so 11 GRAMMAR II sentences × 3
+    // screens were '없음' 33 while they were on screen. --break=gloss-off (env KIG_BREAK_GLOSS=1): the old expectation.
+    if (course === "grammar2" && !koreanGloss) throw new Error("expectations: src/lib/koreanGloss.ts 를 못 읽음 — GRAMMAR II 의 기대 글을 화면 꼴(한글)로 만들 수 없음");
+    const onScreen = (t) => (koreanGloss && typeof koreanGloss.koreanOnScreen === "function" && process.env.KIG_BREAK_GLOSS !== "1" && !process.argv.includes("--break=gloss-off") ? koreanGloss.koreanOnScreen(`${course}/${id}`, t) : t);
+    // lang: the page's language (lib/containers.cjs reads an item from that language's list — a Hangul word no longer makes it Korean)
+    const pageLang = mine.length && isKo(mine[0].text) ? "ko" : "en";
+    for (const it of mine) texts.push({ kind: "item", text: onScreen(it.text), lang: pageLang });
     // the learner types the OTHER language's item: KO page → EN answers, EN page → EN itself
     const english = mine.length && !isKo(mine[0].text) ? mine : theirs;
     for (const it of english) answers.push({ n: it.n, text: it.text, alternatives: it.alternatives });

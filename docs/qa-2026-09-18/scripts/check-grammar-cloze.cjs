@@ -35,7 +35,12 @@ function pull(src) {
   new Function("module", "exports", "require", js)(m, m.exports, require);
   return m.exports.buildCloze;
 }
-const nowSrc = fs.readFileSync(path.join(REPO, "src/components/GrammarLearningView.tsx"), "utf8");
+// --rev <commit> (회귀 점검 1002 T3, 2026-10-05): buildCloze from GrammarLearningView.tsx AT that commit (e.g. the build the sweep saw)
+// instead of the working copy — out/grammar-cloze.json then says which code it judged (rev)
+const REV = process.argv.includes("--rev") ? process.argv[process.argv.indexOf("--rev") + 1] : null;
+const nowSrc = REV
+  ? execSync(`git show ${REV}:src/components/GrammarLearningView.tsx`, { cwd: REPO, encoding: "utf8", maxBuffer: 1 << 26 })
+  : fs.readFileSync(path.join(REPO, "src/components/GrammarLearningView.tsx"), "utf8");
 const PRE_FIX_REV = "f35e8be"; // 6단계 고침 앞 — 대조군과 ④ 의 '고치기 전'
 const headSrc = execSync(`git show ${PRE_FIX_REV}:src/components/GrammarLearningView.tsx`, { cwd: REPO, encoding: "utf8", maxBuffer: 1 << 26 });
 const build = pull(OLD ? headSrc : nowSrc);
@@ -45,25 +50,34 @@ const clean = (s) => String(s || "").replace(/^\s*\d+[.)]\s*/, "").replace(/\s*\
 const seen = new Set();
 let n = 0, half = 0, visible = 0, notExact = 0, changed = 0, changedNoNeg = 0, openerDropped = 0;
 const ex = { half: [], notExact: [], changedNoNeg: [], openerDropped: [] };
+// 회귀 점검 1002 T3 (2026-10-05): which lessons this run read, and which hold a sentence with problem ① or ③ — written to
+// out/grammar-cloze.json so build-coverage can count drive-generic's 'Step 2 · NA coveredBy check-grammar-cloze' as covered for
+// exactly those lessons (a lesson whose sentences were all seen on an earlier lesson is still read — its sentences were checked)
+const lessonsRead = [];
+const sentenceLessons = new Map();   // sentence → lessons that hold it
+const problemSentences = new Set();
 /** ⑤ the sentence's first word (what the old fallback blanked when a sentence had no function word) */
 const openingWord = (t) => (String(t).match(/^[^A-Za-z0-9]*([A-Za-z]+)/) || [])[1] || null;
 for (const course of ["grammar1", "grammar2"]) {
   const dir = path.join(REPO, "content/lessons", course);
   for (const f of fs.readdirSync(dir).filter((x) => /^gh\d-\d{3}(-\d)?\.json$/.test(x))) {
     let exp;
+    const lessonKey = `${course}/${f.replace(".json", "")}`;
     try { exp = E.expected(course, f.replace(".json", "")); } catch { continue; }
+    lessonsRead.push(lessonKey);
     for (const a of (exp && exp.answers) || []) {
       const t = clean(a.text);
+      if (t) { if (!sentenceLessons.has(t)) sentenceLessons.set(t, new Set()); sentenceLessons.get(t).add(lessonKey); }
       if (!t || /[가-힣]/.test(t) || seen.has(t)) continue;
       seen.add(t);
       n++;
       const { parts } = build(t);
       const blanks = parts.map((p, i) => ({ p, i })).filter((x) => x.p.isBlank);
       const hasNeg = /[A-Za-z]n['’]t\b/.test(t);
-      if (blanks.some(({ p, i }) => /^'+$/.test((parts[i + 1] || {}).text || "") && /^t$/i.test((parts[i + 2] || {}).text || ""))) { half++; if (ex.half.length < 5) ex.half.push(t); }
+      if (blanks.some(({ p, i }) => /^'+$/.test((parts[i + 1] || {}).text || "") && /^t$/i.test((parts[i + 2] || {}).text || ""))) { half++; problemSentences.add(t); if (ex.half.length < 5) ex.half.push(t); }
       if (hasNeg && !blanks.some(({ p }) => /n['’]t$/i.test(p.answer || ""))) visible++;
       const full = (w) => { const l = w.toLowerCase().replace(/’/g, "'"); if (l === "can't") return "cannot"; if (l === "won't") return "will not"; if (l === "shan't") return "shall not"; return l.replace(/n't$/, " not"); };
-      for (const { p } of blanks) if (grading.gradeAnswer(p.answer, p.answer) !== "exact" || (/n['’]t$/i.test(p.answer) && grading.gradeAnswer(full(p.answer), p.answer) !== "exact")) { notExact++; if (ex.notExact.length < 5) ex.notExact.push(`${p.answer} | ${t}`); }
+      for (const { p } of blanks) if (grading.gradeAnswer(p.answer, p.answer) !== "exact" || (/n['’]t$/i.test(p.answer) && grading.gradeAnswer(full(p.answer), p.answer) !== "exact")) { notExact++; problemSentences.add(t); if (ex.notExact.length < 5) ex.notExact.push(`${p.answer} | ${t}`); }
       if (!OLD) {
         const a1 = buildHead(t).parts.filter((p) => p.isBlank).map((p) => p.answer).join("|");
         const a2 = parts.filter((p) => p.isBlank).map((p) => p.answer).join("|");
@@ -78,4 +92,18 @@ for (const course of ["grammar1", "grammar2"]) {
 }
 console.log(`${OLD ? `[고치기 전 ${PRE_FIX_REV}] ` : ""}GRAMMAR 모범 답안(서로 다른) ${n} · ① 반쪽 빈칸 ${half} · ② n't 가 있는데 빈칸은 딴 곳 ${visible} · ③ 온전한 꼴이 exact 아닌 빈칸 ${notExact}${OLD ? "" : ` · ④ 고치기 전(${PRE_FIX_REV})과 빈칸이 달라진 문항 ${changed} (n't 없는 문항 ${changedNoNeg}) · ⑤ 문장 첫 낱말 빈칸을 없앤 문항(GRM-L06) ${openerDropped}`}`);
 if (process.argv.includes("--list")) for (const [k, v] of Object.entries(ex)) if (v.length) console.log(`  ${k}: ${v.join(" / ")}`);
-process.exit(half || notExact || changedNoNeg ? 1 : 0);
+const exitCode = half || notExact || changedNoNeg ? 1 : 0;
+{
+  // T3: the run's result for build-coverage (EXTERNAL_COVERS). --old writes its own file, never read as coverage.
+  const problemLessons = new Set();
+  for (const t of problemSentences) for (const k of sentenceLessons.get(t) || []) problemLessons.add(k);
+  let rev = REV;
+  if (!rev) try { rev = execSync("git rev-parse --short HEAD", { cwd: REPO, encoding: "utf8" }).trim(); } catch {}
+  let dirty = null;
+  if (!REV) try { dirty = execSync("git status --porcelain -- src/components/GrammarLearningView.tsx src/lib/grammarGrading.ts content/lessons/grammar1 content/lessons/grammar2", { cwd: REPO, encoding: "utf8" }).trim().length > 0; } catch {}
+  const OUTF = path.join(__dirname, "../out", OLD ? "grammar-cloze-old.json" : "grammar-cloze.json");
+  fs.mkdirSync(path.dirname(OUTF), { recursive: true });
+  fs.writeFileSync(OUTF, JSON.stringify({ at: new Date().toISOString(), tool: "check-grammar-cloze", old: OLD, rev, dirty, exit: exitCode, sentences: n, half, notExact, changedNoNeg, lessons: lessonsRead, problemLessons: [...problemLessons].sort() }, null, 1));
+  console.log(`→ ${path.relative(REPO, OUTF)} (강의 ${lessonsRead.length} · 문제 강의 ${problemLessons.size})`);
+}
+process.exit(exitCode);

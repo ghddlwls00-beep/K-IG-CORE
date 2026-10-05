@@ -26,6 +26,7 @@
  *   O2 (2026-09-27) GRAMMAR 새 1단계 판정 글 '✕ 오답 — …'          → FAIL(진짜 판정은 그대로 셈)
  *   Q~W (회귀 점검 1002) ADULT · PASS-OFF 줄 · --screens · 기록 지운 판 · no-adult · no-passoff — 아래 주석
  *   X · X2 · Y · Z (fixes-0d) 실기기 몫(마이크) · 깨기 기록 빼기 · 학습 단위 확인함 — 아래 주석
+ *   AA~AK (회귀 점검 1002 고침, 2026-10-05) ⑩ 다른 도구가 본 GRAMMAR NA · ⑪ 연결 실패 소리 · ⑫ READING WPM 창 — 아래 주석
  * exit 0 = 모두 기대대로.
  */
 const fs = require("fs");
@@ -125,6 +126,38 @@ lines.push(rec("student", "s3-2", "desktop", LATER, [{ feature: "content", item:
 // Y2 — student s3-3: 운영 PASS + 더 늦은 로컬(localhost — 깨뜨린 앱 사본에 대고 돈 proof-run) FAIL 기록 → PASS · 로컬 기록 1건 뺌
 lines.push(...all3("student", "s3-3", NEW, [pass("step")], { driverRev: "7-1m", base: "https://k-ig-core.vercel.app" }));
 lines.push(rec("student", "s3-3", "desktop", LATER, [{ feature: "content", item: "x", status: "FAIL", note: "Y2: 로컬 증명 기록" }], { driverRev: "7-1m", base: "http://localhost:3311" }));
+// 회귀 점검 1002 고침 (fix-tools, 2026-10-05) — build-coverage ⑩ ⑪ ⑫ (records shaped as the 10-04 sweep wrote them · its own values):
+//   AA GRAMMAR gh1-010: Step 2 · 4 NA with coveredBy (drive-generic -f1005) + both tools' results PASS for it   → PASS
+//   AB GRAMMAR gh1-012: the same NA as the 10-04 sweep wrote it (no coveredBy — the note names the tool)        → PASS (note read)
+//   AC GRAMMAR gh1-014: the exam tool's result says FAIL for it                                                 → FAIL (the tool's finding)
+//   AD GRAMMAR gh1-016: the cloze tool's result does not hold it                                                → BLOCKED (its reason)
+//   AE --break=no-external-cover (before T3)                                                                    → gh1-010 · gh1-012 BLOCKED
+//   AF the cloze result made by --old (the before-fix copy)                                                     → not used: gh1-010 BLOCKED
+//   AG LISTENING d010: a visit with net::ERR_INTERNET_DISCONNECTED and 'clip error 4' FAIL (d172's line)        → PASS · 연결 실패 1줄
+//      --break=offline-as-fail                                                                                  → FAIL
+//   AH LISTENING d011: the same visit but 'clip not in this lesson's data'                                     → FAIL (another text's clip is never the connection)
+//   AI LISTENING d012: 'clip error 4' with no connection failure on the visit                                   → FAIL
+//   AJ READING pr010: the WPM FAIL of pr180-1 (81 words · 11449 ms · shown 425 · exact 424), old driverRev      → PASS · --break=wpm-exact → FAIL
+//   AK READING pr011: the same with the shown WPM 427 (outside the ±0.5 ms window)                             → FAIL
+const G_NA = (step, extra = {}) => ({ feature: "graded input", item: `step ${step}`, status: "NA", note: `GRAMMAR Step ${step} does not grade a typed sentence per row — Step 2 (one word per blank) is checked by check-grammar-cloze.cjs, Step 4 (all rows on '제출') by check-grammar-exam.cjs; this tool checks Step 1`, ...extra });
+const PROD = "https://k-ig-core.vercel.app";
+lines.push(...all3("grammar1", "gh1-010", NEW, [pass("step"), G_NA(2, { coveredBy: "check-grammar-cloze" }), G_NA(4, { coveredBy: "check-grammar-exam" })], { driverRev: "7-1m-a1002-f1005", base: PROD }));
+for (const id of ["gh1-012", "gh1-014", "gh1-016"]) lines.push(...all3("grammar1", id, NEW, [pass("step"), G_NA(2), G_NA(4)], { driverRev: "7-1m-a1002", base: PROD }));
+const OFFLINE_EV = { console: [], exceptions: [], badResponses: [], failed: ["net::ERR_INTERNET_DISCONNECTED", "net::ERR_INTERNET_DISCONNECTED"], requests: [] };
+const clipFail = (note) => ({ control: "Step 3 · 소리클리닉 ▶ dreamed of 듣기", status: "FAIL", clips: [{ path: "/audio/azure-ava/v1/a-38543f0a643c0e55.mp3", play: 1, error: 1, errCode: 4, expected: true }], ttsFallback: ["dreamed of"], note });
+lines.push(...all3("ld", "d010", NEW, [pass("step")], { driverRev: "7-1m-a1002", events: OFFLINE_EV }).map((l) => (l.viewport === "desktop" ? { ...l, audio: [clipFail("clip error 4")] } : l)));
+lines.push(...all3("ld", "d011", NEW, [pass("step")], { driverRev: "7-1m-a1002", events: OFFLINE_EV }).map((l) => (l.viewport === "desktop" ? { ...l, audio: [{ ...clipFail("clip not in this lesson's data: /audio/azure-ava/v1/0-0.mp3"), clips: [] }] } : l)));
+lines.push(...all3("ld", "d012", NEW, [pass("step")], { driverRev: "7-1m-a1002", events: { ...OFFLINE_EV, failed: [] } }).map((l) => (l.viewport === "desktop" ? { ...l, audio: [clipFail("clip error 4")] } : l)));
+const wpmRec = (shown) => [pass("step"),
+  { feature: "step4", item: "", action: "Step 4 meta: word count · sentences · target", expected: "81단어 · 6문장 · 목표 약 27초", actual: "81단어 · 6문장 · 목표 약 27초", status: "PASS" },
+  { feature: "wpm", item: "again", action: "the run is stored (the record's `again`)", expected: "a run", actual: `${shown} WPM · 11449 ms`, status: "PASS" },
+  { feature: "wpm", item: "again", action: "WPM = words ÷ the timed minutes", expected: "424", actual: String(shown), status: "FAIL" }];
+lines.push(...all3("reading", "pr010", NEW, wpmRec(425), { driverRev: "rd-0928-q1004" }).map((l) => (l.viewport === "desktop" ? { ...l, problems: ["wpm[again] WPM = words ÷ the timed minutes: expected 424 / actual 425"] } : { ...l, checks: [pass("step")] })));
+lines.push(...all3("reading", "pr011", NEW, wpmRec(427), { driverRev: "rd-0928-q1004" }).map((l) => (l.viewport === "desktop" ? { ...l, problems: ["wpm[again] WPM = words ÷ the timed minutes: expected 424 / actual 427"] } : { ...l, checks: [pass("step")] })));
+const EVID = { cloze: path.join(dir, "grammar-cloze.json"), clozeOld: path.join(dir, "grammar-cloze-old.json"), exam: path.join(dir, "grammar-exam.json") };
+fs.writeFileSync(EVID.cloze, JSON.stringify({ tool: "check-grammar-cloze", old: false, exit: 0, sentences: 3, lessons: ["grammar1/gh1-010", "grammar1/gh1-012", "grammar1/gh1-014"], problemLessons: [] }));
+fs.writeFileSync(EVID.clozeOld, JSON.stringify({ tool: "check-grammar-cloze", old: true, exit: 1, sentences: 3, lessons: ["grammar1/gh1-010", "grammar1/gh1-012", "grammar1/gh1-014", "grammar1/gh1-016"], problemLessons: [] }));
+fs.writeFileSync(EVID.exam, JSON.stringify({ base: PROD, allAlts: true, broken: null, lessons: 4, counts: { PASS: 3, FAIL: 1 }, results: [{ course: "grammar1", id: "gh1-010", status: "PASS" }, { course: "grammar1", id: "gh1-012", status: "PASS" }, { course: "grammar1", id: "gh1-014", status: "FAIL" }, { course: "grammar1", id: "gh1-016", status: "PASS" }] }));
 for (const l of lines) {
   if (l.course === "passoff-grammar" && l.id === "pg01-1" && l.viewport === "desktop") l.content = { expected: 114, found: 114, missingCount: 0 };
   if (l.course === "adult" && l.id === "a1-1" && l.viewport === "desktop") l.content = { expected: 19, found: 19, missingCount: 0 };
@@ -143,7 +176,13 @@ function run(label, args) {
 }
 const st = (res, course, id) => ((res.detail || {})[course] || {})[id] || { status: "(없음)", why: [] };
 
-const now = run("now", ["--files", "fixture.jsonl"]);
+const EV_ARGS = ["--cloze-from", EVID.cloze, "--exam-from", EVID.exam];
+const now = run("now", ["--files", "fixture.jsonl", ...EV_ARGS]);
+const noExternal = run("no-external-cover", ["--files", "fixture.jsonl", ...EV_ARGS, "--break=no-external-cover"]);
+const clozeOld = run("cloze-old", ["--files", "fixture.jsonl", "--cloze-from", EVID.clozeOld, "--exam-from", EVID.exam]);
+const offlineOld = run("offline-as-fail", ["--files", "fixture.jsonl", ...EV_ARGS, "--break=offline-as-fail"]);
+const wpmOld = run("wpm-exact", ["--files", "fixture.jsonl", ...EV_ARGS, "--break=wpm-exact"]);
+const offlineLines = (res) => { try { return JSON.parse(fs.readFileSync(path.join(dir, res, "coverage.json"), "utf8")).offlineAudio.lines; } catch { return null; } };
 const noBlocked = run("ignore-blocked", ["--files", "fixture.jsonl", "--break=ignore-blocked"]);
 const merged = run("merge-all", ["--files", "fixture.jsonl", "--break=merge-all"]);
 const oldRule = run("old-dictation-rule", ["--files", "fixture.jsonl", "--break=old-dictation-rule"]);
@@ -203,6 +242,18 @@ const cases = [
   ["Y2 더 늦은 로컬(localhost) 기록 → s3-3 PASS · 로컬 기록 1건 뺌 / 깨기 count-break-records → FAIL", st(now, "student", "s3-3").status === "PASS" && now.selection && now.selection.localRecords === 1 && st(countBreak, "student", "s3-3").status === "FAIL", `지금 s3-3 ${st(now, "student", "s3-3").status} · 로컬 기록 ${now.selection ? now.selection.localRecords : "?"} · 깨기 ${st(countBreak, "student", "s3-3").status}`],
   ["Z 학습 단위 '확인함' = 이 선택의 데스크톱 content — PASS-OFF 114/114(1강) · content 없는 1강 · ADULT 19/19(1강)", /PASS-OFF GRAMMAR 114\/114\(1강\) · content 없는 기록 1강/.test(String(unitsOf(now).how)) && /ADULT 19\/19\(1강\)/.test(String(unitsOf(now).how)) && /^133 \(기대 133 중 있음/.test(String(unitsOf(now).tested)), `확인함 '${unitsOf(now).tested}' · ${String(unitsOf(now).how).slice(0, 140)}`],
   ["Z 깨기 units-from-summary → 이 선택의 숫자가 아님(옛 동작 — 다른 묶음 또는 '?')", String(unitsOf(unitsOld).tested) !== String(unitsOf(now).tested) && !/PASS-OFF GRAMMAR 114/.test(String(unitsOf(unitsOld).how)), `깨기 확인함 '${unitsOf(unitsOld).tested}' · ${unitsOf(unitsOld).how}`],
+  // 회귀 점검 1002 고침 — ⑩ ⑪ ⑫
+  ["AA GRAMMAR 2 · 4단계 NA coveredBy + 두 도구 결과 PASS → PASS", st(now, "grammar1", "gh1-010").status === "PASS", `gh1-010 ${st(now, "grammar1", "gh1-010").status} ${st(now, "grammar1", "gh1-010").why[0] || ""}`],
+  ["AB 10-04 스윕 꼴 NA(coveredBy 없음 · note 에 도구 이름) + 결과 PASS → PASS", st(now, "grammar1", "gh1-012").status === "PASS", `gh1-012 ${st(now, "grammar1", "gh1-012").status} ${st(now, "grammar1", "gh1-012").why[0] || ""}`],
+  ["AC 종합 평가 도구 결과가 그 강의 FAIL → 강의 FAIL", st(now, "grammar1", "gh1-014").status === "FAIL" && /check-grammar-exam/.test(st(now, "grammar1", "gh1-014").why.join(" ")), `gh1-014 ${st(now, "grammar1", "gh1-014").status} ${st(now, "grammar1", "gh1-014").why[0] || ""}`],
+  ["AD 빈칸 도구 결과에 그 강의 없음 → BLOCKED(사유)", st(now, "grammar1", "gh1-016").status === "BLOCKED" && /check-grammar-cloze/.test(st(now, "grammar1", "gh1-016").why.join(" ")), `gh1-016 ${st(now, "grammar1", "gh1-016").status} ${st(now, "grammar1", "gh1-016").why[0] || ""}`],
+  ["AE 깨기 no-external-cover → gh1-010 · gh1-012 BLOCKED(옛 동작)", st(noExternal, "grammar1", "gh1-010").status === "BLOCKED" && st(noExternal, "grammar1", "gh1-012").status === "BLOCKED", `깨기 gh1-010 ${st(noExternal, "grammar1", "gh1-010").status} · gh1-012 ${st(noExternal, "grammar1", "gh1-012").status}`],
+  ["AF --old 로 만든 빈칸 결과 → 쓰지 않음: gh1-010 BLOCKED", st(clozeOld, "grammar1", "gh1-010").status === "BLOCKED", `gh1-010 ${st(clozeOld, "grammar1", "gh1-010").status} ${st(clozeOld, "grammar1", "gh1-010").why[0] || ""}`],
+  ["AG 인터넷 끊긴 방문의 'clip error 4' → PASS · 연결 실패 1줄 / 깨기 offline-as-fail → FAIL", st(now, "ld", "d010").status === "PASS" && offlineLines("now") === 1 && st(offlineOld, "ld", "d010").status === "FAIL", `d010 ${st(now, "ld", "d010").status} · 연결 실패 ${offlineLines("now")} · 깨기 ${st(offlineOld, "ld", "d010").status}`],
+  ["AH 같은 방문의 '다른 글의 클립' → FAIL 그대로", st(now, "ld", "d011").status === "FAIL", `d011 ${st(now, "ld", "d011").status}`],
+  ["AI 연결 실패 없는 방문의 'clip error 4' → FAIL 그대로", st(now, "ld", "d012").status === "FAIL", `d012 ${st(now, "ld", "d012").status}`],
+  ["AJ READING WPM 반올림 경계(425 · 424) 옛 기록 → PASS / 깨기 wpm-exact → FAIL", st(now, "reading", "pr010").status === "PASS" && st(wpmOld, "reading", "pr010").status === "FAIL", `pr010 ${st(now, "reading", "pr010").status} · 깨기 ${st(wpmOld, "reading", "pr010").status}`],
+  ["AK READING WPM 427(창 밖) → FAIL 그대로", st(now, "reading", "pr011").status === "FAIL", `pr011 ${st(now, "reading", "pr011").status} ${st(now, "reading", "pr011").why[0] || ""}`],
 ];
 let wrong = 0;
 for (const [what, ok, got] of cases) { if (!ok) wrong++; console.log(`${ok ? "기대대로" : "!! 기대와 다름"} · ${what} — ${got}`); }

@@ -75,7 +75,7 @@
  *   --clone NAME           profile copy name (default "drv-rd" / "drv-rd-<i>") — %TEMP%\kig-audit-0918-<NAME>
  *   --port N               debugging port (default 9470 / 9470+i)
  *   --resume / --no-resume finished page x viewport records are skipped (default on)
- *   --break gate|cloze|hover|stop|untimed|text|answer   deliberate break (see above)
+ *   --break gate|cloze|hover|stop|untimed|text|answer|wpm-exact   deliberate break (see above · wpm-exact: the WPM check before T5)
  *   --dry                  print the page list and exit
  * Exit 1 when any check FAILed (2026-09-27; it used to exit 0 unless the driver itself crashed).
  *
@@ -147,10 +147,11 @@ function parseArgs(argv) {
   if (a.port !== undefined && !(Number.isInteger(a.port) && a.port > 1024 && a.port < 65536)) throw new Error("--port must be a port number");
   return a;
 }
-const BREAKS = ["gate", "cloze", "hover", "stop", "untimed", "text", "answer"];
+const BREAKS = ["gate", "cloze", "hover", "stop", "untimed", "text", "answer", "wpm-exact"];
 let BREAK = "";
 // 회귀 점검 1002: which driver wrote a record (build-coverage reads `driverRev`); bump it when a check changes meaning
-const DRIVER_REV = "rd-0928-q1004";
+// -w1005 (2026-10-05, T5): the WPM check accepts the ±0.5 ms window of the rounded time (lib/wpm-window.cjs)
+const DRIVER_REV = "rd-0928-q1004-w1005";
 
 /** Every in-scope READING route, in the course index order. */
 function allRoutes() {
@@ -922,8 +923,13 @@ async function step4Checks(rec, tab, D, captured, { touch = false } = {}) {
   const run = await timedRun(rec, tab, D, { waitMs: D.minMs, label: "again" });
   ck(rec, "wpm", "again", "the run is stored (the record's `again`)", "a run", run ? `${run.wpm} WPM · ${run.ms} ms` : "none", run ? "PASS" : "FAIL", speedKey(D));
   if (run) {
-    const wpm = readingLearning.wordsPerMinute(D.wordCount, run.ms);
-    ck(rec, "wpm", "again", "WPM = words ÷ the timed minutes", String(wpm), String(run.wpm), wpm === run.wpm && run.wpm <= MAX_WPM ? "PASS" : "FAIL");
+    // 회귀 점검 1002 T5 (2026-10-05): run.ms is the app's time ROUNDED to 1 ms — the app's WPM came from the unrounded time, so any WPM
+    // of the ±0.5 ms window is right (lib/wpm-window.cjs). It was an exact match on the rounded ms: FAIL 9 on x.5 boundaries.
+    // --break wpm-exact (깨기): the old exact compare.
+    const win = require("./lib/wpm-window.cjs");
+    const w = win.windowOf(readingLearning.wordsPerMinute, D.wordCount, run.ms);
+    const okWpm = BREAK === "wpm-exact" ? w.at === run.wpm : win.within(readingLearning.wordsPerMinute, D.wordCount, run.ms, run.wpm);
+    ck(rec, "wpm", "again", "WPM = words ÷ the timed minutes", BREAK === "wpm-exact" ? String(w.at) : win.say(w), String(run.wpm), okWpm && run.wpm <= MAX_WPM ? "PASS" : "FAIL");
     const result = (await jsText(tab, `document.querySelector(${J(`${SEL.step4} [data-speed-result]`)})`)) || "";
     hasCk(rec, "wpm", "again", "the result shows the number", D.timeOnly ? readingLearning.formatDuration(run.ms) : `${run.wpm} WPM`, result, D.timeOnly ? "one-sentence passage: the time only" : undefined);
     const verdict = readingLearning.targetVerdict(run.wpm);

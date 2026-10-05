@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
-import { koreanOnScreen, romanForGrading } from "@/lib/koreanGloss";
+import { KOREAN_GLOSS_PAGES, koreanOnScreen, romanForGrading } from "@/lib/koreanGloss";
 import { learnerOf } from "@/lib/learning/sync";
 import { PASSOFF_COURSE } from "@/lib/passoffLearning";
 import type { PassoffStudentRef } from "@/lib/passoffTypes";
@@ -76,6 +76,16 @@ export function glossFor(lessonId: string): Gloss {
 export function gradedFor(lessonId: string): Gloss {
   const key = `${PASSOFF_COURSE}/${lessonId}`;
   return (text) => romanForGrading(key, text);
+}
+
+/**
+ * The Korean names of lesson `lessonId` written in more than one English word ("Yi Sun-sin" · "Hong Gil Dong" · "Jeju Island"),
+ * longest first — the marked answer (ComposeCard DiffLine) is cut one word at a time, so it draws a run of words that spells
+ * one of them as one word, in Hangul ("이순신", not "이 순신" — 회귀 점검 1002 A7).
+ */
+export function namesFor(lessonId: string): string[] {
+  const glosses = KOREAN_GLOSS_PAGES[`${PASSOFF_COURSE}/${lessonId}`] ?? [];
+  return [...new Set(glosses.map(([written]) => written).filter((written) => /\s/.test(written)))].sort((a, b) => b.split(/\s+/).length - a.split(/\s+/).length || b.length - a.length);
 }
 
 /** Text sizes the learner picks (기본 · 크게 · 특대 — GRAMMAR's three: text-body 16 · text-title-s 18 · text-title 22). */

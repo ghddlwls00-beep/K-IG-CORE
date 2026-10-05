@@ -66,11 +66,11 @@
         },
         {
           "n": "3",
-          "text": "Watching her example, I've come to understand that caring for family isn't an occasional duty but a collaborative commitment we renew every day.",
+          "text": "Watching her, I've come to understand that caring for family isn't an occasional duty but a shared commitment we renew every day.",
           "chunks": [
             {
-              "en": "Watching her example,",
-              "ko": "어머니의 모범을 보며,"
+              "en": "Watching her,",
+              "ko": "어머니를 지켜보며,"
             },
             {
               "en": "I've come to understand",
@@ -81,8 +81,8 @@
               "ko": "가족을 돌보는 일이 가끔 하는 의무가 아니라"
             },
             {
-              "en": "but a collaborative commitment we renew every day.",
-              "ko": "매일 새롭게 다지는 협력적인 약속이라는 것을."
+              "en": "but a shared commitment we renew every day.",
+              "ko": "매일 함께 새롭게 다지는 약속이라는 것을."
             }
           ],
           "words": [
@@ -91,12 +91,12 @@
               "say": "occasional",
               "meaning": "가끔의, 이따금의",
               "pos": "형용사",
-              "start": 78,
-              "end": 88,
+              "start": 70,
+              "end": 80,
               "choices": [
                 "paternal",
                 "maternal",
-                "unavoidable"
+                "eldest"
               ]
             },
             {
@@ -104,8 +104,8 @@
               "say": "commitment",
               "meaning": "헌신, 굳은 약속",
               "pos": "명사",
-              "start": 114,
-              "end": 124,
+              "start": 99,
+              "end": 109,
               "choices": [
                 "potential",
                 "extended families",
@@ -117,12 +117,12 @@
               "say": "renew",
               "meaning": "새롭게 하다, 갱신하다",
               "pos": "동사",
-              "start": 128,
-              "end": 133,
+              "start": 113,
+              "end": 118,
               "choices": [
                 "judge",
-                "pursue",
-                "awakening"
+                "awakening",
+                "lately"
               ]
             }
           ]
@@ -141,7 +141,7 @@
     },
     {
       "type": "paragraph",
-      "text": "어머니의 모범을 보며, 저는 가족을 돌보는 일이 가끔 하는 의무가 아니라 매일 새롭게 다지는 협력적인 약속이라는 것을 깨닫게 되었습니다.",
+      "text": "어머니를 지켜보며, 저는 가족을 돌보는 일이 가끔 하는 의무가 아니라 매일 함께 새롭게 다지는 약속이라는 것을 깨닫게 되었습니다.",
       "lang": "ko"
     }
   ],

@@ -4,7 +4,10 @@ import { useId, useState, useSyncExternalStore, type MouseEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useProgress } from "./ProgressProvider";
+import { usePassoffProgress } from "./PassoffProgressProvider";
 import { getLessonGate, subscribeLessonGate } from "@/lib/lessonGate";
+
+const PASSOFF_COURSE = "passoff-grammar";
 
 /** `code` is shown before the title where a course numbers its lessons by chapter (STUDENT 'Ch 12-1'). */
 type Neighbour = { href: string; title: string; code?: string } | null;
@@ -47,12 +50,17 @@ export function LessonEndBar({
   next: Neighbour;
 }) {
   const { isCompleted, toggleComplete, flushStudentUpdates, flushAdultUpdates } = useProgress();
+  // PASS-OFF GRAMMAR's completions live on the server (PassoffProgressProvider) — the lessons it counts, and those on their way
+  const { countedIds: passoffCounted } = usePassoffProgress();
   // ADULT (2026-10-02) completes inside its view's Step 3 and waits for the save before '다음 강의', as STUDENT
   const isChapterCourse = course === "student" || course === "adult";
   const router = useRouter();
   const [saving, setSaving] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
-  const completed = isCompleted(course, lessonId);
+  // 회귀 점검 1002 A4: a PASS-OFF lesson finished on another device (or before this device's storage was cleared) is complete
+  // here too — the course list already marks it from the server; the bar used to read this device's record alone and showed
+  // the disabled '이 강의 학습 완료' with "5단계를 모두 마치면…" under it
+  const completed = isCompleted(course, lessonId) || (course === PASSOFF_COURSE && passoffCounted?.has(lessonId) === true);
   const showComplete = !isChapterCourse;
   const named = (n: NonNullable<Neighbour>) => (n.code ? `${n.code} · ${n.title}` : n.title);
   const gate = useSyncExternalStore(subscribeLessonGate, () => getLessonGate(course, lessonId), () => null);

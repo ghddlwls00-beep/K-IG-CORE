@@ -50,6 +50,20 @@ const WORD_FORMS =
 export const ALL_WORD_FORMS: readonly string[] = [...new Set(WORD_FORMS.split(/[|,]/))];
 const TABLE = new Set(ALL_WORD_FORMS);
 
+// the first word of each group is the base (say · man); the others are its past forms, participles or plural (said · men).
+// ("lay" is both lie's past and a base — a base wins, so it keeps its "-s" partner.)
+const BASES = new Set(WORD_FORMS.split("|").map((group) => group.split(",")[0]));
+const OTHERS = new Set(WORD_FORMS.split("|").flatMap((group) => group.split(",").slice(1)));
+
+/**
+ * A past form, a participle or a plural of the table and never a base itself (said · gave · been · men — not beat, which is
+ * both): it has no "-s" partner for the word tiles (src/lib/passoffPartnerForms.ts — 회귀 점검 1002 A3 "saids" · "gaves").
+ */
+export function isIrregularOtherForm(word: string): boolean {
+  const w = word.toLowerCase();
+  return OTHERS.has(w) && !BASES.has(w);
+}
+
 /**
  * Every word the grader can hold a typed word against for this item: the words of each answer (the model answer and the
  * accepted ones) as the grader compares them — typed and by microphone (numbers as words, no apostrophes), each `'s`

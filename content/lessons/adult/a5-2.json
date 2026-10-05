@@ -34,11 +34,11 @@
             },
             {
               "en": "and set goals aimed at improving",
-              "ko": "목표를 세웁니다"
+              "ko": "높이기 위한 목표를 세웁니다"
             },
             {
               "en": "how efficiently we work.",
-              "ko": "업무 효율을 높이기 위한."
+              "ko": "우리가 일하는 효율을."
             }
           ],
           "words": [
@@ -118,7 +118,7 @@
         },
         {
           "n": "3",
-          "text": "Once the meeting wraps up, I turn to the tasks I've set for the day, which I've been trying to tackle in order of priority.",
+          "text": "Once the meeting wraps up, I turn to the tasks I've set for the day, which I try to tackle in order of priority.",
           "chunks": [
             {
               "en": "Once the meeting wraps up,",
@@ -129,8 +129,8 @@
               "ko": "저는 그날 해야 할 일에 착수하는데,"
             },
             {
-              "en": "which I've been trying to tackle",
-              "ko": "그 일들을 처리하려고 꾸준히 노력해오고 있습니다"
+              "en": "which I try to tackle",
+              "ko": "그 일들을 처리하려고 노력합니다"
             },
             {
               "en": "in order of priority.",
@@ -156,8 +156,8 @@
               "say": "tackle",
               "meaning": "(일·문제에) 착수해 처리하다",
               "pos": "동사",
-              "start": 95,
-              "end": 101,
+              "start": 84,
+              "end": 90,
               "choices": [
                 "in order of priority",
                 "look forward to",
@@ -169,8 +169,8 @@
               "say": "in order of priority",
               "meaning": "우선순위에 따라",
               "pos": "표현",
-              "start": 102,
-              "end": 122,
+              "start": 91,
+              "end": 111,
               "choices": [
                 "bursts of intense effort",
                 "make a point of",
@@ -193,7 +193,7 @@
     },
     {
       "type": "paragraph",
-      "text": "회의가 끝나면 저는 그날 해야 할 일에 착수하는데, 그 일들을 우선순위에 따라 처리하려고 꾸준히 노력해오고 있습니다.",
+      "text": "회의가 끝나면 저는 그날 해야 할 일에 착수하는데, 그 일들을 우선순위에 따라 처리하려고 노력합니다.",
       "lang": "ko"
     }
   ],

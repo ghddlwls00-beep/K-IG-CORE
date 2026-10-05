@@ -396,6 +396,11 @@ export async function updateStudentProgress(
  * reachable window is computed ONCE from the stored record and does not widen as
  * ids are applied — otherwise importing 81 ids would unlock every chapter in
  * exactly the way the per-request guard above prevents.
+ *
+ * 2026-10-05 (회귀 점검 1002 A2): it only fills lessons the record has never heard of. A lesson with any state in the
+ * record — done, or un-done by the learner ('완료 취소', kept as completed: false) — is left as it is: an old list from
+ * another device must not bring back a completion the learner cancelled. (The device side, ProgressProvider, also stops
+ * sending the server's own completions as old ones.)
  */
 export async function mergeLegacyStudentProgress(
   key: string,
@@ -410,7 +415,7 @@ export async function mergeLegacyStudentProgress(
   // move this ceiling. None for a pass that opens every chapter (BUG-030).
   const ceiling = everyChapterOpen ? Number.POSITIVE_INFINITY : clampChapter(record.unlockedThrough) + 1;
   for (const id of lessonIds.slice(0, 100)) {
-    if (!validIds.has(id) || record.lessons[id]?.completed) continue;
+    if (!validIds.has(id) || record.lessons[id]) continue;
     const chapter = chapterOf.get(id);
     if (chapter !== undefined && chapter > ceiling) continue;
     record.lessons[id] = { completed: true, updatedAt: now };

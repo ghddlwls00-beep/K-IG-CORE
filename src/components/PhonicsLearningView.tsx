@@ -445,6 +445,9 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
     (word: string, toggle = false) => {
       if (!word) return;
       if (toggle && activeWordRef.current === word) {
+        // 2026-10-05 (회귀 점검 1002 A8): the word may be the one a row's '이어 듣기' is saying — stop the row too, or its
+        // button stayed on '정지' with nothing playing and needed two presses to play again.
+        stopRow();
         stopSpeech();
         setWordPlaying(null);
         return;

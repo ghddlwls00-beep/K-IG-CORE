@@ -283,11 +283,19 @@ const CONTAINERS = {
 };
 
 const isKo = (s) => /[가-힣]/.test(String(s || ""));
+/**
+ * 회귀 점검 1002 T4 (2026-10-05): a text that says its language (`lang` — expectations.cjs gives every GRAMMAR item its PAGE's language)
+ * goes to that language's list. An English sentence with a Korean word drawn in Hangul ('He went to 부산 on business.' — koreanOnScreen)
+ * was sent to the Korean list by 'any Hangul' and reported '없음' while the English list held it (GRAMMAR II 33). Not by counting
+ * letters: 18 Korean items carry English hints ('너는 강했니(strong)?') and would go the wrong way.
+ * --break=gloss-off (or KIG_BREAK_GLOSS=1): the old 'any Hangul' rule.
+ */
+const langOf = (text) => (text.lang && process.env.KIG_BREAK_GLOSS !== "1" && !process.argv.includes("--break=gloss-off") ? text.lang : isKo(text.text) ? "ko" : "en");
 
 /** The container that answers for one expected text, or null when that kind has no reader yet. */
 function containerFor(course, text) {
   return (CONTAINERS[course] || []).find((c) =>
-    c.kinds.includes(text.kind) && (!c.lang || (c.lang === "ko") === isKo(text.text))) || null;
+    c.kinds.includes(text.kind) && (!c.lang || c.lang === langOf(text))) || null;
 }
 
 /** Comparison key: case, spacing, curly quotes and "a/b" alternatives do not count as differences. */

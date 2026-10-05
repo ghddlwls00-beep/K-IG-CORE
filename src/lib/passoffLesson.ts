@@ -94,11 +94,32 @@ const CONTRASTS: Record<string, string[]> = {
   yes: ["no"], you: ["your"], it: ["its"], its: ["it"], there: ["their"], than: ["then"], then: ["than"],
 };
 
-/** The other number or person of a word: likes ↔ like, studies ↔ study, watches ↔ watch, box → boxes. */
-function partnersOf(word: string): string[] {
-  const w = word.toLowerCase();
-  if (CONTRASTS[w]) return CONTRASTS[w];
-  if (!/^[a-z]{3,}$/.test(w)) return [];
+/**
+ * Words with no other number or person — a made-up "-s" form of them is no English word (회귀 점검 1002 A3: the tiles
+ * showed "whens" · "hows" · "buts" · "untils" · "alway"). Conjunctions, question words, prepositions, adverbs, interjections
+ * and modals; words in -s that are not plurals ("news" → "new", "besides" → "beside" would be another word); and a few
+ * adjectives whose "-s" form is another word. Any other word gets a partner only when the server knows it as a word.
+ */
+const NO_PARTNER = new Set(
+  (
+    "and but or nor so yet for because although though while whereas unless until till since if whether as once " +
+    "when where why how whenever wherever however whatever whoever whichever " +
+    "about above across after against along among amongst around before behind below beneath beside besides between beyond " +
+    "by despite down during except from inside into near of off onto out outside over past per round through throughout " +
+    "to toward towards under underneath unlike up upon via with within without instead next " +
+    "always never ever often sometimes usually seldom rarely already still just even only also too very quite rather " +
+    "pretty really almost enough more most less least here now today tomorrow tonight yesterday soon later late early ago again twice away back " +
+    "else maybe perhaps together abroad indeed nowadays afterwards upstairs downstairs indoors outdoors overseas " +
+    "wow oh hey ah please okay ok hello goodbye bye " +
+    "should might must may shall ought used better " +
+    "news means series species physics mathematics economics politics clothes " +
+    // adjectives whose "-s" form is another word ("Have a good day." → "goods")
+    "good fine short long high low cold fast hard"
+  ).split(" "),
+);
+
+/** The other number or person by spelling alone (likes ↔ like, studies ↔ study, watches ↔ watch, box → boxes) — candidates. */
+function spelledPartners(w: string): string[] {
   if (w.length > 4 && w.endsWith("ies")) return [`${w.slice(0, -3)}y`];
   if (/(ches|shes|xes|sses|oes)$/.test(w)) return [w.slice(0, -2)];
   if (w.endsWith("s") && !w.endsWith("ss")) return [w.slice(0, -1)];
@@ -108,12 +129,82 @@ function partnersOf(word: string): string[] {
 }
 
 /**
+ * A word that is itself a past form, an -ing form or an -ly adverb of another word (jumped · robbed · bored · used ·
+ * walking · becoming · quickly · easily · truly — A3's "jumpeds" · "walkings" · "quicklies"): it has no number or person
+ * of its own. Judged by the word it comes from being a word, so "hundred" · "need" · "thing" · "family" · "fly" keep theirs.
+ */
+function derivedForm(w: string, isWord: (word: string) => boolean): boolean {
+  const doubled = (stem: string) => /([b-df-hj-np-tv-z])\1$/.test(stem) && isWord(stem.slice(0, -1));
+  if (w.length > 3 && w.endsWith("ed")) {
+    const stem = w.slice(0, -2);
+    if (isWord(stem) || isWord(w.slice(0, -1)) || doubled(stem) || (w.endsWith("ied") && isWord(`${w.slice(0, -3)}y`))) return true;
+  }
+  if (w.length > 4 && w.endsWith("ing")) {
+    const stem = w.slice(0, -3);
+    if (isWord(stem) || isWord(`${stem}e`) || doubled(stem)) return true;
+  }
+  if (w.length > 3 && w.endsWith("ly")) {
+    const stem = w.slice(0, -2);
+    if (isWord(stem) || isWord(`${stem}e`) || (w.endsWith("ily") && isWord(`${w.slice(0, -3)}y`)) || (w.endsWith("ally") && isWord(w.slice(0, -4)))) return true;
+  }
+  return false;
+}
+
+/**
+ * What tells a real word from a made-up one — the server's (src/lib/passoffPartnerForms.ts: the VOCA dictionary and the
+ * PASS-OFF lessons' own English), so a word list never ships to the phone. `irregular`: a past form, a participle or a
+ * plural of the irregular table (said · gave · been · men) — no "-s" partner either.
+ */
+export interface PartnerWords {
+  isWord: (word: string) => boolean;
+  irregular?: (word: string) => boolean;
+}
+
+/**
+ * The grammar partners of a word the item drills: the lesson's own contrast table (CONTRASTS — is ↔ are, a ↔ an, I ↔ me),
+ * and otherwise its other number or person (likes ↔ like, box → boxes) — ONLY a real word (회귀 점검 1002 A3). Not for a
+ * word of NO_PARTNER, a past · -ing · -ly form or an irregular form, nor a spelling `words.isWord` does not know. Without
+ * `words` only the table's partners.
+ */
+function partnersOf(word: string, words: PartnerWords | null, verbForms: boolean): string[] {
+  const w = word.toLowerCase();
+  if (CONTRASTS[w]) return CONTRASTS[w];
+  if (!words || verbForms || !/^[a-z]{3,}$/.test(w) || NO_PARTNER.has(w)) return [];
+  if (words.irregular?.(w) || derivedForm(w, words.isWord)) return [];
+  return spelledPartners(w).filter((p) => !NO_PARTNER.has(p) && words.isWord(p));
+}
+
+/** "go - went - gone" · "am, is - was - been": an item that drills a verb's principal parts — an "-s" form is no contrast there */
+const isVerbFormsItem = (en: string) => /\S\s+-\s+\S/.test(en);
+
+/**
+ * The grammar partners of the item's target words, in order, once each (partnersOf) — what the server attaches to a ④ · ⑤
+ * item as `partnerForms` (src/lib/passoffPartnerForms.ts), with its words. Without `words`: the contrast table's partners only.
+ */
+export function partnerFormsOf(item: { en: string; targets?: readonly (readonly string[])[] | null }, words: PartnerWords | null): string[] {
+  const out: string[] = [];
+  const verbForms = isVerbFormsItem(String(item.en ?? ""));
+  for (const group of item.targets ?? []) {
+    for (const form of group ?? []) {
+      for (const t of wordsOf(form)) for (const p of partnersOf(bare(t), words, verbForms)) if (!out.includes(p)) out.push(p);
+    }
+  }
+  return out;
+}
+
+/**
  * The distractor pool for the tiles of ladder step ③ (설계 §3 "문법 방해 타일"): first the wrong words of the
  * item's own error patterns ("She are" → are), then the grammatical partner of a target word (is → are,
- * likes → like). Words already in the model answer are skipped; listeningUtils.generateWordBank takes the
- * first two that are not.
+ * likes → like) — the real words the server attached (`partnerForms` — partnerFormsOf), or with none attached the
+ * contrast table's alone (회귀 점검 1002 A3: a made-up "-s" form never becomes a tile). Words already in the model answer
+ * are skipped; listeningUtils.generateWordBank takes the first two that are not.
  */
-export function contrastPool(item: { en: string; errorPatterns?: readonly { match: string }[] | null; targets?: readonly (readonly string[])[] | null }): string[] {
+export function contrastPool(item: {
+  en: string;
+  errorPatterns?: readonly { match: string }[] | null;
+  targets?: readonly (readonly string[])[] | null;
+  partnerForms?: readonly string[] | null;
+}): string[] {
   const model = new Set(wordsOf(item.en).map((t) => bare(t).toLowerCase()));
   const out: string[] = [];
   const add = (token: string) => {
@@ -122,7 +213,7 @@ export function contrastPool(item: { en: string; errorPatterns?: readonly { matc
     out.push(w);
   };
   for (const e of item.errorPatterns ?? []) for (const t of wordsOf(e.match)) add(t);
-  for (const group of item.targets ?? []) for (const form of group ?? []) for (const t of wordsOf(form)) for (const p of partnersOf(bare(t))) add(p);
+  for (const p of Array.isArray(item.partnerForms) ? item.partnerForms : partnerFormsOf(item, null)) add(p);
   return out;
 }
 
@@ -149,6 +240,71 @@ export function contrastTiles(
     [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
   }
   return tiles;
+}
+
+/** A word of the grader's marked answer (passoffGrading.ts DiffToken) — the fields joinNameTokens reads. */
+export interface NameToken {
+  kind: string;
+  text: string;
+  expected?: string;
+}
+
+const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+/**
+ * The marked answer (ComposeCard's DiffLine) with a page's Korean name kept whole (회귀 점검 1002 A7). The grader marks one
+ * word at a time, so "Admiral Yi Sun-sin." came out as "Yi" · "Sun-sin." and was drawn "Admiral 이 순신."; and where the
+ * closest accepted answer has the family name alone ("Admiral Yi"), the answer shown for a wrong word was "→ 이".
+ *   - a run of words of one kind (same · missing · extra · moved, or wrong — then by what the answer has there) that spells
+ *     one of `names` (ui.tsx namesFor — "Yi Sun-sin") becomes one word, which the screen draws "이순신.";
+ *   - a wrong or missing word whose answer is the first word of such a name alone ("Yi"), where the model answer `model`
+ *     has the whole name and the next word does not go on with it, shows the whole name ("→ 이순신") — the model answer's
+ *     spelling, which is graded right as well.
+ * The learner's own words (same · extra · moved · a wrong word's own text) are only joined, never changed. Nothing else moves.
+ */
+export function joinNameTokens<T extends NameToken>(tokens: readonly T[], names: readonly string[], model: string): T[] {
+  if (!names.length) return [...tokens];
+  const parts = names.map((n) => n.trim().split(/\s+/)).filter((p) => p.length > 1);
+  const answerOf = (t: NameToken) => bare(t.kind === "wrong" ? t.expected ?? "" : t.text);
+  const out: T[] = [];
+  for (let i = 0; i < tokens.length; ) {
+    const t = tokens[i];
+    const run = parts.find((p) => {
+      if (i + p.length > tokens.length) return false;
+      const slice = tokens.slice(i, i + p.length);
+      return slice.every((x) => x.kind === t.kind) && slice.map(answerOf).join(" ") === p.join(" ");
+    });
+    if (run) {
+      const slice = tokens.slice(i, i + run.length);
+      out.push({
+        ...t,
+        text: slice.map((x) => x.text).join(" "),
+        ...(t.kind === "wrong" ? { expected: slice.map((x) => x.expected ?? "").join(" ") } : {}),
+      });
+      i += run.length;
+      continue;
+    }
+    if (t.kind === "wrong" || t.kind === "missing") {
+      const word = answerOf(t);
+      const next = tokens[i + 1];
+      const whole = parts.find(
+        (p) =>
+          p[0] === word &&
+          new RegExp(`(^|[^A-Za-z0-9])${escapeRe(p.join(" "))}(?![A-Za-z0-9])`).test(model) &&
+          !(next && answerOf(next) === p[1]),
+      );
+      if (whole) {
+        const shown = t.kind === "wrong" ? t.expected ?? "" : t.text;
+        const name = shown.replace(word, whole.join(" "));
+        out.push(t.kind === "wrong" ? { ...t, expected: name } : { ...t, text: name });
+        i++;
+        continue;
+      }
+    }
+    out.push(t);
+    i++;
+  }
+  return out;
 }
 
 /** A token with a letter or a digit — not one of punctuation alone (the "-" of "go - went - gone"). */

@@ -274,14 +274,24 @@ async function load(tab, url, { marker = null, settle = 1200, expectPath = null 
  * Trusted click on the element returned by `elExpr` (a JS expression evaluating to an Element or null).
  * Scrolls it into view, clicks its centre. Returns {ok, text, rect} or {ok:false, reason}.
  */
-async function click(tab, elExpr, { settle = 0 } = {}) {
+/**
+ * 회귀 점검 1002 T1 (2026-10-05): opts.refuseCovered — when no point of the element is on top (another element covers it: a control
+ * inside a closed <details> sits under the page's other controls, Chrome still gives it a box), do NOT press: return
+ * { ok:false, covered:true, reason:'covered by …' } without dispatching anything. Before, the press went to whatever was on top —
+ * the '이전 강의' link, the header '메뉴 열기' — and drive-generic recorded the page it landed on (GRAMMAR FAIL 46강).
+ * The default (no option) is unchanged for the other tools (they read `covered` themselves — recheck-audio).
+ * A <label> on top whose control is the element counts as the element (a visually hidden radio · checkbox under its label is
+ * pressed through the label, as a learner does) — for every caller.
+ */
+async function click(tab, elExpr, { settle = 0, refuseCovered = false } = {}) {
   // Inline elements that wrap over several lines have a bounding box whose centre can fall
   // between line boxes (on the parent). Try the centre of each client rect (line box) and use
   // the first point where elementFromPoint is the element or inside it.
-  const info = await tab.eval(`(() => { const el = (${elExpr}); if (!el) return null; el.scrollIntoView({ block: 'center', inline: 'center' }); const r = el.getBoundingClientRect(); const rects = [...el.getClientRects()].filter((x) => x.width > 0 && x.height > 0); const pts = rects.map((x) => [x.left + x.width / 2, x.top + x.height / 2]).concat(rects.map((x) => [x.left + Math.min(8, x.width / 2), x.top + x.height / 2])); pts.push([r.left + r.width / 2, r.top + r.height / 2]); let pick = null, top = null; for (const [x, y] of pts) { const t = document.elementFromPoint(x, y); if (t && (t === el || el.contains(t))) { pick = [x, y]; top = t; break; } } const fallback = pts[pts.length - 1]; const t2 = pick ? top : document.elementFromPoint(fallback[0], fallback[1]); const [cx, cy] = pick || fallback; return { x: cx, y: cy, w: r.width, h: r.height, text: (el.innerText || el.getAttribute('aria-label') || el.value || '').trim().slice(0, 80), disabled: !!el.disabled, covered: !pick, coveredBy: !pick && t2 ? (t2.innerText || t2.tagName).trim().slice(0, 40) : null }; })()`).catch((e) => ({ error: e.message }));
+  const info = await tab.eval(`(() => { const el = (${elExpr}); if (!el) return null; el.scrollIntoView({ block: 'center', inline: 'center' }); const r = el.getBoundingClientRect(); const rects = [...el.getClientRects()].filter((x) => x.width > 0 && x.height > 0); const pts = rects.map((x) => [x.left + x.width / 2, x.top + x.height / 2]).concat(rects.map((x) => [x.left + Math.min(8, x.width / 2), x.top + x.height / 2])); pts.push([r.left + r.width / 2, r.top + r.height / 2]); const mine = (t) => !!t && (t === el || el.contains(t) || (t.tagName === 'LABEL' && t.control === el) || (!!t.closest && !!t.closest('label') && t.closest('label').control === el)); let pick = null, top = null; for (const [x, y] of pts) { const t = document.elementFromPoint(x, y); if (mine(t)) { pick = [x, y]; top = t; break; } } const fallback = pts[pts.length - 1]; const t2 = pick ? top : document.elementFromPoint(fallback[0], fallback[1]); const [cx, cy] = pick || fallback; const fold = el.closest('details:not([open])'); return { x: cx, y: cy, w: r.width, h: r.height, text: (el.innerText || el.getAttribute('aria-label') || el.value || '').trim().slice(0, 80), disabled: !!el.disabled, covered: !pick, coveredBy: !pick && t2 ? (t2.innerText || t2.getAttribute('aria-label') || t2.tagName).trim().slice(0, 40) : null, inClosedFold: !!fold && !(fold.querySelector(':scope > summary') || { contains: () => false }).contains(el) }; })()`).catch((e) => ({ error: e.message }));
   if (!info) return { ok: false, reason: "not found" };
   if (info.error) return { ok: false, reason: info.error };
   if (!(info.w > 0 && info.h > 0)) return { ok: false, reason: "zero size", ...info };
+  if (refuseCovered && info.covered) return { ...info, ok: false, reason: `covered by '${info.coveredBy || "?"}'${info.inClosedFold ? " (inside a closed <details>)" : ""} — not pressed` };
   await tab.send("Input.dispatchMouseEvent", { type: "mouseMoved", x: info.x, y: info.y });
   await tab.send("Input.dispatchMouseEvent", { type: "mousePressed", x: info.x, y: info.y, button: "left", clickCount: 1 });
   await tab.send("Input.dispatchMouseEvent", { type: "mouseReleased", x: info.x, y: info.y, button: "left", clickCount: 1 });

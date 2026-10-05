@@ -26,7 +26,8 @@
  *   --break keep  : 앞 방문의 답(모든 문항 ①)을 쪽 스크립트보다 먼저 써 두고 지우지 않음 → 처음부터 답이 붙어 'S start' FAIL 이 나야 맞음
  *   --dirty       : 같은 앞 방문의 답을 써 두고 그 뒤에 지움 → PASS 여야 맞음(지우기가 실제로 듣는지 — keep 의 되돌림)
  *   (같은 사본을 다시 써도 앞 실행의 기록은 남지 않았다 — 브라우저를 끌 때 localStorage 가 디스크에 안 써짐. 그래서 기록을 직접 써 둔다)
- *   결과: docs/qa-2026-09-18/out/ld-questions-1004/<조각>.jsonl(강의 한 줄 — 이어 돌리기 됨, --fresh 면 새로) · <조각>-summary.json
+ *   결과: docs/qa-2026-09-18/out/ld-questions-1004/<조각>-<화면>.jsonl(강의 한 줄 — 이어 돌리기 됨, --fresh 면 그 화면 것만 새로) · <조각>-<화면>-summary.json
+ *         (2026-10-05 T10 전 기록은 <조각>.jsonl — 그때 기본 화면 mobile) · --dry-run: 쓸 파일 이름만 찍고 끝(브라우저 0)
  *
  * 지킨 것: 이용권 코드 · PIN 타이핑 0. /api/license/ · /api/admin/ 를 이 도구가 부르지 않음(쪽이 열릴 때 앱이 스스로 부르는 것은 주소만
  * 세어 적음 — 본문 · 쿠키 · localStorage 의 이용권 값은 읽지도 찍지도 않음). 원본 프로필은 열지 않음(사본만). 브라우저는 하나,
@@ -72,8 +73,17 @@ if (LIMIT) ids = ids.slice(0, LIMIT);
 
 const OUT = path.join(H.OUT, "ld-questions-1004");
 fs.mkdirSync(OUT, { recursive: true });
-const tag = `${BREAK ? `break-${BREAK}-` : ""}${argOf("--ids", "") ? "ids-" + ids.slice(0, 6).join("_") + (ids.length > 6 ? `_${ids.length}` : "") : `shard${shardK}of${shardN}`}`;
+// 회귀 점검 1002 T10 (2026-10-05): the screen is part of the name — '<조각>-<화면>.jsonl'. It was '<조각>.jsonl' for every --viewport,
+// so a desktop run resumed on the phone's lessons ('이미 함') and --fresh deleted the other screen's record (단계 1: copied away and
+// put back by hand). Records written before this keep their old name (shardNofM.jsonl = mobile, the default then).
+// --dry-run: print the file this call would write (and whether --fresh would empty it) and stop — no browser.
+const tag = `${BREAK ? `break-${BREAK}-` : ""}${argOf("--ids", "") ? "ids-" + ids.slice(0, 6).join("_") + (ids.length > 6 ? `_${ids.length}` : "") : `shard${shardK}of${shardN}`}-${VIEW}`;
 const FILE = path.join(OUT, `${tag}.jsonl`);
+if (argv.includes("--dry-run")) {
+  const others = fs.readdirSync(OUT).filter((f) => f.endsWith(".jsonl") && path.join(OUT, f) !== FILE).length;
+  console.log(`--dry-run: 화면 ${VIEW} · 결과 ${path.relative(H.REPO, FILE)}${fs.existsSync(FILE) ? " (있음" + (argv.includes("--fresh") ? " — --fresh 면 이 파일만 비움)" : " — 이어 하기)") : " (새로)"} · 같은 폴더의 다른 파일 ${others}개는 건드리지 않음 · 강의 ${ids.length}`);
+  process.exit(0);
+}
 if (argv.includes("--fresh") && fs.existsSync(FILE)) fs.unlinkSync(FILE);
 const out = H.jsonl(FILE, (r) => r.id);
 

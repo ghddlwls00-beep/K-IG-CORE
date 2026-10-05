@@ -30,7 +30,14 @@ const PHASES = ["base", "broken", "fixed", "after"];
  * on (the desktop-only routines). Every other test reads as before (content.missing, three screens).
  */
 const ALL_VPS = ["desktop", "tablet", "mobile", "small"];
-const vpsOf = (t) => t.viewports || ["desktop", "tablet", "mobile"];
+/**
+ * 회귀 점검 1002 T18 (2026-10-05): --viewports a,b — the screens to judge EVERY test on (e.g. 'small' for the 360px proof run 'rcs-'),
+ * instead of a scratch copy with the screen names swapped. A check test whose check is in none of those screens' records (the
+ * driver does not run it there — ADULT 완료 is desktop-only) says '증명 안 됨', never '못 잡음' or a pass.
+ */
+const VP_ARG = process.argv.includes("--viewports") ? process.argv[process.argv.indexOf("--viewports") + 1].split(",").map((s) => s.trim()).filter(Boolean) : null;
+if (VP_ARG && (!VP_ARG.length || VP_ARG.some((v) => !ALL_VPS.includes(v)))) { console.error(`proof-summary: 모르는 화면 ${VP_ARG.join(",")} (아는 것: ${ALL_VPS.join(" · ")})`); process.exit(2); }
+const vpsOf = (t) => VP_ARG || t.viewports || ["desktop", "tablet", "mobile"];
 const checkState = (rec, t) => {
   const hits = ((rec && rec.checks) || []).filter((c) => c.feature === t.check.feature && new RegExp(t.check.item).test(String(c.item || "")));
   return !hits.length ? "absent" : hits.some((c) => c.status !== "PASS") ? "fail" : "pass";
@@ -127,7 +134,9 @@ if (process.argv.includes("--md")) {
     const afterFor = override ? latest(t.course, P("after"), t.id) : after;
     const caught = complete(fixed) ? VPS.every((v) => gone(fixed[v], t)) : null;
     const clean = complete(afterFor) ? VPS.every((v) => intact(afterFor[v], t)) : null;
-    const newVerdict = caught === null ? "(진행 중)"
+    // T18: a check test whose check is in no record of these screens (the driver does not run it here) — not proven, not 'not caught'
+    const checkAbsent = t.check && complete(fixed) && VPS.every((v) => checkState(fixed[v], t) === "absent");
+    const newVerdict = checkAbsent ? "**증명 안 됨** (이 화면 기록에 그 검사 없음)" : caught === null ? "(진행 중)"
       : !caught ? "**못 잡음**"
       : clean === null ? "실패 잡음 · 되돌린 뒤 (진행 중)"
       : clean ? "실패 잡음 확인" : "잡음 · **되돌린 뒤에도 없다고 함**";
@@ -160,7 +169,7 @@ for (const t of TESTS) {
   for (const phase of t.phaseOverride ? ["base", t.phaseOverride] : PHASES) {
     const byVp = latest(t.course, PHASES.includes(phase) ? `${pre}${phase}` : phase, t.id);
     if (!Object.keys(byVp).length) continue;
-    const cells = ["desktop", "tablet", "mobile"].filter((vp) => byVp[vp]).map((vp) => {
+    const cells = vpsOf(t).filter((vp) => byVp[vp]).map((vp) => {
       const c = byVp[vp].content || {};
       const gone = (c.missing || []).filter((m) => t.texts.some((x) => isMissingLine(m, x)));
       return `${vp} ${c.found}/${c.expected}${gone.length ? ` ✗[${gone.map((g) => g.slice(0, 50)).join("; ")}]` : ""}`;

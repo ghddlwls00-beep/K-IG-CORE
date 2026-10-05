@@ -148,6 +148,12 @@ export interface PassoffProduceItem extends PassoffItemBase {
    * the irregular-verb and plural table's words this item's answers can meet, for the grader's typo rule.
    */
   wordForms?: string[];
+  /**
+   * NOT A LESSON-FILE FIELD — the server attaches it too (src/lib/passoffPartnerForms.ts — 회귀 점검 1002 A3): the grammar
+   * partners of the item's target words that are real words (likes → like · is → are), the word tiles' contrasts after the
+   * error patterns' words (passoffLesson.ts contrastPool). Absent: the contrast table's partners alone.
+   */
+  partnerForms?: string[];
 }
 
 /**

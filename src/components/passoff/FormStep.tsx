@@ -175,6 +175,8 @@ export function FormItemCard({
   const [hangul, setHangul] = useState(false);
   const composing = useRef(false);
   const settled = phase === "right" || phase === "shown";
+  /** Hangul the grader will not read (checkShort grades through gradedFor — a page's Korean word copied from the screen is read) */
+  const hangulLeft = (value: string) => hasHangul(gradedFor(lessonId)(value));
 
   /** `answer`: as the learner gave it — the words tapped with their labels ("quickly(부사)"), the option, the word typed */
   function record(correct: boolean, answer?: string) {
@@ -399,13 +401,17 @@ export function FormItemCard({
             enterKeyHint="done"
             onChange={(e) => {
               setText(e.target.value);
-              setHangul(hasHangul(e.target.value));
+              // only Hangul the grader will not read warns (a page's Korean word copied from the screen is read as the lesson
+              // spells it — 회귀 점검 1002 A5), and a word still being typed does not turn the warning on yet (ComposeCard)
+              const left = hangulLeft(e.target.value);
+              if (!composing.current || !left) setHangul(left);
             }}
             onCompositionStart={() => {
               composing.current = true;
             }}
-            onCompositionEnd={() => {
+            onCompositionEnd={(e) => {
               composing.current = false;
+              setHangul(hangulLeft(e.currentTarget.value));
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter" && !e.nativeEvent.isComposing) {
