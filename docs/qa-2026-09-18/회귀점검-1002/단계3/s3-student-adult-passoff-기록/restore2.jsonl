@@ -1,0 +1,6 @@
+{"at":"2026-10-04T13:40:12.856Z","course":"STUDENT","lesson":"s1-2","viewport":"desktop","step":"되돌림","what":"'완료 취소' → 새로고침 → 서버 기록","expect":"미완료","saw":"눌림 true · 저장 끝 true · 서버 completed false","verdict":"PASS"}
+{"at":"2026-10-04T13:40:20.243Z","course":"STUDENT","lesson":"s9-1","viewport":"desktop","step":"되돌림","what":"'완료 취소' → 새로고침 → 서버 기록","expect":"미완료","saw":"눌림 true · 저장 끝 true · 서버 completed false","verdict":"PASS"}
+{"at":"2026-10-04T13:40:22.230Z","course":"STUDENT","lesson":"s20-4","viewport":"desktop","step":"되돌림","what":"서버 기록(읽기만)","expect":"미완료","saw":"이미 미완료 — 누르지 않음","verdict":"PASS"}
+{"at":"2026-10-04T13:40:24.087Z","course":"ADULT","lesson":"a1-2","viewport":"desktop","step":"되돌림","what":"서버 기록(읽기만)","expect":"미완료","saw":"이미 미완료 — 누르지 않음","verdict":"PASS"}
+{"at":"2026-10-04T13:40:25.873Z","course":"ADULT","lesson":"a6-2","viewport":"desktop","step":"되돌림","what":"서버 기록(읽기만)","expect":"미완료","saw":"이미 미완료 — 누르지 않음","verdict":"PASS"}
+{"at":"2026-10-04T13:40:27.640Z","course":"ADULT","lesson":"a12-3","viewport":"desktop","step":"되돌림","what":"서버 기록(읽기만)","expect":"미완료","saw":"이미 미완료 — 누르지 않음","verdict":"PASS"}

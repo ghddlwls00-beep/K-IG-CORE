@@ -1,0 +1,112 @@
+[
+ {
+  "load": {
+   "navigated": true,
+   "rendered": true,
+   "href": "https://k-ig-core.vercel.app/phonics/hv-01",
+   "reloads": 0
+  }
+ },
+ {
+  "before": {
+   "row": {
+    "pressed": "false",
+    "label": "1–6번 이어 듣기",
+    "text": "듣기"
+   },
+   "speakingCards": [],
+   "audio": []
+  },
+  "afterRowPress": {
+   "row": {
+    "pressed": "true",
+    "label": "1–6번 정지",
+    "text": "정지"
+   },
+   "speakingCards": [
+    "1"
+   ],
+   "audio": [
+    {
+     "ev": "loadedmetadata",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    },
+    {
+     "ev": "playing",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    },
+    {
+     "ev": "play-resolved",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    }
+   ]
+  },
+  "firstLabel": "ancestor 조상 듣기",
+  "afterCardPress": {
+   "row": {
+    "pressed": "true",
+    "label": "1–6번 정지",
+    "text": "정지"
+   },
+   "speakingCards": [],
+   "audio": [
+    {
+     "ev": "loadedmetadata",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    },
+    {
+     "ev": "playing",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    },
+    {
+     "ev": "play-resolved",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    }
+   ]
+  },
+  "after6s": {
+   "row": {
+    "pressed": "true",
+    "label": "1–6번 정지",
+    "text": "정지"
+   },
+   "speakingCards": [],
+   "audio": [
+    {
+     "ev": "loadedmetadata",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    },
+    {
+     "ev": "playing",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    },
+    {
+     "ev": "play-resolved",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    }
+   ]
+  },
+  "afterRowPressAgain": {
+   "row": {
+    "pressed": "false",
+    "label": "1–6번 이어 듣기",
+    "text": "듣기"
+   },
+   "speakingCards": [],
+   "audio": [
+    {
+     "ev": "loadedmetadata",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    },
+    {
+     "ev": "playing",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    },
+    {
+     "ev": "play-resolved",
+     "src": "-ava/v1/8-92343da0f612c1fd.mp3"
+    }
+   ]
+  }
+ }
+]

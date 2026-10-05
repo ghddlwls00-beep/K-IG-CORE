@@ -1,0 +1,13 @@
+﻿free memory 1.33 GB
+port 9981 · free 1.33 GB · 2026-10-04T19:27:05.458Z
+INFO    desktop · 목록 /passoff-grammar · 복습 · 오답노트 뒤: 오늘 복습 · 오답노트 입구 — {"review":{"kind":"none","text":"오늘 복습 없음","href":null},"notes":{"text":"오답노트 · 7문항","href":"/passoff-grammar/review?notes=1"}}
+PASS    desktop · GET /api/progress/passoff-grammar · 복습 · 오답노트 뒤: 완료 강의(읽기만) — {"status":200,"completed":["pg01-1","pg01-2","pg01-3"]}
+INFO    desktop · 기기 학습 기록(서버에서 받은 사본 · 저장소 비운 새 쪽) · 복습 · 오답노트 뒤: 요약(읽기만) — [{"which":"licence","lessons":{"pg01-1":"2026-10-04","pg01-2":"2026-10-04","pg01-3":"2026-10-04"},"items":58,"byLesson":{"pg01-1":22,"pg01-2":15,"pg01-3":21},"dueDays":{"2026-10-07":51,"2026-10-06":7},"reviewDays":{"2026-10-05":58},"wrongNow":7,"wrongKeys":["pg01-1:p3","pg01-1:p13","pg01-1:s4","pg01-2:p2","pg01-2:s3","pg01-3:p4","pg01-3:s5"],"withLapses":7,"log":100,"logBy":{"lesson:lesson":30,"review:right":51,"review:wrong":7,"review:retry":6,"review:practice":6},"reports":0,"lastStudyDay":"20
+PASS    desktop · 목록 · 4xx/5xx · 콘솔 오류 · 예외 · 실패한 요청 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 실패 0
+PASS    desktop · 목록 · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+INFO    mobile · 목록 /passoff-grammar · 복습 · 오답노트 뒤: 오늘 복습 · 오답노트 입구 — {"review":{"kind":"none","text":"오늘 복습 없음","href":null},"notes":{"text":"오답노트 · 7문항","href":"/passoff-grammar/review?notes=1"}}
+PASS    mobile · GET /api/progress/passoff-grammar · 복습 · 오답노트 뒤: 완료 강의(읽기만) — {"status":200,"completed":["pg01-1","pg01-2","pg01-3"]}
+INFO    mobile · 기기 학습 기록(서버에서 받은 사본 · 저장소 비운 새 쪽) · 복습 · 오답노트 뒤: 요약(읽기만) — [{"which":"licence","lessons":{"pg01-1":"2026-10-04","pg01-2":"2026-10-04","pg01-3":"2026-10-04"},"items":58,"byLesson":{"pg01-1":22,"pg01-2":15,"pg01-3":21},"dueDays":{"2026-10-07":51,"2026-10-06":7},"reviewDays":{"2026-10-05":58},"wrongNow":7,"wrongKeys":["pg01-1:p3","pg01-1:p13","pg01-1:s4","pg01-2:p2","pg01-2:s3","pg01-3:p4","pg01-3:s5"],"withLapses":7,"log":100,"logBy":{"lesson:lesson":30,"review:right":51,"review:wrong":7,"review:retry":6,"review:practice":6},"reports":0,"lastStudyDay":"20
+PASS    mobile · 목록 · 4xx/5xx · 콘솔 오류 · 예외 · 실패한 요청 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 실패 0
+PASS    mobile · 목록 · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+끝: {"INFO":4,"PASS":6}

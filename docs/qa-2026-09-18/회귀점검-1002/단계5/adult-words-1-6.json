@@ -1,0 +1,163 @@
+{
+  "part": "adult-words-1-6",
+  "scope": "ADULT 1~6과 33강의(a1-1 ~ a6-5)의 문장 words[] 전부 167개(6-1 · 6-2 EXTRA_WORDS 15개 포함) — 표현 · 품사 · 뜻 · say · 밑줄 자리(start/end) · 밑줄 문장에서의 쓰임 · 빈칸 보기(choices 3개 × 167 = 501개)를 한 줄씩 다 읽음. 빈칸마다 오답 보기 3개를 실제로 빈칸에 넣어 문장이 되는지 봄. 문장 · 한국어 줄은 낱말이 붙은 99문장을 문맥으로 읽음(문장 자체 점검은 다른 몫).",
+  "readCount": { "sentences": 99, "titles": 0, "words": 167, "chunks": 0, "other": 501 },
+  "findings": [
+    {
+      "id": "AW16-01", "course": "adult", "lesson": "a1-6", "file": "content/lessons/adult/a1-6.json",
+      "path": "blocks[1].items[0].words[0].meaning (+ blocks[1].items[0].text)",
+      "kind": "word-meaning",
+      "current": "individually | 부사 | 개인적으로, 개별적으로 — 문장 'I like to help other people, individually.' / 한국어 줄 '저는 개인적으로 다른 사람들을 돕는 것을 좋아합니다.'",
+      "problem": "individually 는 '한 사람씩 · 따로따로'(개별적으로)이지 '개인적으로(=personally, 내 입장에서는)'가 아니다. 카드가 첫 뜻으로 '개인적으로'를 가르치고, 문장도 문장 끝에 ', individually' 를 붙여 '개인적으로'처럼 쓴 원어민이 쓰지 않는 영어다(PPT 그대로). 한국어 줄도 '개인적으로'라서 학습자는 individually = personally 로 외우게 된다.",
+      "fix": "추천(A): 문장 'Personally, I like to help other people.' · 낱말 personally | 부사 | 개인적으로, 내 입장에서는 (밑줄 Personally). 다른 길(B): 낱말은 그대로 두고 뜻 '개별적으로, 한 사람씩' · 문장 'I like to help other people individually, one person at a time.' · 한국어 줄 '저는 다른 사람들을 한 사람 한 사람 돕는 것을 좋아합니다.' — 어느 쪽이든 build-adult-content.mjs(EN_FIX 와 낱말)에서 고치고 문장 · 덩어리 · 낱말 소리를 다시 만듦. 둘 중 고르기는 judgements AW16-J1.",
+      "category": "① ⑥", "severity": "심각", "confidence": "높음", "audioChanges": true, "reaches": true
+    },
+    {
+      "id": "AW16-02", "course": "adult", "lesson": "a2-3", "file": "content/lessons/adult/a2-3.json",
+      "path": "blocks[1].items[0].words[3].choices",
+      "kind": "word-blank",
+      "current": "'... a transition I'm approaching with both gratitude and ____.' 정답 anticipation · 보기 retirement age / peace of mind / refuge",
+      "problem": "오답 보기 'peace of mind' 를 넣은 '...approaching with both gratitude and peace of mind.' 는 자연스러운 영어이고 뜻도 통한다(은퇴를 감사와 평안으로 맞음). 한국어 줄은 답을 고른 뒤에야 보이므로 맞는 답을 오답 처리한다.",
+      "fix": "보기에서 peace of mind 를 빼고 들어맞지 않는 것으로: [\"retirement age\", \"refuge\", \"milestone\"] — build-adult-content.mjs 의 보기 고르기에 낱말별 제외 목록(예: BLANK_AVOID { anticipation: ['peace of mind'] })을 두어 다시 만듦.",
+      "category": "③", "severity": "높음", "confidence": "높음", "audioChanges": false, "reaches": true
+    },
+    {
+      "id": "AW16-03", "course": "adult", "lesson": "a3-3", "file": "content/lessons/adult/a3-3.json",
+      "path": "blocks[1].items[0].words[0].choices",
+      "kind": "word-blank",
+      "current": "'... leads his team with an ____, genuinely collaborative style.' 정답 outstanding · 보기 outgoing / gifted at / introverted",
+      "problem": "'with an outgoing, genuinely collaborative style' 은 자연스러운 영어다(대한이는 앞 강의에서 외향적이라고 소개됨). 'an introverted, genuinely collaborative style' 도 문법 · 뜻이 통한다. 관사 an 도 두 보기를 걸러 주지 못한다(모음 시작). 맞는 답을 오답 처리한다.",
+      "fix": "성격 형용사를 빼고 들어맞지 않는 것으로: [\"gifted at\", \"possess\", \"decades\"] (BLANK_AVOID { outstanding: ['outgoing', 'introverted', 'reflective'] }).",
+      "category": "③", "severity": "높음", "confidence": "높음", "audioChanges": false, "reaches": true
+    },
+    {
+      "id": "AW16-04", "course": "adult", "lesson": "a4-3", "file": "content/lessons/adult/a4-3.json",
+      "path": "blocks[1].items[2].words[0].choices",
+      "kind": "word-blank",
+      "current": "'... caring for family isn't an ____ duty but a collaborative commitment we renew every day.' 정답 occasional · 보기 paternal / maternal / unavoidable",
+      "problem": "'isn't an unavoidable duty but a collaborative commitment' 는 자연스럽고 뜻도 통한다(억지로 지는 의무가 아니라 함께 다지는 약속). 관사 an 이 paternal · maternal 은 거르지만 unavoidable 은 통과시킨다. 맞는 답을 오답 처리한다.",
+      "fix": "[\"paternal\", \"maternal\", \"eldest\"] (BLANK_AVOID { occasional: ['unavoidable'] }).",
+      "category": "③", "severity": "높음", "confidence": "높음", "audioChanges": false, "reaches": true
+    },
+    {
+      "id": "AW16-05", "course": "adult", "lesson": "a4-3", "file": "content/lessons/adult/a4-3.json",
+      "path": "blocks[1].items[2].words[2].choices",
+      "kind": "word-blank",
+      "current": "'... a collaborative commitment we ____ every day.' 정답 renew · 보기 judge / pursue / awakening",
+      "problem": "'a collaborative commitment we pursue every day' 는 문법에 맞고 뜻도 통한다(매일 추구하는 약속). 연어로는 renew 가 더 낫지만 학습자가 pursue 를 골라도 틀린 영어가 아니다.",
+      "fix": "[\"judge\", \"awakening\", \"lately\"] (BLANK_AVOID { renew: ['pursue'] }).",
+      "category": "③", "severity": "높음", "confidence": "보통", "audioChanges": false, "reaches": true
+    },
+    {
+      "id": "AW16-06", "course": "adult", "lesson": "a5-3", "file": "content/lessons/adult/a5-3.json",
+      "path": "blocks[1].items[1].words[0].choices",
+      "kind": "word-blank",
+      "current": "'... which is how a workplace slowly becomes a ____ one.' 정답 close-knit · 보기 supportive / collaborative / demanding",
+      "problem": "'becomes a supportive one' · 'becomes a collaborative one' 둘 다 자연스럽고, 함께 밥 먹으며 대화한다는 앞 문맥에도 들어맞는다. 오답 보기 둘이 정답처럼 들어맞는다.",
+      "fix": "[\"demanding\", \"ritual\", \"tackle\"] (BLANK_AVOID { 'close-knit': ['supportive', 'collaborative'] }) — demanding 은 문맥(대화로 가까워짐)과 반대라 남겨도 됨.",
+      "category": "③", "severity": "높음", "confidence": "높음", "audioChanges": false, "reaches": true
+    },
+    {
+      "id": "AW16-07", "course": "adult", "lesson": "a5-3", "file": "content/lessons/adult/a5-3.json",
+      "path": "blocks[1].items[2].words[1].choices",
+      "kind": "word-blank",
+      "current": "'... a small ritual that has kept our team remarkably ____.' 정답 supportive · 보기 collaborative / close-knit / demanding",
+      "problem": "'kept our team remarkably close-knit' · 'remarkably collaborative' 둘 다 자연스러운 영어이고 뜻도 통한다. 맞는 답을 오답 처리한다.",
+      "fix": "[\"demanding\", \"stretch\", \"efficiently\"] (BLANK_AVOID { supportive: ['close-knit', 'collaborative'] }).",
+      "category": "③", "severity": "높음", "confidence": "높음", "audioChanges": false, "reaches": true
+    },
+    {
+      "id": "AW16-08", "course": "adult", "lesson": "a5-5", "file": "content/lessons/adult/a5-5.json",
+      "path": "blocks[1].items[1].words[0].choices",
+      "kind": "word-blank",
+      "current": "'... I've been protecting that hour with ____ effort every evening.' 정답 dedicated · 보기 rushed / collaborative / close-knit",
+      "problem": "'collaborative effort' 는 흔한 연어이고 '가족과의 식사 시간을 함께 노력해 지킨다'로 뜻도 통한다. dedicated 가 주어 I 에 더 맞지만 collaborative 를 틀린 영어로 볼 수 없다.",
+      "fix": "[\"rushed\", \"close-knit\", \"remarkably\"] (BLANK_AVOID { dedicated: ['collaborative'] }).",
+      "category": "③", "severity": "높음", "confidence": "보통", "audioChanges": false, "reaches": true
+    },
+    {
+      "id": "AW16-09", "course": "adult", "lesson": "a6-3", "file": "content/lessons/adult/a6-3.json",
+      "path": "blocks[1].items[2].words[0].choices",
+      "kind": "word-blank",
+      "current": "'... many new friends who have become a remarkably ____ network.' 정답 supportive · 보기 collaborative / close-knit / home-cooked",
+      "problem": "'a remarkably close-knit network' 는 아주 자연스럽고, 'a remarkably collaborative network' 도 통한다. 맞는 답을 오답 처리한다.",
+      "fix": "[\"home-cooked\", \"attentively\", \"every other\"] (BLANK_AVOID { supportive: ['close-knit', 'collaborative'] } — 5과와 같은 규칙).",
+      "category": "③", "severity": "높음", "confidence": "높음", "audioChanges": false, "reaches": true
+    },
+    {
+      "id": "AW16-10", "course": "adult", "lesson": "a6-4", "file": "content/lessons/adult/a6-4.json",
+      "path": "blocks[1].items[2].words[1].choices",
+      "kind": "word-blank",
+      "current": "'... have made our congregation feel like a ____ extended family.' 정답 close-knit · 보기 supportive / collaborative / home-cooked",
+      "problem": "'feel like a supportive extended family' 는 자연스럽고 뜻도 통한다. 맞는 답을 오답 처리한다.",
+      "fix": "[\"home-cooked\", \"occasionally\", \"every other\"] (BLANK_AVOID { 'close-knit': ['supportive', 'collaborative'] }).",
+      "category": "③", "severity": "높음", "confidence": "높음", "audioChanges": false, "reaches": true
+    },
+    {
+      "id": "AW16-11", "course": "adult", "lesson": "a6-5", "file": "content/lessons/adult/a6-5.json",
+      "path": "blocks[1].items[2].words[1].choices",
+      "kind": "word-blank",
+      "current": "'... catching up over a ____ meal.' 정답 home-cooked · 보기 balanced / supportive / collaborative",
+      "problem": "'catching up over a balanced meal' 은 자연스러운 영어이고 뜻도 통한다(a balanced meal 은 굳은 표현). 맞는 답을 오답 처리한다.",
+      "fix": "[\"supportive\", \"collaborative\", \"close-knit\"] (BLANK_AVOID { 'home-cooked': ['balanced'] }).",
+      "category": "③", "severity": "높음", "confidence": "높음", "audioChanges": false, "reaches": true
+    },
+    {
+      "id": "AW16-12", "course": "adult", "lesson": "a1-1", "file": "content/lessons/adult/a1-1.json",
+      "path": "blocks[1].items[1].words[0].choices",
+      "kind": "word-blank",
+      "current": "'It's a ____ to be with you today.' 정답 pleasure · 보기 chance / orphanage / hiking",
+      "problem": "'It's a chance to be with you today.' 는 문법에 맞고 뜻도 통한다(오늘 함께할 기회). 인사의 굳은 말은 pleasure 지만 chance 를 틀린 영어로 볼 수 없다. 무료 강의(a1-1)라 처음 보는 사람이 바로 만난다.",
+      "fix": "[\"orphanage\", \"hiking\", \"subjects\"] (BLANK_AVOID { pleasure: ['chance'] }).",
+      "category": "③", "severity": "높음", "confidence": "보통", "audioChanges": false, "reaches": true
+    },
+    {
+      "id": "AW16-13", "course": "adult", "lesson": "a6-2", "file": "content/lessons/adult/a6-2.json",
+      "path": "blocks[7].text (한국어 줄 — 빈칸 답 뒤에 낱말 카드 run errands 와 함께 보임)",
+      "kind": "sentence-ko",
+      "current": "'저는 운동과 장보기, 영어 연습을 할 시간도 따로 마련하는데, ...' — 같은 문장의 낱말 run errands 뜻은 '볼일을 보다, 이런저런 일을 처리하다'",
+      "problem": "run errands 는 장보기에 한정되지 않는 '볼일 보기'다. 빈칸 답 뒤에 한국어 줄이 낱말 뜻과 함께 보여서, 카드는 '볼일을 보다', 줄은 '장보기'로 서로 다르다(EXTRA_WORDS 로 더한 낱말이라 한국어 줄은 이 낱말을 염두에 두지 않고 쓰였음).",
+      "fix": "'저는 운동하고 볼일을 보고 영어를 연습할 시간도 따로 마련하는데, 균형 잡힌 주말을 보내야 월요일을 훨씬 잘 맞을 수 있다는 것을 깨달았기 때문입니다.' (KO 고침 → 한국어 줄 소리 · 이 문장의 한국어 덩어리도 맞춰야 함)",
+      "category": "② ⑥", "severity": "중간", "confidence": "보통", "audioChanges": true, "reaches": true
+    },
+    {
+      "id": "AW16-14", "course": "adult", "lesson": "a5-1", "file": "content/lessons/adult/a5-1.json",
+      "path": "blocks[4].text (한국어 줄 — 낱말 rushed · make a point of 의 빈칸 답 뒤에 보임)",
+      "kind": "sentence-ko",
+      "current": "영어 'Although breakfast is often rushed, ...' / 한국어 '아침 식사는 늘 시간에 쫓기지만, ...'",
+      "problem": "often(자주)을 '늘'(항상)로 옮겼다. 낱말 rushed 의 빈칸 답 뒤에 이 줄이 보여 often 의 뜻을 흐린다.",
+      "fix": "'아침 식사는 시간에 쫓길 때가 많지만, 저는 전통적인 한식이든 간단한 빵과 샐러드든 제대로 챙겨 먹으려고 합니다.'",
+      "category": "②", "severity": "중간", "confidence": "높음", "audioChanges": true, "reaches": true
+    },
+    {
+      "id": "AW16-15", "course": "adult", "lesson": "a2-5", "file": "content/lessons/adult/a2-5.json",
+      "path": "blocks[1].items[2].words[1].word",
+      "kind": "word",
+      "current": "카드 표현 'contributing to (contribute to)' · 품사 동사 · say 'contributing to'",
+      "problem": "다른 낱말은 모두 기본형으로 적는데(graduate from → 문장 graduated from, enjoy -ing → enjoyed, excel at → excelled at) 이것만 문장 속 꼴에 괄호로 기본형을 덧붙여 카드 · 결과 목록에 그대로 보인다(PPT 표기 그대로). 한 과정 안 표기 흔들림.",
+      "fix": "word 'contribute to' · say 'contribute to'(새 낱말 소리 1 — 이미 있으면 그대로). 밑줄(contributing to)은 그대로.",
+      "category": "⑥ ⑦", "severity": "낮음", "confidence": "보통", "audioChanges": true, "reaches": true
+    }
+  ],
+  "judgements": [
+    {
+      "id": "AW16-J1", "lesson": "a1-6",
+      "question": "'I like to help other people, individually.'(낱말 individually = 개인적으로)를 어떻게 고칠까 — (A) 낱말을 personally 로 바꾸고 문장 'Personally, I like to help other people.' (B) 낱말 individually 를 살리고 문장 'I like to help other people individually, one person at a time.' · 뜻 '개별적으로, 한 사람씩'",
+      "recommendation": "A",
+      "why": "한국어 줄 '저는 개인적으로 ...'와 PPT 가 뜻한 것이 '개인적으로(personally)'라서 A 가 한국어 줄 · 덩어리를 거의 그대로 둘 수 있다. B 는 낱말을 살리지만 문장 뜻이 바뀌어 한국어 줄 · 덩어리 · 소리를 모두 새로 써야 한다. 어느 쪽이든 지금 카드(individually = 개인적으로)는 틀린 뜻을 가르친다."
+    },
+    {
+      "id": "AW16-J2", "lesson": "a6-3",
+      "question": "'hobby circle'(동호회)을 그대로 둘까, 'hobby club' 으로 바꿀까 — 원어민은 보통 hobby club · hobby group 이라 하고 'hobby circle' 은 드물다(한국 · 일본식 영어에 가까움). 다만 reading circle · knitting circle 처럼 circle 자체는 쓰인다.",
+      "recommendation": "그대로 둠(틀림 아님) — 고친다면 a6-3 의 세 곳(hobby circle · Our circle · the circle)을 함께 club 으로 바꾸고 낱말 · 문장 · 덩어리 소리를 다시 만든다.",
+      "why": "뜻은 통하고 틀린 영어는 아니어서 어색함(⑧) 정도다. 바꾸면 한 강의 안 세 문장 · 소리를 함께 바꿔야 하므로 사장님이 고르실 일."
+    },
+    {
+      "id": "AW16-J3", "lesson": "a1~a6 (빌드 규칙)",
+      "question": "빈칸 보기가 정답처럼 들어맞는 문제(AW16-02~12)를 낱말마다 제외 목록으로 막을까, 보기 고르는 규칙 자체를 바꿀까 — 지금 규칙은 '같은 품사 먼저'라서 형용사 빈칸(supportive · close-knit · collaborative · balanced · home-cooked …)에 서로 바꿔 넣어도 되는 형용사가 보기로 몰린다.",
+      "recommendation": "build-adult-content.mjs 에 낱말별 제외 목록(BLANK_AVOID)을 두고, 제외 목록이 가리키는 보기가 다시 뽑히면 빌드가 멈추게 함. 규칙(같은 품사 먼저)은 그대로.",
+      "why": "같은 품사 우선은 보기 꼴로 답이 드러나지 않게 하는 좋은 장치라 버리기 아깝다. 들어맞는 경우는 사람이 문장을 보고 판단해야 하므로 목록이 맞다. 7~12과도 같은 규칙이라 같은 점검이 필요하다(이 몫 밖)."
+    }
+  ],
+  "notes": "같은 AI 계열이 만들고 점검한 것 — 독립 검수 아님. 내용 파일은 바꾸지 않았고 git 은 쓰지 않음. 방법: 보기는 화면이 고르는 것이 아니라 빌드(build-adult-content.mjs 521~547줄)가 같은 과 표현 중 '같은 품사 2점 + 같은 끝(-ed/-ing/-s) 1점' 순으로 3개를 골라 words[].choices 에 적어 둔 것이고, AdultWordsStep.tsx 는 정답(문장의 밑줄 글자) + choices 를 돌려 놓고(문장 첫머리면 대문자) 글자가 정답과 같은지로만 채점한다(optionsOf · pick). 그래서 실제로 나오는 오답 보기 = choices 3개이며 501개를 모두 빈칸에 넣어 봄. 확인한 것: 167개 모두 밑줄(start/end)이 그 낱말의 꼴을 정확히 가리킴 · say 에 한글 없음(소리 그대로) · 뜻 · 품사는 소리 내지 않음(화면만 — w.say 만 playSentenceQueue). 6-1 · 6-2 EXTRA_WORDS 15개(operate · slip away · sleep in · unwind · relieve · talk through · balanced · run errands)는 뜻 · 품사 · 쓰임 모두 맞음, 보기도 들어맞는 것 없음. 사실: a6-4 '2015 census … Protestants outnumbered Buddhists for the first time' · 'more than half … no religion' 은 2015 인구주택총조사(개신교 19.7% · 불교 15.5% · 무종교 56.1%)와 맞음. 들어맞을 듯하지만 틀림으로 세지 않은 경계 사례(문맥상 어색하거나 뜻이 뒤집힘): a2-2 fortunate→'set to'(I'm set to have …) · a1-5 so far→'as well' · a2-1 gratitude→'transition' · a2-3 retirement age→'peace of mind' · a2-5 considerate→'fortunate' · a3-4 lack→'possess' · a5-2 collaborative→'supportive habits' · a5-4 work ethic→'ritual' · a6-1 sleep in→'slip away' · a6-3 collaborative→'close-knit/supportive family activity' · a6-4 congregation→'hobby circle'(앞에 After the service). 답 꼴이 드러나는 경우(a1-2 enjoyed 만 -ed, a4-6 awakening 만 -ing — 보기는 원형)는 틀림이 아니라 쉬움이라 세지 않음. 품사 표기 'set to = 형용사' · 'graduate from / excel at = 구동사' 는 사전 · 한국 교재 관례상 허용으로 봄. AW16-13 · 14 는 문장 몫의 한국어 줄이지만 단어 단계 빈칸 답 뒤에 보여서 적음(문장 몫과 겹칠 수 있음). 작업 중 scratchpad 의 dump.cjs 를 다른 병렬 세션이 덮어씀 — 결과(dump.txt)는 그 전에 만들어져 영향 없음."
+}

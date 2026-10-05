@@ -1,0 +1,97 @@
+{
+  "part": "adult-chunks-5-8",
+  "scope": "ADULT 5~8과 17강의(a5-1~a5-5 · a6-1~a6-5 · a7-1~a7-4 · a8-1~a8-3)의 끊어 읽기 덩어리(blocks[1].items[].chunks[]) 전부 — 80문장 · 249덩어리(en · ko 둘 다). 문장마다 영어 문장 · 한국어 줄(paragraph)과 같이 읽음. 덩어리 en 을 이으면 문장과 글자까지 같음(80/80). 원본 대조: docs/adult/ppt-청크.json 5과 · 6과(남성용 · 여성용) · 7과 · 8과. 5~6과는 PPT 덩어리 그대로(옮긴 것 0 · CHUNK_FIX 0). 7~8과: CHUNK_FIX 13문장(7과 #2 · 9 · 10 · 12 · 13 · 16 · 17 · 18 · 19, 8과 #1 · 2 · 3 · 5)과 PPT 끊는 자리를 새 낱말로 옮긴 13문장(build-adult-content.mjs --check --chunks 출력: a7-1 #3 · 4 · 5 · 7, a7-2 #8 · 11, a7-4 #20, a8-2 #6 · 10, a8-3 #11 · 12 · 13 · 15)을 하나씩 PPT 덩어리와 STUDENT s17 · s18 의 감사 문장에 대어 봄. 화면: StudentLearningView.tsx 끊어 읽기(1228~1290행) — en 은 보이고 소리 남(playChunks → spokenEn(c.en)), ko 는 '뜻 보기' 로 보이기만 하고 소리 안 남.",
+  "readCount": { "sentences": 80, "titles": 17, "words": 0, "chunks": 249, "other": 116 },
+  "findings": [
+    {
+      "id": "c58-1",
+      "course": "adult",
+      "lesson": "a5-2",
+      "file": "content/lessons/adult/a5-2.json",
+      "path": "blocks[1].items[0].chunks[2].ko · blocks[1].items[0].chunks[3].ko",
+      "kind": "chunk-ko",
+      "current": "[2] and set goals aimed at improving || 목표를 세웁니다  ·  [3] how efficiently we work. || 업무 효율을 높이기 위한.",
+      "problem": "영어와 한국어 덩어리의 짝이 어긋남. 'aimed at improving'(높이기 위한)은 [2] 영어에 있는데 그 뜻은 [3] 한국어 '업무 효율을 높이기 위한' 에 들어가 있고, [2] 한국어 '목표를 세웁니다' 에는 빠져 있다. 학습자가 'how efficiently we work' 의 뜻을 열면 '높이기 위한' 까지 보여, 'how efficiently we work' 가 '높이기 위한' 이라는 뜻을 가진 것처럼 배운다(덩어리 학습의 바로 그 목적 — 영어 순서대로 뜻 잡기 — 을 어긋나게 함). 5~6과 PPT 덩어리 그대로라 PPT 의 끊는 자리 실수.",
+      "fix": "[2].ko '그리고 높이기 위한 목표를 세웁니다' · [3].ko '우리가 일하는 효율을.' (영어 끊는 자리는 그대로 — 소리 그대로. 영어를 'and set goals | aimed at improving how efficiently we work.' 로 다시 끊는 방법도 있으나 덩어리 소리 2개를 다시 만들어야 함)",
+      "category": "⑥",
+      "severity": "중간",
+      "confidence": "높음",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "c58-2",
+      "course": "adult",
+      "lesson": "a5-1",
+      "file": "content/lessons/adult/a5-1.json",
+      "path": "blocks[1].items[2].chunks[0].ko",
+      "kind": "chunk-ko",
+      "current": "Although breakfast is often rushed, || 아침 식사는 늘 시간에 쫓기지만,",
+      "problem": "영어 'often'(자주)을 '늘'(항상)로 옮김 — 빈도가 다르다. 한국어 줄(blocks[4].text)도 같은 말이며 adult-sent-4-6 a46-1 이 줄을 잡았다. 줄만 고치면 덩어리와 줄이 서로 달라지므로 같이 고쳐야 한다.",
+      "fix": "아침 식사는 자주 시간에 쫓기지만, (a46-1 의 줄 고침과 같은 말로)",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "높음",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "c58-3",
+      "course": "adult",
+      "lesson": "a6-2",
+      "file": "content/lessons/adult/a6-2.json",
+      "path": "blocks[1].items[5].chunks[0].ko",
+      "kind": "chunk-ko",
+      "current": "I also make time to exercise, run errands, and practice my English, || 저는 운동과 장보기, 영어 연습을 할 시간도 따로 마련하는데,",
+      "problem": "'run errands' 를 '장보기'로 옮김 — 같은 강의 단어 카드 'run errands = 볼일을 보다, 이런저런 일을 처리하다' 와 다르게 가르친다(장보기는 6-3 의 grocery shopping). 한국어 줄(blocks[7].text)은 adult-sent-4-6 a46-2 가 잡았다 — 덩어리도 같이.",
+      "fix": "저는 운동도 하고 볼일도 보고 영어 연습도 할 시간을 따로 마련하는데, (a46-2 의 줄 고침과 같은 말로)",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "높음",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "c58-4",
+      "course": "adult",
+      "lesson": "a6-5",
+      "file": "content/lessons/adult/a6-5.json",
+      "path": "blocks[1].items[4].chunks[3].ko",
+      "kind": "chunk-ko",
+      "current": "should never come at the expense of family. || 결코 가족을 희생시키는 대가가 되어서는 안 된다는 것을.",
+      "problem": "'come at the expense of family'(가족을 희생하면서 이루어지다)를 '가족을 희생시키는 대가가 되다'로 옮겨 한국어가 성립하지 않는다('대가'는 치르는 값). 한국어 줄(blocks[6].text)은 adult-sent-4-6 a46-3 이 잡았다 — 덩어리도 같이.",
+      "fix": "결코 가족을 희생하면서까지 이어져서는 안 된다는 것을. (a46-3 의 줄 고침과 같은 말로)",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "c58-5",
+      "course": "adult",
+      "lesson": "a5-3",
+      "file": "content/lessons/adult/a5-3.json",
+      "path": "blocks[1].items[2].chunks[1].ko",
+      "kind": "chunk-ko",
+      "current": "we always finish with tea together, || 우리는 늘 차를 한 잔 하며 마무리하는데,",
+      "problem": "띄어쓰기 — '간단히 차나 술을 마시다' 의 '한잔하다'는 한 낱말. 한국어 줄(blocks[4].text)은 adult-sent-4-6 a46-6 이 잡았다 — 덩어리도 같이.",
+      "fix": "우리는 늘 차를 한잔하며 마무리하는데,",
+      "category": "②",
+      "severity": "낮음",
+      "confidence": "보통",
+      "audioChanges": false,
+      "reaches": true
+    }
+  ],
+  "judgements": [
+    {
+      "id": "c58-J1",
+      "lesson": "a6-5",
+      "question": "2번 문장 덩어리 '[1] and they have seen us through job changes, || 덕분에 우리는 이직과' · '[2] house moves, and several family milestones. || 이사, 여러 가족 대소사를 함께 겪어 왔습니다.' 는 세 항목 목록(job changes · house moves · family milestones)을 가운데서 자른다. 한국어 덩어리 '덕분에 우리는 이직과' 가 '…과' 로 끝나 혼자서는 뜻이 안 선다. 다시 끊을까, PPT 그대로 둘까?",
+      "recommendation": "다시 끊는다: '[1] and they have seen us through || 덕분에 우리는 함께 겪어 왔습니다' · '[2] job changes, house moves, and several family milestones. || 이직과 이사, 여러 가족 대소사를.' (5~8과 다른 덩어리의 방식 — 술어 덩어리 뒤에 목적어 덩어리 — 과 같음). 영어 덩어리 둘이 바뀌어 덩어리 소리 2개를 새로 만들어야 함.",
+      "why": "틀린 영어 · 틀린 뜻은 아니어서 '틀림'으로 세지 않았다. 다만 목록 한가운데 끊는 것은 의미 단위로 끊는다는 끊어 읽기의 원리와 어긋나고, 다른 문장은 모두 의미 단위로 끊혀 있다. 소리를 다시 만드는 비용이 드는 PPT 원본의 끊는 자리라 판단으로 올린다."
+    }
+  ],
+  "notes": "읽은 수: 문장 80(a5 15 · a6 29 · a7 21 · a8 15) · 덩어리 249(en+ko 쌍) · 강의 제목 17 · other 116 = 한국어 줄 80 + 7~8과 PPT 원본 덩어리 36문장 대조. 덩어리 en 을 이으면 문장과 같음 80/80, 겹친 낱말 · 남은 기호 · 잘린 덩어리 없음, 한 강의 안 따옴표 모양(’ / ') 섞임 없음. 6-1 · 6-2 의 같은 문장(#2 · #3 · #5)은 덩어리도 글자까지 같음.\n7~8과 CHUNK_FIX 13문장: 모두 영어가 STUDENT s17 · s18 감사 문장과 같고(빌드가 확인, s17-2 · s17-4 · s18-2 · s18-3 직접 대조), 한국어 덩어리가 KO_FIX 줄과 뜻이 같다(사실: 4,000여 년 · 8세기 · 약 1,000년 · 1910~1945 · 1950 · 1953 · 광복절 · 어린이날 모두 맞음). 옮긴 13문장: PPT 끊는 자리가 바뀐 낱말(Hwan-in→환인, Shilla→신라, Korean traditional→traditional Korean, Lunar New Year's custom→Lunar New Year custom 등) 위로 맞게 옮겨졌고 한국어 덩어리는 여전히 맞는다 — 틀림 없음.\n소리: 덩어리 ko 는 화면에만 보이고 소리를 안 낸다(StudentLearningView.tsx playChunks 는 spokenEn(c.en) 만 읽음) → 위 고침 5개 모두 덩어리 소리 그대로. 단, 한국어 줄(paragraph)은 소리를 내므로 adult-sent-4-6 의 a46-1 · a46-2 · a46-3 · a46-6 줄 고침은 클립을 다시 만들어야 함(그쪽에 적혀 있음). 고칠 곳: 덩어리 ko 는 build-adult-content.mjs 가 ppt-청크.json 에서 만들므로, 5~6과 덩어리 ko 를 바꾸려면 CHUNK_FIX 에 그 문장을 넣어야 한다 — 그런데 지금 chunksOf() 는 '영어가 PPT 와 같고 KO_FIX 아님' 인 문장의 CHUNK_FIX 를 막는다(272행 'CHUNK_FIX for a sentence the PPT's chunks already fit'). 고치는 세션은 이 막음을 '덩어리 ko 만 고침' 을 허락하도록 바꾸거나 ko 만 덮는 표를 따로 둬야 한다.\n다른 몫의 문장 고침이 받아들여지면 덩어리도 따라 바뀜: a5-2 #3(a46-5 'which I try to tackle') → chunks[2] en 'which I try to tackle' · ko '그 일들을 처리하려고 노력합니다'(덩어리 소리 새로); a7-4 #3(adult-sent-7-10 의 'Games, and' 쉼표) → chunks[1] en 'Korea hosted the Summer Olympic Games,'(덩어리 소리 새로, 쉼표만이라 소리가 같을 수도 있음 — 클립 키 확인). 틀림으로 세지 않은 것: a8-2 #5 덩어리 ko '의식이 끝나면 · 절을 올리는데' 가 한국어 줄의 '차례가 끝나면 · 세배를 올리는데' 와 낱말이 다름(PPT 원본, 뜻 같음) · a6-1/a6-2 #6 덩어리 '월요일을 훨씬 잘 준비할 수 있게 해 준다는 것을' 과 줄 '월요일을 훨씬 잘 맞을 수 있다는' 의 말 다름(덩어리 쪽이 영어에 더 가까움) · a8-3 #5 영어 'On these days I learn'(STUDENT 가 쉼표를 뺌)에 덩어리 ko '이런 날이면,' 의 쉼표. 같은 AI 계열이 만들고 점검한 것 — 독립 검수 아님."
+}

@@ -1,0 +1,19 @@
+﻿start 2026-10-04 17:40:35 args=--mode scope --ids gh1-016,gh1-060,gh1-068,gh1-096 --clone rc1002-s2-var --port 9883
+기대대로 gh1-016 Q5 일부 → 전체 부정: 모범 "Not all boys receive a prize." · 넣은 답 "No boys receive a prize." → ✕ 오답 (0점)
+기대대로 gh1-016 Q7 일부 → 전체 부정: 모범 "Not all of them came." · 넣은 답 "None of them came." → ✕ 오답 (0점)
+기대대로 gh1-016 Q1 모범 답안: 모범 "He enjoys every minute of the trip." · 넣은 답 "He enjoys every minute of the trip." → ✓ 정답 (100점)
+기대대로 gh1-060 Q31 일부 → 전체 부정: 모범 "Not all of them like it." · 넣은 답 "None of them like it." → ✕ 오답 (0점)
+기대대로 gh1-060 Q1 모범 답안: 모범 "How did he go there?" · 넣은 답 "How did he go there?" → ✓ 정답 (100점)
+기대대로 gh1-068 Q79 일부 → 전체 부정: 모범 "Not every boy received a prize, did he?" · 넣은 답 "No boy received a prize, did he?" → ✕ 오답 (0점)
+기대대로 gh1-068 Q80 일부 → 전체 부정: 모범 "Not everybody received a prize, did they?" · 넣은 답 "Nobody received a prize, did they?" → ✕ 오답 (0점)
+기대대로 gh1-068 Q81 일부 → 전체 부정: 모범 "Not all the boys received a prize, did they?" · 넣은 답 "None of the boys received a prize, did they?" → ✕ 오답 (0점)
+기대대로 gh1-068 Q82 일부 → 전체 부정: 모범 "Not all of them come." · 넣은 답 "None of them come." → ✕ 오답 (0점)
+기대대로 gh1-068 Q83 일부 → 전체 부정: 모범 "Not all of them came." · 넣은 답 "None of them came." → ✕ 오답 (0점)
+기대대로 gh1-068 Q84 모범 답안: 모범 "Nobody came." · 넣은 답 "Nobody came." → ✓ 정답 (100점)
+기대대로 gh1-096 Q79 일부 → 전체 부정: 모범 "Not every boy lost his life, did he?" · 넣은 답 "No boy lost his life, did he?" → ✕ 오답 (0점)
+기대대로 gh1-096 Q80 일부 → 전체 부정: 모범 "Not everybody wore glasses, did they?" · 넣은 답 "Nobody wore glasses, did they?" → ✕ 오답 (0점)
+기대대로 gh1-096 Q81 일부 → 전체 부정: 모범 "Not all the boys protected their sisters, did they?" · 넣은 답 "None of the boys protected their sisters, did they?" → ✕ 오답 (0점)
+기대대로 gh1-096 Q83 일부 → 전체 부정: 모범 "Not all of them smelled it." · 넣은 답 "None of them smelled it." → ✕ 오답 (0점)
+기대대로 gh1-096 Q77 모범 답안: 모범 "Each mayor received a warning, didn't he?" · 넣은 답 "Each mayor received a warning, didn't he?" → ✓ 정답 (100점)
+강의 4 · 기대와 다름 0
+exit=0 end 2026-10-04 17:40:50

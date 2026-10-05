@@ -1,0 +1,14 @@
+﻿free memory 1.32 GB
+port 9980 · free 1.32 GB · 2026-10-04T19:25:11.740Z
+PASS    mobile · 목록 /passoff-grammar · 오답노트 입구 — {"review":{"kind":"none","text":"오늘 복습 없음","href":null},"notes":{"text":"오답노트 · 7문항","href":"/passoff-grammar/review?notes=1"}}
+PASS    mobile · 오답노트(mobile) · 목록: h1 · 안내 · 강의별 줄('N문항') — {"path":"/passoff-grammar/review?notes=1","step":"list","h1":"오답노트","intro":"틀린 적 있는 문항 7개를 강의별로 모았어요.","lessons":[{"id":"pg01-1","text":"1인칭 3문항"},{"id":"pg01-2","text":"2인칭 2문항"},{"id":"pg01-3","text":"3인칭 2문항"}]}
+PASS    mobile · 오답노트(mobile) · 강의 '3인칭' 펼침 — 문항마다 문제 · 내 답 · '틀림 N번' · '지금 다시 풀기' — {"items":["pg01-3:p4: 내 답 Wrong answer on purpose. · 틀림 1번","pg01-3:s5: 내 답 He · 틀림 1번"],"runBtn":true}
+PASS    mobile · 오답노트(mobile) · '지금 다시 풀기' 2문항(첫 문항은 일부러 한 번 틀린 뒤 맞힘) — {"run":[{"key":"pg01-3:p4","right":true,"missed":{"ladder":true,"noComebackLine":true,"report":true},"noComebackLine":true,"practiceNote":true},{"key":"pg01-3:s5","right":true,"noComebackLine":true,"practiceNote":false}],"end":"다시 풀기를 마쳤어요 3인칭 2문항 중 1개를 처음에 맞혔어요. 연습이라 복습 일정은 그대로예요"}
+PASS    mobile · 오답노트(mobile) · 다시 풀기 카드의 소리 단추('문장 듣기') — {"key":"pg01-3:p4","clicked":true,"src":"/audio/azure-ava/v1/v-eb392eb681229cc4.mp3","expected":"/audio/azure-ava/v1/v-eb392eb681229cc4.mp3","sameClip":true,"played":true,"errors":0,"tts":0}
+PASS    mobile · 오답노트(mobile) · 맞힌 뒤 '오답노트로' — 문항이 빠지는가 · 기기 기록 — {"lessons":[{"id":"pg01-1","text":"1인칭 3문항"},{"id":"pg01-2","text":"2인칭 2문항"},{"id":"pg01-3","text":"3인칭 2문항"}],"unchangedItems":"2/2","logDelta":[["lesson:lesson",-3],["review:practice",3]],"per":{"pg01-3:p4":"2026-10-06|0|false|1|2026-10-05|0|","pg01-3:s5":"2026-10-06|0|false|1|2026-10-05|0|"}}
+PASS    mobile · 오답노트 새로 열기(저장소 비운 새 쪽 · mobile) · 서버 판 — 다시 풀기 뒤에도 같은 목록 · 연습 답이 서버에 올라갔는지 — {"lessons":[{"id":"pg01-1","text":"1인칭 3문항"},{"id":"pg01-2","text":"2인칭 2문항"},{"id":"pg01-3","text":"3인칭 2문항"}],"logBy":{"lesson:lesson":30,"review:right":51,"review:wrong":7,"review:retry":6,"review:practice":6}}
+PASS    mobile · 오답노트(mobile) · 요청 — POST /api/license/verify 200 · POST /api/learning/passoff-grammar 200 · GET /api/progress/student 200 · GET /api/progress/passoff-grammar 200 · GET /api/progress/adult 200
+PASS    mobile · 오답노트(mobile) · 화면 4곳(오답노트 목록 · 오답노트 강의 펼침 · 다시 풀기 카드 · 다시 풀기 끝): 가로 넘침 · 44px 미만 누를 것 · 12px 미만 글 · 16px 미만 입력 칸 · 잘린 글 · 새 글(undefined 등) · 오류 화면 — 0
+PASS    mobile · 오답노트(mobile) · 4xx/5xx · 콘솔 오류 · 예외 · 실패한 요청 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 실패 0
+PASS    mobile · 오답노트(mobile) · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+끝: {"PASS":11}

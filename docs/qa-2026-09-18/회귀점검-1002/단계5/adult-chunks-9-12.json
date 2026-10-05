@@ -1,0 +1,97 @@
+{
+  "part": "adult-chunks-9-12",
+  "scope": "ADULT 9~12과 15강의(a9-1~a9-4 · a10-1~a10-5 · a11-1~a11-3 · a12-1~a12-3)의 덩어리(blocks[1].items[].chunks[]) 219개 전부 — 영어 덩어리 219 · 한국어 덩어리 219. 문장 71과 한국어 줄 71을 곁에 두고 한 덩어리씩 읽음. CHUNK_FIX · KO_FIX 문장(9과 #17 · #18 = a9-4 #6 · #7, 10과 #5 · #9 · #18 = a10-3 #1 · a10-4 #2 · a10-5 #6) 따로 확인. docs/adult/ppt-청크.json 9~12과와 덩어리마다 대조(영어 · 한국어).",
+  "readCount": { "sentences": 71, "titles": 0, "words": 0, "chunks": 219, "other": 71 },
+  "findings": [
+    {
+      "id": "AC912-01",
+      "course": "adult",
+      "lesson": "a11-1",
+      "file": "content/lessons/adult/a11-1.json",
+      "path": "blocks[1].items[0].chunks[2].ko · blocks[1].items[0].chunks[3].ko",
+      "kind": "chunk-ko",
+      "current": "c2 'that tightly restricted freedom of speech,' = '표현의 자유와' / c3 'the press, and political assembly.' = '언론, 정치 집회의 자유를 엄격히 제한하던 정권이었습니다.'",
+      "problem": "영어 c2 에 있는 'tightly restricted'(엄격히 제한한)의 뜻이 한국어 c2 에는 없고 c3 로 넘어가 있다. 덩어리를 하나씩 눌러 뜻을 여는 단계라, 'that tightly restricted freedom of speech' 의 뜻이 '표현의 자유와' 로만 보이고, 동사가 없는 c3 'the press, and political assembly' 가 '…엄격히 제한하던 정권이었습니다' 로 보여 학습자가 덩어리와 뜻을 잘못 짝짓는다. c3 끝 '정권이었습니다' 는 영어 어디에도 없는 말이다(c1 '정권 아래에서 살았는데' 와 겹침). PPT 덩어리 그대로.",
+      "fix": "c2 ko '그 정권은 표현의 자유를 엄격히 제한했고,' · c3 ko '언론과 정치 집회의 자유도 마찬가지였습니다.' (영어 덩어리 그대로)",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "높음",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "AC912-02",
+      "course": "adult",
+      "lesson": "a11-3",
+      "file": "content/lessons/adult/a11-3.json",
+      "path": "blocks[1].items[1].chunks[2].ko · blocks[1].items[1].chunks[3].ko",
+      "kind": "chunk-ko",
+      "current": "c2 'rather than relying on slogans' = '구호에 의존하거나' / c3 'or the opinions of those around me.' = '주변 사람들의 의견에 기대기보다는.'",
+      "problem": "영어 c2 의 'rather than'(~하기보다는)이 한국어 c2 에서는 '~거나'(또는)로 보이고, '기보다는' 은 영어에 'rather than' 이 없는 c3 에 붙어 있다. 덩어리 하나만 열면 'rather than relying on slogans' = '구호에 의존하거나' 로, 'rather than' 을 '또는' 으로 배우게 된다(c3 의 'or' 는 반대로 '~기보다는'). 또 같은 문장 안에서 relying on 을 '의존하다' · '기대다' 로 다르게 옮김. PPT 덩어리 그대로.",
+      "fix": "c2 ko '구호에 기대기보다는,' · c3 ko '또는 주변 사람들의 의견에 기대기보다는.' (영어 덩어리 그대로 — 한국어 줄 '구호나 주변 사람들의 의견에 기대기보다는' 과 낱말도 맞음)",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "높음",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "AC912-03",
+      "course": "adult",
+      "lesson": "a12-2",
+      "file": "content/lessons/adult/a12-2.json",
+      "path": "blocks[1].items[1].chunks[2].ko · blocks[1].items[1].chunks[3].ko",
+      "kind": "chunk-ko",
+      "current": "c2 'one that surfaces in daily conversations,' = '일상의 대화,' / c3 'news headlines, and political debates alike.' = '뉴스 헤드라인, 정치 토론 어디에서나 등장하는 문제입니다.'",
+      "problem": "영어 c2 의 'one that surfaces in'(~에 등장하는 문제)이 한국어 c2 에는 없어 'one that surfaces in daily conversations' 의 뜻이 '일상의 대화,' 로만 보이고, 동사 없는 c3(목록 끝 두 개 + alike)가 '…등장하는 문제입니다' 를 다 가진다. AC912-01 과 같은 꼴(동사가 있는 덩어리의 뜻에서 동사가 빠짐). PPT 덩어리 그대로.",
+      "fix": "c2 ko '그 문제는 일상의 대화에 등장하고,' · c3 ko '뉴스 헤드라인과 정치 토론에도 똑같이 등장합니다.' (영어 덩어리 그대로)",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "AC912-04",
+      "course": "adult",
+      "lesson": "a12-3",
+      "file": "content/lessons/adult/a12-3.json",
+      "path": "blocks[1].items[4].chunks[0].ko · blocks[1].items[4].chunks[1].ko",
+      "kind": "chunk-ko",
+      "current": "c0 'Having grown up watching classmates' = '친구들이 포기하는 모습을 보며 자라 온 저로서는' / c1 'give up on their goals for financial reasons,' = '경제적인 이유로 꿈을,'",
+      "problem": "'give up'(포기하다)은 영어 c1 에 있는데 한국어는 c0 에 '포기하는' 이 들어가고 c1 은 '경제적인 이유로 꿈을,' 로 동사가 없다. 'give up on their goals' 의 뜻을 열어도 '포기' 가 안 보여, 이 문장의 핵심 구동사를 덩어리에서 짝지을 수 없다. PPT 덩어리 그대로.",
+      "fix": "c0 ko '친구들을 지켜보며 자라 온 저로서는,' · c1 ko '그 친구들이 경제적인 이유로 꿈을 포기하는 모습을,' (영어 덩어리 그대로)",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "AC912-05",
+      "course": "adult",
+      "lesson": "a12-1",
+      "file": "content/lessons/adult/a12-1.json",
+      "path": "blocks[1].items[5].chunks[2].ko",
+      "kind": "chunk-ko",
+      "current": "교육 제도의 모든 단계에 미쳐야 한다는 점입니다,",
+      "problem": "문장을 끝낸 '…점입니다' 뒤에 쉼표가 붙어 다음 덩어리 '초등학교부터 그 위까지.' 로 이어진다. 9~12과의 다른 덩어리는 끝난 말 뒤에 쉼표를 두지 않는다(예: a10-4 #3 '신라 왕국은 가장 강성했습니다' / '8세기에.'). 남은 기호 꼴(⑦). 문장 몫(adult-sent-11-12-titles notes)이 넘긴 것.",
+      "fix": "교육 제도의 모든 단계에 미쳐야 한다는 점입니다",
+      "category": "⑦",
+      "severity": "낮음",
+      "confidence": "높음",
+      "audioChanges": false,
+      "reaches": true
+    }
+  ],
+  "judgements": [
+    {
+      "id": "AC912-J1",
+      "lesson": "a11-1 · a11-3 · a12-2 · a12-3 (9~12과 끊어 읽기 전체 방침)",
+      "question": "한국어 덩어리를 쓸 때, 영어 덩어리의 동사 · 연결어의 뜻을 어느 덩어리에 둘까? 9~12과에는 두 꼴이 섞여 있다. (가) 이음말(while · whereas · as)의 '-지만 · -는데' 를 한국어 문법대로 앞 덩어리 끝에 붙인 것 — a12-2 #4 c0 'Wealthier families can afford' = '…누릴 수 있지만'(whereas 는 c2), a12-3 #3 c1 '…어려움을 겪고 있지만'(while 은 c3), a9-3 #2 c0 '… 보통 나옵니다'. (나) 동사 자체가 다른 덩어리로 옮겨 간 것 — AC912-01~04.",
+      "recommendation": "(가)는 그대로 둔다 — 한국어에서 대조 · 이유의 끝맺음은 앞 마디에 붙을 수밖에 없고, 덩어리의 실질 낱말 뜻은 제자리에 있다. (나)만 틀림으로 고친다(AC912-01~04, 한국어 덩어리만 — 소리 바뀜 없음). 앞으로 덩어리를 새로 쓸 때의 규칙: '영어 덩어리의 동사 · 명사의 뜻은 그 덩어리의 한국어에 있어야 한다, 이음말의 한국어 끝맺음은 앞 덩어리에 붙어도 된다'.",
+      "why": "둘 다 PPT 덩어리 그대로라 원본이 한 규칙을 따르지 않는다. (가)까지 고치면 한국어 덩어리가 부자연스러워지고(예: '…누릴 수 있다 / 반면에 …') 고칠 곳이 9~12과에만 10곳 넘게 늘어난다. 반면 (나)는 덩어리를 열었을 때 그 영어의 핵심 낱말 뜻이 안 보여 이 단계의 목적(영어 순서대로 뜻 잡기)을 해친다."
+    }
+  ],
+  "notes": "같은 AI 계열이 만들고 점검함 — 독립 검수 아님. 내용 파일 · git 은 건드리지 않음(스크래치 스크립트 두 개로 강의 파일 15개의 덩어리 · 문장 · 한국어 줄을 뽑고, ppt-청크.json 과 대조해 한 줄씩 읽음).\n\n읽은 수: 덩어리 219(a9 37 · a10 45 · a11 64 · a12 73; 강의별 a9-1 5 · a9-2 8 · a9-3 10 · a9-4 14 · a10-1 6 · a10-2 6 · a10-3 10 · a10-4 11 · a10-5 12 · a11-1 24 · a11-2 20 · a11-3 20 · a12-1 25 · a12-2 23 · a12-3 25) — 영어 · 한국어 둘 다. 곁에 읽은 문장 71(a9 18 · a10 18 · a11 17 · a12 18)과 한국어 줄 71(other).\n\n기계 확인: 71문장 모두 영어 덩어리를 공백으로 이으면 문장과 글자까지 같음(빈 덩어리 · 겹친 낱말 0). 덩어리 수 = PPT 청크 슬라이드 수(9과 18 · 10과 18 · 11과 17 · 12과 18). PPT 와 다른 덩어리: 영어만 바뀌고 한국어 그대로 22문장(한글 표기 · STUDENT 감사 영어 — 끊는 자리를 새 낱말로 옮긴 것; 옮긴 자리가 모두 뜻 단위에 맞음, 예 a9-1 #3 'are not like those of any other country.' · a10-3 #2 'and observe how Koreans lived in the past.'), 영어 · 한국어 모두 바뀐 5문장(CHUNK_FIX: a9-4 #6 · #7, a10-3 #1, a10-4 #2, a10-5 #6). 11 · 12과는 한글 표기 넷(광주 · 서울 · 학원 · 서울)만 PPT 와 다름.\n\nCHUNK_FIX · KO_FIX 확인: a9-4 #6 'However, in 1443, | King 세종 created a unique Korean alphabet, | and it was proclaimed in 1446.' = '그러나 1443년, | 세종대왕이 한국 고유의 문자를 만들었고, | 이 문자는 1446년에 반포되었습니다.' — 맞음(1443 창제 · 1446 반포). a9-4 #7 '이 문자 체계는 | 한글이라고 알려져 있습니다.' — 한국어 줄 '이 문자 체계가 바로 한글입니다.' 와 말은 다르나 뜻은 같고 덩어리 쪽이 영어 'is known as' 를 그대로 보여 줌 — 틀림 아님. a10-3 #1 '경기도 용인(수원 근처)에 있으며,' · '한국민속촌인데,' — 맞음(한국민속촌은 용인시, 수원 가까이). a10-4 #2 '경주는 옛 수도입니다 | 신라 왕국의.' — 맞음. a10-5 #6 '(약 6,400피트).' — 맞음(1,947m ≈ 6,388ft). KO_FIX 줄과 CHUNK_FIX 덩어리 사이 뜻 어긋남 0.\n\n한국어 맞춤법: 219덩어리 틀림 없음(자리 잡기까지 · 맨바닥 · 보여 줍니다 · 애를 먹는 · 한몫 · 이목 · 누그러지지 · 가 볼 만한 · 한가운데 등 확인).\n\n다른 몫이 이미 올린 것(덩어리에도 걸리지만 겹쳐 세지 않음): a9-1 #1 c0 'The Korean culture'(A710-04), a9-2 #1 c1 'I would like to explain about'(A710-03 — 고치면 c1 · c2 덩어리 영어도 함께), a10-4 #5 c0 'Koreans refer to it as this' · c2 'of the 신라 Dynasty.' = '신라 왕조의.'(A710-02; #2 의 '신라 왕국의.' 와 갈림), a10-4 #4 c1 'as a museum without walls.' = \"'지붕 없는 박물관'으로.\"(판단 A710-J1 — 덩어리에서 walls = 지붕 으로 짝지어지는 문제가 바로 이 칸), a12-1 #4 c4 'almost every few years since.'(a1112t-2), a12-3 #2 한국어 줄 '전혀'(a1112t-3 — 덩어리 쪽은 '전혀' 없이 영어와 맞음), a12-3 #5 'talent should never depend'(판단 a1112t-J1 — 고치면 c2 · c3 덩어리 영어도).\n\n찾았으나 올리지 않은 것: (1) a10-1 #1 c2 '세 바다에 둘러싸여 있습니다:' — 한국어 문장 끝에 쌍점. 영어 덩어리 'three seas:' 를 따른 것이고 다음 덩어리가 목록이라 읽는 데 문제없음. (2) a11-2 #5 c3 '열린 대화, 서로 존중하는 대화에서부터.' 와 한국어 줄 '열린 대화와 서로 존중하는 대화에서부터' 의 쉼표/와 차이 — 뜻 같음. (3) a11-3 #4 c2 'often exceeding seventy-five percent' = '대개 75퍼센트를 넘을 정도로'(often ≈ 자주, 대개 ≈ usually) — 한국어 줄도 같고 사실(2012 75.8 · 2017 77.2 · 2022 77.1 · 2025 79.4)에 비추어 둘 다 틀리지 않음. (4) a10-5 #6 c1 · c2 '높이가 거의 2,000미터에 이르며 | (약 6,400피트).' — 괄호가 '이르며' 뒤에 오지만 영어 덩어리 순서를 따른 것. (5) a9-2 #3 c1 'families celebrate these days' = '가족들이 이날을 기념합니다' — these days(복수)를 '이날' 로 받았으나 앞의 '전통 명절에는' 로 뜻이 풀림.\n\n소리: 덩어리 영어(en)만 소리를 낸다 — scripts/lib/spoken-texts.cjs 115~116줄(ADULT 끊어 읽기, c.en 만 add), StudentLearningView playChunks. 한국어 덩어리(ko)는 소리를 내지 않고 화면에만 보인다(StudentLearningView.tsx 1254줄 '뜻 보기' 뒤 {c.ko}). 그래서 AC912-01~05 는 모두 audioChanges=false — 고쳐도 클립을 다시 만들 일이 없다. 고칠 곳은 강의 파일이 아니라 scripts/build-adult-content.mjs 다: PPT 덩어리 그대로인 문장의 한국어를 바꾸려면 CHUNK_FIX 에 문장을 통째로 적어야 하는데, 지금 chunksOf 는 'PPT 덩어리가 이미 맞는 문장에 CHUNK_FIX 를 쓰면'(same && !meaningChanged) 빌드를 멈춘다(272줄). 그러니 한국어 덩어리만 고치는 길(예: KO_CHUNK_FIX 표 또는 272줄 조건 완화)을 먼저 만들어야 한다 — 이것은 고치는 세션의 몫."
+}

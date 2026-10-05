@@ -1,0 +1,20 @@
+﻿start 17:41:00
+- gh2-001: 짧은 be 동사 문항이 0개뿐 — 건너뜀
+- gh2-002: 짧은 be 동사 문항이 0개뿐 — 건너뜀
+- gh2-003: 짧은 be 동사 문항이 0개뿐 — 건너뜀
+- gh2-004: 짧은 be 동사 문항이 0개뿐 — 건너뜀
+- gh2-005: 짧은 be 동사 문항이 0개뿐 — 건너뜀
+- gh2-006: 짧은 be 동사 문항이 0개뿐 — 건너뜀
+- gh2-008: 짧은 be 동사 문항이 0개뿐 — 건너뜀
+- gh2-009: 짧은 be 동사 문항이 0개뿐 — 건너뜀
+- gh2-010: 짧은 be 동사 문항이 1개뿐 — 건너뜀
+- gh2-011: 짧은 be 동사 문항이 0개뿐 — 건너뜀
+강의 0 · 기대와 다름 0
+node : Assertion failed: !(handle->flags & UV_HANDLE_CLOSING), file src\win\async.c, line 94
+At line:7 char:1
++ node docs/qa-2026-09-18/scripts/check-grammar-exam-variants.cjs --cou ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Assertion faile...sync.c, line 94:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+exit=-1073740791

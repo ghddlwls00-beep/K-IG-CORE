@@ -1,0 +1,17 @@
+{
+  "part": "adult-chunks-9-12-확인",
+  "scope": "다른 일꾼(adult-chunks-9-12)의 틀림 AC912-01 을 다시 확인함(그 일꾼의 틀림은 모두 5개. 그중 심각·높음은 없고, 중간·낮음 다섯 개 가운데 하나인 AC912-01 을 받음). 판단 필요 AC912-J1 은 참고로만 읽음.",
+  "readCount": { "sentences": 1, "titles": 0, "words": 0, "chunks": 4, "other": 3 },
+  "checked": [
+    {
+      "id": "AC912-01",
+      "verdict": "맞음",
+      "why": "content/lessons/adult/a11-1.json 의 blocks[1].items[0].chunks 를 직접 열어 봄. c2 'that tightly restricted freedom of speech,' 의 한국어는 '표현의 자유와', c3 'the press, and political assembly.' 의 한국어는 '언론, 정치 집회의 자유를 엄격히 제한하던 정권이었습니다.' 로, 일꾼이 적은 것과 같다. docs/adult/ppt-청크.json 3001~3015줄 11과 #1 과도 한 자 한 자 같다(PPT 그대로). 화면에 닿음: StudentLearningView.tsx renderChunks(1222~1270줄)는 덩어리마다 '뜻 보기' 를 누르면 그 덩어리의 c.ko 만 보여 준다. 그래서 c2 를 열면 'tightly restricted' 의 뜻이 보이지 않고, 동사가 없는 c3 에서 '엄격히 제한하던 정권이었습니다' 가 보인다. c3 의 '정권이었습니다' 는 c3 영어에 없는 말이다. 소리: playChunks(489~504줄)는 spokenEn(c.en) 만 읽는다. 한국어 덩어리는 소리를 내지 않으므로 audioChanges=false 가 맞다. 심각도 '중간' 도 맞다. 덩어리를 다 열면 나오는 문장 전체 번역(blocks[2] '…표현과 언론, 정치 집회의 자유를 엄격히 제한하던 권위주의 정권 아래에서 살았습니다.')은 바르다. 영어도 틀리지 않았다. 그래서 틀린 영어나 틀린 뜻을 가르치지는 않고 채점과도 상관없다. 덩어리와 뜻의 짝이 어긋나 헷갈리게 하는 정도다. 고칠 글 c2 '그 정권은 표현의 자유를 엄격히 제한했고,' · c3 '언론과 정치 집회의 자유도 마찬가지였습니다.' 는 영어 덩어리와 뜻이 맞는다. c1 '…정권 아래에서 살았는데,' 와도 이어지고 새 틀림을 만들지 않는다. 'governments' 는 복수지만 한국어에서 '그 정권은' 으로 써도 자연스럽다. 다만 고치는 길에 걸림돌이 하나 있다. build-adult-content.mjs 272줄은 영어가 PPT 덩어리와 이미 맞고 KO_FIX 도 없는 문장에 CHUNK_FIX 를 넣으면 'CHUNK_FIX for a sentence the PPT's chunks already fit' 로 멈춘다. 그래서 CHUNK_FIX 에 넣기만 하면 만들기가 멈춘다. JSON 만 직접 고치면 다음에 다시 만들 때 원래대로 돌아가고, --check 도 실패한다.",
+      "severity": "중간",
+      "fix": "a11-1 blocks[1].items[0].chunks[2].ko '그 정권은 표현의 자유를 엄격히 제한했고,' · chunks[3].ko '언론과 정치 집회의 자유도 마찬가지였습니다.' (영어 덩어리 · 소리는 그대로). 고치는 방법: scripts/build-adult-content.mjs 의 CHUNK_FIX['11과.pptx'][1] 에 네 덩어리를 모두 적는다. 그리고 272줄 검사를 '한국어 덩어리가 PPT 와 다를 때는 허용' 으로 넓힌다(또는 한국어 덩어리만 고치는 칸을 따로 둔다). 그다음 node scripts/build-adult-content.mjs 로 다시 만들고 --check 로 확인한다. JSON 만 직접 고치지 말 것."
+    }
+  ],
+  "findings": [],
+  "judgements": [],
+  "notes": "같은 AI 계열이 만들고 같은 계열이 확인한 것이다. 독립 검수가 아니다. 확인한 것은 AC912-01 하나다. 판단 필요 AC912-J1(9~12과 끊어 읽기 방침: 이음말 끝맺음은 앞 덩어리에 둬도 되고, 동사 · 명사 뜻은 그 덩어리에 있어야 한다)은 판정하지 않았다. 다만 AC912-01 은 그 방침의 (나)에 들어맞는다. 같은 방식으로 AC912-02~04 를 고칠 때도 build-adult-content.mjs 272줄 검사에 똑같이 걸리므로, 고치는 세션은 이 검사를 먼저 손봐야 한다. 내용 파일은 바꾸지 않았다."
+}

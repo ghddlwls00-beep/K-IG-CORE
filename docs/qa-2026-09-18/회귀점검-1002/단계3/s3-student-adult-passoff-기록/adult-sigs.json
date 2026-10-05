@@ -1,0 +1,492 @@
+{
+ "adult:a1-2:mobile": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "High",
+    "Mrs",
+    "but",
+    "call",
+    "can",
+    "is",
+    "me",
+    "my",
+    "name",
+    "when",
+    "you",
+    "듣기",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "홍",
+    "홍길동",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-my-info",
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "I'm # years old.",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ },
+ "adult:a1-2:desktop": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "Mrs",
+    "but",
+    "call",
+    "can",
+    "is",
+    "me",
+    "my",
+    "name",
+    "old",
+    "studying",
+    "you",
+    "듣기",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "홍",
+    "홍길동",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-my-info",
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "I'm # years old.",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ },
+ "adult:a6-2:mobile": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "Saturdays",
+    "a",
+    "ago",
+    "company",
+    "husband's",
+    "my",
+    "on",
+    "operating",
+    "prepared",
+    "since",
+    "stopped",
+    "while",
+    "듣기",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ },
+ "adult:a6-2:desktop": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "Saturdays",
+    "a",
+    "ago",
+    "company",
+    "husband's",
+    "mornings",
+    "my",
+    "on",
+    "operating",
+    "since",
+    "stopped",
+    "while",
+    "듣기",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ },
+ "adult:a12-3:mobile": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "Korea's",
+    "education",
+    "faces",
+    "fundamental",
+    "in",
+    "my",
+    "problems",
+    "system",
+    "two",
+    "view",
+    "watching",
+    "듣기",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ },
+ "adult:a12-3:desktop": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "Korea's",
+    "education",
+    "faces",
+    "fundamental",
+    "has",
+    "in",
+    "my",
+    "problems",
+    "system",
+    "two",
+    "view",
+    "듣기",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ }
+}

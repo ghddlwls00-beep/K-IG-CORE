@@ -1,0 +1,86 @@
+{
+  "part": "adult-sent-11-12-titles",
+  "scope": "ADULT 11~12과 6강의(a11-1~a11-3 · a12-1~a12-3)의 영어 문장 35 · 한국어 줄(paragraph lang=ko) 35 전부 + content/courses/adult.json 의 장 제목 12 · 55강의의 title · label · menuLabel 전부(강의 파일의 title · label · menuLabel · unit · part · order · instruction 블록이 과정 목록과 글자까지 같은지, menuLabel 이 '<과>-<소단원>. <영어 제목>' 인지, 문장 수 = 한국어 줄 수인지 스크립트로 55강의 모두 확인 — 다른 곳 0) + 55강의 제목이 그 강의 문장과 맞는지(55강의 228문장 첫 110자를 함께 읽음) + 화면이 ADULT 에 대해 쓰는 글: src/lib/curriculumPresentation.ts 9-1(목록 'Part N · 제목' · 부제목 label · 배지 '실전 회화' · 대비용 '성인 실전 회화'), src/lib/courses.ts ADULT description, src/lib/tabs.ts ADULT blurb, src/app/layout.tsx 사이트 설명(8개 과정), src/app/[course]/[lesson]/page.tsx 의 ADULT 머리(제목 + 장 줄). 원본 대조: docs/adult/ppt-본문.json 11과 · 12과 — 영어 · 한국어 모두 PPT 와 같고 다른 곳은 한글 표기(광주 · 서울 · 학원 · 서울) 네 곳뿐(사장님 결정 2026-10-02). 고치다 생긴 흔적 없음. 제목은 소리 내지 않음(scripts/lib/spoken-texts.cjs 113~119줄: ADULT 는 sentences.items.text 와 paragraph lang=ko 만).",
+  "readCount": { "sentences": 35, "titles": 177, "words": 0, "chunks": 0, "other": 41 },
+  "findings": [
+    {
+      "id": "a1112t-1",
+      "course": "adult",
+      "lesson": "a7-2",
+      "file": "content/courses/adult.json (+ content/lessons/adult/a7-2.json · scripts/build-adult-content.mjs TITLE_FIX)",
+      "path": "lessons[a7-2].title · lessons[a7-2].menuLabel; a7-2.json title · menuLabel · blocks[0].text(instruction, 화면에 안 그림); 만드는 곳 build-adult-content.mjs TITLE_FIX['The Kingdoms are Divided (삼국의 분열과 통일)']",
+      "kind": "title",
+      "current": "The Kingdoms Are Divided (삼국의 분열과 통일) / menuLabel '7-2. The Kingdoms Are Divided'",
+      "problem": "영어 제목은 '왕국들이 나뉘다'뿐인데 한국어 제목은 '삼국의 분열과 통일'로 통일까지 말해 영어와 한국어가 서로 다르다. 또 강의 내용은 고조선이 무너진 뒤 한반도가 세 왕국으로 나뉘고 신라가 통일한 이야기라서, '삼국의 분열'(세 나라가 쪼개짐)도 영어 'The Kingdoms Are Divided'(왕국들이 나뉨)도 내용과 정확히 맞지 않는다. 목록 · 강의 머리(h1 'Part 2 · …') · '다음 강의' 단추에 보인다. PPT 제목 그대로라 원본 탓이지만 제목과 강의가 안 맞는 것은 ⑥이다. (STUDENT 의 같은 소단원 s17-2 는 'The Three Kingdoms Era (삼국 시대)'.)",
+      "fix": "The Three Kingdoms and Unification (삼국 시대와 통일) — menuLabel '7-2. The Three Kingdoms and Unification', instruction 'Chapter 7. History (역사) - The Three Kingdoms and Unification (삼국 시대와 통일)'. 강의 파일은 빌드가 만들므로 TITLE_FIX 의 값을 바꾸고 node scripts/build-adult-content.mjs 로 다시 쓴다.",
+      "category": "⑥",
+      "severity": "중간",
+      "confidence": "높음",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "a1112t-2",
+      "course": "adult",
+      "lesson": "a12-1",
+      "file": "content/lessons/adult/a12-1.json",
+      "path": "blocks[1].items[3].text (4번 문장; 덩어리 blocks[1].items[3].chunks[4] {en 'almost every few years since.', ko '그 이후 거의 몇 년마다.'}; 한국어 줄 blocks[5].text)",
+      "kind": "sentence-en",
+      "current": "The College Scholastic Ability Test, first administered in 1993, replaced the previous national exam, yet even this system has been adjusted almost every few years since.",
+      "problem": "'almost every few years' 는 원어민이 쓰지 않는 결합이다. 'every few years'(몇 년마다) 자체가 이미 어림이라 'almost'(거의)가 꾸밀 자리가 없다. 한국어 줄 '거의 몇 년마다' 도 같은 이유로 어색하다. 사실(수능은 1993년 첫 시행 · 학력고사를 대체 · 그 뒤 여러 차례 개편)은 맞다.",
+      "fix": "영어: '… yet even this system has been adjusted every few years since.' (덩어리 en 'every few years since.' · ko '그 이후 몇 년마다.') / 한국어 줄: '1993년에 처음 시행된 대학수학능력시험은 이전의 학력고사를 대체했지만, 이 제도조차 그 이후 몇 년마다 조정되어 왔습니다.' — 밑줄 낱말 administer(43~55)는 앞쪽이라 자리 그대로. 영어 문장 · 덩어리 · 한국어 줄 소리 다시 만들기.",
+      "category": "⑧",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "a1112t-3",
+      "course": "adult",
+      "lesson": "a12-3",
+      "file": "content/lessons/adult/a12-3.json",
+      "path": "blocks[3].text (2번 문장의 한국어 줄)",
+      "kind": "sentence-ko",
+      "current": "첫 번째는 명문대의 한정된 자리를 두고 벌어지는 치열한 경쟁인데, 이 경쟁은 학생 수가 줄어드는 가운데에도 전혀 누그러지지 않았습니다.",
+      "problem": "영어는 'which has not eased'(누그러지지 않았다)인데 한국어 줄은 '전혀'(조금도)를 더해 영어보다 세게 말한다. 같은 문장의 끊어 읽기 한국어 덩어리('이 경쟁은 누그러지지 않았습니다')에는 '전혀'가 없어, 같은 문장의 두 해석이 다르다.",
+      "fix": "첫 번째는 명문대의 한정된 자리를 두고 벌어지는 치열한 경쟁인데, 이 경쟁은 학생 수가 줄어드는 가운데에도 누그러지지 않았습니다.",
+      "category": "②",
+      "severity": "낮음",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    }
+  ],
+  "judgements": [
+    {
+      "id": "a1112t-J1",
+      "lesson": "a12-3",
+      "question": "5번 'I believe talent should never depend on the size of a family's income.' — 재능 자체는 소득에 달려 있지 않으므로, 말하려는 것은 '재능을 키울 기회'다. 그대로 둘까, 고칠까? (한국어 줄 '재능이 결코 가정의 소득 수준에 따라 좌우되어서는 안 된다고' 도 같은 말)",
+      "recommendation": "고친다: '… I believe a child's chance to develop their talent should never depend on the size of a family's income.' 한국어 줄 '아이가 재능을 키울 기회가 결코 가정의 소득 수준에 따라 좌우되어서는 안 된다고 믿습니다.' (덩어리 3 · 4 와 소리도 함께 다시 만듦). 그대로 두어도 뜻은 통한다.",
+      "why": "성인용 고급 문장인데 주어가 논리상 어긋난다(⑧에 가까움). 다만 원어민도 말로는 이렇게 줄여 말하는 일이 있어 틀림으로 세지 않았다. 고치면 영어 · 덩어리 · 한국어 줄 소리가 바뀐다."
+    },
+    {
+      "id": "a1112t-J2",
+      "lesson": "a12-2",
+      "question": "5번 'some neighborhoods have opened free study programs at the local community center' — 여러 동네(복수)가 한 '그 동네 커뮤니티 센터'(단수)에 연 것처럼 읽힌다. 그대로 둘까?",
+      "recommendation": "고친다면 'at their local community centers' (덩어리 en 'at their local community centers,' · 밑줄 tutoring 의 start/end 가 10자 뒤로 밀림 — 빌드가 다시 셈). 한국어는 그대로('동네 커뮤니티 센터에'). 둘 다 말이 되므로 그대로 두는 것도 가능.",
+      "why": "'the local community center' 는 일반적인 장소를 가리키는 말로 원어민도 쓰지만, 복수 주어 뒤에서는 'their local community centers' 가 더 자연스럽다. 틀림이라기보다 다듬기라 판단으로 올림."
+    },
+    {
+      "id": "a1112t-J3",
+      "lesson": "a3-5",
+      "question": "제목의 한국어 '좋은 친구를 가지면 좋은 점'(Benefits of Good Friends)은 '친구를 가지다'라는 번역투에 '좋은'이 두 번 겹친다. 그대로 둘까?",
+      "recommendation": "'좋은 친구가 있으면 좋은 점' 또는 '좋은 친구의 소중함' — 강의 한국어 줄('좋은 친구를 곁에 둔다는 것은')과도 맞음. TITLE_FIX 에 한 줄 더함. 소리 없음.",
+      "why": "맞춤법은 맞고 뜻도 통해 틀림이 아니지만, 성인 과정 제목으로는 어색한 한국어다. PPT 제목 그대로."
+    },
+    {
+      "id": "a1112t-J4",
+      "lesson": "a12-3",
+      "question": "제목 'The Problems of Korea's Educational Policies (한국 교육 정책의 문제점)' — 강의 문장은 '교육 제도'의 두 문제(명문대 경쟁 · 사교육 기회 격차)를 말하고 '정책'은 다루지 않는다(정책 이야기는 12-2 6번). 그대로 둘까?",
+      "recommendation": "그대로 둔다(추천). 바꾼다면 'The Problems of Korea's Education System (한국 교육 제도의 문제점)'.",
+      "why": "넓게 보면 경쟁 · 격차도 정책의 결과라 제목이 틀렸다고 하기는 어렵다. PPT 제목 그대로이고 ⑥으로 세기에는 약하다."
+    }
+  ],
+  "notes": "읽은 수: 영어 문장 35(a11-1 7 · a11-2 5 · a11-3 5 · a12-1 6 · a12-2 6 · a12-3 6)와 그 한국어 줄 35, 제목 177(장 제목 12 + 55강의 × title · label · menuLabel; 강의 파일 쪽 같은 칸 220과 instruction 55는 스크립트로 글자 대조 — 다름 0), 그 밖 41(한국어 줄 35 + courses.ts description · tabs.ts blurb · layout.tsx 설명 · curriculumPresentation 9-1 의 제목 틀 · 배지 · 대비용 부제목). 낱말 · 덩어리는 다른 몫이라 세지 않음(지나가며 본 것만 아래에).\n\n사실 확인(틀림 없음): 광주 1980년 5월 · 1987년 6월 전국 시위 → 대통령 직선제 · 1988 서울 올림픽, 1980년대 후반 뒤 선거로 정권 교체 여러 번(1997 · 2007 · 2017 · 2022 · 2025), 최근 대선 투표율 75% 넘음(2012 75.8 · 2017 77.2 · 2022 77.1 · 2025 79.4), 수능 1993년 첫 시행 · 학력고사 대체, 출산율 세계 최저 수준, 1945년 광복. '수백 명의 시민이 군인들에게' 는 흔히 쓰는 어림이라 둠.\n\n7~10과 제목은 PPT 제목(TITLE_FIX 로 대소문자 · 한글만 고침)이라 STUDENT 17~20장 제목과 다르다(예: a7-1 '한국의 건국' ↔ s17-1 '고조선의 건국'). 지시는 7~10과 '영어 문장'을 STUDENT 와 같게 하라는 것이라 제목 차이 자체는 틀림으로 세지 않았다(a7-2 만 영어 · 한국어가 서로 달라 a1112t-1). 장 제목 'Friend Introduction' · 'Relative Introduction' 은 영어로 어색하지만 STUDENT 3 · 4장이 감사 뒤에도 같은 이름이라 세지 않음. 목록 장 제목은 '한국어 (영어)', 강의 부제목은 '영어 (한국어)' 순서 — STUDENT 와 같은 방식이라 세지 않음. a8-3 '추석' · a10-4 '경주' · a10-5 '제주도와 한라산' 처럼 영어 없이 한글만인 제목은 사장님 결정(표기는 한국어로, STUDENT s20-4 · s20-5 와 같음).\n\n화면 글: curriculumPresentation.ts 9-1 의 부제목 대비용 'Chapter N · 성인 실전 회화' 는 55강의 모두 label 이 있어 화면에 안 닿음. 배지 '🎙️ 실전 회화'(검색 창에 보임)와 courses.ts '성인 실전 회화' · tabs.ts 'Grown-up Conversations.' 는 내용이 대화가 아니라 혼자 말하는 발표문이지만 STUDENT 도 같은 이름이라 세지 않음. layout.tsx '8개 과정'(STUDENT · ADULT · PASS-OFF · VOCA · 영문법 1 · 2 · LISTENING · READING) 수 맞음.\n\n다른 몫에 넘길 것(지나가며 봄, 세지 않음): a12-1 6번 덩어리 ko '교육 제도의 모든 단계에 미쳐야 한다는 점입니다,' — 문장을 끝낸 '입니다' 뒤에 쉼표가 붙고 다음 덩어리 '초등학교부터 그 위까지.' 가 이어짐(끊어 읽기 몫). src/components/StudentLearningView.tsx 224줄 주석 '(a lesson without key words — 6-1 · 6-2 — says so in 단어)' 는 낡음 — 지금은 55강의 모두 낱말이 있음(README 67줄; 코드 주석이라 화면 아님).\n\n같은 AI 계열이 만들고 점검한 것 — 독립 검수 아님. 내용 파일은 바꾸지 않았다."
+}

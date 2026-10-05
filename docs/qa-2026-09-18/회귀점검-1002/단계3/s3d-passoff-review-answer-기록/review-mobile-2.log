@@ -1,0 +1,18 @@
+﻿free memory 1.37 GB
+port 9983 · free 1.37 GB · 2026-10-04T19:21:09.090Z
+PASS    mobile · 목록 /passoff-grammar · 오늘 복습 입구 · 오답노트 입구 — {"review":{"kind":"due","text":"오늘 복습 · 약 7분","href":"/passoff-grammar/review"},"notes":{"text":"오답노트 · 5문항","href":"/passoff-grammar/review?notes=1"}}
+PASS    mobile · 오늘 복습(mobile) · 열기: 진행 줄 · 안내 · 강의 이름 · 첫 문항 — {"path":"/passoff-grammar/review","step":"items","progress":"다음 날 확인 1 / 21","bar":"1/21","item":"pg01-3:p1","mode":"test","lesson":"3인칭","intro":true,"head":"← PASS-OFF GRAMMAR 목록 오늘 복습 다음 날 확인 1 / 21 어제 배운 강의의 문항이에요. 시험처럼 하나씩 답하면 결과는 끝에서 한꺼번에 보여 드려요. 3인칭 그는 대한이다. 영어 자판으로 쓰세요. 첫 글자 대문자와 끝 문장부호는 서술형 점수로 따로 봐요. 마이크로 말해"}
+PASS    mobile · 오늘 복습(mobile) · 화면대로 한글로 쓴 답 pg01-3:p1(맞는 답) — {"given":"He is 대한.","warnedWhileTyping":true,"next":"pg01-3:p2"}
+PASS    mobile · 오늘 복습(mobile) · 낱말 고르기 카드의 한국어 낱말 pg01-3:s1 — ["He","is","대한"]
+PASS    mobile · 오늘 복습(mobile) · 다음 날 확인 결과(답 21 · 일부러 틀림 pg01-3:p4 · pg01-3:s5) — {"head":"다음 날 확인 결과","status":"21문항 중 19개 맞았어요.","score":"첫 시도 문법 정답 14 / 15 서술형 기준 14 / 15","rows":["pg01-3:p1○","pg01-3:p2○","pg01-3:p3○","pg01-3:p4× 내 답 Wrong answer on purpose. [신고 단추]","pg01-3:p5○","pg01-3:p6○","pg01-3:p7○","pg01-3:p8○","pg01-3:p9○","pg01-3:p10○","pg01-3:p11○","pg01-3:p12○","pg01-3:p13○","pg01-3:t1○","pg01-3:t2○","pg01-3:s1○","pg01-3:s2○","pg01-3:s3○","pg01-3:s4○","pg01-3:s5× 내 답 He [신고 단추]","pg01-3:s6○"],"buttons":["","다시 풀지 않고 마치기","틀린 문항 다시 풀기 (2)"],"caption":true,"focus
+PASS    mobile · 오늘 복습(mobile) · 시험처럼: 답 21개 — 답하면 결과 없이 바로 다음 · 초점은 새 문항(마지막엔 결과 제목) — 결과 먼저 0 · 초점 어긋남 0
+PASS    mobile · 오늘 복습(mobile) · '틀린 문항 다시 풀기' 2문항 — 영작은 시험 답이 칸에 든 채 '틀린 자리를 표시했어요'(사다리 ①)로 열림 · 보기는 '한 번 더' · 고른 보기 꺼짐 → 고쳐서 맞힘 — [{"key":"pg01-3:p4","opened":true,"right":true,"comeback":true,"cardRoman":[],"cardHasHangul":null,"shownAnswerHangul":null},{"key":"pg01-3:s5","opened":true,"right":true}]
+PASS    mobile · 오늘 복습(mobile) · 다시 풀기 영작에서 '도움 받기' 한 번 — {"key":"pg01-3:p4","clicked":true,"clue":true,"rule":true,"firstLetters":"H_ g___ u_ e____ e____ m______.","roman":[]}
+PASS    mobile · 오늘 복습(mobile) · 소리 단추('문장 듣기') 1번 — 맞힌 영작 카드 — [{"key":"pg01-3:p4","src":"/audio/azure-ava/v1/v-eb392eb681229cc4.mp3","sameClip":true,"played":true,"errors":0,"tts":0}]
+PASS    mobile · 오늘 복습(mobile) · 학습 기록 저장 요청(앱이 보낸 것) — 4번: POST /api/learning/passoff-grammar 200 · 그 밖 POST /api/license/verify 200 · GET /api/progress/student 200 · GET /api/progress/adult 200 · GET /api/progress/passoff-grammar 200
+PASS    mobile · 오늘 복습(mobile) · 끝 화면 — {"head":"오늘 복습을 마쳤어요","dl":["오늘 푼 문항 58개","통과한 문장 0개","내일 올 문항 7개"],"notes":{"text":"오답노트 보기 7문항","href":"/passoff-grammar/review?notes=1"},"focus":"review-done","answeredOnThisPage":21}
+INFO    mobile · 목록(복습 끝난 뒤) · '과정 목록으로' → 오늘 복습 입구 · 오답노트 입구 — {"review":{"kind":"none","text":"오늘 복습 없음","href":null},"notes":{"text":"오답노트 · 7문항","href":"/passoff-grammar/review?notes=1"}}
+PASS    mobile · 오늘 복습(mobile) · 화면 8곳(목록 · 다음 날 확인 첫 카드 · 다음 날 확인 둘째 카드 · 결과 1 · 다시 풀기(틀린 자리) · 다시 풀기(도움 받기 뒤) · 끝 · 목록(끝난 뒤)): 가로 넘침 · 44px 미만 누를 것 · 12px 미만 글 · 16px 미만 입력 칸 · 잘린 글 · 새 글(undefined 등) · 오류 화면 — 0
+PASS    mobile · 오늘 복습(mobile) · 4xx/5xx · 콘솔 오류 · 예외 · 실패한 요청 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 실패 0
+PASS    mobile · 오늘 복습(mobile) · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+끝: {"PASS":14,"INFO":1}

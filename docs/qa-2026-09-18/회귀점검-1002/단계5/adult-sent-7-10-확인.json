@@ -1,0 +1,24 @@
+{
+  "part": "adult-sent-7-10-확인",
+  "scope": "adult-sent-7-10 일꾼이 찾은 틀림 중 확인 대상 2건(A710-01 · A710-06)을 그 파일의 그 칸을 직접 열어 다시 판정. 판단 필요 A710-J1 은 참고로만 봄(판정 안 함).",
+  "readCount": { "sentences": 5, "titles": 3, "words": 1, "chunks": 4, "other": 6 },
+  "checked": [
+    {
+      "id": "A710-01",
+      "verdict": "맞음",
+      "severity": "중간",
+      "why": "지금 글을 직접 확인함: content/lessons/adult/a7-2.json title 'The Kingdoms Are Divided (삼국의 분열과 통일)', menuLabel '7-2. The Kingdoms Are Divided', blocks[0].text 'Chapter 7. History (역사) - The Kingdoms Are Divided (삼국의 분열과 통일)', content/courses/adult.json 533·541줄 — 모두 scripts/build-adult-content.mjs 57줄 TITLE_FIX 값에서 나옴(469줄 section.title ?? TITLE_FIX[header]). 강의 네 문장은 '고조선 멸망 뒤 한반도가 세 왕국으로 나뉨 → 신라가 두 왕국을 정복해 통일 → 8세기 전성기 · 황금기'. 영어 제목은 문법은 맞지만 '(그) 왕국들이 나뉜다'로 읽혀 나뉜 것이 한반도라는 내용과 어긋나고 통일이 빠졌다(⑥). 한국어 '삼국의 분열과 통일'은 '세 나라가 쪼개졌다'로 읽혀 사실과 어긋나고, 영어에 없는 '통일'이 있어 영어·한국어 제목이 서로 다르다(②). 제목은 화면(강의 머리 · 메뉴 · '다음 강의:' 단추 StudentLearningView.tsx 1502줄 · 과정 목록)에 닿음 — reaches=true 맞음. 제목·instruction 을 읽어 주는 코드는 ADULT 쪽에 없음(StudentLearningView 는 문장 · 덩어리만 소리) — audioChanges=false 맞음. 심각도: 틀린 영어를 가르치지는 않고 제목이 헷갈리게 하는 정도라 중간이 맞다. 교재(PPT) 머리글 그대로라는 것은 틀림을 없애지 않음(교재는 정답이 아님).",
+      "fix": "TITLE_FIX 57줄 값을 'The Three Kingdoms and Unification (삼국의 성립과 통일)' 로 — 이것을 추천한다. STUDENT 와 같은 'The Three Kingdoms Era (삼국 시대)' 는 이 강의 #3·#4(8세기 신라의 전성기 = 통일 신라 시기, 삼국 시대 뒤)까지 덮지 못해 덜 정확함. 바꾼 뒤 node scripts/build-adult-content.mjs 로 a7-2.json(title · menuLabel · blocks[0].text) 과 content/courses/adult.json 을 다시 만들고, public/search-index.json 1167줄('Part 2 · The Kingdoms Are Divided (삼국의 분열과 통일)')도 옛 제목을 들고 있으므로 scripts/buildSearchIndex 로 다시 만들어야 함(일꾼 고칠 글에 빠진 소비처). 소리 클립은 다시 만들 것 없음."
+    },
+    {
+      "id": "A710-06",
+      "verdict": "맞음",
+      "severity": "낮음",
+      "why": "지금 글을 직접 확인함: content/lessons/adult/a7-4.json blocks[1].items[2].text = 'In 1988, Korea hosted the Summer Olympic Games and in 2002, the World Cup was held in Korea, too.' 주어가 다른 두 독립절을 and 로 잇고 뒤 절 앞에 'in 2002,' 가 끼어 있어, 쉼표가 없으면 'Games and in 2002' 로 한 덩어리처럼 읽힌다 — 표준 문장부호로는 and 앞 쉼표가 맞다. 뜻은 바뀌지 않고 영어가 틀렸다고까지 할 정도는 아니어서 낮음(문장부호 하나)이 맞다. 원본 확인: docs/adult/ppt-본문.json 1384줄 'Games, and in 2002' · ppt-청크.json 2387줄 'Korea hosted the Summer Olympic Games,' — PPT 는 쉼표가 있었다. 일꾼 설명 중 하나는 바로잡음: 'STUDENT 감사 문장에서 쉼표가 빠졌다'가 아니라, STUDENT s17-4 #3 은 처음 커밋(3705523f)부터 쉼표가 없었다(git log -S 로 확인) — 7~10과가 STUDENT 영어를 그대로 받으면서 PPT 의 쉼표를 잃은 것. 화면에 닿음(Step 1~5 문장·받아쓰기) — reaches=true. 문장 소리 클립 키가 텍스트 해시라 audioChanges=true 맞음.",
+      "fix": "고칠 글은 맞음: 'In 1988, Korea hosted the Summer Olympic Games, and in 2002, the World Cup was held in Korea, too.' — 고치는 곳은 a7-4.json 이 아니라 content/lessons/student/s17-4.json #3(7~10과는 STUDENT 영어를 그대로 받음), 그 뒤 build-adult-content.mjs 다시 실행. 덩어리는 따로 손댈 것 없음: chunksOf 가 PPT 덩어리('…Olympic Games,')를 그대로 쓰게 되어 a7-4 chunks[1].en 이 'Korea hosted the Summer Olympic Games,' 로 바뀐다 — 덩어리 영어도 소리를 내므로 그 덩어리 클립 · STUDENT s17-4 #3 문장 클립 · ADULT a7-4 #3 문장 클립을 다시 만들어야 함. 낱말 host(start 15·end 21)는 쉼표 앞이라 위치 그대로. STUDENT·ADULT 받아쓰기 조각이 쉼표를 다루므로 docs/qa-2026-09-18/scripts/check-student-dictation.cjs 를 다시 돌려 볼 것. 새 틀림을 만들지 않음."
+    }
+  ],
+  "findings": [],
+  "judgements": [],
+  "notes": "두 건 모두 일꾼 판정을 지지함(맞음 2). 덧붙임: A710-01 은 public/search-index.json 도 옛 제목을 들고 있어 검색 색인을 다시 만들어야 하고, 추천은 'The Three Kingdoms and Unification (삼국의 성립과 통일)'(STUDENT 식 '삼국 시대'는 통일 신라 문장까지 덮지 못함). A710-06 은 쉼표가 STUDENT 감사에서 빠진 것이 아니라 처음부터 없었고, 고치는 곳은 STUDENT s17-4.json 이며 덩어리 영어와 세 클립(STUDENT 문장 · ADULT 문장 · ADULT 덩어리)이 같이 바뀜. A710-J1 은 참고만 함 — 덩어리 짝 'as a museum without walls.' = \"'지붕 없는 박물관'으로.\" 는 walls/지붕 오짝 위험이 실제 있어 일꾼 추천에 동의. 내용 파일은 바꾸지 않았고 git 은 읽기(log -S · grep)만 씀. 같은 AI 계열의 점검 — 독립 검수가 아님."
+}

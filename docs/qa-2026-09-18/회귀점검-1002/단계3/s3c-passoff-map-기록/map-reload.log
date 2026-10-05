@@ -1,0 +1,26 @@
+﻿free memory 1.38 GB
+INFO    desktop · 구성도(새로고침 — 저장소 비운 새 쪽) · 다 채운 뒤 다시 열기 — {"stage":"place","boxes":["1번 칸: 비어 있음","2번 칸: 비어 있음","3번 칸: 비어 있음"],"text":"강의 놓기 강의 놓기 0 / 3 대주제의 강의를 순서대로 칸에 놓으세요. 강의 이름을 누르면 빈 칸에 들어가고, 놓은 칸을 누르면 빠져요. 1 빈 칸 2 빈 칸 3 빈 칸 1인칭 3인칭 2인칭 다음"}
+PASS    desktop · 구성도(새로고침) · 4xx/5xx · 콘솔 오류 · 예외 · 넘침 · 오류 화면 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 넘침 false · 오류 화면 false · 새 글(undefined 등) null
+PASS    desktop · 구성도(새로고침) · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+INFO    desktop · 목록 /passoff-grammar · 구성도 뒤 새로고침: 진행률 · TOPIC 1 · 강의 줄 · 구성도 입구 — {"progressLine":"학습 진도율: 3 / 67개 완료 (4%)","topic1":"TOPIC 1. 인칭 대주제 완료 3/3 1인칭 완료 2인칭 완료 3인칭 완료 구성도 다시 채우기대주제 끝 마침","rows":{"pg01-1":"처음부터1인칭→","pg01-2":"2인칭완료","pg01-3":"3인칭완료"},"mapRow":{"text":"구성도 다시 채우기대주제 끝 마침","waiting":false,"href":"/passoff-grammar/map?topic=1"},"mapNext":null}
+INFO    desktop · GET /api/progress/passoff-grammar · 구성도 뒤 새로고침: 서버 진도(읽기만) — {"status":200,"completed":["pg01-1","pg01-2","pg01-3"],"everyTopicOpen":true,"mapRefillRequired":true,"topic1":{"completedCount":3,"requiredCount":3,"lastLessonCompleted":true,"mapRefilled":true,"unlocked":true},"topic2":{"unlocked":true,"mapRefilled":false,"completedCount":0}}
+INFO    desktop · 기기 학습 기록(서버에서 받은 사본) · 구성도 뒤 새로고침: 요약(읽기만) — [{"which":"licence","lessons":{"pg01-1":"2026-10-04","pg01-2":"2026-10-04","pg01-3":"2026-10-04"},"items":58,"byLesson":{"pg01-1":22,"pg01-2":15,"pg01-3":21},"dueDays":{"2026-10-05":58},"wrongNow":0,"withLapses":0,"log":72,"logBy":{"lesson:lesson":72},"lastStudyDay":"2026-10-04"}]
+PASS    desktop · 목록 · 4xx/5xx · 콘솔 오류 · 예외 · 넘침 · 오류 화면 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 넘침 false · 오류 화면 false · 새 글(undefined 등) null
+PASS    desktop · 목록 · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+INFO    desktop · 구성도 /passoff-grammar/map?topic=1 · 구성도 뒤 새로고침: 구성도 화면(열기만) — {"stage":"place","waiting":false,"text":"← PASS-OFF GRAMMAR 목록 구성도 다시 채우기 TOPIC 1. 인칭 강의 놓기 강의 놓기 0 / 3 대주제의 강의를 순서대로 칸에 놓으세요. 강의 이름을 누르면 빈 칸에 들어가고, 놓은 칸을 누르면 빠져요. 1 빈 칸 2 빈 칸 3 빈 칸 1인칭 3인칭 2인칭 다음"}
+PASS    desktop · 구성도(열기) · 4xx/5xx · 콘솔 오류 · 예외 · 넘침 · 오류 화면 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 넘침 false · 오류 화면 false · 새 글(undefined 등) null
+PASS    desktop · 구성도(열기) · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+PASS    desktop · 목록 구성도 입구 + 서버 · 구성도 뒤 새로고침에도 유지 — {"mapRow":{"text":"구성도 다시 채우기대주제 끝 마침","waiting":false,"href":"/passoff-grammar/map?topic=1"},"mapNext":null,"topic1":{"completedCount":3,"requiredCount":3,"lastLessonCompleted":true,"mapRefilled":true,"unlocked":true}}
+INFO    mobile · 구성도(새로고침 — 저장소 비운 새 쪽) · 다 채운 뒤 다시 열기 — {"stage":"place","boxes":["1번 칸: 비어 있음","2번 칸: 비어 있음","3번 칸: 비어 있음"],"text":"강의 놓기 강의 놓기 0 / 3 대주제의 강의를 순서대로 칸에 놓으세요. 강의 이름을 누르면 빈 칸에 들어가고, 놓은 칸을 누르면 빠져요. 1 빈 칸 2 빈 칸 3 빈 칸 1인칭 3인칭 2인칭 다음"}
+PASS    mobile · 구성도(새로고침) · 4xx/5xx · 콘솔 오류 · 예외 · 넘침 · 오류 화면 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 넘침 false · 오류 화면 false · 새 글(undefined 등) null
+PASS    mobile · 구성도(새로고침) · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+INFO    mobile · 목록 /passoff-grammar · 구성도 뒤 새로고침: 진행률 · TOPIC 1 · 강의 줄 · 구성도 입구 — {"progressLine":"학습 진도율: 3 / 67개 완료 (4%)","topic1":"TOPIC 1. 인칭 대주제 완료 3/3 1인칭 완료 2인칭 완료 3인칭 완료 구성도 다시 채우기대주제 끝 마침","rows":{"pg01-1":"처음부터1인칭→","pg01-2":"2인칭완료","pg01-3":"3인칭완료"},"mapRow":{"text":"구성도 다시 채우기대주제 끝 마침","waiting":false,"href":"/passoff-grammar/map?topic=1"},"mapNext":null}
+INFO    mobile · GET /api/progress/passoff-grammar · 구성도 뒤 새로고침: 서버 진도(읽기만) — {"status":200,"completed":["pg01-1","pg01-2","pg01-3"],"everyTopicOpen":true,"mapRefillRequired":true,"topic1":{"completedCount":3,"requiredCount":3,"lastLessonCompleted":true,"mapRefilled":true,"unlocked":true},"topic2":{"unlocked":true,"mapRefilled":false,"completedCount":0}}
+INFO    mobile · 기기 학습 기록(서버에서 받은 사본) · 구성도 뒤 새로고침: 요약(읽기만) — [{"which":"licence","lessons":{"pg01-1":"2026-10-04","pg01-2":"2026-10-04","pg01-3":"2026-10-04"},"items":58,"byLesson":{"pg01-1":22,"pg01-2":15,"pg01-3":21},"dueDays":{"2026-10-05":58},"wrongNow":0,"withLapses":0,"log":72,"logBy":{"lesson:lesson":72},"lastStudyDay":"2026-10-04"}]
+PASS    mobile · 목록 · 4xx/5xx · 콘솔 오류 · 예외 · 넘침 · 오류 화면 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 넘침 false · 오류 화면 false · 새 글(undefined 등) null
+PASS    mobile · 목록 · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+INFO    mobile · 구성도 /passoff-grammar/map?topic=1 · 구성도 뒤 새로고침: 구성도 화면(열기만) — {"stage":"place","waiting":false,"text":"← PASS-OFF GRAMMAR 목록 구성도 다시 채우기 TOPIC 1. 인칭 강의 놓기 강의 놓기 0 / 3 대주제의 강의를 순서대로 칸에 놓으세요. 강의 이름을 누르면 빈 칸에 들어가고, 놓은 칸을 누르면 빠져요. 1 빈 칸 2 빈 칸 3 빈 칸 1인칭 3인칭 2인칭 다음"}
+PASS    mobile · 구성도(열기) · 4xx/5xx · 콘솔 오류 · 예외 · 넘침 · 오류 화면 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 넘침 false · 오류 화면 false · 새 글(undefined 등) null
+PASS    mobile · 구성도(열기) · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+PASS    mobile · 목록 구성도 입구 + 서버 · 구성도 뒤 새로고침에도 유지 — {"mapRow":{"text":"구성도 다시 채우기대주제 끝 마침","waiting":false,"href":"/passoff-grammar/map?topic=1"},"mapNext":null,"topic1":{"completedCount":3,"requiredCount":3,"lastLessonCompleted":true,"mapRefilled":true,"unlocked":true}}
+끝: {"INFO":10,"PASS":14}

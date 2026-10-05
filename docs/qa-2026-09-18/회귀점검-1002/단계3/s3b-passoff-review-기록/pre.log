@@ -1,0 +1,13 @@
+﻿free memory 0.70 GB < 0.9 — waiting 60 s
+free memory 0.71 GB < 0.9 — waiting 60 s
+free memory 0.95 GB
+INFO    desktop · 목록 /passoff-grammar · 완료 전: 진행률 줄 · pg01-1 줄 · 오늘 복습 · 오답노트 입구 — {"progressLine":"학습 진도율: 0 / 67개 완료 (0%","row":"1인칭","rowDone":false,"doneRows":["pg12-1","pg12-2","pg16-2"],"review":null,"notes":null,"head":"← 처음 화면 PASS-OFF GRAMMAR 67개 강의 · 20구간 패스오프 문법. GRAMMAR I·II 가 문장을 되풀이해 영작하는 훈련이라면, 여기서는 강의마다 예문 → 문법 설명 → 형태 찾기 → 영작 → 마무리 5단계로 문법 하나를 익혀 통과합니다. 처음부터 1인칭 →
+INFO    desktop · GET /api/progress/passoff-grammar · 완료 전: 서버 진도(읽기만) — {"status":200,"completed":[],"completedAt":[],"keys":["version","lessons","unlockedThrough","everyTopicOpen","requiredRatio","mapRefillRequired","updatedAt","topics"],"everyTopicOpen":true,"mapRefillRequired":true,"topic1":{"lessonIds":["pg01-1","pg01-2","pg01-3"],"completedCount":0,"requiredCount":
+INFO    desktop · 기기 학습 기록(서버에서 받은 사본) · 완료 전: 학습 기록 요약(읽기만) — [{"which":"licence","lessons":{},"items":0,"byLesson":{},"dueDays":{},"wrongNow":0,"withLapses":0,"reports":0,"log":2,"logBy":{"lesson:lesson":2},"lastStudyDay":"2026-09-29"}]
+INFO    desktop · 목록 /passoff-grammar · 완료 전: 쪽이 스스로 보낸 /api 요청(상태만) — POST /api/license/verify 200 · GET /api/progress/student 200 · POST /api/learning/passoff-grammar 200 · GET /api/progress/passoff-grammar 200 · GET /api/progress/adult 200 · GET /api/progress/passoff-grammar 200
+PASS    desktop · 목록 /passoff-grammar · 4xx/5xx · 콘솔 오류 · 예외 · 넘침 · 오류 화면 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 넘침 false · 오류 화면 false
+PASS    desktop · 목록 /passoff-grammar · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+INFO    desktop · 구성도 /passoff-grammar/map?topic=1 · 완료 전: 구성도 화면(읽기만) — {"text":"← PASS-OFF GRAMMAR 목록 구성도 다시 채우기 구성도 다시 채우기는 대주제의 강의를 마친 뒤 할 수 있어요. 강의 3개 이상 마치기 (지금 0/3) 마지막 강의 ‘3인칭’ 마치기 과정 목록으로","fractions":["0/3"],"buttons":["← PASS-OFF GRAMMAR 목록","과정 목록으로"]}
+PASS    desktop · 구성도 · 4xx/5xx · 콘솔 오류 · 예외 · 넘침 · 오류 화면 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 넘침 false · 오류 화면 false
+PASS    desktop · 구성도 · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+끝: {"INFO":5,"PASS":4}

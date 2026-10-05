@@ -1,0 +1,120 @@
+{
+  "part": "adult-sent-4-6",
+  "scope": "ADULT 4~6과 16강의(a4-1~a4-6 · a5-1~a5-5 · a6-1~a6-5)의 영어 문장 62 · 한국어 줄(paragraph lang=ko) 62 전부, 강의 title · label · menuLabel · instruction 블록, content/courses/adult.json 의 4·5·6장 제목과 16강의 항목(강의 파일과 글자까지 같음 확인). 원본 대조: docs/adult/ppt-본문.json 4과 · 5과 · 6과(남성용) · 6과(여성용) — 영어 · 한국어 모두 PPT 와 같고 다른 곳은 'jjimjilbang'→'찜질방'(사장님 결정 · 화면만) 두 곳뿐. 고치다 생긴 흔적 없음.",
+  "readCount": { "sentences": 62, "titles": 67, "words": 0, "chunks": 0, "other": 62 },
+  "findings": [
+    {
+      "id": "a46-1",
+      "course": "adult",
+      "lesson": "a5-1",
+      "file": "content/lessons/adult/a5-1.json",
+      "path": "blocks[4].text (3번 문장의 한국어 줄; 같은 말이 blocks[1].items[2].chunks[0].ko 에도)",
+      "kind": "sentence-ko",
+      "current": "아침 식사는 늘 시간에 쫓기지만, 저는 전통적인 한식이든 간단한 빵과 샐러드든 제대로 챙겨 먹으려고 합니다.",
+      "problem": "영어는 'breakfast is often rushed'(자주, 종종)인데 한국어는 '늘'(항상)이다. 빈도가 영어와 다르다. 끊어 읽기의 한국어 덩어리('아침 식사는 늘 시간에 쫓기지만,')도 같은 말이다.",
+      "fix": "아침 식사는 자주 시간에 쫓기지만, 저는 전통적인 한식이든 간단한 빵과 샐러드든 제대로 챙겨 먹으려고 합니다. (덩어리 ko: '아침 식사는 자주 시간에 쫓기지만,')",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "높음",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "a46-2",
+      "course": "adult",
+      "lesson": "a6-2",
+      "file": "content/lessons/adult/a6-2.json",
+      "path": "blocks[7].text (6번 문장의 한국어 줄; 같은 말이 blocks[1].items[5].chunks 의 ko '저는 운동과 장보기, 영어 연습을 할 시간도 따로 마련하는데,' 에도)",
+      "kind": "sentence-ko",
+      "current": "저는 운동과 장보기, 영어 연습을 할 시간도 따로 마련하는데, 균형 잡힌 주말을 보내야 월요일을 훨씬 잘 맞을 수 있다는 것을 깨달았기 때문입니다.",
+      "problem": "영어 'run errands' 는 '이런저런 볼일을 보다'이고 장보기(grocery shopping)보다 넓다. 같은 강의 단어 카드의 뜻은 '볼일을 보다, 이런저런 일을 처리하다'라서, 단어 단계의 뜻과 문장 해석이 서로 다르게 가르친다. 장보기는 6-3 의 'grocery shopping' 과도 겹친다.",
+      "fix": "저는 운동도 하고 볼일도 보고 영어 연습도 할 시간을 따로 마련하는데, 균형 잡힌 주말을 보내야 월요일을 훨씬 잘 맞을 수 있다는 것을 깨달았기 때문입니다. (덩어리 ko 도 '저는 운동도 하고 볼일도 보고 영어 연습도 할 시간을 따로 마련하는데,')",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "높음",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "a46-3",
+      "course": "adult",
+      "lesson": "a6-5",
+      "file": "content/lessons/adult/a6-5.json",
+      "path": "blocks[6].text (5번 문장의 한국어 줄; 같은 말이 blocks[1].items[4].chunks 의 ko '결코 가족을 희생시키는 대가가 되어서는 안 된다는 것을.' 에도)",
+      "kind": "sentence-ko",
+      "current": "우리가 도착할 때 부모님의 얼굴이 환해지는 것을 보면, 제가 일에 쏟는 성실함이 결코 가족을 희생시키는 대가가 되어서는 안 된다는 것을 다시금 깨닫게 됩니다.",
+      "problem": "'come at the expense of family'(가족을 희생하면서 이루어지다)를 '가족을 희생시키는 대가가 되다'로 옮겨 뜻이 꼬였다 — '대가'는 치르는 값이라, 성실함이 '가족을 희생시키는 값'이 된다는 말이 되어 성립하지 않는다. 같은 문장 단어 카드 'at the expense of = ~을 희생하여' 와도 표현이 다르다.",
+      "fix": "우리가 도착할 때 부모님의 얼굴이 환해지는 것을 보면, 제가 일에 쏟는 성실함이 결코 가족을 희생하면서까지 이어져서는 안 된다는 것을 다시금 깨닫게 됩니다. (덩어리 ko: '결코 가족을 희생하면서까지 이어져서는 안 된다는 것을.')",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "a46-4",
+      "course": "adult",
+      "lesson": "a4-3",
+      "file": "content/lessons/adult/a4-3.json",
+      "path": "blocks[1].items[2].text (3번 문장)",
+      "kind": "sentence-en",
+      "current": "Watching her example, I've come to understand that caring for family isn't an occasional duty but a collaborative commitment we renew every day.",
+      "problem": "어색한 영어 두 군데. 'watch her example' 은 원어민이 쓰지 않는 조합이다(example 은 follow/see/set 와 어울림 — 'Watching her' 또는 'Seeing her example'). 'collaborative commitment' 도 어색하다 — collaborative 는 공동 작업·협업에 쓰는 말이고, 가족을 돌보는 약속이면 'shared commitment' 가 자연스럽다. 이 문장의 단어 카드(occasional · commitment · renew)는 그대로 남는다.",
+      "fix": "Watching her, I've come to understand that caring for family isn't an occasional duty but a shared commitment we renew every day. (한국어 줄 '…매일 새롭게 다지는 협력적인 약속…' 은 '…매일 새롭게 다지는 함께하는 약속…' 으로; 덩어리 en 도 같이 바꾸고, 단어 카드의 start/end 위치는 build-adult-content.mjs 로 다시 계산)",
+      "category": "⑧",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "a46-5",
+      "course": "adult",
+      "lesson": "a5-2",
+      "file": "content/lessons/adult/a5-2.json",
+      "path": "blocks[1].items[2].text (3번 문장)",
+      "kind": "sentence-en",
+      "current": "Once the meeting wraps up, I turn to the tasks I've set for the day, which I've been trying to tackle in order of priority.",
+      "problem": "시제가 어색하다. 'the tasks I've set for the day'(오늘의 할 일)를 받는 관계절이 'which I've been trying to tackle'(얼마 전부터 계속 해 오고 있다)이라, 매일 하는 일의 흐름(현재형 begins · wraps up · turn)과 맞지 않는다. 원어민이면 'which I try to tackle in order of priority' 로 쓴다. 단어 카드(wrap up · tackle · in order of priority)는 그대로 남는다.",
+      "fix": "Once the meeting wraps up, I turn to the tasks I've set for the day, which I try to tackle in order of priority. (한국어 줄 '…처리하려고 꾸준히 노력해오고 있습니다.' 는 '…처리하려고 노력합니다.' 로; 덩어리 en · ko 와 단어 위치도 다시 만듦)",
+      "category": "⑧",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "a46-6",
+      "course": "adult",
+      "lesson": "a5-3",
+      "file": "content/lessons/adult/a5-3.json",
+      "path": "blocks[4].text (3번 문장의 한국어 줄; 같은 말이 blocks[1].items[2].chunks 의 ko '우리는 늘 차를 한 잔 하며 마무리하는데,' 에도)",
+      "kind": "sentence-ko",
+      "current": "점심값은 각자 계산하지만 우리는 늘 차를 한 잔 하며 마무리하는데, 이 작은 습관이 팀을 놀라울 만큼 서로 지지하게 만들어 주었습니다.",
+      "problem": "띄어쓰기. '간단하게 차나 술을 마시다' 뜻의 '한잔하다'는 한 낱말(표준국어대사전)이라 '한잔하며'로 붙여 쓴다. 수량을 셀 때만 '한 잔'.",
+      "fix": "점심값은 각자 계산하지만 우리는 늘 차를 한잔하며 마무리하는데, 이 작은 습관이 팀을 놀라울 만큼 서로 지지하게 만들어 주었습니다. (덩어리 ko 도 '차를 한잔하며')",
+      "category": "②",
+      "severity": "낮음",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    }
+  ],
+  "judgements": [
+    {
+      "id": "a46-J1",
+      "lesson": "a4-5",
+      "question": "3번 문장 'In this era of ever-smaller families, I hope our close-knit family culture keeps growing stronger and continues to spread in a positive direction.' 의 'spread in a positive direction' 은 한국어 '긍정적인 방향으로 퍼져 나가다'를 옮긴 듯한 표현이라 원어민에게는 어색하다. 고칠까, PPT 그대로 둘까?",
+      "recommendation": "고친다: '… keeps growing stronger and spreads its positive influence to those around us.' 한국어 줄은 '… 계속 더 단단해지고 주변에도 좋은 영향을 퍼뜨려 나가기를 바랍니다.' 로. 이 문장에는 단어 카드가 없어 단어 단계에 영향 없음(덩어리 · 소리는 다시 만듦).",
+      "why": "문법은 맞고 뜻도 통해서 '틀림'으로 세기는 어렵지만, B2~C1 성인용 문장의 모범으로는 약하다. 다만 고치면 '퍼지는 것'이 무엇인지(가족 문화 자체인지, 그 영향인지)를 골라야 해서 판단으로 올린다."
+    },
+    {
+      "id": "a46-J2",
+      "lesson": "a5-1",
+      "question": "1번 문장 '… a routine that has remarkably changed how much I get done before noon.' 의 'has remarkably changed' 는 부사 자리가 어색하다(원어민은 'has dramatically changed' 나 'has made a remarkable difference to'). 그러나 'remarkably' 가 이 문장의 단어 카드다. 고칠까?",
+      "recommendation": "그대로 둔다(틀림 아님). 고치고 싶으면 '… a routine that has changed remarkably how much I get done' 보다 '… a routine that has made a remarkable difference to how much I get done before noon' 이 자연스럽지만, 그러면 단어 카드를 'remarkable' 로 바꿔야 한다.",
+      "why": "'remarkably changed' 는 드물지만 틀린 영어는 아니고, 고치면 단어 카드 · 뜻 · 소리가 함께 바뀐다. 이득이 작다."
+    }
+  ],
+  "notes": "읽은 것: 강의 16개의 영어 문장 62 · 한국어 줄 62(StudentLearningView 가 lang=ko paragraph 를 문장 순서대로 짝지어 보여 주고 소리 냄 — README '영어와 한국어 줄을 모두 읽는다'), 제목 67 = 강의마다 title · label · menuLabel · instruction 4개 ×16 + 과정 목록의 4·5·6장 제목 3(과정 목록의 16강의 title · label 은 강의 파일과 글자까지 같음을 스크립트로 확인). 화면 제목은 formatLessonPresentation('adult') 가 'Part n · <title>' · 부제 <label> 로 만든다. instruction 블록은 StudentLearningView · [course]/[lesson] 페이지 어디에서도 그리지 않음 — 화면에 안 닿음(글은 title/label 과 같고 틀림 없음). 단어 · 덩어리는 이 몫이 아니라 세지 않음(덩어리 ko 가 한국어 줄과 같은 말인 곳은 각 finding 의 fix 에 함께 적음). PPT 대조: 영어 · 한국어 62쌍 모두 docs/adult/ppt-본문.json 과 같다(다른 곳은 6-1 · 6-2 5번 'jjimjilbang'→'찜질방' 화면 표기뿐 — 사장님 결정). 6-1 · 6-2 는 1 · 4 · 6번만 다르고 2 · 3 · 5번은 같음(사장님 결정대로). 사실 확인: 6-4 '2015 census … Protestants outnumbered Buddhists for the first time'(개신교 19.7% > 불교 15.5%) · 'more than half of Koreans report having no religion'(56.1%) 맞음. 4과 친척 숫자(3남 3녀의 장남 → 동생 다섯 · 2남 1녀의 막내 → 큰오빠) · 5과 시각(6시 기상 · 1시 오후 업무 · 6시 퇴근 · 7시 귀가)도 서로 맞음. 4-5 · 4-6 의 'uncle' 을 '작은아버지'로 옮긴 것은 4-2(아버지가 장남)와 맞음. 틀림 아님으로 둔 것: 4-3 'her eldest brother'(오빠 둘 중 맏이 — 원어민도 흔히 씀) · 'remarkably' 가 여러 강의에 거듭 나옴(문체) · 4·5과는 축약형, 6과는 풀어 씀(강의 안에서는 한결같음) · '노력해오고 · 쌓아가는 · 지켜오고'(보조 용언 붙여 쓰기 허용) · 제목의 '형제'(형제자매를 아우르는 뜻도 있음) · 과정 목록 장 제목은 '친척 소개 (Relative Introduction)', 강의 부제는 'Relative Introduction (친척 소개)' 로 순서가 반대(12장 모두 같은 방식 — 설계로 보고 틀림으로 세지 않음). 같은 AI 계열이 만들고 점검한 것 — 독립 검수 아님. 내용 파일은 바꾸지 않았다."
+}

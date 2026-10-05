@@ -1,0 +1,99 @@
+{
+  "part": "adult-words-1-6-확인",
+  "scope": "adult-words-1-6 일꾼의 틀림 AW16-01 ~ AW16-13 을 다시 봄. 지금 판(작업 폴더 HEAD + 작업 트리)의 content/lessons/adult/*.json 칸을 직접 열어 확인하고, 화면에 닿는지는 src/components/AdultWordsStep.tsx(카드 · 빈칸 · 고른 뒤 한국어 줄)와 scripts/lib/spoken-texts.cjs(무엇이 소리를 내나)로 확인. 같은 AI 계열의 재확인이다 — 독립 검수가 아니다.",
+  "readCount": { "sentences": 31, "titles": 3, "words": 33, "chunks": 41, "other": 14 },
+  "checked": [
+    {
+      "id": "AW16-01",
+      "verdict": "고칠 글 바꿈",
+      "severity": "심각",
+      "why": "지금 글 확인: a1-6 blocks[1].items[0] text 'I like to help other people, individually.' · words[0] individually | 부사 | '개인적으로, 개별적으로' · 한국어 줄 blocks[2] '저는 개인적으로 다른 사람들을 돕는 것을 좋아합니다.' · 덩어리 'individually.' = '개인적으로.' 모두 그대로다. 문장 끝에 ', individually' 를 붙인 꼴은 원어민이 쓰지 않는 영어이고(PPT 그대로 — ppt-본문.json 490줄), 한국어 줄 · 덩어리 · 카드 첫 뜻이 모두 '개인적으로'(=personally)로 읽혀 individually = personally 로 가르친다. 카드의 '개별적으로' 는 맞고 '개인적으로' 도 사전 풀이로 아주 없는 것은 아니지만, 이 문장 · 한국어 줄과 함께 보면 틀린 뜻을 가르친다 — 심각 유지. 화면: 카드(낱말 · 밑줄 문장 · 뜻), 빈칸, 고른 뒤 한국어 줄 모두 닿음. 소리: 문장 · 덩어리 영어 · 낱말 say 가 바뀐다. 고칠 글은 방향은 맞지만 빠진 것이 있다 — (A) 로 낱말을 personally 로 바꾸면 같은 과의 다른 빈칸 보기도 바뀐다: 지금 a1-3 · a1-4 · a1-5 빈칸 보기에 'individually' 가 들어 있어, 빌드가 그 자리에 'personally' 를 넣게 되는데 a1-4 'I like to travel by car, but I ____ like watching movies.'(정답 especially)에 'but I personally like watching movies' 는 자연스러운 영어라 새 ③ 틀림이 생긴다.",
+      "fix": "AW16-01 원래 고칠 글(A 추천) + 다음을 함께: (1) A 를 고르면 build-adult-content.mjs 에서 especially 의 보기에 personally 가 뽑히지 않게 막고(BLANK_AVOID { especially: ['personally'] }) 다시 만든 a1-3 · a1-4 · a1-5 보기를 눈으로 확인한다. (2) A 의 덩어리는 'Personally,' = '개인적으로,' · 'I like to help other people.' = '저는 다른 사람들을 돕는 것을 좋아합니다.' 로, 한국어 줄 '저는 개인적으로 다른 사람들을 돕는 것을 좋아합니다.' 는 그대로 둘 수 있다. (3) 문장 글이 바뀌므로 받아쓰기 · 말하기 단계(같은 문장을 쓰는 다른 단계)의 조각 · 채점도 새 문장으로 다시 만들어지는지 확인하고, 문장 · 덩어리 · 낱말 소리를 다시 만든다(generate-azure-ava)."
+    },
+    {
+      "id": "AW16-02",
+      "verdict": "맞음",
+      "why": "지금 글 확인: a2-3 blocks[1].items[0].words[3] anticipation · choices ['retirement age','peace of mind','refuge']. 빈칸 문장 '... a transition I'm approaching with both gratitude and ____.' 에 'peace of mind' 를 넣으면 'with both gratitude and peace of mind' — 문법 · 뜻 모두 자연스럽다(은퇴를 감사와 마음의 평안으로 맞음). AdultWordsStep 은 고른 뒤에야 한국어 줄('감사함과 설렘')을 보여 주므로, 고르는 순간에는 맞는 영어를 오답으로 채점한다 — 높음 맞음. 고칠 보기 retirement age · refuge · milestone 은 모두 2과 낱말(milestone 은 a2-2)이고 셋 다 그 자리에 들어맞지 않는다. 화면 닿음 · 보기는 소리를 내지 않음(audioChanges=false 맞음)."
+    },
+    {
+      "id": "AW16-03",
+      "verdict": "맞음",
+      "why": "지금 글 확인: a3-3 blocks[1].items[0].words[0] outstanding · choices ['outgoing','gifted at','introverted']. 'leads his team with an outgoing, genuinely collaborative style' 은 자연스럽고, a3-2 2번 문장이 '대한, who shares my outgoing personality' 라고 소개해 문맥에도 맞는다. 'an introverted ... style' 도 문법은 통한다(문맥상 대한과는 덜 맞음). 둘 다 모음 시작이라 관사 an 으로 걸러지지 않는다 — 높음 맞음. 고칠 보기 gifted at · possess · decades 는 모두 3과 낱말이고 'an' 뒤에서 들어맞지 않는다(다만 정답만 모음으로 시작해 관사로 답이 보이는 쉬운 문제가 된다 — 틀림은 아님)."
+    },
+    {
+      "id": "AW16-04",
+      "verdict": "맞음",
+      "why": "지금 글 확인: a4-3 blocks[1].items[2].words[0] occasional · choices ['paternal','maternal','unavoidable']. 'caring for family isn't an unavoidable duty but a collaborative commitment we renew every day' 는 문법에 맞고 '억지로 지는 의무가 아니라 스스로 다지는 약속' 이라는 뜻으로 읽힌다. 문장이 노린 대비(occasional ↔ every day)는 정답 쪽이 더 낫지만, unavoidable 을 고른 학습자를 틀린 영어로 볼 수 없다. 확신은 '보통' 쪽에 가깝지만 판정은 맞음 · 높음 유지. 고칠 보기 paternal · maternal · eldest(a4-2)는 'an eldest duty' 처럼 관사는 통해도 뜻이 안 되므로 오답으로 충분하다."
+    },
+    {
+      "id": "AW16-05",
+      "verdict": "심각도 바꿈",
+      "severity": "중간",
+      "why": "지금 글 확인: a4-3 blocks[1].items[2].words[2] renew · choices ['judge','pursue','awakening']. 'a collaborative commitment we pursue every day' 는 문법은 맞지만 pursue 는 goal · dream · career 와 어울리고 commitment 와는 잘 쓰지 않는다(commitment 는 keep · honor · renew · fulfill). 맞는 답을 막는다기보다 '덜 자연스러운 보기' 에 가까워, 채점이 틀렸다고(높음) 하기는 어렵다 — 헷갈리게 하는 정도(중간). 빼는 것은 해가 없으므로 고칠 보기(judge · awakening · lately)는 그대로 좋다."
+    },
+    {
+      "id": "AW16-06",
+      "verdict": "맞음",
+      "why": "지금 글 확인: a5-3 blocks[1].items[1].words[0] close-knit · choices ['supportive','collaborative','demanding']. 'a workplace slowly becomes a supportive one' · 'a collaborative one' 둘 다 자연스럽고, 함께 밥 먹으며 대화가 생긴다는 앞 문맥에도 맞는다 — 높음 맞음. 고칠 보기의 demanding 은 'becomes a demanding one' 이 문법은 맞지만 식사 · 대화로 직장이 '힘들어진다' 는 뜻이 문맥과 반대라 오답으로 남겨도 된다. ritual · tackle 은 들어맞지 않음."
+    },
+    {
+      "id": "AW16-07",
+      "verdict": "맞음",
+      "why": "지금 글 확인: a5-3 blocks[1].items[2].words[1] supportive · choices ['collaborative','close-knit','demanding']. 'a small ritual that has kept our team remarkably close-knit' 은 오히려 가장 자연스러운 꼴이고, 'remarkably collaborative' 도 통한다 — 높음 맞음. 고칠 보기 demanding · stretch · efficiently: 'kept our team remarkably efficiently' 는 문법이 안 되고, demanding 은 문맥과 반대라 오답으로 충분."
+    },
+    {
+      "id": "AW16-08",
+      "verdict": "심각도 바꿈",
+      "severity": "중간",
+      "why": "지금 글 확인: a5-5 blocks[1].items[1].words[0] dedicated · choices ['rushed','collaborative','close-knit']. 'I've been protecting that hour with collaborative effort every evening' 은 문법은 통하지만 주어가 I 하나라 '협력적인 노력' 이 누구와의 협력인지 어색하고, 보통은 'a collaborative effort' 처럼 관사와 함께 쓴다. 맞는 답을 막는 수준이라기보다 그럴듯한 오답 — 중간. 빼는 것은 해가 없고 고칠 보기(rushed · close-knit · remarkably)도 들어맞지 않으므로 고칠 글은 그대로 좋다."
+    },
+    {
+      "id": "AW16-09",
+      "verdict": "맞음",
+      "why": "지금 글 확인: a6-3 blocks[1].items[2].words[0] supportive · choices ['collaborative','close-knit','home-cooked']. 'a remarkably close-knit network' 는 매우 자연스러운 영어다 — 높음 맞음. 고칠 보기 home-cooked · attentively · every other(모두 6과 낱말)는 들어맞지 않는다."
+    },
+    {
+      "id": "AW16-10",
+      "verdict": "맞음",
+      "why": "지금 글 확인: a6-4 blocks[1].items[2].words[1] close-knit · choices ['supportive','collaborative','home-cooked']. 'made our congregation feel like a supportive extended family' 는 자연스럽고 뜻도 통한다 — 높음 맞음. 고칠 보기 home-cooked · occasionally · every other 는 들어맞지 않는다."
+    },
+    {
+      "id": "AW16-11",
+      "verdict": "맞음",
+      "why": "지금 글 확인: a6-5 blocks[1].items[2].words[1] home-cooked · choices ['balanced','supportive','collaborative']. 'catching up over a balanced meal' 은 굳은 표현(a balanced meal)이라 자연스럽고 부모님 댁 식사라는 뜻에도 맞는다 — 높음 맞음. 고칠 보기 supportive · collaborative · close-knit 는 meal 과 어울리지 않는다('a close-knit meal' 등은 안 됨)."
+    },
+    {
+      "id": "AW16-12",
+      "verdict": "심각도 바꿈",
+      "severity": "중간",
+      "why": "지금 글 확인: a1-1 blocks[1].items[1].words[0] pleasure · choices ['chance','orphanage','hiking']. 'It's a chance to be with you today.' 는 문법은 맞지만 인사말로는 꾸밈말 없이(a great chance 등) 쓰지 않아 덜 자연스럽다 — 인사의 굳은 말은 pleasure(또는 privilege · honor). 바로 다음 문장('giving me a chance to introduce myself')이 chance 를 쓰므로 학습자가 고를 만은 하다. 오답 처리가 틀렸다(높음)고 하기보다 헷갈리게 하는 보기(중간). 무료 강의(a1-1)라 빼는 것이 좋고, 고칠 보기 orphanage · hiking · subjects 는 들어맞지 않는다."
+    },
+    {
+      "id": "AW16-13",
+      "verdict": "고칠 글 바꿈",
+      "severity": "중간",
+      "why": "지금 글 확인: a6-2 blocks[7].text '저는 운동과 장보기, 영어 연습을 할 시간도 따로 마련하는데, ...' · 덩어리 blocks[1].items[5].chunks[0].ko '저는 운동과 장보기, 영어 연습을 할 시간도 따로 마련하는데,' · 낱말 run errands 뜻 '볼일을 보다, 이런저런 일을 처리하다'(build-adult-content.mjs 411줄, EXTRA_WORDS 로 더함). a6-1 의 같은 자리 영어에는 run errands 가 없다(한국어 '운동과 영어 연습'). 빈칸을 고른 뒤 카드 뜻 '볼일을 보다' 와 한국어 줄 '장보기' 가 함께 보여 서로 다르다 — 중간 맞음. 한국어 줄은 소리를 낸다(spoken-texts.cjs 119줄 paragraph lang ko), 한국어 덩어리는 소리를 내지 않는다(116줄은 c.en 만). 고칠 글이 한국어 줄만 문장으로 적었으므로 덩어리 글도 구체적으로 적어 둔다.",
+      "fix": "한국어 줄 blocks[7].text → '저는 운동하고 볼일을 보고 영어를 연습할 시간도 따로 마련하는데, 균형 잡힌 주말을 보내야 월요일을 훨씬 잘 맞을 수 있다는 것을 깨달았기 때문입니다.' · 덩어리 blocks[1].items[5].chunks[0].ko → '저는 운동하고 볼일을 보고 영어를 연습할 시간도 따로 마련하는데,' (KO_FIX 와 덩어리 고침을 build-adult-content.mjs 에서). 한국어 줄 소리 1개만 다시 만든다(덩어리 한국어는 소리 없음)."
+    }
+  ],
+  "findings": [
+    {
+      "id": "AW16-01-추가",
+      "course": "adult",
+      "lesson": "a1-4",
+      "file": "content/lessons/adult/a1-4.json",
+      "path": "blocks[1].items[?].words[especially].choices (지금 ['individually','pretty','as well'])",
+      "kind": "word-blank (고친 뒤 생길 틀림)",
+      "current": "'I like to travel by car, but I ____ like watching movies.' 정답 especially · 보기 individually / pretty / as well",
+      "problem": "지금은 틀림이 아니다. 그러나 AW16-01 을 (A)로 고쳐 a1-6 낱말이 personally 가 되면, 빌드가 이 보기의 individually 자리에 personally 를 넣게 되고 'but I personally like watching movies' 는 자연스러운 영어라 맞는 답을 오답으로 채점하게 된다(③).",
+      "fix": "AW16-01 (A)를 고를 때 BLANK_AVOID { especially: ['personally'] } 를 함께 두고, 다시 만든 a1-3 · a1-4 · a1-5 보기를 눈으로 확인한다.",
+      "category": "③",
+      "severity": "높음",
+      "confidence": "높음",
+      "audioChanges": false,
+      "reaches": true
+    }
+  ],
+  "judgements": [],
+  "notes": "13건 모두 지금 파일의 그 칸을 직접 열어 확인했다(일꾼이 적은 지금 글과 모두 같음). 판정: 맞음 8(02 · 03 · 04 · 06 · 07 · 09 · 10 · 11), 심각도 바꿈 3(05 · 08 · 12 → 중간: 오답 보기가 덜 자연스러운 '그럴듯한 오답' 이지 맞는 답을 막는 수준은 아님), 고칠 글 바꿈 2(01: (A)로 고치면 a1-4 빈칸에 새 ③ 틀림이 생김 — findings 에 적음 / 13: 한국어 덩어리 글을 함께 적고, 한국어 덩어리는 소리를 내지 않음을 확인). 틀림 아님 0. 화면: 빈칸 보기 · 카드 뜻 · 고른 뒤 한국어 줄은 모두 AdultWordsStep.tsx 가 그린다(reaches=true 모두 맞음). 빈칸 보기는 소리를 내지 않는다(audioChanges=false 맞음). 고칠 보기 목록은 일꾼이 적은 예시이고, 실제 보기는 빌드의 고르기 규칙이 정하므로 BLANK_AVOID 를 둔 뒤 다시 만든 보기를 사람이 한 번 더 읽어야 한다(AW16-J3 과 같은 생각). 7~12과 빈칸은 이 몫 밖. 내용 파일은 바꾸지 않았다."
+}

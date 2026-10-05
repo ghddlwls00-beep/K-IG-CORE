@@ -1,0 +1,65 @@
+{
+  "part": "adult-chunks-1-4",
+  "scope": "ADULT 1~4과 23강의(a1-1~a1-6 · a2-1~a2-6 · a3-1~a3-5 · a4-1~a4-6) 77문장의 chunks[] {en, ko} 245덩어리 전부 — 영어 덩어리 이음 = 문장(77/77 글자까지 같음), 한국어 덩어리 ↔ 영어 덩어리 뜻, 끊는 자리, 한국어 덩어리 이어 읽기 ↔ 문장 한국어 줄(77줄). CHUNK_FIX 2문장(1과 #21 = a1-5 #3 · 2과 #14 = a2-5 #2)과 끊는 자리를 옮긴 1문장(a1-2 #3) 따로 확인.",
+  "readCount": { "sentences": 77, "titles": 0, "words": 0, "chunks": 245, "other": 77 },
+  "findings": [
+    {
+      "id": "AC14-1",
+      "course": "adult",
+      "lesson": "a3-1",
+      "file": "content/lessons/adult/a3-1.json",
+      "path": "blocks[1].items[1].chunks[1].ko",
+      "kind": "chunk-ko",
+      "current": "한때 저에게는 폭넓은 친구들이 있었지만,",
+      "problem": "영어 덩어리 'I realize I once had a wide circle of friends,' 의 'I realize'(깨닫다)가 한국어 덩어리에 없고, 네 덩어리 어디에도 없다. 덩어리를 다 열면 나오는 문장 한국어 줄('…네다섯 명뿐이라는 것을 깨닫게 됩니다')과도 어긋난다. 학습자가 'realize' 의 뜻을 덩어리에서 잡을 수 없음.",
+      "fix": "한때 저에게 폭넓은 친구들이 있었다는 것을 깨닫게 되는데,  (다른 덩어리 그대로 — 이어 읽기: 돌이켜보면, 한때 저에게 폭넓은 친구들이 있었다는 것을 깨닫게 되는데, 그중 네다섯 명만이 지금까지 정말 가깝게 지내고 있습니다.)",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "높음",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "AC14-2",
+      "course": "adult",
+      "lesson": "a1-4",
+      "file": "content/lessons/adult/a1-4.json",
+      "path": "blocks[1].items[2].chunks[0].ko · chunks[1].ko · chunks[2].ko",
+      "kind": "chunk-ko",
+      "current": "[0] I like to drink tea => 저는 차를 마시며 · [1] and talk with my friends => 친구들과 이야기하는 것도 좋아합니다 · [2] at the coffee shop as well. => 커피숍에서.",
+      "problem": "덩어리 뜻이 한 칸씩 밀려 있다: 'I like to drink tea' 의 'like'(좋아하다)가 [0] 에 없고 [1] 로 갔으며, 'as well'(~도)은 [2] 에 없고 [1] 의 '것도' 로 갔다. 같은 과 a1-6 #3 'I like to volunteer at the orphanage' => '…봉사하는 것을 좋아하고' 는 like 를 그 덩어리에 둔다 — 이 문장만 어긋남. 이어 읽은 뜻은 문장 한국어 줄과 맞음.",
+      "fix": "[0] 저는 차 마시는 것을 좋아합니다 · [1] 그리고 친구들과 이야기하는 것도 · [2] 커피숍에서 역시.",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "AC14-3",
+      "course": "adult",
+      "lesson": "a3-3",
+      "file": "content/lessons/adult/a3-3.json",
+      "path": "blocks[1].items[1].chunks[3].ko",
+      "kind": "chunk-ko",
+      "current": "누구보다도.",
+      "problem": "영어 덩어리 'more than almost anyone.' 의 'almost'(거의)가 빠져 '누구보다도'(= more than anyone)가 되었다. 뜻을 조금 세게 바꿈. 문장 한국어 줄('그를 누구보다도 신뢰합니다')도 같은 생략 — 문장 칸은 다른 몫(adult-sent-1-3)의 범위.",
+      "fix": "거의 누구보다도.",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": false,
+      "reaches": true
+    }
+  ],
+  "judgements": [
+    {
+      "id": "AC14-J1",
+      "lesson": "a1-1 · a1-6 · a2-1 · a2-2 · a2-4 · a2-6 · a3-1 · a3-2 · a3-5 · a4-1 · a4-6 (1~4과 전반 — PPT 양식)",
+      "question": "한국어 덩어리가 영어 덩어리의 문장부호를 그대로 따라 쓴다 — 문장이 아닌 조각 끝에 마침표 · 물음표('제 소개를 할.' a1-1 #3 · '오늘 여러분과 함께하게 되어.' a1-1 #2 · '좀처럼 입 밖으로 꺼내지 않는?' a2-1 #2 · '인생의 모든 계절을 함께하며?' a3-1 #1 · '여러분의 일상 속에 함께하는?' a4-1 #3), 한국어에 쓰지 않는 쌍반점('제 소개를 마치겠습니다;' a2-6 #3 · '힘으로 얻을 수도 없습니다;' a3-5 #2), '-니다' 뒤 쉼표('돕는 것을 좋아합니다,' a1-6 #1 · '무척 좋아합니다,' a2-4 #1 · '즐겨 왔습니다,' a3-2 #1 · '소개하고 싶습니다,' a3-1 #3 · '배웠습니다,' a4-6 #2), 쌍점('가족이 있습니다:' a2-2 #1 · '드릴게요:' a4-1 #3). 고칠까?",
+      "recommendation": "그대로 둔다. 다만 고친다면 쌍반점 두 곳(a2-6 #3 · a3-5 #2)만 쉼표로.",
+      "why": "PPT '청크 단위 끊어읽기' 슬라이드의 직독직해 양식이다. 영어 덩어리와 한국어 덩어리가 한 칸씩 짝지어 보여서 끝 부호가 짝을 보여 주는 구실도 한다. 뜻을 바꾸거나 오도하지 않고 소리도 내지 않는다(한국어 덩어리는 화면에만 — StudentLearningView playChunks 는 c.en 만 읽음). 문장 한국어 줄('문장 전체 해석')은 바른 부호로 따로 나온다. 쌍반점만은 한국어 문장부호 규범에 없는 부호라, 손볼 거면 그 둘이 가장 뚜렷하다."
+    }
+  ],
+  "notes": "같은 AI 계열이 만들고 점검함 — 독립 검수 아님. 읽은 것: content/lessons/adult/a1-1~a4-6 의 23파일, 문장 77개(한 줄도 빼지 않음)의 덩어리 245개(영어 · 한국어 모두)와 문장 한국어 줄 77개(blocks[] 의 lang:'ko' paragraph — 문장과 차례로 짝지음). 기계 확인: 덩어리 영어를 빈칸 하나로 이으면 77문장 모두 문장 text 와 글자까지 같음(어긋남 0) · `node scripts/build-adult-content.mjs --check --chunks` exit 0(디스크 = 빌드 결과) · 1~4과에서 PPT 끊는 자리를 새 낱말로 옮긴 문장은 a1-2 #3('I live in 부산 Apartments | with my husband and 2 children.') 하나뿐 — 한국어 덩어리 그대로 맞음. CHUNK_FIX 두 문장(a1-5 #3 '2 months so far' · a2-5 #2 'Our son, …') 은 덩어리 뜻 · 이어 읽기 · 문장 줄 모두 맞음. 1과의 한글 이름(홍길동 · 홍 · 서울 · 부산 · 한국) · 3과(대한 · 민국)는 덩어리에도 한글로 적혀 화면에 그대로 나오고(StudentLearningView renderChunks 가 c.en 을 그대로 그림), 소리는 spokenEn 으로 로마자 — 사장님 결정대로라 틀림 아님. 소리: 영어 덩어리만 소리를 냄(StudentLearningView playChunks → spokenEn(c.en), scripts/lib/spoken-texts.cjs 115~116줄도 c.en 만) — 한국어 덩어리는 소리 없음, 그래서 위 세 틀림은 모두 audioChanges=false. 화면: 세 칸 모두 Step 3 '끊어 읽기'의 '뜻 보기'를 누르면 보이는 칸(reaches=true). 끊는 자리: 245덩어리 모두 의미 단위로 끊김 — 목록이 두 덩어리로 나뉜 곳(a1-4 #1 'hiking, | watching movies' · a3-4 #1 'gifted at sports, | playing musical instruments, and singing.')은 긴 목록이라 받아들일 만해서 틀림으로 세지 않음. 한국어 덩어리에서 접속 어미(-지만 · -는데)가 영어 접속사(but · which)보다 한 덩어리 앞에 붙는 것(a1-2 #1 '홍길동이지만,' · a1-4 #2 등)은 한국어 어순상 자연스러워 틀림 아님. 영어 문장 자체의 어색함(예: a1-6 #1 'I like to help other people, individually.' · a1-2 #4 'in 1980 in 부산')은 문장 몫(adult-sent-1-3 · 4-6)의 범위라 여기 적지 않음. 덩어리 한국어 맞춤법 · 띄어쓰기에서 틀림은 찾지 못함('해오고' · '노력해왔는데' · '보여줍니다' 의 보조용언 붙여 쓰기는 허용, 강의마다 하나로만 씀). 판단: a4-3 #1 '결혼하지 않은 어머니의 큰오빠는,' 은 '결혼하지 않은' 이 어머니를 꾸미는 것으로도 읽히지만 문장 줄이 같은 말에 '즉 저의 큰외삼촌은' 을 붙여 풀어 주고 문맥상 오독 가능성이 낮아 틀림으로 세지 않음."
+}

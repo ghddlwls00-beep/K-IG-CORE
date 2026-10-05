@@ -1,0 +1,2553 @@
+{
+ "at": "2026-10-04T08:34:54.433Z",
+ "base": "https://k-ig-core.vercel.app",
+ "allAlts": true,
+ "broken": null,
+ "lessons": 282,
+ "counts": {
+  "PASS": 282
+ },
+ "alternatives": 7827,
+ "alternativesRead": 7827,
+ "problems": [],
+ "results": [
+  {
+   "course": "grammar1",
+   "id": "gh1-006",
+   "status": "PASS",
+   "note": "42/42 칸 입력 · 채점 42문항 · 모범답안인데 정답 아님 0 · 대체답안 29개(전부 · 채점 4번) 중 읽음 29 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 29,
+   "alternativesRead": 29
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-006-1",
+   "status": "PASS",
+   "note": "21/21 칸 입력 · 채점 21문항 · 모범답안인데 정답 아님 0 · 대체답안 17개(전부 · 채점 3번) 중 읽음 17 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 17,
+   "alternativesRead": 17
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-006-2",
+   "status": "PASS",
+   "note": "21/21 칸 입력 · 채점 21문항 · 모범답안인데 정답 아님 0 · 대체답안 12개(전부 · 채점 4번) 중 읽음 12 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 12,
+   "alternativesRead": 12
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-007",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-006",
+   "note": "/grammar1/gh1-006 로 넘어감 · 답(모범 · 다른 정답 42문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-007-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-006-1",
+   "note": "/grammar1/gh1-006-1 로 넘어감 · 답(모범 · 다른 정답 21문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-007-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-006-2",
+   "note": "/grammar1/gh1-006-2 로 넘어감 · 답(모범 · 다른 정답 21문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-008",
+   "status": "PASS",
+   "note": "42/42 칸 입력 · 채점 42문항 · 모범답안인데 정답 아님 0 · 대체답안 45개(전부 · 채점 10번) 중 읽음 45 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 45,
+   "alternativesRead": 45
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-008-1",
+   "status": "PASS",
+   "note": "21/21 칸 입력 · 채점 21문항 · 모범답안인데 정답 아님 0 · 대체답안 23개(전부 · 채점 10번) 중 읽음 23 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 23,
+   "alternativesRead": 23
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-008-2",
+   "status": "PASS",
+   "note": "21/21 칸 입력 · 채점 21문항 · 모범답안인데 정답 아님 0 · 대체답안 22개(전부 · 채점 9번) 중 읽음 22 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 22,
+   "alternativesRead": 22
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-009",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-008",
+   "note": "/grammar1/gh1-008 로 넘어감 · 답(모범 · 다른 정답 42문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-009-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-008-1",
+   "note": "/grammar1/gh1-008-1 로 넘어감 · 답(모범 · 다른 정답 21문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-009-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-008-2",
+   "note": "/grammar1/gh1-008-2 로 넘어감 · 답(모범 · 다른 정답 21문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-010",
+   "status": "PASS",
+   "note": "46/46 칸 입력 · 채점 46문항 · 모범답안인데 정답 아님 0 · 대체답안 46개(전부 · 채점 5번) 중 읽음 46 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 46,
+   "alternativesRead": 46
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-010-1",
+   "status": "PASS",
+   "note": "23/23 칸 입력 · 채점 23문항 · 모범답안인데 정답 아님 0 · 대체답안 12개(전부 · 채점 3번) 중 읽음 12 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 12,
+   "alternativesRead": 12
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-010-2",
+   "status": "PASS",
+   "note": "23/23 칸 입력 · 채점 23문항 · 모범답안인데 정답 아님 0 · 대체답안 34개(전부 · 채점 5번) 중 읽음 34 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 34,
+   "alternativesRead": 34
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-011",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-010",
+   "note": "/grammar1/gh1-010 로 넘어감 · 답(모범 · 다른 정답 46문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-011-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-010-1",
+   "note": "/grammar1/gh1-010-1 로 넘어감 · 답(모범 · 다른 정답 23문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-011-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-010-2",
+   "note": "/grammar1/gh1-010-2 로 넘어감 · 답(모범 · 다른 정답 23문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-012",
+   "status": "PASS",
+   "note": "35/35 칸 입력 · 채점 35문항 · 모범답안인데 정답 아님 0 · 대체답안 21개(전부 · 채점 6번) 중 읽음 21 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 21,
+   "alternativesRead": 21
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-012-1",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 6개(전부 · 채점 2번) 중 읽음 6 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 6,
+   "alternativesRead": 6
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-012-2",
+   "status": "PASS",
+   "note": "17/17 칸 입력 · 채점 17문항 · 모범답안인데 정답 아님 0 · 대체답안 15개(전부 · 채점 6번) 중 읽음 15 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 15,
+   "alternativesRead": 15
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-013",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-012",
+   "note": "/grammar1/gh1-012 로 넘어감 · 답(모범 · 다른 정답 35문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-013-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-012-1",
+   "note": "/grammar1/gh1-012-1 로 넘어감 · 답(모범 · 다른 정답 18문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-013-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-012-2",
+   "note": "/grammar1/gh1-012-2 로 넘어감 · 답(모범 · 다른 정답 17문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-014",
+   "status": "PASS",
+   "note": "43/43 칸 입력 · 채점 43문항 · 모범답안인데 정답 아님 0 · 대체답안 53개(전부 · 채점 4번) 중 읽음 53 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 53,
+   "alternativesRead": 53
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-014-1",
+   "status": "PASS",
+   "note": "22/22 칸 입력 · 채점 22문항 · 모범답안인데 정답 아님 0 · 대체답안 18개(전부 · 채점 2번) 중 읽음 18 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 18,
+   "alternativesRead": 18
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-014-2",
+   "status": "PASS",
+   "note": "21/21 칸 입력 · 채점 21문항 · 모범답안인데 정답 아님 0 · 대체답안 35개(전부 · 채점 4번) 중 읽음 35 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 35,
+   "alternativesRead": 35
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-015",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-014",
+   "note": "/grammar1/gh1-014 로 넘어감 · 답(모범 · 다른 정답 43문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-015-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-014-1",
+   "note": "/grammar1/gh1-014-1 로 넘어감 · 답(모범 · 다른 정답 22문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-015-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-014-2",
+   "note": "/grammar1/gh1-014-2 로 넘어감 · 답(모범 · 다른 정답 21문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-016",
+   "status": "PASS",
+   "note": "33/33 칸 입력 · 채점 33문항 · 모범답안인데 정답 아님 0 · 대체답안 104개(전부 · 채점 17번) 중 읽음 104 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 104,
+   "alternativesRead": 104
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-016-1",
+   "status": "PASS",
+   "note": "17/17 칸 입력 · 채점 17문항 · 모범답안인데 정답 아님 0 · 대체답안 82개(전부 · 채점 17번) 중 읽음 82 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 82,
+   "alternativesRead": 82
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-016-2",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 22개(전부 · 채점 7번) 중 읽음 22 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 22,
+   "alternativesRead": 22
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-017",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-016",
+   "note": "/grammar1/gh1-016 로 넘어감 · 답(모범 · 다른 정답 33문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-017-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-016-1",
+   "note": "/grammar1/gh1-016-1 로 넘어감 · 답(모범 · 다른 정답 17문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-017-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-016-2",
+   "note": "/grammar1/gh1-016-2 로 넘어감 · 답(모범 · 다른 정답 16문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-020",
+   "status": "PASS",
+   "note": "24/24 칸 입력 · 채점 24문항 · 모범답안인데 정답 아님 0 · 대체답안 12개(전부 · 채점 3번) 중 읽음 12 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 12,
+   "alternativesRead": 12
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-021",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-020",
+   "note": "/grammar1/gh1-020 로 넘어감 · 답(모범 · 다른 정답 24문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-022",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 8개(전부 · 채점 1번) 중 읽음 8 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 8,
+   "alternativesRead": 8
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-023",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-022",
+   "note": "/grammar1/gh1-022 로 넘어감 · 답(모범 · 다른 정답 25문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-024",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 20개(전부 · 채점 3번) 중 읽음 20 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 20,
+   "alternativesRead": 20
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-025",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-024",
+   "note": "/grammar1/gh1-024 로 넘어감 · 답(모범 · 다른 정답 25문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-026",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 8개(전부 · 채점 1번) 중 읽음 8 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 8,
+   "alternativesRead": 8
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-027",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-026",
+   "note": "/grammar1/gh1-026 로 넘어감 · 답(모범 · 다른 정답 25문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-028",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 20개(전부 · 채점 3번) 중 읽음 20 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 20,
+   "alternativesRead": 20
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-029",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-028",
+   "note": "/grammar1/gh1-028 로 넘어감 · 답(모범 · 다른 정답 25문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-030",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 10개(전부 · 채점 2번) 중 읽음 10 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 10,
+   "alternativesRead": 10
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-031",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-030",
+   "note": "/grammar1/gh1-030 로 넘어감 · 답(모범 · 다른 정답 25문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-032",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 36개(전부 · 채점 5번) 중 읽음 36 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 36,
+   "alternativesRead": 36
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-033",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-032",
+   "note": "/grammar1/gh1-032 로 넘어감 · 답(모범 · 다른 정답 25문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-034",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 0개(전부 · 채점 0번) 중 읽음 0 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-035",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-034",
+   "note": "/grammar1/gh1-034 로 넘어감 · 답(모범 · 다른 정답 25문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-036",
+   "status": "PASS",
+   "note": "27/27 칸 입력 · 채점 27문항 · 모범답안인데 정답 아님 0 · 대체답안 10개(전부 · 채점 1번) 중 읽음 10 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 10,
+   "alternativesRead": 10
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-037",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-036",
+   "note": "/grammar1/gh1-036 로 넘어감 · 답(모범 · 다른 정답 27문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-038",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 28개(전부 · 채점 3번) 중 읽음 28 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 28,
+   "alternativesRead": 28
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-039",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-038",
+   "note": "/grammar1/gh1-038 로 넘어감 · 답(모범 · 다른 정답 25문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-040",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 17개(전부 · 채점 4번) 중 읽음 17 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 17,
+   "alternativesRead": 17
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-041",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-040",
+   "note": "/grammar1/gh1-040 로 넘어감 · 답(모범 · 다른 정답 25문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-042",
+   "status": "PASS",
+   "note": "40/40 칸 입력 · 채점 40문항 · 모범답안인데 정답 아님 0 · 대체답안 47개(전부 · 채점 5번) 중 읽음 47 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 47,
+   "alternativesRead": 47
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-042-1",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 20개(전부 · 채점 3번) 중 읽음 20 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 20,
+   "alternativesRead": 20
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-042-2",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 27개(전부 · 채점 5번) 중 읽음 27 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 27,
+   "alternativesRead": 27
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-043",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-042",
+   "note": "/grammar1/gh1-042 로 넘어감 · 답(모범 · 다른 정답 40문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-043-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-042-1",
+   "note": "/grammar1/gh1-042-1 로 넘어감 · 답(모범 · 다른 정답 20문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-043-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-042-2",
+   "note": "/grammar1/gh1-042-2 로 넘어감 · 답(모범 · 다른 정답 20문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-044",
+   "status": "PASS",
+   "note": "40/40 칸 입력 · 채점 40문항 · 모범답안인데 정답 아님 0 · 대체답안 25개(전부 · 채점 5번) 중 읽음 25 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 25,
+   "alternativesRead": 25
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-044-1",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 14개(전부 · 채점 5번) 중 읽음 14 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 14,
+   "alternativesRead": 14
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-044-2",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 11개(전부 · 채점 1번) 중 읽음 11 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 11,
+   "alternativesRead": 11
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-045",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-044",
+   "note": "/grammar1/gh1-044 로 넘어감 · 답(모범 · 다른 정답 40문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-045-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-044-1",
+   "note": "/grammar1/gh1-044-1 로 넘어감 · 답(모범 · 다른 정답 20문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-045-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-044-2",
+   "note": "/grammar1/gh1-044-2 로 넘어감 · 답(모범 · 다른 정답 20문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-046",
+   "status": "PASS",
+   "note": "37/37 칸 입력 · 채점 37문항 · 모범답안인데 정답 아님 0 · 대체답안 31개(전부 · 채점 5번) 중 읽음 31 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 31,
+   "alternativesRead": 31
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-046-1",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 11개(전부 · 채점 3번) 중 읽음 11 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 11,
+   "alternativesRead": 11
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-046-2",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 20개(전부 · 채점 5번) 중 읽음 20 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 20,
+   "alternativesRead": 20
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-047",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-046",
+   "note": "/grammar1/gh1-046 로 넘어감 · 답(모범 · 다른 정답 37문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-047-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-046-1",
+   "note": "/grammar1/gh1-046-1 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-047-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-046-2",
+   "note": "/grammar1/gh1-046-2 로 넘어감 · 답(모범 · 다른 정답 18문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-050",
+   "status": "PASS",
+   "note": "42/42 칸 입력 · 채점 42문항 · 모범답안인데 정답 아님 0 · 대체답안 43개(전부 · 채점 11번) 중 읽음 43 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 43,
+   "alternativesRead": 43
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-050-1",
+   "status": "PASS",
+   "note": "21/21 칸 입력 · 채점 21문항 · 모범답안인데 정답 아님 0 · 대체답안 12개(전부 · 채점 2번) 중 읽음 12 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 12,
+   "alternativesRead": 12
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-050-2",
+   "status": "PASS",
+   "note": "21/21 칸 입력 · 채점 21문항 · 모범답안인데 정답 아님 0 · 대체답안 31개(전부 · 채점 11번) 중 읽음 31 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 31,
+   "alternativesRead": 31
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-051",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-050",
+   "note": "/grammar1/gh1-050 로 넘어감 · 답(모범 · 다른 정답 42문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-051-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-050-1",
+   "note": "/grammar1/gh1-050-1 로 넘어감 · 답(모범 · 다른 정답 21문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-051-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-050-2",
+   "note": "/grammar1/gh1-050-2 로 넘어감 · 답(모범 · 다른 정답 21문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-052",
+   "status": "PASS",
+   "note": "40/40 칸 입력 · 채점 40문항 · 모범답안인데 정답 아님 0 · 대체답안 28개(전부 · 채점 5번) 중 읽음 28 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 28,
+   "alternativesRead": 28
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-052-1",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 15개(전부 · 채점 3번) 중 읽음 15 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 15,
+   "alternativesRead": 15
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-052-2",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 13개(전부 · 채점 5번) 중 읽음 13 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 13,
+   "alternativesRead": 13
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-053",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-052",
+   "note": "/grammar1/gh1-052 로 넘어감 · 답(모범 · 다른 정답 40문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-053-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-052-1",
+   "note": "/grammar1/gh1-052-1 로 넘어감 · 답(모범 · 다른 정답 20문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-053-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-052-2",
+   "note": "/grammar1/gh1-052-2 로 넘어감 · 답(모범 · 다른 정답 20문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-054",
+   "status": "PASS",
+   "note": "46/46 칸 입력 · 채점 46문항 · 모범답안인데 정답 아님 0 · 대체답안 45개(전부 · 채점 6번) 중 읽음 45 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 45,
+   "alternativesRead": 45
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-054-1",
+   "status": "PASS",
+   "note": "23/23 칸 입력 · 채점 23문항 · 모범답안인데 정답 아님 0 · 대체답안 16개(전부 · 채점 3번) 중 읽음 16 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 16,
+   "alternativesRead": 16
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-054-2",
+   "status": "PASS",
+   "note": "23/23 칸 입력 · 채점 23문항 · 모범답안인데 정답 아님 0 · 대체답안 29개(전부 · 채점 6번) 중 읽음 29 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 29,
+   "alternativesRead": 29
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-055",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-054",
+   "note": "/grammar1/gh1-054 로 넘어감 · 답(모범 · 다른 정답 46문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-055-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-054-1",
+   "note": "/grammar1/gh1-054-1 로 넘어감 · 답(모범 · 다른 정답 23문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-055-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-054-2",
+   "note": "/grammar1/gh1-054-2 로 넘어감 · 답(모범 · 다른 정답 23문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-056",
+   "status": "PASS",
+   "note": "35/35 칸 입력 · 채점 35문항 · 모범답안인데 정답 아님 0 · 대체답안 25개(전부 · 채점 4번) 중 읽음 25 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 25,
+   "alternativesRead": 25
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-056-1",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 15개(전부 · 채점 2번) 중 읽음 15 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 15,
+   "alternativesRead": 15
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-056-2",
+   "status": "PASS",
+   "note": "17/17 칸 입력 · 채점 17문항 · 모범답안인데 정답 아님 0 · 대체답안 10개(전부 · 채점 4번) 중 읽음 10 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 10,
+   "alternativesRead": 10
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-057",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-056",
+   "note": "/grammar1/gh1-056 로 넘어감 · 답(모범 · 다른 정답 35문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-057-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-056-1",
+   "note": "/grammar1/gh1-056-1 로 넘어감 · 답(모범 · 다른 정답 18문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-057-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-056-2",
+   "note": "/grammar1/gh1-056-2 로 넘어감 · 답(모범 · 다른 정답 17문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-058",
+   "status": "PASS",
+   "note": "37/37 칸 입력 · 채점 37문항 · 모범답안인데 정답 아님 0 · 대체답안 65개(전부 · 채점 9번) 중 읽음 65 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 65,
+   "alternativesRead": 65
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-058-1",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 27개(전부 · 채점 9번) 중 읽음 27 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 27,
+   "alternativesRead": 27
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-058-2",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 38개(전부 · 채점 5번) 중 읽음 38 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 38,
+   "alternativesRead": 38
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-059",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-058",
+   "note": "/grammar1/gh1-058 로 넘어감 · 답(모범 · 다른 정답 37문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-059-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-058-1",
+   "note": "/grammar1/gh1-058-1 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-059-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-058-2",
+   "note": "/grammar1/gh1-058-2 로 넘어감 · 답(모범 · 다른 정답 18문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-060",
+   "status": "PASS",
+   "note": "32/32 칸 입력 · 채점 32문항 · 모범답안인데 정답 아님 0 · 대체답안 69개(전부 · 채점 17번) 중 읽음 69 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 69,
+   "alternativesRead": 69
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-061",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-060",
+   "note": "/grammar1/gh1-060 로 넘어감 · 답(모범 · 다른 정답 32문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-062",
+   "status": "PASS",
+   "note": "26/26 칸 입력 · 채점 26문항 · 모범답안인데 정답 아님 0 · 대체답안 25개(전부 · 채점 7번) 중 읽음 25 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 25,
+   "alternativesRead": 25
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-063",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-062",
+   "note": "/grammar1/gh1-062 로 넘어감 · 답(모범 · 다른 정답 26문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-064",
+   "status": "PASS",
+   "note": "27/27 칸 입력 · 채점 27문항 · 모범답안인데 정답 아님 0 · 대체답안 28개(전부 · 채점 3번) 중 읽음 28 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 28,
+   "alternativesRead": 28
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-065",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-064",
+   "note": "/grammar1/gh1-064 로 넘어감 · 답(모범 · 다른 정답 27문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-066",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 72개(전부 · 채점 7번) 중 읽음 72 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 72,
+   "alternativesRead": 72
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-067",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-066",
+   "note": "/grammar1/gh1-066 로 넘어감 · 답(모범 · 다른 정답 25문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-068",
+   "status": "PASS",
+   "note": "27/27 칸 입력 · 채점 27문항 · 모범답안인데 정답 아님 0 · 대체답안 73개(전부 · 채점 9번) 중 읽음 73 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 73,
+   "alternativesRead": 73
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-069",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-068",
+   "note": "/grammar1/gh1-068 로 넘어감 · 답(모범 · 다른 정답 27문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-072",
+   "status": "PASS",
+   "note": "14/14 칸 입력 · 채점 14문항 · 모범답안인데 정답 아님 0 · 대체답안 3개(전부 · 채점 2번) 중 읽음 3 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 3,
+   "alternativesRead": 3
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-073",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-072",
+   "note": "/grammar1/gh1-072 로 넘어감 · 답(모범 · 다른 정답 14문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-074",
+   "status": "PASS",
+   "note": "29/29 칸 입력 · 채점 29문항 · 모범답안인데 정답 아님 0 · 대체답안 12개(전부 · 채점 2번) 중 읽음 12 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 12,
+   "alternativesRead": 12
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-075",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-074",
+   "note": "/grammar1/gh1-074 로 넘어감 · 답(모범 · 다른 정답 29문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-076",
+   "status": "PASS",
+   "note": "28/28 칸 입력 · 채점 28문항 · 모범답안인데 정답 아님 0 · 대체답안 22개(전부 · 채점 4번) 중 읽음 22 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 22,
+   "alternativesRead": 22
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-077",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-076",
+   "note": "/grammar1/gh1-076 로 넘어감 · 답(모범 · 다른 정답 28문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-078",
+   "status": "PASS",
+   "note": "44/44 칸 입력 · 채점 44문항 · 모범답안인데 정답 아님 0 · 대체답안 60개(전부 · 채점 5번) 중 읽음 60 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 60,
+   "alternativesRead": 60
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-078-1",
+   "status": "PASS",
+   "note": "22/22 칸 입력 · 채점 22문항 · 모범답안인데 정답 아님 0 · 대체답안 30개(전부 · 채점 5번) 중 읽음 30 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 30,
+   "alternativesRead": 30
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-078-2",
+   "status": "PASS",
+   "note": "22/22 칸 입력 · 채점 22문항 · 모범답안인데 정답 아님 0 · 대체답안 30개(전부 · 채점 4번) 중 읽음 30 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 30,
+   "alternativesRead": 30
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-079",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-078",
+   "note": "/grammar1/gh1-078 로 넘어감 · 답(모범 · 다른 정답 44문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-079-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-078-1",
+   "note": "/grammar1/gh1-078-1 로 넘어감 · 답(모범 · 다른 정답 22문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-079-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-078-2",
+   "note": "/grammar1/gh1-078-2 로 넘어감 · 답(모범 · 다른 정답 22문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-080",
+   "status": "PASS",
+   "note": "39/39 칸 입력 · 채점 39문항 · 모범답안인데 정답 아님 0 · 대체답안 71개(전부 · 채점 12번) 중 읽음 71 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 71,
+   "alternativesRead": 71
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-080-1",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 32개(전부 · 채점 4번) 중 읽음 32 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 32,
+   "alternativesRead": 32
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-080-2",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 39개(전부 · 채점 12번) 중 읽음 39 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 39,
+   "alternativesRead": 39
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-081",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-080",
+   "note": "/grammar1/gh1-080 로 넘어감 · 답(모범 · 다른 정답 39문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-081-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-080-1",
+   "note": "/grammar1/gh1-080-1 로 넘어감 · 답(모범 · 다른 정답 20문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-081-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-080-2",
+   "note": "/grammar1/gh1-080-2 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-082",
+   "status": "PASS",
+   "note": "32/32 칸 입력 · 채점 32문항 · 모범답안인데 정답 아님 0 · 대체답안 14개(전부 · 채점 4번) 중 읽음 14 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 14,
+   "alternativesRead": 14
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-083",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-082",
+   "note": "/grammar1/gh1-082 로 넘어감 · 답(모범 · 다른 정답 32문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-084",
+   "status": "PASS",
+   "note": "31/31 칸 입력 · 채점 31문항 · 모범답안인데 정답 아님 0 · 대체답안 32개(전부 · 채점 4번) 중 읽음 32 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 32,
+   "alternativesRead": 32
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-085",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-084",
+   "note": "/grammar1/gh1-084 로 넘어감 · 답(모범 · 다른 정답 31문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-088",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 31개(전부 · 채점 5번) 중 읽음 31 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 31,
+   "alternativesRead": 31
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-089",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-088",
+   "note": "/grammar1/gh1-088 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-090",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 65개(전부 · 채점 11번) 중 읽음 65 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 65,
+   "alternativesRead": 65
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-091",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-090",
+   "note": "/grammar1/gh1-090 로 넘어감 · 답(모범 · 다른 정답 20문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-092",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 49개(전부 · 채점 10번) 중 읽음 49 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 49,
+   "alternativesRead": 49
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-093",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-092",
+   "note": "/grammar1/gh1-092 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-094",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 93개(전부 · 채점 16번) 중 읽음 93 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 93,
+   "alternativesRead": 93
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-095",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-094",
+   "note": "/grammar1/gh1-094 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-096",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 70개(전부 · 채점 7번) 중 읽음 70 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 70,
+   "alternativesRead": 70
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-097",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-096",
+   "note": "/grammar1/gh1-096 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-098",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 69개(전부 · 채점 9번) 중 읽음 69 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 69,
+   "alternativesRead": 69
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-099",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-098",
+   "note": "/grammar1/gh1-098 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-100",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 87개(전부 · 채점 11번) 중 읽음 87 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 87,
+   "alternativesRead": 87
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-101",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-100",
+   "note": "/grammar1/gh1-100 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-102",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 72개(전부 · 채점 10번) 중 읽음 72 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 72,
+   "alternativesRead": 72
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-103",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-102",
+   "note": "/grammar1/gh1-102 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-106",
+   "status": "PASS",
+   "note": "35/35 칸 입력 · 채점 35문항 · 모범답안인데 정답 아님 0 · 대체답안 132개(전부 · 채점 7번) 중 읽음 132 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 132,
+   "alternativesRead": 132
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-107",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-106",
+   "note": "/grammar1/gh1-106 로 넘어감 · 답(모범 · 다른 정답 35문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-108",
+   "status": "PASS",
+   "note": "35/35 칸 입력 · 채점 35문항 · 모범답안인데 정답 아님 0 · 대체답안 144개(전부 · 채점 10번) 중 읽음 144 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 144,
+   "alternativesRead": 144
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-109",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-108",
+   "note": "/grammar1/gh1-108 로 넘어감 · 답(모범 · 다른 정답 35문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-110",
+   "status": "PASS",
+   "note": "38/38 칸 입력 · 채점 38문항 · 모범답안인데 정답 아님 0 · 대체답안 108개(전부 · 채점 7번) 중 읽음 108 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 108,
+   "alternativesRead": 108
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-110-1",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 58개(전부 · 채점 7번) 중 읽음 58 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 58,
+   "alternativesRead": 58
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-110-2",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 54개(전부 · 채점 6번) 중 읽음 54 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 54,
+   "alternativesRead": 54
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-111",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-110",
+   "note": "/grammar1/gh1-110 로 넘어감 · 답(모범 · 다른 정답 38문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-111-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-110-1",
+   "note": "/grammar1/gh1-110-1 로 넘어감 · 답(모범 · 다른 정답 20문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-111-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-110-2",
+   "note": "/grammar1/gh1-110-2 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-112",
+   "status": "PASS",
+   "note": "37/37 칸 입력 · 채점 37문항 · 모범답안인데 정답 아님 0 · 대체답안 102개(전부 · 채점 8번) 중 읽음 102 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 102,
+   "alternativesRead": 102
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-112-1",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 50개(전부 · 채점 8번) 중 읽음 50 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 50,
+   "alternativesRead": 50
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-112-2",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 52개(전부 · 채점 7번) 중 읽음 52 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 52,
+   "alternativesRead": 52
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-113",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-112",
+   "note": "/grammar1/gh1-112 로 넘어감 · 답(모범 · 다른 정답 37문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-113-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-112-1",
+   "note": "/grammar1/gh1-112-1 로 넘어감 · 답(모범 · 다른 정답 18문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-113-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-112-2",
+   "note": "/grammar1/gh1-112-2 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-116",
+   "status": "PASS",
+   "note": "37/37 칸 입력 · 채점 37문항 · 모범답안인데 정답 아님 0 · 대체답안 132개(전부 · 채점 7번) 중 읽음 132 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 132,
+   "alternativesRead": 132
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-116-1",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 80개(전부 · 채점 7번) 중 읽음 80 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 80,
+   "alternativesRead": 80
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-116-2",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 52개(전부 · 채점 5번) 중 읽음 52 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 52,
+   "alternativesRead": 52
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-117",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-116",
+   "note": "/grammar1/gh1-116 로 넘어감 · 답(모범 · 다른 정답 37문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-117-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-116-1",
+   "note": "/grammar1/gh1-116-1 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-117-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-116-2",
+   "note": "/grammar1/gh1-116-2 로 넘어감 · 답(모범 · 다른 정답 18문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-118",
+   "status": "PASS",
+   "note": "37/37 칸 입력 · 채점 37문항 · 모범답안인데 정답 아님 0 · 대체답안 111개(전부 · 채점 14번) 중 읽음 111 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 111,
+   "alternativesRead": 111
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-118-1",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 58개(전부 · 채점 6번) 중 읽음 58 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 58,
+   "alternativesRead": 58
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-118-2",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 53개(전부 · 채점 14번) 중 읽음 53 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 53,
+   "alternativesRead": 53
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-119",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-118",
+   "note": "/grammar1/gh1-118 로 넘어감 · 답(모범 · 다른 정답 37문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-119-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-118-1",
+   "note": "/grammar1/gh1-118-1 로 넘어감 · 답(모범 · 다른 정답 18문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-119-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-118-2",
+   "note": "/grammar1/gh1-118-2 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-120",
+   "status": "PASS",
+   "note": "37/37 칸 입력 · 채점 37문항 · 모범답안인데 정답 아님 0 · 대체답안 84개(전부 · 채점 6번) 중 읽음 84 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 84,
+   "alternativesRead": 84
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-120-1",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 40개(전부 · 채점 5번) 중 읽음 40 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 40,
+   "alternativesRead": 40
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-120-2",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 44개(전부 · 채점 6번) 중 읽음 44 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 44,
+   "alternativesRead": 44
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-121",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-120",
+   "note": "/grammar1/gh1-120 로 넘어감 · 답(모범 · 다른 정답 37문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-121-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-120-1",
+   "note": "/grammar1/gh1-120-1 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-121-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-120-2",
+   "note": "/grammar1/gh1-120-2 로 넘어감 · 답(모범 · 다른 정답 18문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-122",
+   "status": "PASS",
+   "note": "38/38 칸 입력 · 채점 38문항 · 모범답안인데 정답 아님 0 · 대체답안 131개(전부 · 채점 10번) 중 읽음 131 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 131,
+   "alternativesRead": 131
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-122-1",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 65개(전부 · 채점 10번) 중 읽음 65 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 65,
+   "alternativesRead": 65
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-122-2",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 66개(전부 · 채점 8번) 중 읽음 66 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 66,
+   "alternativesRead": 66
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-123",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-122",
+   "note": "/grammar1/gh1-122 로 넘어감 · 답(모범 · 다른 정답 38문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-123-1",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-122-1",
+   "note": "/grammar1/gh1-122-1 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar1",
+   "id": "gh1-123-2",
+   "status": "PASS",
+   "redirect": "/grammar1/gh1-122-2",
+   "note": "/grammar1/gh1-122-2 로 넘어감 · 답(모범 · 다른 정답 19문항)이 그 쪽과 같아 그 결과 그대로",
+   "alternatives": 0,
+   "alternativesRead": 0
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-007",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 49개(전부 · 채점 8번) 중 읽음 49 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 49,
+   "alternativesRead": 49
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-007-1",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 49개(전부 · 채점 8번) 중 읽음 49 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 49,
+   "alternativesRead": 49
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-008",
+   "status": "PASS",
+   "note": "17/17 칸 입력 · 채점 17문항 · 모범답안인데 정답 아님 0 · 대체답안 50개(전부 · 채점 8번) 중 읽음 50 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 50,
+   "alternativesRead": 50
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-008-1",
+   "status": "PASS",
+   "note": "17/17 칸 입력 · 채점 17문항 · 모범답안인데 정답 아님 0 · 대체답안 50개(전부 · 채점 8번) 중 읽음 50 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 50,
+   "alternativesRead": 50
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-009",
+   "status": "PASS",
+   "note": "17/17 칸 입력 · 채점 17문항 · 모범답안인데 정답 아님 0 · 대체답안 46개(전부 · 채점 7번) 중 읽음 46 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 46,
+   "alternativesRead": 46
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-009-1",
+   "status": "PASS",
+   "note": "17/17 칸 입력 · 채점 17문항 · 모범답안인데 정답 아님 0 · 대체답안 46개(전부 · 채점 7번) 중 읽음 46 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 46,
+   "alternativesRead": 46
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-010",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 55개(전부 · 채점 8번) 중 읽음 55 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 55,
+   "alternativesRead": 55
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-010-1",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 55개(전부 · 채점 8번) 중 읽음 55 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 55,
+   "alternativesRead": 55
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-011",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 52개(전부 · 채점 6번) 중 읽음 52 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 52,
+   "alternativesRead": 52
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-011-1",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 52개(전부 · 채점 6번) 중 읽음 52 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 52,
+   "alternativesRead": 52
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-012",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 61개(전부 · 채점 8번) 중 읽음 61 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 61,
+   "alternativesRead": 61
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-012-1",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 61개(전부 · 채점 8번) 중 읽음 61 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 61,
+   "alternativesRead": 61
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-013",
+   "status": "PASS",
+   "note": "23/23 칸 입력 · 채점 23문항 · 모범답안인데 정답 아님 0 · 대체답안 44개(전부 · 채점 6번) 중 읽음 44 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 44,
+   "alternativesRead": 44
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-013-1",
+   "status": "PASS",
+   "note": "23/23 칸 입력 · 채점 23문항 · 모범답안인데 정답 아님 0 · 대체답안 44개(전부 · 채점 6번) 중 읽음 44 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 44,
+   "alternativesRead": 44
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-014",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 40개(전부 · 채점 5번) 중 읽음 40 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 40,
+   "alternativesRead": 40
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-014-1",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 40개(전부 · 채점 5번) 중 읽음 40 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 40,
+   "alternativesRead": 40
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-015",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 19개(전부 · 채점 5번) 중 읽음 19 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 19,
+   "alternativesRead": 19
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-015-1",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 19개(전부 · 채점 5번) 중 읽음 19 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 19,
+   "alternativesRead": 19
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-016",
+   "status": "PASS",
+   "note": "36/36 칸 입력 · 채점 36문항 · 모범답안인데 정답 아님 0 · 대체답안 58개(전부 · 채점 5번) 중 읽음 58 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 58,
+   "alternativesRead": 58
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-016-1",
+   "status": "PASS",
+   "note": "36/36 칸 입력 · 채점 36문항 · 모범답안인데 정답 아님 0 · 대체답안 58개(전부 · 채점 5번) 중 읽음 58 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 58,
+   "alternativesRead": 58
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-017",
+   "status": "PASS",
+   "note": "27/27 칸 입력 · 채점 27문항 · 모범답안인데 정답 아님 0 · 대체답안 41개(전부 · 채점 4번) 중 읽음 41 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 41,
+   "alternativesRead": 41
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-017-1",
+   "status": "PASS",
+   "note": "27/27 칸 입력 · 채점 27문항 · 모범답안인데 정답 아님 0 · 대체답안 41개(전부 · 채점 4번) 중 읽음 41 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 41,
+   "alternativesRead": 41
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-018",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 31개(전부 · 채점 3번) 중 읽음 31 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 31,
+   "alternativesRead": 31
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-018-1",
+   "status": "PASS",
+   "note": "25/25 칸 입력 · 채점 25문항 · 모범답안인데 정답 아님 0 · 대체답안 31개(전부 · 채점 3번) 중 읽음 31 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 31,
+   "alternativesRead": 31
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-019",
+   "status": "PASS",
+   "note": "26/26 칸 입력 · 채점 26문항 · 모범답안인데 정답 아님 0 · 대체답안 57개(전부 · 채점 7번) 중 읽음 57 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 57,
+   "alternativesRead": 57
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-019-1",
+   "status": "PASS",
+   "note": "26/26 칸 입력 · 채점 26문항 · 모범답안인데 정답 아님 0 · 대체답안 57개(전부 · 채점 7번) 중 읽음 57 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 57,
+   "alternativesRead": 57
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-020",
+   "status": "PASS",
+   "note": "26/26 칸 입력 · 채점 26문항 · 모범답안인데 정답 아님 0 · 대체답안 37개(전부 · 채점 5번) 중 읽음 37 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 37,
+   "alternativesRead": 37
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-020-1",
+   "status": "PASS",
+   "note": "26/26 칸 입력 · 채점 26문항 · 모범답안인데 정답 아님 0 · 대체답안 37개(전부 · 채점 5번) 중 읽음 37 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 37,
+   "alternativesRead": 37
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-021",
+   "status": "PASS",
+   "note": "23/23 칸 입력 · 채점 23문항 · 모범답안인데 정답 아님 0 · 대체답안 35개(전부 · 채점 4번) 중 읽음 35 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 35,
+   "alternativesRead": 35
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-021-1",
+   "status": "PASS",
+   "note": "23/23 칸 입력 · 채점 23문항 · 모범답안인데 정답 아님 0 · 대체답안 35개(전부 · 채점 4번) 중 읽음 35 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 35,
+   "alternativesRead": 35
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-022",
+   "status": "PASS",
+   "note": "22/22 칸 입력 · 채점 22문항 · 모범답안인데 정답 아님 0 · 대체답안 34개(전부 · 채점 6번) 중 읽음 34 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 34,
+   "alternativesRead": 34
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-022-1",
+   "status": "PASS",
+   "note": "22/22 칸 입력 · 채점 22문항 · 모범답안인데 정답 아님 0 · 대체답안 34개(전부 · 채점 6번) 중 읽음 34 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 34,
+   "alternativesRead": 34
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-023",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 36개(전부 · 채점 5번) 중 읽음 36 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 36,
+   "alternativesRead": 36
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-023-1",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 36개(전부 · 채점 5번) 중 읽음 36 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 36,
+   "alternativesRead": 36
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-024",
+   "status": "PASS",
+   "note": "22/22 칸 입력 · 채점 22문항 · 모범답안인데 정답 아님 0 · 대체답안 56개(전부 · 채점 16번) 중 읽음 56 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 56,
+   "alternativesRead": 56
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-024-1",
+   "status": "PASS",
+   "note": "22/22 칸 입력 · 채점 22문항 · 모범답안인데 정답 아님 0 · 대체답안 56개(전부 · 채점 16번) 중 읽음 56 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 56,
+   "alternativesRead": 56
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-025",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 52개(전부 · 채점 7번) 중 읽음 52 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 52,
+   "alternativesRead": 52
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-025-1",
+   "status": "PASS",
+   "note": "20/20 칸 입력 · 채점 20문항 · 모범답안인데 정답 아님 0 · 대체답안 52개(전부 · 채점 7번) 중 읽음 52 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 52,
+   "alternativesRead": 52
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-026",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 43개(전부 · 채점 5번) 중 읽음 43 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 43,
+   "alternativesRead": 43
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-026-1",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 43개(전부 · 채점 5번) 중 읽음 43 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 43,
+   "alternativesRead": 43
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-027",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 34개(전부 · 채점 5번) 중 읽음 34 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 34,
+   "alternativesRead": 34
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-027-1",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 34개(전부 · 채점 5번) 중 읽음 34 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 34,
+   "alternativesRead": 34
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-028",
+   "status": "PASS",
+   "note": "26/26 칸 입력 · 채점 26문항 · 모범답안인데 정답 아님 0 · 대체답안 30개(전부 · 채점 3번) 중 읽음 30 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 30,
+   "alternativesRead": 30
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-028-1",
+   "status": "PASS",
+   "note": "26/26 칸 입력 · 채점 26문항 · 모범답안인데 정답 아님 0 · 대체답안 30개(전부 · 채점 3번) 중 읽음 30 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 30,
+   "alternativesRead": 30
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-029",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 44개(전부 · 채점 5번) 중 읽음 44 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 44,
+   "alternativesRead": 44
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-029-1",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 44개(전부 · 채점 5번) 중 읽음 44 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 44,
+   "alternativesRead": 44
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-030",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 34개(전부 · 채점 4번) 중 읽음 34 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 34,
+   "alternativesRead": 34
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-030-1",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 34개(전부 · 채점 4번) 중 읽음 34 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 34,
+   "alternativesRead": 34
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-031",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 40개(전부 · 채점 7번) 중 읽음 40 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 40,
+   "alternativesRead": 40
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-031-1",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 40개(전부 · 채점 7번) 중 읽음 40 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 40,
+   "alternativesRead": 40
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-032",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 33개(전부 · 채점 8번) 중 읽음 33 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 33,
+   "alternativesRead": 33
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-032-1",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 33개(전부 · 채점 8번) 중 읽음 33 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 33,
+   "alternativesRead": 33
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-033",
+   "status": "PASS",
+   "note": "17/17 칸 입력 · 채점 17문항 · 모범답안인데 정답 아님 0 · 대체답안 55개(전부 · 채점 5번) 중 읽음 55 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 55,
+   "alternativesRead": 55
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-033-1",
+   "status": "PASS",
+   "note": "17/17 칸 입력 · 채점 17문항 · 모범답안인데 정답 아님 0 · 대체답안 55개(전부 · 채점 5번) 중 읽음 55 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 55,
+   "alternativesRead": 55
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-034",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 48개(전부 · 채점 9번) 중 읽음 48 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 48,
+   "alternativesRead": 48
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-034-1",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 48개(전부 · 채점 9번) 중 읽음 48 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 48,
+   "alternativesRead": 48
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-035",
+   "status": "PASS",
+   "note": "12/12 칸 입력 · 채점 12문항 · 모범답안인데 정답 아님 0 · 대체답안 47개(전부 · 채점 7번) 중 읽음 47 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 47,
+   "alternativesRead": 47
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-035-1",
+   "status": "PASS",
+   "note": "12/12 칸 입력 · 채점 12문항 · 모범답안인데 정답 아님 0 · 대체답안 47개(전부 · 채점 7번) 중 읽음 47 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 47,
+   "alternativesRead": 47
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-036",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 50개(전부 · 채점 6번) 중 읽음 50 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 50,
+   "alternativesRead": 50
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-036-1",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 50개(전부 · 채점 6번) 중 읽음 50 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 50,
+   "alternativesRead": 50
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-037",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 44개(전부 · 채점 6번) 중 읽음 44 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 44,
+   "alternativesRead": 44
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-037-1",
+   "status": "PASS",
+   "note": "18/18 칸 입력 · 채점 18문항 · 모범답안인데 정답 아님 0 · 대체답안 44개(전부 · 채점 6번) 중 읽음 44 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 44,
+   "alternativesRead": 44
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-038",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 43개(전부 · 채점 6번) 중 읽음 43 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 43,
+   "alternativesRead": 43
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-038-1",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 43개(전부 · 채점 6번) 중 읽음 43 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 43,
+   "alternativesRead": 43
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-039",
+   "status": "PASS",
+   "note": "14/14 칸 입력 · 채점 14문항 · 모범답안인데 정답 아님 0 · 대체답안 37개(전부 · 채점 5번) 중 읽음 37 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 37,
+   "alternativesRead": 37
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-039-1",
+   "status": "PASS",
+   "note": "14/14 칸 입력 · 채점 14문항 · 모범답안인데 정답 아님 0 · 대체답안 37개(전부 · 채점 5번) 중 읽음 37 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 37,
+   "alternativesRead": 37
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-040",
+   "status": "PASS",
+   "note": "10/10 칸 입력 · 채점 10문항 · 모범답안인데 정답 아님 0 · 대체답안 49개(전부 · 채점 12번) 중 읽음 49 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 49,
+   "alternativesRead": 49
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-040-1",
+   "status": "PASS",
+   "note": "10/10 칸 입력 · 채점 10문항 · 모범답안인데 정답 아님 0 · 대체답안 49개(전부 · 채점 12번) 중 읽음 49 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 49,
+   "alternativesRead": 49
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-041",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 23개(전부 · 채점 5번) 중 읽음 23 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 23,
+   "alternativesRead": 23
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-041-1",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 23개(전부 · 채점 5번) 중 읽음 23 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 23,
+   "alternativesRead": 23
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-042",
+   "status": "PASS",
+   "note": "12/12 칸 입력 · 채점 12문항 · 모범답안인데 정답 아님 0 · 대체답안 29개(전부 · 채점 5번) 중 읽음 29 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 29,
+   "alternativesRead": 29
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-042-1",
+   "status": "PASS",
+   "note": "12/12 칸 입력 · 채점 12문항 · 모범답안인데 정답 아님 0 · 대체답안 29개(전부 · 채점 5번) 중 읽음 29 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 29,
+   "alternativesRead": 29
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-043",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 35개(전부 · 채점 5번) 중 읽음 35 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 35,
+   "alternativesRead": 35
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-043-1",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 35개(전부 · 채점 5번) 중 읽음 35 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 35,
+   "alternativesRead": 35
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-044",
+   "status": "PASS",
+   "note": "12/12 칸 입력 · 채점 12문항 · 모범답안인데 정답 아님 0 · 대체답안 28개(전부 · 채점 5번) 중 읽음 28 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 28,
+   "alternativesRead": 28
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-044-1",
+   "status": "PASS",
+   "note": "12/12 칸 입력 · 채점 12문항 · 모범답안인데 정답 아님 0 · 대체답안 28개(전부 · 채점 5번) 중 읽음 28 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 28,
+   "alternativesRead": 28
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-045",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 37개(전부 · 채점 5번) 중 읽음 37 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 37,
+   "alternativesRead": 37
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-045-1",
+   "status": "PASS",
+   "note": "15/15 칸 입력 · 채점 15문항 · 모범답안인데 정답 아님 0 · 대체답안 37개(전부 · 채점 5번) 중 읽음 37 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 37,
+   "alternativesRead": 37
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-046",
+   "status": "PASS",
+   "note": "14/14 칸 입력 · 채점 14문항 · 모범답안인데 정답 아님 0 · 대체답안 43개(전부 · 채점 5번) 중 읽음 43 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 43,
+   "alternativesRead": 43
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-046-1",
+   "status": "PASS",
+   "note": "14/14 칸 입력 · 채점 14문항 · 모범답안인데 정답 아님 0 · 대체답안 43개(전부 · 채점 5번) 중 읽음 43 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 43,
+   "alternativesRead": 43
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-047",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 57개(전부 · 채점 7번) 중 읽음 57 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 57,
+   "alternativesRead": 57
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-047-1",
+   "status": "PASS",
+   "note": "19/19 칸 입력 · 채점 19문항 · 모범답안인데 정답 아님 0 · 대체답안 57개(전부 · 채점 7번) 중 읽음 57 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 57,
+   "alternativesRead": 57
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-048",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 47개(전부 · 채점 9번) 중 읽음 47 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 47,
+   "alternativesRead": 47
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-048-1",
+   "status": "PASS",
+   "note": "16/16 칸 입력 · 채점 16문항 · 모범답안인데 정답 아님 0 · 대체답안 47개(전부 · 채점 9번) 중 읽음 47 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 47,
+   "alternativesRead": 47
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-049",
+   "status": "PASS",
+   "note": "14/14 칸 입력 · 채점 14문항 · 모범답안인데 정답 아님 0 · 대체답안 37개(전부 · 채점 8번) 중 읽음 37 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 37,
+   "alternativesRead": 37
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-049-1",
+   "status": "PASS",
+   "note": "14/14 칸 입력 · 채점 14문항 · 모범답안인데 정답 아님 0 · 대체답안 37개(전부 · 채점 8번) 중 읽음 37 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 37,
+   "alternativesRead": 37
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-050",
+   "status": "PASS",
+   "note": "10/10 칸 입력 · 채점 10문항 · 모범답안인데 정답 아님 0 · 대체답안 20개(전부 · 채점 6번) 중 읽음 20 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 20,
+   "alternativesRead": 20
+  },
+  {
+   "course": "grammar2",
+   "id": "gh2-050-1",
+   "status": "PASS",
+   "note": "10/10 칸 입력 · 채점 10문항 · 모범답안인데 정답 아님 0 · 대체답안 20개(전부 · 채점 6번) 중 읽음 20 · 정답 아님 0",
+   "missingInputs": [],
+   "alternatives": 20,
+   "alternativesRead": 20
+  }
+ ]
+}

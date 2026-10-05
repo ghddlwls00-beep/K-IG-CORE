@@ -1,0 +1,8 @@
+﻿free memory 1.34 GB
+port 9980 · free 1.34 GB · 2026-10-04T19:13:38.679Z
+INFO    desktop · 목록 /passoff-grammar · 복습 전: 오늘 복습 · 오답노트 입구 — {"review":{"kind":"due","text":"오늘 복습 · 약 7분","href":"/passoff-grammar/review"},"notes":null}
+PASS    desktop · GET /api/progress/passoff-grammar · 복습 전: 완료 강의(읽기만) — {"status":200,"completed":["pg01-1","pg01-2","pg01-3"]}
+INFO    desktop · 기기 학습 기록(서버에서 받은 사본 · 저장소 비운 새 쪽) · 복습 전: 요약(읽기만) — [{"which":"licence","lessons":{"pg01-1":"2026-10-04","pg01-2":"2026-10-04","pg01-3":"2026-10-04"},"items":58,"byLesson":{"pg01-1":22,"pg01-2":15,"pg01-3":21},"dueDays":{"2026-10-05":58},"reviewDays":{},"wrongNow":0,"wrongKeys":[],"withLapses":0,"log":72,"logBy":{"lesson:lesson":72},"reports":0,"lastStudyDay":"2026-10-04","per":{"pg01-1:p1":"2026-10-05|0||0||0|","pg01-1:p2":"2026-10-05|0||0||0|","pg01-1:p3":"2026-10-05|0||0||0|","pg01-1:p4":"2026-10-05|0||0||0|","pg01-1:p5":"2026-10-05|0||0||0|",
+PASS    desktop · 목록 · 4xx/5xx · 콘솔 오류 · 예외 · 실패한 요청 — 4xx/5xx 0 · 콘솔 0 · 예외 0 · 실패 0
+PASS    desktop · 목록 · 로마자 한국어 낱말 · 'Busan(부산)' 꼴 · 가짜 낱말(whens 등) — 로마자 0 · 가짜 낱말 0
+끝: {"INFO":2,"PASS":3}

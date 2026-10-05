@@ -1,0 +1,8360 @@
+{
+ "at": "2026-10-05T00:42:20.296Z",
+ "selection": {
+  "since": null,
+  "files": 54,
+  "break": null,
+  "records": 5235,
+  "beforeSince": 0,
+  "noCourse": 0,
+  "notCounted": 0,
+  "breakRecords": 0,
+  "breakFiles": [],
+  "localRecords": 0
+ },
+ "naStats": {
+  "adult": {
+   "covered": 6,
+   "uncovered": 0,
+   "legacyName": 0,
+   "absent": 0,
+   "sampled": 48,
+   "notNa": 0
+  },
+  "grammar1": {
+   "covered": 0,
+   "uncovered": 600,
+   "legacyName": 0,
+   "absent": 0,
+   "sampled": 163,
+   "notNa": 0
+  },
+  "grammar2": {
+   "covered": 0,
+   "uncovered": 352,
+   "legacyName": 0,
+   "absent": 0,
+   "sampled": 73,
+   "notNa": 0
+  },
+  "ld": {
+   "covered": 1104,
+   "uncovered": 0,
+   "legacyName": 0,
+   "absent": 0,
+   "sampled": 488,
+   "notNa": 0
+  },
+  "passoff-grammar": {
+   "covered": 0,
+   "uncovered": 0,
+   "legacyName": 0,
+   "absent": 0,
+   "sampled": 55,
+   "notNa": 0
+  },
+  "phonics": {
+   "covered": 0,
+   "uncovered": 0,
+   "legacyName": 0,
+   "absent": 0,
+   "sampled": 173,
+   "notNa": 0
+  },
+  "reading": {
+   "covered": 0,
+   "uncovered": 0,
+   "legacyName": 0,
+   "absent": 996,
+   "sampled": 0,
+   "notNa": 0
+  },
+  "student": {
+   "covered": 42,
+   "uncovered": 0,
+   "legacyName": 0,
+   "absent": 0,
+   "sampled": 72,
+   "notNa": 0
+  }
+ },
+ "lessons": {
+  "rows": [
+   {
+    "course": "STUDENT",
+    "baselineMain": 81,
+    "main": 82,
+    "script": 0,
+    "discovered": 82,
+    "pass": 82,
+    "fail": 0,
+    "blocked": 0,
+    "notTested": 0,
+    "balanced": true
+   },
+   {
+    "course": "ADULT",
+    "baselineMain": 55,
+    "main": 55,
+    "script": 0,
+    "discovered": 55,
+    "pass": 55,
+    "fail": 0,
+    "blocked": 0,
+    "notTested": 0,
+    "balanced": true
+   },
+   {
+    "course": "PASS-OFF GRAMMAR",
+    "baselineMain": 67,
+    "main": 67,
+    "script": 0,
+    "discovered": 67,
+    "pass": 67,
+    "fail": 0,
+    "blocked": 0,
+    "notTested": 0,
+    "balanced": true
+   },
+   {
+    "course": "VOCA",
+    "baselineMain": 195,
+    "main": 195,
+    "script": 0,
+    "discovered": 195,
+    "pass": 195,
+    "fail": 0,
+    "blocked": 0,
+    "notTested": 0,
+    "balanced": true
+   },
+   {
+    "course": "GRAMMAR I",
+    "baselineMain": 53,
+    "main": 53,
+    "script": 141,
+    "discovered": 194,
+    "pass": 0,
+    "fail": 34,
+    "blocked": 160,
+    "notTested": 0,
+    "balanced": true
+   },
+   {
+    "course": "GRAMMAR II",
+    "baselineMain": 44,
+    "main": 44,
+    "script": 44,
+    "discovered": 88,
+    "pass": 0,
+    "fail": 12,
+    "blocked": 76,
+    "notTested": 0,
+    "balanced": true
+   },
+   {
+    "course": "LISTENING",
+    "baselineMain": 276,
+    "main": 276,
+    "script": 276,
+    "discovered": 552,
+    "pass": 551,
+    "fail": 1,
+    "blocked": 0,
+    "notTested": 0,
+    "balanced": true
+   },
+   {
+    "course": "READING",
+    "baselineMain": 256,
+    "main": 256,
+    "script": 256,
+    "discovered": 512,
+    "pass": 503,
+    "fail": 9,
+    "blocked": 0,
+    "notTested": 0,
+    "balanced": true
+   }
+  ],
+  "totals": {
+   "discovered": 1745,
+   "main": 1028,
+   "script": 717,
+   "pass": 1453,
+   "fail": 56,
+   "blocked": 236,
+   "notTested": 0,
+   "balanced": true
+  },
+  "blockedReasons": {
+   "점검 BLOCKED — graded input · NA 인데 대신 본 기록 없음 (coveredBy 없음)": 236
+  },
+  "detail": {
+   "student": {
+    "s1-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s1-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s1-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s1-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s1-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "s1-6": {
+     "status": "PASS",
+     "why": []
+    },
+    "s10-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s10-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s10-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s10-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s10-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "s11-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s11-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s11-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s11-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s12-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s12-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s12-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s12-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s13-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s13-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s13-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s14-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s14-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s14-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s15-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s15-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s15-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s16-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s16-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s16-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s17-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s17-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s17-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s17-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s18-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s18-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s18-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s19-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s19-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s19-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s19-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s2-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s2-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s2-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s2-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s2-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "s2-6": {
+     "status": "PASS",
+     "why": []
+    },
+    "s20-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s20-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s20-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s20-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s20-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "s3-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s3-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s3-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s3-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s4-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s4-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s4-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s4-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s4-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "s4-6": {
+     "status": "PASS",
+     "why": []
+    },
+    "s5-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s5-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s5-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s5-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s5-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "s6-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s6-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s6-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s6-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s7-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s7-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s7-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s8-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s8-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s8-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "s8-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "s9-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "s9-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "s9-3": {
+     "status": "PASS",
+     "why": []
+    }
+   },
+   "adult": {
+    "a1-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a1-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a1-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a1-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "a1-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "a1-6": {
+     "status": "PASS",
+     "why": []
+    },
+    "a10-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a10-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a10-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a10-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "a10-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "a11-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a11-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a11-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a12-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a12-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a12-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a2-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a2-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a2-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a2-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "a2-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "a2-6": {
+     "status": "PASS",
+     "why": []
+    },
+    "a3-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a3-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a3-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a3-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "a3-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "a4-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a4-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a4-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a4-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "a4-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "a4-6": {
+     "status": "PASS",
+     "why": []
+    },
+    "a5-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a5-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a5-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a5-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "a5-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "a6-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a6-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a6-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a6-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "a6-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "a7-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a7-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a7-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a7-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "a8-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a8-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a8-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a9-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "a9-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "a9-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "a9-4": {
+     "status": "PASS",
+     "why": []
+    }
+   },
+   "passoff-grammar": {
+    "pg01-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg01-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg01-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg02-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg02-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg02-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg03-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg03-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg03-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg04-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg04-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg04-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg04-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg04-5": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg05-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg05-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg05-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg05-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg06-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg06-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg06-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg07-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg07-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg07-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg07-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg08-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg08-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg08-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg08-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg09-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg09-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg09-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg09-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg10-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg10-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg10-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg11-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg11-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg11-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg11-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg12-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg12-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg12-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg12-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg13-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg13-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg13-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg13-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg14-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg14-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg15-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg15-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg16-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg16-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg16-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg17-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg17-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg17-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg18-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg18-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg18-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg18-4": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg19-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg19-2": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg19-3": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg20-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pg20-2": {
+     "status": "PASS",
+     "why": []
+    }
+   },
+   "phonics": {
+    "hv-01": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-02": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-03": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-04": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-05": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-06": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-07": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-08": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-09": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-10": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-11": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-12": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-13": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-14": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-15": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-16": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-17": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-18": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-19": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-20": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-21": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-22": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-23": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-24": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-25": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-26": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-27": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-28": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-29": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-30": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-31": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-32": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-33": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-34": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-35": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-36": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-37": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-38": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-39": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-40": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-41": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-42": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-43": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-44": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-45": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-46": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-47": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-48": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-49": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-50": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-51": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-52": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-53": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-54": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-55": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-56": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-57": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-58": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-59": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-60": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-61": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-62": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-63": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-64": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-65": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-66": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-67": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-68": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-69": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-70": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-71": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-72": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-73": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-74": {
+     "status": "PASS",
+     "why": []
+    },
+    "hv-75": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-01": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-02": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-03": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-04": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-05": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-06": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-07": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-08": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-09": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-10": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-11": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-12": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-13": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-14": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-15": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-16": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-17": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-18": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-19": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-20": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-21": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-22": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-23": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-24": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-25": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-26": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-27": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-28": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-29": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-30": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-31": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-32": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-33": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-34": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-35": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-36": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-37": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-38": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-39": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv1-40": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-01": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-02": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-03": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-04": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-05": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-06": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-07": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-08": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-09": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-10": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-11": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-12": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-13": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-14": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-15": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-16": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-17": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-18": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-19": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-20": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-21": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-22": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-23": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-24": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-25": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-26": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-27": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-28": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-29": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-30": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-31": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-32": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-33": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-34": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-35": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-36": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-37": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-38": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-39": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv2-40": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-01": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-02": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-03": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-04": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-05": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-06": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-07": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-08": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-09": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-10": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-11": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-12": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-13": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-14": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-15": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-16": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-17": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-18": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-19": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-20": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-21": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-22": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-23": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-24": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-25": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-26": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-27": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-28": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-29": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-30": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-31": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-32": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-33": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-34": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-35": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-36": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-37": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-38": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-39": {
+     "status": "PASS",
+     "why": []
+    },
+    "mv3-40": {
+     "status": "PASS",
+     "why": []
+    }
+   },
+   "grammar1": {
+    "gh1-006": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-008\""
+     ]
+    },
+    "gh1-006-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-006-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-007": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-007-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-007-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-008": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-006\""
+     ]
+    },
+    "gh1-008-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-008-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-009": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-009-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-009-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-010": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-008\""
+     ]
+    },
+    "gh1-010-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-010-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-011": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-011-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-011-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-012": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-010\""
+     ]
+    },
+    "gh1-012-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-012-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-013": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-013-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-013-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-014": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 이전 문장 → /grammar1/gh1-012\""
+     ]
+    },
+    "gh1-014-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-014-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-015": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-015-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-015-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-016": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-014\""
+     ]
+    },
+    "gh1-016-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-016-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-017": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-017-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-017-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-020": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-021": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-022": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-023": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-024": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-025": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-026": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-027": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-028": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-029": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-030": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-031": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-032": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-033": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-034": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-035": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-036": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 이전 문장 → /grammar1/gh1-034\""
+     ]
+    },
+    "gh1-037": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-038": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-039": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-040": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-041": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-042": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 다음 Step → → /grammar1/gh1-040\""
+     ]
+    },
+    "gh1-042-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-042-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-043": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-043-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-043-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-044": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 다음 Step → → /grammar1/gh1-042\""
+     ]
+    },
+    "gh1-044-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-044-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-045": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-045-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-045-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-046": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-044\""
+     ]
+    },
+    "gh1-046-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-046-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-047": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-047-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-047-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-050": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 다음 Step → → /grammar1/gh1-046\""
+     ]
+    },
+    "gh1-050-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-050-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-051": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-051-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-051-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-052": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-050\""
+     ]
+    },
+    "gh1-052-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-052-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-053": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-053-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-053-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-054": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-052\""
+     ]
+    },
+    "gh1-054-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-054-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-055": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-055-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-055-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-056": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-054\""
+     ]
+    },
+    "gh1-056-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-056-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-057": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-057-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-057-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-058": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 다음 Step → → /grammar1/gh1-056\""
+     ]
+    },
+    "gh1-058-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-058-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-059": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-059-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-059-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-060": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: #8 → /grammar1/gh1-058\""
+     ]
+    },
+    "gh1-061": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-062": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 다음 Step → → /grammar1/gh1-060\""
+     ]
+    },
+    "gh1-063": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-064": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 다음 Step → → /grammar1/gh1-062\""
+     ]
+    },
+    "gh1-065": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-066": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-067": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-068": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: #8 → /grammar1/gh1-066\""
+     ]
+    },
+    "gh1-069": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-072": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-073": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-074": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 다음 Step → → /grammar1/gh1-072\""
+     ]
+    },
+    "gh1-075": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-076": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-074\""
+     ]
+    },
+    "gh1-077": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-078": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 다음 Step → → /grammar1/gh1-076\""
+     ]
+    },
+    "gh1-078-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-078-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-079": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-079-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-079-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-080": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-078\""
+     ]
+    },
+    "gh1-080-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-080-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-081": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-081-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-081-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-082": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-080\"",
+      "small · problem · \"control navigated away: 다음 묶음 → → /grammar2\""
+     ]
+    },
+    "gh1-083": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-084": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 이전 문장 → /grammar1/gh1-082\"",
+      "small · problem · \"control navigated away: 다음 묶음 → → /grammar2\""
+     ]
+    },
+    "gh1-085": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-088": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-089": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-090": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-091": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-092": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-093": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-094": {
+     "status": "FAIL",
+     "why": [
+      "small · problem · \"control navigated away: 다음 묶음 → → /grammar2\""
+     ]
+    },
+    "gh1-095": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-096": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-097": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-098": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-099": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-100": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-101": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-102": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-103": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-106": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-102\""
+     ]
+    },
+    "gh1-107": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-108": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-106\""
+     ]
+    },
+    "gh1-109": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-110": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 다음 Step → → /grammar1/gh1-108\""
+     ]
+    },
+    "gh1-110-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-110-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-111": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-111-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-111-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-112": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 이전 문장 → /grammar1/gh1-110\""
+     ]
+    },
+    "gh1-112-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-112-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-113": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-113-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-113-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-116": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-112\""
+     ]
+    },
+    "gh1-116-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-116-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-117": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-117-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-117-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-118": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-116\"",
+      "small · problem · \"control navigated away: 다음 묶음 → → /grammar2\""
+     ]
+    },
+    "gh1-118-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-118-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-119": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-119-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-119-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-120": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-118\""
+     ]
+    },
+    "gh1-120-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-120-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-121": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-121-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-121-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-122": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar1/gh1-120\"",
+      "small · problem · \"control navigated away: 다음 묶음 → → /grammar2\""
+     ]
+    },
+    "gh1-122-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-122-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-123": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-123-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh1-123-2": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    }
+   },
+   "grammar2": {
+    "gh2-007": {
+     "status": "FAIL",
+     "why": [
+      "small · problem · \"control navigated away: 1번 말로 답하기 → /grammar2\""
+     ]
+    },
+    "gh2-007-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-008": {
+     "status": "FAIL",
+     "why": [
+      "small · problem · \"control navigated away: 다음 묶음 → → /grammar2\""
+     ]
+    },
+    "gh2-008-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-009": {
+     "status": "FAIL",
+     "why": [
+      "small · problem · \"control navigated away: 다음 묶음 → → /grammar2\""
+     ]
+    },
+    "gh2-009-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-010": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-010-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-011": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-011-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-012": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-012-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-013": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-013-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-014": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-014-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-015": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-015-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-016": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar2/gh2-015\""
+     ]
+    },
+    "gh2-016-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-017": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar2/gh2-016\""
+     ]
+    },
+    "gh2-017-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-018": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-018-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-019": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 다음 Step → → /grammar2/gh2-018\""
+     ]
+    },
+    "gh2-019-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-020": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: 다음 Step → → /grammar2/gh2-019\""
+     ]
+    },
+    "gh2-020-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-021": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-021-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-022": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-022-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-023": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-023-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-024": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-024-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-025": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-025-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-026": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-026-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-027": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-027-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-028": {
+     "status": "FAIL",
+     "why": [
+      "desktop · problem · \"control navigated away: ? → /grammar2/gh2-027\""
+     ]
+    },
+    "gh2-028-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-029": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-029-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-030": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-030-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-031": {
+     "status": "FAIL",
+     "why": [
+      "small · problem · \"control navigated away: 다음 묶음 → → /grammar2\""
+     ]
+    },
+    "gh2-031-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-032": {
+     "status": "FAIL",
+     "why": [
+      "small · problem · \"control navigated away: 다음 묶음 → → /grammar2\""
+     ]
+    },
+    "gh2-032-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-033": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-033-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-034": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-034-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-035": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-035-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-036": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-036-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-037": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-037-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-038": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-038-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-039": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-039-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-040": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-040-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-041": {
+     "status": "FAIL",
+     "why": [
+      "small · problem · \"control navigated away: 1번 말로 답하기 → /grammar2\""
+     ]
+    },
+    "gh2-041-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-042": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-042-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-043": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-043-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-044": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-044-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-045": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-045-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-046": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-046-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-047": {
+     "status": "FAIL",
+     "why": [
+      "small · problem · \"control navigated away: 다음 묶음 → → /grammar2\""
+     ]
+    },
+    "gh2-047-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-048": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-048-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-049": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-049-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-050": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "mobile · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "small · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    },
+    "gh2-050-1": {
+     "status": "BLOCKED",
+     "why": [
+      "desktop · graded input · step 2 · NA 인데 대신 본 기록 없음 (coveredBy 없음)",
+      "desktop · graded input · step 4 · NA 인데 대신 본 기록 없음 (coveredBy 없음)"
+     ]
+    }
+   },
+   "ld": {
+    "d001": {
+     "status": "PASS",
+     "why": []
+    },
+    "d001-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d002": {
+     "status": "PASS",
+     "why": []
+    },
+    "d002-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d003": {
+     "status": "PASS",
+     "why": []
+    },
+    "d003-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d004": {
+     "status": "PASS",
+     "why": []
+    },
+    "d004-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d005": {
+     "status": "PASS",
+     "why": []
+    },
+    "d005-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d006": {
+     "status": "PASS",
+     "why": []
+    },
+    "d006-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d007": {
+     "status": "PASS",
+     "why": []
+    },
+    "d007-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d008": {
+     "status": "PASS",
+     "why": []
+    },
+    "d008-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d009": {
+     "status": "PASS",
+     "why": []
+    },
+    "d009-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d010": {
+     "status": "PASS",
+     "why": []
+    },
+    "d010-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d011": {
+     "status": "PASS",
+     "why": []
+    },
+    "d011-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d012": {
+     "status": "PASS",
+     "why": []
+    },
+    "d012-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d013": {
+     "status": "PASS",
+     "why": []
+    },
+    "d013-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d014": {
+     "status": "PASS",
+     "why": []
+    },
+    "d014-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d015": {
+     "status": "PASS",
+     "why": []
+    },
+    "d015-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d016": {
+     "status": "PASS",
+     "why": []
+    },
+    "d016-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d017": {
+     "status": "PASS",
+     "why": []
+    },
+    "d017-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d018": {
+     "status": "PASS",
+     "why": []
+    },
+    "d018-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d019": {
+     "status": "PASS",
+     "why": []
+    },
+    "d019-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d020": {
+     "status": "PASS",
+     "why": []
+    },
+    "d020-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d021": {
+     "status": "PASS",
+     "why": []
+    },
+    "d021-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d022": {
+     "status": "PASS",
+     "why": []
+    },
+    "d022-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d023": {
+     "status": "PASS",
+     "why": []
+    },
+    "d023-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d024": {
+     "status": "PASS",
+     "why": []
+    },
+    "d024-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d025": {
+     "status": "PASS",
+     "why": []
+    },
+    "d025-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d026": {
+     "status": "PASS",
+     "why": []
+    },
+    "d026-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d027": {
+     "status": "PASS",
+     "why": []
+    },
+    "d027-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d028": {
+     "status": "PASS",
+     "why": []
+    },
+    "d028-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d029": {
+     "status": "PASS",
+     "why": []
+    },
+    "d029-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d030": {
+     "status": "PASS",
+     "why": []
+    },
+    "d030-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d031": {
+     "status": "PASS",
+     "why": []
+    },
+    "d031-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d032": {
+     "status": "PASS",
+     "why": []
+    },
+    "d032-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d033": {
+     "status": "PASS",
+     "why": []
+    },
+    "d033-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d034": {
+     "status": "PASS",
+     "why": []
+    },
+    "d034-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d035": {
+     "status": "PASS",
+     "why": []
+    },
+    "d035-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d036": {
+     "status": "PASS",
+     "why": []
+    },
+    "d036-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d037": {
+     "status": "PASS",
+     "why": []
+    },
+    "d037-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d038": {
+     "status": "PASS",
+     "why": []
+    },
+    "d038-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d039": {
+     "status": "PASS",
+     "why": []
+    },
+    "d039-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d040": {
+     "status": "PASS",
+     "why": []
+    },
+    "d040-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d041": {
+     "status": "PASS",
+     "why": []
+    },
+    "d041-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d042": {
+     "status": "PASS",
+     "why": []
+    },
+    "d042-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d043": {
+     "status": "PASS",
+     "why": []
+    },
+    "d043-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d044": {
+     "status": "PASS",
+     "why": []
+    },
+    "d044-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d045": {
+     "status": "PASS",
+     "why": []
+    },
+    "d045-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d046": {
+     "status": "PASS",
+     "why": []
+    },
+    "d046-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d047": {
+     "status": "PASS",
+     "why": []
+    },
+    "d047-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d048": {
+     "status": "PASS",
+     "why": []
+    },
+    "d048-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d049": {
+     "status": "PASS",
+     "why": []
+    },
+    "d049-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d050": {
+     "status": "PASS",
+     "why": []
+    },
+    "d050-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d051": {
+     "status": "PASS",
+     "why": []
+    },
+    "d051-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d052": {
+     "status": "PASS",
+     "why": []
+    },
+    "d052-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d053": {
+     "status": "PASS",
+     "why": []
+    },
+    "d053-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d054": {
+     "status": "PASS",
+     "why": []
+    },
+    "d054-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d055": {
+     "status": "PASS",
+     "why": []
+    },
+    "d055-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d056": {
+     "status": "PASS",
+     "why": []
+    },
+    "d056-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d057": {
+     "status": "PASS",
+     "why": []
+    },
+    "d057-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d058": {
+     "status": "PASS",
+     "why": []
+    },
+    "d058-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d059": {
+     "status": "PASS",
+     "why": []
+    },
+    "d059-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d060": {
+     "status": "PASS",
+     "why": []
+    },
+    "d060-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d061": {
+     "status": "PASS",
+     "why": []
+    },
+    "d061-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d062": {
+     "status": "PASS",
+     "why": []
+    },
+    "d062-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d063": {
+     "status": "PASS",
+     "why": []
+    },
+    "d063-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d064": {
+     "status": "PASS",
+     "why": []
+    },
+    "d064-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d065": {
+     "status": "PASS",
+     "why": []
+    },
+    "d065-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d066": {
+     "status": "PASS",
+     "why": []
+    },
+    "d066-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d067": {
+     "status": "PASS",
+     "why": []
+    },
+    "d067-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d068": {
+     "status": "PASS",
+     "why": []
+    },
+    "d068-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d069": {
+     "status": "PASS",
+     "why": []
+    },
+    "d069-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d070": {
+     "status": "PASS",
+     "why": []
+    },
+    "d070-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d071": {
+     "status": "PASS",
+     "why": []
+    },
+    "d071-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d072": {
+     "status": "PASS",
+     "why": []
+    },
+    "d072-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d073": {
+     "status": "PASS",
+     "why": []
+    },
+    "d073-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d074": {
+     "status": "PASS",
+     "why": []
+    },
+    "d074-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d075": {
+     "status": "PASS",
+     "why": []
+    },
+    "d075-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d076": {
+     "status": "PASS",
+     "why": []
+    },
+    "d076-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d077": {
+     "status": "PASS",
+     "why": []
+    },
+    "d077-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d078": {
+     "status": "PASS",
+     "why": []
+    },
+    "d078-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d079": {
+     "status": "PASS",
+     "why": []
+    },
+    "d079-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d080": {
+     "status": "PASS",
+     "why": []
+    },
+    "d080-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d081": {
+     "status": "PASS",
+     "why": []
+    },
+    "d081-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d082": {
+     "status": "PASS",
+     "why": []
+    },
+    "d082-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d083": {
+     "status": "PASS",
+     "why": []
+    },
+    "d083-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d084": {
+     "status": "PASS",
+     "why": []
+    },
+    "d084-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d085": {
+     "status": "PASS",
+     "why": []
+    },
+    "d085-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d086": {
+     "status": "PASS",
+     "why": []
+    },
+    "d086-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d087": {
+     "status": "PASS",
+     "why": []
+    },
+    "d087-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d088": {
+     "status": "PASS",
+     "why": []
+    },
+    "d088-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d089": {
+     "status": "PASS",
+     "why": []
+    },
+    "d089-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d090": {
+     "status": "PASS",
+     "why": []
+    },
+    "d090-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d091": {
+     "status": "PASS",
+     "why": []
+    },
+    "d091-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d092": {
+     "status": "PASS",
+     "why": []
+    },
+    "d092-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d093": {
+     "status": "PASS",
+     "why": []
+    },
+    "d093-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d094": {
+     "status": "PASS",
+     "why": []
+    },
+    "d094-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d095": {
+     "status": "PASS",
+     "why": []
+    },
+    "d095-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d096": {
+     "status": "PASS",
+     "why": []
+    },
+    "d096-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d097": {
+     "status": "PASS",
+     "why": []
+    },
+    "d097-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d098": {
+     "status": "PASS",
+     "why": []
+    },
+    "d098-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d099": {
+     "status": "PASS",
+     "why": []
+    },
+    "d099-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d100": {
+     "status": "PASS",
+     "why": []
+    },
+    "d100-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d101": {
+     "status": "PASS",
+     "why": []
+    },
+    "d101-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d102": {
+     "status": "PASS",
+     "why": []
+    },
+    "d102-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d103": {
+     "status": "PASS",
+     "why": []
+    },
+    "d103-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d104": {
+     "status": "PASS",
+     "why": []
+    },
+    "d104-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d105": {
+     "status": "PASS",
+     "why": []
+    },
+    "d105-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d106": {
+     "status": "PASS",
+     "why": []
+    },
+    "d106-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d107": {
+     "status": "PASS",
+     "why": []
+    },
+    "d107-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d108": {
+     "status": "PASS",
+     "why": []
+    },
+    "d108-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d109": {
+     "status": "PASS",
+     "why": []
+    },
+    "d109-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d110": {
+     "status": "PASS",
+     "why": []
+    },
+    "d110-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d111": {
+     "status": "PASS",
+     "why": []
+    },
+    "d111-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d112": {
+     "status": "PASS",
+     "why": []
+    },
+    "d112-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d113": {
+     "status": "PASS",
+     "why": []
+    },
+    "d113-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d114": {
+     "status": "PASS",
+     "why": []
+    },
+    "d114-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d115": {
+     "status": "PASS",
+     "why": []
+    },
+    "d115-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d116": {
+     "status": "PASS",
+     "why": []
+    },
+    "d116-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d117": {
+     "status": "PASS",
+     "why": []
+    },
+    "d117-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d118": {
+     "status": "PASS",
+     "why": []
+    },
+    "d118-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d119": {
+     "status": "PASS",
+     "why": []
+    },
+    "d119-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d120": {
+     "status": "PASS",
+     "why": []
+    },
+    "d120-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d121": {
+     "status": "PASS",
+     "why": []
+    },
+    "d121-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d122": {
+     "status": "PASS",
+     "why": []
+    },
+    "d122-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d123": {
+     "status": "PASS",
+     "why": []
+    },
+    "d123-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d124": {
+     "status": "PASS",
+     "why": []
+    },
+    "d124-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d125": {
+     "status": "PASS",
+     "why": []
+    },
+    "d125-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d126": {
+     "status": "PASS",
+     "why": []
+    },
+    "d126-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d127": {
+     "status": "PASS",
+     "why": []
+    },
+    "d127-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d128": {
+     "status": "PASS",
+     "why": []
+    },
+    "d128-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d129": {
+     "status": "PASS",
+     "why": []
+    },
+    "d129-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d130": {
+     "status": "PASS",
+     "why": []
+    },
+    "d130-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d131": {
+     "status": "PASS",
+     "why": []
+    },
+    "d131-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d132": {
+     "status": "PASS",
+     "why": []
+    },
+    "d132-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d133": {
+     "status": "PASS",
+     "why": []
+    },
+    "d133-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d134": {
+     "status": "PASS",
+     "why": []
+    },
+    "d134-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d135": {
+     "status": "PASS",
+     "why": []
+    },
+    "d135-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d136": {
+     "status": "PASS",
+     "why": []
+    },
+    "d136-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d137": {
+     "status": "PASS",
+     "why": []
+    },
+    "d137-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d138": {
+     "status": "PASS",
+     "why": []
+    },
+    "d138-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d139": {
+     "status": "PASS",
+     "why": []
+    },
+    "d139-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d140": {
+     "status": "PASS",
+     "why": []
+    },
+    "d140-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d141": {
+     "status": "PASS",
+     "why": []
+    },
+    "d141-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d142": {
+     "status": "PASS",
+     "why": []
+    },
+    "d142-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d143": {
+     "status": "PASS",
+     "why": []
+    },
+    "d143-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d144": {
+     "status": "PASS",
+     "why": []
+    },
+    "d144-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d145": {
+     "status": "PASS",
+     "why": []
+    },
+    "d145-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d146": {
+     "status": "PASS",
+     "why": []
+    },
+    "d146-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d147": {
+     "status": "PASS",
+     "why": []
+    },
+    "d147-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d148": {
+     "status": "PASS",
+     "why": []
+    },
+    "d148-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d149": {
+     "status": "PASS",
+     "why": []
+    },
+    "d149-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d150": {
+     "status": "PASS",
+     "why": []
+    },
+    "d150-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d151": {
+     "status": "PASS",
+     "why": []
+    },
+    "d151-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d152": {
+     "status": "PASS",
+     "why": []
+    },
+    "d152-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d153": {
+     "status": "PASS",
+     "why": []
+    },
+    "d153-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d154": {
+     "status": "PASS",
+     "why": []
+    },
+    "d154-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d155": {
+     "status": "PASS",
+     "why": []
+    },
+    "d155-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d156": {
+     "status": "PASS",
+     "why": []
+    },
+    "d156-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d157": {
+     "status": "PASS",
+     "why": []
+    },
+    "d157-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d158": {
+     "status": "PASS",
+     "why": []
+    },
+    "d158-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d159": {
+     "status": "PASS",
+     "why": []
+    },
+    "d159-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d160": {
+     "status": "PASS",
+     "why": []
+    },
+    "d160-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d161": {
+     "status": "PASS",
+     "why": []
+    },
+    "d161-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d162": {
+     "status": "PASS",
+     "why": []
+    },
+    "d162-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d163": {
+     "status": "PASS",
+     "why": []
+    },
+    "d163-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d164": {
+     "status": "PASS",
+     "why": []
+    },
+    "d164-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d165": {
+     "status": "PASS",
+     "why": []
+    },
+    "d165-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d166": {
+     "status": "PASS",
+     "why": []
+    },
+    "d166-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d167": {
+     "status": "PASS",
+     "why": []
+    },
+    "d167-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d168": {
+     "status": "PASS",
+     "why": []
+    },
+    "d168-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d169": {
+     "status": "PASS",
+     "why": []
+    },
+    "d169-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d170": {
+     "status": "PASS",
+     "why": []
+    },
+    "d170-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d171": {
+     "status": "PASS",
+     "why": []
+    },
+    "d171-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d172": {
+     "status": "FAIL",
+     "why": [
+      "desktop · audio · Step 3 · 소리클리닉 ▶ dreamed of 듣기 · clip error 4",
+      "desktop · audio · Step 3 · 소리클리닉 ▶ not in 듣기 · clip error 4",
+      "desktop · audio · Step 3 · 소리클리닉 ▶ but in 듣기 · clip error 4"
+     ]
+    },
+    "d172-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d173": {
+     "status": "PASS",
+     "why": []
+    },
+    "d173-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d174": {
+     "status": "PASS",
+     "why": []
+    },
+    "d174-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d175": {
+     "status": "PASS",
+     "why": []
+    },
+    "d175-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d176": {
+     "status": "PASS",
+     "why": []
+    },
+    "d176-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d177": {
+     "status": "PASS",
+     "why": []
+    },
+    "d177-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d178": {
+     "status": "PASS",
+     "why": []
+    },
+    "d178-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d179": {
+     "status": "PASS",
+     "why": []
+    },
+    "d179-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d180": {
+     "status": "PASS",
+     "why": []
+    },
+    "d180-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d181": {
+     "status": "PASS",
+     "why": []
+    },
+    "d181-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d182": {
+     "status": "PASS",
+     "why": []
+    },
+    "d182-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d183": {
+     "status": "PASS",
+     "why": []
+    },
+    "d183-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d184": {
+     "status": "PASS",
+     "why": []
+    },
+    "d184-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d185": {
+     "status": "PASS",
+     "why": []
+    },
+    "d185-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d186": {
+     "status": "PASS",
+     "why": []
+    },
+    "d186-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d187": {
+     "status": "PASS",
+     "why": []
+    },
+    "d187-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d188": {
+     "status": "PASS",
+     "why": []
+    },
+    "d188-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d189": {
+     "status": "PASS",
+     "why": []
+    },
+    "d189-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d190": {
+     "status": "PASS",
+     "why": []
+    },
+    "d190-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d191": {
+     "status": "PASS",
+     "why": []
+    },
+    "d191-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d192": {
+     "status": "PASS",
+     "why": []
+    },
+    "d192-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d193": {
+     "status": "PASS",
+     "why": []
+    },
+    "d193-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d194": {
+     "status": "PASS",
+     "why": []
+    },
+    "d194-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d195": {
+     "status": "PASS",
+     "why": []
+    },
+    "d195-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d196": {
+     "status": "PASS",
+     "why": []
+    },
+    "d196-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d197": {
+     "status": "PASS",
+     "why": []
+    },
+    "d197-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d198": {
+     "status": "PASS",
+     "why": []
+    },
+    "d198-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d199": {
+     "status": "PASS",
+     "why": []
+    },
+    "d199-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d200": {
+     "status": "PASS",
+     "why": []
+    },
+    "d200-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d201": {
+     "status": "PASS",
+     "why": []
+    },
+    "d201-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d202": {
+     "status": "PASS",
+     "why": []
+    },
+    "d202-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d203": {
+     "status": "PASS",
+     "why": []
+    },
+    "d203-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d204": {
+     "status": "PASS",
+     "why": []
+    },
+    "d204-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d205": {
+     "status": "PASS",
+     "why": []
+    },
+    "d205-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d206": {
+     "status": "PASS",
+     "why": []
+    },
+    "d206-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d207": {
+     "status": "PASS",
+     "why": []
+    },
+    "d207-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d208": {
+     "status": "PASS",
+     "why": []
+    },
+    "d208-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d209": {
+     "status": "PASS",
+     "why": []
+    },
+    "d209-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d210": {
+     "status": "PASS",
+     "why": []
+    },
+    "d210-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d211": {
+     "status": "PASS",
+     "why": []
+    },
+    "d211-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d212": {
+     "status": "PASS",
+     "why": []
+    },
+    "d212-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d213": {
+     "status": "PASS",
+     "why": []
+    },
+    "d213-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d214": {
+     "status": "PASS",
+     "why": []
+    },
+    "d214-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d215": {
+     "status": "PASS",
+     "why": []
+    },
+    "d215-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d216": {
+     "status": "PASS",
+     "why": []
+    },
+    "d216-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d217": {
+     "status": "PASS",
+     "why": []
+    },
+    "d217-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d218": {
+     "status": "PASS",
+     "why": []
+    },
+    "d218-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d219": {
+     "status": "PASS",
+     "why": []
+    },
+    "d219-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d220": {
+     "status": "PASS",
+     "why": []
+    },
+    "d220-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d221": {
+     "status": "PASS",
+     "why": []
+    },
+    "d221-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d222": {
+     "status": "PASS",
+     "why": []
+    },
+    "d222-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d223": {
+     "status": "PASS",
+     "why": []
+    },
+    "d223-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d224": {
+     "status": "PASS",
+     "why": []
+    },
+    "d224-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d225": {
+     "status": "PASS",
+     "why": []
+    },
+    "d225-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d226": {
+     "status": "PASS",
+     "why": []
+    },
+    "d226-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d227": {
+     "status": "PASS",
+     "why": []
+    },
+    "d227-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d228": {
+     "status": "PASS",
+     "why": []
+    },
+    "d228-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d229": {
+     "status": "PASS",
+     "why": []
+    },
+    "d229-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d230": {
+     "status": "PASS",
+     "why": []
+    },
+    "d230-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d231": {
+     "status": "PASS",
+     "why": []
+    },
+    "d231-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d232": {
+     "status": "PASS",
+     "why": []
+    },
+    "d232-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d233": {
+     "status": "PASS",
+     "why": []
+    },
+    "d233-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d234": {
+     "status": "PASS",
+     "why": []
+    },
+    "d234-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d235": {
+     "status": "PASS",
+     "why": []
+    },
+    "d235-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d236": {
+     "status": "PASS",
+     "why": []
+    },
+    "d236-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d237": {
+     "status": "PASS",
+     "why": []
+    },
+    "d237-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d238": {
+     "status": "PASS",
+     "why": []
+    },
+    "d238-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d239": {
+     "status": "PASS",
+     "why": []
+    },
+    "d239-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d240": {
+     "status": "PASS",
+     "why": []
+    },
+    "d240-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d241": {
+     "status": "PASS",
+     "why": []
+    },
+    "d241-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d242": {
+     "status": "PASS",
+     "why": []
+    },
+    "d242-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d243": {
+     "status": "PASS",
+     "why": []
+    },
+    "d243-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d244": {
+     "status": "PASS",
+     "why": []
+    },
+    "d244-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d245": {
+     "status": "PASS",
+     "why": []
+    },
+    "d245-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d246": {
+     "status": "PASS",
+     "why": []
+    },
+    "d246-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d247": {
+     "status": "PASS",
+     "why": []
+    },
+    "d247-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d248": {
+     "status": "PASS",
+     "why": []
+    },
+    "d248-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d249": {
+     "status": "PASS",
+     "why": []
+    },
+    "d249-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d250": {
+     "status": "PASS",
+     "why": []
+    },
+    "d250-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d251": {
+     "status": "PASS",
+     "why": []
+    },
+    "d251-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d252": {
+     "status": "PASS",
+     "why": []
+    },
+    "d252-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d253": {
+     "status": "PASS",
+     "why": []
+    },
+    "d253-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d254": {
+     "status": "PASS",
+     "why": []
+    },
+    "d254-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d255": {
+     "status": "PASS",
+     "why": []
+    },
+    "d255-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d256": {
+     "status": "PASS",
+     "why": []
+    },
+    "d256-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d257": {
+     "status": "PASS",
+     "why": []
+    },
+    "d257-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d258": {
+     "status": "PASS",
+     "why": []
+    },
+    "d258-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d259": {
+     "status": "PASS",
+     "why": []
+    },
+    "d259-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d260": {
+     "status": "PASS",
+     "why": []
+    },
+    "d260-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d261": {
+     "status": "PASS",
+     "why": []
+    },
+    "d261-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d262": {
+     "status": "PASS",
+     "why": []
+    },
+    "d262-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d263": {
+     "status": "PASS",
+     "why": []
+    },
+    "d263-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d264": {
+     "status": "PASS",
+     "why": []
+    },
+    "d264-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d265": {
+     "status": "PASS",
+     "why": []
+    },
+    "d265-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d266": {
+     "status": "PASS",
+     "why": []
+    },
+    "d266-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d267": {
+     "status": "PASS",
+     "why": []
+    },
+    "d267-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d268": {
+     "status": "PASS",
+     "why": []
+    },
+    "d268-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d269": {
+     "status": "PASS",
+     "why": []
+    },
+    "d269-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d270": {
+     "status": "PASS",
+     "why": []
+    },
+    "d270-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d271": {
+     "status": "PASS",
+     "why": []
+    },
+    "d271-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d272": {
+     "status": "PASS",
+     "why": []
+    },
+    "d272-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d273": {
+     "status": "PASS",
+     "why": []
+    },
+    "d273-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d274": {
+     "status": "PASS",
+     "why": []
+    },
+    "d274-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d275": {
+     "status": "PASS",
+     "why": []
+    },
+    "d275-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "d276": {
+     "status": "PASS",
+     "why": []
+    },
+    "d276-1": {
+     "status": "PASS",
+     "why": []
+    }
+   },
+   "reading": {
+    "pr001": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr001-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr002": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr002-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr003": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr003-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr004": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr004-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr005": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr005-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr006": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr006-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr007": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr007-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr008": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr008-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr009": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr009-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr010": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr010-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr011": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr011-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr012": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr012-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr013": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr013-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr014": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr014-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr015": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr015-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr016": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr016-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr017": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr017-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr018": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr018-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr019": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr019-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr020": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr020-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr021": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr021-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr022": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr022-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr023": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr023-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr024": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr024-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr025": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr025-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr026": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr026-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr027": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr027-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr028": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr028-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr029": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr029-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr030": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr030-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr031": {
+     "status": "FAIL",
+     "why": [
+      "desktop · wpm · again · ",
+      "desktop · problem · \"wpm[again] WPM = words ÷ the timed minutes: expected 349 / actual 350\""
+     ]
+    },
+    "pr031-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr032": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr032-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr033": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr033-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr034": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr034-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr035": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr035-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr036": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr036-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr037": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr037-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr038": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr038-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr039": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr039-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr040": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr040-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr041": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr041-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr042": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr042-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr043": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr043-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr044": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr044-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr045": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr045-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr046": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr046-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr047": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr047-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr048": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr048-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr049": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr049-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr050": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr050-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr051": {
+     "status": "FAIL",
+     "why": [
+      "desktop · wpm · again · ",
+      "desktop · problem · \"wpm[again] WPM = words ÷ the timed minutes: expected 412 / actual 411\""
+     ]
+    },
+    "pr051-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr052": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr052-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr053": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr053-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr054": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr054-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr055": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr055-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr056": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr056-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr057": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr057-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr058": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr058-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr059": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr059-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr060": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr060-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr061": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr061-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr062": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr062-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr063": {
+     "status": "FAIL",
+     "why": [
+      "desktop · wpm · again · ",
+      "desktop · problem · \"wpm[again] WPM = words ÷ the timed minutes: expected 367 / actual 368\""
+     ]
+    },
+    "pr063-1": {
+     "status": "FAIL",
+     "why": [
+      "desktop · wpm · again · ",
+      "desktop · problem · \"wpm[again] WPM = words ÷ the timed minutes: expected 367 / actual 368\""
+     ]
+    },
+    "pr064": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr064-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr065": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr065-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr066": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr066-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr067": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr067-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr068": {
+     "status": "FAIL",
+     "why": [
+      "desktop · wpm · again · ",
+      "desktop · problem · \"wpm[again] WPM = words ÷ the timed minutes: expected 425 / actual 426\""
+     ]
+    },
+    "pr068-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr069": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr069-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr070": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr070-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr071": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr071-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr072": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr072-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr073": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr073-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr074": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr074-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr075": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr075-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr076": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr076-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr077": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr077-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr078": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr078-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr079": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr079-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr080": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr080-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr081": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr081-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr082": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr082-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr083": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr083-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr084": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr084-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr085": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr085-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr086": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr086-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr087": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr087-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr088": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr088-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr089": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr089-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr090": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr090-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr091": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr091-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr092": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr092-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr093": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr093-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr094": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr094-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr095": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr095-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr096": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr096-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr097": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr097-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr098": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr098-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr099": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr099-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr100": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr100-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr101": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr101-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr102": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr102-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr103": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr103-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr104": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr104-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr105": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr105-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr106": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr106-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr107": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr107-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr108": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr108-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr109": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr109-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr110": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr110-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr111": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr111-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr112": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr112-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr113": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr113-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr114": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr114-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr115": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr115-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr116": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr116-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr117": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr117-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr118": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr118-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr119": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr119-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr120": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr120-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr121": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr121-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr122": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr122-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr123": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr123-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr124": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr124-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr125": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr125-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr126": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr126-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr127": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr127-1": {
+     "status": "FAIL",
+     "why": [
+      "desktop · wpm · again · ",
+      "desktop · problem · \"wpm[again] WPM = words ÷ the timed minutes: expected 313 / actual 312\""
+     ]
+    },
+    "pr128": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr128-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr129": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr129-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr130": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr130-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr131": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr131-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr132": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr132-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr133": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr133-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr134": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr134-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr135": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr135-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr136": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr136-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr137": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr137-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr138": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr138-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr139": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr139-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr140": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr140-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr141": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr141-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr142": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr142-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr143": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr143-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr144": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr144-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr145": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr145-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr146": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr146-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr147": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr147-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr148": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr148-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr149": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr149-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr150": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr150-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr151": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr151-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr152": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr152-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr153": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr153-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr154": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr154-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr155": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr155-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr156": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr156-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr157": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr157-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr158": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr158-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr159": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr159-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr160": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr160-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr161": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr161-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr162": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr162-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr163": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr163-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr164": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr164-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr165": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr165-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr166": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr166-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr167": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr167-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr168": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr168-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr169": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr169-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr170": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr170-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr171": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr171-1": {
+     "status": "FAIL",
+     "why": [
+      "desktop · wpm · again · ",
+      "desktop · problem · \"wpm[again] WPM = words ÷ the timed minutes: expected 331 / actual 332\""
+     ]
+    },
+    "pr172": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr172-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr173": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr173-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr174": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr174-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr175": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr175-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr176": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr176-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr177": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr177-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr178": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr178-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr179": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr179-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr180": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr180-1": {
+     "status": "FAIL",
+     "why": [
+      "desktop · wpm · again · ",
+      "desktop · problem · \"wpm[again] WPM = words ÷ the timed minutes: expected 424 / actual 425\""
+     ]
+    },
+    "pr181": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr181-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr182": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr182-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr183": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr183-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr184": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr184-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr185": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr185-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr186": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr186-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr187": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr187-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr188": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr188-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr189": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr189-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr190": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr190-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr191": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr191-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr192": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr192-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr193": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr193-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr194": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr194-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr195": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr195-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr196": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr196-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr197": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr197-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr198": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr198-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr199": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr199-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr200": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr200-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr201": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr201-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr202": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr202-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr203": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr203-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr204": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr204-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr205": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr205-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr206": {
+     "status": "FAIL",
+     "why": [
+      "desktop · wpm · again · ",
+      "desktop · problem · \"wpm[again] WPM = words ÷ the timed minutes: expected 420 / actual 421\""
+     ]
+    },
+    "pr206-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr207": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr207-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr208": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr208-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr209": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr209-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr210": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr210-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr211": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr211-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr212": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr212-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr213": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr213-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr214": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr214-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr215": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr215-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr216": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr216-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr217": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr217-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr218": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr218-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr219": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr219-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr220": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr220-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr221": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr221-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr222": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr222-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr223": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr223-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr224": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr224-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr225": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr225-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr226": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr226-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr227": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr227-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr228": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr228-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr229": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr229-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr230": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr230-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr231": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr231-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr232": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr232-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr233": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr233-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr234": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr234-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr235": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr235-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr236": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr236-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr237": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr237-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr238": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr238-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr239": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr239-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr240": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr240-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr241": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr241-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr242": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr242-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr243": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr243-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr244": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr244-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr245": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr245-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr246": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr246-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr247": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr247-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr248": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr248-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr249": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr249-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr250": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr250-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr251": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr251-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr252": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr252-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr253": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr253-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr254": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr254-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr255": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr255-1": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr256": {
+     "status": "PASS",
+     "why": []
+    },
+    "pr256-1": {
+     "status": "PASS",
+     "why": []
+    }
+   }
+  }
+ },
+ "deviceOnly": {
+  "READING 3단계 실제 마이크 인식 — headless 불가, 단계 3 · 실제 휴대폰 몫": {
+   "records": 512,
+   "lessons": 512,
+   "viewports": [
+    "desktop"
+   ],
+   "courses": [
+    "reading"
+   ]
+  }
+ },
+ "unitsByCourse": {
+  "student": {
+   "lessons": 82,
+   "expected": 828,
+   "found": 828,
+   "noContent": 0
+  },
+  "adult": {
+   "lessons": 55,
+   "expected": 1715,
+   "found": 1715,
+   "noContent": 0
+  },
+  "passoff-grammar": {
+   "lessons": 67,
+   "expected": 9892,
+   "found": 9892,
+   "noContent": 0
+  },
+  "phonics": {
+   "lessons": 195,
+   "expected": 5831,
+   "found": 5831,
+   "noContent": 0
+  },
+  "grammar1": {
+   "lessons": 194,
+   "expected": 5002,
+   "found": 5002,
+   "noContent": 0
+  },
+  "grammar2": {
+   "lessons": 88,
+   "expected": 1592,
+   "found": 1581,
+   "noContent": 0
+  },
+  "ld": {
+   "lessons": 552,
+   "expected": 4925,
+   "found": 4925,
+   "noContent": 0
+  },
+  "reading": {
+   "lessons": 512,
+   "expected": 20248,
+   "found": 20248,
+   "noContent": 0
+  }
+ },
+ "items": [
+  {
+   "what": "과정 (course)",
+   "identified": 8,
+   "tested": 8,
+   "how": "STUDENT · ADULT · PASS-OFF GRAMMAR · VOCA · GRAMMAR I · GRAMMAR II · LISTENING · READING"
+  },
+  {
+   "what": "챕터·스테이지 (STUDENT)",
+   "identified": 20,
+   "tested": 20,
+   "how": "scripts/check-student-unlock.cjs(out/student-unlock.json 2026-10-02T06:11:56.934Z)"
+  },
+  {
+   "what": "강의 (main + script)",
+   "identified": 1745,
+   "tested": 1745,
+   "how": "out/features/*.jsonl"
+  },
+  {
+   "what": "학습 단위 (화면에 나와야 할 문장·낱말)",
+   "identified": 44925,
+   "tested": "50022 (기대 50033 중 있음 · 데스크톱 기록 1745강)",
+   "how": "이 표가 센 기록 — 강의마다 데스크톱 가장 늦은 기록의 content: STUDENT 828/828(82강) · ADULT 1715/1715(55강) · PASS-OFF GRAMMAR 9892/9892(67강) · VOCA 5831/5831(195강) · GRAMMAR I 5002/5002(194강) · GRAMMAR II 1581/1592(88강) · LISTENING 4925/4925(552강) · READING 20248/20248(512강)"
+  },
+  {
+   "what": "VOCA 낱말",
+   "identified": 5831,
+   "tested": 5831,
+   "how": "scripts/check-data-integrity.cjs"
+  },
+  {
+   "what": "채점 문항",
+   "identified": 11670,
+   "tested": 11670,
+   "how": "scripts/grade-offline.cjs + check-grammar-exam.cjs"
+  },
+  {
+   "what": "딕테이션 문장",
+   "identified": "?",
+   "tested": "?",
+   "how": "scripts/check-dictation.cjs"
+  },
+  {
+   "what": "음성 클립",
+   "identified": 17292,
+   "how": "audio-inventory + probe-missing-clips (전수는 대기열)"
+  },
+  {
+   "what": "음성 버튼 누름",
+   "identified": "?",
+   "tested": "?",
+   "how": "실제 클릭"
+  },
+  {
+   "what": "기능 확인 항목",
+   "identified": "?",
+   "tested": "동일",
+   "how": "out/features-summary.json"
+  },
+  {
+   "what": "교육 내용 검토 대상 강의",
+   "identified": "?",
+   "tested": "?",
+   "how": "scripts/check-review-coverage.cjs"
+  }
+ ]
+}

@@ -1,0 +1,113 @@
+{
+  "part": "adult-sent-7-10",
+  "scope": "ADULT 7~10과 16강의(a7-1~a7-4 · a8-1~a8-3 · a9-1~a9-4 · a10-1~a10-5)의 영어 문장 72 · 한국어 줄 72 · 강의 제목 16(+ label · menuLabel · instruction 각 16 · 과정 목록 장 제목 4 · adult.json lessons 칸 16 대조). 영어 72문장을 STUDENT s17-*~s20-* 와 글자까지 대조.",
+  "readCount": { "sentences": 72, "titles": 16, "words": 0, "chunks": 0, "other": 124 },
+  "findings": [
+    {
+      "id": "A710-01",
+      "course": "adult",
+      "lesson": "a7-2",
+      "file": "content/lessons/adult/a7-2.json",
+      "path": "title (+ menuLabel · blocks[0].text · content/courses/adult.json lessons[a7-2].title — 모두 scripts/build-adult-content.mjs TITLE_FIX 에서 나옴)",
+      "kind": "title",
+      "current": "The Kingdoms Are Divided (삼국의 분열과 통일)",
+      "problem": "강의 내용은 '고조선이 망한 뒤 한반도가 세 왕국으로 나뉨 → 신라가 통일 → 8세기 황금기'다. 영어 제목 'The Kingdoms Are Divided'는 '(그) 왕국들이 나뉜다'로, 나뉜 것이 한반도가 아니라 왕국들인 것처럼 읽히고 통일 이야기가 빠졌다. 한국어 '삼국의 분열과 통일'은 '세 나라가 분열했다'는 뜻이 되어 사실과 다르고(삼국이 쪼개진 적은 없음), 영어 제목과도 뜻이 다르다(영어에는 '통일'이 없음). PPT 머리글 그대로인데, STUDENT s17-2 는 감사에서 'The Three Kingdoms Era (삼국 시대)'로 고쳤다.",
+      "fix": "The Three Kingdoms and Unification (삼국의 성립과 통일) — 또는 STUDENT 와 같게 'The Three Kingdoms Era (삼국 시대)'. TITLE_FIX 의 'The Kingdoms are Divided (삼국의 분열과 통일)' 값을 바꾸면 menuLabel · instruction · adult.json 이 따라 바뀜.",
+      "category": "⑥",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "A710-02",
+      "course": "adult",
+      "lesson": "a10-4",
+      "file": "content/lessons/adult/a10-4.json",
+      "path": "blocks[1].items[4].text (+ chunks[0].en · words[] start/end)",
+      "kind": "sentence-en",
+      "current": "Koreans refer to it as this because it contains many of the old remains of the 신라 Dynasty.",
+      "problem": "'refer to it as this'는 원어민이 쓰지 않는 어색한 표현이다(보통 'call it this' / 'call it that'). 또 같은 강의 #2 · #3 은 '신라 Kingdom'인데 #5 만 '신라 Dynasty'로 같은 나라를 두 이름으로 부른다. STUDENT s20-4 #5 도 같은 글(감사가 그대로 둠).",
+      "fix": "Koreans call it this because it contains many of the old remains of the 신라 Kingdom. (STUDENT s20-4 #5 도 같이 — 7~10과 영어는 STUDENT 와 같게 두는 결정. 덩어리 'Koreans call it this' · 'of the 신라 Kingdom.'(ko '신라 왕국의.') · 낱말 'dynasty' 는 이 문장에서 빠지므로 a10-4 낱말 목록 재확인 필요)",
+      "category": "⑧",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "A710-03",
+      "course": "adult",
+      "lesson": "a9-2",
+      "file": "content/lessons/adult/a9-2.json",
+      "path": "blocks[1].items[0].text",
+      "kind": "sentence-en",
+      "current": "First, I would like to explain about traditional Korean clothing.",
+      "problem": "'explain'은 목적어를 바로 받는 동사라 'explain about ~'은 한국인 학습자의 대표적 오류로 꼽힌다(구어에서 드물게 쓰이나 교재 문장으로는 피해야 함). 성인 과정에서 이 꼴을 그대로 따라 말하게 한다. STUDENT s19-2 #1 도 같은 글.",
+      "fix": "First, I would like to tell you about traditional Korean clothing. (또는 'First, I would like to explain traditional Korean clothing.' — STUDENT s19-2 #1 도 같이, 덩어리 · 낱말 위치 다시 맞춤)",
+      "category": "⑧",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "A710-04",
+      "course": "adult",
+      "lesson": "a9-1",
+      "file": "content/lessons/adult/a9-1.json",
+      "path": "blocks[1].items[0].text",
+      "kind": "sentence-en",
+      "current": "The Korean culture is different from other cultures.",
+      "problem": "일반적인 '한국 문화'를 말할 때는 관사를 붙이지 않는다('Korean culture is ...'). 'The Korean culture'는 한국인 학습자의 정관사 과용 꼴로, 같은 과 a9-3 #1 은 'Another unique aspect of Korean culture'로 관사 없이 써서 과 안에서도 엇갈린다. STUDENT s19-1 #1 도 같은 글.",
+      "fix": "Korean culture is different from other cultures. (STUDENT s19-1 #1 도 같이, 덩어리 첫 조각도)",
+      "category": "⑧",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "A710-05",
+      "course": "adult",
+      "lesson": "a10-3",
+      "file": "content/lessons/adult/a10-3.json",
+      "path": "title (+ blocks[0].text · content/courses/adult.json lessons[a10-3].title)",
+      "kind": "title",
+      "current": "Korean Folk Village (한국 민속촌)",
+      "problem": "같은 강의의 한국어 줄 #1(KO_FIX)과 덩어리는 고유 이름대로 '한국민속촌'(붙여 씀)인데 제목만 '한국 민속촌'으로 띄어 써 한 강의 안 표기가 흔들린다(시설 이름은 '한국민속촌').",
+      "fix": "Korean Folk Village (한국민속촌)",
+      "category": "⑦",
+      "severity": "낮음",
+      "confidence": "높음",
+      "audioChanges": false,
+      "reaches": true
+    },
+    {
+      "id": "A710-06",
+      "course": "adult",
+      "lesson": "a7-4",
+      "file": "content/lessons/adult/a7-4.json",
+      "path": "blocks[1].items[2].text",
+      "kind": "sentence-en",
+      "current": "In 1988, Korea hosted the Summer Olympic Games and in 2002, the World Cup was held in Korea, too.",
+      "problem": "주어가 다른 두 절을 and 로 잇고 뒤 절에 'in 2002,' 삽입구가 있는데 and 앞 쉼표가 없어 'the Summer Olympic Games and in 2002'로 잘못 끊어 읽히기 쉽다. PPT 원문은 'Games, and in 2002'였고 STUDENT 감사 문장에서 쉼표가 빠졌다. 뜻은 바뀌지 않음.",
+      "fix": "In 1988, Korea hosted the Summer Olympic Games, and in 2002, the World Cup was held in Korea, too. (STUDENT s17-4 #3 도 같이)",
+      "category": "⑧",
+      "severity": "낮음",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    }
+  ],
+  "judgements": [
+    {
+      "id": "A710-J1",
+      "lesson": "a10-4",
+      "question": "#4 'Many people regard 경주 as a museum without walls.' 의 한국어 줄과 덩어리가 '지붕 없는 박물관'이다. 영어는 'without walls(벽 없는)', 한국어는 '지붕 없는(without a roof)'. 한국에서 경주를 부르는 굳은 말은 '지붕 없는 박물관'이 맞지만, 끊어 읽기에서 'as a museum without walls.' = \"'지붕 없는 박물관'으로.\" 로 보여 학습자가 walls = 지붕 으로 잘못 짝지을 수 있다. 한국어 관용어를 살릴까, 영어 뜻대로 옮길까?",
+      "recommendation": "한국어 줄은 관용어를 살리되 영어 뜻을 함께 보이게: \"많은 사람들은 경주를 '벽 없는 박물관', 곧 '지붕 없는 박물관'으로 여깁니다.\" · 덩어리 ko \"'벽 없는 박물관(지붕 없는 박물관)'으로.\" (STUDENT s20-4 는 '벽이 없는 박물관'). 한국어 줄은 소리를 내므로 고치면 한국어 클립 다시 만들어야 함.",
+      "why": "둘 다 말이 되는 번역(관용어 대 직역)이라 고르는 일이다. 다만 이 과정은 덩어리마다 영어-한국어를 짝지어 보여 주므로, 낱말 뜻이 엇갈리면 오도가 될 수 있어 영어 뜻이 드러나는 쪽을 추천한다."
+    }
+  ],
+  "notes": "같은 AI 계열이 만들고 점검함 — 독립 검수 아님. 내용 파일은 읽기만 함(스크래치 스크립트로 강의 파일 16개 · STUDENT s17~s20 16개 · docs/adult/ppt-본문.json 7~10과 · build-adult-content.mjs KO_FIX/TITLE_FIX 를 뽑아 한 줄씩 읽음).\n읽은 수: 영어 문장 72(a7 21 · a8 15 · a9 18 · a10 18) · 한국어 줄 72(paragraph lang ko, 문장 수와 강의마다 같음) · 강의 제목 16 · 그 밖 52(label 16 · menuLabel 16 · instruction 16 · adult.json 장 제목 4) → other 124 = 한국어 줄 72 + 52. adult.json lessons 의 a7~a10 16칸은 강의 파일 title · label · menuLabel 과 글자까지 같음.\nSTUDENT 대조(compare-student): 72문장 중 71문장이 STUDENT s17~s20 의 같은 자리 문장과 글자까지 같다(한글 표기 · 곧은/굽은 따옴표까지). 다른 곳은 하나 — a9-3 #4 '불고기 is ... is 김치.' 와 #5 'I like them both.' 가 STUDENT s19-3 #4 한 문장('… 김치. I like them both.')을 PPT 대로 둘로 나눈 것. 이어 붙이면 글자까지 같고, 사장님 결정('문장 수 · 소단원은 PPT 대로', build-adult-content.mjs studentEnglish 의 의도된 나눔)이라 틀림 아님 — finding 으로 올리지 않음. 그 밖에 STUDENT 에 없는 영어 · ADULT 에 없는 STUDENT 영어 0.\n한국어 줄: PPT 한국어 그대로인 줄은 영어가 STUDENT 감사로 바뀐 문장(예: a10-2 #2 불국사 · a10-3 #2 'in the past' · a9-1 #2 · a9-4 #3 · a8-2 #2)마다 다시 대 보았고 뜻이 모두 맞음. KO_FIX 18줄도 영어와 뜻이 맞음(a7-1 #2 '4,000여 년' · a7-3 #6 '나뉜 채 남았습니다' · a10-4 #2 '옛 수도입니다' · a10-5 #6 '약 6,400피트' 등). 맞춤법 틀림 없음.\n사실: 1910~1945 · 1945 해방 · 1950/1953 · 1988 올림픽 · 2002 월드컵(한일 공동이지만 '한국에서도 열렸다'는 맞음) · 1443 창제/1446 반포 · 한라산 1,947m ≈ 6,388ft('almost 2,000 meters · about 6,400 feet' 맞음) — 틀림 없음. 고려+조선 '약 1,000년'(918~1910) 맞음.\n찾았으나 올리지 않은 것: (1) 굽은 따옴표(’)와 곧은 따옴표(')가 과정 안에서 섞임 — a8-2 제목 'Lunar New Year's Day'(곧은) 와 #1 · #6 본문(굽은), a8-3 #4 · a9-4 #2 #4 는 곧은, a7-1 · a8-1 · a10-5 는 굽은. 모두 STUDENT 와 같은 글이고 소리 · 화면 뜻에 영향 없어 표기 취향으로 봄(고친다면 클립 키가 바뀌는지 먼저 확인 필요). (2) a9-2 #3 'families celebrate these days by wearing …' 의 'these days' 가 '요즘'으로도 읽힐 수 있음 — 앞의 'on traditional holidays' 로 풀리고 STUDENT 감사 문장이라 둠. (3) a8-3 · a10-4 · a10-5 제목은 영어 없이 한글만('추석' · '경주' · '제주도와 한라산') — 사장님 '표기는 한국어로' 결정(TITLE_FIX 주석)대로라 틀림 아님. (4) 과정 목록 장 제목 'Chapter 7. 역사 (History)' 와 강의 label 'Chapter 7. History (역사)' 는 순서가 반대지만 12장 모두 같은 규칙이라 의도로 봄.\nA710-02~04 · 06 은 STUDENT 감사가 그대로 둔 영어다. 고치면 7~10과 영어는 STUDENT 와 같게 둔다는 결정에 따라 STUDENT s17-4 #3 · s19-1 #1 · s19-2 #1 · s20-4 #5 도 같이 고쳐야 하고, ADULT 쪽은 덩어리(chunks en 이어 붙이면 문장과 같아야 함 — build 가 멈춤) · 낱말 start/end · 영어 클립(STUDENT 와 공유)을 다시 만들어야 한다. 제목(A710-01 · 05)은 소리를 내지 않음(spoken-texts.cjs: ADULT 는 영어 문장 · 한국어 줄 · 덩어리 · 낱말 say 만). 화면 닿음: 제목은 formatLessonPresentation('Part n · 제목') · label 은 부제목으로 닿고, instruction 블록은 STUDENT 화면에 그려지지 않음(STU-U04)."
+}

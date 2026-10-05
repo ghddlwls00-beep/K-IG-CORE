@@ -1,0 +1,480 @@
+{
+ "student:s1-2:mobile": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "I",
+    "School",
+    "and",
+    "in",
+    "is",
+    "live",
+    "my",
+    "name",
+    "student",
+    "듣기",
+    "서울",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "홍길동",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-my-info",
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "I am # years old.",
+    "I live in 한국 Apartments.",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ },
+ "student:s1-2:desktop": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "I",
+    "and",
+    "grade",
+    "in",
+    "is",
+    "live",
+    "my",
+    "name",
+    "듣기",
+    "서울",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "한국",
+    "홍길동",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-my-info",
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "I am # years old.",
+    "I live in 한국 Apartments.",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ },
+ "student:s9-1:mobile": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "I",
+    "classes",
+    "day",
+    "every",
+    "follow",
+    "often",
+    "same",
+    "schedule",
+    "the",
+    "usually",
+    "듣기",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-my-info",
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ },
+ "student:s9-1:desktop": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "I",
+    "day",
+    "every",
+    "follow",
+    "forty-five",
+    "little",
+    "same",
+    "schedule",
+    "the",
+    "usually",
+    "듣기",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-my-info",
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ },
+ "student:s20-4:mobile": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "another",
+    "attractive",
+    "destination",
+    "is",
+    "most",
+    "powerful",
+    "경주",
+    "듣기",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ },
+ "student:s20-4:desktop": {
+  "listen": {
+   "acts": [],
+   "marks": [
+    "data-filter",
+    "data-reveal",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 먼저 듣기",
+    "#번 문장 반복 듣기",
+    "#번 문장 재생",
+    "가림",
+    "모두",
+    "영어",
+    "해석"
+   ],
+   "hint": "먼저 듣고, 회색 칸을 눌러 확인하세요."
+  },
+  "dictation": {
+   "acts": [
+    "check",
+    "hint",
+    "ko-hint",
+    "replay",
+    "reset",
+    "undo"
+   ],
+   "marks": [
+    "data-dictation",
+    "data-word-bank",
+    "data-assembly",
+    "data-pill"
+   ],
+   "labels": [
+    "#번 문장",
+    "another",
+    "attractive",
+    "destination",
+    "is",
+    "people",
+    "regard",
+    "경주",
+    "듣기",
+    "우리말 힌트",
+    "정답 확인",
+    "초기화",
+    "하나 빼기",
+    "힌트"
+   ],
+   "hint": "문장을 듣고, 들리는 순서대로 낱말을 누르세요."
+  },
+  "shadowing": {
+   "acts": [
+    "hide-en",
+    "loop",
+    "play",
+    "said",
+    "speak"
+   ],
+   "marks": [
+    "data-completion",
+    "data-sentence"
+   ],
+   "labels": [
+    "#번 문장 듣기",
+    "#번 문장 말하기",
+    "#번 문장 반복 듣기",
+    "#번 우리말 듣기",
+    "#번 읽었어요",
+    "영어 가리기",
+    "학습 완료 체크"
+   ],
+   "hint": "듣고 바로 따라 말해 보세요."
+  }
+ }
+}

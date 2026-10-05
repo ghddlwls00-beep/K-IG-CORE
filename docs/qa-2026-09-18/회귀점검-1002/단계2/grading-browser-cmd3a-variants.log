@@ -1,0 +1,7 @@
+﻿start 2026-10-04 17:40:23 args=--course grammar1 --ids gh1-006 --clone rc1002-s2-var --port 9883
+기대대로 gh1-006 Q1 뜻 반대(not): 모범 "I am Korean." · 넣은 답 "I am not Korean." → ✕ 오답 (0점)
+기대대로 gh1-006 Q2 뜻 반대(n't): 모범 "He is Japanese." · 넣은 답 "He isn't Japanese." → ✕ 오답 (0점)
+기대대로 gh1-006 Q3 작은 낱말 하나 더: 모범 "You are American." · 넣은 답 "You are a American." → △ 부분 정답 (70점)
+기대대로 gh1-006 Q4 모범 답안: 모범 "She is Filipino." · 넣은 답 "She is Filipino." → ✓ 정답 (100점)
+강의 1 · 기대와 다름 0
+exit=0 end 2026-10-04 17:40:31

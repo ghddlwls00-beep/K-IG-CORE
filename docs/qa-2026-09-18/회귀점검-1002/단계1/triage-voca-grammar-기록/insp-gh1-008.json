@@ -1,0 +1,360 @@
+[
+ {
+  "load": {
+   "navigated": true,
+   "rendered": true,
+   "href": "https://k-ig-core.vercel.app/grammar1/gh1-008",
+   "reloads": 0
+  }
+ },
+ {
+  "total": 54,
+  "odd": [
+   {
+    "label": "재생",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" aria-label=\"재생\" class=\"flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-ink text-surface transition-opacity cursor-pointer hover:opacity-90\"><svg width=\"15\" he",
+    "rect": [
+     325,
+     274,
+     44,
+     44
+    ],
+    "sy": 0,
+    "own": false,
+    "at": "BUTTON Step 1 · 영작 훈련",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.flex.h-11.w-11.shrink-0",
+     "DIV.flex.items-center.gap-1.sm:gap-1.5",
+     "DIV.rounded-card.border.border-line.bg-raised",
+     "DIV.mt-2.flex.flex-col.gap-2",
+     "DETAILS.group.mb-5"
+    ]
+   },
+   {
+    "label": "정지",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" disabled=\"\" aria-label=\"정지\" class=\"flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-ink-soft transition-colors cursor-pointer hover:bg-sunken hover:text-ink ",
+    "rect": [
+     375,
+     274,
+     44,
+     44
+    ],
+    "sy": 0,
+    "own": false,
+    "at": "SPAN  · 영작 훈련",
+    "opacity": "0.3",
+    "pos": "static",
+    "anc": [
+     "BUTTON.flex.h-11.w-11.shrink-0",
+     "DIV.flex.items-center.gap-1.sm:gap-1.5",
+     "DIV.rounded-card.border.border-line.bg-raised",
+     "DIV.mt-2.flex.flex-col.gap-2",
+     "DETAILS.group.mb-5"
+    ]
+   },
+   {
+    "label": "이전 문장",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" aria-label=\"이전 문장\" class=\"hidden min-[380px]:inline-flex h-11 min-w-11 shrink-0 items-center justify-center rounded-control px-1.5 text-label font-medium text-ink-soft transition",
+    "rect": [
+     425,
+     274,
+     44,
+     44
+    ],
+    "sy": 0,
+    "own": false,
+    "at": "SPAN  · 영작 훈련",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.hidden.min-[380px]:inline-flex.h-11.min-w-11",
+     "DIV.flex.items-center.gap-1.sm:gap-1.5",
+     "DIV.rounded-card.border.border-line.bg-raised",
+     "DIV.mt-2.flex.flex-col.gap-2",
+     "DETAILS.group.mb-5"
+    ]
+   },
+   {
+    "label": "다음 문장",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" aria-label=\"다음 문장\" class=\"hidden min-[380px]:inline-flex h-11 min-w-11 shrink-0 items-center justify-center rounded-control px-1.5 text-label font-medium text-ink-soft transition",
+    "rect": [
+     475,
+     274,
+     44,
+     44
+    ],
+    "sy": 0,
+    "own": false,
+    "at": "BUTTON Step 2 · 빈칸 완성",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.hidden.min-[380px]:inline-flex.h-11.min-w-11",
+     "DIV.flex.items-center.gap-1.sm:gap-1.5",
+     "DIV.rounded-card.border.border-line.bg-raised",
+     "DIV.mt-2.flex.flex-col.gap-2",
+     "DETAILS.group.mb-5"
+    ]
+   },
+   {
+    "label": "속도 1.0× — 누르면 바뀜",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" aria-label=\"속도 1.0× — 누르면 바뀜\" title=\"속도 0.8× · 1.0× · 1.2×\" class=\"flex h-11 min-w-11 shrink-0 items-center justify-center rounded-control px-1.5 text-label font-medium tabular-n",
+    "rect": [
+     983,
+     274,
+     44,
+     44
+    ],
+    "sy": 0,
+    "own": false,
+    "at": "BUTTON Step 4 · 종합 평가",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.flex.h-11.min-w-11.shrink-0",
+     "DIV.flex.items-center.gap-1.sm:gap-1.5",
+     "DIV.rounded-card.border.border-line.bg-raised",
+     "DIV.mt-2.flex.flex-col.gap-2",
+     "DETAILS.group.mb-5"
+    ]
+   },
+   {
+    "label": "",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" data-action=\"reveal-all\" class=\"min-h-11 rounded-control border border-line bg-raised px-4 text-label font-semibold text-ink transition-colors cursor-pointer hover:bg-sunken\">전체 ",
+    "rect": [
+     329,
+     581,
+     113,
+     44
+    ],
+    "sy": 1253,
+    "own": false,
+    "at": "MAIN ← GRAMMAR I 목록 02강 · 기초 영작 훈련 제 1단계 (기본 ",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.min-h-11.rounded-control.border.border-line",
+     "DIV.flex.flex-wrap.items-center.gap-2",
+     "DIV.flex.flex-col.gap-4.border-t",
+     "DETAILS.group.rounded-card.border.border-line",
+     "SECTION.flex.flex-col.gap-3",
+     "DIV.flex.flex-col.gap-4"
+    ]
+   },
+   {
+    "label": "",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" data-action=\"hide-all\" class=\"min-h-11 rounded-control border border-line bg-raised px-4 text-label font-semibold text-ink transition-colors cursor-pointer hover:bg-sunken\">전체 정답",
+    "rect": [
+     450,
+     581,
+     126,
+     44
+    ],
+    "sy": 1253,
+    "own": false,
+    "at": "MAIN ← GRAMMAR I 목록 02강 · 기초 영작 훈련 제 1단계 (기본 ",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.min-h-11.rounded-control.border.border-line",
+     "DIV.flex.flex-wrap.items-center.gap-2",
+     "DIV.flex.flex-col.gap-4.border-t",
+     "DETAILS.group.rounded-card.border.border-line",
+     "SECTION.flex.flex-col.gap-3",
+     "DIV.flex.flex-col.gap-4"
+    ]
+   },
+   {
+    "label": "",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" data-action=\"new-run\" class=\"min-h-11 rounded-control border border-line bg-raised px-4 text-label font-semibold text-ink transition-colors cursor-pointer hover:bg-sunken\">1단계 새로",
+    "rect": [
+     583,
+     581,
+     120,
+     44
+    ],
+    "sy": 1253,
+    "own": false,
+    "at": "MAIN ← GRAMMAR I 목록 02강 · 기초 영작 훈련 제 1단계 (기본 ",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.min-h-11.rounded-control.border.border-line",
+     "DIV.flex.flex-wrap.items-center.gap-2",
+     "DIV.flex.flex-col.gap-4.border-t",
+     "DETAILS.group.rounded-card.border.border-line",
+     "SECTION.flex.flex-col.gap-3",
+     "DIV.flex.flex-col.gap-4"
+    ]
+   },
+   {
+    "label": "",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" data-font=\"normal\" aria-pressed=\"true\" class=\"min-h-11 min-w-11 rounded-control px-3 text-label transition-colors cursor-pointer bg-raised font-semibold text-ink shadow-2xs\">기본</",
+    "rect": [
+     421,
+     645,
+     48,
+     44
+    ],
+    "sy": 1253,
+    "own": false,
+    "at": "NAV ← 이전 Step 1 / 4 다음 Step →",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.min-h-11.min-w-11.rounded-control.px-3",
+     "DIV.flex.gap-1.rounded-control.bg-sunken",
+     "DIV.flex.flex-wrap.items-center.gap-2",
+     "DIV.flex.flex-col.gap-4.border-t",
+     "DETAILS.group.rounded-card.border.border-line",
+     "SECTION.flex.flex-col.gap-3"
+    ]
+   },
+   {
+    "label": "",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" data-font=\"large\" aria-pressed=\"false\" class=\"min-h-11 min-w-11 rounded-control px-3 text-label transition-colors cursor-pointer font-medium text-ink-soft\">크게</button>",
+    "rect": [
+     473,
+     645,
+     48,
+     44
+    ],
+    "sy": 1253,
+    "own": false,
+    "at": "NAV ← 이전 Step 1 / 4 다음 Step →",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.min-h-11.min-w-11.rounded-control.px-3",
+     "DIV.flex.gap-1.rounded-control.bg-sunken",
+     "DIV.flex.flex-wrap.items-center.gap-2",
+     "DIV.flex.flex-col.gap-4.border-t",
+     "DETAILS.group.rounded-card.border.border-line",
+     "SECTION.flex.flex-col.gap-3"
+    ]
+   },
+   {
+    "label": "",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" data-font=\"xlarge\" aria-pressed=\"false\" class=\"min-h-11 min-w-11 rounded-control px-3 text-label transition-colors cursor-pointer font-medium text-ink-soft\">특대</button>",
+    "rect": [
+     525,
+     645,
+     48,
+     44
+    ],
+    "sy": 1253,
+    "own": false,
+    "at": "NAV ← 이전 Step 1 / 4 다음 Step →",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.min-h-11.min-w-11.rounded-control.px-3",
+     "DIV.flex.gap-1.rounded-control.bg-sunken",
+     "DIV.flex.flex-wrap.items-center.gap-2",
+     "DIV.flex.flex-col.gap-4.border-t",
+     "DETAILS.group.rounded-card.border.border-line",
+     "SECTION.flex.flex-col.gap-3"
+    ]
+   },
+   {
+    "label": "",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" data-speed=\"1\" aria-pressed=\"true\" title=\"음성 속도 1.0x\" class=\"min-h-11 min-w-11 rounded-control px-3 text-label tabular-nums transition-colors cursor-pointer bg-raised font-semibo",
+    "rect": [
+     421,
+     713,
+     54,
+     44
+    ],
+    "sy": 1253,
+    "own": false,
+    "at": "BUTTON 이 강의 학습 완료",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.min-h-11.min-w-11.rounded-control.px-3",
+     "DIV.flex.gap-1.rounded-control.bg-sunken",
+     "DIV.flex.flex-wrap.items-center.gap-2",
+     "DIV.flex.flex-col.gap-4.border-t",
+     "DETAILS.group.rounded-card.border.border-line",
+     "SECTION.flex.flex-col.gap-3"
+    ]
+   },
+   {
+    "label": "",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" data-speed=\"0.85\" aria-pressed=\"false\" title=\"음성 속도 0.85x (천천히)\" class=\"min-h-11 min-w-11 rounded-control px-3 text-label tabular-nums transition-colors cursor-pointer font-mediu",
+    "rect": [
+     479,
+     713,
+     63,
+     44
+    ],
+    "sy": 1253,
+    "own": false,
+    "at": "BUTTON 이 강의 학습 완료",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.min-h-11.min-w-11.rounded-control.px-3",
+     "DIV.flex.gap-1.rounded-control.bg-sunken",
+     "DIV.flex.flex-wrap.items-center.gap-2",
+     "DIV.flex.flex-col.gap-4.border-t",
+     "DETAILS.group.rounded-card.border.border-line",
+     "SECTION.flex.flex-col.gap-3"
+    ]
+   },
+   {
+    "label": "",
+    "tag": "BUTTON",
+    "type": "button",
+    "html": "<button type=\"button\" data-action=\"reset\" class=\"min-h-11 rounded-control px-3 text-label font-medium text-ink-soft transition-colors cursor-pointer hover:bg-sunken self-start\">이 강의 기록 모두 지우기</button>",
+    "rect": [
+     329,
+     794,
+     159,
+     44
+    ],
+    "sy": 1253,
+    "own": false,
+    "at": "SPAN 01강 · 기초 영작 훈련",
+    "opacity": "1",
+    "pos": "static",
+    "anc": [
+     "BUTTON.min-h-11.rounded-control.px-3.text-label",
+     "DIV.flex.flex-col.gap-2.border-t",
+     "DIV.flex.flex-col.gap-4.border-t",
+     "DETAILS.group.rounded-card.border.border-line",
+     "SECTION.flex.flex-col.gap-3",
+     "DIV.flex.flex-col.gap-4"
+    ]
+   }
+  ]
+ }
+]

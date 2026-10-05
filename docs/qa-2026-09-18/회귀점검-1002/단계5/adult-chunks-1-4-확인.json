@@ -1,0 +1,17 @@
+{
+  "part": "adult-chunks-1-4-확인",
+  "scope": "adult-chunks-1-4 일꾼이 찾은 틀림 중 확인 대상 1건(AC14-1, 중간)을 다시 봄. 그 파일의 그 칸을 직접 열고, 문장 한국어 줄 · 원본 PPT 추출(docs/adult/ppt-청크.json · ppt-본문.json) · 화면(StudentLearningView renderChunks) · 빌드 도구(build-adult-content.mjs chunksOf)까지 확인함. 판단 필요 AC14-J1 은 참고로만 읽고 판정하지 않음.",
+  "readCount": { "sentences": 1, "titles": 0, "words": 2, "chunks": 4, "other": 3 },
+  "checked": [
+    {
+      "id": "AC14-1",
+      "verdict": "맞음",
+      "why": "직접 확인: content/lessons/adult/a3-1.json blocks[1].items[1] 은 'Looking back, I realize I once had a wide circle of friends, though only four or five of them remain truly close today.' 이고, 덩어리 한국어 넷은 '돌이켜보면,' · '한때 저에게는 폭넓은 친구들이 있었지만,' · '그중 네다섯 명만이' · '지금까지 정말 가깝게 지내고 있습니다.' — 'I realize'(깨닫다)의 뜻이 네 덩어리 어디에도 없다(일꾼 말 그대로). 이 문장의 문장 한국어 줄(blocks[3] paragraph)은 '…네다섯 명뿐이라는 것을 깨닫게 됩니다.' 로 깨닫다를 담고 있어 덩어리와 어긋난다. 이 덩어리 한국어는 PPT 그대로다(ppt-청크.json 586줄 — 원본과 다름이 아니라 원본의 빠짐). 학습자에게 닿음: Step 3 '끊어 읽기'에서 '뜻 보기'를 누르면 c.ko 가 그대로 보인다(StudentLearningView.tsx 1252~1255줄). 심각도 중간이 맞다: 주동사 하나가 빠진 뜻이라 헷갈리게 하지만, 네 덩어리를 다 열면 '문장 전체 해석'(1273~1278줄)이 깨닫다를 보여 주어 틀린 뜻을 가르치는 데까지는 가지 않는다(높음 = 오도는 아님). 소리: 한국어 덩어리는 소리를 내지 않는다(playChunks 는 c.en 만) — audioChanges=false 맞음. 고칠 글 '한때 저에게 폭넓은 친구들이 있었다는 것을 깨닫게 되는데,' 는 맞춤법 · 띄어쓰기 바르고, 이어 읽으면 '돌이켜보면, 한때 저에게 폭넓은 친구들이 있었다는 것을 깨닫게 되는데, 그중 네다섯 명만이 지금까지 정말 가깝게 지내고 있습니다.' 로 자연스럽다. 'though' 의 맞섬은 '-는데'(+ 다음 덩어리의 '만')로 약하지만 남고, '그중' 이 '폭넓은 친구들'을 그대로 받으므로 새 틀림을 만들지 않는다. 다른 덩어리를 건드리지 않아도 됨.",
+      "fix": "한때 저에게 폭넓은 친구들이 있었다는 것을 깨닫게 되는데,  (일꾼의 고칠 글 그대로. 고치는 길 주의: 이 덩어리는 build-adult-content.mjs 가 ppt-청크.json 에서 그대로 가져오므로 JSON 만 고치면 'node scripts/build-adult-content.mjs --check --chunks' 가 어긋난다. 그런데 CHUNK_FIX 에 넣으면 chunksOf 272줄의 지킴이('CHUNK_FIX for a sentence the PPT's chunks already fit' — 영어 끊는 자리가 PPT 와 같고 KO_FIX 도 없는 문장이면 throw)에 걸린다. 그러니 고치는 세션은 (가) 영어는 그대로 두고 한국어 덩어리만 바꾸는 길을 도구에 따로 내거나(예: 한국어 덩어리만 갈아 끼우는 표), (나) 272줄 조건을 '한국어 덩어리가 PPT 와 다를 때는 허용' 으로 넓혀야 한다. 어느 쪽이든 다른 몫의 같은 종류 고침(AC14-2 · AC14-3 도 PPT 덩어리 한국어만 바꿈)과 한 방식으로.)",
+      "severity": "중간"
+    }
+  ],
+  "findings": [],
+  "judgements": [],
+  "notes": "같은 AI 계열이 만들고 점검함 — 독립 검수 아님. 확인 대상 1건 모두 판정함: AC14-1 맞음(틀림 맞음 · 화면에 닿음 · 중간 맞음 · 고칠 글 맞음 · 소리 안 바뀜). 새로 찾은 틀림 없음 — 같은 문장의 낱말 둘(look back · circle of friends)의 뜻 · 품사 · 밑줄 자리(0~12 'Looking back' · 42~59 'circle of friends')도 열어 보았고 맞음. 덧붙임: 고치는 길이 CHUNK_FIX 로는 막혀 있다(빌드 도구 272줄 지킴이) — 위 fix 칸에 적음. 판단 필요 AC14-J1(한국어 덩어리 끝 부호)은 참고로만 읽음: 덩어리 한국어가 소리를 내지 않는다는 근거(playChunks → c.en)는 코드에서 맞게 확인됨. 내용 파일 · src · git 은 건드리지 않음."
+}

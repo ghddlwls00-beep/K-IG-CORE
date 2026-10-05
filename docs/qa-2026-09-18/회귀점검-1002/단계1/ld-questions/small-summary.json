@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-05T03:07:43.035Z",
+  "base": "https://k-ig-core.vercel.app",
+  "break": null,
+  "shard": "1/1",
+  "viewport": "small",
+  "lessons": 276,
+  "planned": 276,
+  "questions": 756,
+  "right": "756/756",
+  "wrongShown": "756/756",
+  "textSame": "756/756",
+  "anonLocked": "274/274",
+  "failedLessons": [],
+  "visitErrors": [],
+  "secPerLesson": 1.9,
+  "api": {
+    "/api/license/verify": 276,
+    "/api/progress/student": 276,
+    "/api/progress/adult": 276
+  },
+  "bad": [],
+  "exceptions": 0,
+  "stop": null
+}

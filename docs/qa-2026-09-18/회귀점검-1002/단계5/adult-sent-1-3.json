@@ -1,0 +1,81 @@
+{
+  "part": "adult-sent-1-3",
+  "scope": "ADULT 1~3과 17강의(a1-1~a1-6, a2-1~a2-6, a3-1~a3-5)의 영어 문장 59 · 한국어 줄 59 전부, 강의 제목(title) 17 · 부제(label) 17 · 과정 목록 장 제목 3, instruction 블록 17(화면에 안 닿음), src/lib/studentBlanks.ts 의 a1-2 '내 정보' 빈칸 10 · a1-5 빈칸 1. PPT(docs/adult/ppt-본문.json 1~3과)와 한 줄씩 대조함 — 다른 곳은 a1-2 #3 'in 부산 Apartments'(사장님 결정) · a1-5 #3 '(2)'→'2'(빈칸) · a2-5 #2 'eldest son'→'son'·'큰아들'→'아들'(사장님 결정) · 3과 Daehan/Minguk→대한/민국(한글 표기 결정) 뿐.",
+  "readCount": { "sentences": 59, "titles": 37, "words": 0, "chunks": 0, "other": 28 },
+  "findings": [
+    {
+      "id": "A13-01",
+      "course": "adult",
+      "lesson": "a1-6",
+      "file": "content/lessons/adult/a1-6.json",
+      "path": "blocks[1].items[0].text (+ words[0] start/end · chunks[1].en)",
+      "kind": "sentence-en",
+      "current": "I like to help other people, individually.",
+      "problem": "문장 끝에 쉼표 + 'individually' 를 덧붙인 꼴은 원어민이 쓰지 않는다. individually 는 '하나씩 따로, 개별적으로'(one at a time)의 뜻이라 한국어 줄 '개인적으로 다른 사람들을 돕는'(내 나름으로·사적으로)의 뜻을 영어가 전하지 못하고, 쉼표 때문에 문장 전체에 대한 논평('개인적으로 말하면')처럼 읽혀 더 헷갈린다. 이 낱말은 단어 단계에서 '개인적으로, 개별적으로' 로 가르치는 표현이라 어색한 쓰임이 그대로 학습된다.",
+      "fix": "낱말을 살리려면 쉼표를 빼고 뜻을 분명히: \"I like to help other people individually, one person at a time.\" (한국어 줄 '저는 다른 사람들을 한 사람 한 사람 개별적으로 돕는 것을 좋아합니다.') — 또는 원래 뜻(내 나름으로)을 살리려면 \"I like to help other people on my own.\" 로 바꾸고 단어 카드의 낱말을 바꿔야 함. 어느 쪽이든 words[0] start/end · chunks · 소리를 다시 맞출 것.",
+      "category": "⑧",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "A13-02",
+      "course": "adult",
+      "lesson": "a2-1",
+      "file": "content/lessons/adult/a2-1.json",
+      "path": "blocks[1].items[1].text (+ words[1] 'out loud' start/end · chunks[3].en)",
+      "kind": "sentence-en",
+      "current": "Whenever we think about our families, don't most of us carry quiet stories of gratitude and deep emotion that we rarely say out loud?",
+      "problem": "목적어가 stories 인데 동사가 say — 영어에서 이야기는 'tell/share' 하지 'say' 하지 않는다(say 는 말·낱말을 목적어로 받음). 'stories ... that we rarely say out loud' 는 원어민에게 어색한 연어다. 'out loud' 는 이 문장으로 가르치는 낱말이라 함께 굳어진다.",
+      "fix": "Whenever we think about our families, don't most of us carry quiet stories of gratitude and deep emotion that we rarely share out loud? (한국어 줄 그대로. words[1] 'out loud' 의 start/end 가 +2 밀림 · chunks[3].en 'that we rarely share out loud?')",
+      "category": "⑧",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "A13-03",
+      "course": "adult",
+      "lesson": "a2-2",
+      "file": "content/lessons/adult/a2-2.json",
+      "path": "blocks[1].items[0].text (+ chunks[2].en)",
+      "kind": "sentence-en",
+      "current": "I'm fortunate to have a wonderful family of four: my spouse, our son, our daughter, and myself, all of us remarkably close-knit.",
+      "problem": "close-knit 는 무리(가족·공동체·우정)를 꾸미는 형용사라 'a close-knit family' 처럼 쓴다. 'all of us remarkably close-knit' 는 사람 하나하나가 close-knit 하다는 꼴이 되어 어색하다(같은 과정 a3-2 #3 'our close-knit friendship' 은 바른 쓰임).",
+      "fix": "I'm fortunate to have a wonderful family of four: my spouse, our son, our daughter, and myself, all of us remarkably close. (한국어 줄 그대로 — '우리는 모두 놀라울 만큼 끈끈한 사이입니다'. chunks[2].en 'all of us remarkably close.' · 앞쪽 낱말 fortunate · spouse 의 start/end 는 그대로)",
+      "category": "⑧",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    },
+    {
+      "id": "A13-04",
+      "course": "adult",
+      "lesson": "a3-3",
+      "file": "content/lessons/adult/a3-3.json",
+      "path": "blocks[3].text (한국어 줄 2번) (+ chunks[3].ko)",
+      "kind": "sentence-ko",
+      "current": "제가 도움이 필요할 때마다 그는 제 문제를 자기 일처럼 여기는데, 그래서 저는 그를 누구보다도 신뢰합니다.",
+      "problem": "영어는 'more than almost anyone'(거의 누구보다도 — 가장 믿는 사람 중 하나)인데 한국어 줄은 '누구보다도'(가장 믿는다)로 almost 를 뺐다. 영어와 한국어의 정도가 다르다(덩어리 'more than almost anyone.' → '누구보다도.' 도 같음).",
+      "fix": "제가 도움이 필요할 때마다 그는 제 문제를 자기 일처럼 여기는데, 그래서 저는 그를 그 누구 못지않게 신뢰합니다. (덩어리 chunks[3].ko '그 누구 못지않게.')",
+      "category": "②",
+      "severity": "중간",
+      "confidence": "보통",
+      "audioChanges": true,
+      "reaches": true
+    }
+  ],
+  "judgements": [
+    {
+      "id": "A13-J1",
+      "lesson": "a1-2 · a1-5",
+      "question": "1과 본보기 인물의 숫자가 서로 맞지 않는다: a1-2 #4 '1980년에 고등학교 졸업' 과 #7 '40살'(2026년이면 60대), a1-2 #5·#6 '고등학교 때 매일 영어 공부 · 한국대학교에서 영어 공부' 와 a1-5 #3 '지금까지 2개월 동안 영어를 공부해 오고 있다'. 모두 '내 정보' 빈칸(학습자가 자기 값으로 바꿈)이고 PPT 원문 그대로다.",
+      "recommendation": "그대로 둔다. 빈칸은 학습자가 자기 정보로 채우는 틀이고, 1980/40 은 원본이 쓰인 시절에는 맞던 값(원본 시대 사실은 오류 아님)이다. 다만 본보기 문장이 소리로도 나오므로 바꾸고 싶으시면 '1980'→'2005' 처럼 40살에 맞추는 한 곳만 고치는 것이 가장 작다(그 문장 영어 · 한국어 줄 · 덩어리 · 빈칸 '졸업한 해' 와 소리 다시 만들기).",
+      "why": "틀린 영어는 아니고 학습자가 자기 값으로 바꾸는 자리라 오도는 작지만, 같은 강의 안 숫자가 서로 어긋나는 것을 학습자가 알아챌 수 있다 — 고칠지는 교육 방침(본보기를 현재 시점에 맞출지) 문제."
+    }
+  ],
+  "notes": "같은 AI 계열이 만들고 점검한 것 — 독립 검수 아님. 1~3과 59문장의 영어 · 한국어 줄을 모두 읽었고 PPT 원문과 한 줄씩 기계 대조도 함(다른 곳 4종은 모두 사장님 결정 · 빈칸 · 한글 표기 결정에 따른 것). 틀린 문법 · 철자 · 사실 · 맞춤법은 찾지 못함 — 찾은 넷은 모두 어색한 영어(⑧) 셋과 한국어 정도 차이(②) 하나로 확신 '보통'. 한국어 줄은 ADULT 에서 소리를 낸다(scripts/lib/spoken-texts.cjs 119줄 paragraph lang 'ko') — 그래서 A13-04 도 audioChanges=true. 제목: 화면 h1 은 formatLessonPresentation('adult') 의 'Part N · <title>', 부제는 label — 17개 모두 PPT 소단원 이름과 같고 틀림 없음. instruction 블록 17개는 StudentLearningView 가 그리지 않음(reaches=false, 틀림 없음). 과정 목록의 장 제목은 'Chapter 1. 자기소개 (Self-Introduction)' 이고 강의 부제는 'Chapter 1. Self-Introduction (자기소개)' 로 영어·한국어 순서가 반대지만 표기 취향이라 틀림으로 세지 않음. studentBlanks.ts a1-2 빈칸 10개(홍길동 · 홍 · 서울 · 부산 · 부산 · 부산 Women's High School · 1980 · 부산 · 한국 · 40)와 a1-5 '2' 는 문장 글과 모두 맞고 라벨도 뜻에 맞음. 판단에서 뺀 것(취향·원문 그대로로 봄): a1-2 #4 'in 1980 in 부산'(장소 뒤 시간 순이 더 흔함) · a1-6 #4 'Volunteering ... is an exciting time for me' · a2-6 #2 'collaborative habits like ... recovering from failure' · a2-6 #3 세미콜론 '...introduction; thank you...' · a3-4 #1 'has excelled at his studies since his school days'(현재완료) · a3-1 한국어 '폭넓은 친구들' · a3-5 제목 '좋은 친구를 가지면 좋은 점' — 고쳐도 좋지만 틀림 기준에 들지 않는다고 봄. 1과 이름(홍길동 · Mrs. 홍)은 사장님 결정이라 다시 따지지 않음."
+}

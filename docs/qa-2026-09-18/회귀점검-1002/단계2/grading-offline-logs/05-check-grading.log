@@ -1,0 +1,55 @@
+check-grading — 레슨 67 (유료 보충을 붙인 레슨 1) · ④⑤ 문항 1290 · ③ 문항 609(reserve 포함)
+  A 정답(모범 답 · 허용 답)                        11594
+  A2 목표형 묶음이 있는 문항                         1290
+  A3 줄표 대신 빗금(/)으로 나눈 답 → 정답               386
+  B 따로 셈 · 내용 세션이 허용 답으로 둠                 27
+  B 따로 셈 · 띄어쓰기만 다름                        5
+  B 따로 셈 · 메모만 뗌                           1
+  B 따로 셈 · 문장부호 · 대소문자만 다름                 27
+  B 영어 문장이 아닌 고침(건너뜀)                      26
+  B 원문 오류 문장 → 오답                          141
+  C1 부정 뒤집기                                815
+  C2 목표형 빠짐                                1275
+  C3 목표 낱말 한 글자                            585
+  C4 같은 답을 마이크로 → 맞음                       1908
+  C4 뺀 꼴이 다른 낱말 · 소유격 → 오답                 753
+  C4 소유격 's 의 아포스트로피만 뺀 타이핑 답 → 소유격 힌트     185
+  C4 아포스트로피만 뺀 축약형(dont · Im …) → 정답 아님    1155
+  C4 축약형 · 대명사의 아포스트로피를 뺀 답 → 소유격 힌트 없음    1723
+  C5 같은 낱말의 다른 꼴 · 비슷한 낱말 → 오타 아님          158
+  C6 소유격 's 를 is 로 쓴 답 → 정답 아님             185
+  D 오타 한 글자                                855
+  E literal 오답                             57
+  E 보통 오답 패턴                               3046
+  F choice                                 401
+  F select                                 157
+  F short                                  51
+  G 고정 표본                                  97
+  G 한글 답                                   1290
+  M1 · 그 가운데 타이핑이 한 글자 오타 규칙으로 '맞음(오타)'(전과 같음) 1
+  M1 같은 답을 타이핑 → 깨끗한 정답 아님(그대로)            744
+  M1 마이크: 소리가 같은 낱말 → 정답                   744
+  M2 같은 답을 타이핑 → 정답 아님(뜻이 바뀌는 붙여 쓰기)       481
+  M2 마이크: 붙여 쓰기 · 띄어 쓰기만 다름 → 정답           481
+  M3 마이크: 붙여 쓰기 + 목표형 빠짐 → 오답 · 띄어쓰기 힌트 없음 6
+  M3 타이핑: 붙여 쓰기만 → 그 띄어쓰기 힌트               8
+  N 명사 's 우회 답 — 우회 없는 사본에서 마이크 → 정답       110
+  N 명사 's 우회 답 — 우회 없는 사본에서 타이핑 → 정답       110
+  N 우회 허용 답이 있는 문항                         27
+  N2 절 끝의 is · has 를 's 로 쓴 답 → 정답 아님      14
+  V 화면에 넘기는 문항(reserve 빼고)                 2092
+  W1 답 낱말(끝) · 한 글자 차이인 표의 낱말이 wordForms 에 있음 2561
+  W2 그 답 — 표 전체로 채점한 것과 같음(타이핑 · 마이크)      5122
+
+따로 센 것 60 (실패 아님 — 까닭이 채점 규칙에 있음):
+  B pg01-1:p5 [english_grammar] "Sometimes I watch TV, or listen to music before I go to bed." → correct — 문장부호 · 대소문자만 다름(설계 §8 — 채점에 안 씀) · 고친 글 "Sometimes I watch TV or listen to music before I go to bed."
+  B pg01-3:p6 [english_grammar] "She goes skiing every Saturday in winter" → correct — 문장부호 · 대소문자만 다름(설계 §8 — 채점에 안 씀) · 고친 글 "She goes skiing every Saturday in winter."
+  B pg02-2:p5 [english_unnatural] "Jamie eats lunch at the school." → correct — 내용 세션이 허용 답으로 둠("Jamie eats lunch at the school.") — 틀린 문장이 아니라 덜 자연스러운 글 · 고친 글 "Jamie eats lunch at school."
+  B pg03-2:p18 [layout_or_extraction] "Hold the rope tight, or you‘re going to fall." → correct — 문장부호 · 대소문자만 다름(설계 §8 — 채점에 안 씀) · 고친 글 "Hold the rope tight, or you're going to fall."
+  B pg03-2:t2 [english_unnatural] "Let's meet near a restaurant." → correct — 내용 세션이 허용 답으로 둠("Let's meet near a restaurant.") — 틀린 문장이 아니라 덜 자연스러운 글 · 고친 글 "Let's meet near the restaurant."
+  B pg04-4:p13 [english_unnatural] "There is not a cake on the plate." → correct — 내용 세션이 허용 답으로 둠("There is not a cake on the plate.") — 틀린 문장이 아니라 덜 자연스러운 글 · 고친 글 "There isn't a cake on the plate."
+  B pg05-2:p3 [english_grammar] "No, he can’t" → correct — 문장부호 · 대소문자만 다름(설계 §8 — 채점에 안 씀) · 고친 글 "No, he can't."
+  B pg05-2:p5 [english_grammar] "It was fun, mom." → correct — 문장부호 · 대소문자만 다름(설계 §8 — 채점에 안 씀) · 고친 글 "It was fun, Mom."
+  … (--list 로 전부)
+
+PASS
