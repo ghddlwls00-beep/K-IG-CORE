@@ -72,6 +72,8 @@ const BREAKS = {
     to: 'import { learningDay } from "./learning/day";\nconst isDay = (value: unknown): value is string => typeof value === "string" && /^\\d{4}-\\d{2}-\\d{2}$/.test(value);',
   },
   particle: { file: "unlock", from: /\[1, 3, 6, 7, 8, 0\]\.includes\(lastDigit\)/, to: "[1, 3, 6, 7, 8].includes(lastDigit)" },
+  // UI검토-1007 고침3 통합 (2026-10-08) 4장 8: the head word back to the English 'TOPIC' — U12 must FAIL
+  "topic-english": { file: "unlock", from: /return `대주제 \$\{topic\}/, to: "return `TOPIC ${topic}" },
   "raise-down": { file: "unlock", from: /if \(topic <= before\) return false;/, to: "if (topic === before) return false;" },
   "life-unlocked": { file: "unlock", from: /unlocked: everyTopicOpen \|\| t\.topic <= unlockedThrough/, to: "unlocked: t.topic <= unlockedThrough" },
   "map-no-caller": { file: "scan" },
@@ -549,8 +551,9 @@ group("U12 대주제 번호 뒤 조사");
     const f = hasFinal(READ[n]);
     const want = { "을/를": f ? "을" : "를", "이/가": f ? "이" : "가", "은/는": f ? "은" : "는" };
     for (const [pair, particle] of Object.entries(want)) {
+      // UI검토-1007 고침3 통합 (2026-10-08) 4장 8: the head is '대주제' (it was 'TOPIC') — passoffUnlock.ts topicWithParticle
       const got = U.topicWithParticle(n, pair);
-      check(got === `TOPIC ${n}${particle}`, `${n}(${READ[n]}) ${pair}: ${got} — 'TOPIC ${n}${particle}' 이어야`);
+      check(got === `대주제 ${n}${particle}`, `${n}(${READ[n]}) ${pair}: ${got} — '대주제 ${n}${particle}' 이어야`);
     }
   }
 }

@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import LessonPage, { generateMetadata as lessonMetadata } from "@/app/[course]/[lesson]/page";
 import { PassoffTopicLock } from "@/components/passoff/TopicLock";
 import { getAllLessonParams, getLesson, isFreePreviewLessonServer } from "@/lib/content";
-import { formatLessonPresentation } from "@/lib/curriculumPresentation";
+import { formatGroupTitle, formatLessonPresentation } from "@/lib/curriculumPresentation";
 import { planOpensCourse } from "@/lib/license";
 import {
   LICENSE_SESSION_COOKIE_NAME,
@@ -68,7 +68,8 @@ export default async function PassoffLessonPage({
               title={formatLessonPresentation(COURSE, lesson).title}
               topic={info.topic}
               previousTopic={info.previousTopic}
-              current={info.current}
+              // UI검토-1007 4장 8: the topic open now, by its screen name ('대주제 2 · 동사의 현재형' — the data's 'TOPIC 2. …')
+              current={info.current ? { ...info.current, label: formatGroupTitle(COURSE, info.current.label) } : info.current}
             />
           );
         }

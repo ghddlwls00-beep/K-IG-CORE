@@ -30,7 +30,8 @@ export const vocaItemKey = (lessonId: string, order: number) => `${lessonId}#${o
 export const VOCA_MIC_PASS = 70;
 
 /** The line under the disabled '이 강의 학습 완료' until one Step 2 round is finished (lessonGate — 계획 D02 나). */
-export const VOCA_GATE_REASON = "2단계 퀴즈를 한 번 끝까지 풀면 완료할 수 있어요.";
+// UI검토-1007 17번 (고침3 통합, 2026-10-08): 'Step 2' as the tab says it — it read '2단계 퀴즈를 …' ('단계' is the grade on the list)
+export const VOCA_GATE_REASON = "Step 2 퀴즈를 한 번 끝까지 풀면 완료할 수 있어요.";
 
 export const leitnerStorageKey = (lessonKey: string) => `kig:voca:leitner:${lessonKey}`;
 export const quizStorageKey = (lessonKey: string) => `kig:voca:quiz:${lessonKey}`;

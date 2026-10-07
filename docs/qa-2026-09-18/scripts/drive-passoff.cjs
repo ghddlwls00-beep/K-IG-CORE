@@ -15,7 +15,7 @@
  *   ④ 영작 · ⑤ 처음 보는 문장: 문장마다 모범 답을 쳐 '맞았어요' 인지 — 데스크톱은 레슨 철자(Seoul), 휴대폰 · 태블릿은 화면대로
  *      한글로 쓴 꼴(서울 — src/lib/koreanGloss.ts romanForGrading 이 되돌려 채점) · 데스크톱 첫 문장은 틀린 답 먼저(틀림으로 나와야)
  *      · 맞힌 뒤 소리 단추 · 세트 넘기기 · ⑤ 규칙 다시 확인
- *   끝: '5단계를 모두 마쳤어요' · '이 강의 학습 완료' 켜짐(누르지 않음 — 서버 완료는 되돌릴 수 없음(undo: false). --complete 일 때만 누름)
+ *   끝: 'Step 1~5를 모두 마쳤어요'(2026-10-08 전 '5단계를 모두 마쳤어요') · '이 강의 학습 완료' 켜짐(이름 = 보이는 글 · 59)(누르지 않음 — 서버 완료는 되돌릴 수 없음(undo: false). --complete 일 때만 누름)
  *   단계를 옮길 때 소리가 저절로 나지 않음 · 화면 글 기대 대비 있음/없음 · 로마자 한국어 낱말('Busan' · 'Busan(부산)' 꼴) 0 ·
  *   4xx/5xx · 가로 넘침 · 오류 화면 · 데스크톱: 이전/다음 강의 링크 · (표본) 북마크 넣기→새로고침→빼기→새로고침
  *
@@ -93,7 +93,8 @@ const OUT = path.resolve(arg("--out-root", path.join(__dirname, "../out")));
 const JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}.jsonl`);
 const PAGES_JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}-pages.jsonl`);
 const RENDERED = path.join(OUT, "rendered", COURSE);
-const DRIVER_REV = "passoff-1002a";
+// -u1008 (2026-10-08 · UI검토-1007 고침3): 59 the completion name = its visible words (name59) · 17 'Step 1~5를 모두 마쳤어요'
+const DRIVER_REV = "passoff-1002a-u1008";
 const BREAK = arg("--break", "");
 const ALLOW_4XX = arg("--allow-4xx", null) ? new RegExp(arg("--allow-4xx")) : null;
 const LOCAL = /^http:\/\/(localhost|127\.0\.0\.1)/.test(H.BASE);
@@ -111,7 +112,12 @@ const STEP = (n) => `document.querySelector('main [data-passoff-view] section[ar
 const MAIN_TEXT = `(() => { const m = document.querySelector('main') || document.body; return (m.innerText || '').replace(/[ \\t]+/g, ' ').trim(); })()`;
 const CARD = (n) => `(() => { const s = ${STEP(n)}; return s ? [...s.querySelectorAll('section')].find((x) => /rounded-card/.test(x.className) && !x.hasAttribute('aria-labelledby') && !x.hasAttribute('aria-live') && (x.querySelector('textarea, input[aria-label="답"], [aria-label="낱말 고르기"], [aria-label="보기"], [aria-label="낱말 카드"]') || [...x.querySelectorAll('button')].some((b) => /^(다음|다음 문장)$/.test((b.innerText || '').trim())))) || null : null; })()`;
 const BTN_IN = (scopeExpr, re) => `(() => { const s = ${scopeExpr}; if (!s) return null; return [...s.querySelectorAll('button')].find((b) => ${re}.test((b.innerText || '').replace(/\\s+/g, ' ').trim()) && !!(b.offsetParent || b.getClientRects().length)) || null; })()`;
-const END_BTN = `(() => { const s = document.querySelector('main section[aria-label="강의 마치기"]'); if (!s) return null; const b = s.querySelector('button[aria-label^="학습 완료"]'); if (b) return { kind: 'button', label: b.getAttribute('aria-label'), disabled: b.disabled, text: (b.innerText || '').trim() }; const st = s.querySelector('[role=status]'); return st ? { kind: 'status', text: (st.innerText || '').trim() } : { kind: 'none' }; })()`;
+// UI검토-1007 고침3 (2026-10-08 · tools-c) 59: the end bar's button is named by its visible words — '이 강의 학습 완료' / '학습 완료함 ·
+// 취소하려면 누르세요' (lib/ui-1008.cjs; it was found by aria-label^="학습 완료" — the old '학습 완료 체크' · '학습 완료 취소'); the record
+// carries `name59` (name = words · no aria-pressed). 17: Step 5's line is 'Step 1~5를 모두 마쳤어요' (it was '5단계를 모두 마쳤어요').
+// 깨기: KIG_BREAK_APP=1008 (the page put back) → '처음엔 꺼짐' · '다섯 단계 뒤 켜짐' · '①~⑤ 마침 표시' FAIL.
+const U = require("./lib/ui-1008.cjs");
+const END_BTN = `(() => { const s = document.querySelector('main section[aria-label="강의 마치기"]'); if (!s) return null; const b = s.querySelector('${U.COMPLETE_ANY_SEL}'); if (b) { const words = (b.innerText || '').replace(/^\\s*✓\\s*/, '').replace(/\\s+/g, ' ').trim(); return { kind: 'button', label: b.getAttribute('aria-label'), disabled: b.disabled, text: (b.innerText || '').trim(), name59: b.getAttribute('aria-label') === words && !b.hasAttribute('aria-pressed') }; } const st = s.querySelector('[role=status]'); return st ? { kind: 'status', text: (st.innerText || '').trim() } : { kind: 'none' }; })()`;
 
 async function setViewport(tab, kind) {
   // lib/harness.cjs VIEWPORTS has 'small' (360×780 — 2026-10-04, adult-sweep) — used when it is there; 360×640 only on an older harness
@@ -399,7 +405,7 @@ async function stepWrap(tab, exp, rec, texts, viewport, depth, tally) {
     const t = await tab.eval(`(${sec} || {}).innerText || ''`).catch(() => "");
     rec.checks.push({ feature: "grading", item: "⑤ 규칙 다시 확인 — 정답", status: c.ok && /맞았어요/.test(t) ? "PASS" : "FAIL", note: c.ok ? norm(t).slice(-60) : c.reason });
   }
-  const done = await H.waitFor(tab, `(() => { const s = ${STEP(5)}; return !!s && /5단계를 모두 마쳤어요/.test(s.innerText || ''); })()`, 5000);
+  const done = await H.waitFor(tab, `(() => { const s = ${STEP(5)}; return !!s && (s.innerText || '').includes(${JSON.stringify(U.PASSOFF_ALL_DONE)}); })()`, 5000);
   rec.checks.push({ feature: "steps done", item: "①~⑤ 마침 표시", status: done ? "PASS" : "FAIL", note: done ? "" : norm(await tab.eval(`(${STEP(5)} || {}).innerText || ''`).catch(() => "")).slice(-120) });
   texts.push({ step: "5", text: await tab.eval(MAIN_TEXT).catch(() => "") });
 }
@@ -451,7 +457,7 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     rec.checks.push({ feature: "step", item: "단계 탭 5개", status: tabs.length === 5 && !unknown.length ? "PASS" : "BLOCKED", note: tabs.length === 5 && !unknown.length ? tabs.join(" | ") : `모르는 단계: ${tabs.join(" | ")} (기대 ${exp.stepNames.join(" · ")})` });
     const start = await tab.eval(END_BTN).catch(() => null);
     const startDone = start && (start.kind === "status" || (start.kind === "button" && /취소/.test(start.label)));
-    rec.checks.push({ feature: "completion", item: "처음엔 꺼짐", status: startDone ? "NA" : start && start.kind === "button" && start.disabled ? "PASS" : "FAIL", note: JSON.stringify(start), ...(startDone ? { coveredBy: "completion" } : {}) });
+    rec.checks.push({ feature: "completion", item: "처음엔 꺼짐", status: startDone ? "NA" : start && start.kind === "button" && start.disabled && start.name59 ? "PASS" : "FAIL", note: JSON.stringify(start), ...(startDone ? { coveredBy: "completion" } : {}) });
     const tally = { form: 0, formRight: 0, compose: 0, composeRight: 0, hangulForms: 0, hangulRight: 0 };
     await stepAnchors(tab, exp, rec, texts, depth);
     await nextStep(tab, 1, 2, rec);
@@ -470,10 +476,10 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     // '이 강의 학습 완료' opens after the five steps (lessonGate) — pressed only with --complete (the server keeps it for good)
     await H.sleep(300);
     const end = await tab.eval(END_BTN).catch(() => null);
-    const open = end && ((end.kind === "button" && !end.disabled) || end.kind === "status");
+    const open = end && ((end.kind === "button" && !end.disabled && end.name59) || end.kind === "status");
     rec.checks.push({ feature: "completion", item: "다섯 단계 뒤 켜짐", status: open ? "PASS" : "FAIL", note: JSON.stringify(end) });
     if (open && has("--complete") && end.kind === "button" && viewport === "desktop") {
-      await H.click(tab, `document.querySelector('main section[aria-label="강의 마치기"] button[aria-label^="학습 완료"]')`, { settle: 1200 });
+      await H.click(tab, `document.querySelector('main section[aria-label="강의 마치기"] ${U.COMPLETE_TODO_SEL}')`, { settle: 1200 });
       const after = await tab.eval(END_BTN).catch(() => null);
       rec.checks.push({ feature: "completion", item: "누름 → 학습 완료함", status: after && /학습 완료함/.test(after.text || "") ? "PASS" : "FAIL", note: JSON.stringify(after) });
       H.logDataChange({ course: COURSE, id: page.id, action: "PASS-OFF lesson completed via '이 강의 학습 완료' (server keeps it — undo: false)", detail: JSON.stringify(after) });

@@ -97,10 +97,13 @@ export const FONT: Record<FontSize, { text: string; input: string }> = {
 };
 export const FONT_LABEL: Record<FontSize, string> = { normal: "기본", large: "크게", xlarge: "특대" };
 
-/** One option of a segmented control (글자 크기 · 문장 속도) — the other course views' segment buttons. */
+/**
+ * One option of a segmented control (글자 크기 · 문장 속도) — the other course views' segment buttons. The chosen one wears the
+ * step tabs' dark ring (UI검토-1007 42 — '1.0×' read only by weight in dark mode).
+ */
 export const segmentButton = (on: boolean) =>
   "flex min-h-11 min-w-11 items-center justify-center rounded-control px-3 text-label tabular-nums transition-colors cursor-pointer " +
-  (on ? "bg-raised font-semibold text-ink shadow-2xs" : "font-medium text-ink-soft hover:bg-raised/60");
+  (on ? "bg-raised font-semibold text-ink shadow-2xs dark:ring-1 dark:ring-line-input" : "font-medium text-ink-soft hover:bg-raised/60");
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { children: ReactNode };
 

@@ -58,18 +58,33 @@ function pages(course) {
 /**
  * Prev/next exactly as src/lib/content.ts getLessonContext computes them:
  * a MAIN lesson walks the main-only list, a SCRIPT page walks the full index list.
+ *
+ * UI검토-1007 25번 (2026-10-08 · tools-c): the lesson page asks for a script page's neighbours with its MAIN page's id
+ * ([course]/[lesson]/page.tsx neighboursOf = canonicalLessonId — the id without '-N' when that main page exists), except GRAMMAR I
+ * (its script pages are the parts of one lesson — the old walk). So LISTENING d001-1: prev none · next d002 (it was d001 · d002);
+ * READING pr001-1 the same; GRAMMAR II gh2-007-1: gh2-007's. A script page without a main page keeps the full-list walk.
+ * `{ old: true }` or --break=neighbours-old (argv): the walk before 10-08 — drive-generic's prev/next check must FAIL on script pages.
  */
-function neighbours(course) {
+function neighbours(course, { old = process.argv.includes("--break=neighbours-old") } = {}) {
   const lessons = courseIndex(course).lessons;
   const mains = lessons.filter((l) => l.variant === "main");
-  const map = {};
-  for (const l of lessons) {
-    const list = l.variant === "script" ? lessons : mains;
-    const i = list.findIndex((x) => x.id === l.id);
-    map[l.id] = {
+  const walk = (id) => {
+    const l = lessons.find((x) => x.id === id);
+    const list = l && l.variant === "script" ? lessons : mains;
+    const i = list.findIndex((x) => x.id === id);
+    return {
       prev: i > 0 ? list[i - 1].id : null,
       next: i >= 0 && i < list.length - 1 ? list[i + 1].id : null,
     };
+  };
+  const map = {};
+  for (const l of lessons) {
+    let at = l.id;
+    if (!old && course !== "grammar1" && l.variant === "script") {
+      const base = l.id.replace(/-\d+$/, "");
+      if (mains.some((m) => m.id === base)) at = base;
+    }
+    map[l.id] = walk(at);
   }
   return map;
 }

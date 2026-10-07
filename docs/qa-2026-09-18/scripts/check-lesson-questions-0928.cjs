@@ -4,7 +4,7 @@
  * 눌러 보는 검사. 로컬 운영 빌드의 무료 강의(/ld/d001 · /ld/d001-1 · /reading/pr001)를 빈 브라우저로 연다(이용권 없음 — 서버 쓰기 없음).
  * 기대값은 앱과 같은 방법으로 읽은 문제 파일(content.ts getLessonQuestions — content/questions/<과정>/<id>.json)과 강의 글.
  *
- *   $env:BASE = "http://localhost:3210"; $env:KIG_PROFILE_SOURCE = "<빈 폴더>"; node check-lesson-questions-0928.cjs [--break verdict|evidence|hide|engine|persist|lock]
+ *   $env:BASE = "http://localhost:3210"; $env:KIG_PROFILE_SOURCE = "<빈 폴더>"; node check-lesson-questions-0928.cjs [--break verdict|evidence|hide|engine|persist|lock|early]
  *   --break: 기대값 하나를 일부러 뒤집어 FAIL 이 나는지 본다(exit 1 이 나야 맞음).
  *   [--clone <사본 이름>] [--port <디버깅 포트>] (2026-10-04 — 동시에 도는 일꾼마다 따로. 기본 questions0928 · 9607)
  *
@@ -15,8 +15,10 @@
  *   L4 다시 열어도 답 그대로 · 대본 쪽 d001-1 도 같은 문제 · 같은 기록
  *   L5 모두 풀면 'N문제 중 k개 맞힘' · '다시 풀기' → 답 지움 · 다시 고르면 엔진에 첫 시도 아님
  *   L6 단계를 옮겨도 소리 없음(1→2→1 — 2026-09-28 사장님 규칙)
- *   R1 pr001 4단계: 재기 전 문제 보임(파일 그대로) · 재는 동안 숨음 · 끝나면 다시 보임
+ *   R1 pr001 4단계: 재기 전 문제 없음 — 기다림 한 줄([data-comprehension="waiting"]) · 재는 동안 숨음 · '다 읽었어요' 뒤 보임(파일 그대로)
+ *      (2026-10-08 UI검토-1007 4장 6 — 그 전에는 '재기 전 보임' · --break early 가 그 옛 기대)
  *   R2 정답 고름: right · 근거 = 파일의 근거 문장(강의 readingSentences 의 영어 · 번역 그대로) · 엔진 기록
+ *   R3 (2026-10-08) 실제로 한 번 잰 뒤 다시 열면 4단계 문제가 바로 보임
  */
 const fs = require("fs");
 const path = require("path");
@@ -174,20 +176,26 @@ async function open(tab, url, marker) {
     const back1 = await tab.eval(`document.querySelector('[data-ld-view]')?.getAttribute('data-step')`);
     check("L6 단계를 옮겨도 소리 없음(1→2→1)", back1 === "1" && !sounded(moveLog), `돌아온 단계 ${back1} · 소리 ${sounded(moveLog)}`);
 
-    // R1 — READING Step 4: shown before the run, hidden while timing, shown after
+    // R1 — READING Step 4 (UI검토-1007 4장 6 · 사장님 답 10-07 23:01 · 2026-10-08): before '읽기 시작' NO question — one line waiting for
+    // '다 읽었어요' ([data-comprehension="waiting"]); hidden while timing; after '다 읽었어요' (this one is too fast — pressed, so it opens)
+    // the file's questions. It was 'shown before the run'. --break early: the old expectation (shown before) — must FAIL.
     await open(tab, "/reading/pr001", H.MARKERS.reading);
     await H.click(tab, q('[data-reading-view] [data-step-tab="4"]'), { settle: 700 });
     const before = await shown(tab);
+    const waiting = await tab.eval(`(() => { const s = document.querySelector('[data-step-panel="4"] [data-comprehension]'); return s ? { kind: s.getAttribute('data-comprehension'), line: (s.textContent || '').replace(/\\s+/g, ' ').trim() } : null; })()`).catch(() => null);
     await H.click(tab, q('[data-action="start-reading"]'), { settle: 700 });
     const during = await shown(tab);
     await H.click(tab, q('[data-action="finish-reading"]'), { settle: 900 });
     const after = await shown(tab);
     const wantRd = rdQs.map((x, i) => `${i + 1}. ${x.prompt}`);
     const hiddenWhileTiming = BREAK === "hide" ? !!during : !during;
+    const beforeOk = BREAK === "early"
+      ? !!before && before.visible && J(before.items.map((x) => x.prompt)) === J(wantRd)
+      : !before && !!waiting && waiting.kind === "waiting" && /다 읽었어요/.test(waiting.line);
     check(
-      "R1 pr001 4단계: 재기 전 보임(파일 그대로) · 재는 동안 숨음 · 끝나면 다시 보임",
-      !!before && before.visible && J(before.items.map((x) => x.prompt)) === J(wantRd) && hiddenWhileTiming && !!after && after.visible,
-      `재기 전 ${before ? `${before.items.length}문제 · ${before.items.map((x) => x.prompt).join(" / ").slice(0, 100)}` : "없음"} · 재는 동안 ${during ? "보임" : "숨음"} · 끝난 뒤 ${after ? "보임" : "없음"}`,
+      "R1 pr001 4단계: 재기 전 문제 없음(기다림 한 줄) · 재는 동안 숨음 · '다 읽었어요' 뒤 보임(파일 그대로)",
+      beforeOk && hiddenWhileTiming && !!after && after.visible && J(after.items.map((x) => x.prompt)) === J(wantRd),
+      `재기 전 ${before ? `문제 ${before.items.length}(없어야)` : "문제 없음"} · 자리 ${waiting ? `${waiting.kind} '${waiting.line.slice(0, 40)}'` : "없음"} · 재는 동안 ${during ? "보임" : "숨음"} · 끝난 뒤 ${after ? `${after.items.length}문제 · ${after.items.map((x) => x.prompt).join(" / ").slice(0, 80)}` : "없음"}`,
     );
 
     // R2 — a right pick shows the file's evidence sentences as the lesson has them
@@ -204,6 +212,18 @@ async function open(tab, url, marker) {
       !!ri && ri.verdict === "right" && ri.result === "맞았어요." && J(ri.evidence) === J(wantEn) && J(ri.evidenceKo) === J(wantKo) && !!rentry && rentry.kind === "question" && rentry.correct === true,
       ri ? `판정 ${ri.verdict} · '${ri.result}' · 근거 ${ri.evidence.length}(${(ri.evidence[0] || "").slice(0, 50)}…) · 번역 ${ri.evidenceKo.length} · 엔진 ${J(rentry && { kind: rentry.kind, correct: rentry.correct })}` : "문제 없음",
     );
+
+    // R3 (UI검토-1007 4장 6 · 2026-10-08) — a lesson read before opens its questions at once: one real timed reading
+    // (lib/reading-page.cjs MEASURE_ONCE), then a reload → Step 4 shows the questions with no second '다 읽었어요'. A fresh visit
+    // with nothing on record stays folded (R1).
+    const RDP = require("./lib/reading-page.cjs");
+    const measured = await tab.eval(RDP.MEASURE_ONCE).catch((e) => ({ ok: false, why: String(e && e.message) }));
+    await open(tab, "/reading/pr001", H.MARKERS.reading);
+    await H.click(tab, q('[data-reading-view] [data-step-tab="4"]'), { settle: 700 });
+    const reopened = await tab.eval(`(() => { const s = document.querySelector('[data-step-panel="4"] [data-comprehension]'); return s ? s.getAttribute('data-comprehension') : null; })()`).catch(() => null);
+    const again4 = await shown(tab);
+    check("R3 실제로 잰 뒤 다시 열면 4단계 문제가 바로 보임('다 읽었어요' 다시 안 눌러도)", !!(measured && measured.ok) && reopened === "questions" && !!again4 && again4.visible && J(again4.items.map((x) => x.prompt)) === J(wantRd),
+      `잼 ${measured && measured.ok ? "됨" : `못 함(${measured && measured.why})`} · 다시 연 4단계 자리 ${reopened} · 문제 ${again4 ? again4.items.length : 0}`);
   } catch (e) {
     check("RUN", false, `예외 ${e && e.stack ? e.stack.split("\n").slice(0, 3).join(" | ") : e}`);
   } finally {

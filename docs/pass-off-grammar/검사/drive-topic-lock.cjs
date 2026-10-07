@@ -92,6 +92,19 @@ const load = (rel) => {
 };
 const { viewBlocks } = load("src/lib/passoffView.ts");
 const { cutSets } = load("src/lib/passoffLesson.ts");
+/*
+ * UI검토-1007 고침3 (2026-10-08 · tools-c) — the app's new words (fix-c2 · fix-c3 · lib/ui-1008.cjs):
+ *   59 end bar '학습 완료 체크' / '학습 완료 취소' → '이 강의 학습 완료' / '학습 완료함 · 취소하려면 누르세요' (no aria-pressed)
+ *   17 Step 5 '5단계를 모두 마쳤어요' → 'Step 1~5를 모두 마쳤어요' · 'TOPIC 1 마무리' → '대주제 1 마무리'
+ *   41 · 8 list '서버에 저장됨' → '진도 저장됨' · '진도를 서버와 맞추는 중' → '진도를 맞추는 중' · topic line 'TOPIC 1을 마치면 열림' →
+ *      '대주제 1을 마치면 열려요' · row '대주제 1을 마치면 열림' · '이용권 등록 후 열림' → '…열려요' · notice 'TOPIC 2가 열렸어요.' →
+ *      '대주제 2가 열렸어요.' · the lock screen's current topic name = formatGroupTitle ('대주제 2 · 동사의 현재형')
+ *   고침3 통합 (integrate-c, same day) changed the rest in the app — passoffUnlock.ts topicWithParticle and passoffLearning.ts: the lock
+ *   screen 'TOPIC 2를 마치면 열려요' → '대주제 2를 마치면 열려요' (D6a · D9c) · the map result 'TOPIC 2가 열렸어요' → '대주제 2가 열렸어요'
+ *   (D3h) · '5단계를 모두 마치면 완료할 수 있어요.' → 'Step 1~5를 모두 마치면 완료할 수 있어요.' (D3d).
+ *   'no … 마치면 열림' tests are '마치면 열(림|려요)' now (else they could not fail).
+ */
+const PRES = load("src/lib/curriculumPresentation.ts");
 const index = JSON.parse(fs.readFileSync(path.join(REPO, "content/courses/passoff-grammar.json"), "utf8"));
 const total = index.lessons.length;
 const titleOf = (id) => (index.lessons.find((l) => l.id === id) || {}).title || id;
@@ -160,7 +173,7 @@ const LOCKED = (i) => `(() => { const s = document.getElementById('section-${i}'
 /** the progress sentence '학습 진도율: N / T개 완료 (P%)' — main's list has it in the '진도' (licence) or '무료 체험' box */
 const HEAD = `(() => { const b = document.querySelector('section[aria-label="진도"]') || document.querySelector('section[aria-label="무료 체험"]'); return b ? b.innerText.replace(/\\s+/g, ' ') : ''; })()`;
 /** the end of the lesson (main's LessonEndBar): the completion button's state and the words around it */
-const END_BAR = `(() => { const s = document.querySelector('section[aria-label="강의 마치기"]'); if (!s) return null; const b = s.querySelector('button[aria-label="학습 완료 체크"], button[aria-label="학습 완료 취소"]'); return { text: s.innerText.replace(/\\s+/g, ' '), button: b ? { label: b.getAttribute('aria-label'), disabled: b.disabled } : null, status: Boolean(s.querySelector('[role=status]')) }; })()`;
+const END_BAR = `(() => { const s = document.querySelector('section[aria-label="강의 마치기"]'); if (!s) return null; const b = s.querySelector('button[aria-label="이 강의 학습 완료"], button[aria-label="학습 완료함 · 취소하려면 누르세요"]'); return { text: s.innerText.replace(/\\s+/g, ' '), button: b ? { label: b.getAttribute('aria-label'), disabled: b.disabled } : null, status: Boolean(s.querySelector('[role=status]')) }; })()`;
 const API_GET = `fetch('/api/progress/passoff-grammar', { cache: 'no-store' }).then(r => r.json())`;
 const OVERFLOW = `document.documentElement.scrollWidth > window.innerWidth + 1`;
 const SMALL = `(() => { const out = []; for (const el of document.querySelectorAll('main a[href], main button')) { const r = el.getBoundingClientRect(); if (r.width && r.height && (r.width < 44 || r.height < 44)) out.push((el.innerText || el.getAttribute('aria-label') || '').trim().slice(0, 20) + ' ' + Math.round(r.width) + 'x' + Math.round(r.height)); } return out; })()`;
@@ -267,11 +280,11 @@ async function finishSteps(tab, id) {
     await sleep(900);
   }
   // 단계 2-나 E2: the five steps done — '5단계를 모두 마쳤어요' (before the press) or '레슨 완료 — 5단계를 모두 마쳤어요.' (after)
-  return tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.includes('5단계를 모두 마쳤어요')`);
+  return tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.includes('Step 1~5를 모두 마쳤어요')`);
 }
 /** the end bar's '이 강의 학습 완료' — pressed as a learner does (단계 2-나 E2: the lesson is finished only by this) */
 async function pressComplete(tab) {
-  const r = await tab.eval(`(() => { const b = document.querySelector('section[aria-label="강의 마치기"] button[aria-label="학습 완료 체크"]'); if (!b || b.disabled) return 'no button'; b.click(); return 'clicked'; })()`);
+  const r = await tab.eval(`(() => { const b = document.querySelector('section[aria-label="강의 마치기"] button[aria-label="이 강의 학습 완료"]'); if (!b || b.disabled) return 'no button'; b.click(); return 'clicked'; })()`);
   await sleep(700);
   return r;
 }
@@ -337,7 +350,7 @@ const check = (label, ok, detail) => {
     await tab.goto(ORIGIN + "/passoff-grammar", 2500);
     const s0 = await tab.eval(SECTION(0));
     const s1 = await tab.eval(SECTION(1));
-    check("D1 이용권 없음: TOPIC 1 '첫 두 강의 무료 체험' · TOPIC 2 '이용권 등록 후 열림'", /첫 두 강의 무료 체험/.test(s0) && /이용권 등록 후 열림/.test(s1) && !/마치면 열림/.test(s1) && !(await tab.eval(MAIN_TEXT)).includes("서버에 저장됨"), { s0, s1 });
+    check("D1 이용권 없음: 대주제 1 '첫 두 강의 무료 체험' · 대주제 2 '이용권 등록 후 열려요'", /첫 두 강의 무료 체험/.test(s0) && /이용권 등록 후 열려요/.test(s1) && !/마치면 열(림|려요)/.test(s1) && !(await tab.eval(MAIN_TEXT)).includes("진도 저장됨"), { s0, s1 });
 
     // a STUDENT pass on this browser, as the licence window would do it
     const key = makeKey("STU1Y");
@@ -356,19 +369,19 @@ const check = (label, ok, detail) => {
 
     // D2 the list with a fresh licence
     await tab.goto(ORIGIN + "/passoff-grammar", 2500);
-    await waitFor(tab, `${MAIN_TEXT}.includes('서버에 저장됨')`);
+    await waitFor(tab, `${MAIN_TEXT}.includes('진도 저장됨')`);
     const a0 = await tab.eval(SECTION(0));
     const a1 = await tab.eval(SECTION(1));
     const lock0 = await tab.eval(LOCKED(0));
     const lock1 = await tab.eval(LOCKED(1));
-    check("D2a '서버에 저장됨'", (await tab.eval(MAIN_TEXT)).includes("서버에 저장됨"));
+    check("D2a '진도 저장됨'", (await tab.eval(MAIN_TEXT)).includes("진도 저장됨"));
     check("D2b TOPIC 1: 열림(자물쇠 없음) · '강의 3개와 마지막 강의, 구성도 다시 채우기를 마치면 다음 대주제'", lock0 === false && /강의 3개와 마지막 강의, 구성도 다시 채우기를 마치면 다음 대주제/.test(a0), { a0, lock0 });
-    check("D2c TOPIC 2: 'TOPIC 1을 마치면 열림' · 자물쇠", /TOPIC 1을 마치면 열림/.test(a1) && lock1 === true, { a1, lock1 });
+    check("D2c 대주제 2: '대주제 1을 마치면 열려요' · 자물쇠", /대주제 1을 마치면 열려요/.test(a1) && lock1 === true, { a1, lock1 });
     await tab.eval(`document.querySelector('#section-1 button[aria-expanded]').click(), true`);
     await sleep(500);
     // textContent: main's rows are content-visibility:auto, so a row below the screen has an empty innerText
     const cards = await tab.eval(`[...document.querySelectorAll('#section-1 li')].map(li => li.textContent.replace(/\\s+/g, ' '))`);
-    check("D2d TOPIC 2 레슨 줄마다 'TOPIC 1을 마치면 열림'", cards.length > 0 && cards.every((c) => c.includes("TOPIC 1을 마치면 열림")), cards[0]);
+    check("D2d 대주제 2 레슨 줄마다 '대주제 1을 마치면 열림'", cards.length > 0 && cards.every((c) => c.includes("대주제 1을 마치면 열림")), cards[0]);
     check("D2e 목록 가로 넘침 0", (await tab.eval(OVERFLOW)) === false);
     if (BREAK === "topic-lock-off") await tab.eval(`localStorage.removeItem('drive:passoff-open-all'), true`);
 
@@ -429,10 +442,10 @@ const check = (label, ok, detail) => {
     // the five steps from the start of the page (the view comes back to the first step not done)
     await tab.goto(BASE + "pg01-3", 1800);
     const barBefore = await tab.eval(END_BAR);
-    check("D3d 끝 막대(5단계 전): '이 강의 학습 완료' 꺼짐 · '5단계를 모두 마치면 완료할 수 있어요.'",
-      Boolean(barBefore && barBefore.button && barBefore.button.label === "학습 완료 체크" && barBefore.button.disabled && barBefore.text.includes("5단계를 모두 마치면 완료할 수 있어요.")), barBefore);
+    check("D3d 끝 막대(Step 5 전): '이 강의 학습 완료' 꺼짐 · 'Step 1~5를 모두 마치면 완료할 수 있어요.'",
+      Boolean(barBefore && barBefore.button && barBefore.button.label === "이 강의 학습 완료" && barBefore.button.disabled && barBefore.text.includes("Step 1~5를 모두 마치면 완료할 수 있어요.")), barBefore);
     const finished = await finishSteps(tab, "pg01-3");
-    check("D3a pg01-3 레슨 화면 5단계 끝 — '5단계를 모두 마쳤어요'", finished === true && pre === 1, { pre, finished });
+    check("D3a pg01-3 레슨 화면 5단계 끝 — 'Step 1~5를 모두 마쳤어요'", finished === true && pre === 1, { pre, finished });
     // 단계 2-나 E2: nothing finishes by itself — the button is on, the server has nothing, the step says to press it
     if (BREAK === "press-early") await pressComplete(tab);
     await sleep(1500);
@@ -440,7 +453,7 @@ const check = (label, ok, detail) => {
     const serverBefore = await tab.eval(`${API_GET}.then(d => Boolean(d.progress.lessons['pg01-3']))`);
     const step5 = await tab.eval(`document.querySelector('section[aria-labelledby="passoff-step-5"]').innerText.replace(/\\s+/g, ' ')`);
     check("D3f 5단계를 마쳐도 저절로 완료되지 않음 — 끝 막대 '이 강의 학습 완료' 켜짐 · 서버에 pg01-3 없음 · 5단계에 '누르면 강의가 완료돼요'",
-      Boolean(barReady && barReady.button && barReady.button.label === "학습 완료 체크" && !barReady.button.disabled) && serverBefore === false && step5.includes("누르면 강의가 완료돼요") && !step5.includes("강의 완료 —"),
+      Boolean(barReady && barReady.button && barReady.button.label === "이 강의 학습 완료" && !barReady.button.disabled) && serverBefore === false && step5.includes("누르면 강의가 완료돼요") && !step5.includes("강의 완료 —"),
       { barReady, serverBefore, step5: step5.slice(-120) });
     const pressed = BREAK === "no-press" || BREAK === "press-early" ? "skipped" : await pressComplete(tab);
     const barAfter = await tab.eval(END_BAR);
@@ -454,8 +467,8 @@ const check = (label, ok, detail) => {
     const pending = await tab.eval(`localStorage.getItem('kig:passoff:pending:v1')`);
     check("D3c 기기의 보낼 목록이 비워짐", pending === "[]", pending);
     const entry = await tab.eval(`(() => { const e = document.querySelector('[data-passoff-map-entry="1"]'); return e ? { text: e.innerText.replace(/\\s+/g, ' '), href: (e.querySelector('a') || {}).getAttribute ? e.querySelector('a').getAttribute('href') : null } : null; })()`);
-    check("D3g 대주제 마지막 레슨 끝: 'TOPIC 1 마무리 — 구성도 다시 채우기' · /passoff-grammar/map?topic=1",
-      Boolean(entry && entry.text.includes("TOPIC 1 마무리") && entry.href === "/passoff-grammar/map?topic=1"), entry);
+    check("D3g 대주제 마지막 레슨 끝: '대주제 1 마무리 — 구성도 다시 채우기' · /passoff-grammar/map?topic=1",
+      Boolean(entry && entry.text.includes("대주제 1 마무리") && entry.href === "/passoff-grammar/map?topic=1"), entry);
     // the map page, from that link
     const map1 = mapOf(0);
     if (entry && entry.href) await tab.eval(`document.querySelector('[data-passoff-map-entry="1"] a').click(), true`);
@@ -478,26 +491,26 @@ const check = (label, ok, detail) => {
     const notToday = Boolean(server && server.plan && !server.plan.items.some((i) => i.lessonId === "pg01-2"));
     // 합친 판: the queue is this licence's ("kig-learning-forward:<course>@<licence id>")
     const queueLeft = await tab.eval(`localStorage.getItem(${JSON.stringify(`kig-learning-forward:passoff-grammar@${licenseId}`)})`);
-    check(`D3h 구성도 다시 채우기(2번 칸 문장만 틀림): 결과 '칸 ${map1.length}개 중 ${map1.length - 1}개' · '2인칭 … 내일부터 복습에 다시 나와요' · 'TOPIC 2가 열렸어요' · 서버 구성도 기록 · 2인칭 복습 문항이 기기 · 서버 모두 ${tomorrow}(내일)로 · 오늘 계획엔 없음 · 기기 대기열 비움 · 44px 미만 0 · 넘침 0`,
+    check(`D3h 구성도 다시 채우기(2번 칸 문장만 틀림): 결과 '칸 ${map1.length}개 중 ${map1.length - 1}개' · '2인칭 … 내일부터 복습에 다시 나와요' · '대주제 2가 열렸어요' · 서버 구성도 기록 · 2인칭 복습 문항이 기기 · 서버 모두 ${tomorrow}(내일)로 · 오늘 계획엔 없음 · 기기 대기열 비움 · 44px 미만 0 · 넘침 0`,
       fillLog.length === 0 && saved && result && result.includes(`칸 ${map1.length}개 중 ${map1.length - 1}개`) && result.includes(`${titleOf("pg01-2")}`) && result.includes("내일부터 복습에 다시 나와요") &&
-        result.includes("TOPIC 2가 열렸어요") && after.u === 2 && after.refilled === true && deviceMoved && serverMoved && notToday && queueLeft === null && mapSmall.length === 0 && mapOverflow === false && resultOverflow === false,
+        result.includes("대주제 2가 열렸어요") && after.u === 2 && after.refilled === true && deviceMoved && serverMoved && notToday && queueLeft === null && mapSmall.length === 0 && mapOverflow === false && resultOverflow === false,
       { fillLog, saved, result: result && result.slice(0, 200), after, deviceMoved, serverMoved, notToday, queueLeft, mapSmall });
 
     // D4 back to the list
     await tab.goto(ORIGIN + "/passoff-grammar", 1500);
-    const toast = await waitFor(tab, `[...document.querySelectorAll('[role=status]')].some(e => e.innerText.includes('TOPIC 2가 열렸어요.'))`, 6000);
-    check("D4a 'TOPIC 2가 열렸어요.'", toast);
+    const toast = await waitFor(tab, `[...document.querySelectorAll('[role=status]')].some(e => e.innerText.includes('대주제 2가 열렸어요.'))`, 6000);
+    check("D4a '대주제 2가 열렸어요.'", toast);
     const b0 = await tab.eval(SECTION(0));
     const b1 = await tab.eval(SECTION(1));
     const unlocked1 = (await tab.eval(LOCKED(1))) === false;
     const head = await tab.eval(HEAD);
-    check("D4b TOPIC 1 '대주제 완료' / TOPIC 2 열림(자물쇠 없음 · '마치면 열림' 없음)", /대주제 완료/.test(b0) && unlocked1 && !/마치면 열림/.test(b1), { b0, b1, unlocked1 });
+    check("D4b 대주제 1 '대주제 완료' / 대주제 2 열림(자물쇠 없음 · '마치면 열림/열려요' 없음)", /대주제 완료/.test(b0) && unlocked1 && !/마치면 열(림|려요)/.test(b1), { b0, b1, unlocked1 });
     check(`D4c 진도율 '3 / ${total}개 완료'(pg01-1 · pg01-2 는 서버에서 온 완료)`, head.includes(`3 / ${total}개 완료`), head);
     await sleep(5600); // the notice's five seconds — then it counts as said
 
     // D5 not again
     await tab.goto(ORIGIN + "/passoff-grammar", 2500);
-    await waitFor(tab, `${MAIN_TEXT}.includes('서버에 저장됨')`);
+    await waitFor(tab, `${MAIN_TEXT}.includes('진도 저장됨')`);
     await sleep(800);
     const again = await tab.eval(`[...document.querySelectorAll('[role=status]')].some(e => e.innerText.includes('열렸어요'))`);
     check("D5 다시 열면 알림 없음", again === false);
@@ -505,7 +518,7 @@ const check = (label, ok, detail) => {
     // D6 the lock screen, and a completion still on this device
     await tab.goto(BASE + "pg03-1", 2000);
     const lockText = await tab.eval(MAIN_TEXT);
-    check("D6a pg03-1 잠금 화면 'TOPIC 2를 마치면 열려요' · 지금 대주제 TOPIC 2 · 아직 기록되지 않은 레슨 3", lockText.includes("순차 학습 잠금") && lockText.includes("TOPIC 2를 마치면 열려요") && lockText.includes(index.groups[1].label) && ["pg02-1", "pg02-2", "pg02-3"].every((id) => lockText.includes(titleOf(id))), lockText.slice(0, 200));
+    check("D6a pg03-1 잠금 화면 '대주제 2를 마치면 열려요' · 지금 대주제 '대주제 2 · …' · 아직 기록되지 않은 레슨 3", lockText.includes("순차 학습 잠금") && lockText.includes("대주제 2를 마치면 열려요") && lockText.includes(PRES.formatGroupTitle("passoff-grammar", index.groups[1].label)) && ["pg02-1", "pg02-2", "pg02-3"].every((id) => lockText.includes(titleOf(id))), lockText.slice(0, 200));
     check("D7a 잠금 화면: 가로 넘침 0 · 누를 곳 44px 미만 0", (await tab.eval(OVERFLOW)) === false && (await tab.eval(SMALL)).length === 0, await tab.eval(SMALL));
     // E2 수정: TOPIC 2's map refill is taken only after its lessons, so it cannot go first — sent before them it is refused
     const map2Early = await tab.eval(`fetch('/api/progress/passoff-grammar', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ updates: [{ mapRefillTopic: 2 }] }) }).then(r => r.json()).then(d => d.progress.topics[1].mapRefilled)`);
@@ -529,20 +542,20 @@ const check = (label, ok, detail) => {
 
     // D8 점검 6 — a page opened again while the server's answer is slow
     await tab.goto(ORIGIN + "/passoff-grammar", 2500); // the list asks once, so this device keeps the answer (TOPIC 3 open)
-    await waitFor(tab, `${MAIN_TEXT}.includes('서버에 저장됨')`);
+    await waitFor(tab, `${MAIN_TEXT}.includes('진도 저장됨')`);
     if (BREAK === "no-cache") await tab.eval(`Object.keys(localStorage).filter(k => k.startsWith('kig:passoff:answer:')).forEach(k => localStorage.removeItem(k)), true`);
     await tab.eval(`localStorage.setItem('drive:passoff-get-delay', '7000'), true`);
     await tab.goto(ORIGIN + "/passoff-grammar", 300);
     // TOPIC 3 drawn open from the answer kept on this device: its header there, no lock, not '확인 중', not 'N을 마치면 열림'
-    const early = await waitFor(tab, `(() => { const t = ${SECTION(2)}; return t !== null && ${LOCKED(2)} === false && !/확인 중|마치면 열림/.test(t); })()`, 4000);
+    const early = await waitFor(tab, `(() => { const t = ${SECTION(2)}; return t !== null && ${LOCKED(2)} === false && !/확인 중|마치면 열(림|려요)/.test(t); })()`, 4000);
     const e2 = await tab.eval(SECTION(2));
-    const syncing = (await tab.eval(MAIN_TEXT)).includes("진도를 서버와 맞추는 중");
-    check("D8a 서버 답이 오기 전(7초 늦춤): 기기에 둔 지난 답으로 TOPIC 3 열림(잠김으로 그리지 않음)", early && syncing && !/마치면 열림/.test(e2), { e2, syncing });
+    const syncing = (await tab.eval(MAIN_TEXT)).includes("진도를 맞추는 중");
+    check("D8a 서버 답이 오기 전(7초 늦춤): 기기에 둔 지난 답으로 TOPIC 3 열림(잠김으로 그리지 않음)", early && syncing && !/마치면 열(림|려요)/.test(e2), { e2, syncing });
     await tab.eval(`Object.keys(localStorage).filter(k => k.startsWith('kig:passoff:answer:')).forEach(k => localStorage.removeItem(k)), true`);
     await tab.goto(ORIGIN + "/passoff-grammar", 300);
     const checking = await waitFor(tab, `(${SECTION(2)} || '').includes('진도 확인 중')`, 4000);
     const c2 = await tab.eval(SECTION(2));
-    check("D8b 둔 답이 없는 기기: 서버 답 전에는 '진도 확인 중…' · '확인 중'(TOPIC 2~ 를 잠김으로 그리지 않음)", checking && /확인 중/.test(c2) && !/마치면 열림/.test(c2), c2);
+    check("D8b 둔 답이 없는 기기: 서버 답 전에는 '진도 확인 중…' · '확인 중'(TOPIC 2~ 를 잠김으로 그리지 않음)", checking && /확인 중/.test(c2) && !/마치면 열(림|려요)/.test(c2), c2);
     await tab.eval(`localStorage.removeItem('drive:passoff-get-delay'), true`);
 
     // D9 점검 1 — the owner resets this code; the same phone opens the list again
@@ -552,14 +565,14 @@ const check = (label, ok, detail) => {
       reset = await tab.eval(`fetch('/api/admin/passoff-progress', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key: ${JSON.stringify(key)}, action: 'reset' }) }).then(r => r.json()).then(d => d.progress.unlockedThrough + '/' + d.progress.completedLessons)`);
     }
     await tab.goto(ORIGIN + "/passoff-grammar", 1500);
-    await waitFor(tab, `${MAIN_TEXT}.includes('서버에 저장됨')`);
+    await waitFor(tab, `${MAIN_TEXT}.includes('진도 저장됨')`);
     await sleep(600);
     const r0 = await tab.eval(SECTION(0));
     const r1 = await tab.eval(SECTION(1));
     const rHead = await tab.eval(HEAD);
     const deviceStillHas = await tab.eval(`JSON.parse(localStorage.getItem('kig:progress:completed') || '{}')['passoff-grammar:pg01-3'] === true`);
-    check(`D9a 초기화 뒤 같은 기기 목록 = 서버 기록: '0 / ${total}개 완료' · TOPIC 1 완료 0('0/N') · TOPIC 2 'TOPIC 1을 마치면 열림'(기기 기록 pg01-3 은 남아 있어도)`,
-      login === true && rHead.includes(`0 / ${total}개 완료`) && /(^|\s)0\/\d+$/.test(r0) && /TOPIC 1을 마치면 열림/.test(r1) && deviceStillHas,
+    check(`D9a 초기화 뒤 같은 기기 목록 = 서버 기록: '0 / ${total}개 완료' · TOPIC 1 완료 0('0/N') · 대주제 2 '대주제 1을 마치면 열려요'(기기 기록 pg01-3 은 남아 있어도)`,
+      login === true && rHead.includes(`0 / ${total}개 완료`) && /(^|\s)0\/\d+$/.test(r0) && /대주제 1을 마치면 열려요/.test(r1) && deviceStillHas,
       { reset, rHead, r0, r1, deviceStillHas });
     await tab.goto(BASE + "pg01-3", 1800);
     await tab.eval(clickTab(4));
@@ -568,7 +581,7 @@ const check = (label, ok, detail) => {
     check("D9b 끝낸 레슨 pg01-3 화면: '강의 완료' 와 함께 '이 이용권의 진도에는 아직 이 강의가 기록되지 않았어요'", view.includes("강의 완료") && view.includes("기록되지 않았어요") && view.includes("처음부터 다시 하기"), view.slice(-160));
     await tab.goto(BASE + "pg02-1", 1800);
     const lock2 = await tab.eval(MAIN_TEXT);
-    check("D9c 잠금 화면 pg02-1: 아직 기록되지 않은 강의에 '3인칭 … 이 기기에서 마침' · 다시 하기 안내", lock2.includes("TOPIC 1을 마치면 열려요") && lock2.includes("아직 기록되지 않은 강의") && lock2.includes("이 기기에서 마침") && lock2.includes("처음부터 다시 하기"), lock2.slice(0, 260));
+    check("D9c 잠금 화면 pg02-1: 아직 기록되지 않은 강의에 '3인칭 … 이 기기에서 마침' · 다시 하기 안내", lock2.includes("대주제 1을 마치면 열려요") && lock2.includes("아직 기록되지 않은 강의") && lock2.includes("이 기기에서 마침") && lock2.includes("처음부터 다시 하기"), lock2.slice(0, 260));
     // the way back: 'start again' on pg01-3 and its five steps once more
     await tab.goto(BASE + "pg01-3", 1800);
     await tab.eval(`window.confirm = () => true, true`);
@@ -588,7 +601,7 @@ const check = (label, ok, detail) => {
       { lessonId: 'pg05-1', clientUpdatedAt: Date.now() + 1, licence: ${JSON.stringify(licenseId)} },
     ])), true`);
     await tab.goto(ORIGIN + "/passoff-grammar", 1500);
-    await waitFor(tab, `${MAIN_TEXT}.includes('서버에 저장됨')`);
+    await waitFor(tab, `${MAIN_TEXT}.includes('진도 저장됨')`);
     await sleep(600);
     const server10 = await tab.eval(`${API_GET}.then(d => ({ pg011: Boolean(d.progress.lessons['pg01-1']), pg051: Boolean(d.progress.lessons['pg05-1']), u: d.progress.unlockedThrough }))`);
     const queue1 = await tab.eval(QUEUE);
@@ -597,7 +610,7 @@ const check = (label, ok, detail) => {
     check(`D10b 대주제가 안 열린 pg05-1 은 서버가 거절 → 대기열에 '한 번 더' 표시 · 목록에 안 셈('1 / ${total}' — pg01-3 만)`,
       !server10.pg051 && queue1.some((i) => i.lessonId === "pg05-1" && i.refused === true) && head10.includes(`1 / ${total}개 완료`), { queue1, head10 });
     await tab.goto(ORIGIN + "/passoff-grammar", 1500);
-    await waitFor(tab, `${MAIN_TEXT}.includes('서버에 저장됨')`);
+    await waitFor(tab, `${MAIN_TEXT}.includes('진도 저장됨')`);
     await sleep(600);
     const queue2 = await tab.eval(QUEUE);
     check("D10c TOPIC 5 가 아직 잠긴 동안 pg05-1 은 기다림(다시 열어도 대기열에 그대로 · 안 보냄)", queue2.some((i) => i.lessonId === "pg05-1" && i.refused === true), queue2);

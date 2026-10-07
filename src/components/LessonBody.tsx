@@ -12,11 +12,9 @@ import { vocaWordSpeech } from "@/lib/vocaSpeech";
 
 function ViewLoadingSkeleton() {
   return (
-    <div className="flex flex-col gap-6 animate-pulse p-4">
-      <div className="h-10 w-48 rounded-xl bg-black/[0.05]" />
-      <div className="h-32 w-full rounded-2xl bg-black/[0.04]" />
-      <div className="h-64 w-full rounded-2xl bg-black/[0.03]" />
-    </div>
+    // 2026-10-08 (UI검토-1007 3장 46번): a quiet empty place while the course view loads — no grey blocks, no pulse. It keeps a
+    // height so the step bar and the end bar below do not jump up and back down when the view arrives.
+    <div aria-busy="true" aria-label="강의를 불러오는 중" className="min-h-[60vh]" />
   );
 }
 
@@ -318,7 +316,7 @@ export function LessonBody({
       {pairedSentences.length > 0 ? (
         <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-line bg-raised/50 p-2.5 shadow-2xs">
           <div className="flex items-center gap-1.5 text-[12px] font-medium text-ink-soft">
-            <span className="font-mono text-[11px] text-ink-faint uppercase">모드:</span>
+            <span className="text-caption text-ink-faint">모드:</span>
             <button
               type="button"
               onClick={() => setStudyMode("bilingual")}
@@ -359,11 +357,11 @@ export function LessonBody({
 
           <div className="flex items-center gap-2">
             {voiceGender !== "neutral" ? (
-              <span className="font-mono text-[10.5px] text-ink-faint rounded bg-surface px-1.5 py-0.5 border border-line">
-                {voiceGender === "male" ? "👨 남성 음성" : "👩 여성 음성"}
+              <span className="text-caption text-ink-faint rounded bg-surface px-1.5 py-0.5 border border-line">
+                {voiceGender === "male" ? "남성 음성" : "여성 음성"}
               </span>
             ) : null}
-            <span className="font-mono text-[11px] text-ink-faint">
+            <span className="text-caption text-ink-faint">
               총 {pairedSentences.length}개 문장 대조
             </span>
           </div>
@@ -388,7 +386,7 @@ export function LessonBody({
               key={i}
               className="rounded border border-line bg-raised px-4 py-3 text-[13.5px] leading-relaxed text-ink"
             >
-              <span className="mr-2.5 font-mono text-[10.5px] tracking-[0.18em] text-ink-faint uppercase font-medium">
+              <span className="mr-2.5 text-caption text-ink-faint font-medium">
                 {t("vocabulary")}
               </span>
               <span className="font-mono text-[13px]">{block.text}</span>
@@ -433,9 +431,9 @@ export function LessonBody({
                             e.stopPropagation();
                             toggleReveal(idx);
                           }}
-                          className="self-start inline-flex items-center gap-1.5 rounded border border-dashed border-line px-3 py-1 font-mono text-[12px] text-ink-soft hover:border-ink hover:text-ink cursor-pointer"
+                          className="self-start inline-flex items-center gap-1.5 rounded border border-dashed border-line px-3 py-1 text-[12px] text-ink-soft hover:border-ink hover:text-ink cursor-pointer"
                         >
-                          👁️ 영어 확인하기
+                          영어 확인하기
                         </button>
                       ) : (
                         <p
@@ -457,9 +455,9 @@ export function LessonBody({
                               e.stopPropagation();
                               toggleReveal(idx);
                             }}
-                            className="self-start inline-flex items-center gap-1.5 rounded border border-dashed border-line px-2.5 py-0.5 font-mono text-[11px] text-ink-faint hover:border-ink hover:text-ink cursor-pointer"
+                            className="self-start inline-flex items-center gap-1.5 rounded border border-dashed border-line px-2.5 py-0.5 text-caption text-ink-faint hover:border-ink hover:text-ink cursor-pointer"
                           >
-                            💬 {t("sentence.showTranslation")}
+                            {t("sentence.showTranslation")}
                           </button>
                         ) : (
                           <p className="whitespace-pre-line text-[14px] leading-relaxed text-ink-soft font-normal">
@@ -481,13 +479,13 @@ export function LessonBody({
                     className={
                       "shrink-0 flex h-9 w-9 items-center justify-center rounded-full border transition-all cursor-pointer " +
                       (isSpeaking
-                        ? "border-red-500 bg-red-600 text-white scale-105 shadow-xs font-bold"
+                        ? "border-danger bg-danger text-surface scale-105 shadow-xs font-bold"
                         : "border-line bg-surface text-ink-soft hover:border-ink hover:text-ink hover:scale-105 active:scale-95")
                     }
                     title={isSpeaking ? "정지" : "음성 듣기"}
                   >
                     {isSpeaking ? (
-                      <span className="text-[12px] font-bold">⏹️</span>
+                      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden><rect x="3" y="3" width="10" height="10" rx="1.5" /></svg>
                     ) : (
                       <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden className="ml-0.5">
                         <path d="M4 2.5v11a.5.5 0 0 0 .77.42l8.5-5.5a.5.5 0 0 0 0-.84l-8.5-5.5A.5.5 0 0 0 4 2.5Z" />
@@ -507,10 +505,10 @@ export function LessonBody({
         return (
           <div key={i} className="flex flex-col gap-3">
             <div className="flex items-center justify-between text-xs text-ink-soft">
-              <span className="font-mono text-[11px] text-ink-faint uppercase font-medium">
-                🔤 발음 훈련 단어장
+              <span className="text-caption text-ink-faint font-medium">
+                발음 훈련 단어장
               </span>
-              <span className="text-[11px] text-ink-faint">{t("wordgrid.clickToListen")}</span>
+              <span className="text-caption text-ink-faint">{t("wordgrid.clickToListen")}</span>
             </div>
 
             <div className="overflow-x-auto rounded border border-line bg-surface p-2 shadow-2xs">
@@ -566,13 +564,13 @@ export function LessonBody({
           <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
             <div>
               <h3 className="flex items-center gap-2 text-[15px] font-semibold text-ink">
-                <span>🧩</span> 청크 직독직해 훈련 (Chunk Breakdown Drill)
+                청크 직독직해 훈련 (Chunk Breakdown Drill)
               </h3>
               <p className="mt-0.5 text-[12px] text-ink-soft">
                 문장을 의미 단위(청크)별로 끊어 듣고 따라 말해보세요. (카드를 누르면 발음 청취)
               </p>
             </div>
-            <span className="rounded bg-raised px-2.5 py-0.5 font-mono text-[11px] text-ink-soft border border-line/60">
+            <span className="rounded bg-raised px-2.5 py-0.5 text-caption text-ink-soft border border-line/60">
               {chunkDrills.length}개 청크
             </span>
           </div>
@@ -600,13 +598,17 @@ export function LessonBody({
                   }}
                   className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-all shadow-2xs cursor-pointer font-bold ${
                     activeWord === chunk.en
-                      ? "bg-red-500 text-white"
+                      ? "bg-danger text-surface"
                       : "bg-surface text-ink-soft group-hover:bg-ink group-hover:text-surface"
                   }`}
                   title={activeWord === chunk.en ? "발음 정지" : "청크 발음 듣기"}
                   aria-label={activeWord === chunk.en ? "발음 정지" : "청크 발음 듣기"}
                 >
-                  <span className="text-[11px]">{activeWord === chunk.en ? "⏹️" : "🔊"}</span>
+                  {activeWord === chunk.en ? (
+                    <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor" aria-hidden><rect x="3" y="3" width="10" height="10" rx="1.5" /></svg>
+                  ) : (
+                    <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor" aria-hidden><path d="M4 2.5v11a.5.5 0 0 0 .77.42l8.5-5.5a.5.5 0 0 0 0-.84l-8.5-5.5A.5.5 0 0 0 4 2.5Z" /></svg>
+                  )}
                 </button>
               </div>
             ))}

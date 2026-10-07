@@ -8,6 +8,7 @@
  * 배포 전 판에서 돌리면 33칸 모두 '없음 · 옛 값 남음' 으로 떨어져야 한다(검사가 떨어질 수 있다는 증거).
  *
  *   KIG_PROFILE_SOURCE=... KIG_CLONE_PREFIX=... node check-student-titles-live.cjs [--viewports desktop,tablet,mobile] [--port 9650] [--clone titles-check] [--tag 이름]
+ *        [--pages /student] [--break=raw-labels]   (2026-10-08: 장 label 칸은 화면 꼴 '16장 · …' 로 견줌 — 아래 screenForm)
  * 결과: out/student-titles-live(-<tag>).json · exit 0 통과 / 1 떨어짐 / 2 페이지를 못 엶
  */
 const fs = require("fs");
@@ -34,9 +35,20 @@ const pageOf = (op) => {
   return `/student/${m[1]}`;
 };
 const READ = `(() => ({ href: location.href, visible: document.body.innerText || '', dom: document.body.textContent || '', paywall: ${H.PAYWALL_RE}.test(document.body.innerText || '') }))()`;
+/**
+ * UI검토-1007 4장 8 (2026-10-08 · tools-c): a chapter's raw label ('Chapter 16. My Other Dream Job (Interpreter) (또 다른 장래 희망 (통역사))'
+ * — a lesson's `.label`, a group's `.title`) is not on screen any more: every head shows it as curriculumPresentation.ts formatGroupTitle
+ * makes it, '16장 · 또 다른 장래 희망 (통역사)'. Those cells are judged by that screen form (new and old value alike); the others
+ * (titles · menu labels · the first block) are on screen as written. --break=raw-labels: the raw values as before — the label cells FAIL.
+ */
+const PRES = H.loadTs(path.join(H.REPO, "src/lib/curriculumPresentation.ts"));
+const isLabelCell = (op) => /\.label$/.test(op.path) || /^\.groups\[\d+\]\.title$/.test(op.path);
+const screenForm = (op, v) => (isLabelCell(op) && !process.argv.includes("--break=raw-labels") ? PRES.formatGroupTitle("student", v) : v);
+// --pages /student,…: only these pages (a local run without a licence can open /student, not the paid lessons)
+const ONLY_PAGES = arg("--pages", null) ? new Set(arg("--pages", "").split(",")) : null;
 
 (async () => {
-  const pages = [...new Set(OPS.map(pageOf))];
+  const pages = [...new Set(OPS.map(pageOf))].filter((p) => !ONLY_PAGES || ONLY_PAGES.has(p));
   const browser = await H.startBrowser(CLONE, PORT);
   const tab = await H.openTab(browser);
   const rows = [];
@@ -46,12 +58,13 @@ const READ = `(() => ({ href: location.href, visible: document.body.innerText ||
       await H.setViewport(tab, vp);
       for (const url of pages) {
         // 과정 목록에는 강의 쪽의 'STUDENT 목록' 표시가 없음 — 16장 머리가 뜨기를 기다림
-        const loaded = await H.load(tab, url, { marker: url === "/student" ? "Chapter 16" : H.MARKERS.student });
+        // (2026-10-08: the head reads '16장 · …' — it was 'Chapter 16')
+        const loaded = await H.load(tab, url, { marker: url === "/student" ? "16장 · " : H.MARKERS.student });
         const snap = loaded.rendered ? await tab.eval(READ).catch(() => null) : null;
         if (!snap || snap.paywall) { blocked++; console.log(`${vp} ${url} — 페이지를 못 엶${snap && snap.paywall ? "(잠금 · 이용권 화면)" : ""}`); }
         const vis = snap ? norm(snap.visible) : "", dom = snap ? norm(snap.dom) : "";
         for (const op of OPS.filter((o) => pageOf(o) === url)) {
-          const nw = norm(op.new), old = norm(op.old);
+          const nw = norm(screenForm(op, op.new)), old = norm(screenForm(op, op.old));
           const where = vis.includes(nw) ? "보임" : dom.includes(nw) ? "DOM" : "없음";
           const oldLeft = old !== nw && (vis.includes(old) || dom.includes(old));
           const pass = !!snap && !snap.paywall && where !== "없음" && !oldLeft;

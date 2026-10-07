@@ -14,7 +14,7 @@
  *   E. Long session: 60 client-side lesson navigations in one tab, JS heap and DOM nodes.
  *   F. Home and each list at desktop / tablet / mobile with layout checks and screenshots.
  *
- *   node drive-common.cjs [--port 9570] [--only A,B,C,D,E,F]
+ *   node drive-common.cjs [--port 9570] [--only A,B,C,D,E,F] [--out common.jsonl] [--break=group-old]
  * Output: out/features/common.jsonl (+ screenshots under out/shots/)
  */
 const fs = require("fs");
@@ -26,10 +26,14 @@ const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.inde
 const PORT = Number(arg("--port", 9570));
 const ONLY = new Set(arg("--only", "A,B,C,D,E,F").split(","));
 const OUT = path.join(__dirname, "../out");
-const out = H.jsonl(path.join(OUT, "features", "common.jsonl"), (r) => r.id);
+const out = H.jsonl(path.join(OUT, "features", arg("--out", "common.jsonl")), (r) => r.id);
 const rec = (id, area, status, detail) => { const r = { id, area, status, at: new Date().toISOString(), ...detail }; out.write(r); console.log(`${status.padEnd(7)} ${id} — ${(detail.note || "").slice(0, 140)}`); return r; };
 
-const COURSE_TITLES = { student: "STUDENT", phonics: "VOCA", grammar1: "GRAMMAR I", grammar2: "GRAMMAR II", ld: "LISTENING", reading: "READING" };
+// UI검토-1007 4장 8 (2026-10-08 · tools-c): the list heads are one Korean form — STUDENT · ADULT '1장 · 자기소개' (was 'Chapter 1. …'),
+// PASS-OFF '대주제 1 · 인칭' (was 'TOPIC 1. 인칭'); the others still hold 회 · 단계 · 과 · 중등/고등. HEAD_RE finds the accordions to open.
+// --break=group-old: the regex before 10-08 (no 장 · 대주제) — STUDENT · ADULT · PASS-OFF lists must then miss links (A:list FAIL).
+const HEAD_RE = process.argv.includes("--break=group-old") ? "/(Chapter|단계|중등|고등|과|번|회)/" : "/(\\d+장 · |대주제 \\d|Chapter|단계|중등|고등|과|번|회)/";
+const COURSE_TITLES ={ student: "STUDENT", phonics: "VOCA", grammar1: "GRAMMAR I", grammar2: "GRAMMAR II", ld: "LISTENING", reading: "READING" };
 
 async function seedProgress(tab, course, completed, bookmarks) {
   await tab.eval(`(() => {
@@ -59,7 +63,7 @@ const clearSeed = async (tab) => tab.eval(`(() => { sessionStorage.removeItem('k
         for (let round = 0; round < 3; round++) {
           const opened = await tab.eval(`(() => {
             const main = document.querySelector('main');
-            const heads = [...main.querySelectorAll('summary, button, [role=button]')].filter((el) => el.offsetParent && /(Chapter|단계|중등|고등|과|번|회)/.test(el.innerText || '') && !/전체|북마크|미완료|학습하기|무료/.test(el.innerText || ''));
+            const heads = [...main.querySelectorAll('summary, button, [role=button]')].filter((el) => el.offsetParent && ${HEAD_RE}.test(el.innerText || '') && !/^(전체|북마크|미완료)|학습하기|^무료/.test((el.innerText || '').trim()));
             let n = 0;
             for (const h of heads) { if (!h.__kigOpened) { h.__kigOpened = true; h.click(); n++; } }
             return n;
@@ -100,7 +104,11 @@ const clearSeed = async (tab) => tab.eval(`(() => { sessionStorage.removeItem('k
           return { prog, pct, counts, ticks: checks ? checks.length : 0 };
         })()`);
         const expectedCompleted = doneMains.length;
-        const over = seeded.prog && new RegExp(`${expectedCompleted + scripts.length}\\s*/`).test(seeded.prog);
+        // (2026-10-08 · tools-c: a course with no script page — STUDENT · ADULT · PASS-OFF · VOCA — has expected = expected + 0, so the
+        // old test called the right count an over-count; and the first chapter / topic head was skipped for its '1·2강 무료' ·
+        // '첫 두 강의 무료 체험' words — now only a control whose words START with 전체 · 북마크 · 미완료 · 무료 (the filters and the free
+        // start) or hold 학습하기 is skipped. Both wrong before 고침3 too, found by this worker's run.)
+        const over = scripts.length > 0 && seeded.prog && new RegExp(`(^|\\D)${expectedCompleted + scripts.length}\\s*/`).test(seeded.prog);
         rec(`A:counters:${course}`, "course list counters", over ? "FAIL" : "PASS", {
           note: `seeded ${doneMains.length} main + ${scripts.length} script completions, 2 bookmarks → ${seeded.prog} · ${seeded.counts.join(" ")} · ${seeded.pct}%`,
           seeded: { mains: doneMains, scripts },
@@ -134,7 +142,7 @@ const clearSeed = async (tab) => tab.eval(`(() => { sessionStorage.removeItem('k
       const toList = await H.click(tab, `[...document.querySelectorAll('a[href="/reading"]')][0]`, { settle: 1500 });
       const afterList = await tab.eval("location.pathname");
       // lesson cards live inside collapsed group accordions: open them first
-      await tab.eval(`(() => { const main = document.querySelector('main'); [...main.querySelectorAll('summary, button, [role=button]')].filter((el) => el.offsetParent && /(번|회|단계|Chapter|중등|고등|과)/.test(el.innerText || '') && !/전체|북마크|미완료/.test(el.innerText || '')).slice(0, 3).forEach((el) => el.click()); })()`).catch(() => {});
+      await tab.eval(`(() => { const main = document.querySelector('main'); [...main.querySelectorAll('summary, button, [role=button]')].filter((el) => el.offsetParent && ${HEAD_RE}.test(el.innerText || '') && !/전체|북마크|미완료/.test(el.innerText || '')).slice(0, 3).forEach((el) => el.click()); })()`).catch(() => {});
       await H.sleep(900);
       const toLesson = await H.click(tab, `[...document.querySelectorAll('a[href^="/reading/"]')][0]`, { settle: 2500 });
       const afterLesson = await tab.eval("location.pathname");

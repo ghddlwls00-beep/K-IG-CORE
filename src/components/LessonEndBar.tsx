@@ -14,6 +14,16 @@ const PASSOFF_COURSE = "passoff-grammar";
 type Neighbour = { href: string; title: string; code?: string } | null;
 
 /**
+ * The completion button's accessible name is its visible words (UI검토-1007 59 — WCAG 2.5.3 label in name): voice control
+ * users press it by saying what they see. Until 2026-10-08 it was named "학습 완료 체크" / "학습 완료 취소" under the visible
+ * '이 강의 학습 완료' · '학습 완료함 · 취소하려면 누르세요', and also carried aria-pressed, so a screen reader read the state
+ * twice. Now the name alone says the state (no aria-pressed). `data-lesson-complete` ("todo" | "done") marks the button for
+ * the audit drivers, whatever its words.
+ */
+const TODO_NAME = "이 강의 학습 완료";
+const DONE_NAME = "학습 완료함 · 취소하려면 누르세요";
+
+/**
  * The end of every lesson — 학습 완료 and the previous / next lesson (docs/디자인-규칙.md §1-6 · §6-5).
  *
  * 2026-09-27 (점검 FRAME-U03 · STU-U10 · GRM-U17 · RD-U16): the completion toggle and the
@@ -21,8 +31,8 @@ type Neighbour = { href: string; title: string; code?: string } | null;
  * had to scroll 7–16 phone screens back up to mark it done or to move on. They now close the page.
  *
  * (Until 2026-10-07 STUDENT · ADULT kept their own completion at the end of their last step and this bar showed only the
- * neighbours there — see the last paragraph.) The aria-labels "학습 완료 체크" / "학습 완료 취소" are the
- * ones the audit drivers press (gap-checks-0926 P · drive-generic) — keep them.
+ * neighbours there — see the last paragraph.) The audit drivers press the button by its name — since 2026-10-08 the visible
+ * words (TODO_NAME / DONE_NAME below; it used to be "학습 완료 체크" / "학습 완료 취소") — or by data-lesson-complete.
  *
  * 2026-09-27 STUDENT 학습법 · 화면 고침: the neighbours read 'Ch 12-1 · School Vacations (방학맞이)' (STU-U17 — 'Part 1 ·'
  * alone looked like going backwards), and STUDENT's '다음 강의' first sends the queued completion to the server and
@@ -49,7 +59,7 @@ type Neighbour = { href: string; title: string; code?: string } | null;
  *
  * 2026-10-07 (UI검토-1007 55): the not-yet-done '이 강의 학습 완료' wears the shared `btn-filled` (globals.css) — filled when it can
  * be pressed, an outline with faint text while its gate is closed (it used to be the fill at 40% opacity: in dark mode a wide grey
- * bar louder than the live outlined '다음 강의'). Words, size, aria-label and aria-pressed are unchanged.
+ * bar louder than the live outlined '다음 강의'). Words and size are unchanged (its name: UI검토-1007 59, at TODO_NAME).
  */
 export function LessonEndBar({
   course,
@@ -143,8 +153,8 @@ export function LessonEndBar({
           }}
           disabled={blocked || undefined}
           aria-describedby={blocked && gate ? reasonId : undefined}
-          aria-label={completed ? "학습 완료 취소" : "학습 완료 체크"}
-          aria-pressed={completed}
+          aria-label={completed ? DONE_NAME : TODO_NAME}
+          data-lesson-complete={completed ? "done" : "todo"}
           className={`flex min-h-12 w-full items-center justify-center gap-2 rounded-control text-label font-semibold transition-colors ${
             completed ? "cursor-pointer border border-line bg-raised text-ink hover:bg-sunken" : "btn-filled"
           }`}
@@ -158,7 +168,7 @@ export function LessonEndBar({
               <span className="font-normal text-ink-soft">· 취소하려면 누르세요</span>
             </>
           ) : (
-            <span>이 강의 학습 완료</span>
+            <span>{TODO_NAME}</span>
           )}
         </button>
       )}

@@ -12,8 +12,12 @@
  * driver follows that order; what it checks:
  *   frame   the shared StepTabs ([data-step-tab] — 'Step 1 · 처음 읽기' … 'Step 4 · 다시 읽고 재기'), no header card: Step 1's meta
  *           line [data-passage-meta] '76단어 · 5문장' (no target — the target is Step 4's); the page's top player is hidden (the
- *           view owns it — [data-owns-passage-player]); the '이 강의 학습 완료' button (aria-label '학습 완료 체크' / '학습 완료 취소'
- *           — LessonEndBar) is DISABLED until one timed reading in Step 4 (계획 D02), with the reason line under it.
+ *           view owns it — [data-owns-passage-player]); the '이 강의 학습 완료' button (aria-label = its words, '이 강의 학습 완료' /
+ *           '학습 완료함 · 취소하려면 누르세요' since 2026-10-08 — it was '학습 완료 체크' / '학습 완료 취소'; LessonEndBar) is DISABLED
+ *           until one timed reading in Step 4 (계획 D02), with the reason line under it.
+ *   (2026-10-08 UI검토-1007 고침3) Step 4's questions open after '다 읽었어요' — [data-comprehension="waiting"] before it, and at once
+ *           after a reload of a lesson read before; a script page's prev / next are its main page's (25). --break questions-early ·
+ *           neighbours-old: the old expectations; KIG_BREAK_APP=1008 (lib/ui-1008.cjs): the page put back — each must record FAILs.
  *   Step 1  the passage is on screen from the start, with no clock, no '읽기 시작', no WPM and no speed words; mouse-over changes
  *           nothing; a sentence is a button (Enter/Space) that plays its clip and shows its Korean (a line under it on a phone,
  *           [data-ko-panel] from sm); '다 읽었어요' ([data-action="first-read-done"]) at the end of the passage stores NOTHING
@@ -147,11 +151,17 @@ function parseArgs(argv) {
   if (a.port !== undefined && !(Number.isInteger(a.port) && a.port > 1024 && a.port < 65536)) throw new Error("--port must be a port number");
   return a;
 }
-const BREAKS = ["gate", "cloze", "hover", "stop", "untimed", "text", "answer", "wpm-exact"];
+// UI검토-1007 고침3 (2026-10-08 · tools-c): 'questions-early' expects the old Step 4 (the questions on screen before '읽기 시작') ·
+// 'neighbours-old' the old prev / next of a script page — each must record FAILs. (59 · the page put back: KIG_BREAK_APP=1008.)
+const BREAKS = ["gate", "cloze", "hover", "stop", "untimed", "text", "answer", "wpm-exact", "questions-early", "neighbours-old"];
 let BREAK = "";
 // 회귀 점검 1002: which driver wrote a record (build-coverage reads `driverRev`); bump it when a check changes meaning
 // -w1005 (2026-10-05, T5): the WPM check accepts the ±0.5 ms window of the rounded time (lib/wpm-window.cjs)
-const DRIVER_REV = "rd-0928-q1004-w1005";
+// -u1008 (2026-10-08, UI검토-1007 고침3): 59 the completion button's name = its visible words ('이 강의 학습 완료' / '학습 완료함 · 취소하려면
+// 누르세요', no aria-pressed) · 6 Step 4's questions open after '다 읽었어요' (before: [data-comprehension="waiting"]) and at once on a
+// lesson read before · 25 a script page's prev / next are its main page's
+const DRIVER_REV = "rd-0928-q1004-w1005-u1008";
+const U = require("./lib/ui-1008.cjs");
 
 /** Every in-scope READING route, in the course index order. */
 function allRoutes() {
@@ -197,6 +207,10 @@ function lessonData(id) {
   if (!lesson) throw new Error(`no lesson file for ${id}`);
   const ctx = content.getLessonContext(COURSE, id);
   const pairLesson = ctx.pair ? content.getLesson(COURSE, ctx.pair.id) : null;
+  // UI검토-1007 25번 (2026-10-08): a script page's end bar names its MAIN page's previous / next lesson ([course]/[lesson]/page.tsx
+  // neighboursOf = canonicalLessonId) — pr001-1: no '이전 강의' · '다음 강의' pr002 (it walked the whole index: pr001 · pr002).
+  // --break neighbours-old: the old walk — the script pages' 'nav' checks must FAIL.
+  const nb = BREAK === "neighbours-old" ? ctx : content.getLessonContext(COURSE, content.canonicalLessonId(COURSE, id));
   const sentences = lesson.readingSentences ?? pairLesson?.readingSentences ?? [];
   const vocab = lesson.readingVocabulary ?? pairLesson?.readingVocabulary ?? [];
   const pairs = sentences.map((s, i) => ({ id: s.id, index: i, en: s.english, ko: s.korean }));
@@ -224,8 +238,8 @@ function lessonData(id) {
     cloze: (round, unknown) => readingUtils.generateClozeItems(pairs, { lessonKey: `${COURSE}/${mainId}`, keywords, round, unknown, alsoFits: clozeFitsFor(pairs.map((p) => p.en), keywords.map((k) => k.word)) }),
     title: presentation.formatLessonPresentation(COURSE, lesson).title,
     canonical: content.canonicalLessonId(COURSE, id),
-    prev: ctx.prev ? { id: ctx.prev.id, title: presentation.formatLessonPresentation(COURSE, ctx.prev).title } : null,
-    next: ctx.next ? { id: ctx.next.id, title: presentation.formatLessonPresentation(COURSE, ctx.next).title } : null,
+    prev: nb.prev ? { id: nb.prev.id, title: presentation.formatLessonPresentation(COURSE, nb.prev).title } : null,
+    next: nb.next ? { id: nb.next.id, title: presentation.formatLessonPresentation(COURSE, nb.next).title } : null,
     free: FREE_IDS.has(id),
     // 2026-09-28 새 문제: the passage's comprehension questions, as the page reads them (content.ts getLessonQuestions) — null: none
     questions: typeof content.getLessonQuestions === "function" ? content.getLessonQuestions(COURSE, id, pairs.length) : null,
@@ -655,7 +669,8 @@ const EXTRA_HOOK = `(() => {
 // checks — page shell
 // ---------------------------------------------------------------------------
 
-const completeBtn = `document.querySelector('main button[aria-label="학습 완료 체크"], main button[aria-label="학습 완료 취소"]')`;
+// 59 (2026-10-08): the names are the visible words (lib/ui-1008.cjs) — it was 'main button[aria-label="학습 완료 체크"], …"학습 완료 취소"'
+const completeBtn = `document.querySelector('main ${U.COMPLETE_TODO_SEL}, main ${U.COMPLETE_DONE_SEL}')`;
 const bookmarkBtn = `document.querySelector('main button[aria-label="북마크 추가"], main button[aria-label="북마크 해제"]')`;
 const completeState = `(() => { const b = ${completeBtn}; return b ? { aria: b.getAttribute('aria-label'), disabled: !!b.disabled } : null; })()`;
 
@@ -715,7 +730,9 @@ async function shellChecks(rec, tab, D, snap) {
   await H.waitFor(tab, R.VIEW_READY, 8000);
   await sleep(200);
   const c0 = await jsEval(tab, completeState, null);
-  eqCk(rec, "complete", "gate", "initial aria-label", "학습 완료 체크", c0 && c0.aria);
+  eqCk(rec, "complete", "gate", "initial aria-label", U.COMPLETE_TODO, c0 && c0.aria);
+  const name59 = await jsEval(tab, U.COMPLETE_NAME_CHECK, null);
+  ck(rec, "complete", "gate", "59: the name is the visible words · no aria-pressed", `${U.COMPLETE_TODO} · aria-pressed none`, name59 ? `${name59.name} · '${name59.text}' · aria-pressed ${name59.pressed === null ? "none" : name59.pressed}` : "no button", name59 && name59.ok ? "PASS" : "FAIL");
   boolCk(rec, "complete", "gate", "'이 강의 학습 완료' disabled before a timed reading", true, !!(c0 && c0.disabled));
   hasCk(rec, "complete", "gate", "the reason under it", readingLearning.READING_GATE_REASON, await jsText(tab, `document.querySelector('main section[aria-label="강의 마치기"]')`));
 
@@ -897,12 +914,18 @@ async function step4Checks(rec, tab, D, captured, { touch = false } = {}) {
   boolCk(rec, "step4", "", "'읽기 시작' is there", true, await exists(tab, action(SEL.step4, "start-reading")));
   eqCk(rec, "step4", "", "the passage is not on screen before '읽기 시작' (it cannot be read before the clock starts)", "0", String(await count(tab, `${SEL.step4} [data-sentence-id]`)));
   boolCk(rec, "player", "step4", "no whole-lesson player in the timed step", false, await exists(tab, `document.querySelector(${J(`${SEL.step4} [data-reading-player]`)})`));
-  // the comprehension questions (2026-09-28 새 문제): a passage with a question file shows them under the timed reading — the
-  // page's own questions, in order; a passage without one keeps the slot hidden and empty. The generated quiz stays off.
-  const slot = await jsEval(tab, `(() => { const s = document.querySelector(${J(`${SEL.step4} [data-comprehension]`)}); return s ? { kind: s.getAttribute('data-comprehension'), hidden: s.hidden || getComputedStyle(s).display === 'none', text: (s.textContent || '').trim().length, kids: s.children.length, prompts: [...s.querySelectorAll('[data-question] > p:first-child')].map((p) => p.textContent.replace(/\\s+/g, ' ').trim()), options: [...s.querySelectorAll('[data-question]')].map((li) => li.querySelectorAll('[data-option]').length) } : null; })()`, null);
-  if (D.questions && D.questions.length) {
-    const want = D.questions.map((q, i) => `${i + 1}. ${q.prompt}`);
-    ck(rec, "step4", "comprehension", "the passage's questions are shown under the timed reading, in order, 4 options each", `${want.length} · ${cut(want.join(" / "), 160)}`, slot ? `${slot.hidden ? "HIDDEN" : "shown"} · ${slot.prompts.length} · ${cut(slot.prompts.join(" / "), 160)} · options ${slot.options.join(",")}` : "no [data-comprehension]", slot && !slot.hidden && slot.kind === "questions" && J(slot.prompts) === J(want) && slot.options.every((n) => n === 4) ? "PASS" : "FAIL");
+  // the comprehension questions (2026-09-28 새 문제): a passage with a question file has them under the timed reading — the page's own
+  // questions, in order; a passage without one keeps the slot hidden and empty. The generated quiz stays off.
+  // UI검토-1007 4장 6 (사장님 답 10-07 23:01 · 2026-10-08): the questions open AFTER '다 읽었어요' (a too-fast press too); before it the slot
+  // is [data-comprehension="waiting"] — one line, no question. (They were on screen from the start.) --break questions-early: the old
+  // expectation — must FAIL.
+  const slotOf = () => jsEval(tab, `(() => { const s = document.querySelector(${J(`${SEL.step4} [data-comprehension]`)}); return s ? { kind: s.getAttribute('data-comprehension'), hidden: s.hidden || getComputedStyle(s).display === 'none', text: (s.textContent || '').trim().length, line: (s.textContent || '').replace(/\\s+/g, ' ').trim().slice(0, 80), kids: s.children.length, questions: s.querySelectorAll('[data-question]').length, prompts: [...s.querySelectorAll('[data-question] > p:first-child')].map((p) => p.textContent.replace(/\\s+/g, ' ').trim()), options: [...s.querySelectorAll('[data-question]')].map((li) => li.querySelectorAll('[data-option]').length) } : null; })()`, null);
+  const wantQs = D.questions && D.questions.length ? D.questions.map((q, i) => `${i + 1}. ${q.prompt}`) : null;
+  const questionsShown = (slot, label) => ck(rec, "step4", "comprehension", `${label}: the passage's questions under the timed reading, in order, 4 options each`, `${wantQs.length} · ${cut(wantQs.join(" / "), 160)}`, slot ? `${slot.kind} · ${slot.hidden ? "HIDDEN" : "shown"} · ${slot.prompts.length} · ${cut(slot.prompts.join(" / "), 160)} · options ${slot.options.join(",")}` : "no [data-comprehension]", slot && !slot.hidden && slot.kind === "questions" && J(slot.prompts) === J(wantQs) && slot.options.every((n) => n === 4) ? "PASS" : "FAIL");
+  const slot = await slotOf();
+  if (wantQs) {
+    if (BREAK === "questions-early") questionsShown(slot, "깨기 questions-early — before '읽기 시작' (the old order)");
+    else ck(rec, "step4", "comprehension", "before '읽기 시작': no question yet — one line waiting for '다 읽었어요' (4장 6)", "waiting · 0 questions · '다 읽었어요'", slot ? `${slot.kind} · ${slot.questions} questions · '${slot.line}'` : "no [data-comprehension]", slot && !slot.hidden && slot.kind === "waiting" && slot.questions === 0 && /다 읽었어요/.test(slot.line) ? "PASS" : "FAIL");
   } else {
     ck(rec, "step4", "comprehension", "the comprehension slot is there, hidden and empty (no question file for this passage)", "hidden · 0 characters", slot ? `${slot.hidden ? "hidden" : "SHOWN"} · ${slot.text} characters · ${slot.kids} children` : "no [data-comprehension]", slot && slot.hidden && slot.text === 0 && slot.kids === 0 ? "PASS" : "FAIL");
   }
@@ -913,6 +936,11 @@ async function step4Checks(rec, tab, D, captured, { touch = false } = {}) {
   boolCk(rec, "wpm", "too-fast", "a run faster than 500 WPM is not saved", true, tooFast === null);
   boolCk(rec, "wpm", "too-fast", "the reason is shown", true, await exists(tab, `document.querySelector(${J(`${SEL.step4} [data-too-fast]`)})`));
   boolCk(rec, "complete", "gate", "still disabled after a too-fast run", true, !!(((await jsEval(tab, completeState, null)) || {}).disabled));
+  // 4장 6: '다 읽었어요' was pressed (too fast, but pressed) — the questions open now
+  if (wantQs && BREAK !== "questions-early") {
+    await H.waitFor(tab, `Boolean(document.querySelector(${J(`${SEL.step4} [data-comprehension="questions"]`)}))`, 3000);
+    questionsShown(await slotOf(), "after '다 읽었어요' (too fast)");
+  }
   if (touch) {
     await questionChecks(rec, tab, D, { touch: true });
     captured.step4 = await stepText(tab, "step4");
@@ -1385,7 +1413,7 @@ async function completionChecks(rec, tab, D, { touch = false, measured }) {
   await sleep(300);
   const before = ((await lsJson(tab, "kig-learning:reading")) || { lessons: {}, items: {} });
   const cAria = await toggleProgress(rec, tab, "complete", { touch });
-  eqCk(rec, "complete", "", "aria-label after completing", "학습 완료 취소", cAria, BREAK === "gate" ? "깨기 gate: pressed without the timed reading — must FAIL" : undefined);
+  eqCk(rec, "complete", "", "aria-label after completing", U.COMPLETE_DONE, cAria,BREAK === "gate" ? "깨기 gate: pressed without the timed reading — must FAIL" : undefined);
   boolCk(rec, "complete", "", "localStorage completion flag", true, ((await progressMap(tab, "completed")) || {})[progKey(D.id)] === true);
   const after = ((await lsJson(tab, "kig-learning:reading")) || { lessons: {}, items: {} });
   const words = (await lsJson(tab, wordsKey(D))) || { marks: {}, missed: [] };
@@ -1447,7 +1475,14 @@ async function runDesktop(rec, tab, D) {
       boolCk(rec, "notes", "", "a memo that holds something is open", true, await jsEval(tab, `!!(document.querySelector(${J(`${SEL.step3} details[data-notes]`)}) || {}).open`, false));
     }
     if (await openStep(rec, tab, 2)) eqCk(rec, "step2", "marks", "'알아요' stays folded after a reload", "known", await jsEval(tab, `(${vocaRow(2)} || {}).getAttribute ? ${vocaRow(2)}.getAttribute('data-mark') : null`, null));
-    if (await openStep(rec, tab, 4)) boolCk(rec, "wpm", "persist", "the timed reading (Step 4) survives a reload", true, await exists(tab, `document.querySelector(${J(`${SEL.step4} [data-speed-result]`)})`));
+    if (await openStep(rec, tab, 4)) {
+      boolCk(rec, "wpm", "persist", "the timed reading (Step 4) survives a reload", true, await exists(tab, `document.querySelector(${J(`${SEL.step4} [data-speed-result]`)})`));
+      // 4장 6: a lesson read before (a kept timed reading) opens its questions at once — no second '다 읽었어요'
+      if (D.questions && D.questions.length) {
+        const kind = await jsEval(tab, `(document.querySelector(${J(`${SEL.step4} [data-comprehension]`)}) || { getAttribute: () => null }).getAttribute('data-comprehension')`, null);
+        eqCk(rec, "step4", "comprehension", "after a reload, a lesson read before shows its questions at once (4장 6)", "questions", kind);
+      }
+    }
     await openStep(rec, tab, 1);
     // a learner who read the passage before (here: a timed record) is offered the next step and the player at once
     boolCk(rec, "step1", "persist", "after a reload Step 1 offers the player at once (read before) — no second '다 읽었어요'", true, (await exists(tab, `document.querySelector(${J(`${SEL.step1} [data-reading-player="step1"]`)})`)) && !(await exists(tab, `document.querySelector(${J(`${SEL.step1} [data-action="first-read-done"]`)})`)));
@@ -1461,8 +1496,12 @@ async function runDesktop(rec, tab, D) {
   await completionChecks(rec, tab, D, { measured: BREAK !== "gate" });
   await loadPage(rec, tab, D.id);
   await H.waitFor(tab, R.VIEW_READY, 8000);
-  eqCk(rec, "complete", "", "completion survives a reload", "학습 완료 취소", await jsEval(tab, `(() => { const b = ${completeBtn}; return b ? b.getAttribute('aria-label') : null; })()`, null));
-  eqCk(rec, "complete", "", "un-completing works", "학습 완료 체크", await toggleProgress(rec, tab, "complete"));
+  eqCk(rec, "complete", "", "completion survives a reload", U.COMPLETE_DONE, await jsEval(tab, `(() => { const b = ${completeBtn}; return b ? b.getAttribute('aria-label') : null; })()`, null));
+  {
+    const n = await jsEval(tab, U.COMPLETE_NAME_CHECK, null);
+    ck(rec, "complete", "", "59: completed, the name is the visible words · no aria-pressed", `${U.COMPLETE_DONE} · aria-pressed none`, n ? `${n.name} · '${n.text}' · aria-pressed ${n.pressed === null ? "none" : n.pressed}` : "no button", n && n.ok && n.state === "done" ? "PASS" : "FAIL");
+  }
+  eqCk(rec, "complete", "", "un-completing works", U.COMPLETE_TODO, await toggleProgress(rec, tab, "complete"));
   eqCk(rec, "bookmark", "", "aria-label after removing", "북마크 추가", await toggleProgress(rec, tab, "bookmark"));
   await jsEval(tab, `sessionStorage.removeItem('kig:audit:keep')`, null);
 

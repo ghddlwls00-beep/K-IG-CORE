@@ -1,0 +1,148 @@
+﻿=== drive-generic student s1-1 07:29:39
+student: 2 page×viewport visits to do (0 already done), clone gen-student port 9986
+1/2 /student/s1-1 desktop — 0 problem(s), content 6/6 · eta 1 min
+2/2 /student/s1-1 mobile — 0 problem(s), content 6/6 · eta 0 min
+exit 0
+=== drive-generic adult a1-2 07:32:33
+adult: 2 page×viewport visits to do (0 already done), clone gen-adult port 9986
+1/2 /adult/a1-2 desktop — 0 problem(s), content 36/36 · eta 2 min
+2/2 /adult/a1-2 mobile — 0 problem(s), content 36/36 · eta 0 min
+exit 0
+=== drive-generic phonics mv1-01 07:37:01
+phonics: 2 page×viewport visits to do (0 already done), clone gen-phonics port 9986
+1/2 /phonics/mv1-01 desktop — 0 problem(s), content 30/30 · eta 2 min
+2/2 /phonics/mv1-01 mobile — 0 problem(s), content 30/30 · eta 0 min
+exit 0
+=== drive-generic grammar1 gh1-006 07:40:37
+grammar1: 2 page×viewport visits to do (0 already done), clone gen-grammar1 port 9986
+1/2 /grammar1/gh1-006 desktop — 0 problem(s), content 42/42 · eta 1 min
+2/2 /grammar1/gh1-006 mobile — 0 problem(s), content 42/42 · eta 0 min
+exit 0
+=== drive-generic grammar2 gh2-007 07:43:21
+grammar2: 2 page×viewport visits to do (0 already done), clone gen-grammar2 port 9986
+1/2 /grammar2/gh2-007 desktop — 0 problem(s), content 16/16 · eta 2 min
+2/2 /grammar2/gh2-007 mobile — 0 problem(s), content 16/16 · eta 0 min
+exit 0
+=== drive-generic ld d001 07:46:52
+ld: 2 page×viewport visits to do (0 already done), clone gen-ld port 9986
+1/2 /ld/d001 desktop — 0 problem(s), content 6/6 · eta 1 min
+2/2 /ld/d001 mobile — 0 problem(s), content 6/6 · eta 0 min
+exit 0
+=== drive-reading pr001 07:50:01
+[reading] 1 pages x 2 viewports — 2 to run (clone drv-rd, port 9987) → C:\Users\ghddl\.gemini\antigravity\scratch\K-IG-CORE\.claude\worktrees\nostalgic-blackburn-048c73\docs\qa-2026-09-18\out\features\reading-uifixc.jsonl
+[reading] pr001 desktop 59s checks 363 (PASS 360 FAIL 0 BLOCKED 1 NA 2) audio 29/29 content 38/38
+[reading] pr001 mobile 23.6s checks 82 (PASS 82 FAIL 0 BLOCKED 0 NA 0) audio 2/2 content 38/38
+exit 0
+=== drive-passoff pg01-1 07:52:57
+(주의: 포트 9988 — passoff-sweep 몫은 9720~9729)
+passoff-grammar: 2 방문(강의 1 × 화면 desktop·mobile) · base http://localhost:3380 · 이용권 없음 · clone rc1002-passoff-sweep-uifixc · port 9988
+1/2 pg01-1 desktop — PASS · 31s · 글 81/81 · 채점 ③4/4 ④⑤9/9 한글꼴 0/0 · 소리 12/12 · 남은 1분
+2/2 pg01-1 mobile — PASS · 21.2s · 글 81/81 · 채점 ③4/4 ④⑤8/8 한글꼴 1/1 · 소리 3/3 · 남은 0분
+끝: PASS 2 · FAIL 0 · BLOCKED 0 · 53초 · 쪽(강의×화면)당 26.5초 · 기록 docs\qa-2026-09-18\out\features\passoff-grammar-uifixc.jsonl
+exit 0
+=== check-student-0927 07:53:53
+PASS  L1 처음엔 모두 잠김 — 잠김 3 · 볼 수 있음 0(기대 3 · 0)
+PASS  L2 끝까지 들으면 그 문장만 열림 — 1번 열림 true · 2번 아직 잠김 true · 소리 l-f696a5810cadceb8.mp3 · 브라우저 음성 1(글 있는 것 0: )
+PASS  L3 보기 · 가리기 — 보인 글 'Nice to meet you (sir/ma’am).' · 가린 뒤 영어 없음 true
+PASS  L4 '모두' → '가림'이면 연 카드도 닫힘 — 모두 3 · 가림으로 돌린 뒤 영어 0
+PASS  D1 단계를 옮겨도 소리 없음 · '듣기'로 재생 · 우리말은 힌트 뒤 — 들어갈 때 소리 false · '듣기' 누르면 소리 true · 우리말 숨김 true
+PASS  D2 첫 낱말 타일은 소문자 · 방해 낱말도 이 강의 낱말 — 타일 ma’am · nice · first · myself · meet · sir · you · to
+PASS  D3 틀리면 틀린 자리 · '여기부터 다시' · 우리말 — 판정 wrong · 여기부터 다시 1 · 우리말 1
+PASS  D4 여기부터 다시 → 바르게 → 정답 — 되돌린 뒤 '내 문장 0/5' · 판정 correct · 번호 solved
+PASS  D5 힌트로만 채우면 '힌트로 완성'(정답으로 안 셈) — 판정 hinted · 번호 hinted
+PASS  M1 'Nice to meet you sir' → 100점 빨강 0 — 100점 (모든 단어 일치) · 빨강 0 · 초록 5 · 읽었어요 true
+PASS  M2 앞 세 낱말 되풀이 → 85점 이상 빨강 0 — 94점 (모든 단어 일치) · 빨강 0
+PASS  M3 70~79점은 '통과했어요'(완료와 '다시'가 같이 나오지 않음) — 79점 (통과했어요) · 통과 문구 true · 읽었어요 true
+PASS  M4 반복 재생 중 마이크를 켜면 반복이 멈춤 — 반복 켜짐 true → 마이크 뒤 false · 점수 100
+PASS  C1 연습 전에는 완료가 꺼지고 80% 뒤 켜짐 — 전 disabled true · 뒤 disabled false · 받아쓰기 2번 correct · 3번 correct
+PASS  C2 완료 → '학습 완료함' · 다음 강의 1-2(4장 8 — 'Ch' 없음) — 학습 완료함 · 취소하려면 누르세요 다음 강의 1-2 · Name, School & Age (이름, 학교 및 나이) → · 다음 강의: 1-2 · Name, School & Age (이름, 학교 및 나이)
+PASS  C2b 59 완료 단추 이름 = 보이는 글 · aria-pressed 없음(완료 전 · 뒤) — 전 {"name":"이 강의 학습 완료","text":"이 강의 학습 완료","pressed":null,"state":"todo","ok":true} · 뒤 {"name":"학습 완료함 · 취소하려면 누르세요","text":"학습 완료함 · 취소하려면 누르세요","pressed":null,"state":"done","ok":true}
+PASS  C3 공통 엔진: 강의 날짜 {at, day} · 문장 3개가 내일부터 복습 — lessons.s1-1 {"at":"2026-10-07T22:54:25.622Z","day":"2026-10-08"} · items s1-1#1,s1-1#2,s1-1#3 · 기록 9건
+PASS  C4 새로 고침 뒤에도 완료 · 받아쓰기 기록 그대로 — 완료 취소 단추 1
+PASS  C5 '다음 강의' → s1-2(이용권 없음 — 기다릴 저장 없음) — → /student/s1-2
+PASS  I1 내 정보가 3단계 문장에 보임 — 칸 5 · 1번 문장 'My name is Minjun Kim, and I live in Busan.'
+PASS  I2 듣기는 모범 문장 클립 그대로 · 브라우저 음성 0 — 클립 /audio/azure-ava/v1/26-081f831b4d5ea0cc.mp3 · 모범 문장의 클립 /audio/azure-ava/v1/26-081f831b4d5ea0cc.mp3 · 같음 true · 글 있는 브라우저 음성 0
+PASS  I3 내 정보로 말해도 100점 — 100점 (모든 단어 일치) · 빨강 0
+PASS  G1 GRAMMAR: 틀린 1번 기록 · 완료 → 강의 날짜 · 1번만 복습(안 푼 2번 없음) — 시도 gh1-006#1 correct=false help=none · lessons {"at":"2026-10-07T22:54:39.575Z","day":"2026-10-08"} · items gh1-006#1
+
+23/23 PASS
+exit 0
+=== gap-checks-0926 (M,S,P,R,W,O) 07:54:41
+PASS    M:tablet:/reading/pr001:open-close — 열림 · 과정 링크 9(/student /adult /passoff-grammar /phonics /grammar1 /grammar2 /ld /reading /cnn) · 닫기 단추 true · 바깥 누르기 true
+PASS    M:tablet:/reading/pr001:links — 과정 링크 9/9 도착 · 메뉴 닫힘
+PASS    S:search:Greeting — 결과 8(앱 검색 함수 8) · 눌러 → /student/s1-1(기대 /student/s1-1)
+PASS    S:search:Traditional Food — 결과 1(앱 검색 함수 1) · 눌러 → /student/s19-3(기대 /student/s19-3)
+PASS    S:search:Passage 100 — 결과 1(앱 검색 함수 1) · 눌러 → /reading/pr100(기대 /reading/pr100)
+PASS    P:complete:reading/pr001 — 완료 체크 전 0/256 → 체크 뒤 1/256(기대 1) · 미완료 255 → 취소 뒤 0/256 · 4단계에서 한 번 잼
+PASS    P:complete:ld/d001 — 완료 체크 전 0/276 → 체크 뒤 1/276(기대 1) · 미완료 275 → 취소 뒤 0/276 · 받아쓰기 한 줄을 채점함(wrong)
+PASS    P:complete:phonics/mv1-01 — 완료 체크 전 0/195 → 체크 뒤 1/195(기대 1) · 미완료 194 → 취소 뒤 0/195 · 2단계 한 회차를 끝냄(답 70개)
+PASS    R:idle:/ — 연 뒤 5초 요청 28 → 30초 28 (가만히 있는 25초 동안 +0 · 문턱 3)
+PASS    R:idle:/reading — 연 뒤 5초 요청 22 → 30초 22 (가만히 있는 25초 동안 +0 · 문턱 3)
+PASS    R:idle:/reading/pr001 — 연 뒤 5초 요청 29 → 30초 29 (가만히 있는 25초 동안 +0 · 문턱 3)
+PASS    R:idle:/ld/d001 — 연 뒤 5초 요청 28 → 30초 28 (가만히 있는 25초 동안 +0 · 문턱 3)
+PASS    R:idle:/student/s1-1 — 연 뒤 5초 요청 29 → 30초 29 (가만히 있는 25초 동안 +0 · 문턱 3)
+PASS    R:idle:/phonics/mv1-01 — 연 뒤 5초 요청 28 → 30초 28 (가만히 있는 25초 동안 +0 · 문턱 3)
+PASS    R:idle:/grammar1/gh1-006 — 연 뒤 5초 요청 28 → 30초 28 (가만히 있는 25초 동안 +0 · 문턱 3)
+PASS    R:idle:/grammar2/gh2-007 — 연 뒤 5초 요청 28 → 30초 28 (가만히 있는 25초 동안 +0 · 문턱 3)
+PASS    W:console-warnings — 위 8쪽을 열고 30초씩 두는 동안 콘솔 경고 0
+PASS    O:desktop:/ — 보이는 글 조각 80 · 30% 넘게 겹친 쌍 0
+PASS    O:desktop:/student — 보이는 글 조각 75 · 30% 넘게 겹친 쌍 0
+PASS    O:desktop:/phonics — 보이는 글 조각 23 · 30% 넘게 겹친 쌍 0
+PASS    O:desktop:/grammar1 — 보이는 글 조각 27 · 30% 넘게 겹친 쌍 0
+PASS    O:desktop:/grammar2 — 보이는 글 조각 27 · 30% 넘게 겹친 쌍 0
+PASS    O:desktop:/ld — 보이는 글 조각 25 · 30% 넘게 겹친 쌍 0
+PASS    O:desktop:/reading — 보이는 글 조각 27 · 30% 넘게 겹친 쌍 0
+PASS    O:tablet:/ — 보이는 글 조각 80 · 30% 넘게 겹친 쌍 0
+PASS    O:tablet:/student — 보이는 글 조각 75 · 30% 넘게 겹친 쌍 0
+PASS    O:tablet:/phonics — 보이는 글 조각 23 · 30% 넘게 겹친 쌍 0
+PASS    O:tablet:/grammar1 — 보이는 글 조각 27 · 30% 넘게 겹친 쌍 0
+PASS    O:tablet:/grammar2 — 보이는 글 조각 27 · 30% 넘게 겹친 쌍 0
+PASS    O:tablet:/ld — 보이는 글 조각 25 · 30% 넘게 겹친 쌍 0
+PASS    O:tablet:/reading — 보이는 글 조각 27 · 30% 넘게 겹친 쌍 0
+PASS    O:mobile:/ — 보이는 글 조각 80 · 30% 넘게 겹친 쌍 0
+PASS    O:mobile:/student — 보이는 글 조각 75 · 30% 넘게 겹친 쌍 0
+PASS    O:mobile:/phonics — 보이는 글 조각 23 · 30% 넘게 겹친 쌍 0
+PASS    O:mobile:/grammar1 — 보이는 글 조각 27 · 30% 넘게 겹친 쌍 0
+PASS    O:mobile:/grammar2 — 보이는 글 조각 27 · 30% 넘게 겹친 쌍 0
+PASS    O:mobile:/ld — 보이는 글 조각 25 · 30% 넘게 겹친 쌍 0
+PASS    O:mobile:/reading — 보이는 글 조각 27 · 30% 넘게 겹친 쌍 0
+
+끝 · PASS 44 · FAIL 0 · BLOCKED 0 · INFO 0 → C:\Users\ghddl\.gemini\antigravity\scratch\K-IG-CORE\.claude\worktrees\nostalgic-blackburn-048c73\docs\qa-2026-09-18\out\features\gap-0926-intc.jsonl
+exit 0
+=== check-voca-0927 pass 08:04:57
+PASS  P1 전체 듣기는 1단계 목록 머리 하나만 — 위 플레이어 보임 0 · 1단계 것 1
+PASS  Q1 한 회차: 듣고 뜻 고르기 문항 있음 · 틀린 낱말이 다시 나옴 — 끝남 true · 문항 종류 en-to-ko,ko-to-en,listen · 문항 48 · 다시 나온 것 26
+PASS  G1 한 회차 전 완료 꺼짐 + 이유 한 줄 → 한 회차 뒤 켜짐 — 전 {"label":"이 강의 학습 완료","disabled":true} · 이유 줄 true · 뒤 {"label":"이 강의 학습 완료","disabled":false}
+PASS  W1 한 낱말 판정: 카드 낱말 → '알아들었어요' · 다른 말 → '…로 들렸어요 — 한 번 더' · 점수 숫자 없음 — 낱말 'do' → '알아들었어요' · 'purple' → ''purple'로 들렸어요 — 한 번 더'
+PASS  S1 4단계: 누를 때마다 표시 · 틀린 짝 줄 수 = 틀리게 누른 수 — 누름 14 · 표시 14 · 틀림 4 · 틀린 짝 줄 4
+PASS  V2 단계를 옮겨도 소리 없음 — 2단계 '듣고 뜻 고르기'는 '듣기'를 눌러야 소리 — 옮길 때: 1→2 탭 조용 · 1→2 다음 Step 조용 · 2→3 조용 · 3→4 조용 · 4→1 조용 (1→2 첫 문항 en-to-ko) · 풀지 않은 듣고 고르기 문항의 '듣기' 누르면 소리 남
+PASS  E1 완료 → 엔진: 강의 날짜 · 낱말 30개(kind word) — lessons {"at":"2026-10-07T23:06:38.861Z","day":"2026-10-08"} · 낱말 30 · 기록 84건
+PASS  M1 옛 기록: 같은 순간 box1 = 새 단어 · 뒤에 틀린 한 장 = 틀림 — 낱말 30 · '틀림 1 · 익숙 0 · 외움 0 · 새 단어 29'
+
+8/8 PASS
+exit 0
+=== check-voca-0927 break (KIG_BREAK_APP=1008) 08:06:42
+PASS  P1 전체 듣기는 1단계 목록 머리 하나만 — 위 플레이어 보임 0 · 1단계 것 1
+PASS  Q1 한 회차: 듣고 뜻 고르기 문항 있음 · 틀린 낱말이 다시 나옴 — 끝남 true · 문항 종류 ko-to-en,listen,en-to-ko · 문항 56 · 다시 나온 것 34
+FAIL  G1 한 회차 전 완료 꺼짐 + 이유 한 줄 → 한 회차 뒤 켜짐 — 전 null · 이유 줄 false · 뒤 null
+PASS  W1 한 낱말 판정: 카드 낱말 → '알아들었어요' · 다른 말 → '…로 들렸어요 — 한 번 더' · 점수 숫자 없음 — 낱말 'do' → '알아들었어요' · 'purple' → ''purple'로 들렸어요 — 한 번 더'
+PASS  S1 4단계: 누를 때마다 표시 · 틀린 짝 줄 수 = 틀리게 누른 수 — 누름 14 · 표시 14 · 틀림 5 · 틀린 짝 줄 5
+PASS  V2 단계를 옮겨도 소리 없음 — 2단계 '듣고 뜻 고르기'는 '듣기'를 눌러야 소리 — 옮길 때: 1→2 탭 조용 · 1→2 다음 Step 조용 · 2→3 조용 · 3→4 조용 · 4→1 조용 (1→2 첫 문항 ko-to-en) · 풀지 않은 듣고 고르기 문항의 '듣기' 누르면 소리 남
+FAIL  E1 완료 → 엔진: 강의 날짜 · 낱말 30개(kind word) — lessons undefined · 낱말 0 · 기록 92건
+PASS  M1 옛 기록: 같은 순간 box1 = 새 단어 · 뒤에 틀린 한 장 = 틀림 — 낱말 30 · '틀림 1 · 익숙 0 · 외움 0 · 새 단어 29'
+
+6/8 PASS
+exit 1
+=== check-voca-0927 repass 08:08:26
+PASS  P1 전체 듣기는 1단계 목록 머리 하나만 — 위 플레이어 보임 0 · 1단계 것 1
+PASS  Q1 한 회차: 듣고 뜻 고르기 문항 있음 · 틀린 낱말이 다시 나옴 — 끝남 true · 문항 종류 ko-to-en,listen,en-to-ko · 문항 54 · 다시 나온 것 32
+PASS  G1 한 회차 전 완료 꺼짐 + 이유 한 줄 → 한 회차 뒤 켜짐 — 전 {"label":"이 강의 학습 완료","disabled":true} · 이유 줄 true · 뒤 {"label":"이 강의 학습 완료","disabled":false}
+PASS  W1 한 낱말 판정: 카드 낱말 → '알아들었어요' · 다른 말 → '…로 들렸어요 — 한 번 더' · 점수 숫자 없음 — 낱말 'do' → '알아들었어요' · 'purple' → ''purple'로 들렸어요 — 한 번 더'
+PASS  S1 4단계: 누를 때마다 표시 · 틀린 짝 줄 수 = 틀리게 누른 수 — 누름 14 · 표시 14 · 틀림 8 · 틀린 짝 줄 8
+PASS  V2 단계를 옮겨도 소리 없음 — 2단계 '듣고 뜻 고르기'는 '듣기'를 눌러야 소리 — 옮길 때: 1→2 탭 조용 · 1→2 다음 Step 조용 · 2→3 조용 · 3→4 조용 · 4→1 조용 (1→2 첫 문항 ko-to-en) · 풀지 않은 듣고 고르기 문항의 '듣기' 누르면 소리 남
+PASS  E1 완료 → 엔진: 강의 날짜 · 낱말 30개(kind word) — lessons {"at":"2026-10-07T23:10:07.251Z","day":"2026-10-08"} · 낱말 30 · 기록 89건
+PASS  M1 옛 기록: 같은 순간 box1 = 새 단어 · 뒤에 틀린 한 장 = 틀림 — 낱말 30 · '틀림 1 · 익숙 0 · 외움 0 · 새 단어 29'
+
+8/8 PASS
+exit 0
+=== done 08:10:10

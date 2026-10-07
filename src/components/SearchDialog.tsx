@@ -282,11 +282,11 @@ export function SearchDialog() {
                         isSelected ? "bg-sunken" : "hover:bg-raised"
                       }`}
                     >
+                      {/* UI검토-1007 4장 8: course · title · its section ('1장 · 자기소개' — scripts/buildSearchIndex.ts). The code
+                          ('Ch 1-1' · 'Round 001' · 'Passage 001' · 'Lesson 01') said in English what the title already says;
+                          it is still searched (searchText) */}
                       <div className="flex min-w-0 flex-col">
-                        <span className="text-caption text-ink-soft">
-                          {item.courseTitle}
-                          {item.code ? <span className="tabular-nums"> · {item.code}</span> : null}
-                        </span>
+                        <span className="text-caption text-ink-soft">{item.courseTitle}</span>
                         <span className="truncate text-label font-semibold text-ink">{item.title}</span>
                         {item.subtitle ? <span className="truncate text-caption text-ink-soft">{item.subtitle}</span> : null}
                       </div>

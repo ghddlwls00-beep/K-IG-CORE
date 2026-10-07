@@ -277,7 +277,8 @@ function PAGE_HELPERS() {
     // --- step 3 ------------------------------------------------------------
     shadowing() {
       const doneBox = S.all("main span").find((s) => tc(s) === "완료도");
-      const complete = S.aria("학습 완료 체크") || S.aria("학습 완료 취소");
+      // UI검토-1007 59 (2026-10-08): named by its visible words — it was "학습 완료 체크" / "학습 완료 취소"
+      const complete = S.aria("이 강의 학습 완료") || S.aria("학습 완료함 · 취소하려면 누르세요");
       const status = S.all("main p[role=status]").map(it);
       const summary = S.all("main p").map(it).find((t) => t.indexOf("문장 연습") === 0) || null;
       return {

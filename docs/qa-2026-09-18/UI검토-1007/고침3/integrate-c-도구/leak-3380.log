@@ -1,0 +1,19 @@
+﻿pages 1764, unique chunks 29, json 1
+ld {"paidLessons":548,"needles":13632,"skippedAlsoFree":274,"skippedOnList":0,"inJs":0,"inJson":0,"inAppCode":0,"lessonsWithLeak":0,"examples":[],"appCodeExamples":[]}
+reading {"paidLessons":508,"needles":18910,"skippedAlsoFree":2114,"skippedOnList":0,"inJs":0,"inJson":0,"inAppCode":0,"lessonsWithLeak":0,"examples":[],"appCodeExamples":[]}
+student {"paidLessons":80,"needles":841,"skippedAlsoFree":4,"skippedOnList":116,"inJs":0,"inJson":0,"inAppCode":0,"lessonsWithLeak":0,"examples":[],"appCodeExamples":[]}
+adult {"paidLessons":53,"needles":2644,"skippedAlsoFree":8,"skippedOnList":48,"inJs":0,"inJson":0,"inAppCode":0,"lessonsWithLeak":0,"examples":[],"appCodeExamples":[]}
+passoff-grammar {"paidLessons":66,"needles":15405,"skippedAlsoFree":23,"skippedOnList":3,"inJs":0,"inJson":0,"inAppCode":4,"lessonsWithLeak":0,"examples":[],"appCodeExamples":[{"id":"pg06-3","text":"one, two, three, four, five, six, seven, eight, nine, ten","code":"src/components/LdLearningView.tsx:114 (4bc17f3^)"},{"id":"pg06-3","text":"eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, ninet","code":"src/components/LdLearningView.tsx:114 (4bc17f3^)"},{"id":"pg06-3","text":"first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth","code":"src/components/LdLearningView.tsx:114 (4bc17f3^)"},{"id":"pg06-3","text":"twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety","code":"src/components/LdLearningView.tsx:114 (4bc17f3^)"}]}
+phonics {"paidLessons":193,"needles":962,"skippedAlsoFree":193,"skippedOnList":0,"inJs":0,"inJson":0,"inAppCode":0,"lessonsWithLeak":0,"examples":[],"appCodeExamples":[]}
+grammar1 {"paidLessons":182,"needles":4103,"skippedAlsoFree":186,"skippedOnList":0,"inJs":0,"inJson":0,"inAppCode":0,"lessonsWithLeak":0,"examples":[],"appCodeExamples":[]}
+grammar2 {"paidLessons":84,"needles":2354,"skippedAlsoFree":84,"skippedOnList":0,"inJs":0,"inJson":0,"inAppCode":0,"lessonsWithLeak":0,"examples":[],"appCodeExamples":[]}
+bad chunks: 0; json: [{"url":"/search-index.json","status":200,"kb":303}]
+유출 0 (JS · JSON) · 익명 과정 목록에 이미 보이는 제목이라 뺀 것 167 · 레슨보다 먼저 있던 앱 코드와 글자가 같아 따로 센 것 4
+  (앱 코드) passoff-grammar/pg06-3 "one, two, three, four, five, six, seven, eight, nine, ten" ← src/components/LdLearningView.tsx:114 (4bc17f3^)
+  (앱 코드) passoff-grammar/pg06-3 "eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, ninet" ← src/components/LdLearningView.tsx:114 (4bc17f3^)
+  (앱 코드) passoff-grammar/pg06-3 "first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth" ← src/components/LdLearningView.tsx:114 (4bc17f3^)
+  (앱 코드) passoff-grammar/pg06-3 "twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety" ← src/components/LdLearningView.tsx:114 (4bc17f3^)
+  (목록 제목) passoff-grammar/pg10-1 "I want to become an interpreter." ⊂ student/s16-2 "Why I Want to Become an Interpreter (통역사가 되고 싶은 이유)"
+  (목록 제목) passoff-grammar/pg10-1 "to become an interpreter" ⊂ student/s16-2 "Why I Want to Become an Interpreter (통역사가 되고 싶은 이유)"
+  (목록 제목) passoff-grammar/pg13-3 "Getting ready for school" ⊂ student/s5-1 "Getting Ready for School (등교 준비)"
+과정 8개: ld 유료 548강의 · 바늘 13632 · 유출 0 | reading 유료 508강의 · 바늘 18910 · 유출 0 | student 유료 80강의 · 바늘 841 · 유출 0 | adult 유료 53강의 · 바늘 2644 · 유출 0 | passoff-grammar 유료 66강의 · 바늘 15405 · 유출 0 | phonics 유료 193강의 · 바늘 962 · 유출 0 | grammar1 유료 182강의 · 바늘 4103 · 유출 0 | grammar2 유료 84강의 · 바늘 2354 · 유출 0

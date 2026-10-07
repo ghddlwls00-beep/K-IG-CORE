@@ -1,7 +1,7 @@
 /**
  * LISTENING lesson page — browser-side steps the audit drivers share (2026-09-27, LISTENING 학습법 · 화면 고침).
  *
- * WHY. Since 2026-09-27 (계획 D02 나) a LISTENING lesson's '이 강의 학습 완료' (LessonEndBar, aria-label '학습 완료 체크') is disabled
+ * WHY. Since 2026-09-27 (계획 D02 나) a LISTENING lesson's '이 강의 학습 완료' (LessonEndBar, aria-label '학습 완료 체크' — since 2026-10-08 '이 강의 학습 완료', 59) is disabled
  * until one line has been checked in Step 2 받아쓰기 on this device (src/lib/lessonGate.ts · LdLearningView). A driver that tests the
  * completion toggle must first do what a learner does: open Step 2, answer the line on screen and press '정답 확인'. The answer does
  * not have to be right — a wrong check counts too. The page's own markup is used, not texts:

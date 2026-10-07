@@ -11,7 +11,7 @@
  *   L  1단계: 처음엔 모든 문장이 '먼저 듣기'(잠김) → 한 문장을 끝까지 들으면 그 문장만 '눌러서 보기' → 보기 · 가리기 → 보기 방식을 바꾸면 연 카드가 닫힘
  *   D  2단계: 단계를 옮겨도 소리 없음(09-28) · '듣기'로 재생 · 우리말은 힌트 뒤 · 틀리게 조립 → 틀린 자리 · '여기부터 다시' · 우리말이 보임 → 바르게 → 정답 · 힌트로만 채우면 '힌트로 완성'(정답으로 안 셈)
  *   M  3단계 마이크(가짜): 'nice to meet you sir' → 100점 빨강 0 · 앞 세 낱말 되풀이 → 85점 이상 빨강 0 · 70~79점은 '통과했어요' · 반복 재생 중 마이크를 켜면 반복이 멈춤
- *   C  완료: 연습 전에는 완료 단추가 꺼짐 → 받아쓰기 · 말하기 80% 뒤 켜짐 → 완료 → '완료한 강의' · '다음 강의: Ch 1-2 · …' · 공통 엔진 기록(kig-learning:student) 강의 날짜 · 문장 3개
+ *   C  완료: 연습 전에는 완료 단추가 꺼짐 → 받아쓰기 · 말하기 80% 뒤 켜짐 → 완료 → '완료한 강의' · '다음 강의: 1-2 · …'(10-08 전 'Ch 1-2 · …') · 완료 단추 이름 = 보이는 글(59) · 공통 엔진 기록(kig-learning:student) 강의 날짜 · 문장 3개
  *      (2026-10-07 UI검토-1007 2장 1번부터 완료 단추 · '학습 완료함' · '다음 강의' 는 강의 끝 막대(section '강의 마치기') 것 — 그곳을 읽음)
  *   I  s1-2 내 정보: 넣은 값이 3단계 문장에 보이고, 듣기는 모범 문장 클립 그대로(브라우저 음성 0), 마이크는 내 정보로 말해도 100점
  *   G  GRAMMAR gh1-006: 1번을 틀리게 쓰고 확인 → 강의 끝 막대의 완료 → kig-learning:grammar1 에 강의 날짜와 1번만(안 푼 2번은 없음)
@@ -27,7 +27,11 @@ if (!/^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(H.BASE) && !process.arg
   console.error(`멈춤: BASE=${H.BASE} — 이 검사는 로컬 운영 빌드(http://localhost:3210)와 빈 브라우저용입니다. 다른 곳이면 --allow-remote.`);
   process.exit(2);
 }
-const PORT = 9594;
+// UI검토-1007 고침3 (2026-10-08 · tools-c): --port (일꾼마다 따로 — 기본은 전과 같음)
+const PORT = Number(process.argv.includes("--port") ? process.argv[process.argv.indexOf("--port") + 1] : 9594);
+// 59 (2026-10-08): the end bar's completion button is named by its visible words (lib/ui-1008.cjs) — it was "학습 완료 체크" / "학습 완료
+// 취소" · 4장 8: the neighbour reads '다음 강의: 1-2 · …' (it was 'Ch 1-2 · …'). 깨기: KIG_BREAK_APP=1008 (the page put back) → C1 · C2 · C4 · G1 FAIL
+const U = require("./lib/ui-1008.cjs");
 const FAKE_STT = fs.readFileSync(path.join(__dirname, "lib/ld-fake-stt.js"), "utf8");
 const OUT = path.join(H.OUT, "student-0927");
 fs.mkdirSync(OUT, { recursive: true });
@@ -164,8 +168,9 @@ async function speak(tab, idx, said) {
     // ------------------------------------------------------------------ C. completion (80% rule) + engine
     // 2026-10-07 (UI검토-1007 2장 1번): the completion is the shared end bar's (section '강의 마치기') — no longer a box in Step 3
     const END = 'section[aria-label="강의 마치기"]';
-    const completeSel = `${END} button[aria-label="학습 완료 체크"]`;
+    const completeSel = `${END} ${U.COMPLETE_TODO_SEL}`;
     const disabledBefore = await tab.eval(`(() => { const b = ${q(completeSel)}; return b ? b.disabled : null; })()`);
+    const nameBefore = await tab.eval(U.COMPLETE_NAME_CHECK).catch(() => null);
     // dictation 3/3: sentence 2 (hinted) again without hints, sentence 3
     await click(tab, '[data-step-tab="2"]', 800);
     await click(tab, '[data-pill="1"]', 900);
@@ -185,7 +190,9 @@ async function speak(tab, idx, said) {
     if (BREAK !== "complete") await click(tab, completeSel, 900);
     const doneText = await text(tab, END);
     const nextAria = await attr(tab, `${END} a[aria-label^="다음 강의"]`, "aria-label");
-    check("C2 완료 → '학습 완료함' · 다음 강의 Ch 1-2", /학습 완료함/.test(doneText || "") && /^다음 강의: Ch 1-2 · /.test(nextAria || "") && (await count(tab, `${END} button[aria-label="학습 완료 취소"]`)) === 1, `${(doneText || "").replace(/\s+/g, " ").slice(0, 90)} · ${nextAria}`);
+    const nameAfter = await tab.eval(U.COMPLETE_NAME_CHECK).catch(() => null);
+    check("C2 완료 → '학습 완료함' · 다음 강의 1-2(4장 8 — 'Ch' 없음)", /학습 완료함/.test(doneText || "") && /^다음 강의: 1-2 · /.test(nextAria || "") && (await count(tab, `${END} ${U.COMPLETE_DONE_SEL}`)) === 1, `${(doneText || "").replace(/\s+/g, " ").slice(0, 90)} · ${nextAria}`);
+    check("C2b 59 완료 단추 이름 = 보이는 글 · aria-pressed 없음(완료 전 · 뒤)", !!nameBefore && nameBefore.ok && nameBefore.state === "todo" && !!nameAfter && nameAfter.ok && nameAfter.state === "done", `전 ${JSON.stringify(nameBefore)} · 뒤 ${JSON.stringify(nameAfter)}`);
     const rec = await store(tab, "kig-learning:student");
     const day = learningDay(t0);
     const items = rec ? Object.keys(rec.items || {}) : [];
@@ -194,7 +201,7 @@ async function speak(tab, idx, said) {
     check("C3 공통 엔진: 강의 날짜 {at, day} · 문장 3개가 내일부터 복습", !!lessonDone && lessonDone.day === day && typeof lessonDone.at === "string" && JSON.stringify(items.sort()) === JSON.stringify(wantItems) && items.every((k) => rec.items[k].firstDay === day), `lessons.s1-1 ${JSON.stringify(lessonDone)} · items ${items.join(",")} · 기록 ${rec ? rec.log.length : 0}건`);
     await H.load(tab, "/student/s1-1", { marker: H.MARKERS.student });
     await click(tab, '[data-step-tab="3"]', 800);
-    const persisted = await count(tab, `${END} button[aria-label="학습 완료 취소"]`);
+    const persisted = await count(tab, `${END} ${U.COMPLETE_DONE_SEL}`);
     check("C4 새로 고침 뒤에도 완료 · 받아쓰기 기록 그대로", persisted === 1, `완료 취소 단추 ${persisted}`);
     await H.click(tab, `document.querySelector('${END} a[aria-label^="다음 강의"]')`, { settle: 2500 });
     const went = await tab.eval("location.pathname");
@@ -230,16 +237,16 @@ async function speak(tab, idx, said) {
     await H.click(tab, `(() => { const box = document.querySelector('textarea[aria-label="1번 영작 답안"]'); const row = box && box.closest('[data-item], li'); return row ? row.querySelector('[data-check]') : null; })()`, { settle: 500 });
     const g1log = await store(tab, "kig-learning:grammar1");
     const gAttempt = g1log && g1log.log.find((e) => e.item === "gh1-006#1");
-    await H.click(tab, q('main button[aria-label="학습 완료 체크"]'), { settle: 900 });
+    await H.click(tab, q(`main ${U.COMPLETE_TODO_SEL}`), { settle: 900 });
     const g = await store(tab, "kig-learning:grammar1");
     const gItems = g ? Object.keys(g.items || {}) : [];
     const gOk = !!g && !!g.lessons["gh1-006"] && g.lessons["gh1-006"].day === learningDay(Date.now()) && gItems.includes("gh1-006#1") && !gItems.includes("gh1-006#2");
     check("G1 GRAMMAR: 틀린 1번 기록 · 완료 → 강의 날짜 · 1번만 복습(안 푼 2번 없음)", gOk && !!gAttempt && gAttempt.correct === false, `시도 ${gAttempt ? `${gAttempt.item} correct=${gAttempt.correct} help=${gAttempt.help}` : "없음"} · lessons ${JSON.stringify(g && g.lessons["gh1-006"])} · items ${gItems.join(",")}`);
-    await H.click(tab, q('main button[aria-label="학습 완료 취소"]'), { settle: 600 });
+    await H.click(tab, q(`main ${U.COMPLETE_DONE_SEL}`), { settle: 600 });
   } catch (e) {
     check("RUN", false, `예외 ${e && e.stack ? e.stack.split("\n").slice(0, 3).join(" | ") : e}`);
   } finally {
-    fs.writeFileSync(path.join(OUT, `result${BREAK ? "-break-" + BREAK : ""}.json`), JSON.stringify({ at: new Date().toISOString(), base: H.BASE, break: BREAK || null, rows }, null, 2));
+    fs.writeFileSync(path.join(OUT, `result${BREAK ? "-break-" + BREAK : ""}${U.BREAK_APP ? "-break-app" + U.BREAK_APP : ""}.json`), JSON.stringify({ at: new Date().toISOString(), base: H.BASE, break: BREAK || null, breakApp: U.BREAK_APP || null, rows }, null, 2));
     await tab.close().catch(() => {});
     browser.proc.kill();
   }

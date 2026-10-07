@@ -1,0 +1,9 @@
+﻿PASS  F 깜빡임 · 빈 기기: 처음엔 안 보임 → 판정 뒤 '이용권 등록' 한 번 — [{"t":115,"s":"unseen:이용권 등록","pending":true},{"t":264,"s":"seen:이용권 등록","pending":false}]
+PASS  F 깜빡임 · 저장된 이용권(서명 없는 가짜 — 로컬은 검증 못 함): 처음엔 안 보임 → 판정 뒤 '이용권 등록' 한 번 — [{"t":79,"s":"unseen:이용권 등록","pending":true},{"t":196,"s":"seen:이용권 등록","pending":false}]
+PASS  Q 20 GRAMMAR 1단계(묶음 남음): '다음 Step' data-quiet · 테두리 투명 · 굵기 500 · 44px — {"bundles":true,"quiet":true,"border":"rgba(0, 0, 0, 0)","bg":"rgba(0, 0, 0, 0)","weight":"500","h":44,"disabled":false}
+PASS  Q 20 GRAMMAR 4단계(묶음 없음): '다음 Step' 예전 모양(data-quiet 없음 · 테두리 보임) — {"bundles4":false,"quiet":false,"border":"rgba(34, 30, 26, 0.08)","bg":"rgb(255, 255, 255)","weight":"600","h":44,"disabled":true}
+PASS  R 42 어둠 390 목록 '전체' 고른 칩 1px 테두리 — {"text":"전체 (82)","shadow":"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(110, 106, 101) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px"}
+PASS  R 42 어둠 390 STUDENT s1-1 고른 칩 1px 테두리(모두) — [{"text":"1×","shadow":"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(110, 106, 101) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px"},{"text":"가림","shadow":"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0
+PASS  R 42 어둠 390 GRAMMAR '⋯ 더보기' 고른 칩 1px 테두리 — [{"text":"기본","shadow":"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(110, 106, 101) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px"},{"text":"1.0×","shadow":"rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0,
+PASS  S 55 어둠 390 VOCA 3단계 철자 '확인' 꺼짐: btn-filled · 불투명 1 · 바탕 투명 · 44px — {"disabled":true,"filled":true,"opacity":"1","bg":"rgba(0, 0, 0, 0)","border":"rgb(110, 106, 101)","color":"rgb(138, 133, 126)","h":44}
+8/8 PASS

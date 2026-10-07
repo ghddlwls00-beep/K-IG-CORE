@@ -175,7 +175,7 @@
   "phasePrefix": "a-",
   "viewports": ["desktop"],
   "check": { "feature": "completion", "item": "Step 5" },
-  "site": "StudentLearningView.tsx:1525 renderCompletion 1478 (ADULT Step 5 섀도잉 & 낭독 [data-step-panel=\"5\"] 1725 — '이 강의 학습 완료' aria-label 학습 완료 체크). 드라이버: 80% 연습(practiseStudent 4 · 5단계) → 누름 → 새로고침 → 되돌림, kig:adult:pending:v1 을 기다림",
+  "site": "StudentLearningView.tsx:1525 renderCompletion 1478 (ADULT Step 5 섀도잉 & 낭독 [data-step-panel=\"5\"] 1725 — '이 강의 학습 완료' aria-label 학습 완료 체크 — 2026-10-08 부터 이름 = 보이는 글 '이 강의 학습 완료' · LessonEndBar 끝 막대). 드라이버: 80% 연습(practiseStudent 4 · 5단계) → 누름 → 새로고침 → 되돌림, kig:adult:pending:v1 을 기다림",
   "break": "StudentLearningView.tsx:1525 `onClick={complete}` → `onClick={course === \"adult\" ? () => {} : complete}` → 눌러도 완료가 안 됨 → completion FAIL. 로컬 개발 서버는 이용권이 없어 /api/progress/adult 저장은 안 일어날 수 있음 — 그 경우 note 의 '+0' 은 판정에 안 씀(운영 기록에서만 봄)",
   "texts": []
  },

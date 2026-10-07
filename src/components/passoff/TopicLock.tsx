@@ -163,7 +163,7 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
                 </ul>
                 {finishedHereOnly.size ? (
                   <p className="text-label leading-relaxed text-ink-soft">
-                    이 기기에서 마쳤는데 기록되지 않은 강의는 그 강의 5단계 끝의 &lsquo;처음부터 다시 하기&rsquo;로 다시 마치면
+                    이 기기에서 마쳤는데 기록되지 않은 강의는 그 강의 Step 5 끝의 &lsquo;처음부터 다시 하기&rsquo;로 다시 마치면
                     기록돼요.
                   </p>
                 ) : null}
@@ -177,7 +177,7 @@ export function PassoffTopicLock({ title, topic, previousTopic, current }: Passo
             href={listHref}
             className="inline-flex min-h-12 items-center justify-center whitespace-nowrap rounded-control bg-ink px-6 text-label font-semibold text-surface transition-opacity hover:opacity-90"
           >
-            {current ? `TOPIC ${current.topic} 강의 보기` : "목록으로"}
+            {current ? `대주제 ${current.topic} 강의 보기` : "목록으로"}
           </Link>
         </div>
       </section>

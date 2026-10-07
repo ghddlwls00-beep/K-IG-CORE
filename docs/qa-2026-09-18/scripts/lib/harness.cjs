@@ -225,6 +225,9 @@ async function openTab(browser, { clean = false } = {}) {
   keepVisitEvents(tab);
   await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: AUDIO_HOOK });
   if (clean) await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: CLEAN_STORAGE });
+  // UI검토-1007 고침3 (2026-10-08 · tools-c) 깨기: KIG_BREAK_APP=1008 turns every page back into the app before 10-08 (lib/ui-1008.cjs)
+  // — the drivers that read the new names · words · GRAMMAR player must then FAIL. Unset (always, outside a break test): nothing.
+  if (process.env.KIG_BREAK_APP === "1008") await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: require("./ui-1008.cjs").REVERT_1008 });
   return tab;
 }
 

@@ -101,8 +101,10 @@ export default async function AdultLessonPage({
             <span>ADULT 목록</span>
           </Link>
         </nav>
+        {/* UI검토-1007 16번 · 4장 8: the lesson's head as the lesson page draws it — '2-1 · …' and its chapter line '2장 · 가족 소개' */}
         <header className="mt-1 mb-4 sm:mb-6">
           <h1 className="text-[20px] sm:text-[26px] leading-snug font-bold tracking-tight text-balance text-ink">{pres.title}</h1>
+          {pres.subtitle ? <p className="mt-0.5 text-caption text-ink-faint">{pres.subtitle}</p> : null}
         </header>
         <LessonPaywall
           courseSlug="adult"

@@ -81,8 +81,8 @@ export function RuleStep({
           ) : null}
           {notOpened ? (
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-              <p className="text-label text-ink-soft">1단계에서 먼저 떠올린 문장만 영어로 보여요.</p>
-              <SecondaryButton onClick={onGoAnchors}>1단계로</SecondaryButton>
+              <p className="text-label text-ink-soft">Step 1에서 먼저 떠올린 문장만 영어로 보여요.</p>
+              <SecondaryButton onClick={onGoAnchors}>Step 1로</SecondaryButton>
             </div>
           ) : null}
           <p className={`${FONT[font].text} text-ink`}>{notOpened ? withoutBoldCue(gloss(d.question)) : gloss(d.question)}</p>

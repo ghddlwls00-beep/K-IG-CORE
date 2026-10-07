@@ -21,13 +21,14 @@ export async function GET(request: Request) {
     const rawChapter = new URL(request.url).searchParams.get("chapter");
     const chapter = Number(rawChapter);
     if (!Number.isInteger(chapter) || chapter < 1 || chapter > 20) {
-      return json({ success: false, error: "올바른 챕터 번호가 필요합니다." }, 400);
+      // UI검토-1007 18 · 41번: '장' and 해요체, as the screen says it (ChapterAudioBar shows its own line, not these)
+      return json({ success: false, error: "올바른 장 번호가 필요해요." }, 400);
     }
 
     const groups = getCourseGroups("student");
     const group = groups[chapter - 1];
     if (!group) {
-      return json({ success: false, error: "챕터를 찾을 수 없습니다." }, 404);
+      return json({ success: false, error: "장을 찾을 수 없어요." }, 404);
     }
 
     const session = await verifyLicenseSession(request);
@@ -37,7 +38,7 @@ export async function GET(request: Request) {
     if (!session) {
       if (chapter !== 1) {
         return json(
-          { success: false, error: "이 챕터는 이용권 등록 후 들을 수 있습니다." },
+          { success: false, error: "이용권을 등록하면 이 장을 들을 수 있어요." },
           401,
         );
       }
@@ -49,7 +50,7 @@ export async function GET(request: Request) {
         const progress = await getStudentProgress(session.payload.key);
         if (chapter > progress.unlockedThrough) {
           return json(
-            { success: false, error: "이전 챕터를 완료하면 전체 듣기가 열립니다." },
+            { success: false, error: "앞 장을 마치면 이 장 전체 듣기가 열려요." },
             403,
           );
         }
@@ -103,7 +104,7 @@ export async function GET(request: Request) {
   } catch (error) {
     console.error("STUDENT chapter audio failed:", error);
     return json(
-      { success: false, error: "챕터 음성을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요." },
+      { success: false, error: "이 장의 소리를 불러오지 못했어요. 잠시 뒤 다시 눌러 주세요." },
       500,
     );
   }

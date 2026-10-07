@@ -169,9 +169,16 @@ function topPlayerSentences(id) {
   return [];
 }
 
-/** getLessonContext (content.ts:124-163) restricted to grammar2. */
+/**
+ * getLessonContext (content.ts:124-163) restricted to grammar2.
+ * UI검토-1007 25번 (2026-10-08 · tools-c): a script page (gh2-007-1) is asked with its main page's id (page.tsx neighboursOf =
+ * canonicalLessonId) — it shows gh2-007's prev / next (it walked the whole index). --break=neighbours-old (argv): the old walk.
+ */
 function neighbours(id) {
   const mains = INDEX.lessons.filter((l) => l.variant === "main");
+  const asked = INDEX.lessons.find((l) => l.id === id) ?? null;
+  const base = id.replace(/-\d+$/, "");
+  if (asked?.variant === "script" && !process.argv.includes("--break=neighbours-old") && mains.some((l) => l.id === base)) id = base;
   const current = INDEX.lessons.find((l) => l.id === id) ?? null;
   const list = current?.variant === "script" ? INDEX.lessons : mains;
   const i = list.findIndex((l) => l.id === id);
@@ -366,8 +373,12 @@ const PAGE_HELPERS = `(() => {
   const card4 = (n) => document.querySelector('main [data-exam-row][data-item="' + n + '"]');
   const modelCard = (c) => (c ? c.querySelector("[data-answer-panel]") : null);
   // the top player: its root is now div.rounded-card (공통 틀 1); in GRAMMAR it sits folded in details[data-answer-player] (GRM-L03 ④)
-  const player = () => document.querySelector('main input[aria-label="문장 이동"]')?.closest('div[class*="rounded-card"], div[class*="rounded-3xl"]') || null;
-  const playerDetails = () => document.querySelector("main details[data-answer-player]");
+  // UI검토-1007 4장 7 (2026-10-08): the page-level player stays in the DOM hidden; the view's own is at the end of Step 3 and of Step 4
+  // after grading (main [data-grammar-view] details[data-answer-player]) — open Step 3 first. It used to be the first one in main.
+  const playerDetails = () => document.querySelector("main [data-grammar-view] details[data-answer-player]");
+  const player = () => (playerDetails() || document).querySelector('[data-grammar-view] input[aria-label="문장 이동"]')?.closest('div[class*="rounded-card"], div[class*="rounded-3xl"]') || null;
+  const playerOnScreen = () => all("main details[data-answer-player]").some((d) => d.getClientRects().length > 0);
+  const completeBtn = () => document.querySelector('main section[aria-label="강의 마치기"] button[aria-label="이 강의 학습 완료"], main section[aria-label="강의 마치기"] button[aria-label="학습 완료함 · 취소하려면 누르세요"]');
   const pills = () => all('main nav[aria-label="문법 4단계 학습 모드"] button');
   const chromeNav = () => document.querySelector('main nav[aria-label="강의 이동"]');
   const stepNav = () => document.querySelector('main nav[aria-label="학습 단계 이동"]');
@@ -600,6 +611,7 @@ const PAGE_HELPERS = `(() => {
     setPrev: () => all("main [data-set-prev]").find(vis) || null,
     bundleOf: (n) => { const li = document.querySelector('main [data-step-panel] [data-item="' + n + '"]'); const ol = li ? li.closest("[data-set]") : null; return ol ? Number(ol.dataset.set) : null; },
     playerDetails,
+    playerOnScreen,
     playerSummary: () => { const d = playerDetails(); return d ? d.querySelector("summary") : null; },
     playerBtn: (which) => {
       const p = player(); if (!p) return null;
@@ -635,7 +647,8 @@ const PAGE_HELPERS = `(() => {
       const courseLink = links.find((a) => norm(a.innerText).includes("목록"));
       const btns = nav ? [...nav.querySelectorAll("button")] : [];
       const bm = btns.find((b) => /북마크/.test(b.getAttribute("aria-label") || ""));
-      const done = btns.find((b) => /학습 완료/.test(b.getAttribute("aria-label") || ""));
+      // UI검토-1007 (10-07 end bar · 10-08 59): the completion is the end bar's button (section 강의 마치기), named by its visible words
+      const done = completeBtn();
       const snButtons = sn ? [...sn.querySelectorAll("button")] : [];
       return {
         h1: txt(document.querySelector("main h1")),
@@ -659,7 +672,7 @@ const PAGE_HELPERS = `(() => {
     chromeBtn: (which) => {
       const nav = chromeNav(); const sn = stepNav();
       if (which === "bookmark") return nav ? [...nav.querySelectorAll("button")].find((b) => /북마크/.test(b.getAttribute("aria-label") || "")) : null;
-      if (which === "complete") return nav ? [...nav.querySelectorAll("button")].find((b) => /학습 완료/.test(b.getAttribute("aria-label") || "")) : null;
+      if (which === "complete") return completeBtn();
       if (which === "stepPrev") return sn ? sn.querySelectorAll("button")[0] : null;
       if (which === "stepNext") return sn ? sn.querySelectorAll("button")[1] : null;
       if (which === "prevLesson") return nav ? [...nav.querySelectorAll("a")].find((a) => (a.getAttribute("aria-label") || "").startsWith("이전 강의")) : null;

@@ -370,7 +370,7 @@ export function AdultWordsStep({
   }
 
   if (words.length === 0) {
-    return <p className="text-label text-ink-soft">이 강의에는 핵심 어휘가 없어요. 다음 단계로 넘어가세요.</p>;
+    return <p className="text-label text-ink-soft">이 강의에는 핵심 어휘가 없어요. 다음 Step으로 넘어가세요.</p>;
   }
   const current = words[set[blankIndex] ?? -1];
   return (

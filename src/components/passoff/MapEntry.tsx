@@ -32,7 +32,7 @@ export function PassoffMapNext({ progress }: { progress: PassoffProgressSnapshot
         href={passoffMapHref(topic.topic)}
         className="flex min-h-12 items-center justify-between gap-3 rounded-control border border-line-strong bg-surface px-4 text-label font-semibold text-ink transition-colors hover:bg-sunken"
       >
-        <span>TOPIC {topic.topic} 구성도 다시 채우기</span>
+        <span>대주제 {topic.topic} 구성도 다시 채우기</span>
         <IconChevronRight size={18} className="shrink-0 text-ink-soft" />
       </Link>
       <p className="text-caption text-ink-soft">

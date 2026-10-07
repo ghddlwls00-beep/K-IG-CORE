@@ -170,9 +170,11 @@ const outlineButton =
   "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control border border-line bg-raised px-3 text-label font-semibold text-ink transition-colors cursor-pointer hover:bg-sunken disabled:cursor-not-allowed disabled:opacity-40";
 const quietButton =
   "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control px-3 text-label font-medium text-ink-soft transition-colors cursor-pointer hover:bg-sunken disabled:cursor-not-allowed disabled:opacity-40";
+// the chosen chip ('모두' · '1×' …) wears the step tabs' dark ring (UI검토-1007 42 — in dark mode the raised chip was nearly
+// the bar's own colour, so the choice read only by weight)
 const segmentButton = (on: boolean) =>
   "flex min-h-11 min-w-11 items-center justify-center rounded-control px-1.5 text-label tabular-nums transition-colors cursor-pointer " +
-  (on ? "bg-raised font-semibold text-ink shadow-2xs" : "font-medium text-ink-soft hover:bg-raised/60");
+  (on ? "bg-raised font-semibold text-ink shadow-2xs dark:ring-1 dark:ring-line-input" : "font-medium text-ink-soft hover:bg-raised/60");
 /** a word as a tile: the bank, the answer box and the answer box's measuring copy share it (a fixed blank adds its own weight) */
 const chipBase = "inline-flex min-h-11 min-w-11 items-center justify-center rounded-control border px-3 text-body";
 const tileBase = `${chipBase} font-semibold`;
@@ -1465,7 +1467,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
   return (
     <div className="flex flex-col gap-3" data-student-view data-step={stepNumber}>
       <StepTabs
-        label={`${course === "adult" ? "ADULT" : "STUDENT"} ${steps.length}단계 학습`}
+        label="학습 단계"
         stepStart
         compact={steps.length > 3}
         current={stepNumber}

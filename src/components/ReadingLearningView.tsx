@@ -1673,6 +1673,24 @@ export function ReadingLearningView({
 
   function renderComprehension() {
     if (lessonQuestions && lessonQuestions.length > 0) {
+      /*
+       * 2026-10-08 (사장님 답 10-07 23:01 · UI검토-1007 결과.md 4장 6번): the questions open AFTER '다 읽었어요' of the timed reading,
+       * so the screen's order is the intro's ('다시 읽은 뒤 풀어 보세요'). Until then the slot holds one quiet line. Open when:
+       *   - '다 읽었어요' was pressed on this visit (outcome — a too-fast press too: it was pressed, and the notice above says why the
+       *     time was not kept; the questions are practice, not the completion), or
+       *   - this lesson has a reading on record — a kept timed reading (speed.again), an older one (speed.first · the old best WPM),
+       *     or the lesson completed (gateReady — the same record that opens '이 강의 학습 완료'). So a lesson finished before, or
+       *     visited again after a timed reading, opens the questions at once; a fresh visit with nothing on record starts folded.
+       * The completion condition and the grading are unchanged.
+       */
+      const questionsOpen = outcome !== null || gateReady;
+      if (!questionsOpen) {
+        return (
+          <div data-comprehension="waiting">
+            <p className="text-label text-ink-soft">다시 읽고 &lsquo;다 읽었어요&rsquo;를 누르면 이해 문제가 나와요.</p>
+          </div>
+        );
+      }
       return (
         <div data-comprehension="questions">
           <LessonQuestions

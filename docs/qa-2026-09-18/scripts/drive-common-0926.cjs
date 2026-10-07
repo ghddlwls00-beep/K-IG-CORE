@@ -24,7 +24,8 @@ const fs = require("fs");
 const path = require("path");
 const H = require("./lib/harness.cjs");
 const E = require("./lib/expectations.cjs");
-const ts = require(path.join(H.REPO, "node_modules/typescript"));
+const UI = require("./lib/ui-1008.cjs"); // UI검토-1007 고침3 (2026-10-08): GRAMMAR's answer player (4장 7)
+const ts =require(path.join(H.REPO, "node_modules/typescript"));
 
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const PORT = Number(arg("--port", 9571));
@@ -279,8 +280,17 @@ const clearSeed = (tab) => tab.eval(`(() => { localStorage.removeItem('kig:progr
         if (!loaded.rendered || (await tab.eval(PAYWALLED).catch(() => true))) { rec(`D:rapid:${url}`, "rapid actions", "BLOCKED", { note: loaded.rendered ? "잠김 화면" : "안 뜸" }); continue; }
         // 2026-09-27 (GRAMMAR 학습법 · 화면 고침 — GRM-L03 ④): GRAMMAR's top player is folded under '정답 문장 전체 듣기'
         // (details[data-answer-player]) — open it like a learner would, or no visible 재생 button is found (BLOCKED).
-        const foldedPlayer = `document.querySelector('main details[data-answer-player]:not([open]) > summary')`;
-        if (await tab.eval(`Boolean(${foldedPlayer})`).catch(() => false)) await H.click(tab, foldedPlayer, { settle: 300 });
+        // UI검토-1007 4장 7 (2026-10-08 · tools-c): that page-level fold is now hidden (display:none) and the view draws its own at the end
+        // of Step 3 (and of Step 4 after grading) — go to Step 3 like a learner, then open the view's fold (lib/ui-1008.cjs). It was
+        // `main details[data-answer-player]:not([open]) > summary` on Step 1. 깨기: KIG_BREAK_APP=1008 (the old page) → no visible 재생 here.
+        const isGrammar = course === "grammar1" || course === "grammar2";
+        const openGrammarPlayer = async () => {
+          if (!isGrammar) return true;
+          await H.click(tab, `document.querySelector('main [data-step-tab="3"]')`, { settle: 600 });
+          if (await tab.eval(`Boolean(${UI.GRAMMAR_PLAYER_FOLDED_SUMMARY})`).catch(() => false)) await H.click(tab, UI.GRAMMAR_PLAYER_FOLDED_SUMMARY, { settle: 300 });
+          return tab.eval(`(() => { const d = document.querySelector(${JSON.stringify(UI.GRAMMAR_PLAYER)}); return !!d && d.open && d.getClientRects().length > 0; })()`).catch(() => false);
+        };
+        if (!(await openGrammarPlayer())) { rec(`D:rapid:${url}`, "rapid actions", "BLOCKED", { note: "GRAMMAR 정답 플레이어(3단계 끝 · 4장 7)를 열지 못함 — 화면이 바뀌었으면 도구를 고쳐야 함" }); continue; }
         // 2026-09-27 (READING · 계획 D01 나): the whole passage plays after the first reading and in 원문 대조 — the top player is hidden
         // (A10) and Step 1 has no play button before its '다 읽었어요', so go to 원문 대조 like a learner who wants to listen.
         // 2026-09-28 (READING 순서 바꿈 — D31 다): 원문 대조 and its player moved from Step 4 to Step 3; Step 4 is now the timed
@@ -318,6 +328,7 @@ const clearSeed = (tab) => tab.eval(`(() => { localStorage.removeItem('kig:progr
         if (steps.length) await H.click(tab, `[...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(steps[0])})`, { settle: 900 });
         // READING: the passage player lives in 원문 대조 — Step 3 since 2026-09-28 (Step 1 has none before '다 읽었어요') — back to it
         if (course === "reading") await H.click(tab, `document.querySelector('main [data-step-tab="3"]')`, { settle: 600 });
+        await openGrammarPlayer(); // GRAMMAR: the player lives at the end of Step 3 since 2026-10-08 (4장 7)
         await tab.eval(tagPlay("/재생|🔊/")).catch(() => false);
         await H.audioLog(tab, { clear: true });
         const again = await H.click(tab, tagged, { settle: 200 });

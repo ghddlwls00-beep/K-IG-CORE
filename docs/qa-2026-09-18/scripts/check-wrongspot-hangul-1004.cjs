@@ -406,7 +406,8 @@ async function drivePassoff(tab, page, rows) {
       const card = await tab.eval(`(() => { const c = ${CARD(n)}; if (!c) return null; return { text: c.innerText, ko: [...c.querySelectorAll('p')].map((p) => (p.innerText || '').replace(/\\s+/g, ' ').trim()), answer: !!c.querySelector('textarea'), next: [...c.querySelectorAll('button')].some((b) => (b.innerText || '').trim() === '다음 문장') }; })()`).catch(() => null);
       if (!card) {
         if (n === 4 && /다음 세트/.test(stepText)) { await H.click(tab, BTN_IN(STEP(4), "/^다음 세트$/"), { settle: 500 }); continue; }
-        if (/다음 단계: 마무리|5단계를 모두 마쳤어요/.test(stepText)) break;
+        // UI검토-1007 17 (2026-10-08): Step 5's line is 'Step 1~5를 모두 마쳤어요' (it was '5단계를 모두 마쳤어요' — kept for an old build)
+        if (/다음 단계: 마무리|Step 1~5를 모두 마쳤어요|5단계를 모두 마쳤어요/.test(stepText)) break;
         if (++idle > 25) break;
         await H.sleep(300); continue;
       }

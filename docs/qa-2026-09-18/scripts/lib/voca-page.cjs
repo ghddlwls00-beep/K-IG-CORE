@@ -1,7 +1,7 @@
 /**
  * VOCA lesson page — browser-side steps the audit drivers share (2026-09-27, VOCA 학습법 · 화면 고침).
  *
- * WHY. Since 2026-09-27 (계획 D02 나) a VOCA lesson's '이 강의 학습 완료' (LessonEndBar, aria-label '학습 완료 체크') is disabled
+ * WHY. Since 2026-09-27 (계획 D02 나) a VOCA lesson's '이 강의 학습 완료' (LessonEndBar, aria-label '학습 완료 체크' — since 2026-10-08 '이 강의 학습 완료', 59) is disabled
  * until one Step 2 round has been finished on this device (src/lib/lessonGate.ts · PhonicsLearningView). A driver that tests the
  * completion toggle must first do what a learner does: open Step 2 and answer every question of a round. The answers do not
  * have to be right — a round ends when its queue is empty (a missed word is asked again at most twice, so a round is at most

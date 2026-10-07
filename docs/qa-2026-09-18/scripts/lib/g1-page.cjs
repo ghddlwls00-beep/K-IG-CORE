@@ -40,7 +40,8 @@ function pageHelpers() {
    *   the summary line [data-summary] with data-answered/total/correct/retry/accuracy (Step 1)
    *   '⋯ 더보기'       details[data-more] — open it (moreSummary) before pressing [data-action=…], [data-font], [data-speed]
    *   bundles          Steps 1–3 show ten items (ol[data-set]; the rest are hidden, not removed) — setNext / setPrev / bundleOf
-   *   top player       folded in details[data-answer-player] in GRAMMAR (GRM-L03 ④) — open it (playerSummary) first
+   *   top player       folded in details[data-answer-player] in GRAMMAR (GRM-L03 ④) — open it (playerSummary) first; since 2026-10-08
+ *                    (UI검토-1007 4장 7) at the end of Step 3 and of Step 4 after grading only — the view's [data-grammar-view] one
    */
   const panel = (k) => document.querySelector('main [data-step-panel="' + k + '"]');
   const itemsIn = (k) => { const p = panel(k); return p ? all("[data-item]", p) : []; };
@@ -111,7 +112,8 @@ function pageHelpers() {
 
     actionBtn(kind) {
       if (kind === "bookmark") return document.querySelector('button[aria-label="북마크 추가"], button[aria-label="북마크 해제"]');
-      return document.querySelector('button[aria-label="학습 완료 체크"], button[aria-label="학습 완료 취소"]');
+      // UI검토-1007 59 (2026-10-08): named by its visible words — it was '학습 완료 체크' / '학습 완료 취소'
+      return document.querySelector('button[aria-label="이 강의 학습 완료"], button[aria-label="학습 완료함 · 취소하려면 누르세요"]');
     },
     actions() {
       const b = g.actionBtn("bookmark");
@@ -162,10 +164,16 @@ function pageHelpers() {
     rulesSummaryEl: () => { const d = document.querySelector("main details[data-rule-summary]"); return d ? d.querySelector("summary") : null; },
 
     // --- top player --------------------------------------------------------
-    playerDetails: () => document.querySelector("main details[data-answer-player]"),
+    // UI검토-1007 4장 7 (2026-10-08): the page-level player above the step tabs stays in the DOM but hidden (display:none); the view
+    // draws its own at the end of Step 3 (data-answer-player-step="3") and of Step 4 once graded ("4"). Open Step 3 first (pill(3)).
+    // It used to be the first `main details[data-answer-player]` — now that is the hidden one.
+    playerDetails: () => document.querySelector("main [data-grammar-view] details[data-answer-player]"),
     playerSummary: () => { const d = g.playerDetails(); return d ? d.querySelector("summary") : null; },
+    // true when a details[data-answer-player] is on screen (Step 1 · 2 and Step 4 before grading: none)
+    playerOnScreen: () => all("main details[data-answer-player]").some((d) => d.getClientRects().length > 0),
     playerRoot() {
-      const range = document.querySelector('input[aria-label="문장 이동"]');
+      const d = g.playerDetails();
+      const range = (d && d.querySelector('input[aria-label="문장 이동"]')) || document.querySelector('[data-grammar-view] input[aria-label="문장 이동"]');
       if (range) return range.closest("div.rounded-card, div.rounded-3xl");
       return document.querySelector("main div.rounded-card, main div.rounded-3xl");
     },

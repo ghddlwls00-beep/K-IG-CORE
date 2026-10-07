@@ -988,7 +988,7 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
         <div className="flex items-center justify-between gap-3">
           <p className="min-w-0 flex-1 text-label text-ink-soft">
             단어를 누르면 소리가 나요.
-            {words.length > 0 ? " 옆 동그라미는 ‘안다고 표시’예요 — 표시해도 2단계 퀴즈에는 그대로 나와요." : null}
+            {words.length > 0 ? " 옆 동그라미는 ‘안다고 표시’예요 — 표시해도 Step 2 퀴즈에는 그대로 나와요." : null}
           </p>
           {/* the shared switch (UI검토-1007 3장 56번) */}
           <Toggle
@@ -1363,7 +1363,14 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
                 className="min-h-11 min-w-0 flex-1 rounded-control border border-line-input bg-surface px-3 text-body text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
               />
               {p.verdict === null ? (
-                <button type="submit" data-action="check-spelling" disabled={!p.typed.trim()} className={`${filledButton} shrink-0`}>
+                // 2026-10-08 (UI검토-1007 3장 55번): off (nothing typed) it is the shared off look — `btn-filled` (globals.css): an
+                // outline and faint text, as '이 강의 학습 완료' and GRAMMAR '전체 시험 채점하기', not the fill at 40%
+                <button
+                  type="submit"
+                  data-action="check-spelling"
+                  disabled={!p.typed.trim()}
+                  className="btn-filled inline-flex min-h-11 shrink-0 items-center justify-center gap-1.5 rounded-control px-4 text-label font-semibold transition-opacity"
+                >
                   확인
                 </button>
               ) : null}
@@ -1483,7 +1490,7 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
             <div className="flex flex-col gap-0.5">
               <p className="text-body font-semibold text-ink">틀린 단어가 없어요.</p>
               <p className="text-label text-ink-soft">
-                {roundsDone > 0 ? "2단계와 4단계에서 틀린 단어가 여기에 모여요." : "2단계 퀴즈를 풀면 틀린 단어가 여기에 모여요."}
+                {roundsDone > 0 ? "Step 2와 Step 4에서 틀린 단어가 여기에 모여요." : "Step 2 퀴즈를 풀면 틀린 단어가 여기에 모여요."}
               </p>
             </div>
             <div className="flex flex-col gap-2 sm:flex-row">

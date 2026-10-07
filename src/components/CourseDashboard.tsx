@@ -13,10 +13,10 @@ import dynamic from "next/dynamic";
 import { useProgress } from "./ProgressProvider";
 import { useLicense } from "./LicenseProvider";
 import { isFreePreviewLesson, planOpensCourse } from "@/lib/license";
-import type { LessonPresentation } from "@/lib/curriculumPresentation";
+import { passoffTopicWithParticle, type LessonPresentation } from "@/lib/curriculumPresentation";
 import { READING_LENGTHS } from "@/lib/readingLengths";
 import { shownPercent } from "@/lib/shownPercent";
-import { passoffLessonsDone, passoffTopicOf, topicWithParticle } from "@/lib/passoffUnlock";
+import { passoffLessonsDone, passoffTopicOf } from "@/lib/passoffUnlock";
 import { ChapterAudioBar } from "./ChapterAudioBar";
 import { usePassoffProgress, usePassoffUnlockNotice } from "./PassoffProgressProvider";
 // the topic's "구성도 다시 채우기" links (단계 2-나 E2) — from the server's progress answer only: no learning engine in them
@@ -75,15 +75,15 @@ function cameBackByHistory(): boolean {
 }
 
 /**
- * UI검토-1007 16번 — a STUDENT · ADULT lesson named outside its chapter's rows (the '이어서 학습' button, the free-lesson
- * buttons) carries its chapter, as the lesson's end bar names it: 'Ch 2-1 · Greeting (인사)'. Its title alone,
- * 'Part 1 · Greeting (인사)', is the same words in several chapters. Other courses: the title, unchanged.
+ * UI검토-1007 16번 · 4장 8 — a lesson named outside its chapter's rows (the '이어서 학습' button, the free-lesson buttons) is its
+ * title, which now carries its chapter for STUDENT · ADULT ('2-1 · Greeting (인사)' — curriculumPresentation.ts, the same
+ * words as the lesson's head, the lock screen and the end bar). A row inside its chapter draws the number in its own column
+ * and the lesson's own words beside it (rowName).
  */
-function nameOutsideChapter(courseSlug: string, pres: LessonPresentation): string {
-  return courseSlug === "student" || courseSlug === "adult"
-    ? `${pres.code} · ${pres.title.replace(/^Part \d+ · /, "")}`
-    : pres.title;
-}
+const nameOutsideChapter = (pres: LessonPresentation): string => pres.title;
+const NUMBERED_ROWS = new Set(["student", "adult", "passoff-grammar"]);
+const rowName = (courseSlug: string, pres: LessonPresentation): string =>
+  NUMBERED_ROWS.has(courseSlug) ? (pres.name ?? pres.title) : pres.title;
 
 const LessonRow = memo(function LessonRow({
   lesson,
@@ -109,7 +109,7 @@ const LessonRow = memo(function LessonRow({
   isRecent: boolean;
   onToggleBookmark: (courseSlug: string, lessonId: string) => void;
   sequentialLock: boolean;
-  /** what a row locked by the course order says (PASS-OFF GRAMMAR: "TOPIC N-1을 마치면 열림") — STUDENT's own when absent */
+  /** what a row locked by the course order says (PASS-OFF GRAMMAR: "대주제 N-1을 마치면 열림") — STUDENT's own when absent */
   lockLabel?: string;
   /**
    * UI검토-1007 10번: the licence (or the server record the chapter locks come from) has not answered yet for someone the
@@ -143,14 +143,15 @@ const LessonRow = memo(function LessonRow({
         scroll={true}
         className="flex min-h-[52px] min-w-0 flex-1 items-center gap-3 py-2 pl-4 pr-2 transition-colors hover:bg-sunken"
       >
-        {/* UI검토-1007 33번: PASS-OFF GRAMMAR's rows carry their number too ('1-1' — code 'Topic 1-1'), as STUDENT's · ADULT's do */}
-        {courseSlug === "student" || courseSlug === "adult" || courseSlug === "passoff-grammar" ? (
-          <span className="w-9 shrink-0 text-caption tabular-nums text-ink-soft">{pres.code.replace(/^(?:Ch|Topic)\s*/, "")}</span>
+        {/* UI검토-1007 33번: PASS-OFF GRAMMAR's rows carry their number too ('1-1'), as STUDENT's · ADULT's do. 4장 8: the code is
+            the number itself now ('1-1' — it was 'Ch 1-1' · 'Topic 1-1') and the row's words are the lesson's own (rowName) */}
+        {NUMBERED_ROWS.has(courseSlug) ? (
+          <span className="w-9 shrink-0 text-caption tabular-nums text-ink-soft">{pres.code}</span>
         ) : null}
         {length ? (
           <span className="flex min-w-0 flex-1 flex-col">
             <span className={`truncate text-label ${isUnlocked || pending ? "text-ink" : "text-ink-soft"} ${isRecent ? "font-semibold" : "font-medium"}`}>
-              {pres.title}
+              {rowName(courseSlug, pres)}
             </span>
             <span data-passage-length className="text-caption tabular-nums text-ink-soft">
               {length[0]}단어 · {length[1]}문장
@@ -158,7 +159,7 @@ const LessonRow = memo(function LessonRow({
           </span>
         ) : (
           <span className={`min-w-0 flex-1 truncate text-label ${isUnlocked || pending ? "text-ink" : "text-ink-soft"} ${isRecent ? "font-semibold" : "font-medium"}`}>
-            {pres.title}
+            {rowName(courseSlug, pres)}
           </span>
         )}
         {state ? (
@@ -353,6 +354,14 @@ export function CourseDashboard({
       : "마지막 강의";
   /** the record that says what is done has not answered yet — the button would point at the wrong lesson for a moment */
   const startPending = !recentListed && (chapterRecordPending || passoffChecking);
+  /**
+   * UI검토-1007 3차 ③ (1차 운영 확인 10-08 01시): with a licence, the counts ('학습 진도율: 0 / 82' · '미완료 (82)' · a chapter's
+   * '0/6') showed for 0.2~0.5 s before the licence and the server record answered, then changed ('1 / 82'). Until they have,
+   * the numbers keep their place unseen (`invisible` — the same box and height, nothing to read) and appear once, right. The
+   * words stay in the page for the audit drivers, which read the counters after the list has settled.
+   */
+  const countsPending = licenseUnknown || chapterRecordPending || passoffChecking;
+  const hideWhilePending = countsPending ? "invisible" : "";
 
   // the two free lessons (first two cards of the first section — the same rule as the gate)
   const freeLessons = useMemo(() => {
@@ -427,16 +436,21 @@ export function CourseDashboard({
     if (row && window.scrollY < 40) row.scrollIntoView({ block: "center" });
   }, [openSections, recentListed]);
 
-  const filterButton = (key: typeof filter, label: string) => (
+  // UI검토-1007 42번: the chosen chip wears the shared chosen look (StepTabs · GRAMMAR · PASS-OFF chips) — a thin --line-input
+  // ring in dark mode, where its raised ground was nearly the sunken track's. ③: the count waits unseen while pending.
+  const filterButton = (key: typeof filter, label: string, count: number) => (
     <button
       type="button"
       onClick={() => setFilter(key)}
       aria-pressed={filter === key}
       className={`flex min-h-11 items-center justify-center rounded-control px-3 text-label transition-colors cursor-pointer ${
-        filter === key ? "bg-raised font-semibold text-ink shadow-2xs" : "font-medium text-ink-soft hover:text-ink"
+        filter === key ? "bg-raised font-semibold text-ink shadow-2xs dark:ring-1 dark:ring-line-input" : "font-medium text-ink-soft hover:text-ink"
       }`}
     >
-      {label}
+      {/* one inline box, so the space before '(N)' stays (a flex button drops a bare space between its items) */}
+      <span>
+        {label} <span className={`tabular-nums ${key === "all" ? "" : hideWhilePending}`}>({count})</span>
+      </span>
     </button>
   );
 
@@ -450,8 +464,8 @@ export function CourseDashboard({
       )}
       {passoffNotice && (
         <div className="fixed inset-x-4 top-20 z-50 mx-auto max-w-md rounded-card border border-line bg-raised px-5 py-4 text-center text-label font-semibold text-ink shadow-xl" role="status">
-          {/* the particle as the number is read in Korean ('TOPIC 2가' · 'TOPIC 3이' — passoffUnlock.ts topicWithParticle) */}
-          {topicWithParticle(passoffNotice, "이/가")} 열렸어요.
+          {/* the particle as the number is read in Korean ('대주제 2가' · '대주제 3이' — curriculumPresentation.ts, 4장 8) */}
+          {passoffTopicWithParticle(passoffNotice, "이/가")} 열렸어요.
         </div>
       )}
 
@@ -460,9 +474,9 @@ export function CourseDashboard({
         // UI검토-1007 10번: the licence answer is on its way — the place is kept (same box, same height), nothing drawn in it
         <section className="rounded-card border border-line bg-raised p-4 sm:p-5" aria-label="진도" aria-busy="true" data-license-pending="">
           <div className="min-h-14" aria-hidden />
-          {/* kept for the audit drivers, which read the counters on every list page */}
+          {/* kept for the audit drivers, which read the counters on every list page — unseen until the answer (③: it read '0 / 82') */}
           <div className="mt-4 flex flex-col gap-2">
-            <p className="text-label text-ink">
+            <p className="invisible text-label text-ink" aria-hidden>
               학습 진도율: <span className="font-semibold tabular-nums">{completedCount}</span> / {totalLessons}개 완료{" "}
               <span className="tabular-nums text-ink-soft">({progressPercent}%)</span>
             </p>
@@ -481,7 +495,7 @@ export function CourseDashboard({
             >
               <span className="min-w-0">
                 <span className="block text-caption text-surface/75">{startLabel}</span>
-                <span className="block truncate text-label font-semibold">{nameOutsideChapter(courseSlug, startLesson.presentation)}</span>
+                <span className="block truncate text-label font-semibold">{nameOutsideChapter(startLesson.presentation)}</span>
               </span>
               <span aria-hidden>→</span>
             </Link>
@@ -491,20 +505,21 @@ export function CourseDashboard({
           {isPassoff ? <PassoffReviewEntry learner={licenseInfo?.licenseId ?? null} freeKeys={passoffFreeReviewKeys ?? []} /> : null}
           {isPassoff ? <PassoffMapNext progress={passoffProgress} /> : null}
           <div className="mt-4 flex flex-col gap-2">
-            <p className="text-label text-ink">
+            {/* ③: unseen (same place) until the chapter record / PASS-OFF answer is in — it read '0 / 82' first */}
+            <p className={`text-label text-ink ${hideWhilePending}`} aria-hidden={countsPending || undefined}>
               학습 진도율: <span className="font-semibold tabular-nums">{completedCount}</span> / {totalLessons}개 완료{" "}
               <span className="tabular-nums text-ink-soft">({progressPercent}%)</span>
             </p>
             {/* UI검토-1007 57번: an empty bar (0%) was the card's own colour (dark 1.05 · light 1.15) — its ground is now
                 globals.css --track (a step darker than the card: light 1.53 · dark 1.56), so a 0% bar shows where progress will fill */}
             <div className="h-1.5 w-full overflow-hidden rounded-full bg-track" aria-hidden>
-              <div className="h-full rounded-full bg-ink transition-[width] duration-500" style={{ width: `${Math.min(100, Math.max(0, progressPercent))}%` }} />
+              <div className="h-full rounded-full bg-ink transition-[width] duration-500" style={{ width: `${countsPending ? 0 : Math.min(100, Math.max(0, progressPercent))}%` }} />
             </div>
-            {/* UI검토-1007 41번: 해요체. '서버에 저장됨' and PASS-OFF's '진도를 서버와 맞추는 중…' stay this time — docs/pass-off-grammar/
-                검사 drive-topic-lock · drive-topic-admin wait for those words ('진도 저장됨' goes with those tools, next batch) */}
+            {/* UI검토-1007 41번: 해요체 — '서버에 저장됨' → '진도 저장됨', PASS-OFF '진도를 서버와 맞추는 중…' → '진도를 맞추는 중…'
+                (docs/pass-off-grammar/검사 drive-topic-lock · drive-topic-admin wait for these words — the tools' worker changes them) */}
             {isChapterCourse && (
               <p className="text-caption text-ink-soft" aria-live="polite">
-                {studentSyncStatus === "saved" && "서버에 저장됨"}
+                {studentSyncStatus === "saved" && "진도 저장됨"}
                 {studentSyncStatus === "syncing" && "진도를 저장하는 중…"}
                 {studentSyncStatus === "pending" && "연결되면 자동으로 저장해요"}
                 {studentSyncStatus === "error" && "저장하지 못했어요 · 연결되면 다시 저장해요"}
@@ -512,8 +527,8 @@ export function CourseDashboard({
             )}
             {isPassoff && (
               <p className="text-caption text-ink-soft" aria-live="polite">
-                {passoffSyncStatus === "saved" && "서버에 저장됨"}
-                {passoffSyncStatus === "syncing" && "진도를 서버와 맞추는 중…"}
+                {passoffSyncStatus === "saved" && "진도 저장됨"}
+                {passoffSyncStatus === "syncing" && "진도를 맞추는 중…"}
                 {passoffSyncStatus === "pending" && "연결되면 자동으로 저장해요"}
                 {passoffSyncStatus === "error" && "저장하지 못했어요 · 연결되면 다시 저장해요"}
               </p>
@@ -536,7 +551,7 @@ export function CourseDashboard({
                     i === 0 ? "bg-ink text-surface hover:opacity-90" : "border border-line text-ink hover:bg-sunken"
                   }`}
                 >
-                  <span className="min-w-0 truncate">{nameOutsideChapter(courseSlug, lesson.presentation)}</span>
+                  <span className="min-w-0 truncate">{nameOutsideChapter(lesson.presentation)}</span>
                   <span className="shrink-0" aria-hidden>→</span>
                 </Link>
               ))}
@@ -553,9 +568,9 @@ export function CourseDashboard({
 
       {/* Filters */}
       <div className="grid grid-cols-3 gap-1 rounded-control bg-sunken p-1" role="group" aria-label="목록 거르기">
-        {filterButton("all", `전체 (${totalLessons})`)}
-        {filterButton("bookmarked", `북마크 (${bookmarkCount})`)}
-        {filterButton("incomplete", `미완료 (${Math.max(0, totalLessons - completedCount)})`)}
+        {filterButton("all", "전체", totalLessons)}
+        {filterButton("bookmarked", "북마크", bookmarkCount)}
+        {filterButton("incomplete", "미완료", Math.max(0, totalLessons - completedCount))}
       </div>
 
       {/* Sections */}
@@ -607,17 +622,22 @@ export function CourseDashboard({
             const chapterComplete = Boolean(studentChapter?.complete) || Boolean(passoffState?.complete);
             const chapterPercent = studentChapter?.percent ?? passoffState?.percent ?? shownPercent(completedInSection, section.lessons.length);
             const isLife = licenseInfo?.plan === "LIFE";
-            /** PASS-OFF GRAMMAR's lock words (its topic line and each locked row): 'TOPIC 2를 마치면 열림' — the particle as the number is read */
-            const passoffLock = `${topicWithParticle(passoffPreviousTopic ?? sectionIndex, "을/를")} 마치면 열림`;
+            /**
+             * PASS-OFF GRAMMAR's lock words: each locked row '대주제 2를 마치면 열림' (as STUDENT's row '앞 장을 마치면 열림'), the topic
+             * line '대주제 2를 마치면 열려요' (as STUDENT's '2장을 마치면 열려요' — 41번 해요체) — the particle as the number is read.
+             * 4장 8: '대주제' — it read 'TOPIC 2를 …'.
+             */
+            const passoffPrevious = passoffTopicWithParticle(passoffPreviousTopic ?? sectionIndex, "을/를");
+            const passoffLock = `${passoffPrevious} 마치면 열림`;
             // PASS-OFF GRAMMAR's line under the topic name — '강의' like every course (사장님 2026-09-28 "강의로 맞춰")
             const passoffNote = !isPassoff
               ? null
               : !hasCourseAccess
-                ? sectionIndex === 0 ? "첫 두 강의 무료 체험" : "이용권 등록 후 열림"
+                ? sectionIndex === 0 ? "첫 두 강의 무료 체험" : "이용권 등록 후 열려요"
                 : passoffChecking
                   ? "진도 확인 중…"
                   : !chapterUnlocked
-                    ? passoffLock
+                    ? `${passoffPrevious} 마치면 열려요`
                     : chapterComplete
                       ? "대주제 완료"
                       : passoffState && !passoffProgress?.everyTopicOpen
@@ -627,9 +647,9 @@ export function CourseDashboard({
             const studentNote = !isChapterCourse
               ? null
               : !hasCourseAccess
-                ? sectionIndex === 0 ? "1·2강 무료" : "이용권 등록 후 열립니다"
+                ? sectionIndex === 0 ? "1·2강 무료" : "이용권 등록 후 열려요"
                 : !chapterUnlocked
-                  ? `${sectionIndex}장을 마치면 열립니다` // STU-U28: '{n}장을' — '챕터 {n}을(를)' read wrong
+                  ? `${sectionIndex}장을 마치면 열려요` // STU-U28: '{n}장을' — '챕터 {n}을(를)' read wrong · 41번 해요체
                   : chapterComplete
                     ? "이 장 완료"
                     : isLife || !studentChapter
@@ -673,7 +693,7 @@ export function CourseDashboard({
                         <path d="M8 11V8a4 4 0 0 1 8 0v3" />
                       </svg>
                     ) : null}
-                    {completedInSection}/{section.lessons.length}
+                    <span className={notePending || countsPending ? "invisible" : ""}>{completedInSection}/{section.lessons.length}</span>
                   </span>
                 </button>
 

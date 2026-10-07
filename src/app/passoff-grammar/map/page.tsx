@@ -8,7 +8,8 @@ import { planOpensCourse } from "@/lib/license";
 import { LICENSE_SESSION_COOKIE_NAME, verifyLicenseSessionToken } from "@/lib/licenseSession";
 import { getPassoffProgress, isPassoffLessonUnlocked, passoffProgressSnapshot, passoffTopics } from "@/lib/passoffProgress";
 import { passoffMapData } from "@/lib/passoffReview";
-import { passoffLessonsDone, topicWithParticle } from "@/lib/passoffUnlock";
+import { passoffLessonsDone } from "@/lib/passoffUnlock";
+import { formatGroupTitle, passoffTopicWithParticle } from "@/lib/curriculumPresentation";
 
 /**
  * "구성도 다시 채우기" of a topic (설계 §4 · §5, 공통-학습-엔진.md §8-7 — 단계 2-나 E2): /passoff-grammar/map?topic=N — a literal
@@ -52,7 +53,8 @@ export default async function PassoffMapPage({ searchParams }: { searchParams: P
     const open = everyTopicOpen || isPassoffLessonUnlocked(topic.lessonIds[0], record);
     const state = passoffProgressSnapshot(record, { everyTopicOpen }).topics.find((t) => t.topic === topic.topic) ?? null;
     if (!open) {
-      note = `${topicWithParticle(topic.topic, "은/는")} 아직 열리지 않았어요.`;
+      // UI검토-1007 4장 8: '대주제 3은' — it read 'TOPIC 3은'
+      note = `${passoffTopicWithParticle(topic.topic, "은/는")} 아직 열리지 않았어요.`;
     } else if (!state || !passoffLessonsDone(state)) {
       const titles = new Map((getCourseIndex(COURSE)?.lessons ?? []).map((l) => [l.id, l.title]));
       const last = topic.lessonIds[topic.lessonIds.length - 1];
@@ -82,7 +84,8 @@ export default async function PassoffMapPage({ searchParams }: { searchParams: P
       </nav>
       <header className="mt-1 mb-4 sm:mb-6">
         <h1 className="text-[20px] sm:text-[26px] leading-snug font-bold text-balance text-ink">구성도 다시 채우기</h1>
-        {data ? <p className="mt-1 text-label text-ink-soft">{data.label}</p> : null}
+        {/* 4장 8: the topic by its screen name, '대주제 1 · 인칭' (the data's 'TOPIC 1. 인칭') */}
+        {data ? <p className="mt-1 text-label text-ink-soft">{formatGroupTitle(COURSE, data.label)}</p> : null}
       </header>
       {data ? (
         <PassoffMapRefill data={data} />

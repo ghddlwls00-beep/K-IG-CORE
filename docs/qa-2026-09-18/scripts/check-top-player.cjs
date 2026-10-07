@@ -16,7 +16,11 @@ const PORT = Number(arg("--port", 9590));
 const BUTTON = `[...document.querySelectorAll('main button, header button')].find((b) => /재생/.test((b.getAttribute('aria-label') || '') + (b.innerText || '')) && b.offsetParent)`;
 // 2026-09-27 (GRAMMAR 학습법 · 화면 고침 — GRM-L03 ④): in GRAMMAR the top player reads every English answer, so it waits folded
 // under '정답 문장 전체 듣기' (details[data-answer-player]); its play button has no offsetParent until that is opened.
-const FOLDED_PLAYER = `document.querySelector('main details[data-answer-player]:not([open]) > summary')`;
+// UI검토-1007 4장 7 (2026-10-08 · tools-c): that page-level fold is hidden now (display:none); the view's own sits at the end of Step 3
+// (and of Step 4 after grading) — GRAMMAR goes to Step 3 first and opens the view's fold (lib/ui-1008.cjs). It was
+// `main details[data-answer-player]:not([open]) > summary` on the first screen. 깨기: KIG_BREAK_APP=1008 → no 재생 found (button null).
+const UI = require("./lib/ui-1008.cjs");
+const FOLDED_PLAYER = UI.GRAMMAR_PLAYER_FOLDED_SUMMARY;
 
 (async () => {
   const browser = await H.startBrowser("topplayer", PORT);
@@ -26,6 +30,7 @@ const FOLDED_PLAYER = `document.querySelector('main details[data-answer-player]:
     for (const url of URLS) {
       const course = url.split("/")[1];
       await H.load(tab, url, { marker: H.MARKERS[course] });
+      if (course === "grammar1" || course === "grammar2") await H.click(tab, `document.querySelector('main [data-step-tab="3"]')`, { settle: 600 });
       if (await tab.eval(`Boolean(${FOLDED_PLAYER})`).catch(() => false)) await H.click(tab, FOLDED_PLAYER, { settle: 300 });
       // 2026-09-28 (READING 순서 바꿈 — D31 다): READING's top player is hidden (A10, since 2026-09-27) and the view plays the same
       // sentences in 원문 대조 — Step 3 now (Step 1 has it only after '다 읽었어요') — so that is the player pressed here.
@@ -49,5 +54,7 @@ const FOLDED_PLAYER = `document.querySelector('main details[data-answer-player]:
   } finally {
     browser.proc.kill();
   }
-  fs.writeFileSync(path.join(__dirname, "../out/top-player.json"), JSON.stringify({ at: new Date().toISOString(), rows }, null, 1));
+  // 2026-10-08: --tag <이름> · KIG_BREAK_APP → a file of its own (it was always out/top-player.json)
+  const tag = `${arg("--tag", "") ? "-" + arg("--tag", "") : ""}${process.env.KIG_BREAK_APP ? "-break-app" + process.env.KIG_BREAK_APP : ""}`;
+  fs.writeFileSync(path.join(__dirname, `../out/top-player${tag}.json`), JSON.stringify({ at: new Date().toISOString(), base: H.BASE, rows }, null, 1));
 })();

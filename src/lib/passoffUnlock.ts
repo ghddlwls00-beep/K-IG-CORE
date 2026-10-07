@@ -425,12 +425,15 @@ export function passoffSnapshot(
 }
 
 /**
- * "TOPIC 2를" · "TOPIC 3을" — a topic number with the particle after it, as the number is read in Korean (일 · 이 ·
+ * "대주제 2를" · "대주제 3을" — a topic number with the particle after it, as the number is read in Korean (일 · 이 ·
  * 삼 …): 을 · 이 · 은 after a final consonant — a last digit of 1 3 6 7 8 or 0 (일 삼 육 칠 팔 · 십) — and 를 · 가 · 는
  * after 2 4 5 9 (이 사 오 구). The lock's words (설계 §5) put a particle right after the number.
+ * UI검토-1007 4장 8 (고침3 통합, 2026-10-08): the head is '대주제' — it read 'TOPIC 2를 마치면 열려요' on the lock screen, the map
+ * result and the list's map row while the list, the lock's topic name and the notice already said '대주제'. The same words as
+ * curriculumPresentation.ts passoffTopicWithParticle.
  */
 export function topicWithParticle(topic: number, particle: "을/를" | "이/가" | "은/는"): string {
   const [afterConsonant, afterVowel] = particle.split("/");
   const lastDigit = Math.abs(Math.trunc(topic)) % 10;
-  return `TOPIC ${topic}${[1, 3, 6, 7, 8, 0].includes(lastDigit) ? afterConsonant : afterVowel}`;
+  return `대주제 ${topic}${[1, 3, 6, 7, 8, 0].includes(lastDigit) ? afterConsonant : afterVowel}`;
 }

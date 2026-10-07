@@ -16,11 +16,16 @@ const H = require("./lib/harness.cjs");
 const V = require("./lib/voca-page.cjs");
 const LDP = require("./lib/ld-page.cjs");
 const RDP = require("./lib/reading-page.cjs");
-const ts = require(path.join(H.REPO, "node_modules/typescript"));
+// UI검토-1007 고침3 (2026-10-08 · tools-c) 59: the completion button is named by its visible words — '이 강의 학습 완료' / '학습 완료함 ·
+// 취소하려면 누르세요' (it was '학습 완료 체크' / '학습 완료 취소', the names in the comments below). 깨기: KIG_BREAK_APP=1008 → P BLOCKED
+const U = require("./lib/ui-1008.cjs");
+const ts =require(path.join(H.REPO, "node_modules/typescript"));
 const arg = (n, d) => (process.argv.includes(n) ? process.argv[process.argv.indexOf(n) + 1] : d);
 const ONLY = new Set(arg("--only", "M,S,P,R,W,O").split(","));
 const BREAK = arg("--break", "");
-const OUT = path.join(H.OUT, "features", BREAK ? `gap-0926-break-${BREAK}.jsonl` : "gap-0926.jsonl");
+// --tag (2026-10-08): a run of its own file (gap-0926-<tag>.jsonl) · KIG_BREAK_APP adds '-break-app1008'
+const TAG_ = arg("--tag", "");
+const OUT = path.join(H.OUT, "features", `${BREAK ? `gap-0926-break-${BREAK}` : "gap-0926"}${TAG_ ? `-${TAG_}` : ""}${process.env.KIG_BREAK_APP ? `-break-app${process.env.KIG_BREAK_APP}` : ""}.jsonl`);
 const counts = { PASS: 0, FAIL: 0, BLOCKED: 0, INFO: 0 };
 const rec = (id, status, note, extra = {}) => { fs.appendFileSync(OUT, JSON.stringify({ id, status, note, at: new Date().toISOString(), ...(BREAK ? { break: BREAK } : {}), ...extra }) + "\n"); counts[status]++; console.log(`${status.padEnd(7)} ${id} — ${note.slice(0, 190)}`); };
 const L = (rel) => { const js = ts.transpileModule(fs.readFileSync(path.join(H.REPO, rel), "utf8"), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2020 } }).outputText; const m = { exports: {} }; new Function("module", "exports", "require", js)(m, m.exports, (x) => (x.startsWith(".") || x.startsWith("@/") ? {} : require(x))); return m.exports; };
@@ -118,7 +123,7 @@ const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getCompute
         let practised = "";
         if (course === "phonics") {
           if (await H.waitFor(tab, V.VIEW_READY, 8000)) await H.sleep(300);
-          const gated = await tab.eval(`Boolean(document.querySelector('button[aria-label="학습 완료 체크"][disabled]'))`).catch(() => false);
+          const gated = await tab.eval(`Boolean(document.querySelector('${U.COMPLETE_TODO_SEL}[disabled]'))`).catch(() => false);
           if (gated) {
             const r = await tab.eval(V.FINISH_ROUND).catch(() => ({ ok: false, why: "eval failed" }));
             practised = r && r.ok ? ` · 2단계 한 회차를 끝냄(답 ${r.answered}개)` : ` · 2단계 한 회차를 끝내지 못함: ${(r && r.why) || "?"}`;
@@ -129,7 +134,7 @@ const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getCompute
         // like a learner first (lib/ld-page.cjs CHECK_ONE_LINE: Step 2, the first option of every blank, '정답 확인').
         if (course === "ld") {
           if (await H.waitFor(tab, LDP.VIEW_READY, 8000)) await H.sleep(300);
-          const gated = await tab.eval(`Boolean(document.querySelector('button[aria-label="학습 완료 체크"][disabled]'))`).catch(() => false);
+          const gated = await tab.eval(`Boolean(document.querySelector('${U.COMPLETE_TODO_SEL}[disabled]'))`).catch(() => false);
           if (gated) {
             const r = await tab.eval(LDP.CHECK_ONE_LINE).catch(() => ({ ok: false, why: "eval failed" }));
             practised = r && r.ok ? ` · 받아쓰기 한 줄을 채점함(${r.verdict})` : ` · 받아쓰기 한 줄을 채점하지 못함: ${(r && r.why) || "?"}`;
@@ -143,22 +148,22 @@ const VIS = `(b) => { const r = b.getBoundingClientRect(); const cs = getCompute
         // its '다 읽었어요' does not open the completion) — MEASURE_ONCE opens Step 4; the note says so.
         if (course === "reading") {
           if (await H.waitFor(tab, RDP.VIEW_READY, 8000)) await H.sleep(300);
-          const gated = await tab.eval(`Boolean(document.querySelector('button[aria-label="학습 완료 체크"][disabled]'))`).catch(() => false);
+          const gated = await tab.eval(`Boolean(document.querySelector('${U.COMPLETE_TODO_SEL}[disabled]'))`).catch(() => false);
           if (gated) {
             const r = await tab.eval(RDP.MEASURE_ONCE).catch(() => ({ ok: false, why: "eval failed" }));
             practised = r && r.ok ? ` · 4단계에서 한 번 잼` : ` · 4단계에서 재지 못함: ${(r && r.why) || "?"}`;
             await H.sleep(400);
           }
         }
-        const mark = await H.click(tab, `document.querySelector('button[aria-label="학습 완료 체크"]')`, { settle: 800 });
-        const shown = await tab.eval(`Boolean(document.querySelector('button[aria-label="학습 완료 취소"]'))`).catch(() => false);
+        const mark = await H.click(tab, `document.querySelector('${U.COMPLETE_TODO_SEL}')`, { settle: 800 });
+        const shown = await tab.eval(`Boolean(document.querySelector('${U.COMPLETE_DONE_SEL}'))`).catch(() => false);
         await H.load(tab, `/${course}`, { marker: null });
         const c1 = await tab.eval(COUNTERS);
         await H.load(tab, `/${course}/${id}`, { marker: H.MARKERS[course] });
         if (course === "phonics" && (await H.waitFor(tab, V.VIEW_READY, 8000))) await H.sleep(300);
         if (course === "ld" && (await H.waitFor(tab, LDP.VIEW_READY, 8000))) await H.sleep(300);
         if (course === "reading" && (await H.waitFor(tab, RDP.VIEW_READY, 8000))) await H.sleep(300);
-        const unmark = await H.click(tab, `document.querySelector('button[aria-label="학습 완료 취소"]')`, { settle: 800 });
+        const unmark = await H.click(tab, `document.querySelector('${U.COMPLETE_DONE_SEL}')`, { settle: 800 });
         await H.load(tab, `/${course}`, { marker: null });
         const c2 = await tab.eval(COUNTERS);
         const want1 = BREAK === "P" ? c0.done + 2 : c0.done + 1;

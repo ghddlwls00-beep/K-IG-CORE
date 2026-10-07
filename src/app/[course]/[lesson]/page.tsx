@@ -20,6 +20,7 @@ import { T } from "@/components/LanguageProvider";
 import { canonicalLessonId, getAllLessonParams, getCourse, getLesson, getLessonContext, getLdEnglishScript, getLessonQuestions, getMenTranslationsForLesson, getVocaDictionaryForWords, isFreePreviewLessonServer } from "@/lib/content";
 import { planOpensCourse } from "@/lib/license";
 import { passoffLessonBlocks } from "@/lib/passoffContent";
+import { passoffSubtitle } from "@/lib/passoffView";
 import { freeLessonLinks } from "@/lib/freeLessonLinks";
 import {
   LICENSE_SESSION_COOKIE_NAME,
@@ -140,11 +141,19 @@ export default async function LessonPage({
   const lesson = getLesson(course, id);
   if (!lesson) notFound();
 
-  const { prev, next, pair } = getLessonContext(course, id);
+  const { pair } = getLessonContext(course, id);
   const pairLesson = pair ? getLesson(course, pair.id) : null;
   const courseInfo = getCourse(course);
   const tab = tabForCourse(course);
   const isScript = lesson.variant === "script";
+  /**
+   * UI검토-1007 25번: a Korean script page ('d001-1' · 'pr001-1' · 'gh2-007-1') is the same lesson as its main page
+   * (canonicalLessonId — its canonical URL already points there), so its end bar names the main page's previous / next
+   * lesson. It walked the whole index instead (mains and scripts), so d001-1's '이전 강의' was d001 — the lesson being read —
+   * and its '다음 강의' d002. GRAMMAR I keeps its own walk: its script pages are the parts of one lesson (gh1-006-1 · -2).
+   */
+  const neighboursOf = course !== "grammar1" && isScript ? canonicalLessonId(course, id) : id;
+  const { prev, next } = getLessonContext(course, neighboursOf);
   const pres = formatLessonPresentation(course, lesson);
   const prevPresentation = prev ? formatLessonPresentation(course, prev) : null;
   const nextPresentation = next ? formatLessonPresentation(course, next) : null;
@@ -308,14 +317,12 @@ export default async function LessonPage({
   // ADULT is taught exactly as STUDENT (2026-10-02): the same chapter line, neighbour names and view
   const isStudent = course === "student" || course === "adult";
   /**
-   * 2026-09-27 STUDENT 학습법 · 화면 고침 (STU-U17 · STU-U10): a STUDENT neighbour is named by its chapter code and its
-   * own title — 'Ch 12-1 · School Vacations (방학맞이)'. The presentation title's 'Part 1 ·' is the code's second half,
-   * and alone it read like going back ('다음 강의 Part 1'). The lesson titles themselves are unchanged.
+   * 2026-09-27 STUDENT 학습법 · 화면 고침 (STU-U17 · STU-U10): a STUDENT neighbour is named with its chapter — it was
+   * 'Part 1 · …' alone, which read like going back ('다음 강의 Part 1'). UI검토-1007 4장 8: the title itself now carries it
+   * ('12-1 · School Vacations (방학맞이)' — curriculumPresentation.ts), so every course's neighbour is its title, the same
+   * words as the list, the lesson's head and the lock screen (it was 'Ch 12-1 · ' put before the title here).
    */
-  const neighbour = (id: string, p: ReturnType<typeof formatLessonPresentation>) =>
-    isStudent
-      ? { href: `/${course}/${id}`, title: p.title.replace(/^Part \d+ · /, ""), code: p.code }
-      : { href: `/${course}/${id}`, title: p.title };
+  const neighbour = (id: string, p: ReturnType<typeof formatLessonPresentation>) => ({ href: `/${course}/${id}`, title: p.title });
 
   // Unified Audio Player with native TTS fallback & gender profile
   const topPlayers =
@@ -411,9 +418,13 @@ export default async function LessonPage({
           (D1 — the title is the link's words, this is its subtitle), in GRAMMAR's line under the title. The course view
           drew it itself above its step tabs before the common frame came.
         */}
-        {course === "passoff-grammar" && "subtitle" in lesson && typeof lesson.subtitle === "string" && lesson.subtitle ? (
-          <p className="mt-1 text-label text-ink-soft">{lesson.subtitle}</p>
-        ) : null}
+        {/* UI검토-1007 37번: as passoffView.ts passoffSubtitle shows it — '(1) 부정사' under '부정사' is not drawn, '(1) 평서문 (2) 의문문'
+            reads '평서문 · 의문문' (the lesson file keeps its subtitle) */}
+        {(() => {
+          if (course !== "passoff-grammar" || !("subtitle" in lesson) || typeof lesson.subtitle !== "string") return null;
+          const line = passoffSubtitle(pres.title, lesson.subtitle);
+          return line ? <p className="mt-1 text-label text-ink-soft">{line}</p> : null;
+        })()}
       </header>
 
       {video.length > 0 ? (

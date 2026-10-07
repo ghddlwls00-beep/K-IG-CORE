@@ -45,7 +45,10 @@ const visibleCount = (tab, sel) => tab.eval(`[...document.querySelectorAll(${JSO
 const text = (tab, sel) => tab.eval(`(() => { const e = ${q(sel)}; return e ? (e.innerText || '').replace(/\\s+/g, ' ').trim() : null; })()`).catch(() => null);
 const store = (tab, key) => tab.eval(`(() => { try { return JSON.parse(localStorage.getItem(${JSON.stringify(key)}) || 'null'); } catch (e) { return null; } })()`).catch(() => null);
 const learningDay = (ms) => new Date(ms + 5 * 3600e3).toISOString().slice(0, 10);
-const completeBtn = `[...document.querySelectorAll('main button')].find((b) => /^학습 완료 (체크|취소)$/.test(b.getAttribute('aria-label') || ''))`;
+// UI검토-1007 고침3 (2026-10-08 · tools-c) 59: the end bar's button is named by its visible words (lib/ui-1008.cjs) — it was
+// /^학습 완료 (체크|취소)$/. 깨기: KIG_BREAK_APP=1008 (the page put back) → G1 · G2 FAIL. --port (default 9603 as before).
+const UI = require("./lib/ui-1008.cjs");
+const completeBtn = `[...document.querySelectorAll('main button')].find((b) => ${UI.COMPLETE_NAME_RE}.test(b.getAttribute('aria-label') || ''))`;
 const btnState = (tab) => tab.eval(`(() => { const b = ${completeBtn}; return b ? { label: b.getAttribute('aria-label'), disabled: b.disabled } : null; })()`).catch(() => null);
 
 // ---- V2 (2026-09-28): a step change never starts sound ----
@@ -89,7 +92,7 @@ async function open(tab) {
 }
 
 (async () => {
-  const browser = await H.startBrowser("voca0927", 9603);
+  const browser = await H.startBrowser("voca0927", Number(process.argv.includes("--port") ? process.argv[process.argv.indexOf("--port") + 1] : 9603));
   const tab = await H.openTab(browser);
   await tab.send("Page.addScriptToEvaluateOnNewDocument", { source: FAKE_STT });
   await H.setViewport(tab, "mobile");
@@ -105,7 +108,8 @@ async function open(tab) {
 
     // G — gate before a round
     const before = await btnState(tab);
-    const reason = await tab.eval(`(() => { const t = (document.querySelector('main') || {}).innerText || ''; return /2단계 퀴즈를 한 번 끝까지 풀면 완료할 수 있어요/.test(t); })()`);
+    // 고침3 통합 (2026-10-08 · integrate-c) 17: the gate line says 'Step 2 퀴즈를 …' (it read '2단계 퀴즈를 …') — lib/ui-1008.cjs VOCA_GATE
+    const reason = await tab.eval(`(() => { const t = (document.querySelector('main') || {}).innerText || ''; return t.includes(${JSON.stringify(UI.VOCA_GATE)}); })()`);
     const words = await tab.eval(`[...document.querySelectorAll('[data-step-panel="1"] [data-word-text]')].map((e) => (e.innerText || '').trim())`);
 
     // Q — one Step 2 round (first option every time → some wrong words come back)
@@ -215,7 +219,7 @@ async function open(tab) {
   } catch (e) {
     check("RUN", false, `예외 ${e && e.stack ? e.stack.split("\n").slice(0, 3).join(" | ") : e}`);
   } finally {
-    fs.writeFileSync(path.join(OUT, `result${BREAK ? "-break-" + BREAK : ""}.json`), JSON.stringify({ at: new Date().toISOString(), base: H.BASE, break: BREAK || null, rows }, null, 2));
+    fs.writeFileSync(path.join(OUT, `result${BREAK ? "-break-" + BREAK : ""}${UI.BREAK_APP ? "-break-app" + UI.BREAK_APP : ""}.json`), JSON.stringify({ at: new Date().toISOString(), base: H.BASE, break: BREAK || null, breakApp: UI.BREAK_APP || null, rows }, null, 2));
     await tab.close().catch(() => {});
     browser.proc.kill();
   }

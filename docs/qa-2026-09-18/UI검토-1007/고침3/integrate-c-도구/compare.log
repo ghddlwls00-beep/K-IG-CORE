@@ -1,0 +1,257 @@
+﻿{
+ "after": 444,
+ "matched": 432,
+ "unmatched": [
+  "light|phone|reading|search-balum",
+  "light|phone|reading|search-1jang",
+  "light|small|reading|search-balum",
+  "light|small|reading|search-1jang",
+  "light|desktop|reading|search-balum",
+  "light|desktop|reading|search-1jang",
+  "dark|phone|reading|search-balum",
+  "dark|phone|reading|search-1jang",
+  "dark|small|reading|search-balum",
+  "dark|small|reading|search-1jang",
+  "dark|desktop|reading|search-balum",
+  "dark|desktop|reading|search-1jang"
+ ],
+ "totals": {
+  "now": {
+   "ox": 0,
+   "s44": 54,
+   "u12": 210,
+   "zoom": 0,
+   "low": 78
+  },
+  "nowMatched": {
+   "ox": 0,
+   "s44": 54,
+   "u12": 210,
+   "zoom": 0,
+   "low": 78
+  },
+  "prevMatched": {
+   "ox": 0,
+   "s44": 54,
+   "u12": 210,
+   "zoom": 0,
+   "low": 79
+  }
+ },
+ "worse": [],
+ "better": 1,
+ "nonHomeBad": [],
+ "tabOut": [],
+ "tabClipped": [],
+ "gutterJumps": [],
+ "gutterJumpsPrev": [],
+ "search": [
+  {
+   "k": "light|phone|search-open",
+   "dialog": {
+    "found": true,
+    "name": "강의 검색",
+    "cover": {
+     "w": 390,
+     "h": 844,
+     "inHeader": false
+    },
+    "vw": 390,
+    "vh": 844,
+    "inPortal": true,
+    "placeholder": "강의 제목이나 번호로 찾기",
+    "focusInInput": true,
+    "results": [
+     "READING 001회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 002회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 003회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 이용권 필요 →"
+    ],
+    "kbd": [
+     "Ctrl K"
+    ]
+   }
+  },
+  {
+   "k": "light|phone|search-keys",
+   "tabOutside": 0,
+   "shiftTabOutside": 0,
+   "afterEsc": {
+    "open": false,
+    "focus": "검색"
+   }
+  },
+  {
+   "k": "light|small|search-open",
+   "dialog": {
+    "found": true,
+    "name": "강의 검색",
+    "cover": {
+     "w": 360,
+     "h": 780,
+     "inHeader": false
+    },
+    "vw": 360,
+    "vh": 780,
+    "inPortal": true,
+    "placeholder": "강의 제목이나 번호로 찾기",
+    "focusInInput": true,
+    "results": [
+     "READING 001회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 002회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 003회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 이용권 필요 →"
+    ],
+    "kbd": [
+     "Ctrl K"
+    ]
+   }
+  },
+  {
+   "k": "light|small|search-keys",
+   "tabOutside": 0,
+   "shiftTabOutside": 0,
+   "afterEsc": {
+    "open": false,
+    "focus": "검색"
+   }
+  },
+  {
+   "k": "light|desktop|search-open",
+   "dialog": {
+    "found": true,
+    "name": "강의 검색",
+    "cover": {
+     "w": 1351,
+     "h": 900,
+     "inHeader": false
+    },
+    "vw": 1366,
+    "vh": 900,
+    "inPortal": true,
+    "placeholder": "강의 제목이나 번호로 찾기",
+    "focusInInput": true,
+    "results": [
+     "READING 001회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 002회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 003회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 이용권 →"
+    ],
+    "kbd": [
+     "검색\nCtrl K",
+     "Ctrl K"
+    ]
+   }
+  },
+  {
+   "k": "light|desktop|search-keys",
+   "tabOutside": 0,
+   "shiftTabOutside": 0,
+   "afterEsc": {
+    "open": false,
+    "focus": "검색"
+   }
+  },
+  {
+   "k": "dark|phone|search-open",
+   "dialog": {
+    "found": true,
+    "name": "강의 검색",
+    "cover": {
+     "w": 390,
+     "h": 844,
+     "inHeader": false
+    },
+    "vw": 390,
+    "vh": 844,
+    "inPortal": true,
+    "placeholder": "강의 제목이나 번호로 찾기",
+    "focusInInput": true,
+    "results": [
+     "READING 001회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 002회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 003회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 이용권 필요 →"
+    ],
+    "kbd": [
+     "Ctrl K"
+    ]
+   }
+  },
+  {
+   "k": "dark|phone|search-keys",
+   "tabOutside": 0,
+   "shiftTabOutside": 0,
+   "afterEsc": {
+    "open": false,
+    "focus": "검색"
+   }
+  },
+  {
+   "k": "dark|small|search-open",
+   "dialog": {
+    "found": true,
+    "name": "강의 검색",
+    "cover": {
+     "w": 360,
+     "h": 780,
+     "inHeader": false
+    },
+    "vw": 360,
+    "vh": 780,
+    "inPortal": true,
+    "placeholder": "강의 제목이나 번호로 찾기",
+    "focusInInput": true,
+    "results": [
+     "READING 001회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 002회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 003회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 이용권 필요 →"
+    ],
+    "kbd": [
+     "Ctrl K"
+    ]
+   }
+  },
+  {
+   "k": "dark|small|search-keys",
+   "tabOutside": 0,
+   "shiftTabOutside": 0,
+   "afterEsc": {
+    "open": false,
+    "focus": "검색"
+   }
+  },
+  {
+   "k": "dark|desktop|search-open",
+   "dialog": {
+    "found": true,
+    "name": "강의 검색",
+    "cover": {
+     "w": 1351,
+     "h": 900,
+     "inHeader": false
+    },
+    "vw": 1366,
+    "vh": 900,
+    "inPortal": true,
+    "placeholder": "강의 제목이나 번호로 찾기",
+    "focusInInput": true,
+    "results": [
+     "READING 001회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 002회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 →",
+     "READING 003회 · 원문 독해 & 리스닝 001~040회 · 원문 독해 이용권 →"
+    ],
+    "kbd": [
+     "검색\nCtrl K",
+     "Ctrl K"
+    ]
+   }
+  },
+  {
+   "k": "dark|desktop|search-keys",
+   "tabOutside": 0,
+   "shiftTabOutside": 0,
+   "afterEsc": {
+    "open": false,
+    "focus": "검색"
+   }
+  }
+ ],
+ "errors": []
+}

@@ -274,7 +274,8 @@ export function readingGateOpen(record: SpeedRecord, legacyBest: boolean): boole
 }
 
 /** The line under the disabled '이 강의 학습 완료' until the passage was timed once in Step 4 (lessonGate). */
-export const READING_GATE_REASON = "4단계에서 지문을 다시 읽고 시간을 한 번 재면 완료할 수 있어요.";
+// UI검토-1007 17번 (고침3 통합, 2026-10-08): 'Step 4' as the tab says it — it read '4단계에서 …'
+export const READING_GATE_REASON = "Step 4에서 지문을 다시 읽고 시간을 한 번 재면 완료할 수 있어요.";
 
 /** Part-of-speech abbreviations of the vocabulary data as Korean words (the old coloured chips showed "n." "v." …). */
 export function posLabel(pos: string | undefined): string {

@@ -123,7 +123,10 @@ const STEP = (n) => `document.querySelector('main [data-passoff-view] section[ar
 const MAIN_TEXT = `(() => { const m = document.querySelector('main') || document.body; return (m.innerText || '').replace(/[ \\t]+/g, ' ').trim(); })()`;
 const CARD = (n) => `(() => { const s = ${STEP(n)}; return s ? [...s.querySelectorAll('section')].find((x) => /rounded-card/.test(x.className) && !x.hasAttribute('aria-labelledby') && !x.hasAttribute('aria-live') && (x.querySelector('textarea, input[aria-label="답"], [aria-label="낱말 고르기"], [aria-label="보기"], [aria-label="낱말 카드"]') || [...x.querySelectorAll('button')].some((b) => /^(다음|다음 문장)$/.test((b.innerText || '').trim())))) || null : null; })()`;
 const BTN_IN = (scopeExpr, re) => `(() => { const s = ${scopeExpr}; if (!s) return null; return [...s.querySelectorAll('button')].find((b) => ${re}.test((b.innerText || '').replace(/\\s+/g, ' ').trim()) && !!(b.offsetParent || b.getClientRects().length)) || null; })()`;
-const END_BTN = `(() => { const s = document.querySelector('main section[aria-label="강의 마치기"]'); if (!s) return null; const b = s.querySelector('button[aria-label^="학습 완료"]'); if (b) return { kind: 'button', label: b.getAttribute('aria-label'), disabled: b.disabled, text: (b.innerText || '').trim() }; const st = s.querySelector('[role=status]'); return st ? { kind: 'status', text: (st.innerText || '').trim() } : { kind: 'none' }; })()`;
+// UI검토-1007 고침3 (2026-10-08 · tools-c): 59 the end bar's button is named by its visible words ('이 강의 학습 완료' / '학습 완료함 ·
+// 취소하려면 누르세요' — it was found by aria-label^="학습 완료") · 17 Step 5 reads 'Step 1~5를 모두 마쳤어요' (was '5단계를 모두 마쳤어요').
+// (drive-passoff.cjs 의 사본 — 같은 고침)
+const END_BTN = `(() => { const s = document.querySelector('main section[aria-label="강의 마치기"]'); if (!s) return null; const b = s.querySelector('button[aria-label="이 강의 학습 완료"], button[aria-label="학습 완료함 · 취소하려면 누르세요"]'); if (b) return { kind: 'button', label: b.getAttribute('aria-label'), disabled: b.disabled, text: (b.innerText || '').trim() }; const st = s.querySelector('[role=status]'); return st ? { kind: 'status', text: (st.innerText || '').trim() } : { kind: 'none' }; })()`;
 
 async function setViewport(tab, kind) {
   // lib/harness.cjs VIEWPORTS has 'small' (360×780 — 2026-10-04, adult-sweep) — used when it is there; 360×640 only on an older harness
@@ -423,7 +426,7 @@ async function stepWrap(tab, exp, rec, texts, viewport, depth, tally) {
     const t = await tab.eval(`(${sec} || {}).innerText || ''`).catch(() => "");
     rec.checks.push({ feature: "grading", item: "⑤ 규칙 다시 확인 — 정답", status: c.ok && /맞았어요/.test(t) ? "PASS" : "FAIL", note: c.ok ? norm(t).slice(-60) : c.reason });
   }
-  const done = await H.waitFor(tab, `(() => { const s = ${STEP(5)}; return !!s && /5단계를 모두 마쳤어요/.test(s.innerText || ''); })()`, 5000);
+  const done = await H.waitFor(tab, `(() => { const s = ${STEP(5)}; return !!s && /Step 1~5를 모두 마쳤어요/.test(s.innerText || ''); })()`, 5000);
   rec.checks.push({ feature: "steps done", item: "①~⑤ 마침 표시", status: done ? "PASS" : "FAIL", note: done ? "" : norm(await tab.eval(`(${STEP(5)} || {}).innerText || ''`).catch(() => "")).slice(-120) });
   texts.push({ step: "5", text: await tab.eval(MAIN_TEXT).catch(() => "") });
 }
@@ -499,7 +502,7 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     if (open && has("--complete") && end.kind === "button" && viewport === "desktop" && S3C_COMPLETE_OK.has(page.id)) {
       await tab.eval("window.__s3bNet && (window.__s3bNet.length = 0)").catch(() => {});
       const t0c = Date.now();
-      const pressed = await H.click(tab, `document.querySelector('main section[aria-label="강의 마치기"] button[aria-label^="학습 완료"]')`, { settle: 1200 });
+      const pressed = await H.click(tab, `document.querySelector('main section[aria-label="강의 마치기"] button[aria-label="이 강의 학습 완료"]')`, { settle: 1200 });
       H.logDataChange({ course: COURSE, id: page.id, action: `rc1002-s3c: PASS-OFF ${page.id} '이 강의 학습 완료' 누름 (데스크톱) — 서버 완료(되돌릴 수 없음 · undo: false) · 사장님 허락 2026-10-05 '너가 하고 싶은거 다해 다 허락할게'(이번에는 pg01-2 · pg01-3 두 강의만)`, by: "rc1002-s3c", detail: `눌림 ${pressed.ok}` });
       // wait for the saves: POST /api/progress/passoff-grammar and POST /api/learning/passoff-grammar (status only)
       let net = [];

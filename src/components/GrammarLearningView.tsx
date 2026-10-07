@@ -37,6 +37,8 @@ import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from 
 import type { Block, SentenceItem } from "@/lib/types";
 import { isInAppBrowser, isKakaoTalk, speakText, stopSpeech } from "@/lib/speech";
 import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
+import { extractSentencesForAudio } from "@/lib/lessonAudioText";
+import { AudioPlayer } from "./AudioPlayer";
 import { koreanOnScreen, romanForGrading } from "@/lib/koreanGloss";
 import {
   diffAgainstReferences,
@@ -56,7 +58,7 @@ import { LESSON_COMPLETE_EVENT, useProgress } from "./ProgressProvider";
 import { clearLessonGate, setLessonGate } from "@/lib/lessonGate";
 
 /** the end bar's line under the disabled '이 강의 학습 완료' (2026-10-07 — D02 나 for GRAMMAR) */
-const GRAMMAR_GATE_REASON = "1단계에서 한 문제를 확인하면 완료할 수 있어요.";
+const GRAMMAR_GATE_REASON = "Step 1에서 한 문제를 확인하면 완료할 수 있어요.";
 
 export interface GrammarItem {
   id: number;
@@ -94,7 +96,7 @@ const GUIDES: Record<StudyMode, string> = {
   composition: "우리말을 보고 영어로 쓴 뒤 확인을 누르세요. 막히면 빈칸 힌트를 보세요.",
   cloze: "우리말을 보고 빈칸을 채운 뒤 확인을 누르세요.",
   shadowing: "구문 각인 — 듣고 따라 말하기. 마이크로 확인하거나 '따라 말했어요'를 누르면 1회로 셉니다.",
-  exam: "모두 쓰고 채점하세요. 1단계에 쓴 답과는 따로 저장됩니다.",
+  exam: "모두 쓰고 채점하세요. Step 1에 쓴 답과는 따로 저장됩니다.",
 };
 
 /** The six text sizes of docs/디자인-규칙.md §3; one choice for every step (GRM-U24). */
@@ -576,6 +578,7 @@ export function GrammarLearningView({
   course,
   lessonKey,
   isScript,
+  audioTracks,
 }: GrammarLearningViewProps) {
   /**
    * 2026-10-02 (사장님 "영어 표기 + 한글 덧붙임"): a Korean word in the English is DRAWN with its Hangul — "Busan(부산)". Only
@@ -584,6 +587,31 @@ export function GrammarLearningView({
   const gloss = (text: string) => koreanOnScreen(lessonKey, text);
   /** the learner's typed answer as graded — a Korean word written in Hangul counts as the lesson's spelling */
   const asWritten = (text: string) => romanForGrading(lessonKey, text);
+  /**
+   * 2026-10-08 (사장님 답 10-07 23:01 · UI검토-1007 결과.md 4장 7번): '정답 문장 전체 듣기' — the page's whole-lesson player, which in
+   * GRAMMAR reads every English answer — is no longer folded above the step tabs (reachable before any attempt) but here, at the end
+   * of Step 3 (listen and repeat — the sentences are on screen there anyway) and of Step 4 once the sheet is graded. The same player
+   * the page built: GRAMMAR I's English recording (the odd gh1 number), GRAMMAR II's track(s), and the page's own fallback sentences
+   * (extractSentencesForAudio + lessonSpeechForm, the same inputs) — so nothing spoken changes (no new clip). The page's folded box
+   * (`main > details[data-answer-player]`, src/app/[course]/[lesson]/page.tsx — not this file) is hidden by the rule this view renders.
+   */
+  const answerPlayers = useMemo(() => {
+    const audio = (audioTracks ?? []).filter((a, i, all) => all.findIndex((x) => x.src === a.src) === i);
+    let tracks = audio;
+    if (course === "grammar1") {
+      const english =
+        audio.find((a) => {
+          const m = a.src.match(/gh1-(\d+)/);
+          return m ? parseInt(m[1], 10) % 2 !== 0 : false;
+        }) || audio[audio.length - 1];
+      tracks = english ? [english] : [];
+    }
+    const fallbackSentences = extractSentencesForAudio(blocks, pairBlocks, isScript, course).map((text) => lessonSpeechForm(lessonKey, text));
+    if (tracks.length > 0) {
+      return tracks.map((a) => ({ key: a.src, src: a.src as string | undefined, label: a.label && tracks.length > 1 ? a.label : undefined, fallbackSentences }));
+    }
+    return fallbackSentences.length > 0 ? [{ key: "fallback", src: undefined, label: "전체 듣기", fallbackSentences }] : [];
+  }, [audioTracks, course, blocks, pairBlocks, isScript, lessonKey]);
   /**
    * A cloze sentence's text between two blanks, drawn as ONE piece from the first part of the run (null for the parts after it) —
    * so a name cut into words ("Han" · " " · "River") is drawn whole: "한강" (koreanOnScreen works on whole names).
@@ -1524,6 +1552,24 @@ export function GrammarLearningView({
     );
   }
 
+  /** '정답 문장 전체 듣기', folded — Step 3's end, and Step 4's end after grading (answerPlayers above) */
+  function answerPlayerBox(step: 3 | 4) {
+    if (answerPlayers.length === 0) return null;
+    return (
+      <details className="group" data-answer-player data-answer-player-step={step}>
+        <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 rounded-control border border-line bg-raised px-4 text-label font-medium text-ink transition-colors hover:bg-sunken [&::-webkit-details-marker]:hidden">
+          <span>정답 문장 전체 듣기</span>
+          <IconChevron className="shrink-0 text-ink-soft transition-transform group-open:rotate-180" />
+        </summary>
+        <div className="mt-2 flex flex-col gap-2">
+          {answerPlayers.map((p) => (
+            <AudioPlayer key={p.key} src={p.src} fallbackSentences={p.fallbackSentences} lang="en" gender="neutral" label={p.label} />
+          ))}
+        </div>
+      </details>
+    );
+  }
+
   function moreMenu(mode: StudyMode) {
     return (
       <details data-more className="group rounded-card border border-line bg-raised">
@@ -1541,9 +1587,9 @@ export function GrammarLearningView({
                 전체 정답 가리기
               </button>
               {confirming === "new-run" ? (
-                <div className="flex w-full flex-wrap items-center gap-2" role="group" aria-label="1단계 새로 풀기 확인">
+                <div className="flex w-full flex-wrap items-center gap-2" role="group" aria-label="Step 1 새로 풀기 확인">
                   <p className="text-label text-ink">
-                    1단계 답을 비우고 처음부터 풀까요? 지금 결과(맞음 {correctCount}/{totalCount})는 한 줄로 남아요.
+                    Step 1 답을 비우고 처음부터 풀까요? 지금 결과(맞음 {correctCount}/{totalCount})는 한 줄로 남아요.
                   </p>
                   <button type="button" data-action="new-run-confirm" onClick={newRun} className={filledButton}>
                     새로 풀기
@@ -1554,7 +1600,7 @@ export function GrammarLearningView({
                 </div>
               ) : (
                 <button type="button" data-action="new-run" onClick={() => setConfirming("new-run")} className={outlineButton}>
-                  1단계 새로 풀기
+                  Step 1 새로 풀기
                 </button>
               )}
             </div>
@@ -1572,7 +1618,8 @@ export function GrammarLearningView({
                   onClick={() => choosePrefs({ fontSize: size })}
                   className={
                     "min-h-11 min-w-11 rounded-control px-3 text-label transition-colors cursor-pointer " +
-                    (fontSize === size ? "bg-raised font-semibold text-ink shadow-2xs" : "font-medium text-ink-soft")
+                    // dark: the chosen chip gets the step tabs' thin --line-input ring (UI검토-1007 42 — 10-08)
+                    (fontSize === size ? "bg-raised font-semibold text-ink shadow-2xs dark:ring-1 dark:ring-line-input" : "font-medium text-ink-soft")
                   }
                 >
                   {FONT_LABEL[size]}
@@ -1594,7 +1641,7 @@ export function GrammarLearningView({
                   title={speed === 1 ? "음성 속도 1.0x" : "음성 속도 0.85x (천천히)"}
                   className={
                     "min-h-11 min-w-11 rounded-control px-3 text-label tabular-nums transition-colors cursor-pointer " +
-                    (audioSpeed === speed ? "bg-raised font-semibold text-ink shadow-2xs" : "font-medium text-ink-soft")
+                    (audioSpeed === speed ? "bg-raised font-semibold text-ink shadow-2xs dark:ring-1 dark:ring-line-input" : "font-medium text-ink-soft")
                   }
                 >
                   {speed === 1 ? "1.0×" : "0.85×"}
@@ -2177,7 +2224,13 @@ export function GrammarLearningView({
       data-variant={isScript ? "script" : "main"}
       data-step={stepNumber}
       data-bundles-left={bundlesLeft ? "" : undefined}
+      data-owns-answer-player=""
     >
+      {/*
+        2026-10-08 (4장 7번): the page's own folded '정답 문장 전체 듣기' above the step tabs stays out of sight from the server's first
+        paint — this view offers it in Steps 3 · 4 (answerPlayerBox). Only the page's box is a direct child of <main>; this view's are not.
+      */}
+      <style>{"main > details[data-answer-player]{display:none}"}</style>
       {/*
         Step tabs (GRM-U15): 44px, 14px, aria-pressed, no emoji. On a phone one row — the numbers and
         the current step's name (docs/디자인-규칙.md §6-3); every button's text still reads "Step N · …"
@@ -2300,6 +2353,7 @@ export function GrammarLearningView({
             </ol>
           ))}
           {bundleEndBar(0, "", null, "")}
+          {answerPlayerBox(3)}
           {moreMenu("shadowing")}
         </section>
       ) : null}
@@ -2421,6 +2475,8 @@ export function GrammarLearningView({
             ) : null}
           </div>
 
+          {/* after grading only — before it the answers' sound is not on this step (사장님 답 10-07 · 4장 7번) */}
+          {examResult ? answerPlayerBox(4) : null}
           {moreMenu("exam")}
         </section>
       ) : null}

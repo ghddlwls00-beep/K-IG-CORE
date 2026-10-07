@@ -105,7 +105,16 @@ const JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}.jsonl`);
 // UI검토-1007 고침 (2026-10-07): '-u1007' — STUDENT · ADULT completion is the shared end bar's button (same aria-labels; the test
 // reads it the same way) and a GRAMMAR lesson completes after one checked Step 1 item (사장님 결정 — D02 나), so the completion test
 // checks one first when the button is disabled.
-const DRIVER_REV = "7-1m-g15-s0927-v0927-l0927-a1002-f1005-p1006-u1007";
+// UI검토-1007 고침3 (2026-10-08 · tools-c): '-u1008' — 59 the completion button is found by its new name (the visible words, every
+// course — lib/ui-1008.cjs) and a check '59 · name = visible words · no aria-pressed' is added · 25 a script page's prev/next are its
+// main page's (lib/expectations.cjs neighbours; --break=neighbours-old the old walk) · 7 a fold that is not on screen (GRAMMAR's hidden
+// page-level player) is not opened — the view's own sits at the end of Step 3; a fold player left reading '일시정지' by this driver's
+// early stops is paused once first (rec.folds[].reset), and a GRAMMAR main page checks 'answer player · 4장 7 · Step 3 end only';
+// rec.folds says which folds each step opened and why one was not · 35 (360px) the ADULT step tab's count badge is hidden on
+// purpose under 380px, so the count is read from the tab's DOM text there (it was innerText → no count → FAIL 4 on 10-08 운영 확인).
+// 깨기: KIG_BREAK_APP=1008 (the page put back as before 10-08) → the completion checks BLOCKED/FAIL.
+const DRIVER_REV = "7-1m-g15-s0927-v0927-l0927-a1002-f1005-p1006-u1007-u1008";
+const UI = require("./lib/ui-1008.cjs");
 // T6: the machine's connection, not a server answer (4xx/5xx are badResponses, never these)
 const OFFLINE_ERR = /ERR_INTERNET_DISCONNECTED|ERR_NETWORK_CHANGED|ERR_NETWORK_IO_SUSPENDED|ERR_NAME_NOT_RESOLVED|ERR_ADDRESS_UNREACHABLE/;
 const RENDERED = path.join(OUT, "rendered", COURSE);
@@ -250,6 +259,9 @@ async function resolveRedirect(url) {
  * T1: the closed folds (<details>) in <main> that hold a play control not pressed yet — opened one by one by a trusted press on their
  * <summary> (the way a learner opens '정답 문장 전체 듣기' · '어원 · 쓰임 보기'), marked data-kig-opened so closeOpenedFolds shuts them again.
  */
+// UI검토-1007 4장 7 (2026-10-08 · tools-c): a fold that is not on screen (getClientRects 0) is skipped — GRAMMAR's page-level
+// '정답 문장 전체 듣기' stays in the DOM hidden (display:none); the view draws its own at the end of Step 3 · of Step 4 after grading.
+// (No '//' comment inside the page code below: tab.eval sends it as one line, and a comment there swallowed the rest — FAIL-silent.)
 async function openPlayFolds(tab) {
   const opened = [];
   for (let guard = 0; guard < 12; guard++) {
@@ -260,21 +272,30 @@ async function openPlayFolds(tab) {
       const play = ${PLAY_RE}, stop = ${STOP_RE}, skip = ${SKIP_CLICK}, notPlay = ${NOT_PLAY_CTX};
       for (const d of main.querySelectorAll('details:not([open])')) {
         if (d.hasAttribute('data-kig-fold-tried')) continue;
+        if (!d.getClientRects().length) continue;
         const s = d.querySelector(':scope > summary');
         if (!s || folded(s)) continue;
-        const has = [...d.querySelectorAll('button, [role=button]')].some((b) => !s.contains(b) && !b.__kigClicked && !b.disabled && play.test(lab(b)) && !stop.test(lab(b)) && !skip.test(lab(b)) && !notPlay(b));
-        if (!has) continue;
+        const has = [...d.querySelectorAll('button, [role=button]')].some((b) => !s.contains(b) && !b.__kigClicked && !b.disabled && ((play.test(lab(b)) && !stop.test(lab(b))) || /일시정지/.test(lab(b))) && !skip.test(lab(b)) && !notPlay(b));
+        if (!has && !play.test(s.innerText || '')) continue;
+        if (!has) { window.__kigFoldWhy =(window.__kigFoldWhy || []).concat([(s.innerText || '').trim().slice(0, 24) + ': ' + [...d.querySelectorAll('button')].slice(0, 2).map((b) => lab(b) + (b.__kigClicked ? ' clicked' : '') + (b.disabled ? ' disabled' : '')).join(' / ')]); continue; }
         d.setAttribute('data-kig-fold-tried', '1');
         s.setAttribute('data-kig-fold-summary', '1');
         return (s.innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 40) || '(fold)';
       }
       return null;
-    })()`).catch(() => null);
+    })()`).catch((e) => { (opened.refused ||= []).push(`fold search failed: ${String(e && e.message).slice(0, 120)}`); return null; });
     if (!label) break;
     const summary = `document.querySelector('main [data-kig-fold-summary="1"]')`;
     const c = await H.click(tab, summary, { settle: 450, refuseCovered: true });
     const isOpen = await tab.eval(`(() => { const s = ${summary}; const d = s && s.parentElement; if (s) s.removeAttribute('data-kig-fold-summary'); if (d && d.open) { d.setAttribute('data-kig-opened', '1'); return true; } return false; })()`).catch(() => false);
-    if (c.ok && isOpen) opened.push(label);
+    if (c.ok && isOpen) {
+      opened.push(label);
+      // 2026-10-08: a player in the fold may still read '일시정지' after a clip this driver stopped early (window.__kigStop pauses the
+      // element without the app's own end — GRAMMAR's Step 3 player after the sentences' '문장 듣기'): press it once, as a learner
+      // would, so its '재생' is there to press. The record says so (rec.folds[].reset).
+      const paused = `[...document.querySelectorAll('main details[data-kig-opened="1"][open] button')].find((b) => /일시정지/.test((b.getAttribute('aria-label') || '') + (b.innerText || '')) && !b.disabled) || null`;
+      if (await tab.eval(`Boolean(${paused})`).catch(() => false)) { await H.click(tab, paused, { settle: 400 }); (opened.reset ||= []).push(label); }
+    } else (opened.refused ||= []).push(`${label}: ${c.ok ? "did not open" : c.reason}`); // 2026-10-08: why a fold was not opened (rec.folds)
   }
   return opened;
 }
@@ -727,7 +748,11 @@ const ADULT_KNOWN = { "블라인드 리스닝": "listen", "단어": "words", "�
 // that tab must come out BLOCKED (모르는 단계) and the lesson BLOCKED in build-coverage, never a quiet PASS
 if (process.argv.includes("--break=forget-chunk")) delete ADULT_KNOWN["끊어 읽기"];
 const tx = (s) => String(s || "").replace(/ /g, " ").replace(/\s+/g, " ").trim();
-const tabText = (n) => `(() => { const b = document.querySelector('main [data-step-tab="${n}"]'); return b ? (b.innerText || '').replace(/\\s+/g, ' ').trim() : null; })()`;
+// 35 (UI검토-1007 고침2 · StepTabs badgeCurrent "max-[379px]:hidden"): under 380px the current tab's 'n/7' is hidden on purpose so the
+// five tabs fit — there the count is read from the tab's DOM text (textContent); at 380px and wider it must be on screen (innerText).
+// --break=badge-innertext: innerText at every width (the rule before 10-08) — ADULT at 360 must FAIL '빈칸 채우기' · '뜻 보기 · 문장 전체 해석'.
+const TAB_DOM_UNDER = process.argv.includes("--break=badge-innertext") ? 0 : 380;
+const tabText = (n) => `(() => { const b = document.querySelector('main [data-step-tab="${n}"]'); return b ? ((window.innerWidth < ${TAB_DOM_UNDER} ? b.textContent : b.innerText) || '').replace(/\\s+/g, ' ').trim() : null; })()`;
 
 /** Step 2 '단어': the cards (count · '뜻 보기' → the meaning of THAT card · 몰라요 · 알아요 folds), the word's speaker, five blanks. */
 async function adultWords(tab, exp, rec, stepLabel) {
@@ -1149,6 +1174,12 @@ async function visitStepControls(tab, exp, rec, stepLabel, depth = "full") {
   // every-other-control pass below never presses what a learner has not opened: '기록 지우기' · '글자 크기' …)
   if (!BREAK_FOLD && pressed < maxPlay) {
     const opened = await openPlayFolds(tab);
+    // 2026-10-08 (UI검토-1007 고침3): which folds each step opened, and why one was not — GRAMMAR's '정답 문장 전체 듣기' moved to
+    // the end of Step 3 (4장 7), so the record says where it was opened
+    const why = await tab.eval(`(() => { const w = window.__kigFoldWhy || []; window.__kigFoldWhy = []; return w; })()`).catch(() => []);
+    if (why.length) (opened.refused ||= []).push(...why.map((w) => `no play control to press: ${w}`));
+    const foldsHere = await tab.eval(`[...document.querySelectorAll('main details')].map((d) => ((d.querySelector(':scope > summary') || {}).innerText || '').replace(/\\s+/g, ' ').trim().slice(0, 24) + (d.open ? ' [open]' : '') + (d.getClientRects().length ? '' : ' [hidden]') + (d.hasAttribute('data-kig-fold-tried') ? ' [tried]' : ''))`).catch((e) => [`eval failed: ${String(e && e.message).slice(0, 80)}`]);
+    (rec.folds ||= []).push({ step: stepLabel, opened: [...opened], reset: opened.reset || [], refused: opened.refused || [], folds: foldsHere });
     if (opened.length) {
       for (let k = pressed; k < maxPlay; k++) {
         const left = await tab.eval(COUNT_CONTROLS("play")).catch(() => 0);
@@ -1157,7 +1188,7 @@ async function visitStepControls(tab, exp, rec, stepLabel, depth = "full") {
       }
       await closeOpenedFolds(tab);
     }
-  }
+  } else (rec.folds ||= []).push({ step: stepLabel, opened: [], refused: [BREAK_FOLD ? "--break=fold" : `no fold pass: ${pressed} play controls pressed (max ${maxPlay})`] });
   await gradedInputs(tab, exp, rec.checks, depth === "medium" ? 1 : 12, rec.course);
   // 7단계 7-1 m: the tiles also on the phone (medium depth). Tap-to-assemble is the phone's way of answering (generateWordBank:
   // "for mobile tap-to-assemble dictation"), and the phone record's typed-input line is NA coveredBy 'tile dictation' — which
@@ -1278,6 +1309,15 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     alive = await visitStepControls(tab, exp, rec, label, depth);
   }
   // ADULT: every one of the five steps was opened and recognised — a step never reached is BLOCKED, not a quiet pass
+  // UI검토-1007 4장 7 (2026-10-08 · tools-c): GRAMMAR's '정답 문장 전체 듣기' is the view's, at the end of Step 3 — none on the first
+  // screen (Step 1 · 2), and its '재생' plays there. 깨기: KIG_BREAK_APP=1008 (the old page: the player on the first screen) → FAIL.
+  // (main pages at the desktop depth: a script page's lighter pass stops at 6 sound controls a step, before the folds)
+  if ((page.course === "grammar1" || page.course === "grammar2") && depth === "full" && exp.variant !== "script") {
+    const playerRows = rec.audio.filter((a) => /▶ 재생$/.test(String(a.control || "")));
+    const atStep3 = playerRows.filter((a) => /^Step 3\b/.test(a.control));
+    const early = playerRows.filter((a) => /^(\(initial\)|Step [12]\b)/.test(a.control));
+    rec.checks.push({ feature: "answer player", item: "4장 7 · Step 3 end only", status: atStep3.length && atStep3.every((a) => a.status === "PASS") && !early.length ? "PASS" : "FAIL", note: `Step 3 ${atStep3.map((a) => a.status).join(",") || "none"} · first screen / Step 1 · 2 ${early.length ? early.map((a) => a.control).join(" | ") : "none"}` });
+  }
   if (adult) for (const [name, mode] of Object.entries(ADULT_KNOWN)) if (!adultDone[mode]) rec.checks.push({ feature: "adult step", item: `${name} · 열림`, status: "BLOCKED", note: `'${name}' 단계를 열지 못함(탭 ${steps.join(" / ")}) — 이 칸은 보지 못함` });
 
   if (viewport === "desktop" && persist) {
@@ -1316,9 +1356,10 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     // 2026-09-27: the STUDENT tab carries a count ('Step 3 · 섀도잉 & 낭독 2/5') that changes while the test practises — it is
     // found by data-step-tab (StepTabs), and by its captured label only on a page without that mark
     const openStep3 = async () => { if (step3) await H.click(tab, `document.querySelector('main [data-step-tab="${lastTab}"]') || [...document.querySelectorAll('main button')].find((b) => (b.innerText || '').replace(/\\s+/g, ' ').trim() === ${JSON.stringify(step3)})`, { settle: 800 }); };
-    const cm = studentView
-      ? `[...document.querySelectorAll('main button')].find((b) => /^학습 완료 (체크|취소)$/.test(b.getAttribute('aria-label') || ''))`
-      : `[...document.querySelectorAll('main button')].find((b) => /학습 완료|완료 체크/.test((b.getAttribute('aria-label') || '') + (b.innerText || '')))`;
+    // UI검토-1007 59 (2026-10-08): every course's completion is the end bar's button named by its visible words — '이 강의 학습 완료' /
+    // '학습 완료함 · 취소하려면 누르세요' (lib/ui-1008.cjs; STUDENT · ADULT read /^학습 완료 (체크|취소)$/ and the others /학습 완료|완료 체크/
+    // on name + words until 10-08). The completed name still holds '취소' (the /취소/ tests below). 깨기: KIG_BREAK_APP=1008 → BLOCKED
+    const cm = `[...document.querySelectorAll('main button')].find((b) => ${UI.COMPLETE_NAME_RE}.test(b.getAttribute('aria-label') || ''))`;
     const cmState = `(() => { const b = ${cm}; return b ? ((b.getAttribute('aria-label') || '') + '|' + (b.innerText || '') + (b.disabled ? '|disabled' : '')).replace(/\\s+/g, ' ').trim() : null; })()`;
     // BUG-030 (2026-09-24): a STUDENT completion is saved on the server (ProgressProvider queues it in
     // 'kig:student:pending:v1' and posts it 650 ms later), and the server's answer can take it back. The state
@@ -1410,10 +1451,14 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       // (the resource-timing buffer holds 250 entries and a lesson's clips fill it — emptied first so the save is counted)
       await tab.eval("performance.clearResourceTimings(); performance.setResourceTimingBufferSize(2000)").catch(() => {});
       const posts0 = await progressPosts();
+      const name0 = await tab.eval(UI.COMPLETE_NAME_CHECK).catch(() => null);
       await H.click(tab, cm, { settle: 700 });
       const saved1 = await serverSaved();
       const posts1 = await progressPosts();
       const c1 = await tab.eval(cmState).catch(() => null);
+      // 59: the name is the visible words and there is no aria-pressed — before and after the press
+      const name1 = await tab.eval(UI.COMPLETE_NAME_CHECK).catch(() => null);
+      rec.checks.push({ feature: "completion", item: "59 · name = visible words · no aria-pressed", status: name0 && name0.ok && name1 && name1.ok && name0.state !== name1.state ? "PASS" : "FAIL", note: `${JSON.stringify(name0)} → ${JSON.stringify(name1)}` });
       await H.load(tab, page.url, { marker: H.MARKERS[page.course], expectPath: red.finalPath });
       await openStep3();
       if (page.course === "phonics" && (await H.waitFor(tab, V.VIEW_READY, 8000))) await H.sleep(300);

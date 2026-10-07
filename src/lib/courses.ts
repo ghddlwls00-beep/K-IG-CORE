@@ -72,8 +72,10 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "PASS-OFF GRAMMAR",
     titleEn: "Pass-Off Grammar",
     kind: "audio-drill",
+    // UI검토-1007 17번: '5단계' counted the lesson's own Steps — '단계' is the grade (중등 단어 1단계 · GRAMMAR I 6단계) on the
+    // lists, so the order is said without it (the words of the five Steps unchanged)
     description:
-      "패스오프 문법. GRAMMAR I·II 가 문장을 되풀이해 영작하는 훈련이라면, 여기서는 강의마다 예문 → 문법 설명 → 형태 찾기 → 영작 → 마무리 5단계로 문법 하나를 익혀 통과해요.",
+      "패스오프 문법. GRAMMAR I·II 가 문장을 되풀이해 영작하는 훈련이라면, 여기서는 강의마다 예문 → 문법 설명 → 형태 찾기 → 영작 → 마무리 순서로 문법 하나를 익혀 통과해요.",
     series: [{ slug: "pg", title: "Grammar Lessons", prefix: "pg" }],
   },
   {

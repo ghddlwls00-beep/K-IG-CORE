@@ -123,7 +123,7 @@ const activate = (key, keep) => `(async () => {
 
     // M1 STUDENT's list, as it was
     await tab.goto(ORIGIN + "/student", 2500);
-    await waitFor(tab, `(document.querySelector('main') || document.body).innerText.includes('서버에 저장됨')`);
+    await waitFor(tab, `(document.querySelector('main') || document.body).innerText.includes('진도 저장됨')`);
     const s0 = await tab.eval(`document.querySelector('#section-0 button[aria-expanded]').innerText.replace(/\\s+/g, ' ')`);
     const s1 = await tab.eval(`document.querySelector('#section-1 button[aria-expanded]').innerText.replace(/\\s+/g, ' ')`);
     await tab.eval(`document.querySelector('#section-1 button[aria-expanded]').click(), true`);
@@ -131,8 +131,8 @@ const activate = (key, keep) => `(async () => {
     // textContent: main's rows are content-visibility:auto, so a row below the screen has an empty innerText
     const card = await tab.eval(`(document.querySelector('#section-1 li') || {}).textContent || ''`);
     const lock1 = await tab.eval(`Boolean(document.querySelector('#section-1 button[aria-expanded] svg[aria-label="잠김"]'))`);
-    check("M1 STUDENT 목록: 1장 '…강과 마지막 강의를 마치면 다음 장' · 2장 '1장을 마치면 열립니다' · 자물쇠 · 줄 '앞 장을 마치면 열림'(TOPIC 없음)",
-      /\d+강과 마지막 강의를 마치면 다음 장/.test(s0) && /1장을 마치면 열립니다/.test(s1) && lock1 && card.includes("앞 장을 마치면 열림") && !`${s0} ${s1} ${card}`.includes("TOPIC"),
+    check("M1 STUDENT 목록: 1장 '…강과 마지막 강의를 마치면 다음 장' · 2장 '1장을 마치면 열려요' · 자물쇠 · 줄 '앞 장을 마치면 열림'(TOPIC 없음)",
+      /\d+강과 마지막 강의를 마치면 다음 장/.test(s0) && /1장을 마치면 열려요/.test(s1) && lock1 && card.includes("앞 장을 마치면 열림") && !`${s0} ${s1} ${card}`.includes("TOPIC"),
       { s0, s1, lock1, card: card.replace(/\s+/g, " ").slice(0, 80) });
 
     // M2 admin

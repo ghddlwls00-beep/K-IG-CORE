@@ -39,7 +39,9 @@ export const PASSOFF_COURSE = "passoff-grammar";
  * are done, in the words VOCA's · LISTENING's · READING's gates use ("…하면 완료할 수 있어요"). 단계 2-나 E2 (이끄는 세션 결정,
  * 09-28): the learner presses it after the fifth step, as in the other courses — the lesson no longer completes by itself.
  */
-export const PASSOFF_GATE_REASON = "5단계를 모두 마치면 완료할 수 있어요.";
+// UI검토-1007 17번 (고침3 통합, 2026-10-08): the lesson's own steps are 'Step N' (the tabs, Step 5's 'Step 1~5를 모두 마쳤어요') —
+// '단계' is the grade on the lists. It read '5단계를 모두 마치면 …'.
+export const PASSOFF_GATE_REASON = "Step 1~5를 모두 마치면 완료할 수 있어요.";
 
 export type PassoffItemKind = "produce" | "transfer" | "select" | "choice" | "short";
 /** the help received before an answer: ladder ② clue = "hint", ③ tiles = "tiles", the answer shown = "reveal" (설계 §4) */

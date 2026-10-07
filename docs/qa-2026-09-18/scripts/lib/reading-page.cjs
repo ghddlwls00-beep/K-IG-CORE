@@ -1,6 +1,8 @@
 /**
  * READING lesson page — browser-side steps the audit drivers share (2026-09-27, READING 학습법 · 화면 고침).
  *
+ * (2026-10-08 UI검토-1007 고침3: the button's name is its words '이 강의 학습 완료' — it was '학습 완료 체크' (59); and Step 4's
+ * comprehension questions open only after this '다 읽었어요' (4장 6) — the order below is unchanged, so this helper is too.)
  * WHY. Since 2026-09-27 (계획 D02 나) a READING lesson's '이 강의 학습 완료' (LessonEndBar, aria-label '학습 완료 체크') is disabled
  * until the passage was read and timed once on this device (src/lib/lessonGate.ts · ReadingLearningView). A driver that tests the
  * completion toggle must first do what a learner does: open the timed step, press '읽기 시작', wait as long as reading takes, press

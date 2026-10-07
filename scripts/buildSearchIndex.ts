@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { formatLessonPresentation } from "../src/lib/curriculumPresentation";
+import { formatGroupTitle, formatLessonPresentation } from "../src/lib/curriculumPresentation";
 
 const courses = [
   // RE-009: "student" was missing from this list, so all 81 STUDENT conversation
@@ -49,18 +49,33 @@ for (const { slug, title: courseTitle } of courses) {
 
   const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
   const lessons = data.lessons || [];
+  /**
+   * UI검토-1007 4장 8: a result's second line is its section by the one Korean name the course list gives it
+   * (formatGroupTitle — '1장 · 자기소개' · '대주제 1 · 인칭' · '001~050회 · 실전 듣기'), the same in every course.
+   */
+  const sectionOf = new Map<string, string>();
+  for (const group of data.groups || []) {
+    const head = formatGroupTitle(slug, group.label || group.title || "");
+    for (const id of group.lessons || []) sectionOf.set(id, head);
+  }
 
   for (const lesson of lessons) {
     if (lesson.variant === "script") continue;
 
     const pres = formatLessonPresentation(slug, lesson);
+    const section = sectionOf.get(lesson.id) || pres.subtitle;
+    /*
+     * UI검토-1007 12번: no `badge` here any more — '🎙️ 마이크 채점' · '🎙️ 발음 채점' · '📖 직독직해' are not shown (2차) and
+     * said what a course does not do, yet searching '발음' still found every VOCA lesson through them. READING's '직독직해'
+     * keyword goes for the same reason. The words a result shows (code, title, section) are what it is found by.
+     */
     const searchText = [
       lesson.id,
       courseTitle,
       pres.code,
       pres.title,
       pres.subtitle,
-      pres.badge || "",
+      section,
       slug === "student" ? "회화 스피킹 대화 표현 conversation speaking student" : "",
       slug === "adult" ? "성인 어른 회화 스피킹 대화 표현 conversation speaking adult" : "",
       slug === "passoff-grammar" ? "문법 규칙 영작 패스오프 pass-off grammar" : "",
@@ -68,7 +83,7 @@ for (const { slug, title: courseTitle } of courses) {
       slug === "grammar1" ? "문법 영작 기초문법 문장구조 grammar1" : "",
       slug === "grammar2" ? "문법 패턴 구문 영작 grammar2" : "",
       slug === "ld" ? "듣기 청취 수능 토익 받아쓰기 dictation listening ld" : "",
-      slug === "reading" ? "독해 리딩 지문 본문 해석 직독직해 reading" : "",
+      slug === "reading" ? "독해 리딩 지문 본문 해석 reading" : "",
     ]
       .filter(Boolean)
       .join(" ")
@@ -80,8 +95,7 @@ for (const { slug, title: courseTitle } of courses) {
       courseTitle,
       code: pres.code,
       title: pres.title,
-      subtitle: pres.subtitle,
-      badge: pres.badge,
+      subtitle: section,
       searchText,
     });
   }
