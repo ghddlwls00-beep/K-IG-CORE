@@ -9,6 +9,7 @@ import {
 } from "@/lib/speech";
 import { firstSlashAlternative } from "@/lib/listeningUtils";
 import { lessonSpeechForm } from "@/lib/lessonSpeechForm";
+import { IconLock, IconPause, IconPlay, IconStop } from "./icons";
 
 interface ChapterAudioItem {
   text: string;
@@ -189,7 +190,7 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
 
       if (!response.ok || !data.success) {
         throw new Error(
-          ("error" in data && data.error) || "챕터 음성을 불러오지 못했습니다."
+          ("error" in data && data.error) || "이 장의 소리를 불러오지 못했어요."
         );
       }
 
@@ -199,7 +200,7 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
     } catch (err) {
       if (globalActiveChapter !== chapterNumber) return;
       setStatus("idle");
-      setError(err instanceof Error ? err.message : "챕터 음성을 불러오지 못했습니다.");
+      setError(err instanceof Error ? err.message : "이 장의 소리를 불러오지 못했어요.");
       setGlobalActiveChapter(null);
     }
   }, [chapterNumber, chapterUnlocked, course, speed, startPlayback, status]);
@@ -223,116 +224,93 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
     [isPlayingOrPaused, startPlayback]
   );
 
+  /*
+   * UI검토-1007 8번: this used to be the only coloured box on the list (apricot fill, amber border, 11.5px words; while
+   * playing 10.5px monospace speed chips, a 32px stop button, red words; locked: '🔒' · '챕터 해금 후'). It is now one
+   * more line of the chapter, drawn like the lesson rows under it (52px, the same left column, 14px words, hover only
+   * shades it): '이 장 전체 듣기 · 강의 N개 이어서'. Line icons, 44px controls, no colour but the gold of the playing icon.
+   * What it plays and asks for (/api/<course>/chapter-audio, the sentences, the speeds) is unchanged.
+   */
+  const lineTitle = isPlayingOrPaused
+    ? status === "paused" ? "일시정지" : "재생 중"
+    : previewOnly ? "무료 강의 이어 듣기" : "이 장 전체 듣기";
+  const lineNote = !chapterUnlocked
+    ? "이 장을 열면 들을 수 있어요"
+    : status === "loading"
+      ? "재생 목록을 준비하는 중…"
+      : isPlayingOrPaused && progress
+        ? `강의 ${progress.partNumber}/${progress.partTotal} · 문장 ${progress.sentenceNumber}/${progress.sentenceTotal}`
+        : isPlayingOrPaused
+          ? ""
+          : previewOnly
+            ? "1·2강 이어서"
+            : `강의 ${totalLessons}개 이어서`;
+
   return (
-    <div className="border-t border-line/70 px-4 py-3 sm:px-5">
-      <div
-        className={`flex flex-col gap-2.5 rounded-2xl border p-3 sm:flex-row sm:items-center sm:justify-between transition-colors duration-150 ${
-          !chapterUnlocked
-            ? "border-line bg-sunken/60 opacity-80"
-            : isPlayingOrPaused
-              ? "border-amber-500/40 bg-amber-500/[0.07]"
-              : "border-amber-500/20 bg-amber-500/[0.03] hover:bg-amber-500/[0.06]"
-        }`}
-        style={{ WebkitTapHighlightColor: "transparent" }}
-      >
+    <div className="border-b border-line" data-chapter-audio="">
+      <div className="flex flex-wrap items-center">
         <button
           type="button"
           disabled={!chapterUnlocked || status === "loading"}
           onClick={handleTogglePlay}
-          className={`flex min-w-0 flex-1 items-center gap-3 rounded-xl text-left select-none touch-manipulation ${
-            chapterUnlocked
-              ? "cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500 active:scale-[0.99]"
-              : "cursor-not-allowed"
+          className={`flex min-h-[52px] min-w-[12rem] flex-1 items-center gap-3 py-2 pl-4 pr-2 text-left transition-colors select-none touch-manipulation ${
+            chapterUnlocked ? "cursor-pointer hover:bg-sunken" : "cursor-not-allowed"
           }`}
           aria-label={
             !chapterUnlocked
-              ? `챕터 ${chapterNumber} 전체 듣기 잠김`
+              ? `${chapterNumber}장 전체 듣기 잠김`
               : status === "paused"
-                ? `챕터 ${chapterNumber} 전체 듣기 계속 재생`
+                ? `${chapterNumber}장 전체 듣기 계속 재생`
                 : status === "playing"
-                  ? `챕터 ${chapterNumber} 전체 듣기 일시정지`
-                  : `챕터 ${chapterNumber} 전체 파트 듣기`
+                  ? `${chapterNumber}장 전체 듣기 일시정지`
+                  : `${chapterNumber}장 전체 듣기`
           }
         >
           <span
-            className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[15px] font-bold shadow-xs select-none transition-colors duration-150 ${
-              !chapterUnlocked
-                ? "border border-line bg-raised text-ink-faint"
-                : status === "playing"
-                  ? "bg-amber-600 text-white"
-                  : "bg-ink text-surface hover:opacity-90"
+            className={`flex w-9 shrink-0 items-center ${
+              !chapterUnlocked || status === "loading" ? "text-ink-faint" : isPlayingOrPaused ? "text-primary" : "text-ink"
             }`}
             aria-hidden="true"
           >
-            {status === "loading" ? (
-              <span className="font-mono text-[11px] tracking-tighter">•••</span>
-            ) : !chapterUnlocked ? (
-              "🔒"
-            ) : status === "playing" ? (
-              "Ⅱ"
-            ) : (
-              "▶"
-            )}
+            {!chapterUnlocked ? <IconLock size={16} /> : status === "playing" ? <IconPause size={18} /> : <IconPlay size={18} />}
           </span>
-
-          <span className="min-w-0 flex-1">
-            <span className="block text-[13.5px] font-bold text-ink sm:text-[14px] leading-tight">
-              {previewOnly ? "무료 파트 연속 듣기" : "챕터 전체 파트 듣기"}
-            </span>
-            <span className="mt-1 block truncate text-[11.5px] text-ink-soft tabular-nums leading-tight h-[18px]">
-              {!chapterUnlocked
-                ? "챕터 해금 후 이용할 수 있습니다"
-                : status === "loading"
-                  ? "재생 목록을 준비하는 중..."
-                  : isPlayingOrPaused && progress
-                    ? `▶ ${status === "paused" ? "일시정지" : "재생 중"}: 파트 ${progress.partNumber}/${progress.partTotal} · 문장 ${progress.sentenceNumber}/${progress.sentenceTotal}`
-                    : previewOnly
-                      ? "1·2강 연속 재생"
-                      : `${totalLessons}개 파트 연속 재생`}
-            </span>
+          <span className="min-w-0 flex-1 truncate text-label tabular-nums">
+            <span className={`font-medium ${chapterUnlocked ? "text-ink" : "text-ink-soft"}`}>{lineTitle}</span>
+            {lineNote ? <span className="text-ink-soft"> · {lineNote}</span> : null}
           </span>
         </button>
 
         {isPlayingOrPaused && (
-          <div className="flex shrink-0 items-center justify-between gap-2 border-t border-amber-500/20 pt-2 sm:justify-end sm:border-l sm:border-t-0 sm:pl-3 sm:pt-0">
-            <div
-              className="flex items-center rounded-lg border border-line bg-raised p-0.5"
-              aria-label="재생 속도"
-            >
+          <div className="ml-auto flex shrink-0 items-center gap-1 pr-2 pb-1 sm:pb-0">
+            <div className="flex items-center gap-0.5 rounded-control bg-sunken p-0.5" role="group" aria-label="재생 속도">
               {([0.85, 1, 1.2] as const).map((rate) => (
                 <button
                   key={rate}
                   type="button"
                   onClick={() => handleSpeedChange(rate)}
-                  className={`rounded-md px-2 py-1 font-mono text-[10.5px] font-semibold transition-colors duration-150 cursor-pointer ${
-                    speed === rate
-                      ? "bg-ink text-surface"
-                      : "text-ink-soft hover:bg-sunken"
+                  aria-pressed={speed === rate}
+                  className={`flex min-h-11 min-w-11 items-center justify-center rounded-control px-2 text-caption tabular-nums transition-colors cursor-pointer ${
+                    speed === rate ? "bg-raised font-semibold text-ink shadow-2xs" : "font-medium text-ink-soft hover:text-ink"
                   }`}
                 >
                   {rate}×
                 </button>
               ))}
             </div>
-
             <button
               type="button"
               onClick={handleStop}
-              className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-line bg-raised px-2.5 text-[11px] font-semibold text-ink-soft transition-colors duration-150 hover:text-ink cursor-pointer select-none"
-              aria-label="챕터 전체 듣기 정지"
+              className="flex h-11 w-11 items-center justify-center rounded-control text-ink-soft transition-colors hover:bg-sunken hover:text-ink cursor-pointer select-none"
+              aria-label={`${chapterNumber}장 전체 듣기 정지`}
             >
-              <span aria-hidden="true">■</span>
-              <span>정지</span>
+              <IconStop size={16} />
             </button>
           </div>
         )}
       </div>
 
       {error && (
-        <p
-          className="mt-2 px-1 text-[11px] font-medium text-red-600 dark:text-red-300"
-          role="alert"
-        >
+        <p className="px-4 pb-3 text-caption text-danger" role="alert">
           {error}
         </p>
       )}

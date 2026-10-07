@@ -176,9 +176,15 @@ const quietButton =
   "inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control px-3 text-label font-medium text-ink-soft transition-colors cursor-pointer hover:bg-sunken disabled:cursor-not-allowed disabled:opacity-40";
 const iconButton =
   "flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-line bg-raised text-ink-soft transition-colors cursor-pointer hover:bg-sunken hover:text-ink";
+const segmentState = (on: boolean) => (on ? "bg-raised font-semibold text-ink shadow-2xs" : "font-medium text-ink-soft hover:bg-raised/60");
 const segmentButton = (on: boolean) =>
-  "flex min-h-11 min-w-11 flex-1 items-center justify-center rounded-control px-2 text-label transition-colors cursor-pointer " +
-  (on ? "bg-raised font-semibold text-ink shadow-2xs" : "font-medium text-ink-soft hover:bg-raised/60");
+  "flex min-h-11 min-w-11 flex-1 items-center justify-center rounded-control px-2 text-label transition-colors cursor-pointer " + segmentState(on);
+/**
+ * Step 3's '영어 · 한글 / 영어만 / 한글만' (2026-10-07 UI검토-1007 2장 9번): each as wide as its words, on one line — in equal 60px
+ * shares '영어 · 한글' broke into two lines (and with nowrap alone it spilled over its own edge). Same 44px height and look.
+ */
+const segmentButtonFit = (on: boolean) =>
+  "flex min-h-11 min-w-11 shrink-0 items-center justify-center whitespace-nowrap rounded-control px-3 text-label transition-colors cursor-pointer " + segmentState(on);
 
 /** The passage sizes of the 'Aa' menu — English and the Korean line beside it (the six-size scale: 16/14 · 18/16 · 22/18). */
 const SIZE_CLASS: Record<PassageSize, { en: string; ko: string }> = {
@@ -1585,7 +1591,7 @@ export function ReadingLearningView({
                     setDualView(v.value);
                     setShownKo({});
                   }}
-                  className={segmentButton(dualView === v.value)}
+                  className={segmentButtonFit(dualView === v.value)}
                 >
                   {v.label}
                 </button>

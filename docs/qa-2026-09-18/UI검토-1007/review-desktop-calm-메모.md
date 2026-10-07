@@ -1,0 +1,446 @@
+﻿# review:desktop-calm 사진 메모 (데스크톱 1366 · 밝음/어둠 440장)
+
+같은 AI 계열이 찍고 봄 — 독립 검수 아님. 사진마다 한 줄: 무엇이 보이나 · 학습자는 어디를 눌러야 하나. 밝음과 어둠은 같은 화면이라 같은 줄을 적되, 어둠에서만 다른 것은 [어둠]으로 따로 적음.
+
+- `밝음/desktop/adult/expanded-1.jpg` — 챕터 1 펼침 — 금색 상자 '챕터 전체 파트 듣기' · 누를 곳: 강의 줄
+- `밝음/desktop/adult/expanded-2.jpg` — 챕터 1 펼침 — 금색 상자 '챕터 전체 파트 듣기' · 누를 곳: 강의 줄
+- `밝음/desktop/adult/open-1.jpg` — ADULT 목록 — STUDENT와 같은 틀 · 12개 챕터 카드 · 누를 곳: '이어서 학습'
+- `밝음/desktop/adult/open-2.jpg` — ADULT 목록 — STUDENT와 같은 틀 · 12개 챕터 카드 · 누를 곳: '이어서 학습'
+- `밝음/desktop/adult_a1-2/end-1.jpg` — 끝: 완료 조건 상자 · 이전/다음 Step · 다음 강의(채움) · 누를 곳: '이 강의 학습 완료'(조건 전 꺼짐)
+- `밝음/desktop/adult_a1-2/open-1.jpg` — ADULT 강의 열림: 단계 탭이 데스크톱에서도 번호만(1·블라인드 리스닝 / 2 3 4 5) · 전체 듣기(채움) · 속도 4개 · 가림/영어/해석/모두 · 줄마다 듣기·반복 + 점선 '▶ 먼저 듣기' · 누를 곳: '▶ 듣기' 또는 '전체 듣기'
+- `밝음/desktop/adult_a1-2/step1-1.jpg` — 1단계 블라인드 리스닝 — 줄마다 '▶ 듣기'와 '▶ 먼저 듣기' 두 개가 같은 소리 · 끝 막대 다음 강의(채움, 완료 전) · 누를 곳: '▶ 듣기'
+- `밝음/desktop/adult_a1-2/step1-2.jpg` — 1단계 블라인드 리스닝 — 줄마다 '▶ 듣기'와 '▶ 먼저 듣기' 두 개가 같은 소리 · 끝 막대 다음 강의(채움, 완료 전) · 누를 곳: '▶ 듣기'
+- `밝음/desktop/adult_a1-2/step2-1.jpg` — 2단계 단어: 뜻 보기 · 스피커 · 금색 밑줄 · 빈칸 채우기 4지선다(부산 한글) · 누를 곳: '뜻 보기' → 빈칸 고르기
+- `밝음/desktop/adult_a1-2/step2-2.jpg` — 2단계 단어: 뜻 보기 · 스피커 · 금색 밑줄 · 빈칸 채우기 4지선다(부산 한글) · 누를 곳: '뜻 보기' → 빈칸 고르기
+- `밝음/desktop/adult_a1-2/step3-1.jpg` — 3단계 끊어 읽기: 문장 번호 1~7 · 덩어리별 점선 '뜻 보기' · 끊어 듣기/문장 듣기/다음 문장(채움) · 누를 곳: '뜻 보기' → '다음 문장'
+- `밝음/desktop/adult_a1-2/step3-2.jpg` — 3단계 끊어 읽기: 문장 번호 1~7 · 덩어리별 점선 '뜻 보기' · 끊어 듣기/문장 듣기/다음 문장(채움) · 누를 곳: '뜻 보기' → '다음 문장'
+- `밝음/desktop/adult_a1-2/step4-1.jpg` — 4단계 탭 딕테이션: 점선 놓는 칸 · 낱말 칩 13 · 듣기/힌트/정답 확인(채움) · 누를 곳: 낱말 칩 → '정답 확인'
+- `밝음/desktop/adult_a1-2/step4-2.jpg` — 4단계 탭 딕테이션: 점선 놓는 칸 · 낱말 칩 13 · 듣기/힌트/정답 확인(채움) · 누를 곳: 낱말 칩 → '정답 확인'
+- `밝음/desktop/adult_a1-2/step5-1.jpg` — 5단계 섀도잉: '내 정보 넣기 · 빈칸 10개' 접힘 · 문장마다 영어(눌러 듣기)·우리말·스피커 원(우리말 듣기, 표시 없음)·듣기/반복/말하기/읽었어요 · 완료 조건 상자 안 꺼진 완료 단추 · 누를 곳: '듣기' → '말하기'/'읽었어요'
+- `밝음/desktop/adult_a1-2/step5-2.jpg` — 5단계 섀도잉: '내 정보 넣기 · 빈칸 10개' 접힘 · 문장마다 영어(눌러 듣기)·우리말·스피커 원(우리말 듣기, 표시 없음)·듣기/반복/말하기/읽었어요 · 완료 조건 상자 안 꺼진 완료 단추 · 누를 곳: '듣기' → '말하기'/'읽었어요'
+- `밝음/desktop/adult_a6-2/end-1.jpg` — 끝 막대 — 다음 강의 제목 '…' 잘림 · 누를 곳: '다음 강의'
+- `밝음/desktop/adult_a6-2/open-1.jpg` — ADULT 6-2(Women's Version) 1단계 — 위와 같은 틀 · 제목 '—' · 누를 곳: '▶ 듣기'
+- `밝음/desktop/adult_a6-2/step1-1.jpg` — 1단계 6줄 · 끝 막대 이전/다음(다음 채움, 제목 '…' 잘림) · 누를 곳: '▶ 듣기'
+- `밝음/desktop/adult_a6-2/step1-2.jpg` — 1단계 6줄 · 끝 막대 이전/다음(다음 채움, 제목 '…' 잘림) · 누를 곳: '▶ 듣기'
+- `밝음/desktop/adult_a6-2/step2-1.jpg` — 2단계 단어 8개 · 긴 예문 2줄 · 빈칸 5문제 · 누를 곳: '뜻 보기'
+- `밝음/desktop/adult_a6-2/step2-2.jpg` — 2단계 단어 8개 · 긴 예문 2줄 · 빈칸 5문제 · 누를 곳: '뜻 보기'
+- `밝음/desktop/adult_a6-2/step3-1.jpg` — 3단계 끊어 읽기 문장 1(3덩어리) · 누를 곳: '뜻 보기' → '다음 문장'
+- `밝음/desktop/adult_a6-2/step3-2.jpg` — 3단계 끊어 읽기 문장 1(3덩어리) · 누를 곳: '뜻 보기' → '다음 문장'
+- `밝음/desktop/adult_a6-2/step4-1.jpg` — 4단계 '문장 1/6 · 앞부분 (1/2)' · 낱말 칩 12 · 누를 곳: 낱말 칩 → '정답 확인'
+- `밝음/desktop/adult_a6-2/step4-2.jpg` — 4단계 '문장 1/6 · 앞부분 (1/2)' · 낱말 칩 12 · 누를 곳: 낱말 칩 → '정답 확인'
+- `밝음/desktop/adult_a6-2/step5-1.jpg` — 5단계 긴 문장 6개 · 각 줄 4버튼 · 완료 조건 상자 · 누를 곳: '듣기'
+- `밝음/desktop/adult_a6-2/step5-2.jpg` — 5단계 긴 문장 6개 · 각 줄 4버튼 · 완료 조건 상자 · 누를 곳: '듣기'
+- `밝음/desktop/free_adult_a2-1/license-modal-1.jpg` — 이용권 창: 🔑 이모지 원 · 시리얼 입력 · 등록하기(채움) · 💡 '아직 이용권 코드가 없으신가요?' 안쪽 상자 · '구매 링크 준비 중' 칩(누를 수 없음) · 자간 벌어진 각주 '* 각 코스의 1~2강은…' · 누를 곳: 입력 칸 → '이용권 코드 등록하기'
+- `밝음/desktop/free_adult_a2-1/open-1.jpg` — ADULT 잠김 화면: 자물쇠 원 · 'STUDENT PASS · ALL-PASS' · 이용권 등록(채움)/구매 안내 · 무료 강의 2줄 · 'ADULT 전체 목록' · 누를 곳: '이용권 등록' 또는 무료 강의 줄
+- `밝음/desktop/free_home/open-1.jpg` — 이용권 없는 홈 — 위와 같음 · 누를 곳: '학습 시작하기'
+- `밝음/desktop/grammar1/expanded-1.jpg` — 제 1단계 펼침: 01강~06강 · 같은 제목 '기초 영작 훈련' 반복 · 누를 곳: 강의 줄
+- `밝음/desktop/grammar1/open-1.jpg` — GRAMMAR I 목록: 설명 '…6단계 체계적 문장 구조 정복.' · '제 1단계 : … (Stage 1)' · 누를 곳: '이어서 학습'
+- `밝음/desktop/grammar1/open-2.jpg` — GRAMMAR I 목록: 설명 '…6단계 체계적 문장 구조 정복.' · '제 1단계 : … (Stage 1)' · 누를 곳: '이어서 학습'
+- `밝음/desktop/grammar1_gh1-006/end-1.jpg` — 끝: 작성 0/42 · 더보기 · 이 강의 학습 완료(채움, 조건 없음) · 다음 강의 · 누를 곳: '이 강의 학습 완료'
+- `밝음/desktop/grammar1_gh1-006/open-1.jpg` — GRAMMAR I 01강 4단계로 열림(저장된 단계) · 제목 아래 '제 1단계 (기본 문장 구조)' · 탭 위에 '정답 문장 전체 듣기' 접힘 상자 · Q1~ 입력 · 아래 고정 '작성 0/42 · 전체 시험 채점하기' · 누를 곳: 입력 칸
+- `밝음/desktop/grammar1_gh1-006/step1-1.jpg` — 1단계 영작: '문제 1–10 / 42' · '다음 묶음 →'(위 글자 + 아래 채움 두 번) · 줄마다 입력+마이크 원+'확인'(굵은 테두리)+'빈칸 힌트' · '⋯ 더보기' · 누를 곳: 입력 → 'Enter/확인'
+- `밝음/desktop/grammar1_gh1-006/step1-2.jpg` — 1단계 영작: '문제 1–10 / 42' · '다음 묶음 →'(위 글자 + 아래 채움 두 번) · 줄마다 입력+마이크 원+'확인'(굵은 테두리)+'빈칸 힌트' · '⋯ 더보기' · 누를 곳: 입력 → 'Enter/확인'
+- `밝음/desktop/grammar1_gh1-006/step2-1.jpg` — 2단계 빈칸: 줄마다 우리말·빈칸 상자·별도 줄 '확인' · 728px 중 왼쪽 300px만 씀 · 한 화면 3문제 · 누를 곳: 빈칸 → '확인'
+- `밝음/desktop/grammar1_gh1-006/step2-2.jpg` — 2단계 빈칸: 줄마다 우리말·빈칸 상자·별도 줄 '확인' · 728px 중 왼쪽 300px만 씀 · 한 화면 3문제 · 누를 곳: 빈칸 → '확인'
+- `밝음/desktop/grammar1_gh1-006/step3-1.jpg` — 3단계 구문 각인: 영어·우리말·스피커·'따라 말했어요'·0/3회·별도 줄 '따라 말하고 확인' · 한 화면 3.5문제 · 누를 곳: '따라 말했어요'
+- `밝음/desktop/grammar1_gh1-006/step3-2.jpg` — 3단계 구문 각인: 영어·우리말·스피커·'따라 말했어요'·0/3회·별도 줄 '따라 말하고 확인' · 한 화면 3.5문제 · 누를 곳: '따라 말했어요'
+- `밝음/desktop/grammar1_gh1-006/step4-1.jpg` — 4단계 종합 평가: Q1.~Q42. 입력 · 고정 막대 · 누를 곳: 입력 → '전체 시험 채점하기'
+- `밝음/desktop/grammar1_gh1-006/step4-2.jpg` — 4단계 종합 평가: Q1.~Q42. 입력 · 고정 막대 · 누를 곳: 입력 → '전체 시험 채점하기'
+- `밝음/desktop/grammar1_gh1-074/end-1.jpg` — 끝 · 이전/다음 강의 · 누를 곳: '이 강의 학습 완료'
+- `밝음/desktop/grammar1_gh1-074/open-1.jpg` — 32강 4단계 — 위와 같은 틀 · 누를 곳: 입력 칸
+- `밝음/desktop/grammar1_gh1-074/step1-1.jpg` — 1단계 29문제 · 같은 틀 · 누를 곳: 입력
+- `밝음/desktop/grammar1_gh1-074/step1-2.jpg` — 1단계 29문제 · 같은 틀 · 누를 곳: 입력
+- `밝음/desktop/grammar1_gh1-074/step2-1.jpg` — 2단계 빈칸 2개씩 · '. ' 빈칸 뒤 마침표 떠 있음 · 누를 곳: 빈칸
+- `밝음/desktop/grammar1_gh1-074/step2-2.jpg` — 2단계 빈칸 2개씩 · '. ' 빈칸 뒤 마침표 떠 있음 · 누를 곳: 빈칸
+- `밝음/desktop/grammar1_gh1-074/step3-1.jpg` — 3단계 구문 각인 · 누를 곳: '따라 말했어요'
+- `밝음/desktop/grammar1_gh1-074/step3-2.jpg` — 3단계 구문 각인 · 누를 곳: '따라 말했어요'
+- `밝음/desktop/grammar1_gh1-074/step4-1.jpg` — 4단계 Q1~Q29 · 누를 곳: 입력
+- `밝음/desktop/grammar1_gh1-074/step4-2.jpg` — 4단계 Q1~Q29 · 누를 곳: 입력
+- `밝음/desktop/grammar2/expanded-1.jpg` — 제 7~14과 펼침 · '패턴 영작 훈련' 반복 · 누를 곳: 강의 줄
+- `밝음/desktop/grammar2/expanded-2.jpg` — 제 7~14과 펼침 · '패턴 영작 훈련' 반복 · 누를 곳: 강의 줄
+- `밝음/desktop/grammar2/open-1.jpg` — GRAMMAR II 목록: '…고난도 문형과 어순 감각 완성.' · 누를 곳: '이어서 학습'
+- `밝음/desktop/grammar2/open-2.jpg` — GRAMMAR II 목록: '…고난도 문형과 어순 감각 완성.' · 누를 곳: '이어서 학습'
+- `밝음/desktop/grammar2_gh2-007/end-1.jpg` — 끝 · 다음 강의만 · 누를 곳: '이 강의 학습 완료'
+- `밝음/desktop/grammar2_gh2-007/open-1.jpg` — GRAMMAR II 7과 4단계 — 부제 없음 · 정답 문장 전체 듣기 상자 · 누를 곳: 입력
+- `밝음/desktop/grammar2_gh2-007/step1-1.jpg` — 1단계 16문제 · 긴 우리말 2줄 · 누를 곳: 입력
+- `밝음/desktop/grammar2_gh2-007/step1-2.jpg` — 1단계 16문제 · 긴 우리말 2줄 · 누를 곳: 입력
+- `밝음/desktop/grammar2_gh2-007/step2-1.jpg` — 2단계 빈칸 2개씩 · 문장 길어 폭 씀 · 누를 곳: 빈칸
+- `밝음/desktop/grammar2_gh2-007/step2-2.jpg` — 2단계 빈칸 2개씩 · 문장 길어 폭 씀 · 누를 곳: 빈칸
+- `밝음/desktop/grammar2_gh2-007/step3-1.jpg` — 3단계 · 누를 곳: '따라 말했어요'
+- `밝음/desktop/grammar2_gh2-007/step3-2.jpg` — 3단계 · 누를 곳: '따라 말했어요'
+- `밝음/desktop/grammar2_gh2-007/step4-1.jpg` — 4단계 Q1~Q16 · 누를 곳: 입력
+- `밝음/desktop/grammar2_gh2-007/step4-2.jpg` — 4단계 Q1~Q16 · 누를 곳: 입력
+- `밝음/desktop/grammar2_gh2-033/end-1.jpg` — 끝 · 이전/다음 · 누를 곳: '이 강의 학습 완료'
+- `밝음/desktop/grammar2_gh2-033/open-1.jpg` — 33과 4단계 · 누를 곳: 입력
+- `밝음/desktop/grammar2_gh2-033/step1-1.jpg` — 1단계 17문제 · 9번 '빈칸 힌트' 없음 · 누를 곳: 입력
+- `밝음/desktop/grammar2_gh2-033/step1-2.jpg` — 1단계 17문제 · 9번 '빈칸 힌트' 없음 · 누를 곳: 입력
+- `밝음/desktop/grammar2_gh2-033/step2-1.jpg` — 2단계 · 9번 '빈칸이 없는 문장이에요 — 읽고 들어 보세요.'(11~12px) · 누를 곳: 빈칸
+- `밝음/desktop/grammar2_gh2-033/step2-2.jpg` — 2단계 · 9번 '빈칸이 없는 문장이에요 — 읽고 들어 보세요.'(11~12px) · 누를 곳: 빈칸
+- `밝음/desktop/grammar2_gh2-033/step3-1.jpg` — 3단계 · '부산' 한글 · 누를 곳: '따라 말했어요'
+- `밝음/desktop/grammar2_gh2-033/step3-2.jpg` — 3단계 · '부산' 한글 · 누를 곳: '따라 말했어요'
+- `밝음/desktop/grammar2_gh2-033/step4-1.jpg` — 4단계 Q1~Q17 · 누를 곳: 입력
+- `밝음/desktop/grammar2_gh2-033/step4-2.jpg` — 4단계 Q1~Q17 · 누를 곳: 입력
+- `밝음/desktop/home/open-1.jpg` — 홈 사진 슬라이드(STUDENT) · 'STAGE 01 · CURRICULUM' 고정폭 대문자 칩 · 오른쪽 점 9개 · 'NEXT↓' · 누를 곳: '학습 시작하기' (모양은 사장님 결정 — 손대지 않음)
+- `밝음/desktop/ld/expanded-1.jpg` — Section 1 펼침 50줄 '실전 듣기 평가' · 누를 곳: 강의 줄
+- `밝음/desktop/ld/expanded-2.jpg` — Section 1 펼침 50줄 '실전 듣기 평가' · 누를 곳: 강의 줄
+- `밝음/desktop/ld/open-1.jpg` — LISTENING 목록: '…고음질 음성과 딕테이션 훈련으로 완벽한 청취력을 완성합니다.' · 누를 곳: '이어서 학습'
+- `밝음/desktop/ld_d001/end-1.jpg` — 끝 · 다음 강의만 · 누를 곳: '이 강의 학습 완료'(꺼짐)
+- `밝음/desktop/ld_d001/open-1.jpg` — LISTENING 001회 1단계: 탭 5개 한 줄 · '이 단계는?' · 이름·숫자 칩 · 플레이어 · '들은 내용 확인' 4지선다 2문제 · 누를 곳: 플레이어 ▶
+- `밝음/desktop/ld_d001/step1-1.jpg` — 1단계 — 위와 같음 · 끝 막대 완료(꺼짐) '받아쓰기에서 한 줄을 채점하면…' · 누를 곳: ▶ 재생
+- `밝음/desktop/ld_d001/step1-2.jpg` — 1단계 — 위와 같음 · 끝 막대 완료(꺼짐) '받아쓰기에서 한 줄을 채점하면…' · 누를 곳: ▶ 재생
+- `밝음/desktop/ld_d001/step2-1.jpg` — 2단계 딕테이션: 빈칸/블록/쓰기 탭 · '< 문장 1/6 >' · 듣기 · 느리게 0.75× · 직접 쓰기 · 힌트 접힘 · 빈칸 4개 · 아래 1~4 줄마다 3개 칩(왼쪽 240px만 씀) · 정답 확인 · 누를 곳: 칩 고르기 → '정답 확인'
+- `밝음/desktop/ld_d001/step2-2.jpg` — 2단계 딕테이션: 빈칸/블록/쓰기 탭 · '< 문장 1/6 >' · 듣기 · 느리게 0.75× · 직접 쓰기 · 힌트 접힘 · 빈칸 4개 · 아래 1~4 줄마다 3개 칩(왼쪽 240px만 씀) · 정답 확인 · 누를 곳: 칩 고르기 → '정답 확인'
+- `밝음/desktop/ld_d001/step3-1.jpg` — 3단계 소리클리닉: '< 문장 1/6 >' 위 · 점선 상자 '먼저 받아쓰기 / 그래도 보기' · 문장 듣기 — 짧은 쪽, 화면 옆으로 밀림 · 누를 곳: '먼저 받아쓰기'
+- `밝음/desktop/ld_d001/step4-1.jpg` — 4단계 따라 말하기: '글 가리기' 스위치가 안내 줄 가운데 · 점선 상자 · 우리말 · 문장 듣기 · 그 아래 '< 문장 1/6 >' · 말하기 — 문장 이동 자리가 2·3단계와 다름 · 누를 곳: '문장 듣기' → '말하기'
+- `밝음/desktop/ld_d001/step4-2.jpg` — 4단계 따라 말하기: '글 가리기' 스위치가 안내 줄 가운데 · 점선 상자 · 우리말 · 문장 듣기 · 그 아래 '< 문장 1/6 >' · 말하기 — 문장 이동 자리가 2·3단계와 다름 · 누를 곳: '문장 듣기' → '말하기'
+- `밝음/desktop/ld_d001/step5-1.jpg` — 5단계 다시 듣기: 플레이어 · 처음부터 · 해석 모두 보기 · 점선 상자 · '받아쓰기 전이라 가려 두었어요' 6번 반복 · 메모 · 누를 곳: 플레이어/'먼저 받아쓰기'
+- `밝음/desktop/ld_d001/step5-2.jpg` — 5단계 다시 듣기: 플레이어 · 처음부터 · 해석 모두 보기 · 점선 상자 · '받아쓰기 전이라 가려 두었어요' 6번 반복 · 메모 · 누를 곳: 플레이어/'먼저 받아쓰기'
+- `밝음/desktop/ld_d001-1/end-1.jpg` — 끝 · '이전 강의 001회' · 누를 곳: 완료
+- `밝음/desktop/ld_d001-1/open-1.jpg` — 001회 대본 쪽(-1) — 001회와 같은 화면 · 이전 강의가 '001회'(같은 강의) · 누를 곳: 플레이어
+- `밝음/desktop/ld_d001-1/step1-1.jpg` — 위와 같음 · 끝 막대 '이전 강의 001회 · 다음 강의 002회' · 누를 곳: 플레이어
+- `밝음/desktop/ld_d001-1/step1-2.jpg` — 위와 같음 · 끝 막대 '이전 강의 001회 · 다음 강의 002회' · 누를 곳: 플레이어
+- `밝음/desktop/ld_d001-1/step2-1.jpg` — 2단계 — 001회와 같음 · 누를 곳: 칩
+- `밝음/desktop/ld_d001-1/step2-2.jpg` — 2단계 — 001회와 같음 · 누를 곳: 칩
+- `밝음/desktop/ld_d001-1/step3-1.jpg` — 3단계 · 누를 곳: '먼저 받아쓰기'
+- `밝음/desktop/ld_d001-1/step4-1.jpg` — 4단계 · 누를 곳: '문장 듣기'
+- `밝음/desktop/ld_d001-1/step4-2.jpg` — 4단계 · 누를 곳: '문장 듣기'
+- `밝음/desktop/ld_d001-1/step5-1.jpg` — 5단계 · 누를 곳: 플레이어
+- `밝음/desktop/ld_d001-1/step5-2.jpg` — 5단계 · 누를 곳: 플레이어
+- `밝음/desktop/ld_d166/end-1.jpg` — 끝 · 누를 곳: 완료
+- `밝음/desktop/ld_d166/open-1.jpg` — 166회 1단계: 이름·숫자 칩 9개+더 보기(실제로는 'author', 'measure depth' 같은 구도 섞임) · 3문제 · 누를 곳: 플레이어
+- `밝음/desktop/ld_d166/step1-1.jpg` — 위와 같음 · 누를 곳: 플레이어
+- `밝음/desktop/ld_d166/step1-2.jpg` — 위와 같음 · 누를 곳: 플레이어
+- `밝음/desktop/ld_d166/step2-1.jpg` — 2단계 빈칸 3개 · 누를 곳: 칩
+- `밝음/desktop/ld_d166/step2-2.jpg` — 2단계 빈칸 3개 · 누를 곳: 칩
+- `밝음/desktop/ld_d166/step3-1.jpg` — 3단계 · 누를 곳: '먼저 받아쓰기'
+- `밝음/desktop/ld_d166/step4-1.jpg` — 4단계 · 누를 곳: '문장 듣기'
+- `밝음/desktop/ld_d166/step4-2.jpg` — 4단계 · 누를 곳: '문장 듣기'
+- `밝음/desktop/ld_d166/step5-1.jpg` — 5단계 7줄 가림 · 누를 곳: 플레이어
+- `밝음/desktop/ld_d166/step5-2.jpg` — 5단계 7줄 가림 · 누를 곳: 플레이어
+- `밝음/desktop/nope-404/open-1.jpg` — '404 · NOT FOUND' 고정폭 대문자 11px · 큰 제목 · 알약 모양 '홈으로 가기' · 과정 목록(영어 홍보 문구 줄) · 누를 곳: '홈으로 가기' 또는 과정 줄
+- `밝음/desktop/nope-404/open-2.jpg` — '404 · NOT FOUND' 고정폭 대문자 11px · 큰 제목 · 알약 모양 '홈으로 가기' · 과정 목록(영어 홍보 문구 줄) · 누를 곳: '홈으로 가기' 또는 과정 줄
+- `밝음/desktop/passoff-grammar/expanded-1.jpg` — TOPIC 1 펼침: 1~3인칭 완료 · '구성도 다시 채우기 · 마침' · 누를 곳: 강의 줄
+- `밝음/desktop/passoff-grammar/expanded-2.jpg` — TOPIC 1 펼침: 1~3인칭 완료 · '구성도 다시 채우기 · 마침' · 누를 곳: 강의 줄
+- `밝음/desktop/passoff-grammar/open-1.jpg` — PASS-OFF 목록: TOPIC 카드마다 '진행 0%' + '0/3' 두 번 · 누를 곳: '이어서 학습'
+- `밝음/desktop/passoff-grammar/open-2.jpg` — PASS-OFF 목록: TOPIC 카드마다 '진행 0%' + '0/3' 두 번 · 누를 곳: '이어서 학습'
+- `밝음/desktop/passoff-grammar_map_topic1/open-1.jpg` — 구성도: 빈 칸 3(점선) · 강의 이름 칩 3 · '다음'(꺼짐) — 짧은 쪽이라 스크롤바 없음 → 화면이 옆으로 8px 밀림 · 누를 곳: 이름 칩
+- `밝음/desktop/passoff-grammar_pg01-1/end-1.jpg` — 끝 · 학습 완료함 · 누를 곳: '다음 강의'
+- `밝음/desktop/passoff-grammar_pg01-1/open-1.jpg` — PASS-OFF 1인칭 1단계(완료한 강의): 탭 아래 금색 '1단계' + '예문 떠올리기'(탭과 같은 이름 두 번) · ᴀA 글자 단추 · 문장마다 따로 테두리 상자 5개 · 먼저 말해 보기/영어 보기(채움) · 누를 곳: '영어 보기'
+- `밝음/desktop/passoff-grammar_pg01-1/step1-1.jpg` — 1단계 · 끝 '학습 완료함' 줄 + 다음 강의(채움) · 누를 곳: '영어 보기'
+- `밝음/desktop/passoff-grammar_pg01-1/step1-2.jpg` — 1단계 · 끝 '학습 완료함' 줄 + 다음 강의(채움) · 누를 곳: '영어 보기'
+- `밝음/desktop/passoff-grammar_pg01-1/step2-1.jpg` — 2단계 문법 설명: 먼저 찾아보기 3문장 · '1단계로' · 3지선다 칩 · 누를 곳: 선택지
+- `밝음/desktop/passoff-grammar_pg01-1/step2-2.jpg` — 2단계 문법 설명: 먼저 찾아보기 3문장 · '1단계로' · 3지선다 칩 · 누를 곳: 선택지
+- `밝음/desktop/passoff-grammar_pg01-1/step3-1.jpg` — 3단계 찾기: 낱말 칩 · 확인(꺼짐) · 누를 곳: 낱말 → '확인'
+- `밝음/desktop/passoff-grammar_pg01-1/step3-2.jpg` — 3단계 찾기: 낱말 칩 · 확인(꺼짐) · 누를 곳: 낱말 → '확인'
+- `밝음/desktop/passoff-grammar_pg01-1/step4-1.jpg` — 4단계 영작: 세트 1/2 · 큰 입력 · 마이크로 말해서 영작하기 · 확인 · 누를 곳: 입력 → '확인'
+- `밝음/desktop/passoff-grammar_pg01-1/step4-2.jpg` — 4단계 영작: 세트 1/2 · 큰 입력 · 마이크로 말해서 영작하기 · 확인 · 누를 곳: 입력 → '확인'
+- `밝음/desktop/passoff-grammar_pg01-1/step5-1.jpg` — 5단계 마무리: 처음 보는 문장 1/2 · 누를 곳: 입력
+- `밝음/desktop/passoff-grammar_pg01-1/step5-2.jpg` — 5단계 마무리: 처음 보는 문장 1/2 · 누를 곳: 입력
+- `밝음/desktop/passoff-grammar_pg13-1/end-1.jpg` — 끝 · 이전 강의 'Going Being' · 누를 곳: 완료(꺼짐)
+- `밝음/desktop/passoff-grammar_pg13-1/open-1.jpg` — 부정사 1단계: 8문장 상자 각각 · 끝 막대 완료(꺼짐) '5단계를 모두 마치면…' · 누를 곳: '영어 보기'
+- `밝음/desktop/passoff-grammar_pg13-1/step1-1.jpg` — 1단계 · 누를 곳: '영어 보기'
+- `밝음/desktop/passoff-grammar_pg13-1/step1-2.jpg` — 1단계 · 누를 곳: '영어 보기'
+- `밝음/desktop/passoff-grammar_pg13-1/step2-1.jpg` — 2단계 3지선다(긴 칩) · 누를 곳: 선택지
+- `밝음/desktop/passoff-grammar_pg13-1/step2-2.jpg` — 2단계 3지선다(긴 칩) · 누를 곳: 선택지
+- `밝음/desktop/passoff-grammar_pg13-1/step3-1.jpg` — 3단계 밑줄 뜻 고르기 — 짧은 쪽, 화면 옆으로 밀림 · 누를 곳: 선택지
+- `밝음/desktop/passoff-grammar_pg13-1/step4-1.jpg` — 4단계 'to부정사로' 칩 · 세트 1/4 · 누를 곳: 입력
+- `밝음/desktop/passoff-grammar_pg13-1/step4-2.jpg` — 4단계 'to부정사로' 칩 · 세트 1/4 · 누를 곳: 입력
+- `밝음/desktop/passoff-grammar_pg13-1/step5-1.jpg` — 5단계 · 누를 곳: 입력
+- `밝음/desktop/passoff-grammar_pg13-1/step5-2.jpg` — 5단계 · 누를 곳: 입력
+- `밝음/desktop/passoff-grammar_review/open-1.jpg` — 오늘 복습: '인터넷에 연결되지 않아…'(감사 사본의 막은 요청 탓으로 보임) · 다시 불러오기 · 그만하고 과정 목록으로 · 누를 곳: '다시 불러오기'
+- `밝음/desktop/passoff-grammar_review_notes1/open-1.jpg` — 오답노트: 같은 연결 안내 · 과정 목록으로 · 누를 곳: '다시 불러오기'
+- `밝음/desktop/phonics/expanded-1.jpg` — 중등 1단계 펼침 40줄 · 누를 곳: 강의 줄
+- `밝음/desktop/phonics/expanded-2.jpg` — 중등 1단계 펼침 40줄 · 누를 곳: 강의 줄
+- `밝음/desktop/phonics/open-1.jpg` — VOCA 목록: '…필수 영단어 매트릭스 및 발음 정밀 클리닉.' · 누를 곳: '이어서 학습'
+- `밝음/desktop/phonics_mv1-01/end-1.jpg` — 끝 = 4단계 화면 · 누를 곳: '시작 · 60초'
+- `밝음/desktop/phonics_mv1-01/open-1.jpg` — VOCA 1단계: 뜻 가리기 스위치 · 플레이어 · '1–6번 ▶ 듣기' 묶음 · 3열 단어 카드 30장(카드마다 테두리+동그라미) · 동그라미 설명은 맨 아래 · 누를 곳: 단어 카드
+- `밝음/desktop/phonics_mv1-01/step1-1.jpg` — 1단계 끝: 'here' 카드 마우스 올림 배경이 카드 일부만 덮음 · 동그라미 설명 · 완료(꺼짐) · 누를 곳: 단어 카드
+- `밝음/desktop/phonics_mv1-01/step1-2.jpg` — 1단계 끝: 'here' 카드 마우스 올림 배경이 카드 일부만 덮음 · 동그라미 설명 · 완료(꺼짐) · 누를 곳: 단어 카드
+- `밝음/desktop/phonics_mv1-01/step2-1.jpg` — 2단계 4지선다: '이 뜻의 영어 단어는?' — 짧은 쪽, 화면 옆으로 8px 밀림 · 누를 곳: 보기
+- `밝음/desktop/phonics_mv1-01/step3-1.jpg` — 3단계: '틀린 단어가 없어요' 상자 · 퀴즈 풀러 가기(채움)/전체 30단어로 연습 · 누를 곳: '퀴즈 풀러 가기'
+- `밝음/desktop/phonics_mv1-01/step4-1.jpg` — 4단계: 설명 한 줄 · 시작 · 60초(채움, 폭 전체) · 아래 빈 화면 · 누를 곳: '시작 · 60초'
+- `밝음/desktop/phonics_mv3-38/end-1.jpg` — 끝 · 누를 곳: '시작 · 60초'
+- `밝음/desktop/phonics_mv3-38/open-1.jpg` — VOCA 3단계 38회 1단계 · 뜻 3줄 꺾이는 카드 · 누를 곳: 단어 카드
+- `밝음/desktop/phonics_mv3-38/step1-1.jpg` — 1단계 끝 · 'add' 카드 일부 배경 · 누를 곳: 단어 카드
+- `밝음/desktop/phonics_mv3-38/step1-2.jpg` — 1단계 끝 · 'add' 카드 일부 배경 · 누를 곳: 단어 카드
+- `밝음/desktop/phonics_mv3-38/step2-1.jpg` — 2단계 (어둠: '듣고 알맞은 뜻을 고르세요 · 듣기' 문항) · 누를 곳: 보기
+- `밝음/desktop/phonics_mv3-38/step3-1.jpg` — 3단계 · 누를 곳: '퀴즈 풀러 가기'
+- `밝음/desktop/phonics_mv3-38/step4-1.jpg` — 4단계 · 누를 곳: '시작 · 60초'
+- `밝음/desktop/reading/expanded-1.jpg` — Section 1 펼침 · 줄마다 '76단어 · 5문장' · 누를 곳: 강의 줄
+- `밝음/desktop/reading/expanded-2.jpg` — Section 1 펼침 · 줄마다 '76단어 · 5문장' · 누를 곳: 강의 줄
+- `밝음/desktop/reading/menu-open-1.jpg` — 메뉴 서랍: 과정 9개(CNN NEWS 포함) · '올패스 이용 중 · 확인' · '처음 화면으로' · 누를 곳: 과정 이름
+- `밝음/desktop/reading/open-1.jpg` — READING 목록: '…문해력과 직독직해 능력을 완성합니다.' · 누를 곳: '이어서 학습'
+- `밝음/desktop/reading/open-2.jpg` — READING 목록: '…문해력과 직독직해 능력을 완성합니다.' · 누를 곳: '이어서 학습'
+- `밝음/desktop/reading/search-open-1.jpg` — 검색 창: 결과마다 '🎙️ 실전 회화' 이모지 꼬리표 · 아래 '↑↓ 고르기 Enter 이동 Esc 닫기' · 머리줄 '⌘K' · 누를 곳: 결과 줄
+- `밝음/desktop/reading_pr001/end-1.jpg` — 끝 · 완료(꺼짐) '4단계에서 지문을 다시 읽고…' · 누를 곳: '읽기 시작'
+- `밝음/desktop/reading_pr001/open-1.jpg` — READING 001회 1단계: 안내 1줄 · '76단어 · 5문장' · 'Aa' 단추(글자) · 지문 상자(세리프 글꼴) · 다 읽었어요(채움) · 누를 곳: '다 읽었어요'
+- `밝음/desktop/reading_pr001/step1-1.jpg` — 1단계 끝 · 완료(꺼짐) 이유 · 다음 강의 · 누를 곳: '다 읽었어요'
+- `밝음/desktop/reading_pr001/step1-2.jpg` — 1단계 끝 · 완료(꺼짐) 이유 · 다음 강의 · 누를 곳: '다 읽었어요'
+- `밝음/desktop/reading_pr001/step2-1.jpg` — 2단계 핵심 어휘 14줄: 뜻 보기·스피커 원 · 금색 밑줄 · 아래 빈칸 채우기 · 누를 곳: '뜻 보기'
+- `밝음/desktop/reading_pr001/step2-2.jpg` — 2단계 핵심 어휘 14줄: 뜻 보기·스피커 원 · 금색 밑줄 · 아래 빈칸 채우기 · 누를 곳: '뜻 보기'
+- `밝음/desktop/reading_pr001/step3-1.jpg` — 3단계 원문 대조: '영어 · 한글' 칸 글자가 두 줄로 꺾임 · Aa · 안내 2줄 · 플레이어 · 번호 원 + 영(세리프)·한 두 칸 · 소리 내어 읽기 · 메모 · 누를 곳: 플레이어/줄
+- `밝음/desktop/reading_pr001/step3-2.jpg` — 3단계 원문 대조: '영어 · 한글' 칸 글자가 두 줄로 꺾임 · Aa · 안내 2줄 · 플레이어 · 번호 원 + 영(세리프)·한 두 칸 · 소리 내어 읽기 · 메모 · 누를 곳: 플레이어/줄
+- `밝음/desktop/reading_pr001/step4-1.jpg` — 4단계: 읽기 시작(채움, 작게) · 이해 문제 2개가 읽기 전에 이미 보이고 바로 고를 수 있음 · 누를 곳: '읽기 시작'
+- `밝음/desktop/reading_pr001/step4-2.jpg` — 4단계: 읽기 시작(채움, 작게) · 이해 문제 2개가 읽기 전에 이미 보이고 바로 고를 수 있음 · 누를 곳: '읽기 시작'
+- `밝음/desktop/reading_pr001-1/end-1.jpg` — 끝 · 누를 곳: '읽기 시작'
+- `밝음/desktop/reading_pr001-1/open-1.jpg` — 001회 대본 쪽 — 001회와 같은 화면 · 누를 곳: '다 읽었어요'
+- `밝음/desktop/reading_pr001-1/step1-1.jpg` — 위와 같음 · 이전 강의 001회(같은 강의) · 누를 곳: '다 읽었어요'
+- `밝음/desktop/reading_pr001-1/step1-2.jpg` — 위와 같음 · 이전 강의 001회(같은 강의) · 누를 곳: '다 읽었어요'
+- `밝음/desktop/reading_pr001-1/step2-1.jpg` — 2단계 · 누를 곳: '뜻 보기'
+- `밝음/desktop/reading_pr001-1/step2-2.jpg` — 2단계 · 누를 곳: '뜻 보기'
+- `밝음/desktop/reading_pr001-1/step3-1.jpg` — 3단계 · '영어 · 한글' 두 줄 · 누를 곳: 플레이어
+- `밝음/desktop/reading_pr001-1/step3-2.jpg` — 3단계 · '영어 · 한글' 두 줄 · 누를 곳: 플레이어
+- `밝음/desktop/reading_pr001-1/step4-1.jpg` — 4단계 · 누를 곳: '읽기 시작'
+- `밝음/desktop/reading_pr001-1/step4-2.jpg` — 4단계 · 누를 곳: '읽기 시작'
+- `밝음/desktop/reading_pr154/end-1.jpg` — 끝 · 누를 곳: '읽기 시작'
+- `밝음/desktop/reading_pr154/open-1.jpg` — 154회 1단계 · 지문 속 '한지' 한글이 세리프 영어와 다른 글꼴로 튐 · 누를 곳: '다 읽었어요'
+- `밝음/desktop/reading_pr154/step1-1.jpg` — 1단계 끝 · 누를 곳: '다 읽었어요'
+- `밝음/desktop/reading_pr154/step1-2.jpg` — 1단계 끝 · 누를 곳: '다 읽었어요'
+- `밝음/desktop/reading_pr154/step2-1.jpg` — 2단계 14줄 · 누를 곳: '뜻 보기'
+- `밝음/desktop/reading_pr154/step2-2.jpg` — 2단계 14줄 · 누를 곳: '뜻 보기'
+- `밝음/desktop/reading_pr154/step3-1.jpg` — 3단계 8문장 · '영어 · 한글' 두 줄 · 누를 곳: 플레이어
+- `밝음/desktop/reading_pr154/step3-2.jpg` — 3단계 8문장 · '영어 · 한글' 두 줄 · 누를 곳: 플레이어
+- `밝음/desktop/reading_pr154/step4-1.jpg` — 4단계 · 2번 문제 한 줄 꽉 참 · 누를 곳: '읽기 시작'
+- `밝음/desktop/reading_pr154/step4-2.jpg` — 4단계 · 2번 문제 한 줄 꽉 참 · 누를 곳: '읽기 시작'
+- `밝음/desktop/student/expanded-1.jpg` — 챕터 1 펼침: 금색 바탕 상자 '챕터 전체 파트 듣기 / 6개 파트 연속 재생(11.5px)' · 강의 줄 6개 · 나머지 챕터 카드 · 누를 곳: 강의 줄
+- `밝음/desktop/student/expanded-2.jpg` — 챕터 1 펼침: 금색 바탕 상자 '챕터 전체 파트 듣기 / 6개 파트 연속 재생(11.5px)' · 강의 줄 6개 · 나머지 챕터 카드 · 누를 곳: 강의 줄
+- `밝음/desktop/student/open-1.jpg` — STUDENT 목록: 설명 '…마스터하는…' · 이어서 학습(채움) · 진도 · 전체/북마크/미완료 · 챕터 카드 하나씩 테두리 · 누를 곳: '이어서 학습'
+- `밝음/desktop/student/open-2.jpg` — STUDENT 목록: 설명 '…마스터하는…' · 이어서 학습(채움) · 진도 · 전체/북마크/미완료 · 챕터 카드 하나씩 테두리 · 누를 곳: '이어서 학습'
+- `밝음/desktop/student_s1-1/end-1.jpg` — 끝: '완료한 강의' 상자 안 '다음 강의: Ch 1-2…'(채움) + 끝 막대 '다음 강의 Ch 1-2'(채움) — 같은 단추 두 벌 · 누를 곳: '다음 강의'
+- `밝음/desktop/student_s1-1/open-1.jpg` — STUDENT 1-1 1단계(완료한 강의): 전체 듣기(채움) · 속도 0.7/0.85/1/1.2 · 가림/영어/해석/모두 · 줄마다 '▶ 듣기'+'▶ 먼저 듣기'(같은 소리 두 단추) · 누를 곳: '▶ 듣기'
+- `밝음/desktop/student_s1-1/step1-1.jpg` — 1단계 끝 · 끝 막대 다음 강의(채움) · 누를 곳: '▶ 듣기'
+- `밝음/desktop/student_s1-1/step1-2.jpg` — 1단계 끝 · 끝 막대 다음 강의(채움) · 누를 곳: '▶ 듣기'
+- `밝음/desktop/student_s1-1/step2-1.jpg` — 2단계 탭 딕테이션: 문장 1~3 · 우리말 힌트 · 점선 놓는 칸 · 낱말 칩 8 · 듣기/힌트/정답 확인(채움) · 누를 곳: 칩 → '정답 확인'
+- `밝음/desktop/student_s1-1/step2-2.jpg` — 2단계 탭 딕테이션: 문장 1~3 · 우리말 힌트 · 점선 놓는 칸 · 낱말 칩 8 · 듣기/힌트/정답 확인(채움) · 누를 곳: 칩 → '정답 확인'
+- `밝음/desktop/student_s1-1/step3-1.jpg` — 3단계 섀도잉: 영어 가리기 · 문장(눌러 듣기)·우리말·스피커 원(우리말 듣기, 표시 없음) · 듣기/반복/말하기/읽었어요 · 누를 곳: '듣기' → '말하기'
+- `밝음/desktop/student_s1-1/step3-2.jpg` — 3단계 섀도잉: 영어 가리기 · 문장(눌러 듣기)·우리말·스피커 원(우리말 듣기, 표시 없음) · 듣기/반복/말하기/읽었어요 · 누를 곳: '듣기' → '말하기'
+- `밝음/desktop/student_s11-4/end-1.jpg` — 끝: 완료 조건 상자(완료 꺼짐, 오른쪽 작게) + 끝 막대 다음 강의(채움) · 누를 곳: '다음 강의'(채움)가 가장 눈에 띔
+- `밝음/desktop/student_s11-4/open-1.jpg` — STUDENT 11-4 1단계 5줄 · 제목 길어 한 줄 · 누를 곳: '▶ 듣기'
+- `밝음/desktop/student_s11-4/step1-1.jpg` — 1단계 끝 · 이전 강의 제목 '…' 잘림 · 다음 강의(채움, 완료 전) · 누를 곳: '▶ 듣기'
+- `밝음/desktop/student_s11-4/step1-2.jpg` — 1단계 끝 · 이전 강의 제목 '…' 잘림 · 다음 강의(채움, 완료 전) · 누를 곳: '▶ 듣기'
+- `밝음/desktop/student_s11-4/step2-1.jpg` — 2단계 · 놓는 칸 2줄 높이 · 낱말 칩 12 · 누를 곳: 칩
+- `밝음/desktop/student_s11-4/step2-2.jpg` — 2단계 · 놓는 칸 2줄 높이 · 낱말 칩 12 · 누를 곳: 칩
+- `밝음/desktop/student_s11-4/step3-1.jpg` — 3단계 5문장 · 마지막 긴 문장 2줄 · 누를 곳: '듣기'
+- `밝음/desktop/student_s11-4/step3-2.jpg` — 3단계 5문장 · 마지막 긴 문장 2줄 · 누를 곳: '듣기'
+- `어둠/desktop/adult/expanded-1.jpg` — 챕터 1 펼침 — 금색 상자 '챕터 전체 파트 듣기' · 누를 곳: 강의 줄
+- `어둠/desktop/adult/expanded-2.jpg` — 챕터 1 펼침 — 금색 상자 '챕터 전체 파트 듣기' · 누를 곳: 강의 줄
+- `어둠/desktop/adult/open-1.jpg` — ADULT 목록 — STUDENT와 같은 틀 · 12개 챕터 카드 · 누를 곳: '이어서 학습'
+- `어둠/desktop/adult/open-2.jpg` — ADULT 목록 — STUDENT와 같은 틀 · 12개 챕터 카드 · 누를 곳: '이어서 학습'
+- `어둠/desktop/adult_a1-2/end-1.jpg` — 끝: 완료 조건 상자 · 이전/다음 Step · 다음 강의(채움) · 누를 곳: '이 강의 학습 완료'(조건 전 꺼짐)
+- `어둠/desktop/adult_a1-2/open-1.jpg` — ADULT 강의 열림: 단계 탭이 데스크톱에서도 번호만(1·블라인드 리스닝 / 2 3 4 5) · 전체 듣기(채움) · 속도 4개 · 가림/영어/해석/모두 · 줄마다 듣기·반복 + 점선 '▶ 먼저 듣기' · 누를 곳: '▶ 듣기' 또는 '전체 듣기'
+- `어둠/desktop/adult_a1-2/step1-1.jpg` — 1단계 블라인드 리스닝 — 줄마다 '▶ 듣기'와 '▶ 먼저 듣기' 두 개가 같은 소리 · 끝 막대 다음 강의(채움, 완료 전) · 누를 곳: '▶ 듣기'
+- `어둠/desktop/adult_a1-2/step1-2.jpg` — 1단계 블라인드 리스닝 — 줄마다 '▶ 듣기'와 '▶ 먼저 듣기' 두 개가 같은 소리 · 끝 막대 다음 강의(채움, 완료 전) · 누를 곳: '▶ 듣기'
+- `어둠/desktop/adult_a1-2/step2-1.jpg` — 2단계 단어: 뜻 보기 · 스피커 · 금색 밑줄 · 빈칸 채우기 4지선다(부산 한글) · 누를 곳: '뜻 보기' → 빈칸 고르기
+- `어둠/desktop/adult_a1-2/step2-2.jpg` — 2단계 단어: 뜻 보기 · 스피커 · 금색 밑줄 · 빈칸 채우기 4지선다(부산 한글) · 누를 곳: '뜻 보기' → 빈칸 고르기
+- `어둠/desktop/adult_a1-2/step3-1.jpg` — 3단계 끊어 읽기: 문장 번호 1~7 · 덩어리별 점선 '뜻 보기' · 끊어 듣기/문장 듣기/다음 문장(채움) · 누를 곳: '뜻 보기' → '다음 문장'
+- `어둠/desktop/adult_a1-2/step3-2.jpg` — 3단계 끊어 읽기: 문장 번호 1~7 · 덩어리별 점선 '뜻 보기' · 끊어 듣기/문장 듣기/다음 문장(채움) · 누를 곳: '뜻 보기' → '다음 문장'
+- `어둠/desktop/adult_a1-2/step4-1.jpg` — 4단계 탭 딕테이션: 점선 놓는 칸 · 낱말 칩 13 · 듣기/힌트/정답 확인(채움) · 누를 곳: 낱말 칩 → '정답 확인'
+- `어둠/desktop/adult_a1-2/step4-2.jpg` — 4단계 탭 딕테이션: 점선 놓는 칸 · 낱말 칩 13 · 듣기/힌트/정답 확인(채움) · 누를 곳: 낱말 칩 → '정답 확인'
+- `어둠/desktop/adult_a1-2/step5-1.jpg` — 5단계 섀도잉: '내 정보 넣기 · 빈칸 10개' 접힘 · 문장마다 영어(눌러 듣기)·우리말·스피커 원(우리말 듣기, 표시 없음)·듣기/반복/말하기/읽었어요 · 완료 조건 상자 안 꺼진 완료 단추 · 누를 곳: '듣기' → '말하기'/'읽었어요'
+- `어둠/desktop/adult_a1-2/step5-2.jpg` — 5단계 섀도잉: '내 정보 넣기 · 빈칸 10개' 접힘 · 문장마다 영어(눌러 듣기)·우리말·스피커 원(우리말 듣기, 표시 없음)·듣기/반복/말하기/읽었어요 · 완료 조건 상자 안 꺼진 완료 단추 · 누를 곳: '듣기' → '말하기'/'읽었어요'
+- `어둠/desktop/adult_a6-2/end-1.jpg` — 끝 막대 — 다음 강의 제목 '…' 잘림 · 누를 곳: '다음 강의'
+- `어둠/desktop/adult_a6-2/open-1.jpg` — ADULT 6-2(Women's Version) 1단계 — 위와 같은 틀 · 제목 '—' · 누를 곳: '▶ 듣기'
+- `어둠/desktop/adult_a6-2/step1-1.jpg` — 1단계 6줄 · 끝 막대 이전/다음(다음 채움, 제목 '…' 잘림) · 누를 곳: '▶ 듣기'
+- `어둠/desktop/adult_a6-2/step1-2.jpg` — 1단계 6줄 · 끝 막대 이전/다음(다음 채움, 제목 '…' 잘림) · 누를 곳: '▶ 듣기'
+- `어둠/desktop/adult_a6-2/step2-1.jpg` — 2단계 단어 8개 · 긴 예문 2줄 · 빈칸 5문제 · 누를 곳: '뜻 보기'
+- `어둠/desktop/adult_a6-2/step2-2.jpg` — 2단계 단어 8개 · 긴 예문 2줄 · 빈칸 5문제 · 누를 곳: '뜻 보기'
+- `어둠/desktop/adult_a6-2/step3-1.jpg` — 3단계 끊어 읽기 문장 1(3덩어리) · 누를 곳: '뜻 보기' → '다음 문장'
+- `어둠/desktop/adult_a6-2/step3-2.jpg` — 3단계 끊어 읽기 문장 1(3덩어리) · 누를 곳: '뜻 보기' → '다음 문장'
+- `어둠/desktop/adult_a6-2/step4-1.jpg` — 4단계 '문장 1/6 · 앞부분 (1/2)' · 낱말 칩 12 · 누를 곳: 낱말 칩 → '정답 확인'
+- `어둠/desktop/adult_a6-2/step4-2.jpg` — 4단계 '문장 1/6 · 앞부분 (1/2)' · 낱말 칩 12 · 누를 곳: 낱말 칩 → '정답 확인'
+- `어둠/desktop/adult_a6-2/step5-1.jpg` — 5단계 긴 문장 6개 · 각 줄 4버튼 · 완료 조건 상자 · 누를 곳: '듣기'
+- `어둠/desktop/adult_a6-2/step5-2.jpg` — 5단계 긴 문장 6개 · 각 줄 4버튼 · 완료 조건 상자 · 누를 곳: '듣기'
+- `어둠/desktop/free_adult_a2-1/license-modal-1.jpg` — 이용권 창: 🔑 이모지 원 · 시리얼 입력 · 등록하기(채움) · 💡 '아직 이용권 코드가 없으신가요?' 안쪽 상자 · '구매 링크 준비 중' 칩(누를 수 없음) · 자간 벌어진 각주 '* 각 코스의 1~2강은…' · 누를 곳: 입력 칸 → '이용권 코드 등록하기'
+- `어둠/desktop/free_adult_a2-1/open-1.jpg` — ADULT 잠김 화면: 자물쇠 원 · 'STUDENT PASS · ALL-PASS' · 이용권 등록(채움)/구매 안내 · 무료 강의 2줄 · 'ADULT 전체 목록' · 누를 곳: '이용권 등록' 또는 무료 강의 줄
+- `어둠/desktop/free_home/open-1.jpg` — 이용권 없는 홈 — 위와 같음 · 누를 곳: '학습 시작하기'
+- `어둠/desktop/grammar1/expanded-1.jpg` — 제 1단계 펼침: 01강~06강 · 같은 제목 '기초 영작 훈련' 반복 · 누를 곳: 강의 줄
+- `어둠/desktop/grammar1/open-1.jpg` — GRAMMAR I 목록: 설명 '…6단계 체계적 문장 구조 정복.' · '제 1단계 : … (Stage 1)' · 누를 곳: '이어서 학습'
+- `어둠/desktop/grammar1/open-2.jpg` — GRAMMAR I 목록: 설명 '…6단계 체계적 문장 구조 정복.' · '제 1단계 : … (Stage 1)' · 누를 곳: '이어서 학습'
+- `어둠/desktop/grammar1_gh1-006/end-1.jpg` — 끝: 작성 0/42 · 더보기 · 이 강의 학습 완료(채움, 조건 없음) · 다음 강의 · 누를 곳: '이 강의 학습 완료'
+- `어둠/desktop/grammar1_gh1-006/open-1.jpg` — GRAMMAR I 01강 4단계로 열림(저장된 단계) · 제목 아래 '제 1단계 (기본 문장 구조)' · 탭 위에 '정답 문장 전체 듣기' 접힘 상자 · Q1~ 입력 · 아래 고정 '작성 0/42 · 전체 시험 채점하기' · 누를 곳: 입력 칸
+- `어둠/desktop/grammar1_gh1-006/step1-1.jpg` — 1단계 영작: '문제 1–10 / 42' · '다음 묶음 →'(위 글자 + 아래 채움 두 번) · 줄마다 입력+마이크 원+'확인'(굵은 테두리)+'빈칸 힌트' · '⋯ 더보기' · 누를 곳: 입력 → 'Enter/확인'
+- `어둠/desktop/grammar1_gh1-006/step1-2.jpg` — 1단계 영작: '문제 1–10 / 42' · '다음 묶음 →'(위 글자 + 아래 채움 두 번) · 줄마다 입력+마이크 원+'확인'(굵은 테두리)+'빈칸 힌트' · '⋯ 더보기' · 누를 곳: 입력 → 'Enter/확인'
+- `어둠/desktop/grammar1_gh1-006/step2-1.jpg` — 2단계 빈칸: 줄마다 우리말·빈칸 상자·별도 줄 '확인' · 728px 중 왼쪽 300px만 씀 · 한 화면 3문제 · 누를 곳: 빈칸 → '확인'
+- `어둠/desktop/grammar1_gh1-006/step2-2.jpg` — 2단계 빈칸: 줄마다 우리말·빈칸 상자·별도 줄 '확인' · 728px 중 왼쪽 300px만 씀 · 한 화면 3문제 · 누를 곳: 빈칸 → '확인'
+- `어둠/desktop/grammar1_gh1-006/step3-1.jpg` — 3단계 구문 각인: 영어·우리말·스피커·'따라 말했어요'·0/3회·별도 줄 '따라 말하고 확인' · 한 화면 3.5문제 · 누를 곳: '따라 말했어요'
+- `어둠/desktop/grammar1_gh1-006/step3-2.jpg` — 3단계 구문 각인: 영어·우리말·스피커·'따라 말했어요'·0/3회·별도 줄 '따라 말하고 확인' · 한 화면 3.5문제 · 누를 곳: '따라 말했어요'
+- `어둠/desktop/grammar1_gh1-006/step4-1.jpg` — 4단계 종합 평가: Q1.~Q42. 입력 · 고정 막대 · 누를 곳: 입력 → '전체 시험 채점하기'
+- `어둠/desktop/grammar1_gh1-006/step4-2.jpg` — 4단계 종합 평가: Q1.~Q42. 입력 · 고정 막대 · 누를 곳: 입력 → '전체 시험 채점하기'
+- `어둠/desktop/grammar1_gh1-074/end-1.jpg` — 끝 · 이전/다음 강의 · 누를 곳: '이 강의 학습 완료'
+- `어둠/desktop/grammar1_gh1-074/open-1.jpg` — 32강 4단계 — 위와 같은 틀 · 누를 곳: 입력 칸
+- `어둠/desktop/grammar1_gh1-074/step1-1.jpg` — 1단계 29문제 · 같은 틀 · 누를 곳: 입력
+- `어둠/desktop/grammar1_gh1-074/step1-2.jpg` — 1단계 29문제 · 같은 틀 · 누를 곳: 입력
+- `어둠/desktop/grammar1_gh1-074/step2-1.jpg` — 2단계 빈칸 2개씩 · '. ' 빈칸 뒤 마침표 떠 있음 · 누를 곳: 빈칸
+- `어둠/desktop/grammar1_gh1-074/step2-2.jpg` — 2단계 빈칸 2개씩 · '. ' 빈칸 뒤 마침표 떠 있음 · 누를 곳: 빈칸
+- `어둠/desktop/grammar1_gh1-074/step3-1.jpg` — 3단계 구문 각인 · 누를 곳: '따라 말했어요'
+- `어둠/desktop/grammar1_gh1-074/step3-2.jpg` — 3단계 구문 각인 · 누를 곳: '따라 말했어요'
+- `어둠/desktop/grammar1_gh1-074/step4-1.jpg` — 4단계 Q1~Q29 · 누를 곳: 입력
+- `어둠/desktop/grammar1_gh1-074/step4-2.jpg` — 4단계 Q1~Q29 · 누를 곳: 입력
+- `어둠/desktop/grammar2/expanded-1.jpg` — 제 7~14과 펼침 · '패턴 영작 훈련' 반복 · 누를 곳: 강의 줄
+- `어둠/desktop/grammar2/expanded-2.jpg` — 제 7~14과 펼침 · '패턴 영작 훈련' 반복 · 누를 곳: 강의 줄
+- `어둠/desktop/grammar2/open-1.jpg` — GRAMMAR II 목록: '…고난도 문형과 어순 감각 완성.' · 누를 곳: '이어서 학습'
+- `어둠/desktop/grammar2/open-2.jpg` — GRAMMAR II 목록: '…고난도 문형과 어순 감각 완성.' · 누를 곳: '이어서 학습'
+- `어둠/desktop/grammar2_gh2-007/end-1.jpg` — 끝 · 다음 강의만 · 누를 곳: '이 강의 학습 완료'
+- `어둠/desktop/grammar2_gh2-007/open-1.jpg` — GRAMMAR II 7과 4단계 — 부제 없음 · 정답 문장 전체 듣기 상자 · 누를 곳: 입력
+- `어둠/desktop/grammar2_gh2-007/step1-1.jpg` — 1단계 16문제 · 긴 우리말 2줄 · 누를 곳: 입력
+- `어둠/desktop/grammar2_gh2-007/step1-2.jpg` — 1단계 16문제 · 긴 우리말 2줄 · 누를 곳: 입력
+- `어둠/desktop/grammar2_gh2-007/step2-1.jpg` — 2단계 빈칸 2개씩 · 문장 길어 폭 씀 · 누를 곳: 빈칸
+- `어둠/desktop/grammar2_gh2-007/step2-2.jpg` — 2단계 빈칸 2개씩 · 문장 길어 폭 씀 · 누를 곳: 빈칸
+- `어둠/desktop/grammar2_gh2-007/step3-1.jpg` — 3단계 · 누를 곳: '따라 말했어요'
+- `어둠/desktop/grammar2_gh2-007/step3-2.jpg` — 3단계 · 누를 곳: '따라 말했어요'
+- `어둠/desktop/grammar2_gh2-007/step4-1.jpg` — 4단계 Q1~Q16 · 누를 곳: 입력
+- `어둠/desktop/grammar2_gh2-007/step4-2.jpg` — 4단계 Q1~Q16 · 누를 곳: 입력
+- `어둠/desktop/grammar2_gh2-033/end-1.jpg` — 끝 · 이전/다음 · 누를 곳: '이 강의 학습 완료'
+- `어둠/desktop/grammar2_gh2-033/open-1.jpg` — 33과 4단계 · 누를 곳: 입력
+- `어둠/desktop/grammar2_gh2-033/step1-1.jpg` — 1단계 17문제 · 9번 '빈칸 힌트' 없음 · 누를 곳: 입력
+- `어둠/desktop/grammar2_gh2-033/step1-2.jpg` — 1단계 17문제 · 9번 '빈칸 힌트' 없음 · 누를 곳: 입력
+- `어둠/desktop/grammar2_gh2-033/step2-1.jpg` — 2단계 · 9번 '빈칸이 없는 문장이에요 — 읽고 들어 보세요.'(11~12px) · 누를 곳: 빈칸
+- `어둠/desktop/grammar2_gh2-033/step2-2.jpg` — 2단계 · 9번 '빈칸이 없는 문장이에요 — 읽고 들어 보세요.'(11~12px) · 누를 곳: 빈칸
+- `어둠/desktop/grammar2_gh2-033/step3-1.jpg` — 3단계 · '부산' 한글 · 누를 곳: '따라 말했어요'
+- `어둠/desktop/grammar2_gh2-033/step3-2.jpg` — 3단계 · '부산' 한글 · 누를 곳: '따라 말했어요'
+- `어둠/desktop/grammar2_gh2-033/step4-1.jpg` — 4단계 Q1~Q17 · 누를 곳: 입력
+- `어둠/desktop/grammar2_gh2-033/step4-2.jpg` — 4단계 Q1~Q17 · 누를 곳: 입력
+- `어둠/desktop/home/open-1.jpg` — 홈 사진 슬라이드(STUDENT) · 'STAGE 01 · CURRICULUM' 고정폭 대문자 칩 · 오른쪽 점 9개 · 'NEXT↓' · 누를 곳: '학습 시작하기' (모양은 사장님 결정 — 손대지 않음)
+- `어둠/desktop/ld/expanded-1.jpg` — Section 1 펼침 50줄 '실전 듣기 평가' · 누를 곳: 강의 줄
+- `어둠/desktop/ld/expanded-2.jpg` — Section 1 펼침 50줄 '실전 듣기 평가' · 누를 곳: 강의 줄
+- `어둠/desktop/ld/open-1.jpg` — LISTENING 목록: '…고음질 음성과 딕테이션 훈련으로 완벽한 청취력을 완성합니다.' · 누를 곳: '이어서 학습'
+- `어둠/desktop/ld_d001/end-1.jpg` — 끝 · 다음 강의만 · 누를 곳: '이 강의 학습 완료'(꺼짐)
+- `어둠/desktop/ld_d001/open-1.jpg` — LISTENING 001회 1단계: 탭 5개 한 줄 · '이 단계는?' · 이름·숫자 칩 · 플레이어 · '들은 내용 확인' 4지선다 2문제 · 누를 곳: 플레이어 ▶
+- `어둠/desktop/ld_d001/step1-1.jpg` — 1단계 — 위와 같음 · 끝 막대 완료(꺼짐) '받아쓰기에서 한 줄을 채점하면…' · 누를 곳: ▶ 재생
+- `어둠/desktop/ld_d001/step1-2.jpg` — 1단계 — 위와 같음 · 끝 막대 완료(꺼짐) '받아쓰기에서 한 줄을 채점하면…' · 누를 곳: ▶ 재생
+- `어둠/desktop/ld_d001/step2-1.jpg` — 2단계 딕테이션: 빈칸/블록/쓰기 탭 · '< 문장 1/6 >' · 듣기 · 느리게 0.75× · 직접 쓰기 · 힌트 접힘 · 빈칸 4개 · 아래 1~4 줄마다 3개 칩(왼쪽 240px만 씀) · 정답 확인 · 누를 곳: 칩 고르기 → '정답 확인'
+- `어둠/desktop/ld_d001/step2-2.jpg` — 2단계 딕테이션: 빈칸/블록/쓰기 탭 · '< 문장 1/6 >' · 듣기 · 느리게 0.75× · 직접 쓰기 · 힌트 접힘 · 빈칸 4개 · 아래 1~4 줄마다 3개 칩(왼쪽 240px만 씀) · 정답 확인 · 누를 곳: 칩 고르기 → '정답 확인'
+- `어둠/desktop/ld_d001/step3-1.jpg` — 3단계 소리클리닉: '< 문장 1/6 >' 위 · 점선 상자 '먼저 받아쓰기 / 그래도 보기' · 문장 듣기 — 짧은 쪽, 화면 옆으로 밀림 · 누를 곳: '먼저 받아쓰기'
+- `어둠/desktop/ld_d001/step4-1.jpg` — 4단계 따라 말하기: '글 가리기' 스위치가 안내 줄 가운데 · 점선 상자 · 우리말 · 문장 듣기 · 그 아래 '< 문장 1/6 >' · 말하기 — 문장 이동 자리가 2·3단계와 다름 · 누를 곳: '문장 듣기' → '말하기'
+- `어둠/desktop/ld_d001/step4-2.jpg` — 4단계 따라 말하기: '글 가리기' 스위치가 안내 줄 가운데 · 점선 상자 · 우리말 · 문장 듣기 · 그 아래 '< 문장 1/6 >' · 말하기 — 문장 이동 자리가 2·3단계와 다름 · 누를 곳: '문장 듣기' → '말하기'
+- `어둠/desktop/ld_d001/step5-1.jpg` — 5단계 다시 듣기: 플레이어 · 처음부터 · 해석 모두 보기 · 점선 상자 · '받아쓰기 전이라 가려 두었어요' 6번 반복 · 메모 · 누를 곳: 플레이어/'먼저 받아쓰기'
+- `어둠/desktop/ld_d001/step5-2.jpg` — 5단계 다시 듣기: 플레이어 · 처음부터 · 해석 모두 보기 · 점선 상자 · '받아쓰기 전이라 가려 두었어요' 6번 반복 · 메모 · 누를 곳: 플레이어/'먼저 받아쓰기'
+- `어둠/desktop/ld_d001-1/end-1.jpg` — 끝 · '이전 강의 001회' · 누를 곳: 완료
+- `어둠/desktop/ld_d001-1/open-1.jpg` — 001회 대본 쪽(-1) — 001회와 같은 화면 · 이전 강의가 '001회'(같은 강의) · 누를 곳: 플레이어
+- `어둠/desktop/ld_d001-1/step1-1.jpg` — 위와 같음 · 끝 막대 '이전 강의 001회 · 다음 강의 002회' · 누를 곳: 플레이어
+- `어둠/desktop/ld_d001-1/step1-2.jpg` — 위와 같음 · 끝 막대 '이전 강의 001회 · 다음 강의 002회' · 누를 곳: 플레이어
+- `어둠/desktop/ld_d001-1/step2-1.jpg` — 2단계 — 001회와 같음 · 누를 곳: 칩
+- `어둠/desktop/ld_d001-1/step2-2.jpg` — 2단계 — 001회와 같음 · 누를 곳: 칩
+- `어둠/desktop/ld_d001-1/step3-1.jpg` — 3단계 · 누를 곳: '먼저 받아쓰기'
+- `어둠/desktop/ld_d001-1/step4-1.jpg` — 4단계 · 누를 곳: '문장 듣기'
+- `어둠/desktop/ld_d001-1/step4-2.jpg` — 4단계 · 누를 곳: '문장 듣기'
+- `어둠/desktop/ld_d001-1/step5-1.jpg` — 5단계 · 누를 곳: 플레이어
+- `어둠/desktop/ld_d001-1/step5-2.jpg` — 5단계 · 누를 곳: 플레이어
+- `어둠/desktop/ld_d166/end-1.jpg` — 끝 · 누를 곳: 완료
+- `어둠/desktop/ld_d166/open-1.jpg` — 166회 1단계: 이름·숫자 칩 9개+더 보기(실제로는 'author', 'measure depth' 같은 구도 섞임) · 3문제 · 누를 곳: 플레이어
+- `어둠/desktop/ld_d166/step1-1.jpg` — 위와 같음 · 누를 곳: 플레이어
+- `어둠/desktop/ld_d166/step1-2.jpg` — 위와 같음 · 누를 곳: 플레이어
+- `어둠/desktop/ld_d166/step2-1.jpg` — 2단계 빈칸 3개 · 누를 곳: 칩
+- `어둠/desktop/ld_d166/step2-2.jpg` — 2단계 빈칸 3개 · 누를 곳: 칩
+- `어둠/desktop/ld_d166/step3-1.jpg` — 3단계 · 누를 곳: '먼저 받아쓰기'
+- `어둠/desktop/ld_d166/step4-1.jpg` — 4단계 · 누를 곳: '문장 듣기'
+- `어둠/desktop/ld_d166/step4-2.jpg` — 4단계 · 누를 곳: '문장 듣기'
+- `어둠/desktop/ld_d166/step5-1.jpg` — 5단계 7줄 가림 · 누를 곳: 플레이어
+- `어둠/desktop/ld_d166/step5-2.jpg` — 5단계 7줄 가림 · 누를 곳: 플레이어
+- `어둠/desktop/nope-404/open-1.jpg` — '404 · NOT FOUND' 고정폭 대문자 11px · 큰 제목 · 알약 모양 '홈으로 가기' · 과정 목록(영어 홍보 문구 줄) · 누를 곳: '홈으로 가기' 또는 과정 줄
+- `어둠/desktop/nope-404/open-2.jpg` — '404 · NOT FOUND' 고정폭 대문자 11px · 큰 제목 · 알약 모양 '홈으로 가기' · 과정 목록(영어 홍보 문구 줄) · 누를 곳: '홈으로 가기' 또는 과정 줄
+- `어둠/desktop/passoff-grammar/expanded-1.jpg` — TOPIC 1 펼침: 1~3인칭 완료 · '구성도 다시 채우기 · 마침' · 누를 곳: 강의 줄
+- `어둠/desktop/passoff-grammar/expanded-2.jpg` — TOPIC 1 펼침: 1~3인칭 완료 · '구성도 다시 채우기 · 마침' · 누를 곳: 강의 줄
+- `어둠/desktop/passoff-grammar/open-1.jpg` — PASS-OFF 목록: TOPIC 카드마다 '진행 0%' + '0/3' 두 번 · 누를 곳: '이어서 학습'
+- `어둠/desktop/passoff-grammar/open-2.jpg` — PASS-OFF 목록: TOPIC 카드마다 '진행 0%' + '0/3' 두 번 · 누를 곳: '이어서 학습'
+- `어둠/desktop/passoff-grammar_map_topic1/open-1.jpg` — 구성도: 빈 칸 3(점선) · 강의 이름 칩 3 · '다음'(꺼짐) — 짧은 쪽이라 스크롤바 없음 → 화면이 옆으로 8px 밀림 · 누를 곳: 이름 칩
+- `어둠/desktop/passoff-grammar_pg01-1/end-1.jpg` — 끝 · 학습 완료함 · 누를 곳: '다음 강의'
+- `어둠/desktop/passoff-grammar_pg01-1/open-1.jpg` — PASS-OFF 1인칭 1단계(완료한 강의): 탭 아래 금색 '1단계' + '예문 떠올리기'(탭과 같은 이름 두 번) · ᴀA 글자 단추 · 문장마다 따로 테두리 상자 5개 · 먼저 말해 보기/영어 보기(채움) · 누를 곳: '영어 보기'
+- `어둠/desktop/passoff-grammar_pg01-1/step1-1.jpg` — 1단계 · 끝 '학습 완료함' 줄 + 다음 강의(채움) · 누를 곳: '영어 보기'
+- `어둠/desktop/passoff-grammar_pg01-1/step1-2.jpg` — 1단계 · 끝 '학습 완료함' 줄 + 다음 강의(채움) · 누를 곳: '영어 보기'
+- `어둠/desktop/passoff-grammar_pg01-1/step2-1.jpg` — 2단계 문법 설명: 먼저 찾아보기 3문장 · '1단계로' · 3지선다 칩 · 누를 곳: 선택지
+- `어둠/desktop/passoff-grammar_pg01-1/step2-2.jpg` — 2단계 문법 설명: 먼저 찾아보기 3문장 · '1단계로' · 3지선다 칩 · 누를 곳: 선택지
+- `어둠/desktop/passoff-grammar_pg01-1/step3-1.jpg` — 3단계 찾기: 낱말 칩 · 확인(꺼짐) · 누를 곳: 낱말 → '확인'
+- `어둠/desktop/passoff-grammar_pg01-1/step3-2.jpg` — 3단계 찾기: 낱말 칩 · 확인(꺼짐) · 누를 곳: 낱말 → '확인'
+- `어둠/desktop/passoff-grammar_pg01-1/step4-1.jpg` — 4단계 영작: 세트 1/2 · 큰 입력 · 마이크로 말해서 영작하기 · 확인 · 누를 곳: 입력 → '확인'
+- `어둠/desktop/passoff-grammar_pg01-1/step4-2.jpg` — 4단계 영작: 세트 1/2 · 큰 입력 · 마이크로 말해서 영작하기 · 확인 · 누를 곳: 입력 → '확인'
+- `어둠/desktop/passoff-grammar_pg01-1/step5-1.jpg` — 5단계 마무리: 처음 보는 문장 1/2 · 누를 곳: 입력
+- `어둠/desktop/passoff-grammar_pg01-1/step5-2.jpg` — 5단계 마무리: 처음 보는 문장 1/2 · 누를 곳: 입력
+- `어둠/desktop/passoff-grammar_pg13-1/end-1.jpg` — 끝 · 이전 강의 'Going Being' · 누를 곳: 완료(꺼짐)
+- `어둠/desktop/passoff-grammar_pg13-1/open-1.jpg` — 부정사 1단계: 8문장 상자 각각 · 끝 막대 완료(꺼짐) '5단계를 모두 마치면…' · 누를 곳: '영어 보기'
+- `어둠/desktop/passoff-grammar_pg13-1/step1-1.jpg` — 1단계 · 누를 곳: '영어 보기'
+- `어둠/desktop/passoff-grammar_pg13-1/step1-2.jpg` — 1단계 · 누를 곳: '영어 보기'
+- `어둠/desktop/passoff-grammar_pg13-1/step2-1.jpg` — 2단계 3지선다(긴 칩) · 누를 곳: 선택지
+- `어둠/desktop/passoff-grammar_pg13-1/step2-2.jpg` — 2단계 3지선다(긴 칩) · 누를 곳: 선택지
+- `어둠/desktop/passoff-grammar_pg13-1/step3-1.jpg` — 3단계 밑줄 뜻 고르기 — 짧은 쪽, 화면 옆으로 밀림 · 누를 곳: 선택지
+- `어둠/desktop/passoff-grammar_pg13-1/step4-1.jpg` — 4단계 'to부정사로' 칩 · 세트 1/4 · 누를 곳: 입력
+- `어둠/desktop/passoff-grammar_pg13-1/step4-2.jpg` — 4단계 'to부정사로' 칩 · 세트 1/4 · 누를 곳: 입력
+- `어둠/desktop/passoff-grammar_pg13-1/step5-1.jpg` — 5단계 · 누를 곳: 입력
+- `어둠/desktop/passoff-grammar_pg13-1/step5-2.jpg` — 5단계 · 누를 곳: 입력
+- `어둠/desktop/passoff-grammar_review/open-1.jpg` — 오늘 복습: '인터넷에 연결되지 않아…'(감사 사본의 막은 요청 탓으로 보임) · 다시 불러오기 · 그만하고 과정 목록으로 · 누를 곳: '다시 불러오기'
+- `어둠/desktop/passoff-grammar_review_notes1/open-1.jpg` — 오답노트: 같은 연결 안내 · 과정 목록으로 · 누를 곳: '다시 불러오기'
+- `어둠/desktop/phonics/expanded-1.jpg` — 중등 1단계 펼침 40줄 · 누를 곳: 강의 줄
+- `어둠/desktop/phonics/expanded-2.jpg` — 중등 1단계 펼침 40줄 · 누를 곳: 강의 줄
+- `어둠/desktop/phonics/open-1.jpg` — VOCA 목록: '…필수 영단어 매트릭스 및 발음 정밀 클리닉.' · 누를 곳: '이어서 학습'
+- `어둠/desktop/phonics_mv1-01/end-1.jpg` — 끝 = 4단계 화면 · 누를 곳: '시작 · 60초'
+- `어둠/desktop/phonics_mv1-01/open-1.jpg` — VOCA 1단계: 뜻 가리기 스위치 · 플레이어 · '1–6번 ▶ 듣기' 묶음 · 3열 단어 카드 30장(카드마다 테두리+동그라미) · 동그라미 설명은 맨 아래 · 누를 곳: 단어 카드
+- `어둠/desktop/phonics_mv1-01/step1-1.jpg` — 1단계 끝: 'here' 카드 마우스 올림 배경이 카드 일부만 덮음 · 동그라미 설명 · 완료(꺼짐) · 누를 곳: 단어 카드
+- `어둠/desktop/phonics_mv1-01/step1-2.jpg` — 1단계 끝: 'here' 카드 마우스 올림 배경이 카드 일부만 덮음 · 동그라미 설명 · 완료(꺼짐) · 누를 곳: 단어 카드
+- `어둠/desktop/phonics_mv1-01/step2-1.jpg` — 2단계 4지선다: '이 뜻의 영어 단어는?' — 짧은 쪽, 화면 옆으로 8px 밀림 · 누를 곳: 보기
+- `어둠/desktop/phonics_mv1-01/step3-1.jpg` — 3단계: '틀린 단어가 없어요' 상자 · 퀴즈 풀러 가기(채움)/전체 30단어로 연습 · 누를 곳: '퀴즈 풀러 가기'
+- `어둠/desktop/phonics_mv1-01/step4-1.jpg` — 4단계: 설명 한 줄 · 시작 · 60초(채움, 폭 전체) · 아래 빈 화면 · 누를 곳: '시작 · 60초'
+- `어둠/desktop/phonics_mv3-38/end-1.jpg` — 끝 · 누를 곳: '시작 · 60초'
+- `어둠/desktop/phonics_mv3-38/open-1.jpg` — VOCA 3단계 38회 1단계 · 뜻 3줄 꺾이는 카드 · 누를 곳: 단어 카드
+- `어둠/desktop/phonics_mv3-38/step1-1.jpg` — 1단계 끝 · 'add' 카드 일부 배경 · 누를 곳: 단어 카드
+- `어둠/desktop/phonics_mv3-38/step1-2.jpg` — 1단계 끝 · 'add' 카드 일부 배경 · 누를 곳: 단어 카드
+- `어둠/desktop/phonics_mv3-38/step2-1.jpg` — 2단계 (어둠: '듣고 알맞은 뜻을 고르세요 · 듣기' 문항) · 누를 곳: 보기
+- `어둠/desktop/phonics_mv3-38/step3-1.jpg` — 3단계 · 누를 곳: '퀴즈 풀러 가기'
+- `어둠/desktop/phonics_mv3-38/step4-1.jpg` — 4단계 · 누를 곳: '시작 · 60초'
+- `어둠/desktop/reading/expanded-1.jpg` — Section 1 펼침 · 줄마다 '76단어 · 5문장' · 누를 곳: 강의 줄
+- `어둠/desktop/reading/expanded-2.jpg` — Section 1 펼침 · 줄마다 '76단어 · 5문장' · 누를 곳: 강의 줄
+- `어둠/desktop/reading/menu-open-1.jpg` — 메뉴 서랍: 과정 9개(CNN NEWS 포함) · '올패스 이용 중 · 확인' · '처음 화면으로' · 누를 곳: 과정 이름
+- `어둠/desktop/reading/open-1.jpg` — READING 목록: '…문해력과 직독직해 능력을 완성합니다.' · 누를 곳: '이어서 학습'
+- `어둠/desktop/reading/open-2.jpg` — READING 목록: '…문해력과 직독직해 능력을 완성합니다.' · 누를 곳: '이어서 학습'
+- `어둠/desktop/reading/search-open-1.jpg` — 검색 창: 결과마다 '🎙️ 실전 회화' 이모지 꼬리표 · 아래 '↑↓ 고르기 Enter 이동 Esc 닫기' · 머리줄 '⌘K' · 누를 곳: 결과 줄
+- `어둠/desktop/reading_pr001/end-1.jpg` — 끝 · 완료(꺼짐) '4단계에서 지문을 다시 읽고…' · 누를 곳: '읽기 시작'
+- `어둠/desktop/reading_pr001/open-1.jpg` — READING 001회 1단계: 안내 1줄 · '76단어 · 5문장' · 'Aa' 단추(글자) · 지문 상자(세리프 글꼴) · 다 읽었어요(채움) · 누를 곳: '다 읽었어요'
+- `어둠/desktop/reading_pr001/step1-1.jpg` — 1단계 끝 · 완료(꺼짐) 이유 · 다음 강의 · 누를 곳: '다 읽었어요'
+- `어둠/desktop/reading_pr001/step1-2.jpg` — 1단계 끝 · 완료(꺼짐) 이유 · 다음 강의 · 누를 곳: '다 읽었어요'
+- `어둠/desktop/reading_pr001/step2-1.jpg` — 2단계 핵심 어휘 14줄: 뜻 보기·스피커 원 · 금색 밑줄 · 아래 빈칸 채우기 · 누를 곳: '뜻 보기'
+- `어둠/desktop/reading_pr001/step2-2.jpg` — 2단계 핵심 어휘 14줄: 뜻 보기·스피커 원 · 금색 밑줄 · 아래 빈칸 채우기 · 누를 곳: '뜻 보기'
+- `어둠/desktop/reading_pr001/step3-1.jpg` — 3단계 원문 대조: '영어 · 한글' 칸 글자가 두 줄로 꺾임 · Aa · 안내 2줄 · 플레이어 · 번호 원 + 영(세리프)·한 두 칸 · 소리 내어 읽기 · 메모 · 누를 곳: 플레이어/줄
+- `어둠/desktop/reading_pr001/step3-2.jpg` — 3단계 원문 대조: '영어 · 한글' 칸 글자가 두 줄로 꺾임 · Aa · 안내 2줄 · 플레이어 · 번호 원 + 영(세리프)·한 두 칸 · 소리 내어 읽기 · 메모 · 누를 곳: 플레이어/줄
+- `어둠/desktop/reading_pr001/step4-1.jpg` — 4단계: 읽기 시작(채움, 작게) · 이해 문제 2개가 읽기 전에 이미 보이고 바로 고를 수 있음 · 누를 곳: '읽기 시작'
+- `어둠/desktop/reading_pr001/step4-2.jpg` — 4단계: 읽기 시작(채움, 작게) · 이해 문제 2개가 읽기 전에 이미 보이고 바로 고를 수 있음 · 누를 곳: '읽기 시작'
+- `어둠/desktop/reading_pr001-1/end-1.jpg` — 끝 · 누를 곳: '읽기 시작'
+- `어둠/desktop/reading_pr001-1/open-1.jpg` — 001회 대본 쪽 — 001회와 같은 화면 · 누를 곳: '다 읽었어요'
+- `어둠/desktop/reading_pr001-1/step1-1.jpg` — 위와 같음 · 이전 강의 001회(같은 강의) · 누를 곳: '다 읽었어요'
+- `어둠/desktop/reading_pr001-1/step1-2.jpg` — 위와 같음 · 이전 강의 001회(같은 강의) · 누를 곳: '다 읽었어요'
+- `어둠/desktop/reading_pr001-1/step2-1.jpg` — 2단계 · 누를 곳: '뜻 보기'
+- `어둠/desktop/reading_pr001-1/step2-2.jpg` — 2단계 · 누를 곳: '뜻 보기'
+- `어둠/desktop/reading_pr001-1/step3-1.jpg` — 3단계 · '영어 · 한글' 두 줄 · 누를 곳: 플레이어
+- `어둠/desktop/reading_pr001-1/step3-2.jpg` — 3단계 · '영어 · 한글' 두 줄 · 누를 곳: 플레이어
+- `어둠/desktop/reading_pr001-1/step4-1.jpg` — 4단계 · 누를 곳: '읽기 시작'
+- `어둠/desktop/reading_pr001-1/step4-2.jpg` — 4단계 · 누를 곳: '읽기 시작'
+- `어둠/desktop/reading_pr154/end-1.jpg` — 끝 · 누를 곳: '읽기 시작'
+- `어둠/desktop/reading_pr154/open-1.jpg` — 154회 1단계 · 지문 속 '한지' 한글이 세리프 영어와 다른 글꼴로 튐 · 누를 곳: '다 읽었어요'
+- `어둠/desktop/reading_pr154/step1-1.jpg` — 1단계 끝 · 누를 곳: '다 읽었어요'
+- `어둠/desktop/reading_pr154/step1-2.jpg` — 1단계 끝 · 누를 곳: '다 읽었어요'
+- `어둠/desktop/reading_pr154/step2-1.jpg` — 2단계 14줄 · 누를 곳: '뜻 보기'
+- `어둠/desktop/reading_pr154/step2-2.jpg` — 2단계 14줄 · 누를 곳: '뜻 보기'
+- `어둠/desktop/reading_pr154/step3-1.jpg` — 3단계 8문장 · '영어 · 한글' 두 줄 · 누를 곳: 플레이어
+- `어둠/desktop/reading_pr154/step3-2.jpg` — 3단계 8문장 · '영어 · 한글' 두 줄 · 누를 곳: 플레이어
+- `어둠/desktop/reading_pr154/step4-1.jpg` — 4단계 · 2번 문제 한 줄 꽉 참 · 누를 곳: '읽기 시작'
+- `어둠/desktop/reading_pr154/step4-2.jpg` — 4단계 · 2번 문제 한 줄 꽉 참 · 누를 곳: '읽기 시작'
+- `어둠/desktop/student/expanded-1.jpg` — 챕터 1 펼침: 금색 바탕 상자 '챕터 전체 파트 듣기 / 6개 파트 연속 재생(11.5px)' · 강의 줄 6개 · 나머지 챕터 카드 · 누를 곳: 강의 줄
+- `어둠/desktop/student/expanded-2.jpg` — 챕터 1 펼침: 금색 바탕 상자 '챕터 전체 파트 듣기 / 6개 파트 연속 재생(11.5px)' · 강의 줄 6개 · 나머지 챕터 카드 · 누를 곳: 강의 줄
+- `어둠/desktop/student/open-1.jpg` — STUDENT 목록: 설명 '…마스터하는…' · 이어서 학습(채움) · 진도 · 전체/북마크/미완료 · 챕터 카드 하나씩 테두리 · 누를 곳: '이어서 학습'
+- `어둠/desktop/student/open-2.jpg` — STUDENT 목록: 설명 '…마스터하는…' · 이어서 학습(채움) · 진도 · 전체/북마크/미완료 · 챕터 카드 하나씩 테두리 · 누를 곳: '이어서 학습'
+- `어둠/desktop/student_s1-1/end-1.jpg` — 끝: '완료한 강의' 상자 안 '다음 강의: Ch 1-2…'(채움) + 끝 막대 '다음 강의 Ch 1-2'(채움) — 같은 단추 두 벌 · 누를 곳: '다음 강의'
+- `어둠/desktop/student_s1-1/open-1.jpg` — STUDENT 1-1 1단계(완료한 강의): 전체 듣기(채움) · 속도 0.7/0.85/1/1.2 · 가림/영어/해석/모두 · 줄마다 '▶ 듣기'+'▶ 먼저 듣기'(같은 소리 두 단추) · 누를 곳: '▶ 듣기'
+- `어둠/desktop/student_s1-1/step1-1.jpg` — 1단계 끝 · 끝 막대 다음 강의(채움) · 누를 곳: '▶ 듣기'
+- `어둠/desktop/student_s1-1/step1-2.jpg` — 1단계 끝 · 끝 막대 다음 강의(채움) · 누를 곳: '▶ 듣기'
+- `어둠/desktop/student_s1-1/step2-1.jpg` — 2단계 탭 딕테이션: 문장 1~3 · 우리말 힌트 · 점선 놓는 칸 · 낱말 칩 8 · 듣기/힌트/정답 확인(채움) · 누를 곳: 칩 → '정답 확인'
+- `어둠/desktop/student_s1-1/step2-2.jpg` — 2단계 탭 딕테이션: 문장 1~3 · 우리말 힌트 · 점선 놓는 칸 · 낱말 칩 8 · 듣기/힌트/정답 확인(채움) · 누를 곳: 칩 → '정답 확인'
+- `어둠/desktop/student_s1-1/step3-1.jpg` — 3단계 섀도잉: 영어 가리기 · 문장(눌러 듣기)·우리말·스피커 원(우리말 듣기, 표시 없음) · 듣기/반복/말하기/읽었어요 · 누를 곳: '듣기' → '말하기'
+- `어둠/desktop/student_s1-1/step3-2.jpg` — 3단계 섀도잉: 영어 가리기 · 문장(눌러 듣기)·우리말·스피커 원(우리말 듣기, 표시 없음) · 듣기/반복/말하기/읽었어요 · 누를 곳: '듣기' → '말하기'
+- `어둠/desktop/student_s11-4/end-1.jpg` — 끝: 완료 조건 상자(완료 꺼짐, 오른쪽 작게) + 끝 막대 다음 강의(채움) · 누를 곳: '다음 강의'(채움)가 가장 눈에 띔
+- `어둠/desktop/student_s11-4/open-1.jpg` — STUDENT 11-4 1단계 5줄 · 제목 길어 한 줄 · 누를 곳: '▶ 듣기'
+- `어둠/desktop/student_s11-4/step1-1.jpg` — 1단계 끝 · 이전 강의 제목 '…' 잘림 · 다음 강의(채움, 완료 전) · 누를 곳: '▶ 듣기'
+- `어둠/desktop/student_s11-4/step1-2.jpg` — 1단계 끝 · 이전 강의 제목 '…' 잘림 · 다음 강의(채움, 완료 전) · 누를 곳: '▶ 듣기'
+- `어둠/desktop/student_s11-4/step2-1.jpg` — 2단계 · 놓는 칸 2줄 높이 · 낱말 칩 12 · 누를 곳: 칩
+- `어둠/desktop/student_s11-4/step2-2.jpg` — 2단계 · 놓는 칸 2줄 높이 · 낱말 칩 12 · 누를 곳: 칩
+- `어둠/desktop/student_s11-4/step3-1.jpg` — 3단계 5문장 · 마지막 긴 문장 2줄 · 누를 곳: '듣기'
+- `어둠/desktop/student_s11-4/step3-2.jpg` — 3단계 5문장 · 마지막 긴 문장 2줄 · 누를 곳: '듣기'
+
+[어둠] 채운 단추가 밝은 바탕(흰색)으로 뒤집힘 — 한 화면에 채운 단추 하나는 그대로 지켜짐. 강의·목록 대비 미달 없음(metrics). 꺼진 완료 단추 가운데 256px 폭의 진한 띠는 화면 그리기 타일 흔적으로 보여 결함으로 세지 않음.

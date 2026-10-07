@@ -5,7 +5,9 @@
  *   - robots.txt and sitemap.xml: every listed URL fetched (status, redirect, noindex)
  *   - metadata on the home page, a course list, a free lesson and a paid lesson
  *   - legal / contact / refund / business information anywhere in the served HTML
- *   - the purchase path a buyer would follow (paywall → purchase link)
+ *   - the purchase path a buyer would follow (paywall → purchase link) — paywall.purchasePath:
+ *     link · registerOnly(store address not set yet, 2026-10-07) · deadEnd(the old '구매 안내' that reopened the
+ *     registration window) · none. Note legal.purchase no longer hits the paid page while the address is unset.
  *   - third-party origins requested by the HTML (trackers)
  * Output: out/commercial.json
  */
@@ -74,9 +76,21 @@ const get = async (url, headers = {}) => {
   const paywall = paid.text.match(/[^<>]{0,80}(ALL-PASS ONLY|VIP ALL-PASS REQUIRED|STUDENT PASS ONLY|STUDENT PASS · ALL-PASS)[^<>]{0,200}/);
   out.paywall = {
     markerContext: paywall ? paywall[0].replace(/\s+/g, " ").trim() : null,
+    // UI검토-1007 2번(2026-10-07 사장님): NEXT_PUBLIC_PURCHASE_URL 이 있으면 잠김 화면에 '이용권 구매하기'(그 주소 · 새 탭),
+    // 없으면 구매 쪽은 아무것도 그리지 않음 — '이용권 등록' 하나. 셋 중 하나: link(살 길 있음) · registerOnly(주소 전, 막다른 길 없음) ·
+    // deadEnd(옛 꼴 — 이용권 창만 다시 여는 '구매 안내' 단추나 '구매 링크 준비 중'이 남음 → 고칠 것).
     purchaseLinkPresent: /href="https?:\/\/(?!k-ig-core)[^"]+"[^>]*>\s*[^<]*구매/i.test(paid.text),
     purchaseComingSoon: /구매 링크 준비 중/.test(paid.text),
+    purchaseGuideButton: /<button[^>]*>\s*구매 안내\s*</.test(paid.text),
+    registerButton: /<button[^>]*>\s*이용권 등록\s*</.test(paid.text),
   };
+  out.paywall.purchasePath = out.paywall.purchaseLinkPresent
+    ? "link"
+    : out.paywall.purchaseGuideButton || out.paywall.purchaseComingSoon
+      ? "deadEnd"
+      : out.paywall.registerButton
+        ? "registerOnly"
+        : "none";
   fs.mkdirSync(OUT, { recursive: true });
   fs.writeFileSync(path.join(OUT, "commercial.json"), JSON.stringify(out, null, 1));
   console.log(JSON.stringify({ robots: out.robots, sitemap: { count: out.sitemap.urlCount, notOk: out.sitemapChecked.notOk, noindex: out.sitemapChecked.noindex.length }, meta: out.meta, legal: out.legal, externalOrigins: out.externalOrigins, paywall: out.paywall }, null, 1));

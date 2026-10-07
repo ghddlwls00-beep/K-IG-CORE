@@ -49,7 +49,11 @@ import { markLessonDone, readCourseRecord, recordAttempt } from "@/lib/learning/
 import type { AnswerMode, Help } from "@/lib/learning/types";
 import { grammarItemKey, grammarLearningProfile } from "@/lib/grammarLearning";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
-import { LESSON_COMPLETE_EVENT } from "./ProgressProvider";
+import { LESSON_COMPLETE_EVENT, useProgress } from "./ProgressProvider";
+import { clearLessonGate, setLessonGate } from "@/lib/lessonGate";
+
+/** the end bar's line under the disabled '이 강의 학습 완료' (2026-10-07 — D02 나 for GRAMMAR) */
+const GRAMMAR_GATE_REASON = "1단계에서 한 문제를 확인하면 완료할 수 있어요.";
 
 export interface GrammarItem {
   id: number;
@@ -796,6 +800,34 @@ export function GrammarLearningView({
     window.addEventListener(LESSON_COMPLETE_EVENT, onComplete);
     return () => window.removeEventListener(LESSON_COMPLETE_EVENT, onComplete);
   }, [course, lessonId, learningProfile, items, selfGrades, hints, examResult, examAnswers]);
+
+  /**
+   * 2026-10-07 (사장님 결정 · UI검토-1007 결과.md 2장 5번 — 9/27 D02 나 for GRAMMAR too): '이 강의 학습 완료' opens once one Step 1
+   * item was checked, read from the lesson's saved work: 확인 grades it (selfGrades — a typed answer, a hinted one, or the second
+   * 확인 on an empty box that opens the answer), or a spoken answer was checked (its box holds the words and its answer panel is
+   * open — 확인 sets no grade for a spoken one), or a finished Step 1 round is on record (lastRun). '전체 정답 보기' alone opens
+   * no gate (it writes no answer). A lesson completed — or seen completed on this screen — stays completable, and a completed
+   * lesson can always be un-completed (lessonGate). Registered after the saved work was read.
+   */
+  const { isCompleted } = useProgress();
+  const lessonCompleted = isCompleted(course, lessonId);
+  // the lesson id it was seen completed for — this view is not keyed by lesson, so a plain flag would carry to the next one
+  const [seenCompletedId, setSeenCompletedId] = useState<string | null>(null);
+  if (lessonCompleted && seenCompletedId !== lessonId) setSeenCompletedId(lessonId);
+  const step1Checked =
+    items.length === 0 || // nothing to check (no lesson today — never a dead end)
+    lastRun !== null ||
+    items.some(
+      (it) =>
+        selfGrades[it.id] !== undefined ||
+        (revealedAnswers[rk("composition", it.id)] === true && (answers[it.id] || "").trim() !== ""),
+    );
+  const gateReady = step1Checked || lessonCompleted || seenCompletedId === lessonId;
+  useEffect(() => {
+    if (!restored) return;
+    setLessonGate(course, lessonId, { ready: gateReady, reason: GRAMMAR_GATE_REASON });
+  }, [restored, course, lessonId, gateReady]);
+  useEffect(() => () => clearLessonGate(course, lessonId), [course, lessonId]);
 
   // The microphone: asked once for the whole view (GRM-U09).
   useEffect(() => {

@@ -1,0 +1,446 @@
+[
+ {
+  "theme": "light",
+  "vp": "phone",
+  "paywallFound": true,
+  "clicked": true,
+  "open": true,
+  "info": {
+   "theme": "light",
+   "text": "STUDENT PASS · ALL-PASS\nSTUDENT 이용권이나 올패스를 등록하면 학습할 수 있는 강의입니다\n\n받으신 STUDENT 이용권이나 올패스 코드를 등록하면 ADULT 과정 전체를 학습할 수 있습니다.\n\n이용권 등록\n구매 안내\n\n이용권 없이 먼저 해 볼 수 있는 강의\n\nPart 1 · Greeting (인사)\n→\nPart 2 · Name ~ Age (이름~나이)\n→\n← ADULT 전체 목록",
+   "btns": [
+    {
+     "t": "이용권 등록",
+     "h": 48,
+     "w": 154,
+     "href": null,
+     "target": null
+    },
+    {
+     "t": "구매 안내",
+     "h": 48,
+     "w": 154,
+     "href": null,
+     "target": null
+    },
+    {
+     "t": "Part 1 · Greeting (인사)\n→",
+     "h": 44,
+     "w": 316,
+     "href": "/adult/a1-1",
+     "target": null
+    },
+    {
+     "t": "Part 2 · Name ~ Age (이름~나이)\n→",
+     "h": 44,
+     "w": 316,
+     "href": "/adult/a1-2",
+     "target": null
+    },
+    {
+     "t": "← ADULT 전체 목록",
+     "h": 44,
+     "w": 139,
+     "href": "/adult",
+     "target": null
+    }
+   ],
+   "overflowX": false
+  },
+  "modal": {
+   "text": "🔑\nK-IG 이용권 등록\n\n발급받으신 코드를 등록하여 학습을 시작하세요.\n\n✕\n이용권 시리얼 코드\n현재 기기: Windows 데스크탑 (Edge)\n1인 최대 2대 기기 지원\n이용권 코드 등록하기\n💡 아직 이용권 코드가 없으신가요?\n\n공식 판매처에서 이용권을 구매한 뒤 발급받은 인증 코드를 등록해 주세요.\n\n구매 링크 준비 중\n\n※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체험하실 수 있습니다.",
+   "rect": [
+    358,
+    459
+   ],
+   "ctl": [
+    {
+     "tag": "BUTTON",
+     "id": null,
+     "t": "✕",
+     "w": 28,
+     "h": 28,
+     "fs": "12px",
+     "href": null,
+     "target": null
+    },
+    {
+     "tag": "INPUT",
+     "id": "license-code",
+     "t": "",
+     "w": 308,
+     "h": 46,
+     "fs": "16px",
+     "href": null,
+     "target": null
+    },
+    {
+     "tag": "BUTTON",
+     "id": null,
+     "t": "이용권 코드 등록하기",
+     "w": 308,
+     "h": 40,
+     "fs": "13px",
+     "href": null,
+     "target": null
+    }
+   ],
+   "tiny": [
+    "현재 기기: Windows 데스크탑 (Edge)",
+    "Windows 데스크탑 (Edge)",
+    "1인 최대 2대 기기 지원",
+    "💡 아직 이용권 코드가 없으신가요?",
+    "공식 판매처에서 이용권을 구매한 뒤 발급받은 인증 코드",
+    "구매 링크 준비 중",
+    "※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체"
+   ],
+   "mono": [
+    "※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체"
+   ],
+   "focus": "license-code",
+   "labelFor": true,
+   "placeholder": "KIG-1Y-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX"
+  },
+  "closed": {
+   "open": false,
+   "focus": "K‑IG\n교육\n←\nADULT 목록\nP"
+  },
+  "files": [
+   "docs\\qa-2026-09-18\\UI검토-1007\\고침\\fix-license\\before\\light-phone-paywall.png",
+   "docs\\qa-2026-09-18\\UI검토-1007\\고침\\fix-license\\before\\light-phone-modal.png"
+  ]
+ },
+ {
+  "theme": "light",
+  "vp": "desktop",
+  "paywallFound": true,
+  "clicked": true,
+  "open": true,
+  "info": {
+   "theme": "light",
+   "text": "STUDENT PASS · ALL-PASS\nSTUDENT 이용권이나 올패스를 등록하면 학습할 수 있는 강의입니다\n\n받으신 STUDENT 이용권이나 올패스 코드를 등록하면 ADULT 과정 전체를 학습할 수 있습니다.\n\n이용권 등록\n구매 안내\n\n이용권 없이 먼저 해 볼 수 있는 강의\n\nPart 1 · Greeting (인사)\n→\nPart 2 · Name ~ Age (이름~나이)\n→\n← ADULT 전체 목록",
+   "btns": [
+    {
+     "t": "이용권 등록",
+     "h": 48,
+     "w": 188,
+     "href": null,
+     "target": null
+    },
+    {
+     "t": "구매 안내",
+     "h": 48,
+     "w": 188,
+     "href": null,
+     "target": null
+    },
+    {
+     "t": "Part 1 · Greeting (인사)\n→",
+     "h": 44,
+     "w": 384,
+     "href": "/adult/a1-1",
+     "target": null
+    },
+    {
+     "t": "Part 2 · Name ~ Age (이름~나이)\n→",
+     "h": 44,
+     "w": 384,
+     "href": "/adult/a1-2",
+     "target": null
+    },
+    {
+     "t": "← ADULT 전체 목록",
+     "h": 44,
+     "w": 139,
+     "href": "/adult",
+     "target": null
+    }
+   ],
+   "overflowX": false
+  },
+  "modal": {
+   "text": "🔑\nK-IG 이용권 등록\n\n발급받으신 코드를 등록하여 학습을 시작하세요.\n\n✕\n이용권 시리얼 코드\n현재 기기: Windows 데스크탑 (Edge)\n1인 최대 2대 기기 지원\n이용권 코드 등록하기\n💡 아직 이용권 코드가 없으신가요?\n\n공식 판매처에서 이용권을 구매한 뒤 발급받은 인증 코드를 등록해 주세요.\n\n구매 링크 준비 중\n\n※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체험하실 수 있습니다.",
+   "rect": [
+    448,
+    433
+   ],
+   "ctl": [
+    {
+     "tag": "BUTTON",
+     "id": null,
+     "t": "✕",
+     "w": 28,
+     "h": 28,
+     "fs": "12px",
+     "href": null,
+     "target": null
+    },
+    {
+     "tag": "INPUT",
+     "id": "license-code",
+     "t": "",
+     "w": 390,
+     "h": 46,
+     "fs": "16px",
+     "href": null,
+     "target": null
+    },
+    {
+     "tag": "BUTTON",
+     "id": null,
+     "t": "이용권 코드 등록하기",
+     "w": 390,
+     "h": 40,
+     "fs": "13px",
+     "href": null,
+     "target": null
+    }
+   ],
+   "tiny": [
+    "현재 기기: Windows 데스크탑 (Edge)",
+    "Windows 데스크탑 (Edge)",
+    "1인 최대 2대 기기 지원",
+    "💡 아직 이용권 코드가 없으신가요?",
+    "공식 판매처에서 이용권을 구매한 뒤 발급받은 인증 코드",
+    "구매 링크 준비 중",
+    "※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체"
+   ],
+   "mono": [
+    "※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체"
+   ],
+   "focus": "license-code",
+   "labelFor": true,
+   "placeholder": "KIG-1Y-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX"
+  },
+  "closed": {
+   "open": false,
+   "focus": "K‑IG\n교육\n이용권 등록\n검색\n⌘K"
+  },
+  "files": [
+   "docs\\qa-2026-09-18\\UI검토-1007\\고침\\fix-license\\before\\light-desktop-paywall.png",
+   "docs\\qa-2026-09-18\\UI검토-1007\\고침\\fix-license\\before\\light-desktop-modal.png"
+  ]
+ },
+ {
+  "theme": "dark",
+  "vp": "phone",
+  "paywallFound": true,
+  "clicked": true,
+  "open": true,
+  "info": {
+   "theme": "dark",
+   "text": "STUDENT PASS · ALL-PASS\nSTUDENT 이용권이나 올패스를 등록하면 학습할 수 있는 강의입니다\n\n받으신 STUDENT 이용권이나 올패스 코드를 등록하면 ADULT 과정 전체를 학습할 수 있습니다.\n\n이용권 등록\n구매 안내\n\n이용권 없이 먼저 해 볼 수 있는 강의\n\nPart 1 · Greeting (인사)\n→\nPart 2 · Name ~ Age (이름~나이)\n→\n← ADULT 전체 목록",
+   "btns": [
+    {
+     "t": "이용권 등록",
+     "h": 48,
+     "w": 154,
+     "href": null,
+     "target": null
+    },
+    {
+     "t": "구매 안내",
+     "h": 48,
+     "w": 154,
+     "href": null,
+     "target": null
+    },
+    {
+     "t": "Part 1 · Greeting (인사)\n→",
+     "h": 44,
+     "w": 316,
+     "href": "/adult/a1-1",
+     "target": null
+    },
+    {
+     "t": "Part 2 · Name ~ Age (이름~나이)\n→",
+     "h": 44,
+     "w": 316,
+     "href": "/adult/a1-2",
+     "target": null
+    },
+    {
+     "t": "← ADULT 전체 목록",
+     "h": 44,
+     "w": 139,
+     "href": "/adult",
+     "target": null
+    }
+   ],
+   "overflowX": false
+  },
+  "modal": {
+   "text": "🔑\nK-IG 이용권 등록\n\n발급받으신 코드를 등록하여 학습을 시작하세요.\n\n✕\n이용권 시리얼 코드\n현재 기기: Windows 데스크탑 (Edge)\n1인 최대 2대 기기 지원\n이용권 코드 등록하기\n💡 아직 이용권 코드가 없으신가요?\n\n공식 판매처에서 이용권을 구매한 뒤 발급받은 인증 코드를 등록해 주세요.\n\n구매 링크 준비 중\n\n※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체험하실 수 있습니다.",
+   "rect": [
+    358,
+    459
+   ],
+   "ctl": [
+    {
+     "tag": "BUTTON",
+     "id": null,
+     "t": "✕",
+     "w": 28,
+     "h": 28,
+     "fs": "12px",
+     "href": null,
+     "target": null
+    },
+    {
+     "tag": "INPUT",
+     "id": "license-code",
+     "t": "",
+     "w": 308,
+     "h": 46,
+     "fs": "16px",
+     "href": null,
+     "target": null
+    },
+    {
+     "tag": "BUTTON",
+     "id": null,
+     "t": "이용권 코드 등록하기",
+     "w": 308,
+     "h": 40,
+     "fs": "13px",
+     "href": null,
+     "target": null
+    }
+   ],
+   "tiny": [
+    "현재 기기: Windows 데스크탑 (Edge)",
+    "Windows 데스크탑 (Edge)",
+    "1인 최대 2대 기기 지원",
+    "💡 아직 이용권 코드가 없으신가요?",
+    "공식 판매처에서 이용권을 구매한 뒤 발급받은 인증 코드",
+    "구매 링크 준비 중",
+    "※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체"
+   ],
+   "mono": [
+    "※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체"
+   ],
+   "focus": "license-code",
+   "labelFor": true,
+   "placeholder": "KIG-1Y-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX"
+  },
+  "closed": {
+   "open": false,
+   "focus": "K‑IG\n교육\n←\nADULT 목록\nP"
+  },
+  "files": [
+   "docs\\qa-2026-09-18\\UI검토-1007\\고침\\fix-license\\before\\dark-phone-paywall.png",
+   "docs\\qa-2026-09-18\\UI검토-1007\\고침\\fix-license\\before\\dark-phone-modal.png"
+  ]
+ },
+ {
+  "theme": "dark",
+  "vp": "desktop",
+  "paywallFound": true,
+  "clicked": true,
+  "open": true,
+  "info": {
+   "theme": "dark",
+   "text": "STUDENT PASS · ALL-PASS\nSTUDENT 이용권이나 올패스를 등록하면 학습할 수 있는 강의입니다\n\n받으신 STUDENT 이용권이나 올패스 코드를 등록하면 ADULT 과정 전체를 학습할 수 있습니다.\n\n이용권 등록\n구매 안내\n\n이용권 없이 먼저 해 볼 수 있는 강의\n\nPart 1 · Greeting (인사)\n→\nPart 2 · Name ~ Age (이름~나이)\n→\n← ADULT 전체 목록",
+   "btns": [
+    {
+     "t": "이용권 등록",
+     "h": 48,
+     "w": 188,
+     "href": null,
+     "target": null
+    },
+    {
+     "t": "구매 안내",
+     "h": 48,
+     "w": 188,
+     "href": null,
+     "target": null
+    },
+    {
+     "t": "Part 1 · Greeting (인사)\n→",
+     "h": 44,
+     "w": 384,
+     "href": "/adult/a1-1",
+     "target": null
+    },
+    {
+     "t": "Part 2 · Name ~ Age (이름~나이)\n→",
+     "h": 44,
+     "w": 384,
+     "href": "/adult/a1-2",
+     "target": null
+    },
+    {
+     "t": "← ADULT 전체 목록",
+     "h": 44,
+     "w": 139,
+     "href": "/adult",
+     "target": null
+    }
+   ],
+   "overflowX": false
+  },
+  "modal": {
+   "text": "🔑\nK-IG 이용권 등록\n\n발급받으신 코드를 등록하여 학습을 시작하세요.\n\n✕\n이용권 시리얼 코드\n현재 기기: Windows 데스크탑 (Edge)\n1인 최대 2대 기기 지원\n이용권 코드 등록하기\n💡 아직 이용권 코드가 없으신가요?\n\n공식 판매처에서 이용권을 구매한 뒤 발급받은 인증 코드를 등록해 주세요.\n\n구매 링크 준비 중\n\n※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체험하실 수 있습니다.",
+   "rect": [
+    448,
+    433
+   ],
+   "ctl": [
+    {
+     "tag": "BUTTON",
+     "id": null,
+     "t": "✕",
+     "w": 28,
+     "h": 28,
+     "fs": "12px",
+     "href": null,
+     "target": null
+    },
+    {
+     "tag": "INPUT",
+     "id": "license-code",
+     "t": "",
+     "w": 390,
+     "h": 46,
+     "fs": "16px",
+     "href": null,
+     "target": null
+    },
+    {
+     "tag": "BUTTON",
+     "id": null,
+     "t": "이용권 코드 등록하기",
+     "w": 390,
+     "h": 40,
+     "fs": "13px",
+     "href": null,
+     "target": null
+    }
+   ],
+   "tiny": [
+    "현재 기기: Windows 데스크탑 (Edge)",
+    "Windows 데스크탑 (Edge)",
+    "1인 최대 2대 기기 지원",
+    "💡 아직 이용권 코드가 없으신가요?",
+    "공식 판매처에서 이용권을 구매한 뒤 발급받은 인증 코드",
+    "구매 링크 준비 중",
+    "※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체"
+   ],
+   "mono": [
+    "※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체"
+   ],
+   "focus": "license-code",
+   "labelFor": true,
+   "placeholder": "KIG-1Y-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX"
+  },
+  "closed": {
+   "open": false,
+   "focus": "K‑IG\n교육\n이용권 등록\n검색\n⌘K"
+  },
+  "files": [
+   "docs\\qa-2026-09-18\\UI검토-1007\\고침\\fix-license\\before\\dark-desktop-paywall.png",
+   "docs\\qa-2026-09-18\\UI검토-1007\\고침\\fix-license\\before\\dark-desktop-modal.png"
+  ]
+ }
+]

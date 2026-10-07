@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { cookies } from "next/headers";
 import type { Metadata } from "next";
+import { LICENSE_SESSION_COOKIE_NAME } from "@/lib/licenseSession";
+import { verifyLicenseToken } from "@/lib/serverLicense";
+import { planOpensCourse } from "@/lib/license";
 import { T } from "@/components/LanguageProvider";
 import { getCourseIndex, getCourses } from "@/lib/content";
 import { tabForCourse } from "@/lib/tabs";
@@ -94,6 +98,7 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
 
   const { course, lessons, groups } = index;
   const tab = tabForCourse(course.slug);
+  const licenseHint = await licenceCookieOpens(course.slug);
   const byId = new Map(lessons.map((l) => [l.id, l]));
 
   // Korean script pages are reached from their English lesson via the "View the
@@ -164,9 +169,28 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
         totalLessons={listed.length}
         // PASS-OFF GRAMMAR's '오늘 복습' line without a licence counts only what the free review can draw — its ids, no text
         passoffFreeReviewKeys={course.slug === "passoff-grammar" ? Object.keys(passoffFreeReviewItems()) : undefined}
+        licenseHint={licenseHint}
       />
     </main>
   );
+}
+
+/**
+ * UI검토-1007 10번 — does this request carry a licence cookie, signed by this service and not past its date, whose plan opens
+ * this course? Only a hint for the list's first picture (CourseDashboard waits for the browser's licence answer instead of
+ * drawing '무료' and locks first). It decides no access: the cookie is not checked against the device records here (that
+ * needs storage), so a revoked or moved licence still gets the free card — when the browser's answer comes. No cookie, a
+ * bad one, or any failure: false, and the server draws the free card as before.
+ */
+async function licenceCookieOpens(courseSlug: string): Promise<boolean> {
+  try {
+    const token = (await cookies()).get(LICENSE_SESSION_COOKIE_NAME)?.value;
+    if (!token) return false;
+    const verified = verifyLicenseToken(token);
+    return Boolean(verified.valid && verified.payload && planOpensCourse(verified.payload.plan, courseSlug));
+  } catch {
+    return false;
+  }
 }
 
 /**

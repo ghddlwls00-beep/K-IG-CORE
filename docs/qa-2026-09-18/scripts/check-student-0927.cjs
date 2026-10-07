@@ -12,6 +12,7 @@
  *   D  2단계: 단계를 옮겨도 소리 없음(09-28) · '듣기'로 재생 · 우리말은 힌트 뒤 · 틀리게 조립 → 틀린 자리 · '여기부터 다시' · 우리말이 보임 → 바르게 → 정답 · 힌트로만 채우면 '힌트로 완성'(정답으로 안 셈)
  *   M  3단계 마이크(가짜): 'nice to meet you sir' → 100점 빨강 0 · 앞 세 낱말 되풀이 → 85점 이상 빨강 0 · 70~79점은 '통과했어요' · 반복 재생 중 마이크를 켜면 반복이 멈춤
  *   C  완료: 연습 전에는 완료 단추가 꺼짐 → 받아쓰기 · 말하기 80% 뒤 켜짐 → 완료 → '완료한 강의' · '다음 강의: Ch 1-2 · …' · 공통 엔진 기록(kig-learning:student) 강의 날짜 · 문장 3개
+ *      (2026-10-07 UI검토-1007 2장 1번부터 완료 단추 · '학습 완료함' · '다음 강의' 는 강의 끝 막대(section '강의 마치기') 것 — 그곳을 읽음)
  *   I  s1-2 내 정보: 넣은 값이 3단계 문장에 보이고, 듣기는 모범 문장 클립 그대로(브라우저 음성 0), 마이크는 내 정보로 말해도 100점
  *   G  GRAMMAR gh1-006: 1번을 틀리게 쓰고 확인 → 강의 끝 막대의 완료 → kig-learning:grammar1 에 강의 날짜와 1번만(안 푼 2번은 없음)
  */
@@ -161,7 +162,9 @@ async function speak(tab, idx, said) {
     check("M4 반복 재생 중 마이크를 켜면 반복이 멈춤", loopOn === "true" && loopAfter === "false", `반복 켜짐 ${loopOn} → 마이크 뒤 ${loopAfter} · 점수 ${m4.score}`);
 
     // ------------------------------------------------------------------ C. completion (80% rule) + engine
-    const completeSel = '[data-completion] button[aria-label="학습 완료 체크"]';
+    // 2026-10-07 (UI검토-1007 2장 1번): the completion is the shared end bar's (section '강의 마치기') — no longer a box in Step 3
+    const END = 'section[aria-label="강의 마치기"]';
+    const completeSel = `${END} button[aria-label="학습 완료 체크"]`;
     const disabledBefore = await tab.eval(`(() => { const b = ${q(completeSel)}; return b ? b.disabled : null; })()`);
     // dictation 3/3: sentence 2 (hinted) again without hints, sentence 3
     await click(tab, '[data-step-tab="2"]', 800);
@@ -180,8 +183,9 @@ async function speak(tab, idx, said) {
     check("C1 연습 전에는 완료가 꺼지고 80% 뒤 켜짐", disabledBefore === true && disabledAfter === false, `전 disabled ${disabledBefore} · 뒤 disabled ${disabledAfter} · 받아쓰기 2번 ${fbS2} · 3번 ${fbS3}`);
     const t0 = Date.now();
     if (BREAK !== "complete") await click(tab, completeSel, 900);
-    const doneText = await text(tab, "[data-completion]");
-    check("C2 완료 → '완료한 강의' · 다음 강의 Ch 1-2", /완료한 강의/.test(doneText || "") && /다음 강의: Ch 1-2 · /.test(doneText || "") && (await count(tab, '[data-completion] button[aria-label="학습 완료 취소"]')) === 1, `${(doneText || "").slice(0, 90)}`);
+    const doneText = await text(tab, END);
+    const nextAria = await attr(tab, `${END} a[aria-label^="다음 강의"]`, "aria-label");
+    check("C2 완료 → '학습 완료함' · 다음 강의 Ch 1-2", /학습 완료함/.test(doneText || "") && /^다음 강의: Ch 1-2 · /.test(nextAria || "") && (await count(tab, `${END} button[aria-label="학습 완료 취소"]`)) === 1, `${(doneText || "").replace(/\s+/g, " ").slice(0, 90)} · ${nextAria}`);
     const rec = await store(tab, "kig-learning:student");
     const day = learningDay(t0);
     const items = rec ? Object.keys(rec.items || {}) : [];
@@ -190,9 +194,9 @@ async function speak(tab, idx, said) {
     check("C3 공통 엔진: 강의 날짜 {at, day} · 문장 3개가 내일부터 복습", !!lessonDone && lessonDone.day === day && typeof lessonDone.at === "string" && JSON.stringify(items.sort()) === JSON.stringify(wantItems) && items.every((k) => rec.items[k].firstDay === day), `lessons.s1-1 ${JSON.stringify(lessonDone)} · items ${items.join(",")} · 기록 ${rec ? rec.log.length : 0}건`);
     await H.load(tab, "/student/s1-1", { marker: H.MARKERS.student });
     await click(tab, '[data-step-tab="3"]', 800);
-    const persisted = await count(tab, '[data-completion] button[aria-label="학습 완료 취소"]');
+    const persisted = await count(tab, `${END} button[aria-label="학습 완료 취소"]`);
     check("C4 새로 고침 뒤에도 완료 · 받아쓰기 기록 그대로", persisted === 1, `완료 취소 단추 ${persisted}`);
-    await H.click(tab, `[...document.querySelectorAll('[data-completion] a')].find((a) => /다음 강의/.test(a.innerText || ''))`, { settle: 2500 });
+    await H.click(tab, `document.querySelector('${END} a[aria-label^="다음 강의"]')`, { settle: 2500 });
     const went = await tab.eval("location.pathname");
     check("C5 '다음 강의' → s1-2(이용권 없음 — 기다릴 저장 없음)", went === "/student/s1-2", `→ ${went}`);
 

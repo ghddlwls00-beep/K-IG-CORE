@@ -20,8 +20,8 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "LISTENING",
     titleEn: "Listening",
     kind: "audio-drill",
-    description:
-      "실전 수능·토익 대비 받아쓰기 훈련. 고음질 음성과 딕테이션 훈련으로 완벽한 청취력을 완성합니다.",
+    // UI검토-1007 7번(사장님 2026-10-07): 과정 소개 글은 하는 일대로 — 과장 · 사실과 다른 말 없이(목록 머리 · 메타 설명 · /t/ 쪽에 쓰임)
+    description: "듣기 지문을 먼저 들어 보고, 받아쓰고, 연음을 짚은 뒤 따라 말해요.",
     series: [{ slug: "d", title: "Listening Rounds", prefix: "d" }],
   },
   {
@@ -32,7 +32,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "READING",
     titleEn: "Reading",
     kind: "audio-drill",
-    description: "문장 낭독과 구문 분석이 결합된 원문 독해 훈련으로 문해력과 직독직해 능력을 완성합니다.",
+    description: "영어 지문을 읽고, 핵심 어휘를 익히고, 우리말과 맞춰 본 뒤 다시 읽으며 속도를 재요.",
     series: [{ slug: "pr", title: "Reading Passages", prefix: "pr" }],
   },
   {
@@ -43,8 +43,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "STUDENT",
     titleEn: "Student",
     kind: "audio-drill",
-    description:
-      "일상 회화로 마스터하는 실전 듣기와 정독 훈련.",
+    description: "자기소개부터 학교생활 · 꿈 · 한국 이야기까지, 학생 회화 문장을 먼저 듣고 받아쓰고 따라 말해요.",
     series: [{ slug: "s", title: "Conversation Lessons", prefix: "s" }],
   },
   // ADULT (2026-10-02, docs/adult/README.md) — made from the owner's Pass-Off English adult PPTs, taught exactly as STUDENT
@@ -84,7 +83,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "VOCA",
     titleEn: "Vocabulary",
     kind: "audio-drill",
-    description: "중등 1~4단계부터 고등 심화까지 필수 영단어 매트릭스 및 발음 정밀 클리닉.",
+    description: "중등 1~3단계와 고등 심화 단어. 보고 듣기 → 뜻 고르기 → 틀린 단어 말하기 → 60초 풀기.",
     series: [
       { slug: "mv1", title: "Middle School Vocabulary 1 (MV1)", prefix: "mv1-" },
       { slug: "mv2", title: "Middle School Vocabulary 2 (MV2)", prefix: "mv2-" },
@@ -100,7 +99,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "GRAMMAR I",
     titleEn: "Grammar 1",
     kind: "audio-drill",
-    description: "한국어 문장을 즉시 영어로 변환하는 기초 영작 훈련. 6단계 체계적 문장 구조 정복.",
+    description: "우리말을 보고 영어 문장을 써 봐요. 기본 문장 구조부터 접속사 · 복문까지 6단계.",
     lessonNaming: "number",
     series: [{ slug: "gh1", title: "Composition Practice", prefix: "gh1-" }],
   },
@@ -112,7 +111,7 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     title: "GRAMMAR II",
     titleEn: "Grammar 2",
     kind: "audio-drill",
-    description: "심화 구문 및 패턴별 집중 영작 트레이닝. 고난도 문형과 어순 감각 완성.",
+    description: "우리말을 보고 영어 문장을 써 봐요. 전치사 · 부정사 · 관계사 · 가정법 같은 구문과 생활 표현을 과마다 영작해요.",
     lessonNaming: "number",
     series: [{ slug: "gh2", title: "Composition Practice", prefix: "gh2-" }],
   },

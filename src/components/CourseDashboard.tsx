@@ -38,7 +38,8 @@ export interface DashboardSection {
 
 /*
  * 2026-09-27 — the course list rebuilt to docs/디자인-규칙.md (점검 FRAME-U02 · U12 · L02 · L09):
- *   - '이어서 학습' (the last lesson opened in THIS course) or '처음부터' at the top; visitors get
+ *   - '이어서 학습' (the last lesson opened in THIS course) or, with none on this device, the first lesson not done
+ *     ('처음부터' · '다음 강의' · '마지막 강의' — UI검토-1007 6번) at the top; visitors get
  *     '무료로 먼저 해 보기' with the two free lessons instead of an empty progress card
  *   - every section starts closed (사장님 2026-09-29 — it used to open the one holding that lesson); which
  *     sections are open is kept for the tab (sessionStorage), and BACK from a lesson returns to the same list
@@ -85,6 +86,7 @@ const LessonRow = memo(function LessonRow({
   onToggleBookmark,
   sequentialLock,
   lockLabel,
+  pending = false,
 }: {
   lesson: DashboardLessonItem;
   courseSlug: string;
@@ -98,13 +100,20 @@ const LessonRow = memo(function LessonRow({
   sequentialLock: boolean;
   /** what a row locked by the course order says (PASS-OFF GRAMMAR: "TOPIC N-1을 마치면 열림") — STUDENT's own when absent */
   lockLabel?: string;
+  /**
+   * UI검토-1007 10번: the licence (or the server record the chapter locks come from) has not answered yet for someone the
+   * server saw with a licence — no '무료' · lock · '이용권' on the row until it has (only '완료', which this device knows)
+   */
+  pending?: boolean;
 }) {
   const pres = lesson.presentation;
   // 2026-09-27 (계획 D35 나 · RD-L14): a READING row says how long its passage is — numbers only (this page is public)
   const length = courseSlug === "reading" ? READING_LENGTHS[lesson.id] : undefined;
   const state = isDone
     ? "완료"
-    : !isUnlocked
+    : pending
+      ? ""
+      : !isUnlocked
       ? sequentialLock
         ? (lockLabel ?? "앞 장을 마치면 열림")
         : "이용권"
@@ -128,7 +137,7 @@ const LessonRow = memo(function LessonRow({
         ) : null}
         {length ? (
           <span className="flex min-w-0 flex-1 flex-col">
-            <span className={`truncate text-label ${isUnlocked ? "text-ink" : "text-ink-soft"} ${isRecent ? "font-semibold" : "font-medium"}`}>
+            <span className={`truncate text-label ${isUnlocked || pending ? "text-ink" : "text-ink-soft"} ${isRecent ? "font-semibold" : "font-medium"}`}>
               {pres.title}
             </span>
             <span data-passage-length className="text-caption tabular-nums text-ink-soft">
@@ -136,7 +145,7 @@ const LessonRow = memo(function LessonRow({
             </span>
           </span>
         ) : (
-          <span className={`min-w-0 flex-1 truncate text-label ${isUnlocked ? "text-ink" : "text-ink-soft"} ${isRecent ? "font-semibold" : "font-medium"}`}>
+          <span className={`min-w-0 flex-1 truncate text-label ${isUnlocked || pending ? "text-ink" : "text-ink-soft"} ${isRecent ? "font-semibold" : "font-medium"}`}>
             {pres.title}
           </span>
         )}
@@ -165,7 +174,7 @@ const LessonRow = memo(function LessonRow({
         aria-label={!isUnlocked ? "잠긴 강의는 북마크할 수 없습니다" : isStarred ? "북마크 해제" : "북마크 추가"}
         aria-pressed={isStarred}
         className={`mr-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-control transition-colors ${
-          isUnlocked ? "cursor-pointer hover:bg-sunken" : "cursor-not-allowed opacity-30"
+          isUnlocked ? "cursor-pointer hover:bg-sunken" : pending ? "" : "cursor-not-allowed opacity-30"
         } ${isStarred ? "text-primary" : "text-ink-faint hover:text-ink"}`}
       >
         <svg width="17" height="17" viewBox="0 0 24 24" fill={isStarred ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" aria-hidden>
@@ -181,21 +190,48 @@ export function CourseDashboard({
   sections,
   totalLessons,
   passoffFreeReviewKeys,
+  licenseHint = false,
 }: {
   courseSlug: string;
   sections: DashboardSection[];
   totalLessons: number;
   /** PASS-OFF GRAMMAR: the items its free review can draw (ids only) — the '오늘 복습' line counts no other without a licence */
   passoffFreeReviewKeys?: readonly string[];
+  /**
+   * UI검토-1007 10번: the server saw a signed licence cookie whose plan opens this course (app/[course]/page.tsx). A hint for
+   * drawing only — access is still the browser's verified licence (LicenseProvider) and the server's lesson gate.
+   */
+  licenseHint?: boolean;
 }) {
   const { bookmarks, recentByCourse, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus: studentSync, adultSyncStatus } = useProgress();
-  const { hasActiveLicense, licenseInfo, isUnlocked: checkUnlocked, studentProgress: studentRecord, adultProgress } = useLicense();
+  const {
+    hasActiveLicense,
+    licenseSettled,
+    licenseInfo,
+    isUnlocked: checkUnlocked,
+    studentProgress: studentRecord,
+    adultProgress,
+    studentProgressSettled,
+    adultProgressSettled,
+  } = useLicense();
   // ADULT (2026-10-02) opens chapter by chapter exactly as STUDENT — the same list, from its own record
   const isChapterCourse = courseSlug === "student" || courseSlug === "adult";
   const studentProgress = courseSlug === "adult" ? adultProgress : studentRecord;
   const studentSyncStatus = courseSlug === "adult" ? adultSyncStatus : studentSync;
   // STUDENT passes open STUDENT and PASS-OFF GRAMMAR; the all-pass opens every course (license.ts planOpensCourse)
   const hasCourseAccess = hasActiveLicense && planOpensCourse(licenseInfo?.plan, courseSlug);
+  /**
+   * UI검토-1007 10번 — a paying learner used to see '무료로 먼저 해 보기 · 0/67', locks and '이용권 등록 후 열림' for 0.2~0.3 s
+   * before the list changed. While the server saw a licence cookie for this course and this browser has not had its licence
+   * answer yet, none of that is drawn — the places stay empty and are drawn once, when the answer comes. Without that cookie
+   * (a visitor) the first picture is the server's free one, as before; a cookie that turns out not to hold a licence gets the
+   * free card as soon as the answer comes.
+   */
+  const licenseUnknown = !hasCourseAccess && licenseHint && !licenseSettled;
+  /** a licence, and STUDENT's · ADULT's server record (which opens the chapters) not answered yet — LIFE opens every chapter */
+  const chapterRecordPending =
+    isChapterCourse && hasCourseAccess && licenseInfo?.plan !== "LIFE" &&
+    !(courseSlug === "adult" ? adultProgressSettled : studentProgressSettled);
   const [filter, setFilter] = useState<"all" | "bookmarked" | "incomplete">("all");
   const [unlockNotice, setUnlockNotice] = useState<number | null>(null);
   const previousUnlockedRef = useRef<number | null>(null);
@@ -289,7 +325,22 @@ export function CourseDashboard({
     if (exact) return exact;
     return allLessons.find((l) => recentRecord.lessonId.startsWith(`${l.id}-`)) ?? null;
   }, [allLessons, recentRecord]);
-  const firstLesson = allLessons[0] ?? null;
+  /**
+   * UI검토-1007 6번: with no lesson opened in this course on this device (a new phone, another computer), the top button
+   * pointed at the first lesson even when it was done ('처음부터 1인칭' at '3/67 완료'). It now points at the first lesson
+   * not done — done as this list shows it (isDoneHere: the server's record for STUDENT · ADULT · PASS-OFF GRAMMAR with a
+   * licence, this device's for the others) — and at the last lesson when every one is done.
+   */
+  const firstNotDone = useMemo(() => allLessons.find((l) => !isDoneHere(l.id)) ?? null, [allLessons, isDoneHere]);
+  const lastLesson = allLessons[allLessons.length - 1] ?? null;
+  const startLesson = recentListed ?? firstNotDone ?? lastLesson;
+  const startLabel = recentListed
+    ? "이어서 학습"
+    : firstNotDone
+      ? completedCount === 0 ? "처음부터" : "다음 강의"
+      : "마지막 강의";
+  /** the record that says what is done has not answered yet — the button would point at the wrong lesson for a moment */
+  const startPending = !recentListed && (chapterRecordPending || passoffChecking);
 
   // the two free lessons (first two cards of the first section — the same rule as the gate)
   const freeLessons = useMemo(() => {
@@ -393,16 +444,32 @@ export function CourseDashboard({
       )}
 
       {/* Where to go next */}
-      {hasCourseAccess ? (
+      {licenseUnknown ? (
+        // UI검토-1007 10번: the licence answer is on its way — the place is kept (same box, same height), nothing drawn in it
+        <section className="rounded-card border border-line bg-raised p-4 sm:p-5" aria-label="진도" aria-busy="true" data-license-pending="">
+          <div className="min-h-14" aria-hidden />
+          {/* kept for the audit drivers, which read the counters on every list page */}
+          <div className="mt-4 flex flex-col gap-2">
+            <p className="text-label text-ink">
+              학습 진도율: <span className="font-semibold tabular-nums">{completedCount}</span> / {totalLessons}개 완료{" "}
+              <span className="tabular-nums text-ink-soft">({progressPercent}%)</span>
+            </p>
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-sunken" aria-hidden />
+          </div>
+        </section>
+      ) : hasCourseAccess ? (
         <section className="rounded-card border border-line bg-raised p-4 sm:p-5" aria-label="진도">
-          {recentListed || firstLesson ? (
+          {startPending ? (
+            // the record that says which lesson is next is on its way — the button's place is kept
+            <div className="min-h-14" aria-hidden />
+          ) : startLesson ? (
             <Link
-              href={`/${courseSlug}/${(recentListed ?? firstLesson)!.id}`}
+              href={`/${courseSlug}/${startLesson.id}`}
               className="flex min-h-14 items-center justify-between gap-3 rounded-control bg-ink px-4 py-2 text-surface transition-opacity hover:opacity-90"
             >
               <span className="min-w-0">
-                <span className="block text-caption text-surface/75">{recentListed ? "이어서 학습" : "처음부터"}</span>
-                <span className="block truncate text-label font-semibold">{(recentListed ?? firstLesson)!.presentation.title}</span>
+                <span className="block text-caption text-surface/75">{startLabel}</span>
+                <span className="block truncate text-label font-semibold">{startLesson.presentation.title}</span>
               </span>
               <span aria-hidden>→</span>
             </Link>
@@ -442,17 +509,19 @@ export function CourseDashboard({
           <h2 className="text-label font-semibold text-ink">무료로 먼저 해 보기</h2>
           <p className="mt-1 text-caption text-ink-soft">{`이용권 없이 첫 두 강의를 끝까지 학습할 수 있습니다.`}</p>
           {freeLessons.length ? (
-            <div className={`mt-3 grid gap-2 ${freeLessons.length > 1 ? "sm:grid-cols-2" : ""}`}>
+            // UI검토-1007 4번: STUDENT's long titles pushed both buttons out of the card (390: 19px · 360: 49px) — the grid
+            // track and the button may now shrink below their text (minmax(0,1fr) · min-w-0), so the title ends in '…'
+            <div className={`mt-3 grid grid-cols-1 gap-2 ${freeLessons.length > 1 ? "sm:grid-cols-2" : ""}`}>
               {freeLessons.map((lesson, i) => (
                 <Link
                   key={lesson.id}
                   href={`/${courseSlug}/${lesson.id}`}
-                  className={`flex min-h-12 items-center justify-between gap-2 rounded-control px-4 text-label font-semibold transition-colors ${
+                  className={`flex min-h-12 min-w-0 items-center justify-between gap-2 rounded-control px-4 text-label font-semibold transition-colors ${
                     i === 0 ? "bg-ink text-surface hover:opacity-90" : "border border-line text-ink hover:bg-sunken"
                   }`}
                 >
-                  <span className="truncate">{lesson.presentation.title}</span>
-                  <span aria-hidden>→</span>
+                  <span className="min-w-0 truncate">{lesson.presentation.title}</span>
+                  <span className="shrink-0" aria-hidden>→</span>
                 </Link>
               ))}
             </div>
@@ -549,6 +618,9 @@ export function CourseDashboard({
                     : isLife || !studentChapter
                       ? null
                       : `진행 ${chapterPercent}% · ${studentChapter.requiredCount}강과 마지막 강의를 마치면 다음 장`;
+            // UI검토-1007 10번: the answer that decides this line (the licence, or STUDENT's · ADULT's chapter record) is on its
+            // way — its place is kept empty instead of showing '이용권 등록 후 열립니다' or '1장을 마치면 열립니다' first
+            const notePending = (isChapterCourse || isPassoff) && (licenseUnknown || chapterRecordPending);
 
             return (
               <div
@@ -568,11 +640,17 @@ export function CourseDashboard({
                   </svg>
                   <span className="flex min-w-0 flex-1 flex-col">
                     <span className="text-label font-semibold text-ink">{section.label}</span>
-                    {studentNote ? <span className="mt-0.5 text-caption text-ink-soft">{studentNote}</span> : null}
-                    {passoffNote ? <span className="mt-0.5 text-caption text-ink-soft">{passoffNote}</span> : null}
+                    {notePending ? (
+                      <span className="mt-0.5 text-caption text-ink-soft" aria-hidden>{" "}</span>
+                    ) : (
+                      <>
+                        {studentNote ? <span className="mt-0.5 text-caption text-ink-soft">{studentNote}</span> : null}
+                        {passoffNote ? <span className="mt-0.5 text-caption text-ink-soft">{passoffNote}</span> : null}
+                      </>
+                    )}
                   </span>
                   <span className="flex shrink-0 items-center gap-1.5 text-caption tabular-nums text-ink-soft">
-                    {(isChapterCourse || (isPassoff && !passoffChecking)) && !chapterUnlocked ? (
+                    {!notePending && (isChapterCourse || (isPassoff && !passoffChecking)) && !chapterUnlocked ? (
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label="잠김">
                         <rect x="5" y="11" width="14" height="9" rx="2" />
                         <path d="M8 11V8a4 4 0 0 1 8 0v3" />
@@ -584,7 +662,7 @@ export function CourseDashboard({
 
                 {isOpen && (
                   <div className="border-t border-line">
-                    {isChapterCourse && chapterUnlocked && (
+                    {isChapterCourse && chapterUnlocked && !notePending && (
                       <ChapterAudioBar
                         chapterNumber={chapterNumber}
                         chapterUnlocked={chapterUnlocked}
@@ -616,6 +694,7 @@ export function CourseDashboard({
                             onToggleBookmark={handleToggleBookmark}
                             sequentialLock={sequentialLock}
                             lockLabel={!isPassoff ? undefined : passoffChecking ? "진도 확인 중" : passoffLock}
+                            pending={licenseUnknown || notePending}
                           />
                         );
                       })}

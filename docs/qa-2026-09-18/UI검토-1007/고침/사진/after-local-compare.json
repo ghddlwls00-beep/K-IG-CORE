@@ -1,0 +1,9513 @@
+{
+ "after": 276,
+ "matchedBefore": 276,
+ "totals": {
+  "after": {
+   "ox": 0,
+   "s44": 36,
+   "u12": 140,
+   "zoom": 0,
+   "low": 52
+  },
+  "beforeMatched": {
+   "ox": 0,
+   "s44": 44,
+   "u12": 148,
+   "zoom": 0,
+   "low": 52
+  }
+ },
+ "bad": [
+  {
+   "k": "light|phone|free_home|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 17,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 17,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/phone/free_home/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/free_home/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [
+    {
+     "text": "STUDENT",
+     "x": 24,
+     "y": 374,
+     "w": 139,
+     "h": 38
+    },
+    {
+     "text": "ADULT",
+     "x": 24,
+     "y": 1218,
+     "w": 95,
+     "h": 38
+    },
+    {
+     "text": "PASS-OFF GRAMMAR",
+     "x": 24,
+     "y": 2062,
+     "w": 304,
+     "h": 38
+    },
+    {
+     "text": "VOCA",
+     "x": 24,
+     "y": 2895,
+     "w": 84,
+     "h": 38
+    }
+   ],
+   "tiny": [
+    {
+     "text": "STAGE 01",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "·",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "CURRICULUM",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "NEXT",
+     "px": 9,
+     "y": 799
+    }
+   ],
+   "low": [
+    {
+     "text": "·",
+     "ratio": 1.72,
+     "need": 4.5,
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "NEXT",
+     "ratio": 2.74,
+     "need": 4.5,
+     "px": 9,
+     "y": 799
+    },
+    {
+     "text": "·",
+     "ratio": 1.72,
+     "need": 4.5,
+     "px": 10.5,
+     "y": 1190
+    }
+   ],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|free_home|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 17,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 17,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/free_home/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/free_home/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [
+    {
+     "text": "STUDENT 슬라이드로 이동",
+     "x": 1310,
+     "y": 342,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "ADULT 슬라이드로 이동",
+     "x": 1310,
+     "y": 366,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "PASS-OFF GRAMMAR 슬라이드로 이동",
+     "x": 1310,
+     "y": 390,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "VOCA 슬라이드로 이동",
+     "x": 1310,
+     "y": 414,
+     "w": 44,
+     "h": 24
+    }
+   ],
+   "tiny": [
+    {
+     "text": "STAGE 01",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "·",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "CURRICULUM",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "NEXT",
+     "px": 9,
+     "y": 847
+    }
+   ],
+   "low": [
+    {
+     "text": "·",
+     "ratio": 1.72,
+     "need": 4.5,
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "NEXT",
+     "ratio": 2.74,
+     "need": 4.5,
+     "px": 9,
+     "y": 847
+    },
+    {
+     "text": "·",
+     "ratio": 1.72,
+     "need": 4.5,
+     "px": 11.5,
+     "y": 1223
+    }
+   ],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|free_home|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 9,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 9,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/phone/free_home/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/free_home/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [
+    {
+     "text": "STUDENT",
+     "x": 24,
+     "y": 374,
+     "w": 139,
+     "h": 38
+    },
+    {
+     "text": "ADULT",
+     "x": 24,
+     "y": 1218,
+     "w": 95,
+     "h": 38
+    },
+    {
+     "text": "PASS-OFF GRAMMAR",
+     "x": 24,
+     "y": 2062,
+     "w": 304,
+     "h": 38
+    },
+    {
+     "text": "VOCA",
+     "x": 24,
+     "y": 2895,
+     "w": 84,
+     "h": 38
+    }
+   ],
+   "tiny": [
+    {
+     "text": "STAGE 01",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "·",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "CURRICULUM",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "NEXT",
+     "px": 9,
+     "y": 799
+    }
+   ],
+   "low": [
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 10.5,
+     "y": 1190
+    },
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 10.5,
+     "y": 2034
+    }
+   ],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|free_home|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 9,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 9,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/free_home/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/free_home/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [
+    {
+     "text": "STUDENT 슬라이드로 이동",
+     "x": 1310,
+     "y": 342,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "ADULT 슬라이드로 이동",
+     "x": 1310,
+     "y": 366,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "PASS-OFF GRAMMAR 슬라이드로 이동",
+     "x": 1310,
+     "y": 390,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "VOCA 슬라이드로 이동",
+     "x": 1310,
+     "y": 414,
+     "w": 44,
+     "h": 24
+    }
+   ],
+   "tiny": [
+    {
+     "text": "STAGE 01",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "·",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "CURRICULUM",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "NEXT",
+     "px": 9,
+     "y": 847
+    }
+   ],
+   "low": [
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 11.5,
+     "y": 1223
+    },
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 11.5,
+     "y": 2082
+    }
+   ],
+   "hscroll": []
+  }
+ ],
+ "worse": [],
+ "rows": [
+  {
+   "k": "light|phone|free_home|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 17,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 17,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/phone/free_home/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/free_home/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [
+    {
+     "text": "STUDENT",
+     "x": 24,
+     "y": 374,
+     "w": 139,
+     "h": 38
+    },
+    {
+     "text": "ADULT",
+     "x": 24,
+     "y": 1218,
+     "w": 95,
+     "h": 38
+    },
+    {
+     "text": "PASS-OFF GRAMMAR",
+     "x": 24,
+     "y": 2062,
+     "w": 304,
+     "h": 38
+    },
+    {
+     "text": "VOCA",
+     "x": 24,
+     "y": 2895,
+     "w": 84,
+     "h": 38
+    }
+   ],
+   "tiny": [
+    {
+     "text": "STAGE 01",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "·",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "CURRICULUM",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "NEXT",
+     "px": 9,
+     "y": 799
+    }
+   ],
+   "low": [
+    {
+     "text": "·",
+     "ratio": 1.72,
+     "need": 4.5,
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "NEXT",
+     "ratio": 2.74,
+     "need": 4.5,
+     "px": 9,
+     "y": 799
+    },
+    {
+     "text": "·",
+     "ratio": 1.72,
+     "need": 4.5,
+     "px": 10.5,
+     "y": 1190
+    }
+   ],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|student|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "afterFiles": [
+    "밝음/phone/student/open-1.jpg",
+    "밝음/phone/student/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/student/open-1.jpg",
+    "밝음/phone/student/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|student|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 1,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "afterFiles": [
+    "밝음/phone/student/expanded-1.jpg",
+    "밝음/phone/student/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/student/expanded-1.jpg",
+    "밝음/phone/student/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|adult|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "afterFiles": [
+    "밝음/phone/adult/open-1.jpg",
+    "밝음/phone/adult/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/adult/open-1.jpg",
+    "밝음/phone/adult/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|adult|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 1,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "afterFiles": [
+    "밝음/phone/adult/expanded-1.jpg",
+    "밝음/phone/adult/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/adult/expanded-1.jpg",
+    "밝음/phone/adult/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|passoff-grammar|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "afterFiles": [
+    "밝음/phone/passoff-grammar/open-1.jpg",
+    "밝음/phone/passoff-grammar/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/passoff-grammar/open-1.jpg",
+    "밝음/phone/passoff-grammar/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|passoff-grammar|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.8
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.8
+   },
+   "afterFiles": [
+    "밝음/phone/passoff-grammar/expanded-1.jpg",
+    "밝음/phone/passoff-grammar/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/passoff-grammar/expanded-1.jpg",
+    "밝음/phone/passoff-grammar/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|phonics|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/phone/phonics/open-1.jpg",
+    "밝음/phone/phonics/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/phonics/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|phonics|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.6
+   },
+   "afterFiles": [
+    "밝음/phone/phonics/expanded-1.jpg",
+    "밝음/phone/phonics/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/phonics/expanded-1.jpg",
+    "밝음/phone/phonics/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/phone/grammar1/open-1.jpg",
+    "밝음/phone/grammar1/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar1/open-1.jpg",
+    "밝음/phone/grammar1/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar1|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "밝음/phone/grammar1/expanded-1.jpg",
+    "밝음/phone/grammar1/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar1/expanded-1.jpg",
+    "밝음/phone/grammar1/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar2|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/phone/grammar2/open-1.jpg",
+    "밝음/phone/grammar2/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar2/open-1.jpg",
+    "밝음/phone/grammar2/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar2|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "밝음/phone/grammar2/expanded-1.jpg",
+    "밝음/phone/grammar2/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar2/expanded-1.jpg",
+    "밝음/phone/grammar2/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|ld|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/phone/ld/open-1.jpg",
+    "밝음/phone/ld/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/ld/open-1.jpg",
+    "밝음/phone/ld/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|ld|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 4.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 4.3
+   },
+   "afterFiles": [
+    "밝음/phone/ld/expanded-1.jpg",
+    "밝음/phone/ld/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/ld/expanded-1.jpg",
+    "밝음/phone/ld/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|reading|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/phone/reading/open-1.jpg",
+    "밝음/phone/reading/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/reading/open-1.jpg",
+    "밝음/phone/reading/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|reading|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.8
+   },
+   "afterFiles": [
+    "밝음/phone/reading/expanded-1.jpg",
+    "밝음/phone/reading/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/reading/expanded-1.jpg",
+    "밝음/phone/reading/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|free_adult_a2-1|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/phone/free_adult_a2-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/free_adult_a2-1/open-1.jpg"
+   ],
+   "paywalled": true,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|free_adult_a2-1|license-modal",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 2,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/phone/free_adult_a2-1/license-modal-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/free_adult_a2-1/license-modal-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|student_s1-1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "밝음/phone/student_s1-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/student_s1-1/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|student_s1-1|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "밝음/phone/student_s1-1/step1-1.jpg",
+    "밝음/phone/student_s1-1/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/student_s1-1/step1-1.jpg",
+    "밝음/phone/student_s1-1/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|student_s1-1|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "밝음/phone/student_s1-1/step2-1.jpg",
+    "밝음/phone/student_s1-1/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/student_s1-1/step2-1.jpg",
+    "밝음/phone/student_s1-1/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|student_s1-1|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "밝음/phone/student_s1-1/step3-1.jpg",
+    "밝음/phone/student_s1-1/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/student_s1-1/step3-1.jpg",
+    "밝음/phone/student_s1-1/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|student_s1-1|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "밝음/phone/student_s1-1/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/student_s1-1/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|adult_a1-2|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "afterFiles": [
+    "밝음/phone/adult_a1-2/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/adult_a1-2/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|adult_a1-2|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "afterFiles": [
+    "밝음/phone/adult_a1-2/step1-1.jpg",
+    "밝음/phone/adult_a1-2/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/adult_a1-2/step1-1.jpg",
+    "밝음/phone/adult_a1-2/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|adult_a1-2|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "밝음/phone/adult_a1-2/step2-1.jpg",
+    "밝음/phone/adult_a1-2/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/adult_a1-2/step2-1.jpg",
+    "밝음/phone/adult_a1-2/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|adult_a1-2|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "밝음/phone/adult_a1-2/step3-1.jpg",
+    "밝음/phone/adult_a1-2/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/adult_a1-2/step3-1.jpg",
+    "밝음/phone/adult_a1-2/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|adult_a1-2|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "밝음/phone/adult_a1-2/step4-1.jpg",
+    "밝음/phone/adult_a1-2/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/adult_a1-2/step4-1.jpg",
+    "밝음/phone/adult_a1-2/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|adult_a1-2|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "afterFiles": [
+    "밝음/phone/adult_a1-2/step5-1.jpg",
+    "밝음/phone/adult_a1-2/step5-2.jpg",
+    "밝음/phone/adult_a1-2/step5-3.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/adult_a1-2/step5-1.jpg",
+    "밝음/phone/adult_a1-2/step5-2.jpg",
+    "밝음/phone/adult_a1-2/step5-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|adult_a1-2|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "afterFiles": [
+    "밝음/phone/adult_a1-2/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/adult_a1-2/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|passoff-grammar_pg01-1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|passoff-grammar_pg01-1|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/step1-1.jpg",
+    "밝음/phone/passoff-grammar_pg01-1/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/step1-1.jpg",
+    "밝음/phone/passoff-grammar_pg01-1/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|passoff-grammar_pg01-1|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/step2-1.jpg",
+    "밝음/phone/passoff-grammar_pg01-1/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/step2-1.jpg",
+    "밝음/phone/passoff-grammar_pg01-1/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|passoff-grammar_pg01-1|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/step3-1.jpg",
+    "밝음/phone/passoff-grammar_pg01-1/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/step3-1.jpg",
+    "밝음/phone/passoff-grammar_pg01-1/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|passoff-grammar_pg01-1|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/step4-1.jpg",
+    "밝음/phone/passoff-grammar_pg01-1/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/step4-1.jpg",
+    "밝음/phone/passoff-grammar_pg01-1/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|passoff-grammar_pg01-1|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/step5-1.jpg",
+    "밝음/phone/passoff-grammar_pg01-1/step5-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/step5-1.jpg",
+    "밝음/phone/passoff-grammar_pg01-1/step5-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|passoff-grammar_pg01-1|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/passoff-grammar_pg01-1/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|phonics_mv1-01|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "afterFiles": [
+    "밝음/phone/phonics_mv1-01/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/phonics_mv1-01/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|phonics_mv1-01|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "afterFiles": [
+    "밝음/phone/phonics_mv1-01/step1-1.jpg",
+    "밝음/phone/phonics_mv1-01/step1-2.jpg",
+    "밝음/phone/phonics_mv1-01/step1-3.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/phonics_mv1-01/step1-1.jpg",
+    "밝음/phone/phonics_mv1-01/step1-2.jpg",
+    "밝음/phone/phonics_mv1-01/step1-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|phonics_mv1-01|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/phone/phonics_mv1-01/step2-1.jpg",
+    "밝음/phone/phonics_mv1-01/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/phonics_mv1-01/step2-1.jpg",
+    "밝음/phone/phonics_mv1-01/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|phonics_mv1-01|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/phone/phonics_mv1-01/step3-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/phonics_mv1-01/step3-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|phonics_mv1-01|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/phone/phonics_mv1-01/step4-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/phonics_mv1-01/step4-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|phonics_mv1-01|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/phone/phonics_mv1-01/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/phonics_mv1-01/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar1_gh1-006|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "afterFiles": [
+    "밝음/phone/grammar1_gh1-006/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar1_gh1-006/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar1_gh1-006|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "afterFiles": [
+    "밝음/phone/grammar1_gh1-006/step1-1.jpg",
+    "밝음/phone/grammar1_gh1-006/step1-2.jpg",
+    "밝음/phone/grammar1_gh1-006/step1-3.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar1_gh1-006/step1-1.jpg",
+    "밝음/phone/grammar1_gh1-006/step1-2.jpg",
+    "밝음/phone/grammar1_gh1-006/step1-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar1_gh1-006|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "afterFiles": [
+    "밝음/phone/grammar1_gh1-006/step2-1.jpg",
+    "밝음/phone/grammar1_gh1-006/step2-2.jpg",
+    "밝음/phone/grammar1_gh1-006/step2-3.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar1_gh1-006/step2-1.jpg",
+    "밝음/phone/grammar1_gh1-006/step2-2.jpg",
+    "밝음/phone/grammar1_gh1-006/step2-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar1_gh1-006|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.3
+   },
+   "afterFiles": [
+    "밝음/phone/grammar1_gh1-006/step3-1.jpg",
+    "밝음/phone/grammar1_gh1-006/step3-2.jpg",
+    "밝음/phone/grammar1_gh1-006/step3-3.jpg",
+    "밝음/phone/grammar1_gh1-006/step3-4.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar1_gh1-006/step3-1.jpg",
+    "밝음/phone/grammar1_gh1-006/step3-2.jpg",
+    "밝음/phone/grammar1_gh1-006/step3-3.jpg",
+    "밝음/phone/grammar1_gh1-006/step3-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar1_gh1-006|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.6
+   },
+   "afterFiles": [
+    "밝음/phone/grammar1_gh1-006/step4-1.jpg",
+    "밝음/phone/grammar1_gh1-006/step4-2.jpg",
+    "밝음/phone/grammar1_gh1-006/step4-3.jpg",
+    "밝음/phone/grammar1_gh1-006/step4-4.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar1_gh1-006/step4-1.jpg",
+    "밝음/phone/grammar1_gh1-006/step4-2.jpg",
+    "밝음/phone/grammar1_gh1-006/step4-3.jpg",
+    "밝음/phone/grammar1_gh1-006/step4-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar1_gh1-006|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.6
+   },
+   "afterFiles": [
+    "밝음/phone/grammar1_gh1-006/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar1_gh1-006/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar2_gh2-007|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "afterFiles": [
+    "밝음/phone/grammar2_gh2-007/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar2_gh2-007/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar2_gh2-007|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "afterFiles": [
+    "밝음/phone/grammar2_gh2-007/step1-1.jpg",
+    "밝음/phone/grammar2_gh2-007/step1-2.jpg",
+    "밝음/phone/grammar2_gh2-007/step1-3.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar2_gh2-007/step1-1.jpg",
+    "밝음/phone/grammar2_gh2-007/step1-2.jpg",
+    "밝음/phone/grammar2_gh2-007/step1-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar2_gh2-007|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.8
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.8
+   },
+   "afterFiles": [
+    "밝음/phone/grammar2_gh2-007/step2-1.jpg",
+    "밝음/phone/grammar2_gh2-007/step2-2.jpg",
+    "밝음/phone/grammar2_gh2-007/step2-3.jpg",
+    "밝음/phone/grammar2_gh2-007/step2-4.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar2_gh2-007/step2-1.jpg",
+    "밝음/phone/grammar2_gh2-007/step2-2.jpg",
+    "밝음/phone/grammar2_gh2-007/step2-3.jpg",
+    "밝음/phone/grammar2_gh2-007/step2-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar2_gh2-007|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.7
+   },
+   "afterFiles": [
+    "밝음/phone/grammar2_gh2-007/step3-1.jpg",
+    "밝음/phone/grammar2_gh2-007/step3-2.jpg",
+    "밝음/phone/grammar2_gh2-007/step3-3.jpg",
+    "밝음/phone/grammar2_gh2-007/step3-4.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar2_gh2-007/step3-1.jpg",
+    "밝음/phone/grammar2_gh2-007/step3-2.jpg",
+    "밝음/phone/grammar2_gh2-007/step3-3.jpg",
+    "밝음/phone/grammar2_gh2-007/step3-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar2_gh2-007|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.6
+   },
+   "afterFiles": [
+    "밝음/phone/grammar2_gh2-007/step4-1.jpg",
+    "밝음/phone/grammar2_gh2-007/step4-2.jpg",
+    "밝음/phone/grammar2_gh2-007/step4-3.jpg",
+    "밝음/phone/grammar2_gh2-007/step4-4.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar2_gh2-007/step4-1.jpg",
+    "밝음/phone/grammar2_gh2-007/step4-2.jpg",
+    "밝음/phone/grammar2_gh2-007/step4-3.jpg",
+    "밝음/phone/grammar2_gh2-007/step4-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|grammar2_gh2-007|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.6
+   },
+   "afterFiles": [
+    "밝음/phone/grammar2_gh2-007/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/grammar2_gh2-007/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|ld_d001|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "밝음/phone/ld_d001/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/ld_d001/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|ld_d001|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "밝음/phone/ld_d001/step1-1.jpg",
+    "밝음/phone/ld_d001/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/ld_d001/step1-1.jpg",
+    "밝음/phone/ld_d001/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|ld_d001|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "밝음/phone/ld_d001/step2-1.jpg",
+    "밝음/phone/ld_d001/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/ld_d001/step2-1.jpg",
+    "밝음/phone/ld_d001/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|ld_d001|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/phone/ld_d001/step3-1.jpg",
+    "밝음/phone/ld_d001/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/ld_d001/step3-1.jpg",
+    "밝음/phone/ld_d001/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|ld_d001|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/phone/ld_d001/step4-1.jpg",
+    "밝음/phone/ld_d001/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/ld_d001/step4-1.jpg",
+    "밝음/phone/ld_d001/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|ld_d001|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "밝음/phone/ld_d001/step5-1.jpg",
+    "밝음/phone/ld_d001/step5-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/ld_d001/step5-1.jpg",
+    "밝음/phone/ld_d001/step5-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|ld_d001|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "밝음/phone/ld_d001/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/ld_d001/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|reading_pr001|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "밝음/phone/reading_pr001/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/reading_pr001/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|reading_pr001|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "밝음/phone/reading_pr001/step1-1.jpg",
+    "밝음/phone/reading_pr001/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/reading_pr001/step1-1.jpg",
+    "밝음/phone/reading_pr001/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|reading_pr001|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "afterFiles": [
+    "밝음/phone/reading_pr001/step2-1.jpg",
+    "밝음/phone/reading_pr001/step2-2.jpg",
+    "밝음/phone/reading_pr001/step2-3.jpg",
+    "밝음/phone/reading_pr001/step2-4.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/reading_pr001/step2-1.jpg",
+    "밝음/phone/reading_pr001/step2-2.jpg",
+    "밝음/phone/reading_pr001/step2-3.jpg",
+    "밝음/phone/reading_pr001/step2-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|reading_pr001|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "afterFiles": [
+    "밝음/phone/reading_pr001/step3-1.jpg",
+    "밝음/phone/reading_pr001/step3-2.jpg",
+    "밝음/phone/reading_pr001/step3-3.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/reading_pr001/step3-1.jpg",
+    "밝음/phone/reading_pr001/step3-2.jpg",
+    "밝음/phone/reading_pr001/step3-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|reading_pr001|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "밝음/phone/reading_pr001/step4-1.jpg",
+    "밝음/phone/reading_pr001/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/reading_pr001/step4-1.jpg",
+    "밝음/phone/reading_pr001/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|phone|reading_pr001|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "밝음/phone/reading_pr001/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/phone/reading_pr001/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|free_home|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 17,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 17,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/free_home/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/free_home/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [
+    {
+     "text": "STUDENT 슬라이드로 이동",
+     "x": 1310,
+     "y": 342,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "ADULT 슬라이드로 이동",
+     "x": 1310,
+     "y": 366,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "PASS-OFF GRAMMAR 슬라이드로 이동",
+     "x": 1310,
+     "y": 390,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "VOCA 슬라이드로 이동",
+     "x": 1310,
+     "y": 414,
+     "w": 44,
+     "h": 24
+    }
+   ],
+   "tiny": [
+    {
+     "text": "STAGE 01",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "·",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "CURRICULUM",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "NEXT",
+     "px": 9,
+     "y": 847
+    }
+   ],
+   "low": [
+    {
+     "text": "·",
+     "ratio": 1.72,
+     "need": 4.5,
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "NEXT",
+     "ratio": 2.74,
+     "need": 4.5,
+     "px": 9,
+     "y": 847
+    },
+    {
+     "text": "·",
+     "ratio": 1.72,
+     "need": 4.5,
+     "px": 11.5,
+     "y": 1223
+    }
+   ],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|student|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "afterFiles": [
+    "밝음/desktop/student/open-1.jpg",
+    "밝음/desktop/student/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/student/open-1.jpg",
+    "밝음/desktop/student/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|student|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 1,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.8
+   },
+   "afterFiles": [
+    "밝음/desktop/student/expanded-1.jpg",
+    "밝음/desktop/student/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/student/expanded-1.jpg",
+    "밝음/desktop/student/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|adult|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "밝음/desktop/adult/open-1.jpg",
+    "밝음/desktop/adult/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/adult/open-1.jpg",
+    "밝음/desktop/adult/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|adult|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 1,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.1
+   },
+   "afterFiles": [
+    "밝음/desktop/adult/expanded-1.jpg",
+    "밝음/desktop/adult/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/adult/expanded-1.jpg",
+    "밝음/desktop/adult/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|passoff-grammar|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "afterFiles": [
+    "밝음/desktop/passoff-grammar/open-1.jpg",
+    "밝음/desktop/passoff-grammar/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/passoff-grammar/open-1.jpg",
+    "밝음/desktop/passoff-grammar/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|passoff-grammar|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "afterFiles": [
+    "밝음/desktop/passoff-grammar/expanded-1.jpg",
+    "밝음/desktop/passoff-grammar/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/passoff-grammar/expanded-1.jpg",
+    "밝음/desktop/passoff-grammar/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|phonics|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/phonics/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/phonics/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|phonics|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.3
+   },
+   "afterFiles": [
+    "밝음/desktop/phonics/expanded-1.jpg",
+    "밝음/desktop/phonics/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/phonics/expanded-1.jpg",
+    "밝음/desktop/phonics/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar1/open-1.jpg",
+    "밝음/desktop/grammar1/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar1/open-1.jpg",
+    "밝음/desktop/grammar1/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar1|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar1/expanded-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar1/expanded-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar2|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar2/open-1.jpg",
+    "밝음/desktop/grammar2/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar2/open-1.jpg",
+    "밝음/desktop/grammar2/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar2|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar2/expanded-1.jpg",
+    "밝음/desktop/grammar2/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar2/expanded-1.jpg",
+    "밝음/desktop/grammar2/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|ld|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/ld/open-1.jpg",
+    "밝음/desktop/ld/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/ld/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|ld|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 4
+   },
+   "afterFiles": [
+    "밝음/desktop/ld/expanded-1.jpg",
+    "밝음/desktop/ld/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/ld/expanded-1.jpg",
+    "밝음/desktop/ld/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|reading|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/desktop/reading/open-1.jpg",
+    "밝음/desktop/reading/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/reading/open-1.jpg",
+    "밝음/desktop/reading/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|reading|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "afterFiles": [
+    "밝음/desktop/reading/expanded-1.jpg",
+    "밝음/desktop/reading/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/reading/expanded-1.jpg",
+    "밝음/desktop/reading/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|free_adult_a2-1|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/free_adult_a2-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/free_adult_a2-1/open-1.jpg"
+   ],
+   "paywalled": true,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|free_adult_a2-1|license-modal",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 2,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/free_adult_a2-1/license-modal-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/free_adult_a2-1/license-modal-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|student_s1-1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "밝음/desktop/student_s1-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/student_s1-1/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|student_s1-1|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "밝음/desktop/student_s1-1/step1-1.jpg",
+    "밝음/desktop/student_s1-1/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/student_s1-1/step1-1.jpg",
+    "밝음/desktop/student_s1-1/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|student_s1-1|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/desktop/student_s1-1/step2-1.jpg",
+    "밝음/desktop/student_s1-1/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/student_s1-1/step2-1.jpg",
+    "밝음/desktop/student_s1-1/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|student_s1-1|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "밝음/desktop/student_s1-1/step3-1.jpg",
+    "밝음/desktop/student_s1-1/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/student_s1-1/step3-1.jpg",
+    "밝음/desktop/student_s1-1/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|student_s1-1|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "밝음/desktop/student_s1-1/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/student_s1-1/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|adult_a1-2|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.8
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.9
+   },
+   "afterFiles": [
+    "밝음/desktop/adult_a1-2/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/adult_a1-2/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|adult_a1-2|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.8
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.9
+   },
+   "afterFiles": [
+    "밝음/desktop/adult_a1-2/step1-1.jpg",
+    "밝음/desktop/adult_a1-2/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/adult_a1-2/step1-1.jpg",
+    "밝음/desktop/adult_a1-2/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|adult_a1-2|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "밝음/desktop/adult_a1-2/step2-1.jpg",
+    "밝음/desktop/adult_a1-2/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/adult_a1-2/step2-1.jpg",
+    "밝음/desktop/adult_a1-2/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|adult_a1-2|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/desktop/adult_a1-2/step3-1.jpg",
+    "밝음/desktop/adult_a1-2/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/adult_a1-2/step3-1.jpg",
+    "밝음/desktop/adult_a1-2/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|adult_a1-2|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "밝음/desktop/adult_a1-2/step4-1.jpg",
+    "밝음/desktop/adult_a1-2/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/adult_a1-2/step4-1.jpg",
+    "밝음/desktop/adult_a1-2/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|adult_a1-2|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "afterFiles": [
+    "밝음/desktop/adult_a1-2/step5-1.jpg",
+    "밝음/desktop/adult_a1-2/step5-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/adult_a1-2/step5-1.jpg",
+    "밝음/desktop/adult_a1-2/step5-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|adult_a1-2|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "afterFiles": [
+    "밝음/desktop/adult_a1-2/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/adult_a1-2/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|passoff-grammar_pg01-1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|passoff-grammar_pg01-1|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/step1-1.jpg",
+    "밝음/desktop/passoff-grammar_pg01-1/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/step1-1.jpg",
+    "밝음/desktop/passoff-grammar_pg01-1/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|passoff-grammar_pg01-1|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/step2-1.jpg",
+    "밝음/desktop/passoff-grammar_pg01-1/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/step2-1.jpg",
+    "밝음/desktop/passoff-grammar_pg01-1/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|passoff-grammar_pg01-1|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/step3-1.jpg",
+    "밝음/desktop/passoff-grammar_pg01-1/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/step3-1.jpg",
+    "밝음/desktop/passoff-grammar_pg01-1/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|passoff-grammar_pg01-1|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/step4-1.jpg",
+    "밝음/desktop/passoff-grammar_pg01-1/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/step4-1.jpg",
+    "밝음/desktop/passoff-grammar_pg01-1/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|passoff-grammar_pg01-1|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/step5-1.jpg",
+    "밝음/desktop/passoff-grammar_pg01-1/step5-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/step5-1.jpg",
+    "밝음/desktop/passoff-grammar_pg01-1/step5-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|passoff-grammar_pg01-1|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/passoff-grammar_pg01-1/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|phonics_mv1-01|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "afterFiles": [
+    "밝음/desktop/phonics_mv1-01/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/phonics_mv1-01/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|phonics_mv1-01|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "afterFiles": [
+    "밝음/desktop/phonics_mv1-01/step1-1.jpg",
+    "밝음/desktop/phonics_mv1-01/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/phonics_mv1-01/step1-1.jpg",
+    "밝음/desktop/phonics_mv1-01/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|phonics_mv1-01|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/phonics_mv1-01/step2-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/phonics_mv1-01/step2-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|phonics_mv1-01|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/phonics_mv1-01/step3-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/phonics_mv1-01/step3-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|phonics_mv1-01|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/phonics_mv1-01/step4-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/phonics_mv1-01/step4-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|phonics_mv1-01|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/phonics_mv1-01/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/phonics_mv1-01/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar1_gh1-006|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar1_gh1-006/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar1_gh1-006/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar1_gh1-006|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar1_gh1-006/step1-1.jpg",
+    "밝음/desktop/grammar1_gh1-006/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar1_gh1-006/step1-1.jpg",
+    "밝음/desktop/grammar1_gh1-006/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar1_gh1-006|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar1_gh1-006/step2-1.jpg",
+    "밝음/desktop/grammar1_gh1-006/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar1_gh1-006/step2-1.jpg",
+    "밝음/desktop/grammar1_gh1-006/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar1_gh1-006|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar1_gh1-006/step3-1.jpg",
+    "밝음/desktop/grammar1_gh1-006/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar1_gh1-006/step3-1.jpg",
+    "밝음/desktop/grammar1_gh1-006/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar1_gh1-006|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar1_gh1-006/step4-1.jpg",
+    "밝음/desktop/grammar1_gh1-006/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar1_gh1-006/step4-1.jpg",
+    "밝음/desktop/grammar1_gh1-006/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar1_gh1-006|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar1_gh1-006/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar1_gh1-006/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar2_gh2-007|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar2_gh2-007/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar2_gh2-007/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar2_gh2-007|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar2_gh2-007/step1-1.jpg",
+    "밝음/desktop/grammar2_gh2-007/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar2_gh2-007/step1-1.jpg",
+    "밝음/desktop/grammar2_gh2-007/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar2_gh2-007|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar2_gh2-007/step2-1.jpg",
+    "밝음/desktop/grammar2_gh2-007/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar2_gh2-007/step2-1.jpg",
+    "밝음/desktop/grammar2_gh2-007/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar2_gh2-007|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar2_gh2-007/step3-1.jpg",
+    "밝음/desktop/grammar2_gh2-007/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar2_gh2-007/step3-1.jpg",
+    "밝음/desktop/grammar2_gh2-007/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar2_gh2-007|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar2_gh2-007/step4-1.jpg",
+    "밝음/desktop/grammar2_gh2-007/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar2_gh2-007/step4-1.jpg",
+    "밝음/desktop/grammar2_gh2-007/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|grammar2_gh2-007|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "afterFiles": [
+    "밝음/desktop/grammar2_gh2-007/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/grammar2_gh2-007/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|ld_d001|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "밝음/desktop/ld_d001/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/ld_d001/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|ld_d001|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "밝음/desktop/ld_d001/step1-1.jpg",
+    "밝음/desktop/ld_d001/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/ld_d001/step1-1.jpg",
+    "밝음/desktop/ld_d001/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|ld_d001|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "밝음/desktop/ld_d001/step2-1.jpg",
+    "밝음/desktop/ld_d001/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/ld_d001/step2-1.jpg",
+    "밝음/desktop/ld_d001/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|ld_d001|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "밝음/desktop/ld_d001/step3-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/ld_d001/step3-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|ld_d001|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "밝음/desktop/ld_d001/step4-1.jpg",
+    "밝음/desktop/ld_d001/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/ld_d001/step4-1.jpg",
+    "밝음/desktop/ld_d001/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|ld_d001|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "밝음/desktop/ld_d001/step5-1.jpg",
+    "밝음/desktop/ld_d001/step5-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/ld_d001/step5-1.jpg",
+    "밝음/desktop/ld_d001/step5-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|ld_d001|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "밝음/desktop/ld_d001/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/ld_d001/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|reading_pr001|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/desktop/reading_pr001/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/reading_pr001/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|reading_pr001|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "밝음/desktop/reading_pr001/step1-1.jpg",
+    "밝음/desktop/reading_pr001/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/reading_pr001/step1-1.jpg",
+    "밝음/desktop/reading_pr001/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|reading_pr001|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "afterFiles": [
+    "밝음/desktop/reading_pr001/step2-1.jpg",
+    "밝음/desktop/reading_pr001/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/reading_pr001/step2-1.jpg",
+    "밝음/desktop/reading_pr001/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|reading_pr001|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "밝음/desktop/reading_pr001/step3-1.jpg",
+    "밝음/desktop/reading_pr001/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/reading_pr001/step3-1.jpg",
+    "밝음/desktop/reading_pr001/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|reading_pr001|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "밝음/desktop/reading_pr001/step4-1.jpg",
+    "밝음/desktop/reading_pr001/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/reading_pr001/step4-1.jpg",
+    "밝음/desktop/reading_pr001/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "light|desktop|reading_pr001|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "밝음/desktop/reading_pr001/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "밝음/desktop/reading_pr001/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|free_home|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 9,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 9,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/phone/free_home/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/free_home/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [
+    {
+     "text": "STUDENT",
+     "x": 24,
+     "y": 374,
+     "w": 139,
+     "h": 38
+    },
+    {
+     "text": "ADULT",
+     "x": 24,
+     "y": 1218,
+     "w": 95,
+     "h": 38
+    },
+    {
+     "text": "PASS-OFF GRAMMAR",
+     "x": 24,
+     "y": 2062,
+     "w": 304,
+     "h": 38
+    },
+    {
+     "text": "VOCA",
+     "x": 24,
+     "y": 2895,
+     "w": 84,
+     "h": 38
+    }
+   ],
+   "tiny": [
+    {
+     "text": "STAGE 01",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "·",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "CURRICULUM",
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "NEXT",
+     "px": 9,
+     "y": 799
+    }
+   ],
+   "low": [
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 10.5,
+     "y": 346
+    },
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 10.5,
+     "y": 1190
+    },
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 10.5,
+     "y": 2034
+    }
+   ],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|student|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "afterFiles": [
+    "어둠/phone/student/open-1.jpg",
+    "어둠/phone/student/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/student/open-1.jpg",
+    "어둠/phone/student/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|student|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 1,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "afterFiles": [
+    "어둠/phone/student/expanded-1.jpg",
+    "어둠/phone/student/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/student/expanded-1.jpg",
+    "어둠/phone/student/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|adult|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "afterFiles": [
+    "어둠/phone/adult/open-1.jpg",
+    "어둠/phone/adult/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/adult/open-1.jpg",
+    "어둠/phone/adult/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|adult|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 1,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "afterFiles": [
+    "어둠/phone/adult/expanded-1.jpg",
+    "어둠/phone/adult/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/adult/expanded-1.jpg",
+    "어둠/phone/adult/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|passoff-grammar|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "afterFiles": [
+    "어둠/phone/passoff-grammar/open-1.jpg",
+    "어둠/phone/passoff-grammar/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/passoff-grammar/open-1.jpg",
+    "어둠/phone/passoff-grammar/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|passoff-grammar|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.8
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.8
+   },
+   "afterFiles": [
+    "어둠/phone/passoff-grammar/expanded-1.jpg",
+    "어둠/phone/passoff-grammar/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/passoff-grammar/expanded-1.jpg",
+    "어둠/phone/passoff-grammar/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|phonics|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/phone/phonics/open-1.jpg",
+    "어둠/phone/phonics/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/phonics/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|phonics|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.6
+   },
+   "afterFiles": [
+    "어둠/phone/phonics/expanded-1.jpg",
+    "어둠/phone/phonics/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/phonics/expanded-1.jpg",
+    "어둠/phone/phonics/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/phone/grammar1/open-1.jpg",
+    "어둠/phone/grammar1/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar1/open-1.jpg",
+    "어둠/phone/grammar1/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar1|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "어둠/phone/grammar1/expanded-1.jpg",
+    "어둠/phone/grammar1/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar1/expanded-1.jpg",
+    "어둠/phone/grammar1/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar2|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/phone/grammar2/open-1.jpg",
+    "어둠/phone/grammar2/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar2/open-1.jpg",
+    "어둠/phone/grammar2/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar2|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "어둠/phone/grammar2/expanded-1.jpg",
+    "어둠/phone/grammar2/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar2/expanded-1.jpg",
+    "어둠/phone/grammar2/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|ld|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/phone/ld/open-1.jpg",
+    "어둠/phone/ld/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/ld/open-1.jpg",
+    "어둠/phone/ld/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|ld|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 4.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 4.3
+   },
+   "afterFiles": [
+    "어둠/phone/ld/expanded-1.jpg",
+    "어둠/phone/ld/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/ld/expanded-1.jpg",
+    "어둠/phone/ld/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|reading|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/phone/reading/open-1.jpg",
+    "어둠/phone/reading/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/reading/open-1.jpg",
+    "어둠/phone/reading/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|reading|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.8
+   },
+   "afterFiles": [
+    "어둠/phone/reading/expanded-1.jpg",
+    "어둠/phone/reading/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/reading/expanded-1.jpg",
+    "어둠/phone/reading/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|free_adult_a2-1|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/phone/free_adult_a2-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/free_adult_a2-1/open-1.jpg"
+   ],
+   "paywalled": true,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|free_adult_a2-1|license-modal",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 2,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/phone/free_adult_a2-1/license-modal-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/free_adult_a2-1/license-modal-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|student_s1-1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "어둠/phone/student_s1-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/student_s1-1/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|student_s1-1|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "어둠/phone/student_s1-1/step1-1.jpg",
+    "어둠/phone/student_s1-1/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/student_s1-1/step1-1.jpg",
+    "어둠/phone/student_s1-1/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|student_s1-1|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "어둠/phone/student_s1-1/step2-1.jpg",
+    "어둠/phone/student_s1-1/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/student_s1-1/step2-1.jpg",
+    "어둠/phone/student_s1-1/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|student_s1-1|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "어둠/phone/student_s1-1/step3-1.jpg",
+    "어둠/phone/student_s1-1/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/student_s1-1/step3-1.jpg",
+    "어둠/phone/student_s1-1/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|student_s1-1|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "어둠/phone/student_s1-1/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/student_s1-1/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|adult_a1-2|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "afterFiles": [
+    "어둠/phone/adult_a1-2/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/adult_a1-2/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|adult_a1-2|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "afterFiles": [
+    "어둠/phone/adult_a1-2/step1-1.jpg",
+    "어둠/phone/adult_a1-2/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/adult_a1-2/step1-1.jpg",
+    "어둠/phone/adult_a1-2/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|adult_a1-2|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "어둠/phone/adult_a1-2/step2-1.jpg",
+    "어둠/phone/adult_a1-2/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/adult_a1-2/step2-1.jpg",
+    "어둠/phone/adult_a1-2/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|adult_a1-2|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "어둠/phone/adult_a1-2/step3-1.jpg",
+    "어둠/phone/adult_a1-2/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/adult_a1-2/step3-1.jpg",
+    "어둠/phone/adult_a1-2/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|adult_a1-2|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "어둠/phone/adult_a1-2/step4-1.jpg",
+    "어둠/phone/adult_a1-2/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/adult_a1-2/step4-1.jpg",
+    "어둠/phone/adult_a1-2/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|adult_a1-2|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "afterFiles": [
+    "어둠/phone/adult_a1-2/step5-1.jpg",
+    "어둠/phone/adult_a1-2/step5-2.jpg",
+    "어둠/phone/adult_a1-2/step5-3.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/adult_a1-2/step5-1.jpg",
+    "어둠/phone/adult_a1-2/step5-2.jpg",
+    "어둠/phone/adult_a1-2/step5-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|adult_a1-2|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "afterFiles": [
+    "어둠/phone/adult_a1-2/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/adult_a1-2/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|passoff-grammar_pg01-1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|passoff-grammar_pg01-1|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/step1-1.jpg",
+    "어둠/phone/passoff-grammar_pg01-1/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/step1-1.jpg",
+    "어둠/phone/passoff-grammar_pg01-1/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|passoff-grammar_pg01-1|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/step2-1.jpg",
+    "어둠/phone/passoff-grammar_pg01-1/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/step2-1.jpg",
+    "어둠/phone/passoff-grammar_pg01-1/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|passoff-grammar_pg01-1|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/step3-1.jpg",
+    "어둠/phone/passoff-grammar_pg01-1/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/step3-1.jpg",
+    "어둠/phone/passoff-grammar_pg01-1/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|passoff-grammar_pg01-1|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/step4-1.jpg",
+    "어둠/phone/passoff-grammar_pg01-1/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/step4-1.jpg",
+    "어둠/phone/passoff-grammar_pg01-1/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|passoff-grammar_pg01-1|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/step5-1.jpg",
+    "어둠/phone/passoff-grammar_pg01-1/step5-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/step5-1.jpg",
+    "어둠/phone/passoff-grammar_pg01-1/step5-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|passoff-grammar_pg01-1|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/passoff-grammar_pg01-1/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|phonics_mv1-01|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "afterFiles": [
+    "어둠/phone/phonics_mv1-01/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/phonics_mv1-01/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|phonics_mv1-01|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "afterFiles": [
+    "어둠/phone/phonics_mv1-01/step1-1.jpg",
+    "어둠/phone/phonics_mv1-01/step1-2.jpg",
+    "어둠/phone/phonics_mv1-01/step1-3.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/phonics_mv1-01/step1-1.jpg",
+    "어둠/phone/phonics_mv1-01/step1-2.jpg",
+    "어둠/phone/phonics_mv1-01/step1-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|phonics_mv1-01|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/phone/phonics_mv1-01/step2-1.jpg",
+    "어둠/phone/phonics_mv1-01/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/phonics_mv1-01/step2-1.jpg",
+    "어둠/phone/phonics_mv1-01/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|phonics_mv1-01|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/phone/phonics_mv1-01/step3-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/phonics_mv1-01/step3-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|phonics_mv1-01|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/phone/phonics_mv1-01/step4-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/phonics_mv1-01/step4-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|phonics_mv1-01|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/phone/phonics_mv1-01/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/phonics_mv1-01/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar1_gh1-006|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.6
+   },
+   "afterFiles": [
+    "어둠/phone/grammar1_gh1-006/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar1_gh1-006/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar1_gh1-006|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "afterFiles": [
+    "어둠/phone/grammar1_gh1-006/step1-1.jpg",
+    "어둠/phone/grammar1_gh1-006/step1-2.jpg",
+    "어둠/phone/grammar1_gh1-006/step1-3.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar1_gh1-006/step1-1.jpg",
+    "어둠/phone/grammar1_gh1-006/step1-2.jpg",
+    "어둠/phone/grammar1_gh1-006/step1-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar1_gh1-006|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "afterFiles": [
+    "어둠/phone/grammar1_gh1-006/step2-1.jpg",
+    "어둠/phone/grammar1_gh1-006/step2-2.jpg",
+    "어둠/phone/grammar1_gh1-006/step2-3.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar1_gh1-006/step2-1.jpg",
+    "어둠/phone/grammar1_gh1-006/step2-2.jpg",
+    "어둠/phone/grammar1_gh1-006/step2-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar1_gh1-006|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.3
+   },
+   "afterFiles": [
+    "어둠/phone/grammar1_gh1-006/step3-1.jpg",
+    "어둠/phone/grammar1_gh1-006/step3-2.jpg",
+    "어둠/phone/grammar1_gh1-006/step3-3.jpg",
+    "어둠/phone/grammar1_gh1-006/step3-4.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar1_gh1-006/step3-1.jpg",
+    "어둠/phone/grammar1_gh1-006/step3-2.jpg",
+    "어둠/phone/grammar1_gh1-006/step3-3.jpg",
+    "어둠/phone/grammar1_gh1-006/step3-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar1_gh1-006|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.6
+   },
+   "afterFiles": [
+    "어둠/phone/grammar1_gh1-006/step4-1.jpg",
+    "어둠/phone/grammar1_gh1-006/step4-2.jpg",
+    "어둠/phone/grammar1_gh1-006/step4-3.jpg",
+    "어둠/phone/grammar1_gh1-006/step4-4.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar1_gh1-006/step4-1.jpg",
+    "어둠/phone/grammar1_gh1-006/step4-2.jpg",
+    "어둠/phone/grammar1_gh1-006/step4-3.jpg",
+    "어둠/phone/grammar1_gh1-006/step4-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar1_gh1-006|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.6
+   },
+   "afterFiles": [
+    "어둠/phone/grammar1_gh1-006/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar1_gh1-006/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar2_gh2-007|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.6
+   },
+   "afterFiles": [
+    "어둠/phone/grammar2_gh2-007/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar2_gh2-007/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar2_gh2-007|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.9
+   },
+   "afterFiles": [
+    "어둠/phone/grammar2_gh2-007/step1-1.jpg",
+    "어둠/phone/grammar2_gh2-007/step1-2.jpg",
+    "어둠/phone/grammar2_gh2-007/step1-3.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar2_gh2-007/step1-1.jpg",
+    "어둠/phone/grammar2_gh2-007/step1-2.jpg",
+    "어둠/phone/grammar2_gh2-007/step1-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar2_gh2-007|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.8
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.8
+   },
+   "afterFiles": [
+    "어둠/phone/grammar2_gh2-007/step2-1.jpg",
+    "어둠/phone/grammar2_gh2-007/step2-2.jpg",
+    "어둠/phone/grammar2_gh2-007/step2-3.jpg",
+    "어둠/phone/grammar2_gh2-007/step2-4.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar2_gh2-007/step2-1.jpg",
+    "어둠/phone/grammar2_gh2-007/step2-2.jpg",
+    "어둠/phone/grammar2_gh2-007/step2-3.jpg",
+    "어둠/phone/grammar2_gh2-007/step2-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar2_gh2-007|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.7
+   },
+   "afterFiles": [
+    "어둠/phone/grammar2_gh2-007/step3-1.jpg",
+    "어둠/phone/grammar2_gh2-007/step3-2.jpg",
+    "어둠/phone/grammar2_gh2-007/step3-3.jpg",
+    "어둠/phone/grammar2_gh2-007/step3-4.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar2_gh2-007/step3-1.jpg",
+    "어둠/phone/grammar2_gh2-007/step3-2.jpg",
+    "어둠/phone/grammar2_gh2-007/step3-3.jpg",
+    "어둠/phone/grammar2_gh2-007/step3-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar2_gh2-007|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.6
+   },
+   "afterFiles": [
+    "어둠/phone/grammar2_gh2-007/step4-1.jpg",
+    "어둠/phone/grammar2_gh2-007/step4-2.jpg",
+    "어둠/phone/grammar2_gh2-007/step4-3.jpg",
+    "어둠/phone/grammar2_gh2-007/step4-4.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar2_gh2-007/step4-1.jpg",
+    "어둠/phone/grammar2_gh2-007/step4-2.jpg",
+    "어둠/phone/grammar2_gh2-007/step4-3.jpg",
+    "어둠/phone/grammar2_gh2-007/step4-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|grammar2_gh2-007|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.6
+   },
+   "afterFiles": [
+    "어둠/phone/grammar2_gh2-007/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/grammar2_gh2-007/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|ld_d001|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "어둠/phone/ld_d001/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/ld_d001/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|ld_d001|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "어둠/phone/ld_d001/step1-1.jpg",
+    "어둠/phone/ld_d001/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/ld_d001/step1-1.jpg",
+    "어둠/phone/ld_d001/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|ld_d001|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "어둠/phone/ld_d001/step2-1.jpg",
+    "어둠/phone/ld_d001/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/ld_d001/step2-1.jpg",
+    "어둠/phone/ld_d001/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|ld_d001|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/phone/ld_d001/step3-1.jpg",
+    "어둠/phone/ld_d001/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/ld_d001/step3-1.jpg",
+    "어둠/phone/ld_d001/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|ld_d001|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/phone/ld_d001/step4-1.jpg",
+    "어둠/phone/ld_d001/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/ld_d001/step4-1.jpg",
+    "어둠/phone/ld_d001/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|ld_d001|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "어둠/phone/ld_d001/step5-1.jpg",
+    "어둠/phone/ld_d001/step5-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/ld_d001/step5-1.jpg",
+    "어둠/phone/ld_d001/step5-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|ld_d001|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "어둠/phone/ld_d001/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/ld_d001/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|reading_pr001|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "어둠/phone/reading_pr001/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/reading_pr001/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|reading_pr001|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "어둠/phone/reading_pr001/step1-1.jpg",
+    "어둠/phone/reading_pr001/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/reading_pr001/step1-1.jpg",
+    "어둠/phone/reading_pr001/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|reading_pr001|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "afterFiles": [
+    "어둠/phone/reading_pr001/step2-1.jpg",
+    "어둠/phone/reading_pr001/step2-2.jpg",
+    "어둠/phone/reading_pr001/step2-3.jpg",
+    "어둠/phone/reading_pr001/step2-4.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/reading_pr001/step2-1.jpg",
+    "어둠/phone/reading_pr001/step2-2.jpg",
+    "어둠/phone/reading_pr001/step2-3.jpg",
+    "어둠/phone/reading_pr001/step2-4.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|reading_pr001|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "afterFiles": [
+    "어둠/phone/reading_pr001/step3-1.jpg",
+    "어둠/phone/reading_pr001/step3-2.jpg",
+    "어둠/phone/reading_pr001/step3-3.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/reading_pr001/step3-1.jpg",
+    "어둠/phone/reading_pr001/step3-2.jpg",
+    "어둠/phone/reading_pr001/step3-3.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|reading_pr001|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "어둠/phone/reading_pr001/step4-1.jpg",
+    "어둠/phone/reading_pr001/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/reading_pr001/step4-1.jpg",
+    "어둠/phone/reading_pr001/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|phone|reading_pr001|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "어둠/phone/reading_pr001/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/phone/reading_pr001/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|free_home|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 9,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 9,
+    "u12": 35,
+    "zoom": 0,
+    "low": 9,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/free_home/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/free_home/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [
+    {
+     "text": "STUDENT 슬라이드로 이동",
+     "x": 1310,
+     "y": 342,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "ADULT 슬라이드로 이동",
+     "x": 1310,
+     "y": 366,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "PASS-OFF GRAMMAR 슬라이드로 이동",
+     "x": 1310,
+     "y": 390,
+     "w": 44,
+     "h": 24
+    },
+    {
+     "text": "VOCA 슬라이드로 이동",
+     "x": 1310,
+     "y": 414,
+     "w": 44,
+     "h": 24
+    }
+   ],
+   "tiny": [
+    {
+     "text": "STAGE 01",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "·",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "CURRICULUM",
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "NEXT",
+     "px": 9,
+     "y": 847
+    }
+   ],
+   "low": [
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 11.5,
+     "y": 323
+    },
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 11.5,
+     "y": 1223
+    },
+    {
+     "text": "·",
+     "ratio": 2.32,
+     "need": 4.5,
+     "px": 11.5,
+     "y": 2082
+    }
+   ],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|student|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "afterFiles": [
+    "어둠/desktop/student/open-1.jpg",
+    "어둠/desktop/student/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/student/open-1.jpg",
+    "어둠/desktop/student/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|student|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 1,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.8
+   },
+   "afterFiles": [
+    "어둠/desktop/student/expanded-1.jpg",
+    "어둠/desktop/student/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/student/expanded-1.jpg",
+    "어둠/desktop/student/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|adult|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "어둠/desktop/adult/open-1.jpg",
+    "어둠/desktop/adult/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/adult/open-1.jpg",
+    "어둠/desktop/adult/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|adult|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 1,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.1
+   },
+   "afterFiles": [
+    "어둠/desktop/adult/expanded-1.jpg",
+    "어둠/desktop/adult/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/adult/expanded-1.jpg",
+    "어둠/desktop/adult/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|passoff-grammar|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "afterFiles": [
+    "어둠/desktop/passoff-grammar/open-1.jpg",
+    "어둠/desktop/passoff-grammar/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/passoff-grammar/open-1.jpg",
+    "어둠/desktop/passoff-grammar/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|passoff-grammar|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.6
+   },
+   "afterFiles": [
+    "어둠/desktop/passoff-grammar/expanded-1.jpg",
+    "어둠/desktop/passoff-grammar/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/passoff-grammar/expanded-1.jpg",
+    "어둠/desktop/passoff-grammar/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|phonics|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/phonics/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/phonics/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|phonics|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.3
+   },
+   "afterFiles": [
+    "어둠/desktop/phonics/expanded-1.jpg",
+    "어둠/desktop/phonics/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/phonics/expanded-1.jpg",
+    "어둠/desktop/phonics/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar1/open-1.jpg",
+    "어둠/desktop/grammar1/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar1/open-1.jpg",
+    "어둠/desktop/grammar1/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar1|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar1/expanded-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar1/expanded-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar2|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar2/open-1.jpg",
+    "어둠/desktop/grammar2/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar2/open-1.jpg",
+    "어둠/desktop/grammar2/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar2|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar2/expanded-1.jpg",
+    "어둠/desktop/grammar2/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar2/expanded-1.jpg",
+    "어둠/desktop/grammar2/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|ld|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/ld/open-1.jpg",
+    "어둠/desktop/ld/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/ld/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|ld|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.9
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 4
+   },
+   "afterFiles": [
+    "어둠/desktop/ld/expanded-1.jpg",
+    "어둠/desktop/ld/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/ld/expanded-1.jpg",
+    "어둠/desktop/ld/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|reading|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/desktop/reading/open-1.jpg",
+    "어둠/desktop/reading/open-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/reading/open-1.jpg",
+    "어둠/desktop/reading/open-2.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|reading|expanded",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.5
+   },
+   "afterFiles": [
+    "어둠/desktop/reading/expanded-1.jpg",
+    "어둠/desktop/reading/expanded-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/reading/expanded-1.jpg",
+    "어둠/desktop/reading/expanded-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|free_adult_a2-1|open",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/free_adult_a2-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/free_adult_a2-1/open-1.jpg"
+   ],
+   "paywalled": true,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|free_adult_a2-1|license-modal",
+   "beforeMode": "free",
+   "before": {
+    "ox": 0,
+    "s44": 2,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/free_adult_a2-1/license-modal-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/free_adult_a2-1/license-modal-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|student_s1-1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "어둠/desktop/student_s1-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/student_s1-1/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|student_s1-1|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "어둠/desktop/student_s1-1/step1-1.jpg",
+    "어둠/desktop/student_s1-1/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/student_s1-1/step1-1.jpg",
+    "어둠/desktop/student_s1-1/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|student_s1-1|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/desktop/student_s1-1/step2-1.jpg",
+    "어둠/desktop/student_s1-1/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/student_s1-1/step2-1.jpg",
+    "어둠/desktop/student_s1-1/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|student_s1-1|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "어둠/desktop/student_s1-1/step3-1.jpg",
+    "어둠/desktop/student_s1-1/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/student_s1-1/step3-1.jpg",
+    "어둠/desktop/student_s1-1/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|student_s1-1|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "어둠/desktop/student_s1-1/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/student_s1-1/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|adult_a1-2|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.8
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.9
+   },
+   "afterFiles": [
+    "어둠/desktop/adult_a1-2/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/adult_a1-2/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|adult_a1-2|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.8
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.9
+   },
+   "afterFiles": [
+    "어둠/desktop/adult_a1-2/step1-1.jpg",
+    "어둠/desktop/adult_a1-2/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/adult_a1-2/step1-1.jpg",
+    "어둠/desktop/adult_a1-2/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|adult_a1-2|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "어둠/desktop/adult_a1-2/step2-1.jpg",
+    "어둠/desktop/adult_a1-2/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/adult_a1-2/step2-1.jpg",
+    "어둠/desktop/adult_a1-2/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|adult_a1-2|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/desktop/adult_a1-2/step3-1.jpg",
+    "어둠/desktop/adult_a1-2/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/adult_a1-2/step3-1.jpg",
+    "어둠/desktop/adult_a1-2/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|adult_a1-2|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "어둠/desktop/adult_a1-2/step4-1.jpg",
+    "어둠/desktop/adult_a1-2/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/adult_a1-2/step4-1.jpg",
+    "어둠/desktop/adult_a1-2/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|adult_a1-2|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "afterFiles": [
+    "어둠/desktop/adult_a1-2/step5-1.jpg",
+    "어둠/desktop/adult_a1-2/step5-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/adult_a1-2/step5-1.jpg",
+    "어둠/desktop/adult_a1-2/step5-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|adult_a1-2|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.3
+   },
+   "afterFiles": [
+    "어둠/desktop/adult_a1-2/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/adult_a1-2/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|passoff-grammar_pg01-1|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|passoff-grammar_pg01-1|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.3
+   },
+   "afterFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/step1-1.jpg",
+    "어둠/desktop/passoff-grammar_pg01-1/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/step1-1.jpg",
+    "어둠/desktop/passoff-grammar_pg01-1/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|passoff-grammar_pg01-1|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/step2-1.jpg",
+    "어둠/desktop/passoff-grammar_pg01-1/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/step2-1.jpg",
+    "어둠/desktop/passoff-grammar_pg01-1/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|passoff-grammar_pg01-1|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/step3-1.jpg",
+    "어둠/desktop/passoff-grammar_pg01-1/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/step3-1.jpg",
+    "어둠/desktop/passoff-grammar_pg01-1/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|passoff-grammar_pg01-1|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/step4-1.jpg",
+    "어둠/desktop/passoff-grammar_pg01-1/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/step4-1.jpg",
+    "어둠/desktop/passoff-grammar_pg01-1/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|passoff-grammar_pg01-1|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/step5-1.jpg",
+    "어둠/desktop/passoff-grammar_pg01-1/step5-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/step5-1.jpg",
+    "어둠/desktop/passoff-grammar_pg01-1/step5-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|passoff-grammar_pg01-1|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/passoff-grammar_pg01-1/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|phonics_mv1-01|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "afterFiles": [
+    "어둠/desktop/phonics_mv1-01/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/phonics_mv1-01/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|phonics_mv1-01|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2
+   },
+   "afterFiles": [
+    "어둠/desktop/phonics_mv1-01/step1-1.jpg",
+    "어둠/desktop/phonics_mv1-01/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/phonics_mv1-01/step1-1.jpg",
+    "어둠/desktop/phonics_mv1-01/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|phonics_mv1-01|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/phonics_mv1-01/step2-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/phonics_mv1-01/step2-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|phonics_mv1-01|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/phonics_mv1-01/step3-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/phonics_mv1-01/step3-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|phonics_mv1-01|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/phonics_mv1-01/step4-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/phonics_mv1-01/step4-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|phonics_mv1-01|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/phonics_mv1-01/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/phonics_mv1-01/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar1_gh1-006|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar1_gh1-006/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar1_gh1-006/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar1_gh1-006|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar1_gh1-006/step1-1.jpg",
+    "어둠/desktop/grammar1_gh1-006/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar1_gh1-006/step1-1.jpg",
+    "어둠/desktop/grammar1_gh1-006/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar1_gh1-006|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar1_gh1-006/step2-1.jpg",
+    "어둠/desktop/grammar1_gh1-006/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar1_gh1-006/step2-1.jpg",
+    "어둠/desktop/grammar1_gh1-006/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar1_gh1-006|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar1_gh1-006/step3-1.jpg",
+    "어둠/desktop/grammar1_gh1-006/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar1_gh1-006/step3-1.jpg",
+    "어둠/desktop/grammar1_gh1-006/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar1_gh1-006|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar1_gh1-006/step4-1.jpg",
+    "어둠/desktop/grammar1_gh1-006/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar1_gh1-006/step4-1.jpg",
+    "어둠/desktop/grammar1_gh1-006/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar1_gh1-006|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 6.2
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar1_gh1-006/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar1_gh1-006/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar2_gh2-007|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar2_gh2-007/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar2_gh2-007/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar2_gh2-007|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.4
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar2_gh2-007/step1-1.jpg",
+    "어둠/desktop/grammar2_gh2-007/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar2_gh2-007/step1-1.jpg",
+    "어둠/desktop/grammar2_gh2-007/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar2_gh2-007|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar2_gh2-007/step2-1.jpg",
+    "어둠/desktop/grammar2_gh2-007/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar2_gh2-007/step2-1.jpg",
+    "어둠/desktop/grammar2_gh2-007/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar2_gh2-007|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3.1
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar2_gh2-007/step3-1.jpg",
+    "어둠/desktop/grammar2_gh2-007/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar2_gh2-007/step3-1.jpg",
+    "어둠/desktop/grammar2_gh2-007/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar2_gh2-007|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar2_gh2-007/step4-1.jpg",
+    "어둠/desktop/grammar2_gh2-007/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar2_gh2-007/step4-1.jpg",
+    "어둠/desktop/grammar2_gh2-007/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|grammar2_gh2-007|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 3
+   },
+   "afterFiles": [
+    "어둠/desktop/grammar2_gh2-007/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/grammar2_gh2-007/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|ld_d001|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "어둠/desktop/ld_d001/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/ld_d001/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|ld_d001|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.6
+   },
+   "afterFiles": [
+    "어둠/desktop/ld_d001/step1-1.jpg",
+    "어둠/desktop/ld_d001/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/ld_d001/step1-1.jpg",
+    "어둠/desktop/ld_d001/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|ld_d001|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.4
+   },
+   "afterFiles": [
+    "어둠/desktop/ld_d001/step2-1.jpg",
+    "어둠/desktop/ld_d001/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/ld_d001/step2-1.jpg",
+    "어둠/desktop/ld_d001/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|ld_d001|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1
+   },
+   "afterFiles": [
+    "어둠/desktop/ld_d001/step3-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/ld_d001/step3-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|ld_d001|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.1
+   },
+   "afterFiles": [
+    "어둠/desktop/ld_d001/step4-1.jpg",
+    "어둠/desktop/ld_d001/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/ld_d001/step4-1.jpg",
+    "어둠/desktop/ld_d001/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|ld_d001|step5",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "어둠/desktop/ld_d001/step5-1.jpg",
+    "어둠/desktop/ld_d001/step5-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/ld_d001/step5-1.jpg",
+    "어둠/desktop/ld_d001/step5-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|ld_d001|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "어둠/desktop/ld_d001/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/ld_d001/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|reading_pr001|open",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/desktop/reading_pr001/open-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/reading_pr001/open-1.jpg"
+   ],
+   "paywalled": false,
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|reading_pr001|step1",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.2
+   },
+   "afterFiles": [
+    "어둠/desktop/reading_pr001/step1-1.jpg",
+    "어둠/desktop/reading_pr001/step1-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/reading_pr001/step1-1.jpg",
+    "어둠/desktop/reading_pr001/step1-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|reading_pr001|step2",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 2.7
+   },
+   "afterFiles": [
+    "어둠/desktop/reading_pr001/step2-1.jpg",
+    "어둠/desktop/reading_pr001/step2-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/reading_pr001/step2-1.jpg",
+    "어둠/desktop/reading_pr001/step2-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|reading_pr001|step3",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.7
+   },
+   "afterFiles": [
+    "어둠/desktop/reading_pr001/step3-1.jpg",
+    "어둠/desktop/reading_pr001/step3-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/reading_pr001/step3-1.jpg",
+    "어둠/desktop/reading_pr001/step3-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|reading_pr001|step4",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "어둠/desktop/reading_pr001/step4-1.jpg",
+    "어둠/desktop/reading_pr001/step4-2.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/reading_pr001/step4-1.jpg",
+    "어둠/desktop/reading_pr001/step4-2.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  },
+  {
+   "k": "dark|desktop|reading_pr001|end",
+   "beforeMode": "lic",
+   "before": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "after": {
+    "ox": 0,
+    "s44": 0,
+    "u12": 0,
+    "zoom": 0,
+    "low": 0,
+    "scr": 1.5
+   },
+   "afterFiles": [
+    "어둠/desktop/reading_pr001/end-1.jpg"
+   ],
+   "beforeFiles": [
+    "어둠/desktop/reading_pr001/end-1.jpg"
+   ],
+   "s44samples": [],
+   "tiny": [],
+   "low": [],
+   "hscroll": []
+  }
+ ]
+}

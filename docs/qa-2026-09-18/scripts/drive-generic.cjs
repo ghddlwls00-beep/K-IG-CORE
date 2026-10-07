@@ -102,7 +102,10 @@ const JSONL = path.join(OUT, "features", `${COURSE}${SUFFIX}.jsonl`);
 // inside 'playground') and never a button in the word bank · answer box, an answer option or a script line toggle (the dictation
 // tile 'play' · 'players' · 'playground', '… put on plays', '… 알아듣기 …' were pressed as speakers → RETEST). Each sound row
 // pressed through NEXT_CONTROL carries ctx (where the control sits). --break=play-regex: the old rule.
-const DRIVER_REV = "7-1m-g15-s0927-v0927-l0927-a1002-f1005-p1006";
+// UI검토-1007 고침 (2026-10-07): '-u1007' — STUDENT · ADULT completion is the shared end bar's button (same aria-labels; the test
+// reads it the same way) and a GRAMMAR lesson completes after one checked Step 1 item (사장님 결정 — D02 나), so the completion test
+// checks one first when the button is disabled.
+const DRIVER_REV = "7-1m-g15-s0927-v0927-l0927-a1002-f1005-p1006-u1007";
 // T6: the machine's connection, not a server answer (4xx/5xx are badResponses, never these)
 const OFFLINE_ERR = /ERR_INTERNET_DISCONNECTED|ERR_NETWORK_CHANGED|ERR_NETWORK_IO_SUSPENDED|ERR_NAME_NOT_RESOLVED|ERR_ADDRESS_UNREACHABLE/;
 const RENDERED = path.join(OUT, "rendered", COURSE);
@@ -1304,6 +1307,9 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
     // '완료 취소' (aria-label 학습 완료 취소, STU-U26). This test used to look only at the first screen and wrote 'no completion
     // control' NA for every STUDENT lesson — the completion that drives the progress rate and the next chapter's unlock was never pressed.
     // 회귀 점검 1002: ADULT completes the same way at the end of ITS LAST step (Step 5 · 섀도잉 & 낭독) — STUDENT_TABS.shadowing
+    // 2026-10-07 (UI검토-1007 2장 1번): the button is now the shared end bar's (section '강의 마치기', under every step) with the same
+    // aria-labels; the view registers the 80% rule as its lessonGate. Completed it reads '학습 완료함 · 취소하려면 누르세요'. Opening
+    // the last step first is kept (harmless — the bar is below it too) so the item names stay comparable with earlier runs.
     const studentView = isStudentView(page.course);
     const lastTab = studentView ? STUDENT_TABS[page.course].shadowing : 3;
     const step3 = studentView ? (rec.steps || []).find((s) => new RegExp(`Step\\s*${lastTab}(?!\\d)`, "i").test(s)) : null;
@@ -1370,6 +1376,18 @@ async function visit(tab, page, viewport, neighbourMap, persist) {
       const r = await tab.eval(RDP.MEASURE_ONCE).catch((e) => ({ ok: false, why: String(e && e.message ? e.message : e).slice(0, 80) }));
       practiceNote = r && r.ok ? "practised: one timed reading (Step 4)" : `could not time a reading: ${(r && r.why) || "?"}`;
       await H.sleep(200);
+      c0 = await tab.eval(cmState).catch(() => null);
+    }
+    if ((page.course === "grammar1" || page.course === "grammar2") && c0 && /\|disabled$/.test(c0)) {
+      // 2026-10-07 (UI검토-1007 결과.md 2장 5번 · 사장님 결정 — 9/27 D02 나 for GRAMMAR): '이 강의 학습 완료' opens once one Step 1
+      // item was checked — write an answer in Step 1's first box and press Enter (= 확인) like a learner, then read the button again
+      // (the work is saved 400 ms later, so the reload below still finds the check).
+      await H.click(tab, `document.querySelector('main [data-step-tab="1"]')`, { settle: 600 });
+      const box = `[...document.querySelectorAll('main [data-step-panel="1"] [data-item] textarea')].find((t) => t.offsetParent !== null)`;
+      const typed = await H.type(tab, box, "zzz qqq xxx");
+      if (typed) await tab.send("Input.dispatchKeyEvent", { type: "keyDown", key: "Enter", code: "Enter", windowsVirtualKeyCode: 13, text: "\r" }).catch(() => {});
+      await H.sleep(700);
+      practiceNote = typed ? "practised: one Step 1 item checked (an answer + Enter)" : "could not type in a Step 1 box";
       c0 = await tab.eval(cmState).catch(() => null);
     }
     // 회귀 점검 1002: ADULT — press completion only when it cannot open a chapter for good (adultProgress keeps unlockedThrough with

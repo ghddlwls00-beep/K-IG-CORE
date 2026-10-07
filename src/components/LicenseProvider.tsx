@@ -45,6 +45,19 @@ const SERVER_GATED_LESSON_PATH =
 
 interface LicenseContextType {
   hasActiveLicense: boolean;
+  /**
+   * UI검토-1007 10번: false until this browser's licence question has its first answer (no copy here and the server's
+   * cookie check answered, or the stored copy's verification answered — either way). Nothing here decides access:
+   * `hasActiveLicense` is exactly as before. A list page uses it only to wait before drawing '무료' and locks
+   * for someone the server already saw with a licence cookie.
+   */
+  licenseSettled: boolean;
+  /**
+   * The server progress records the chapter locks are drawn from (STUDENT · ADULT) have had their first answer since the
+   * licence became active (or there is no active licence). Display only — isUnlocked reads the records as before.
+   */
+  studentProgressSettled: boolean;
+  adultProgressSettled: boolean;
   licenseInfo: LicenseInfo | null;
   currentDevice: ClientDevice;
   isUnlocked: (
@@ -128,6 +141,10 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   const [studentProgressLoading, setStudentProgressLoading] = useState(false);
   const [passoffSnapshot, setPassoffSnapshot] = useState<PassoffProgressSnapshot | null>(null);
   const [adultProgress, setAdultProgress] = useState<StudentProgressSnapshot | null>(null);
+  // UI검토-1007 10번 — display-only markers (see LicenseContextType)
+  const [licenseSettled, setLicenseSettled] = useState(false);
+  const [studentProgressSettled, setStudentProgressSettled] = useState(false);
+  const [adultProgressSettled, setAdultProgressSettled] = useState(false);
 
   useEffect(() => {
     const updateClock = () => setClock(Date.now());
@@ -187,7 +204,8 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
           })
           .catch(() => {
             // Offline or blocked: stay as a visitor without a licence.
-          });
+          })
+          .finally(() => setLicenseSettled(true));
       }
       if (raw) {
         const parsed = JSON.parse(raw) as StoredLicense;
@@ -274,15 +292,18 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
               // blocked — a forged token needed no valid signature at all.
               console.warn("License verification failed; staying locked.");
               setStored(null);
-            });
+            })
+            .finally(() => setLicenseSettled(true));
         } else {
           // Untrusted / un-signed localStorage data (no server-signed token)
           window.localStorage.removeItem(STORAGE_KEY);
           setStored(null);
+          setLicenseSettled(true);
         }
       }
     } catch {
       // ignore
+      setLicenseSettled(true);
     }
   }, []);
 
@@ -304,12 +325,16 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       return null;
     } finally {
       setStudentProgressLoading(false);
+      setStudentProgressSettled(true);
     }
   }, []);
 
   useEffect(() => {
     if (hasActiveLicense) void refreshStudentProgress();
-    else setStudentProgress(null);
+    else {
+      setStudentProgress(null);
+      setStudentProgressSettled(false);
+    }
   }, [hasActiveLicense, refreshStudentProgress]);
 
   // ADULT — as STUDENT above, from its own record. A plan that does not open ADULT gets 403 and keeps null.
@@ -322,12 +347,17 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       return data.progress as StudentProgressSnapshot;
     } catch {
       return null;
+    } finally {
+      setAdultProgressSettled(true);
     }
   }, []);
 
   useEffect(() => {
     if (hasActiveLicense) void refreshAdultProgress();
-    else setAdultProgress(null);
+    else {
+      setAdultProgress(null);
+      setAdultProgressSettled(false);
+    }
   }, [hasActiveLicense, refreshAdultProgress]);
 
   const licenseInfo: LicenseInfo | null = stored
@@ -505,6 +535,10 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     <LicenseContext.Provider
       value={{
         hasActiveLicense,
+        licenseSettled,
+        // without an active licence there is no server record to wait for
+        studentProgressSettled: !hasActiveLicense || studentProgressSettled,
+        adultProgressSettled: !hasActiveLicense || adultProgressSettled,
         licenseInfo,
         currentDevice,
         isUnlocked,

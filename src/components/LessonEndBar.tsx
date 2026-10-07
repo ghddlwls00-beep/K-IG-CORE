@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useProgress } from "./ProgressProvider";
 import { usePassoffProgress } from "./PassoffProgressProvider";
+import { useLicense } from "./LicenseProvider";
 import { getLessonGate, subscribeLessonGate } from "@/lib/lessonGate";
 
 const PASSOFF_COURSE = "passoff-grammar";
@@ -19,9 +20,9 @@ type Neighbour = { href: string; title: string; code?: string } | null;
  * previous/next cards used to sit at the TOP of the page, so a learner who finished the last step
  * had to scroll 7–16 phone screens back up to mark it done or to move on. They now close the page.
  *
- * STUDENT keeps its own completion at the end of Step 3 (server progress, chapter unlock), so this
- * bar shows only the neighbours there. The aria-labels "학습 완료 체크" / "학습 완료 취소" are the
- * ones the audit drivers press (gap-checks-0926 P) — keep them.
+ * (Until 2026-10-07 STUDENT · ADULT kept their own completion at the end of their last step and this bar showed only the
+ * neighbours there — see the last paragraph.) The aria-labels "학습 완료 체크" / "학습 완료 취소" are the
+ * ones the audit drivers press (gap-checks-0926 P · drive-generic) — keep them.
  *
  * 2026-09-27 STUDENT 학습법 · 화면 고침: the neighbours read 'Ch 12-1 · School Vacations (방학맞이)' (STU-U17 — 'Part 1 ·'
  * alone looked like going backwards), and STUDENT's '다음 강의' first sends the queued completion to the server and
@@ -37,6 +38,14 @@ type Neighbour = { href: string; title: string; code?: string } | null;
  * 설계.md §3). The bar shows the disabled button with the reason until then, and '학습 완료함' as a status afterwards — no
  * '취소', because that course's server keeps completions only (lessonGate.ts `undo`). On a topic's last lesson whose
  * "구성도 다시 채우기" opens the next topic, the gate also says `quietNext`: '다음 강의' keeps its border (one filled button).
+ *
+ * 2026-10-07 (UI검토-1007 결과.md 2장 1번): STUDENT · ADULT complete HERE too, like the other six courses — their view no longer
+ * draws its own '이 강의 학습 완료' box at the end of its last step (that box had a second filled '다음 강의', and this bar's
+ * '다음 강의' was filled before completion, so a period-pass learner could skip completion and land on the chapter lock). The view
+ * registers its rule as a gate (80% dictated and 80% spoken — unchanged, studentPractice.canCompleteLesson); until it has, the
+ * button stays off (no gate yet = not yet known, for these two courses only). The save is unchanged: toggleComplete queues it for
+ * /api/progress/student · adult, and '다음 강의' waits for the server's answer as before (A11). 'N장은 이 장을 마치면 열려요.'
+ * moved here with it: while a period pass's next chapter is still closed, that line stands where '다음 강의' would be.
  */
 export function LessonEndBar({
   course,
@@ -49,27 +58,42 @@ export function LessonEndBar({
   prev: Neighbour;
   next: Neighbour;
 }) {
-  const { isCompleted, toggleComplete, flushStudentUpdates, flushAdultUpdates } = useProgress();
+  const { isCompleted, toggleComplete, flushStudentUpdates, flushAdultUpdates, studentSyncStatus, adultSyncStatus } = useProgress();
   // PASS-OFF GRAMMAR's completions live on the server (PassoffProgressProvider) — the lessons it counts, and those on their way
   const { countedIds: passoffCounted } = usePassoffProgress();
-  // ADULT (2026-10-02) completes inside its view's Step 3 and waits for the save before '다음 강의', as STUDENT
+  const { hasActiveLicense, licenseInfo, studentProgress, adultProgress } = useLicense();
+  // STUDENT · ADULT (chapter courses): completion opens chapters on the server, so '다음 강의' waits for the save
   const isChapterCourse = course === "student" || course === "adult";
   const router = useRouter();
   const [saving, setSaving] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
+  // the server answered '다음 강의' with the next chapter still closed
+  const [lockedAfterSave, setLockedAfterSave] = useState(false);
   // 회귀 점검 1002 A4: a PASS-OFF lesson finished on another device (or before this device's storage was cleared) is complete
   // here too — the course list already marks it from the server; the bar used to read this device's record alone and showed
   // the disabled '이 강의 학습 완료' with "5단계를 모두 마치면…" under it
   const completed = isCompleted(course, lessonId) || (course === PASSOFF_COURSE && passoffCounted?.has(lessonId) === true);
-  const showComplete = !isChapterCourse;
   const named = (n: NonNullable<Neighbour>) => (n.code ? `${n.code} · ${n.title}` : n.title);
   const gate = useSyncExternalStore(subscribeLessonGate, () => getLessonGate(course, lessonId), () => null);
-  const blocked = showComplete && !completed && gate !== null && !gate.ready;
+  // no gate: every course completes at any time — except STUDENT · ADULT, whose view always registers one (not yet = not yet known)
+  const blocked = !completed && (gate !== null ? !gate.ready : isChapterCourse);
   // a gate with undo: false (PASS-OFF GRAMMAR): a completed lesson is a status line, not a toggle
-  const doneForGood = showComplete && completed && gate !== null && gate.undo === false;
+  const doneForGood = completed && gate !== null && gate.undo === false;
   // a gate with quietNext (PASS-OFF GRAMMAR — a topic's last lesson before its map): '다음 강의' is not the page's main action
-  const nextFilled = (completed || !showComplete) && gate?.quietNext !== true;
+  const nextFilled = completed && gate?.quietNext !== true;
   const reasonId = useId();
+
+  // STUDENT · ADULT chapter lock (moved from the view's completion box, 2026-10-07): a period pass opens the next chapter only once
+  // this chapter is finished on the server — until then '다음 강의' into it would land on the lock screen ('순차 학습 잠금')
+  const chapterOf = (id: string) => Number(id.match(/^[sa](\d+)-/)?.[1] ?? 0);
+  const thisChapter = chapterOf(lessonId);
+  const nextChapter = next ? chapterOf(next.href.split("/").pop() ?? "") : 0;
+  const periodPass = hasActiveLicense && licenseInfo?.plan !== "LIFE";
+  const lockedByChapter = (unlockedThrough: number | null | undefined) =>
+    Boolean(isChapterCourse && next && periodPass && typeof unlockedThrough === "number" && nextChapter > thisChapter && nextChapter > unlockedThrough);
+  const chapterRecord = course === "adult" ? adultProgress : studentProgress;
+  const chapterSync = course === "adult" ? adultSyncStatus : studentSyncStatus;
+  const nextLocked = (lockedByChapter(chapterRecord?.unlockedThrough) && chapterSync !== "syncing" && chapterSync !== "pending") || lockedAfterSave;
 
   async function goNext(event: MouseEvent<HTMLAnchorElement>) {
     if (!isChapterCourse || !next) return;
@@ -86,6 +110,11 @@ export function LessonEndBar({
           : "완료 기록을 아직 저장하지 못했어요. 잠시 뒤 다시 보내요.",
       );
       await new Promise((resolve) => window.setTimeout(resolve, 1500));
+    } else if (result.progress && lockedByChapter(result.progress.unlockedThrough)) {
+      // still closed — the line where '다음 강의' was says so
+      setSaving(false);
+      setLockedAfterSave(true);
+      return;
     }
     router.push(next.href);
   }
@@ -102,14 +131,14 @@ export function LessonEndBar({
           </svg>
           <span>학습 완료함</span>
         </p>
-      ) : showComplete ? (
+      ) : (
         <button
           type="button"
           onClick={() => {
             if (!blocked) toggleComplete(course, lessonId);
           }}
           disabled={blocked || undefined}
-          aria-describedby={blocked ? reasonId : undefined}
+          aria-describedby={blocked && gate ? reasonId : undefined}
           aria-label={completed ? "학습 완료 취소" : "학습 완료 체크"}
           aria-pressed={completed}
           className={`flex min-h-12 w-full items-center justify-center gap-2 rounded-control text-label font-semibold transition-colors cursor-pointer ${
@@ -130,7 +159,7 @@ export function LessonEndBar({
             <span>이 강의 학습 완료</span>
           )}
         </button>
-      ) : null}
+      )}
       {blocked && gate ? (
         <p id={reasonId} className="mt-2 text-center text-caption text-ink-soft">
           {gate.reason}
@@ -138,7 +167,7 @@ export function LessonEndBar({
       ) : null}
 
       {prev || next ? (
-        <nav aria-label="강의 이동" className={`${showComplete ? "mt-3" : ""} grid gap-2 ${prev && next ? "sm:grid-cols-2" : ""}`}>
+        <nav aria-label="강의 이동" className={`mt-3 grid gap-2 ${prev && next ? "sm:grid-cols-2" : ""}`}>
           {prev ? (
             <Link
               href={prev.href}
@@ -153,7 +182,11 @@ export function LessonEndBar({
               </span>
             </Link>
           ) : null}
-          {next ? (
+          {next && nextLocked ? (
+            <p data-next-locked className="flex min-h-14 min-w-0 items-center justify-end px-3 py-2 text-right text-label text-ink-soft">
+              {nextChapter}장은 이 장을 마치면 열려요.
+            </p>
+          ) : next ? (
             <Link
               href={next.href}
               scroll={true}

@@ -3,9 +3,16 @@
 import { useEffect, useRef, useState } from "react";
 import { useLicense } from "./LicenseProvider";
 import { STUDENT_PASS_SCOPE } from "@/lib/license";
+import { IconCheck, IconLock, IconX } from "./icons";
 
-const PURCHASE_URL = process.env.NEXT_PUBLIC_PURCHASE_URL?.trim() || "";
-const HAS_PURCHASE_URL = /^https:\/\//i.test(PURCHASE_URL);
+/**
+ * Where a learner buys a pass. 2026-10-07 (UI검토-1007 결과.md 2번 · 사장님): while the store address is not set,
+ * nothing about buying is drawn — no '구매 안내' on the paywall, no '구매 링크 준비 중' here (a button that led
+ * nowhere). Set NEXT_PUBLIC_PURCHASE_URL (https) and '이용권 구매하기' appears here and on the paywall, opening
+ * the store in a new tab. LessonPaywall reads these two as well, so both screens change together.
+ */
+export const PURCHASE_URL = process.env.NEXT_PUBLIC_PURCHASE_URL?.trim() || "";
+export const HAS_PURCHASE_URL = /^https:\/\//i.test(PURCHASE_URL);
 
 /**
  * What an issued key looks like — `KIG-<PLAN>-<16 hex>-<16 hex>`, see
@@ -23,6 +30,13 @@ const FOCUSABLE =
  * closing returns focus to the button that opened it. It used to be a div
  * whose "닫기 (ESC)" tooltip promised a key that did nothing, and Tab left the
  * modal for the page underneath on the second press.
+ *
+ * 2026-10-07 (UI검토-1007 결과.md 3번 · docs/디자인-규칙.md): the same calm look as the paywall and the lessons —
+ * line icons instead of 🔑 · 👑 · 🎓 · 💡 · 🛒, no English capital labels ('ALL-PASS ACTIVE'), no monospace or
+ * letter-spaced Korean, nothing under 12px, a 44px close button, one box (rows divided by lines, not boxes in
+ * boxes), and one set of names ('과정' · '이용권 코드'). 'VIP' stays (사장님 2026-10-07: product name).
+ * What registering does is unchanged to the letter: the same fields (#license-code · #license-upgrade-code),
+ * the same handlers, the same activateKey / deactivateLicense calls.
  */
 export function LicenseModal() {
   const {
@@ -106,6 +120,13 @@ export function LicenseModal() {
     }
   }
 
+  // One line under a form: the server's answer, in the right/wrong colour (no tinted box).
+  const feedbackLine = feedback ? (
+    <p role="alert" className={`text-label font-medium ${feedback.type === "success" ? "text-success" : "text-danger"}`}>
+      {feedback.text}
+    </p>
+  ) : null;
+
   return (
     <div
       role="dialog"
@@ -119,29 +140,29 @@ export function LicenseModal() {
         ref={dialogRef}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-md rounded-2xl border border-line bg-surface p-6 sm:p-7 shadow-2xl flex flex-col gap-5 animate-in zoom-in-95 duration-150 focus:outline-none"
+        className="flex max-h-[calc(100dvh-2rem)] w-full max-w-md flex-col gap-5 overflow-y-auto rounded-card border border-line bg-surface p-5 shadow-2xl animate-in zoom-in-95 duration-150 focus:outline-none sm:p-6"
       >
         {/* Header */}
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-black/8 bg-black/[0.03] dark:border-white/10 dark:bg-white/[0.06] text-[17px] shadow-2xs" aria-hidden="true">
-              {hasActiveLicense ? (licenseInfo?.isStudentOnly ? "🎓" : "👑") : "🔑"}
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex min-w-0 items-start gap-3">
+            <div aria-hidden className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line text-ink-soft">
+              {hasActiveLicense ? <IconCheck size={18} className="text-success" /> : <IconLock size={18} />}
             </div>
-            <div>
-              <h3 id="license-modal-title" className="text-[17px] font-bold text-ink tracking-tight">
+            <div className="min-w-0">
+              <h3 id="license-modal-title" className="text-title-s font-bold text-ink">
                 {hasActiveLicense
                   ? licenseInfo?.isStudentOnly
                     ? "STUDENT 패스 회원"
                     : "올패스 VIP 회원"
-                  : "K-IG 이용권 등록"}
+                  : "이용권 등록"}
               </h3>
-              <p className="text-[12px] text-ink-soft mt-0.5">
+              <p className="mt-0.5 text-label leading-relaxed text-ink-soft">
                 {/* what the pass opens comes from license.ts (STUDENT_PASS_SCOPE), so it cannot drift from the gate */}
                 {hasActiveLicense
                   ? licenseInfo?.isStudentOnly
-                    ? `STUDENT 이용권이 활성화되어 ${STUDENT_PASS_SCOPE}를 챕터 1부터 순차적으로 학습할 수 있습니다.`
-                    : "전체 유료 강의가 활성화되어 있습니다."
-                  : "발급받으신 코드를 등록하여 학습을 시작하세요."}
+                    ? `STUDENT 이용권으로 ${STUDENT_PASS_SCOPE}를 1장부터 차례대로 학습할 수 있습니다.`
+                    : "모든 유료 강의를 학습할 수 있습니다."
+                  : "받은 코드를 등록하면 바로 학습할 수 있습니다."}
               </p>
             </div>
           </div>
@@ -149,76 +170,66 @@ export function LicenseModal() {
           <button
             type="button"
             onClick={closeModal}
-            className="flex h-7 w-7 items-center justify-center rounded-full border border-line bg-surface text-ink-faint hover:text-ink hover:bg-raised transition-colors cursor-pointer text-[12px]"
+            className="-mr-2 -mt-2 flex h-11 w-11 shrink-0 items-center justify-center rounded-control text-ink-soft transition-colors cursor-pointer hover:bg-sunken hover:text-ink"
             title="닫기 (ESC)"
             aria-label="닫기"
           >
-            ✕
+            <IconX size={18} />
           </button>
         </div>
 
         {/* ALREADY ACTIVATED VIEW */}
         {hasActiveLicense && licenseInfo ? (
-          <div className="flex flex-col gap-4">
-            <div className="rounded-2xl border border-line bg-raised/50 p-4.5 flex flex-col gap-3">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[10.5px] font-semibold text-ink-soft uppercase tracking-wider">
-                  {licenseInfo.isStudentOnly ? "STUDENT PASS ACTIVE" : "ALL-PASS ACTIVE"}
-                </span>
-                <span
-                  className={`inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 font-mono text-[10.5px] font-semibold ${
-                    licenseInfo.isStudentOnly
-                      ? "border-blue-500/20 bg-blue-500/10 text-blue-700 dark:text-blue-300"
-                      : "border-emerald-500/20 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
-                  }`}
-                >
-                  <span
-                    className={`h-1.5 w-1.5 rounded-full ${
-                      licenseInfo.isStudentOnly ? "bg-blue-500" : "bg-emerald-500"
-                    }`}
-                  />
+          <div className="flex flex-col gap-5">
+            {/* the pass, as rows divided by lines (no box inside the box) */}
+            <dl className="divide-y divide-line border-y border-line text-label">
+              <div className="flex items-center justify-between gap-4 py-2.5">
+                <dt className="text-ink-soft">상태</dt>
+                <dd className="flex items-center gap-1.5 font-medium text-ink">
+                  <IconCheck size={14} className="text-success" />
                   정상 이용 중
-                </span>
+                </dd>
               </div>
+              <div className="flex items-center justify-between gap-4 py-2.5">
+                <dt className="shrink-0 text-ink-soft">이용권</dt>
+                <dd className="min-w-0 text-right font-semibold text-ink">{licenseInfo.planLabel}</dd>
+              </div>
+              <div className="flex items-center justify-between gap-4 py-2.5">
+                <dt className="shrink-0 text-ink-soft">이용권 코드</dt>
+                {/* BUG-018: the browser keeps only a masked copy of the code. The code itself is letters and
+                    digits (monospace is for code); the Korean fallback is set in the normal face. */}
+                <dd className="min-w-0 truncate text-right text-ink">
+                  {licenseInfo.maskedKey ? <span className="font-mono">{licenseInfo.maskedKey}</span> : "가려서 보관 중"}
+                </dd>
+              </div>
+              <div className="flex items-center justify-between gap-4 py-2.5">
+                <dt className="shrink-0 text-ink-soft">이 기기</dt>
+                <dd className="min-w-0 truncate text-right text-ink">{currentDevice.name}</dd>
+              </div>
+              <div className="flex items-center justify-between gap-4 py-2.5">
+                <dt className="shrink-0 text-ink-soft">등록일</dt>
+                <dd className="text-right tabular-nums text-ink">{licenseInfo.activatedAt}</dd>
+              </div>
+              <div className="flex items-center justify-between gap-4 py-2.5">
+                <dt className="shrink-0 text-ink-soft">만료일</dt>
+                <dd className="text-right tabular-nums text-ink">{licenseInfo.expiresAt ? licenseInfo.expiresAt : "평생 소장"}</dd>
+              </div>
+            </dl>
 
-              <div className="flex flex-col gap-0.5">
-                <span className="text-[16px] font-bold text-ink tracking-tight">
-                  {licenseInfo.planLabel}
-                </span>
-                <span className="font-mono text-[11.5px] text-ink-faint">
-                  {/* BUG-018: the browser keeps only a masked copy of the code */}
-                  코드: {licenseInfo.maskedKey || "가려서 보관 중"}
-                </span>
-              </div>
-
-              <div className="rounded-xl border border-line/60 bg-surface/70 p-3 flex flex-col gap-1 text-[11.5px] text-ink-soft">
-                <div className="flex items-center justify-between">
-                  <span>등록 기기: <strong className="text-ink">{currentDevice.name}</strong></span>
-                  <span className="font-mono text-[10.5px] text-ink-faint">기기 슬롯 정상 연동</span>
-                </div>
-                <span className="text-[11px] text-ink-faint">
-                  {licenseInfo.isStudentOnly
-                    ? "※ 학습 완료 조건을 충족하면 다음 챕터가 순서대로 열립니다."
-                    : "※ 최대 2대 기기까지 자동 연동되어 학습하실 수 있습니다."}
-                </span>
-              </div>
-
-              <div className="border-t border-line/60 pt-2.5 flex flex-wrap items-center justify-between text-[11.5px] text-ink-faint font-mono">
-                <span>등록일: {licenseInfo.activatedAt}</span>
-                <span>
-                  {licenseInfo.expiresAt ? `만료일: ${licenseInfo.expiresAt}` : "만료일: 평생 소장"}
-                </span>
-              </div>
-            </div>
+            <p className="-mt-2 text-caption text-ink-soft">
+              {licenseInfo.isStudentOnly
+                ? "학습 완료 조건을 채우면 다음 장이 차례대로 열립니다."
+                : "한 사람이 기기 2대까지 쓸 수 있습니다."}
+            </p>
 
             {/* If on student-only pass, provide upgrade form */}
             {licenseInfo.isStudentOnly && (
-              <div className="rounded-xl border border-dashed border-amber-500/40 bg-amber-500/[0.04] p-3.5 flex flex-col gap-2">
-                <div className="flex items-center justify-between">
-                  <label htmlFor="license-upgrade-code" className="text-[12px] font-bold text-amber-900 dark:text-amber-200">
-                    👑 VIP 올패스로 업그레이드
+              <div className="flex flex-col gap-2 border-t border-line pt-4">
+                <div className="flex items-baseline justify-between gap-3">
+                  <label htmlFor="license-upgrade-code" className="text-label font-semibold text-ink">
+                    VIP 올패스로 업그레이드
                   </label>
-                  <span className="text-[11px] text-ink-faint">전 강좌 열람</span>
+                  <span className="shrink-0 text-caption text-ink-soft">모든 과정 학습</span>
                 </div>
                 <form onSubmit={handleSubmit} className="flex gap-2">
                   <input
@@ -227,34 +238,25 @@ export function LicenseModal() {
                     value={inputCode}
                     onChange={(e) => setInputCode(e.target.value.toUpperCase())}
                     placeholder={KEY_PLACEHOLDER}
-                    className="flex-1 min-w-0 rounded-xl border border-line bg-surface px-3 py-1.5 font-mono text-[13px] font-bold text-ink placeholder:font-sans placeholder:font-normal placeholder:text-ink-faint focus:border-ink focus:outline-none"
+                    className="min-h-11 min-w-0 flex-1 text-ellipsis rounded-control border border-line bg-raised px-3 font-mono text-body font-semibold text-ink placeholder:font-sans placeholder:font-normal placeholder:text-ink-faint focus:border-ink focus:outline-none"
                   />
                   <button
                     type="submit"
                     disabled={isSubmitting || !inputCode.trim()}
-                    className="rounded-xl bg-ink px-3 py-1.5 text-[12px] font-bold text-surface hover:opacity-90 disabled:opacity-40 cursor-pointer shrink-0"
+                    className="min-h-11 shrink-0 rounded-control bg-ink px-4 text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90 disabled:opacity-40"
                   >
                     {isSubmitting ? "확인 중" : "등록"}
                   </button>
                 </form>
-                {feedback && (
-                  <span
-                    role="alert"
-                    className={`text-[11.5px] font-medium ${
-                      feedback.type === "success" ? "text-emerald-700 dark:text-emerald-400" : "text-red-500"
-                    }`}
-                  >
-                    {feedback.text}
-                  </span>
-                )}
+                {feedbackLine}
               </div>
             )}
 
-            <div className="flex items-center justify-between pt-1">
+            <div className="flex items-center justify-between gap-3">
               <button
                 type="button"
                 onClick={handleDeactivate}
-                className="text-[11.5px] text-ink-faint hover:text-red-500 cursor-pointer underline underline-offset-2 transition-colors"
+                className="-ml-2 min-h-11 rounded-control px-2 text-label text-ink-soft underline underline-offset-2 transition-colors cursor-pointer hover:text-danger"
               >
                 이 기기에서 등록 해제
               </button>
@@ -262,7 +264,7 @@ export function LicenseModal() {
               <button
                 type="button"
                 onClick={closeModal}
-                className="rounded-full bg-ink px-5 py-2 text-[12.5px] font-semibold text-surface hover:opacity-90 transition-all cursor-pointer shadow-2xs active:scale-95"
+                className="min-h-11 rounded-control bg-ink px-6 text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90"
               >
                 확인
               </button>
@@ -272,8 +274,8 @@ export function LicenseModal() {
           /* REGISTRATION FORM VIEW */
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="flex flex-col gap-1.5">
-              <label htmlFor="license-code" className="text-[12px] font-medium text-ink-soft">
-                이용권 시리얼 코드
+              <label htmlFor="license-code" className="text-label font-medium text-ink">
+                이용권 코드
               </label>
               <input
                 id="license-code"
@@ -282,65 +284,44 @@ export function LicenseModal() {
                 onChange={(e) => setInputCode(e.target.value.toUpperCase())}
                 placeholder={KEY_PLACEHOLDER}
                 aria-describedby="license-code-hint"
-                className="w-full rounded-full border border-line bg-raised/50 px-4 py-2.5 font-mono text-[16px] font-bold text-ink placeholder:font-sans placeholder:font-normal placeholder:text-[13px] placeholder:text-ink-faint focus:border-ink focus:bg-surface focus:outline-none transition-colors tracking-wide"
+                className="min-h-12 w-full text-ellipsis rounded-control border border-line bg-raised px-4 font-mono text-body font-semibold text-ink placeholder:font-sans placeholder:font-normal placeholder:text-ink-faint focus:border-ink focus:outline-none transition-colors"
                 disabled={isSubmitting}
               />
-              <div id="license-code-hint" className="flex items-center justify-between text-[11px] text-ink-faint px-1">
-                <span>현재 기기: <strong>{currentDevice.name}</strong></span>
-                <span>1인 최대 2대 기기 지원</span>
-              </div>
+              <p id="license-code-hint" className="flex flex-wrap justify-between gap-x-3 text-caption text-ink-soft">
+                <span>이 기기: {currentDevice.name}</span>
+                <span>한 사람이 기기 2대까지</span>
+              </p>
             </div>
 
-            {feedback && (
-              <div
-                role="alert"
-                className={`rounded-xl p-3 text-[12px] font-medium animate-in fade-in ${
-                  feedback.type === "success"
-                    ? "border border-emerald-500/20 bg-emerald-500/10 text-emerald-800 dark:text-emerald-200"
-                    : "border border-red-500/20 bg-red-500/10 text-red-600 dark:text-red-300"
-                }`}
-              >
-                {feedback.text}
-              </div>
-            )}
+            {feedbackLine}
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full rounded-full bg-ink py-2.5 text-[13px] font-semibold text-surface hover:opacity-90 transition-all cursor-pointer shadow-2xs active:scale-[0.99] disabled:opacity-50"
+              className="flex min-h-12 w-full items-center justify-center rounded-control bg-ink text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90 disabled:opacity-50"
             >
-              {isSubmitting ? "인증 확인 중…" : "이용권 코드 등록하기"}
+              {isSubmitting ? "확인 중…" : "이용권 코드 등록하기"}
             </button>
 
-            {/* SmartStore / External Purchase Guide */}
-            <div className="mt-1 rounded-2xl border border-line bg-raised/40 p-3.5 flex flex-col gap-1.5">
-              <span className="text-[11.5px] font-semibold text-ink">
-                💡 아직 이용권 코드가 없으신가요?
-              </span>
-              <p className="text-[11.5px] text-ink-soft leading-relaxed">
-                공식 판매처에서 이용권을 구매한 뒤 발급받은 인증 코드를 등록해 주세요.
-              </p>
-              <div className="mt-1">
-                {HAS_PURCHASE_URL ? (
+            {/* Buying: only when the store address is set (2번) — otherwise nothing, not a dead '준비 중' */}
+            {HAS_PURCHASE_URL ? (
+              <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2 border-t border-line pt-4">
+                <span className="text-label text-ink-soft">아직 이용권 코드가 없으면</span>
                 <a
                   href={PURCHASE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-black/8 dark:border-white/10 bg-surface px-3 py-1 text-[11px] font-medium text-ink hover:bg-raised transition-colors shadow-2xs cursor-pointer"
+                  className="inline-flex min-h-11 items-center gap-1 rounded-control border border-line px-4 text-label font-medium text-ink transition-colors hover:bg-sunken"
                 >
-                  <span>🛒 이용권 구매하기</span>
-                  <span>→</span>
+                  이용권 구매하기
+                  <span className="sr-only">(새 탭)</span>
+                  <span aria-hidden>→</span>
                 </a>
-                ) : (
-                  <span className="inline-flex items-center rounded-full border border-line bg-surface px-3 py-1 text-[11px] font-medium text-ink-faint">
-                    구매 링크 준비 중
-                  </span>
-                )}
               </div>
-            </div>
+            ) : null}
 
-            <p className="text-center font-mono text-[10.5px] text-ink-faint">
-              ※ 각 코스의 1~2강은 이용권 없이도 무료로 상시 체험하실 수 있습니다.
+            <p className="text-center text-caption text-ink-soft">
+              각 과정의 첫 두 강의는 이용권 없이도 학습할 수 있습니다.
             </p>
           </form>
         )}

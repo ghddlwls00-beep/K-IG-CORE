@@ -9,6 +9,11 @@
  * VOCA registers { ready: a Step 2 round was finished (or the lesson was completed), reason: VOCA_GATE_REASON }.
  * In memory only — the view knows its own conditions from its own storage and sets the gate again on every visit.
  *
+ * 2026-10-07 (UI검토-1007 결과.md 2장 1번 · 5번): STUDENT · ADULT register { ready: 80% dictated and 80% spoken (or completed
+ * here) } — their completion moved from their own box to the end bar, which keeps the button off until their gate is set (those
+ * two courses only: no gate there means the record is not read yet). GRAMMAR I · II register { ready: one Step 1 item checked }
+ * (사장님 결정 — 9/27 D02 나). Every course with a gate now: VOCA · LISTENING · READING · GRAMMAR I · II · STUDENT · ADULT · PASS-OFF.
+ *
  * 2026-09-28 (PASS-OFF GRAMMAR, merged with main): `undo: false` — a completed lesson shows '학습 완료함' as a status, with no
  * '취소'. PASS-OFF's server progress takes completions only (docs/pass-off-grammar/설계.md §5 — "학습자 화면에 취소가 없고"), so
  * an undo here would clear this device's mark while the course list and the topic lock still count the lesson. Absent → the

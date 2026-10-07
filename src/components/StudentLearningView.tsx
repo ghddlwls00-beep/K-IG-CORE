@@ -34,14 +34,15 @@
  *           (src/lib/studentBlanks.ts); the microphone accepts every form of the sentence with STUDENT's pass mark 70
  *           and stops the model sound first; completion needs 80% dictated and 80% spoken (D18), and then offers the
  *           next lesson once the completion reached the server (A11).
+ *   2026-10-07 (UI검토-1007 결과.md 2장 1번) the completion press, '완료 취소', '다음 강의' and 'N장은 이 장을 마치면 열려요.' moved
+ *           to the shared end bar (LessonEndBar) like the other six courses; the rule above is this view's lessonGate, and the
+ *           last step ends with one quiet line of where the practice stands.
  * Practice on this device: src/lib/studentPractice.ts (an old save keeps its counts). The common learning engine hears
  * markLessonDone on completion and recordAttempt on each Step 2 check and each microphone result.
  * The data-* attributes are what the audit helpers read (drive-generic.cjs · lib/containers.cjs) — keep them.
  */
 
-import { Fragment, useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore, type MouseEvent, type ReactNode } from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import type { Block, SentenceItem } from "@/lib/types";
 import {
   getServerSpeechSnapshot,
@@ -103,17 +104,8 @@ import {
   IconSpeaker,
   IconStop,
 } from "@/components/icons";
-import { useProgress } from "@/components/ProgressProvider";
-import { useLicense } from "@/components/LicenseProvider";
-
-export interface StudentNextLesson {
-  id: string;
-  href: string;
-  /** 'Ch 12-1' */
-  code: string;
-  /** the lesson's own title — 'School Vacations (방학맞이)' */
-  title: string;
-}
+import { LESSON_COMPLETE_EVENT, useProgress } from "@/components/ProgressProvider";
+import { clearLessonGate, setLessonGate } from "@/lib/lessonGate";
 
 interface StudentLearningViewProps {
   blocks: Block[];
@@ -125,8 +117,6 @@ interface StudentLearningViewProps {
   audioTracks?: { src: string; label?: string }[];
   /** per sentence: its first word keeps its capital on the tile — worked out on the server over the whole course */
   firstWordKeepsCase?: boolean[];
-  /** the lesson after this one (STU-U10) */
-  next?: StudentNextLesson | null;
 }
 
 type StudyMode = "listen" | "words" | "chunk" | "dictation" | "shadowing";
@@ -191,17 +181,12 @@ function headerHeight(): number {
   return parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--header-h")) || 56;
 }
 
-export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: keepFromServer, next = null }: StudentLearningViewProps) {
+export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: keepFromServer }: StudentLearningViewProps) {
   const lessonId = lessonKey.split("/").pop() || lessonKey;
   // ADULT (2026-10-02) is taught by this same view — the course only picks whose record, chapters and review it is
   const course: "student" | "adult" = lessonKey.startsWith("adult/") ? "adult" : "student";
   const learningProfile = course === "adult" ? ADULT_LEARNING_PROFILE : STUDENT_LEARNING_PROFILE;
-  const router = useRouter();
-  const { isCompleted, toggleComplete, flushStudentUpdates, studentSyncStatus, flushAdultUpdates, adultSyncStatus } = useProgress();
-  const { hasActiveLicense, licenseInfo, studentProgress: studentRecord, adultProgress } = useLicense();
-  const studentProgress = course === "adult" ? adultProgress : studentRecord;
-  const chapterSyncStatus = course === "adult" ? adultSyncStatus : studentSyncStatus;
-  const flushChapterUpdates = course === "adult" ? flushAdultUpdates : flushStudentUpdates;
+  const { isCompleted } = useProgress();
   const lessonCompleted = isCompleted(course, lessonId);
 
   // ------------------------------------------------------------------------------------------------------------
@@ -288,8 +273,6 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
 
   // completion
   const [seenCompleted, setSeenCompleted] = useState(false);
-  const [navSaving, setNavSaving] = useState(false);
-  const [navNotice, setNavNotice] = useState<string | null>(null);
 
   const itemRefs = useRef<Record<number, HTMLLIElement | null>>({});
   const lastUserScrollRef = useRef(0);
@@ -599,7 +582,6 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
       if (mode === studyMode) return; // the current tab again: keep the work on screen
       stopAll();
       setStudyMode(mode);
-      setNavNotice(null);
       // 2026-09-28 (사장님 "1단계에서 2단계로 넘어가는데 음성이 나와 이거 해결해"): a step change never starts sound — the
       // sentence opens silent and the learner presses '듣기'; '다음 문장' and the number buttons inside Step 2 still play it
       if (mode === "dictation") openSentence(Math.min(dictationIdx, Math.max(0, total - 1)), false);
@@ -804,54 +786,36 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
   // ------------------------------------------------------------------------------------------------------------
   // Completion (D18 · STU-U26 · U10 · U18 · A11)
   // ------------------------------------------------------------------------------------------------------------
+  // 2026-10-07 (UI검토-1007 2장 1번): the press is the end bar's '이 강의 학습 완료' (LessonEndBar), as in the other six courses —
+  // this view registers the same rule as its gate (80% dictated and 80% spoken · STU-U26 · a lesson without sentences at any time),
+  // and the end bar also carries '다음 강의' (waiting for the server's answer — A11) and 'N장은 이 장을 마치면 열려요.'
   const canComplete = canCompleteLesson({ total, solved: solvedCount, spoken: spokenCount, completedHere: lessonCompleted || seenCompleted });
-  const practisedHere = solvedCount + spokenCount + countOf(practice.hinted) > 0;
-  const complete = () => {
-    if (lessonCompleted || !canComplete) return;
-    toggleComplete(course, lessonId);
-    try {
-      markLessonDone(
-        learningProfile,
-        lessonId,
-        sentenceItems.map((_, i) => ({ key: `${lessonId}#${i + 1}`, kind: "sentence" })),
-      );
-    } catch {
-      // storage unavailable: the lesson is complete; only the review forgets
-    }
-  };
-  const undoComplete = () => {
-    if (lessonCompleted) toggleComplete(course, lessonId);
-  };
+  const gateReason = `탭 딕테이션과 섀도잉을 각각 ${need}문장 이상 하면 완료할 수 있어요.`;
+  useEffect(() => {
+    if (practiceKey !== storageKey) return; // the record is read first — until then the end bar keeps the button off
+    setLessonGate(course, lessonId, { ready: canComplete, reason: gateReason });
+  }, [practiceKey, storageKey, course, lessonId, canComplete, gateReason]);
+  useEffect(() => () => clearLessonGate(course, lessonId), [course, lessonId]);
 
-  const chapterOf = (id: string) => Number(id.match(/^[sa](\d+)-/)?.[1] ?? 0);
-  const thisChapter = chapterOf(lessonId);
-  const nextChapter = next ? chapterOf(next.id) : 0;
-  const periodPass = hasActiveLicense && licenseInfo?.plan !== "LIFE";
-  const lockedByChapter = (unlockedThrough: number | null | undefined) =>
-    Boolean(next && periodPass && typeof unlockedThrough === "number" && nextChapter > thisChapter && nextChapter > unlockedThrough);
-  const nextLocked = lockedByChapter(studentProgress?.unlockedThrough) && chapterSyncStatus !== "syncing" && chapterSyncStatus !== "pending";
-
-  async function goNext(event: MouseEvent<HTMLAnchorElement>) {
-    if (!next) return;
-    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    if (navSaving) return;
-    setNavSaving(true);
-    setNavNotice(null);
-    const result = await flushChapterUpdates();
-    if (result.status === "offline" || result.status === "error") {
-      setNavNotice(
-        result.status === "offline"
-          ? "인터넷에 연결되지 않아 완료 기록은 이 기기에 두었어요. 연결되면 저장돼요."
-          : "완료 기록을 아직 저장하지 못했어요. 잠시 뒤 다시 보내요.",
-      );
-      await new Promise((resolve) => window.setTimeout(resolve, 1500));
-    } else if (result.progress && lockedByChapter(result.progress.unlockedThrough)) {
-      setNavSaving(false); // still closed — the line in the box says so
-      return;
-    }
-    router.push(next.href);
-  }
+  // The lesson is finished (LessonEndBar → ProgressProvider.toggleComplete announces it): every sentence of it comes back from the
+  // next day — the same entries the view's own button handed to the engine before. Un-completing keeps the record.
+  useEffect(() => {
+    const onComplete = (event: Event) => {
+      const detail = (event as CustomEvent<{ course?: string; lessonId?: string; completed?: boolean }>).detail;
+      if (!detail || detail.course !== course || detail.lessonId !== lessonId || !detail.completed) return;
+      try {
+        markLessonDone(
+          learningProfile,
+          lessonId,
+          sentenceItems.map((_, i) => ({ key: `${lessonId}#${i + 1}`, kind: "sentence" })),
+        );
+      } catch {
+        // storage unavailable: the lesson is complete; only the review forgets
+      }
+    };
+    window.addEventListener(LESSON_COMPLETE_EVENT, onComplete);
+    return () => window.removeEventListener(LESSON_COMPLETE_EVENT, onComplete);
+  }, [course, lessonId, learningProfile, sentenceItems]);
 
   // ------------------------------------------------------------------------------------------------------------
   // Pieces
@@ -1475,58 +1439,19 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
     );
   }
 
+  /**
+   * Where the practice stands, one quiet line at the end of the last step (2026-10-07 — no box, no buttons: '이 강의 학습 완료' ·
+   * '학습 완료함 · 취소' · '다음 강의' are the end bar's, right below). A completed lesson needs no line — the end bar says it.
+   * data-completion stays for the audit helpers. The condition itself is said once, by the end bar's reason line (gateReason) —
+   * repeating it here put the same sentence twice on one screen (통합 검사 2026-10-07).
+   */
   function renderCompletion() {
+    if (lessonCompleted || total === 0) return null;
     return (
-      <section data-completion aria-label="이 강의 완료" className="rounded-card border border-line bg-raised px-4 py-4">
-        {lessonCompleted ? (
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <p role="status" className="inline-flex items-center gap-1.5 text-label font-semibold text-success">
-                <IconCheck />
-                <span>완료한 강의</span>
-              </p>
-              <button type="button" aria-label="학습 완료 취소" onClick={undoComplete} className={quietButton}>
-                완료 취소
-              </button>
-            </div>
-            <p className="text-caption tabular-nums text-ink-soft">
-              {practisedHere
-                ? `탭 딕테이션 ${solvedCount}/${total} · 섀도잉 ${spokenCount}/${total}`
-                : "완료한 강의예요 — 다시 연습해도 좋아요."}
-            </p>
-            {next ? (
-              nextLocked ? (
-                <p className="text-label text-ink-soft">{nextChapter}장은 이 장을 마치면 열려요.</p>
-              ) : (
-                <Link href={next.href} onClick={goNext} className={`${filledButton} w-full justify-between`}>
-                  <span className="min-w-0 truncate">{navSaving ? "저장 중…" : `다음 강의: ${next.code} · ${next.title}`}</span>
-                  <IconChevronRight className="shrink-0" />
-                </Link>
-              )
-            ) : null}
-            {navNotice ? (
-              <p role="status" className="text-caption text-ink-soft">
-                {navNotice}
-              </p>
-            ) : null}
-          </div>
-        ) : (
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="min-w-0">
-              <p className="text-label font-semibold tabular-nums text-ink">
-                탭 딕테이션 {solvedCount}/{total} · 섀도잉 {spokenCount}/{total}
-              </p>
-              <p className="text-caption text-ink-soft">
-                {canComplete
-                  ? "이 강의를 완료로 표시할 수 있어요. 완료 기록은 다음 장이 열리는 데 쓰여요."
-                  : `탭 딕테이션과 섀도잉을 각각 ${need}문장 이상 하면 완료할 수 있어요. (섀도잉은 말하기 확인 70점 이상이나 '읽었어요')`}
-              </p>
-            </div>
-            <button type="button" aria-label="학습 완료 체크" disabled={!canComplete} onClick={complete} className={`${filledButton} shrink-0`}>
-              이 강의 학습 완료
-            </button>
-          </div>
-        )}
+      <section data-completion aria-label="완료 조건" className="flex flex-col gap-0.5 px-1 pt-1">
+        <p className="text-label font-semibold tabular-nums text-ink">
+          탭 딕테이션 {solvedCount}/{total} · 섀도잉 {spokenCount}/{total}
+        </p>
       </section>
     );
   }

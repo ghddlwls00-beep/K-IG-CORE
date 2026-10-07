@@ -1,0 +1,470 @@
+{
+ "base": "http://localhost:3361",
+ "at": "2026-10-07T10:49:05.884Z",
+ "rows": [
+  {
+   "vp": "mobile",
+   "id": "s1-1",
+   "state": "not completed (last step)",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_s1-1_mobile_end.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 체크",
+     "text": "이 강의 학습 완료",
+     "disabled": true,
+     "filled": true
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: Ch 1-2 · Name, School & Age (이름, 학교 및 나이)",
+     "filled": false
+    }
+   ],
+   "reason": [
+    "탭 딕테이션과 섀도잉을 각각 3문장 이상 하면 완료할 수 있어요."
+   ],
+   "filledVisibleInMain": [
+    "학습 완료 체크 (disabled)"
+   ],
+   "views": [],
+   "scrollW": 390,
+   "innerW": 390
+  },
+  {
+   "vp": "mobile",
+   "id": "s1-1",
+   "state": "completed (last step)",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_s1-1_mobile_end-done.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 취소",
+     "text": "학습 완료함 · 취소하려면 누르세요",
+     "disabled": false,
+     "filled": false
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: Ch 1-2 · Name, School & Age (이름, 학교 및 나이)",
+     "filled": true
+    }
+   ],
+   "reason": [],
+   "filledVisibleInMain": [
+    "다음 강의: Ch 1-2 · Name, School & Age (이름, 학교 및 나이)"
+   ],
+   "views": [],
+   "scrollW": 390,
+   "innerW": 390
+  },
+  {
+   "vp": "mobile",
+   "id": "a1-1",
+   "state": "not completed (last step)",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_a1-1_mobile_end.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 체크",
+     "text": "이 강의 학습 완료",
+     "disabled": true,
+     "filled": true
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: Ch 1-2 · Name ~ Age (이름~나이)",
+     "filled": false
+    }
+   ],
+   "reason": [
+    "탭 딕테이션과 섀도잉을 각각 3문장 이상 하면 완료할 수 있어요."
+   ],
+   "filledVisibleInMain": [
+    "학습 완료 체크 (disabled)"
+   ],
+   "views": [],
+   "scrollW": 390,
+   "innerW": 390
+  },
+  {
+   "vp": "mobile",
+   "id": "a1-1",
+   "state": "completed (last step)",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_a1-1_mobile_end-done.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 취소",
+     "text": "학습 완료함 · 취소하려면 누르세요",
+     "disabled": false,
+     "filled": false
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: Ch 1-2 · Name ~ Age (이름~나이)",
+     "filled": true
+    }
+   ],
+   "reason": [],
+   "filledVisibleInMain": [
+    "다음 강의: Ch 1-2 · Name ~ Age (이름~나이)"
+   ],
+   "views": [],
+   "scrollW": 390,
+   "innerW": 390
+  },
+  {
+   "vp": "mobile",
+   "id": "gh1-006",
+   "state": "nothing answered",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_gh1-006_mobile_end.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 체크",
+     "text": "이 강의 학습 완료",
+     "disabled": true,
+     "filled": true
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: 02강 · 기초 영작 훈련",
+     "filled": false
+    }
+   ],
+   "reason": [
+    "1단계에서 한 문제를 확인하면 완료할 수 있어요."
+   ],
+   "filledVisibleInMain": [
+    "다음 묶음 →",
+    "학습 완료 체크 (disabled)"
+   ],
+   "views": [],
+   "scrollW": 390,
+   "innerW": 390
+  },
+  {
+   "vp": "mobile",
+   "id": "gh1-006",
+   "state": "one Step 1 item checked",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_gh1-006_mobile_end-checked.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 체크",
+     "text": "이 강의 학습 완료",
+     "disabled": false,
+     "filled": true
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: 02강 · 기초 영작 훈련",
+     "filled": false
+    }
+   ],
+   "reason": [],
+   "filledVisibleInMain": [
+    "틀린 문제 다시 풀기 (1)",
+    "학습 완료 체크"
+   ],
+   "views": [],
+   "scrollW": 390,
+   "innerW": 390
+  },
+  {
+   "vp": "mobile",
+   "id": "pr001",
+   "state": "Step 3 view buttons",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_pr001_mobile_step3.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 체크",
+     "text": "이 강의 학습 완료",
+     "disabled": true,
+     "filled": true
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: 002회 · 원문 독해 & 리스닝",
+     "filled": false
+    }
+   ],
+   "reason": [
+    "4단계에서 지문을 다시 읽고 시간을 한 번 재면 완료할 수 있어요."
+   ],
+   "filledVisibleInMain": [
+    "재생"
+   ],
+   "views": [
+    {
+     "text": "영어 · 한글",
+     "h": 44,
+     "w": 60,
+     "lines": 1
+    },
+    {
+     "text": "영어만",
+     "h": 44,
+     "w": 60,
+     "lines": 1
+    },
+    {
+     "text": "한글만",
+     "h": 44,
+     "w": 60,
+     "lines": 1
+    }
+   ],
+   "scrollW": 390,
+   "innerW": 390
+  },
+  {
+   "vp": "desktop",
+   "id": "s1-1",
+   "state": "not completed (last step)",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_s1-1_desktop_end.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 체크",
+     "text": "이 강의 학습 완료",
+     "disabled": true,
+     "filled": true
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: Ch 1-2 · Name, School & Age (이름, 학교 및 나이)",
+     "filled": false
+    }
+   ],
+   "reason": [
+    "탭 딕테이션과 섀도잉을 각각 3문장 이상 하면 완료할 수 있어요."
+   ],
+   "filledVisibleInMain": [
+    "학습 완료 체크 (disabled)"
+   ],
+   "views": [],
+   "scrollW": 1351,
+   "innerW": 1366
+  },
+  {
+   "vp": "desktop",
+   "id": "s1-1",
+   "state": "completed (last step)",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_s1-1_desktop_end-done.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 취소",
+     "text": "학습 완료함 · 취소하려면 누르세요",
+     "disabled": false,
+     "filled": false
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: Ch 1-2 · Name, School & Age (이름, 학교 및 나이)",
+     "filled": true
+    }
+   ],
+   "reason": [],
+   "filledVisibleInMain": [
+    "다음 강의: Ch 1-2 · Name, School & Age (이름, 학교 및 나이)"
+   ],
+   "views": [],
+   "scrollW": 1351,
+   "innerW": 1366
+  },
+  {
+   "vp": "desktop",
+   "id": "a1-1",
+   "state": "not completed (last step)",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_a1-1_desktop_end.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 체크",
+     "text": "이 강의 학습 완료",
+     "disabled": true,
+     "filled": true
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: Ch 1-2 · Name ~ Age (이름~나이)",
+     "filled": false
+    }
+   ],
+   "reason": [
+    "탭 딕테이션과 섀도잉을 각각 3문장 이상 하면 완료할 수 있어요."
+   ],
+   "filledVisibleInMain": [
+    "학습 완료 체크 (disabled)"
+   ],
+   "views": [],
+   "scrollW": 1351,
+   "innerW": 1366
+  },
+  {
+   "vp": "desktop",
+   "id": "a1-1",
+   "state": "completed (last step)",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_a1-1_desktop_end-done.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 취소",
+     "text": "학습 완료함 · 취소하려면 누르세요",
+     "disabled": false,
+     "filled": false
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: Ch 1-2 · Name ~ Age (이름~나이)",
+     "filled": true
+    }
+   ],
+   "reason": [],
+   "filledVisibleInMain": [
+    "다음 강의: Ch 1-2 · Name ~ Age (이름~나이)"
+   ],
+   "views": [],
+   "scrollW": 1351,
+   "innerW": 1366
+  },
+  {
+   "vp": "desktop",
+   "id": "gh1-006",
+   "state": "nothing answered",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_gh1-006_desktop_end.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 체크",
+     "text": "이 강의 학습 완료",
+     "disabled": true,
+     "filled": true
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: 02강 · 기초 영작 훈련",
+     "filled": false
+    }
+   ],
+   "reason": [
+    "1단계에서 한 문제를 확인하면 완료할 수 있어요."
+   ],
+   "filledVisibleInMain": [
+    "다음 묶음 →",
+    "학습 완료 체크 (disabled)"
+   ],
+   "views": [],
+   "scrollW": 1351,
+   "innerW": 1366
+  },
+  {
+   "vp": "desktop",
+   "id": "gh1-006",
+   "state": "one Step 1 item checked",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_gh1-006_desktop_end-checked.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 체크",
+     "text": "이 강의 학습 완료",
+     "disabled": false,
+     "filled": true
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: 02강 · 기초 영작 훈련",
+     "filled": false
+    }
+   ],
+   "reason": [],
+   "filledVisibleInMain": [
+    "틀린 문제 다시 풀기 (1)",
+    "학습 완료 체크"
+   ],
+   "views": [],
+   "scrollW": 1351,
+   "innerW": 1366
+  },
+  {
+   "vp": "desktop",
+   "id": "pr001",
+   "state": "Step 3 view buttons",
+   "shot": "docs/qa-2026-09-18/UI검토-1007/고침/사진/after_pr001_desktop_step3.png",
+   "complete": [
+    {
+     "where": "endbar",
+     "aria": "학습 완료 체크",
+     "text": "이 강의 학습 완료",
+     "disabled": true,
+     "filled": true
+    }
+   ],
+   "next": [
+    {
+     "where": "endbar",
+     "text": "다음 강의: 002회 · 원문 독해 & 리스닝",
+     "filled": false
+    }
+   ],
+   "reason": [
+    "4단계에서 지문을 다시 읽고 시간을 한 번 재면 완료할 수 있어요."
+   ],
+   "filledVisibleInMain": [
+    "재생"
+   ],
+   "views": [
+    {
+     "text": "영어 · 한글",
+     "h": 44,
+     "w": 60,
+     "lines": 1
+    },
+    {
+     "text": "영어만",
+     "h": 44,
+     "w": 60,
+     "lines": 1
+    },
+    {
+     "text": "한글만",
+     "h": 44,
+     "w": 60,
+     "lines": 1
+    }
+   ],
+   "scrollW": 1351,
+   "innerW": 1366
+  }
+ ]
+}

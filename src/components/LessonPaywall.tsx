@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLicense } from "./LicenseProvider";
+import { HAS_PURCHASE_URL, PURCHASE_URL } from "./LicenseModal";
 import { planOpensCourse, STUDENT_PASS_COURSES, STUDENT_PASS_SCOPE } from "@/lib/license";
 
 interface LessonPaywallProps {
@@ -25,10 +26,14 @@ interface LessonPaywallProps {
  * 'VIP ALL-PASS REQUIRED' · '순차 학습 잠금' — because the paid-lock checks recognise the paywall by
  * it (probe-entitlement-all.cjs PAYWALL · lib/harness.cjs PAYWALL_RE). Change those checks, with a
  * deliberate-break proof, before changing these words.
+ *
+ * 2026-10-07 (UI검토-1007 결과.md 2번 · 사장님): '구매 안내' only opened the same registration window, which
+ * held a '구매 링크 준비 중' that could not be pressed — a dead end. Now there is one black '이용권 등록' and,
+ * only once NEXT_PUBLIC_PURCHASE_URL is set, an outlined '이용권 구매하기' that opens the store in a new tab.
  */
 export function LessonPaywall({
   courseSlug,
-  courseTitle = "코스",
+  courseTitle = "과정",
   lockReason = "license",
   chapter,
   freeLessons = [],
@@ -114,7 +119,7 @@ export function LessonPaywall({
           지금 장으로 돌아가기
         </Link>
       ) : (
-        <div className="grid w-full max-w-sm grid-cols-2 gap-2">
+        <div className={`grid w-full max-w-sm gap-2 ${HAS_PURCHASE_URL ? "grid-cols-2" : ""}`}>
           <button
             type="button"
             onClick={openModal}
@@ -122,13 +127,16 @@ export function LessonPaywall({
           >
             이용권 등록
           </button>
-          <button
-            type="button"
-            onClick={openModal}
-            className="flex min-h-12 items-center justify-center whitespace-nowrap rounded-control border border-line px-4 text-label font-medium text-ink transition-colors cursor-pointer hover:bg-sunken"
-          >
-            구매 안내
-          </button>
+          {HAS_PURCHASE_URL ? (
+            <a
+              href={PURCHASE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-12 items-center justify-center whitespace-nowrap rounded-control border border-line px-4 text-label font-medium text-ink transition-colors hover:bg-sunken"
+            >
+              이용권 구매하기<span className="sr-only"> (새 탭)</span>
+            </a>
+          ) : null}
         </div>
       )}
 

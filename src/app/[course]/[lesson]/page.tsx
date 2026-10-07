@@ -525,7 +525,7 @@ export default async function LessonPage({
               lessonKey={`${course}/${lesson.id}`}
               audioTracks={audio}
               firstWordKeepsCase={studentFirstWordKeepsCase(lesson.blocks, course)}
-              next={next && nextPresentation ? { id: next.id, ...neighbour(next.id, nextPresentation), code: nextPresentation.code } : null}
+              // 2026-10-07: no `next` — '다음 강의' and the chapter-lock line are the end bar's (LessonEndBar) for STUDENT · ADULT too
             />
           )}
         </LessonSpeechGuard>
