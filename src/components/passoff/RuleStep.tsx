@@ -85,7 +85,7 @@ export function RuleStep({
               <SecondaryButton onClick={onGoAnchors}>1단계로</SecondaryButton>
             </div>
           ) : null}
-          <p className={`${FONT[font].text} text-ink`}>{gloss(d.question)}</p>
+          <p className={`${FONT[font].text} text-ink`}>{notOpened ? withoutBoldCue(gloss(d.question)) : gloss(d.question)}</p>
           <div className="flex flex-wrap gap-2" role="group" aria-label="고르기">
             {optionOrder(ruleQuestionKey(lessonId, "discovery"), d.options.length).map((i) => {
               const option = d.options[i];
@@ -148,6 +148,15 @@ export function RuleStep({
       ) : null}
     </div>
   );
+}
+
+/**
+ * A discovery question that points at the bold words of ①'s English ("굵게 표시된 My · I · We 는 …" — pg01-1 · pg01-3 ·
+ * pg03-2 · pg03-3 · pg08-4), drawn while some of those sentences are still shown by their Korean (no bold to point at):
+ * the cue dropped, the words themselves kept — "My · I · We 는 누구를 가리킬까요?" (UI 검토 1007 47번). For the screen only.
+ */
+export function withoutBoldCue(question: string): string {
+  return question.replace(/^\s*(?:굵게 표시[된한]|굵은 (?:낱말|부분))\s*/, "");
 }
 
 /** The explanation card — no box inside the box: lines and space only (디자인 규칙 §1-3). */

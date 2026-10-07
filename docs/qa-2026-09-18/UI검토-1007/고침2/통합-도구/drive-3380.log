@@ -1,0 +1,43 @@
+﻿=== drive-generic student s1-1 01:40:55
+student: 2 page×viewport visits to do (0 already done), clone gen-student port 9986
+1/2 /student/s1-1 desktop — 0 problem(s), content 6/6 · eta 1 min
+2/2 /student/s1-1 mobile — 0 problem(s), content 6/6 · eta 0 min
+exit 0
+=== drive-generic adult a1-2 01:43:47
+adult: 2 page×viewport visits to do (0 already done), clone gen-adult port 9986
+1/2 /adult/a1-2 desktop — 2 problem(s), content 36/36 · eta 2 min
+2/2 /adult/a1-2 mobile — 0 problem(s), content 36/36 · eta 0 min
+exit 0
+=== drive-generic phonics mv1-01 01:48:09
+phonics: 2 page×viewport visits to do (0 already done), clone gen-phonics port 9986
+1/2 /phonics/mv1-01 desktop — 0 problem(s), content 30/30 · eta 2 min
+2/2 /phonics/mv1-01 mobile — 0 problem(s), content 30/30 · eta 0 min
+exit 0
+=== drive-generic grammar1 gh1-006 01:51:44
+grammar1: 2 page×viewport visits to do (0 already done), clone gen-grammar1 port 9986
+1/2 /grammar1/gh1-006 desktop — 0 problem(s), content 42/42 · eta 1 min
+2/2 /grammar1/gh1-006 mobile — 0 problem(s), content 42/42 · eta 0 min
+exit 0
+=== drive-generic grammar2 gh2-007 01:54:27
+grammar2: 2 page×viewport visits to do (0 already done), clone gen-grammar2 port 9986
+1/2 /grammar2/gh2-007 desktop — 0 problem(s), content 16/16 · eta 2 min
+2/2 /grammar2/gh2-007 mobile — 0 problem(s), content 16/16 · eta 0 min
+exit 0
+=== drive-generic ld d001 01:57:52
+ld: 2 page×viewport visits to do (0 already done), clone gen-ld port 9986
+1/2 /ld/d001 desktop — 0 problem(s), content 6/6 · eta 1 min
+2/2 /ld/d001 mobile — 0 problem(s), content 6/6 · eta 0 min
+exit 0
+=== drive-reading pr001 02:00:59
+[reading] 1 pages x 2 viewports — 2 to run (clone drv-rd, port 9987) → C:\Users\ghddl\.gemini\antigravity\scratch\K-IG-CORE\.claude\worktrees\nostalgic-blackburn-048c73\docs\qa-2026-09-18\out\features\reading-uifixb.jsonl
+[reading] pr001 desktop 58.5s checks 359 (PASS 356 FAIL 0 BLOCKED 1 NA 2) audio 29/29 content 38/38
+[reading] pr001 mobile 23.4s checks 81 (PASS 81 FAIL 0 BLOCKED 0 NA 0) audio 2/2 content 38/38
+exit 0
+=== drive-passoff pg01-1 02:03:53
+(주의: 포트 9988 — passoff-sweep 몫은 9720~9729)
+passoff-grammar: 2 방문(강의 1 × 화면 desktop·mobile) · base http://localhost:3380 · 이용권 없음 · clone rc1002-passoff-sweep-uifixb · port 9988
+1/2 pg01-1 desktop — PASS · 30.7s · 글 81/81 · 채점 ③4/4 ④⑤9/9 한글꼴 0/0 · 소리 12/12 · 남은 1분
+2/2 pg01-1 mobile — PASS · 21s · 글 81/81 · 채점 ③4/4 ④⑤8/8 한글꼴 1/1 · 소리 3/3 · 남은 0분
+끝: PASS 2 · FAIL 0 · BLOCKED 0 · 52초 · 쪽(강의×화면)당 26.1초 · 기록 docs\qa-2026-09-18\out\features\passoff-grammar-uifixb.jsonl
+exit 0
+=== done 02:04:50

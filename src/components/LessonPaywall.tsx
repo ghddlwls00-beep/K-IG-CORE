@@ -31,6 +31,17 @@ interface LessonPaywallProps {
  * held a '구매 링크 준비 중' that could not be pressed — a dead end. Now there is one black '이용권 등록' and,
  * only once NEXT_PUBLIC_PURCHASE_URL is set, an outlined '이용권 구매하기' that opens the store in a new tab.
  */
+/**
+ * UI검토-1007 16번: on a locked STUDENT · ADULT lesson (a2-1 'Part 1 · Greeting (인사)') the free lesson below it read
+ * 'Part 1 · Greeting (인사)' too — the same words, no chapter. A free lesson is named as the end bar names a neighbour:
+ * 'Ch 1-1 · Greeting (인사)' (the chapter code from its address, the title without its 'Part N ·'). Other courses: the title.
+ */
+function freeLessonName(courseSlug: string, lesson: { href: string; title: string }): string {
+  if (courseSlug !== "student" && courseSlug !== "adult") return lesson.title;
+  const m = lesson.href.match(/\/[sa](\d+)-(\d+)$/);
+  return m ? `Ch ${m[1]}-${m[2]} · ${lesson.title.replace(/^Part \d+ · /, "")}` : lesson.title;
+}
+
 export function LessonPaywall({
   courseSlug,
   courseTitle = "과정",
@@ -150,7 +161,7 @@ export function LessonPaywall({
                 href={lesson.href}
                 className="flex min-h-11 items-center justify-between gap-2 rounded-control border border-line px-4 text-label font-medium text-ink transition-colors hover:bg-sunken"
               >
-                <span className="truncate">{lesson.title}</span>
+                <span className="truncate">{freeLessonName(courseSlug, lesson)}</span>
                 <span aria-hidden>→</span>
               </Link>
             ))}

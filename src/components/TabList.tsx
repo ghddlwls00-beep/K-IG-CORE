@@ -5,6 +5,9 @@ import type { Tab } from "@/lib/types";
 import { T, useLanguage } from "./LanguageProvider";
 
 /**
+ * UNUSED — nothing imports this file (docs/qa-2026-09-18/maps/common.md R20). Brought to the design rules (UI검토-1007 61:
+ * no monospace / capitals on Korean, nothing under 12px) only so the rule count is clean until a person deletes it.
+ *
  * The home page's list of sections.
  *
  * Courses whose *material* is in the selected language come first. The Chinese
@@ -28,35 +31,30 @@ export function TabList({ tabs }: { tabs: Tab[] }) {
         <li key={tab.slug} className="border-b border-line">
           <Link
             href={`/t/${tab.slug}`}
-            className="group flex items-baseline gap-5 py-5 hover:bg-raised focus-visible:bg-raised"
+            className="group flex min-h-14 items-baseline gap-4 py-4 hover:bg-raised focus-visible:bg-raised"
           >
-            <span className="w-7 shrink-0 pl-1 font-mono text-[11px] tabular-nums text-ink-faint">
+            <span className="w-7 shrink-0 pl-1 text-caption tabular-nums text-ink-faint">
               {String(i + 1).padStart(2, "0")}
             </span>
 
             <span className="flex-1">
-              <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                <span className="text-[17px] font-medium tracking-tight">{tab.label}</span>
+              <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                <span className="text-title-s font-semibold">{tab.label}</span>
                 {tab.contentLang === lang ? (
-                  <span className="rounded-sm bg-ink px-1.5 py-0.5 font-mono text-[10px] tracking-wide text-surface uppercase">
+                  <span className="rounded-control bg-ink px-2 py-0.5 text-caption text-surface">
                     <T k="tab.inYourLanguage" />
                   </span>
                 ) : null}
                 {tab.unavailable ? (
-                  <span className="rounded-sm border border-line px-1.5 py-0.5 font-mono text-[10px] tracking-wide text-ink-faint uppercase">
+                  <span className="rounded-control border border-line px-2 py-0.5 text-caption text-ink-faint">
                     <T k="tab.archiveOnly" />
                   </span>
                 ) : null}
               </span>
-              <span className="mt-1 block max-w-md text-[13.5px] leading-relaxed text-ink-soft">
-                {tab.blurb}
-              </span>
+              <span className="mt-1 block max-w-md text-label text-ink-soft">{tab.blurb}</span>
             </span>
 
-            <span
-              aria-hidden
-              className="pr-1 font-mono text-sm text-ink-faint transition-transform duration-200 ease-out group-hover:translate-x-1 group-hover:text-ink"
-            >
+            <span aria-hidden className="pr-1 text-ink-faint group-hover:text-ink">
               →
             </span>
           </Link>

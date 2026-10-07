@@ -8,7 +8,7 @@
  *   단어      (사장님 "어덜트 섹션에서 단어 학습법 만들자 적절한 순서로 들어가게") the PPT's key words on cards and blanks, READING's
  *            핵심 어휘 way — src/components/AdultWordsStep.tsx; the tab counts the words answered right (practice.wordRight).
  *   끊어 읽기 (사장님 "어덜트 섹션에서 청크 학습법 하나 만들자 …") one sentence at a time: each chunk is heard by itself (tap) or all
- *            in turn with a pause ('끊어 듣기'), its meaning waits behind a grey box, and with every meaning open the whole Korean
+ *            in turn with a pause ('끊어 듣기'), its meaning waits behind a dotted box, and with every meaning open the whole Korean
  *            line shows. The tab counts the sentences whose meanings were all opened (practice.chunked).
  * Completion is unchanged for both courses.
  *
@@ -29,7 +29,7 @@
  *           wrong word marked + '여기부터 다시'; a hint takes back from there first; more than a third hinted is
  *           '힌트로 완성'; distractors from the lesson's other sentences; the first tile in lower case. The judge is
  *           unchanged — verifyAnyWordSequence (the rules: src/lib/studentDictation.ts).
- *   Step 3  (D03 · D14 · STU-L01 · L02 · L03 · L13 · U08 · U25 · U26 · U10 · U18) English (tap = listen) → Korean →
+ *   Step 3  (D03 · D14 · STU-L01 · L02 · L03 · L13 · U08 · U25 · U26 · U10 · U18) English (text — '듣기' plays it, 2026-10-07) → Korean →
  *           [듣기][반복][말하기][읽었어요]; '영어 가리기'; '내 정보' in the brackets, for the screen and the microphone only
  *           (src/lib/studentBlanks.ts); the microphone accepts every form of the sentence with STUDENT's pass mark 70
  *           and stops the model sound first; completion needs 80% dictated and 80% spoken (D18), and then offers the
@@ -91,6 +91,7 @@ import {
 import { VoiceSpeakingTester } from "@/components/VoiceSpeakingTester";
 import { StepTabs } from "@/components/StepTabs";
 import { AdultWordsStep } from "@/components/AdultWordsStep";
+import { Toggle } from "@/components/Toggle";
 import {
   IconBackspace,
   IconCheck,
@@ -1313,16 +1314,13 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
                 </button>
               </div>
             ) : (
-              <button
-                type="button"
-                onClick={() => toggleSentence(idx, "en")}
-                title="눌러서 듣기"
-                className="block min-h-11 w-full rounded-control py-1 text-left transition-colors cursor-pointer hover:bg-sunken"
-              >
+              // 2026-10-07 (UI검토-1007 3장 31번): the sentence is text — '듣기' below is its one sound control (pressing the
+              // sentence played the very same sound). Step 1's '먼저 듣기' is a different thing (it opens the text) and stays.
+              <p className="py-1">
                 <span data-en className="text-title-s font-semibold text-ink">
                   {sentenceText(idx, true)}
                 </span>
-              </button>
+              </p>
             )}
             {ko ? (
               <div className="mt-1 flex items-start gap-2">
@@ -1541,7 +1539,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
       {/* ===================== Step 1 · 블라인드 리스닝 ===================== */}
       {studyMode === "listen" ? (
         <section data-step-panel="1" aria-label="블라인드 리스닝" className="flex flex-col gap-3">
-          <p className="text-label text-ink-soft">먼저 듣고, 회색 칸을 눌러 확인하세요.</p>
+          <p className="text-label text-ink-soft">먼저 듣고, 점선 칸을 눌러 확인하세요.</p>
           <div role="group" aria-label="대본 보기" className="grid grid-cols-4 gap-1 rounded-control bg-sunken p-1">
             {FILTERS.map((f) => (
               <button key={f.value} type="button" data-filter={f.value} aria-pressed={scriptFilter === f.value} onClick={() => changeFilter(f.value)} className={segmentButton(scriptFilter === f.value)}>
@@ -1576,13 +1574,16 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
       {/* ===================== 끊어 읽기 (ADULT — Step 3) ===================== */}
       {studyMode === "chunk" ? (
         <section data-step-panel={stepOf("chunk")} aria-label="끊어 읽기" className="flex flex-col gap-3">
-          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
-            <p className="text-label text-ink-soft">덩어리마다 듣고 뜻을 먼저 떠올린 뒤, 회색 칸을 눌러 확인하세요.</p>
+          {/* 2026-10-07 (UI검토-1007 3장 36 · 39번): '뜻 모두 보기' at the right of the line (it fell alone to the left of the
+              next line on a phone); 'grey box' was black in the dark theme — the box is dotted in both */}
+          <div className="flex items-center justify-between gap-3">
+            <p className="min-w-0 flex-1 text-label text-ink-soft">덩어리마다 듣고 뜻을 먼저 떠올린 뒤, 점선 칸을 눌러 확인하세요.</p>
             <button type="button" data-action="all-meanings" aria-pressed={allChunksOpen} onClick={toggleAllMeanings} className={`${quietButton} shrink-0`}>
               {allChunksOpen ? "뜻 가리기" : "뜻 모두 보기"}
             </button>
           </div>
-          <div role="group" aria-label="문장 고르기" className="flex flex-wrap gap-1">
+          {/* 2px apart (was 4): seven 44px numbers fit one row of a 360px phone — the '7' fell alone to a second line (36번) */}
+          <div role="group" aria-label="문장 고르기" className="flex flex-wrap gap-0.5">
             {sentenceItems.map((_, i) => {
               const read = practice.chunked[i] === true;
               const current = i === chunkIdx;
@@ -1616,7 +1617,7 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
           <p className="text-label text-ink-soft">문장을 듣고, 들리는 순서대로 낱말을 누르세요.</p>
           {hasSentences ? (
             // one row of numbers (a lesson of 8+ sentences — 9 of 82 — wraps once on a phone, so none hides off screen)
-            <div role="group" aria-label="문장 고르기" className="flex flex-wrap gap-1">
+            <div role="group" aria-label="문장 고르기" className="flex flex-wrap gap-0.5">
               {sentenceItems.map((_, i) => {
                 const state = practice.solved[i] ? "solved" : practice.hinted[i] ? "hinted" : "todo";
                 const current = i === dictationIdx;
@@ -1651,22 +1652,17 @@ export function StudentLearningView({ blocks, lessonKey, firstWordKeepsCase: kee
           <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
             <p className="text-label text-ink-soft">듣고 바로 따라 말해 보세요.</p>
             {hasSentences ? (
-              <button
-                type="button"
-                role="switch"
-                aria-checked={hideEn}
+              // the shared switch (UI검토-1007 3장 56번)
+              <Toggle
+                checked={hideEn}
                 data-action="hide-en"
                 onClick={() => {
                   setHideEn((v) => !v);
                   setShownEn({});
                 }}
-                className="inline-flex min-h-11 items-center gap-2 rounded-control px-2 text-label font-medium text-ink transition-colors cursor-pointer hover:bg-sunken"
               >
-                <span aria-hidden className={"relative inline-block h-5 w-9 rounded-full transition-colors " + (hideEn ? "bg-ink" : "bg-line-strong/25")}>
-                  <span className={"absolute top-0.5 h-4 w-4 rounded-full bg-surface shadow-2xs transition-[left] " + (hideEn ? "left-[18px]" : "left-0.5")} />
-                </span>
-                <span>영어 가리기</span>
-              </button>
+                영어 가리기
+              </Toggle>
             ) : null}
           </div>
           {hasSentences && !micSupported ? (

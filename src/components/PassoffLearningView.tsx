@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Block } from "@/lib/types";
 import type { PassoffAnchor, PassoffFormItem, PassoffFrameBlock, PassoffProduceItem, PassoffRuleBlock } from "@/lib/passoffTypes";
 import { speakText, stopSpeech } from "@/lib/speech";
@@ -67,7 +67,8 @@ import { FONT_LABEL, segmentButton, spokenOf, usePassoffLearner, type FontSize, 
  *   - (2026-10-02 사장님 "영어 표기 + 한글 덧붙임") each step draws a Korean word written in English with its Hangul after
  *     it — "Chuseok(추석)" — through glossFor(lessonId) (passoff/ui.tsx); the sound below and every grade keep the lesson's text;
  *   - the line icons of src/components/icons.tsx and the type · radius · colour tokens; text size and sentence speed sit
- *     beside the step's title, in GRAMMAR's words and segments ('글자 크기' 기본 · 크게 · 특대 · '문장 속도' 1.0× · 0.85×).
+ *     in one quiet row under the step tabs (UI 검토 1007 14번 — no gold step title there any more), in GRAMMAR's words and
+ *     segments ('글자 크기' 기본 · 크게 · 특대 · '문장 속도' 1.0× · 0.85×).
  * The textbook's own subheading of the lesson is the line under the page's title (page.tsx), as STUDENT's chapter is.
  *
  * 단계 2-나 E2 (이끄는 세션 결정 09-28 — the other courses' way): the lesson is finished when the learner PRESSES '이 강의 학습
@@ -125,7 +126,7 @@ function stepsDone(c: LessonContent, w: PassoffWork): boolean[] {
 /** ④'s set on screen (a stored index past the last set means the last one). */
 const setIndexOf = (c: LessonContent, w: PassoffWork) => Math.min(w.composeSet, Math.max(0, c.sets.length - 1));
 
-/** How a step change the view makes itself should look: scrolled to the steps, and the new step's heading focused. */
+/** How a step change the view makes itself should look: scrolled to the steps, and the new step's tab focused. */
 interface StepMove {
   scroll: boolean;
   focus: boolean;
@@ -158,11 +159,8 @@ export function PassoffLearningView({
   const [speed, setSpeed] = useState<1 | 0.85>(1);
   const [showSettings, setShowSettings] = useState(false);
   const topRef = useRef<HTMLDivElement | null>(null);
-  const headingRefs = useRef<(HTMLHeadingElement | null)[]>([]);
   // a tab clicked by the view itself (goStep) — how that move looks; null for the learner's own click
   const tabMove = useRef<StepMove | null>(null);
-  // the step whose heading takes the focus once it is on screen
-  const focusStep = useRef<number | null>(null);
 
   /** a step's tab in the shared StepTabs (data-step-tab is 1-based) */
   const tabOf = (index: number) => topRef.current?.querySelector<HTMLButtonElement>(`[data-step-tab="${index + 1}"]`) ?? null;
@@ -266,13 +264,6 @@ export function PassoffLearningView({
   const composeQueue = queueOf(work.composeQueue, onScreenSet, composeDone, partners);
   const transferQueue = queueOf(work.transferQueue, transferIds, composeDone, partners);
 
-  // the new step's heading takes the focus when a button inside the old step moved there — that button is now hidden
-  useEffect(() => {
-    if (focusStep.current !== step) return;
-    focusStep.current = null;
-    headingRefs.current[step]?.focus({ preventScroll: true });
-  }, [step]);
-
   /**
    * What a step tab's click does. 2026-09-28 (사장님 — STUDENT 060705c · VOCA ecc5761 의 규칙): a step change never starts sound —
    * nothing here plays by itself (every sound is a press of a speaker button) — and it stops a sentence still playing, as the
@@ -283,10 +274,9 @@ export function PassoffLearningView({
       stopSpeech();
       speaker.reset();
     }
-    if (move.focus) {
-      if (next === step) headingRefs.current[next]?.focus({ preventScroll: true });
-      else focusStep.current = next;
-    }
+    // a button inside the old step moved here, and it is hidden now: the focus goes to the new step's tab — it names the step
+    // ('Step 2 · 문법 설명', pressed) and the next Tab goes on into it (UI 검토 1007 14번 — before, the gold title under the tabs)
+    if (move.focus) tabOf(next)?.focus({ preventScroll: true });
     setStep(next);
     const top = topRef.current;
     if (move.scroll && top) window.scrollTo({ top: Math.max(0, top.getBoundingClientRect().top + window.scrollY - 72), behavior: "smooth" });
@@ -416,7 +406,7 @@ export function PassoffLearningView({
   }, [gateReady, lessonId, quietNext]);
   useEffect(() => () => clearLessonGate(PASSOFF_COURSE, lessonId), [lessonId]);
 
-  // text size and sentence speed — GRAMMAR's words and segments, beside the step's title
+  // text size and sentence speed — GRAMMAR's words and segments, in the row under the step tabs
   const settingsButton = (
     <button
       type="button"
@@ -452,17 +442,7 @@ export function PassoffLearningView({
       </div>
     </div>
   ) : null;
-  const heading = (index: number) => (
-    <StepHeading
-      n={index + 1}
-      done={done[index]}
-      headingRef={(node) => {
-        headingRefs.current[index] = node;
-      }}
-      settings={settingsButton}
-      panel={settingsPanel}
-    />
-  );
+  const heading = (index: number) => <StepHeading n={index + 1} />;
 
   return (
     <div ref={topRef} className="flex flex-col gap-4" data-passoff-view data-step={step + 1}>
@@ -473,6 +453,23 @@ export function PassoffLearningView({
         onSelect={(n) => showStep(n - 1, tabMove.current ?? { scroll: true, focus: false })}
         steps={STEPS.map((s, i) => ({ n: i + 1, name: s.short }))}
       />
+
+      {/* UI 검토 1007 14번: no gold 'N단계 …' title under the tabs (the other courses have none — the tab names the step).
+          What that line carried stays, quietly: '이 단계 마침' once the step on screen is done, and the text size · speed button */}
+      <div className="flex flex-col gap-3">
+        <div className="flex min-h-11 items-center justify-between gap-2">
+          {done[step] ? (
+            <span className="inline-flex items-center gap-1 text-caption font-medium text-success">
+              <IconCheck size={14} />
+              <span>이 단계 마침</span>
+            </span>
+          ) : (
+            <span />
+          )}
+          {settingsButton}
+        </div>
+        {settingsPanel}
+      </div>
 
       <section hidden={step !== 0} aria-labelledby="passoff-step-1" className="flex flex-col gap-3">
         {heading(0)}
@@ -614,40 +611,14 @@ export function PassoffLearningView({
 }
 
 /**
- * A step's title — focusable (tabIndex -1) so that moving on from a button inside the last step lands here — with '마침'
- * once that step is done (the shared step tabs carry names only), and the text size · speed button on the right.
+ * A step's title, for screen readers only (UI 검토 1007 14번 — the tab above names the step on screen). It names the step's
+ * section (`aria-labelledby="passoff-step-N"` — the PASS-OFF drivers find each step's section by it) and keeps the step's
+ * full name in the page text ('예문 떠올리기' — drive-topic-lock.cjs waits for it).
  */
-function StepHeading({
-  n,
-  done,
-  headingRef,
-  settings,
-  panel,
-}: {
-  n: number;
-  done: boolean;
-  headingRef: (node: HTMLHeadingElement | null) => void;
-  settings: ReactNode;
-  panel: ReactNode;
-}) {
+function StepHeading({ n }: { n: number }) {
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex items-center justify-between gap-2">
-        <div className="flex min-w-0 flex-wrap items-baseline gap-x-2">
-          <span className="text-label font-semibold tabular-nums text-primary">{n}단계</span>
-          <h2 id={`passoff-step-${n}`} tabIndex={-1} ref={headingRef} className="text-title-s font-bold text-ink">
-            {STEPS[n - 1].title}
-          </h2>
-          {done ? (
-            <span className="inline-flex items-center gap-1 text-caption font-medium text-success">
-              <IconCheck size={14} />
-              <span>마침</span>
-            </span>
-          ) : null}
-        </div>
-        {settings}
-      </div>
-      {panel}
-    </div>
+    <h2 id={`passoff-step-${n}`} className="sr-only">
+      {STEPS[n - 1].title}
+    </h2>
   );
 }

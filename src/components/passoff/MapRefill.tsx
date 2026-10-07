@@ -170,7 +170,7 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
         </h2>
         <Progress label="강의 놓기" at={placed} of={n} name="구성도 진행" />
         <p className="text-label leading-relaxed text-ink-soft">
-          대주제의 강의를 순서대로 칸에 놓으세요. 강의 이름을 누르면 빈 칸에 들어가고, 놓은 칸을 누르면 빠져요.
+          대주제의 강의를 순서대로 칸에 놓으세요. 강의 이름을 누르면 빈칸에 들어가고, 놓은 칸을 누르면 빠져요.
         </p>
         <ol className="flex flex-col gap-2" aria-label="구성도 칸">
           {boxes.map((id, box) => (
@@ -181,11 +181,11 @@ export function PassoffMapRefill({ data }: { data: PassoffMapData }) {
                 disabled={!id}
                 aria-label={id ? `${box + 1}번 칸: ${titleOf(id)} — 누르면 빠져요` : `${box + 1}번 칸: 비어 있음`}
                 className={`flex min-h-12 w-full items-center gap-3 rounded-control px-4 text-left text-body transition-colors disabled:cursor-default ${
-                  id ? "border border-line-strong bg-raised font-semibold text-ink cursor-pointer hover:bg-sunken" : "border border-dashed border-line text-ink-faint"
+                  id ? "border border-line-strong bg-raised font-semibold text-ink cursor-pointer hover:bg-sunken" : "border border-dashed border-line-input text-ink-faint"
                 }`}
               >
                 <span className="w-6 shrink-0 text-label tabular-nums text-ink-soft">{box + 1}</span>
-                <span className="min-w-0">{id ? titleOf(id) : "빈 칸"}</span>
+                <span className="min-w-0">{id ? titleOf(id) : "빈칸"}</span>
               </button>
             </li>
           ))}

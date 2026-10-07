@@ -58,6 +58,9 @@
   --color-sunken: var(--sunken);
   --color-line: var(--line);
   --color-line-strong: var(--line-strong);
+  /* UI검토-1007 51 · 57 (2026-10-07): `border-line-input` · `bg-track` — see the values below */
+  --color-line-input: var(--line-input);
+  --color-track: var(--track);
 
   --color-primary: var(--primary);
   --color-primary-soft: var(--primary-soft);
@@ -80,6 +83,15 @@
 
   --line: rgba(34, 30, 26, 0.08);   /* Hairline Warm Border */
   --line-strong: #121316;
+  /*
+   * UI검토-1007 51 (2026-10-07): the edge of something you type into, press-to-switch or that floats over the page — an input
+   * box whose fill is the card's own, a switch's off track (56), a disabled filled button's outline (55), a modal's edge (54).
+   * It must be seen on its own, so ≥ 3:1 against every ground (WCAG 1.4.11): 3.49 on surface · 3.70 on raised · 3.23 on sunken.
+   * Card edges stay the faint --line.
+   */
+  --line-input: #8A847C;
+  /* UI검토-1007 57: the empty part of a progress bar — a step darker than the card so a 0% bar is still seen (1.53 on raised · 1.45 on surface) */
+  --track: #D6D0C6;
 
   /* Signature Burnished Champagne Gold Accent */
   /* UX-02: #A8824B was 3.32:1 as small text on the canvas and 3.52:1 under white
@@ -118,6 +130,10 @@
 
   --line: rgba(255, 255, 255, 0.08);
   --line-strong: #F5F3EF;
+  /* 51: 3.59 on surface · 3.33 on raised · 3.48 on sunken · 3.8 on a modal's black/60 backdrop */
+  --line-input: #6E6A65;
+  /* 57: 1.56 on raised · 1.69 on surface */
+  --track: #3A3940;
 
   --primary: #D4AF37;
   --primary-soft: rgba(212, 175, 55, 0.12);
@@ -181,6 +197,16 @@ html {
   -webkit-text-size-adjust: 100%;
   /* Prevent iOS font size inflation in landscape */
   text-size-adjust: 100%;
+  /*
+   * UI검토-1007 11 (2026-10-07): on a desktop with a classic scrollbar, switching to a short step removed the scrollbar and the
+   * whole page jumped sideways by its width (7–8px, 17 places). The scrollbar's room is now kept at all times. Phones and
+   * overlay scrollbars are unaffected. It also keeps the page still when the menu drawer or a dialog locks the scroll.
+   */
+  scrollbar-gutter: stable;
+}
+/* the home page is one full-screen slide deck that never scrolls the document — no empty strip beside its photos */
+html:has([data-full-screen]) {
+  scrollbar-gutter: auto;
 }
 
 body {
@@ -271,6 +297,33 @@ textarea:focus-visible,
 }
 .link-underline:hover {
   background-size: 100% 1px;
+}
+
+/*
+ * UI검토-1007 55 (2026-10-07): the page's one filled button ('이 강의 학습 완료', '전체 시험 채점하기' …). Size, corners and
+ * text size stay with the caller (min-h-12 rounded-control text-label …); this class owns the colours of both states.
+ * Disabled used to be the same fill at 40% opacity — in dark mode a wide grey bar louder than the live outlined '다음 강의'.
+ * Disabled is now an outline (--line-input, 3:1) with faint text, so the thing you can press always reads first.
+ * In the components layer, so a utility on the same element still wins.
+ */
+@layer components {
+  .btn-filled {
+    border: 1px solid var(--ink);
+    background-color: var(--ink);
+    color: var(--surface);
+    cursor: pointer;
+  }
+  .btn-filled:hover:not(:disabled):not([aria-disabled="true"]) {
+    opacity: 0.9;
+  }
+  .btn-filled:disabled,
+  .btn-filled[aria-disabled="true"] {
+    border-color: var(--line-input);
+    background-color: transparent;
+    color: var(--ink-faint);
+    cursor: not-allowed;
+    opacity: 1;
+  }
 }
 
 /*

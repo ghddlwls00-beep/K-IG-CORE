@@ -104,13 +104,18 @@ export const segmentButton = (on: boolean) =>
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { children: ReactNode };
 
-/** The one filled button of a screen (디자인 규칙 §1-2). */
+/**
+ * The one filled button of a screen (디자인 규칙 §1-2). Its colours are the shared `btn-filled` of globals.css (UI 검토
+ * 1007 55번): filled while on, and while off (`disabled`, or `aria-disabled` for '영어 보기' waiting its turn in ①) a border with
+ * faint words — not a half-clear filled bar, which in dark mode stood out more than the button that was on. The class also
+ * owns the hover and the pointer (it sits in the components layer, so no utility here sets them — one would win over it).
+ */
 export function PrimaryButton({ className = "", children, ...rest }: ButtonProps) {
   return (
     <button
       type="button"
       {...rest}
-      className={`inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control bg-ink px-4 text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 aria-disabled:opacity-40 ${className}`}
+      className={`btn-filled inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control px-4 text-label font-semibold transition-opacity ${className}`}
     >
       {children}
     </button>

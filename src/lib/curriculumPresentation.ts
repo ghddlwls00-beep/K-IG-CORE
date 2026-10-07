@@ -162,7 +162,8 @@ export function formatLessonPresentation(
     // (9/18 감사 6-1602 · 관문 15 전수 읽기, 소유자 결정 2026-09-24).
     const newsNote = lessonNum === "44" ? " · 4번은 1996년 미국 대선 무렵 뉴스로 만든 문장입니다" : "";
     return {
-      title: `제 ${lessonNum}과 · 패턴 영작 훈련`,
+      // UI검토-1007 44번: '제 7과' like the list's section heads ('제 7과 ~ 제 12과') — it read '제 07과' here
+      title: `제 ${Number(lessonNum) || lessonNum}과 · 패턴 영작 훈련`,
       subtitle: `${isKoreanScript ? "한국어 대조 스크립트" : "English Model Pattern"}${newsNote}`,
       badge: "🎙️ 마이크 채점",
       code: `Lesson ${lessonNum}`,

@@ -151,7 +151,7 @@ export function WrapUpStep({
                       next[i] = e.target.value;
                       onFrame(next);
                     }}
-                    className={`min-h-11 w-40 max-w-full rounded-control border border-line bg-surface px-3 text-ink focus:border-ink focus:outline-none ${FONT[font].input}`}
+                    className={`min-h-11 w-40 max-w-full rounded-control border border-line-input bg-surface px-3 text-ink focus:border-ink focus:outline-none ${FONT[font].input}`}
                   />
                 ) : null}
               </span>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { getTabs } from "@/lib/content";
+import { getCourse, getTabs } from "@/lib/content";
 
 /**
  * RE-016 — the 404 screen.
@@ -13,6 +13,11 @@ import { getTabs } from "@/lib/content";
  *
  * This is a server component, so the section list is built from the same
  * `getTabs()` the nav uses and cannot drift from it.
+ *
+ * 2026-10-07 (UI검토-1007 23): no '404 · NOT FOUND' monospace capitals, the site's buttons (rounded-control, 44px+) instead of
+ * pills, each course line in Korean (the course's own description — the English home-page blurbs were promotion), and each line
+ * goes straight to the course list as the menu drawer does (it used to stop at the /t/ page in between). The h1 '찾는 페이지가
+ * 없습니다' stays — the audit harness recognises a 404 by it.
  */
 export const metadata: Metadata = {
   title: "페이지를 찾을 수 없습니다",
@@ -25,53 +30,44 @@ export default function NotFound() {
 
   return (
     <main className="mx-auto max-w-3xl px-5 py-16 sm:py-24">
-      <p className="font-mono text-[11px] tracking-[0.18em] text-ink-faint uppercase">
-        404 · Not Found
-      </p>
-      <h1 className="mt-3 text-[clamp(28px,5vw,40px)] leading-tight font-bold tracking-tight text-ink text-balance">
-        찾는 페이지가 없습니다
-      </h1>
-      <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-soft">
-        주소가 바뀌었거나, 링크가 오래되었거나, 주소에 오타가 있을 수 있습니다.
-        아래에서 과정을 다시 골라 주세요.
+      <h1 className="text-title-l font-bold text-ink text-balance">찾는 페이지가 없습니다</h1>
+      <p className="mt-3 max-w-xl text-body text-ink-soft">
+        주소가 바뀌었거나 오래된 링크일 수 있어요. 아래에서 과정을 골라 주세요.
       </p>
 
-      <div className="mt-8 flex flex-wrap items-center gap-3">
+      <div className="mt-6 flex flex-wrap items-center gap-2">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-[14px] font-medium tracking-wide text-surface transition-all duration-300 hover:opacity-90 active:scale-[0.98] border border-white/10"
+          className="inline-flex min-h-11 items-center justify-center rounded-control border border-line bg-raised px-4 text-label font-semibold text-ink transition-colors hover:bg-sunken"
         >
-          홈으로 가기
+          처음 화면으로
         </Link>
       </div>
 
-      <nav className="mt-12 border-t border-line" aria-label="과정 목록">
+      <nav className="mt-10 border-t border-line" aria-label="과정 목록">
         <ul>
-          {tabs.map((tab) => (
-            <li key={tab.slug} className="border-b border-line">
-              <Link
-                href={`/t/${tab.slug}`}
-                className="group flex items-baseline gap-5 py-4 hover:bg-raised focus-visible:bg-raised"
-              >
-                <span className="flex-1">
-                  <span className="text-[16px] font-medium tracking-tight text-ink">
-                    {tab.label}
-                  </span>
-                  {tab.blurb ? (
-                    <span className="mt-1 block max-w-md text-[13.5px] leading-relaxed text-ink-soft">
-                      {tab.blurb}
-                    </span>
-                  ) : null}
-                </span>
-                <span
-                  aria-hidden
-                  className="pr-1 font-mono text-sm text-ink-faint transition-transform duration-200 ease-out group-hover:translate-x-1 group-hover:text-ink"
+          {tabs.map((tab) => {
+            const course = tab.courses[0] ? getCourse(tab.courses[0]) : null;
+            const href = tab.courses[0] ? `/${tab.courses[0]}` : `/t/${tab.slug}`;
+            return (
+              <li key={tab.slug} className="border-b border-line">
+                <Link
+                  href={href}
+                  className="group flex min-h-14 items-center gap-4 px-1 py-3 transition-colors hover:bg-raised focus-visible:bg-raised"
                 >
-                  →
-                </span>
-              </Link>
-            </li>
-          ))}
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-body font-semibold text-ink">{tab.label}</span>
+                    {course?.description ? (
+                      <span className="mt-0.5 block max-w-md text-label text-ink-soft">{course.description}</span>
+                    ) : null}
+                  </span>
+                  <span aria-hidden className="pr-1 text-ink-faint group-hover:text-ink">
+                    →
+                  </span>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </main>

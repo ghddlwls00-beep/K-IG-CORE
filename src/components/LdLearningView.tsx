@@ -21,8 +21,12 @@
  *           after two wrong checks (the line then counts as helped); tiles that stay where they are; a 16px typing box, Enter checks.
  *   Step 3  (F03 · D26 가 · LD-L15 · U13) listeningUtils.generateLiaisonPoints without its wrong cards; 'author‿in'; a line with
  *           no card offers 보통 · 느리게.
- *   Step 4  (F04 · D05 · D27 다 · LD-L07 · U12) '들은 뒤 따라 말해 보세요'; the line nav right above the microphone; a fresh
- *           tester per line; the best score is the best one; '글 가리기' for lines of 15 words or fewer.
+ *   Step 4  (F04 · D05 · D27 다 · LD-L07 · U12) '들은 뒤 따라 말해 보세요'; a fresh tester per line; the best score is the best
+ *           one; '글 가리기' for lines of 15 words or fewer. 2026-10-07 (UI검토-1007 27번): the line nav under the instruction row
+ *           and '글 가리기' at the right of the sound row, as in Steps 2 · 3 (they stood above the microphone · mid-row).
+ *   2026-10-07 (UI검토-1007 26 · 28 · 29 · 51 · 56): Step 5 says once why lines are hidden (a hidden row is its number and
+ *           sound); '빈칸에 직접 쓰기'; from 640px the blank rows in two columns; writing boxes `border-line-input`; the three
+ *           switches are the shared Toggle.
  *   Step 5  (F01 · D05 · D29 · LD-L08 · U10 · U14 · U19) the player with the line it is on marked; '처음부터'; Korean on a press
  *           or '해석 모두 보기'; wrong and helped lines marked; the memo folded (open when it holds something).
  *   Lines   (D28 나 · LD-L10) Steps 2–4 stay on the same line. (D29 나 · LD-L16) before a line is checked in Step 2, Steps 3–5
@@ -95,6 +99,7 @@ import { AudioPlayer } from "./AudioPlayer";
 import { LessonQuestions } from "./LessonQuestions";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import { StepTabs } from "./StepTabs";
+import { Toggle } from "./Toggle";
 import { IconBackspace, IconCheck, IconChevronDown, IconChevronRight, IconPlay, IconSpeaker, IconStop, IconX } from "./icons";
 import { LESSON_COMPLETE_EVENT, useProgress } from "./ProgressProvider";
 
@@ -1067,13 +1072,15 @@ function LdLessonView({
     );
   }
 
-  /** 빈칸 (D24 나): one numbered row per blank — three sound-alike words to choose from, or a 16px box with '직접 쓰기'. */
+  /** 빈칸 (D24 나): one numbered row per blank — three sound-alike words to choose from, or a 16px box with '빈칸에 직접 쓰기'. */
   function renderBlanks(text: string) {
     const typing = prefs.blankInput === "type" && !done;
     return (
       <div className="flex flex-col gap-3">
         {renderBlankSentence(text)}
-        <ol data-blank-rows className="flex list-none flex-col gap-2">
+        {/* 2026-10-07 (UI검토-1007 29번): from 640px the blank rows stand in two columns — the choices used ~240px at the left and
+            '정답 확인' fell to the bottom of the first desktop screen */}
+        <ol data-blank-rows className="grid list-none grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-x-4">
           {lineBlanks.map((blank, bi) => {
             const value = answers[bi] ?? "";
             const mark = marks[bi];
@@ -1100,7 +1107,7 @@ function LdLessonView({
                     lang="en"
                     className={
                       "min-h-11 w-full max-w-[14rem] rounded-control border bg-raised px-3 text-body text-ink focus:border-ink focus:outline-none " +
-                      (mark === "ok" ? "border-success/60" : mark === "wrong" ? "border-danger" : "border-line")
+                      (mark === "ok" ? "border-success/60" : mark === "wrong" ? "border-danger" : "border-line-input")
                     }
                   />
                 ) : (
@@ -1265,7 +1272,7 @@ function LdLessonView({
             spellCheck={false}
             enterKeyHint="done"
             placeholder="들리는 영어 문장을 그대로 쓰세요"
-            className="w-full resize-y rounded-control border border-line bg-raised px-3 py-2.5 text-body text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
+            className="w-full resize-y rounded-control border border-line-input bg-raised px-3 py-2.5 text-body text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
           />
         </label>
         {d ? (
@@ -1311,7 +1318,7 @@ function LdLessonView({
             {mode === "blanks" ? "문장을 듣고 빈칸을 채우세요." : mode === "blocks" ? "문장을 듣고 들리는 순서대로 낱말을 누르세요." : "문장을 듣고 들리는 대로 쓰세요."}
           </p>
           <StepHelp>
-            <p>빈칸: 약하게 들리는 작은 낱말과 끝소리(a · the · and · in · of · -ed · -s)를 비워 두었어요. 소리가 비슷한 셋 중에서 고르거나 &lsquo;직접 쓰기&rsquo;로 써요.</p>
+            <p>빈칸: 약하게 들리는 작은 낱말과 끝소리(a · the · and · in · of · -ed · -s)를 비워 두었어요. 소리가 비슷한 셋 중에서 고르거나 &lsquo;빈칸에 직접 쓰기&rsquo;로 써요.</p>
             <p>블록: 문장의 모든 낱말을 순서대로 놓아요. 쓰기: 문장 전체를 써요 — 숫자는 들린 대로 써도 돼요.</p>
             <p>해석은 한 번 채점하면 보여요. 두 번 틀리면 &lsquo;정답 보기&rsquo;를 쓸 수 있어요.</p>
           </StepHelp>
@@ -1351,22 +1358,18 @@ function LdLessonView({
               <span>{slowOn ? "정지" : `느리게 ${SLOW}×`}</span>
             </button>
             {mode === "blanks" ? (
-              <button
-                type="button"
-                role="switch"
-                aria-checked={prefs.blankInput === "type"}
+              // 2026-10-07 (UI검토-1007 28번): '빈칸에 직접 쓰기' — '직접 쓰기' read almost like the way '쓰기' above it; 56번: the shared Toggle
+              <Toggle
+                checked={prefs.blankInput === "type"}
                 data-action="blank-typing"
                 onClick={() => {
                   changePrefs({ blankInput: prefs.blankInput === "type" ? "choose" : "type" });
                   setResult(null);
                 }}
-                className="ml-auto inline-flex min-h-11 items-center gap-2 rounded-control px-2 text-label font-medium text-ink transition-colors cursor-pointer hover:bg-sunken"
+                className="ml-auto"
               >
-                <span aria-hidden className={"relative inline-block h-5 w-9 rounded-full transition-colors " + (prefs.blankInput === "type" ? "bg-ink" : "bg-line-strong/25")}>
-                  <span className={"absolute top-0.5 h-4 w-4 rounded-full bg-surface shadow-2xs transition-[left] " + (prefs.blankInput === "type" ? "left-[18px]" : "left-0.5")} />
-                </span>
-                <span>직접 쓰기</span>
-              </button>
+                빈칸에 직접 쓰기
+              </Toggle>
             ) : null}
           </div>
 
@@ -1567,29 +1570,19 @@ function LdLessonView({
     const lineOn = isOn(`line:${idx}:${speed}`);
     return (
       <section data-step-panel="4" aria-label="따라 말하기" className="flex flex-col gap-3">
+        {/*
+          2026-10-07 (UI검토-1007 27번): the same order as Steps 2 · 3 — the instruction row, then '문장 n / N' right under it
+          (it stood between the line and the microphone), and '글 가리기' at the right of the line's sound row, where Step 2 keeps
+          '빈칸에 직접 쓰기' (it stood in the middle of the instruction row).
+        */}
         <div className="flex flex-wrap items-center justify-between gap-x-2">
           <p className="text-label text-ink-soft">들은 뒤 따라 말해 보세요.</p>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={prefs.hideText}
-            data-action="hide-text"
-            onClick={() => {
-              changePrefs({ hideText: !prefs.hideText });
-              setShownText({});
-            }}
-            className="inline-flex min-h-11 items-center gap-2 rounded-control px-2 text-label font-medium text-ink transition-colors cursor-pointer hover:bg-sunken"
-          >
-            <span aria-hidden className={"relative inline-block h-5 w-9 rounded-full transition-colors " + (prefs.hideText ? "bg-ink" : "bg-line-strong/25")}>
-              <span className={"absolute top-0.5 h-4 w-4 rounded-full bg-surface shadow-2xs transition-[left] " + (prefs.hideText ? "left-[18px]" : "left-0.5")} />
-            </span>
-            <span>글 가리기</span>
-          </button>
           <StepHelp>
             <p>먼저 문장을 듣고, 끝난 뒤에 마이크를 눌러 따라 말해요. 점수는 알아들은 낱말의 비율이에요(발음 채점이 아니에요).</p>
             <p>&lsquo;글 가리기&rsquo;를 켜면 {LD_HIDE_TEXT_MAX_WORDS}낱말 이하 문장의 영어를 가리고, 말한 뒤에 보여 줘요.</p>
           </StepHelp>
         </div>
+        {lineNav(markChip(idx))}
         {!line?.en ? (
           <p className="text-label text-ink-soft">이 강의에는 영어 문장이 없어요.</p>
         ) : (
@@ -1624,10 +1617,20 @@ function LdLessonView({
                   이 문장 최고 {best}점
                 </span>
               ) : null}
+              <Toggle
+                checked={prefs.hideText}
+                data-action="hide-text"
+                onClick={() => {
+                  changePrefs({ hideText: !prefs.hideText });
+                  setShownText({});
+                }}
+                className="ml-auto"
+              >
+                글 가리기
+              </Toggle>
             </div>
           </>
         )}
-        {lineNav(markChip(idx))}
         {line?.en ? (
           <VoiceSpeakingTester
             key={idx}
@@ -1668,22 +1671,16 @@ function LdLessonView({
               <IconPlay />
               <span>처음부터</span>
             </button>
-            <button
-              type="button"
-              role="switch"
-              aria-checked={allKo}
+            <Toggle
+              checked={allKo}
               data-action="show-all-ko"
               onClick={() => {
                 setAllKo((v) => !v);
                 setKoOpen({});
               }}
-              className="inline-flex min-h-11 items-center gap-2 rounded-control px-2 text-label font-medium text-ink transition-colors cursor-pointer hover:bg-sunken"
             >
-              <span aria-hidden className={"relative inline-block h-5 w-9 rounded-full transition-colors " + (allKo ? "bg-ink" : "bg-line-strong/25")}>
-                <span className={"absolute top-0.5 h-4 w-4 rounded-full bg-surface shadow-2xs transition-[left] " + (allKo ? "left-[18px]" : "left-0.5")} />
-              </span>
-              <span>해석 모두 보기</span>
-            </button>
+              해석 모두 보기
+            </Toggle>
           </div>
         </div>
         {hiddenCount > 0 ? (
@@ -1716,7 +1713,12 @@ function LdLessonView({
                   <span className="w-6 shrink-0 pt-2.5 text-label font-semibold tabular-nums text-ink-soft">{item.n || idx + 1}</span>
                   <div className="min-w-0 flex-1">
                     {hidden ? (
-                      <p className="flex min-h-11 items-center text-label text-ink-faint">받아쓰기 전이라 가려 두었어요</p>
+                      // 2026-10-07 (UI검토-1007 26번): a hidden line is its number and its sound only — the box above says once why
+                      // ('아직 받아쓰기 전인 문장 N개는 가려 두었어요'); the line here is a quiet dashed place, read as '가린 문장'
+                      <p className="flex min-h-11 items-center">
+                        <span aria-hidden className="block w-full max-w-48 border-b border-dashed border-ink-faint/50" />
+                        <span className="sr-only">가린 문장</span>
+                      </p>
                     ) : item.en ? (
                       <button
                         type="button"
@@ -1776,7 +1778,7 @@ function LdLessonView({
               }}
               aria-label="청취 메모"
               placeholder="잘 안 들린 곳이나 새 낱말을 적어 두세요. 이 기기에만 저장돼요."
-              className="w-full resize-y rounded-control border border-line bg-surface px-3 py-2.5 text-body leading-relaxed text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
+              className="w-full resize-y rounded-control border border-line-input bg-surface px-3 py-2.5 text-body leading-relaxed text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
             />
           </div>
         </details>

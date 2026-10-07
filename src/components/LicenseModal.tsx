@@ -114,7 +114,8 @@ export function LicenseModal() {
   }
 
   async function handleDeactivate() {
-    if (confirm("현재 기기에서 이용권 등록을 해제하시겠습니까?\n(해제 시 새로운 기기를 등록할 수 있는 슬롯이 반환됩니다)")) {
+    // UI검토-1007 18 · 41번: plain words ('슬롯이 반환됩니다' → what the learner can do next)
+    if (confirm("이 기기에서 이용권 등록을 해제할까요?\n해제하면 다른 기기를 새로 등록할 수 있어요.")) {
       await deactivateLicense();
       setFeedback(null);
     }
@@ -140,7 +141,9 @@ export function LicenseModal() {
         ref={dialogRef}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className="flex max-h-[calc(100dvh-2rem)] w-full max-w-md flex-col gap-5 overflow-y-auto rounded-card border border-line bg-surface p-5 shadow-2xl animate-in zoom-in-95 duration-150 focus:outline-none sm:p-6"
+        // UI검토-1007 54번: in the dark the window's edge (border-line, 1.25:1) melted into the dimmed page behind it —
+        // the input-field edge colour (globals.css --line-input, 3:1 or more on either theme, 51번) draws it
+        className="flex max-h-[calc(100dvh-2rem)] w-full max-w-md flex-col gap-5 overflow-y-auto rounded-card border border-line-input bg-surface p-5 shadow-2xl animate-in zoom-in-95 duration-150 focus:outline-none sm:p-6"
       >
         {/* Header */}
         <div className="flex items-start justify-between gap-3">
@@ -162,7 +165,7 @@ export function LicenseModal() {
                   ? licenseInfo?.isStudentOnly
                     ? `STUDENT 이용권으로 ${STUDENT_PASS_SCOPE}를 1장부터 차례대로 학습할 수 있습니다.`
                     : "모든 유료 강의를 학습할 수 있습니다."
-                  : "받은 코드를 등록하면 바로 학습할 수 있습니다."}
+                  : "받은 이용권 코드를 등록하면 바로 학습할 수 있습니다."}
               </p>
             </div>
           </div>
@@ -238,12 +241,13 @@ export function LicenseModal() {
                     value={inputCode}
                     onChange={(e) => setInputCode(e.target.value.toUpperCase())}
                     placeholder={KEY_PLACEHOLDER}
-                    className="min-h-11 min-w-0 flex-1 text-ellipsis rounded-control border border-line bg-raised px-3 font-mono text-body font-semibold text-ink placeholder:font-sans placeholder:font-normal placeholder:text-ink-faint focus:border-ink focus:outline-none"
+                    className="min-h-11 min-w-0 flex-1 text-ellipsis rounded-control border border-line-input bg-raised px-3 font-mono text-body font-semibold text-ink placeholder:font-sans placeholder:font-normal placeholder:text-ink-faint focus:border-ink focus:outline-none"
                   />
                   <button
                     type="submit"
                     disabled={isSubmitting || !inputCode.trim()}
-                    className="min-h-11 shrink-0 rounded-control bg-ink px-4 text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90 disabled:opacity-40"
+                    // UI검토-1007 55번: the shared filled button (globals.css .btn-filled) — off is an outline, not a faded fill
+                    className="btn-filled min-h-11 shrink-0 rounded-control px-4 text-label font-semibold transition-opacity"
                   >
                     {isSubmitting ? "확인 중" : "등록"}
                   </button>
@@ -284,7 +288,7 @@ export function LicenseModal() {
                 onChange={(e) => setInputCode(e.target.value.toUpperCase())}
                 placeholder={KEY_PLACEHOLDER}
                 aria-describedby="license-code-hint"
-                className="min-h-12 w-full text-ellipsis rounded-control border border-line bg-raised px-4 font-mono text-body font-semibold text-ink placeholder:font-sans placeholder:font-normal placeholder:text-ink-faint focus:border-ink focus:outline-none transition-colors"
+                className="min-h-12 w-full text-ellipsis rounded-control border border-line-input bg-raised px-4 font-mono text-body font-semibold text-ink placeholder:font-sans placeholder:font-normal placeholder:text-ink-faint focus:border-ink focus:outline-none transition-colors"
                 disabled={isSubmitting}
               />
               <p id="license-code-hint" className="flex flex-wrap justify-between gap-x-3 text-caption text-ink-soft">
@@ -298,7 +302,7 @@ export function LicenseModal() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex min-h-12 w-full items-center justify-center rounded-control bg-ink text-label font-semibold text-surface transition-opacity cursor-pointer hover:opacity-90 disabled:opacity-50"
+              className="btn-filled flex min-h-12 w-full items-center justify-center rounded-control text-label font-semibold transition-opacity"
             >
               {isSubmitting ? "확인 중…" : "이용권 코드 등록하기"}
             </button>

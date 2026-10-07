@@ -28,6 +28,23 @@ function shown(item: unknown): unknown {
   return Object.fromEntries(Object.entries(item).filter(([key]) => !HIDDEN_ITEM_FIELDS.has(key)));
 }
 
+/**
+ * The line under a lesson's title (the lesson file's `subtitle` — the textbook's own subheading), as the screen draws it
+ * (UI 검토 1007 37번): the textbook's section numbers '(1) ' · '(2) ' dropped — "(1) 부정사" → "부정사", and one in the middle
+ * of a list turned into the list's dot — "(1) 평서문 (2) 의문문" → "평서문 · 의문문" — and null when what is left says the
+ * same as the title (pg13-1 '부정사' · '(1) 부정사'), so the same words are not drawn twice. For the screen only — the
+ * lesson file keeps its subtitle.
+ */
+export function passoffSubtitle(title: string, subtitle: string | null | undefined): string | null {
+  if (typeof subtitle !== "string") return null;
+  const shown = subtitle
+    .replace(/(^|\s*[·/]\s*|\s+)\(\d+\)\s*/g, (_match, before: string, at: number) => (at === 0 ? "" : /[·/]/.test(before) ? before : " · "))
+    .trim();
+  const same = (s: string) => s.replace(/\s+/g, "").toLowerCase();
+  if (!shown || same(shown) === same(title)) return null;
+  return shown;
+}
+
 export function viewBlocks(blocks: readonly Block[]): Block[] {
   return blocks
     .filter((b) => isRecord(b) && VIEW_BLOCK_TYPES.has(String(b.type)))

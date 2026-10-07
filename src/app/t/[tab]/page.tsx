@@ -104,10 +104,15 @@ export default async function TabPage({ params }: { params: Promise<{ tab: strin
           <h1 className="text-[clamp(40px,6vw,64px)] leading-[1.06] font-medium tracking-tight text-ink">
             {tab.label}
           </h1>
-          <p className="mt-4 max-w-lg text-[16px] leading-relaxed text-ink-soft">{tab.blurb}</p>
+          <p className="mt-4 max-w-lg text-body text-ink-soft">{tab.blurb}</p>
         </div>
       </header>
 
+      {/*
+        2026-10-07 (UI검토-1007 23 · 디자인 규칙 §2 · §3): this in-between page is no longer linked from the 404 screen or the menu,
+        but an old link can still land here — so it follows the same rules: no monospace / tracking / capitals on Korean ('훈련'
+        was set in monospace capitals), nothing under 12px, 44px+ rows, the same arrow as the other lists.
+      */}
       <div className="mx-auto max-w-4xl px-5 py-14">
 
       {/*
@@ -122,12 +127,12 @@ export default async function TabPage({ params }: { params: Promise<{ tab: strin
             <li key={course.slug} className="border-b border-line">
               <Link
                 href={`/${course.slug}`}
-                className="group flex items-baseline gap-5 py-5 hover:bg-raised focus-visible:bg-raised"
+                className="group flex min-h-14 items-center gap-4 px-1 py-4 transition-colors hover:bg-raised focus-visible:bg-raised"
               >
-                <span className="flex-1">
-                  <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <span className="text-[16px] font-medium tracking-tight">{course.titleEn}</span>
-                    <span className="font-mono text-[11px] tracking-wide text-ink-faint uppercase">
+                <span className="min-w-0 flex-1">
+                  <span className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                    <span className="text-body font-semibold text-ink">{course.titleEn}</span>
+                    <span className="text-caption text-ink-faint">
                       {course.kind === "flash-video" ? (
                         <T k="tab.conversation" />
                       ) : course.kind === "video" ? (
@@ -137,17 +142,13 @@ export default async function TabPage({ params }: { params: Promise<{ tab: strin
                       )}
                     </span>
                   </span>
-                  <span className="mt-1 block max-w-md text-[13.5px] leading-relaxed text-ink-soft">
-                    {course.description}
-                  </span>
+                  <span className="mt-0.5 block max-w-md text-label text-ink-soft">{course.description}</span>
                 </span>
-                <span className="shrink-0 font-mono text-[12px] tabular-nums text-ink-faint">
-                  {course.lessonCount}
+                {/* the inner number keeps 'tabular-nums text-ink-faint">N<' — docs/qa-2026-09-15/scripts/crawl-prod.cjs reads it */}
+                <span className="shrink-0 text-caption text-ink-faint">
+                  강의 <span className="tabular-nums text-ink-faint">{course.lessonCount}</span>개
                 </span>
-                <span
-                  aria-hidden
-                  className="pr-1 font-mono text-sm text-ink-faint transition-transform duration-200 ease-out group-hover:translate-x-1 group-hover:text-ink"
-                >
+                <span aria-hidden className="pr-1 text-ink-faint group-hover:text-ink">
                   →
                 </span>
               </Link>
@@ -157,20 +158,20 @@ export default async function TabPage({ params }: { params: Promise<{ tab: strin
       ) : null}
 
       {tab.unavailable ? (
-        <section className="mt-4 border border-line p-6">
-          <h2 className="mb-2 font-mono text-[11px] tracking-[0.18em] text-ink-faint uppercase">
+        <section className="mt-4 rounded-card border border-line p-6">
+          <h2 className="mb-2 text-label font-semibold text-ink-soft">
             <T k="tab.unavailable" />
           </h2>
-          <p className="max-w-xl text-[14px] leading-relaxed text-ink-soft">{tab.unavailable}</p>
+          <p className="max-w-xl text-label text-ink-soft">{tab.unavailable}</p>
 
           {tab.legacyModules ? (
             <>
-              <p className="mt-5 mb-2 font-mono text-[11px] tracking-[0.18em] text-ink-faint uppercase">
+              <p className="mt-5 mb-2 text-label font-semibold text-ink-soft">
                 <T k="tab.contained" />
               </p>
               <ul className="flex flex-col gap-1">
                 {tab.legacyModules.map((m) => (
-                  <li key={m} className="text-[14px] text-ink-soft">
+                  <li key={m} className="text-label text-ink-soft">
                     {m}
                   </li>
                 ))}
@@ -178,8 +179,8 @@ export default async function TabPage({ params }: { params: Promise<{ tab: strin
             </>
           ) : null}
 
-          <p className="mt-5 font-mono text-[11px] text-ink-faint">
-            legacy: {tab.legacyIndex}
+          <p className="mt-5 text-caption text-ink-faint">
+            legacy: <span className="font-mono">{tab.legacyIndex}</span>
           </p>
         </section>
       ) : null}

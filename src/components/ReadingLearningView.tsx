@@ -132,6 +132,7 @@ import { AudioPlayer } from "./AudioPlayer";
 import { LessonQuestions } from "./LessonQuestions";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import { StepTabs } from "./StepTabs";
+import { Toggle } from "./Toggle";
 import { IconCheck, IconChevronDown, IconChevronRight, IconRepeat, IconSpeaker, IconStop, IconX } from "./icons";
 import { LESSON_COMPLETE_EVENT, useProgress } from "./ProgressProvider";
 
@@ -322,19 +323,16 @@ function ViewMenu({
               ))}
             </div>
           </div>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={prefs.numbers}
+          {/* the shared switch (UI검토-1007 3장 56번 — the off track is 3:1 on both themes) */}
+          <Toggle
+            checked={prefs.numbers}
+            labelFirst
             data-action="toggle-numbers"
             onClick={() => onChange({ ...prefs, numbers: !prefs.numbers })}
-            className="flex min-h-11 items-center justify-between gap-2 rounded-control px-1 text-label font-medium text-ink transition-colors cursor-pointer hover:bg-sunken"
+            className="w-full justify-between"
           >
-            <span>문장 번호</span>
-            <span aria-hidden className={"relative inline-block h-5 w-9 rounded-full transition-colors " + (prefs.numbers ? "bg-ink" : "bg-line-strong/25")}>
-              <span className={"absolute top-0.5 h-4 w-4 rounded-full bg-surface shadow-2xs transition-[left] " + (prefs.numbers ? "left-[18px]" : "left-0.5")} />
-            </span>
-          </button>
+            문장 번호
+          </Toggle>
           <button type="button" data-action="copy-passage" onClick={onCopy} className={`${outlineButton} w-full`}>
             {copied ? <IconCheck /> : null}
             <span>{copied ? "복사했어요" : "지문 복사"}</span>
@@ -923,7 +921,7 @@ export function ReadingLearningView({
             읽는 중 · <ReadingClock read={readElapsed} />
           </p>
         ) : null}
-        <div lang="en" className={`${size.en} font-serif leading-loose text-left text-ink sm:max-w-[68ch]`}>
+        <div lang="en" className={`${size.en} leading-loose text-left text-ink sm:max-w-[68ch]`}>
           {sentencePairs.map((pair, i) => {
             const learnFirst = where === "step1" && i === 0 ? "" : undefined;
             if (timing) {
@@ -1256,7 +1254,7 @@ export function ReadingLearningView({
           </p>
           <p className="text-label tabular-nums text-ink-soft">맞힘 {right}</p>
         </div>
-        <p data-masked lang="en" className="rounded-card border border-line bg-raised px-4 py-4 font-serif text-body text-ink">
+        <p data-masked lang="en" className="rounded-card border border-line bg-raised px-4 py-4 text-body text-ink">
           {item.maskedSentence}
         </p>
         <div role="group" aria-label="보기" className="grid grid-cols-2 gap-2">
@@ -1301,7 +1299,7 @@ export function ReadingLearningView({
                 </span>
               ) : null}
             </p>
-            <p data-filled lang="en" className="font-serif text-body text-ink">
+            <p data-filled lang="en" className="text-body text-ink">
               {filledSentence(item)}
             </p>
             {pair ? (
@@ -1512,7 +1510,7 @@ export function ReadingLearningView({
           {isPlaying ? <IconStop /> : prefs.numbers ? i + 1 : <IconSpeaker />}
         </button>
         {dualView !== "ko" ? (
-          <p lang="en" data-en className={`${size.en} py-2 font-serif leading-relaxed text-ink`}>
+          <p lang="en" data-en className={`${size.en} py-2 leading-relaxed text-ink`}>
             <span className={`box-decoration-clone rounded-sm ${isPlaying ? PLAYING_MARK : isCurrent ? TINT : ""}`}>{englishWithKeywords(i)}</span>
           </p>
         ) : null}
@@ -1613,7 +1611,7 @@ export function ReadingLearningView({
               <h3 className="text-body font-semibold text-ink">소리 내어 읽기 · 말하기 인식(단어 일치)</h3>
               <p className="mt-0.5 text-label text-ink-soft">첫 문장을 소리 내어 읽으면, 알아들은 단어가 원문과 얼마나 맞는지 보여 줘요.</p>
             </div>
-            <p lang="en" className="rounded-card border border-line bg-raised px-4 py-3 font-serif text-body text-ink">
+            <p lang="en" className="rounded-card border border-line bg-raised px-4 py-3 text-body text-ink">
               {sentencePairs[0].en}
             </p>
             <VoiceSpeakingTester targetText={romanizedForm(lessonKey, sentencePairs[0].en)} targetTexts={readAloudTargets} onStart={stopAll} buttonLabel="소리 내어 읽기" />
@@ -1635,7 +1633,7 @@ export function ReadingLearningView({
               onChange={(event) => setNotes(event.target.value)}
               aria-label="메모"
               placeholder="이 글에서 기억할 것을 적어 두세요. 이 기기에 저장돼요."
-              className="w-full rounded-control border border-line bg-surface p-3 text-body text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
+              className="w-full rounded-control border border-line-input bg-surface p-3 text-body text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
             />
             <p className="text-caption tabular-nums text-ink-soft">{notes.length}자</p>
           </div>
@@ -1745,8 +1743,10 @@ export function ReadingLearningView({
               : "원문 대조까지 마쳤으면 같은 글을 다시 읽으며 시간을 재 보세요. '읽기 시작'을 누르면 글이 나와요. 뜻을 파악하며 평소 속도로 읽고, 다 읽으면 '다 읽었어요'를 누르세요."}
           </p>
         ) : null}
-        <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+        {/* 2026-10-07 (UI검토-1007 3장 60번): the outer row never wraps — only the left group does — so 'Aa' stays at the top
+            right on a 360px phone even for a long passage (pr154 '109단어 · 8문장 · 목표 약 36초' dropped it to the left end) */}
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex min-h-11 min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-1">
             {!running && !again ? (
               <button type="button" data-action="start-reading" onClick={() => startRun()} className={`${filledButton} min-h-12 px-5`}>
                 <span>읽기 시작</span>

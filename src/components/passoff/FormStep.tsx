@@ -419,7 +419,7 @@ export function FormItemCard({
                 checkShort();
               }
             }}
-            className={`min-h-11 w-full rounded-control border border-line bg-surface px-3 text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none ${FONT[font].input}`}
+            className={`min-h-11 w-full rounded-control border border-line-input bg-surface px-3 text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none ${FONT[font].input}`}
           />
           {hangul ? <p className={`text-label ${tone.danger}`}>한글이 섞여 있어요. 영어 자판으로 바꿔 주세요.</p> : null}
           {!settled ? (

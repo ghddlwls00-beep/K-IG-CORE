@@ -15,7 +15,8 @@ import { FOCUS_CLASS, FONT, Marked, PrimaryButton, SecondaryButton, SpeakButton,
  * The sentences are recalled one at a time, in order (stage A, 점검 10): the first one whose English is still
  * hidden is the one to recall, and its button wakes two seconds after it becomes that one — a single timer for
  * the page opened them all at once. Opening one moves the focus to its English, where the button was. Only that
- * sentence has the (filled) button; the ones after it say they wait their turn (디자인 규칙: one main action).
+ * sentence has the (filled) button; the first one after it says, once, that they wait their turn (디자인 규칙: one main
+ * action). The sentences sit in one list box parted by lines, not a card each (UI 검토 1007 15번).
  *
  * The English is drawn with the lesson's Hangul glosses (glossFor — "Hong Gil Dong(홍길동)"); the microphone's target and
  * the sound keep the lesson's own sentence.
@@ -46,7 +47,10 @@ export function AnchorsStep({
   const { openModal } = useLicense();
   const gloss = glossFor(lessonId);
   const shownSet = new Set(revealed);
-  const currentId = anchors.find((anchor) => !shownSet.has(anchor.id))?.id ?? null;
+  const currentIndex = anchors.findIndex((anchor) => !shownSet.has(anchor.id));
+  const currentId = currentIndex < 0 ? null : anchors[currentIndex].id;
+  // the first sentence still waiting its turn after that one — the only one that says it waits (UI 검토 1007 15번)
+  const firstWaitingIndex = currentIndex < 0 ? -1 : anchors.findIndex((anchor, i) => i > currentIndex && !shownSet.has(anchor.id));
   const allShown = currentId === null;
 
   useEffect(() => {
@@ -71,14 +75,17 @@ export function AnchorsStep({
         한국어를 보고 영어 문장을 먼저 떠올려 보세요. 소리 내어 말해 봐도 좋아요. 떠올린 뒤 &lsquo;영어 보기&rsquo;를 누르세요.
       </p>
 
-      <ol className="flex flex-col gap-3">
+      {/* one list box, the sentences parted by lines — not a card each (UI 검토 1007 15번 · 디자인 규칙 §1-3) */}
+      <ol className="flex flex-col divide-y divide-line rounded-card border border-line bg-raised">
         {anchors.map((anchor, index) => {
           const shown = shownSet.has(anchor.id);
           const isCurrent = anchor.id === currentId;
+          // the waiting sentences say so once — on the first of them, right under the one to recall
+          const firstWaiting = index === firstWaitingIndex;
           // aria-disabled, not disabled: the button waiting its two seconds stays in the tab order
           const waiting = readyId !== anchor.id;
           return (
-            <li key={anchor.id} className="rounded-card border border-line bg-raised p-4">
+            <li key={anchor.id} className="p-4">
               <div className="flex gap-3">
                 <span className="w-6 shrink-0 pt-0.5 text-right text-label font-semibold tabular-nums text-ink-faint">{index + 1}</span>
                 <div className="flex min-w-0 flex-1 flex-col gap-3">
@@ -119,9 +126,9 @@ export function AnchorsStep({
                         영어 보기
                       </PrimaryButton>
                     </div>
-                  ) : (
-                    <p className="text-label text-ink-faint">앞 문장을 연 뒤에 차례가 와요.</p>
-                  )}
+                  ) : firstWaiting ? (
+                    <p className="text-label text-ink-faint">이 문장부터는 앞 문장을 연 뒤에 차례가 와요.</p>
+                  ) : null}
                 </div>
               </div>
             </li>

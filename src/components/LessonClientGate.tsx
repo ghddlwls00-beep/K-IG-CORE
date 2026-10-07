@@ -15,6 +15,9 @@ interface LessonClientGateProps {
 }
 
 /**
+ * UNUSED since KIG-001 (984a553 — the lesson page gates on the server; nothing imports this file, docs/qa-2026-09-18/maps/
+ * common.md R20). Kept only until a person deletes it (UI검토-1007 46: the deletion was not done by the fix session).
+ *
  * Wraps lesson learning body (video, audio, drill content) with access control.
  * The first curriculum section's first two lessons are always accessible.
  * Locked lessons require an active license; otherwise displays the high-converting Paywall card.
@@ -41,15 +44,9 @@ export function LessonClientGate({
     return <>{children}</>;
   }
 
-  // Before hydration finishes, show a clean skeleton to prevent content flash
+  // Before hydration finishes: a quiet empty space of the body's height — no grey blinking skeleton (UI검토-1007 46)
   if (!mounted) {
-    return (
-      <div className="my-8 rounded-3xl border border-line bg-sunken p-12 text-center flex flex-col items-center justify-center gap-3 min-h-[280px] animate-pulse">
-        <div className="h-10 w-10 rounded-2xl bg-black/10" />
-        <div className="h-4 w-48 rounded bg-black/10" />
-        <div className="h-3 w-64 rounded bg-black/5" />
-      </div>
-    );
+    return <div aria-busy="true" className="min-h-[280px]" />;
   }
 
   // Active license holders get access according to their plan (VIP vs STUDENT-only)

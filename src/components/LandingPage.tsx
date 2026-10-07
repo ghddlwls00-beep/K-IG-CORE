@@ -283,7 +283,8 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
 
   return (
     // A11Y-02: the home page had no <main> landmark — every other route has one.
-    <main className="relative h-[100dvh] w-full overflow-hidden bg-surface text-ink antialiased select-none">
+    // data-full-screen: this page never scrolls the document, so globals.css does not keep a scrollbar's room beside it (UI검토-1007 11)
+    <main data-full-screen className="relative h-[100dvh] w-full overflow-hidden bg-surface text-ink antialiased select-none">
       {/* Top Header */}
       <header className="absolute top-0 inset-x-0 z-30 flex shrink-0 items-center justify-between border-b border-line/60 bg-surface/80 px-5 py-3.5 backdrop-blur-md sm:px-12 sm:py-4">
         {/*
@@ -335,9 +336,11 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                 return (
                   <>
                     <h2 className="text-[clamp(32px,8vw,78px)] font-bold leading-[1.06] tracking-[-0.03em] text-ink text-balance">
+                      {/* UI검토-1007 43: the name link was 38px tall at 360. As an inline-block its box is the line (32px × 1.06 ≈ 34px);
+                          6px of padding each way, cancelled by the same negative margin, makes it 46px without moving a pixel of the slide */}
                       <Link
                         href={`/${targetCourse}`}
-                        className="transition-all duration-300 hover:opacity-85"
+                        className="-my-1.5 inline-block py-1.5 transition-all duration-300 hover:opacity-85"
                       >
                         {tab.label}
                       </Link>
@@ -406,7 +409,8 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
                   "block h-[7px] w-[7px] rounded-full transition-[transform,background-color] duration-200 " +
                   (isActive
                     ? "scale-140 bg-primary ring-2 ring-primary/25"
-                    : "bg-ink/20 group-hover:scale-120 group-hover:bg-ink-soft")
+                    : // UI검토-1007 43: a thin white edge, so the dot still shows on the dark part of a photo (2 of 9 vanished at 360)
+                      "bg-ink/20 ring-1 ring-white/70 group-hover:scale-120 group-hover:bg-ink-soft")
                 }
               />
             </button>

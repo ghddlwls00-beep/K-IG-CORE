@@ -32,6 +32,8 @@ interface ChapterAudioPayload {
 
 type AudioSpeed = 0.85 | 1 | 1.2;
 
+const LOAD_FAILED = "이 장의 소리를 불러오지 못했어요. 잠시 뒤 다시 눌러 주세요.";
+
 // In-memory module cache for fetched chapter audio payloads — "<course>:<chapter>" (ADULT's chapter 1 is not STUDENT's)
 const chapterCache = new Map<string, ChapterAudioPayload>();
 
@@ -138,7 +140,7 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
           onError: () => {
             setStatus("idle");
             setProgress(null);
-            setError("음성을 재생하지 못했습니다. 네트워크 연결을 확인해 주세요.");
+            setError("소리를 재생하지 못했어요. 인터넷 연결을 확인해 주세요.");
             setGlobalActiveChapter(null);
           },
         }
@@ -182,25 +184,36 @@ export const ChapterAudioBar = memo(function ChapterAudioBar({
         cache: "no-store",
         credentials: "same-origin",
       });
-      const data = (await response.json()) as
+      const data = (await response.json().catch(() => null)) as
         | ChapterAudioPayload
-        | { success?: false; error?: string };
+        | { success?: false; error?: string }
+        | null;
 
       if (globalActiveChapter !== chapterNumber) return;
 
-      if (!response.ok || !data.success) {
-        throw new Error(
-          ("error" in data && data.error) || "이 장의 소리를 불러오지 못했어요."
+      if (!response.ok || !data?.success) {
+        // UI검토-1007 18 · 41번: the server's own words say '챕터' and 합니다체 (api/<course>/chapter-audio) — this line
+        // says it the list's way, by what the answer means: 401 no licence · 403 the chapter before is not done
+        setStatus("idle");
+        setError(
+          response.status === 401
+            ? "이용권을 등록하면 이 장을 들을 수 있어요."
+            : response.status === 403
+              ? "앞 장을 마치면 이 장 전체 듣기가 열려요."
+              : LOAD_FAILED
         );
+        setGlobalActiveChapter(null);
+        return;
       }
 
       chapterCache.set(cacheKey, data);
       setStatus("playing");
       startPlayback(data, speed, 0);
-    } catch (err) {
+    } catch {
+      // no answer at all (offline) — never a browser's English error text on the list
       if (globalActiveChapter !== chapterNumber) return;
       setStatus("idle");
-      setError(err instanceof Error ? err.message : "이 장의 소리를 불러오지 못했어요.");
+      setError(LOAD_FAILED);
       setGlobalActiveChapter(null);
     }
   }, [chapterNumber, chapterUnlocked, course, speed, startPlayback, status]);

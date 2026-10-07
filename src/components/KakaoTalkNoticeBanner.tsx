@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { isKakaoTalk, isInAppBrowser, isAndroid, isIOS } from "@/lib/speech";
+import { IconCheck, IconX } from "./icons";
 
 const DISMISS_KEY = "kig_iab_banner_dismissed_v1";
 const AUTO_ESCAPE_KEY = "kig_android_auto_escape_v1";
@@ -86,7 +87,7 @@ export function KakaoTalkNoticeBanner() {
         setTimeout(() => setCopied(false), 3000);
       }
     } catch {
-      alert("링크를 복사할 수 없습니다. 상단 주소창을 복사해 주세요.");
+      alert("주소를 복사하지 못했어요. 위 주소창의 주소를 복사해 주세요.");
     }
   }
 
@@ -99,56 +100,45 @@ export function KakaoTalkNoticeBanner() {
     }
   }
 
+  // 2026-10-07 (UI검토-1007 19 · 61): the site's own colours and sizes instead of KakaoTalk yellow and amber (the same light
+  // amber in dark mode), 11–12.5px text and 29–31px buttons; line icons instead of 💬 · 🌐 · 📋; plain words. One filled button
+  // (open in the phone's browser), an outlined '주소 복사', a 44px close. What the buttons do — and the one automatic move to
+  // Chrome on Android, which is the owner's call (4장 10) — is unchanged.
+  const browser = isIOS() ? "Safari" : "Chrome";
   return (
-    <div className="relative z-50 border-b border-amber-300 bg-amber-50 px-3.5 py-2 text-amber-950 shadow-xs transition-all animate-in slide-in-from-top duration-300">
-      <div className="mx-auto flex max-w-5xl flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 text-[12.5px]">
-        {/* Notice Info */}
-        <div className="flex items-center gap-2">
-          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#FEE500] text-xs font-bold text-[#371D1E] shadow-2xs">
-            💬
-          </span>
-          <div className="leading-snug">
-            <span className="font-bold text-[#371D1E]">
-              {isKakao ? "카카오톡 브라우저 접속 중" : "인앱 브라우저 접속 중"}
-            </span>
-            <span className="text-amber-900 ml-1.5 hidden sm:inline">
-              · 원활한 오디오 재생 및 마이크 학습을 위해 Safari 또는 Chrome 브라우저를 권장합니다.
-            </span>
-            <p className="text-[11px] text-amber-800 sm:hidden mt-0.5">
-              오디오 및 마이크 학습을 위해 Safari 또는 Chrome에서 열어주세요.
-            </p>
-          </div>
-        </div>
+    <div role="region" aria-label="브라우저 안내" className="relative z-50 border-b border-line bg-sunken px-4 py-2 text-ink">
+      <div className="mx-auto flex max-w-5xl flex-col items-stretch justify-between gap-2 sm:flex-row sm:items-center">
+        <p className="text-label leading-snug">
+          <span className="font-semibold">{isKakao ? "카카오톡 안에서 열었어요." : "앱 안의 브라우저에서 열었어요."}</span>{" "}
+          <span className="text-ink-soft">소리와 마이크는 {browser}에서 잘 돼요.</span>
+        </p>
 
-        {/* Action Buttons */}
-        <div className="flex items-center gap-1.5 w-full sm:w-auto justify-end">
+        <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={handleOpenExternal}
-            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 rounded-lg bg-[#371D1E] px-3 py-1.5 text-[11.5px] font-semibold text-[#FEE500] shadow-xs hover:bg-black transition-colors cursor-pointer"
+            className="btn-filled inline-flex min-h-11 flex-1 items-center justify-center rounded-control px-4 text-label font-semibold transition-colors sm:flex-none"
           >
-            <span>🌐</span>
-            <span>{isIOS() ? "Safari로 열기" : "Chrome으로 열기"}</span>
+            {isIOS() ? "Safari로 열기" : "Chrome으로 열기"}
           </button>
 
           <button
             type="button"
             onClick={handleCopyLink}
-            className="inline-flex items-center gap-1 rounded-lg border border-amber-400/60 bg-raised/80 px-2.5 py-1.5 text-[11.5px] font-medium text-amber-900 hover:bg-raised dark:text-amber-200 transition-colors cursor-pointer"
-            title="주소 복사"
+            className="inline-flex min-h-11 items-center justify-center gap-1.5 rounded-control border border-line bg-raised px-3 text-label font-medium text-ink transition-colors hover:bg-surface cursor-pointer"
           >
-            <span>{copied ? "✓" : "📋"}</span>
-            <span>{copied ? "복사됨!" : "링크 복사"}</span>
+            {copied ? <IconCheck size={16} className="text-success" /> : null}
+            <span>{copied ? "복사했어요" : "주소 복사"}</span>
           </button>
 
           <button
             type="button"
             onClick={handleDismiss}
             aria-label="안내 닫기"
-            className="flex h-7 w-7 items-center justify-center rounded-lg text-amber-700 hover:bg-amber-200/60 transition-colors cursor-pointer text-xs"
-            title="인앱에서 계속 학습"
+            title="이 브라우저에서 계속하기"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-control text-ink-soft transition-colors hover:bg-raised hover:text-ink cursor-pointer"
           >
-            ✕
+            <IconX size={18} />
           </button>
         </div>
       </div>

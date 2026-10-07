@@ -85,6 +85,7 @@ import {
 import { AudioPlayer } from "./AudioPlayer";
 import { VoiceSpeakingTester } from "./VoiceSpeakingTester";
 import { StepTabs } from "./StepTabs";
+import { Toggle } from "./Toggle";
 import { IconCheck, IconChevronDown, IconChevronRight, IconPlay, IconRepeat, IconSpeaker, IconStop, IconX } from "./icons";
 import { LESSON_COMPLETE_EVENT, useProgress } from "./ProgressProvider";
 
@@ -854,8 +855,9 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
         data-word={order}
         data-learn-first={order === 1 ? "" : undefined}
         className={
+          // 2026-10-07 (UI검토-1007 3장 30번): the hover tint covers the whole card, the circle's column too (it covered the word part only)
           "flex min-h-16 items-stretch rounded-control border transition-colors " +
-          (speaking ? "border-ink bg-ink text-surface" : "border-line bg-raised text-ink")
+          (speaking ? "border-ink bg-ink text-surface" : "border-line bg-raised text-ink hover:bg-sunken")
         }
       >
         <button
@@ -866,10 +868,7 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
             playWord(w, true);
           }}
           aria-label={showMeaning ? `${w} ${meaning} 듣기` : `${w} 듣기 · 뜻 보기`}
-          className={
-            "flex min-w-0 flex-1 flex-col items-start justify-center gap-0.5 rounded-control py-2 pr-1 pl-3 text-left transition-colors cursor-pointer " +
-            (speaking ? "" : "hover:bg-sunken")
-          }
+          className="flex min-w-0 flex-1 flex-col items-start justify-center gap-0.5 rounded-control py-2 pr-1 pl-3 text-left transition-colors cursor-pointer"
         >
           <span id={`${uid}-w${order}`} data-word-text lang="en" className="text-title-s font-semibold hyphens-auto [overflow-wrap:anywhere]">
             {w}
@@ -984,24 +983,25 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
   function renderStep1() {
     return (
       <section data-step-panel="1" aria-label="단어 보고 듣기" className="flex flex-col gap-3">
-        <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
-          <p className="text-label text-ink-soft">단어를 누르면 소리가 나요.</p>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={hideMeanings}
+        {/* 2026-10-07 (UI검토-1007 3장 30번): what the circle is, here at the top — it was one line under the last row, three
+            screens down. The row does not wrap, so the switch stays at the right of the line. */}
+        <div className="flex items-center justify-between gap-3">
+          <p className="min-w-0 flex-1 text-label text-ink-soft">
+            단어를 누르면 소리가 나요.
+            {words.length > 0 ? " 옆 동그라미는 ‘안다고 표시’예요 — 표시해도 2단계 퀴즈에는 그대로 나와요." : null}
+          </p>
+          {/* the shared switch (UI검토-1007 3장 56번) */}
+          <Toggle
+            checked={hideMeanings}
             data-action="hide-meanings"
             onClick={() => {
               setHideMeanings((v) => !v);
               setOpened({});
             }}
-            className="inline-flex min-h-11 items-center gap-2 rounded-control px-2 text-label font-medium text-ink transition-colors cursor-pointer hover:bg-sunken"
+            className="shrink-0"
           >
-            <span aria-hidden className={"relative inline-block h-5 w-9 rounded-full transition-colors " + (hideMeanings ? "bg-ink" : "bg-line-strong/25")}>
-              <span className={"absolute top-0.5 h-4 w-4 rounded-full bg-surface shadow-2xs transition-[left] " + (hideMeanings ? "left-[18px]" : "left-0.5")} />
-            </span>
-            <span>뜻 가리기</span>
-          </button>
+            뜻 가리기
+          </Toggle>
         </div>
         {ownsPlayer && passagePlayers ? (
           // the page's whole-lesson player, here at the head of the list (A10 · D01 나) — the same sentences and voice
@@ -1025,11 +1025,6 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
         ) : (
           <p className="text-label text-ink-soft">이 강의에는 단어가 없어요.</p>
         )}
-        {words.length > 0 ? (
-          <p className="text-caption text-ink-soft">
-            단어 옆 동그라미는 &lsquo;안다고 표시&rsquo;예요. 표시해도 2단계 퀴즈에는 그대로 나와요.
-          </p>
-        ) : null}
         <span id={`${uid}-known`} hidden>
           안다고 표시
         </span>
@@ -1365,7 +1360,7 @@ export function PhonicsLearningView({ blocks, lessonKey, vocaDictionary, passage
                 spellCheck={false}
                 enterKeyHint="done"
                 maxLength={40}
-                className="min-h-11 min-w-0 flex-1 rounded-control border border-line bg-surface px-3 text-body text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
+                className="min-h-11 min-w-0 flex-1 rounded-control border border-line-input bg-surface px-3 text-body text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none"
               />
               {p.verdict === null ? (
                 <button type="submit" data-action="check-spelling" disabled={!p.typed.trim()} className={`${filledButton} shrink-0`}>

@@ -74,6 +74,17 @@ function cameBackByHistory(): boolean {
   return nav?.type === "back_forward" && nav.name === window.location.href && performance.now() < 10000;
 }
 
+/**
+ * UI검토-1007 16번 — a STUDENT · ADULT lesson named outside its chapter's rows (the '이어서 학습' button, the free-lesson
+ * buttons) carries its chapter, as the lesson's end bar names it: 'Ch 2-1 · Greeting (인사)'. Its title alone,
+ * 'Part 1 · Greeting (인사)', is the same words in several chapters. Other courses: the title, unchanged.
+ */
+function nameOutsideChapter(courseSlug: string, pres: LessonPresentation): string {
+  return courseSlug === "student" || courseSlug === "adult"
+    ? `${pres.code} · ${pres.title.replace(/^Part \d+ · /, "")}`
+    : pres.title;
+}
+
 const LessonRow = memo(function LessonRow({
   lesson,
   courseSlug,
@@ -132,8 +143,9 @@ const LessonRow = memo(function LessonRow({
         scroll={true}
         className="flex min-h-[52px] min-w-0 flex-1 items-center gap-3 py-2 pl-4 pr-2 transition-colors hover:bg-sunken"
       >
-        {courseSlug === "student" || courseSlug === "adult" ? (
-          <span className="w-9 shrink-0 text-caption tabular-nums text-ink-soft">{pres.code.replace(/^Ch\s*/, "")}</span>
+        {/* UI검토-1007 33번: PASS-OFF GRAMMAR's rows carry their number too ('1-1' — code 'Topic 1-1'), as STUDENT's · ADULT's do */}
+        {courseSlug === "student" || courseSlug === "adult" || courseSlug === "passoff-grammar" ? (
+          <span className="w-9 shrink-0 text-caption tabular-nums text-ink-soft">{pres.code.replace(/^(?:Ch|Topic)\s*/, "")}</span>
         ) : null}
         {length ? (
           <span className="flex min-w-0 flex-1 flex-col">
@@ -170,7 +182,7 @@ const LessonRow = memo(function LessonRow({
         type="button"
         disabled={!isUnlocked}
         onClick={() => onToggleBookmark(courseSlug, lesson.id)}
-        title={!isUnlocked ? "이용권 등록 후 북마크할 수 있습니다" : isStarred ? "북마크 해제" : "북마크 추가"}
+        title={!isUnlocked ? "이용권 등록 후 북마크할 수 있어요" : isStarred ? "북마크 해제" : "북마크 추가"}
         aria-label={!isUnlocked ? "잠긴 강의는 북마크할 수 없습니다" : isStarred ? "북마크 해제" : "북마크 추가"}
         aria-pressed={isStarred}
         className={`mr-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-control transition-colors ${
@@ -454,7 +466,7 @@ export function CourseDashboard({
               학습 진도율: <span className="font-semibold tabular-nums">{completedCount}</span> / {totalLessons}개 완료{" "}
               <span className="tabular-nums text-ink-soft">({progressPercent}%)</span>
             </p>
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-sunken" aria-hidden />
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-track" aria-hidden />
           </div>
         </section>
       ) : hasCourseAccess ? (
@@ -469,7 +481,7 @@ export function CourseDashboard({
             >
               <span className="min-w-0">
                 <span className="block text-caption text-surface/75">{startLabel}</span>
-                <span className="block truncate text-label font-semibold">{startLesson.presentation.title}</span>
+                <span className="block truncate text-label font-semibold">{nameOutsideChapter(courseSlug, startLesson.presentation)}</span>
               </span>
               <span aria-hidden>→</span>
             </Link>
@@ -483,23 +495,27 @@ export function CourseDashboard({
               학습 진도율: <span className="font-semibold tabular-nums">{completedCount}</span> / {totalLessons}개 완료{" "}
               <span className="tabular-nums text-ink-soft">({progressPercent}%)</span>
             </p>
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-sunken" aria-hidden>
+            {/* UI검토-1007 57번: an empty bar (0%) was the card's own colour (dark 1.05 · light 1.15) — its ground is now
+                globals.css --track (a step darker than the card: light 1.53 · dark 1.56), so a 0% bar shows where progress will fill */}
+            <div className="h-1.5 w-full overflow-hidden rounded-full bg-track" aria-hidden>
               <div className="h-full rounded-full bg-ink transition-[width] duration-500" style={{ width: `${Math.min(100, Math.max(0, progressPercent))}%` }} />
             </div>
+            {/* UI검토-1007 41번: 해요체. '서버에 저장됨' and PASS-OFF's '진도를 서버와 맞추는 중…' stay this time — docs/pass-off-grammar/
+                검사 drive-topic-lock · drive-topic-admin wait for those words ('진도 저장됨' goes with those tools, next batch) */}
             {isChapterCourse && (
               <p className="text-caption text-ink-soft" aria-live="polite">
                 {studentSyncStatus === "saved" && "서버에 저장됨"}
-                {studentSyncStatus === "syncing" && "진도를 서버에 저장하는 중…"}
-                {studentSyncStatus === "pending" && "연결되면 자동으로 저장합니다"}
-                {studentSyncStatus === "error" && "저장하지 못했습니다 · 연결되면 다시 시도합니다"}
+                {studentSyncStatus === "syncing" && "진도를 저장하는 중…"}
+                {studentSyncStatus === "pending" && "연결되면 자동으로 저장해요"}
+                {studentSyncStatus === "error" && "저장하지 못했어요 · 연결되면 다시 저장해요"}
               </p>
             )}
             {isPassoff && (
               <p className="text-caption text-ink-soft" aria-live="polite">
                 {passoffSyncStatus === "saved" && "서버에 저장됨"}
                 {passoffSyncStatus === "syncing" && "진도를 서버와 맞추는 중…"}
-                {passoffSyncStatus === "pending" && "연결되면 자동으로 저장합니다"}
-                {passoffSyncStatus === "error" && "저장하지 못했습니다 · 연결되면 다시 시도합니다"}
+                {passoffSyncStatus === "pending" && "연결되면 자동으로 저장해요"}
+                {passoffSyncStatus === "error" && "저장하지 못했어요 · 연결되면 다시 저장해요"}
               </p>
             )}
           </div>
@@ -507,7 +523,7 @@ export function CourseDashboard({
       ) : (
         <section className="rounded-card border border-line bg-raised p-4 sm:p-5" aria-label="무료 체험">
           <h2 className="text-label font-semibold text-ink">무료로 먼저 해 보기</h2>
-          <p className="mt-1 text-caption text-ink-soft">{`이용권 없이 첫 두 강의를 끝까지 학습할 수 있습니다.`}</p>
+          <p className="mt-1 text-caption text-ink-soft">{`이용권 없이 첫 두 강의를 끝까지 학습할 수 있어요.`}</p>
           {freeLessons.length ? (
             // UI검토-1007 4번: STUDENT's long titles pushed both buttons out of the card (390: 19px · 360: 49px) — the grid
             // track and the button may now shrink below their text (minmax(0,1fr) · min-w-0), so the title ends in '…'
@@ -520,7 +536,7 @@ export function CourseDashboard({
                     i === 0 ? "bg-ink text-surface hover:opacity-90" : "border border-line text-ink hover:bg-sunken"
                   }`}
                 >
-                  <span className="min-w-0 truncate">{lesson.presentation.title}</span>
+                  <span className="min-w-0 truncate">{nameOutsideChapter(courseSlug, lesson.presentation)}</span>
                   <span className="shrink-0" aria-hidden>→</span>
                 </Link>
               ))}
@@ -546,12 +562,12 @@ export function CourseDashboard({
       {filteredSections.length === 0 ? (
         <div className="flex flex-col items-center justify-center gap-2 rounded-card border border-line p-10 text-center">
           <p className="text-label font-semibold text-ink">
-            {filter === "bookmarked" ? "아직 북마크한 강의가 없습니다." : "조건에 맞는 강의가 없습니다."}
+            {filter === "bookmarked" ? "아직 북마크한 강의가 없어요." : "조건에 맞는 강의가 없어요."}
           </p>
           <p className="max-w-sm text-caption text-ink-soft">
             {filter === "bookmarked"
-              ? "다시 보고 싶은 강의에서 제목 옆 북마크를 누르세요."
-              : "모든 강의를 마쳤습니다."}
+              ? "다시 보고 싶은 강의에서 제목 옆 북마크를 눌러 보세요."
+              : "모든 강의를 마쳤어요."}
           </p>
           {filter !== "all" && (
             <button
@@ -606,7 +622,8 @@ export function CourseDashboard({
                       ? "대주제 완료"
                       : passoffState && !passoffProgress?.everyTopicOpen
                         ? `진행 ${chapterPercent}% · 강의 ${passoffState.requiredCount}개와 마지막 강의${passoffProgress?.mapRefillRequired ? ", 구성도 다시 채우기를" : "를"} 마치면 다음 대주제`
-                        : `진행 ${chapterPercent}%`;
+                        // UI검토-1007 33번: every topic open (LIFE) — '진행 0%' said what '0/3' beside it says; STUDENT's LIFE line is empty too
+                        : null;
             const studentNote = !isChapterCourse
               ? null
               : !hasCourseAccess

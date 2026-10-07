@@ -149,8 +149,16 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
 
       <header className="mt-2 mb-6 flex flex-col gap-2">
         <h1 className="text-title-l font-bold tracking-tight text-ink">{course.title}</h1>
+        {/* UI검토-1007 18번: the sections by the name the rest of the screen uses — STUDENT · ADULT '장', PASS-OFF '대주제' */}
         <p className="text-caption text-ink-soft tabular-nums">
-          {listed.length}개 강의{sections.length > 0 ? ` · ${sections.length}구간` : ""}
+          {listed.length}개 강의
+          {sections.length > 0
+            ? course.slug === "student" || course.slug === "adult"
+              ? ` · ${sections.length}장`
+              : course.slug === "passoff-grammar"
+                ? ` · 대주제 ${sections.length}개`
+                : ` · ${sections.length}구간`
+            : ""}
         </p>
         {course.description ? (
           <p className="max-w-2xl text-label leading-relaxed text-ink-soft">{course.description}</p>

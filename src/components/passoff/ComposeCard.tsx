@@ -286,7 +286,7 @@ export function ComposeCard({
                 check();
               }
             }}
-            className={`w-full resize-none rounded-control border border-line bg-surface px-3 py-2.5 text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none ${FONT[font].input}`}
+            className={`w-full resize-none rounded-control border border-line-input bg-surface px-3 py-2.5 text-ink placeholder:text-ink-faint focus:border-ink focus:outline-none ${FONT[font].input}`}
           />
           {hangul ? (
             <p className={`text-label ${tone.danger}`}>한글이 섞여 있어요. 영어 자판으로 바꿔 주세요.</p>
@@ -356,7 +356,7 @@ export function ComposeCard({
       {phase === "answer" && rung === 3 && bank ? (
         <div className="flex flex-col gap-3 border-t border-line pt-3">
           <p className="text-label text-ink-soft">낱말 카드를 차례로 누르세요. 문법이 틀린 카드도 섞여 있어요. 놓은 카드를 누르면 돌아가요.</p>
-          <div lang="en" aria-label="만든 문장" className="flex min-h-14 flex-wrap gap-2 rounded-control border border-dashed border-line p-2">
+          <div lang="en" aria-label="만든 문장" className="flex min-h-14 flex-wrap gap-2 rounded-control border border-dashed border-line-input p-2">
             {tilePicks.map((t) => (
               <button
                 key={t.id}

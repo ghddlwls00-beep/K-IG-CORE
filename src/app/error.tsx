@@ -33,38 +33,34 @@ export default function Error({
     console.error("[K-IG] route error", error.digest ?? "", error);
   }, [error]);
 
+  // 2026-10-07 (UI검토-1007 23): no 'Error · …' monospace capitals, the site's buttons (one filled '다시 시도' · an outlined
+  // '처음 화면으로', rounded-control, 44px+) instead of pills, 해요체, and the error code in monospace only where it is a code.
   return (
     <main className="mx-auto max-w-3xl px-5 py-16 sm:py-24">
-      <p className="font-mono text-[11px] tracking-[0.18em] text-ink-faint uppercase">
-        Error · 일시적인 오류
-      </p>
-      <h1 className="mt-3 text-[clamp(28px,5vw,40px)] leading-tight font-bold tracking-tight text-ink text-balance">
-        화면을 불러오지 못했습니다
-      </h1>
-      <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink-soft">
-        잠시 후 다시 시도해 주세요. 같은 문제가 계속되면 홈에서 다시 들어오시면 됩니다.
-        학습 기록과 이용권은 그대로 남아 있습니다.
+      <h1 className="text-title-l font-bold text-ink text-balance">화면을 불러오지 못했습니다</h1>
+      <p className="mt-3 max-w-xl text-body text-ink-soft">
+        잠시 뒤 다시 시도해 주세요. 학습 기록과 이용권은 그대로 남아 있어요.
       </p>
 
-      <div className="mt-8 flex flex-wrap items-center gap-3">
+      <div className="mt-6 flex flex-wrap items-center gap-2">
         <button
           type="button"
           onClick={() => reset()}
-          className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-ink px-6 py-3 text-[14px] font-medium tracking-wide text-surface transition-all duration-300 hover:opacity-90 active:scale-[0.98] border border-white/10"
+          className="btn-filled inline-flex min-h-11 items-center justify-center rounded-control px-5 text-label font-semibold transition-colors"
         >
           다시 시도
         </button>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-[14px] font-medium tracking-wide text-ink transition-colors duration-200 hover:bg-raised"
+          className="inline-flex min-h-11 items-center justify-center rounded-control border border-line bg-raised px-4 text-label font-semibold text-ink transition-colors hover:bg-sunken"
         >
-          홈으로 가기
+          처음 화면으로
         </Link>
       </div>
 
       {error.digest ? (
-        <p className="mt-10 font-mono text-[11px] text-ink-faint">
-          오류 코드: {error.digest}
+        <p className="mt-10 text-caption text-ink-faint">
+          오류 코드 <span className="font-mono">{error.digest}</span>
         </p>
       ) : null}
     </main>

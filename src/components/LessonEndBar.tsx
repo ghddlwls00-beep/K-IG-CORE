@@ -46,6 +46,10 @@ type Neighbour = { href: string; title: string; code?: string } | null;
  * button stays off (no gate yet = not yet known, for these two courses only). The save is unchanged: toggleComplete queues it for
  * /api/progress/student · adult, and '다음 강의' waits for the server's answer as before (A11). 'N장은 이 장을 마치면 열려요.'
  * moved here with it: while a period pass's next chapter is still closed, that line stands where '다음 강의' would be.
+ *
+ * 2026-10-07 (UI검토-1007 55): the not-yet-done '이 강의 학습 완료' wears the shared `btn-filled` (globals.css) — filled when it can
+ * be pressed, an outline with faint text while its gate is closed (it used to be the fill at 40% opacity: in dark mode a wide grey
+ * bar louder than the live outlined '다음 강의'). Words, size, aria-label and aria-pressed are unchanged.
  */
 export function LessonEndBar({
   course,
@@ -141,11 +145,9 @@ export function LessonEndBar({
           aria-describedby={blocked && gate ? reasonId : undefined}
           aria-label={completed ? "학습 완료 취소" : "학습 완료 체크"}
           aria-pressed={completed}
-          className={`flex min-h-12 w-full items-center justify-center gap-2 rounded-control text-label font-semibold transition-colors cursor-pointer ${
-            completed
-              ? "border border-line bg-raised text-ink hover:bg-sunken"
-              : "bg-ink text-surface hover:opacity-90"
-          }${blocked ? " disabled:cursor-not-allowed disabled:opacity-40" : ""}`}
+          className={`flex min-h-12 w-full items-center justify-center gap-2 rounded-control text-label font-semibold transition-colors ${
+            completed ? "cursor-pointer border border-line bg-raised text-ink hover:bg-sunken" : "btn-filled"
+          }`}
         >
           {completed ? (
             <>

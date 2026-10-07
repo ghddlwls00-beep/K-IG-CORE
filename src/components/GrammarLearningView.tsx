@@ -22,6 +22,9 @@
  *   Steps 1–3 go in bundles of 10 ('1–10 / 42 · 다음 묶음 →', a last bundle of 5 or fewer joins the
  *   one before); Step 4 is the whole lesson (L08). Every bundle stays in the DOM (hidden), so the
  *   audit's text readers still see every item.
+ * 2026-10-07 (UI검토-1007 결과.md 3장 20 · 21 · 22 · 51 · 55 · 58): '다음 묶음' only at a bundle's end; Step 1 확인 the light
+ *   outline button; below 640px the Step 1 box takes the whole row (🎤 · 확인 under it, right); from 640px Steps 2 · 3 put their
+ *   buttons at the right of the sentence; the writing boxes' edge is `border-line-input`; '전체 시험 채점하기' is `btn-filled`.
  * Saved per lesson in localStorage `kig:grammar:work:<lesson>` (version 2 — an old save opens with its
  * answers; see readWork). Font size and speed are a per-device preference (`kig:grammar:prefs`).
  * The common learning engine (src/lib/learning — reviews that cross days) gets every graded answer
@@ -1450,6 +1453,11 @@ export function GrammarLearningView({
     );
   }
 
+  /**
+   * 2026-10-07 (UI검토-1007 결과.md 3장 20번): the top line keeps '문제 n–m / N' and '← 이전 묶음' only. '다음 묶음 →' is the
+   * bundle's end bar alone (bundleEndBar — the drivers' setNext takes the visible [data-set-next], which is that one) — the top
+   * one made a second '다음 묶음' on the same screen as the end bar's.
+   */
   function bundleNav() {
     if (bundles.length < 2) return null;
     return (
@@ -1463,28 +1471,16 @@ export function GrammarLearningView({
         <p className="text-label tabular-nums text-ink-soft">
           문제 {bundleStart + 1}–{bundleEnd} / {totalCount}
         </p>
-        <div className="flex items-center gap-1">
-          {bundleIndex > 0 ? (
-            <button
-              type="button"
-              data-set-prev
-              onClick={() => changeBundle(bundleIndex - 1)}
-              className="min-h-11 rounded-control px-3 text-label font-medium text-ink-soft transition-colors cursor-pointer hover:bg-sunken"
-            >
-              ← 이전 묶음
-            </button>
-          ) : null}
-          {bundleIndex < bundles.length - 1 ? (
-            <button
-              type="button"
-              data-set-next
-              onClick={() => changeBundle(bundleIndex + 1)}
-              className="min-h-11 rounded-control px-3 text-label font-semibold text-ink transition-colors cursor-pointer hover:bg-sunken"
-            >
-              다음 묶음 →
-            </button>
-          ) : null}
-        </div>
+        {bundleIndex > 0 ? (
+          <button
+            type="button"
+            data-set-prev
+            onClick={() => changeBundle(bundleIndex - 1)}
+            className="min-h-11 rounded-control px-3 text-label font-medium text-ink-soft transition-colors cursor-pointer hover:bg-sunken"
+          >
+            ← 이전 묶음
+          </button>
+        ) : null}
       </div>
     );
   }
@@ -1700,7 +1696,12 @@ export function GrammarLearningView({
             </p>
           ) : null}
 
-          <div className="mt-1.5 flex items-end gap-2">
+          {/*
+            2026-10-07 (UI검토-1007 58번): below 640px the box takes the whole row and the microphone · 확인 go to the row under
+            it, on the right — on a 360 phone the box was 136px (about 14 letters). From 640px one row as before. The box's edge
+            is the input line token (51번); 확인 is the light outline button of Step 2 (21번).
+          */}
+          <div className="mt-1.5 flex flex-col gap-2 sm:flex-row sm:items-end">
             <AnswerBox
               value={value}
               label={`${n}번 영작 답안`}
@@ -1712,33 +1713,29 @@ export function GrammarLearningView({
               boxRef={(el) => {
                 answerRefs.current[id] = el;
               }}
-              className={`min-h-11 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-control border border-line bg-raised px-3 py-2 leading-snug text-ink placeholder:text-ink-faint [field-sizing:content] focus:border-ink focus:outline-none ${fs.input}`}
+              className={`min-h-11 w-full min-w-0 resize-none overflow-hidden rounded-control border border-line-input bg-raised px-3 py-2 leading-snug text-ink placeholder:text-ink-faint [field-sizing:content] focus:border-ink focus:outline-none sm:flex-1 ${fs.input}`}
             />
-            {micSupported ? (
-              <button
-                type="button"
-                data-mic
-                onClick={() => toggleMic(item)}
-                aria-label={listening ? "듣기 멈추기" : `${n}번 말로 답하기`}
-                aria-pressed={listening}
-                title={listening ? "듣기 멈추기" : "말로 답하기"}
-                className={
-                  "flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors cursor-pointer " +
-                  (listening ? "border-danger bg-danger/10 text-danger" : "border-line bg-raised text-ink hover:bg-sunken")
-                }
-              >
-                {listening ? <IconStop /> : <IconMic />}
+            <div className="flex shrink-0 items-center justify-end gap-2">
+              {micSupported ? (
+                <button
+                  type="button"
+                  data-mic
+                  onClick={() => toggleMic(item)}
+                  aria-label={listening ? "듣기 멈추기" : `${n}번 말로 답하기`}
+                  aria-pressed={listening}
+                  title={listening ? "듣기 멈추기" : "말로 답하기"}
+                  className={
+                    "flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors cursor-pointer " +
+                    (listening ? "border-danger bg-danger/10 text-danger" : "border-line bg-raised text-ink hover:bg-sunken")
+                  }
+                >
+                  {listening ? <IconStop /> : <IconMic />}
+                </button>
+              ) : null}
+              <button type="button" data-check onClick={() => checkItem(item)} aria-label={`${n}번 확인`} className={`${outlineButton} shrink-0`}>
+                확인
               </button>
-            ) : null}
-            <button
-              type="button"
-              data-check
-              onClick={() => checkItem(item)}
-              aria-label={`${n}번 확인`}
-              className="h-11 shrink-0 rounded-control border border-line-strong bg-raised px-4 text-label font-semibold text-ink transition-colors cursor-pointer hover:bg-sunken"
-            >
-              확인
-            </button>
+            </div>
           </div>
 
           {listening ? (
@@ -1898,7 +1895,12 @@ export function GrammarLearningView({
               </div>
             </>
           ) : (
-            <>
+            /*
+              2026-10-07 (UI검토-1007 22번): from 640px the sentence with its blanks takes the left and 확인 · 정답 보기 · 다시
+              풀기 stand on the same row at the right, so a desktop screen holds more sentences. Below 640px one column as before.
+            */
+            <div className="sm:flex sm:items-start sm:gap-4">
+              <div className="min-w-0 sm:flex-1">
               <p data-cloze className={`mt-1 leading-[2.75] text-ink ${fs.english}`}>
                 {item.clozeParts.map((part, index) => {
                   if (!part.isBlank) {
@@ -1950,7 +1952,7 @@ export function GrammarLearningView({
                         spellCheck={false}
                         className={
                           `mx-0.5 inline-block h-11 w-[5.5em] rounded-control border bg-raised px-2 text-center font-semibold text-ink focus:outline-none ${fs.input} ` +
-                          (judged ? (right ? "border-success" : "border-danger") : "border-line focus:border-ink")
+                          (judged ? (right ? "border-success" : "border-danger") : "border-line-input focus:border-ink")
                         }
                       />
                       {judged ? (
@@ -1983,8 +1985,9 @@ export function GrammarLearningView({
                   {blanks.every((b) => blankRight(blankValue(id, b.index), b.part.answer)) ? "✓ 모두 맞음" : "정답을 보여 드렸어요. '다시 풀기'로 한 번 더 해 보세요."}
                 </p>
               ) : null}
+              </div>
 
-              <div className="mt-1 flex flex-wrap items-center gap-2">
+              <div className="mt-1 flex flex-wrap items-center gap-2 sm:max-w-[45%] sm:shrink-0 sm:justify-end">
                 {!done ? (
                   <button type="button" data-cloze-check onClick={() => checkCloze(item)} aria-label={`${n}번 빈칸 확인`} className={outlineButton}>
                     확인
@@ -2007,7 +2010,7 @@ export function GrammarLearningView({
                   </button>
                 ) : null}
               </div>
-            </>
+            </div>
           )}
         </div>
       </li>
@@ -2024,14 +2027,21 @@ export function GrammarLearningView({
         <span data-q className="w-7 shrink-0 pt-0.5 text-label font-semibold tabular-nums text-ink-soft">
           {n}
         </span>
-        <div className="min-w-0 flex-1">
+        {/*
+          2026-10-07 (UI검토-1007 22번): from 640px the sentence (and the microphone check under it) takes the left and the
+          sentence's sound · '따라 말했어요' · count stand at the right of the same row (the right cell spans both rows), so a
+          desktop screen holds more sentences. Below 640px one column in the old order.
+        */}
+        <div className="min-w-0 flex-1 sm:grid sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-x-4">
+          <div className="min-w-0 sm:col-start-1 sm:row-start-1">
           <p data-en className={`font-semibold text-ink ${fs.english}`}>
             {gloss(item.englishText)}
           </p>
           <p data-ko className={`mt-0.5 text-ink-soft ${fs.korean}`}>
             {item.koreanText}
           </p>
-          <div className="mt-2 flex flex-wrap items-center gap-2">
+          </div>
+          <div className="mt-2 flex flex-wrap items-center gap-2 sm:col-start-2 sm:row-span-2 sm:row-start-1 sm:mt-0 sm:max-w-[20rem] sm:justify-end sm:self-start">
             {playButton(item)}
             <button type="button" data-said onClick={() => addRepetition(id)} className={outlineButton}>
               따라 말했어요
@@ -2044,7 +2054,7 @@ export function GrammarLearningView({
               {repeats >= 3 ? `✓ 3회 채움 (${repeats}회)` : `${repeats}/3회`}
             </span>
           </div>
-          <div className="mt-2">
+          <div className="mt-2 min-w-0 sm:col-start-1 sm:row-start-2">
             <VoiceSpeakingTester
               targetText={item.englishText}
               buttonLabel="따라 말하고 확인"
@@ -2109,7 +2119,7 @@ export function GrammarLearningView({
                     : res === "partial"
                     ? "border-line-strong bg-surface"
                     : "border-danger/60 bg-surface"
-                  : "border-line bg-raised focus:border-ink")
+                  : "border-line-input bg-raised focus:border-ink")
               }
             />
           </div>
@@ -2152,8 +2162,22 @@ export function GrammarLearningView({
   const examMisses = examResult ? items.filter((it) => (examResult.perItem[it.id] ?? "incorrect") !== "exact") : [];
   const bundleWord = bundles.length > 1 ? "이 묶음" : "이 강의";
 
+  /**
+   * 2026-10-07 (UI검토-1007 20번): while a step of bundles still has bundles after this one, '다음 묶음' is this screen's one
+   * action and the page's '다음 Step →' (LessonStepNavigation — not this file) should step back. The mark says so; the rule
+   * that quiets that button reads it (main:has([data-bundles-left]) — globals.css or LessonStepNavigation, see 고침2/fix-grammar-ld.md).
+   */
+  const bundlesLeft = studyMode !== "exam" && bundles.length > 1 && bundleIndex < bundles.length - 1;
+
   return (
-    <div className="flex flex-col gap-4" data-grammar-view data-course={course} data-variant={isScript ? "script" : "main"} data-step={stepNumber}>
+    <div
+      className="flex flex-col gap-4"
+      data-grammar-view
+      data-course={course}
+      data-variant={isScript ? "script" : "main"}
+      data-step={stepNumber}
+      data-bundles-left={bundlesLeft ? "" : undefined}
+    >
       {/*
         Step tabs (GRM-U15): 44px, 14px, aria-pressed, no emoji. On a phone one row — the numbers and
         the current step's name (docs/디자인-규칙.md §6-3); every button's text still reads "Step N · …"
@@ -2175,7 +2199,8 @@ export function GrammarLearningView({
                 onClick={() => changeMode(step.mode)}
                 className={
                   "flex min-h-11 items-center justify-center whitespace-nowrap rounded-control px-3 text-label transition-colors cursor-pointer sm:flex-1 " +
-                  (current ? "flex-1 bg-raised font-semibold text-ink shadow-2xs" : "min-w-11 font-medium text-ink-soft hover:bg-raised/60")
+                  // dark: a thin --line-input ring on the current tab, as StepTabs has (UI검토-1007 42 — 통합 검사 고침2, 10-08)
+                  (current ? "flex-1 bg-raised font-semibold text-ink shadow-2xs dark:ring-1 dark:ring-line-input" : "min-w-11 font-medium text-ink-soft hover:bg-raised/60")
                 }
               >
                 {/* one inline run, as in StepTabs (077f5c4): as separate flex items the spaces at their edges were dropped — 'Step2· …' */}
@@ -2371,13 +2396,18 @@ export function GrammarLearningView({
                     </button>
                   </>
                 ) : (
+                  /*
+                    2026-10-07 (UI검토-1007 55번): off (nothing written) it is the shared off look of a filled button — `btn-filled`
+                    (globals.css): an outline and faint text, not a half-clear black bar that stood out more than the live buttons
+                    in the dark. It stays pressable (aria-disabled, not disabled): an empty press says what to do (FUN-05).
+                  */
                   <button
                     type="button"
                     data-exam-submit
                     ref={examSubmitRef}
                     aria-disabled={examAnswered === 0}
                     onClick={submitExam}
-                    className={`${filledButton} whitespace-nowrap aria-disabled:opacity-40`}
+                    className="btn-filled min-h-11 whitespace-nowrap rounded-control px-4 text-label font-semibold"
                   >
                     전체 시험 채점하기
                   </button>
