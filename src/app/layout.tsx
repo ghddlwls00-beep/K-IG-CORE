@@ -10,16 +10,16 @@ import { TabBar } from "@/components/TabBar";
 import { KakaoTalkNoticeBanner } from "@/components/KakaoTalkNoticeBanner";
 import { NavigationScrollRestoration } from "@/components/NavigationScrollRestoration";
 import { getCourseTabMap, getTabs } from "@/lib/content";
+import { BRAND_NAME, SITE_DESCRIPTION, SITE_TITLE } from "@/lib/brand";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://k-ig-core.vercel.app"),
   title: {
-    default: "K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENING · READING)",
-    template: "%s · K-IG 핵심 어학 마스터",
+    default: SITE_TITLE,
+    template: `%s · ${BRAND_NAME}`,
   },
-  description:
-    "K-IG 핵심 8개 과정 전용 플랫폼: STUDENT 회화, ADULT 성인 회화, PASS-OFF GRAMMAR 문법, VOCA 어휘, 영문법 1·2, LISTENING, READING.",
+  description: SITE_DESCRIPTION,
   // RE-011: a GLOBAL `canonical: "/"` used to live here. Because no page
   // overrode it, EVERY page declared itself a duplicate of the home page, so
   // search engines indexed only "/" and the rest of the site dropped out.
@@ -27,11 +27,10 @@ export const metadata: Metadata = {
   // route's own `generateMetadata` / `metadata`.
   openGraph: {
     type: "website",
-    siteName: "K-IG 핵심 어학 마스터",
+    siteName: BRAND_NAME,
     locale: "ko_KR",
-    title: "K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENING · READING)",
-    description:
-      "K-IG 핵심 8개 과정 전용 플랫폼: STUDENT 회화, ADULT 성인 회화, PASS-OFF GRAMMAR 문법, VOCA 어휘, 영문법 1·2, LISTENING, READING.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     // RE-012: without these, a KakaoTalk / SNS share renders as a bare link
     // with no thumbnail and no description. SEO-01: the image is the 1000×525
     // landscape crop in public/images/og, declared at its real size — the
@@ -41,15 +40,14 @@ export const metadata: Metadata = {
         url: "/images/og/students.jpg",
         width: 1000,
         height: 525,
-        alt: "K-IG 핵심 어학 마스터",
+        alt: BRAND_NAME,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "K-IG 핵심 어학 마스터 (VOCA · GRAMMAR · LISTENING · READING)",
-    description:
-      "K-IG 핵심 8개 과정 전용 플랫폼: STUDENT 회화, ADULT 성인 회화, PASS-OFF GRAMMAR 문법, VOCA 어휘, 영문법 1·2, LISTENING, READING.",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     images: ["/images/og/students.jpg"],
   },
   other: {

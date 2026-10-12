@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 // STUDENT_PASS_SCOPE — what a STUDENT pass opens, by name ("STUDENT · PASS-OFF GRAMMAR"); license.ts keeps it
 // next to the list the gate uses, and docs/pass-off-grammar/검사/plan-access.cjs checks it against courses.ts
+import { BRAND_NAME } from "@/lib/brand";
 import { getPlanLabel, STUDENT_PASS_SCOPE, type LicensePlan } from "@/lib/license";
 import {
   buildAdminLicenseRows,
@@ -817,7 +818,7 @@ export default function AdminLicensePage() {
               <div className="rounded-xl bg-emerald-500/10 p-3 text-[12.5px] text-emerald-900 dark:text-emerald-200 leading-relaxed">
                 💡 <strong>고객 발송 안내 팁:</strong> 복사한 코드를 고객에게 문자나 메시지로 전달하실 때 아래와 같이 보내주시면 됩니다:
                 <div className="mt-1 font-mono text-[12px] bg-white/70 p-2.5 rounded border border-emerald-500/20 select-all leading-relaxed">
-                  안녕하세요! K-IG 올패스 이용권 번호는 [{newlyGenerated[0]}] 입니다.<br />
+                  안녕하세요! {BRAND_NAME} 이용권 번호는 [{newlyGenerated[0]}] 입니다.<br />
                   웹사이트 상단 [이용권 등록]에 코드를 입력하시면 이용하실 수 있습니다.<br />
                   {selectedPlan === "LIFE"
                     ? "평생 VIP 올패스는 STUDENT 전 강의를 포함한 모든 과정을 즉시 열람할 수 있습니다."

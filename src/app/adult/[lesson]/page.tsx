@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { BRAND_NAME, LESSON_DESCRIPTION_SUFFIX } from "@/lib/brand";
 import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import LessonPage from "@/app/[course]/[lesson]/page";
@@ -36,13 +37,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lesson: id } = await params;
   const lesson = getLesson("adult", id);
-  if (!lesson) return { title: "K-IG 교육" };
+  if (!lesson) return { title: { absolute: BRAND_NAME } };
   const pres = formatLessonPresentation("adult", lesson);
   const canonical = `/adult/${id}`;
   const title = pres.title;
   const description = lesson.menuLabel
-    ? `${lesson.menuLabel} — ${pres.title}. K-IG 핵심 어학 과정.`
-    : `${pres.title}. K-IG 핵심 어학 과정.`;
+    ? `${lesson.menuLabel} — ${pres.title}. ${LESSON_DESCRIPTION_SUFFIX}`
+    : `${pres.title}. ${LESSON_DESCRIPTION_SUFFIX}`;
   const image = "/images/og/men.jpg";
   const isFree = isFreePreviewLesson("adult", id);
   return {

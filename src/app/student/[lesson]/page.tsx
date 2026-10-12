@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { BRAND_NAME, LESSON_DESCRIPTION_SUFFIX } from "@/lib/brand";
 import { notFound } from "next/navigation";
 import { cookies } from "next/headers";
 import LessonPage from "@/app/[course]/[lesson]/page";
@@ -44,7 +45,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lesson: id } = await params;
   const lesson = getLesson("student", id);
-  if (!lesson) return { title: "K-IG 교육" };
+  if (!lesson) return { title: { absolute: BRAND_NAME } };
   const pres = formatLessonPresentation("student", lesson);
   // RE-011/RE-012: STUDENT lessons live on their own route, so they need their
   // own canonical + share card exactly like the shared `[course]/[lesson]`
@@ -52,8 +53,8 @@ export async function generateMetadata({
   const canonical = `/student/${id}`;
   const title = pres.title;
   const description = lesson.menuLabel
-    ? `${lesson.menuLabel} — ${pres.title}. K-IG 핵심 어학 과정.`
-    : `${pres.title}. K-IG 핵심 어학 과정.`;
+    ? `${lesson.menuLabel} — ${pres.title}. ${LESSON_DESCRIPTION_SUFFIX}`
+    : `${pres.title}. ${LESSON_DESCRIPTION_SUFFIX}`;
   // SEO-01: the 1000×525 landscape crop, declared at its real size.
   const image = "/images/og/students.jpg";
   // RE-008: the locked STUDENT lessons render the same paywall shell as the

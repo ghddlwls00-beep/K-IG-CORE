@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Tab } from "@/lib/types";
+import { BrandMark } from "./BrandMark";
 import { SearchDialog } from "./SearchDialog";
 import { LicenseButton } from "./LicenseButton";
 import { useLicense } from "./LicenseProvider";
@@ -79,11 +80,9 @@ export function TabBar({ tabs, courseTabs }: { tabs: Tab[]; courseTabs: Record<s
             <div className="flex items-center justify-start shrink-0">
               <Link
                 href="/"
-                className="-ml-2 inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-control px-2 text-[15px] font-bold tracking-tight text-ink select-none hover:text-primary transition-colors"
+                className="-ml-2 inline-flex min-h-11 shrink-0 items-center rounded-control px-2 text-[15px] select-none hover:opacity-80 transition-opacity"
               >
-                <span>K&#8209;IG</span>
-                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-primary" />
-                <span className="text-label font-medium text-ink-soft">교육</span>
+                <BrandMark />
               </Link>
             </div>
 

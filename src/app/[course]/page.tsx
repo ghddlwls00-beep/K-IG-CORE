@@ -10,6 +10,7 @@ import { getCourseIndex, getCourses } from "@/lib/content";
 import { tabForCourse } from "@/lib/tabs";
 import { lessonDisplay } from "@/lib/courses";
 import { formatGroupTitle, formatLessonPresentation } from "@/lib/curriculumPresentation";
+import { BRAND_NAME, FALLBACK_DESCRIPTION } from "@/lib/brand";
 import { CourseDashboard } from "@/components/CourseDashboard";
 import { passoffFreeReviewItems } from "@/lib/passoffReview";
 import type { LessonSummary } from "@/lib/types";
@@ -46,28 +47,30 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { course } = await params;
   const index = getCourseIndex(course);
-  const title = `${index?.course.title ?? "K-IG"} · K-IG 교육`;
+  // 2026-10-12: the browser tab used to read 'STUDENT · K-IG 교육 · K-IG 핵심 어학 마스터' — the company twice, because
+  // the root layout's title template adds it as well. The tab title is now the course alone (the template adds the
+  // company once); a share card gets no template, so its title carries the company itself.
+  const courseTitle = index?.course.title;
+  const shareTitle = courseTitle ? `${courseTitle} · ${BRAND_NAME}` : BRAND_NAME;
   // RE-011: each route declares its OWN canonical URL. Without this the global
   // "/" canonical from the root layout made every course page a duplicate of
   // the home page.
   const canonical = `/${course}`;
-  const description =
-    index?.course.description ||
-    "K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩을 한 곳에서.";
+  const description = index?.course.description || FALLBACK_DESCRIPTION;
   // RE-012: the representative image for a course is its own section banner.
   const image = COURSE_OG_IMAGE[course] || "/images/og/students.jpg";
   return {
-    title,
+    title: courseTitle ?? { absolute: BRAND_NAME },
     description,
     alternates: { canonical },
     openGraph: {
       type: "website",
-      title,
+      title: shareTitle,
       description,
       url: canonical,
-      images: [{ url: image, width: 1000, height: 525, alt: index?.course.title ?? "K-IG" }],
+      images: [{ url: image, width: 1000, height: 525, alt: courseTitle ?? BRAND_NAME }],
     },
-    twitter: { card: "summary_large_image", title, description, images: [image] },
+    twitter: { card: "summary_large_image", title: shareTitle, description, images: [image] },
   };
 }
 

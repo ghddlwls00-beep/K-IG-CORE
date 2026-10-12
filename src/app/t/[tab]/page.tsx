@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { T } from "@/components/LanguageProvider";
 import { getCourse, getTab, getTabs } from "@/lib/content";
+import { BRAND_NAME, FALLBACK_DESCRIPTION } from "@/lib/brand";
 import { TAB_IMAGES } from "@/lib/tabImages";
 
 export function generateStaticParams() {
@@ -27,8 +28,7 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 /** Used when a tab has no blurb of its own, so a share card is never blank. */
-const TAB_FALLBACK_DESCRIPTION =
-  "K-IG 핵심 어학 과정 — 어휘, 영문법, 리스닝, 리딩을 한 곳에서.";
+const TAB_FALLBACK_DESCRIPTION = FALLBACK_DESCRIPTION;
 
 export async function generateMetadata({
   params,
@@ -41,13 +41,14 @@ export async function generateMetadata({
   // layout's former global `canonical: "/"` and every section page told search
   // engines it was a duplicate of the home page. It now names its own URL.
   const canonical = `/t/${tab}`;
-  const title = section?.label ?? "K-IG 교육";
+  const title = section?.label ?? BRAND_NAME;
   const description = section?.blurb || TAB_FALLBACK_DESCRIPTION;
   // RE-012: the same section photograph the page renders as its banner, so a
   // link shared into KakaoTalk previews as the page it points at.
   const image = TAB_IMAGES[tab]?.og || "/images/og/students.jpg";
   return {
-    title,
+    // the root layout's template adds the company after a section's name; with no section there is only the company
+    title: section ? title : { absolute: BRAND_NAME },
     description,
     alternates: { canonical },
     openGraph: {

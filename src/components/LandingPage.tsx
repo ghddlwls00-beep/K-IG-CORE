@@ -5,6 +5,7 @@ import { preload } from "react-dom";
 import Link from "next/link";
 import type { Tab } from "@/lib/types";
 import { TAB_IMAGES } from "@/lib/tabImages";
+import { BrandMark } from "./BrandMark";
 
 interface CourseDetail {
   slug: string;
@@ -295,12 +296,12 @@ export function LandingPage({ tabs }: { tabs: LandingTab[] }) {
           element that names the whole page rather than one stage of it.
           Only the tag changed: Tailwind's preflight already resets heading
           margin/size/weight, and the classes below set all three explicitly.
+          2026-10-12: the company is now '홍세일 | 음절연구소' — the same mark as the header on
+          every other page, one step larger on wide screens. The old 0.14em letter-spacing and the
+          Latin 'Open Sans' face suited 'K-IG'; on a Hangul name they pulled the syllables apart.
         */}
-        <h1
-          className="text-[14px] sm:text-[15px] font-semibold tracking-[0.14em] text-ink"
-          style={{ fontFamily: '"Open Sans", var(--font-sans)' }}
-        >
-          K-IG 교육
+        <h1 className="text-[15px] sm:text-[16px] font-normal">
+          <BrandMark />
         </h1>
       </header>
 

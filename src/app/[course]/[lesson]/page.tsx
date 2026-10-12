@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import type { Metadata } from "next";
+import { BRAND_NAME, LESSON_DESCRIPTION_SUFFIX } from "@/lib/brand";
 import { AudioPlayer } from "@/components/AudioPlayer";
 import { LessonBody } from "@/components/LessonBody";
 import { LessonSpeechGuard } from "@/components/LessonSpeechGuard";
@@ -94,7 +95,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { course, lesson: id } = await params;
   const lesson = getLesson(course, id);
-  if (!lesson) return { title: "K-IG 교육" };
+  if (!lesson) return { title: { absolute: BRAND_NAME } };
   const pres = formatLessonPresentation(course, lesson);
   // RE-011: every lesson declares its OWN canonical URL, so each page is indexed
   // on its own instead of being collapsed into the home page by the root
@@ -103,8 +104,8 @@ export async function generateMetadata({
   const canonical = `/${course}/${canonicalLessonId(course, id)}`;
   const title = pres.title;
   const description = lesson.menuLabel
-    ? `${lesson.menuLabel} — ${pres.title}. K-IG 핵심 어학 과정.`
-    : `${pres.title}. K-IG 핵심 어학 과정.`;
+    ? `${lesson.menuLabel} — ${pres.title}. ${LESSON_DESCRIPTION_SUFFIX}`
+    : `${pres.title}. ${LESSON_DESCRIPTION_SUFFIX}`;
   const image = COURSE_OG_IMAGE[course] || "/images/og/students.jpg";
   // RE-008: a locked lesson renders the paywall shell — 270 characters of
   // navigation and an upsell, the same on 1,713 URLs except for the title. Left

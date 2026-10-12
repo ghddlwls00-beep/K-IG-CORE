@@ -135,7 +135,7 @@ export function getPlanLabel(plan: LicensePlan | string): string {
     case "STULIFE":
       return "STUDENT 평생 소장 패스";
     default:
-      return "K-IG 이용권";
+      return "이용권";
   }
 }
 
