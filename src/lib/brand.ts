@@ -3,17 +3,22 @@
  *
  * 2026-10-12 (owner): the company was renamed from 'K-IG 교육' to '홍세일 | 음절연구소'. Every
  * place a learner or a search engine reads the name — the header mark, the home page, the
- * browser-tab titles, the share cards, the icon label, the licence wording — takes it from
- * here, so the next change is one line.
+ * browser-tab titles, the share cards, the licence wording — takes it from here, so the next
+ * change is one line.
+ *
+ * The site icon (2026-10-15) is the owner's own drawing, kept at docs/brand/site-icon-master.png;
+ * `scripts/make-site-icon.ps1` makes src/app/icon.png · apple-icon.png · favicon.ico from it.
+ * READING's printed label in the lesson data ('[ … Reading 001 ]') reached the browser in the page
+ * data though no screen draws it, so it was renamed in `content/` as well (2026-10-15).
  *
  * NOT renamed, on purpose:
  *   - licence codes still start with `KIG-` (`src/lib/license.ts` · `serverLicense.ts`): codes
  *     already issued to customers must keep working, and the prefix is part of what is signed;
  *   - the `kig:` browser-storage keys: renaming them would drop every learner's saved progress,
  *     theme and bookmarks on this device;
- *   - the original textbook's own strings inside `content/` ('::: K-IG 교육 … :::',
- *     '[ K-IG 교육 Reading 001 ]'): no screen shows them, and the views recognise the old
- *     textbook chrome by that very string (`t.includes("K-IG")`) in order to drop it.
+ *   - the original textbook page titles inside `content/` ('::: K-IG 교육 영어듣기훈련프로그램 … :::'):
+ *     they never leave the server (no screen, no page data, no search index), and the old
+ *     dialogue views recognise textbook chrome by the string "K-IG" in order to drop it.
  */
 
 /** The founder's name — the quieter half of the mark. */

@@ -31,7 +31,7 @@ export default function GlobalError({
   useEffect(() => {
     // The only reporting channel available: this project has no error collector
     // (STATUS-2026-09-16 §3-3). The digest is the handle for a server log line.
-    console.error("[K-IG] global error", error.digest ?? "", error);
+    console.error("[site] global error", error.digest ?? "", error);
   }, [error]);
 
   return (

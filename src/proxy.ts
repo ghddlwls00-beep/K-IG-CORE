@@ -161,7 +161,7 @@ function isServable(pathname: string): boolean {
  * response, which the whole design avoids; the next.config one is left alone.
  */
 const NON_PAGE_ANY_CASE =
-  /^\/(?:(?:_next|_vercel|api|audio|video|images|\.well-known)\/.|(?:robots\.txt|sitemap\.xml|favicon\.ico|icon\.svg|search-index\.json)\/?$)/i;
+  /^\/(?:(?:_next|_vercel|api|audio|video|images|\.well-known)\/.|(?:robots\.txt|sitemap\.xml|favicon\.ico|icon\.png|apple-icon\.png|search-index\.json)\/?$)/i;
 
 export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -213,7 +213,7 @@ export default function proxy(request: NextRequest) {
  *                         filesystem, so matching these would add the hop to every
  *                         image and could rewrite a real file to the 404.
  *   the root files        `/robots.txt`, `/sitemap.xml`, `/favicon.ico`,
- *                         `/icon.svg`, `/search-index.json` (second entry)
+ *                         `/icon.png`, `/apple-icon.png`, `/search-index.json` (second entry)
  *
  * THESE EXCLUSIONS AND `NON_PAGE_SOURCES` IN `src/lib/csp.ts` ARE THE SAME LIST,
  * and must stay that way: a path in both would carry two policies, a path in
@@ -249,7 +249,7 @@ export const config = {
     },
     {
       source:
-        "/((?!_next/|_vercel/|api/|audio/|video/|images/|\\.well-known/|robots\\.txt$|sitemap\\.xml$|favicon\\.ico$|icon\\.svg$|search-index\\.json$)(?=.*\\.)[^/]+(?:/[^/]+)*)",
+        "/((?!_next/|_vercel/|api/|audio/|video/|images/|\\.well-known/|robots\\.txt$|sitemap\\.xml$|favicon\\.ico$|icon\\.png$|apple-icon\\.png$|search-index\\.json$)(?=.*\\.)[^/]+(?:/[^/]+)*)",
       missing: [{ type: "header", key: "next-router-prefetch" }],
     },
   ],

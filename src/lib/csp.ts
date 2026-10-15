@@ -116,7 +116,7 @@ export const NON_PAGE_SOURCES = [
   "/video/:path+",
   "/images/:path+",
   "/.well-known/:path+",
-  "/:file(robots\\.txt|sitemap\\.xml|favicon\\.ico|icon\\.svg|search-index\\.json)",
+  "/:file(robots\\.txt|sitemap\\.xml|favicon\\.ico|icon\\.png|apple-icon\\.png|search-index\\.json)",
 ];
 
 /** 18 random bytes → 24 base64 characters, no padding. Matches Next's nonce pattern. */

@@ -30,7 +30,7 @@ export default function Error({
     // There is no error collector in this project yet (see STATUS-2026-09-16 §3-3),
     // so the browser console is the only place this can surface. Keep the digest:
     // it is the only handle that ties a user's report to a server log line.
-    console.error("[K-IG] route error", error.digest ?? "", error);
+    console.error("[site] route error", error.digest ?? "", error);
   }, [error]);
 
   // 2026-10-07 (UI검토-1007 23): no 'Error · …' monospace capitals, the site's buttons (one filled '다시 시도' · an outlined

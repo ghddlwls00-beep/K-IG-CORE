@@ -246,7 +246,7 @@ const problems = [];
 if (staticRoutes.length === 0) {
   problems.push("the src/app scan found no static routes at all — the scan is broken");
 }
-for (const required of ["robots.txt", "sitemap.xml", "favicon.ico", "icon.svg"]) {
+for (const required of ["robots.txt", "sitemap.xml", "favicon.ico", "icon.png", "apple-icon.png"]) {
   if (!files.includes(required)) problems.push(`the file scan did not find /${required} — the scan is broken`);
 }
 if (courses.length !== COURSES.length) {  problems.push(

@@ -155,7 +155,7 @@ function startServer() {
 // ── N1 build output ────────────────────────────────────────────────────────────────────────────
 function n1() {
   const manifest = JSON.parse(fs.readFileSync(path.join(REPO, ".next/prerender-manifest.json"), "utf8"));
-  const META = new Set(["/favicon.ico", "/icon.svg", "/robots.txt", "/sitemap.xml"]);
+  const META = new Set(["/favicon.ico", "/icon.png", "/apple-icon.png", "/robots.txt", "/sitemap.xml"]);
   const staticRoutes = Object.keys(manifest.routes);
   const staticPages = staticRoutes.filter((r) => !META.has(r));
   const htmlFiles = [];
@@ -182,7 +182,7 @@ function n1() {
   check(`N1 KNOWN GAP recorded: the static 500 page (${staticErrorFiles.join(", ")}) has ${e500.map((h) => scriptTags(h).length).join("/")} scripts with no nonce, and its "Reload" is a plain form (same URL) that works with no script`, staticErrorFiles.length > 0 && noScriptReload, JSON.stringify(record.n1.staticErrorPages));
 
   const mustMatch = ["/", "/ld", "/student", "/api", "/images", "/ld/d001", "/t/voca", "/admin/license", "/x/y/z", "/_kig/route-guard/not-found", "/admin", "/__nextjs_original-stack-frames", "/index.html", "/.env", "/ld/d001.html", "/a/b/c.html", "/wp-login.php", "/ld.rsc", "/ld/d001.rsc", "/ld.segments/_tree.segment.rsc", "/ld/d001.segments/_tree.segment.rsc", "/x.segments/y", "/a.segments/b/c"];
-  const mustSkip = ["/_next/static/chunks/a.js", "/_next/static/immutable/chunks/a.js", "/api/license/status", "/audio/ld/d001.mp3", "/video/v.mp4", "/images/og/students.jpg", "/images/x", "/robots.txt", "/sitemap.xml", "/favicon.ico", "/icon.svg", "/search-index.json", "/.well-known/security.txt", "/_vercel/insights/script.js"];
+  const mustSkip = ["/_next/static/chunks/a.js", "/_next/static/immutable/chunks/a.js", "/api/license/status", "/audio/ld/d001.mp3", "/video/v.mp4", "/images/og/students.jpg", "/images/x", "/robots.txt", "/sitemap.xml", "/favicon.ico", "/icon.png", "/apple-icon.png", "/search-index.json", "/.well-known/security.txt", "/_vercel/insights/script.js"];
   check("N1 proxy matcher covers every page path at any depth, every typo with a dot, and Next's .rsc / .segments names", mustMatch.every(matches), mustMatch.filter((p) => !matches(p)).join(", "));
   check("N1 proxy matcher skips _next, _vercel, api, audio, video, images, .well-known and the root files", mustSkip.every((p) => !matches(p)), mustSkip.filter(matches).join(", "));
   const missingKeys = matchers.map((m) => (m.missing || []).map((x) => x.key.toLowerCase()).sort().join(","));
@@ -206,7 +206,7 @@ function n1() {
   const KNOWN_OVERLAP = (p) => p.startsWith("/_next/data/");
   const valid = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
   const samplePages = ["/", ...valid.courses.map((c) => `/${c}`), ...valid.tabs.map((t) => `/t/${t}`), ...valid.staticRoutes.map((r) => `/${r}`), ...Object.entries(valid.lessons).map(([c, ids]) => `/${c}/${ids[0]}`), ...mustMatch, "/LD/D001", "/Api", "/IMAGES"];
-  const sampleFiles = [...publicFiles(), "/robots.txt", "/sitemap.xml", "/favicon.ico", "/icon.svg", "/_next/static/chunks/a.js", "/api/license/status", "/api/admin/check", "/audio/azure-ava/v1/x.mp3", "/video/v.mp4", "/.well-known/security.txt", "/_vercel/insights/script.js", "/api/x", "/images/x", "/API/x", "/Images/og/a.jpg", "/ROBOTS.TXT", "/_NEXT/static/a.js", "/Audio/x.mp3", "/_next/data/x/ld/d001.json"];
+  const sampleFiles = [...publicFiles(), "/robots.txt", "/sitemap.xml", "/favicon.ico", "/icon.png", "/apple-icon.png", "/_next/static/chunks/a.js", "/api/license/status", "/api/admin/check", "/audio/azure-ava/v1/x.mp3", "/video/v.mp4", "/.well-known/security.txt", "/_vercel/insights/script.js", "/api/x", "/images/x", "/API/x", "/Images/og/a.jpg", "/ROBOTS.TXT", "/_NEXT/static/a.js", "/Audio/x.mp3", "/_next/data/x/ld/d001.json"];
   const overlapping = [...samplePages, ...sampleFiles].filter((p) => proxyPolicy(p) && configCsp(p));
   const both = overlapping.filter((p) => !KNOWN_OVERLAP(p));
   const knownOverlap = overlapping.filter(KNOWN_OVERLAP);
@@ -346,7 +346,7 @@ async function n3() {
   const css = (home.match(/<link[^>]+href="(\/_next\/static\/[^"]+\.css)"/) || [])[1];
   const files = REMOTE ? ["/search-index.json", "/images/og/students.jpg"] : publicFiles();
   const items = [
-    ...["/robots.txt", "/sitemap.xml", "/icon.svg", "/favicon.ico"].map((r) => ({ key: r, route: r })),
+    ...["/robots.txt", "/sitemap.xml", "/icon.png", "/apple-icon.png", "/favicon.ico"].map((r) => ({ key: r, route: r })),
     ...files.map((r) => ({ key: r, route: r })),
     { key: "_next chunk", route: chunk },
     { key: "_next css", route: css },
@@ -578,7 +578,7 @@ async function n5(browser) {
         const csp = (headers.find((h) => h.name.toLowerCase() === "content-security-policy") || {}).value || "";
         const nonce = nonceOf(csp) || "no-nonce-in-policy";
         const probe = `<script>window.__noNonce=1</script><script nonce="${nonce}">window.__withNonce=1</script>`;
-        html = html.replace(/<head[^>]*>/i, (m) => m + probe).replace(/<body[^>]*>/i, (m) => `${m}<img src="/icon.svg" alt="" width="1" height="1" onload="window.__attr=1">`);
+        html = html.replace(/<head[^>]*>/i, (m) => m + probe).replace(/<body[^>]*>/i, (m) => `${m}<img src="/icon.png" alt="" width="1" height="1" onload="window.__attr=1">`);
         injected = { nonce: nonce !== "no-nonce-in-policy" };
         await tab.send("Fetch.fulfillRequest", { requestId: p.requestId, responseCode: p.responseStatusCode, responseHeaders: headers, body: Buffer.from(html, "utf8").toString("base64") });
       } catch (e) {
