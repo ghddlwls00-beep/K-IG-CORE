@@ -125,7 +125,7 @@ const UNGROUP = new Set(arg("--ungroup", "").split(",").filter(Boolean).map(Numb
 const COMPLETE = new Set(arg("--complete", "").split(",").filter(Boolean).map(Number));
 /** A reading's cache key: its text and every setting that changes the sound (FNV-1a, base 36). */
 function readingKey(text, complete = false) {
-  const s = [ENGINE, AZURE_VOICE, MODEL, VOICE_ID, OPENAI_SPEED, complete ? "complete" : OPENAI_INSTRUCTIONS, text].join("\u0001");
+  const s = ["wav-v2", ENGINE, AZURE_VOICE, MODEL, VOICE_ID, OPENAI_SPEED, complete ? "complete" : OPENAI_INSTRUCTIONS, text].join("\u0001");
   let h = 0x811c9dc5, g = 0x9e3779b9;
   for (let i = 0; i < s.length; i++) { h = Math.imul(h ^ s.charCodeAt(i), 0x01000193); g = Math.imul(g ^ s.charCodeAt(i), 0x85ebca6b); }
   return (h >>> 0).toString(36) + (g >>> 0).toString(36);
@@ -139,8 +139,17 @@ if (!DRY && ENGINE === "openai" && !OPENAI_KEY) throw new Error("OPENAI_API_KEY 
 // sometimes stops early ("with the jeweler", "wish" — lh082 2026-10-18); without it, it read them every time
 const COMPLETE_INSTRUCTIONS = "A friendly Korean English teacher explaining a passage. Read every single word to the very end — the last words too. Korean in Korean, English in clear English.";
 async function openaiTts(text, attempt = 1, instructions = OPENAI_INSTRUCTIONS) {
-  const res = await fetch("https://api.openai.com/v1/audio/speech", { method: "POST", headers: { Authorization: `Bearer ${OPENAI_KEY}`, "Content-Type": "application/json" }, body: JSON.stringify({ model: OPENAI_MODEL, voice: AZURE_VOICE, input: text, instructions, response_format: "pcm", speed: OPENAI_SPEED }) });
-  if (res.ok) return { pcm: Buffer.from(await res.arrayBuffer()), alignment: null };
+  // WAV, not "pcm": the raw-PCM answer came back without its last second or two now and then — the tail words seemed
+  // "dropped" (lm002 #12 "city가 나오고", lh082 #15 "with the jeweler"); the same text as WAV held them every time
+  // (2026-10-18). The RIFF header is stripped here; the data chunk is 24 kHz 16-bit mono like the PCM answer.
+  const res = await fetch("https://api.openai.com/v1/audio/speech", { method: "POST", headers: { Authorization: `Bearer ${OPENAI_KEY}`, "Content-Type": "application/json" }, body: JSON.stringify({ model: OPENAI_MODEL, voice: AZURE_VOICE, input: text, instructions, response_format: "wav", speed: OPENAI_SPEED }) });
+  if (res.ok) {
+    const wav = Buffer.from(await res.arrayBuffer());
+    const at = wav.indexOf("data");
+    const rate = wav.readUInt32LE(24);
+    if (at < 0 || rate !== SR) throw new Error(`OpenAI TTS: unexpected WAV (data chunk at ${at}, rate ${rate})`);
+    return { pcm: wav.subarray(at + 8), alignment: null };
+  }
   const detail = (await res.text()).slice(0, 300);
   if ((res.status === 429 || res.status >= 500) && attempt < 6) {
     await new Promise((r) => setTimeout(r, 4000 * attempt));
@@ -397,17 +406,26 @@ for (const id of IDS) {
     // calibrated on lh082 (the owner-approved voice): a whole-reading similarity flags gross failures (a skipped sentence),
     // and the decisive test is per ENGLISH word — the mis-reads the owner heard ("made"→마데) come back from Scribe in
     // Hangul or as another word, so an English word of the text (3+ letters) missing from what was heard is a fail.
-    const engWords = (s) => (s.match(/[A-Za-z][A-Za-z'’-]{2,}/g) || []).map((w) => w.toLowerCase().replace(/[’']s$/, "").replace(/['’]/g, ""));
+    // not checked: English number words (Scribe writes them as digits — "nineteen thirty-seven" → 1937) and capitalised
+    // names (Scribe writes some in Hangul — Colorado → 콜로라도); lm002 2026-10-18
+    const NUMBER_WORD = /^(zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|twelfth|twentieth|thirtieth|o'clock|oclock)(-\w+)?$/;
+    const engWords = (s) => (s.match(/[A-Za-z][A-Za-z'’-]{2,}/g) || []).filter((w) => !/^[A-Z]/.test(w) || /^(I|The|A|An|And|But|He|She|It|They|We|You|This|That|What|When|Where|Why|How|After|Before|In|On|At|For|With|My|His|Her|Our|Their|Can|Do|Does|Did|Is|Are|Was|Were)$/.test(w)).map((w) => w.toLowerCase().replace(/[’']s$/, "").replace(/['’]/g, "")).filter((w) => !NUMBER_WORD.test(w));
     pronunciation = laid.map((l) => {
       const heardWords = newWords.filter((w) => w.t >= l.newStart - 0.05 && w.t < l.newStart + l.newLen + 0.05).map((w) => w.w);
       const heard = heardWords.join(" ");
       const a = squash(l.text), b = squash(heard);
       const sim = a.length ? 1 - lev(a, b) / Math.max(a.length, b.length) : 1;
-      const heardEng = new Set(engWords(heard).flatMap((w) => [w, w.replace(/s$/, ""), `${w}s`]));
+      // English words looked up with 0.4 s more on each side: Scribe sometimes places a word on the next reading's
+      // edge ("gi|ven name", lm002 #4)
+      const near = newWords.filter((w) => w.t >= l.newStart - 0.4 && w.t < l.newStart + l.newLen + 0.4).map((w) => w.w).join(" ");
+      // (the heard side keeps capitalised words: Scribe capitalises a word that starts its sentence — "Given name")
+      const heardEng = new Set((near.match(/[A-Za-z][A-Za-z'’-]{2,}/g) || []).map((w) => w.toLowerCase().replace(/[’']s$/, "").replace(/['’]/g, "")).flatMap((w) => [w, w.replace(/s$/, ""), `${w}s`]));
       const missingEnglish = engWords(l.text).filter((w) => !heardEng.has(w) && !heardEng.has(w.replace(/s$/, "")));
       return { piece: l.piece, members: l.members, cacheKey: l.cacheKey, sim: +sim.toFixed(3), missingEnglish, text: l.text, heard };
     });
-    for (const x of pronunciation) x.fail = x.sim < 0.75 || x.missingEnglish.length > 0;
+    // whole-reading similarity only catches gross failures: number-heavy readings sit at 0.54–0.6 because Scribe writes
+    // "천사백구십" as 1490 (lm002); half a reading lost would be well below 0.45
+    for (const x of pronunciation) x.fail = x.sim < 0.45 || x.missingEnglish.length > 0;
     const below = pronunciation.filter((x) => x.fail);
     console.log(`  pronunciation: ${pronunciation.length - below.length}/${pronunciation.length} readings pass${below.length ? ` · fail: ${below.map((x) => `#${x.piece} ${x.sim}${x.missingEnglish.length ? ` [${x.missingEnglish.join(" ")}]` : ""}`).join(", ")}` : ""}`);
   }
