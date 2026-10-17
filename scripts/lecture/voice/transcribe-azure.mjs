@@ -42,7 +42,7 @@ const REGION = process.env.AZURE_SPEECH_REGION;
 if (!KEY || !REGION) throw new Error("AZURE_SPEECH_KEY and AZURE_SPEECH_REGION are required (.env.local or KIG_ENV_LOCAL)");
 if (!IDS.length) throw new Error("--ids lm001[,lm057] is required");
 
-export async function transcribe(wavFile) {
+export async function transcribe(wavFile, attempt = 1) {
   const form = new FormData();
   form.append("audio", new Blob([fs.readFileSync(wavFile)], { type: "audio/wav" }), path.basename(wavFile));
   // Korean explanation with English reading: let the service pick the language per phrase
@@ -52,8 +52,16 @@ export async function transcribe(wavFile) {
     headers: { "Ocp-Apim-Subscription-Key": KEY },
     body: form,
   });
-  if (!res.ok) throw new Error(`Azure fast transcription ${res.status}: ${(await res.text()).slice(0, 300)}`);
-  return res.json();
+  if (res.ok) return res.json();
+  const detail = (await res.text()).slice(0, 300);
+  // 429 "Resource Exhausted" came back on the first call after the subscription was re-enabled (2026-10-17): wait and retry
+  if ((res.status === 429 || res.status >= 500) && attempt < 6) {
+    const wait = 15000 * attempt;
+    console.log(`  ${path.basename(path.dirname(wavFile))}: ${res.status} — waiting ${wait / 1000} s (try ${attempt})`);
+    await new Promise((r) => setTimeout(r, wait));
+    return transcribe(wavFile, attempt + 1);
+  }
+  throw new Error(`Azure fast transcription ${res.status}: ${detail}`);
 }
 
 for (const id of IDS) {

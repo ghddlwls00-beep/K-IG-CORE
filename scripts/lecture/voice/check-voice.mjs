@@ -9,14 +9,17 @@
  *
  * Checks (the 지시문's J):
  *   ① length: |new − original| ≤ 0.05 s
- *   ② speech starts: ≥ 95% of the original's speech onsets have a new-voice onset within ±0.3 s
- *      (onset = speech after ≥ 0.3 s of silence; speech = frame energy ≥ noise floor + 12 dB, 20 ms frames)
+ *   ② timing: the two energy envelopes (20 ms frames) are compared in 5 s windows, each window's best lag searched
+ *      within ±1 s — ≥ 95% of windows must sit within ±0.3 s and their median correlation be ≥ 0.8. (Speech onsets
+ *      are reported too, but a changed voice carries breath and room tone at a different level, so pauses merge or
+ *      split and onset counting alone misjudged a perfectly aligned sample — 2026-10-17, lm001 Hyuk: lag 0 ms in
+ *      every window, correlation 0.97–0.99, yet 14 of 20 onsets "missed".)
  *   ③ stretch ratios: if <new>.segments.json exists beside the file (synth step), none outside 0.8–1.25
  *   ④ noise where the original is silent: inside the original's silences (≥ 0.5 s long, 0.1 s guard at both ends)
  *      no new-voice frame above −40 dBFS that is also louder than the original's own frame there + 3 dB
  *      (the original is a noisy room recording with the odd click — the new voice must not ADD sounds)
- *   ⑤ pen sync: at ≥ 5 writing bursts spread over the lecture (pen.json), the speech-activity curves of the two
- *      files within ±3 s agree (correlation ≥ 0.8) — the words said while writing are said at the same time
+ *   ⑤ pen sync: at ≥ 5 writing bursts spread over the lecture (pen.json), the energy envelopes of the two files
+ *      within ±3 s agree (correlation ≥ 0.8) — the words said while writing are said at the same time
  *   Both files are decoded with ffmpeg to 16 kHz mono float. PASS/FAIL per check and overall; exit 1 on FAIL.
  */
 import fs from "node:fs";
@@ -56,18 +59,38 @@ const sec = (frames) => +(frames * HOP / SR).toFixed(2);
 const lenO = orig.length / SR, lenN = made.length / SR;
 report.checks.length = { origSec: +lenO.toFixed(3), newSec: +lenN.toFixed(3), diff: +(lenN - lenO).toFixed(3), pass: Math.abs(lenN - lenO) <= 0.05 };
 
-// ② speech onsets
+// ② timing: envelope lag per 5 s window
 const dbO = energyDb(orig), dbN = energyDb(made);
 const mO = speechMask(dbO), mN = speechMask(dbN);
-const onsetsO = runs(mO.mask, 1).map(([s]) => s), onsetsN = runs(mN.mask, 1).map(([s]) => s);
-let matched = 0;
-const misses = [];
-for (const o of onsetsO) {
-  const near = onsetsN.some((n) => Math.abs(n - o) * HOP / SR <= 0.3);
-  if (near) matched++;
-  else if (misses.length < 10) misses.push(sec(o));
+const n = Math.min(dbO.length, dbN.length);
+const WIN = 250, MAX_LAG = 50; // frames: 5 s windows, ±1 s
+const windows = [];
+for (let s = 0; s + WIN <= n; s += WIN) {
+  let best = 0, bestC = -2;
+  for (let lag = -MAX_LAG; lag <= MAX_LAG; lag++) {
+    let sab = 0, saa = 0, sbb = 0;
+    for (let i = s; i < s + WIN; i++) {
+      const j = i + lag;
+      if (j < 0 || j >= n) continue;
+      const x = dbO[i] - mO.floor, y = dbN[j] - mN.floor;
+      sab += x * y; saa += x * x; sbb += y * y;
+    }
+    const c = saa && sbb ? sab / Math.sqrt(saa * sbb) : 0;
+    if (c > bestC) { bestC = c; best = lag; }
+  }
+  windows.push({ at: sec(s), lagMs: best * 20, corr: +bestC.toFixed(3) });
 }
-report.checks.onsets = { orig: onsetsO.length, new: onsetsN.length, matched, rate: +(matched / Math.max(1, onsetsO.length)).toFixed(3), firstMisses: misses, pass: matched / Math.max(1, onsetsO.length) >= 0.95 };
+const within = windows.filter((w) => Math.abs(w.lagMs) <= 300).length;
+const corrs = windows.map((w) => w.corr).sort((a, b) => a - b);
+const medianCorr = corrs.length ? corrs[Math.floor(corrs.length / 2)] : 0;
+const worst = windows.slice().sort((a, b) => Math.abs(b.lagMs) - Math.abs(a.lagMs)).slice(0, 5);
+const onsetsO = runs(mO.mask, 1).map(([s]) => s), onsetsN = runs(mN.mask, 1).map(([s]) => s);
+const matched = onsetsO.filter((o) => onsetsN.some((x) => Math.abs(x - o) * HOP / SR <= 0.3)).length;
+report.checks.timing = {
+  windows: windows.length, within300ms: within, rate: +(within / Math.max(1, windows.length)).toFixed(3), medianCorr, worstLags: worst,
+  onsets: { orig: onsetsO.length, new: onsetsN.length, matched },
+  pass: windows.length > 0 && within / windows.length >= 0.95 && medianCorr >= 0.8,
+};
 
 // ③ stretch ratios (from the synth step's segments file, when there is one)
 const segFile = NEW.replace(/\.(mp3|wav)$/i, "") + ".segments.json";
@@ -106,7 +129,7 @@ if (fs.existsSync(penFile)) {
   }
   const rows = bursts.map((t) => {
     const a = Math.max(0, Math.round((t - 3) * SR / HOP)), b = Math.min(dbO.length, dbN.length, Math.round((t + 3) * SR / HOP));
-    const c = corr(mO.mask.subarray(a, b), mN.mask.subarray(a, b));
+    const c = corr(dbO.subarray(a, b), dbN.subarray(a, b));
     return { at: t, corr: +c.toFixed(3), speechOrig: sec(mO.mask.subarray(a, b).reduce((x, y) => x + y, 0)), speechNew: sec(mN.mask.subarray(a, b).reduce((x, y) => x + y, 0)) };
   });
   const bad = rows.filter((r) => r.corr < 0.8);

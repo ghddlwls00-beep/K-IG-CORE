@@ -3,7 +3,10 @@
  * LECTURE voice — 길 2: synthesise the transcript piece by piece with Azure Speech, each piece made to the length the
  * teacher took, placed at the time the teacher started it; then one voice.mp3 on the original timeline.
  *
- *   node scripts/lecture/voice/synth-azure.mjs --ids lm001[,…] [--voice ko-KR-HyunsuMultilingualNeural] [--dry-run] [--force]
+ *   node scripts/lecture/voice/synth-azure.mjs --ids lm001[,…] [--voice ko-KR-HyunsuMultilingualNeural] [--until <sec>] [--dry-run] [--force]
+ *
+ *   --until  only the pieces that start before this second (a voice SAMPLE for the owner to compare: the lecture's first
+ *            minute in each candidate voice). Output then goes to <id>/azure-<voice>/ with that many pieces.
  *
  * Text: .lecture-media/voice/<id>/segments.edited.json when it exists (step E — the corrected transcript, same shape as
  * segments.json `pieces` with `text`), else segments.json pieces' words joined (raw transcript). A piece with no text
@@ -31,6 +34,7 @@ const IDS = arg("--ids", "").split(",").filter(Boolean);
 const VOICE_NAME = arg("--voice", "ko-KR-HyunsuMultilingualNeural");
 const DRY = args.includes("--dry-run");
 const FORCE = args.includes("--force");
+const UNTIL = Number(arg("--until", 0)) || 0;
 const VOICE = path.join(ROOT, ".lecture-media", "voice");
 const SR = 24000;
 const PRICE_PER_MCHAR = 15;
@@ -73,12 +77,12 @@ for (const id of IDS) {
   const dir = path.join(VOICE, id);
   const edited = path.join(dir, "segments.edited.json");
   const seg = JSON.parse(fs.readFileSync(fs.existsSync(edited) ? edited : path.join(dir, "segments.json"), "utf8"));
-  const pieces = seg.pieces.map((p) => ({ ...p, text: (p.text ?? (p.words || []).join(" ")).trim() }));
+  const pieces = seg.pieces.filter((p) => !UNTIL || p.speechStart < UNTIL).map((p) => ({ ...p, text: (p.text ?? (p.words || []).join(" ")).trim() }));
   const chars = pieces.reduce((n, p) => n + p.text.length, 0);
   totalChars += chars;
   console.log(`${id}: ${pieces.length} pieces · ${pieces.filter((p) => p.text).length} with text · ${chars} chars · $${((chars / 1e6) * PRICE_PER_MCHAR).toFixed(3)}${fs.existsSync(edited) ? " (edited transcript)" : " (raw transcript)"}`);
   if (DRY) continue;
-  const out = path.join(dir, "azure");
+  const out = path.join(dir, UNTIL ? `azure-${VOICE_NAME.replace(/^ko-KR-/, "")}` : "azure");
   fs.mkdirSync(out, { recursive: true });
   const parts = [], fitted = [];
   for (const [n, p] of pieces.entries()) {

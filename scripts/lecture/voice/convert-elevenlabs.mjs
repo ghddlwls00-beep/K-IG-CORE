@@ -4,7 +4,12 @@
  * then back on the original timeline as one voice.mp3.
  *
  *   node scripts/lecture/voice/convert-elevenlabs.mjs --ids lm001[,…] --voice-id <id> [--model eleven_multilingual_sts_v2]
- *        [--no-noise-removal] [--dry-run] [--force]
+ *        [--no-noise-removal] [--until <sec>] [--dry-run] [--force]
+ *
+ *   --until  a SAMPLE: only the lecture's start up to the pause nearest below <sec> (one chunk), written to
+ *            <id>/eleven-<voice-id>/ — for the owner to compare candidate voices before the full pilot.
+ * Credits: the account's character_count is read before and after (/v1/user/subscription) and the difference
+ * printed per lecture — the measured cost per minute of audio.
  *
  * Per lecture: segments.json `chunks` (≤ 280 s each, cut in pauses — segments.mjs) → each chunk cut from orig.mp3 as
  * 24 kHz mono wav → POST /v1/speech-to-speech/{voice_id}?output_format=pcm_24000 (multipart: audio · model_id ·
@@ -36,6 +41,7 @@ const MODEL = arg("--model", "eleven_multilingual_sts_v2");
 const NOISE_REMOVAL = !args.includes("--no-noise-removal");
 const DRY = args.includes("--dry-run");
 const FORCE = args.includes("--force");
+const UNTIL = Number(arg("--until", 0)) || 0;
 const VOICE = path.join(ROOT, ".lecture-media", "voice");
 const SR = 24000;
 const PRICE_PER_MIN = 0.12;
@@ -70,18 +76,32 @@ async function convert(wavFile, attempt = 1) {
   throw new Error(`ElevenLabs ${res.status}: ${text}`);
 }
 
+async function creditsUsed() {
+  const r = await fetch("https://api.elevenlabs.io/v1/user/subscription", { headers: { "xi-api-key": KEY } });
+  if (!r.ok) return null;
+  const j = await r.json();
+  return j.character_count;
+}
+
 let totalMin = 0;
 for (const id of IDS) {
   const dir = path.join(VOICE, id);
   const seg = JSON.parse(fs.readFileSync(path.join(dir, "segments.json"), "utf8"));
-  const out = path.join(dir, "eleven");
+  let chunks = seg.chunks;
+  if (UNTIL) {
+    // the start of the lecture up to the piece boundary (a pause) nearest below --until
+    const cut = seg.pieces.filter((p) => p.start <= UNTIL).at(-1)?.start ?? UNTIL;
+    chunks = [{ start: 0, end: cut }];
+  }
+  const out = path.join(dir, UNTIL ? `eleven-${VOICE_ID || "sample"}` : "eleven");
   fs.mkdirSync(out, { recursive: true });
-  const minutes = seg.totalSec / 60;
+  const minutes = chunks.reduce((n, c) => n + (c.end - c.start), 0) / 60;
   totalMin += minutes;
-  console.log(`${id}: ${seg.chunks.length} chunks (${seg.chunks.map((c) => (c.end - c.start).toFixed(0)).join("/")} s) · ${minutes.toFixed(1)} min · $${(minutes * PRICE_PER_MIN).toFixed(2)}`);
+  console.log(`${id}: ${chunks.length} chunks (${chunks.map((c) => (c.end - c.start).toFixed(0)).join("/")} s) · ${minutes.toFixed(1)} min · $${(minutes * PRICE_PER_MIN).toFixed(2)}`);
   if (DRY) continue;
+  const before = await creditsUsed();
   const parts = [], fitted = [];
-  for (const [n, c] of seg.chunks.entries()) {
+  for (const [n, c] of chunks.entries()) {
     const inWav = path.join(out, `chunk-${n}.in.wav`), outPcm = path.join(out, `chunk-${n}.out.pcm`), fitWav = path.join(out, `chunk-${n}.fit.wav`);
     if (!fs.existsSync(outPcm) || FORCE) {
       execFileSync(ffmpeg, ["-v", "error", "-y", "-f", "mp3", "-i", path.join(dir, "orig.mp3"), "-ss", String(c.start), "-to", String(c.end), "-ac", "1", "-ar", String(SR), inWav]);
@@ -98,8 +118,17 @@ for (const id of IDS) {
     parts.push({ start: c.start, file: fitWav });
     console.log(`  chunk ${n}: answer ${fit.inSec} s for ${(c.end - c.start).toFixed(3)} s · stretch ${fit.stretch} (${fit.method})`);
   }
+  const after = await creditsUsed();
+  const used = before != null && after != null ? after - before : null;
+  console.log(`  credits used ${used ?? "?"} for ${minutes.toFixed(2)} min${used != null ? ` → ${(used / minutes).toFixed(0)} per minute` : ""}`);
   fs.writeFileSync(path.join(out, "parts.json"), JSON.stringify(parts, null, 1));
-  fs.writeFileSync(path.join(out, "voice.segments.json"), JSON.stringify({ id, method: "elevenlabs-sts", model: MODEL, voiceId: VOICE_ID, noiseRemoval: NOISE_REMOVAL, segments: fitted }, null, 1));
+  fs.writeFileSync(path.join(out, "voice.segments.json"), JSON.stringify({ id, method: "elevenlabs-sts", model: MODEL, voiceId: VOICE_ID, noiseRemoval: NOISE_REMOVAL, creditsUsed: used, minutes: +minutes.toFixed(3), segments: fitted }, null, 1));
+  if (UNTIL) {
+    // a sample: just the converted minute as mp3 (loudness-matched), nothing assembled on the full timeline
+    execFileSync(ffmpeg, ["-v", "error", "-y", "-i", parts[0].file, "-af", "loudnorm=I=-16:TP=-1:LRA=11", "-c:a", "libmp3lame", "-b:a", "48k", path.join(out, "sample.mp3")]);
+    console.log(`  sample → ${path.join(out, "sample.mp3")}`);
+    continue;
+  }
   execFileSync("node", [path.join(import.meta.dirname, "assemble.mjs"), "--id", id, "--parts", path.join(out, "parts.json"), "--out", path.join(out, "voice.mp3")], { stdio: "inherit" });
   execFileSync("node", [path.join(import.meta.dirname, "check-voice.mjs"), "--id", id, "--new", path.join(out, "voice.mp3"), "--json", path.join(out, "check.json")], { stdio: "inherit" });
 }
