@@ -26,8 +26,8 @@ import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
 import { execFileSync } from "node:child_process";
-import { ffmpeg } from "./vad.mjs";
-import { fitToLength } from "./fit.mjs";
+import { ffmpeg, decode } from "./vad.mjs";
+import { fitToLength, writeWav } from "./fit.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..", "..", "..");
 const args = process.argv.slice(2);
@@ -76,6 +76,15 @@ async function convert(wavFile, attempt = 1) {
   throw new Error(`ElevenLabs ${res.status}: ${text}`);
 }
 
+function muteLeadIn(wavFile, untilSec) {
+  const s = decode(wavFile, { sr: SR });
+  const n = Math.min(s.length, Math.round(untilSec * SR));
+  for (let i = 0; i < n; i++) s[i] = 0;
+  const fade = Math.min(480, s.length - n);
+  for (let i = 0; i < fade; i++) s[n + i] *= i / fade;
+  writeWav(wavFile, s, SR);
+}
+
 async function creditsUsed() {
   const r = await fetch("https://api.elevenlabs.io/v1/user/subscription", { headers: { "xi-api-key": KEY } });
   if (!r.ok) return null;
@@ -114,6 +123,9 @@ for (const id of IDS) {
     const wav = path.join(out, `chunk-${n}.out.wav`);
     execFileSync(ffmpeg, ["-v", "error", "-y", "-f", "s16le", "-ar", String(SR), "-ac", "1", "-i", outPcm, wav]);
     const fit = fitToLength(wav, c.end - c.start, fitWav, { sr: SR });
+    // the first chunk: the changed voice puts a breath/pop in the lead-in where the teacher was still silent (check ④,
+    // samples 2026-10-17: 1–4 frames at 0.38–0.46 s) — keep the lead-in silent up to 0.15 s before the first speech
+    if (n === 0 && seg.speech?.[0]?.[0] > 0.3) muteLeadIn(fitWav, seg.speech[0][0] - 0.15);
     fitted.push({ chunk: n, start: c.start, end: c.end, ...fit, bytes: pcm.length });
     parts.push({ start: c.start, file: fitWav });
     console.log(`  chunk ${n}: answer ${fit.inSec} s for ${(c.end - c.start).toFixed(3)} s · stretch ${fit.stretch} (${fit.method})`);
