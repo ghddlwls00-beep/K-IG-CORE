@@ -82,7 +82,14 @@ for (const id of IDS) {
   }
   for (let i = 0; i < pieces.length; i++) pieces[i].end = i + 1 < pieces.length ? pieces[i + 1].start : +total.toFixed(3);
   const { source, words } = wordsOf(dir);
-  if (words.length) for (const p of pieces) p.words = words.filter((w) => w.t >= p.start && w.t < p.end).map((w) => w.w);
+  if (words.length) {
+    for (const p of pieces) {
+      const inside = words.filter((w) => w.t >= p.start && w.t < p.end);
+      p.words = inside.map((w) => w.w);
+      // [start sec, duration sec, word] — the anchors for word-level time-warp (synth-elevenlabs.mjs)
+      p.wordsT = inside.map((w) => [w.t, w.d, w.w]);
+    }
+  }
   const doc = { id, totalSec: +total.toFixed(3), noiseFloorDb: +floor.toFixed(1), speechThresholdDb: +thr.toFixed(1), speechSec: +(speech.reduce((n, [s, e]) => n + (e - s), 0) * HOP / SR).toFixed(1), speech: speech.map(([s, e]) => [+frameSec(s).toFixed(2), +frameSec(e).toFixed(2)]), chunks, pieces, transcript: source };
   fs.writeFileSync(path.join(dir, "segments.json"), JSON.stringify(doc, null, 1));
   const longest = Math.max(...pieces.map((p) => p.speechEnd - p.speechStart));
