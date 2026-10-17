@@ -348,21 +348,37 @@ for (const id of IDS) {
   const after = ENGINE === "elevenlabs" ? await creditsUsed() : null;
   let pronunciation = null;
   if (ALIGN === "scribe") {
-    // the made voice, word by word: lay the pieces on a scratch track, transcribe it, match to the teacher's words
-    const scratch = new Float32Array(Math.round((cursor + 0.6) * SR));
-    for (const l of laid) { const s = decode(l.file, { sr: SR }); scratch.set(s.subarray(0, Math.min(s.length, scratch.length - Math.round(l.newStart * SR))), Math.round(l.newStart * SR)); }
-    const wavFile = path.join(out, "voice.align.wav");
-    writeWav(wavFile, scratch, SR);
-    const form = new FormData();
-    form.append("file", new Blob([fs.readFileSync(wavFile)], { type: "audio/wav" }), "voice.wav");
-    form.append("model_id", "scribe_v1");
-    form.append("timestamps_granularity", "word");
-    form.append("diarize", "false");
-    const res = await fetch("https://api.elevenlabs.io/v1/speech-to-text", { method: "POST", headers: { "xi-api-key": KEY }, body: form });
-    if (!res.ok) throw new Error(`Scribe on the made voice: ${res.status} ${(await res.text()).slice(0, 200)}`);
-    const j = await res.json();
-    fs.writeFileSync(path.join(out, "voice.scribe.json"), JSON.stringify(j));
-    const newWords = (j.words || []).filter((w) => w.type === "word").map((w) => ({ w: w.text, t: w.start }));
+    // the made voice, word by word: each READING is transcribed once and the result cached by its content key
+    // (s-<key>.json) — a re-read reading is transcribed again, the others never (the whole-track transcription it
+    // replaced ran up to 4 times per lecture and used up the month's ElevenLabs credits, 2026-10-18)
+    async function scribeReading(file, attempt = 1) {
+      const form = new FormData();
+      form.append("file", new Blob([fs.readFileSync(file)], { type: "audio/wav" }), "reading.wav");
+      form.append("model_id", "scribe_v1");
+      form.append("timestamps_granularity", "word");
+      form.append("diarize", "false");
+      const res = await fetch("https://api.elevenlabs.io/v1/speech-to-text", { method: "POST", headers: { "xi-api-key": KEY }, body: form });
+      if (res.ok) return res.json();
+      const detail = (await res.text()).slice(0, 200);
+      if ((res.status === 429 || res.status >= 500) && attempt < 6) {
+        await new Promise((r) => setTimeout(r, 3000 * attempt));
+        return scribeReading(file, attempt + 1);
+      }
+      throw new Error(`Scribe on the made voice: ${res.status} ${detail}`);
+    }
+    const queue = laid.slice();
+    await Promise.all(Array.from({ length: 4 }, async () => {
+      for (;;) {
+        const l = queue.shift();
+        if (!l) return;
+        const cache = path.join(out, `s-${l.cacheKey}.json`);
+        if (!fs.existsSync(cache)) {
+          const j = await scribeReading(l.file);
+          fs.writeFileSync(cache, JSON.stringify((j.words || []).filter((w) => w.type === "word").map((w) => [w.start, w.text])));
+        }
+      }
+    }));
+    const newWords = laid.flatMap((l) => JSON.parse(fs.readFileSync(path.join(out, `s-${l.cacheKey}.json`), "utf8")).map(([t, w]) => ({ w, t: l.newStart + t }))).sort((a, b) => a.t - b.t);
     const origWords = pieces.flatMap((p) => p.wordsT || []).map(([t, , w]) => [t, 0, w]);
     const pairsAll = matchWords(origWords, newWords);
     // per piece/group: keep the pairs inside it, prune the ones that bend the map > 1.6× from the group's pace
