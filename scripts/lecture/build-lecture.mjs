@@ -30,8 +30,10 @@
  *     HIGH byte is the LAST byte of the record before (the first record's is 0). kind 10 = show page
  *     <page>; kind 33 = viewport scroll (payload bytes 0–1, big-endian); kind 2 = one pen segment:
  *     payload [scroll u16 BE, 00, 00, flag, p1(3), pen, p2(3), 00, 00, hi-of-next], a point (a b c) being
- *     x = (a >> 4) << 8 | b, y = (a & 15) << 8 | c in PAGE pixels (827 × 1169; the scroll is already in y),
- *     flag 0xd3 = pen down. Some notes sit right of the page (x up to ~965).
+ *     x = (a >> 4) << 8 | b, y = (a & 15) << 8 | c in the GVA WINDOW's pixels (the scroll is already in y),
+ *     flag 0xd3 = pen down. The window showed the page centred under a 20px top margin (PageNN.htm:
+ *     `<body topmargin="20"><center><img>`) — so page x = pen x − 80, page y = pen y − 20 (fitted on 27 lectures,
+ *     ±2px; the window was ~987px wide). pen.json keeps the window numbers; the views place the page at (80, 20).
  *   - One time unit = audio length / header length = 0.18005–0.18042 s on all 200 (mean 0.18025).
  *   - Lecture N shows page N of its book; 57 also turns to pages 59, 60 and 58; 182 starts with no page
  *     record (its strokes carry page 82).

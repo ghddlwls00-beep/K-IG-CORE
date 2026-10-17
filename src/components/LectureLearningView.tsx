@@ -36,14 +36,24 @@ import {
  */
 
 /**
- * The stage, in textbook-page pixels: wide enough for the notes beside the page in every lecture (pen.json canvas.w is
- * 840–1020 over the 200, measured 2026-10-17) and as tall as all of them (1170). One size for every lecture, so the page
+ * The stage, in the pen's pixels (the GVA window — see PAGE_X): wide enough for the notes beside the page in every lecture
+ * (pen.json canvas.w is 840–1020 over the 200, measured 2026-10-17) and as tall as the page placed 20px down (1190). One size for every lecture, so the page
  * keeps its place while the pen file loads and does not jump when it arrives. A wider file (none today) is scaled to fit.
  */
 const STAGE_W = 1020;
-const STAGE_H = 1170;
+const STAGE_H = 1190;
 const PAGE_W = 827;
 const PAGE_H = 1169;
+/**
+ * Where the page sits in the pen's coordinates. The pen was recorded in the GVA player's window, not on the page: every
+ * PageNN.htm in the .gdb shows the page as `<body topmargin="20"><center><img …></center>` — 20px down and centred. Measured
+ * 2026-10-17 by moving the teacher's underlines under the ink of the text line above them: the best fit is 80px right and 20px
+ * down on every lecture tried (27 of them, ±2px — the window was ~987px wide). Drawn at (0, 0) the notes sat 80px right of and
+ * 20px under the words they mark (사장님: "86강 보면 뭔가 어색한 느낌", 2026-10-17). So the page image goes here, and the
+ * pen stays in its own numbers.
+ */
+const PAGE_X = 80;
+const PAGE_Y = 20;
 
 /**
  * Pen colours. These are the textbook's ink, not interface colours: they are drawn on the white page image (which is white in
@@ -61,6 +71,11 @@ const PEN_STYLE: Record<number, { color: string; width: number; highlighter?: tr
 const UNKNOWN_PEN = { color: "#2A2A2A", width: 2.2 };
 /** the highlighter layer's opacity: drawn opaque on its own canvas, so crossing strokes do not darken where they overlap */
 const HIGHLIGHT_OPACITY = 0.42;
+
+/** the smallest the page is drawn (stage scale): below this a phone pans the page instead of shrinking it further */
+const MIN_SCALE = 0.62;
+/** how long following the pen waits after the learner scrolls the page window themselves */
+const FOLLOW_HOLD_MS = 4000;
 
 const SPEEDS = [1, 1.5, 2] as const;
 type Speed = (typeof SPEEDS)[number];
@@ -215,21 +230,96 @@ export function LectureLearningView({
       drawSegments(drawn.drawn, reach, pageNow);
     }
     drawnRef.current = { page: pageNow, drawn: reach };
+    // the latest point on the open page — the viewport follows it (none yet: the top of the page)
+    penPointRef.current = null;
+    for (let k = reach - 1; k >= 0; k--) {
+      const stroke = timeline.strokes[timeline.segStroke[k]];
+      if (stroke.page !== pageNow) continue;
+      const p = timeline.segPoint[k];
+      penPointRef.current = { x: stroke.x[p], y: stroke.y[p] };
+      break;
+    }
     setPage(pageNow);
   }, [clearCanvases, drawSegments, firstPage]);
 
-  // 사장님 2026-10-17 '쪽 전체가 한 화면에': on a wide screen the whole page shows without scrolling, from the top of the
-  // lesson page. The stage's height is the window below where the stage starts (its offset in the document, measured, since
-  // the head above it — title, chapter line, the play row — differs in height by screen width) less a 16px margin. Phones are
-  // limited by width first, so this changes nothing there.
-  const [stageTop, setStageTop] = useState<number | null>(null);
+  /*
+   * The size of the page on screen (사장님 2026-10-17, second answer). Fitting the whole page into the window made it far too
+   * small to read ("너무 작은데? 데스크탑에서는 아예 보이지가 않는데?" — on a 1366 × 650 window the text came out ~5px). So the
+   * page is shown at a readable size — the stage as wide as the frame, but never above its own size (scale 1) nor below
+   * MIN_SCALE — inside a window of the page (the viewport) as tall as the screen allows, and that window FOLLOWS THE PEN while
+   * the lecture plays: the place the teacher is writing is kept in view, as the original GVA player scrolled its page. The
+   * learner can scroll the window too; following waits a few seconds after they do.
+   */
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState<number | null>(null);
   useEffect(() => {
-    const stage = stageRef.current;
-    if (!stage) return;
-    const measure = () => setStageTop(Math.round(stage.getBoundingClientRect().top + window.scrollY));
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+    const measure = () => {
+      const w = viewport.clientWidth;
+      if (w) setScale(Math.min(1, Math.max(MIN_SCALE, w / STAGE_W)));
+    };
     measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
+    const observer = new ResizeObserver(measure);
+    observer.observe(viewport);
+    return () => observer.disconnect();
+  }, []);
+
+  /** the last point drawn, in page pixels — what the viewport follows */
+  const penPointRef = useRef<{ x: number; y: number } | null>(null);
+  /** following waits until this time (performance.now()) after the learner scrolled the viewport themselves */
+  const followHoldRef = useRef(0);
+  /** our own scrolls, which must not count as the learner's */
+  const ownScrollUntilRef = useRef(0);
+  const lastFollowRef = useRef(0);
+
+  const follow = useCallback((immediate: boolean) => {
+    const viewport = viewportRef.current;
+    const point = penPointRef.current;
+    const k = scaleRef.current;
+    if (!viewport) return;
+    const now = performance.now();
+    if (!immediate && (now < followHoldRef.current || now - lastFollowRef.current < 250)) return;
+    lastFollowRef.current = now;
+    const vw = viewport.clientWidth;
+    const vh = viewport.clientHeight;
+    let left = viewport.scrollLeft;
+    let top = viewport.scrollTop;
+    if (!point) {
+      left = 0;
+      top = 0;
+    } else {
+      const px = point.x * k;
+      const py = point.y * k;
+      // keep the pen inside the middle of the window: move only when it nears an edge, then bring it to a third from the top
+      if (py < top + vh * 0.15 || py > top + vh * 0.8) top = py - vh * 0.35;
+      if (px < left + vw * 0.1 || px > left + vw * 0.9) left = px - vw * 0.5;
+    }
+    left = Math.max(0, Math.min(left, viewport.scrollWidth - vw));
+    top = Math.max(0, Math.min(top, viewport.scrollHeight - vh));
+    if (Math.abs(left - viewport.scrollLeft) < 2 && Math.abs(top - viewport.scrollTop) < 2) return;
+    ownScrollUntilRef.current = now + 900;
+    viewport.scrollTo({ left, top, behavior: immediate ? "auto" : "smooth" });
+  }, []);
+
+  // the learner's own scrolling (wheel, touch, keys, the scroll bar) holds following for a while
+  useEffect(() => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+    const hold = () => {
+      followHoldRef.current = performance.now() + FOLLOW_HOLD_MS;
+    };
+    const onScroll = () => {
+      if (performance.now() > ownScrollUntilRef.current) hold();
+    };
+    viewport.addEventListener("wheel", hold, { passive: true });
+    viewport.addEventListener("touchstart", hold, { passive: true });
+    viewport.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      viewport.removeEventListener("wheel", hold);
+      viewport.removeEventListener("touchstart", hold);
+      viewport.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   // the canvases follow the stage's size on screen, at the screen's pixel density (sharp lines on a high-density screen)
@@ -301,6 +391,7 @@ export function LectureLearningView({
   const tick = useCallback(() => {
     const seconds = currentSeconds();
     renderAt(seconds);
+    follow(false);
     showTime(seconds);
     if (seconds >= duration - END_SLACK) {
       pause();
@@ -311,7 +402,7 @@ export function LectureLearningView({
     }
     frameRef.current = requestAnimationFrame(tick);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [duration, markEnd, pause, renderAt, showTime]);
+  }, [duration, follow, markEnd, pause, renderAt, showTime]);
 
   const seek = useCallback((seconds: number) => {
     const target = Math.min(duration, Math.max(0, seconds));
@@ -321,6 +412,9 @@ export function LectureLearningView({
     const audio = audioRef.current;
     if (audioSrc && audio) audio.currentTime = target;
     renderAt(target);
+    // a jump on the bar takes the page window to where the pen is then, at once (and the learner's hold is over)
+    followHoldRef.current = 0;
+    follow(true);
     shownTimeRef.current = target;
     setTime(target);
     if (target >= duration - END_SLACK) {
@@ -328,7 +422,7 @@ export function LectureLearningView({
       pause();
       markEnd();
     }
-  }, [audioSrc, duration, markEnd, pause, renderAt]);
+  }, [audioSrc, duration, follow, markEnd, pause, renderAt]);
 
   const play = useCallback(() => {
     if (load !== "ready") return;
@@ -403,7 +497,15 @@ export function LectureLearningView({
   const speedText = `${speed}×`;
 
   return (
-    <div className="flex flex-col gap-3" data-lecture-view="" data-lecture-state={load} data-lecture-playing={playing ? "1" : "0"}>
+    // wider than the lesson column on a wide screen (up to 1040px — the page at its own size), centred on it; the column's
+    // width on a phone. Margins, not a transform, so the page image is not resampled.
+    <div
+      className="flex flex-col gap-3"
+      style={{ width: "min(calc(100vw - 2rem), 1040px)", marginLeft: "calc(50% - min(50vw - 1rem, 520px))" }}
+      data-lecture-view=""
+      data-lecture-state={load}
+      data-lecture-playing={playing ? "1" : "0"}
+    >
       {audioSrc ? (
         // the lecture's voice, when one is added (lesson file `lecture.audio.src`) — then it is the clock (see the top)
         <audio
@@ -491,21 +593,25 @@ export function LectureLearningView({
       </div>
 
       {/*
-        The stage: the textbook page at its own size in the stage (827 × 1169 of 1020 × 1170), the highlighter layer over it,
-        the pen layer on top. As wide as the column, but no taller than the window below where the stage starts (stageTop —
-        the whole page seen at once without scrolling, 사장님 2026-10-17); before that is measured, no taller than the window
-        under the header and the play row. Never narrower than 20rem.
+        The page window (viewport): as tall as the screen below the header and the play row, scrolling the page inside it —
+        it follows the pen while the lecture plays (see `follow`). The stage inside: the textbook page at its own size in the
+        stage (827 × 1169 of 1020 × 1170), the highlighter layer over it, the pen layer on top — drawn at `scale` (the window's
+        width, between MIN_SCALE and 1), so a phone pans a readable page rather than shrinking it to a stamp.
       */}
       <div
+        ref={viewportRef}
+        className="relative w-full overflow-auto overscroll-contain rounded-card border border-line bg-white"
+        style={{ maxHeight: "calc(100svh - var(--header-h, 56px) - 84px)" }}
+        data-lecture-viewport=""
+      >
+      <div
         ref={stageRef}
-        className="relative mx-auto w-full overflow-hidden rounded-card border border-line bg-white"
-        style={{
-          aspectRatio: `${STAGE_W} / ${STAGE_H}`,
-          width:
-            stageTop === null
-              ? `min(100%, max(20rem, calc((100svh - var(--header-h, 56px) - 5.5rem) * ${STAGE_W} / ${STAGE_H})))`
-              : `min(100%, max(20rem, calc((100svh - ${stageTop}px - 16px) * ${STAGE_W} / ${STAGE_H})))`,
-        }}
+        className="relative overflow-hidden bg-white"
+        style={
+          scale === null
+            ? { width: "100%", aspectRatio: `${STAGE_W} / ${STAGE_H}` }
+            : { width: `${Math.round(STAGE_W * scale)}px`, height: `${Math.round(STAGE_H * scale)}px` }
+        }
       >
         {lecture.pages.map((p) => (
           // eslint-disable-next-line @next/next/no-img-element
@@ -518,8 +624,13 @@ export function LectureLearningView({
             decoding="async"
             draggable={false}
             onError={() => setLoad("error")}
-            className={`absolute left-0 top-0 select-none ${p.page === page ? "" : "invisible"}`}
-            style={{ width: `${(PAGE_W / STAGE_W) * 100}%`, height: `${(PAGE_H / STAGE_H) * 100}%` }}
+            className={`absolute select-none ${p.page === page ? "" : "invisible"}`}
+            style={{
+              left: `${(PAGE_X / STAGE_W) * 100}%`,
+              top: `${(PAGE_Y / STAGE_H) * 100}%`,
+              width: `${(PAGE_W / STAGE_W) * 100}%`,
+              height: `${(PAGE_H / STAGE_H) * 100}%`,
+            }}
           />
         ))}
         <canvas
@@ -550,6 +661,7 @@ export function LectureLearningView({
             </button>
           </div>
         ) : null}
+      </div>
       </div>
 
       <p className="sr-only" aria-live="polite">

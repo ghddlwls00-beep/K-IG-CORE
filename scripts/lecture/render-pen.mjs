@@ -53,6 +53,11 @@ for (const s of pen.strokes) {
   paths.push(`<path d="${d}" fill="none" stroke="${p.color}" stroke-width="${p.width}" stroke-linecap="round" stroke-linejoin="round"${p.opacity ? ` stroke-opacity="${p.opacity}"` : ""}/>`);
 }
 const jpg = fs.readFileSync(path.join(MEDIA, "audio", "lecture", id, `p${String(page).padStart(3, "0")}.jpg`)).toString("base64");
-const { w, h } = pen.canvas;
-fs.writeFileSync(out, `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><rect width="${w}" height="${h}" fill="#fff"/><image href="data:image/jpeg;base64,${jpg}" width="${pen.page.w}" height="${pen.page.h}"/>${paths.join("")}</svg>`);
+// the page sits 80px right and 20px down in the pen's coordinates (the GVA window: PageNN.htm centres it under a 20px top
+// margin — measured on 27 lectures, see src/components/LectureLearningView.tsx PAGE_X)
+const PAGE_X = 80;
+const PAGE_Y = 20;
+const w = Math.max(pen.canvas.w, PAGE_X + pen.page.w);
+const h = Math.max(pen.canvas.h, PAGE_Y + pen.page.h);
+fs.writeFileSync(out, `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><rect width="${w}" height="${h}" fill="#fff"/><image href="data:image/jpeg;base64,${jpg}" x="${PAGE_X}" y="${PAGE_Y}" width="${pen.page.w}" height="${pen.page.h}"/>${paths.join("")}</svg>`);
 console.log(`${id}: page ${page} · ${paths.length} strokes${at === null ? "" : ` up to ${at}s`} → ${path.relative(ROOT, out)}`);
