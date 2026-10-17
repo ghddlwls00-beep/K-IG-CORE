@@ -171,7 +171,64 @@ function audioSeconds(audio) {
 const MANIFEST = path.join(ROOT, "docs", "lecture", "voice-manifest.json");
 const voices = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, "utf8")) : {};
 for (const [id, v] of Object.entries(voices)) {
-  if (v.src !== `/audio/lecture/${id}/voice.mp3` || !(v.durationSec > 0)) throw new Error(`voice-manifest ${id}: expected { src: "/audio/lecture/${id}/voice.mp3", durationSec > 0 }`);
+  if (v.src !== `/audio/lecture/${id}/voice.mp3` || !(v.durationSec > 0)) throw new Error(`voice-manifest ${id}: expected { src: "/audio/lecture/${id}/voice.mp3", durationSec > 0 } (no query — the build adds the version)`);
+}
+/**
+ * A voice READ at its own pace (scripts/lecture/voice/read-and-retime.mjs, 사장님 2026-10-17) has its own timeline: the pen
+ * is moved onto it through the lecture's TIME MAP, docs/lecture/voice/<id>.timemap.json — anchors [original time unit,
+ * new seconds], monotonic, numbers only. The original pen stays what the .gdb says; this build applies the map every
+ * time (no hand-edited pen copies). unitSec is unchanged (units × unitSec = seconds still holds in the views);
+ * lengthUnits and durationSec become the voice's. Strokes past the voice's end are kept (never drawn — the clock
+ * stops at the voice's length); a sample voice therefore shows only its own stretch.
+ */
+function loadTimemap(id) {
+  const file = path.join(ROOT, "docs", "lecture", "voice", `${id}.timemap.json`);
+  if (!fs.existsSync(file)) return null;
+  const m = JSON.parse(fs.readFileSync(file, "utf8"));
+  const a = m.anchors;
+  if (!Array.isArray(a) || a.length < 2) throw new Error(`${id}.timemap.json: needs ≥ 2 anchors`);
+  for (let i = 1; i < a.length; i++) if (!(a[i][0] > a[i - 1][0] && a[i][1] > a[i - 1][1])) throw new Error(`${id}.timemap.json: anchors must rise in both columns (at ${i})`);
+  return m;
+}
+/** Units → units through the map (piecewise linear; outside the anchors the nearest segment continues at slope 1). */
+function mapUnits(m, unitSec) {
+  const a = m.anchors;
+  return (t) => {
+    let sec;
+    if (t <= a[0][0]) sec = a[0][1] + (t - a[0][0]) * unitSec;
+    else {
+      sec = null;
+      for (let i = 0; i + 1 < a.length; i++) {
+        if (t <= a[i + 1][0]) {
+          const r = (a[i + 1][1] - a[i][1]) / ((a[i + 1][0] - a[i][0]) * unitSec);
+          sec = a[i][1] + (t - a[i][0]) * unitSec * r;
+          break;
+        }
+      }
+      if (sec === null) sec = a.at(-1)[1] + (t - a.at(-1)[0]) * unitSec;
+    }
+    return Math.round(sec / unitSec);
+  };
+}
+/** A short version tag for a media URL: changes whenever the object it names changes. */
+function version(obj) {
+  let h = 0x811c9dc5;
+  for (const ch of JSON.stringify(obj)) h = Math.imul(h ^ ch.charCodeAt(0), 0x01000193);
+  return (h >>> 0).toString(36);
+}
+function retimePen(penDoc, m) {
+  const f = mapUnits(m, penDoc.unitSec);
+  const strokes = penDoc.strokes.map((s) => {
+    const [t0, page, pen, x0, y0, ...rest] = s;
+    const times = [t0];
+    let t = t0;
+    for (let i = 0; i + 2 < rest.length; i += 3) { t += rest[i]; times.push(t); }
+    const mapped = times.map(f);
+    const out = [mapped[0], page, pen, x0, y0];
+    for (let i = 0; i + 2 < rest.length; i += 3) out.push(Math.max(0, mapped[i / 3 + 1] - mapped[i / 3]), rest[i + 1], rest[i + 2]);
+    return out;
+  });
+  return { ...penDoc, lengthUnits: Math.ceil(m.voiceSec / penDoc.unitSec), pageEvents: penDoc.pageEvents.map(([t, pg]) => [f(t), pg]), scrollEvents: penDoc.scrollEvents.map(([t, y]) => [f(t), y]), strokes, retimed: { anchors: m.anchors.length, voiceSec: m.voiceSec, madeAt: m.madeAt } };
 }
 
 // ---------------------------------------------------------------- main
@@ -211,7 +268,9 @@ function main() {
     const sec = audioSeconds(g.audio);
     const unitSec = sec ? sec / g.lengthUnits : UNIT_SEC_DEFAULT;
     const voice = voices[id] || null;
-    if (voice && Math.abs(voice.durationSec - sec) > 0.05) throw new Error(`${id}: voice.mp3 is ${voice.durationSec} s, the recording ${sec.toFixed(3)} s — not on the same timeline`);
+    const timemap = voice ? loadTimemap(id) : null;
+    if (voice && !timemap && Math.abs(voice.durationSec - sec) > 0.05) throw new Error(`${id}: voice.mp3 is ${voice.durationSec} s, the recording ${sec.toFixed(3)} s — not on the same timeline, and no docs/lecture/voice/${id}.timemap.json`);
+    if (timemap && Math.abs(timemap.voiceSec - voice.durationSec) > 0.05) throw new Error(`${id}: timemap voiceSec ${timemap.voiceSec} ≠ manifest durationSec ${voice.durationSec}`);
     report.unit.push(unitSec);
     const pagesUsed = [...new Set([number, ...pen.pageEvents.map(([, pg]) => pg), ...pen.segments.map((s) => s.page)])];
     // the first page shown is the lecture's own page (182 has no page record; its strokes say 82)
@@ -221,7 +280,7 @@ function main() {
     const maxY = Math.max(PAGE.h, ...pen.segments.flatMap((s) => [s.y1, s.y2]));
     const pageSrc = (pg) => `/audio/lecture/${id}/p${pad3(pg)}.jpg`;
     for (const pg of pagesUsed) writes.set(path.join(MEDIA, pageSrc(pg).slice(1)), g.pages[pg - 1]);
-    const penDoc = {
+    let penDoc = {
       v: 1,
       id,
       unitSec: Math.round(unitSec * 1e6) / 1e6,
@@ -233,6 +292,8 @@ function main() {
       // [t0, page, pen, x0, y0, (dt, dx, dy)…] — t in units (× unitSec = seconds), x/y in page pixels
       strokes,
     };
+    if (timemap) penDoc = retimePen(penDoc, timemap);
+    const lectureSec = timemap ? voice.durationSec : null;
     writes.set(path.join(MEDIA, "audio", "lecture", id, "pen.json"), JSON.stringify(penDoc));
     const title = `${book === "middle" ? "중등" : "고등"} 영어독해 ${number}강`;
     const chapter = Math.ceil(n / 10);
@@ -254,13 +315,16 @@ function main() {
       lecture: {
         book,
         number,
-        durationSec: Math.round(g.lengthUnits * unitSec * 10) / 10,
-        lengthUnits: g.lengthUnits,
+        durationSec: lectureSec ? Math.round(lectureSec * 10) / 10 : Math.round(g.lengthUnits * unitSec * 10) / 10,
+        lengthUnits: penDoc.lengthUnits,
         unitSec: penDoc.unitSec,
         pages: pagesUsed.map((pg) => ({ page: pg, src: pageSrc(pg) })),
-        pen: { src: `/audio/lecture/${id}/pen.json`, strokes: strokes.length, segments: pen.segments.length },
+        // a voiced lecture's pen and voice carry a version in the query (the browser keeps these for a year — MEDIA-02
+        // mediaRoute: free objects immutable, paid ones an hour — so a re-made voice or re-timed pen at the same path
+        // would play against the old one: lh082 preview 2026-10-17). The media gate and keys use the path only.
+        pen: { src: `/audio/lecture/${id}/pen.json${timemap ? `?v=${version(timemap)}` : ""}`, strokes: strokes.length, segments: pen.segments.length },
         // the AI voice, once made (voice-manifest.json) — the view's clock; absent until then
-        ...(voice ? { audio: { src: voice.src, durationSec: voice.durationSec } } : {}),
+        ...(voice ? { audio: { src: `${voice.src}?v=${version(voice)}`, durationSec: voice.durationSec } } : {}),
       },
       legacyPath: path.relative(SRC, file).split(path.sep).join("/"),
       legacyEncoding: "euc-kr",

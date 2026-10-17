@@ -53,7 +53,12 @@ function cut(silences, from, to, maxFrames) {
 }
 
 function wordsOf(dir) {
-  const azure = path.join(dir, "azure-fast.json"), whisper = path.join(dir, "whisper.json");
+  const scribe = path.join(dir, "scribe.json"), azure = path.join(dir, "azure-fast.json"), whisper = path.join(dir, "whisper.json");
+  // ElevenLabs Scribe first (lh082 2026-10-17: it heard what whisper lost), then Azure, then whisper
+  if (fs.existsSync(scribe)) {
+    const j = JSON.parse(fs.readFileSync(scribe, "utf8"));
+    return { source: "scribe", words: (j.words || []).filter((w) => w.type === "word").map((w) => ({ t: w.start, d: +(w.end - w.start).toFixed(3), w: w.text })) };
+  }
   if (fs.existsSync(azure)) {
     const j = JSON.parse(fs.readFileSync(azure, "utf8"));
     return { source: "azure-fast", words: (j.phrases || []).flatMap((p) => (p.words || []).map((w) => ({ t: w.offsetMilliseconds / 1000, d: w.durationMilliseconds / 1000, w: w.text, locale: p.locale }))) };

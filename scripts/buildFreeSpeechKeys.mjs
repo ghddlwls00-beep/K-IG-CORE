@@ -163,7 +163,8 @@ for (const [course, ids] of Object.entries(FREE_PREVIEW_LESSON_IDS)) {
       ? [...(lecture.pages || []), lecture.pen, lecture.audio].filter(Boolean)
       : [];
     for (const media of [...(lesson.audio || []), ...(lesson.video || []), ...lectureMedia]) {
-      const src = String(media?.src || "");
+      // a voiced lecture's pen and voice carry `?v=…` (build-lecture.mjs — the browser's year-long cache); the key is the path
+      const src = String(media?.src || "").split("?")[0];
       if (/^\/(audio|video)\//.test(src)) mediaKeys.add(src.slice(1));
     }
   }
