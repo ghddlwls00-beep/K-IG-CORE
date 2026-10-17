@@ -1,0 +1,36 @@
+{
+  "id": "lh077",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 77강",
+  "label": "고등 영어독해 71~80강",
+  "menuLabel": "77강",
+  "unit": 18,
+  "part": 77,
+  "order": 176,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 77,
+    "durationSec": 200.9,
+    "lengthUnits": 1115,
+    "unitSec": 0.180222,
+    "pages": [
+      {
+        "page": 77,
+        "src": "/audio/lecture/lh077/p077.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh077/pen.json",
+      "strokes": 99,
+      "segments": 2837
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해177.gdb",
+  "legacyEncoding": "euc-kr"
+}

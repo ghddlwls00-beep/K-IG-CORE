@@ -1,0 +1,36 @@
+{
+  "id": "lh061",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 61강",
+  "label": "고등 영어독해 61~70강",
+  "menuLabel": "61강",
+  "unit": 17,
+  "part": 61,
+  "order": 160,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 61,
+    "durationSec": 342.5,
+    "lengthUnits": 1901,
+    "unitSec": 0.180185,
+    "pages": [
+      {
+        "page": 61,
+        "src": "/audio/lecture/lh061/p061.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh061/pen.json",
+      "strokes": 89,
+      "segments": 3431
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해161.gdb",
+  "legacyEncoding": "euc-kr"
+}

@@ -7,6 +7,7 @@ import { useProgress } from "./ProgressProvider";
 import { usePassoffProgress } from "./PassoffProgressProvider";
 import { useLicense } from "./LicenseProvider";
 import { getLessonGate, subscribeLessonGate } from "@/lib/lessonGate";
+import { lectureChapterOf } from "@/lib/lectureChapters";
 
 const PASSOFF_COURSE = "passoff-grammar";
 
@@ -72,12 +73,15 @@ export function LessonEndBar({
   prev: Neighbour;
   next: Neighbour;
 }) {
-  const { isCompleted, toggleComplete, flushStudentUpdates, flushAdultUpdates, studentSyncStatus, adultSyncStatus } = useProgress();
+  const {
+    isCompleted, toggleComplete, flushStudentUpdates, flushAdultUpdates, flushLectureUpdates, studentSyncStatus, adultSyncStatus, lectureSyncStatus,
+  } = useProgress();
   // PASS-OFF GRAMMAR's completions live on the server (PassoffProgressProvider) — the lessons it counts, and those on their way
   const { countedIds: passoffCounted } = usePassoffProgress();
-  const { hasActiveLicense, licenseInfo, studentProgress, adultProgress } = useLicense();
-  // STUDENT · ADULT (chapter courses): completion opens chapters on the server, so '다음 강의' waits for the save
-  const isChapterCourse = course === "student" || course === "adult";
+  const { hasActiveLicense, licenseInfo, studentProgress, adultProgress, lectureProgress } = useLicense();
+  // STUDENT · ADULT · LECTURE (chapter courses — LECTURE 2026-10-17, as ADULT): completion opens chapters on the server, so
+  // '다음 강의' waits for the save. LECTURE's view registers its gate (played to the end once) as STUDENT's · ADULT's do.
+  const isChapterCourse = course === "student" || course === "adult" || course === "lecture";
   const router = useRouter();
   const [saving, setSaving] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
@@ -99,14 +103,16 @@ export function LessonEndBar({
 
   // STUDENT · ADULT chapter lock (moved from the view's completion box, 2026-10-07): a period pass opens the next chapter only once
   // this chapter is finished on the server — until then '다음 강의' into it would land on the lock screen ('순차 학습 잠금')
-  const chapterOf = (id: string) => Number(id.match(/^[sa](\d+)-/)?.[1] ?? 0);
+  // LECTURE's ids carry no chapter number ('lm013' is chapter 2 — lectureChapters.ts)
+  const chapterOf = (id: string) =>
+    course === "lecture" ? (lectureChapterOf(id) ?? 0) : Number(id.match(/^[sa](\d+)-/)?.[1] ?? 0);
   const thisChapter = chapterOf(lessonId);
   const nextChapter = next ? chapterOf(next.href.split("/").pop() ?? "") : 0;
   const periodPass = hasActiveLicense && licenseInfo?.plan !== "LIFE";
   const lockedByChapter = (unlockedThrough: number | null | undefined) =>
     Boolean(isChapterCourse && next && periodPass && typeof unlockedThrough === "number" && nextChapter > thisChapter && nextChapter > unlockedThrough);
-  const chapterRecord = course === "adult" ? adultProgress : studentProgress;
-  const chapterSync = course === "adult" ? adultSyncStatus : studentSyncStatus;
+  const chapterRecord = course === "adult" ? adultProgress : course === "lecture" ? lectureProgress : studentProgress;
+  const chapterSync = course === "adult" ? adultSyncStatus : course === "lecture" ? lectureSyncStatus : studentSyncStatus;
   const nextLocked = (lockedByChapter(chapterRecord?.unlockedThrough) && chapterSync !== "syncing" && chapterSync !== "pending") || lockedAfterSave;
 
   async function goNext(event: MouseEvent<HTMLAnchorElement>) {
@@ -116,7 +122,7 @@ export function LessonEndBar({
     if (saving) return;
     setSaving(true);
     setNotice(null);
-    const result = await (course === "adult" ? flushAdultUpdates() : flushStudentUpdates());
+    const result = await (course === "adult" ? flushAdultUpdates() : course === "lecture" ? flushLectureUpdates() : flushStudentUpdates());
     if (result.status === "offline" || result.status === "error") {
       setNotice(
         result.status === "offline"

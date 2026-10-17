@@ -25,14 +25,29 @@
  *   --no-mutating-routes : /api/admin/ 와 /api/license/ 의 POST(상태를 바꾸는 계열 — 세션 없이 401 이 나는 것을 보는 것이지만 회귀 점검
  *                          명령서는 부르는 것 자체를 금함)를 건너뛰고 '건너뜀' 으로 적는다. 회귀 점검 1002 에서는 이것으로 돌린다.
  *   --break=adult-free-chapter : ADULT 무료 목록 사본(메모리)에서 a1-2 를 뺌 → chapter=1 이 돌려준 a1-2 가 '무료 아님' → FAIL · exit 1
+ *
+ * LECTURE (2026-10-17 · docs/lecture/도구-기록.md): 학습자 진도 GET · POST /api/progress/lecture (이용권 없이 401) · 관리자
+ *   POST /api/admin/lecture-progress (401 — --no-mutating-routes 면 건너뜀). LECTURE 에는 장 듣기 API 가 없다(소리 없음).
+ *   --base <주소> (또는 환경 BASE): 올리기 전 로컬 운영 빌드에(전에는 운영 주소 고정).
+ *   --break=lecture-open : 'GET /api/progress/lecture' 줄이 부르는 주소를 무료 강의 필기(/audio/lecture/lm001/pen.json — 누구나 200)로 바꿈
+ *                          → 이용권 없이 열린 LECTURE 주소를 그 줄이 FAIL 로 잡는지 · exit 1
  */
 const fs = require("fs");
 const path = require("path");
-const BASE = "https://k-ig-core.vercel.app";
+const BASE = (() => {
+  const at = process.argv.indexOf("--base");
+  if (at >= 0) {
+    const v = process.argv[at + 1];
+    if (!v || v.startsWith("--")) throw new Error("--base 다음에 사이트 주소를 주어야 함(예: --base http://localhost:3392)");
+    return v;
+  }
+  const eq = process.argv.find((a) => a.startsWith("--base="));
+  return eq ? eq.slice("--base=".length) : process.env.BASE || "https://k-ig-core.vercel.app";
+})().replace(/\/+$/, "");
 const OUT = path.join(__dirname, "../out");
 const NO_MUTATING = process.argv.includes("--no-mutating-routes");
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
-if (BREAK && BREAK !== "adult-free-chapter") { console.error(`모르는 --break=${BREAK} (adult-free-chapter)`); process.exit(2); }
+if (BREAK && !["adult-free-chapter", "lecture-open"].includes(BREAK)) { console.error(`모르는 --break=${BREAK} (adult-free-chapter · lecture-open)`); process.exit(2); }
 const REPO = path.resolve(__dirname, "../../..");
 // license.ts FREE_PREVIEW_LESSON_IDS — 과정마다 무료 체험 강의(글자에서 읽음)
 const FREE = (() => {
@@ -81,6 +96,8 @@ async function req(method, url, body) {
     // 회귀 점검 1002
     ["POST", "/api/admin/adult-progress"],
     ["POST", "/api/admin/passoff-progress"],
+    // LECTURE (2026-10-17) — POST 만 있음(GET 은 405 · 본문 없음, 로컬 3392 에서 잼)
+    ["POST", "/api/admin/lecture-progress"],
   ]) {
     if (NO_MUTATING && isMutating(method, url)) { rec("AUTH", `${method} ${url} (no cookie)`, "401, no data", "건너뜀(--no-mutating-routes)", true, "skipped"); continue; }
     const r = await req(method, url, method === "POST" ? {} : undefined);
@@ -108,8 +125,14 @@ async function req(method, url, body) {
     ["GET", "/api/progress/passoff-grammar"],
     ["POST", "/api/progress/passoff-grammar", {}],
     ["GET", "/api/adult/chapter-audio?chapter=2"],
+    // LECTURE (2026-10-17)
+    ["GET", "/api/progress/lecture"],
+    ["POST", "/api/progress/lecture", {}],
   ]) {
-    const r = await req(method, url, body);
+    // 깨기(머리말): 줄 이름은 그대로, 부르는 주소만 누구나 열리는 LECTURE 무료 필기로
+    const target = BREAK === "lecture-open" && method === "GET" && url === "/api/progress/lecture" ? "/audio/lecture/lm001/pen.json" : url;
+    if (target !== url) console.log(`[일부러 깸] GET ${url} 줄이 ${target} 를 부름`);
+    const r = await req(method, target, body);
     rec("LICENCE", `${method} ${url} (no licence)`, "401", String(r.status), r.status === 401);
   }
   // 장 1 전체 듣기(이용권 없이): 무료 — 그리고 돌려준 강의가 그 과정의 무료 체험 강의뿐(회귀 점검 1002: 강의 목록까지 봄)
@@ -165,7 +188,9 @@ async function req(method, url, body) {
   }
   rec("BUNDLE", `${chunks.size} JS chunks (${Math.round(bytes / 1024)} KB) from ${pages.join(", ")}`, "no secret-looking strings", hits.length ? hits.join("; ") : "none", hits.length === 0);
 
-  fs.writeFileSync(path.join(OUT, BREAK ? `security-probe-break-${BREAK}.json` : "security-probe.json"), JSON.stringify({ at: new Date().toISOString(), base: BASE, noMutatingRoutes: NO_MUTATING, results }, null, 1));
+  // 운영이 아닌 주소(--base)의 결과는 운영 결과 파일을 덮지 않게 따로(LECTURE 2026-10-17)
+  const local = BASE !== "https://k-ig-core.vercel.app" ? "-local" : "";
+  fs.writeFileSync(path.join(OUT, BREAK ? `security-probe${local}-break-${BREAK}.json` : `security-probe${local}.json`), JSON.stringify({ at: new Date().toISOString(), base: BASE, noMutatingRoutes: NO_MUTATING, results }, null, 1));
   const skipped = results.filter((r) => r.note === "skipped").length;
   const pass = results.filter((r) => r.pass && r.note !== "skipped").length;
   const fail = results.filter((r) => !r.pass).length;

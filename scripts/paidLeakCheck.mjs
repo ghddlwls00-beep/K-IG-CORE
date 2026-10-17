@@ -31,7 +31,22 @@ import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const COURSES = ["student", "adult", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"]; // as the probe
+const COURSES = ["student", "adult", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading", "lecture"]; // as the probe
+/**
+ * LECTURE (2026-10-17, docs/lecture/도구-기록.md). A lecture file holds no paid TEXT — only its title and
+ * chapter name, which the public list shows. What is paid is the textbook page images and the pen
+ * strokes in the private bucket, which the lesson view loads from "/audio/lecture/<id>/p<NN>.jpg" and
+ * "/audio/lecture/<id>/pen.json". An image cannot be searched for as text, so a locked lecture's needles
+ * are those media keys themselves (lecture.pages[].src · lecture.pen.src · a later lecture.audio.src),
+ * flattened like everything else: "audiolecturelm050p050jpg" (24 characters, over MIN). A public file
+ * that names one has published the way to a locked lecture's content. The pen strokes themselves are not
+ * in this repository (it is public), so no file this check reads can hold them; the bundle probe looks for
+ * them in the public JS and JSON when a local copy of the bucket is present.
+ */
+const lectureMediaKeys = (d) => {
+  const L = d.lecture || {};
+  return [...(L.pages || []).map((p) => p && p.src), L.pen && L.pen.src, L.audio && L.audio.src].filter((s) => typeof s === "string" && s);
+};
 const MIN = 20;
 
 /** Transpile a TS module that has no runtime imports (license.ts) — as buildFreeSpeechKeys.mjs does. */
@@ -88,6 +103,7 @@ export function paidNeedles({ publicExcept = [] } = {}) {
       const f = flat(row.join(" "));
       if (f.length >= MIN) needles.push({ kind: "grid-row", raw: row.join(" "), f });
     }
+    if (course === "lecture") for (const src of lectureMediaKeys(d)) needles.push({ kind: "lecture-media", raw: src, f: flat(src) });
     return needles;
   };
   const publicStrings = new Set();

@@ -1,0 +1,36 @@
+{
+  "id": "lh020",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 20강",
+  "label": "고등 영어독해 11~20강",
+  "menuLabel": "20강",
+  "unit": 12,
+  "part": 20,
+  "order": 119,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 20,
+    "durationSec": 334.8,
+    "lengthUnits": 1857,
+    "unitSec": 0.180314,
+    "pages": [
+      {
+        "page": 20,
+        "src": "/audio/lecture/lh020/p020.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh020/pen.json",
+      "strokes": 96,
+      "segments": 4834
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해120.gdb",
+  "legacyEncoding": "euc-kr"
+}

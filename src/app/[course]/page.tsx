@@ -89,6 +89,7 @@ const COURSE_OG_IMAGE: Record<string, string> = {
   cnn: "/images/og/cnn.jpg",
   student: "/images/og/students.jpg",
   adult: "/images/og/men.jpg",
+  lecture: "/images/og/lecture.jpg",
   // GRAMMAR I's banner until PASS-OFF GRAMMAR has its own (docs/pass-off-grammar/작업기록.md)
   "passoff-grammar": "/images/og/passoff-grammar.jpg",
   chinese: "/images/og/chinese.jpg",
@@ -156,7 +157,7 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
         <p className="text-caption text-ink-soft tabular-nums">
           {listed.length}개 강의
           {sections.length > 0
-            ? course.slug === "student" || course.slug === "adult"
+            ? course.slug === "student" || course.slug === "adult" || course.slug === "lecture"
               ? ` · ${sections.length}장`
               : course.slug === "passoff-grammar"
                 ? ` · 대주제 ${sections.length}개`

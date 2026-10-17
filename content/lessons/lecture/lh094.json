@@ -1,0 +1,36 @@
+{
+  "id": "lh094",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 94강",
+  "label": "고등 영어독해 91~100강",
+  "menuLabel": "94강",
+  "unit": 20,
+  "part": 94,
+  "order": 193,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 94,
+    "durationSec": 176.4,
+    "lengthUnits": 979,
+    "unitSec": 0.180161,
+    "pages": [
+      {
+        "page": 94,
+        "src": "/audio/lecture/lh094/p094.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh094/pen.json",
+      "strokes": 49,
+      "segments": 1979
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해194.gdb",
+  "legacyEncoding": "euc-kr"
+}

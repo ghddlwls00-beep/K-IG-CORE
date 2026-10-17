@@ -12,6 +12,7 @@ import {
 } from "@/lib/license";
 import { adoptDeviceId, getOrCreateDeviceId, hasStoredDeviceId, type ClientDevice } from "@/lib/device";
 import { passoffTopicOf, type PassoffProgressSnapshot } from "@/lib/passoffUnlock";
+import { lectureChapterOf } from "@/lib/lectureChapters";
 
 /**
  * What this browser keeps in localStorage "kig:license:v1".
@@ -41,7 +42,7 @@ interface StoredLicense {
  * the section pages or any non-lesson route.
  */
 const SERVER_GATED_LESSON_PATH =
-  /^\/(ld|reading|phonics|grammar1|grammar2|cnn|adult|student|passoff-grammar)\/[^/]+$/;
+  /^\/(ld|reading|phonics|grammar1|grammar2|cnn|adult|lecture|student|passoff-grammar)\/[^/]+$/;
 
 interface LicenseContextType {
   hasActiveLicense: boolean;
@@ -58,6 +59,7 @@ interface LicenseContextType {
    */
   studentProgressSettled: boolean;
   adultProgressSettled: boolean;
+  lectureProgressSettled: boolean;
   licenseInfo: LicenseInfo | null;
   currentDevice: ClientDevice;
   isUnlocked: (
@@ -82,6 +84,14 @@ interface LicenseContextType {
   adultProgress: StudentProgressSnapshot | null;
   refreshAdultProgress: () => Promise<StudentProgressSnapshot | null>;
   applyAdultProgress: (progress: StudentProgressSnapshot) => void;
+  /**
+   * LECTURE's chapter lock (2026-10-17) — ADULT's, from LECTURE's own record (/api/progress/lecture): the same snapshot
+   * shape, asked for when a licence becomes active (a STUDENT pass gets 403 and keeps null), written back by
+   * ProgressProvider's LECTURE queue.
+   */
+  lectureProgress: StudentProgressSnapshot | null;
+  refreshLectureProgress: () => Promise<StudentProgressSnapshot | null>;
+  applyLectureProgress: (progress: StudentProgressSnapshot) => void;
   /**
    * PASS-OFF GRAMMAR's topic lock as the server last answered — null without a licence or before the first answer.
    * PassoffProgressProvider reads and writes it (the server decides; isUnlocked only shows it).
@@ -145,6 +155,8 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
   const [licenseSettled, setLicenseSettled] = useState(false);
   const [studentProgressSettled, setStudentProgressSettled] = useState(false);
   const [adultProgressSettled, setAdultProgressSettled] = useState(false);
+  const [lectureProgress, setLectureProgress] = useState<StudentProgressSnapshot | null>(null);
+  const [lectureProgressSettled, setLectureProgressSettled] = useState(false);
 
   useEffect(() => {
     const updateClock = () => setClock(Date.now());
@@ -360,6 +372,31 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
     }
   }, [hasActiveLicense, refreshAdultProgress]);
 
+  // LECTURE (2026-10-17) — as ADULT above, from its own record. Asked for only by a plan that opens LECTURE (an all-pass):
+  // a STUDENT pass would get 403 anyway, and keeps null — settled, so nothing waits for it.
+  const refreshLectureProgress = useCallback(async (): Promise<StudentProgressSnapshot | null> => {
+    try {
+      const response = await fetch("/api/progress/lecture", { cache: "no-store" });
+      const data = await response.json();
+      if (!response.ok || !data.success) return null;
+      setLectureProgress(data.progress);
+      return data.progress as StudentProgressSnapshot;
+    } catch {
+      return null;
+    } finally {
+      setLectureProgressSettled(true);
+    }
+  }, []);
+
+  const lecturePlanOpens = hasActiveLicense && planOpensCourse(stored?.plan, "lecture");
+  useEffect(() => {
+    if (lecturePlanOpens) void refreshLectureProgress();
+    else {
+      setLectureProgress(null);
+      setLectureProgressSettled(false);
+    }
+  }, [lecturePlanOpens, refreshLectureProgress]);
+
   const licenseInfo: LicenseInfo | null = stored
     ? {
         maskedKey: stored.maskedKey ?? "",
@@ -403,6 +440,15 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       if (stored.plan === "LIFE") return true;
       const match = lessonId.match(/^a(\d+)-/);
       return Boolean(match && Number(match[1]) <= (adultProgress?.unlockedThrough || 1));
+    }
+
+    // LECTURE (2026-10-17) opens chapter by chapter as ADULT — as its own record last answered; chapter 1 until it has.
+    // LIFE: all. A STUDENT pass opens none of it (planOpensCourse — 사장님 "올패스로만").
+    if (courseSlug === "lecture") {
+      if (!planOpensCourse(stored.plan, courseSlug)) return false;
+      if (stored.plan === "LIFE") return true;
+      const chapter = lectureChapterOf(lessonId);
+      return chapter !== null && chapter <= (lectureProgress?.unlockedThrough || 1);
     }
 
     // PASS-OFF GRAMMAR opens topic by topic (설계 §5) — as the server last answered; TOPIC 1 until it has. LIFE: all.
@@ -539,6 +585,7 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         // without an active licence there is no server record to wait for
         studentProgressSettled: !hasActiveLicense || studentProgressSettled,
         adultProgressSettled: !hasActiveLicense || adultProgressSettled,
+        lectureProgressSettled: !lecturePlanOpens || lectureProgressSettled,
         licenseInfo,
         currentDevice,
         isUnlocked,
@@ -554,6 +601,9 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
         adultProgress,
         refreshAdultProgress,
         applyAdultProgress: setAdultProgress,
+        lectureProgress,
+        refreshLectureProgress,
+        applyLectureProgress: setLectureProgress,
         passoffProgress,
         applyPassoffProgress: setPassoffSnapshot,
       }}

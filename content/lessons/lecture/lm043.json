@@ -1,0 +1,36 @@
+{
+  "id": "lm043",
+  "course": "lecture",
+  "series": "lm",
+  "variant": "main",
+  "pairId": null,
+  "title": "중등 영어독해 43강",
+  "label": "중등 영어독해 41~50강",
+  "menuLabel": "43강",
+  "unit": 5,
+  "part": 43,
+  "order": 42,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "middle",
+    "number": 43,
+    "durationSec": 174.3,
+    "lengthUnits": 967,
+    "unitSec": 0.180253,
+    "pages": [
+      {
+        "page": 43,
+        "src": "/audio/lecture/lm043/p043.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lm043/pen.json",
+      "strokes": 66,
+      "segments": 1786
+    }
+  },
+  "legacyPath": "중등영어 독해043.gdb",
+  "legacyEncoding": "euc-kr"
+}

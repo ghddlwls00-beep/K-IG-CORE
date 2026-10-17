@@ -109,6 +109,8 @@ let lessonsSeen = 0;
 for (const [course, ids] of Object.entries(FREE_PREVIEW_LESSON_IDS)) {
   // CNN keeps its original broadcast audio and never requests a generated clip.
   if (course === "cnn") continue;
+  // LECTURE (2026-10-17) speaks nothing — no voice yet (docs/lecture/README.md); its free media are listed below.
+  if (course === "lecture") continue;
   const index = readJson(path.join(ROOT, "content", "courses", `${course}.json`))?.lessons || [];
   for (const id of ids) {
     const lesson = readJson(path.join(LESSONS, course, `${id}.json`));
@@ -154,7 +156,13 @@ for (const [course, ids] of Object.entries(FREE_PREVIEW_LESSON_IDS)) {
     const lesson = readJson(path.join(LESSONS, course, `${id}.json`));
     if (!lesson) throw new Error(`free preview lesson ${course}/${id} has no file — FREE_PREVIEW_LESSON_IDS is stale`);
     mediaLessons += 1;
-    for (const media of [...(lesson.audio || []), ...(lesson.video || [])]) {
+    // LECTURE (2026-10-17): a free lecture's textbook pages and its pen file — the exact paths its lesson file lists
+    // (lecture.pages[].src · lecture.pen.src · lecture.audio.src once a voice is added), never a folder
+    const lecture = lesson.lecture || null;
+    const lectureMedia = lecture
+      ? [...(lecture.pages || []), lecture.pen, lecture.audio].filter(Boolean)
+      : [];
+    for (const media of [...(lesson.audio || []), ...(lesson.video || []), ...lectureMedia]) {
       const src = String(media?.src || "");
       if (/^\/(audio|video)\//.test(src)) mediaKeys.add(src.slice(1));
     }

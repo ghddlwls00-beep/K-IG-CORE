@@ -1,0 +1,36 @@
+{
+  "id": "lh007",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 7강",
+  "label": "고등 영어독해 1~10강",
+  "menuLabel": "7강",
+  "unit": 11,
+  "part": 7,
+  "order": 106,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 7,
+    "durationSec": 241.7,
+    "lengthUnits": 1340,
+    "unitSec": 0.180404,
+    "pages": [
+      {
+        "page": 7,
+        "src": "/audio/lecture/lh007/p007.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh007/pen.json",
+      "strokes": 83,
+      "segments": 2568
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해107.gdb",
+  "legacyEncoding": "euc-kr"
+}

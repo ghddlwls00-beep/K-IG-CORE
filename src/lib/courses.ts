@@ -118,6 +118,26 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     lessonNaming: "number",
     series: [{ slug: "gh2", title: "Composition Practice", prefix: "gh2-" }],
   },
+  // LECTURE (2026-10-17, docs/lecture/README.md) — the 200 GVA reading lectures (중등 영어독해 1~100 · 고등 영어독해 1~100) from the
+  // owner's .gdb files (scripts/lecture/build-lecture.mjs): each plays a textbook page with the teacher's pen notes in their
+  // original timing. No voice yet (사장님 — an AI voice per lecture later). Lessons "lm001"–"lm100" · "lh001"–"lh100", 20 chapters
+  // of 10. Not the retired "gva" course: nothing paid is in content/ or public/ — pages and pen files are private R2 objects
+  // behind /audio/lecture/ (mediaAccess.ts).
+  {
+    slug: "lecture",
+    tab: "lecture",
+    legacyFolder: "lecture",
+    numbering: "sequence",
+    title: "LECTURE",
+    titleEn: "Lecture",
+    kind: "desktop-legacy",
+    // UI검토-1007 7번: 하는 일대로 — 중등 · 고등 독해 지문 200개, 교재 쪽 위에 선생님 필기가 그려지는 강의
+    description: "중등 · 고등 영어 독해 지문 200개를 선생님 필기로 풀어 주는 강의예요. 재생하면 교재 쪽 위에 필기가 그때그때 그려져요.",
+    series: [
+      { slug: "lm", title: "중등 영어독해", prefix: "lm" },
+      { slug: "lh", title: "고등 영어독해", prefix: "lh" },
+    ],
+  },
   {
     slug: "cnn",
     tab: "cnn",

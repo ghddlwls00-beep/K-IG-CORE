@@ -1,0 +1,36 @@
+{
+  "id": "lh076",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 76강",
+  "label": "고등 영어독해 71~80강",
+  "menuLabel": "76강",
+  "unit": 18,
+  "part": 76,
+  "order": 175,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 76,
+    "durationSec": 194.5,
+    "lengthUnits": 1079,
+    "unitSec": 0.180293,
+    "pages": [
+      {
+        "page": 76,
+        "src": "/audio/lecture/lh076/p076.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh076/pen.json",
+      "strokes": 67,
+      "segments": 2534
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해176.gdb",
+  "legacyEncoding": "euc-kr"
+}

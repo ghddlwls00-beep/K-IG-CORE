@@ -1,0 +1,36 @@
+{
+  "id": "lh054",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 54강",
+  "label": "고등 영어독해 51~60강",
+  "menuLabel": "54강",
+  "unit": 16,
+  "part": 54,
+  "order": 153,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 54,
+    "durationSec": 282.6,
+    "lengthUnits": 1569,
+    "unitSec": 0.180141,
+    "pages": [
+      {
+        "page": 54,
+        "src": "/audio/lecture/lh054/p054.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh054/pen.json",
+      "strokes": 82,
+      "segments": 3248
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해154.gdb",
+  "legacyEncoding": "euc-kr"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "lh066",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 66강",
+  "label": "고등 영어독해 61~70강",
+  "menuLabel": "66강",
+  "unit": 17,
+  "part": 66,
+  "order": 165,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 66,
+    "durationSec": 393.4,
+    "lengthUnits": 2183,
+    "unitSec": 0.18021,
+    "pages": [
+      {
+        "page": 66,
+        "src": "/audio/lecture/lh066/p066.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh066/pen.json",
+      "strokes": 69,
+      "segments": 3653
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해166.gdb",
+  "legacyEncoding": "euc-kr"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "lh045",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 45강",
+  "label": "고등 영어독해 41~50강",
+  "menuLabel": "45강",
+  "unit": 15,
+  "part": 45,
+  "order": 144,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 45,
+    "durationSec": 278.6,
+    "lengthUnits": 1544,
+    "unitSec": 0.180415,
+    "pages": [
+      {
+        "page": 45,
+        "src": "/audio/lecture/lh045/p045.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh045/pen.json",
+      "strokes": 79,
+      "segments": 3321
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해145.gdb",
+  "legacyEncoding": "euc-kr"
+}

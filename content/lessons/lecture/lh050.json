@@ -1,0 +1,36 @@
+{
+  "id": "lh050",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 50강",
+  "label": "고등 영어독해 41~50강",
+  "menuLabel": "50강",
+  "unit": 15,
+  "part": 50,
+  "order": 149,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 50,
+    "durationSec": 197.8,
+    "lengthUnits": 1097,
+    "unitSec": 0.180283,
+    "pages": [
+      {
+        "page": 50,
+        "src": "/audio/lecture/lh050/p050.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh050/pen.json",
+      "strokes": 105,
+      "segments": 2962
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해150.gdb",
+  "legacyEncoding": "euc-kr"
+}

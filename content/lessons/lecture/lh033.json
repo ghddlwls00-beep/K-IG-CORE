@@ -1,0 +1,36 @@
+{
+  "id": "lh033",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 33강",
+  "label": "고등 영어독해 31~40강",
+  "menuLabel": "33강",
+  "unit": 14,
+  "part": 33,
+  "order": 132,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 33,
+    "durationSec": 319.2,
+    "lengthUnits": 1772,
+    "unitSec": 0.180142,
+    "pages": [
+      {
+        "page": 33,
+        "src": "/audio/lecture/lh033/p033.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh033/pen.json",
+      "strokes": 138,
+      "segments": 2354
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해133.gdb",
+  "legacyEncoding": "euc-kr"
+}

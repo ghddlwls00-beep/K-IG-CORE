@@ -1,0 +1,36 @@
+{
+  "id": "lh052",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 52강",
+  "label": "고등 영어독해 51~60강",
+  "menuLabel": "52강",
+  "unit": 16,
+  "part": 52,
+  "order": 151,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 52,
+    "durationSec": 296.3,
+    "lengthUnits": 1643,
+    "unitSec": 0.180355,
+    "pages": [
+      {
+        "page": 52,
+        "src": "/audio/lecture/lh052/p052.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh052/pen.json",
+      "strokes": 75,
+      "segments": 3398
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해152.gdb",
+  "legacyEncoding": "euc-kr"
+}

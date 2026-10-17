@@ -1,0 +1,36 @@
+{
+  "id": "lh019",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 19강",
+  "label": "고등 영어독해 11~20강",
+  "menuLabel": "19강",
+  "unit": 12,
+  "part": 19,
+  "order": 118,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 19,
+    "durationSec": 327.6,
+    "lengthUnits": 1816,
+    "unitSec": 0.180389,
+    "pages": [
+      {
+        "page": 19,
+        "src": "/audio/lecture/lh019/p019.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh019/pen.json",
+      "strokes": 111,
+      "segments": 3951
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해119.gdb",
+  "legacyEncoding": "euc-kr"
+}

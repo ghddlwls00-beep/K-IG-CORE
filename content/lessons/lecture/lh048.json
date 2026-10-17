@@ -1,0 +1,36 @@
+{
+  "id": "lh048",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 48강",
+  "label": "고등 영어독해 41~50강",
+  "menuLabel": "48강",
+  "unit": 15,
+  "part": 48,
+  "order": 147,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 48,
+    "durationSec": 304.4,
+    "lengthUnits": 1690,
+    "unitSec": 0.180124,
+    "pages": [
+      {
+        "page": 48,
+        "src": "/audio/lecture/lh048/p048.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh048/pen.json",
+      "strokes": 172,
+      "segments": 5197
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해148.gdb",
+  "legacyEncoding": "euc-kr"
+}

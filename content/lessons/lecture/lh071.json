@@ -1,0 +1,36 @@
+{
+  "id": "lh071",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 71강",
+  "label": "고등 영어독해 71~80강",
+  "menuLabel": "71강",
+  "unit": 18,
+  "part": 71,
+  "order": 170,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 71,
+    "durationSec": 173.1,
+    "lengthUnits": 961,
+    "unitSec": 0.180103,
+    "pages": [
+      {
+        "page": 71,
+        "src": "/audio/lecture/lh071/p071.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh071/pen.json",
+      "strokes": 67,
+      "segments": 2716
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해171.gdb",
+  "legacyEncoding": "euc-kr"
+}

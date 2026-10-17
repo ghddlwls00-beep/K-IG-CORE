@@ -84,7 +84,8 @@ export function isStudentOnlyPlan(plan?: string | null): boolean {
 /**
  * The courses a STUDENT pass ("STU…" plans) opens. PASS-OFF GRAMMAR joined STUDENT on the
  * owner's decision (D3, 2026-09-27 — docs/pass-off-grammar/설계.md §6), ADULT on the owner's
- * answer of 2026-10-02 ("STUDENT 이용권도 열기"). Every other course needs an all-pass.
+ * answer of 2026-10-02 ("STUDENT 이용권도 열기"). Every other course needs an all-pass — LECTURE among them
+ * (사장님 2026-10-17 "올패스로만", docs/lecture/README.md), so it is deliberately not in this list.
  */
 export const STUDENT_PASS_COURSES: readonly string[] = ["student", "passoff-grammar", "adult"];
 
@@ -150,6 +151,9 @@ export function getPlanLabel(plan: LicensePlan | string): string {
 export const FREE_PREVIEW_LESSON_IDS: Record<string, readonly string[]> = {
   student: ["s1-1", "s1-2"],
   adult: ["a1-1", "a1-2"],
+  // LECTURE (2026-10-17 사장님 '다른 섹션과 같게') — 1장 1·2강. Their page images and pen files are listed exactly in
+  // generated/freeMediaKeys.json (scripts/buildFreeSpeechKeys.mjs); every other lecture's need an all-pass.
+  lecture: ["lm001", "lm002"],
   // D4 — the first two lessons, as every course. The paid STUDENT sentences of pg01-1 are not in
   // its file: a licence adds them on the server (src/lib/passoffContent.ts).
   "passoff-grammar": ["pg01-1", "pg01-2"],

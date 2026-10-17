@@ -1,0 +1,36 @@
+{
+  "id": "lh016",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 16강",
+  "label": "고등 영어독해 11~20강",
+  "menuLabel": "16강",
+  "unit": 12,
+  "part": 16,
+  "order": 115,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 16,
+    "durationSec": 476.1,
+    "lengthUnits": 2642,
+    "unitSec": 0.180219,
+    "pages": [
+      {
+        "page": 16,
+        "src": "/audio/lecture/lh016/p016.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh016/pen.json",
+      "strokes": 188,
+      "segments": 7110
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해116.gdb",
+  "legacyEncoding": "euc-kr"
+}

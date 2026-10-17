@@ -1,0 +1,36 @@
+{
+  "id": "lh041",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 41강",
+  "label": "고등 영어독해 41~50강",
+  "menuLabel": "41강",
+  "unit": 15,
+  "part": 41,
+  "order": 140,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 41,
+    "durationSec": 268.3,
+    "lengthUnits": 1489,
+    "unitSec": 0.180219,
+    "pages": [
+      {
+        "page": 41,
+        "src": "/audio/lecture/lh041/p041.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh041/pen.json",
+      "strokes": 55,
+      "segments": 1298
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해141.gdb",
+  "legacyEncoding": "euc-kr"
+}

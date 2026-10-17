@@ -33,7 +33,16 @@ let text = HEAD
   ? execSync(`git show ${PRE_FIX_REV}:public/search-index.json`, { cwd: REPO, encoding: "utf8", maxBuffer: 64 << 20 })
   : fs.readFileSync(indexArg > 0 ? path.resolve(process.argv[indexArg + 1]) : path.join(REPO, "public/search-index.json"), "utf8");
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
-if (BREAK && BREAK !== "adult") { console.error(`모르는 --break=${BREAK} (adult)`); process.exit(2); }
+// LECTURE (2026-10-17): 유료 내용은 글이 아니라 그림 · 필기 주소(paidLeakCheck.mjs 머리말) — 깨기 --break=lecture : 잠긴 lm050 의 그림 ·
+//   pen 주소를 항목 하나로(메모리) → 2번 FAIL · exit 1. (3번 '1강' 은 LECTURE 항목이 커밋되기 전엔 HEAD 색인과 다르다 — 도구-기록.md)
+if (BREAK && !["adult", "lecture"].includes(BREAK)) { console.error(`모르는 --break=${BREAK} (adult · lecture)`); process.exit(2); }
+if (BREAK === "lecture") {
+  const L = JSON.parse(fs.readFileSync(path.join(REPO, "content/lessons/lecture/lm050.json"), "utf8")).lecture;
+  const arr = JSON.parse(text);
+  arr.push({ id: "zz-break", course: "lecture", title: "깨기 시험", searchText: "lm050", href: "/lecture/lm050", image: L.pages[0].src, pen: L.pen.src });
+  text = JSON.stringify(arr);
+  console.log(`[일부러 깸] 색인 사본에 유료 LECTURE lm050 의 미디어 주소: ${L.pages[0].src} · ${L.pen.src}`);
+}
 if (BREAK === "adult") {
   // 유료 ADULT a2-1 의 첫 문장을 항목 하나로(메모리) — 이름 검색(3번)은 건드리지 않게 맨 뒤에
   const d = JSON.parse(fs.readFileSync(path.join(REPO, "content/lessons/adult/a2-1.json"), "utf8"));

@@ -1,0 +1,36 @@
+{
+  "id": "lh032",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 32강",
+  "label": "고등 영어독해 31~40강",
+  "menuLabel": "32강",
+  "unit": 14,
+  "part": 32,
+  "order": 131,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 32,
+    "durationSec": 511.1,
+    "lengthUnits": 2834,
+    "unitSec": 0.180352,
+    "pages": [
+      {
+        "page": 32,
+        "src": "/audio/lecture/lh032/p032.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh032/pen.json",
+      "strokes": 113,
+      "segments": 2657
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해132.gdb",
+  "legacyEncoding": "euc-kr"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "lm039",
+  "course": "lecture",
+  "series": "lm",
+  "variant": "main",
+  "pairId": null,
+  "title": "중등 영어독해 39강",
+  "label": "중등 영어독해 31~40강",
+  "menuLabel": "39강",
+  "unit": 4,
+  "part": 39,
+  "order": 38,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "middle",
+    "number": 39,
+    "durationSec": 332.4,
+    "lengthUnits": 1845,
+    "unitSec": 0.180137,
+    "pages": [
+      {
+        "page": 39,
+        "src": "/audio/lecture/lm039/p039.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lm039/pen.json",
+      "strokes": 63,
+      "segments": 2568
+    }
+  },
+  "legacyPath": "중등영어 독해039.gdb",
+  "legacyEncoding": "euc-kr"
+}

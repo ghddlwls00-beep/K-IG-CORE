@@ -1,0 +1,36 @@
+{
+  "id": "lh026",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 26강",
+  "label": "고등 영어독해 21~30강",
+  "menuLabel": "26강",
+  "unit": 13,
+  "part": 26,
+  "order": 125,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 26,
+    "durationSec": 258.4,
+    "lengthUnits": 1434,
+    "unitSec": 0.180203,
+    "pages": [
+      {
+        "page": 26,
+        "src": "/audio/lecture/lh026/p026.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh026/pen.json",
+      "strokes": 49,
+      "segments": 1608
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해126.gdb",
+  "legacyEncoding": "euc-kr"
+}

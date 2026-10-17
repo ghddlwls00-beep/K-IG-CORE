@@ -1,0 +1,36 @@
+{
+  "id": "lh040",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 40강",
+  "label": "고등 영어독해 31~40강",
+  "menuLabel": "40강",
+  "unit": 14,
+  "part": 40,
+  "order": 139,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 40,
+    "durationSec": 259.3,
+    "lengthUnits": 1440,
+    "unitSec": 0.180085,
+    "pages": [
+      {
+        "page": 40,
+        "src": "/audio/lecture/lh040/p040.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh040/pen.json",
+      "strokes": 50,
+      "segments": 998
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해140.gdb",
+  "legacyEncoding": "euc-kr"
+}

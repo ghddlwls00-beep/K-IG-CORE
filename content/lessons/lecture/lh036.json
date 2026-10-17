@@ -1,0 +1,36 @@
+{
+  "id": "lh036",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 36강",
+  "label": "고등 영어독해 31~40강",
+  "menuLabel": "36강",
+  "unit": 14,
+  "part": 36,
+  "order": 135,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 36,
+    "durationSec": 276.1,
+    "lengthUnits": 1531,
+    "unitSec": 0.180323,
+    "pages": [
+      {
+        "page": 36,
+        "src": "/audio/lecture/lh036/p036.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh036/pen.json",
+      "strokes": 100,
+      "segments": 1527
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해136.gdb",
+  "legacyEncoding": "euc-kr"
+}

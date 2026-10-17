@@ -1,0 +1,36 @@
+{
+  "id": "lh002",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 2강",
+  "label": "고등 영어독해 1~10강",
+  "menuLabel": "2강",
+  "unit": 11,
+  "part": 2,
+  "order": 101,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 2,
+    "durationSec": 394.8,
+    "lengthUnits": 2190,
+    "unitSec": 0.180276,
+    "pages": [
+      {
+        "page": 2,
+        "src": "/audio/lecture/lh002/p002.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh002/pen.json",
+      "strokes": 108,
+      "segments": 3929
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해102.gdb",
+  "legacyEncoding": "euc-kr"
+}

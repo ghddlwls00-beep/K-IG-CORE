@@ -1,0 +1,36 @@
+{
+  "id": "lh044",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 44강",
+  "label": "고등 영어독해 41~50강",
+  "menuLabel": "44강",
+  "unit": 15,
+  "part": 44,
+  "order": 143,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 44,
+    "durationSec": 245.3,
+    "lengthUnits": 1361,
+    "unitSec": 0.180203,
+    "pages": [
+      {
+        "page": 44,
+        "src": "/audio/lecture/lh044/p044.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh044/pen.json",
+      "strokes": 80,
+      "segments": 2674
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해144.gdb",
+  "legacyEncoding": "euc-kr"
+}

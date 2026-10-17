@@ -60,6 +60,9 @@ const FOLDER_TO_COURSE: Record<string, string> = {
   grammar2: "grammar2",
   student: "student",
   cnn: "cnn",
+  // LECTURE (2026-10-17): audio/lecture/<id>/p<NN>.jpg · pen.json — the textbook pages and pen strokes (paid; private R2).
+  // The free lectures' exact keys are in generated/freeMediaKeys.json; the rest need a licence that opens LECTURE (all-pass).
+  lecture: "lecture",
 };
 
 export type MediaAccess =

@@ -1,0 +1,36 @@
+{
+  "id": "lh064",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 64강",
+  "label": "고등 영어독해 61~70강",
+  "menuLabel": "64강",
+  "unit": 17,
+  "part": 64,
+  "order": 163,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 64,
+    "durationSec": 307.3,
+    "lengthUnits": 1705,
+    "unitSec": 0.180254,
+    "pages": [
+      {
+        "page": 64,
+        "src": "/audio/lecture/lh064/p064.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh064/pen.json",
+      "strokes": 122,
+      "segments": 4476
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해164.gdb",
+  "legacyEncoding": "euc-kr"
+}

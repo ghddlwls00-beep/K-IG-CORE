@@ -216,7 +216,7 @@ export function CourseDashboard({
    */
   licenseHint?: boolean;
 }) {
-  const { bookmarks, recentByCourse, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus: studentSync, adultSyncStatus } = useProgress();
+  const { bookmarks, recentByCourse, toggleBookmark, isCompleted, isBookmarked, studentSyncStatus: studentSync, adultSyncStatus, lectureSyncStatus } = useProgress();
   const {
     hasActiveLicense,
     licenseSettled,
@@ -224,13 +224,16 @@ export function CourseDashboard({
     isUnlocked: checkUnlocked,
     studentProgress: studentRecord,
     adultProgress,
+    lectureProgress,
     studentProgressSettled,
     adultProgressSettled,
+    lectureProgressSettled,
   } = useLicense();
-  // ADULT (2026-10-02) opens chapter by chapter exactly as STUDENT — the same list, from its own record
-  const isChapterCourse = courseSlug === "student" || courseSlug === "adult";
-  const studentProgress = courseSlug === "adult" ? adultProgress : studentRecord;
-  const studentSyncStatus = courseSlug === "adult" ? adultSyncStatus : studentSync;
+  // ADULT (2026-10-02) opens chapter by chapter exactly as STUDENT — the same list, from its own record. LECTURE (2026-10-17)
+  // too, as ADULT (its lectures have no voice, so no chapter listening bar)
+  const isChapterCourse = courseSlug === "student" || courseSlug === "adult" || courseSlug === "lecture";
+  const studentProgress = courseSlug === "adult" ? adultProgress : courseSlug === "lecture" ? lectureProgress : studentRecord;
+  const studentSyncStatus = courseSlug === "adult" ? adultSyncStatus : courseSlug === "lecture" ? lectureSyncStatus : studentSync;
   // STUDENT passes open STUDENT and PASS-OFF GRAMMAR; the all-pass opens every course (license.ts planOpensCourse)
   const hasCourseAccess = hasActiveLicense && planOpensCourse(licenseInfo?.plan, courseSlug);
   /**
@@ -244,7 +247,7 @@ export function CourseDashboard({
   /** a licence, and STUDENT's · ADULT's server record (which opens the chapters) not answered yet — LIFE opens every chapter */
   const chapterRecordPending =
     isChapterCourse && hasCourseAccess && licenseInfo?.plan !== "LIFE" &&
-    !(courseSlug === "adult" ? adultProgressSettled : studentProgressSettled);
+    !(courseSlug === "adult" ? adultProgressSettled : courseSlug === "lecture" ? lectureProgressSettled : studentProgressSettled);
   const [filter, setFilter] = useState<"all" | "bookmarked" | "incomplete">("all");
   const [unlockNotice, setUnlockNotice] = useState<number | null>(null);
   const previousUnlockedRef = useRef<number | null>(null);
@@ -699,7 +702,7 @@ export function CourseDashboard({
 
                 {isOpen && (
                   <div className="border-t border-line">
-                    {isChapterCourse && chapterUnlocked && !notePending && (
+                    {isChapterCourse && courseSlug !== "lecture" && chapterUnlocked && !notePending && (
                       <ChapterAudioBar
                         chapterNumber={chapterNumber}
                         chapterUnlocked={chapterUnlocked}

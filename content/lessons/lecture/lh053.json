@@ -1,0 +1,36 @@
+{
+  "id": "lh053",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 53강",
+  "label": "고등 영어독해 51~60강",
+  "menuLabel": "53강",
+  "unit": 16,
+  "part": 53,
+  "order": 152,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 53,
+    "durationSec": 259.8,
+    "lengthUnits": 1441,
+    "unitSec": 0.18026,
+    "pages": [
+      {
+        "page": 53,
+        "src": "/audio/lecture/lh053/p053.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh053/pen.json",
+      "strokes": 109,
+      "segments": 4291
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해153.gdb",
+  "legacyEncoding": "euc-kr"
+}

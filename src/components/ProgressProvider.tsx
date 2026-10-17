@@ -3,6 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { pairCompleted, pairedLessonId } from "@/lib/lessonPair";
 import { useLicense, type StudentProgressSnapshot } from "./LicenseProvider";
+import { planOpensCourse } from "@/lib/license";
 
 /**
  * 2026-09-27: fired on window by toggleComplete — a learner marking a lesson done (or undone) by hand. Never by the
@@ -50,6 +51,9 @@ interface ProgressContextType {
   /** ADULT (2026-10-02) — STUDENT's server sync for ADULT's own record (/api/progress/adult) */
   adultSyncStatus: "local" | "syncing" | "saved" | "pending" | "error";
   flushAdultUpdates: () => Promise<StudentFlushResult>;
+  /** LECTURE (2026-10-17) — ADULT's server sync for LECTURE's own record (/api/progress/lecture), for a plan that opens it */
+  lectureSyncStatus: "local" | "syncing" | "saved" | "pending" | "error";
+  flushLectureUpdates: () => Promise<StudentFlushResult>;
 }
 
 const ProgressContext = createContext<ProgressContextType>({
@@ -68,6 +72,8 @@ const ProgressContext = createContext<ProgressContextType>({
   flushStudentUpdates: async () => ({ status: "local", progress: null }),
   adultSyncStatus: "local",
   flushAdultUpdates: async () => ({ status: "local", progress: null }),
+  lectureSyncStatus: "local",
+  flushLectureUpdates: async () => ({ status: "local", progress: null }),
 });
 
 const COMPLETED_KEY = "kig:progress:completed";
@@ -86,6 +92,8 @@ const PENDING_KEY = "kig:student:pending:v1";
 const STUDENT_SERVER_COPY_KEY = "kig:student:server-completed:v1";
 /** ADULT's queue — the same records as STUDENT's, in a key of its own */
 const ADULT_PENDING_KEY = "kig:adult:pending:v1";
+/** LECTURE's queue (2026-10-17) — the same records, in a key of its own */
+const LECTURE_PENDING_KEY = "kig:lecture:pending:v1";
 
 interface StudentPendingUpdate {
   lessonId?: string;
@@ -102,7 +110,12 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     applyStudentProgress,
     adultProgress,
     applyAdultProgress,
+    lectureProgress,
+    applyLectureProgress,
   } = useLicense();
+  // LECTURE's record is kept on the server only for a plan that opens LECTURE (an all-pass — 사장님 "올패스로만"); a STUDENT
+  // pass would be refused (403), so its free lectures' completions stay on this device like a visitor's
+  const lectureSyncOn = hasActiveLicense && planOpensCourse(licenseInfo?.plan, "lecture");
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
   const [bookmarks, setBookmarks] = useState<Record<string, boolean>>({});
   const [recent, setRecent] = useState<RecentLesson | null>(null);
@@ -116,6 +129,10 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
   const adultPendingRef = useRef<StudentPendingUpdate[]>([]);
   const adultFlushTimerRef = useRef<number | null>(null);
   const adultFlushingRef = useRef<Promise<StudentFlushResult> | null>(null);
+  const [lectureSyncStatus, setLectureSyncStatus] = useState<ProgressContextType["lectureSyncStatus"]>("local");
+  const lecturePendingRef = useRef<StudentPendingUpdate[]>([]);
+  const lectureFlushTimerRef = useRef<number | null>(null);
+  const lectureFlushingRef = useRef<Promise<StudentFlushResult> | null>(null);
 
   /**
    * 2026-09-27 (A11 · STU-U10): also callable by a view — STUDENT's '다음 강의' awaits it, so the completion reaches the
@@ -240,6 +257,61 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     adultFlushTimerRef.current = window.setTimeout(flushAdultUpdates, 650);
   }, [flushAdultUpdates]);
 
+  /** LECTURE (2026-10-17) — flushAdultUpdates above, for LECTURE's queue and endpoint. */
+  const flushLectureUpdates = useCallback(async (): Promise<StudentFlushResult> => {
+    if (lectureFlushTimerRef.current) {
+      window.clearTimeout(lectureFlushTimerRef.current);
+      lectureFlushTimerRef.current = null;
+    }
+    if (lectureFlushingRef.current) await lectureFlushingRef.current.catch(() => null);
+    if (!lectureSyncOn) return { status: "local", progress: null };
+    if (lecturePendingRef.current.length === 0) return { status: "saved", progress: null };
+    const run = (async (): Promise<StudentFlushResult> => {
+      const updates = lecturePendingRef.current.slice(0, 100);
+      setLectureSyncStatus("syncing");
+      try {
+        const response = await fetch("/api/progress/lecture", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ updates }),
+        });
+        const data = await response.json();
+        if (!response.ok || !data.success) throw new Error(data.error || "sync failed");
+        lecturePendingRef.current = lecturePendingRef.current.slice(updates.length);
+        window.localStorage.setItem(LECTURE_PENDING_KEY, JSON.stringify(lecturePendingRef.current));
+        applyLectureProgress(data.progress);
+        setLectureSyncStatus(lecturePendingRef.current.length ? "pending" : "saved");
+        return { status: "saved", progress: (data.progress as StudentProgressSnapshot) ?? null };
+      } catch {
+        const online = navigator.onLine;
+        setLectureSyncStatus(online ? "error" : "pending");
+        return { status: online ? "error" : "offline", progress: null };
+      }
+    })();
+    lectureFlushingRef.current = run;
+    try {
+      return await run;
+    } finally {
+      if (lectureFlushingRef.current === run) lectureFlushingRef.current = null;
+    }
+  }, [applyLectureProgress, lectureSyncOn]);
+
+  const queueLectureUpdate = useCallback((update: StudentPendingUpdate) => {
+    const identityOf = (item: StudentPendingUpdate) =>
+      item.lessonId ? `lesson:${item.lessonId}` : item.lastLessonId ? "recent" : `event:${item.clientUpdatedAt}`;
+    const identity = identityOf(update);
+    lecturePendingRef.current = lecturePendingRef.current.filter((item) => identityOf(item) !== identity);
+    lecturePendingRef.current.push(update);
+    try {
+      window.localStorage.setItem(LECTURE_PENDING_KEY, JSON.stringify(lecturePendingRef.current));
+    } catch {
+      // Keep the in-memory queue when browser storage is unavailable.
+    }
+    setLectureSyncStatus(navigator.onLine ? "syncing" : "pending");
+    if (lectureFlushTimerRef.current) window.clearTimeout(lectureFlushTimerRef.current);
+    lectureFlushTimerRef.current = window.setTimeout(flushLectureUpdates, 650);
+  }, [flushLectureUpdates]);
+
   // Restore on mount to avoid SSR hydration mismatch
   useEffect(() => {
     try {
@@ -281,6 +353,9 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
 
       const adultPending = window.localStorage.getItem(ADULT_PENDING_KEY);
       if (adultPending) adultPendingRef.current = JSON.parse(adultPending);
+
+      const lecturePending = window.localStorage.getItem(LECTURE_PENDING_KEY);
+      if (lecturePending) lecturePendingRef.current = JSON.parse(lecturePending);
     } catch {
       // LocalStorage unavailable
     }
@@ -338,6 +413,35 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     if (adultPendingRef.current.length) void flushAdultUpdates();
     return () => window.removeEventListener("online", onOnline);
   }, [flushAdultUpdates, hasActiveLicense]);
+
+  // LECTURE — the server's record is what the list and the lecture show as done, as ADULT's above
+  useEffect(() => {
+    if (!lectureProgress) return;
+    setCompleted((previous) => {
+      const next = { ...previous };
+      for (const key of Object.keys(next)) {
+        if (key.startsWith("lecture:")) delete next[key];
+      }
+      for (const [lessonId, state] of Object.entries(lectureProgress.lessons)) {
+        if (state.completed) next[`lecture:${lessonId}`] = true;
+      }
+      try {
+        window.localStorage.setItem(COMPLETED_KEY, JSON.stringify(next));
+      } catch {
+        // ignore
+      }
+      return next;
+    });
+    setLectureSyncStatus("saved");
+  }, [lectureProgress]);
+
+  useEffect(() => {
+    if (!lectureSyncOn) return;
+    const onOnline = () => void flushLectureUpdates();
+    window.addEventListener("online", onOnline);
+    if (lecturePendingRef.current.length) void flushLectureUpdates();
+    return () => window.removeEventListener("online", onOnline);
+  }, [flushLectureUpdates, lectureSyncOn]);
 
   useEffect(() => {
     if (!hasActiveLicense) return;
@@ -424,12 +528,15 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
     if (course === "adult" && hasActiveLicense) {
       queueAdultUpdate({ lessonId, completed: willBe, clientUpdatedAt: Date.now() });
     }
+    if (course === "lecture" && lectureSyncOn) {
+      queueLectureUpdate({ lessonId, completed: willBe, clientUpdatedAt: Date.now() });
+    }
     try {
       window.dispatchEvent(new CustomEvent(LESSON_COMPLETE_EVENT, { detail: { course, lessonId, completed: willBe } }));
     } catch {
       // an old browser without CustomEvent: the completion is saved; only listeners miss it
     }
-  }, [completed, hasActiveLicense, queueAdultUpdate, queueStudentUpdate]);
+  }, [completed, hasActiveLicense, lectureSyncOn, queueAdultUpdate, queueLectureUpdate, queueStudentUpdate]);
 
   const isBookmarked = useCallback(
     (course: string, lessonId: string) => {
@@ -482,8 +589,11 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
       if (course === "adult" && hasActiveLicense) {
         queueAdultUpdate({ lastLessonId: lessonId, clientUpdatedAt: Date.now() });
       }
+      if (course === "lecture" && lectureSyncOn) {
+        queueLectureUpdate({ lastLessonId: lessonId, clientUpdatedAt: Date.now() });
+      }
     },
-    [hasActiveLicense, queueAdultUpdate, queueStudentUpdate]
+    [hasActiveLicense, lectureSyncOn, queueAdultUpdate, queueLectureUpdate, queueStudentUpdate]
   );
 
   const getCourseCompletedCount = useCallback(
@@ -520,6 +630,8 @@ export function ProgressProvider({ children }: { children: React.ReactNode }) {
         flushStudentUpdates,
         adultSyncStatus,
         flushAdultUpdates,
+        lectureSyncStatus,
+        flushLectureUpdates,
       }}
     >
       {children}

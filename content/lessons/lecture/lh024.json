@@ -1,0 +1,36 @@
+{
+  "id": "lh024",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 24강",
+  "label": "고등 영어독해 21~30강",
+  "menuLabel": "24강",
+  "unit": 13,
+  "part": 24,
+  "order": 123,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 24,
+    "durationSec": 110.7,
+    "lengthUnits": 614,
+    "unitSec": 0.180229,
+    "pages": [
+      {
+        "page": 24,
+        "src": "/audio/lecture/lh024/p024.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh024/pen.json",
+      "strokes": 32,
+      "segments": 1464
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해124.gdb",
+  "legacyEncoding": "euc-kr"
+}

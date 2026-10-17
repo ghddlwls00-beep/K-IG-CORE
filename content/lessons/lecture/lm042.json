@@ -1,0 +1,36 @@
+{
+  "id": "lm042",
+  "course": "lecture",
+  "series": "lm",
+  "variant": "main",
+  "pairId": null,
+  "title": "중등 영어독해 42강",
+  "label": "중등 영어독해 41~50강",
+  "menuLabel": "42강",
+  "unit": 5,
+  "part": 42,
+  "order": 41,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "middle",
+    "number": 42,
+    "durationSec": 343.9,
+    "lengthUnits": 1910,
+    "unitSec": 0.180078,
+    "pages": [
+      {
+        "page": 42,
+        "src": "/audio/lecture/lm042/p042.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lm042/pen.json",
+      "strokes": 149,
+      "segments": 4441
+    }
+  },
+  "legacyPath": "중등영어 독해042.gdb",
+  "legacyEncoding": "euc-kr"
+}

@@ -62,6 +62,19 @@ export function chapterName(rawLabel: string, chapter?: number): string {
   return words ? `${n}장 · ${words}` : `${n}장`;
 }
 
+/**
+ * LECTURE (2026-10-17): a chapter of ten lectures, '중등 영어독해 1~10강' (the data's group title and lesson label) → '1장 · 중등
+ * 영어독해 1~10강'. Chapters 1–10 are the 중등 book, 11–20 the 고등 book (its lectures count from 1 again — 사장님), so 고등
+ * 영어독해 1~10강 is chapter 11.
+ */
+export function lectureChapterName(rawLabel: string): string {
+  const clean = cleanBrackets(rawLabel);
+  const m = clean.match(/^(중등|고등)\s*영어독해\s*(\d+)\s*~\s*(\d+)\s*강$/);
+  if (!m) return clean;
+  const chapter = (m[1] === "고등" ? 10 : 0) + Math.floor((Number(m[2]) - 1) / 10) + 1;
+  return `${chapter}장 · ${m[1]} 영어독해 ${Number(m[2])}~${Number(m[3])}강`;
+}
+
 /** PASS-OFF GRAMMAR: a topic by its number — '대주제 3' (no English 'TOPIC') */
 export function passoffTopicName(topic: number): string {
   return `대주제 ${topic}`;
@@ -150,6 +163,11 @@ export function formatGroupTitle(courseSlug: string, rawLabel: string): string {
   // STUDENT · ADULT: 'Chapter 1. 자기소개 (Self-introduction)' → '1장 · 자기소개'
   if (courseSlug === "student" || courseSlug === "adult") {
     return chapterName(clean);
+  }
+
+  // LECTURE: '중등 영어독해 1~10강' → '1장 · 중등 영어독해 1~10강'
+  if (courseSlug === "lecture") {
+    return lectureChapterName(clean);
   }
 
   if (courseSlug === "cnn") {
@@ -369,6 +387,22 @@ export function formatLessonPresentation(
       subtitle: lesson.label ? formatGroupTitle(courseSlug, lesson.label) : passoffTopicName(topic),
       badge: "문법 설명 · 영작",
       code: `${topic}-${link}`,
+    };
+  }
+
+  // 9-3. LECTURE (2026-10-17) — "lm001" · "lh001": the title is the lecture's own name ('중등 영어독해 1강', from the data), the line
+  // under it its chapter ('1장 · 중등 영어독해 1~10강'), the code the book and number ('중등 1강'). No English anywhere.
+  if (courseSlug === "lecture") {
+    const m = id.match(/^l([mh])(\d+)$/);
+    const book = m?.[1] === "h" ? "고등" : "중등";
+    const number = m ? Number(m[2]) : 0;
+    const title = lesson.title || `${book} 영어독해 ${number}강`;
+    return {
+      title,
+      subtitle: lesson.label ? lectureChapterName(lesson.label) : `${lesson.unit ?? ""}장`,
+      badge: "필기 강의",
+      code: `${book} ${number}강`,
+      name: title,
     };
   }
 

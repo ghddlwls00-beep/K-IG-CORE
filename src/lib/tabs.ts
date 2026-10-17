@@ -90,6 +90,16 @@ export const TABS: Tab[] = [
     courses: ["reading"],
     blurb: "Narrated Reading Passages & Direct Sentence Analysis",
   },
+  // LECTURE — a new section (2026-10-17, docs/lecture/README.md): the 200 GVA reading lectures, each a textbook page the
+  // teacher writes on as the lecture plays. After READING (a reading course too). No legacy image or page.
+  {
+    slug: "lecture",
+    label: "LECTURE",
+    legacyImage: "",
+    legacyIndex: "",
+    courses: ["lecture"],
+    blurb: "Reading Passages with the Teacher's Notes",
+  },
   {
     slug: "cnn",
     label: "CNN NEWS",

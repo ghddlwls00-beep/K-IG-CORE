@@ -1,0 +1,36 @@
+{
+  "id": "lh080",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 80강",
+  "label": "고등 영어독해 71~80강",
+  "menuLabel": "80강",
+  "unit": 18,
+  "part": 80,
+  "order": 179,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 80,
+    "durationSec": 275.4,
+    "lengthUnits": 1528,
+    "unitSec": 0.180212,
+    "pages": [
+      {
+        "page": 80,
+        "src": "/audio/lecture/lh080/p080.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh080/pen.json",
+      "strokes": 75,
+      "segments": 2637
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해180.gdb",
+  "legacyEncoding": "euc-kr"
+}

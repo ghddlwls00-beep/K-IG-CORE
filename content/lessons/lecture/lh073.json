@@ -1,0 +1,36 @@
+{
+  "id": "lh073",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 73강",
+  "label": "고등 영어독해 71~80강",
+  "menuLabel": "73강",
+  "unit": 18,
+  "part": 73,
+  "order": 172,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 73,
+    "durationSec": 340.8,
+    "lengthUnits": 1892,
+    "unitSec": 0.180115,
+    "pages": [
+      {
+        "page": 73,
+        "src": "/audio/lecture/lh073/p073.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh073/pen.json",
+      "strokes": 101,
+      "segments": 4102
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해173.gdb",
+  "legacyEncoding": "euc-kr"
+}

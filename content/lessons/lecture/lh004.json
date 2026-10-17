@@ -1,0 +1,36 @@
+{
+  "id": "lh004",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 4강",
+  "label": "고등 영어독해 1~10강",
+  "menuLabel": "4강",
+  "unit": 11,
+  "part": 4,
+  "order": 103,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 4,
+    "durationSec": 313.8,
+    "lengthUnits": 1740,
+    "unitSec": 0.180342,
+    "pages": [
+      {
+        "page": 4,
+        "src": "/audio/lecture/lh004/p004.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh004/pen.json",
+      "strokes": 128,
+      "segments": 4064
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해104.gdb",
+  "legacyEncoding": "euc-kr"
+}

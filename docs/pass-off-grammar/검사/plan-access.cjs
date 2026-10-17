@@ -16,6 +16,15 @@
  *   node docs/pass-off-grammar/검사/plan-access.cjs --break=drop-passoff   일부러 깨기: STUDENT_PASS_COURSES 에서 passoff-grammar 를 뺀 license.ts(메모리) → 표 · 이름 FAIL
  *   node docs/pass-off-grammar/검사/plan-access.cjs --break=old-gate       일부러 깨기: page.tsx 판정을 옛 꼴로 되돌린 글(메모리) → 부르는 곳 FAIL
  *   node docs/pass-off-grammar/검사/plan-access.cjs --break=old-copy       일부러 깨기: 내 이용권 창 문구를 옛 'STUDENT 전용 회원' 으로(메모리) → 부르는 곳 FAIL
+ *
+ * LECTURE (2026-10-17 · docs/lecture/도구-기록.md): 사장님 '올패스로만'(docs/lecture/README.md 1장) — 표에 lecture(STU… 잠김 · 올패스 열림)와,
+ *   빠져 있던 adult(사장님 2026-10-02 'STUDENT 이용권도 열기' — license.ts STUDENT_PASS_COURSES)를 더함. 부르는 곳에 LECTURE 의 서버 잠금
+ *   (src/app/lecture/[lesson]/page.tsx · api/progress/lecture)과 LicenseProvider 길 목록의 lecture 를 더함.
+ *   drop-passoff 깨기는 STUDENT_PASS_COURSES 가 ["student", "passoff-grammar"] 꼴일 때만 바꿨다 — ADULT 가 들어온 뒤(10-02)로는 아무것도
+ *   안 바꾸고 PASS(exit 0)였다(10-17 확인). 이제 목록 안의 "passoff-grammar" 를 꼴과 상관없이 빼고, 못 빼면 exit 2.
+ *   node docs/pass-off-grammar/검사/plan-access.cjs --break=lecture-student  일부러 깨기: STUDENT_PASS_COURSES 에 lecture 를 더한 license.ts(메모리)
+ *                                                                          → 표(STU… × lecture 열림) · 이름 FAIL
+ *   node docs/pass-off-grammar/검사/plan-access.cjs --break=lecture-path     일부러 깨기: LicenseProvider 길 목록에서 lecture 를 뺀 글(메모리) → 부르는 곳 FAIL
  * exit 1 on any failure.
  */
 const fs = require("fs");
@@ -23,7 +32,7 @@ const path = require("path");
 const REPO = path.resolve(__dirname, "../../..");
 const ts = require(path.join(REPO, "node_modules/typescript"));
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
-if (BREAK && !["drop-passoff", "old-gate", "old-copy"].includes(BREAK)) throw new Error(`모르는 --break=${BREAK}`);
+if (BREAK && !["drop-passoff", "old-gate", "old-copy", "lecture-student", "lecture-path"].includes(BREAK)) throw new Error(`모르는 --break=${BREAK}`);
 
 const read = (rel) => fs.readFileSync(path.join(REPO, rel), "utf8");
 const load = (src) => {
@@ -33,7 +42,15 @@ const load = (src) => {
   return mod.exports;
 };
 let licenseSrc = read("src/lib/license.ts");
-if (BREAK === "drop-passoff") licenseSrc = licenseSrc.replace(/STUDENT_PASS_COURSES: readonly string\[\] = \["student", "passoff-grammar"\]/, 'STUDENT_PASS_COURSES: readonly string[] = ["student"]');
+if (BREAK === "drop-passoff" || BREAK === "lecture-student") {
+  // 목록 꼴과 상관없이(머리말 LECTURE) — 바꾸지 못하면 이 깨기는 아무것도 증명 못 함
+  const before = licenseSrc;
+  licenseSrc = BREAK === "drop-passoff"
+    ? licenseSrc.replace(/(STUDENT_PASS_COURSES: readonly string\[\] = \[[^\]]*?)"passoff-grammar",?\s*/, "$1")
+    : licenseSrc.replace(/(STUDENT_PASS_COURSES: readonly string\[\] = \[[^\]]*?)\]/, '$1, "lecture"]');
+  if (licenseSrc === before) { console.log(`!!! --break=${BREAK}: license.ts 의 STUDENT_PASS_COURSES 를 못 바꿈 — 아무것도 증명 못 함 · exit 2`); process.exit(2); }
+  console.log(`[일부러 깸] ${BREAK}: ${licenseSrc.match(/STUDENT_PASS_COURSES: readonly string\[\] = \[[^\]]*\]/)[0]}`);
+}
 const { planOpensCourse, STUDENT_PASS_COURSES, STUDENT_PASS_SCOPE } = load(licenseSrc);
 if (typeof planOpensCourse !== "function") throw new Error("planOpensCourse 를 license.ts 에서 못 찾음 — 이 검사가 아무것도 안 봄");
 // courses.ts 는 타입만 import 하므로 혼자 옮겨 돌릴 수 있음
@@ -41,8 +58,9 @@ const { COURSE_BY_SLUG } = load(read("src/lib/courses.ts"));
 if (!COURSE_BY_SLUG || typeof COURSE_BY_SLUG.get !== "function") throw new Error("COURSE_BY_SLUG 를 courses.ts 에서 못 찾음");
 
 const PLANS = ["1M", "1Y", "LIFE", "STU", "STU1M", "STU1Y", "STULIFE"];
-const COURSES = ["student", "passoff-grammar", "grammar1", "grammar2", "phonics", "ld", "reading"];
-const STUDENT_OPENS = new Set(["student", "passoff-grammar"]);
+// 기대는 사장님 결정에서(코드에서 읽지 않음): STUDENT 패스 = STUDENT · PASS-OFF GRAMMAR(D3 09-27) · ADULT(10-02), LECTURE 는 올패스만(10-17)
+const COURSES = ["student", "passoff-grammar", "adult", "grammar1", "grammar2", "phonics", "ld", "reading", "lecture"];
+const STUDENT_OPENS = new Set(["student", "passoff-grammar", "adult"]);
 let fails = 0;
 const rows = [];
 for (const plan of PLANS) {
@@ -64,9 +82,16 @@ const SITES = [
   { file: "src/lib/mediaAccess.ts", must: [/planOpensCourse\(session\.payload\.plan, course\)/], mustNot: [/isStudentOnlyPlan\(/] },
   {
     file: "src/components/LicenseProvider.tsx",
-    must: [/return planOpensCourse\(plan, course\);/, /return planOpensCourse\(stored\.plan, courseSlug\);/, /\|student\|passoff-grammar\)\\\/\[\^\/\]\+\$\//],
+    must: [
+      /return planOpensCourse\(plan, course\);/, /return planOpensCourse\(stored\.plan, courseSlug\);/, /\|student\|passoff-grammar\)\\\/\[\^\/\]\+\$\//,
+      // LECTURE: 서버가 잠그는 강의 길 목록에 lecture(브라우저가 잠긴 강의를 다시 그리지 않게)
+      /SERVER_GATED_LESSON_PATH =\s*\/\^\\\/\((?:[a-z0-9-]+\|)*lecture(?:\|[a-z0-9-]+)*\)/,
+    ],
     mustNot: [/!isStudentOnlyPlan\(plan\) \|\| course === "student"/, /return courseSlug === "student";/],
   },
+  // LECTURE (2026-10-17): 자기 길의 서버 잠금 · 진도 API 가 같은 판정을 씀
+  { file: "src/app/lecture/[lesson]/page.tsx", must: [/planOpensCourse\(session\.payload\.plan, "lecture"\)/], mustNot: [/isStudentOnlyPlan\(/] },
+  { file: "src/app/api/progress/lecture/route.ts", must: [/planOpensCourse\(session\.payload\.plan, "lecture"\)/], mustNot: [/isStudentOnlyPlan\(/] },
   { file: "src/components/CourseDashboard.tsx", must: [/hasActiveLicense && planOpensCourse\(licenseInfo\?\.plan, courseSlug\)/], mustNot: [/!licenseInfo\?\.isStudentOnly \|\| courseSlug === "student"/] },
   {
     file: "src/components/LessonPaywall.tsx",
@@ -80,13 +105,14 @@ const SITES = [
     mustNot: [/"30일간 STUDENT 전 강의 열람"/, /STUDENT 전용/],
   },
 ];
-console.log(`\n2. 부르는 곳 — ${SITES.length}개 파일${BREAK === "old-gate" || BREAK === "old-copy" ? ` [일부러 깸: ${BREAK}]` : ""}`);
+console.log(`\n2. 부르는 곳 — ${SITES.length}개 파일${BREAK === "old-gate" || BREAK === "old-copy" || BREAK === "lecture-path" ? ` [일부러 깸: ${BREAK}]` : ""}`);
 for (const s of SITES) {
   let text = read(s.file);
   if (BREAK === "old-gate" && s.file.endsWith("[lesson]/page.tsx")) {
     text = text.replace(/accessAllowed = planOpensCourse\(session\.payload\.plan, course\);/, 'accessAllowed = isStudentOnlyPlan(session.payload.plan) ? course === "student" : true;');
   }
   if (BREAK === "old-copy" && s.file.endsWith("LicenseModal.tsx")) text = text.replace(/"STUDENT 패스 회원"/, '"STUDENT 전용 회원"');
+  if (BREAK === "lecture-path" && s.file.endsWith("LicenseProvider.tsx")) text = text.replace("|lecture|", "|");
   const missing = (s.must || []).filter((re) => !re.test(text)).map(String);
   const left = (s.mustNot || []).filter((re) => re.test(text)).map(String);
   const ok = !missing.length && !left.length;

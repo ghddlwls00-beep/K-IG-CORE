@@ -95,6 +95,10 @@ export default function AdminLicensePage() {
   const [openAdultKey, setOpenAdultKey] = useState<string | null>(null);
   const [adultProgressByKey, setAdultProgressByKey] = useState<Record<string, AdminStudentProgress>>({});
   const [adultLoadingKey, setAdultLoadingKey] = useState<string | null>(null);
+  // LECTURE (2026-10-17) — ADULT's progress tools for LECTURE's own record (/api/admin/lecture-progress)
+  const [openLectureKey, setOpenLectureKey] = useState<string | null>(null);
+  const [lectureProgressByKey, setLectureProgressByKey] = useState<Record<string, AdminStudentProgress>>({});
+  const [lectureLoadingKey, setLectureLoadingKey] = useState<string | null>(null);
 
   // Check server-side admin session on mount
   useEffect(() => {
@@ -463,6 +467,42 @@ export default function AdminLicensePage() {
       return;
     }
     await requestAdultProgress(key, "setChapter", { chapter });
+  }
+
+  // LECTURE progress (2026-10-17) — ADULT's above, on LECTURE's own record (/api/admin/lecture-progress)
+  async function requestLectureProgress(key: string, action = "get", extra: Record<string, unknown> = {}) {
+    setLectureLoadingKey(key);
+    try {
+      const response = await fetch("/api/admin/lecture-progress", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ key, action, ...extra }),
+      });
+      const data = await response.json();
+      if (!response.ok || !data.success) throw new Error(data.error || "진도 처리 실패");
+      setLectureProgressByKey((previous) => ({ ...previous, [key]: data.progress }));
+      setOpenLectureKey(key);
+    } catch (error) {
+      alert(error instanceof Error ? error.message : "LECTURE 진도를 처리하지 못했습니다.");
+    } finally {
+      setLectureLoadingKey(null);
+    }
+  }
+
+  async function handleLectureProgressReset(key: string) {
+    if (!confirm("이 이용권의 LECTURE 진도를 모두 초기화할까요? 이 작업은 되돌릴 수 없습니다.")) return;
+    if (!confirm("마지막 확인입니다. 완료 기록과 챕터 해금 상태를 초기화합니다.")) return;
+    await requestLectureProgress(key, "reset");
+  }
+
+  async function handleSetLectureChapter(key: string, currentChapter: number, chapter: number) {
+    if (chapter === currentChapter) return;
+    const lowering = chapter < currentChapter ? `\n\n주의: 챕터 ${chapter + 1}~${currentChapter} 이 다시 잠깁니다.` : "";
+    if (!confirm(`이용권 [${key}]의 LECTURE 해금을 챕터 ${currentChapter} → 챕터 ${chapter} 로 바꿀까요?${lowering}`)) {
+      setLectureProgressByKey((previous) => ({ ...previous }));
+      return;
+    }
+    await requestLectureProgress(key, "setChapter", { chapter });
   }
 
   // PASS-OFF GRAMMAR progress — look, open topics by hand and reset, the way STUDENT's is above (its own route and state)
@@ -1020,6 +1060,16 @@ export default function AdminLicensePage() {
 
                           <button
                             type="button"
+                            onClick={() => openLectureKey === item.key
+                              ? setOpenLectureKey(null)
+                              : void requestLectureProgress(item.key)}
+                            className="rounded-lg border border-blue-500/20 bg-blue-500/5 px-2.5 py-1 text-[11.5px] font-semibold text-blue-700 hover:bg-blue-500/15 cursor-pointer transition-colors"
+                          >
+                            {lectureLoadingKey === item.key ? "불러오는 중..." : "LECTURE 진도"}
+                          </button>
+
+                          <button
+                            type="button"
                             onClick={() => openPassoffKey === item.key
                               ? setOpenPassoffKey(null)
                               : void requestPassoffProgress(item.key)}
@@ -1168,6 +1218,50 @@ export default function AdminLicensePage() {
                               <button
                                 type="button"
                                 onClick={() => void handleAdultProgressReset(item.key)}
+                                className="rounded-lg border border-red-300 bg-white px-2.5 py-1 font-semibold text-red-600 hover:bg-red-50"
+                              >
+                                진도 초기화
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* LECTURE (2026-10-17) — ADULT's panel above, on LECTURE's own record (20장) */}
+                      {openLectureKey === item.key && lectureProgressByKey[item.key] && (
+                        <div className="rounded-2xl border border-blue-200 bg-blue-50/60 p-4 text-[12px] text-blue-950">
+                          <div className="flex flex-wrap items-center justify-between gap-3">
+                            <div className="flex flex-wrap gap-x-4 gap-y-1">
+                              <strong>LECTURE 챕터 {lectureProgressByKey[item.key].unlockedThrough}까지 해금</strong>
+                              <span>
+                                완료 강의 {lectureProgressByKey[item.key].completedLessons}
+                                {lectureProgressByKey[item.key].chapters?.length
+                                  ? `/${lectureProgressByKey[item.key].chapters!.reduce((sum, chapter) => sum + chapter.lessonIds.length, 0)}`
+                                  : ""}
+                              </span>
+                              <span>마지막 학습 {lectureProgressByKey[item.key].lastLessonId || "기록 없음"}</span>
+                              <span>저장 {new Date(lectureProgressByKey[item.key].updatedAt).toLocaleString("ko-KR")}</span>
+                            </div>
+                            <div className="flex flex-wrap items-center gap-2">
+                              <label className="flex items-center gap-1.5">
+                                <span>수동 해금</span>
+                                <select
+                                  value={lectureProgressByKey[item.key].unlockedThrough}
+                                  onChange={(event) => void handleSetLectureChapter(
+                                    item.key,
+                                    lectureProgressByKey[item.key].unlockedThrough,
+                                    Number(event.target.value),
+                                  )}
+                                  className="rounded-lg border border-blue-200 bg-white px-2 py-1 font-semibold"
+                                >
+                                  {Array.from({ length: 20 }, (_, chapterIndex) => (
+                                    <option key={chapterIndex + 1} value={chapterIndex + 1}>챕터 {chapterIndex + 1}</option>
+                                  ))}
+                                </select>
+                              </label>
+                              <button
+                                type="button"
+                                onClick={() => void handleLectureProgressReset(item.key)}
                                 className="rounded-lg border border-red-300 bg-white px-2.5 py-1 font-semibold text-red-600 hover:bg-red-50"
                               >
                                 진도 초기화

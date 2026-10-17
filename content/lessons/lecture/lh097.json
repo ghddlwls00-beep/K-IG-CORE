@@ -1,0 +1,36 @@
+{
+  "id": "lh097",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 97강",
+  "label": "고등 영어독해 91~100강",
+  "menuLabel": "97강",
+  "unit": 20,
+  "part": 97,
+  "order": 196,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 97,
+    "durationSec": 235.5,
+    "lengthUnits": 1307,
+    "unitSec": 0.180219,
+    "pages": [
+      {
+        "page": 97,
+        "src": "/audio/lecture/lh097/p097.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh097/pen.json",
+      "strokes": 63,
+      "segments": 2567
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해197.gdb",
+  "legacyEncoding": "euc-kr"
+}

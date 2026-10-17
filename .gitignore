@@ -25,6 +25,7 @@
 /data/student-progress.json
 /data/passoff-progress.json
 /data/adult-progress.json
+/data/lecture-progress.json
 /data/learning-*.json
 
 # misc
@@ -77,3 +78,6 @@ next-env.d.ts
 # engine out of report-kig006.cjs to keep exactly one implementation). Regenerated on
 # every run — never commit it.
 /docs/qa-2026-09-15/scripts/_eng-tmp.cjs
+
+# LECTURE page images and pen files (paid) — built by scripts/lecture/build-lecture.mjs, kept in the private R2 bucket only
+/.lecture-media/

@@ -12,6 +12,7 @@ import { GrammarLearningView } from "@/components/GrammarLearningView";
 import { PhonicsLearningView } from "@/components/PhonicsLearningView";
 import { StudentLearningView } from "@/components/StudentLearningView";
 import { PassoffLearningView } from "@/components/PassoffLearningView";
+import { LectureLearningView } from "@/components/LectureLearningView";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import { LessonActionButtons } from "@/components/LessonActionButtons";
 import { LessonStepNavigation } from "@/components/LessonStepNavigation";
@@ -40,8 +41,10 @@ import type { VoiceGender } from "@/lib/speech";
 export function generateStaticParams() {
   // STUDENT and PASS-OFF GRAMMAR have routes of their own (src/app/student · src/app/passoff-grammar) that gate
   // the chapter / topic order first and then render this page
-  // (ADULT too — src/app/adult, 2026-10-02)
-  return getAllLessonParams().filter((item) => item.course !== "student" && item.course !== "adult" && item.course !== "passoff-grammar");
+  // (ADULT too — src/app/adult, 2026-10-02 · LECTURE — src/app/lecture, 2026-10-17)
+  return getAllLessonParams().filter(
+    (item) => item.course !== "student" && item.course !== "adult" && item.course !== "passoff-grammar" && item.course !== "lecture",
+  );
 }
 
 /**
@@ -81,6 +84,7 @@ const COURSE_OG_IMAGE: Record<string, string> = {
   cnn: "/images/og/cnn.jpg",
   student: "/images/og/students.jpg",
   adult: "/images/og/men.jpg",
+  lecture: "/images/og/lecture.jpg",
   // GRAMMAR I's banner until PASS-OFF GRAMMAR has its own (docs/pass-off-grammar/작업기록.md)
   "passoff-grammar": "/images/og/passoff-grammar.jpg",
   chinese: "/images/og/chinese.jpg",
@@ -414,6 +418,8 @@ export default async function LessonPage({
           repeats the title, an icon and a general description in a box of its own above the steps.
         */}
         {isStudent && pres.subtitle ? <p className="mt-0.5 text-caption text-ink-faint">{pres.subtitle}</p> : null}
+        {/* LECTURE (2026-10-17): its chapter, the same quiet line — '1장 · 중등 영어독해 1~10강' */}
+        {course === "lecture" && pres.subtitle ? <p className="mt-0.5 text-caption text-ink-faint">{pres.subtitle}</p> : null}
         {/*
           2026-09-28 PASS-OFF GRAMMAR (merged with main): the textbook's own subheading of this link of the structure map
           (D1 — the title is the link's words, this is its subtitle), in GRAMMAR's line under the title. The course view
@@ -461,7 +467,19 @@ export default async function LessonPage({
       ) : null}
 
       {/* Educational Body with Aligned Sentences */}
-      {lesson.blocks.length > 0 && DIRECT_VIEW_COURSES.has(course) ? (
+      {course === "lecture" && lesson.lecture ? (
+        /*
+         * LECTURE (2026-10-17, docs/lecture/README.md): one screen, no steps — the textbook page and the teacher's pen played on
+         * their original timing. Only this lecture's paths go to the browser (the images and pen file are fetched from
+         * /audio/lecture/…, which checks the licence) and only here, after the gate above and the route's chapter gate.
+         * key: a new lecture is a new view (its clock, canvas and gate start fresh).
+         */
+        <LectureLearningView
+          key={`${course}/${lesson.id}`}
+          lessonKey={`${course}/${lesson.id}`}
+          lecture={lesson.lecture}
+        />
+      ) : lesson.blocks.length > 0 && DIRECT_VIEW_COURSES.has(course) ? (
         /*
          * BUG-023 — the course view is rendered HERE, on the server, instead of by
          * LessonBody's next/dynamic. That dynamic import made React stream a loading

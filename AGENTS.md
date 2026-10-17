@@ -155,9 +155,10 @@ node scripts/buildValidRoutes.mjs
 | LISTENING | `ld` | `content/lessons/ld/` · `content/ld_english_scripts.json` |
 | READING | `reading` | `content/lessons/reading/` |
 | STUDENT | `student` | `content/lessons/student/` — 괄호는 **빈칸**입니다 |
+| LECTURE | `lecture` | `content/lessons/lecture/` — 2026-10-17 새 과정, GVA 독해 강의 200개(교재 쪽 + 선생님 필기, 음성 없음). 강의 파일엔 경로만 — 그림 · 필기는 비공개 R2(`/audio/lecture/…`). 올패스로만 · 장 순서 잠금 · 진도는 따로. [`docs/lecture/README.md`](docs/lecture/README.md) · [`만들기-기록.md`](docs/lecture/만들기-기록.md) |
 | ADULT | `adult` | `content/lessons/adult/` — 2026-10-02 새 과정, STUDENT 와 같은 학습법에 '단어'(READING 핵심 어휘 방식 · 문장의 `words`) · '끊어 읽기'(문장의 `chunks`)를 더한 5단계(STUDENT 는 3단계 그대로 — 사장님 결정) · 진도는 따로. [`docs/adult/README.md`](docs/adult/README.md) |
 
-**CNN · GVA 는 폐지되었습니다.** 데이터는 남아 있지만 작업 대상이 아닙니다.
+**CNN 은 폐지되었습니다.** 데이터는 남아 있지만 작업 대상이 아닙니다. **GVA** 독해 강의는 9월에 폐지됐다가 2026-10-17 사장님 지시로 **LECTURE** 로 다시 들어왔습니다(위 표 · `docs/lecture/README.md`) — 옛 `/gva` 코드 · 공개 R2 방식은 쓰지 않습니다.
 
 ### 데이터에 대해 알아야 할 것
 

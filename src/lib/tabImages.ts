@@ -27,5 +27,10 @@ export const TAB_IMAGES: Record<
 // ADULT — the men's photo the site already has (사장님 2026-10-02 "남성 어른 사진으로 사용해")
 TAB_IMAGES.adult = TAB_IMAGES.men;
 
+// LECTURE (2026-10-17, docs/lecture/README.md) — the September GVA section's photo brought back (사장님 결정: 커밋 276630ef^ 의
+// public/images/sections/gva.jpg, saved as lecture.jpg byte for byte); the 640/1000 WebP, the 1000×525 share crop and the
+// 20×25 placeholder made with sharp like PASS-OFF GRAMMAR's below
+TAB_IMAGES.lecture = { src: "/images/sections/lecture.jpg", webp640: "/images/sections/lecture-640.webp", webp1000: "/images/sections/lecture-1000.webp", og: "/images/og/lecture.jpg", tiny: "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAZABQDASIAAhEBAxEB/8QAGwAAAQQDAAAAAAAAAAAAAAAAAAIFBgcBAwT/xAAtEAABAwICBQ0AAAAAAAAAAAABAAIDBBEFExIhIjFBBiQyMzQ1UmFxcnOxwf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCMV2DSUtdUwMOY2J+iHbrhN8kLmGxFlO6uppKqtm0ctz772kbWzvBUXxJrcw2uD5oGYjWhLd0kINkNTOx4y3OuTw1m66al07TzmOSN58bNFIwjt8PvH2rH5R921XxfiCrjYnghYk6x3qhB/9k=" };
+
 // PASS-OFF GRAMMAR's own photo (brush on paper — 사장님이 고른 사진, 2026-09-30), made with sharp like the rest
 TAB_IMAGES["passoff-grammar"] = { src: "/images/sections/passoff-grammar.jpg", webp640: "/images/sections/passoff-grammar-640.webp", webp1000: "/images/sections/passoff-grammar-1000.webp", og: "/images/og/passoff-grammar.jpg", tiny: "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAZABQDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAECAwUG/8QAKRAAAgEDAQcDBQAAAAAAAAAAAgMBAAQRBRIhMUJRYYEGEyJBkaHB0f/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCt11Os2wqF4i8eU+bz1rGvdPvLYYWwNhryhaxmd85nGf15rZGLFLBXrGmstHRu91czsH3x/M1FLA1P1RFyIsKytMQrAzMFMcPzvoOt0+2CxsU2oR8VBA5696KBuYmM7Bfaigtatb1EpwCYFxEozFRUhSFwtKxAI+gxiKmNOgWI6UU6KD//2Q==" };

@@ -1,0 +1,36 @@
+{
+  "id": "lh072",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 72강",
+  "label": "고등 영어독해 71~80강",
+  "menuLabel": "72강",
+  "unit": 18,
+  "part": 72,
+  "order": 171,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 72,
+    "durationSec": 304.1,
+    "lengthUnits": 1687,
+    "unitSec": 0.180262,
+    "pages": [
+      {
+        "page": 72,
+        "src": "/audio/lecture/lh072/p072.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh072/pen.json",
+      "strokes": 79,
+      "segments": 3408
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해172.gdb",
+  "legacyEncoding": "euc-kr"
+}

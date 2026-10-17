@@ -1,0 +1,36 @@
+{
+  "id": "lh062",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 62강",
+  "label": "고등 영어독해 61~70강",
+  "menuLabel": "62강",
+  "unit": 17,
+  "part": 62,
+  "order": 161,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 62,
+    "durationSec": 320.5,
+    "lengthUnits": 1777,
+    "unitSec": 0.180346,
+    "pages": [
+      {
+        "page": 62,
+        "src": "/audio/lecture/lh062/p062.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh062/pen.json",
+      "strokes": 140,
+      "segments": 4627
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해162.gdb",
+  "legacyEncoding": "euc-kr"
+}

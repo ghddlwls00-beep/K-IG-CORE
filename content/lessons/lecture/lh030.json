@@ -1,0 +1,36 @@
+{
+  "id": "lh030",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 30강",
+  "label": "고등 영어독해 21~30강",
+  "menuLabel": "30강",
+  "unit": 13,
+  "part": 30,
+  "order": 129,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 30,
+    "durationSec": 342.1,
+    "lengthUnits": 1899,
+    "unitSec": 0.180173,
+    "pages": [
+      {
+        "page": 30,
+        "src": "/audio/lecture/lh030/p030.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh030/pen.json",
+      "strokes": 98,
+      "segments": 3748
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해130.gdb",
+  "legacyEncoding": "euc-kr"
+}

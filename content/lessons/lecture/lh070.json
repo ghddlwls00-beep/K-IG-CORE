@@ -1,0 +1,36 @@
+{
+  "id": "lh070",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 70강",
+  "label": "고등 영어독해 61~70강",
+  "menuLabel": "70강",
+  "unit": 17,
+  "part": 70,
+  "order": 169,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 70,
+    "durationSec": 212.2,
+    "lengthUnits": 1178,
+    "unitSec": 0.180175,
+    "pages": [
+      {
+        "page": 70,
+        "src": "/audio/lecture/lh070/p070.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh070/pen.json",
+      "strokes": 70,
+      "segments": 2759
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해170.gdb",
+  "legacyEncoding": "euc-kr"
+}

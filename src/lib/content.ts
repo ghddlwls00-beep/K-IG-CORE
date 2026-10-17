@@ -90,6 +90,10 @@ export function getLesson(course: string, id: string): Lesson | null {
     case "passoff-grammar":
       courseDir = path.join(CONTENT_DIR, "lessons", "passoff-grammar");
       break;
+    case "lecture":
+      // LECTURE (2026-10-17) — titles and media paths only; the pages and pen strokes are private R2 objects
+      courseDir = path.join(CONTENT_DIR, "lessons", "lecture");
+      break;
     case "phonics":
       courseDir = path.join(CONTENT_DIR, "lessons", "phonics");
       break;

@@ -1,0 +1,36 @@
+{
+  "id": "lh035",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 35강",
+  "label": "고등 영어독해 31~40강",
+  "menuLabel": "35강",
+  "unit": 14,
+  "part": 35,
+  "order": 134,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 35,
+    "durationSec": 257.2,
+    "lengthUnits": 1427,
+    "unitSec": 0.180257,
+    "pages": [
+      {
+        "page": 35,
+        "src": "/audio/lecture/lh035/p035.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh035/pen.json",
+      "strokes": 59,
+      "segments": 1047
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해135.gdb",
+  "legacyEncoding": "euc-kr"
+}

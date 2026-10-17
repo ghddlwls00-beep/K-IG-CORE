@@ -1,0 +1,36 @@
+{
+  "id": "lh089",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 89강",
+  "label": "고등 영어독해 81~90강",
+  "menuLabel": "89강",
+  "unit": 19,
+  "part": 89,
+  "order": 188,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 89,
+    "durationSec": 180,
+    "lengthUnits": 998,
+    "unitSec": 0.180337,
+    "pages": [
+      {
+        "page": 89,
+        "src": "/audio/lecture/lh089/p089.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh089/pen.json",
+      "strokes": 74,
+      "segments": 3036
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해189.gdb",
+  "legacyEncoding": "euc-kr"
+}

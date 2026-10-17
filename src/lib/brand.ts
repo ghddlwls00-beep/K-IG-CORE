@@ -31,13 +31,14 @@ export const BRAND_LAB = "음절연구소";
 export const BRAND_NAME = `${BRAND_PERSON} | ${BRAND_LAB}`;
 
 /** One line about what the site is — browser tab on the home page, share cards. */
-export const BRAND_TAGLINE = "영어 학습 8개 과정";
+export const BRAND_TAGLINE = "영어 학습 9개 과정";
 
 /** The home page's browser-tab title and the share-card title. */
 export const SITE_TITLE = `${BRAND_NAME} · ${BRAND_TAGLINE}`;
 
 /** The share-card / search-result description of the whole site. */
-export const SITE_DESCRIPTION = `${BRAND_NAME}의 영어 학습 8개 과정: STUDENT 회화, ADULT 성인 회화, PASS-OFF GRAMMAR 문법, VOCA 어휘, 영문법 1·2, LISTENING, READING.`;
+// LECTURE (2026-10-17) made it nine — as ADULT made it eight (2026-10-02)
+export const SITE_DESCRIPTION = `${BRAND_NAME}의 영어 학습 9개 과정: STUDENT 회화, ADULT 성인 회화, PASS-OFF GRAMMAR 문법, VOCA 어휘, 영문법 1·2, LISTENING, READING, LECTURE 독해 강의.`;
 
 /** Used when a course or section has no description of its own, so a share card is never blank. */
 export const FALLBACK_DESCRIPTION = `${BRAND_NAME} — 회화, 문법, 어휘, 리스닝, 리딩을 한 곳에서.`;

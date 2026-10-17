@@ -185,6 +185,30 @@ export interface ReadingVocabularyItem {
   freq?: number;
 }
 
+/**
+ * LECTURE (2026-10-17, docs/lecture/README.md) — one GVA reading lecture as content/lessons/lecture/<id>.json holds it. Only
+ * the paths are here: the page images and the pen file are paid, private R2 objects the browser gets through /audio/lecture/…
+ * (mediaAccess.ts checks the licence). The pen file's own shape is LecturePenFile (src/lib/lecturePen.ts).
+ */
+export interface LectureData {
+  book: "middle" | "high";
+  /** The lecture's number in its book (1–100) */
+  number: number;
+  /** The whole lecture in seconds (lengthUnits × unitSec) */
+  durationSec: number;
+  lengthUnits: number;
+  /** Seconds per pen-time unit */
+  unitSec: number;
+  /** The textbook pages the lecture shows, the first one first */
+  pages: { page: number; src: string }[];
+  pen: { src: string; strokes: number; segments: number };
+  /**
+   * The lecture's voice, when the owner adds one (사장님 2026-10-17 — an AI voice per lecture later). None today. When it is
+   * set, LectureLearningView plays it and takes its clock from it.
+   */
+  audio?: { src: string };
+}
+
 export interface Lesson {
   /** Stable id, unique within a course. Derived from the legacy filename. */
   id: string;
@@ -222,6 +246,8 @@ export interface Lesson {
   readingSentences?: ReadingSentence[];
   /** 14 Pedagogically curated and ranked vocabulary items for reading course */
   readingVocabulary?: ReadingVocabularyItem[];
+  /** LECTURE (2026-10-17): the lecture's pages and pen timeline — paths only (scripts/lecture/build-lecture.mjs) */
+  lecture?: LectureData;
 
   /** Original file, relative to the archive root. Kept for verification. */
   legacyPath: string;

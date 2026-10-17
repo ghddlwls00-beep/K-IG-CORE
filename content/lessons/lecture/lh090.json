@@ -1,0 +1,36 @@
+{
+  "id": "lh090",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 90강",
+  "label": "고등 영어독해 81~90강",
+  "menuLabel": "90강",
+  "unit": 19,
+  "part": 90,
+  "order": 189,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 90,
+    "durationSec": 213.8,
+    "lengthUnits": 1186,
+    "unitSec": 0.180312,
+    "pages": [
+      {
+        "page": 90,
+        "src": "/audio/lecture/lh090/p090.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh090/pen.json",
+      "strokes": 53,
+      "segments": 1899
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해190.gdb",
+  "legacyEncoding": "euc-kr"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "lm052",
+  "course": "lecture",
+  "series": "lm",
+  "variant": "main",
+  "pairId": null,
+  "title": "중등 영어독해 52강",
+  "label": "중등 영어독해 51~60강",
+  "menuLabel": "52강",
+  "unit": 6,
+  "part": 52,
+  "order": 51,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "middle",
+    "number": 52,
+    "durationSec": 437,
+    "lengthUnits": 2427,
+    "unitSec": 0.180066,
+    "pages": [
+      {
+        "page": 52,
+        "src": "/audio/lecture/lm052/p052.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lm052/pen.json",
+      "strokes": 135,
+      "segments": 4443
+    }
+  },
+  "legacyPath": "중등영어 독해052.gdb",
+  "legacyEncoding": "euc-kr"
+}

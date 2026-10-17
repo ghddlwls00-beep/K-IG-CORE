@@ -20,6 +20,15 @@
  *   node audio-inventory.cjs --break=adult-free         깨기: 유료 ADULT a2-1 을 무료 강의로 여김(메모리) → 그 클립이 무료 목록에 없음 · exit 1
  *   node audio-inventory.cjs --break=adult-paid-listed  깨기: 유료 ADULT 만 쓰는 클립 하나를 무료 소리 목록 사본(메모리)에 넣음 → exit 1
  *   (깨기는 out/audio-inventory-break-<이름>.json 에 씀 — 진짜 목록을 덮지 않음)
+ *
+ * LECTURE (2026-10-17 · docs/lecture/도구-기록.md): 소리 내는 글이 없는 과정(사장님 '음성 없음' — docs/lecture/README.md)이라
+ *   SPOKEN_COURSES 에 넣지 않는다(넣으면 소리 생성기 · 무료 소리 키도 그 과정을 걷게 됨). 그 대신 여기서 NO_SPEECH 로 알고 지나가고,
+ *   그 과정의 미디어(교재 쪽 그림 lecture.pages[].src · 필기 lecture.pen.src · 나중의 AI 음성 lecture.audio.src — 모두 /audio/lecture/<id>/…)를
+ *   옛 과정 소리와 같은 '강의 미디어'(legacyAudio)로 적는다 → audio-check --anon 이 무료 강의 것은 열림 · 나머지는 403 으로 하나하나 본다.
+ *   무료/유료 갈림도 같은 규칙으로: 무료 강의 미디어가 무료 미디어 목록(generated/freeMediaKeys.json — 문지기가 쓰는 것)에 없음 · 유료만 쓰는
+ *   미디어가 그 목록에 있음 → exit 1.
+ *   node audio-inventory.cjs --break=lecture-free         깨기: 유료 LECTURE lm003 을 무료 강의로 여김(메모리) → 그 그림 · pen 이 무료 목록에 없음 · exit 1
+ *   node audio-inventory.cjs --break=lecture-paid-listed  깨기: 유료 lm050 의 pen 키를 무료 미디어 목록 사본(메모리)에 넣음 → exit 1
  */
 const fs = require("fs");
 const path = require("path");
@@ -39,11 +48,14 @@ function anonymousClipTexts(course, id) {
   try { return new Set(E.expected(course, id).clipTexts); } finally { spokenLib.heldBackOf = orig; }
 }
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
-if (BREAK && !["adult-free", "adult-paid-listed"].includes(BREAK)) { console.error(`모르는 --break=${BREAK} (adult-free · adult-paid-listed)`); process.exit(2); }
+const BREAKS = ["adult-free", "adult-paid-listed", "lecture-free", "lecture-paid-listed"];
+if (BREAK && !BREAKS.includes(BREAK)) { console.error(`모르는 --break=${BREAK} (${BREAKS.join(" · ")})`); process.exit(2); }
 const ROUTED = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8")).lessons;
 const COURSES = SPOKEN_COURSES.filter((c) => (ROUTED[c] || []).length);
+/** 소리 내는 글이 없는 과정 — 미디어만(머리말 LECTURE). 여기 적지 않은 새 과정은 여전히 멈춘다. */
+const NO_SPEECH = ["lecture"];
 {
-  const outside = Object.keys(ROUTED).filter((c) => c !== "cnn" && !SPOKEN_COURSES.includes(c));
+  const outside = Object.keys(ROUTED).filter((c) => c !== "cnn" && !SPOKEN_COURSES.includes(c) && !NO_SPEECH.includes(c));
   if (outside.length) { console.error(`!!! 주소가 있는데 spoken-texts.cjs SPOKEN_COURSES 에 없는 과정: ${outside.join(", ")} — 그 과정이 소리 내는 글을 정의한 뒤 다시 · exit 2`); process.exit(2); }
 }
 
@@ -65,6 +77,10 @@ const FREE_IDS = {};
   }
 }
 if (BREAK === "adult-free") { (FREE_IDS.adult ||= new Set()).add("a2-1"); console.log("[일부러 깸] 유료 ADULT a2-1 을 무료 강의로 여김(메모리)"); }
+if (BREAK === "lecture-free") { (FREE_IDS.lecture ||= new Set()).add("lm003"); console.log("[일부러 깸] 유료 LECTURE lm003 을 무료 강의로 여김(메모리)"); }
+// LECTURE(머리말): 문지기가 쓰는 무료 미디어 목록
+const freeMediaKeys = new Set(JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/freeMediaKeys.json"), "utf8")).keys);
+if (BREAK === "lecture-paid-listed") { freeMediaKeys.add("audio/lecture/lm050/pen.json"); console.log("[일부러 깸] 유료 lm050 의 pen 키를 무료 미디어 목록 사본에 넣음(메모리)"); }
 const isFreeLesson = (course, id) => {
   const set = FREE_IDS[course];
   if (!set) return false;
@@ -112,6 +128,34 @@ for (const course of COURSES) {
   byCourse[course] = { pages: stat.pages, freePages: stat.freePages, clipReferences: stat.clipRefs, uniqueClips: stat.uniqueClips.size, legacyAudioRefs: stat.legacy };
 }
 
+// LECTURE(머리말): 클립 없음 — 강의 미디어(그림 · 필기 · 나중 음성)를 legacyAudio 로, 무료/유료 갈림은 freeMediaKeys.json 과 견줌
+const lectureMediaSplit = { freeNotListed: [], paidListed: [] };
+for (const course of NO_SPEECH.filter((c) => (ROUTED[c] || []).length)) {
+  const stat = { pages: 0, freePages: 0, clipReferences: 0, uniqueClips: 0, legacyAudioRefs: 0, mediaFree: 0, mediaPaid: 0 };
+  for (const id of ROUTED[course]) {
+    const d = JSON.parse(fs.readFileSync(path.join(REPO, "content/lessons", course, `${id}.json`), "utf8"));
+    const L = d.lecture || {};
+    const freePage = isFreeLesson(course, id);
+    stat.pages++;
+    if (freePage) stat.freePages++;
+    for (const src of [...(L.pages || []).map((p) => p && p.src), L.pen && L.pen.src, L.audio && L.audio.src].filter((s) => typeof s === "string" && s)) {
+      const rec = legacy.get(src) || { lessons: new Set(), freeLesson: false };
+      rec.lessons.add(`${course}/${id}`);
+      rec.freeLesson = rec.freeLesson || freePage;
+      legacy.set(src, rec);
+      stat.legacyAudioRefs++;
+      if (freePage) stat.mediaFree++; else stat.mediaPaid++;
+    }
+  }
+  byCourse[course] = stat;
+}
+for (const [src, r] of legacy) {
+  if (!src.startsWith("/audio/lecture/")) continue;
+  const listed = freeMediaKeys.has(src.replace(/^\//, ""));
+  if (r.freeLesson && !listed) lectureMediaSplit.freeNotListed.push(`${src} (${[...r.lessons].join(", ")})`);
+  if (!r.freeLesson && listed) lectureMediaSplit.paidListed.push(`${src} (${[...r.lessons].join(", ")})`);
+}
+
 if (BREAK === "adult-paid-listed") {
   const victim = [...clips.entries()].find(([, r]) => !r.freeLesson && r.courses.size === 1 && r.courses.has("adult"));
   if (!victim) { console.log("!!! --break=adult-paid-listed: 유료 ADULT 만 쓰는 클립이 없음 — 아무것도 증명 못 함 · exit 2"); process.exit(2); }
@@ -150,6 +194,11 @@ const report = {
     paidOnlyClipsInFreeKeyListCount: paidOnlyClipsListedFree.length,
     oneKeyManyTexts: sameKeyDifferentTexts.slice(0, 10).map((r) => `${r.key}: ${r.texts.map((t) => `"${t.slice(0, 40)}"`).join(" | ")}`),
     oneKeyManyTextsCount: sameKeyDifferentTexts.length,
+    // LECTURE(머리말)
+    lectureFreeMediaNotInFreeMediaKeys: lectureMediaSplit.freeNotListed.slice(0, 20),
+    lectureFreeMediaNotInFreeMediaKeysCount: lectureMediaSplit.freeNotListed.length,
+    lecturePaidMediaInFreeMediaKeys: lectureMediaSplit.paidListed.slice(0, 20),
+    lecturePaidMediaInFreeMediaKeysCount: lectureMediaSplit.paidListed.length,
   },
   clips: rows,
   legacyAudio: [...legacy.entries()].map(([src, r]) => ({ src, lessons: [...r.lessons].slice(0, 4), lessonCount: r.lessons.size, freeLesson: r.freeLesson })),
@@ -160,6 +209,7 @@ const OUT_FILE = path.join(OUT, BREAK ? `audio-inventory-break-${BREAK}.json` : 
 fs.writeFileSync(OUT_FILE, JSON.stringify({ ...report, ...(BREAK ? { break: BREAK } : {}) }, null, 1));
 console.log(JSON.stringify({ totals: report.totals, byCourse: report.byCourse, problems: { ...report.problems, clipsSample: undefined } }, null, 1));
 // 회귀 점검 1002: 무료/유료 갈림이 어긋나면 exit 1 (전에는 숫자만 적고 0)
-const split = freeLessonClipsNotListed.length + paidOnlyClipsListedFree.length;
-console.log(`과정 ${COURSES.length}개(${COURSES.join(" · ")}) · 클립 ${rows.length} · 무료 강의 클립 중 무료 목록에 없음 ${freeLessonClipsNotListed.length} · 유료만 쓰는 클립 중 무료 목록에 있음 ${paidOnlyClipsListedFree.length}${BREAK ? ` [일부러 깸: ${BREAK}]` : ""} → ${path.relative(process.cwd(), OUT_FILE)} · exit ${split ? 1 : 0}`);
+const split = freeLessonClipsNotListed.length + paidOnlyClipsListedFree.length + lectureMediaSplit.freeNotListed.length + lectureMediaSplit.paidListed.length;
+if (byCourse.lecture) console.log(`LECTURE(소리 없음 — 미디어만): 강의 ${byCourse.lecture.pages} · 미디어 ${byCourse.lecture.legacyAudioRefs}(무료 강의 ${byCourse.lecture.mediaFree} · 유료 ${byCourse.lecture.mediaPaid}) · 무료 강의 미디어 중 무료 미디어 목록에 없음 ${lectureMediaSplit.freeNotListed.length} · 유료 미디어 중 그 목록에 있음 ${lectureMediaSplit.paidListed.length}${[...lectureMediaSplit.freeNotListed, ...lectureMediaSplit.paidListed].slice(0, 4).map((x) => `\n  ${x}`).join("")}`);
+console.log(`과정 ${COURSES.length}개(${COURSES.join(" · ")})${byCourse.lecture ? " + LECTURE 미디어" : ""} · 클립 ${rows.length} · 무료 강의 클립 중 무료 목록에 없음 ${freeLessonClipsNotListed.length} · 유료만 쓰는 클립 중 무료 목록에 있음 ${paidOnlyClipsListedFree.length}${BREAK ? ` [일부러 깸: ${BREAK}]` : ""} → ${path.relative(process.cwd(), OUT_FILE)} · exit ${split ? 1 : 0}`);
 process.exitCode = split ? 1 : 0;

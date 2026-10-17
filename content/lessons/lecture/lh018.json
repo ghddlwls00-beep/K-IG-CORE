@@ -1,0 +1,36 @@
+{
+  "id": "lh018",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 18강",
+  "label": "고등 영어독해 11~20강",
+  "menuLabel": "18강",
+  "unit": 12,
+  "part": 18,
+  "order": 117,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 18,
+    "durationSec": 412.5,
+    "lengthUnits": 2289,
+    "unitSec": 0.18021,
+    "pages": [
+      {
+        "page": 18,
+        "src": "/audio/lecture/lh018/p018.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh018/pen.json",
+      "strokes": 148,
+      "segments": 5614
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해118.gdb",
+  "legacyEncoding": "euc-kr"
+}

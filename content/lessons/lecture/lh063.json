@@ -1,0 +1,36 @@
+{
+  "id": "lh063",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 63강",
+  "label": "고등 영어독해 61~70강",
+  "menuLabel": "63강",
+  "unit": 17,
+  "part": 63,
+  "order": 162,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 63,
+    "durationSec": 274.5,
+    "lengthUnits": 1522,
+    "unitSec": 0.180344,
+    "pages": [
+      {
+        "page": 63,
+        "src": "/audio/lecture/lh063/p063.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh063/pen.json",
+      "strokes": 105,
+      "segments": 4584
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해163.gdb",
+  "legacyEncoding": "euc-kr"
+}

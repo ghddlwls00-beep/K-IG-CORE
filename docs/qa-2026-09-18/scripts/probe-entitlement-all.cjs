@@ -22,17 +22,37 @@
  *     --break=adult-free   유료 ADULT a2-1 을 무료 목록 사본(메모리)에 넣음 → 운영은 잠김 화면 → 그 주소 FAIL · exit 1
  *     --break=adult-leak   유료 ADULT a2-1 의 받은 HTML · RSC 사본(메모리)에 그 강의 바늘 하나를 심음 → 유출로 FAIL · exit 1
  *                          (심을 바늘이 없으면 exit 2 — 아무것도 증명 못 함)
+ *
+ * LECTURE (2026-10-17 · docs/lecture/도구-기록.md): 강의 파일에 유료 '글' 이 없다(제목 · 장 이름은 잠김 화면에도 나옴). 유료 내용은 비공개
+ *   R2 의 교재 쪽 그림 · 필기이고, 강의 화면은 그것을 '/audio/lecture/<id>/p<NN>.jpg' · '/audio/lecture/<id>/pen.json' 주소로 부른다.
+ *   그래서 바늘 = 그 강의 파일의 미디어 주소(lecture.pages[].src · lecture.pen.src · 나중의 lecture.audio.src) 그대로:
+ *   유료 강의 → HTML · RSC 에 0 + 잠김 표시('ALL-PASS ONLY' — LECTURE 는 올패스만), 무료 lm001 · lm002 → 잠김 표시 없음 + 주소가 있음
+ *   (강의 화면이 실제로 그려졌다는 뜻). 잠김 쪽 서버는 강의 파일의 lecture 덩어리를 읽지 않으므로 주소가 하나라도 있으면 유출.
+ *   --base <주소> (또는 환경 BASE): 올리기 전 로컬 운영 빌드(npx next start)에.
+ *     --break=lecture-free   유료 LECTURE lm003 을 무료 목록 사본(메모리)에 넣음 → 사이트는 잠김 화면 → 그 주소 FAIL · exit 1
+ *     --break=lecture-leak   유료 LECTURE lm050 의 받은 HTML · RSC 사본(메모리)에 그 강의 pen 주소를 심음 → 유출로 FAIL · exit 1
  */
 const fs = require("fs");
 const path = require("path");
 const REPO = path.resolve(__dirname, "../../..");
-const BASE = process.env.BASE || "https://k-ig-core.vercel.app";
+/** `--base <url>` · `--base=<url>` (LECTURE 2026-10-17 — 로컬 빌드), else env BASE, else production */
+const BASE = (() => {
+  const at = process.argv.indexOf("--base");
+  if (at >= 0) {
+    const v = process.argv[at + 1];
+    if (!v || v.startsWith("--")) throw new Error("--base 다음에 사이트 주소를 주어야 함(예: --base http://localhost:3392)");
+    return v;
+  }
+  const eq = process.argv.find((a) => a.startsWith("--base="));
+  return eq ? eq.slice("--base=".length) : process.env.BASE || "https://k-ig-core.vercel.app";
+})().replace(/\/+$/, "");
 const OUT = path.join(__dirname, "../out");
 const BREAK = (process.argv.find((a) => a.startsWith("--break=")) || "").slice("--break=".length);
-if (BREAK && !["adult-free", "adult-leak"].includes(BREAK)) { console.error(`모르는 --break=${BREAK} (adult-free · adult-leak)`); process.exit(2); }
+const BREAKS = ["adult-free", "adult-leak", "lecture-free", "lecture-leak"];
+if (BREAK && !BREAKS.includes(BREAK)) { console.error(`모르는 --break=${BREAK} (${BREAKS.join(" · ")})`); process.exit(2); }
 const routes = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8")).lessons;
 // 회귀 점검 1002: validRoutes 의 과정 전부(CNN 폐지) — 바늘 뽑는 법을 아는 과정만(KNOWN), 모르는 과정이 생기면 멈춤
-const KNOWN = ["student", "adult", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
+const KNOWN = ["student", "adult", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading", "lecture"];
 const RETIRED = new Set(["cnn"]);
 const COURSES = Object.keys(routes).filter((c) => !RETIRED.has(c));
 {
@@ -59,6 +79,8 @@ for (const line of freeBlock.split("\n")) {
 }
 if (!FREE.adult || !FREE.adult.size) { console.error("!!! license.ts FREE_PREVIEW_LESSON_IDS 에서 adult 무료 강의를 못 읽음 · exit 2"); process.exit(2); }
 if (BREAK === "adult-free") { FREE.adult.add("a2-1"); console.log("[일부러 깸] 유료 ADULT a2-1 을 무료 목록 사본에 넣음 — 운영은 잠김 화면이므로 a2-1 이 FAIL 이어야 함"); }
+if (COURSES.includes("lecture") && (!FREE.lecture || !FREE.lecture.size)) { console.error("!!! license.ts FREE_PREVIEW_LESSON_IDS 에서 lecture 무료 강의를 못 읽음 · exit 2"); process.exit(2); }
+if (BREAK === "lecture-free") { FREE.lecture.add("lm003"); console.log("[일부러 깸] 유료 LECTURE lm003 을 무료 목록 사본에 넣음 — 사이트는 잠김 화면이므로 lm003 이 FAIL 이어야 함"); }
 const isFree = (course, id) => {
   const set = FREE[course];
   if (!set) return false;
@@ -87,6 +109,11 @@ function needles(course, id) {
   if (!fs.existsSync(file)) return [];
   const d = JSON.parse(fs.readFileSync(file, "utf8"));
   if (course === "adult") return adultNeedles(d);
+  // LECTURE (머리말): 그 강의의 그림 · 필기 주소 그대로 — 아래 '/' 로 시작하는 글을 빼는 거름을 지나지 않게 여기서 돌려줌
+  if (course === "lecture") {
+    const L = d.lecture || {};
+    return [...new Set([L.pen && L.pen.src, ...(L.pages || []).map((p) => p && p.src), L.audio && L.audio.src].filter((s) => typeof s === "string" && s))];
+  }
   let c = [];
   if (course === "ld") c.push(...(scripts[id.replace(/-1$/, "")] || []).map((r) => r.en));
   collectStrings(d.blocks || d, c);
@@ -183,6 +210,14 @@ async function get(url, headers) {
         rsc.text += JSON.stringify(plant);
         console.log(`[일부러 깸] a2-1 의 받은 HTML · RSC 사본에 그 강의 바늘을 심음: ${JSON.stringify(plant)}`);
       }
+      if (BREAK === "lecture-leak" && course === "lecture" && id === "lm050") {
+        const plant = ns.find((n) => /pen\.json$/.test(n));
+        if (!plant) { console.log("!!! --break=lecture-leak: lm050 에 심을 pen 주소가 없음 — 아무것도 증명 못 함 · exit 2"); process.exit(2); }
+        // 강의 화면이 그려졌다면 실제로 실리는 꼴 — HTML 은 속성 값, RSC 는 JSON 글
+        html.text += `<link rel="preload" href="${esc(plant)}">`;
+        rsc.text += JSON.stringify({ pen: { src: plant } });
+        console.log(`[일부러 깸] lm050 의 받은 HTML · RSC 사본에 그 강의 pen 주소를 심음: ${plant}`);
+      }
       // HTML: paid → paywall marker in server HTML and no lesson text; free → no paywall and lesson text.
       // RSC: the paywall is a client component, so its marker text is not in the flight payload;
       //      paid → no lesson text; free → recorded only (lesson text may arrive as client props).
@@ -206,7 +241,9 @@ async function get(url, headers) {
   results.sort((a, b) => (a.course + a.id).localeCompare(b.course + b.id));
   fs.mkdirSync(OUT, { recursive: true });
   // 깨기 결과는 진짜 결과 파일을 덮지 않는다
-  fs.writeFileSync(path.join(OUT, BREAK ? `entitlement-all-break-${BREAK}.json` : "entitlement-all.json"), JSON.stringify({ at: new Date().toISOString(), base: BASE, ...(BREAK ? { break: BREAK } : {}), results }, null, 1));
+  // 운영이 아닌 주소(--base · BASE)의 결과는 운영 결과 파일을 덮지 않게 따로(LECTURE 2026-10-17)
+  const local = BASE !== "https://k-ig-core.vercel.app" ? "-local" : "";
+  fs.writeFileSync(path.join(OUT, BREAK ? `entitlement-all${local}-break-${BREAK}.json` : `entitlement-all${local}.json`), JSON.stringify({ at: new Date().toISOString(), base: BASE, ...(BREAK ? { break: BREAK } : {}), results }, null, 1));
   const by = {};
   for (const r of results) {
     const key = `${r.course} ${r.free ? "free" : "paid"}`;

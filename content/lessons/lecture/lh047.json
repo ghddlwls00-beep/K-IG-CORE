@@ -1,0 +1,36 @@
+{
+  "id": "lh047",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 47강",
+  "label": "고등 영어독해 41~50강",
+  "menuLabel": "47강",
+  "unit": 15,
+  "part": 47,
+  "order": 146,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 47,
+    "durationSec": 192,
+    "lengthUnits": 1066,
+    "unitSec": 0.18011,
+    "pages": [
+      {
+        "page": 47,
+        "src": "/audio/lecture/lh047/p047.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh047/pen.json",
+      "strokes": 53,
+      "segments": 2055
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해147.gdb",
+  "legacyEncoding": "euc-kr"
+}

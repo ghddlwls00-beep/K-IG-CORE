@@ -60,6 +60,20 @@
  *   node probe-bundle-leak-all.cjs --break=adult-ko       유료 ADULT 한국어 줄 하나를 /search-index.json 사본에 → adult inJson ≥1 · exit 1
  *   node probe-bundle-leak-all.cjs --break=adult-chunk    유료 ADULT 한국어 덩어리 하나를(20글자 미만 — 옛 기준이면 못 봄) 같은 사본에 → exit 1
  *   node probe-bundle-leak-all.cjs --break=adult-meaning  유료 ADULT 낱말 뜻 하나를(20글자 미만) JS 사본에 → adult inJs ≥1 · exit 1
+ *
+ * LECTURE (2026-10-17 · docs/lecture/도구-기록.md): 강의 파일에는 유료 '글' 이 없다 — 제목 · 장 이름(목록에 공개)뿐이고, 유료 내용은
+ *   비공개 R2 의 교재 쪽 그림(audio/lecture/<id>/p<NN>.jpg)과 필기(pen.json)다. 그림 바이트는 글자 검색으로 찾을 수 없으므로 바늘은
+ *   (1) lecture-media: 잠긴 강의의 미디어 주소 그대로(강의 파일 lecture.pages[].src · lecture.pen.src · 나중의 lecture.audio.src) —
+ *       평문으로 'audiolecturelm050p050jpg' · 'audiolecturelm050penjson'(24글자). 주소가 공개 JS · JSON 에 있으면 잠긴 강의의 그림 ·
+ *       필기를 부를 길이 공개된 것(문지기가 이용권을 보더라도 '잠긴 강의 화면에 주소 0' 이 앱의 약속 — 확인-기록 3장). 평문이라 JSON 의
+ *       '\/' 꼴도 같은 글자가 됨. '%2F' 로 감싼 주소는 못 봄(그 꼴은 확인-도구/probe-lecture-public.cjs 가 날 글로 봄).
+ *       '/lecture/lm050' 같은 강의 주소(목록에 공개)나 'audio/lecture' 머리만으로는 바늘로 삼지 않음 — 공개 쪽에 원래 있다.
+ *   (2) lecture-pen: 필기 내용 — 저장소엔 없고(공개 저장소라서) R2 를 받은 로컬 사본(.lecture-media/audio/lecture/<id>/pen.json,
+ *       git 밖 · 없으면 0 으로 적고 (1) 만)이 있을 때만. 'strokes' + 첫 획의 숫자(시각 · 쪽 · 펜 · x · y · 움직임 …)를 평문으로 40글자 —
+ *       JSON 이든 압축된 JS 객체(strokes:[[…]])든 정수는 그대로라 같은 글자. unitSec 같은 소수는 압축기가 '0.18' → '.18' 로 바꿔 쓰지 않음.
+ *   node probe-bundle-leak-all.cjs --break=lecture-media  유료 LECTURE lm050 의 그림 주소를 /search-index.json 사본에 → lecture inJson ≥1 · exit 1
+ *   node probe-bundle-leak-all.cjs --break=lecture-pen    유료 LECTURE lm050 의 pen.json 앞 3,000자(실제 파일)를 JS 사본에 → lecture inJs ≥1 · exit 1
+ *                                                         (로컬 사본이 없으면 exit 2 — 아무것도 증명 못 함)
  */
 const fs = require("fs");
 const path = require("path");
@@ -79,7 +93,7 @@ const BASE = (baseArg() || process.env.BASE || "https://k-ig-core.vercel.app").r
 const OUT = path.join(__dirname, "../out");
 const vr = JSON.parse(fs.readFileSync(path.join(REPO, "src/lib/generated/validRoutes.json"), "utf8"));
 // 회귀 점검 1002: validRoutes 의 과정 전부(CNN 폐지) — 바늘 뽑는 법을 아는 과정만, 모르는 과정이 생기면 멈춤
-const KNOWN_COURSES = ["student", "adult", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading"];
+const KNOWN_COURSES = ["student", "adult", "passoff-grammar", "phonics", "grammar1", "grammar2", "ld", "reading", "lecture"];
 const COURSES = Object.keys(vr.lessons).filter((c) => c !== "cnn");
 {
   const unknown = COURSES.filter((c) => !KNOWN_COURSES.includes(c));
@@ -117,6 +131,25 @@ function collectStrings(v, out) {
   else if (Array.isArray(v)) for (const x of v) collectStrings(x, out);
   else if (v && typeof v === "object") for (const [k, x] of Object.entries(v)) if (!/^(id|type|audio|src|image|href|slug|course)$/i.test(k)) collectStrings(x, out);
 }
+// LECTURE 그림 · 필기의 로컬 사본(R2 를 받은 것 · git 밖) — 다른 곳이면 KIG_LECTURE_MEDIA 로
+const LECTURE_MEDIA = process.env.KIG_LECTURE_MEDIA || path.join(REPO, ".lecture-media");
+const lecturePenFile = (id) => path.join(LECTURE_MEDIA, "audio/lecture", id, "pen.json");
+/** LECTURE 한 강의의 바늘 — 미디어 주소(늘) + 필기 내용 'strokes'+첫 획 40글자(로컬 사본이 있을 때). 이유는 머리말. */
+function lectureNeedles(id, d) {
+  const L = d.lecture || {};
+  const out = [];
+  for (const src of [...(L.pages || []).map((p) => p && p.src), L.pen && L.pen.src, L.audio && L.audio.src]) {
+    if (typeof src === "string" && src) out.push({ kind: "lecture-media", raw: src, f: flat(src), meta: false });
+  }
+  const pf = lecturePenFile(id);
+  if (fs.existsSync(pf)) {
+    const strokes = JSON.parse(fs.readFileSync(pf, "utf8")).strokes || [];
+    let f = "strokes";
+    for (const s of strokes) { f += flat(JSON.stringify(s)); if (f.length >= 40) break; }
+    if (f.length >= 40) out.push({ kind: "lecture-pen", raw: `${id}/pen.json strokes[0…]`, f: f.slice(0, 40), meta: false });
+  }
+  return out;
+}
 const META_KEYS = ["title", "label", "menuLabel", "series", "variant"];
 function lessonNeedles(course, id) {
   const file = path.join(REPO, "content/lessons", course, `${id}.json`);
@@ -147,6 +180,8 @@ function lessonNeedles(course, id) {
       }
     }
   }
+  // LECTURE (2026-10-17 · 머리말): 미디어 주소 + (로컬 사본이 있으면) 필기 내용. collectStrings 는 'src' 칸을 건너뛰므로 여기서 따로.
+  if (course === "lecture") needles.push(...lectureNeedles(id, d));
   // 2026-09-28 새 문제: the lesson's comprehension questions (content/questions/<course>/<main id>.json) — prompts and options of
   // 12+ letters (Korean is dense: 12 letters is already a specific phrase)
   const qFile = path.join(REPO, "content/questions", course, `${id.replace(/-\d+$/, "")}.json`);
@@ -229,10 +264,15 @@ function appCodeEvidence(course, id, n) {
   return null;
 }
 
+/**
+ * LECTURE 도구 고침(2026-10-17): Next 16 은 'RSC: 1' 요청을 '?_rsc' 로 307 보낸다(본문 0바이트 — 로컬 3392 에서 /lecture/lm001 ·
+ * /student/s1-1 둘 다 잼). redirect "manual" 이라 RSC 를 받는 줄은 그동안 빈 글만 받았다 — 청크 · JSON 주소는 HTML 에서만 모였고
+ * (HTML 속 RSC 는 '\"' 로 감싸여 JSON 주소 정규식에 안 걸림), 목록 쪽 RSC 글도 비었다. RSC 요청만 따라간다.
+ */
 async function get(url, headers = {}) {
   for (let a = 0; a < 4; a++) {
     try {
-      const r = await fetch(url, { headers, redirect: "manual" });
+      const r = await fetch(url, { headers, redirect: headers.RSC ? "follow" : "manual" });
       const t = await r.text();
       if (r.status < 500 && r.status !== 429) return { status: r.status, text: t };
     } catch {}
@@ -398,6 +438,27 @@ async function crawl() {
     }
     if (!planted) nothingToPlant(`유료 ADULT ${kind} 바늘이`);
     console.log(`[일부러 깸] ${BREAK === "adult-meaning" ? "JS" : "/search-index.json"} 사본에 유료 ADULT ${kind} 하나: ${JSON.stringify(planted)}`);
+  } else if (BREAK === "lecture-media" || BREAK === "lecture-pen") {
+    // LECTURE (2026-10-17): 잠긴 lm050 의 그림 주소(날 글 그대로)를 색인 사본에 · 또는 그 pen.json 실제 파일 앞 3,000자를 JS 사본에 —
+    // 주소 바늘 · 필기 바늘이 실제 꼴에서 잡히는지. lm050 이 무료가 되었거나 이미 어딘가 있으면 심지 않고 멈춘다.
+    const id = "lm050";
+    if (!(vr.lessons.lecture || []).includes(id) || isFree("lecture", id)) nothingToPlant("유료 LECTURE lm050 이");
+    const d = JSON.parse(fs.readFileSync(path.join(REPO, "content/lessons/lecture", `${id}.json`), "utf8"));
+    if (BREAK === "lecture-media") {
+      const src = ((d.lecture || {}).pages || [])[0] && d.lecture.pages[0].src;
+      const idx = jsonBodies.find((j) => j.url === "/search-index.json");
+      if (!src || idx.flat.includes(flat(src)) || js.includes(flat(src))) nothingToPlant("lm050 그림 주소가(없거나 이미 공개 파일에 있음)");
+      idx.flat += flat(JSON.stringify({ href: "/lecture/lm050", image: src }));
+      planted = { course: "lecture", id, text: src };
+    } else {
+      if (!fs.existsSync(lecturePenFile(id))) nothingToPlant(`lm050 pen.json 로컬 사본이(${lecturePenFile(id)})`);
+      const raw = fs.readFileSync(lecturePenFile(id), "utf8").slice(0, 3000);
+      const pen = lectureNeedles(id, d).find((n) => n.kind === "lecture-pen");
+      if (!pen || js.includes(pen.f)) nothingToPlant("lm050 필기 바늘이(없거나 이미 JS 에 있음)");
+      js += "\n" + flat(raw);
+      planted = { course: "lecture", id, text: `pen.json 앞 ${raw.length}자` };
+    }
+    console.log(`[일부러 깸] ${BREAK === "lecture-media" ? "/search-index.json" : "JS"} 사본에 유료 LECTURE: ${JSON.stringify(planted)}`);
   } else if (BREAK) throw new Error(`모르는 --break=${BREAK}`);
 
   const result = { at: new Date().toISOString(), base: BASE, pages, chunks: chunkList.length, jsKB: Math.round(jsBytes / 1024), badChunks, json: jsonBodies.map((j) => ({ url: j.url, status: j.status, kb: Math.round(j.bytes / 1024) })), courses: {} };
@@ -451,6 +512,12 @@ async function crawl() {
   console.log(`유출 ${leaks} (JS · JSON) · 익명 과정 목록에 이미 보이는 제목이라 뺀 것 ${onList} · 레슨보다 먼저 있던 앱 코드와 글자가 같아 따로 센 것 ${inAppCode}${BREAK ? ` [일부러 깸: ${BREAK}]` : ""}`);
   for (const [c, x] of Object.entries(result.courses)) for (const e of x.appCodeExamples) console.log(`  (앱 코드) ${c}/${e.id} "${e.text}" ← ${e.code}`);
   for (const [c, x] of Object.entries(result.courses)) for (const e of x.listTitleExamples) console.log(`  (목록 제목) ${c}/${e.id} "${e.text}" ⊂ ${e.title}`);
+  if (COURSES.includes("lecture")) {
+    // LECTURE: 바늘 종류별 수 — 필기 바늘이 0 이면 로컬 사본이 없어 주소만 본 것
+    const kinds = {};
+    for (const id of vr.lessons.lecture || []) if (!isFree("lecture", id)) for (const n of lessonNeedles("lecture", id)) kinds[n.kind] = (kinds[n.kind] || 0) + 1;
+    console.log(`LECTURE 바늘: 미디어 주소 ${kinds["lecture-media"] || 0} · 필기 내용 ${kinds["lecture-pen"] || 0}(로컬 사본 ${fs.existsSync(path.join(LECTURE_MEDIA, "audio/lecture")) ? "있음" : `없음 — ${LECTURE_MEDIA}`}) · 그 밖 ${Object.entries(kinds).filter(([k]) => !k.startsWith("lecture-")).reduce((s, [, v]) => s + v, 0)}`);
+  }
   if (result.badChunks.length) console.log(`!!! 받지 못한 청크 ${result.badChunks.length} — 이 판정은 그 청크를 못 본 것 · exit 1`);
   // 회귀 점검 1002: 과정마다 본 유료 강의 · 바늘 수 — ADULT 가 세어졌는지 숫자로
   console.log(`과정 ${COURSES.length}개: ${Object.entries(result.courses).map(([c, x]) => `${c} 유료 ${x.paidLessons}강의 · 바늘 ${x.needles} · 유출 ${x.inJs + x.inJson}`).join(" | ")}`);

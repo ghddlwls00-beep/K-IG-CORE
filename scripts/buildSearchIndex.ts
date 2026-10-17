@@ -16,6 +16,9 @@ const courses = [
   { slug: "grammar2", title: "GRAMMAR II" },
   { slug: "ld", title: "LISTENING" },
   { slug: "reading", title: "READING" },
+  // LECTURE (2026-10-17): titles only ('중등 영어독해 1강' · its chapter) — the lesson files hold nothing else, and the pages and pen
+  // strokes are private R2 objects that never reach this file
+  { slug: "lecture", title: "LECTURE" },
   // BUG-017 (2026-09-23): CNN NEWS is a discontinued course, so it is no longer
   // indexed — 120 search results led to a course that is not sold. The course
   // itself is untouched; only the index stops listing it.
@@ -84,6 +87,7 @@ for (const { slug, title: courseTitle } of courses) {
       slug === "grammar2" ? "문법 패턴 구문 영작 grammar2" : "",
       slug === "ld" ? "듣기 청취 수능 토익 받아쓰기 dictation listening ld" : "",
       slug === "reading" ? "독해 리딩 지문 본문 해석 reading" : "",
+      slug === "lecture" ? "강의 독해 영어독해 지문 필기 lecture" : "",
     ]
       .filter(Boolean)
       .join(" ")

@@ -1,0 +1,36 @@
+{
+  "id": "lm022",
+  "course": "lecture",
+  "series": "lm",
+  "variant": "main",
+  "pairId": null,
+  "title": "중등 영어독해 22강",
+  "label": "중등 영어독해 21~30강",
+  "menuLabel": "22강",
+  "unit": 3,
+  "part": 22,
+  "order": 21,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "middle",
+    "number": 22,
+    "durationSec": 282.3,
+    "lengthUnits": 1566,
+    "unitSec": 0.180265,
+    "pages": [
+      {
+        "page": 22,
+        "src": "/audio/lecture/lm022/p022.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lm022/pen.json",
+      "strokes": 168,
+      "segments": 4057
+    }
+  },
+  "legacyPath": "중등영어 독해022.gdb",
+  "legacyEncoding": "euc-kr"
+}

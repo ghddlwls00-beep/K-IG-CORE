@@ -1,0 +1,36 @@
+{
+  "id": "lh015",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 15강",
+  "label": "고등 영어독해 11~20강",
+  "menuLabel": "15강",
+  "unit": 12,
+  "part": 15,
+  "order": 114,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 15,
+    "durationSec": 391,
+    "lengthUnits": 2168,
+    "unitSec": 0.180347,
+    "pages": [
+      {
+        "page": 15,
+        "src": "/audio/lecture/lh015/p015.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh015/pen.json",
+      "strokes": 100,
+      "segments": 4101
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해115.gdb",
+  "legacyEncoding": "euc-kr"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "lh010",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 10강",
+  "label": "고등 영어독해 1~10강",
+  "menuLabel": "10강",
+  "unit": 11,
+  "part": 10,
+  "order": 109,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 10,
+    "durationSec": 306.6,
+    "lengthUnits": 1700,
+    "unitSec": 0.180382,
+    "pages": [
+      {
+        "page": 10,
+        "src": "/audio/lecture/lh010/p010.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh010/pen.json",
+      "strokes": 120,
+      "segments": 3824
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해110.gdb",
+  "legacyEncoding": "euc-kr"
+}

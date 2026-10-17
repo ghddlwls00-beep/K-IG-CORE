@@ -1,0 +1,36 @@
+{
+  "id": "lh049",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 49강",
+  "label": "고등 영어독해 41~50강",
+  "menuLabel": "49강",
+  "unit": 15,
+  "part": 49,
+  "order": 148,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 49,
+    "durationSec": 438.7,
+    "lengthUnits": 2432,
+    "unitSec": 0.180387,
+    "pages": [
+      {
+        "page": 49,
+        "src": "/audio/lecture/lh049/p049.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh049/pen.json",
+      "strokes": 200,
+      "segments": 6966
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해149.gdb",
+  "legacyEncoding": "euc-kr"
+}

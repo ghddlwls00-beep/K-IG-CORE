@@ -1,0 +1,36 @@
+{
+  "id": "lh023",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 23강",
+  "label": "고등 영어독해 21~30강",
+  "menuLabel": "23강",
+  "unit": 13,
+  "part": 23,
+  "order": 122,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 23,
+    "durationSec": 223,
+    "lengthUnits": 1237,
+    "unitSec": 0.180249,
+    "pages": [
+      {
+        "page": 23,
+        "src": "/audio/lecture/lh023/p023.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh023/pen.json",
+      "strokes": 70,
+      "segments": 3066
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해123.gdb",
+  "legacyEncoding": "euc-kr"
+}

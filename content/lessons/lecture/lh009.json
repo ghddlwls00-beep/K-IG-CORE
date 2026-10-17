@@ -1,0 +1,36 @@
+{
+  "id": "lh009",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 9강",
+  "label": "고등 영어독해 1~10강",
+  "menuLabel": "9강",
+  "unit": 11,
+  "part": 9,
+  "order": 108,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 9,
+    "durationSec": 264.4,
+    "lengthUnits": 1466,
+    "unitSec": 0.180387,
+    "pages": [
+      {
+        "page": 9,
+        "src": "/audio/lecture/lh009/p009.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh009/pen.json",
+      "strokes": 56,
+      "segments": 2573
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해109.gdb",
+  "legacyEncoding": "euc-kr"
+}

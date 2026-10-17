@@ -1,0 +1,36 @@
+{
+  "id": "lh008",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 8강",
+  "label": "고등 영어독해 1~10강",
+  "menuLabel": "8강",
+  "unit": 11,
+  "part": 8,
+  "order": 107,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 8,
+    "durationSec": 292.9,
+    "lengthUnits": 1624,
+    "unitSec": 0.180353,
+    "pages": [
+      {
+        "page": 8,
+        "src": "/audio/lecture/lh008/p008.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh008/pen.json",
+      "strokes": 96,
+      "segments": 3695
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해108.gdb",
+  "legacyEncoding": "euc-kr"
+}

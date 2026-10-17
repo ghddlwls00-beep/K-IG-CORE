@@ -1,0 +1,36 @@
+{
+  "id": "lh031",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 31강",
+  "label": "고등 영어독해 31~40강",
+  "menuLabel": "31강",
+  "unit": 14,
+  "part": 31,
+  "order": 130,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 31,
+    "durationSec": 274.3,
+    "lengthUnits": 1522,
+    "unitSec": 0.180205,
+    "pages": [
+      {
+        "page": 31,
+        "src": "/audio/lecture/lh031/p031.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh031/pen.json",
+      "strokes": 86,
+      "segments": 3294
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해131.gdb",
+  "legacyEncoding": "euc-kr"
+}

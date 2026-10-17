@@ -1,0 +1,36 @@
+{
+  "id": "lh005",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 5강",
+  "label": "고등 영어독해 1~10강",
+  "menuLabel": "5강",
+  "unit": 11,
+  "part": 5,
+  "order": 104,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 5,
+    "durationSec": 262.6,
+    "lengthUnits": 1457,
+    "unitSec": 0.180253,
+    "pages": [
+      {
+        "page": 5,
+        "src": "/audio/lecture/lh005/p005.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh005/pen.json",
+      "strokes": 88,
+      "segments": 3390
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해105.gdb",
+  "legacyEncoding": "euc-kr"
+}

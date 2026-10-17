@@ -33,6 +33,12 @@
  *   - 깨기: --break=stale-spoken  scripts/lib/spoken-texts.cjs 를 메모리에서만 바꾼 지문으로 견줌 → '목록이 지금 내용과 다름' · exit 1
  *     (spoken-texts.cjs 가 재료 지문에 없을 때는 ADULT 덩어리 · 낱말을 더해도 낡은 목록으로 검사했다)
  *     --inventory <사본> 으로 '유료 ADULT 클립 하나를 무료 강의 것으로 적은 목록' 을 주면 운영의 403 이 FAIL 로 잡혀야 한다.
+ *
+ * LECTURE (2026-10-17 · docs/lecture/도구-기록.md): 교재 쪽 그림 · 필기(/audio/lecture/<id>/p<NN>.jpg · pen.json)는 audio-inventory 가
+ *   legacyAudio(강의 미디어)로 적으므로 --anon 의 'lesson media' 줄로 하나하나 본다(무료 lm001 · lm002 의 4개 열림 · 나머지 403). 그 밖에
+ *   무료 강의 폴더 안의 지어낸 이름 8개(403/404). 이 미디어는 public/ 에 없으므로 로컬 next start 에서도 문지기(src/app/audio route)를 지난다 —
+ *   로컬 빌드에서 LECTURE 를 볼 때는 --anon --allow-local --extra-only(클립은 로컬 public/audio 가 문지기 없이 내주므로 건너뜀).
+ *   깨기: --inventory <사본>(유료 lm050 pen 을 무료 강의 것으로 적은 목록) → 그 줄이 403 이라 FAIL · exit 1.
  */
 const fs = require("fs");
 const path = require("path");
@@ -124,6 +130,9 @@ async function anon() {
   for (const p of ["/audio/student/s1-1-99.mp3", "/audio/ld/d001-99.mp3", "/audio/reading/pr001-99.mp3"]) extra.push({ url: p, expect: "403-or-404", why: "free id with an invented suffix (mediaAccess suffix stripping)" });
   // 회귀 점검 1002: 강의 폴더가 없는 과정(허용 폴더 밖 — mediaAccess 'unclaimed')의 지어낸 주소
   for (const p of ["/audio/adult/a1-1.mp3", "/audio/adult/a2-1.mp3", "/audio/passoff-grammar/pg01-1.mp3", "/audio/passoff-grammar/pg02-1.mp3"]) extra.push({ url: p, expect: "403-or-404", why: "course with no media folder (ADULT · PASS-OFF speak azure-ava clips only)" });
+  // LECTURE (2026-10-17 · docs/lecture/도구-기록.md): 그림 · 필기 · 나중 음성은 audio-inventory 가 legacyAudio 로 적음(위 'lesson media' — 무료
+  // lm001 · lm002 의 4개 열림 · 나머지 399개 403). 여기는 무료 강의 폴더 안의 지어낸 이름 — 다른 쪽 · 대소문자 · 폴더 밖 · 아직 없는 음성 → 403/404
+  for (const p of ["/audio/lecture/lm001/p002.jpg", "/audio/lecture/lm001/p999.jpg", "/audio/lecture/lm001/PEN.json", "/audio/lecture/lm001/p001.JPG", "/audio/lecture/lm001.jpg", "/audio/lecture/lm001/voice.mp3", "/audio/lecture/lm002/p001.jpg", "/audio/lecture/lm001/pen-1.json"])extra.push({ url: p, expect: "403-or-404", why: "LECTURE invented name inside a free lecture" });
   const extraRows = [];
   let j = 0;
   const worker2 = async () => {

@@ -1,0 +1,36 @@
+{
+  "id": "lh003",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 3강",
+  "label": "고등 영어독해 1~10강",
+  "menuLabel": "3강",
+  "unit": 11,
+  "part": 3,
+  "order": 102,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 3,
+    "durationSec": 344.2,
+    "lengthUnits": 1908,
+    "unitSec": 0.180376,
+    "pages": [
+      {
+        "page": 3,
+        "src": "/audio/lecture/lh003/p003.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh003/pen.json",
+      "strokes": 204,
+      "segments": 5097
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해103.gdb",
+  "legacyEncoding": "euc-kr"
+}

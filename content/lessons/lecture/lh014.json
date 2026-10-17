@@ -1,0 +1,36 @@
+{
+  "id": "lh014",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 14강",
+  "label": "고등 영어독해 11~20강",
+  "menuLabel": "14강",
+  "unit": 12,
+  "part": 14,
+  "order": 113,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 14,
+    "durationSec": 536.3,
+    "lengthUnits": 2975,
+    "unitSec": 0.180255,
+    "pages": [
+      {
+        "page": 14,
+        "src": "/audio/lecture/lh014/p014.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh014/pen.json",
+      "strokes": 180,
+      "segments": 7285
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해114.gdb",
+  "legacyEncoding": "euc-kr"
+}

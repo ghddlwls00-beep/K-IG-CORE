@@ -1,0 +1,36 @@
+{
+  "id": "lh006",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 6강",
+  "label": "고등 영어독해 1~10강",
+  "menuLabel": "6강",
+  "unit": 11,
+  "part": 6,
+  "order": 105,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 6,
+    "durationSec": 486.4,
+    "lengthUnits": 2697,
+    "unitSec": 0.180355,
+    "pages": [
+      {
+        "page": 6,
+        "src": "/audio/lecture/lh006/p006.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh006/pen.json",
+      "strokes": 372,
+      "segments": 8914
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해106.gdb",
+  "legacyEncoding": "euc-kr"
+}

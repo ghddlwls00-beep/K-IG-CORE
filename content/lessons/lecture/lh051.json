@@ -1,0 +1,36 @@
+{
+  "id": "lh051",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 51강",
+  "label": "고등 영어독해 51~60강",
+  "menuLabel": "51강",
+  "unit": 16,
+  "part": 51,
+  "order": 150,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 51,
+    "durationSec": 381.6,
+    "lengthUnits": 2116,
+    "unitSec": 0.180353,
+    "pages": [
+      {
+        "page": 51,
+        "src": "/audio/lecture/lh051/p051.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh051/pen.json",
+      "strokes": 146,
+      "segments": 4610
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해151.gdb",
+  "legacyEncoding": "euc-kr"
+}

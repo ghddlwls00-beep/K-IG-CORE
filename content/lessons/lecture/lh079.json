@@ -1,0 +1,36 @@
+{
+  "id": "lh079",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 79강",
+  "label": "고등 영어독해 71~80강",
+  "menuLabel": "79강",
+  "unit": 18,
+  "part": 79,
+  "order": 178,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 79,
+    "durationSec": 242.5,
+    "lengthUnits": 1346,
+    "unitSec": 0.18019,
+    "pages": [
+      {
+        "page": 79,
+        "src": "/audio/lecture/lh079/p079.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh079/pen.json",
+      "strokes": 91,
+      "segments": 2681
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해179.gdb",
+  "legacyEncoding": "euc-kr"
+}

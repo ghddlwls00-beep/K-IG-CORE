@@ -1,0 +1,36 @@
+{
+  "id": "lh056",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 56강",
+  "label": "고등 영어독해 51~60강",
+  "menuLabel": "56강",
+  "unit": 16,
+  "part": 56,
+  "order": 155,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 56,
+    "durationSec": 344,
+    "lengthUnits": 1909,
+    "unitSec": 0.180224,
+    "pages": [
+      {
+        "page": 56,
+        "src": "/audio/lecture/lh056/p056.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh056/pen.json",
+      "strokes": 203,
+      "segments": 5560
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해156.gdb",
+  "legacyEncoding": "euc-kr"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "lh055",
+  "course": "lecture",
+  "series": "lh",
+  "variant": "main",
+  "pairId": null,
+  "title": "고등 영어독해 55강",
+  "label": "고등 영어독해 51~60강",
+  "menuLabel": "55강",
+  "unit": 16,
+  "part": 55,
+  "order": 154,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "high",
+    "number": 55,
+    "durationSec": 247.5,
+    "lengthUnits": 1373,
+    "unitSec": 0.180249,
+    "pages": [
+      {
+        "page": 55,
+        "src": "/audio/lecture/lh055/p055.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lh055/pen.json",
+      "strokes": 90,
+      "segments": 4162
+    }
+  },
+  "legacyPath": "중등독해101~200/고등영어 독해155.gdb",
+  "legacyEncoding": "euc-kr"
+}
