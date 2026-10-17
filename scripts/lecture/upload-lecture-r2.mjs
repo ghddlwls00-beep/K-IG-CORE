@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * LECTURE — uploads the page images and pen files that build-lecture.mjs wrote to .lecture-media/ into the
- * media bucket, under the same keys (audio/lecture/<id>/p<NN>.jpg · pen.json). The bucket is private: the
+ * media bucket, under the same keys (audio/lecture/<id>/p<NN>.jpg · pen.json · voice.mp3). The bucket is private: the
  * browser reaches these only through /audio/[...path], which checks the licence (src/lib/mediaAccess.ts).
  *
  *   node scripts/lecture/upload-lecture-r2.mjs [--media <folder>] [--force]
@@ -83,7 +83,8 @@ async function main() {
   for (const id of fs.readdirSync(base)) {
     for (const name of fs.readdirSync(path.join(base, id))) {
       const full = path.join(base, id, name);
-      const type = name.endsWith(".jpg") ? "image/jpeg" : name.endsWith(".json") ? "application/json" : null;
+      // voice.mp3: the lecture's AI voice (scripts/lecture/voice/, 2026-10-17) — never an original recording
+      const type = name.endsWith(".jpg") ? "image/jpeg" : name.endsWith(".json") ? "application/json" : name === "voice.mp3" ? "audio/mpeg" : null;
       if (type) files.push({ full, key: `audio/lecture/${id}/${name}`, type });
     }
   }

@@ -34,14 +34,22 @@
  *     flag 0xd3 = pen down. The window showed the page centred under a 20px top margin (PageNN.htm:
  *     `<body topmargin="20"><center><img>`) — so page x = pen x − 80, page y = pen y − 20 (fitted on 27 lectures,
  *     ±2px; the window was ~987px wide). pen.json keeps the window numbers; the views place the page at (80, 20).
- *   - One time unit = audio length / header length = 0.18005–0.18042 s on all 200 (mean 0.18025).
+ *   - One time unit = audio length / header length. The audio record's MP3 carries a 2-byte tick marker after
+ *     every ~7.5 frames (voice/extract-original.mjs); ffprobe's bitrate estimate over the raw bytes counted those
+ *     markers as audio, so until 2026-10-17 the unit came out 0.18005–0.18042 s. The frames themselves give
+ *     0.17952–0.18000 s (mean 0.17983) — the clock a voice file follows, so that is what is written now.
  *   - Lecture N shows page N of its book; 57 also turns to pages 59, 60 and 58; 182 starts with no page
  *     record (its strokes carry page 82).
+ *
+ * THE VOICE (2026-10-17, docs/lecture/AI음성/): when docs/lecture/voice-manifest.json lists a lecture
+ * ({ "<id>": { "src": "/audio/lecture/<id>/voice.mp3", "durationSec": … } }), its lesson file gets
+ * `lecture.audio = { src, durationSec }` and the view uses that <audio> as the clock. The manifest holds paths
+ * and lengths only (no lecture text); the mp3 itself is private R2 (upload-lecture-r2.mjs).
  */
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
-import { execFileSync } from "node:child_process";
+import { cleanStream } from "./voice/extract-original.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..", "..");
 const args = process.argv.slice(2);
@@ -153,39 +161,17 @@ function toStrokes(segments) {
 }
 
 // ---------------------------------------------------------------- audio length (for the time unit)
-const FFPROBE = (() => {
-  for (const c of [process.env.FFPROBE, "ffprobe"]) {
-    if (!c) continue;
-    try { execFileSync(c, ["-version"], { stdio: "ignore" }); return c; } catch {}
-  }
-  const winget = path.join(process.env.LOCALAPPDATA || "", "Microsoft/WinGet/Packages");
-  if (fs.existsSync(winget)) {
-    for (const d of fs.readdirSync(winget)) {
-      if (!/FFmpeg/i.test(d)) continue;
-      const base = path.join(winget, d);
-      for (const sub of fs.readdirSync(base)) {
-        const f = path.join(base, sub, "bin", "ffprobe.exe");
-        if (fs.existsSync(f)) return f;
-      }
-    }
-  }
-  return null;
-})();
+const AUDIO_HEADER = 726;
+/** The recording's true length: its MP3 frames counted, the recorder's tick markers left out (no decoder needed). */
 function audioSeconds(audio) {
-  if (!FFPROBE) return null;
-  let s = 0;
-  for (let i = 0; i < 4000; i++) if (audio[i] === 0xff && (audio[i + 1] & 0xe0) === 0xe0) { s = i; break; }
-  const tmp = path.join(MEDIA, ".probe.mp3");
-  fs.mkdirSync(MEDIA, { recursive: true });
-  fs.writeFileSync(tmp, audio.subarray(s));
-  try {
-    const out = execFileSync(FFPROBE, ["-v", "quiet", "-f", "mp3", "-show_entries", "format=duration", "-of", "csv=p=0", tmp]).toString().trim();
-    return Number(out) || null;
-  } catch {
-    return null;
-  } finally {
-    fs.rmSync(tmp, { force: true });
-  }
+  return cleanStream(audio.subarray(AUDIO_HEADER)).audioSec;
+}
+
+// ---------------------------------------------------------------- the voices made so far
+const MANIFEST = path.join(ROOT, "docs", "lecture", "voice-manifest.json");
+const voices = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, "utf8")) : {};
+for (const [id, v] of Object.entries(voices)) {
+  if (v.src !== `/audio/lecture/${id}/voice.mp3` || !(v.durationSec > 0)) throw new Error(`voice-manifest ${id}: expected { src: "/audio/lecture/${id}/voice.mp3", durationSec > 0 }`);
 }
 
 // ---------------------------------------------------------------- main
@@ -224,6 +210,8 @@ function main() {
     const strokes = toStrokes(pen.segments);
     const sec = audioSeconds(g.audio);
     const unitSec = sec ? sec / g.lengthUnits : UNIT_SEC_DEFAULT;
+    const voice = voices[id] || null;
+    if (voice && Math.abs(voice.durationSec - sec) > 0.05) throw new Error(`${id}: voice.mp3 is ${voice.durationSec} s, the recording ${sec.toFixed(3)} s — not on the same timeline`);
     report.unit.push(unitSec);
     const pagesUsed = [...new Set([number, ...pen.pageEvents.map(([, pg]) => pg), ...pen.segments.map((s) => s.page)])];
     // the first page shown is the lecture's own page (182 has no page record; its strokes say 82)
@@ -271,6 +259,8 @@ function main() {
         unitSec: penDoc.unitSec,
         pages: pagesUsed.map((pg) => ({ page: pg, src: pageSrc(pg) })),
         pen: { src: `/audio/lecture/${id}/pen.json`, strokes: strokes.length, segments: pen.segments.length },
+        // the AI voice, once made (voice-manifest.json) — the view's clock; absent until then
+        ...(voice ? { audio: { src: voice.src, durationSec: voice.durationSec } } : {}),
       },
       legacyPath: path.relative(SRC, file).split(path.sep).join("/"),
       legacyEncoding: "euc-kr",
@@ -316,7 +306,7 @@ function main() {
   }
   const u = report.unit;
   console.log(`lectures ${report.lectures} · pages ${report.pages} · strokes ${report.strokes.toLocaleString("en-US")} · segments ${report.segments.toLocaleString("en-US")} · ${(report.seconds / 3600).toFixed(1)} h · unknown pen records ${report.unknownRecords}`);
-  console.log(`time unit ${Math.min(...u).toFixed(5)}–${Math.max(...u).toFixed(5)} s${FFPROBE ? "" : " (no ffprobe: default used)"}`);
+  console.log(`time unit ${Math.min(...u).toFixed(5)}–${Math.max(...u).toFixed(5)} s · voices ${Object.keys(voices).length}`);
   console.log(`${CHECK ? "would change" : "written"} ${changed} files (media → ${path.relative(ROOT, MEDIA)})`);
   if (CHECK) {
     const contentChanged = [...writes.keys()].filter((f) => f.startsWith(path.join(ROOT, "content")) && (!fs.existsSync(f) || !fs.readFileSync(f).equals(Buffer.from(writes.get(f)))));

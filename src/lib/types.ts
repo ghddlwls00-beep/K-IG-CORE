@@ -203,10 +203,11 @@ export interface LectureData {
   pages: { page: number; src: string }[];
   pen: { src: string; strokes: number; segments: number };
   /**
-   * The lecture's voice, when the owner adds one (사장님 2026-10-17 — an AI voice per lecture later). None today. When it is
-   * set, LectureLearningView plays it and takes its clock from it.
+   * The lecture's voice, when the owner adds one (사장님 2026-10-17 — an AI voice per lecture later; made by
+   * scripts/lecture/voice/, listed in docs/lecture/voice-manifest.json). When it is set, LectureLearningView plays it and
+   * takes its clock from it. durationSec is the file's length — the same as the lecture's (±0.05 s), checked by the build.
    */
-  audio?: { src: string };
+  audio?: { src: string; durationSec: number };
 }
 
 export interface Lesson {
