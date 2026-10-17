@@ -42,6 +42,9 @@ const NOISE_REMOVAL = !args.includes("--no-noise-removal");
 const DRY = args.includes("--dry-run");
 const FORCE = args.includes("--force");
 const UNTIL = Number(arg("--until", 0)) || 0;
+// --isolate: run each chunk through the Voice Isolator (POST /v1/audio-isolation, $0.12/min) BEFORE the voice change —
+// a stronger clean-up than remove_background_noise alone (사장님 10-17 "소리가 지저분해"). Output folders get "-isolated".
+const ISOLATE = args.includes("--isolate");
 const VOICE = path.join(ROOT, ".lecture-media", "voice");
 const SR = 24000;
 const PRICE_PER_MIN = 0.12;
@@ -60,6 +63,19 @@ const KEY = process.env.ELEVENLABS_API_KEY;
 if (!IDS.length) throw new Error("--ids lm001[,…] is required");
 if (!DRY && !KEY) throw new Error("ELEVENLABS_API_KEY is required (.env.local or KIG_ENV_LOCAL) — or --dry-run");
 if (!DRY && !VOICE_ID) throw new Error("--voice-id <ElevenLabs voice id> is required");
+
+async function isolate(wavFile, attempt = 1) {
+  const form = new FormData();
+  form.append("audio", new Blob([fs.readFileSync(wavFile)], { type: "audio/wav" }), path.basename(wavFile));
+  const res = await fetch("https://api.elevenlabs.io/v1/audio-isolation", { method: "POST", headers: { "xi-api-key": KEY }, body: form });
+  if (res.ok) return Buffer.from(await res.arrayBuffer());
+  const text = (await res.text()).slice(0, 300);
+  if ((res.status === 429 || res.status >= 500) && attempt < 5) {
+    await new Promise((r) => setTimeout(r, 2000 * 2 ** attempt));
+    return isolate(wavFile, attempt + 1);
+  }
+  throw new Error(`ElevenLabs audio-isolation ${res.status}: ${text}`);
+}
 
 async function convert(wavFile, attempt = 1) {
   const form = new FormData();
@@ -137,7 +153,7 @@ for (const id of IDS) {
     const cut = seg.pieces.filter((p) => p.start <= UNTIL).at(-1)?.start ?? UNTIL;
     chunks = [{ start: 0, end: cut }];
   }
-  const out = path.join(dir, UNTIL ? `eleven-${VOICE_ID || "sample"}` : "eleven");
+  const out = path.join(dir, (UNTIL ? `eleven-${VOICE_ID || "sample"}` : "eleven") + (ISOLATE ? "-isolated" : ""));
   fs.mkdirSync(out, { recursive: true });
   const minutes = chunks.reduce((n, c) => n + (c.end - c.start), 0) / 60;
   totalMin += minutes;
@@ -152,7 +168,16 @@ for (const id of IDS) {
     if (!fs.existsSync(outPcm) || FORCE) {
       execFileSync(ffmpeg, ["-v", "error", "-y", "-f", "mp3", "-i", path.join(dir, "orig.mp3"), "-ss", String(c.start), "-to", String(c.end), "-ac", "1", "-ar", String(SR), inWav]);
       const t0 = Date.now();
-      fs.writeFileSync(outPcm, await convert(inWav));
+      let sendWav = inWav;
+      if (ISOLATE) {
+        // the isolator answers with an audio file (mp3); decode it back to wav at the working rate for the voice change
+        const isoFile = path.join(out, `chunk-${n}.isolated.mp3`), isoWav = path.join(out, `chunk-${n}.isolated.wav`);
+        fs.writeFileSync(isoFile, await isolate(inWav));
+        execFileSync(ffmpeg, ["-v", "error", "-y", "-i", isoFile, "-ac", "1", "-ar", String(SR), isoWav]);
+        sendWav = isoWav;
+        console.log(`  chunk ${n}: isolated (${(fs.statSync(isoFile).size / 1024).toFixed(0)} KB)`);
+      }
+      fs.writeFileSync(outPcm, await convert(sendWav));
       console.log(`  chunk ${n}: ${(c.end - c.start).toFixed(1)} s sent · ${((Date.now() - t0) / 1000).toFixed(0)} s`);
     }
     // the answer is raw PCM 16-bit 24 kHz mono: wrap it so fit/decode can read it
