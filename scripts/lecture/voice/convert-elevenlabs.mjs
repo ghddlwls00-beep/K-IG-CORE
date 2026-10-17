@@ -26,7 +26,7 @@ import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
 import { execFileSync } from "node:child_process";
-import { ffmpeg, decode } from "./vad.mjs";
+import { ffmpeg, decode, energyDb, speechMask } from "./vad.mjs";
 import { fitToLength, writeWav } from "./fit.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..", "..", "..");
@@ -76,14 +76,49 @@ async function convert(wavFile, attempt = 1) {
   throw new Error(`ElevenLabs ${res.status}: ${text}`);
 }
 
-function muteLeadIn(wavFile, untilSec) {
+/**
+ * In the TEACHER's pauses (≥ 0.5 s between speech runs, 0.1 s guard each side) the changed voice is held down to the
+ * recording's own level, frame by frame: the voice changer renders breaths and small room sounds as louder, voice-like
+ * sounds (lm001 pilot: 42 frames above −40 dBFS in the original's 27 silences — check ④). Where the recording sat at
+ * its noise floor the new voice is silent; where it had a small sound the new voice may be as loud as that, no louder.
+ * A quiet word the speech mask missed keeps its original loudness — nothing is cut outright except true silence.
+ */
+function gateToOriginal(wavFile, chunkStart, speechRuns, origDb, origFloor) {
   const s = decode(wavFile, { sr: SR });
-  const n = Math.min(s.length, Math.round(untilSec * SR));
-  for (let i = 0; i < n; i++) s[i] = 0;
-  const fade = Math.min(480, s.length - n);
-  for (let i = 0; i < fade; i++) s[n + i] *= i / fade;
+  const len = s.length / SR;
+  const hop = Math.round(0.02 * SR); // the same 20 ms frames as origDb (16 kHz · 320) at this rate
+  let ducked = 0, muted = 0, gaps = 0;
+  const gain = new Float32Array(Math.ceil(s.length / hop)).fill(1);
+  for (let i = -1; i < speechRuns.length; i++) {
+    const from = i < 0 ? 0 : speechRuns[i][1] + 0.1;
+    const to = Math.min(i + 1 < speechRuns.length ? speechRuns[i + 1][0] - 0.1 : Infinity, chunkStart + len);
+    if (to - from < 0.3) continue;
+    gaps++;
+    // frame by frame: the new voice may never be louder here than the teacher's recording was (so a quiet word the
+    // mask missed keeps its own loudness, while a breath the changer made louder comes down); where the teacher's
+    // recording was at its noise floor (≤ floor + 3 dB) the new voice is silent
+    for (let t = from; t < to; t += 0.02) {
+      const fo = Math.round((t * SR16) / HOP16), fn = Math.round(((t - chunkStart) * SR) / hop);
+      if (fo >= origDb.length || fn < 0 || fn >= gain.length) continue;
+      const o = origDb[fo];
+      if (o <= origFloor + 3) { gain[fn] = 0; muted += 0.02; continue; }
+      let e = 0;
+      const a0 = fn * hop, a1 = Math.min(s.length, a0 + hop);
+      for (let k = a0; k < a1; k++) e += s[k] * s[k];
+      const nDb = 10 * Math.log10(e / Math.max(1, a1 - a0) + 1e-12);
+      if (nDb > o) { gain[fn] = Math.pow(10, (o - nDb) / 20); ducked += 0.02; }
+    }
+  }
+  // apply with a linear ramp between frames so the gain never jumps
+  for (let fn = 0; fn < gain.length; fn++) {
+    const g0 = fn > 0 ? gain[fn - 1] : gain[fn], g1 = gain[fn];
+    const a0 = fn * hop, a1 = Math.min(s.length, a0 + hop);
+    for (let k = a0; k < a1; k++) s[k] *= g0 + ((g1 - g0) * (k - a0)) / hop;
+  }
   writeWav(wavFile, s, SR);
+  return { muted: +muted.toFixed(2), ducked: +ducked.toFixed(2), gaps, of: +len.toFixed(2) };
 }
+const SR16 = 16000, HOP16 = 320;
 
 async function creditsUsed() {
   const r = await fetch("https://api.elevenlabs.io/v1/user/subscription", { headers: { "xi-api-key": KEY } });
@@ -109,6 +144,8 @@ for (const id of IDS) {
   console.log(`${id}: ${chunks.length} chunks (${chunks.map((c) => (c.end - c.start).toFixed(0)).join("/")} s) · ${minutes.toFixed(1)} min · $${(minutes * PRICE_PER_MIN).toFixed(2)}`);
   if (DRY) continue;
   const before = await creditsUsed();
+  const origDb = energyDb(decode(path.join(dir, "orig.mp3")));
+  const origFloor = speechMask(origDb).floor;
   const parts = [], fitted = [];
   for (const [n, c] of chunks.entries()) {
     const inWav = path.join(out, `chunk-${n}.in.wav`), outPcm = path.join(out, `chunk-${n}.out.pcm`), fitWav = path.join(out, `chunk-${n}.fit.wav`);
@@ -123,12 +160,10 @@ for (const id of IDS) {
     const wav = path.join(out, `chunk-${n}.out.wav`);
     execFileSync(ffmpeg, ["-v", "error", "-y", "-f", "s16le", "-ar", String(SR), "-ac", "1", "-i", outPcm, wav]);
     const fit = fitToLength(wav, c.end - c.start, fitWav, { sr: SR });
-    // the first chunk: the changed voice puts a breath/pop in the lead-in where the teacher was still silent (check ④,
-    // samples 2026-10-17: 1–4 frames at 0.38–0.46 s) — keep the lead-in silent up to 0.15 s before the first speech
-    if (n === 0 && seg.speech?.[0]?.[0] > 0.3) muteLeadIn(fitWav, seg.speech[0][0] - 0.15);
-    fitted.push({ chunk: n, start: c.start, end: c.end, ...fit, bytes: pcm.length });
+    const gate = gateToOriginal(fitWav, c.start, (seg.speech || []).filter(([a, b]) => b > c.start && a < c.end), origDb, origFloor);
+    fitted.push({ chunk: n, start: c.start, end: c.end, ...fit, pausesMutedSec: gate.muted, pausesDuckedSec: gate.ducked, gaps: gate.gaps, bytes: pcm.length });
     parts.push({ start: c.start, file: fitWav });
-    console.log(`  chunk ${n}: answer ${fit.inSec} s for ${(c.end - c.start).toFixed(3)} s · stretch ${fit.stretch} (${fit.method})`);
+    console.log(`  chunk ${n}: answer ${fit.inSec} s for ${(c.end - c.start).toFixed(3)} s · stretch ${fit.stretch} (${fit.method}) · pauses ${gate.gaps}: muted ${gate.muted} s · brought down ${gate.ducked} s`);
   }
   const after = await creditsUsed();
   const used = before != null && after != null ? after - before : null;
@@ -142,6 +177,11 @@ for (const id of IDS) {
     continue;
   }
   execFileSync("node", [path.join(import.meta.dirname, "assemble.mjs"), "--id", id, "--parts", path.join(out, "parts.json"), "--out", path.join(out, "voice.mp3")], { stdio: "inherit" });
-  execFileSync("node", [path.join(import.meta.dirname, "check-voice.mjs"), "--id", id, "--new", path.join(out, "voice.mp3"), "--json", path.join(out, "check.json")], { stdio: "inherit" });
+  // the check's verdict is in check.json and on the console; a FAIL must not stop the next lecture's conversion
+  try {
+    execFileSync("node", [path.join(import.meta.dirname, "check-voice.mjs"), "--id", id, "--new", path.join(out, "voice.mp3"), "--json", path.join(out, "check.json")], { stdio: "inherit" });
+  } catch {
+    console.log(`  ${id}: check FAIL — see ${path.join(out, "check.json")}`);
+  }
 }
 console.log(`total ${totalMin.toFixed(1)} min · $${(totalMin * PRICE_PER_MIN).toFixed(2)} at $${PRICE_PER_MIN}/min${DRY ? " (dry run — nothing sent)" : ""}`);

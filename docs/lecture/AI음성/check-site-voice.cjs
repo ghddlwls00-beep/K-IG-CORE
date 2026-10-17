@@ -6,7 +6,7 @@
 // node docs/lecture/AI음성/check-site-voice.cjs   (BASE · PORT env to change; delete the edge-<PORT> profile folder after).
 // 2026-10-17 with the original's own audio as a local stand-in (never uploaded): 34/34 PASS, desktop and mobile.
 const path = require("path");
-const REPO = path.resolve(__dirname, "..", "..");
+const REPO = path.resolve(__dirname, "..", "..", "..");
 const { launch, Tab, sleep } = require(path.join(REPO, "docs/qa-2026-09-15/scripts/verify/cdp.cjs"));
 const BASE = process.env.BASE || "http://localhost:3391";
 const PORT = Number(process.env.PORT || 9932);
