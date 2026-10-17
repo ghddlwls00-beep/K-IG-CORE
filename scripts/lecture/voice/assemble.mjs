@@ -33,7 +33,6 @@ const LOUDNORM = !args.includes("--no-loudnorm");
 if (!ID || !PARTS || !OUT) throw new Error("--id --parts --out are required");
 const WORK_SR = 24000;
 
-const origFile = path.join(ROOT, ".lecture-media", "voice", ID, "orig.mp3");
 const orig = JSON.parse(fs.readFileSync(path.join(ROOT, ".lecture-media", "voice", ID, "markers.json"), "utf8"));
 const target = Math.round(orig.audioSec * WORK_SR);
 const parts = JSON.parse(fs.readFileSync(PARTS, "utf8").replace(/^﻿/, "")).slice().sort((a, b) => a.start - b.start);
@@ -61,4 +60,3 @@ const back = decode(OUT, { sr: WORK_SR });
 const diff = (back.length - target) / WORK_SR;
 console.log(`${ID}: parts ${placed} · tail cut ${(cutTail / WORK_SR).toFixed(3)} s · target ${(target / WORK_SR).toFixed(3)} s · mp3 decodes to ${(back.length / WORK_SR).toFixed(3)} s (diff ${diff.toFixed(3)}) · ${(fs.statSync(OUT).size / 1024).toFixed(0)} KB → ${OUT}`);
 if (Math.abs(diff) > 0.05) process.exit(1);
-void origFile;
