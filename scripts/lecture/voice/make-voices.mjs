@@ -15,6 +15,7 @@ import path from "node:path";
 import process from "node:process";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
+import { carryPoint } from "./sound-match.mjs";
 
 const run = promisify(execFile);
 const ROOT = path.resolve(import.meta.dirname, "..", "..", "..");
@@ -45,33 +46,45 @@ const skipped = ids.filter((id) => !fs.existsSync(path.join(VOICE, id, "segments
 
 async function one(id) {
   let stats = null;
-  const complete = new Set();
-  const detach = new Set();
-  // round 1: as is · round 2: the failed readings read afresh · rounds 3–4: read with the short "every word to the end"
-  // instruction (the long style line is what makes gpt-4o-mini-tts drop its last words now and then — lh082 #15 "with the
-  // jeweler", #11 "wish", 2026-10-18). What still fails after round 4 is listed for a person.
-  // first: a reading whose missing English words sit at its END (the last member piece holds them) — that last piece is
-  // detached and read at the head of the next reading (lh001 "can travel.", lh071 "and told", 2026-10-18)
+  // the fixes found in earlier runs are kept (overrides.json; before it existed, the results file's "ungrouped" list held
+  // the short-instruction and detached pieces, and --reuse-variants finds the closing-line readings in the cache)
+  const overridesFile = path.join(OUT_DIR(id), "overrides.json");
+  const seed = fs.existsSync(overridesFile) ? JSON.parse(fs.readFileSync(overridesFile, "utf8")) : { complete: (results[id]?.ungrouped || []).filter((u) => !String(u).startsWith("d")).map(Number), detach: (results[id]?.ungrouped || []).filter((u) => String(u).startsWith("d")).map((u) => Number(String(u).slice(1))) };
+  const seg = JSON.parse(fs.readFileSync(path.join(VOICE, id, "segments.edited.json"), "utf8"));
+  const complete = new Set(seed.complete || []);
+  const detach = new Set(seed.detach || []);
+  const carry = new Set(seed.carry || []);
+  // a reading whose missing English words sit at its END (the last member piece holds them): that fragment is carried
+  // to, or that last piece detached to, the head of the next reading (lh001 "can travel.", lh071 "and told", 2026-10-18)
   const tailMissing = (x) => {
     if (!x.members || x.members.length < 2 || !x.missingEnglish.length) return false;
     const tail = x.text.slice(Math.floor(x.text.length * 0.6)).toLowerCase();
     return x.missingEnglish.every((w) => tail.includes(w.toLowerCase()));
   };
-  // round 2: a failed reading read afresh (end fragment detached when it is the tail) · round 3+: with the sentinel
-  // (a throw-away closing line read after the text and cut off) — the end-drop fix · rounds 4–5: sentinel and the short
-  // "every word" instruction. What still fails after round 5 is printed.
-  const sentinel = new Set();
+  // round 1: as made (cached readings reused) · a failed reading is read afresh — with the sentinel (a throw-away closing
+  // line read after the text and cut off) at once when its last word was dropped, else from round 2 · rounds 3–5: also
+  // the short "every word" instruction (the long style line makes gpt-4o-mini-tts drop its last words more — lh082 #15
+  // "with the jeweler", 2026-10-18). What still fails after round 5 is in make-voices.json (stillFailing).
+  const sentinel = new Set(seed.sentinel || []);
   for (let round = 1; round <= 5; round++) {
-    const extra = [...(complete.size ? ["--complete", [...complete].join(",")] : []), ...(detach.size ? ["--detach", [...detach].join(",")] : []), ...(sentinel.size ? ["--sentinel", [...sentinel].join(",")] : [])];
-    await run("node", [path.join(import.meta.dirname, "read-and-retime.mjs"), "--ids", id, ...recipeArgs, ...extra], { env: process.env, maxBuffer: 1 << 26 });
+    const extra = [...(complete.size ? ["--complete", [...complete].join(",")] : []), ...(detach.size ? ["--detach", [...detach].join(",")] : []), ...(carry.size ? ["--carry", [...carry].join(",")] : []), ...(sentinel.size ? ["--sentinel", [...sentinel].join(",")] : [])];
+    await run("node", [path.join(import.meta.dirname, "read-and-retime.mjs"), "--ids", id, ...recipeArgs, "--reuse-variants", ...extra], { env: process.env, maxBuffer: 1 << 26 });
     stats = JSON.parse(fs.readFileSync(path.join(OUT_DIR(id), "stats.json"), "utf8"));
     stats.round = round;
+    fs.writeFileSync(overridesFile, JSON.stringify({ ...stats.overrides, detach: [...detach], carry: [...carry] }));
     const failed = (stats.pronunciationDetail || []).filter((x) => x.fail);
     if (!failed.length || round === 5) break;
     for (const x of failed) {
       for (const ext of ["pcm", "alignment.json"]) fs.rmSync(path.join(OUT_DIR(id), `r-${x.cacheKey}.${ext}`), { force: true });
-      if (round === 1 && tailMissing(x)) detach.add(x.members.at(-1));
-      if (round >= 2) for (const m of x.members) sentinel.add(m);
+      // an English fragment dropped at the END: carried to the next piece when the last piece has a sentence end before
+      // it ("…하겠습니다. They,"), else the whole last piece starts the next reading (detach) — once per piece
+      const last = x.members.at(-1);
+      if (tailMissing(x) && !carry.has(last) && !detach.has(last)) {
+        if (carryPoint(seg.pieces[last]?.text ?? "") >= 0) carry.add(last);
+        else if (x.members.length > 1) detach.add(last);
+      }
+      // a dropped last word or a closing line left in: the closing line at once (a plain re-read drops it again)
+      if (round >= 2 || x.lastMissing || x.sentinelLeft) for (const m of x.members) sentinel.add(m);
       if (round >= 3) for (const m of x.members) complete.add(m);
     }
   }
@@ -82,7 +95,7 @@ async function one(id) {
   manifest[id] = { src: `/audio/lecture/${id}/voice.mp3`, durationSec: stats.voiceSec };
   const sorted = Object.fromEntries(Object.entries(manifest).sort(([a], [b]) => a.localeCompare(b)));
   fs.writeFileSync(MANIFEST, `${JSON.stringify(sorted, null, 2)}\n`);
-  results[id] = { voiceSec: stats.voiceSec, origSpan: stats.origSpan, anchors: stats.anchors, wordAnchors: stats.wordAnchors, perFiveSec: +((stats.wordAnchors / stats.voiceSec) * 5).toFixed(2), pronunciationBelow: stats.pronunciation?.below || [], missingEnglish: stats.pronunciation?.missingEnglish || [], pronunciationMin: stats.pronunciation?.min ?? null, rounds: stats.round, ungrouped: [...ungroup] };
+  results[id] = { voiceSec: stats.voiceSec, origSpan: stats.origSpan, anchors: stats.anchors, wordAnchors: stats.wordAnchors, perFiveSec: +((stats.wordAnchors / stats.voiceSec) * 5).toFixed(2), pronunciationBelow: stats.pronunciation?.below || [], missingEnglish: stats.pronunciation?.missingEnglish || [], pronunciationMin: stats.pronunciation?.min ?? null, rounds: stats.round, ungrouped: [...ungroup], carried: [...carry], stillFailing: (stats.pronunciationDetail || []).filter((x) => x.fail).map((x) => x.piece) };
   fs.writeFileSync(resultsFile, JSON.stringify(results, null, 1));
   return `${id}: ${stats.voiceSec.toFixed(1)} s · word anchors ${stats.wordAnchors} (${results[id].perFiveSec}/5 s) · pronunciation below 0.9: ${results[id].pronunciationBelow.length} · rounds ${stats.round}`;
 }

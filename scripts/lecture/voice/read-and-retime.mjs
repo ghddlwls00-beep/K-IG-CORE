@@ -29,6 +29,7 @@ import process from "node:process";
 import { execFileSync } from "node:child_process";
 import { ffmpeg, decode } from "./vad.mjs";
 import { writeWav } from "./fit.mjs";
+import { carryPoint, saidInHangul, lastWordMissing } from "./sound-match.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..", "..", "..");
 const args = process.argv.slice(2);
@@ -125,8 +126,15 @@ const DETACH = new Set(arg("--detach", "").split(",").filter(Boolean).map(Number
 // --sentinel: original pieces whose reading gets the throw-away closing line (see "THE SENTINEL" below)
 const SENTINEL = new Set(arg("--sentinel", "").split(",").filter(Boolean).map(Number));
 const SENTINEL_TEXT = "네, 여기까지입니다.";
+const REUSE_VARIANTS = args.includes("--reuse-variants");
+// --carry: original pieces whose text ENDS in a fragment that leads into the next sentence ("…하겠습니다. They,",
+// "…올렸습니다. and", "그리고 electronic equipment.") — the voice dropped such a fragment at the end of a reading even with
+// the closing line (lh004 #0, lh041 #7, lh001 #13, 2026-10-18). The fragment (after the piece's last sentence end) is
+// moved to the head of the next piece, where it is read with the sentence it leads into. Pen timing is unaffected
+// beyond those few words: piece boundaries stay, and word anchors match words wherever they are read.
+const CARRY = new Set(arg("--carry", "").split(",").filter(Boolean).map(Number));
 
-/** ElevenLabs Scribe on one audio file → [[start sec, word]…] (word type only). Retries 429/5xx. */
+/** ElevenLabs Scribe on one audio file → [[start sec, word, end sec]…] (word type only). Retries 429/5xx. */
 async function scribeWords(file, attempt = 1) {
   const form = new FormData();
   form.append("file", new Blob([fs.readFileSync(file)], { type: "audio/wav" }), "reading.wav");
@@ -134,7 +142,7 @@ async function scribeWords(file, attempt = 1) {
   form.append("timestamps_granularity", "word");
   form.append("diarize", "false");
   const res = await fetch("https://api.elevenlabs.io/v1/speech-to-text", { method: "POST", headers: { "xi-api-key": process.env.ELEVENLABS_API_KEY }, body: form });
-  if (res.ok) return ((await res.json()).words || []).filter((w) => w.type === "word").map((w) => [w.start, w.text]);
+  if (res.ok) return ((await res.json()).words || []).filter((w) => w.type === "word").map((w) => [w.start, w.text, w.end]);
   const detail = (await res.text()).slice(0, 200);
   if ((res.status === 429 || res.status >= 500) && attempt < 6) {
     await new Promise((r) => setTimeout(r, 3000 * attempt));
@@ -300,6 +308,14 @@ for (const id of IDS) {
   const seg = JSON.parse(fs.readFileSync(path.join(dir, fs.existsSync(path.join(dir, "segments.edited.json")) ? "segments.edited.json" : "segments.json"), "utf8"));
   let pieces = seg.pieces.filter((p) => !UNTIL || p.speechStart < UNTIL).map((p) => ({ ...p, text: (p.text ?? (p.words || []).join(" ")).trim() }));
   pieces = pieces.map((p, i) => ({ ...p, firstIndex: i, members: [i] }));
+  for (const i of CARRY) {
+    const p = pieces[i], next = pieces.slice(i + 1).find((q) => q.text);
+    if (!p || !next) continue;
+    const cutAt = carryPoint(p.text);
+    if (cutAt < 0) continue;
+    next.text = `${p.text.slice(cutAt).trim()} ${next.text}`;
+    p.text = p.text.slice(0, cutAt).trim();
+  }
   if (GROUP_SEC) {
     const grouped = [];
     for (const p of pieces) {
@@ -347,26 +363,53 @@ for (const id of IDS) {
     }
     // cached BY CONTENT (text + engine settings), so a regrouped or corrected reading is made again and the rest reused;
     // make-voices.mjs deletes a cache entry (by this key) to get a fresh reading of one that failed the check
-    const complete = (p.members || []).some((m) => COMPLETE.has(m));
-    const sentinel = ENGINE === "openai" && (p.members || []).some((m) => SENTINEL.has(m));
-    const cacheKey = readingKey(sentinel ? `${p.text}\u0002sentinel` : p.text, complete);
+    let complete = (p.members || []).some((m) => COMPLETE.has(m));
+    let sentinel = ENGINE === "openai" && (p.members || []).some((m) => SENTINEL.has(m));
+    let cacheKey = readingKey(sentinel ? `${p.text}\u0002sentinel` : p.text, complete);
+    // --reuse-variants: no reading of the asked kind cached, but one of the same text read another way (with the closing
+    // line · the short instruction) is — that one is used. An earlier run's fixes were passed per run and not written
+    // down; this keeps them (make-voices.mjs now writes them down — overrides.json)
+    if (REUSE_VARIANTS && !fs.existsSync(path.join(out, `r-${cacheKey}.pcm`))) {
+      for (const [s, c] of [[true, complete], [sentinel, !complete], [true, !complete], [false, complete], [false, !complete]]) {
+        if (s && ENGINE !== "openai") continue;
+        const k = readingKey(s ? `${p.text}\u0002sentinel` : p.text, c);
+        if (fs.existsSync(path.join(out, `r-${k}.pcm`)) && fs.existsSync(path.join(out, `r-${k}.alignment.json`))) { cacheKey = k; sentinel = s; complete = c; break; }
+      }
+    }
     const pcmFile = path.join(out, `r-${cacheKey}.pcm`), alnFile = path.join(out, `r-${cacheKey}.alignment.json`);
     if (!fs.existsSync(pcmFile) || !fs.existsSync(alnFile) || FORCE) {
       if (sentinel) {
         // THE SENTINEL (end-drop fix): the text is read with a throw-away closing line after it; when the voice stops
         // early it is the closing line that goes, not the lecture's last words. The line is then cut off at the time
         // Scribe hears its first word (lh001 "can travel.", lh003 "to three weeks", 2026-10-18).
-        const r = await openaiTts(`${p.text} ${SENTINEL_TEXT}`, 1, complete ? COMPLETE_INSTRUCTIONS : OPENAI_INSTRUCTIONS);
-        const tmpWav = path.join(out, `tmp-${cacheKey}.wav`);
-        const tmp = new Float32Array(r.pcm.length / 2);
-        for (let i = 0; i < tmp.length; i++) tmp[i] = r.pcm.readInt16LE(i * 2) / 32768;
-        writeWav(tmpWav, tmp, SR);
-        const words = await scribeWords(tmpWav);
-        fs.rmSync(tmpWav, { force: true });
-        // the sentinel's first word, searched from the end: "네" (or "여기까지")
-        let cutAt = null;
-        for (let i = words.length - 1; i >= 0 && i >= words.length - 6; i--) if (/^(네|여기까지)/.test(words[i][1])) cutAt = words[i][0];
-        const cut = cutAt === null ? r.pcm : r.pcm.subarray(0, Math.max(0, Math.round((cutAt - 0.08) * SR)) * 2);
+        // The cut: at the QUIETEST 20 ms between the end of the last word before the closing line and 0.12 s into the
+        // closing line's first word — Scribe's word starts run late now and then, and a cut at "start − 0.08 s" left a
+        // "네" in 6 readings (lh007 #2, lm057 #14 …, 2026-10-18). No closing line heard at all → read again (3 tries);
+        // the pronunciation check fails any reading whose voice still says it.
+        let cut = null;
+        for (let attempt = 1; attempt <= 3 && !cut; attempt++) {
+          const r = await openaiTts(`${p.text} ${SENTINEL_TEXT}`, 1, complete ? COMPLETE_INSTRUCTIONS : OPENAI_INSTRUCTIONS);
+          const tmpWav = path.join(out, `tmp-${cacheKey}.wav`);
+          const tmp = new Float32Array(r.pcm.length / 2);
+          for (let i = 0; i < tmp.length; i++) tmp[i] = r.pcm.readInt16LE(i * 2) / 32768;
+          writeWav(tmpWav, tmp, SR);
+          const words = await scribeWords(tmpWav);
+          fs.rmSync(tmpWav, { force: true });
+          // the sentinel's first word, searched from the end: "네" (or "여기까지"), the earliest of the last 6 words
+          let k = -1;
+          for (let i = words.length - 1; i >= 0 && i >= words.length - 6; i--) if (/^(네|여기까지)/.test(words[i][1])) k = i;
+          if (k < 0) { if (attempt === 3) cut = r.pcm; continue; }
+          const lo = Math.max(0, k > 0 ? words[k - 1][2] ?? words[k][0] - 0.3 : words[k][0] - 0.3);
+          const hi = Math.max(lo + 0.02, words[k][0] + 0.12);
+          const win = Math.round(0.02 * SR);
+          let best = Math.round(lo * SR), bestE = Infinity;
+          for (let s = Math.round(lo * SR); s + win <= Math.min(tmp.length, Math.round(hi * SR)); s += Math.round(win / 2)) {
+            let e = 0;
+            for (let i = s; i < s + win; i++) e += tmp[i] * tmp[i];
+            if (e < bestE) { bestE = e; best = s; }
+          }
+          cut = r.pcm.subarray(0, (best + Math.round(win / 2)) * 2);
+        }
         fs.writeFileSync(pcmFile, cut);
         fs.writeFileSync(alnFile, JSON.stringify(null));
       } else {
@@ -403,7 +446,7 @@ for (const id of IDS) {
     }
     wordPairs += pairs.length;
     anchors.push([p.speechStart, cursor], ...pairs.map((q) => [q.orig, q.synth]), [p.speechEnd, cursor + newLen]);
-    laid.push({ piece: n, members: p.members || [p.firstIndex ?? n], cacheKey, text: p.text, origStart: p.speechStart, origLen: +origLen.toFixed(3), newStart: +cursor.toFixed(3), newLen: +newLen.toFixed(3), ratio: +(newLen / origLen).toFixed(3), wordAnchors: pairs.length, file: wavFile });
+    laid.push({ piece: n, members: p.members || [p.firstIndex ?? n], cacheKey, sentinel, complete, text: p.text, origStart: p.speechStart, origLen: +origLen.toFixed(3), newStart: +cursor.toFixed(3), newLen: +newLen.toFixed(3), ratio: +(newLen / origLen).toFixed(3), wordAnchors: pairs.length, file: wavFile });
     cursor += newLen;
   }
   const after = ENGINE === "elevenlabs" ? await creditsUsed() : null;
@@ -485,8 +528,11 @@ for (const id of IDS) {
     // Hangul or as another word, so an English word of the text (3+ letters) missing from what was heard is a fail.
     // not checked: English number words (Scribe writes them as digits — "nineteen thirty-seven" → 1937) and capitalised
     // names (Scribe writes some in Hangul — Colorado → 콜로라도); lm002 2026-10-18
-    const NUMBER_WORD = /^(zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|twelfth|twentieth|thirtieth|o'clock|oclock)(-\w+)?$/;
-    const engWords = (s) => (s.match(/[A-Za-z][A-Za-z'’-]{2,}/g) || []).filter((w) => !/^[A-Z]/.test(w) || /^(I|The|A|An|And|But|He|She|It|They|We|You|This|That|What|When|Where|Why|How|After|Before|In|On|At|For|With|My|His|Her|Our|Their|Can|Do|Does|Did|Is|Are|Was|Were)$/.test(w)).map((w) => w.toLowerCase().replace(/[’']s$/, "").replace(/['’]/g, "")).filter((w) => !NUMBER_WORD.test(w));
+    const NUMBER_WORD = /^(zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand|million|first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|twelfth|twentieth|thirtieth|o'clock|oclock|oh|ought)(-\w+)?$/;
+    // (ordinals and decades too — eighteenth, seventeenth, the sixties, eighteen hundreds: written 18th, 1960s, 1800s;
+    // and "nineteen oh-eight" · "nineteen ought three": written 1908 · 1903)
+    const isNumberWord = (w) => w.split("-").every((part) => NUMBER_WORD.test(part) || NUMBER_WORD.test(part.replace(/(ths|th|s)$/, "")) || NUMBER_WORD.test(part.replace(/(ieth|ies)$/, "y")));
+    const engWords = (s) => (s.match(/[A-Za-z][A-Za-z'’-]{2,}/g) || []).filter((w) => !/^[A-Z]/.test(w) || /^(I|The|A|An|And|But|He|She|It|They|We|You|This|That|What|When|Where|Why|How|After|Before|In|On|At|For|With|My|His|Her|Our|Their|Can|Do|Does|Did|Is|Are|Was|Were)$/.test(w)).map((w) => w.toLowerCase().replace(/[’']s$/, "").replace(/['’]/g, "")).filter((w) => !isNumberWord(w));
     pronunciation = laid.map((l) => {
       const heardWords = newWords.filter((w) => w.t >= l.newStart - 0.05 && w.t < l.newStart + l.newLen + 0.05).map((w) => w.w);
       const heard = heardWords.join(" ");
@@ -504,7 +550,14 @@ for (const id of IDS) {
       const heardRaw = near.toLowerCase();
       const found = (w) => heardEng.has(w) || heardEng.has(w.replace(/s$/, "")) || (HOMO[w] || []).some((h) => heardEng.has(h) || heardRaw.includes(h)) || heardJoined.includes(w.replace(/-/g, ""));
       const missingEnglish = engWords(l.text).filter((w) => !found(w));
-      return { piece: l.piece, members: l.members, cacheKey: l.cacheKey, sim: +sim.toFixed(3), missingEnglish, text: l.text, heard };
+      // the throw-away closing line still in the voice (its cut missed): "…not이 네", "Until. 네, 여기까지입니다."
+      const sentinelLeft = l.sentinel && (/여기까지/.test(heard) && !/여기까지/.test(l.text) || (/(^|\s|[.,?!])네[.,?!]?$/.test(heard.trim()) && !/네[.,?!]?$/.test(l.text.trim())));
+      // the reading's LAST word not said — gpt-4o-mini-tts leaves off a reading's last short phrase now and then
+      // ("수고하셨습니다.", "그런 말이죠.", "The") — 1,028 of 6,444 readings of the 200-lecture run, heard again with
+      // silence after them to rule out the hearing (2026-10-18). Judged on the reading's own hearing.
+      const own = JSON.parse(fs.readFileSync(path.join(out, `s-${l.cacheKey}.json`), "utf8")).map((w) => w[1]);
+      const lastMissing = lastWordMissing(l.text, own);
+      return { piece: l.piece, members: l.members, cacheKey: l.cacheKey, sim: +sim.toFixed(3), missingEnglish, sentinelLeft, lastMissing, text: l.text, heard, near };
     });
     // A SECOND HEARING for every reading Scribe flagged: Scribe writes some English the voice said correctly in Hangul
     // (에디션, 매니저, 패시브 — lh007/lh008, 2026-10-18). OpenAI hears the reading on its own, told to keep English in
@@ -518,12 +571,20 @@ for (const id of IDS) {
       const secondJoined = second.replace(/[^a-z]/g, "");
       x.secondHeard = second;
       x.missingEnglish = x.missingEnglish.filter((w) => !new RegExp(`(^|[^a-z])${w.replace(/[^a-z-]/g, "")}s?([^a-z]|$)`).test(second) && !secondJoined.includes(w.replace(/[^a-z]/g, "")));
+      // and a word either hearing wrote in Hangul with the same sound (에디션 · 셸터 · 미디엄) or a known other spelling
+      // (sound-match.mjs — 70 of the 111 flags left after the 200-lecture run were these, 2026-10-18)
+      x.missingEnglish = x.missingEnglish.filter((w) => !saidInHangul(w, `${x.near} ${second}`));
     }
     // whole-reading similarity only catches gross failures: number-heavy readings sit at 0.54–0.6 because Scribe writes
-    // "천사백구십" as 1490 (lm002); half a reading lost would be well below 0.45
-    for (const x of pronunciation) x.fail = x.sim < 0.45 || x.missingEnglish.length > 0;
+    // "천사백구십" as 1490 (lm002); half a reading lost would be well below 0.45. Not judged by it: a reading Scribe wrote
+    // digits for (numbers read out — 1848 · 300,000, the similarity says nothing there) and a 1–3 letter one ("자,").
+    for (const x of pronunciation) {
+      const simJudged = !/\d/.test(x.heard) && x.text.replace(/[\s\p{P}]/gu, "").length > 3;
+      x.fail = (simJudged && x.sim < 0.45) || x.missingEnglish.length > 0 || x.sentinelLeft || x.lastMissing;
+      delete x.near;
+    }
     const below = pronunciation.filter((x) => x.fail);
-    console.log(`  pronunciation: ${pronunciation.length - below.length}/${pronunciation.length} readings pass${below.length ? ` · fail: ${below.map((x) => `#${x.piece} ${x.sim}${x.missingEnglish.length ? ` [${x.missingEnglish.join(" ")}]` : ""}`).join(", ")}` : ""}`);
+    console.log(`  pronunciation: ${pronunciation.length - below.length}/${pronunciation.length} readings pass${below.length ? ` · fail: ${below.map((x) => `#${x.piece} ${x.sim}${x.missingEnglish.length ? ` [${x.missingEnglish.join(" ")}]` : ""}${x.lastMissing ? " [end]" : ""}${x.sentinelLeft ? " [closing line]" : ""}`).join(", ")}` : ""}`);
   }
   // keep the map monotonic
   anchors.sort((a, b) => a[0] - b[0]);
@@ -604,6 +665,8 @@ for (const id of IDS) {
   };
   stats.pronunciation = pronunciation ? { readings: pronunciation.length, below: pronunciation.filter((x) => x.fail).map((x) => x.piece), min: Math.min(...pronunciation.map((x) => x.sim)), missingEnglish: pronunciation.flatMap((x) => x.missingEnglish.map((w) => `#${x.piece}:${w}`)) } : null;
   stats.outDir = out;
+  // the fixes this voice was made with (original piece numbers) — make-voices.mjs keeps them for the next run
+  stats.overrides = { detach: [...DETACH], carry: [...CARRY], sentinel: laid.filter((l) => l.sentinel).flatMap((l) => l.members), complete: laid.filter((l) => l.complete).flatMap((l) => l.members) };
   fs.writeFileSync(path.join(out, "stats.json"), JSON.stringify({ ...stats, laid, pronunciationDetail: pronunciation }, null, 1));
   console.log(JSON.stringify(stats));
   console.log(`  → ${mp3} · ${path.join(out, "pen.retimed.json")}`);
