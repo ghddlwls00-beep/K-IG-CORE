@@ -395,9 +395,14 @@ for (const id of IDS) {
           writeWav(tmpWav, tmp, SR);
           const words = await scribeWords(tmpWav);
           fs.rmSync(tmpWav, { force: true });
-          // the sentinel's first word, searched from the end: "네" (or "여기까지"), the earliest of the last 6 words
+          // the sentinel's first word: the LAST "여기까지" heard, and the "네" just before it when there is one. (Searching
+          // the last 6 words for any "네"/"여기까지" found the lecture's OWN — "네, 수고하셨습니다." · "여기까지는 삽입구" ·
+          // "네다섯 번" — and cut the text there: lh048 #33, lh064 #17, lm045 #47 …, 2026-10-18.) Only when the closing
+          // line's "여기까지" was not heard: a lone last "네" the text does not end with.
           let k = -1;
-          for (let i = words.length - 1; i >= 0 && i >= words.length - 6; i--) if (/^(네|여기까지)/.test(words[i][1])) k = i;
+          for (let i = words.length - 1; i >= 0 && i >= words.length - 6; i--) if (/^여기까지/.test(words[i][1])) { k = i; break; }
+          if (k > 0 && /^네[.,!?]?$/.test(words[k - 1][1])) k--;
+          if (k < 0 && words.length && /^네[.,!?]?$/.test(words.at(-1)[1]) && !/네[.,!?]?$/.test(p.text.trim())) k = words.length - 1;
           if (k < 0) { if (attempt === 3) cut = r.pcm; continue; }
           const lo = Math.max(0, k > 0 ? words[k - 1][2] ?? words[k][0] - 0.3 : words[k][0] - 0.3);
           const hi = Math.max(lo + 0.02, words[k][0] + 0.12);
@@ -551,7 +556,8 @@ for (const id of IDS) {
       const found = (w) => heardEng.has(w) || heardEng.has(w.replace(/s$/, "")) || (HOMO[w] || []).some((h) => heardEng.has(h) || heardRaw.includes(h)) || heardJoined.includes(w.replace(/-/g, ""));
       const missingEnglish = engWords(l.text).filter((w) => !found(w));
       // the throw-away closing line still in the voice (its cut missed): "…not이 네", "Until. 네, 여기까지입니다."
-      const sentinelLeft = l.sentinel && (/여기까지/.test(heard) && !/여기까지/.test(l.text) || (/(^|\s|[.,?!])네[.,?!]?$/.test(heard.trim()) && !/네[.,?!]?$/.test(l.text.trim())));
+      const ownHeard = JSON.parse(fs.readFileSync(path.join(out, `s-${l.cacheKey}.json`), "utf8")).map((w) => w[1]).join(" ");
+      const sentinelLeft = (/여기까지입니다/.test(ownHeard) && !/여기까지입니다/.test(l.text)) || (l.sentinel && /(^|\s|[.,?!])네[.,?!]?$/.test(ownHeard.trim()) && !/네[.,?!]?$/.test(l.text.trim()));
       // the reading's LAST word not said — gpt-4o-mini-tts leaves off a reading's last short phrase now and then
       // ("수고하셨습니다.", "그런 말이죠.", "The") — 1,028 of 6,444 readings of the 200-lecture run, heard again with
       // silence after them to rule out the hearing (2026-10-18). Judged on the reading's own hearing.

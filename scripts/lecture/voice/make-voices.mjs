@@ -75,7 +75,9 @@ async function one(id) {
     const failed = (stats.pronunciationDetail || []).filter((x) => x.fail);
     if (!failed.length || round === 5) break;
     for (const x of failed) {
-      for (const ext of ["pcm", "alignment.json"]) fs.rmSync(path.join(OUT_DIR(id), `r-${x.cacheKey}.${ext}`), { force: true });
+      // the reading AND its hearings (s- Scribe · o- OpenAI): a re-read under the same key was otherwise checked — and its
+      // pen anchored — against the hearing of the take before it (rounds 4–5, found 2026-10-18)
+      for (const f of [`r-${x.cacheKey}.pcm`, `r-${x.cacheKey}.alignment.json`, `s-${x.cacheKey}.json`, `o-${x.cacheKey}.txt`]) fs.rmSync(path.join(OUT_DIR(id), f), { force: true });
       // an English fragment dropped at the END: carried to the next piece when the last piece has a sentence end before
       // it ("…하겠습니다. They,"), else the whole last piece starts the next reading (detach) — once per piece
       const last = x.members.at(-1);
