@@ -14,6 +14,7 @@ import {
   verifyLicenseSessionToken,
 } from "@/lib/licenseSession";
 import { getLectureProgress, isLectureLessonUnlocked, lectureChapterOf } from "@/lib/lectureProgress";
+import { lectureStepBefore } from "@/lib/lectureChapters";
 
 /**
  * LECTURE lessons (2026-10-17, docs/lecture/README.md) — ADULT's own route (src/app/adult/[lesson]/page.tsx) for LECTURE:
@@ -78,6 +79,8 @@ export default async function LectureLessonPage({
   const cookieStore = await cookies();
   const isFree = isFreePreviewLesson("lecture", id);
   const lessonChapter = lectureChapterOf(id) ?? 0;
+  // 뼈대세우기 · 문장구조론 · 알파오메가 (2026-10-19): the lecture whose end opens this one
+  const stepBefore = lectureStepBefore(id) ?? null;
 
   let accessAllowed = isFree;
   let sequentialLock = false;
@@ -117,7 +120,8 @@ export default async function LectureLessonPage({
           lessonId={id}
           lockReason={sequentialLock ? "progress" : "license"}
           chapter={lessonChapter || undefined}
-          freeLessons={freeLessonLinks("lecture")}
+          stepBeforeTitle={stepBefore ? getLesson("lecture", stepBefore)?.title : undefined}
+          freeLessons={freeLessonLinks("lecture", 2, id)}
         />
       </main>
     );

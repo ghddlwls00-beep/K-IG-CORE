@@ -1,0 +1,63 @@
+{
+  "id": "la006",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 6강",
+  "label": "알파오메가",
+  "menuLabel": "6강",
+  "unit": 1,
+  "part": 6,
+  "order": 18,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 6,
+    "durationSec": 1884.5,
+    "lengthUnits": 10475,
+    "unitSec": 0.179917,
+    "pages": [
+      {
+        "page": 21,
+        "src": "/audio/lecture/la006/p021.jpg"
+      },
+      {
+        "page": 22,
+        "src": "/audio/lecture/la006/p022.jpg"
+      },
+      {
+        "page": 23,
+        "src": "/audio/lecture/la006/p023.jpg"
+      },
+      {
+        "page": 24,
+        "src": "/audio/lecture/la006/p024.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la006/pen.json?v=y6qqvl",
+      "strokes": 944,
+      "segments": 29848
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la006/voice.mp3?v=ncq5el",
+      "durationSec": 1884.511
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_6강.gdb",
+  "legacyEncoding": "euc-kr"
+}

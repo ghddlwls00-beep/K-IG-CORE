@@ -393,6 +393,13 @@ export function formatLessonPresentation(
   // 9-3. LECTURE (2026-10-17) — "lm001" · "lh001": the title is the lecture's own name ('중등 영어독해 1강', from the data), the line
   // under it its chapter ('1장 · 중등 영어독해 1~10강'), the code the book and number ('중등 1강'). No English anywhere.
   if (courseSlug === "lecture") {
+    // 뼈대세우기 · 문장구조론 · 알파오메가 (2026-10-19): '뼈대세우기 1강', under it the section's name, the code '1강'
+    const step = id.match(/^l([bsa])(\d+)$/);
+    if (step) {
+      const section = { b: "뼈대세우기", s: "문장구조론", a: "알파오메가" }[step[1] as "b" | "s" | "a"];
+      const title = lesson.title || `${section} ${Number(step[2])}강`;
+      return { title, subtitle: section, badge: "필기 강의", code: `${Number(step[2])}강`, name: title };
+    }
     const m = id.match(/^l([mh])(\d+)$/);
     const book = m?.[1] === "h" ? "고등" : "중등";
     const number = m ? Number(m[2]) : 0;

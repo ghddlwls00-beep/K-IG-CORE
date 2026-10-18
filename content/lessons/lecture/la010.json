@@ -1,0 +1,71 @@
+{
+  "id": "la010",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 10강",
+  "label": "알파오메가",
+  "menuLabel": "10강",
+  "unit": 1,
+  "part": 10,
+  "order": 22,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 10,
+    "durationSec": 1677.3,
+    "lengthUnits": 9323,
+    "unitSec": 0.179918,
+    "pages": [
+      {
+        "page": 33,
+        "src": "/audio/lecture/la010/p033.jpg"
+      },
+      {
+        "page": 34,
+        "src": "/audio/lecture/la010/p034.jpg"
+      },
+      {
+        "page": 35,
+        "src": "/audio/lecture/la010/p035.jpg"
+      },
+      {
+        "page": 36,
+        "src": "/audio/lecture/la010/p036.jpg"
+      },
+      {
+        "page": 37,
+        "src": "/audio/lecture/la010/p037.jpg"
+      },
+      {
+        "page": 38,
+        "src": "/audio/lecture/la010/p038.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la010/pen.json?v=q7x9ng",
+      "strokes": 764,
+      "segments": 32076
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la010/voice.mp3?v=dy3wa0",
+      "durationSec": 1677.344
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_10강.gdb",
+  "legacyEncoding": "euc-kr"
+}

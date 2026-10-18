@@ -1,0 +1,63 @@
+{
+  "id": "la004",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 4강",
+  "label": "알파오메가",
+  "menuLabel": "4강",
+  "unit": 1,
+  "part": 4,
+  "order": 16,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 4,
+    "durationSec": 1673.2,
+    "lengthUnits": 9303,
+    "unitSec": 0.179854,
+    "pages": [
+      {
+        "page": 14,
+        "src": "/audio/lecture/la004/p014.jpg"
+      },
+      {
+        "page": 15,
+        "src": "/audio/lecture/la004/p015.jpg"
+      },
+      {
+        "page": 16,
+        "src": "/audio/lecture/la004/p016.jpg"
+      },
+      {
+        "page": 17,
+        "src": "/audio/lecture/la004/p017.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la004/pen.json?v=2in1iy",
+      "strokes": 903,
+      "segments": 29610
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la004/voice.mp3?v=xk5gkw",
+      "durationSec": 1673.174
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_4강.gdb",
+  "legacyEncoding": "euc-kr"
+}

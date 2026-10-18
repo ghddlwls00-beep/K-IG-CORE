@@ -2,6 +2,7 @@
   "id": "lh027",
   "course": "lecture",
   "series": "lh",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "고등 영어독해 27강",
@@ -9,7 +10,7 @@
   "menuLabel": "27강",
   "unit": 13,
   "part": 27,
-  "order": 126,
+  "order": 159,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 84,
       "segments": 3329
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "고등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lh027/voice.mp3?v=bt2g63",
       "durationSec": 346.861
     }
   },
-  "legacyPath": "중등독해101~200/고등영어 독해127.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등독해101~200/고등영어 독해127.gdb",
   "legacyEncoding": "euc-kr"
 }

@@ -2,6 +2,7 @@
   "id": "lm064",
   "course": "lecture",
   "series": "lm",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "중등 영어독해 64강",
@@ -9,7 +10,7 @@
   "menuLabel": "64강",
   "unit": 7,
   "part": 64,
-  "order": 63,
+  "order": 96,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 124,
       "segments": 3448
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "중등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lm064/voice.mp3?v=lp2zbe",
       "durationSec": 391.44
     }
   },
-  "legacyPath": "중등영어 독해064.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등영어 독해064.gdb",
   "legacyEncoding": "euc-kr"
 }

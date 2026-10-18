@@ -1,0 +1,63 @@
+{
+  "id": "la008",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 8강",
+  "label": "알파오메가",
+  "menuLabel": "8강",
+  "unit": 1,
+  "part": 8,
+  "order": 20,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 8,
+    "durationSec": 1890.6,
+    "lengthUnits": 10508,
+    "unitSec": 0.179936,
+    "pages": [
+      {
+        "page": 27,
+        "src": "/audio/lecture/la008/p027.jpg"
+      },
+      {
+        "page": 28,
+        "src": "/audio/lecture/la008/p028.jpg"
+      },
+      {
+        "page": 29,
+        "src": "/audio/lecture/la008/p029.jpg"
+      },
+      {
+        "page": 30,
+        "src": "/audio/lecture/la008/p030.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la008/pen.json?v=1vesga3",
+      "strokes": 970,
+      "segments": 37325
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la008/voice.mp3?v=6ddlaq",
+      "durationSec": 1890.618
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_8강.gdb",
+  "legacyEncoding": "euc-kr"
+}

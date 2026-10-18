@@ -2,6 +2,7 @@
   "id": "lh026",
   "course": "lecture",
   "series": "lh",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "고등 영어독해 26강",
@@ -9,7 +10,7 @@
   "menuLabel": "26강",
   "unit": 13,
   "part": 26,
-  "order": 125,
+  "order": 158,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 49,
       "segments": 1608
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "고등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lh026/voice.mp3?v=1j1s9vz",
       "durationSec": 276.167
     }
   },
-  "legacyPath": "중등독해101~200/고등영어 독해126.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등독해101~200/고등영어 독해126.gdb",
   "legacyEncoding": "euc-kr"
 }

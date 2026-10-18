@@ -2,6 +2,7 @@
   "id": "lm071",
   "course": "lecture",
   "series": "lm",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "중등 영어독해 71강",
@@ -9,7 +10,7 @@
   "menuLabel": "71강",
   "unit": 8,
   "part": 71,
-  "order": 70,
+  "order": 103,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 167,
       "segments": 4824
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "중등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lm071/voice.mp3?v=ootsoe",
       "durationSec": 471.838
     }
   },
-  "legacyPath": "중등영어 독해071.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등영어 독해071.gdb",
   "legacyEncoding": "euc-kr"
 }

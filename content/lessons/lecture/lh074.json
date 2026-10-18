@@ -2,6 +2,7 @@
   "id": "lh074",
   "course": "lecture",
   "series": "lh",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "고등 영어독해 74강",
@@ -9,7 +10,7 @@
   "menuLabel": "74강",
   "unit": 18,
   "part": 74,
-  "order": 173,
+  "order": 206,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 81,
       "segments": 3721
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "고등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lh074/voice.mp3?v=zsj9vl",
       "durationSec": 276.643
     }
   },
-  "legacyPath": "중등독해101~200/고등영어 독해174.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등독해101~200/고등영어 독해174.gdb",
   "legacyEncoding": "euc-kr"
 }

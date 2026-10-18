@@ -132,8 +132,12 @@ export const COURSES: Omit<Course, "lessonCount">[] = [
     titleEn: "Lecture",
     kind: "desktop-legacy",
     // UI검토-1007 7번: 하는 일대로 — 중등 · 고등 독해 지문 200개, 교재 쪽 위에 선생님 필기가 그려지는 강의
-    description: "중등 · 고등 영어 독해 지문 200개를 선생님 필기로 풀어 주는 강의예요. 재생하면 교재 쪽 위에 필기가 그때그때 그려져요.",
+    // 2026-10-19 (사장님): four sections — 뼈대세우기 · 문장구조론 · 알파오메가 · 영어독해 (lb · ls · la · lm/lh)
+    description: "뼈대세우기 · 문장구조론 · 알파오메가 · 영어독해, 네 과정을 선생님 필기로 풀어 주는 강의예요. 재생하면 교재 쪽 위에 필기가 그때그때 그려져요.",
     series: [
+      { slug: "lb", title: "뼈대세우기", prefix: "lb" },
+      { slug: "ls", title: "문장구조론", prefix: "ls" },
+      { slug: "la", title: "알파오메가", prefix: "la" },
       { slug: "lm", title: "중등 영어독해", prefix: "lm" },
       { slug: "lh", title: "고등 영어독해", prefix: "lh" },
     ],

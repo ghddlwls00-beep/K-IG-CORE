@@ -1,0 +1,89 @@
+{
+  "id": "ls009",
+  "course": "lecture",
+  "series": "ls",
+  "section": "ls",
+  "variant": "main",
+  "pairId": null,
+  "title": "문장구조론 9강",
+  "label": "문장구조론",
+  "menuLabel": "9강",
+  "unit": 1,
+  "part": 9,
+  "order": 11,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "ls",
+    "number": 9,
+    "durationSec": 1748.5,
+    "lengthUnits": 9722,
+    "unitSec": 0.179859,
+    "pages": [
+      {
+        "page": 36,
+        "src": "/audio/lecture/ls009/p036.jpg"
+      },
+      {
+        "page": 37,
+        "src": "/audio/lecture/ls009/p037.jpg"
+      },
+      {
+        "page": 38,
+        "src": "/audio/lecture/ls009/p038.jpg"
+      },
+      {
+        "page": 39,
+        "src": "/audio/lecture/ls009/p039.jpg"
+      },
+      {
+        "page": 40,
+        "src": "/audio/lecture/ls009/p040.jpg"
+      },
+      {
+        "page": 41,
+        "src": "/audio/lecture/ls009/p041.jpg"
+      },
+      {
+        "page": 42,
+        "src": "/audio/lecture/ls009/p042.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/ls009/pen.json?v=1k36yzp",
+      "strokes": 529,
+      "segments": 19294
+    },
+    "frame": {
+      "head": {
+        "top": 74,
+        "bottom": 126,
+        "left": 100,
+        "right": 728,
+        "label": "문장구조론"
+      },
+      "foot": [
+        {
+          "top": 1061,
+          "bottom": 1069,
+          "left": 80,
+          "right": 746,
+          "edge": "#000"
+        },
+        {
+          "top": 1069,
+          "bottom": 1104,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/ls009/voice.mp3?v=1gcg131",
+      "durationSec": 1748.548
+    }
+  },
+  "legacyPath": "문장구조론/영어문장구조론09.gdb",
+  "legacyEncoding": "euc-kr"
+}

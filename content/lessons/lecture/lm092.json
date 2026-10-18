@@ -2,6 +2,7 @@
   "id": "lm092",
   "course": "lecture",
   "series": "lm",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "중등 영어독해 92강",
@@ -9,7 +10,7 @@
   "menuLabel": "92강",
   "unit": 10,
   "part": 92,
-  "order": 91,
+  "order": 124,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 54,
       "segments": 3043
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "중등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lm092/voice.mp3?v=13ckhsj",
       "durationSec": 265.28
     }
   },
-  "legacyPath": "중등영어 독해092.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등영어 독해092.gdb",
   "legacyEncoding": "euc-kr"
 }

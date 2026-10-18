@@ -1,0 +1,75 @@
+{
+  "id": "la017",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 17강",
+  "label": "알파오메가",
+  "menuLabel": "17강",
+  "unit": 1,
+  "part": 17,
+  "order": 29,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 17,
+    "durationSec": 1603.3,
+    "lengthUnits": 8910,
+    "unitSec": 0.179947,
+    "pages": [
+      {
+        "page": 64,
+        "src": "/audio/lecture/la017/p064.jpg"
+      },
+      {
+        "page": 65,
+        "src": "/audio/lecture/la017/p065.jpg"
+      },
+      {
+        "page": 66,
+        "src": "/audio/lecture/la017/p066.jpg"
+      },
+      {
+        "page": 67,
+        "src": "/audio/lecture/la017/p067.jpg"
+      },
+      {
+        "page": 68,
+        "src": "/audio/lecture/la017/p068.jpg"
+      },
+      {
+        "page": 69,
+        "src": "/audio/lecture/la017/p069.jpg"
+      },
+      {
+        "page": 70,
+        "src": "/audio/lecture/la017/p070.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la017/pen.json?v=1l31hbw",
+      "strokes": 676,
+      "segments": 24141
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la017/voice.mp3?v=11n2bi2",
+      "durationSec": 1603.292
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_17강.gdb",
+  "legacyEncoding": "euc-kr"
+}

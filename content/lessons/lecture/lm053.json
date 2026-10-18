@@ -2,6 +2,7 @@
   "id": "lm053",
   "course": "lecture",
   "series": "lm",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "중등 영어독해 53강",
@@ -9,7 +10,7 @@
   "menuLabel": "53강",
   "unit": 6,
   "part": 53,
-  "order": 52,
+  "order": 85,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 83,
       "segments": 2455
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "중등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lm053/voice.mp3?v=1jg0plg",
       "durationSec": 412.84
     }
   },
-  "legacyPath": "중등영어 독해053.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등영어 독해053.gdb",
   "legacyEncoding": "euc-kr"
 }

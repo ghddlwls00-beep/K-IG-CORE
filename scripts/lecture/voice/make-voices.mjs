@@ -28,7 +28,7 @@ const arg = (name, fallback) => {
   return i > -1 && args[i + 1] ? args[i + 1] : fallback;
 };
 const idsArg = arg("--ids", "");
-const all = fs.readdirSync(VOICE).filter((d) => /^l[mh]\d{3}$/.test(d)).sort();
+const all = fs.readdirSync(VOICE).filter((d) => /^l[mhbsa]\d{3}$/.test(d)).sort(); // lm · lh 영어독해, lb · ls · la the 10-19 sections
 const ids = idsArg === "all" ? all : idsArg.split(",").filter(Boolean);
 const CONCURRENCY = Math.max(1, Number(arg("--concurrency", 3)) || 3);
 

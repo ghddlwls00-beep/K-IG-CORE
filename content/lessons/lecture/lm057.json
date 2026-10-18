@@ -2,6 +2,7 @@
   "id": "lm057",
   "course": "lecture",
   "series": "lm",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "중등 영어독해 57강",
@@ -9,7 +10,7 @@
   "menuLabel": "57강",
   "unit": 6,
   "part": 57,
-  "order": 56,
+  "order": 89,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -42,11 +43,28 @@
       "strokes": 170,
       "segments": 4873
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "중등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lm057/voice.mp3?v=nkuyau",
       "durationSec": 422.258
     }
   },
-  "legacyPath": "중등영어 독해057.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등영어 독해057.gdb",
   "legacyEncoding": "euc-kr"
 }

@@ -153,7 +153,8 @@ export const FREE_PREVIEW_LESSON_IDS: Record<string, readonly string[]> = {
   adult: ["a1-1", "a1-2"],
   // LECTURE (2026-10-17 사장님 '다른 섹션과 같게') — 1장 1·2강. Their page images and pen files are listed exactly in
   // generated/freeMediaKeys.json (scripts/buildFreeSpeechKeys.mjs); every other lecture's need an all-pass.
-  lecture: ["lm001", "lm002"],
+  // 2026-10-19 — every section's 1·2강 (사장님 '각 묶음 1·2강 무료'): 뼈대세우기 · 문장구조론 · 알파오메가 · 영어독해
+  lecture: ["lb001", "lb002", "ls001", "ls002", "la001", "la002", "lm001", "lm002"],
   // D4 — the first two lessons, as every course. The paid STUDENT sentences of pg01-1 are not in
   // its file: a licence adds them on the server (src/lib/passoffContent.ts).
   "passoff-grammar": ["pg01-1", "pg01-2"],
@@ -195,7 +196,8 @@ export function isFreePreviewLesson(
   sectionIndex?: number,
   lessonIndex?: number,
 ): boolean {
-  if (typeof sectionIndex === "number" && typeof lessonIndex === "number") {
+  // LECTURE has a free pair in each of its four sections — its list, not a position, says which (2026-10-19)
+  if (courseSlug !== "lecture" && typeof sectionIndex === "number" && typeof lessonIndex === "number") {
     return sectionIndex === 0 && lessonIndex < 2;
   }
   const free = FREE_PREVIEW_LESSON_IDS[courseSlug];

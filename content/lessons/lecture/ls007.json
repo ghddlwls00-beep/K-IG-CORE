@@ -1,0 +1,77 @@
+{
+  "id": "ls007",
+  "course": "lecture",
+  "series": "ls",
+  "section": "ls",
+  "variant": "main",
+  "pairId": null,
+  "title": "문장구조론 7강",
+  "label": "문장구조론",
+  "menuLabel": "7강",
+  "unit": 1,
+  "part": 7,
+  "order": 9,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "ls",
+    "number": 7,
+    "durationSec": 1054.7,
+    "lengthUnits": 5863,
+    "unitSec": 0.179919,
+    "pages": [
+      {
+        "page": 24,
+        "src": "/audio/lecture/ls007/p024.jpg"
+      },
+      {
+        "page": 25,
+        "src": "/audio/lecture/ls007/p025.jpg"
+      },
+      {
+        "page": 26,
+        "src": "/audio/lecture/ls007/p026.jpg"
+      },
+      {
+        "page": 27,
+        "src": "/audio/lecture/ls007/p027.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/ls007/pen.json?v=6g698t",
+      "strokes": 735,
+      "segments": 19167
+    },
+    "frame": {
+      "head": {
+        "top": 74,
+        "bottom": 126,
+        "left": 100,
+        "right": 728,
+        "label": "문장구조론"
+      },
+      "foot": [
+        {
+          "top": 1061,
+          "bottom": 1069,
+          "left": 80,
+          "right": 746,
+          "edge": "#000"
+        },
+        {
+          "top": 1069,
+          "bottom": 1104,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/ls007/voice.mp3?v=rzymxn",
+      "durationSec": 1054.702
+    }
+  },
+  "legacyPath": "문장구조론/영어문장구조론07.gdb",
+  "legacyEncoding": "euc-kr"
+}

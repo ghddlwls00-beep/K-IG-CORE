@@ -1,7 +1,7 @@
 import "server-only";
 import fs from "node:fs";
 import path from "node:path";
-import type { Course, CourseIndex, Lesson, LessonGroup, LessonSummary, Tab } from "./types";
+import type { Course, CourseIndex, CourseSection, Lesson, LessonGroup, LessonSummary, Tab } from "./types";
 import { COURSES } from "./courses";
 import { TABS } from "./tabs";
 import { isFreePreviewLesson } from "./license";
@@ -62,11 +62,11 @@ export function getCourse(slug: string): Course | null {
 export function getCourseIndex(slug: string): CourseIndex | null {
   const course = getCourse(slug);
   if (!course) return null;
-  const index = readJson<{ lessons: LessonSummary[]; groups?: LessonGroup[] }>(
+  const index = readJson<{ lessons: LessonSummary[]; groups?: LessonGroup[]; sections?: CourseSection[] }>(
     path.join(CONTENT_DIR, "courses", `${slug}.json`),
   );
   if (!index) return null;
-  return { course, lessons: index.lessons, groups: index.groups ?? [] };
+  return { course, lessons: index.lessons, groups: index.groups ?? [], ...(index.sections ? { sections: index.sections } : {}) };
 }
 
 export function getLesson(course: string, id: string): Lesson | null {
@@ -136,7 +136,9 @@ export function getLessonContext(course: string, id: string) {
   const index = getCourseIndex(course);
   if (!index) return { prev: null, next: null, pair: null };
 
-  const mains = index.lessons.filter((l) => l.variant === "main");
+  // LECTURE (2026-10-19): '이전 / 다음 강의' stay inside the lecture's own section (뼈대세우기 · 문장구조론 · 알파오메가 · 영어독해)
+  const section = course === "lecture" ? index.lessons.find((l) => l.id === id)?.section : undefined;
+  const mains = index.lessons.filter((l) => l.variant === "main" && (!section || l.section === section));
   const list = index.lessons.find((l) => l.id === id)?.variant === "script" ? index.lessons : mains;
 
   const i = list.findIndex((l) => l.id === id);

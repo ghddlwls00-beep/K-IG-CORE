@@ -191,8 +191,9 @@ export interface ReadingVocabularyItem {
  * (mediaAccess.ts checks the licence). The pen file's own shape is LecturePenFile (src/lib/lecturePen.ts).
  */
 export interface LectureData {
-  book: "middle" | "high";
-  /** The lecture's number in its book (1–100) */
+  /** 영어독해's two books, or the section key of 뼈대세우기 · 문장구조론 · 알파오메가 (lb · ls · la — 2026-10-19) */
+  book: "middle" | "high" | "lb" | "ls" | "la";
+  /** The lecture's number in its book (영어독해 1–100) or section */
   number: number;
   /** The whole lecture in seconds (lengthUnits × unitSec) */
   durationSec: number;
@@ -202,6 +203,15 @@ export interface LectureData {
   /** The textbook pages the lecture shows, the first one first */
   pages: { page: number; src: string }[];
   pen: { src: string; strokes: number; segments: number };
+  /**
+   * The printed page's head and foot to cover, in page pixels (사장님 2026-10-18 — build-lecture.mjs per book): the head is
+   * replaced by a quiet `label`; the foot's rule and page number are blanked by `foot` rectangles (one with `edge` keeps a
+   * box's bottom line in that colour along its top). Absent: nothing covered (뼈대세우기's blank pages).
+   */
+  frame?: {
+    head?: { top: number; bottom: number; left: number; right: number; label: string };
+    foot?: { top: number; bottom: number; left: number; right: number; edge?: string }[];
+  };
   /**
    * The lecture's voice, when the owner adds one (사장님 2026-10-17 — an AI voice per lecture later; made by
    * scripts/lecture/voice/, listed in docs/lecture/voice-manifest.json). When it is set, LectureLearningView plays it and
@@ -262,6 +272,19 @@ export interface CourseIndex {
   lessons: LessonSummary[];
   /** Groups recovered from the legacy menu; empty when it had no dropdown. */
   groups: LessonGroup[];
+  /** LECTURE only (2026-10-19): its four sections in the order shown — `groups` are 영어독해's chapters */
+  sections?: CourseSection[];
+}
+
+/**
+ * A LECTURE section (2026-10-19): 뼈대세우기 · 문장구조론 · 알파오메가 open lecture by lecture (`gate: "lesson"`), 영어독해 by
+ * its chapters (`gate: "chapter"` — the index's `groups`).
+ */
+export interface CourseSection {
+  key: string;
+  title: string;
+  gate: "lesson" | "chapter";
+  lessons: string[];
 }
 
 export interface LessonSummary {
@@ -269,6 +292,8 @@ export interface LessonSummary {
   title: string;
   label: string | null;
   series: string | null;
+  /** LECTURE: the section the lecture belongs to (lb · ls · la · reading) */
+  section?: string;
   variant: LessonVariant;
   unit: number | null;
   part: number | null;

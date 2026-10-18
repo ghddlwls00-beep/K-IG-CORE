@@ -204,10 +204,17 @@ export function CourseDashboard({
   totalLessons,
   passoffFreeReviewKeys,
   licenseHint = false,
+  lectureSteps = false,
 }: {
   courseSlug: string;
   sections: DashboardSection[];
   totalLessons: number;
+  /**
+   * LECTURE's 뼈대세우기 · 문장구조론 · 알파오메가 (2026-10-19): one list whose lectures open one by one (lectureChapters.ts
+   * lectureStepOpen) — no chapters, so no chapter record, chapter notes or '장이 열렸어요'; each locked row says
+   * '앞 강의를 마치면 열림'.
+   */
+  lectureSteps?: boolean;
   /** PASS-OFF GRAMMAR: the items its free review can draw (ids only) — the '오늘 복습' line counts no other without a licence */
   passoffFreeReviewKeys?: readonly string[];
   /**
@@ -253,7 +260,7 @@ export function CourseDashboard({
   const previousUnlockedRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (!isChapterCourse || !studentProgress || licenseInfo?.plan === "LIFE") return;
+    if (!isChapterCourse || lectureSteps || !studentProgress || licenseInfo?.plan === "LIFE") return;
     const previous = previousUnlockedRef.current;
     previousUnlockedRef.current = studentProgress.unlockedThrough;
     if (previous !== null && studentProgress.unlockedThrough > previous) {
@@ -261,7 +268,7 @@ export function CourseDashboard({
       const timer = window.setTimeout(() => setUnlockNotice(null), 5000);
       return () => window.clearTimeout(timer);
     }
-  }, [isChapterCourse, licenseInfo?.plan, studentProgress]);
+  }, [isChapterCourse, lectureSteps, licenseInfo?.plan, studentProgress]);
 
   // PASS-OFF GRAMMAR opens topic by topic, as STUDENT opens chapters (설계 §5) — from the server's answer
   // (PassoffProgressProvider; until it comes, the one kept on this device). With a licence this list counts what the
@@ -603,9 +610,10 @@ export function CourseDashboard({
             const sectionIndex = section.sectionIndex;
             const chapterNumber = sectionIndex + 1;
             // a filter shows its matches without making the learner open each section
-            const isOpen = filter !== "all" || (openSections[section.label] ?? false);
+            // (a one-by-one LECTURE list is its section's only group — it starts open)
+            const isOpen = filter !== "all" || (openSections[section.label] ?? lectureSteps);
             const completedInSection = section.lessons.filter((l) => isDoneHere(l.id)).length;
-            const studentChapter = isChapterCourse
+            const studentChapter = isChapterCourse && !lectureSteps
               ? studentProgress?.chapters.find((item) => item.chapter === chapterNumber)
               : undefined;
             // PASS-OFF GRAMMAR: this section's topic (by its lessons' ids) and the one before it
@@ -616,7 +624,8 @@ export function CourseDashboard({
             const passoffState = passoffTopic !== null
               ? passoffProgress?.topics.find((item) => item.topic === passoffTopic)
               : undefined;
-            const chapterUnlocked = (!isChapterCourse && !isPassoff)
+            // a one-by-one list is always open as a list — its rows lock one by one
+            const chapterUnlocked = (!isChapterCourse && !isPassoff) || (lectureSteps && hasCourseAccess)
               || (!hasCourseAccess
                 ? sectionIndex === 0
                 : section.lessons.some((lesson, lessonIdx) =>
@@ -651,6 +660,10 @@ export function CourseDashboard({
               ? null
               : !hasCourseAccess
                 ? sectionIndex === 0 ? "1·2강 무료" : "이용권 등록 후 열려요"
+                : lectureSteps
+                  ? completedInSection === section.lessons.length && section.lessons.length > 0
+                    ? "모두 완료"
+                    : isLife ? null : "강의를 마치면 다음 강의가 열려요"
                 : !chapterUnlocked
                   ? `${sectionIndex}장을 마치면 열려요` // STU-U28: '{n}장을' — '챕터 {n}을(를)' read wrong · 41번 해요체
                   : chapterComplete
@@ -733,7 +746,7 @@ export function CourseDashboard({
                             isRecent={recentListed?.id === lesson.id}
                             onToggleBookmark={handleToggleBookmark}
                             sequentialLock={sequentialLock}
-                            lockLabel={!isPassoff ? undefined : passoffChecking ? "진도 확인 중" : passoffLock}
+                            lockLabel={lectureSteps ? "앞 강의를 마치면 열림" : !isPassoff ? undefined : passoffChecking ? "진도 확인 중" : passoffLock}
                             pending={licenseUnknown || notePending}
                           />
                         );

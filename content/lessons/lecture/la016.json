@@ -1,0 +1,71 @@
+{
+  "id": "la016",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 16강",
+  "label": "알파오메가",
+  "menuLabel": "16강",
+  "unit": 1,
+  "part": 16,
+  "order": 28,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 16,
+    "durationSec": 1826,
+    "lengthUnits": 10152,
+    "unitSec": 0.179878,
+    "pages": [
+      {
+        "page": 59,
+        "src": "/audio/lecture/la016/p059.jpg"
+      },
+      {
+        "page": 60,
+        "src": "/audio/lecture/la016/p060.jpg"
+      },
+      {
+        "page": 61,
+        "src": "/audio/lecture/la016/p061.jpg"
+      },
+      {
+        "page": 62,
+        "src": "/audio/lecture/la016/p062.jpg"
+      },
+      {
+        "page": 63,
+        "src": "/audio/lecture/la016/p063.jpg"
+      },
+      {
+        "page": 64,
+        "src": "/audio/lecture/la016/p064.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la016/pen.json?v=gz0ve4",
+      "strokes": 599,
+      "segments": 21050
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la016/voice.mp3?v=aoniyr",
+      "durationSec": 1826.015
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_16강.gdb",
+  "legacyEncoding": "euc-kr"
+}

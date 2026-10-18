@@ -33,7 +33,8 @@ const arg = (name, fallback) => {
   const i = args.indexOf(name);
   return i > -1 && args[i + 1] ? args[i + 1] : fallback;
 };
-const SRC = arg("--src", "C:/Users/ghddl/Desktop/GVA강의자료/중등영어독해(1~200)");
+// the GVA folder (lesson files' legacyPath is relative to it since the four sections — 2026-10-19)
+const SRC = arg("--src", "C:/Users/ghddl/Desktop/GVA강의자료");
 const OUT = path.resolve(ROOT, arg("--out", ".lecture-media/voice"));
 const ONLY = arg("--ids", "").split(",").filter(Boolean);
 const WAV = args.includes("--wav");
@@ -53,7 +54,7 @@ function readAudio(file) {
   const records = [];
   for (let guard = 0; guard < 1000; guard++) {
     const type = buf[p];
-    if (!(type >= 0x0a && type <= 0x1f)) break;
+    if (!(type >= 0x0a && type <= 0x2f)) break; // 알파오메가's audio record is type 0x22
     const start = buf.readUInt32LE(p + 3);
     const len = buf.readUInt32LE(p + 7);
     const nul = buf.indexOf(0, p + 15);

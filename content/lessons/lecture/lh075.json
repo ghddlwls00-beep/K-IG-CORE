@@ -2,6 +2,7 @@
   "id": "lh075",
   "course": "lecture",
   "series": "lh",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "고등 영어독해 75강",
@@ -9,7 +10,7 @@
   "menuLabel": "75강",
   "unit": 18,
   "part": 75,
-  "order": 174,
+  "order": 207,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 71,
       "segments": 2711
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "고등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lh075/voice.mp3?v=317xsb",
       "durationSec": 290.637
     }
   },
-  "legacyPath": "중등독해101~200/고등영어 독해175.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등독해101~200/고등영어 독해175.gdb",
   "legacyEncoding": "euc-kr"
 }

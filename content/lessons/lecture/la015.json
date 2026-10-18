@@ -1,0 +1,63 @@
+{
+  "id": "la015",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 15강",
+  "label": "알파오메가",
+  "menuLabel": "15강",
+  "unit": 1,
+  "part": 15,
+  "order": 27,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 15,
+    "durationSec": 1814.7,
+    "lengthUnits": 10086,
+    "unitSec": 0.179937,
+    "pages": [
+      {
+        "page": 56,
+        "src": "/audio/lecture/la015/p056.jpg"
+      },
+      {
+        "page": 57,
+        "src": "/audio/lecture/la015/p057.jpg"
+      },
+      {
+        "page": 58,
+        "src": "/audio/lecture/la015/p058.jpg"
+      },
+      {
+        "page": 59,
+        "src": "/audio/lecture/la015/p059.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la015/pen.json?v=9yip4h",
+      "strokes": 688,
+      "segments": 25178
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la015/voice.mp3?v=12fr6ab",
+      "durationSec": 1814.675
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_15강.gdb",
+  "legacyEncoding": "euc-kr"
+}

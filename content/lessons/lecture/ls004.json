@@ -1,0 +1,101 @@
+{
+  "id": "ls004",
+  "course": "lecture",
+  "series": "ls",
+  "section": "ls",
+  "variant": "main",
+  "pairId": null,
+  "title": "문장구조론 4강",
+  "label": "문장구조론",
+  "menuLabel": "4강",
+  "unit": 1,
+  "part": 4,
+  "order": 7,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "ls",
+    "number": 4,
+    "durationSec": 1852.1,
+    "lengthUnits": 10300,
+    "unitSec": 0.179827,
+    "pages": [
+      {
+        "page": 1,
+        "src": "/audio/lecture/ls004/p001.jpg"
+      },
+      {
+        "page": 2,
+        "src": "/audio/lecture/ls004/p002.jpg"
+      },
+      {
+        "page": 3,
+        "src": "/audio/lecture/ls004/p003.jpg"
+      },
+      {
+        "page": 4,
+        "src": "/audio/lecture/ls004/p004.jpg"
+      },
+      {
+        "page": 5,
+        "src": "/audio/lecture/ls004/p005.jpg"
+      },
+      {
+        "page": 6,
+        "src": "/audio/lecture/ls004/p006.jpg"
+      },
+      {
+        "page": 7,
+        "src": "/audio/lecture/ls004/p007.jpg"
+      },
+      {
+        "page": 8,
+        "src": "/audio/lecture/ls004/p008.jpg"
+      },
+      {
+        "page": 9,
+        "src": "/audio/lecture/ls004/p009.jpg"
+      },
+      {
+        "page": 10,
+        "src": "/audio/lecture/ls004/p010.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/ls004/pen.json?v=tnbltj",
+      "strokes": 1161,
+      "segments": 36535
+    },
+    "frame": {
+      "head": {
+        "top": 74,
+        "bottom": 126,
+        "left": 100,
+        "right": 728,
+        "label": "문장구조론"
+      },
+      "foot": [
+        {
+          "top": 1061,
+          "bottom": 1069,
+          "left": 80,
+          "right": 746,
+          "edge": "#000"
+        },
+        {
+          "top": 1069,
+          "bottom": 1104,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/ls004/voice.mp3?v=1hw8lai",
+      "durationSec": 1852.1
+    }
+  },
+  "legacyPath": "문장구조론/영어문장구조론04.gdb",
+  "legacyEncoding": "euc-kr"
+}

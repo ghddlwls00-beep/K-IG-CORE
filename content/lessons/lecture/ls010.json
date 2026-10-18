@@ -1,0 +1,77 @@
+{
+  "id": "ls010",
+  "course": "lecture",
+  "series": "ls",
+  "section": "ls",
+  "variant": "main",
+  "pairId": null,
+  "title": "문장구조론 10강",
+  "label": "문장구조론",
+  "menuLabel": "10강",
+  "unit": 1,
+  "part": 10,
+  "order": 12,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "ls",
+    "number": 10,
+    "durationSec": 1065.2,
+    "lengthUnits": 5920,
+    "unitSec": 0.179952,
+    "pages": [
+      {
+        "page": 42,
+        "src": "/audio/lecture/ls010/p042.jpg"
+      },
+      {
+        "page": 43,
+        "src": "/audio/lecture/ls010/p043.jpg"
+      },
+      {
+        "page": 44,
+        "src": "/audio/lecture/ls010/p044.jpg"
+      },
+      {
+        "page": 45,
+        "src": "/audio/lecture/ls010/p045.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/ls010/pen.json?v=1fhc54n",
+      "strokes": 818,
+      "segments": 20162
+    },
+    "frame": {
+      "head": {
+        "top": 74,
+        "bottom": 126,
+        "left": 100,
+        "right": 728,
+        "label": "문장구조론"
+      },
+      "foot": [
+        {
+          "top": 1061,
+          "bottom": 1069,
+          "left": 80,
+          "right": 746,
+          "edge": "#000"
+        },
+        {
+          "top": 1069,
+          "bottom": 1104,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/ls010/voice.mp3?v=exesu8",
+      "durationSec": 1065.172
+    }
+  },
+  "legacyPath": "문장구조론/영어문장구조론10.gdb",
+  "legacyEncoding": "euc-kr"
+}

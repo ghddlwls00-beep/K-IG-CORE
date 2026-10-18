@@ -2,6 +2,7 @@
   "id": "lh004",
   "course": "lecture",
   "series": "lh",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "고등 영어독해 4강",
@@ -9,7 +10,7 @@
   "menuLabel": "4강",
   "unit": 11,
   "part": 4,
-  "order": 103,
+  "order": 136,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 128,
       "segments": 4064
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "고등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lh004/voice.mp3?v=xu7yfa",
       "durationSec": 338.903
     }
   },
-  "legacyPath": "중등독해101~200/고등영어 독해104.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등독해101~200/고등영어 독해104.gdb",
   "legacyEncoding": "euc-kr"
 }

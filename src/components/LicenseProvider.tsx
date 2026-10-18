@@ -12,7 +12,7 @@ import {
 } from "@/lib/license";
 import { adoptDeviceId, getOrCreateDeviceId, hasStoredDeviceId, type ClientDevice } from "@/lib/device";
 import { passoffTopicOf, type PassoffProgressSnapshot } from "@/lib/passoffUnlock";
-import { lectureChapterOf } from "@/lib/lectureChapters";
+import { lectureChapterOf, lectureStepOpen } from "@/lib/lectureChapters";
 
 /**
  * What this browser keeps in localStorage "kig:license:v1".
@@ -448,7 +448,9 @@ export function LicenseProvider({ children }: { children: React.ReactNode }) {
       if (!planOpensCourse(stored.plan, courseSlug)) return false;
       if (stored.plan === "LIFE") return true;
       const chapter = lectureChapterOf(lessonId);
-      return chapter !== null && chapter <= (lectureProgress?.unlockedThrough || 1);
+      if (chapter !== null) return chapter <= (lectureProgress?.unlockedThrough || 1);
+      // 뼈대세우기 · 문장구조론 · 알파오메가 (2026-10-19): one by one — open when the one before it is finished
+      return lectureStepOpen(lessonId, (before) => Boolean(lectureProgress?.lessons?.[before]?.completed));
     }
 
     // PASS-OFF GRAMMAR opens topic by topic (설계 §5) — as the server last answered; TOPIC 1 until it has. LIFE: all.

@@ -2,6 +2,7 @@
   "id": "lh025",
   "course": "lecture",
   "series": "lh",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "고등 영어독해 25강",
@@ -9,7 +10,7 @@
   "menuLabel": "25강",
   "unit": 13,
   "part": 25,
-  "order": 124,
+  "order": 157,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 103,
       "segments": 3760
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "고등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lh025/voice.mp3?v=17kkuo7",
       "durationSec": 278.249
     }
   },
-  "legacyPath": "중등독해101~200/고등영어 독해125.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등독해101~200/고등영어 독해125.gdb",
   "legacyEncoding": "euc-kr"
 }

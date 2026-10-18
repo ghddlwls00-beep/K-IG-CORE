@@ -1,0 +1,97 @@
+{
+  "id": "ls008",
+  "course": "lecture",
+  "series": "ls",
+  "section": "ls",
+  "variant": "main",
+  "pairId": null,
+  "title": "문장구조론 8강",
+  "label": "문장구조론",
+  "menuLabel": "8강",
+  "unit": 1,
+  "part": 8,
+  "order": 10,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "ls",
+    "number": 8,
+    "durationSec": 1770.1,
+    "lengthUnits": 9841,
+    "unitSec": 0.179883,
+    "pages": [
+      {
+        "page": 28,
+        "src": "/audio/lecture/ls008/p028.jpg"
+      },
+      {
+        "page": 29,
+        "src": "/audio/lecture/ls008/p029.jpg"
+      },
+      {
+        "page": 30,
+        "src": "/audio/lecture/ls008/p030.jpg"
+      },
+      {
+        "page": 31,
+        "src": "/audio/lecture/ls008/p031.jpg"
+      },
+      {
+        "page": 32,
+        "src": "/audio/lecture/ls008/p032.jpg"
+      },
+      {
+        "page": 33,
+        "src": "/audio/lecture/ls008/p033.jpg"
+      },
+      {
+        "page": 34,
+        "src": "/audio/lecture/ls008/p034.jpg"
+      },
+      {
+        "page": 35,
+        "src": "/audio/lecture/ls008/p035.jpg"
+      },
+      {
+        "page": 36,
+        "src": "/audio/lecture/ls008/p036.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/ls008/pen.json?v=1skr2i1",
+      "strokes": 1195,
+      "segments": 35238
+    },
+    "frame": {
+      "head": {
+        "top": 74,
+        "bottom": 126,
+        "left": 100,
+        "right": 728,
+        "label": "문장구조론"
+      },
+      "foot": [
+        {
+          "top": 1061,
+          "bottom": 1069,
+          "left": 80,
+          "right": 746,
+          "edge": "#000"
+        },
+        {
+          "top": 1069,
+          "bottom": 1104,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/ls008/voice.mp3?v=9bcbru",
+      "durationSec": 1770.118
+    }
+  },
+  "legacyPath": "문장구조론/영어문장구조론08.gdb",
+  "legacyEncoding": "euc-kr"
+}

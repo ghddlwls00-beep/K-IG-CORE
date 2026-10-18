@@ -1,0 +1,67 @@
+{
+  "id": "la011",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 11강",
+  "label": "알파오메가",
+  "menuLabel": "11강",
+  "unit": 1,
+  "part": 11,
+  "order": 23,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 11,
+    "durationSec": 1730.6,
+    "lengthUnits": 9618,
+    "unitSec": 0.179939,
+    "pages": [
+      {
+        "page": 39,
+        "src": "/audio/lecture/la011/p039.jpg"
+      },
+      {
+        "page": 40,
+        "src": "/audio/lecture/la011/p040.jpg"
+      },
+      {
+        "page": 41,
+        "src": "/audio/lecture/la011/p041.jpg"
+      },
+      {
+        "page": 42,
+        "src": "/audio/lecture/la011/p042.jpg"
+      },
+      {
+        "page": 43,
+        "src": "/audio/lecture/la011/p043.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la011/pen.json?v=lqv26s",
+      "strokes": 655,
+      "segments": 25730
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la011/voice.mp3?v=ht2tc3",
+      "durationSec": 1730.63
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_11강.gdb",
+  "legacyEncoding": "euc-kr"
+}

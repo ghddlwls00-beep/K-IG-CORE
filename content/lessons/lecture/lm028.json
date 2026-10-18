@@ -2,6 +2,7 @@
   "id": "lm028",
   "course": "lecture",
   "series": "lm",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "중등 영어독해 28강",
@@ -9,7 +10,7 @@
   "menuLabel": "28강",
   "unit": 3,
   "part": 28,
-  "order": 27,
+  "order": 60,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 98,
       "segments": 2227
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "중등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lm028/voice.mp3?v=156nian",
       "durationSec": 358.64
     }
   },
-  "legacyPath": "중등영어 독해028.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등영어 독해028.gdb",
   "legacyEncoding": "euc-kr"
 }

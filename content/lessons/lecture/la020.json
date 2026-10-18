@@ -1,0 +1,79 @@
+{
+  "id": "la020",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 20강",
+  "label": "알파오메가",
+  "menuLabel": "20강",
+  "unit": 1,
+  "part": 20,
+  "order": 32,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 20,
+    "durationSec": 1977.5,
+    "lengthUnits": 10990,
+    "unitSec": 0.179942,
+    "pages": [
+      {
+        "page": 81,
+        "src": "/audio/lecture/la020/p081.jpg"
+      },
+      {
+        "page": 82,
+        "src": "/audio/lecture/la020/p082.jpg"
+      },
+      {
+        "page": 83,
+        "src": "/audio/lecture/la020/p083.jpg"
+      },
+      {
+        "page": 84,
+        "src": "/audio/lecture/la020/p084.jpg"
+      },
+      {
+        "page": 85,
+        "src": "/audio/lecture/la020/p085.jpg"
+      },
+      {
+        "page": 86,
+        "src": "/audio/lecture/la020/p086.jpg"
+      },
+      {
+        "page": 87,
+        "src": "/audio/lecture/la020/p087.jpg"
+      },
+      {
+        "page": 88,
+        "src": "/audio/lecture/la020/p088.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la020/pen.json?v=sdtuxo",
+      "strokes": 600,
+      "segments": 31859
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la020/voice.mp3?v=1sa2j5f",
+      "durationSec": 1977.525
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_20강.gdb",
+  "legacyEncoding": "euc-kr"
+}

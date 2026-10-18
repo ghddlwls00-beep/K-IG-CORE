@@ -2,6 +2,7 @@
   "id": "lh098",
   "course": "lecture",
   "series": "lh",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "고등 영어독해 98강",
@@ -9,7 +10,7 @@
   "menuLabel": "98강",
   "unit": 20,
   "part": 98,
-  "order": 197,
+  "order": 230,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 74,
       "segments": 2893
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "고등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lh098/voice.mp3?v=ampiw5",
       "durationSec": 200.772
     }
   },
-  "legacyPath": "중등독해101~200/고등영어 독해198.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등독해101~200/고등영어 독해198.gdb",
   "legacyEncoding": "euc-kr"
 }

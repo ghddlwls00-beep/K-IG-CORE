@@ -1,0 +1,59 @@
+{
+  "id": "la007",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 7강",
+  "label": "알파오메가",
+  "menuLabel": "7강",
+  "unit": 1,
+  "part": 7,
+  "order": 19,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 7,
+    "durationSec": 1822.4,
+    "lengthUnits": 10129,
+    "unitSec": 0.179922,
+    "pages": [
+      {
+        "page": 25,
+        "src": "/audio/lecture/la007/p025.jpg"
+      },
+      {
+        "page": 26,
+        "src": "/audio/lecture/la007/p026.jpg"
+      },
+      {
+        "page": 27,
+        "src": "/audio/lecture/la007/p027.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la007/pen.json?v=1gdnob0",
+      "strokes": 1095,
+      "segments": 33431
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la007/voice.mp3?v=4ljht9",
+      "durationSec": 1822.389
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_7강.gdb",
+  "legacyEncoding": "euc-kr"
+}

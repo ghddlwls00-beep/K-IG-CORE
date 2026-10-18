@@ -1,0 +1,63 @@
+{
+  "id": "la002",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 2강",
+  "label": "알파오메가",
+  "menuLabel": "2강",
+  "unit": 1,
+  "part": 2,
+  "order": 14,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 2,
+    "durationSec": 2033.1,
+    "lengthUnits": 11300,
+    "unitSec": 0.179922,
+    "pages": [
+      {
+        "page": 6,
+        "src": "/audio/lecture/la002/p006.jpg"
+      },
+      {
+        "page": 7,
+        "src": "/audio/lecture/la002/p007.jpg"
+      },
+      {
+        "page": 8,
+        "src": "/audio/lecture/la002/p008.jpg"
+      },
+      {
+        "page": 9,
+        "src": "/audio/lecture/la002/p009.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la002/pen.json?v=15kfx2n",
+      "strokes": 1297,
+      "segments": 37723
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la002/voice.mp3?v=1pu1h60",
+      "durationSec": 2033.096
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_2강.gdb",
+  "legacyEncoding": "euc-kr"
+}

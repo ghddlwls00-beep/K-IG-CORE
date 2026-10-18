@@ -13,6 +13,8 @@ interface LessonPaywallProps {
   title?: string;
   lockReason?: "license" | "progress";
   chapter?: number;
+  /** LECTURE's one-by-one sections: the title of the lecture that opens this one ('뼈대세우기 1강') */
+  stepBeforeTitle?: string;
   /** the course's free lessons — the way forward for a visitor (점검 FRAME-L09) */
   freeLessons?: { href: string; title: string }[];
 }
@@ -44,6 +46,7 @@ export function LessonPaywall({
   courseTitle = "과정",
   lockReason = "license",
   chapter,
+  stepBeforeTitle,
   freeLessons = [],
 }: LessonPaywallProps) {
   const { openModal, licenseInfo } = useLicense();
@@ -84,7 +87,15 @@ export function LessonPaywall({
 
       <div className="flex max-w-md flex-col items-center gap-2">
         <span className="text-caption font-semibold text-ink-soft">{marker}</span>
-        {lockReason === "progress" ? (
+        {lockReason === "progress" && stepBeforeTitle ? (
+          // LECTURE's one-by-one sections (2026-10-19): the lecture before it opens it, not a chapter
+          <>
+            <h2 className="text-title-s font-bold text-ink">이 강의는 앞 강의를 마치면 열립니다</h2>
+            <p className="text-label leading-relaxed text-ink-soft">
+              {stepBeforeTitle}를 끝까지 들으면 바로 열립니다.
+            </p>
+          </>
+        ) : lockReason === "progress" ? (
           <>
             {/* 2026-09-27 STU-U28: '{n}장은' fixes the particle ('챕터 2은(는)' read wrong) */}
             <h2 className="text-title-s font-bold text-ink">{chapter ? `${chapter}장은` : "다음 장은"} 앞 장을 마치면 열립니다</h2>

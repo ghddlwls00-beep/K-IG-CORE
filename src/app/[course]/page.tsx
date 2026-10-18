@@ -12,6 +12,7 @@ import { lessonDisplay } from "@/lib/courses";
 import { formatGroupTitle, formatLessonPresentation } from "@/lib/curriculumPresentation";
 import { BRAND_NAME, FALLBACK_DESCRIPTION } from "@/lib/brand";
 import { CourseDashboard } from "@/components/CourseDashboard";
+import { LectureSections } from "@/components/LectureSections";
 import { passoffFreeReviewItems } from "@/lib/passoffReview";
 import type { LessonSummary } from "@/lib/types";
 
@@ -137,6 +138,23 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
       : fallbackSections(course.series, listed)
   ).filter((section) => section.lessons.length > 0);
 
+  // LECTURE's four sections (2026-10-19): 영어독해 is the chapters above; the others one list each
+  const toItems = (ls: LessonSummary[]) => ls.map((lesson) => ({ id: lesson.id, presentation: formatLessonPresentation(course.slug, lesson) }));
+  const lectureItems = course.slug === "lecture" && index.sections
+    ? index.sections.map((s) => {
+        const members = s.lessons.map((id) => byId.get(id)).filter((l) => l !== undefined);
+        return {
+          key: s.key,
+          title: s.title,
+          gate: s.gate,
+          seconds: members.reduce((n, l) => n + ((l as { durationSec?: number }).durationSec || 0), 0),
+          sections: s.gate === "chapter"
+            ? sections.map((section) => ({ label: section.label, lessons: toItems(section.lessons) }))
+            : [{ label: s.title, lessons: toItems(members) }],
+        };
+      })
+    : null;
+
   // 2026-09-27 (docs/디자인-규칙.md · 점검 FRAME-U12 · U20): the same 768px column as the lessons,
   // a plain meta line instead of 'CORE TRACK · 총 N개 정규 레슨 · N개 단계 구성', no entrance animation.
   return (
@@ -156,7 +174,9 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
         {/* UI검토-1007 18번: the sections by the name the rest of the screen uses — STUDENT · ADULT '장', PASS-OFF '대주제' */}
         <p className="text-caption text-ink-soft tabular-nums">
           {listed.length}개 강의
-          {sections.length > 0
+          {lectureItems
+            ? ` · ${lectureItems.length}개 과정`
+            : sections.length > 0
             ? course.slug === "student" || course.slug === "adult" || course.slug === "lecture"
               ? ` · ${sections.length}장`
               : course.slug === "passoff-grammar"
@@ -169,6 +189,10 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
         ) : null}
       </header>
 
+      {lectureItems ? (
+        // LECTURE (사장님 2026-10-19): four sections first; a click shows that section's lectures
+        <LectureSections items={lectureItems} licenseHint={licenseHint} />
+      ) : (
       <CourseDashboard
         courseSlug={course.slug}
         sections={sections.map((section) => ({
@@ -183,6 +207,7 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
         passoffFreeReviewKeys={course.slug === "passoff-grammar" ? Object.keys(passoffFreeReviewItems()) : undefined}
         licenseHint={licenseHint}
       />
+      )}
     </main>
   );
 }

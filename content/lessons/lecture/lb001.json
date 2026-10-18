@@ -1,0 +1,45 @@
+{
+  "id": "lb001",
+  "course": "lecture",
+  "series": "lb",
+  "section": "lb",
+  "variant": "main",
+  "pairId": null,
+  "title": "뼈대세우기 1강",
+  "label": "뼈대세우기",
+  "menuLabel": "1강",
+  "unit": 1,
+  "part": 1,
+  "order": 0,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "lb",
+    "number": 1,
+    "durationSec": 1481.5,
+    "lengthUnits": 8239,
+    "unitSec": 0.179827,
+    "pages": [
+      {
+        "page": 1,
+        "src": "/audio/lecture/lb001/p001.jpg"
+      },
+      {
+        "page": 3,
+        "src": "/audio/lecture/lb001/p003.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lb001/pen.json?v=k0irkf",
+      "strokes": 1496,
+      "segments": 32398
+    },
+    "audio": {
+      "src": "/audio/lecture/lb001/voice.mp3?v=14z19uy",
+      "durationSec": 1481.546
+    }
+  },
+  "legacyPath": "뼈대세우기/뼈대 새우기01.gdb",
+  "legacyEncoding": "euc-kr"
+}

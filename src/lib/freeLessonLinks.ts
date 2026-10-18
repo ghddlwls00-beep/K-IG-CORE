@@ -9,9 +9,14 @@ import { formatLessonPresentation } from "./curriculumPresentation";
  * script pages (`d001-1`) and GRAMMAR I's odd answer pages (which redirect to the even
  * lesson) are in FREE_PREVIEW_LESSON_IDS so their text may be spoken, but are not starts.
  */
-export function freeLessonLinks(course: string, limit = 2): { href: string; title: string }[] {
+export function freeLessonLinks(course: string, limit = 2, nearLessonId?: string): { href: string; title: string }[] {
   const out: { href: string; title: string }[] = [];
-  for (const id of FREE_PREVIEW_LESSON_IDS[course] ?? []) {
+  // LECTURE (2026-10-19) has a free pair per section: a locked lecture offers its own section's pair ('la001' for 'la007')
+  const free = FREE_PREVIEW_LESSON_IDS[course] ?? [];
+  const ids = course === "lecture" && nearLessonId
+    ? [...free.filter((id) => id.slice(0, 2) === nearLessonId.slice(0, 2) || (/^l[mh]/.test(id) && /^l[mh]/.test(nearLessonId))), ...free]
+    : free;
+  for (const id of [...new Set(ids)]) {
     const lesson = getLesson(course, id);
     if (!lesson || lesson.variant !== "main") continue;
     if (course === "grammar1") {

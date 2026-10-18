@@ -1,0 +1,73 @@
+{
+  "id": "ls001",
+  "course": "lecture",
+  "series": "ls",
+  "section": "ls",
+  "variant": "main",
+  "pairId": null,
+  "title": "문장구조론 1강",
+  "label": "문장구조론",
+  "menuLabel": "1강",
+  "unit": 1,
+  "part": 1,
+  "order": 4,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "ls",
+    "number": 1,
+    "durationSec": 1858.1,
+    "lengthUnits": 10329,
+    "unitSec": 0.179907,
+    "pages": [
+      {
+        "page": 1,
+        "src": "/audio/lecture/ls001/p001.jpg"
+      },
+      {
+        "page": 2,
+        "src": "/audio/lecture/ls001/p002.jpg"
+      },
+      {
+        "page": 3,
+        "src": "/audio/lecture/ls001/p003.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/ls001/pen.json?v=o1rzs7",
+      "strokes": 1424,
+      "segments": 35424
+    },
+    "frame": {
+      "head": {
+        "top": 74,
+        "bottom": 126,
+        "left": 100,
+        "right": 728,
+        "label": "문장구조론"
+      },
+      "foot": [
+        {
+          "top": 1061,
+          "bottom": 1069,
+          "left": 80,
+          "right": 746,
+          "edge": "#000"
+        },
+        {
+          "top": 1069,
+          "bottom": 1104,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/ls001/voice.mp3?v=8qtjes",
+      "durationSec": 1858.112
+    }
+  },
+  "legacyPath": "문장구조론/영어문장구조론01.gdb",
+  "legacyEncoding": "euc-kr"
+}

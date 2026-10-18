@@ -57,7 +57,8 @@ const arg = (name, fallback) => {
   const i = args.indexOf(name);
   return i > -1 && args[i + 1] ? args[i + 1] : fallback;
 };
-const SRC = arg("--src", "C:/Users/ghddl/Desktop/GVA강의자료/중등영어독해(1~200)");
+// the GVA folder holding one subfolder per section (영어독해: 중등영어독해(1~200), with 고등 in its subfolder)
+const SRC = arg("--src", "C:/Users/ghddl/Desktop/GVA강의자료");
 const MEDIA = path.resolve(ROOT, arg("--media", ".lecture-media"));
 const CHECK = args.includes("--check");
 const UNIT_SEC_DEFAULT = 0.18025;
@@ -65,15 +66,16 @@ const PAGE = { w: 827, h: 1169 };
 const decoder = new TextDecoder("euc-kr");
 
 // ---------------------------------------------------------------- .gdb container
-function readGdb(file) {
+function readGdb(file, expectPages = 100) {
   const buf = fs.readFileSync(file);
   let p = buf.indexOf(Buffer.from(".JPG"));
   while (p > 0 && buf[p - 1] !== 0) p--;
   p -= 15;
   const records = [];
   for (let guard = 0; guard < 1000; guard++) {
+    // record types 0a–1f in the 영어독해 files; 알파오메가's audio and pen records are 0x22 · 0x21 (2026-10-19)
     const type = buf[p];
-    if (!(type >= 0x0a && type <= 0x1f)) break;
+    if (!(type >= 0x0a && type <= 0x2f)) break;
     const start = buf.readUInt32LE(p + 3);
     const len = buf.readUInt32LE(p + 7);
     const nul = buf.indexOf(0, p + 15);
@@ -85,7 +87,7 @@ function readGdb(file) {
   const pages = records.filter((r) => /\.jpg$/i.test(r.name)).map(slice);
   const audioRec = records.find((r) => /\.audio$/i.test(r.name));
   const textRec = records.find((r) => /\.text/i.test(r.name));
-  if (pages.length !== 100) throw new Error(`${path.basename(file)}: ${pages.length} pages, expected 100`);
+  if (expectPages !== null && pages.length !== expectPages) throw new Error(`${path.basename(file)}: ${pages.length} pages, expected ${expectPages}`);
   for (const [i, jpg] of pages.entries()) {
     if (!(jpg[0] === 0xff && jpg[1] === 0xd8 && jpg[jpg.length - 2] === 0xff && jpg[jpg.length - 1] === 0xd9)) {
       throw new Error(`${path.basename(file)}: page ${i + 1} is not a whole JPEG`);
@@ -238,6 +240,22 @@ function retimePen(penDoc, m) {
 }
 
 // ---------------------------------------------------------------- main
+/**
+ * THE SECTIONS (사장님 2026-10-19): LECTURE shows four, in this order — 뼈대세우기 · 문장구조론 · 알파오메가 · 영어독해
+ * (중등 · 고등 inside). The first three are each their own folder of GVA files; every lecture of them is one long class
+ * (20–35 min) and they open one by one (a lecture opens when the one before it is finished — `gate: "lesson"`), 1·2강
+ * free. 영어독해 keeps its 20 chapters of 10 (`gate: "chapter"`, the chapter record of lectureProgress.ts).
+ *   문장구조론: the folder has no 06; its file 03 holds a lecture on the 뼈대세우기 book (3 pages) — kept as it is (owner).
+ *   알파오메가 1강: the book's cover (page 1 — author, the teacher's name and e-mail) is left out: its page, its strokes and
+ *   its page turns are dropped (owner 10-19 "이거는 삭제해서 안나오게"); the voice leaves out the words about it.
+ */
+const NEW_SECTIONS = [
+  { key: "lb", title: "뼈대세우기", dir: "뼈대세우기", number: (f) => Number(f.match(/(\d+)\.gdb$/i)?.[1]), expect: [1, 2, 3, 4] },
+  { key: "ls", title: "문장구조론", dir: "문장구조론", number: (f) => Number(f.match(/(\d+)\.gdb$/i)?.[1]), expect: [1, 2, 3, 4, 5, 7, 8, 9, 10] },
+  { key: "la", title: "알파오메가", dir: "알파오메가지비에이", number: (f) => Number(f.match(/_(\d+)강\.gdb$/i)?.[1]), expect: Array.from({ length: 20 }, (_, i) => i + 1), dropPages: { 1: [1] } },
+];
+const READING_DIR = "중등영어독해(1~200)";
+
 function listFiles() {
   const files = [];
   const walk = (d) => {
@@ -247,7 +265,7 @@ function listFiles() {
       else if (/\.gdb$/i.test(e.name)) files.push(f);
     }
   };
-  walk(SRC);
+  walk(path.join(SRC, READING_DIR));
   const num = (f) => Number(path.basename(f).match(/(\d{3})\.gdb$/i)?.[1]);
   files.sort((a, b) => num(a) - num(b));
   const nums = files.map(num);
@@ -255,22 +273,61 @@ function listFiles() {
   if (files.length !== 200) throw new Error(`${files.length} .gdb files, expected 200`);
   return files.map((f) => ({ file: f, n: num(f) }));
 }
+function listSection(s) {
+  const dir = path.join(SRC, s.dir);
+  const files = fs.readdirSync(dir).filter((f) => /\.gdb$/i.test(f)).map((f) => ({ file: path.join(dir, f), n: s.number(f) })).sort((a, b) => a.n - b.n);
+  const got = files.map((f) => f.n).join(",");
+  if (got !== s.expect.join(",")) throw new Error(`${s.title}: lectures ${got}, expected ${s.expect.join(",")}`);
+  return files;
+}
 
 const pad3 = (n) => String(n).padStart(3, "0");
+
+/**
+ * The printed head and foot the view covers (사장님 2026-10-18 "제일 위 사이트랑 안어울림 · 제일 아래 줄 필요 없음"), per book —
+ * the book is known by its page count; rows measured on every page image (2026-10-18 · 19):
+ *   영어독해 (100 pages): red double rule '고·등·영·어·독·해' 59–97 → a label; red rule + page number 1137–1150 → blank
+ *   문장구조론 (45): red double rule '감·각·영·어·/·문·장·구·조·론' 82–121 → a label; the content box's bottom is the red rule
+ *     1062–1066 (box sides black at x 80 · 745 down to 1067) → blank with a black edge where the box ends; page number 1080–1096
+ *   알파오메가 (88): no printed head; the page number '- n -' 1112–1128 inside the black double frame → blank
+ *   뼈대세우기 (3 blank pages — also 문장구조론 3강): nothing
+ */
+function frameOf(bookPages, book) {
+  if (bookPages === 100) return { head: { top: 48, bottom: 104, left: 118, right: 733, label: book === "high" ? "고등 영어독해" : "중등 영어독해" }, foot: [{ top: 1128, bottom: 1169, left: 0, right: 827 }] };
+  if (bookPages === 45) return { head: { top: 74, bottom: 126, left: 100, right: 728, label: "문장구조론" }, foot: [{ top: 1061, bottom: 1069, left: 80, right: 746, edge: "#000" }, { top: 1069, bottom: 1104, left: 0, right: 827 }] };
+  if (bookPages === 88) return { foot: [{ top: 1106, bottom: 1134, left: 370, right: 470 }] };
+  return null;
+}
 const writes = new Map(); // path → Buffer | string
 
 function main() {
-  const files = listFiles();
   const lessons = [];
   const report = { lectures: 0, pages: 0, strokes: 0, segments: 0, seconds: 0, unknownRecords: 0, unit: [] };
-  for (const { file, n } of files) {
+  // the three new sections first (their lectures come first in the list and in 이전/다음), then 영어독해
+  const jobs = [];
+  for (const s of NEW_SECTIONS) {
+    for (const { file, n } of listSection(s)) jobs.push({ file, section: s.key, sectionTitle: s.title, book: s.key, number: n, id: `${s.key}${pad3(n)}`, dropPages: s.dropPages?.[n] || [] });
+  }
+  for (const { file, n } of listFiles()) {
     const book = n <= 100 ? "middle" : "high";
     const number = book === "middle" ? n : n - 100; // 고등 lectures count from 1 again (owner)
-    const id = `${book === "middle" ? "lm" : "lh"}${pad3(number)}`;
-    const g = readGdb(file);
-    const pen = readPen(g.pen, number);
+    jobs.push({ file, n, section: "reading", sectionTitle: "영어독해", book, number, id: `${book === "middle" ? "lm" : "lh"}${pad3(number)}`, dropPages: [] });
+  }
+  for (const job of jobs) {
+    const { file, n, book, number, id, section } = job;
+    const reading = section === "reading";
+    const g = readGdb(file, reading ? 100 : null);
+    const pen = readPen(g.pen, reading ? number : 1);
     if (pen.trailing > 17) throw new Error(`${id}: pen data stops ${pen.trailing} bytes early`);
-    const strokes = toStrokes(pen.segments);
+    if (job.dropPages.length) {
+      // pages left out (알파오메가 1강's cover): their strokes and page turns go too; the screen starts on the next page
+      pen.segments = pen.segments.filter((s) => !job.dropPages.includes(s.page));
+      pen.pageEvents = pen.pageEvents.filter(([, pg]) => !job.dropPages.includes(pg));
+    }
+    if (!reading && pen.segments.length && (!pen.pageEvents.length || pen.segments[0].t < pen.pageEvents[0][0]) && pen.segments[0].page !== pen.pageEvents[0]?.[1]) {
+      // written on before the first page turn: that page is the one on screen from the start
+      pen.pageEvents.unshift([0, pen.segments[0].page]);
+    }
     const sec = audioSeconds(g.audio);
     const unitSec = sec ? sec / g.lengthUnits : UNIT_SEC_DEFAULT;
     const voice = voices[id] || null;
@@ -278,10 +335,16 @@ function main() {
     if (voice && !timemap && Math.abs(voice.durationSec - sec) > 0.05) throw new Error(`${id}: voice.mp3 is ${voice.durationSec} s, the recording ${sec.toFixed(3)} s — not on the same timeline, and no docs/lecture/voice/${id}.timemap.json`);
     if (timemap && Math.abs(timemap.voiceSec - voice.durationSec) > 0.05) throw new Error(`${id}: timemap voiceSec ${timemap.voiceSec} ≠ manifest durationSec ${voice.durationSec}`);
     report.unit.push(unitSec);
-    const pagesUsed = [...new Set([number, ...pen.pageEvents.map(([, pg]) => pg), ...pen.segments.map((s) => s.page)])];
+    // 영어독해 lecture N shows page N of its book; a new section's lecture shows the pages it turns to and writes on
+    // (a page number the book does not have — a stray record — is left out)
+    const pagesUsed = [...new Set([...(reading ? [number] : []), ...pen.pageEvents.map(([, pg]) => pg), ...pen.segments.map((s) => s.page)])].filter((pg) => pg >= 1 && pg <= g.pages.length && !job.dropPages.includes(pg));
+    if (!pagesUsed.length) pagesUsed.push(1);
     // the first page shown is the lecture's own page (182 has no page record; its strokes say 82)
-    const firstPage = pen.pageEvents[0]?.[1] ?? pen.segments[0]?.page ?? number;
-    if (firstPage !== number) throw new Error(`${id}: starts on page ${firstPage}, expected ${number}`);
+    const firstPage = pen.pageEvents[0]?.[1] ?? pen.segments[0]?.page ?? (reading ? number : pagesUsed[0]);
+    if (reading && firstPage !== number) throw new Error(`${id}: starts on page ${firstPage}, expected ${number}`);
+    pen.pageEvents = pen.pageEvents.filter(([, pg]) => pagesUsed.includes(pg));
+    pen.segments = pen.segments.filter((s) => pagesUsed.includes(s.page));
+    const strokes = toStrokes(pen.segments);
     const maxX = Math.max(PAGE.w, ...pen.segments.flatMap((s) => [s.x1, s.x2]));
     const maxY = Math.max(PAGE.h, ...pen.segments.flatMap((s) => [s.y1, s.y2]));
     const pageSrc = (pg) => `/audio/lecture/${id}/p${pad3(pg)}.jpg`;
@@ -293,7 +356,7 @@ function main() {
       lengthUnits: g.lengthUnits,
       page: PAGE,
       canvas: { w: Math.ceil(maxX / 10) * 10 + 10, h: Math.ceil(maxY / 10) * 10 },
-      pageEvents: pen.pageEvents.length ? pen.pageEvents : [[0, number]],
+      pageEvents: pen.pageEvents.length ? pen.pageEvents : [[0, reading ? number : pagesUsed[0]]],
       scrollEvents: pen.scrollEvents,
       // [t0, page, pen, x0, y0, (dt, dx, dy)…] — t in units (× unitSec = seconds), x/y in page pixels
       strokes,
@@ -301,20 +364,22 @@ function main() {
     if (timemap) penDoc = retimePen(penDoc, timemap);
     const lectureSec = timemap ? voice.durationSec : null;
     writes.set(path.join(MEDIA, "audio", "lecture", id, "pen.json"), JSON.stringify(penDoc));
-    const title = `${book === "middle" ? "중등" : "고등"} 영어독해 ${number}강`;
-    const chapter = Math.ceil(n / 10);
+    const title = reading ? `${book === "middle" ? "중등" : "고등"} 영어독해 ${number}강` : `${job.sectionTitle} ${number}강`;
+    // 영어독해: chapter of 10 (1–20). A new section has no chapters (its lectures open one by one) — unit 1.
+    const chapter = reading ? Math.ceil(n / 10) : 1;
     const lesson = {
       id,
       course: "lecture",
-      series: book === "middle" ? "lm" : "lh",
+      series: reading ? (book === "middle" ? "lm" : "lh") : section,
+      section,
       variant: "main",
       pairId: null,
       title,
-      label: `${book === "middle" ? "중등" : "고등"} 영어독해 ${(chapter - (book === "middle" ? 1 : 11)) * 10 + 1}~${(chapter - (book === "middle" ? 1 : 11)) * 10 + 10}강`,
+      label: reading ? `${book === "middle" ? "중등" : "고등"} 영어독해 ${(chapter - (book === "middle" ? 1 : 11)) * 10 + 1}~${(chapter - (book === "middle" ? 1 : 11)) * 10 + 10}강` : job.sectionTitle,
       menuLabel: `${number}강`,
       unit: chapter,
       part: number,
-      order: n - 1,
+      order: lessons.length,
       audio: [],
       video: [],
       blocks: [],
@@ -329,6 +394,7 @@ function main() {
         // mediaRoute: free objects immutable, paid ones an hour — so a re-made voice or re-timed pen at the same path
         // would play against the old one: lh082 preview 2026-10-17). The media gate and keys use the path only.
         pen: { src: `/audio/lecture/${id}/pen.json${timemap ? `?v=${version(timemap)}` : ""}`, strokes: strokes.length, segments: pen.segments.length },
+        ...(frameOf(g.pages.length, book) ? { frame: frameOf(g.pages.length, book) } : {}),
         // the AI voice, once made (voice-manifest.json) — the view's clock; absent until then
         ...(voice ? { audio: { src: `${voice.src}?v=${version(voice)}`, durationSec: voice.durationSec } } : {}),
       },
@@ -345,18 +411,26 @@ function main() {
     report.unknownRecords += pen.unknown;
   }
 
+  // `groups` stay 영어독해's 20 chapters — their numbers ARE the chapter record (lectureProgress.ts: unlockedThrough), so
+  // nothing in front of them may shift them. The four sections, in the order shown, are in `sections`.
+  const readingLessons = lessons.filter((l) => l.section === "reading");
   const groups = [];
   for (let c = 1; c <= 20; c++) {
-    const members = lessons.filter((l) => l.unit === c);
+    const members = readingLessons.filter((l) => l.unit === c);
     groups.push({ title: members[0].label, lessons: members.map((l) => l.id) });
   }
+  const sections = [
+    ...NEW_SECTIONS.map((s) => ({ key: s.key, title: s.title, gate: "lesson", lessons: lessons.filter((l) => l.section === s.key).map((l) => l.id) })),
+    { key: "reading", title: "영어독해", gate: "chapter", lessons: readingLessons.map((l) => l.id) },
+  ];
   const index = {
     course: "lecture",
     tab: "lecture",
     lessonCount: lessons.length,
+    sections,
     groups,
-    lessons: lessons.map(({ id, title, label, series, variant, unit, part, order, menuLabel, lecture }) => ({
-      id, title, label, series, variant, unit, part, order, hasAudio: false, hasVideo: false, menuLabel, durationSec: lecture.durationSec,
+    lessons: lessons.map(({ id, title, label, series, section, variant, unit, part, order, menuLabel, lecture }) => ({
+      id, title, label, series, section, variant, unit, part, order, hasAudio: false, hasVideo: false, menuLabel, durationSec: lecture.durationSec,
     })),
   };
   writes.set(path.join(ROOT, "content", "courses", "lecture.json"), `${JSON.stringify(index, null, 2)}\n`);

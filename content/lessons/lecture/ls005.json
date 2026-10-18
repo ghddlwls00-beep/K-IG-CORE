@@ -1,0 +1,85 @@
+{
+  "id": "ls005",
+  "course": "lecture",
+  "series": "ls",
+  "section": "ls",
+  "variant": "main",
+  "pairId": null,
+  "title": "문장구조론 5강",
+  "label": "문장구조론",
+  "menuLabel": "5강",
+  "unit": 1,
+  "part": 5,
+  "order": 8,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "ls",
+    "number": 5,
+    "durationSec": 1411.5,
+    "lengthUnits": 7847,
+    "unitSec": 0.179891,
+    "pages": [
+      {
+        "page": 11,
+        "src": "/audio/lecture/ls005/p011.jpg"
+      },
+      {
+        "page": 12,
+        "src": "/audio/lecture/ls005/p012.jpg"
+      },
+      {
+        "page": 13,
+        "src": "/audio/lecture/ls005/p013.jpg"
+      },
+      {
+        "page": 14,
+        "src": "/audio/lecture/ls005/p014.jpg"
+      },
+      {
+        "page": 15,
+        "src": "/audio/lecture/ls005/p015.jpg"
+      },
+      {
+        "page": 16,
+        "src": "/audio/lecture/ls005/p016.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/ls005/pen.json?v=omxdib",
+      "strokes": 1079,
+      "segments": 30711
+    },
+    "frame": {
+      "head": {
+        "top": 74,
+        "bottom": 126,
+        "left": 100,
+        "right": 728,
+        "label": "문장구조론"
+      },
+      "foot": [
+        {
+          "top": 1061,
+          "bottom": 1069,
+          "left": 80,
+          "right": 746,
+          "edge": "#000"
+        },
+        {
+          "top": 1069,
+          "bottom": 1104,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/ls005/voice.mp3?v=46mpxq",
+      "durationSec": 1411.515
+    }
+  },
+  "legacyPath": "문장구조론/영어문장구조론05.gdb",
+  "legacyEncoding": "euc-kr"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "la005",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 5강",
+  "label": "알파오메가",
+  "menuLabel": "5강",
+  "unit": 1,
+  "part": 5,
+  "order": 17,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 5,
+    "durationSec": 1669.8,
+    "lengthUnits": 9281,
+    "unitSec": 0.179919,
+    "pages": [
+      {
+        "page": 18,
+        "src": "/audio/lecture/la005/p018.jpg"
+      },
+      {
+        "page": 19,
+        "src": "/audio/lecture/la005/p019.jpg"
+      },
+      {
+        "page": 20,
+        "src": "/audio/lecture/la005/p020.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la005/pen.json?v=12ftyz",
+      "strokes": 840,
+      "segments": 28196
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la005/voice.mp3?v=1gc0j33",
+      "durationSec": 1669.803
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_5강.gdb",
+  "legacyEncoding": "euc-kr"
+}

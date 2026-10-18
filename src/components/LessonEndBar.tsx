@@ -7,7 +7,8 @@ import { useProgress } from "./ProgressProvider";
 import { usePassoffProgress } from "./PassoffProgressProvider";
 import { useLicense } from "./LicenseProvider";
 import { getLessonGate, subscribeLessonGate } from "@/lib/lessonGate";
-import { lectureChapterOf } from "@/lib/lectureChapters";
+import { lectureChapterOf, lectureStepBefore } from "@/lib/lectureChapters";
+import { isFreePreviewLesson } from "@/lib/license";
 
 const PASSOFF_COURSE = "passoff-grammar";
 
@@ -113,7 +114,12 @@ export function LessonEndBar({
     Boolean(isChapterCourse && next && periodPass && typeof unlockedThrough === "number" && nextChapter > thisChapter && nextChapter > unlockedThrough);
   const chapterRecord = course === "adult" ? adultProgress : course === "lecture" ? lectureProgress : studentProgress;
   const chapterSync = course === "adult" ? adultSyncStatus : course === "lecture" ? lectureSyncStatus : studentSyncStatus;
-  const nextLocked = (lockedByChapter(chapterRecord?.unlockedThrough) && chapterSync !== "syncing" && chapterSync !== "pending") || lockedAfterSave;
+  // LECTURE's one-by-one sections (2026-10-19): the next lecture opens when this one is finished
+  const nextId = next?.href.split("/").pop() ?? "";
+  const lockedByStep = Boolean(
+    course === "lecture" && next && periodPass && lectureStepBefore(nextId) === lessonId && !completed && !isFreePreviewLesson("lecture", nextId),
+  );
+  const nextLocked = lockedByStep || (lockedByChapter(chapterRecord?.unlockedThrough) && chapterSync !== "syncing" && chapterSync !== "pending") || lockedAfterSave;
 
   async function goNext(event: MouseEvent<HTMLAnchorElement>) {
     if (!isChapterCourse || !next) return;
@@ -202,7 +208,7 @@ export function LessonEndBar({
           ) : null}
           {next && nextLocked ? (
             <p data-next-locked className="flex min-h-14 min-w-0 items-center justify-end px-3 py-2 text-right text-label text-ink-soft">
-              {nextChapter}장은 이 장을 마치면 열려요.
+              {lockedByStep ? "다음 강의는 이 강의를 마치면 열려요." : `${nextChapter}장은 이 장을 마치면 열려요.`}
             </p>
           ) : next ? (
             <Link

@@ -2,6 +2,7 @@
   "id": "lh008",
   "course": "lecture",
   "series": "lh",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "고등 영어독해 8강",
@@ -9,7 +10,7 @@
   "menuLabel": "8강",
   "unit": 11,
   "part": 8,
-  "order": 107,
+  "order": 140,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 96,
       "segments": 3695
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "고등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lh008/voice.mp3?v=1t2az7n",
       "durationSec": 311.138
     }
   },
-  "legacyPath": "중등독해101~200/고등영어 독해108.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등독해101~200/고등영어 독해108.gdb",
   "legacyEncoding": "euc-kr"
 }

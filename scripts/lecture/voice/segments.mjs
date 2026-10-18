@@ -74,7 +74,19 @@ for (const id of IDS) {
   const dir = path.join(VOICE, id);
   const samples = decode(path.join(dir, "orig.mp3"));
   const total = samples.length / SR;
-  const { mask, floor, thr } = speechMask(energyDb(samples));
+  let { mask, floor, thr } = speechMask(energyDb(samples));
+  const { source, words } = wordsOf(dir);
+  // A quiet recording over a loud hiss (알파오메가: speech only 3–8 dB above the floor, 2026-10-19) leaves the energy
+  // mask almost empty (la008: 0 s of 1,830). Then the speech is where the transcript's words are: each word's span,
+  // pauses under 0.3 s bridged — the same rule as the energy mask.
+  let maskFrom = "energy";
+  const energySec = mask.reduce((n, v) => n + v, 0) * HOP / SR;
+  if (words.length && energySec < 0.3 * (samples.length / SR)) {
+    mask = new Uint8Array(mask.length);
+    for (const w of words) for (let f = Math.floor((w.t - 0.05) * SR / HOP); f <= Math.ceil((w.t + w.d + 0.05) * SR / HOP); f++) if (f >= 0 && f < mask.length) mask[f] = 1;
+    for (const [s, e] of runs(mask, 0)) if (s > 0 && e - s < 15) mask.fill(1, s, e);
+    maskFrom = "words";
+  }
   const speech = runs(mask, 1), silences = runs(mask, 0);
   const maxFrames = Math.round((MAX * SR) / HOP), pieceFrames = Math.round((PIECE * SR) / HOP);
   const chunks = cut(silences, 0, mask.length, maxFrames).map(([s, e]) => ({ start: +frameSec(s).toFixed(3), end: +frameSec(e).toFixed(3) }));
@@ -86,7 +98,6 @@ for (const id of IDS) {
     for (const [a, b] of cut(silences, s, e, pieceFrames)) pieces.push({ speechStart: +frameSec(a).toFixed(3), speechEnd: +frameSec(b).toFixed(3), start: +frameSec(a === s ? lead : a).toFixed(3) });
   }
   for (let i = 0; i < pieces.length; i++) pieces[i].end = i + 1 < pieces.length ? pieces[i + 1].start : +total.toFixed(3);
-  const { source, words } = wordsOf(dir);
   if (words.length) {
     for (const p of pieces) {
       const inside = words.filter((w) => w.t >= p.start && w.t < p.end);
@@ -95,8 +106,8 @@ for (const id of IDS) {
       p.wordsT = inside.map((w) => [w.t, w.d, w.w]);
     }
   }
-  const doc = { id, totalSec: +total.toFixed(3), noiseFloorDb: +floor.toFixed(1), speechThresholdDb: +thr.toFixed(1), speechSec: +(speech.reduce((n, [s, e]) => n + (e - s), 0) * HOP / SR).toFixed(1), speech: speech.map(([s, e]) => [+frameSec(s).toFixed(2), +frameSec(e).toFixed(2)]), chunks, pieces, transcript: source };
+  const doc = { id, totalSec: +total.toFixed(3), noiseFloorDb: +floor.toFixed(1), speechThresholdDb: +thr.toFixed(1), speechSec: +(speech.reduce((n, [s, e]) => n + (e - s), 0) * HOP / SR).toFixed(1), speech: speech.map(([s, e]) => [+frameSec(s).toFixed(2), +frameSec(e).toFixed(2)]), chunks, pieces, transcript: source, speechFrom: maskFrom };
   fs.writeFileSync(path.join(dir, "segments.json"), JSON.stringify(doc, null, 1));
   const longest = Math.max(...pieces.map((p) => p.speechEnd - p.speechStart));
-  console.log(`${id}: ${total.toFixed(1)} s · speech ${doc.speechSec} s in ${speech.length} runs · chunks ${chunks.length} (${chunks.map((c) => (c.end - c.start).toFixed(0)).join("/")} s) · pieces ${pieces.length} (longest speech ${longest.toFixed(1)} s) · words ${words.length}${source ? ` (${source})` : ""}`);
+  console.log(`${id}: ${total.toFixed(1)} s · speech ${doc.speechSec} s in ${speech.length} runs · chunks ${chunks.length} (${chunks.map((c) => (c.end - c.start).toFixed(0)).join("/")} s) · pieces ${pieces.length} (longest speech ${longest.toFixed(1)} s) · words ${words.length}${source ? ` (${source})` : ""}${maskFrom === "words" ? " · speech from the words" : ""}`);
 }

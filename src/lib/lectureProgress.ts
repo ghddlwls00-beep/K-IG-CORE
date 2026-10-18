@@ -16,7 +16,7 @@ import type {
   StudentProgressRecord,
   StudentProgressWriteOptions,
 } from "@/lib/studentProgress";
-import { LECTURE_CHAPTERS, LECTURE_LESSON_ID, lectureChapterOf } from "@/lib/lectureChapters";
+import { LECTURE_CHAPTERS, isLectureId, lectureChapterOf, lectureStepBefore, lectureStepOpen } from "@/lib/lectureChapters";
 
 /**
  * LECTURE progress on the server — the record behind LECTURE's chapter order lock (2026-10-17, docs/lecture/README.md).
@@ -34,13 +34,17 @@ import { LECTURE_CHAPTERS, LECTURE_LESSON_ID, lectureChapterOf } from "@/lib/lec
  * in production) it is data/lecture-progress.json.
  *
  * There is no legacy import: LECTURE never had an old app.
+ *
+ * 2026-10-19 — the one-by-one sections (뼈대세우기 · 문장구조론 · 알파오메가, lectureChapters.ts) keep their completions in the
+ * same `lessons` map; their lock is "the one before it is finished", read from that map — the chapter numbers below stay
+ * 영어독해's 20, so no record written before them changes meaning.
  */
 
 export const LECTURE_PROGRESS_VERSION = 1;
 export const LECTURE_REQUIRED_RATIO = 0.8;
 export const LECTURE_CHAPTER_COUNT = LECTURE_CHAPTERS;
 const PROGRESS_PREFIX = "private/progress/lecture/";
-const LESSON_ID = LECTURE_LESSON_ID;
+const LESSON_ID = { test: isLectureId };
 
 export type LectureProgressRecord = StudentProgressRecord;
 export type LectureChapterProgress = StudentChapterProgress;
@@ -318,9 +322,13 @@ export async function updateLectureProgress(
         const now = Date.now();
         const clientUpdatedAt = Math.min(now + 60_000, Math.max(0, update.clientUpdatedAt || now));
 
+        // a one-by-one lecture is reachable when it is open (free, its section's first, or the one before it finished)
+        const stepReachable = (id: string) =>
+          everyChapterOpen || isFreePreviewLesson("lecture", id) || lectureStepOpen(id, (before) => Boolean(record.lessons[before]?.completed));
         if (update.lessonId && validIds.has(update.lessonId) && typeof update.completed === "boolean") {
           const chapter = chapterOf.get(update.lessonId);
           if (chapter !== undefined && chapter > reachable()) continue;
+          if (lectureStepBefore(update.lessonId) !== undefined && !stepReachable(update.lessonId)) continue;
           const existing = record.lessons[update.lessonId];
           if (!existing || clientUpdatedAt >= existing.updatedAt) {
             record.lessons[update.lessonId] = {
@@ -332,6 +340,7 @@ export async function updateLectureProgress(
         if (update.lastLessonId && validIds.has(update.lastLessonId)) {
           const chapter = chapterOf.get(update.lastLessonId);
           if (chapter !== undefined && chapter > reachable()) continue;
+          if (lectureStepBefore(update.lastLessonId) !== undefined && !stepReachable(update.lastLessonId)) continue;
           if (!record.lastLessonUpdatedAt || clientUpdatedAt >= record.lastLessonUpdatedAt) {
             record.lastLessonId = update.lastLessonId;
             record.lastLessonUpdatedAt = clientUpdatedAt;
@@ -367,10 +376,14 @@ export async function resetLectureProgress(key: string): Promise<LectureProgress
 
 export { lectureChapterOf };
 
-/** The free lectures (license.ts FREE_PREVIEW_LESSON_IDS.lecture) are open to all; any other up to the record's chapter. */
+/**
+ * The free lectures (license.ts FREE_PREVIEW_LESSON_IDS.lecture) are open to all; a 영어독해 lecture up to the record's
+ * chapter; a one-by-one section's lecture when the one before it is finished.
+ */
 export function isLectureLessonUnlocked(lessonId: string, record: LectureProgressRecord): boolean {
-  const chapter = lectureChapterOf(lessonId);
-  if (chapter === null) return false;
+  if (!isLectureId(lessonId)) return false;
   if (isFreePreviewLesson("lecture", lessonId)) return true;
-  return chapter <= record.unlockedThrough;
+  const chapter = lectureChapterOf(lessonId);
+  if (chapter !== null) return chapter <= record.unlockedThrough;
+  return lectureStepOpen(lessonId, (before) => Boolean(record.lessons[before]?.completed));
 }

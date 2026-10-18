@@ -42,7 +42,7 @@ function loadTs(rel) {
 }
 const readJson = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), "utf8"));
 
-const { lectureChapterOf } = loadTs("src/lib/lectureChapters.ts");
+const { lectureChapterOf, LECTURE_STEP_SECTIONS, lectureStepOpen } = loadTs("src/lib/lectureChapters.ts");
 const { formatLessonPresentation, formatGroupTitle } = loadTs("src/lib/curriculumPresentation.ts");
 const { FREE_PREVIEW_LESSON_IDS } = loadTs("src/lib/license.ts");
 const { buildLectureTimeline } = loadTs("src/lib/lecturePen.ts");
@@ -70,8 +70,27 @@ check("1 chapters — lectureChapterOf = the index's chapter, all 200", () => {
   for (const bad of ["lm000", "lm101", "lh1", "a1-1", "lmx01"]) if (lectureChapterOf(bad) !== null) problems.push(`chapters: '${bad}' is not a lecture id`);
 });
 
+check("1b sections — 뼈대세우기 · 문장구조론 · 알파오메가 · 영어독해 in that order; the one-by-one lists as lectureChapters.ts has them", () => {
+  const keys = (index.sections || []).map((s) => s.key).join(",");
+  if (keys !== "lb,ls,la,reading") problems.push(`sections: ${keys} (want lb,ls,la,reading)`);
+  for (const s of LECTURE_STEP_SECTIONS) {
+    const inIndex = (index.sections || []).find((x) => x.key === s.key);
+    const want = BREAK === "sections" && s.key === "ls" ? [...s.lessons, "ls006"] : s.lessons;
+    if (JSON.stringify(inIndex?.lessons) !== JSON.stringify(want)) problems.push(`sections: ${s.key} lessons differ between lecture.json and lectureChapters.ts`);
+    if (inIndex?.gate !== "lesson") problems.push(`sections: ${s.key} gate ${inIndex?.gate}`);
+    // the one-by-one rule: the first open; each next one only after the one before it
+    s.lessons.forEach((id, i) => {
+      if (lectureStepOpen(id, () => false) !== (i === 0)) problems.push(`sections: ${id} open with nothing finished = ${i !== 0}`);
+      if (i > 0 && !lectureStepOpen(id, (b) => b === s.lessons[i - 1])) problems.push(`sections: ${id} closed after ${s.lessons[i - 1]} finished`);
+    });
+  }
+  const reading = (index.sections || []).find((x) => x.key === "reading");
+  if (reading?.gate !== "chapter" || reading.lessons.length !== 200) problems.push(`sections: 영어독해 ${reading?.gate} · ${reading?.lessons.length}`);
+  if (index.lessonCount !== index.lessons.length || index.lessons.length !== (index.sections || []).reduce((n, s) => n + s.lessons.length, 0)) problems.push("sections: lesson counts differ");
+});
+
 check("2 names — titles and chapter lines in Korean only", () => {
-  for (const lesson of index.lessons) {
+  for (const lesson of index.lessons.filter((l) => /^l[mh]/.test(l.id))) {
     const pres = formatLessonPresentation("lecture", BREAK === "names" && lesson.id === "lm005" ? { ...lesson, label: "Chapter 1" } : lesson);
     const book = lesson.id.startsWith("lm") ? "중등" : "고등";
     const n = Number(lesson.id.slice(2));
@@ -85,11 +104,20 @@ check("2 names — titles and chapter lines in Korean only", () => {
     const head = formatGroupTitle("lecture", group.title);
     if (!head.startsWith(`${i + 1}장 · `)) problems.push(`names: chapter ${i + 1} head '${head}'`);
   });
+  for (const s of LECTURE_STEP_SECTIONS) {
+    for (const id of s.lessons) {
+      const lesson = index.lessons.find((l) => l.id === id);
+      const pres = formatLessonPresentation("lecture", lesson ?? { id });
+      if (pres.title !== `${s.title} ${Number(id.slice(2))}강` || pres.subtitle !== s.title) problems.push(`names: ${id} '${pres.title}' · '${pres.subtitle}'`);
+    }
+  }
 });
 
 check("3 free — freeMediaKeys has exactly the free lectures' files", () => {
   const free = FREE_PREVIEW_LESSON_IDS.lecture || [];
-  if (JSON.stringify(free) !== JSON.stringify(["lm001", "lm002"])) problems.push(`free: FREE_PREVIEW_LESSON_IDS.lecture = ${JSON.stringify(free)}`);
+  // each section's 1·2강 (사장님 2026-10-19)
+  const wantFree = (index.sections || []).flatMap((s) => s.lessons.slice(0, 2)).sort();
+  if (JSON.stringify([...free].sort()) !== JSON.stringify(wantFree)) problems.push(`free: FREE_PREVIEW_LESSON_IDS.lecture = ${JSON.stringify(free)} (want ${wantFree.join(",")})`);
   const want = new Set();
   for (const id of free) {
     const lesson = readJson(`content/lessons/lecture/${id}.json`);
@@ -114,7 +142,7 @@ check("4 public — no lecture media path in public files", () => {
   };
   walk(path.join(ROOT, "public"));
   files.push(path.join(ROOT, "src", "lib", "generated", "validRoutes.json"));
-  const pattern = /audio\/lecture\/|lecture\/l[mh]\d{3}\/(p\d{3}\.jpg|pen\.json)/;
+  const pattern = /audio\/lecture\/|lecture\/l[mhbsa]\d{3}\/(p\d{3}\.jpg|pen\.json|voice\.mp3)/;
   for (const f of files) {
     let text = fs.readFileSync(f, "utf8");
     if (BREAK === "public" && f.endsWith("search-index.json")) text += "/audio/lecture/lm050/pen.json";
@@ -155,7 +183,8 @@ check("5 timeline — every local pen file builds, counts match the lesson files
     for (let k = 1; k < timeline.segT.length; k++) if (timeline.segT[k] < timeline.segT[k - 1]) { problems.push(`timeline: ${lesson.id} not in time order`); break; }
     const last = timeline.segT[timeline.segT.length - 1] ?? 0;
     if (last * timeline.unitSec > data.durationSec + 0.5) problems.push(`timeline: ${lesson.id} ends at ${(last * timeline.unitSec).toFixed(1)}s, after ${data.durationSec}s`);
-    if (pen.canvas.w > 1020 || pen.canvas.h > 1170) problems.push(`timeline: ${lesson.id} canvas ${pen.canvas.w}×${pen.canvas.h} is larger than the view's stage 1020×1170`);
+    // (the stage is 1020 × 1190: the page 20 px down — a note at the page's very foot reaches 1210 on 문장구조론, drawn to the edge)
+    if (pen.canvas.w > 1020 || pen.canvas.h > 1220) problems.push(`timeline: ${lesson.id} canvas ${pen.canvas.w}×${pen.canvas.h} is larger than the view's stage 1020×1170`);
     const pages = new Set(data.pages.map((p) => p.page));
     for (const [, page] of timeline.pageEvents) if (!pages.has(page)) problems.push(`timeline: ${lesson.id} turns to page ${page}, which its lesson file does not list`);
   }

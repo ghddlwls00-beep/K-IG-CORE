@@ -1,0 +1,113 @@
+{
+  "id": "ls002",
+  "course": "lecture",
+  "series": "ls",
+  "section": "ls",
+  "variant": "main",
+  "pairId": null,
+  "title": "문장구조론 2강",
+  "label": "문장구조론",
+  "menuLabel": "2강",
+  "unit": 1,
+  "part": 2,
+  "order": 5,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "ls",
+    "number": 2,
+    "durationSec": 1335.6,
+    "lengthUnits": 7425,
+    "unitSec": 0.179899,
+    "pages": [
+      {
+        "page": 1,
+        "src": "/audio/lecture/ls002/p001.jpg"
+      },
+      {
+        "page": 2,
+        "src": "/audio/lecture/ls002/p002.jpg"
+      },
+      {
+        "page": 3,
+        "src": "/audio/lecture/ls002/p003.jpg"
+      },
+      {
+        "page": 4,
+        "src": "/audio/lecture/ls002/p004.jpg"
+      },
+      {
+        "page": 5,
+        "src": "/audio/lecture/ls002/p005.jpg"
+      },
+      {
+        "page": 6,
+        "src": "/audio/lecture/ls002/p006.jpg"
+      },
+      {
+        "page": 7,
+        "src": "/audio/lecture/ls002/p007.jpg"
+      },
+      {
+        "page": 8,
+        "src": "/audio/lecture/ls002/p008.jpg"
+      },
+      {
+        "page": 9,
+        "src": "/audio/lecture/ls002/p009.jpg"
+      },
+      {
+        "page": 10,
+        "src": "/audio/lecture/ls002/p010.jpg"
+      },
+      {
+        "page": 11,
+        "src": "/audio/lecture/ls002/p011.jpg"
+      },
+      {
+        "page": 12,
+        "src": "/audio/lecture/ls002/p012.jpg"
+      },
+      {
+        "page": 13,
+        "src": "/audio/lecture/ls002/p013.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/ls002/pen.json?v=wxpcuy",
+      "strokes": 836,
+      "segments": 23401
+    },
+    "frame": {
+      "head": {
+        "top": 74,
+        "bottom": 126,
+        "left": 100,
+        "right": 728,
+        "label": "문장구조론"
+      },
+      "foot": [
+        {
+          "top": 1061,
+          "bottom": 1069,
+          "left": 80,
+          "right": 746,
+          "edge": "#000"
+        },
+        {
+          "top": 1069,
+          "bottom": 1104,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/ls002/voice.mp3?v=1w0nit8",
+      "durationSec": 1335.612
+    }
+  },
+  "legacyPath": "문장구조론/영어문장구조론02.gdb",
+  "legacyEncoding": "euc-kr"
+}

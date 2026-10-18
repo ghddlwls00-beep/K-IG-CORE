@@ -2,6 +2,7 @@
   "id": "lm054",
   "course": "lecture",
   "series": "lm",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "중등 영어독해 54강",
@@ -9,7 +10,7 @@
   "menuLabel": "54강",
   "unit": 6,
   "part": 54,
-  "order": 53,
+  "order": 86,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 259,
       "segments": 6768
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "중등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lm054/voice.mp3?v=zoe1ou",
       "durationSec": 638.568
     }
   },
-  "legacyPath": "중등영어 독해054.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등영어 독해054.gdb",
   "legacyEncoding": "euc-kr"
 }

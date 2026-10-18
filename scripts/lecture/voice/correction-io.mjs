@@ -27,7 +27,11 @@ const arg = (name, fallback) => {
   return i > -1 && rest[i + 1] ? rest[i + 1] : fallback;
 };
 const idsArg = arg("--ids", "");
-const ids = idsArg === "all" ? fs.readdirSync(VOICE).filter((d) => /^l[mh]\d{3}$/.test(d) && fs.existsSync(path.join(VOICE, d, "segments.json"))).sort() : idsArg.split(",").filter(Boolean);
+const ids = idsArg === "all" ? fs.readdirSync(VOICE).filter((d) => /^l[mhbsa]\d{3}$/.test(d) && fs.existsSync(path.join(VOICE, d, "segments.json"))).sort() : idsArg.split(",").filter(Boolean);
+// --part-size N (prepare): a long lecture (뼈대세우기 · 문장구조론 · 알파오메가: 20–35 min, 370–740 pieces, 2026-10-19) is
+// corrected in parts of about N pieces by different correctors — `parts` [[from, to]…] in the input; each writes
+// correct.output.p<k>.json { from, to, texts (to − from + 1), guesses }, and `apply` joins them.
+const PART_SIZE = Number(arg("--part-size", 0)) || 0;
 
 export const CORRECTION_RULES = `강의 받아쓰기 바로잡기 규칙 (사장님 2026-10-17·18 — 고등 82강이 기준)
 1. 선생님이 말한 내용 그대로. 요약 · 새로 쓰기 · 설명 덧붙이기 금지.
@@ -50,7 +54,10 @@ if (cmd === "rules") {
     // the second hearing (OpenAI, noisy lectures — transcribe-openai.mjs): per group of pieces [from..to]
     const secondFile = path.join(VOICE, id, "second.json");
     const second = fs.existsSync(secondFile) ? JSON.parse(fs.readFileSync(secondFile, "utf8")).map(({ from, to, text }) => ({ from, to, text })) : null;
-    const input = { id, title: lesson.title, pages, rules: CORRECTION_RULES, pieces: seg.pieces.map((p, i) => ({ i, start: p.speechStart, end: p.speechEnd, heard: (p.words || []).join(" ") })), ...(second ? { secondHearing: second } : {}) };
+    const n = seg.pieces.length;
+    const partCount = PART_SIZE && n > PART_SIZE * 1.3 ? Math.round(n / PART_SIZE) : 1;
+    const parts = Array.from({ length: partCount }, (_, k) => [Math.round((k * n) / partCount), Math.round(((k + 1) * n) / partCount) - 1]);
+    const input = { id, title: lesson.title, pages, rules: CORRECTION_RULES, ...(partCount > 1 ? { parts } : {}), pieces: seg.pieces.map((p, i) => ({ i, start: p.speechStart, end: p.speechEnd, heard: (p.words || []).join(" ") })), ...(second ? { secondHearing: second } : {}) };
     fs.writeFileSync(path.join(VOICE, id, "correct.input.json"), JSON.stringify(input, null, 1));
   }
   console.log(`prepared ${ids.length}`);
@@ -59,8 +66,24 @@ if (cmd === "rules") {
   const problems = [];
   for (const id of ids) {
     const outFile = path.join(VOICE, id, "correct.output.json");
-    if (!fs.existsSync(outFile)) { problems.push(`${id}: no correct.output.json`); continue; }
     const seg = JSON.parse(fs.readFileSync(path.join(VOICE, id, "segments.json"), "utf8"));
+    const input = fs.existsSync(path.join(VOICE, id, "correct.input.json")) ? JSON.parse(fs.readFileSync(path.join(VOICE, id, "correct.input.json"), "utf8")) : {};
+    if (input.parts) {
+      // join the parts (each must cover exactly its range) into correct.output.json
+      const texts = [], guesses = [];
+      let bad = null;
+      for (const [k, [from, to]] of input.parts.entries()) {
+        const f = path.join(VOICE, id, `correct.output.p${k + 1}.json`);
+        if (!fs.existsSync(f)) { bad = `no correct.output.p${k + 1}.json`; break; }
+        const part = JSON.parse(fs.readFileSync(f, "utf8"));
+        if (!Array.isArray(part.texts) || part.texts.length !== to - from + 1) { bad = `part ${k + 1}: texts ${part.texts?.length} ≠ ${to - from + 1}`; break; }
+        texts.push(...part.texts);
+        guesses.push(...(part.guesses || []));
+      }
+      if (bad) { problems.push(`${id}: ${bad}`); continue; }
+      fs.writeFileSync(outFile, JSON.stringify({ texts, guesses }, null, 1));
+    }
+    if (!fs.existsSync(outFile)) { problems.push(`${id}: no correct.output.json`); continue; }
     const o = JSON.parse(fs.readFileSync(outFile, "utf8"));
     if (!Array.isArray(o.texts) || o.texts.length !== seg.pieces.length) { problems.push(`${id}: texts ${o.texts?.length} ≠ pieces ${seg.pieces.length}`); continue; }
     const digits = o.texts.map((t, i) => (/\d/.test(t) ? i : -1)).filter((i) => i >= 0);

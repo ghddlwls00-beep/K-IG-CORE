@@ -1,0 +1,41 @@
+{
+  "id": "lb004",
+  "course": "lecture",
+  "series": "lb",
+  "section": "lb",
+  "variant": "main",
+  "pairId": null,
+  "title": "뼈대세우기 4강",
+  "label": "뼈대세우기",
+  "menuLabel": "4강",
+  "unit": 1,
+  "part": 4,
+  "order": 3,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "lb",
+    "number": 4,
+    "durationSec": 391.4,
+    "lengthUnits": 2177,
+    "unitSec": 0.179817,
+    "pages": [
+      {
+        "page": 1,
+        "src": "/audio/lecture/lb004/p001.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/lb004/pen.json?v=1wzqvou",
+      "strokes": 368,
+      "segments": 7561
+    },
+    "audio": {
+      "src": "/audio/lecture/lb004/voice.mp3?v=1htf8fj",
+      "durationSec": 391.352
+    }
+  },
+  "legacyPath": "뼈대세우기/뼈대 새우기04.gdb",
+  "legacyEncoding": "euc-kr"
+}

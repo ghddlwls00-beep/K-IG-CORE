@@ -1,0 +1,67 @@
+{
+  "id": "la019",
+  "course": "lecture",
+  "series": "la",
+  "section": "la",
+  "variant": "main",
+  "pairId": null,
+  "title": "알파오메가 19강",
+  "label": "알파오메가",
+  "menuLabel": "19강",
+  "unit": 1,
+  "part": 19,
+  "order": 31,
+  "audio": [],
+  "video": [],
+  "blocks": [],
+  "lecture": {
+    "book": "la",
+    "number": 19,
+    "durationSec": 1773.4,
+    "lengthUnits": 9855,
+    "unitSec": 0.179962,
+    "pages": [
+      {
+        "page": 76,
+        "src": "/audio/lecture/la019/p076.jpg"
+      },
+      {
+        "page": 77,
+        "src": "/audio/lecture/la019/p077.jpg"
+      },
+      {
+        "page": 78,
+        "src": "/audio/lecture/la019/p078.jpg"
+      },
+      {
+        "page": 79,
+        "src": "/audio/lecture/la019/p079.jpg"
+      },
+      {
+        "page": 80,
+        "src": "/audio/lecture/la019/p080.jpg"
+      }
+    ],
+    "pen": {
+      "src": "/audio/lecture/la019/pen.json?v=19gqgof",
+      "strokes": 834,
+      "segments": 32516
+    },
+    "frame": {
+      "foot": [
+        {
+          "top": 1106,
+          "bottom": 1134,
+          "left": 370,
+          "right": 470
+        }
+      ]
+    },
+    "audio": {
+      "src": "/audio/lecture/la019/voice.mp3?v=37noz2",
+      "durationSec": 1773.445
+    }
+  },
+  "legacyPath": "알파오메가지비에이/알파오메가_독해part_19강.gdb",
+  "legacyEncoding": "euc-kr"
+}

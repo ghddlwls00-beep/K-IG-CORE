@@ -2,6 +2,7 @@
   "id": "lh083",
   "course": "lecture",
   "series": "lh",
+  "section": "reading",
   "variant": "main",
   "pairId": null,
   "title": "고등 영어독해 83강",
@@ -9,7 +10,7 @@
   "menuLabel": "83강",
   "unit": 19,
   "part": 83,
-  "order": 182,
+  "order": 215,
   "audio": [],
   "video": [],
   "blocks": [],
@@ -30,11 +31,28 @@
       "strokes": 53,
       "segments": 2449
     },
+    "frame": {
+      "head": {
+        "top": 48,
+        "bottom": 104,
+        "left": 118,
+        "right": 733,
+        "label": "고등 영어독해"
+      },
+      "foot": [
+        {
+          "top": 1128,
+          "bottom": 1169,
+          "left": 0,
+          "right": 827
+        }
+      ]
+    },
     "audio": {
       "src": "/audio/lecture/lh083/voice.mp3?v=1oncqrd",
       "durationSec": 231.484
     }
   },
-  "legacyPath": "중등독해101~200/고등영어 독해183.gdb",
+  "legacyPath": "중등영어독해(1~200)/중등독해101~200/고등영어 독해183.gdb",
   "legacyEncoding": "euc-kr"
 }

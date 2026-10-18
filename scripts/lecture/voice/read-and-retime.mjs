@@ -308,8 +308,12 @@ for (const id of IDS) {
   const seg = JSON.parse(fs.readFileSync(path.join(dir, fs.existsSync(path.join(dir, "segments.edited.json")) ? "segments.edited.json" : "segments.json"), "utf8"));
   let pieces = seg.pieces.filter((p) => !UNTIL || p.speechStart < UNTIL).map((p) => ({ ...p, text: (p.text ?? (p.words || []).join(" ")).trim() }));
   pieces = pieces.map((p, i) => ({ ...p, firstIndex: i, members: [i] }));
+  // pieces marked `cut` (segments.edited.json) are left out altogether — not a silent slot of their length: 알파오메가 1강's
+  // 56 s about the book's cover, which the owner removed (2026-10-19). The pause around them is capped like any other.
+  pieces = pieces.filter((p) => !p.cut);
   for (const i of CARRY) {
-    const p = pieces[i], next = pieces.slice(i + 1).find((q) => q.text);
+    const at = pieces.findIndex((q) => q.firstIndex === i);
+    const p = pieces[at], next = at < 0 ? null : pieces.slice(at + 1).find((q) => q.text);
     if (!p || !next) continue;
     const cutAt = carryPoint(p.text);
     if (cutAt < 0) continue;

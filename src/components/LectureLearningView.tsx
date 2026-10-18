@@ -634,47 +634,54 @@ export function LectureLearningView({
           />
         ))}
         {/*
-          The page's own head and foot, covered (사장님 2026-10-18 "제일 위 사이트랑 안어울림 · 제일 아래 줄 필요 없음"): every one
-          of the 203 page images has a red double rule with "고·등·영·어·독·해" at page rows 59–97 and a red rule with the page
-          number at 1137–1150 (measured on all 203). The head becomes a quiet label in the site's type; the foot is blanked.
-          Under the pen layers, so a note the teacher wrote there still shows. Paper colours, like PEN_STYLE (the page is white
-          in dark mode too).
+          The page's own head and foot, covered (사장님 2026-10-18 "제일 위 사이트랑 안어울림 · 제일 아래 줄 필요 없음"): the head
+          becomes a quiet label in the site's type, the foot (rule · page number) is blanked. Where they are is each book's own
+          (lecture.frame, written by build-lecture.mjs from rows measured on every page image): 영어독해's red double rule
+          '고·등·영·어·독·해' at 59–97 and foot 1137–1150; 문장구조론's at 82–121 and 1062–1096; 알파오메가 only its page number;
+          뼈대세우기's blank pages nothing. Under the pen layers, so a note the teacher wrote there still shows. Paper colours,
+          like PEN_STYLE (the page is white in dark mode too).
         */}
-        <div
-          aria-hidden
-          className="absolute flex items-end bg-white"
-          style={{
-            left: `${(PAGE_X / STAGE_W) * 100}%`,
-            width: `${(PAGE_W / STAGE_W) * 100}%`,
-            top: `${((PAGE_Y + 48) / STAGE_H) * 100}%`,
-            height: `${(56 / STAGE_H) * 100}%`,
-          }}
-        >
+        {lecture.frame?.head ? (
           <div
-            className="flex w-full items-baseline justify-between border-b font-semibold"
+            aria-hidden
+            className="absolute flex items-end bg-white"
             style={{
-              marginLeft: `${(118 / PAGE_W) * 100}%`,
-              marginRight: `${(94 / PAGE_W) * 100}%`,
-              paddingBottom: "0.35em",
-              borderColor: "#E4E1DA",
-              color: "#6E6A62",
-              fontSize: `clamp(11px, ${(16 * (scale ?? 1)).toFixed(2)}px, 16px)`,
-              letterSpacing: "0.02em",
+              left: `${(PAGE_X / STAGE_W) * 100}%`,
+              width: `${(PAGE_W / STAGE_W) * 100}%`,
+              top: `${((PAGE_Y + lecture.frame.head.top) / STAGE_H) * 100}%`,
+              height: `${((lecture.frame.head.bottom - lecture.frame.head.top) / STAGE_H) * 100}%`,
             }}
           >
-            <span>{lessonId.startsWith("lh") ? "고등 영어독해" : "중등 영어독해"}</span>
+            <div
+              className="flex w-full items-baseline justify-between border-b font-semibold"
+              style={{
+                marginLeft: `${(lecture.frame.head.left / PAGE_W) * 100}%`,
+                marginRight: `${((PAGE_W - lecture.frame.head.right) / PAGE_W) * 100}%`,
+                paddingBottom: "0.35em",
+                borderColor: "#E4E1DA",
+                color: "#6E6A62",
+                fontSize: `clamp(11px, ${(16 * (scale ?? 1)).toFixed(2)}px, 16px)`,
+                letterSpacing: "0.02em",
+              }}
+            >
+              <span>{lecture.frame.head.label}</span>
+            </div>
           </div>
-        </div>
-        <div
-          aria-hidden
-          className="absolute bg-white"
-          style={{
-            left: `${(PAGE_X / STAGE_W) * 100}%`,
-            width: `${(PAGE_W / STAGE_W) * 100}%`,
-            top: `${((PAGE_Y + 1128) / STAGE_H) * 100}%`,
-            height: `${((PAGE_H - 1128) / STAGE_H) * 100}%`,
-          }}
-        />
+        ) : null}
+        {(lecture.frame?.foot ?? []).map((r, i) => (
+          <div
+            key={`foot-${i}`}
+            aria-hidden
+            className="absolute bg-white"
+            style={{
+              left: `${((PAGE_X + r.left) / STAGE_W) * 100}%`,
+              width: `${((r.right - r.left) / STAGE_W) * 100}%`,
+              top: `${((PAGE_Y + r.top) / STAGE_H) * 100}%`,
+              height: `${((r.bottom - r.top) / STAGE_H) * 100}%`,
+              ...(r.edge ? { borderTop: `1px solid ${r.edge}` } : {}),
+            }}
+          />
+        ))}
         <canvas
           ref={markRef}
           aria-hidden
