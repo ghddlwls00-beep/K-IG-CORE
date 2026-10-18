@@ -210,6 +210,9 @@ function mapUnits(m, unitSec) {
       }
       if (sec === null) sec = a.at(-1)[1] + (t - a.at(-1)[0]) * unitSec;
     }
+    // a whole lecture's voice: what the teacher drew after his last word (lm068, 2.3 s after) is drawn by the voice's end —
+    // past it the player has stopped and those strokes would never appear
+    if (!m.sample) sec = Math.min(sec, m.voiceSec - 0.1);
     return Math.round(sec / unitSec);
   };
 }

@@ -16,8 +16,8 @@
   "lecture": {
     "book": "middle",
     "number": 55,
-    "durationSec": 269.3,
-    "lengthUnits": 1496,
+    "durationSec": 315.4,
+    "lengthUnits": 1753,
     "unitSec": 0.179984,
     "pages": [
       {
@@ -26,9 +26,13 @@
       }
     ],
     "pen": {
-      "src": "/audio/lecture/lm055/pen.json",
+      "src": "/audio/lecture/lm055/pen.json?v=b0vsu1",
       "strokes": 44,
       "segments": 1899
+    },
+    "audio": {
+      "src": "/audio/lecture/lm055/voice.mp3?v=19jbn4w",
+      "durationSec": 315.354
     }
   },
   "legacyPath": "중등영어 독해055.gdb",

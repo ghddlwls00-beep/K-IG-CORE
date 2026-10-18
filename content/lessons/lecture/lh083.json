@@ -16,8 +16,8 @@
   "lecture": {
     "book": "high",
     "number": 83,
-    "durationSec": 201.6,
-    "lengthUnits": 1122,
+    "durationSec": 231.5,
+    "lengthUnits": 1289,
     "unitSec": 0.179647,
     "pages": [
       {
@@ -26,9 +26,13 @@
       }
     ],
     "pen": {
-      "src": "/audio/lecture/lh083/pen.json",
+      "src": "/audio/lecture/lh083/pen.json?v=1x6fs8y",
       "strokes": 53,
       "segments": 2449
+    },
+    "audio": {
+      "src": "/audio/lecture/lh083/voice.mp3?v=1oncqrd",
+      "durationSec": 231.484
     }
   },
   "legacyPath": "중등독해101~200/고등영어 독해183.gdb",

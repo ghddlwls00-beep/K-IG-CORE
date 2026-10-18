@@ -93,7 +93,8 @@ check("3 free — freeMediaKeys has exactly the free lectures' files", () => {
   const want = new Set();
   for (const id of free) {
     const lesson = readJson(`content/lessons/lecture/${id}.json`);
-    for (const m of [...lesson.lecture.pages, lesson.lecture.pen]) want.add(m.src.split("?")[0].slice(1)); // a voiced lecture's pen carries ?v=
+    // a voiced lecture's pen and voice carry ?v=; a free lecture's voice is as open as its pages and pen
+    for (const m of [...lesson.lecture.pages, lesson.lecture.pen, ...(lesson.lecture.audio ? [lesson.lecture.audio] : [])]) want.add(m.src.split("?")[0].slice(1));
   }
   let keys = readJson("src/lib/generated/freeMediaKeys.json").keys.filter((k) => k.startsWith("audio/lecture/"));
   if (BREAK === "free") keys = [...keys, "audio/lecture/lm003/pen.json"];

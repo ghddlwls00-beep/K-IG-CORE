@@ -16,8 +16,8 @@
   "lecture": {
     "book": "middle",
     "number": 60,
-    "durationSec": 363.4,
-    "lengthUnits": 2019,
+    "durationSec": 369.4,
+    "lengthUnits": 2053,
     "unitSec": 0.179982,
     "pages": [
       {
@@ -26,9 +26,13 @@
       }
     ],
     "pen": {
-      "src": "/audio/lecture/lm060/pen.json",
+      "src": "/audio/lecture/lm060/pen.json?v=1t3lkut",
       "strokes": 135,
       "segments": 3783
+    },
+    "audio": {
+      "src": "/audio/lecture/lm060/voice.mp3?v=dw38eg",
+      "durationSec": 369.405
     }
   },
   "legacyPath": "중등영어 독해060.gdb",

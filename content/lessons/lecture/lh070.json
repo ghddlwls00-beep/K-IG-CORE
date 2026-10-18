@@ -16,8 +16,8 @@
   "lecture": {
     "book": "high",
     "number": 70,
-    "durationSec": 211.7,
-    "lengthUnits": 1178,
+    "durationSec": 218.1,
+    "lengthUnits": 1214,
     "unitSec": 0.179694,
     "pages": [
       {
@@ -26,9 +26,13 @@
       }
     ],
     "pen": {
-      "src": "/audio/lecture/lh070/pen.json",
+      "src": "/audio/lecture/lh070/pen.json?v=n89v1d",
       "strokes": 70,
       "segments": 2759
+    },
+    "audio": {
+      "src": "/audio/lecture/lh070/voice.mp3?v=1vv05ve",
+      "durationSec": 218.077
     }
   },
   "legacyPath": "중등독해101~200/고등영어 독해170.gdb",

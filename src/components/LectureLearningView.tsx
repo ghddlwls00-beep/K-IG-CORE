@@ -633,6 +633,48 @@ export function LectureLearningView({
             }}
           />
         ))}
+        {/*
+          The page's own head and foot, covered (사장님 2026-10-18 "제일 위 사이트랑 안어울림 · 제일 아래 줄 필요 없음"): every one
+          of the 203 page images has a red double rule with "고·등·영·어·독·해" at page rows 59–97 and a red rule with the page
+          number at 1137–1150 (measured on all 203). The head becomes a quiet label in the site's type; the foot is blanked.
+          Under the pen layers, so a note the teacher wrote there still shows. Paper colours, like PEN_STYLE (the page is white
+          in dark mode too).
+        */}
+        <div
+          aria-hidden
+          className="absolute flex items-end bg-white"
+          style={{
+            left: `${(PAGE_X / STAGE_W) * 100}%`,
+            width: `${(PAGE_W / STAGE_W) * 100}%`,
+            top: `${((PAGE_Y + 48) / STAGE_H) * 100}%`,
+            height: `${(56 / STAGE_H) * 100}%`,
+          }}
+        >
+          <div
+            className="flex w-full items-baseline justify-between border-b font-semibold"
+            style={{
+              marginLeft: `${(118 / PAGE_W) * 100}%`,
+              marginRight: `${(94 / PAGE_W) * 100}%`,
+              paddingBottom: "0.35em",
+              borderColor: "#E4E1DA",
+              color: "#6E6A62",
+              fontSize: `clamp(11px, ${(16 * (scale ?? 1)).toFixed(2)}px, 16px)`,
+              letterSpacing: "0.02em",
+            }}
+          >
+            <span>{lessonId.startsWith("lh") ? "고등 영어독해" : "중등 영어독해"}</span>
+          </div>
+        </div>
+        <div
+          aria-hidden
+          className="absolute bg-white"
+          style={{
+            left: `${(PAGE_X / STAGE_W) * 100}%`,
+            width: `${(PAGE_W / STAGE_W) * 100}%`,
+            top: `${((PAGE_Y + 1128) / STAGE_H) * 100}%`,
+            height: `${((PAGE_H - 1128) / STAGE_H) * 100}%`,
+          }}
+        />
         <canvas
           ref={markRef}
           aria-hidden

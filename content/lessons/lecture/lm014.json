@@ -16,8 +16,8 @@
   "lecture": {
     "book": "middle",
     "number": 14,
-    "durationSec": 187,
-    "lengthUnits": 1039,
+    "durationSec": 215.3,
+    "lengthUnits": 1197,
     "unitSec": 0.179965,
     "pages": [
       {
@@ -26,9 +26,13 @@
       }
     ],
     "pen": {
-      "src": "/audio/lecture/lm014/pen.json",
+      "src": "/audio/lecture/lm014/pen.json?v=1i141ey",
       "strokes": 27,
       "segments": 1311
+    },
+    "audio": {
+      "src": "/audio/lecture/lm014/voice.mp3?v=12yshep",
+      "durationSec": 215.267
     }
   },
   "legacyPath": "중등영어 독해014.gdb",
