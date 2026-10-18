@@ -210,7 +210,7 @@ export interface LectureData {
    */
   frame?: {
     head?: { top: number; bottom: number; left: number; right: number; label: string };
-    foot?: { top: number; bottom: number; left: number; right: number; edge?: string }[];
+    foot?: { top: number; bottom: number; left: number; right: number; edge?: string }[]; // absent on a re-typeset page
   };
   /**
    * The lecture's voice, when the owner adds one (사장님 2026-10-17 — an AI voice per lecture later; made by

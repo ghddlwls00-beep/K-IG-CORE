@@ -292,7 +292,13 @@ const pad3 = (n) => String(n).padStart(3, "0");
  *   알파오메가 (88): no printed head; the page number '- n -' 1112–1128 inside the black double frame → blank
  *   뼈대세우기 (3 blank pages — also 문장구조론 3강): nothing
  */
-function frameOf(bookPages, book) {
+function frameOf(bookPages, book, retyped = false) {
+  // a re-typeset page has no printed head or foot left: only the quiet label stays (영어독해 · 문장구조론), nothing to blank
+  if (retyped) {
+    if (bookPages === 100) return { head: { top: 48, bottom: 104, left: 118, right: 733, label: book === "high" ? "고등 영어독해" : "중등 영어독해" } };
+    if (bookPages === 45) return { head: { top: 74, bottom: 126, left: 100, right: 728, label: "문장구조론" } };
+    return null;
+  }
   if (bookPages === 100) return { head: { top: 48, bottom: 104, left: 118, right: 733, label: book === "high" ? "고등 영어독해" : "중등 영어독해" }, foot: [{ top: 1128, bottom: 1169, left: 0, right: 827 }] };
   if (bookPages === 45) return { head: { top: 74, bottom: 126, left: 100, right: 728, label: "문장구조론" }, foot: [{ top: 1061, bottom: 1069, left: 80, right: 746, edge: "#000" }, { top: 1069, bottom: 1104, left: 0, right: 827 }] };
   if (bookPages === 88) return { foot: [{ top: 1106, bottom: 1134, left: 370, right: 470 }] };
@@ -348,7 +354,16 @@ function main() {
     const maxX = Math.max(PAGE.w, ...pen.segments.flatMap((s) => [s.x1, s.x2]));
     const maxY = Math.max(PAGE.h, ...pen.segments.flatMap((s) => [s.y1, s.y2]));
     const pageSrc = (pg) => `/audio/lecture/${id}/p${pad3(pg)}.jpg`;
-    for (const pg of pagesUsed) writes.set(path.join(MEDIA, pageSrc(pg).slice(1)), g.pages[pg - 1]);
+    // the RE-TYPESET page when there is one (사장님 2026-10-20 "촌스러운 티 싹다 없애 · 교재 틀도 없애"): <media>/retype/<book>-<NNN>.jpg —
+    // the printed page re-set in Pretendard at 2x, every word's ink where the old word's ink was (the pen marks the page
+    // by position), the frame and red rules gone, misprints fixed. Paid, private like the pages it replaces.
+    const retypeOf = (pg) => {
+      const key = { 100: book, 45: "structure", 88: "alpha" }[g.pages.length];
+      const f = key && path.join(MEDIA, "retype", `${key}-${pad3(pg)}.jpg`);
+      return f && fs.existsSync(f) ? f : null;
+    };
+    for (const pg of pagesUsed) writes.set(path.join(MEDIA, pageSrc(pg).slice(1)), retypeOf(pg) ? fs.readFileSync(retypeOf(pg)) : g.pages[pg - 1]);
+    const allRetyped = pagesUsed.every((pg) => retypeOf(pg));
     let penDoc = {
       v: 1,
       id,
@@ -394,7 +409,7 @@ function main() {
         // mediaRoute: free objects immutable, paid ones an hour — so a re-made voice or re-timed pen at the same path
         // would play against the old one: lh082 preview 2026-10-17). The media gate and keys use the path only.
         pen: { src: `/audio/lecture/${id}/pen.json${timemap ? `?v=${version(timemap)}` : ""}`, strokes: strokes.length, segments: pen.segments.length },
-        ...(frameOf(g.pages.length, book) ? { frame: frameOf(g.pages.length, book) } : {}),
+        ...(frameOf(g.pages.length, book, allRetyped) ? { frame: frameOf(g.pages.length, book, allRetyped) } : {}),
         // the AI voice, once made (voice-manifest.json) — the view's clock; absent until then
         ...(voice ? { audio: { src: `${voice.src}?v=${version(voice)}`, durationSec: voice.durationSec } } : {}),
       },
