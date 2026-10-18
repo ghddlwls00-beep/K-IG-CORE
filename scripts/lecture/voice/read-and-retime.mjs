@@ -121,6 +121,44 @@ const OPENAI_SPEED = Number(arg("--speed", "1.0")) || 1.0;
 // The pen is then moved on the group's boundaries (inside, in proportion). 0 = every piece on its own.
 const GROUP_SEC = Number(arg("--group-sec", "0")) || 0;
 const UNGROUP = new Set(arg("--ungroup", "").split(",").filter(Boolean).map(Number));
+const DETACH = new Set(arg("--detach", "").split(",").filter(Boolean).map(Number));
+// --sentinel: original pieces whose reading gets the throw-away closing line (see "THE SENTINEL" below)
+const SENTINEL = new Set(arg("--sentinel", "").split(",").filter(Boolean).map(Number));
+const SENTINEL_TEXT = "네, 여기까지입니다.";
+
+/** ElevenLabs Scribe on one audio file → [[start sec, word]…] (word type only). Retries 429/5xx. */
+async function scribeWords(file, attempt = 1) {
+  const form = new FormData();
+  form.append("file", new Blob([fs.readFileSync(file)], { type: "audio/wav" }), "reading.wav");
+  form.append("model_id", "scribe_v1");
+  form.append("timestamps_granularity", "word");
+  form.append("diarize", "false");
+  const res = await fetch("https://api.elevenlabs.io/v1/speech-to-text", { method: "POST", headers: { "xi-api-key": process.env.ELEVENLABS_API_KEY }, body: form });
+  if (res.ok) return ((await res.json()).words || []).filter((w) => w.type === "word").map((w) => [w.start, w.text]);
+  const detail = (await res.text()).slice(0, 200);
+  if ((res.status === 429 || res.status >= 500) && attempt < 6) {
+    await new Promise((r) => setTimeout(r, 3000 * attempt));
+    return scribeWords(file, attempt + 1);
+  }
+  throw new Error(`Scribe: ${res.status} ${detail}`);
+}
+
+/** OpenAI gpt-4o-transcribe on one reading — a second hearing for the pronunciation check (English kept in English). */
+async function openaiHear(file, attempt = 1) {
+  const form = new FormData();
+  form.append("file", new Blob([fs.readFileSync(file)], { type: "audio/wav" }), "reading.wav");
+  form.append("model", "gpt-4o-transcribe");
+  form.append("response_format", "json");
+  form.append("prompt", "한국어 설명 속에 영어 낱말과 문장이 섞여 있습니다. 영어는 영어 철자로, 한국어는 한글로 적으세요.");
+  const res = await fetch("https://api.openai.com/v1/audio/transcriptions", { method: "POST", headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}` }, body: form });
+  if (res.ok) return (await res.json()).text || "";
+  const detail = (await res.text()).slice(0, 200);
+  if ((res.status === 429 || res.status >= 500) && attempt < 6) {
+    await new Promise((r) => setTimeout(r, 3000 * attempt));
+    return openaiHear(file, attempt + 1);
+  }
+  throw new Error(`OpenAI transcribe: ${res.status} ${detail}`);
+}
 // --complete: original pieces whose reading uses the short "read every word" instruction (see COMPLETE_INSTRUCTIONS)
 const COMPLETE = new Set(arg("--complete", "").split(",").filter(Boolean).map(Number));
 /** A reading's cache key: its text and every setting that changes the sound (FNV-1a, base 36). */
@@ -268,7 +306,10 @@ for (const id of IDS) {
       const last = grouped.at(-1);
       const gap = last ? p.speechStart - last.speechEnd : Infinity;
       // --ungroup: these original pieces are read on their own (a grouped reading of them kept dropping words)
-      const kept = UNGROUP.has(p.firstIndex) || (last && last.members.some((m) => UNGROUP.has(m)));
+      // --detach: these pieces START a reading (joined with what follows, never with what precedes) — an English fragment
+      // at the END of a reading ("…설명합니다. can travel.", "…웃었습니다. and told") was now and then skipped by the voice;
+      // read at the head of the next reading, with the sentence it leads into, it is said (2026-10-18, 200-lecture run)
+      const kept = UNGROUP.has(p.firstIndex) || DETACH.has(p.firstIndex) || (last && last.members.some((m) => UNGROUP.has(m)));
       if (!kept && last && last.text && p.text && gap < 0.9 && p.speechEnd - last.speechStart <= GROUP_SEC) {
         // join: a comma where the teacher paused (no punctuation at the join already)
         const joiner = /[.?!,…]$/.test(last.text) ? " " : gap >= 0.4 ? ", " : " ";
@@ -307,12 +348,32 @@ for (const id of IDS) {
     // cached BY CONTENT (text + engine settings), so a regrouped or corrected reading is made again and the rest reused;
     // make-voices.mjs deletes a cache entry (by this key) to get a fresh reading of one that failed the check
     const complete = (p.members || []).some((m) => COMPLETE.has(m));
-    const cacheKey = readingKey(p.text, complete);
+    const sentinel = ENGINE === "openai" && (p.members || []).some((m) => SENTINEL.has(m));
+    const cacheKey = readingKey(sentinel ? `${p.text}\u0002sentinel` : p.text, complete);
     const pcmFile = path.join(out, `r-${cacheKey}.pcm`), alnFile = path.join(out, `r-${cacheKey}.alignment.json`);
     if (!fs.existsSync(pcmFile) || !fs.existsSync(alnFile) || FORCE) {
-      const r = ENGINE === "azure" ? await azureTts(p.text) : ENGINE === "gemini" ? await geminiTts(p.text) : ENGINE === "openai" ? await openaiTts(p.text, 1, complete ? COMPLETE_INSTRUCTIONS : OPENAI_INSTRUCTIONS) : await tts(p.text);
-      fs.writeFileSync(pcmFile, r.pcm);
-      fs.writeFileSync(alnFile, JSON.stringify(r.alignment));
+      if (sentinel) {
+        // THE SENTINEL (end-drop fix): the text is read with a throw-away closing line after it; when the voice stops
+        // early it is the closing line that goes, not the lecture's last words. The line is then cut off at the time
+        // Scribe hears its first word (lh001 "can travel.", lh003 "to three weeks", 2026-10-18).
+        const r = await openaiTts(`${p.text} ${SENTINEL_TEXT}`, 1, complete ? COMPLETE_INSTRUCTIONS : OPENAI_INSTRUCTIONS);
+        const tmpWav = path.join(out, `tmp-${cacheKey}.wav`);
+        const tmp = new Float32Array(r.pcm.length / 2);
+        for (let i = 0; i < tmp.length; i++) tmp[i] = r.pcm.readInt16LE(i * 2) / 32768;
+        writeWav(tmpWav, tmp, SR);
+        const words = await scribeWords(tmpWav);
+        fs.rmSync(tmpWav, { force: true });
+        // the sentinel's first word, searched from the end: "네" (or "여기까지")
+        let cutAt = null;
+        for (let i = words.length - 1; i >= 0 && i >= words.length - 6; i--) if (/^(네|여기까지)/.test(words[i][1])) cutAt = words[i][0];
+        const cut = cutAt === null ? r.pcm : r.pcm.subarray(0, Math.max(0, Math.round((cutAt - 0.08) * SR)) * 2);
+        fs.writeFileSync(pcmFile, cut);
+        fs.writeFileSync(alnFile, JSON.stringify(null));
+      } else {
+        const r = ENGINE === "azure" ? await azureTts(p.text) : ENGINE === "gemini" ? await geminiTts(p.text) : ENGINE === "openai" ? await openaiTts(p.text, 1, complete ? COMPLETE_INSTRUCTIONS : OPENAI_INSTRUCTIONS) : await tts(p.text);
+        fs.writeFileSync(pcmFile, r.pcm);
+        fs.writeFileSync(alnFile, JSON.stringify(r.alignment));
+      }
     }
     const raw = fs.readFileSync(pcmFile);
     const all = new Float32Array(raw.length / 2);
@@ -435,10 +496,29 @@ for (const id of IDS) {
       // edge ("gi|ven name", lm002 #4)
       const near = newWords.filter((w) => w.t >= l.newStart - 0.4 && w.t < l.newStart + l.newLen + 0.4).map((w) => w.w).join(" ");
       // (the heard side keeps capitalised words: Scribe capitalises a word that starts its sentence — "Given name")
-      const heardEng = new Set((near.match(/[A-Za-z][A-Za-z'’-]{2,}/g) || []).map((w) => w.toLowerCase().replace(/[’']s$/, "").replace(/['’]/g, "")).flatMap((w) => [w, w.replace(/s$/, ""), `${w}s`]));
-      const missingEnglish = engWords(l.text).filter((w) => !heardEng.has(w) && !heardEng.has(w.replace(/s$/, "")));
+      const heardList = (near.match(/[A-Za-z][A-Za-z'’-]{2,}/g) || []).map((w) => w.toLowerCase().replace(/[’']s$/, "").replace(/['’]/g, ""));
+      const heardEng = new Set(heardList.flatMap((w) => [w, w.replace(/s$/, ""), `${w}s`]));
+      // compounds written either way (race track / racetrack, dog-sleds / dogsleds) and homophones Scribe picks between
+      const heardJoined = heardList.join("").replace(/-/g, "");
+      const HOMO = { feet: ["ft"], foot: ["ft"], percent: ["%"], dollars: ["$"], for: ["four"], to: ["too", "two"], too: ["to", "two"], two: ["to", "too"], their: ["there"], there: ["their"], right: ["write"], write: ["right"], know: ["no"], no: ["know"], one: ["won"], won: ["one"], hear: ["here"], here: ["hear"], by: ["buy", "bye"], buy: ["by"], son: ["sun"], sun: ["son"], ate: ["eight"], eight: ["ate"], new: ["knew"], knew: ["new"], meet: ["meat"], see: ["sea"] };
+      const heardRaw = near.toLowerCase();
+      const found = (w) => heardEng.has(w) || heardEng.has(w.replace(/s$/, "")) || (HOMO[w] || []).some((h) => heardEng.has(h) || heardRaw.includes(h)) || heardJoined.includes(w.replace(/-/g, ""));
+      const missingEnglish = engWords(l.text).filter((w) => !found(w));
       return { piece: l.piece, members: l.members, cacheKey: l.cacheKey, sim: +sim.toFixed(3), missingEnglish, text: l.text, heard };
     });
+    // A SECOND HEARING for every reading Scribe flagged: Scribe writes some English the voice said correctly in Hangul
+    // (에디션, 매니저, 패시브 — lh007/lh008, 2026-10-18). OpenAI hears the reading on its own, told to keep English in
+    // English; a word either hearing caught counts as said. Cached per reading (o-<key>.txt).
+    for (const x of pronunciation) {
+      if (!x.missingEnglish.length) continue;
+      const l = laid.find((y) => y.piece === x.piece);
+      const cache = path.join(out, `o-${l.cacheKey}.txt`);
+      if (!fs.existsSync(cache)) fs.writeFileSync(cache, await openaiHear(l.file));
+      const second = fs.readFileSync(cache, "utf8").toLowerCase();
+      const secondJoined = second.replace(/[^a-z]/g, "");
+      x.secondHeard = second;
+      x.missingEnglish = x.missingEnglish.filter((w) => !new RegExp(`(^|[^a-z])${w.replace(/[^a-z-]/g, "")}s?([^a-z]|$)`).test(second) && !secondJoined.includes(w.replace(/[^a-z]/g, "")));
+    }
     // whole-reading similarity only catches gross failures: number-heavy readings sit at 0.54–0.6 because Scribe writes
     // "천사백구십" as 1490 (lm002); half a reading lost would be well below 0.45
     for (const x of pronunciation) x.fail = x.sim < 0.45 || x.missingEnglish.length > 0;

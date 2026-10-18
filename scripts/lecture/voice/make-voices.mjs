@@ -46,22 +46,36 @@ const skipped = ids.filter((id) => !fs.existsSync(path.join(VOICE, id, "segments
 async function one(id) {
   let stats = null;
   const complete = new Set();
+  const detach = new Set();
   // round 1: as is · round 2: the failed readings read afresh · rounds 3–4: read with the short "every word to the end"
   // instruction (the long style line is what makes gpt-4o-mini-tts drop its last words now and then — lh082 #15 "with the
   // jeweler", #11 "wish", 2026-10-18). What still fails after round 4 is listed for a person.
-  for (let round = 1; round <= 4; round++) {
-    const extra = complete.size ? ["--complete", [...complete].join(",")] : [];
+  // first: a reading whose missing English words sit at its END (the last member piece holds them) — that last piece is
+  // detached and read at the head of the next reading (lh001 "can travel.", lh071 "and told", 2026-10-18)
+  const tailMissing = (x) => {
+    if (!x.members || x.members.length < 2 || !x.missingEnglish.length) return false;
+    const tail = x.text.slice(Math.floor(x.text.length * 0.6)).toLowerCase();
+    return x.missingEnglish.every((w) => tail.includes(w.toLowerCase()));
+  };
+  // round 2: a failed reading read afresh (end fragment detached when it is the tail) · round 3+: with the sentinel
+  // (a throw-away closing line read after the text and cut off) — the end-drop fix · rounds 4–5: sentinel and the short
+  // "every word" instruction. What still fails after round 5 is printed.
+  const sentinel = new Set();
+  for (let round = 1; round <= 5; round++) {
+    const extra = [...(complete.size ? ["--complete", [...complete].join(",")] : []), ...(detach.size ? ["--detach", [...detach].join(",")] : []), ...(sentinel.size ? ["--sentinel", [...sentinel].join(",")] : [])];
     await run("node", [path.join(import.meta.dirname, "read-and-retime.mjs"), "--ids", id, ...recipeArgs, ...extra], { env: process.env, maxBuffer: 1 << 26 });
     stats = JSON.parse(fs.readFileSync(path.join(OUT_DIR(id), "stats.json"), "utf8"));
     stats.round = round;
     const failed = (stats.pronunciationDetail || []).filter((x) => x.fail);
-    if (!failed.length || round === 4) break;
+    if (!failed.length || round === 5) break;
     for (const x of failed) {
       for (const ext of ["pcm", "alignment.json"]) fs.rmSync(path.join(OUT_DIR(id), `r-${x.cacheKey}.${ext}`), { force: true });
-      if (round >= 2) for (const m of x.members) complete.add(m);
+      if (round === 1 && tailMissing(x)) detach.add(x.members.at(-1));
+      if (round >= 2) for (const m of x.members) sentinel.add(m);
+      if (round >= 3) for (const m of x.members) complete.add(m);
     }
   }
-  const ungroup = complete; // (kept for the results field name)
+  const ungroup = new Set([...complete, ...[...detach].map((d) => `d${d}`)]); // (results: complete-instruction pieces · d = detached)
   fs.mkdirSync(path.join(MEDIA, id), { recursive: true });
   fs.copyFileSync(path.join(OUT_DIR(id), "voice.mp3"), path.join(MEDIA, id, "voice.mp3"));
   const manifest = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, "utf8").replace(/^﻿/, "")) : {};

@@ -169,7 +169,10 @@ function audioSeconds(audio) {
 
 // ---------------------------------------------------------------- the voices made so far
 const MANIFEST = path.join(ROOT, "docs", "lecture", "voice-manifest.json");
-const voices = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, "utf8")) : {};
+const voicesAll = fs.existsSync(MANIFEST) ? JSON.parse(fs.readFileSync(MANIFEST, "utf8").replace(/^﻿/, "")) : {};
+// LECTURE_VOICE_ONLY=lm001,lh082 — a local preview while the voice run is still going: only these lectures get their voice
+const ONLY_VOICES = (process.env.LECTURE_VOICE_ONLY || "").split(",").filter(Boolean);
+const voices = ONLY_VOICES.length ? Object.fromEntries(Object.entries(voicesAll).filter(([id]) => ONLY_VOICES.includes(id))) : voicesAll;
 for (const [id, v] of Object.entries(voices)) {
   if (v.src !== `/audio/lecture/${id}/voice.mp3` || !(v.durationSec > 0)) throw new Error(`voice-manifest ${id}: expected { src: "/audio/lecture/${id}/voice.mp3", durationSec > 0 } (no query — the build adds the version)`);
 }
