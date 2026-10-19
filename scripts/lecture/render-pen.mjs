@@ -7,7 +7,7 @@
  *
  * Pen colours (2026-10-17, chosen to sit with the textbook's burgundy rules and the site's ink · gold — the original
  * GVA colours are not in the file): 0x43 crimson (the main pen, ~90% of strokes) · 0x33 ink blue · 0x23 forest green ·
- * 0x13 charcoal · 0x03 warm gold highlighter (wide, translucent, drawn under the text).
+ * 0x13 charcoal · 0x03 deep gold (a highlighter until 2026-10-20, see penStyle).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -23,13 +23,11 @@ const MEDIA = path.resolve(ROOT, arg("--media", ".lecture-media"));
 const at = arg("--at", null);
 const out = path.resolve(arg("--out", path.join(MEDIA, `${id}.svg`)));
 
-export const PEN = {
-  0x43: { color: "#C2362F", width: 2.2 },
-  0x33: { color: "#2456A4", width: 2.2 },
-  0x23: { color: "#2E7A4C", width: 2.2 },
-  0x13: { color: "#2A2A2A", width: 2.2 },
-  0x03: { color: "#E8B93A", width: 13, opacity: 0.42 },
-};
+// the colour is the code's high nibble (0x12 · 0x22 … in 문장구조론 · 알파오메가). Pen 0 was a wide gold highlighter until
+// 2026-10-20: its strokes are handwriting (뼈대세우기 writes on blank pages with it), so it is a deep gold pen now —
+// src/components/LectureLearningView.tsx penStyle has the same values.
+const PEN_COLOR = { 4: "#C2362F", 3: "#2456A4", 2: "#2E7A4C", 1: "#2A2A2A", 0: "#A3690F" };
+export const penStyle = (code) => (PEN_COLOR[code >> 4] ? { color: PEN_COLOR[code >> 4], width: 2.2 } : null);
 
 const pen = JSON.parse(fs.readFileSync(path.join(MEDIA, "audio", "lecture", id, "pen.json"), "utf8"));
 const limit = at === null ? Infinity : Number(at) / pen.unitSec;
@@ -49,7 +47,7 @@ for (const s of pen.strokes) {
     y += s[i + 2];
     d += `L${x} ${y}`;
   }
-  const p = PEN[code] || { color: "#ff00ff", width: 2 };
+  const p = penStyle(code) || { color: "#ff00ff", width: 2 };
   paths.push(`<path d="${d}" fill="none" stroke="${p.color}" stroke-width="${p.width}" stroke-linecap="round" stroke-linejoin="round"${p.opacity ? ` stroke-opacity="${p.opacity}"` : ""}/>`);
 }
 const jpg = fs.readFileSync(path.join(MEDIA, "audio", "lecture", id, `p${String(page).padStart(3, "0")}.jpg`)).toString("base64");

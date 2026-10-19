@@ -59,16 +59,27 @@ const PAGE_Y = 20;
  * Pen colours. These are the textbook's ink, not interface colours: they are drawn on the white page image (which is white in
  * dark mode too), so they stay outside the design tokens (docs/디자인-규칙.md §4 is about the interface). The five pen codes
  * of the .gdb files and their colours are the owner's (docs/lecture/README.md 2장 · 5장 — 사장님 '그 색으로 해', 2026-10-17),
- * the same values as scripts/lecture/render-pen.mjs `PEN`. Widths are in page pixels.
+ * the same values as scripts/lecture/render-pen.mjs `penStyle`. Widths are in page pixels.
+ *
+ * The colour is the code's high nibble: 문장구조론 and 알파오메가 also write 0x12 · 0x22 · 0x32 · 0x42 · 0x02 (the low nibble
+ * 2 or 1 instead of 3), which fell to the charcoal default. Pen 0 was drawn as a wide gold highlighter, but its strokes are
+ * handwriting — 1,009 in 뼈대세우기, written on blank pages, and none of its 1,045 strokes in all 233 lectures is a flat
+ * underline-like band (measured 2026-10-20) — so wide and pale they could not be read (사장님 10-20 "뼈대세우기 필기 알아볼 수가
+ * 없잖아"). It is a pen like the others now, in a deep gold that reads on white. The highlighter layer stays for a pen that
+ * really is one; none does today.
  */
-const PEN_STYLE: Record<number, { color: string; width: number; highlighter?: true }> = {
-  0x43: { color: "#C2362F", width: 2.2 }, // crimson — the main pen (~90% of strokes)
-  0x33: { color: "#2456A4", width: 2.2 }, // ink blue
-  0x23: { color: "#2E7A4C", width: 2.2 }, // forest green
-  0x13: { color: "#2A2A2A", width: 2.2 }, // charcoal
-  0x03: { color: "#E8B93A", width: 13, highlighter: true }, // warm gold highlighter — its own layer, see HIGHLIGHT_OPACITY
+const PEN_COLOR: Record<number, string> = {
+  4: "#C2362F", // crimson — the main pen of 영어독해 (~90% of its strokes)
+  3: "#2456A4", // ink blue
+  2: "#2E7A4C", // forest green
+  1: "#2A2A2A", // charcoal
+  0: "#A3690F", // deep gold
 };
-const UNKNOWN_PEN = { color: "#2A2A2A", width: 2.2 };
+const UNKNOWN_PEN: { color: string; width: number; highlighter?: true } = { color: "#2A2A2A", width: 2.2 };
+function penStyle(code: number): { color: string; width: number; highlighter?: true } {
+  const color = PEN_COLOR[code >> 4];
+  return color ? { color, width: 2.2 } : UNKNOWN_PEN;
+}
 /** the highlighter layer's opacity: drawn opaque on its own canvas, so crossing strokes do not darken where they overlap */
 const HIGHLIGHT_OPACITY = 0.42;
 
@@ -172,7 +183,7 @@ export function LectureLearningView({
         k++;
         continue;
       }
-      const style = PEN_STYLE[stroke.pen] ?? UNKNOWN_PEN;
+      const style = penStyle(stroke.pen);
       const g = style.highlighter ? ctx.mark : ctx.ink;
       g.strokeStyle = style.color;
       g.lineWidth = style.width;
