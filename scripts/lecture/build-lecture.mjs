@@ -49,6 +49,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";
+import { createHash } from "node:crypto";
 import { cleanStream } from "./voice/extract-original.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..", "..");
@@ -404,7 +405,9 @@ function main() {
         durationSec: lectureSec ? Math.round(lectureSec * 10) / 10 : Math.round(g.lengthUnits * unitSec * 10) / 10,
         lengthUnits: penDoc.lengthUnits,
         unitSec: penDoc.unitSec,
-        pages: pagesUsed.map((pg) => ({ page: pg, src: pageSrc(pg) })),
+        // a version in the query, as the pen and voice have: the browser keeps a free page a year (immutable) and a paid
+        // one an hour, so the re-typeset page at the same path showed the old one (사장님 2026-10-20 "반영 안되있는데?")
+        pages: pagesUsed.map((pg) => ({ page: pg, src: `${pageSrc(pg)}?v=${createHash("sha1").update(retypeOf(pg) ? fs.readFileSync(retypeOf(pg)) : g.pages[pg - 1]).digest("hex").slice(0, 8)}` })),
         // a voiced lecture's pen and voice carry a version in the query (the browser keeps these for a year — MEDIA-02
         // mediaRoute: free objects immutable, paid ones an hour — so a re-made voice or re-timed pen at the same path
         // would play against the old one: lh082 preview 2026-10-17). The media gate and keys use the path only.
